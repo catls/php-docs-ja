@@ -29,6 +29,8 @@
 
   <p class="para rdfs-comment">
    指定したディレクトリを作成します。
+   既存のディレクトリと同じものを作成することはできません。また、ディレクトリを作成するための権限が必要です。
+   失敗した場合は E_WARNING レベルのエラーが発生します。
   </p>
  </div>
 
@@ -162,7 +164,7 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
  <div class="refsect1 examples" id="refsect1-function.mkdir-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2403">
+   <div class="example" id="example-2410">
     <p><strong>例1  <span class="function"><strong>mkdir()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -174,7 +176,7 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2404">
+   <div class="example" id="example-2411">
     <p><strong>例2  <span class="function"><strong>mkdir()</strong></span> での <em><code class="parameter">recursive</code></em> パラメータの使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

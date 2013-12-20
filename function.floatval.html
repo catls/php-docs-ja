@@ -68,11 +68,23 @@
  <div class="refsect1 examples" id="refsect1-function.floatval-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5238">
+   <div class="example" id="example-5247">
     <p><strong>例1  <span class="function"><strong>floatval()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'122.34343The'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$float_value_of_var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">floatval</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$float_value_of_var</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;122.34343<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-5248">
+    <p><strong>例2  <span class="function"><strong>floatval()</strong></span> で、先頭が非数値である場合の例</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'The122.34343'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$float_value_of_var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">floatval</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$float_value_of_var</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

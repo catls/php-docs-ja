@@ -27,6 +27,7 @@
   <p class="para rdfs-comment">
    配列のサイズを、新しい値 <em><code class="parameter">size</code></em> に変更します。
    <em><code class="parameter">size</code></em> が現在の配列のサイズより小さい場合は、
+   入りきらなかったそれ以降の値は破棄されます。
    <em><code class="parameter">size</code></em> が現在の配列のサイズより大きい場合は、
    増えた要素の値は <strong><code>NULL</code></strong> となります。
   </p>
@@ -81,7 +82,7 @@
  <div class="refsect1 examples" id="refsect1-splfixedarray.setsize-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3796">
+   <div class="example" id="example-3803">
     <p><strong>例1  <span class="function"><strong>SplFixedArray::setSize()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

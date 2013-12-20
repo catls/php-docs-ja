@@ -20,7 +20,7 @@
  <div class="refsect1 description" id="refsect1-function.mb-strlen-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">int</span> <span class="methodname"><strong>mb_strlen</strong></span>
+   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>mb_strlen</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$encoding</code><span class="initializer"> = mb_internal_encoding()</span></span>
   ] )</div>
@@ -74,6 +74,15 @@
    <em><code class="parameter">str</code></em> の文字数を返します。
    マルチバイト文字の一文字は1個として数えられます。
   </p>
+  <p class="para">
+   無効な <em><code class="parameter">encoding</code></em> を指定した場合は <strong><code>FALSE</code></strong> を返します。
+  </p>
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は論理値
+<strong><code>FALSE</code></strong> を返す可能性がありますが、<strong><code>FALSE</code></strong> として評価される値を返す可能性もあります。
+詳細については <a href="language.types.boolean.html" class="link">論理値</a>の
+セクションを参照してください。この関数の返り値を調べるには
+<a href="language.operators.comparison.html" class="link">===演算子</a> を
+使用してください。</p></div>
  </div>
 
 
