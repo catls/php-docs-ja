@@ -46,14 +46,15 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">format</code></em></dt>
 
-    <span class="term"><em><code class="parameter">format</code></em></span>
     <dd>
 
      <p class="para">
       書式を文字列で渡します。以下の書式オプションを参照ください。
-      大半は、 <span class="function"><a href="function.date.html" class="function">date()</a></span> で使える文字と同じです。
+      大半は、<span class="function"><a href="function.date.html" class="function">date()</a></span> で使える文字と同じです。
      </p>
      <p class="para">
       <table class="doctable table">
@@ -299,7 +300,7 @@
           <td><em>+</em></td>
           <td>この文字があると、文字列のそれ以降のデータではエラーが発生せず、
           かわりに警告を発生させる</td>
-          <td>それ以降のデータが存在したかどうかを調べるには  <span class="methodname"><a href="datetime.getlasterrors.html" class="methodname">DateTime::getLastErrors()</a></span>
+          <td>それ以降のデータが存在したかどうかを調べるには <span class="methodname"><a href="datetime.getlasterrors.html" class="methodname">DateTime::getLastErrors()</a></span>
           を使います。</td>
          </tr>
 
@@ -311,7 +312,7 @@
      <p class="para">
       書式文字列の中に解釈不能な文字が含まれていると処理は失敗し、
       返り値にはエラーメッセージが付加されます。エラーメッセージを調べるには
-       <span class="methodname"><a href="datetime.getlasterrors.html" class="methodname">DateTime::getLastErrors()</a></span> を使います。
+      <span class="methodname"><a href="datetime.getlasterrors.html" class="methodname">DateTime::getLastErrors()</a></span> を使います。
      </p>
      <p class="para">
       <em><code class="parameter">format</code></em> に文字
@@ -331,11 +332,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">time</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">time</code></em></span>
     <dd>
 
      <p class="para">
@@ -343,11 +344,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">timezone</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">timezone</code></em></span>
     <dd>
 
      <p class="para">
@@ -370,8 +371,7 @@
      </p></blockquote>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -387,8 +387,8 @@
 
  <div class="refsect1 examples" id="refsect1-datetime.createfromformat-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-2254">
-   <p><strong>例1  <span class="function"><strong>DateTime::createFromFormat()</strong></span> の例</strong></p>
+  <div class="example" id="example-2255">
+   <p><strong>例1 <span class="function"><strong>DateTime::createFromFormat()</strong></span> の例</strong></p>
    <div class="example-contents"><p>オブジェクト指向型</p></div>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -412,8 +412,8 @@
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-2255">
-   <p><strong>例2  <span class="function"><strong>DateTime::createFromFormat()</strong></span> の複雑な例</strong></p>
+  <div class="example" id="example-2256">
+   <p><strong>例2 <span class="function"><strong>DateTime::createFromFormat()</strong></span> の複雑な例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'Current&nbsp;time:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d&nbsp;H:i:s'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Y-m-d'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'2009-02-15'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Format:&nbsp;</span><span style="color: #0000BB">$format</span><span style="color: #DD0000">;&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d&nbsp;H:i:s'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Y-m-d&nbsp;H:i:s'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'2009-02-15&nbsp;15:16:17'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Format:&nbsp;</span><span style="color: #0000BB">$format</span><span style="color: #DD0000">;&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d&nbsp;H:i:s'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Y-m-!d&nbsp;H:i:s'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'2009-02-15&nbsp;15:16:17'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Format:&nbsp;</span><span style="color: #0000BB">$format</span><span style="color: #DD0000">;&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d&nbsp;H:i:s'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$format&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'!d'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromFormat</span><span style="color: #007700">(</span><span style="color: #0000BB">$format</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'15'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"Format:&nbsp;</span><span style="color: #0000BB">$format</span><span style="color: #DD0000">;&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$date</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'Y-m-d&nbsp;H:i:s'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -439,10 +439,10 @@ Format: !d; 1970-01-15 00:00:00
  <div class="refsect1 seealso" id="refsect1-datetime.createfromformat-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"> <span class="function"><a href="datetime.construct.html" class="function" rel="rdfs-seeAlso">DateTime::__construct()</a> - 新しい DateTime オブジェクトを返す</span></li>
-   <li class="member"> <span class="function"><a href="datetime.getlasterrors.html" class="function" rel="rdfs-seeAlso">DateTime::getLastErrors()</a> - 警告およびエラーを返す</span></li>
-   <li class="member"> <span class="function"><a href="function.checkdate.html" class="function" rel="rdfs-seeAlso">checkdate()</a> - グレゴリオ暦の日付/時刻の妥当性を確認します</span></li>
-   <li class="member"> <span class="function"><a href="function.strptime.html" class="function" rel="rdfs-seeAlso">strptime()</a> - strftime が生成した日付/時刻をパースする</span></li>
+   <li class="member"><span class="function"><a href="datetime.construct.html" class="function" rel="rdfs-seeAlso">DateTime::__construct()</a> - 新しい DateTime オブジェクトを返す</span></li>
+   <li class="member"><span class="function"><a href="datetime.getlasterrors.html" class="function" rel="rdfs-seeAlso">DateTime::getLastErrors()</a> - 警告およびエラーを返す</span></li>
+   <li class="member"><span class="function"><a href="function.checkdate.html" class="function" rel="rdfs-seeAlso">checkdate()</a> - グレゴリオ暦の日付/時刻の妥当性を確認します</span></li>
+   <li class="member"><span class="function"><a href="function.strptime.html" class="function" rel="rdfs-seeAlso">strptime()</a> - strftime が生成した日付/時刻をパースする</span></li>
   </ul>
  </div>
 

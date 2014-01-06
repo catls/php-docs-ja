@@ -25,12 +25,12 @@
    cluster nodes that can deliver the consistency level requested. For example,
    if using asynchronous MySQL Replication with its cluster-wide eventual
    consistency, it is possible to request session consistency (read your writes)
-   at any time using  <span class="function"><strong>mysqlnd_ms_set_quos()</strong></span>. Please, see also the
+   at any time using <span class="function"><strong>mysqlnd_ms_set_quos()</strong></span>. Please, see also the
    <a href="mysqlnd-ms.quickstart.qos-consistency.html" class="link">service level and consistency</a>
    introduction.
   </p>
   <p class="para">
-   <div class="example" id="example-1783">
+   <div class="example" id="example-1784">
     <p><strong>例1 Recap: quality of service to request read your writes</strong></p>
     <div class="example-contents"><div class="phpcode"><code><span style="color: #000000">
 /*&nbsp;Request&nbsp;session&nbsp;consistency:&nbsp;read&nbsp;your&nbsp;writes&nbsp;*/<br />if&nbsp;(!mysqlnd_ms_set_qos($mysqli,&nbsp;MYSQLND_MS_QOS_CONSISTENCY_SESSION))<br />&nbsp;&nbsp;die(sprintf("[%d]&nbsp;%s\n",&nbsp;$mysqli-&gt;errno,&nbsp;$mysqli-&gt;error));</span>
@@ -54,7 +54,7 @@
    of a database query is slower than a local cache access.
   </p>
   <p class="para">
-   <div class="example" id="example-1784">
+   <div class="example" id="example-1785">
     <p><strong>例2 Plugin config: no special entries for caching</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -79,7 +79,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1785">
+   <div class="example" id="example-1786">
     <p><strong>例3 Caching a slave request</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -93,13 +93,13 @@
   <p class="para">
    The example shows how to use the cache feature. First, you have to set
    the quality of service to eventual consistency and explicitly allow for caching.
-   This is done by calling  <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
+   This is done by calling <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
    Then, the result set of every read-only statement is cached for upto that
-   many seconds as allowed with  <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
+   many seconds as allowed with <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
   </p>
   <p class="para">
    The actual TTL is lower or equal to the value set
-   with  <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>. The value passed to the
+   with <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>. The value passed to the
    function sets the maximum age (seconds) of the data delivered. To calculate
    the actual TTL value the replication lag on a slave is checked and subtracted
    from the given value. If, for example, the maximum age is set to 60 seconds and
@@ -107,7 +107,7 @@
    The TTL is calculated individually for every cached query.
   </p>
   <p class="para">
-   <div class="example" id="example-1786">
+   <div class="example" id="example-1787">
     <p><strong>例4 Read your writes and caching combined</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

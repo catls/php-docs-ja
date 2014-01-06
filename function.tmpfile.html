@@ -29,7 +29,7 @@
    ファイルハンドルを返します。
   </p>
   <p class="para">
-   ( <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span>を呼んだり、 <span class="function"><strong>tmpfile()</strong></span> が返すファイルハンドルへの参照がなくなったりして)
+   (<span class="function"><a href="function.fclose.html" class="function">fclose()</a></span>を呼んだり、<span class="function"><strong>tmpfile()</strong></span> が返すファイルハンドルへの参照がなくなったりして)
    ファイルをクローズした場合や、スクリプトが終了したりしたときに、このファイルは自動的に削除されます。
   </p>
   <p class="para">
@@ -44,7 +44,7 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    ファイルのハンドルを返します。
-   これは、  <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
+   これは、 <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
    により返されるハンドルと同じものです。
    失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
@@ -54,8 +54,8 @@
  <div class="refsect1 examples" id="refsect1-function.tmpfile-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2434">
-    <p><strong>例1  <span class="function"><strong>tmpfile()</strong></span> の例</strong></p>
+   <div class="example" id="example-2435">
+    <p><strong>例1 <span class="function"><strong>tmpfile()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$temp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">tmpfile</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$temp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"writing&nbsp;to&nbsp;tempfile"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fseek</span><span style="color: #007700">(</span><span style="color: #0000BB">$temp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$temp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1024</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$temp</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;ファイルを削除します<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -78,8 +78,8 @@ writing to tempfile
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.tempnam.html" class="function" rel="rdfs-seeAlso">tempnam()</a> - 一意なファイル名を生成する</span></li>
-    <li class="member"> <span class="function"><a href="function.sys-get-temp-dir.html" class="function" rel="rdfs-seeAlso">sys_get_temp_dir()</a> - 一時ファイル用に使用されるディレクトリのパスを返す</span></li>
+    <li class="member"><span class="function"><a href="function.tempnam.html" class="function" rel="rdfs-seeAlso">tempnam()</a> - 一意なファイル名を生成する</span></li>
+    <li class="member"><span class="function"><a href="function.sys-get-temp-dir.html" class="function" rel="rdfs-seeAlso">sys_get_temp_dir()</a> - 一時ファイル用に使用されるディレクトリのパスを返す</span></li>
    </ul>
   </p>
  </div>

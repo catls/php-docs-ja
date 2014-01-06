@@ -36,9 +36,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">text</code></em></dt>
 
-     <span class="term"><em><code class="parameter">text</code></em></span>
      <dd>
 
       <p class="para">
@@ -46,8 +47,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -66,8 +66,8 @@
  <div class="refsect1 examples" id="refsect1-function.ctype-alnum-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5069">
-    <p><strong>例1 A  <span class="function"><strong>ctype_alnum()</strong></span> の例 (デフォルトのロケールを使用)</strong></p>
+   <div class="example" id="example-5071">
+    <p><strong>例1 A <span class="function"><strong>ctype_alnum()</strong></span> の例 (デフォルトのロケールを使用)</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$strings&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'AbCd1zyZ9'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'foo!#$bar'</span><span style="color: #007700">);<br />foreach&nbsp;(</span><span style="color: #0000BB">$strings&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$testcase</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">ctype_alnum</span><span style="color: #007700">(</span><span style="color: #0000BB">$testcase</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;string&nbsp;</span><span style="color: #0000BB">$testcase</span><span style="color: #DD0000">&nbsp;consists&nbsp;of&nbsp;all&nbsp;letters&nbsp;or&nbsp;digits.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;string&nbsp;</span><span style="color: #0000BB">$testcase</span><span style="color: #DD0000">&nbsp;does&nbsp;not&nbsp;consist&nbsp;of&nbsp;all&nbsp;letters&nbsp;or&nbsp;digits.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -100,9 +100,9 @@ The string foo!#$bar does not consist of all letters or digits.
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.ctype-alpha.html" class="function" rel="rdfs-seeAlso">ctype_alpha()</a> - 英字かどうかを調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.ctype-digit.html" class="function" rel="rdfs-seeAlso">ctype_digit()</a> - 数字かどうかを調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.setlocale.html" class="function" rel="rdfs-seeAlso">setlocale()</a> - ロケール情報を設定する</span></li>
+    <li class="member"><span class="function"><a href="function.ctype-alpha.html" class="function" rel="rdfs-seeAlso">ctype_alpha()</a> - 英字かどうかを調べる</span></li>
+    <li class="member"><span class="function"><a href="function.ctype-digit.html" class="function" rel="rdfs-seeAlso">ctype_digit()</a> - 数字かどうかを調べる</span></li>
+    <li class="member"><span class="function"><a href="function.setlocale.html" class="function" rel="rdfs-seeAlso">setlocale()</a> - ロケール情報を設定する</span></li>
    </ul>
   </p>
  </div>

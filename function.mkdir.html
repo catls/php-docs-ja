@@ -29,8 +29,6 @@
 
   <p class="para rdfs-comment">
    指定したディレクトリを作成します。
-   既存のディレクトリと同じものを作成することはできません。また、ディレクトリを作成するための権限が必要です。
-   失敗した場合は E_WARNING レベルのエラーが発生します。
   </p>
  </div>
 
@@ -40,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">pathname</code></em></dt>
 
-     <span class="term"><em><code class="parameter">pathname</code></em></span>
      <dd>
 
       <p class="para">
@@ -50,17 +49,17 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">mode</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">mode</code></em></span>
      <dd>
 
       <p class="para">
        モードは 0777 がデフォルトです。
        これは最も緩やかなアクセス制限を意味します。
-       モードに関する詳細は  <span class="function"><a href="function.chmod.html" class="function">chmod()</a></span> をご覧ください。
+       モードに関する詳細は <span class="function"><a href="function.chmod.html" class="function">chmod()</a></span> をご覧ください。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
@@ -71,15 +70,15 @@
        モードを八進数で指定したくなることもあるかもしれません。
        その場合は先頭にゼロをつける必要があります。
        また、モードは、現在設定されている umask の影響も受けます。
-       umask を変更するには  <span class="function"><a href="function.umask.html" class="function">umask()</a></span> を使用します。
+       umask を変更するには <span class="function"><a href="function.umask.html" class="function">umask()</a></span> を使用します。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">recursive</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">recursive</code></em></span>
      <dd>
 
       <p class="para">
@@ -87,11 +86,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">context</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">context</code></em></span>
      <dd>
 
       <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">コンテキストのサポートは、
@@ -99,8 +98,7 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
 <a href="book.stream.html" class="xref">ストリーム</a> を参照してください。</span></p></blockquote>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -139,9 +137,9 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
       <tr>
        <td>5.0.0</td>
        <td>
-        PHP 5.0.0 以降、 <span class="function"><strong>mkdir()</strong></span> は
+        PHP 5.0.0 以降、<span class="function"><strong>mkdir()</strong></span> は
         <em class="emphasis">いくつかの</em> URL ラッパーを併用することが可能です。
-         <span class="function"><strong>mkdir()</strong></span> をサポートしているラッパーの一覧については、
+        <span class="function"><strong>mkdir()</strong></span> をサポートしているラッパーの一覧については、
         <a href="wrappers.html" class="xref">サポートするプロトコル/ラッパー</a> を参照ください。
        </td>
       </tr>
@@ -164,8 +162,8 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
  <div class="refsect1 examples" id="refsect1-function.mkdir-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2410">
-    <p><strong>例1  <span class="function"><strong>mkdir()</strong></span> の例</strong></p>
+   <div class="example" id="example-2411">
+    <p><strong>例1 <span class="function"><strong>mkdir()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />mkdir</span><span style="color: #007700">(</span><span style="color: #DD0000">"/path/to/my/dir"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0700</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -176,8 +174,8 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2411">
-    <p><strong>例2  <span class="function"><strong>mkdir()</strong></span> での <em><code class="parameter">recursive</code></em> パラメータの使用例</strong></p>
+   <div class="example" id="example-2412">
+    <p><strong>例2 <span class="function"><strong>mkdir()</strong></span> での <em><code class="parameter">recursive</code></em> パラメータの使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;作りたいフォルダ構造<br /></span><span style="color: #0000BB">$structure&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'./depth1/depth2/depth3/'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;入れ子構造を作るには、$recursive&nbsp;パラメータを<br />//&nbsp;mkdir()&nbsp;に指定しなければなりません<br /><br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">mkdir</span><span style="color: #007700">(</span><span style="color: #0000BB">$structure</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">'Failed&nbsp;to&nbsp;create&nbsp;folders...'</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;...<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -186,6 +184,17 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
     </div>
 
    </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.mkdir-errors">
+  <h3 class="title">エラー / 例外</h3>
+  <p class="para">
+   ディレクトリが既に存在する場合は <strong><code>E_WARNING</code></strong> レベルのエラーが発生します。
+  </p>
+  <p class="para">
+   ディレクトリの作成権限がない場合は <strong><code>E_WARNING</code></strong> レベルのエラーが発生します。
   </p>
  </div>
 
@@ -202,7 +211,7 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.rmdir.html" class="function" rel="rdfs-seeAlso">rmdir()</a> - ディレクトリを削除する</span></li>
+    <li class="member"><span class="function"><a href="function.rmdir.html" class="function" rel="rdfs-seeAlso">rmdir()</a> - ディレクトリを削除する</span></li>
    </ul>
   </p>
  </div>

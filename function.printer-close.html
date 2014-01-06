@@ -26,7 +26,7 @@
 
   <p class="para rdfs-comment">
    この関数は、プリンタへの接続をクローズします。
-    <span class="function"><strong>printer_close()</strong></span> は、アクティブな
+   <span class="function"><strong>printer_close()</strong></span> は、アクティブな
    デバイスコンテキストもクローズします。
   </p>
  </div>
@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">printer_handle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">printer_handle</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,8 +49,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -67,8 +67,8 @@
  <div class="refsect1 examples" id="refsect1-function.printer-close-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5362">
-    <p><strong>例1  <span class="function"><strong>printer_close()</strong></span> の例</strong></p>
+   <div class="example" id="example-5364">
+    <p><strong>例1 <span class="function"><strong>printer_close()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">printer_open</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">printer_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

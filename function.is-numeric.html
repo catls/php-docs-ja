@@ -42,9 +42,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">var</code></em></dt>
 
-     <span class="term"><em><code class="parameter">var</code></em></span>
      <dd>
 
       <p class="para">
@@ -52,8 +53,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -72,8 +72,8 @@
  <div class="refsect1 examples" id="refsect1-function.is-numeric-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5260">
-    <p><strong>例1  <span class="function"><strong>is_numeric()</strong></span> の例</strong></p>
+   <div class="example" id="example-5262">
+    <p><strong>例1 <span class="function"><strong>is_numeric()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$tests&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"42"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">1337</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">0x539</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">02471</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">0b10100111001</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">1337e0</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"not&nbsp;numeric"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;array(),<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">9.1<br /></span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$tests&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$element</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">is_numeric</span><span style="color: #007700">(</span><span style="color: #0000BB">$element</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"'</span><span style="color: #007700">{</span><span style="color: #0000BB">$element</span><span style="color: #007700">}</span><span style="color: #DD0000">'&nbsp;is&nbsp;numeric"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"'</span><span style="color: #007700">{</span><span style="color: #0000BB">$element</span><span style="color: #007700">}</span><span style="color: #DD0000">'&nbsp;is&nbsp;NOT&nbsp;numeric"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -104,14 +104,14 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.ctype-digit.html" class="function" rel="rdfs-seeAlso">ctype_digit()</a> - 数字かどうかを調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.is-bool.html" class="function" rel="rdfs-seeAlso">is_bool()</a> - 変数が boolean であるかを調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.is-null.html" class="function" rel="rdfs-seeAlso">is_null()</a> - 変数が NULL かどうか調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.is-float.html" class="function" rel="rdfs-seeAlso">is_float()</a> - 変数の型が float かどうか調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.is-int.html" class="function" rel="rdfs-seeAlso">is_int()</a> - 変数が整数型かどうかを検査する</span></li>
-    <li class="member"> <span class="function"><a href="function.is-string.html" class="function" rel="rdfs-seeAlso">is_string()</a> - 変数の型が文字列かどうかを調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.is-object.html" class="function" rel="rdfs-seeAlso">is_object()</a> - 変数がオブジェクトかどうかを検査する</span></li>
-    <li class="member"> <span class="function"><a href="function.is-array.html" class="function" rel="rdfs-seeAlso">is_array()</a> - 変数が配列かどうかを検査する</span></li>
+    <li class="member"><span class="function"><a href="function.ctype-digit.html" class="function" rel="rdfs-seeAlso">ctype_digit()</a> - 数字かどうかを調べる</span></li>
+    <li class="member"><span class="function"><a href="function.is-bool.html" class="function" rel="rdfs-seeAlso">is_bool()</a> - 変数が boolean であるかを調べる</span></li>
+    <li class="member"><span class="function"><a href="function.is-null.html" class="function" rel="rdfs-seeAlso">is_null()</a> - 変数が NULL かどうか調べる</span></li>
+    <li class="member"><span class="function"><a href="function.is-float.html" class="function" rel="rdfs-seeAlso">is_float()</a> - 変数の型が float かどうか調べる</span></li>
+    <li class="member"><span class="function"><a href="function.is-int.html" class="function" rel="rdfs-seeAlso">is_int()</a> - 変数が整数型かどうかを検査する</span></li>
+    <li class="member"><span class="function"><a href="function.is-string.html" class="function" rel="rdfs-seeAlso">is_string()</a> - 変数の型が文字列かどうかを調べる</span></li>
+    <li class="member"><span class="function"><a href="function.is-object.html" class="function" rel="rdfs-seeAlso">is_object()</a> - 変数がオブジェクトかどうかを検査する</span></li>
+    <li class="member"><span class="function"><a href="function.is-array.html" class="function" rel="rdfs-seeAlso">is_array()</a> - 変数が配列かどうかを検査する</span></li>
    </ul>
   </p>
  </div>

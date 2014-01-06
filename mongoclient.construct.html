@@ -20,7 +20,7 @@
  <div class="refsect1 description" id="refsect1-mongoclient.construct-description">
   <h3 class="title">説明</h3>
   <div class="constructorsynopsis dc-description">
-   <span class="modifier">public</span>  <span class="methodname"><strong>MongoClient::__construct()</strong></span>
+   <span class="modifier">public</span> <span class="methodname"><strong>MongoClient::__construct()</strong></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$server</code><span class="initializer"> = &quot;mongodb://localhost:27017&quot;</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array(&quot;connect&quot; =&gt; <strong><code>TRUE</code></strong>)</span></span>
   ]] )</div>
@@ -86,11 +86,12 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">server</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -98,13 +99,13 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">options</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -120,7 +121,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
           <em class="emphasis">自動的に</em> サーバーと接続するようになります。
           クエリの実行に接続が必要かどうかは関係ありません。
           それ以外に、手動で
-           <span class="function"><a href="mongo.connect.html" class="function">Mongo::connect()</a></span> を実行する方法もあります。
+          <span class="function"><a href="mongo.connect.html" class="function">Mongo::connect()</a></span> を実行する方法もあります。
          </p>
          <div class="warning"><strong class="warning">警告</strong>
           <p class="para">
@@ -319,8 +320,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -351,8 +351,8 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
 
  <div class="refsect1 examples" id="mongo.mongoclient.construct.examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1396">
-   <p><strong>例1  <span class="function"><strong>MongoClient::__construct()</strong></span> でのレプリカセットの例</strong></p>
+  <div class="example" id="example-1397">
+   <p><strong>例1 <span class="function"><strong>MongoClient::__construct()</strong></span> でのレプリカセットの例</strong></p>
    <div class="example-contents"><p>
     この例は、レプリカセットに接続する方法を示します。
     このでは、次の三つのサーバー sf1.example.com、sf2.example.com および
@@ -385,7 +385,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
     を参照ください。
    </p></div>
   </div>
-  <div class="example" id="example-1397">
+  <div class="example" id="example-1398">
    <p><strong>例2 ドメインソケットへの接続</strong></p>
    <div class="example-contents"><p>
     バージョン 1.0.9 以降では、ローカルで実行している MongoDB への接続に
@@ -415,8 +415,8 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
    </div>
 
   </div>
-  <div class="example" id="example-1398">
-   <p><strong>例3  <span class="function"><strong>MongoClient::__construct()</strong></span> での認証の例</strong></p>
+  <div class="example" id="example-1399">
+   <p><strong>例3 <span class="function"><strong>MongoClient::__construct()</strong></span> での認証の例</strong></p>
    <div class="example-contents"><p>
     認証を使うには、admin データベースにユーザーが存在しなければなりません。
     Mongo シェルでユーザーを作るには、次のようにします。
@@ -447,8 +447,8 @@ switched to db admin
    </div>
 
   </div>
-  <div class="example" id="example-1399">
-   <p><strong>例4  <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
+  <div class="example" id="example-1400">
+   <p><strong>例4 <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;"east"&nbsp;データセンターにある最も近いサーバーを優先します<br /></span><span style="color: #0000BB">$uri&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mongodb://rs1.example.com,rs2.example.com/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$uri&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'?readPreference=nearest'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$uri&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&amp;readPreferenceTags=dc:east'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(</span><span style="color: #0000BB">$uri</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">'replicaSet'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'rs'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -462,8 +462,8 @@ switched to db admin
    </p></div>
   </div>
 
-  <div class="example" id="example-1400">
-   <p><strong>例5  <span class="function"><strong>MongoClient::__construct()</strong></span> でのオプションの例</strong></p>
+  <div class="example" id="example-1401">
+   <p><strong>例5 <span class="function"><strong>MongoClient::__construct()</strong></span> でのオプションの例</strong></p>
    <div class="example-contents"><p>
     オプションは、接続文字列のクエリ文字列で渡すだけでなく、
     コンストラクタの二番目の引数で渡すこともできます。
@@ -497,8 +497,8 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
 
   </div>
 
-  <div class="example" id="example-1401">
-   <p><strong>例6  <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
+  <div class="example" id="example-1402">
+   <p><strong>例6 <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;"east"&nbsp;データセンターにある最も近いサーバーを優先します<br /></span><span style="color: #0000BB">$uri&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mongodb://rs1.example.com,rs2.example.com/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$uri&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'?readPreference=nearest'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$uri&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&amp;readPreferenceTags=dc:east'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(</span><span style="color: #0000BB">$uri</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">'replicaSet'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'rs'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -572,11 +572,12 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
         </p>
         <dl>
 
-         <dt>
+         
+          <dt>
 
-          <span class="term">
            <em><code class="parameter">&quot;persist&quot;</code></em>
-          </span>
+          </dt>
+
           <dd>
 
            <p class="para">
@@ -590,8 +591,7 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
            </p>
           </dd>
 
-         </dt>
-
+         
         </dl>
 
         <p class="para">
@@ -614,11 +614,12 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
         </p>
         <dl>
 
-         <dt>
+         
+          <dt>
 
-          <span class="term">
            <em><code class="parameter">server</code></em>
-          </span>
+          </dt>
+
           <dd>
 
            <p class="para">
@@ -626,13 +627,13 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
            </p>
           </dd>
 
-         </dt>
+         
+         
+          <dt>
 
-         <dt>
-
-          <span class="term">
            <em><code class="parameter">connect</code></em>
-          </span>
+          </dt>
+
           <dd>
 
            <p class="para">
@@ -642,13 +643,13 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
            </p>
           </dd>
 
-         </dt>
+         
+         
+          <dt>
 
-         <dt>
-
-          <span class="term">
            <em><code class="parameter">persistent</code></em>
-          </span>
+          </dt>
+
           <dd>
 
            <p class="para">
@@ -656,13 +657,13 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
            </p>
           </dd>
 
-         </dt>
+         
+         
+          <dt>
 
-         <dt>
-
-          <span class="term">
            <em><code class="parameter">paired</code></em>
-          </span>
+          </dt>
+
           <dd>
 
            <p class="para">
@@ -670,8 +671,7 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
            </p>
           </dd>
 
-         </dt>
-
+         
         </dl>
 
        </td>

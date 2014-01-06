@@ -84,11 +84,12 @@
    セーフモードの設定ディレクティブの簡単な説明を以下に示します。
     <dl>
 
-     <dt id="ini.safe-mode">
-      <span class="term">
+     
+      <dt id="ini.safe-mode">
        <em><code class="parameter">safe_mode</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -101,13 +102,13 @@
 PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
       </dd>
 
-     </dt>
-
-     <dt id="ini.safe-mode-gid">
-      <span class="term">
+     
+     
+      <dt id="ini.safe-mode-gid">
        <em><code class="parameter">safe_mode_gid</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -119,13 +120,13 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
-
-     <dt id="ini.safe-mode-include-dir">
-      <span class="term">
+     
+     
+      <dt id="ini.safe-mode-include-dir">
        <em><code class="parameter">safe_mode_include_dir</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -156,17 +157,17 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </span>
       </dd>
 
-     </dt>
-
-     <dt id="ini.safe-mode-exec-dir">
-      <span class="term">
+     
+     
+      <dt id="ini.safe-mode-exec-dir">
        <em><code class="parameter">safe_mode_exec_dir</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
-        PHPがセーフモードで動作する場合、 <span class="function"><a href="function.system.html" class="function">system()</a></span>や
+        PHPがセーフモードで動作する場合、<span class="function"><a href="function.system.html" class="function">system()</a></span>や
         その他の<a href="ref.exec.html" class="link">プログラム実行関数</a>を、
         このディレクトリ以外で起動することは拒否されます。
         Windowsを含む全ての環境において
@@ -174,13 +175,13 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
-
-     <dt id="ini.safe-mode-allowed-env-vars">
-      <span class="term">
+     
+     
+      <dt id="ini.safe-mode-allowed-env-vars">
        <em><code class="parameter">safe_mode_allowed_env_vars</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -199,25 +200,24 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p></blockquote>
       </dd>
 
-     </dt>
-
-     <dt id="ini.safe-mode-protected-env-vars">
-      <span class="term">
+     
+     
+      <dt id="ini.safe-mode-protected-env-vars">
        <em><code class="parameter">safe_mode_protected_env_vars</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
-         <span class="function"><a href="function.putenv.html" class="function">putenv()</a></span>を使ってエンドユーザーが変更するのを
+        <span class="function"><a href="function.putenv.html" class="function">putenv()</a></span>を使ってエンドユーザーが変更するのを
         防ぎたい環境変数をカンマ区切りで記述します。ここで設定された環境変数は
         もしもsafe_mode_allowed_env_varsでは許可されているものであっても
         保護されます。
        </p>
       </dd>
 
-     </dt>
-
+     
     </dl>
 
    </p>

@@ -27,7 +27,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>dba_open()</strong></span> は、<em><code class="parameter">handler</code></em> を用いて
+   <span class="function"><strong>dba_open()</strong></span> は、<em><code class="parameter">handler</code></em> を用いて
    <em><code class="parameter">mode</code></em> を指定し、<em><code class="parameter">path</code></em>
    にデータベースインスタンスを生成します。
   </p>
@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">path</code></em></dt>
 
-     <span class="term"><em><code class="parameter">path</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,11 +49,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">mode</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">mode</code></em></span>
      <dd>
 
       <p class="para">
@@ -169,7 +170,7 @@
 
         <ul class="simplelist">
          <li class="member">ok: 2 番目のコールは成功します。</li>
-         <li class="member">wait: 2 番目のコールは、最初のデータベースで  <span class="function"><a href="function.dba-close.html" class="function">dba_close()</a></span> がコールされるまで待ちます。</li>
+         <li class="member">wait: 2 番目のコールは、最初のデータベースで <span class="function"><a href="function.dba-close.html" class="function">dba_close()</a></span> がコールされるまで待ちます。</li>
          <li class="member">false: 2 番目のコールは、false を返します。</li>
          <li class="member">illegal: <em><code class="parameter">mode</code></em> パラメータで <em>&quot;l&quot;</em> および <em>&quot;d&quot;</em> を同時に使用することはできません。</li>
         </ul>
@@ -177,23 +178,22 @@
       </p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">handler</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">handler</code></em></span>
      <dd>
 
       <p class="para">
        <em><code class="parameter">path</code></em> にアクセスする際に使用する
        <a href="dba.requirements.html" class="link">ハンドラ</a>の名前。
-        <span class="function"><strong>dba_open()</strong></span> に指定したすべてのオプションが
+       <span class="function"><strong>dba_open()</strong></span> に指定したすべてのオプションが
        渡され、その機能を用いることができます。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -266,8 +266,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.dba-popen.html" class="function" rel="rdfs-seeAlso">dba_popen()</a> - データベースを持続的にオープンする</span></li>
-    <li class="member"> <span class="function"><a href="function.dba-close.html" class="function" rel="rdfs-seeAlso">dba_close()</a> - DBA データベースを閉じる</span></li>
+    <li class="member"><span class="function"><a href="function.dba-popen.html" class="function" rel="rdfs-seeAlso">dba_popen()</a> - データベースを持続的にオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.dba-close.html" class="function" rel="rdfs-seeAlso">dba_close()</a> - DBA データベースを閉じる</span></li>
    </ul>
   </p>
  </div>

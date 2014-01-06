@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">filename</code></em></dt>
 
-     <span class="term"><em><code class="parameter">filename</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,8 +49,8 @@
        ローカルファイルのほか <acronym title="Uniform Resource Locator">URL</acronym> も指定できます。
       </p>
       <p class="para">
-       <div class="example" id="example-4081">
-        <p><strong>例1  <span class="function"><strong>get_meta_tags()</strong></span> が何をパースするのか</strong></p>
+       <div class="example" id="example-4083">
+        <p><strong>例1 <span class="function"><strong>get_meta_tags()</strong></span> が何をパースするのか</strong></p>
         <div class="example-contents">
 <div class="htmlcode"><pre class="htmlcode">&lt;meta name=&quot;author&quot; content=&quot;name&quot;&gt;
 &lt;meta name=&quot;keywords&quot; content=&quot;php documentation&quot;&gt;
@@ -65,11 +66,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">use_include_path</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">use_include_path</code></em></span>
      <dd>
 
       <p class="para">
@@ -80,8 +81,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -135,8 +135,8 @@
  <div class="refsect1 examples" id="refsect1-function.get-meta-tags-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4082">
-    <p><strong>例2  <span class="function"><strong>get_meta_tags()</strong></span> が何を返すのか</strong></p>
+   <div class="example" id="example-4084">
+    <p><strong>例2 <span class="function"><strong>get_meta_tags()</strong></span> が何を返すのか</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;上のタグは&nbsp;www.example.com&nbsp;上のものだと仮定します<br /></span><span style="color: #0000BB">$tags&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_meta_tags</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;すべてのキーが小文字であり、.&nbsp;(ピリオド)&nbsp;が&nbsp;_&nbsp;に<br />//&nbsp;置換されていることに注目してください。<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'author'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;name<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'keywords'</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;php&nbsp;documentation<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'description'</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;a&nbsp;php&nbsp;manual<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$tags</span><span style="color: #007700">[</span><span style="color: #DD0000">'geo_position'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;49.33;-86.59<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -163,8 +163,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.htmlentities.html" class="function" rel="rdfs-seeAlso">htmlentities()</a> - 適用可能な文字を全て HTML エンティティに変換する</span></li>
-    <li class="member"> <span class="function"><a href="function.urlencode.html" class="function" rel="rdfs-seeAlso">urlencode()</a> - 文字列を URL エンコードする</span></li>
+    <li class="member"><span class="function"><a href="function.htmlentities.html" class="function" rel="rdfs-seeAlso">htmlentities()</a> - 適用可能な文字を全て HTML エンティティに変換する</span></li>
+    <li class="member"><span class="function"><a href="function.urlencode.html" class="function" rel="rdfs-seeAlso">urlencode()</a> - 文字列を URL エンコードする</span></li>
    </ul>
   </p>
  </div>

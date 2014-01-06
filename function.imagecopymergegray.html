@@ -32,7 +32,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>imagecopymergegray()</strong></span> は、
+   <span class="function"><strong>imagecopymergegray()</strong></span> は、
    <em><code class="parameter">src_im</code></em> の X,Y座標
    <em><code class="parameter">src_x</code></em>, <em><code class="parameter">src_y </code></em> から
    始まる幅<em><code class="parameter">src_w</code></em>、高さ
@@ -42,7 +42,7 @@
    <em><code class="parameter">dst_y</code></em>にコピーされます。
   </p>
   <p class="para">
-   この関数は  <span class="function"><a href="function.imagecopymerge.html" class="function">imagecopymerge()</a></span> と同じですが、マー
+   この関数は <span class="function"><a href="function.imagecopymerge.html" class="function">imagecopymerge()</a></span> と同じですが、マー
    ジをする際に、コピー前にコピー先のピクセルをグレースケールに変換
    することにより、コピー先のピクセルをコピー元の色相を維持するとこ
    ろが異なります。
@@ -54,29 +54,30 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">dst_im</code></em></dt>
 
-     <span class="term"><em><code class="parameter">dst_im</code></em></span>
      <dd>
 
       <p class="para">コピー先の画像リンクリソース。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">src_im</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">src_im</code></em></span>
      <dd>
 
       <p class="para">コピー元の画像リンクリソース。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">dst_x</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">dst_x</code></em></span>
      <dd>
 
       <p class="para">
@@ -84,11 +85,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">dst_y</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">dst_y</code></em></span>
      <dd>
 
       <p class="para">
@@ -96,11 +97,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">src_x</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">src_x</code></em></span>
      <dd>
 
       <p class="para">
@@ -108,11 +109,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">src_y</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">src_y</code></em></span>
      <dd>
 
       <p class="para">
@@ -120,31 +121,31 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">src_w</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">src_w</code></em></span>
      <dd>
 
       <p class="para">コピー元の幅。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">src_h</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">src_h</code></em></span>
      <dd>
 
       <p class="para">コピー元の高さ。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">pct</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">pct</code></em></span>
      <dd>
 
       <p class="para">
@@ -153,14 +154,13 @@
         <em><code class="parameter">pct</code></em> が 0 の場合は完全なグレースケール、
         100 の場合は何も変わらない状態となります。
         <em><code class="parameter">pct</code></em> = 100 の場合、パレット画像に対してはこの関数は
-         <span class="function"><a href="function.imagecopy.html" class="function">imagecopy()</a></span> と同じ動作となります
+        <span class="function"><a href="function.imagecopy.html" class="function">imagecopy()</a></span> と同じ動作となります
         (アルファコンポーネントを無視する点だけが違います)。
         一方 true color 画像については、この関数はアルファ透過度を実装しています。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -176,8 +176,8 @@
  <div class="refsect1 examples" id="refsect1-function.imagecopymergegray-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3203">
-    <p><strong>例1  <span class="function"><strong>imagecopymergegray()</strong></span> の使用法</strong></p>
+   <div class="example" id="example-3204">
+    <p><strong>例1 <span class="function"><strong>imagecopymergegray()</strong></span> の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;画像のインスタンスを作成します<br /></span><span style="color: #0000BB">$dest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefromgif</span><span style="color: #007700">(</span><span style="color: #DD0000">'php.gif'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$src&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefromgif</span><span style="color: #007700">(</span><span style="color: #DD0000">'php.gif'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;コピー・マージ&nbsp;(Gray&nbsp;=&nbsp;20%)&nbsp;します<br /></span><span style="color: #0000BB">imagecopymergegray</span><span style="color: #007700">(</span><span style="color: #0000BB">$dest</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$src</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">47</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;出力してメモリから解放します<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;image/gif'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagegif</span><span style="color: #007700">(</span><span style="color: #0000BB">$dest</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$dest</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$src</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

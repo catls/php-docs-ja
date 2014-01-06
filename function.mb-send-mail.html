@@ -29,10 +29,10 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   email を送信します。ヘッダと本文は  <span class="function"><a href="function.mb-language.html" class="function">mb_language()</a></span>
+   email を送信します。ヘッダと本文は <span class="function"><a href="function.mb-language.html" class="function">mb_language()</a></span>
    の設定に基づき変換、エンコードされます。
-   これは  <span class="function"><a href="function.mail.html" class="function">mail()</a></span> のラッパー関数です。詳細は、
-    <span class="function"><a href="function.mail.html" class="function">mail()</a></span> を参照ください。
+   これは <span class="function"><a href="function.mail.html" class="function">mail()</a></span> のラッパー関数です。詳細は、
+   <span class="function"><a href="function.mail.html" class="function">mail()</a></span> を参照ください。
   </p>
  </div>
 
@@ -42,9 +42,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">to</code></em></dt>
 
-     <span class="term"><em><code class="parameter">to</code></em></span>
      <dd>
 
       <p class="para">
@@ -55,11 +56,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">subject</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">subject</code></em></span>
      <dd>
 
       <p class="para">
@@ -67,11 +68,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">message</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">message</code></em></span>
      <dd>
 
       <p class="para">
@@ -79,25 +80,52 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">additional_headers</code></em>（オプション）</dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">additional_headers</code></em></span>
      <dd>
 
       <p class="para">
-       <em><code class="parameter">additional_headers</code></em> は、
-       ヘッダの最後に挿入されます。これは通常、ヘッダを追加する際に使用されます。
-       改行 (&quot;\n&quot;) で区切ることにより複数のヘッダを指定可能です。
+       メールヘッダの最後に挿入される文字列。
       </p>
+      <p class="para">
+       通常、これは追加のヘッダ（From、Cc、Bcc）のために用いられます。
+       複数のヘッダを追加する場合は CRLF（\r\n）で区切ります。
+      </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        メールを送信する際には、<em class="emphasis">必ず</em> 
+        <em>From</em> ヘッダが含まれていなければなりません。
+        <em><code class="parameter">additional_headers</code></em> パラメータで指定するか、
+        あるいは <var class="filename">php.ini</var> にデフォルト値を指定します。
+       </p>
+       <p class="para">
+        指定しなかった場合は、以下のようなエラーメッセージが返ります
+        <em>Warning: mail(): &quot;sendmail_from&quot; not
+        set in php.ini or custom &quot;From:&quot; header missing</em> 。
+        Windows では、<em>From</em> ヘッダを設定すると
+        <em>Return-Path</em> も設定されます。
+       </p>
+      </p></blockquote>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        メッセージが受信されなかった場合には、LF（\n）のみを使ってみてください。
+        Unix の MTA の中には、自動的に LF を CRLF に変換してしまう
+        もの (有名なところでは、<a href="http://www.qmail.org/" class="link external">&raquo;&nbsp;qmail</a> など)
+        があります（もし CRLF を利用していた場合、CR が重複してしまいます）。
+        ただし、これは最後の手段です。というのも、これは
+        <a href="http://www.faqs.org/rfcs/rfc2822" class="link external">&raquo;&nbsp;RFC 2822</a> に違反しているからです。
+       </p>
+      </p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">additional_parameter</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">additional_parameter</code></em></span>
      <dd>
 
       <p class="para">
@@ -107,8 +135,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -143,7 +170,7 @@
         PHP 5.0.0 以降では、<em>Content-Type</em> および
         <em>Content-Transfer-Encoding</em> ヘッダの内容が
         再定義可能となりました。PHP 4 では、常に
-         <span class="function"><a href="function.mb-language.html" class="function">mb_language()</a></span> で定義された値が用いられていました。
+        <span class="function"><a href="function.mb-language.html" class="function">mb_language()</a></span> で定義された値が用いられていました。
        </td>
       </tr>
 
@@ -159,9 +186,9 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.mail.html" class="function" rel="rdfs-seeAlso">mail()</a> - メールを送信する</span></li>
-    <li class="member"> <span class="function"><a href="function.mb-encode-mimeheader.html" class="function" rel="rdfs-seeAlso">mb_encode_mimeheader()</a> - MIMEヘッダの文字列をエンコードする</span></li>
-    <li class="member"> <span class="function"><a href="function.mb-language.html" class="function" rel="rdfs-seeAlso">mb_language()</a> - 現在の言語を設定あるいは取得する</span></li>
+    <li class="member"><span class="function"><a href="function.mail.html" class="function" rel="rdfs-seeAlso">mail()</a> - メールを送信する</span></li>
+    <li class="member"><span class="function"><a href="function.mb-encode-mimeheader.html" class="function" rel="rdfs-seeAlso">mb_encode_mimeheader()</a> - MIMEヘッダの文字列をエンコードする</span></li>
+    <li class="member"><span class="function"><a href="function.mb-language.html" class="function" rel="rdfs-seeAlso">mb_language()</a> - 現在の言語を設定あるいは取得する</span></li>
    </ul>
   </p>
  </div>

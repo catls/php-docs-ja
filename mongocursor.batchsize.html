@@ -38,11 +38,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">batchSize</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -69,7 +70,7 @@
        </p>
       </div>
       <p class="para">
-       この機能が  <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> と違うところは、
+       この機能が <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> と違うところは、
        ドキュメントが最大サイズに収まらなければいけないという点と、
        カーソルを閉じるリクエストをサーバーに送らなくてもよいという点です。
        カーソルをループしている間にもバッチサイズを変更でき、
@@ -82,19 +83,18 @@
       </p>
       <p class="para">
        一貫性を維持するため、
-        <span class="function"><strong>MongoCursor::batchSize()</strong></span> と
-        <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> のルールは多少込み入ったものになっていますが、
+       <span class="function"><strong>MongoCursor::batchSize()</strong></span> と
+       <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> のルールは多少込み入ったものになっていますが、
        「期待通りに」動作します。そのルールとは、
        ハードリミットがソフトリミットを上書きし、
-        <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> のほうが
-        <span class="function"><strong>MongoCursor::batchSize()</strong></span> より優先順位が高くなるということです。
+       <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> のほうが
+       <span class="function"><strong>MongoCursor::batchSize()</strong></span> より優先順位が高くなるということです。
        その結果、どちらであってももう一方より小さく設定されているほうが優先されます。
        以下の例を参照ください。
       </p>
      </dd>
 
-    </dt>
-   
+       
    </dl>
 
   </p>
@@ -111,9 +111,9 @@
 
  <div class="refsect1 examples" id="refsect1-mongocursor.batchsize-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1476">
-   <p><strong>例1  <span class="function"><strong>MongoCursor::batchSize()</strong></span> を
-    <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> と組み合わせる例</strong></p>
+  <div class="example" id="example-1477">
+   <p><strong>例1 <span class="function"><strong>MongoCursor::batchSize()</strong></span> を
+   <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> と組み合わせる例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;ひとつのバッチで最大&nbsp;10&nbsp;件。-10&nbsp;でサーバーから&nbsp;10&nbsp;件を返し、<br />//&nbsp;カーソルを削除する。<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(-</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;最初のバッチ。最大&nbsp;10&nbsp;件<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;最初のバッチ。最大&nbsp;10&nbsp;件<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;結果を&nbsp;10&nbsp;件ずつのバッチで取得し、最大で&nbsp;20&nbsp;件<br />//&nbsp;(10&nbsp;件のバッチが二つ)&nbsp;を返す<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;結果を&nbsp;7&nbsp;件ずつのバッチで取得し、最大で&nbsp;30&nbsp;件を返す<br />//&nbsp;(ドライバが&nbsp;7&nbsp;件のバッチを&nbsp;4&nbsp;回リクエストし、最後のバッチは&nbsp;2&nbsp;件となる)<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">30</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">7</span><span style="color: #007700">)<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -132,7 +132,7 @@
   </p>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="mongocursor.limit.html" class="function" rel="rdfs-seeAlso">MongoCursor::limit()</a> - 返す結果の数を制限する</span></li>
+    <li class="member"><span class="function"><a href="mongocursor.limit.html" class="function" rel="rdfs-seeAlso">MongoCursor::limit()</a> - 返す結果の数を制限する</span></li>
    </ul>
   </p>
  </div>

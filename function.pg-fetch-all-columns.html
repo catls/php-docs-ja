@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_fetch_all_columns()</strong></span> は、結果リソースの
+   <span class="function"><strong>pg_fetch_all_columns()</strong></span> は、結果リソースの
    指定したカラムについて全ての行（レコード）を含む配列を返します。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">この関数は、
@@ -39,23 +39,24 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">result</code></em></dt>
 
-     <span class="term"><em><code class="parameter">result</code></em></span>
      <dd>
 
       <p class="para">
-        <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>,  <span class="function"><a href="function.pg-query-params.html" class="function">pg_query_params()</a></span>
-       あるいは  <span class="function"><a href="function.pg-execute.html" class="function">pg_execute()</a></span> から返される PostgreSQL の
+       <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>, <span class="function"><a href="function.pg-query-params.html" class="function">pg_query_params()</a></span>
+       あるいは <span class="function"><a href="function.pg-execute.html" class="function">pg_execute()</a></span> から返される PostgreSQL の
        クエリ結果リソース。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">column</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">column</code></em></span>
      <dd>
 
       <p class="para">
@@ -64,8 +65,7 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -87,8 +87,8 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
  <div class="refsect1 examples" id="refsect1-function.pg-fetch-all-columns-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2063">
-    <p><strong>例1  <span class="function"><strong>pg_fetch_all_columns()</strong></span> の例</strong></p>
+   <div class="example" id="example-2064">
+    <p><strong>例1 <span class="function"><strong>pg_fetch_all_columns()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php&nbsp;<br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=publisher"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"An&nbsp;error&nbsp;occurred.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;exit;<br />}<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;title,&nbsp;name,&nbsp;address&nbsp;FROM&nbsp;authors"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"An&nbsp;error&nbsp;occurred.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;exit;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;全ての著者名を配列で得る<br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_fetch_all_columns</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -105,7 +105,7 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-fetch-all.html" class="function" rel="rdfs-seeAlso">pg_fetch_all()</a> - 取得されたすべての行を配列として取得する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-fetch-all.html" class="function" rel="rdfs-seeAlso">pg_fetch_all()</a> - 取得されたすべての行を配列として取得する</span></li>
    </ul>
   </p>
  </div>

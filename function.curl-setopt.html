@@ -38,15 +38,16 @@
    <dl>
 
     <dt>
-<span class="term"><em><code class="parameter">ch</code></em>
-</span><dd>
-<p class="para"> <span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span>
-が返す cURL ハンドル。</p></dd>
+<em><code class="parameter">ch</code></em>
 </dt>
+<dd>
+<p class="para"><span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span>
+が返す cURL ハンドル。</p></dd>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">option</code></em></dt>
 
-     <span class="term"><em><code class="parameter">option</code></em></span>
      <dd>
 
       <p class="para">
@@ -54,11 +55,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">value</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">value</code></em></span>
      <dd>
 
       <p class="para">
@@ -178,7 +179,7 @@
            <td style="vertical-align: top;"><strong><code>CURLOPT_FILETIME</code></strong></td>
            <td style="vertical-align: top;">
             <strong><code>TRUE</code></strong> を設定すると、ドキュメントの更新日時を取得しようと試みます。
-            この値を取得するには、 <span class="function"><a href="function.curl-getinfo.html" class="function">curl_getinfo()</a></span> で
+            この値を取得するには、<span class="function"><a href="function.curl-getinfo.html" class="function">curl_getinfo()</a></span> で
             <em><code class="parameter">CURLINFO_FILETIME</code></em> オプションを用います。
            </td>
            <td style="vertical-align: top;">
@@ -401,7 +402,7 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_RETURNTRANSFER</code></strong></td>
            <td style="vertical-align: top;">
-            <strong><code>TRUE</code></strong> を設定すると、 <span class="function"><a href="function.curl-exec.html" class="function">curl_exec()</a></span> の返り値を
+            <strong><code>TRUE</code></strong> を設定すると、<span class="function"><a href="function.curl-exec.html" class="function">curl_exec()</a></span> の返り値を
             文字列で返します。通常はデータを直接出力します。
            </td>
            <td style="vertical-align: top;">
@@ -1285,7 +1286,7 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_URL</code></strong></td>
            <td style="vertical-align: top;">
-            取得する URL 。 <span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span> でセッションを
+            取得する URL 。<span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span> でセッションを
             初期化する際に指定することも可能です。
            </td>
            <td style="vertical-align: top;">
@@ -1381,7 +1382,7 @@
       </p>
       <p class="para">
        <em><code class="parameter">value</code></em> はストリームリソース（例えば
-        <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> が作成するもの）であり、以下の
+       <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> が作成するもの）であり、以下の
        <em><code class="parameter">option</code></em> パラメータに設定します。
        <table class="doctable informaltable">
         
@@ -1533,7 +1534,7 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_SHARE</code></strong></td>
            <td style="vertical-align: top;">
-             <span class="function"><a href="function.curl-share-init.html" class="function">curl_share_init()</a></span> の結果。
+            <span class="function"><a href="function.curl-share-init.html" class="function">curl_share_init()</a></span> の結果。
             この cURL ハンドルに、共有ハンドルからのデータを使わせるようにします。
            </td>
           </tr>
@@ -1545,8 +1546,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -1645,7 +1645,7 @@
  <div class="refsect1 examples" id="refsect1-function.curl-setopt-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4223">
+   <div class="example" id="example-4225">
     <p><strong>例1 新規に cURL セッションを初期化、ウェブページを取得する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -1657,7 +1657,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4224">
+   <div class="example" id="example-4226">
     <p><strong>例2 ファイルのアップロード</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -1710,7 +1710,7 @@ Array
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.curl-setopt-array.html" class="function" rel="rdfs-seeAlso">curl_setopt_array()</a> - CURL 転送用の複数のオプションを設定する</span></li>
+    <li class="member"><span class="function"><a href="function.curl-setopt-array.html" class="function" rel="rdfs-seeAlso">curl_setopt_array()</a> - CURL 転送用の複数のオプションを設定する</span></li>
    </ul>
   </p>
  </div>

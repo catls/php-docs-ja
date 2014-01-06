@@ -144,7 +144,7 @@
     <strong class="classname">MongoGridFS</strong> のメソッドの中には
     <a href="class.mongocollection.html" class="classname">MongoCollection</a> のメソッドと同じ名前のものもあります。
     これらのメソッドの挙動は微妙に異なります。
-    たとえば  <span class="function"><a href="mongogridfs.remove.html" class="function">MongoGridFS::remove()</a></span>
+    たとえば <span class="function"><a href="mongogridfs.remove.html" class="function">MongoGridFS::remove()</a></span>
     は、条件にマッチするすべてのオブジェクトを files コレクションから削除し、
     対応する chunks コレクションの中身も同時に削除します。
    </p>
@@ -165,7 +165,7 @@
 
    <p class="para">
     ファイルではない文字列やバイト列の場合は、
-     <span class="function"><a href="mongogridfs.storebytes.html" class="function">MongoGridFS::storeBytes()</a></span> を使うこともできます。
+    <span class="function"><a href="mongogridfs.storebytes.html" class="function">MongoGridFS::storeBytes()</a></span> を使うこともできます。
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -186,8 +186,8 @@
 
    <p class="para">
     <strong class="classname">MongoGridFSFiles</strong> をディスクに書き出すには
-     <span class="function"><a href="mongogridfsfile.write.html" class="function">MongoGridFSFile::write()</a></span> を、メモリに取り込むには
-     <span class="function"><a href="mongogridfsfile.getbytes.html" class="function">MongoGridFSFile::getBytes()</a></span> を使います。
+    <span class="function"><a href="mongogridfsfile.write.html" class="function">MongoGridFSFile::write()</a></span> を、メモリに取り込むには
+    <span class="function"><a href="mongogridfsfile.getbytes.html" class="function">MongoGridFSFile::getBytes()</a></span> を使います。
     自動的にチャンクをつなげるメソッドは今のところありませんが、
     <em>$grid-&gt;chunks</em> コレクションに問い合わせて自分でつなげるのはきわめて簡単です。
    </p>
@@ -240,57 +240,57 @@
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span>  <span class="methodname"><a href="mongogridfs.construct.html" class="methodname">__construct</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="mongogridfs.construct.html" class="methodname">__construct</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.mongodb.html" class="type MongoDB">MongoDB</a></span> <code class="parameter">$db</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code><span class="initializer"> = &quot;fs&quot;</span></span>
    [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$chunks</code><span class="initializer"> = &quot;fs&quot;</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongogridfs.delete.html" class="methodname">delete</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="mongogridfs.delete.html" class="methodname">delete</a></span>
     ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$id</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongogridfs.drop.html" class="methodname">drop</a></span>
+   <span class="modifier">public</span> <span class="type">array</span><span class="methodname"><a href="mongogridfs.drop.html" class="methodname">drop</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoGridFSCursor</span> <span class="methodname"><a href="mongogridfs.find.html" class="methodname">find</a></span>
+   <span class="modifier">public</span> <span class="type">MongoGridFSCursor</span><span class="methodname"><a href="mongogridfs.find.html" class="methodname">find</a></span>
     ([ <span class="methodparam"><span class="type">array</span> <code class="parameter">$query</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$fields</code><span class="initializer"> = array()</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoGridFSFile</span> <span class="methodname"><a href="mongogridfs.findone.html" class="methodname">findOne</a></span>
+   <span class="modifier">public</span> <span class="type">MongoGridFSFile</span><span class="methodname"><a href="mongogridfs.findone.html" class="methodname">findOne</a></span>
     ([ <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$query</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$fields</code><span class="initializer"> = array()</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoGridFSFile</span> <span class="methodname"><a href="mongogridfs.get.html" class="methodname">get</a></span>
+   <span class="modifier">public</span> <span class="type">MongoGridFSFile</span><span class="methodname"><a href="mongogridfs.get.html" class="methodname">get</a></span>
     ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$id</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongogridfs.put.html" class="methodname">put</a></span>
+   <span class="modifier">public</span> <span class="type">mixed</span><span class="methodname"><a href="mongogridfs.put.html" class="methodname">put</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$metadata</code><span class="initializer"> = array()</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongogridfs.remove.html" class="methodname">remove</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="mongogridfs.remove.html" class="methodname">remove</a></span>
     ([ <span class="methodparam"><span class="type">array</span> <code class="parameter">$criteria</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongogridfs.storebytes.html" class="methodname">storeBytes</a></span>
+   <span class="modifier">public</span> <span class="type">mixed</span><span class="methodname"><a href="mongogridfs.storebytes.html" class="methodname">storeBytes</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$bytes</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$metadata</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongogridfs.storefile.html" class="methodname">storeFile</a></span>
+   <span class="modifier">public</span> <span class="type">mixed</span><span class="methodname"><a href="mongogridfs.storefile.html" class="methodname">storeFile</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$metadata</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongogridfs.storeupload.html" class="methodname">storeUpload</a></span>
+   <span class="modifier">public</span> <span class="type">mixed</span><span class="methodname"><a href="mongogridfs.storeupload.html" class="methodname">storeUpload</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$metadata</code></span>
   ] )</div>

@@ -31,11 +31,11 @@
    注意すべき点があります。
   </p>
   <p class="para">
-    <span class="function"><strong>flush()</strong></span> はウェブサーバーのバッファリング手法を上書きすることはできません。
+   <span class="function"><strong>flush()</strong></span> はウェブサーバーのバッファリング手法を上書きすることはできません。
    また、クライアント側のブラウザでのバッファリングにはなんの影響も及ぼしません。
    PHP のユーザーレベルでの出力バッファリングの仕組みにも影響を及ぼしません。
-   つまり、もし ob 出力バッファを使用しているのなら  <span class="function"><a href="function.ob-flush.html" class="function">ob_flush()</a></span>
-   と  <span class="function"><strong>flush()</strong></span> の両方をコールしなければなりません。
+   つまり、もし ob 出力バッファを使用しているのなら <span class="function"><a href="function.ob-flush.html" class="function">ob_flush()</a></span>
+   と <span class="function"><strong>flush()</strong></span> の両方をコールしなければなりません。
   </p>
   <p class="para">
    いくつかのサーバー、特に Win32 上ではスクリプトからの出力をブラウザに
@@ -43,7 +43,7 @@
   </p>
   <p class="para">
    mod_gzip のような Apache 用のサーバーモジュールはそれ自体がバッファリングを行います。
-   そのため、 <span class="function"><strong>flush()</strong></span> をコールしても
+   そのため、<span class="function"><strong>flush()</strong></span> をコールしても
    即時にデータをクライアントに送信しないという結果につながります。
   </p>
   <p class="para">

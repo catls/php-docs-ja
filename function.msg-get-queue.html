@@ -26,11 +26,11 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>msg_get_queue()</strong></span> は、指定した <em><code class="parameter">key</code></em>
+   <span class="function"><strong>msg_get_queue()</strong></span> は、指定した <em><code class="parameter">key</code></em>
    で System V メッセージキューにアクセスするために使用される ID を返します。
    最初にコールされた際には、オプションの <em><code class="parameter">perms</code></em>
    でメッセージキューを作成します。同じ
-   <em><code class="parameter">key</code></em> で 2 度目に  <span class="function"><strong>msg_get_queue()</strong></span>
+   <em><code class="parameter">key</code></em> で 2 度目に <span class="function"><strong>msg_get_queue()</strong></span>
    がコールされると別の ID が返されますが、どちらの ID も同じメッセージキューを指します。
   </p>
  </div>
@@ -41,9 +41,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">key</code></em></dt>
 
-     <span class="term"><em><code class="parameter">key</code></em></span>
      <dd>
 
       <p class="para">
@@ -51,11 +52,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">perms</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">perms</code></em></span>
      <dd>
 
       <p class="para">
@@ -65,8 +66,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -85,11 +85,11 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.msg-remove-queue.html" class="function" rel="rdfs-seeAlso">msg_remove_queue()</a> - メッセージキューを破棄する</span></li>
-    <li class="member"> <span class="function"><a href="function.msg-receive.html" class="function" rel="rdfs-seeAlso">msg_receive()</a> - メッセージキューからメッセージを受信する</span></li>
-    <li class="member"> <span class="function"><a href="function.msg-send.html" class="function" rel="rdfs-seeAlso">msg_send()</a> - メッセージキューにメッセージを送信する</span></li>
-    <li class="member"> <span class="function"><a href="function.msg-stat-queue.html" class="function" rel="rdfs-seeAlso">msg_stat_queue()</a> - メッセージキューデータ構造体の情報を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.msg-set-queue.html" class="function" rel="rdfs-seeAlso">msg_set_queue()</a> - メッセージキューデータ構造体の情報を設定する</span></li>
+    <li class="member"><span class="function"><a href="function.msg-remove-queue.html" class="function" rel="rdfs-seeAlso">msg_remove_queue()</a> - メッセージキューを破棄する</span></li>
+    <li class="member"><span class="function"><a href="function.msg-receive.html" class="function" rel="rdfs-seeAlso">msg_receive()</a> - メッセージキューからメッセージを受信する</span></li>
+    <li class="member"><span class="function"><a href="function.msg-send.html" class="function" rel="rdfs-seeAlso">msg_send()</a> - メッセージキューにメッセージを送信する</span></li>
+    <li class="member"><span class="function"><a href="function.msg-stat-queue.html" class="function" rel="rdfs-seeAlso">msg_stat_queue()</a> - メッセージキューデータ構造体の情報を返す</span></li>
+    <li class="member"><span class="function"><a href="function.msg-set-queue.html" class="function" rel="rdfs-seeAlso">msg_set_queue()</a> - メッセージキューデータ構造体の情報を設定する</span></li>
    </ul>
   </p>
  </div>

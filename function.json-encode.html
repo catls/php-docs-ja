@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">value</code></em></dt>
 
-     <span class="term"><em><code class="parameter">value</code></em></span>
      <dd>
 
       <p class="para">
@@ -55,11 +56,11 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
 </p></p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">options</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">options</code></em></span>
      <dd>
 
       <p class="para">
@@ -79,11 +80,11 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">depth</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">depth</code></em></span>
      <dd>
 
       <p class="para">
@@ -91,8 +92,7 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -163,8 +163,8 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
  <div class="refsect1 examples" id="refsect1-function.json-encode-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3758">
-    <p><strong>例1  <span class="function"><strong>json_encode()</strong></span> の例</strong></p>
+   <div class="example" id="example-3760">
+    <p><strong>例1 <span class="function"><strong>json_encode()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'a'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'b'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'c'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'d'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'e'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -180,9 +180,9 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
     </div>
    </div>
 
-   <div class="example" id="example-3759">
+   <div class="example" id="example-3761">
     <p><strong>例2 
-      <span class="function"><strong>json_encode()</strong></span> で、利用中のいくつかのオプションを表示する例
+     <span class="function"><strong>json_encode()</strong></span> で、利用中のいくつかのオプションを表示する例
     </strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -213,7 +213,7 @@ Associative array always output as object: {&quot;foo&quot;:&quot;bar&quot;,&quo
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-3760">
+   <div class="example" id="example-3762">
     <p><strong>例3 シーケンシャルな配列とそうでない配列の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -272,7 +272,7 @@ string(33) &quot;{&quot;0&quot;:&quot;foo&quot;,&quot;2&quot;:&quot;baz&quot;,&q
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    エンコードに失敗した場合は、 <span class="function"><a href="function.json-last-error.html" class="function">json_last_error()</a></span>
+    エンコードに失敗した場合は、<span class="function"><a href="function.json-last-error.html" class="function">json_last_error()</a></span>
     を使ってエラーの内容を調べることができます。
    </p>
   </p></blockquote>
@@ -288,13 +288,13 @@ string(33) &quot;{&quot;0&quot;:&quot;foo&quot;,&quot;2&quot;:&quot;baz&quot;,&q
     JSON エンコーダーのリファレンス実装と同様、
     <span class="type"><a href="language.types.string.html" class="type string">string</a></span> や <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>、
     <span class="type"><a href="language.types.float.html" class="type float">float</a></span> そして <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> を入力として渡したときに
-     <span class="function"><strong>json_encode()</strong></span> が生成する JSON
+    <span class="function"><strong>json_encode()</strong></span> が生成する JSON
     はシンプルな値 (オブジェクトでもないし配列でもないもの) となります。
     大半のエンコーダーはこういった値を妥当な JSON として扱いますが、中にはそうでないものもあります。
     そのため、現時点ではこの仕様は不明瞭です。
    </p>
    <p class="para">
-    要するに、 <span class="function"><strong>json_encode()</strong></span> で生成した JSON
+    要するに、<span class="function"><strong>json_encode()</strong></span> で生成した JSON
     が、あなたの使おうとしているデコーダーでデコードできるかどうかを常に確認する必要があるということです。
    </p>
   </p></blockquote>
@@ -306,9 +306,9 @@ string(33) &quot;{&quot;0&quot;:&quot;foo&quot;,&quot;2&quot;:&quot;baz&quot;,&q
   <p class="para">
    <ul class="simplelist">
     <li class="member"><span class="interfacename"><a href="class.jsonserializable.html" class="interfacename">JsonSerializable</a></span></li>
-    <li class="member"> <span class="function"><a href="function.json-decode.html" class="function" rel="rdfs-seeAlso">json_decode()</a> - JSON 文字列をデコードする</span></li>
-    <li class="member"> <span class="function"><a href="function.json-last-error.html" class="function" rel="rdfs-seeAlso">json_last_error()</a> - 直近に発生したエラーを返す</span></li>
-    <li class="member"> <span class="function"><a href="function.serialize.html" class="function" rel="rdfs-seeAlso">serialize()</a> - 値の保存可能な表現を生成する</span></li>
+    <li class="member"><span class="function"><a href="function.json-decode.html" class="function" rel="rdfs-seeAlso">json_decode()</a> - JSON 文字列をデコードする</span></li>
+    <li class="member"><span class="function"><a href="function.json-last-error.html" class="function" rel="rdfs-seeAlso">json_last_error()</a> - 直近に発生したエラーを返す</span></li>
+    <li class="member"><span class="function"><a href="function.serialize.html" class="function" rel="rdfs-seeAlso">serialize()</a> - 値の保存可能な表現を生成する</span></li>
    </ul>
   </p>
  </div>

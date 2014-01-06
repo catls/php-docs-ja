@@ -39,7 +39,7 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-    PHP の他の多くの仕組みと異なり、 <span class="function"><strong>apc_store()</strong></span> 
+    PHP の他の多くの仕組みと異なり、<span class="function"><strong>apc_store()</strong></span> 
     を用いて格納された変数はリクエストを超えて
     （その値がキャッシュから取り除かれるまで）持続します。
    </span>
@@ -51,9 +51,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">key</code></em></dt>
 
-     <span class="term"><em><code class="parameter">key</code></em></span>
      <dd>
 
       <p class="para">
@@ -63,11 +64,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">var</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">var</code></em></span>
      <dd>
 
       <p class="para">
@@ -75,11 +76,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">ttl</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">ttl</code></em></span>
      <dd>
 
       <p class="para">
@@ -94,11 +95,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">values</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">values</code></em></span>
      <dd>
 
       <p class="para">
@@ -106,8 +107,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -125,8 +125,8 @@
  <div class="refsect1 examples" id="refsect1-function.apc-store-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-416">
-    <p><strong>例1 A  <span class="function"><strong>apc_store()</strong></span> の例</strong></p>
+   <div class="example" id="example-417">
+    <p><strong>例1 A <span class="function"><strong>apc_store()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'BAR'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">apc_store</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">apc_fetch</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -149,9 +149,9 @@ string(3) &quot;BAR&quot;
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.apc-add.html" class="function" rel="rdfs-seeAlso">apc_add()</a> - 新規の変数をデータ領域にキャッシュする</span></li>
-    <li class="member"> <span class="function"><a href="function.apc-fetch.html" class="function" rel="rdfs-seeAlso">apc_fetch()</a> - 格納されている変数をキャッシュから取得する</span></li>
-    <li class="member"> <span class="function"><a href="function.apc-delete.html" class="function" rel="rdfs-seeAlso">apc_delete()</a> - 格納されている変数をキャッシュから取り除く</span></li>
+    <li class="member"><span class="function"><a href="function.apc-add.html" class="function" rel="rdfs-seeAlso">apc_add()</a> - 新規の変数をデータ領域にキャッシュする</span></li>
+    <li class="member"><span class="function"><a href="function.apc-fetch.html" class="function" rel="rdfs-seeAlso">apc_fetch()</a> - 格納されている変数をキャッシュから取得する</span></li>
+    <li class="member"><span class="function"><a href="function.apc-delete.html" class="function" rel="rdfs-seeAlso">apc_delete()</a> - 格納されている変数をキャッシュから取り除く</span></li>
    </ul>
   </p>
  </div>

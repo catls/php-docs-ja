@@ -45,7 +45,7 @@
    section name match, the plugin will load the sections settings.
   </p>
   <p class="para">
-   <div class="example" id="example-1832">
+   <div class="example" id="example-1833">
     <p><strong>例1 Using section names example</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">[myapp]
@@ -99,7 +99,7 @@ slave[] = 192.168.3.65:3309</pre>
    section.
   </p>
   <p class="para">
-   <div class="example" id="example-1833">
+   <div class="example" id="example-1834">
     <p><strong>例2 List-like syntax</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">[myapp]
@@ -117,11 +117,12 @@ slave[] = mysql_slave_2</pre>
   <p class="para">
   <dl>
 
-   <dt id="ini.mysqlnd-ms-plugin-config.master">
-     <span class="term">
+   
+     <dt id="ini.mysqlnd-ms-plugin-config.master">
       <em><code class="parameter">master[]</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -143,13 +144,13 @@ slave[] = mysql_slave_2</pre>
       </p>
      </dd>
 
-    </dt>
-
+    
+    
     <dt id="ini.mysqlnd-ms-plugin-config.slave">
-    <span class="term">
       <em><code class="parameter">slave[]</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -170,13 +171,13 @@ slave[] = mysql_slave_2</pre>
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config.pick">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config.pick">
       <em><code class="parameter">pick[]</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -205,19 +206,19 @@ slave[] = mysql_slave_2</pre>
       <p class="para">
        Setting more than one load balancing policy for a configuration
        section makes only sense in conjunction with <em>user</em>
-       and  <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span>. If the
+       and <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span>. If the
        user defined callback fails to pick a server, the plugin falls
        back to the second configured load balancing policy.
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config.failover">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config.failover">
       <em><code class="parameter">failover</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -240,13 +241,13 @@ slave[] = mysql_slave_2</pre>
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config.lazy-connections">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config.lazy-connections">
       <em><code class="parameter">lazy_connections</code></em>
       <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -279,13 +280,13 @@ slave[] = mysql_slave_2</pre>
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config.master-on-write">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config.master-on-write">
       <em><code class="parameter">master_on_write</code></em>
       <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -304,13 +305,13 @@ slave[] = mysql_slave_2</pre>
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config.trx-stickiness">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config.trx-stickiness">
       <em><code class="parameter">trx_stickiness</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -348,7 +349,7 @@ slave[] = mysql_slave_2</pre>
       <p class="para">
        An example of a PHP MySQL API function calling the <em>mysqlnd</em>
        library internal function call <em>trx_autocommit()</em> is
-        <span class="function"><a href="mysqli.autocommit.html" class="function">mysqli_autocommit()</a></span>.
+       <span class="function"><a href="mysqli.autocommit.html" class="function">mysqli_autocommit()</a></span>.
       </p>
       <p class="para">
        Although setting <em>trx_stickiness=master</em>, the plugin
@@ -357,8 +358,7 @@ slave[] = mysql_slave_2</pre>
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>

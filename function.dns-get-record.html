@@ -40,37 +40,38 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">hostname</code></em></dt>
 
-     <span class="term"><em><code class="parameter">hostname</code></em></span>
      <dd>
 
       <p class="para">
        <em><code class="parameter">hostname</code></em> は、正しい DNS ホスト名、すなわち
        &quot;<em>www.example.com</em>&quot; のようなものでなければなりません。
        <em>in-addr.arpa</em> 形式の表記を用いた逆引き検索は可能ですが、
-       たいていは  <span class="function"><a href="function.gethostbyaddr.html" class="function">gethostbyaddr()</a></span> を用いるほうが適当です。
+       たいていは <span class="function"><a href="function.gethostbyaddr.html" class="function">gethostbyaddr()</a></span> を用いるほうが適当です。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
         DNS の標準規格により、メールアドレスは <em>user.host</em> 形式で渡されます
         （たとえば、<em>hostmaster.example.com</em> が <em>hostmaster@example.com</em>
         の代わりとなります）。
-        この値をしっかり確認し、 <span class="function"><a href="function.mail.html" class="function">mail()</a></span> のような関数で
+        この値をしっかり確認し、<span class="function"><a href="function.mail.html" class="function">mail()</a></span> のような関数で
         利用する前には必要なら変更を加えることを忘れないようにしてください。 
        </p>
       </p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">type</code></em></span>
      <dd>
 
       <p class="para">
-       デフォルトでは、 <span class="function"><strong>dns_get_record()</strong></span> は
+       デフォルトでは、<span class="function"><strong>dns_get_record()</strong></span> は
        <em><code class="parameter">hostname</code></em> に関連するすべてのリソースレコードを検索します。
        これを制限するには、オプションの
        <em><code class="parameter">type</code></em> パラメータを指定してください。
@@ -93,11 +94,11 @@
       </p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">authns</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">authns</code></em></span>
      <dd>
 
       <p class="para">
@@ -107,11 +108,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">addtl</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">addtl</code></em></span>
      <dd>
 
       <p class="para">
@@ -121,11 +122,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">raw</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">raw</code></em></span>
      <dd>
 
       <p class="para">
@@ -134,8 +135,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -171,7 +171,7 @@
       <tr>
        <td>class</td>
        <td>
-         <span class="function"><strong>dns_get_record()</strong></span> は
+        <span class="function"><strong>dns_get_record()</strong></span> は
         Internet クラスのレコードのみを返すので、このパラメータは常に
         <em>IN</em> を返します。
        </td>
@@ -225,7 +225,7 @@
         <em>pri</em>: メールエクスチェンジャの優先度。
         数字が小さいほど優先度が高い。
         <em>target</em>: メールエクスチェンジャの FQDN 。
-         <span class="function"><a href="function.dns-get-mx.html" class="function">dns_get_mx()</a></span> も参照ください。
+        <span class="function"><a href="function.dns-get-mx.html" class="function">dns_get_mx()</a></span> も参照ください。
        </td>
       </tr>
 
@@ -385,8 +385,8 @@
  <div class="refsect1 examples" id="refsect1-function.dns-get-record-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4469">
-    <p><strong>例1  <span class="function"><strong>dns_get_record()</strong></span> の使用</strong></p>
+   <div class="example" id="example-4471">
+    <p><strong>例1 <span class="function"><strong>dns_get_record()</strong></span> の使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">dns_get_record</span><span style="color: #007700">(</span><span style="color: #DD0000">"php.net"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -423,11 +423,11 @@ Array
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-4470">
-    <p><strong>例2  <span class="function"><strong>dns_get_record()</strong></span> と DNS_ANY の使用</strong></p>
+   <div class="example" id="example-4472">
+    <p><strong>例2 <span class="function"><strong>dns_get_record()</strong></span> と DNS_ANY の使用</strong></p>
     <div class="example-contents"><p>
      MX レコードが解決されれば、たいていはメールサーバーの IP アドレスを
-     取得したくなるものです。そのため、 <span class="function"><strong>dns_get_record()</strong></span>
+     取得したくなるものです。そのため、<span class="function"><strong>dns_get_record()</strong></span>
      は <em><code class="parameter">addtl</code></em> に関連するレコードを含めて返します。
      また、<em><code class="parameter">authns</code></em> には
      権威のあるネームサーバーのリストを含めて返します。
@@ -576,8 +576,8 @@ Additional = Array
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.dns-get-mx.html" class="function" rel="rdfs-seeAlso">dns_get_mx()</a> - getmxrr のエイリアス</span></li>
-    <li class="member"> <span class="function"><a href="function.dns-check-record.html" class="function" rel="rdfs-seeAlso">dns_check_record()</a> - checkdnsrr のエイリアス</span></li>
+    <li class="member"><span class="function"><a href="function.dns-get-mx.html" class="function" rel="rdfs-seeAlso">dns_get_mx()</a> - getmxrr のエイリアス</span></li>
+    <li class="member"><span class="function"><a href="function.dns-check-record.html" class="function" rel="rdfs-seeAlso">dns_check_record()</a> - checkdnsrr のエイリアス</span></li>
    </ul>
   </p>
  </div>

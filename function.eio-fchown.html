@@ -30,7 +30,7 @@
   ]]]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>eio_fchown()</strong></span> は、
+   <span class="function"><strong>eio_fchown()</strong></span> は、
   ファイルディスクリプタ <em><code class="parameter">fd</code></em> で指定したファイルやディレクトリのオーナーを変更します。
   </p>
 
@@ -41,9 +41,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">fd</code></em></dt>
 
-    <span class="term"><em><code class="parameter">fd</code></em></span>
     <dd>
 
      <p class="para">
@@ -51,11 +52,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">uid</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">uid</code></em></span>
     <dd>
 
      <p class="para">
@@ -63,11 +64,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">gid</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">gid</code></em></span>
     <dd>
 
      <p class="para">
@@ -75,11 +76,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">pri</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">pri</code></em></span>
     <dd>
 
     <p class="para">リクエストの優先順位。<strong><code>EIO_PRI_DEFAULT</code></strong>、<strong><code>EIO_PRI_MIN</code></strong>、<strong><code>EIO_PRI_MAX</code></strong> あるいは <strong><code>NULL</code></strong> を指定します。
@@ -89,11 +90,11 @@
 
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">callback</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">callback</code></em></span>
     <dd>
 
      <p class="para">
@@ -105,30 +106,30 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
 に一致しなければなりません。
 <dl>
 
-<dt>
 
-<span class="term"><em><code class="parameter">data</code></em></span>
+<dt>
+<em><code class="parameter">data</code></em></dt>
+
 <dd>
 <p class="para">は、リクエストに渡すカスタムデータです。</p></dd>
 
-</dt>
+
 
 <dt>
+<em><code class="parameter">result</code></em></dt>
 
-<span class="term"><em><code class="parameter">result</code></em></span>
 <dd>
 <p class="para">にはリクエスト固有の結果が格納されます。基本的には、対応するシステムコールが返すそのままの値となります。</p></dd>
 
-</dt>
+
 
 <dt>
+<em><code class="parameter">req</code></em></dt>
 
-<span class="term"><em><code class="parameter">req</code></em></span>
 <dd>
 <p class="para">はオプションで指定するリクエストリソースです。
- <span class="function"><a href="function.eio-get-last-error.html" class="function">eio_get_last_error()</a></span> のような関数で使えます。</p></dd>
+<span class="function"><a href="function.eio-get-last-error.html" class="function">eio_get_last_error()</a></span> のような関数で使えます。</p></dd>
 
-</dt>
 
 </dl>
 
@@ -136,11 +137,11 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
 
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">data</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">data</code></em></span>
     <dd>
 
      <p class="para">
@@ -148,8 +149,7 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>

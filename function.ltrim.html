@@ -36,9 +36,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">str</code></em></dt>
 
-     <span class="term"><em><code class="parameter">str</code></em></span>
      <dd>
 
       <p class="para">
@@ -46,11 +47,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">charlist</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">charlist</code></em></span>
      <dd>
 
       <p class="para">
@@ -61,8 +62,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -74,7 +74,7 @@
   <p class="para">
    この関数は文字列の最初から空白文字を取り除き、
    取り除かれた文字列を返します。2番目のパラメータを指定しない場合、
-    <span class="function"><strong>ltrim()</strong></span>は以下の文字を削除します。
+   <span class="function"><strong>ltrim()</strong></span>は以下の文字を削除します。
    
    <ul class="itemizedlist">
     <li class="listitem">
@@ -150,8 +150,8 @@
  <div class="refsect1 examples" id="refsect1-function.ltrim-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4842">
-    <p><strong>例1  <span class="function"><strong>ltrim()</strong></span> の使用例</strong></p>
+   <div class="example" id="example-4844">
+    <p><strong>例1 <span class="function"><strong>ltrim()</strong></span> の使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"\t\tThese&nbsp;are&nbsp;a&nbsp;few&nbsp;words&nbsp;:)&nbsp;...&nbsp;&nbsp;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$binary&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"\x09Example&nbsp;string\x0A"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$hello&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Hello&nbsp;World"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$binary</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$hello</span><span style="color: #007700">);<br /><br />print&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /><br /></span><span style="color: #0000BB">$trimmed&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ltrim</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$trimmed</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$trimmed&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ltrim</span><span style="color: #007700">(</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"&nbsp;\t."</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$trimmed</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$trimmed&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ltrim</span><span style="color: #007700">(</span><span style="color: #0000BB">$hello</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Hdle"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$trimmed</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ASCII&nbsp;制御文字&nbsp;(0&nbsp;から&nbsp;31&nbsp;まで)&nbsp;を<br />//&nbsp;$binary&nbsp;の先頭から取り除きます<br /></span><span style="color: #0000BB">$clean&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ltrim</span><span style="color: #007700">(</span><span style="color: #0000BB">$binary</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\x00..\x1F"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$clean</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -183,8 +183,8 @@ string(15) &quot;Example string
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.trim.html" class="function" rel="rdfs-seeAlso">trim()</a> - 文字列の先頭および末尾にあるホワイトスペースを取り除く</span></li>
-    <li class="member"> <span class="function"><a href="function.rtrim.html" class="function" rel="rdfs-seeAlso">rtrim()</a> - 文字列の最後から空白 (もしくはその他の文字) を取り除く</span></li>
+    <li class="member"><span class="function"><a href="function.trim.html" class="function" rel="rdfs-seeAlso">trim()</a> - 文字列の先頭および末尾にあるホワイトスペースを取り除く</span></li>
+    <li class="member"><span class="function"><a href="function.rtrim.html" class="function" rel="rdfs-seeAlso">rtrim()</a> - 文字列の最後から空白 (もしくはその他の文字) を取り除く</span></li>
    </ul>
   </p>
  </div>

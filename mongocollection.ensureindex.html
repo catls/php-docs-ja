@@ -40,11 +40,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">keys</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -54,13 +55,13 @@
       </p>
      </dd>
 
-    </dt>
-   
-    <dt>
+       
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">options</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -165,8 +166,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -182,7 +182,7 @@
   </p>
   <p class="para">
    配列のフィールドについての説明は
-    <span class="function"><a href="mongocollection.insert.html" class="function">MongoCollection::insert()</a></span> を参照ください。
+   <span class="function"><a href="mongocollection.insert.html" class="function">MongoCollection::insert()</a></span> を参照ください。
   </p>
  </div>
 
@@ -276,8 +276,8 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.ensureindex-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1442">
-   <p><strong>例1  <span class="function"><strong>MongoCollection::ensureIndex()</strong></span> の例</strong></p>
+  <div class="example" id="example-1443">
+   <p><strong>例1 <span class="function"><strong>MongoCollection::ensureIndex()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$c&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoCollection</span><span style="color: #007700">(</span><span style="color: #0000BB">$db</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;'x'&nbsp;の昇順にインデックスを作成します<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ensureIndex</span><span style="color: #007700">(</span><span style="color: #DD0000">'x'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;'y'&nbsp;の昇順にインデックスを作成します<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ensureIndex</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'y'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;'z'&nbsp;の昇順、'zz'&nbsp;の降順にインデックスを作成します<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ensureIndex</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'z'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'zz'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;'x'&nbsp;に一意なインデックスを作成します<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ensureIndex</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'x'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">"unique"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -286,7 +286,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-1443">
+  <div class="example" id="example-1444">
    <p><strong>例2 重複を削除する例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -297,7 +297,7 @@
 
   </div>
 
-  <div class="example" id="example-1444">
+  <div class="example" id="example-1445">
    <p><strong>例3 地理空間のインデックス</strong></p>
    <div class="example-contents"><p>
     Mongo は地理空間のインデックスをサポートしています。

@@ -42,9 +42,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">input</code></em></dt>
 
-     <span class="term"><em><code class="parameter">input</code></em></span>
      <dd>
 
       <p class="para">
@@ -52,11 +53,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">pad_length</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">pad_length</code></em></span>
      <dd>
 
       <p class="para">
@@ -65,11 +66,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">pad_string</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">pad_string</code></em></span>
      <dd>
 
       <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -81,11 +82,11 @@
       </p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">pad_type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">pad_type</code></em></span>
      <dd>
 
       <p class="para">
@@ -99,8 +100,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -119,8 +119,8 @@
  <div class="refsect1 examples" id="refsect1-function.str-pad-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4874">
-    <p><strong>例1  <span class="function"><strong>str_pad()</strong></span> の例</strong></p>
+   <div class="example" id="example-4876">
+    <p><strong>例1 <span class="function"><strong>str_pad()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Alien"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">str_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;結果は&nbsp;"Alien&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">str_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"-="</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">STR_PAD_LEFT</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;結果は&nbsp;"-=-=-Alien"<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">str_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"_"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">STR_PAD_BOTH</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;結果は&nbsp;"__Alien___"<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">str_pad</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">6&nbsp;</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"___"</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;結果は&nbsp;"Alien_"<br /></span><span style="color: #0000BB">?&gt;</span>

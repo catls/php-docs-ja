@@ -46,9 +46,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">pattern</code></em></dt>
 
-     <span class="term"><em><code class="parameter">pattern</code></em></span>
      <dd>
 
       <p class="para">
@@ -56,11 +57,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">subject</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">subject</code></em></span>
      <dd>
 
       <p class="para">
@@ -68,11 +69,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">matches</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">matches</code></em></span>
      <dd>
 
       <p class="para">
@@ -82,11 +83,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -96,9 +97,10 @@
        無意味ですので注意してください)。
        <dl>
 
-        <dt>
+        
+         <dt>
+<strong><code>PREG_PATTERN_ORDER</code></strong></dt>
 
-         <span class="term"><strong><code>PREG_PATTERN_ORDER</code></strong></span>
          <dd>
 
           <p class="para">
@@ -130,11 +132,11 @@ example: , this is a test
           </p>
          </dd>
 
-        </dt>
+        
+        
+         <dt>
+<strong><code>PREG_SET_ORDER</code></strong></dt>
 
-        <dt>
-
-         <span class="term"><strong><code>PREG_SET_ORDER</code></strong></span>
          <dd>
 
           <p class="para">
@@ -160,11 +162,11 @@ example: , this is a test
           </p>
          </dd>
 
-        </dt>
+        
+        
+         <dt>
+<strong><code>PREG_OFFSET_CAPTURE</code></strong></dt>
 
-        <dt>
-
-         <span class="term"><strong><code>PREG_OFFSET_CAPTURE</code></strong></span>
          <dd>
 
           <p class="para">
@@ -175,8 +177,7 @@ example: , this is a test
           </p>
          </dd>
 
-        </dt>
-
+        
        </dl>
 
       </p>
@@ -186,11 +187,11 @@ example: , this is a test
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">offset</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">offset</code></em></span>
      <dd>
 
       <p class="para">
@@ -202,19 +203,18 @@ example: , this is a test
        <p class="para">
         <em><code class="parameter">offset</code></em> を用いるのと、
         <em>substr($subject, $offset)</em> を
-         <span class="function"><strong>preg_match_all()</strong></span>の対象文字列として指定するのとは
+        <span class="function"><strong>preg_match_all()</strong></span>の対象文字列として指定するのとは
         等価ではありません。
         これは、<em><code class="parameter">pattern</code></em> には、
         <em class="emphasis">^</em>, <em class="emphasis">$</em> や
         <em class="emphasis">(?&lt;=x)</em> のような言明を含めることができるためです。
         これに関する例については、
-         <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span> を参照してください。
+        <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span> を参照してください。
        </p>
       </p></blockquote>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -296,7 +296,7 @@ example: , this is a test
  <div class="refsect1 examples" id="refsect1-function.preg-match-all-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4783">
+   <div class="example" id="example-4785">
     <p><strong>例1 テキストからすべての電話番号を得る</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -308,7 +308,7 @@ example: , this is a test
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4784">
+   <div class="example" id="example-4786">
     <p><strong>例2 HTML タグにマッチするものを見付ける（貪欲）</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -336,7 +336,7 @@ part 4: &lt;/a&gt;
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4785">
+   <div class="example" id="example-4787">
     <p><strong>例3 名前つきサブパターンの使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -398,10 +398,10 @@ Array
   <p class="para">
    <ul class="simplelist">
     <li class="member"><a href="pcre.pattern.html" class="link">PCRE のパターン</a></li>
-    <li class="member"> <span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - 正規表現によるマッチングを行う</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - 正規表現検索および置換を行う</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-split.html" class="function" rel="rdfs-seeAlso">preg_split()</a> - 正規表現で文字列を分割する</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-last-error.html" class="function" rel="rdfs-seeAlso">preg_last_error()</a> - 直近の PCRE 正規表現処理のエラーコードを返す</span></li>
+    <li class="member"><span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - 正規表現によるマッチングを行う</span></li>
+    <li class="member"><span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - 正規表現検索および置換を行う</span></li>
+    <li class="member"><span class="function"><a href="function.preg-split.html" class="function" rel="rdfs-seeAlso">preg_split()</a> - 正規表現で文字列を分割する</span></li>
+    <li class="member"><span class="function"><a href="function.preg-last-error.html" class="function" rel="rdfs-seeAlso">preg_last_error()</a> - 直近の PCRE 正規表現処理のエラーコードを返す</span></li>
    </ul>
   </p>
  </div>

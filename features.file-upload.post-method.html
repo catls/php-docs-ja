@@ -45,7 +45,7 @@
    </p>
 
    <p class="para">
-    <div class="example" id="example-355">
+    <div class="example" id="example-356">
      <p><strong>例1 ファイルアップロード用のフォーム</strong></p>
      <div class="example-contents"><p>
       ファイルアップロード画面は、次のような特別なフォームを作成すること
@@ -105,9 +105,10 @@
     実際にはどんな名前にすることもできます。
     <dl>
 
-     <dt>
+     
+      <dt>
+<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['name']</a></var></var></dt>
 
-      <span class="term"><var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['name']</a></var></var></span>
       <dd>
 
        <p class="para">
@@ -115,11 +116,11 @@
        </p>
       </dd>
 
-     </dt>
+     
+     
+      <dt>
+<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['type']</a></var></var></dt>
 
-     <dt>
-
-      <span class="term"><var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['type']</a></var></var></span>
       <dd>
 
        <p class="para">
@@ -130,11 +131,11 @@
        </p>
       </dd>
 
-     </dt>
+     
+     
+      <dt>
+<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['size']</a></var></var></dt>
 
-     <dt>
-
-      <span class="term"><var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['size']</a></var></var></span>
       <dd>
 
        <p class="para">
@@ -142,11 +143,11 @@
        </p>
       </dd>
 
-     </dt>
+     
+     
+      <dt>
+<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['tmp_name']</a></var></var></dt>
 
-     <dt>
-
-      <span class="term"><var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['tmp_name']</a></var></var></span>
       <dd>
 
        <p class="para">
@@ -155,11 +156,11 @@
        </p>
       </dd>
 
-     </dt>
+     
+     
+      <dt>
+<var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['error']</a></var></var></dt>
 
-     <dt>
-
-      <span class="term"><var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['error']</a></var></var></span>
       <dd>
 
        <p class="para">
@@ -169,8 +170,7 @@
        </p>
       </dd>
 
-     </dt>
-
+     
     </dl>
 
    </p>
@@ -181,14 +181,14 @@
     テンポラリディレクトリに保存されます。サーバーのデフォルトディレクトリは、
     PHP を実行する環境において環境変数 <span class="envar">TMPDIR</span> を設定する
     ことにより変更することができます。しかし、PHP スクリプトの内部から
-     <span class="function"><a href="function.putenv.html" class="function">putenv()</a></span> 関数により設定しても上手くいきません。
+    <span class="function"><a href="function.putenv.html" class="function">putenv()</a></span> 関数により設定しても上手くいきません。
     この環境変数は、アップロードされたファイルに他の処理を行う際にも
     同様に使用することが可能です。
-    <div class="example" id="example-356">
+    <div class="example" id="example-357">
      <p><strong>例2 ファイルのアップロードを検証する</strong></p>
      <div class="example-contents"><p>
-      詳細については、 <span class="function"><a href="function.is-uploaded-file.html" class="function">is_uploaded_file()</a></span>
-      および  <span class="function"><a href="function.move-uploaded-file.html" class="function">move_uploaded_file()</a></span> の関数のエントリも
+      詳細については、<span class="function"><a href="function.is-uploaded-file.html" class="function">is_uploaded_file()</a></span>
+      および <span class="function"><a href="function.move-uploaded-file.html" class="function">move_uploaded_file()</a></span> の関数のエントリも
       参照ください。以下はフォームからファイルをアップロードするプロセスの例です。
      </p></div>
      <div class="example-contents">
@@ -228,7 +228,7 @@
     移動または名前の変更が行われていない場合、リクエストの終了時に
     そのファイルはテンポラリディレクトリから削除されます。
    </p>
-    <div class="example" id="example-357">
+    <div class="example" id="example-358">
      <p><strong>例3 ファイルの配列をアップロードする</strong></p>
      <div class="example-contents"><p>
       PHP はファイルについても

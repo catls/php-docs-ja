@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">a</code></em></dt>
 
-     <span class="term"><em><code class="parameter">a</code></em></span>
      <dd>
 
       <p class="para">
@@ -47,8 +48,7 @@
 あるいは数値に変換可能な数値形式の文字列。</p> 
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -59,7 +59,7 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    最初の要素が <em><code class="parameter">a</code></em> の整数平方根
-   ( <span class="function"><a href="function.gmp-sqrt.html" class="function">gmp_sqrt()</a></span>も参照ください)、2 番目の要素が余り
+   (<span class="function"><a href="function.gmp-sqrt.html" class="function">gmp_sqrt()</a></span>も参照ください)、2 番目の要素が余り
    (すなわち、<em><code class="parameter">a</code></em> と最初の要素の 2 乗の差)
    であるような配列を返します。
   </p>
@@ -69,8 +69,8 @@
  <div class="refsect1 examples" id="refsect1-function.gmp-sqrtrem-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3435">
-    <p><strong>例1  <span class="function"><strong>gmp_sqrtrem()</strong></span> の例</strong></p>
+   <div class="example" id="example-3436">
+    <p><strong>例1 <span class="function"><strong>gmp_sqrtrem()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$sqrt1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sqrt1rem</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">gmp_sqrtrem</span><span style="color: #007700">(</span><span style="color: #DD0000">"9"</span><span style="color: #007700">);<br />list(</span><span style="color: #0000BB">$sqrt2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sqrt2rem</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">gmp_sqrtrem</span><span style="color: #007700">(</span><span style="color: #DD0000">"7"</span><span style="color: #007700">);<br />list(</span><span style="color: #0000BB">$sqrt3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sqrt3rem</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">gmp_sqrtrem</span><span style="color: #007700">(</span><span style="color: #DD0000">"1048576"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$sqrt1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">",&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$sqrt1rem</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$sqrt2</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">",&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$sqrt2rem</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$sqrt3</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">",&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$sqrt3rem</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>

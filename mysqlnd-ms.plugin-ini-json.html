@@ -46,7 +46,7 @@
    <var class="filename">php.ini</var> format.
   </p>
   <p class="para">
-   <div class="example" id="example-1803">
+   <div class="example" id="example-1804">
     <p><strong>例1 Converting a PHP array (hash) into JSON format</strong></p>
     <div class="example-contents"><p>
      Or alternatively, a developer may be more familiar with the PHP <span class="type"><a href="language.types.array.html" class="type array">array</a></span>
@@ -101,7 +101,7 @@ Dumping file contents...
    section name match, then the plugin will load the settings for that section.
   </p>
   <p class="para" id="mysqlnd-ms.plugin-ini-json.using-section">
-   <div class="example" id="example-1804">
+   <div class="example" id="example-1805">
     <p><strong>例2 Using section names example</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -186,7 +186,7 @@ Dumping file contents...
    for slave and master servers may be used.
   </p>
   <p class="para">
-   <div class="example" id="example-1805">
+   <div class="example" id="example-1806">
     <p><strong>例3 List of anonymous slaves</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">&quot;slave&quot;: [
@@ -210,7 +210,7 @@ Dumping file contents...
    of a server list, and done so using the <em>JSON object</em> type.
   </p>
   <p class="para">
-   <div class="example" id="example-1806">
+   <div class="example" id="example-1807">
     <p><strong>例4 Master list using symbolic names</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">&quot;master&quot;: {
@@ -241,7 +241,7 @@ Dumping file contents...
    keyword. All other settings are optional.
   </p>
   <p class="para">
-   <div class="example" id="example-1807">
+   <div class="example" id="example-1808">
     <p><strong>例5 Keywords to configure a server</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -292,7 +292,7 @@ Dumping file contents...
    <em>roundrobin</em> provide the same functionality.
   </p>
   <p class="para">
-   <div class="example" id="example-1808">
+   <div class="example" id="example-1809">
     <p><strong>例6 New <em>roundrobin</em> filter, old functionality</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -326,13 +326,13 @@ Dumping file contents...
   </p>
   <p class="para">
    The function
-    <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span>
+   <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span>
    has been removed. Setting a callback is now done with the <em>user</em>
    filter. Some filters accept parameters. The <em>user</em> filter
    requires and accepts a mandatory <em>callback</em> parameter
-   to set the callback previously set through the function  <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span>.
-   <div class="example" id="example-1809">
-    <p><strong>例7 The <em>user</em> filter replaces  <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span></strong></p>
+   to set the callback previously set through the function <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span>.
+   <div class="example" id="example-1810">
+    <p><strong>例7 The <em>user</em> filter replaces <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span></strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">&quot;filters&quot;: {
     &quot;user&quot;: {
@@ -353,7 +353,7 @@ Dumping file contents...
    This problem has been cured in version 1.5.0.
   </p>
   <p class="para">
-   <div class="example" id="example-1810">
+   <div class="example" id="example-1811">
     <p><strong>例8 Common error message in case of configuration file issues (upto version 1.5.0)</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -384,7 +384,7 @@ Fatal error: Call to a member function fetch_assoc() on a non-object in Command 
    of type <em>E_WARNING</em> will be emitted.
  </p>
  <p class="para">
-   <div class="example" id="example-1811">
+   <div class="example" id="example-1812">
     <p><strong>例9 Improved configuration file validation since 1.5.0</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -408,7 +408,7 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) (mysqlnd_ms) Failed to parse config file
    help detecting misspelled section names.
   </p>
   <p class="para">
-   <div class="example" id="example-1812">
+   <div class="example" id="example-1813">
     <p><strong>例10 Possibly more precise error due to <em>mysqlnd_ms.force_config_usage=1</em></strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_ms.force_config_usage=1</pre>
@@ -437,11 +437,12 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
   <p class="para">
   <dl>
 
-   <dt id="ini.mysqlnd-ms-plugin-config-v2.master">
-     <span class="term">
+   
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.master">
       <em><code class="parameter">master</code></em>
       <span class="type"><span class="type array or object">array or object</span></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -587,13 +588,13 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
       </p>
      </dd>
 
-    </dt>
-
+    
+    
     <dt id="ini.mysqlnd-ms-plugin-config-v2.slave">
-    <span class="term">
       <em><code class="parameter">slave</code></em>
       <span class="type"><span class="type array or object">array or object</span></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -625,13 +626,13 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.gtid">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.gtid">
       <em><code class="parameter">global_transaction_id_injection</code></em>
       <span class="type"><span class="type array or object">array or object</span></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -664,7 +665,7 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
             The SQL statement is run if the plugin needs to know the most recent
             global transaction identifier. This can be the case, for example, when checking
             MySQL Replication slave status.
-            Also used with  <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span>.
+            Also used with <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span>.
            </p>
           </td>
           <td>Since 1.2.0.</td>
@@ -755,13 +756,13 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
 
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.filters">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.filters">
       <em><code class="parameter">filters</code></em>
       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -772,7 +773,7 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
        <a href="mysqlnd-ms.plugin-ini-v1.html#ini.mysqlnd-ms-plugin-config.pick" class="link"><em>pick[]</em></a>
        directive used in prior version to select a load balancing policy.
        The <em>user</em> filter replaces the
-        <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span> function.
+       <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span> function.
       </p>
       <p class="para">
        Filters may accept parameters to refine their actions.
@@ -799,7 +800,7 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
        handle.
       </p>
       <p class="para">
-       <div class="example" id="example-1813">
+       <div class="example" id="example-1814">
         <p><strong>例11 Invalid filter sequence</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -843,13 +844,13 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
       </p>
     </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-random">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-random">
       Filter: <em><code class="parameter">random</code></em>
       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -870,7 +871,7 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        stands for random load balancing policy.
       </p>
       <p class="para">
-       <div class="example" id="example-1814">
+       <div class="example" id="example-1815">
         <p><strong>例12 Random load balancing with <em>random</em> filter</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -907,7 +908,7 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        load balancing strategy.
       </p>
       <p class="para">
-       <div class="example" id="example-1815">
+       <div class="example" id="example-1816">
         <p><strong>例13 Random once load balancing with <em>random</em> filter</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -932,7 +933,7 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        to reference servers for assigning a priority with <em>weight</em>.
       </p>
       <p class="para">
-       <div class="example" id="example-1816">
+       <div class="example" id="example-1817">
         <p><strong>例14 Referencing error</strong></p>
         <div class="example-contents screen">
 <div class="cdata"><pre>
@@ -950,7 +951,7 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        all servers is one.
       </p>
       <p class="para">
-       <div class="example" id="example-1817">
+       <div class="example" id="example-1818">
         <p><strong>例15 Assigning a <em>weight</em> for load balancing</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -1070,13 +1071,13 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
 
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-roundrobin">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-roundrobin">
       Filter: <em><code class="parameter">roundrobin</code></em>
       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -1087,7 +1088,7 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        configured slave server.
       </p>
       <p class="para">
-       <div class="example" id="example-1818">
+       <div class="example" id="example-1819">
         <p><strong>例16 <em>roundrobin</em> filter</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -1158,18 +1159,18 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
 
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-user">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-user">
       Filter: <em><code class="parameter">user</code></em>
       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
         The <em>user</em> replaces
-        <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span> function,
+       <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span> function,
        which was removed in 1.1.0-beta. The filter sets a callback for user-defined
        read/write splitting and server selection.
       </p>
@@ -1206,7 +1207,7 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        the plugin to prevent an endless loop.
       </p>
       <p class="para">
-       <div class="example" id="example-1819">
+       <div class="example" id="example-1820">
         <p><strong>例17 Setting a callback</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -1377,7 +1378,7 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
       </table>
 
      <p class="para">
-      <div class="example" id="example-1820">
+      <div class="example" id="example-1821">
         <p><strong>例18 Using a callback</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -1435,13 +1436,13 @@ User has connected to &#039;myapp&#039;...
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-user-multi">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-user-multi">
       Filter: <em><code class="parameter">user_multi</code></em>
       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -1470,7 +1471,7 @@ User has connected to &#039;myapp&#039;...
        random master and slave lists extracted from the functions input.
       </p>
       <p class="para">
-      <div class="example" id="example-1821">
+      <div class="example" id="example-1822">
         <p><strong>例19 Returning random masters and slaves</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -1508,15 +1509,15 @@ User has connected to &#039;myapp&#039;...
       </p>
      </dd>
 
-    </dt>
+    
 
 
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-node-groups">
-     <span class="term">
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-node-groups">
       Filter: <em><code class="parameter">node_groups</code></em>
       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -1580,7 +1581,7 @@ User has connected to &#039;myapp&#039;...
              <em>(mysqlnd_ms) Unknown master &#039;server_alias_name&#039; (section &#039;name_of_group&#039;) in &#039;node_groups&#039; filter configuration</em>.
             </p>
             <p class="para">
-             <div class="example" id="example-1822">
+             <div class="example" id="example-1823">
                <p><strong>例20 Manual partitioning</strong></p>
                 <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -1633,14 +1634,14 @@ User has connected to &#039;myapp&#039;...
 
      </dd>
 
-    </dt>
+    
 
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-qos">
-     <span class="term">
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.filter-qos">
       Filter: <em><code class="parameter">quality_of_service</code></em>
       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -1666,11 +1667,11 @@ User has connected to &#039;myapp&#039;...
       <p class="para">
        The <em>quality_of_service</em> filter can be replaced or created
        at runtime. A successful call to
-        <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>
+       <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>
        removes all existing <em>qos</em> filter entries from the
        filter list and installs a new one at the very beginning. All settings
        that can be made through
-        <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>
+       <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>
        can also be in the plugins configuration file. However, use of the function
        is by far the most common use case. Instead of setting session consistency and
        strong consistency service levels in the plugins configuration file it is
@@ -1721,7 +1722,7 @@ User has connected to &#039;myapp&#039;...
               emit a warning.
             </p>
             <p class="para">
-             <div class="example" id="example-1823">
+             <div class="example" id="example-1824">
                <p><strong>例21 Global limit on slave lag</strong></p>
                 <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -1776,7 +1777,7 @@ User has connected to &#039;myapp&#039;...
             </p>
             <p class="para">
              Session consistency temporarily requested using
-              <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span> is a valuable alternative
+             <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span> is a valuable alternative
              to using <em>master_on_write</em>.
              <em>master_on_write</em> is likely to send more statements
              to the master than needed. The application may be able to continue
@@ -1805,14 +1806,14 @@ User has connected to &#039;myapp&#039;...
 
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.failover">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.failover">
       <em><code class="parameter">failover</code></em>
       Up to and including 1.3.x: <span class="type"><a href="language.types.string.html" class="type string">string</a></span>.
       Since 1.4.0: <span class="type"><a href="language.types.object.html" class="type object">object</a></span>.
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -1843,7 +1844,7 @@ User has connected to &#039;myapp&#039;...
        pitfalls and risks of using <em>failover=master</em>.
       </p>
       <p class="para">
-       <div class="example" id="example-1824">
+       <div class="example" id="example-1825">
         <p><strong>例22 Optional master failover when failing to connect to slave (PECL/mysqlnd_ms &lt; 1.4.0)</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -1872,7 +1873,7 @@ User has connected to &#039;myapp&#039;...
        object.
       </p>
       <p class="para">
-       <div class="example" id="example-1825">
+       <div class="example" id="example-1826">
         <p><strong>例23 New syntax since 1.4.0</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -2001,13 +2002,13 @@ User has connected to &#039;myapp&#039;...
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.lazy-connections">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.lazy-connections">
       <em><code class="parameter">lazy_connections</code></em>
       <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -2034,7 +2035,7 @@ User has connected to &#039;myapp&#039;...
        connections are opened.
       </p>
       <p class="para">
-       <div class="example" id="example-1826">
+       <div class="example" id="example-1827">
         <p><strong>例24 Disabling lazy connection</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -2065,13 +2066,13 @@ User has connected to &#039;myapp&#039;...
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.server-charset">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.server-charset">
       <em><code class="parameter">server_charset</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -2118,7 +2119,7 @@ User has connected to &#039;myapp&#039;...
       </p>
       <p class="para">
        The plugin does not stop the user from changing the charset at any time
-       using the  <span class="function"><strong>set_charset()</strong></span> call or corresponding SQL statements.
+       using the <span class="function"><strong>set_charset()</strong></span> call or corresponding SQL statements.
        Please, note that the use of SQL is not recommended as it cannot be monitored
        by the plugin. The user can, for example, change the charset on a
        lazy connection handle after escaping a string and before the actual connection
@@ -2129,7 +2130,7 @@ User has connected to &#039;myapp&#039;...
        <em>set_charset</em> is of no meaning anymore.
       </p>
       <p class="para">
-       <div class="example" id="example-1827">
+       <div class="example" id="example-1828">
         <p><strong>例25 String escaping on a lazy connection handle</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -2163,13 +2164,13 @@ User has connected to &#039;myapp&#039;...
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.master-on-write">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.master-on-write">
       <em><code class="parameter">master_on_write</code></em>
       <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -2187,7 +2188,7 @@ User has connected to &#039;myapp&#039;...
        <em>INSERT</em> yet.
       </p>
       <p class="para">
-       <div class="example" id="example-1828">
+       <div class="example" id="example-1829">
         <p><strong>例26 Master on write for consistent reads</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -2223,13 +2224,13 @@ User has connected to &#039;myapp&#039;...
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.trx-stickiness">
-     <span class="term">
+    
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.trx-stickiness">
       <em><code class="parameter">trx_stickiness</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -2264,7 +2265,7 @@ User has connected to &#039;myapp&#039;...
       <p class="para">
        An example of a PHP MySQL API function calling the <em>mysqlnd</em>
        library internal function call <em>set_autocommit()</em> is
-        <span class="function"><a href="mysqli.autocommit.html" class="function">mysqli_autocommit()</a></span>.
+       <span class="function"><a href="mysqli.autocommit.html" class="function">mysqli_autocommit()</a></span>.
       </p>
       <p class="para">
        Although setting <em>trx_stickiness=master</em>, the plugin
@@ -2276,13 +2277,13 @@ User has connected to &#039;myapp&#039;...
        control transactions. The level of control matches the one offered by SQL
        statements. The <em>mysqli</em> API has been modified to use
        these calls. Since version 1.5.0, PECL/mysqlnd_ms can monitor not only
-        <span class="function"><a href="mysqli.autocommit.html" class="function">mysqli_autocommit()</a></span>, but also  <span class="function"><strong>mysqli_begin()</strong></span>,
-        <span class="function"><a href="mysqli.commit.html" class="function">mysqli_commit()</a></span> and  <span class="function"><a href="mysqli.rollback.html" class="function">mysqli_rollback()</a></span> to
+       <span class="function"><a href="mysqli.autocommit.html" class="function">mysqli_autocommit()</a></span>, but also <span class="function"><strong>mysqli_begin()</strong></span>,
+       <span class="function"><a href="mysqli.commit.html" class="function">mysqli_commit()</a></span> and <span class="function"><a href="mysqli.rollback.html" class="function">mysqli_rollback()</a></span> to
        detect transaction boundaries and stop load balancing for the duration of
        a transaction.
       </p>
       <p class="para">
-       <div class="example" id="example-1829">
+       <div class="example" id="example-1830">
         <p><strong>例27 Using master to execute transactions</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -2320,7 +2321,7 @@ User has connected to &#039;myapp&#039;...
        Those errors will be generated by the failing query function.
       </p>
       <p class="para">
-       <div class="example" id="example-1830">
+       <div class="example" id="example-1831">
         <p><strong>例28 No automatic failover, error handling pitfall</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -2350,14 +2351,14 @@ User has connected to &#039;myapp&#039;...
       </p>
      </dd>
 
-    </dt>
+    
 
-
-    <dt id="ini.mysqlnd-ms-plugin-config-v2.transient_error">
-     <span class="term">
+    
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.transient_error">
        <em><code class="parameter">transient_error</code></em>
        <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -2380,7 +2381,7 @@ User has connected to &#039;myapp&#039;...
        forwarded to the application by the end of the loop.
       </p>
       <p class="para">
-       <div class="example" id="example-1831">
+       <div class="example" id="example-1832">
         <p><strong>例29 Retry loop for transient errors</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -2468,7 +2469,7 @@ User has connected to &#039;myapp&#039;...
           <td>
            <p class="para">
             Milliseconds to sleep between transient error retries.
-            The value is passed to the C function  <span class="function"><a href="function.usleep.html" class="function">usleep()</a></span>,
+            The value is passed to the C function <span class="function"><a href="function.usleep.html" class="function">usleep()</a></span>,
             hence the name.
            </p>
            <p class="para">
@@ -2484,8 +2485,7 @@ User has connected to &#039;myapp&#039;...
 
      </dd>
 
-    </dt>
-
+    
 
    </dl>
 

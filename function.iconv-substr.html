@@ -40,9 +40,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">str</code></em></dt>
 
-     <span class="term"><em><code class="parameter">str</code></em></span>
      <dd>
 
       <p class="para">
@@ -50,32 +51,32 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">offset</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">offset</code></em></span>
      <dd>
 
       <p class="para">
        <em><code class="parameter">start</code></em> が負でない場合、
-        <span class="function"><strong>iconv_substr()</strong></span> は
+       <span class="function"><strong>iconv_substr()</strong></span> は
        <em><code class="parameter">str</code></em> の <em><code class="parameter">start</code></em>
        番目の文字（ゼロから数えて）から切り出します。
       </p>
       <p class="para">
        <em><code class="parameter">start</code></em> が負の場合、
-        <span class="function"><strong>iconv_substr()</strong></span> は
+       <span class="function"><strong>iconv_substr()</strong></span> は
        <em><code class="parameter">str</code></em> の最後から数えて
        <em><code class="parameter">start</code></em> 番目の文字から切り出します。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">length</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">length</code></em></span>
      <dd>
 
       <p class="para">
@@ -86,7 +87,7 @@
       </p>
       <p class="para">
        もし負の <em><code class="parameter">length</code></em> が渡された場合に
-        <span class="function"><strong>iconv_substr()</strong></span> が切り出す文字列は、
+       <span class="function"><strong>iconv_substr()</strong></span> が切り出す文字列は、
        <em><code class="parameter">str</code></em> の <em><code class="parameter">start</code></em>
        番目の文字からはじまり、文字列の最後から数えて
        <em><code class="parameter">length</code></em> 文字分戻ったところまでとなります。
@@ -95,11 +96,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">charset</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">charset</code></em></span>
      <dd>
 
       <p class="para">
@@ -111,13 +112,12 @@
        <em><code class="parameter">offset</code></em> や <em><code class="parameter">length</code></em>
        のパラメータは、常に <em><code class="parameter">charset</code></em> で定義された
        文字セットにおける文字数と判断されることに注意してください。
-       一方、 <span class="function"><a href="function.substr.html" class="function">substr()</a></span> の場合はこれらの値を常に
+       一方、<span class="function"><a href="function.substr.html" class="function">substr()</a></span> の場合はこれらの値を常に
        バイト数として判断します。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -142,9 +142,9 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - 文字列の一部分を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.mb-substr.html" class="function" rel="rdfs-seeAlso">mb_substr()</a> - 文字列の一部を得る</span></li>
-    <li class="member"> <span class="function"><a href="function.mb-strcut.html" class="function" rel="rdfs-seeAlso">mb_strcut()</a> - 文字列の一部を得る</span></li>
+    <li class="member"><span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - 文字列の一部分を返す</span></li>
+    <li class="member"><span class="function"><a href="function.mb-substr.html" class="function" rel="rdfs-seeAlso">mb_substr()</a> - 文字列の一部を得る</span></li>
+    <li class="member"><span class="function"><a href="function.mb-strcut.html" class="function" rel="rdfs-seeAlso">mb_strcut()</a> - 文字列の一部を得る</span></li>
    </ul>
   </p>
  </div>

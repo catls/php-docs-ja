@@ -47,9 +47,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">ticks_per_second</code></em></dt>
 
-     <span class="term"><em><code class="parameter">ticks_per_second</code></em></span>
      <dd>
 
       <p class="para">
@@ -57,8 +58,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -76,8 +76,8 @@
  <div class="refsect1 examples" id="refsect1-imagick.setimagetickspersecond-examples">
     <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3340">
-    <p><strong>例1  <span class="function"><strong>Imagick::setImageTicksPerSecond()</strong></span> によるアニメーション GIF の変更</strong></p>
+   <div class="example" id="example-3341">
+    <p><strong>例1 <span class="function"><strong>Imagick::setImageTicksPerSecond()</strong></span> によるアニメーション GIF の変更</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;アニメーション&nbsp;GIF&nbsp;の前半の再生スピードを元の半分に、<br />//&nbsp;そして後半の再生スピードを元の倍にします。<br /><br /></span><span style="color: #0000BB">$imagick&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Imagick</span><span style="color: #007700">(</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">"Test.gif"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$imagick&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">coalesceImages</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$totalFrames&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getNumberImages</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$frameCount&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$imagick&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$frame</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setImageTicksPerSecond</span><span style="color: #007700">(</span><span style="color: #0000BB">50</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$frameCount&nbsp;</span><span style="color: #007700">&lt;&nbsp;(</span><span style="color: #0000BB">$totalFrames&nbsp;</span><span style="color: #007700">/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;フレームの表示時間を元の二倍にします<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setImageTicksPerSecond</span><span style="color: #007700">(</span><span style="color: #0000BB">50</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;フレームの表示時間を元の半分にします<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setImageTicksPerSecond</span><span style="color: #007700">(</span><span style="color: #0000BB">200</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$frameCount</span><span style="color: #007700">++;<br />}<br /><br /></span><span style="color: #0000BB">$imagick&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">deconstructImages</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">writeImages</span><span style="color: #007700">(</span><span style="color: #DD0000">"/path/to/save/output.gif"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>

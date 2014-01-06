@@ -30,7 +30,7 @@
    ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>dio_open()</strong></span> は、ファイルをオープンして
+   <span class="function"><strong>dio_open()</strong></span> は、ファイルをオープンして
    そのファイル記述子を返します。
   </p>
  </div>
@@ -40,9 +40,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">filename</code></em></dt>
 
-     <span class="term"><em><code class="parameter">filename</code></em></span>
      <dd>
 
       <p class="para">
@@ -50,11 +51,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -89,7 +90,7 @@
          <p class="para">
           <strong><code>O_EXCL</code></strong> - <strong><code>O_CREAT</code></strong>
           および <strong><code>O_EXCL</code></strong> をともに指定すると、
-          すでにファイルが存在する場合に  <span class="function"><strong>dio_open()</strong></span>
+          すでにファイルが存在する場合に <span class="function"><strong>dio_open()</strong></span>
           が失敗します。
          </p>
         </li> 
@@ -120,11 +121,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">mode</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">mode</code></em></span>
      <dd>
 
       <p class="para">
@@ -140,8 +141,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -156,7 +156,7 @@
 
  <div class="refsect1 examples" id="refsect1-function.dio-open-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-2329">
+  <div class="example" id="example-2330">
    <p><strong>例1 ファイル記述子をオープンする</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -172,7 +172,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.dio-close.html" class="function" rel="rdfs-seeAlso">dio_close()</a> - fd で指定したファイル記述子を閉じる</span></li>
+    <li class="member"><span class="function"><a href="function.dio-close.html" class="function" rel="rdfs-seeAlso">dio_close()</a> - fd で指定したファイル記述子を閉じる</span></li>
    </ul>
   </p>
  </div>

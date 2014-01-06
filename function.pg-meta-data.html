@@ -28,7 +28,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_meta_data()</strong></span> は、<em>table_name</em>
+   <span class="function"><strong>pg_meta_data()</strong></span> は、<em>table_name</em>
    のテーブル定義を配列として返します。
   </p>
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -44,9 +44,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">connection</code></em></dt>
 
-     <span class="term"><em><code class="parameter">connection</code></em></span>
      <dd>
 
       <p class="para">
@@ -54,11 +55,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">table_name</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">table_name</code></em></span>
      <dd>
 
       <p class="para">
@@ -66,8 +67,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -85,7 +85,7 @@
  <div class="refsect1 examples" id="refsect1-function.pg-meta-data-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2098">
+   <div class="example" id="example-2099">
     <p><strong>例1 テーブルのメタデータを得る</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -149,7 +149,7 @@ array(5) {
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-convert.html" class="function" rel="rdfs-seeAlso">pg_convert()</a> - 連想配列の値を、SQL 文として実行可能な形式に変換する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-convert.html" class="function" rel="rdfs-seeAlso">pg_convert()</a> - 連想配列の値を、SQL 文として実行可能な形式に変換する</span></li>
    </ul>
   </p>
  </div>

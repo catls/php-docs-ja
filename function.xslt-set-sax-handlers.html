@@ -26,14 +26,14 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>xslt_set_sax_handlers()</strong></span> は、与えられた XSLT
+   <span class="function"><strong>xslt_set_sax_handlers()</strong></span> は、与えられた XSLT
    <em><code class="parameter">processor</code></em> リソースに文章のための SAX ハンドラ
    <em><code class="parameter">handlers</code></em> を設定します。
   </p>
   <p class="para">
-    <span class="function"><strong>xslt_set_sax_handlers()</strong></span> を使用することは、
-    <span class="function"><a href="function.xslt-process.html" class="function">xslt_process()</a></span> を使用した変換の結果を
-    <span class="function"><a href="function.xml-parse.html" class="function">xml_parse()</a></span> のような SAX パーサで実行することと比べて
+   <span class="function"><strong>xslt_set_sax_handlers()</strong></span> を使用することは、
+   <span class="function"><a href="function.xslt-process.html" class="function">xslt_process()</a></span> を使用した変換の結果を
+   <span class="function"><a href="function.xml-parse.html" class="function">xml_parse()</a></span> のような SAX パーサで実行することと比べて
    あまり難しく見えません。
   </p>
  </div>
@@ -45,16 +45,17 @@
    <dl>
 
     <dt>
-<span class="term"><em><code class="parameter">
-processor</code></em></span><dd>
-<p class="para"> <span class="function"><a href="function.xslt-create.html" class="function">xslt_create()</a></span> で作成した
+<em><code class="parameter">
+processor</code></em></dt>
+<dd>
+<p class="para"><span class="function"><a href="function.xslt-create.html" class="function">xslt_create()</a></span> で作成した
 <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> プロセッサリンク ID。</p></dd>
 
-</dt>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">handlers</code></em></dt>
 
-     <span class="term"><em><code class="parameter">handlers</code></em></span>
      <dd>
 
       <p class="para">
@@ -85,7 +86,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">start_doc</span></span>
+          <span class="methodname"><span class="replaceable">start_doc</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           )</div>
 
@@ -94,7 +95,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">end_doc</span></span>
+          <span class="methodname"><span class="replaceable">end_doc</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           )</div>
 
@@ -103,7 +104,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">start_element</span></span>
+          <span class="methodname"><span class="replaceable">start_element</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
           , <span class="methodparam"><span class="type">array</span> <code class="parameter">$attributes</code></span>
@@ -114,7 +115,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">end_element</span></span>
+          <span class="methodname"><span class="replaceable">end_element</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
           )</div>
@@ -124,7 +125,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">start_namespace</span></span>
+          <span class="methodname"><span class="replaceable">start_namespace</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$uri</code></span>
@@ -135,7 +136,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">end_namespace</span></span>
+          <span class="methodname"><span class="replaceable">end_namespace</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$prefix</code></span>
           )</div>
@@ -145,7 +146,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">comment</span></span>
+          <span class="methodname"><span class="replaceable">comment</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$contents</code></span>
           )</div>
@@ -155,7 +156,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">pi</span></span>
+          <span class="methodname"><span class="replaceable">pi</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$target</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$contents</code></span>
@@ -166,7 +167,7 @@ processor</code></em></span><dd>
         <li class="listitem">
          <p class="para">
          <div class="methodsynopsis dc-description">
-           <span class="methodname"><span class="replaceable">characters</span></span>
+          <span class="methodname"><span class="replaceable">characters</span></span>
            ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$processor</code></span>
           , <span class="methodparam"><span class="type">string</span> <code class="parameter">$contents</code></span>
           )</div>
@@ -177,8 +178,7 @@ processor</code></em></span><dd>
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -196,8 +196,8 @@ processor</code></em></span><dd>
  
  <div class="refsect1 examples" id="refsect1-function.xslt-set-sax-handlers-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-5555">
-   <p><strong>例1  <span class="function"><strong>xslt_set_sax_handlers()</strong></span> の例</strong></p>
+  <div class="example" id="example-5557">
+   <p><strong>例1 <span class="function"><strong>xslt_set_sax_handlers()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;ohlesbeauxjours&nbsp;at&nbsp;yahoo&nbsp;dot&nbsp;fr&nbsp;より。<br />//&nbsp;これは、全ての&nbsp;&lt;auteur&gt;&nbsp;タグの内容に&nbsp;strtoupper()&nbsp;を適用し、<br />//&nbsp;結果の&nbsp;XML&nbsp;ツリーを表示する、というシンプルな例です。<br /><br /></span><span style="color: #0000BB">$xml</span><span style="color: #007700">=</span><span style="color: #DD0000">'&lt;?xml&nbsp;version="1.0"?&gt;<br />&lt;books&gt;<br />&nbsp;&lt;book&gt;<br />&nbsp;&nbsp;&lt;title&gt;Mme&nbsp;Bovary&lt;/title&gt;<br />&nbsp;&nbsp;&lt;author&gt;Gustave&nbsp;Flaubert&lt;/author&gt;<br />&nbsp;&lt;/book&gt;<br />&nbsp;&lt;book&gt;<br />&nbsp;&nbsp;&lt;title&gt;Mrs&nbsp;Dalloway&lt;/title&gt;<br />&nbsp;&nbsp;&lt;author&gt;Virginia&nbsp;Woolf&lt;/author&gt;<br />&nbsp;&lt;/book&gt;<br />&lt;/books&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$xsl</span><span style="color: #007700">=</span><span style="color: #DD0000">'&lt;?xml&nbsp;version="1.0"?&gt;<br />&lt;xsl:stylesheet&nbsp;version="1.0"&nbsp;xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;<br />&lt;xsl:output&nbsp;method="html"&nbsp;encoding="ISO-8859-1"&nbsp;indent="no"&nbsp;omit-xml-declaration="yes"/&gt;<br />&lt;xsl:template&nbsp;match="/"&gt;<br />&nbsp;&lt;xsl:for-each&nbsp;select="books/book"&gt;<br />&nbsp;&nbsp;&lt;livre&gt;<br />&nbsp;&nbsp;&nbsp;&lt;auteur&gt;&lt;xsl:value-of&nbsp;select="author/text()"/&gt;&lt;/auteur&gt;<br />&nbsp;&nbsp;&lt;/livre&gt;<br />&nbsp;&lt;/xsl:for-each&gt;<br />&lt;/xsl:template&gt;<br />&lt;/xsl:stylesheet&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;ハンドラ&nbsp;:<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">start_document</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;文章の読み込みを開始する<br /></span><span style="color: #007700">}<br /><br />function&nbsp;</span><span style="color: #0000BB">end_document</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;文章の読み込みを終了する<br /></span><span style="color: #007700">}<br /><br />function&nbsp;</span><span style="color: #0000BB">start_element</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$attributes</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">,</span><span style="color: #0000BB">$tag</span><span style="color: #007700">;<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"&lt;"</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$tag&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">end_element</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">;<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">"&lt;/"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&gt;"</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">characters</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">,</span><span style="color: #0000BB">$tag</span><span style="color: #007700">;<br />&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$tag&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #DD0000">"auteur"&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br />&nbsp;&nbsp;}<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;変換する&nbsp;:<br /></span><span style="color: #0000BB">$xh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">xslt_create</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$handlers&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"document"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"start_document"</span><span style="color: #007700">,</span><span style="color: #DD0000">"end_document"</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"element"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"start_element"</span><span style="color: #007700">,</span><span style="color: #DD0000">"end_element"</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"character"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"characters"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">xslt_set_sax_handlers</span><span style="color: #007700">(</span><span style="color: #0000BB">$xh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$handlers</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">xslt_process</span><span style="color: #007700">(</span><span style="color: #0000BB">$xh</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'arg:/_xml'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'arg:/_xsl'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"/_xml"</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">$xml</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/_xsl"</span><span style="color: #007700">=&gt;</span><span style="color: #0000BB">$xsl</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">xslt_free</span><span style="color: #007700">(</span><span style="color: #0000BB">$xh</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -208,9 +208,9 @@ processor</code></em></span><dd>
   </div>
   <p class="para">
    オブジェクト内にハンドラを実装したい場合、
-    <span class="function"><a href="function.xslt-set-object.html" class="function">xslt_set_object()</a></span> を使用することもできます。
+   <span class="function"><a href="function.xslt-set-object.html" class="function">xslt_set_object()</a></span> を使用することもできます。
   </p>
-  <div class="example" id="example-5556">
+  <div class="example" id="example-5558">
    <p><strong>例2 オブジェクト指向ハンドラ</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

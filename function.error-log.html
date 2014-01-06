@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">message</code></em></dt>
 
-     <span class="term"><em><code class="parameter">message</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,11 +49,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">message_type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">message_type</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,7 +61,7 @@
       </p>
       <p class="para">
        <table class="doctable table">
-        <caption><strong> <span class="function"><strong>error_log()</strong></span> ログタイプ</strong></caption>
+        <caption><strong><span class="function"><strong>error_log()</strong></span> ログタイプ</strong></caption>
         
          <tbody class="tbody">
           <tr>
@@ -117,11 +118,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">destination</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">destination</code></em></span>
      <dd>
 
       <p class="para">
@@ -130,23 +131,22 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">extra_headers</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">extra_headers</code></em></span>
      <dd>
 
       <p class="para">
        追加のヘッダ。<em><code class="parameter">message_type</code></em> パラメータが
        <em>1</em> に設定される場合に利用されます。
-       このメッセージタイプは、 <span class="function"><a href="function.mail.html" class="function">mail()</a></span> と同様に
+       このメッセージタイプは、<span class="function"><a href="function.mail.html" class="function">mail()</a></span> と同様に
        内部関数を利用します。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -165,7 +165,7 @@
   <h3 class="title">注意</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="simpara">
-     <span class="function"><strong>error_log()</strong></span> はバイナリセーフではありません。
+    <span class="function"><strong>error_log()</strong></span> はバイナリセーフではありません。
     <em><code class="parameter">message</code></em> に null 文字があれば、そこで切り詰められます。
    </p>
   </div>
@@ -173,8 +173,8 @@
    <p class="simpara">
     <em><code class="parameter">message</code></em> に null 文字を含めてはいけません。
     <em><code class="parameter">message</code></em> の送り先はファイルやメール、そして syslog などになることもあります。
-     <span class="function"><a href="function.base64-encode.html" class="function">base64_encode()</a></span> や  <span class="function"><a href="function.rawurlencode.html" class="function">rawurlencode()</a></span>、 <span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span>
-    などの関数で適切に変換してから  <span class="function"><strong>error_log()</strong></span> に渡す必要があります。
+    <span class="function"><a href="function.base64-encode.html" class="function">base64_encode()</a></span> や <span class="function"><a href="function.rawurlencode.html" class="function">rawurlencode()</a></span>、<span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span>
+    などの関数で適切に変換してから <span class="function"><strong>error_log()</strong></span> に渡す必要があります。
    </p>
   </div>
  </div>
@@ -183,8 +183,8 @@
  <div class="refsect1 examples" id="refsect1-function.error-log-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-451">
-    <p><strong>例1  <span class="function"><strong>error_log()</strong></span> の例</strong></p>
+   <div class="example" id="example-452">
+    <p><strong>例1 <span class="function"><strong>error_log()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;データベースに接続できない場合、<br />//&nbsp;サーバーログを通してエラーを通知する。<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">Ora_Logon</span><span style="color: #007700">(</span><span style="color: #0000BB">$username</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">error_log</span><span style="color: #007700">(</span><span style="color: #DD0000">"オラクルのデータベースが使用できません!"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;FOO&nbsp;に失敗したら、管理者に&nbsp;email&nbsp;で通知する<br /></span><span style="color: #007700">if&nbsp;(!(</span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">allocate_new_foo</span><span style="color: #007700">()))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">error_log</span><span style="color: #007700">(</span><span style="color: #DD0000">"大変です。FOO&nbsp;に失敗しました!"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"operator@example.com"</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;これ以外の&nbsp;error_log()&nbsp;のコール方法：<br /></span><span style="color: #0000BB">error_log</span><span style="color: #007700">(</span><span style="color: #DD0000">"大変だ!"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/var/tmp/my-errors.log"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

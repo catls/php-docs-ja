@@ -28,7 +28,7 @@
   <p class="para rdfs-comment">
    一意なテンポラリファイル名を、パーミッションを 0600 に設定し、
    指定したディレクトリに作成します。
-   指定したディレクトリが存在しない場合、 <span class="function"><strong>tempnam()</strong></span>
+   指定したディレクトリが存在しない場合、<span class="function"><strong>tempnam()</strong></span>
    はシステムのテンポラリディレクトリにあるファイル名を生成し、
    その名前を返します。
   </p>
@@ -40,9 +40,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">dir</code></em></dt>
 
-     <span class="term"><em><code class="parameter">dir</code></em></span>
      <dd>
 
       <p class="para">
@@ -50,11 +51,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">prefix</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">prefix</code></em></span>
      <dd>
 
       <p class="para">
@@ -67,8 +68,7 @@
       </p></blockquote>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -100,7 +100,7 @@
       <tr>
        <td>4.0.6</td>
        <td>
-        PHP 4.0.6 より前では、関数  <span class="function"><strong>tempnam()</strong></span>
+        PHP 4.0.6 より前では、関数 <span class="function"><strong>tempnam()</strong></span>
         の動作はシステムに依存していました。Windows において <var class="varname"><var class="varname">TMP</var></var> 環境変数は
         <em><code class="parameter">dir</code></em> パラメータを上書きします。Linux においては、
         <var class="varname"><var class="varname">TMPDIR</var></var> 環境変数が優先されます。一方 SVR4 においては、
@@ -132,8 +132,8 @@
  <div class="refsect1 examples" id="refsect1-function.tempnam-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2433">
-    <p><strong>例1  <span class="function"><strong>tempnam()</strong></span> の例</strong></p>
+   <div class="example" id="example-2434">
+    <p><strong>例1 <span class="function"><strong>tempnam()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$tmpfname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">tempnam</span><span style="color: #007700">(</span><span style="color: #DD0000">"/tmp"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"FOO"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$tmpfname</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"writing&nbsp;to&nbsp;tempfile"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ここで何か行う<br /><br /></span><span style="color: #0000BB">unlink</span><span style="color: #007700">(</span><span style="color: #0000BB">$tmpfname</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -164,9 +164,9 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.tmpfile.html" class="function" rel="rdfs-seeAlso">tmpfile()</a> - テンポラリファイルを作成する</span></li>
-    <li class="member"> <span class="function"><a href="function.sys-get-temp-dir.html" class="function" rel="rdfs-seeAlso">sys_get_temp_dir()</a> - 一時ファイル用に使用されるディレクトリのパスを返す</span></li>
-    <li class="member"> <span class="function"><a href="function.unlink.html" class="function" rel="rdfs-seeAlso">unlink()</a> - ファイルを削除する</span></li>
+    <li class="member"><span class="function"><a href="function.tmpfile.html" class="function" rel="rdfs-seeAlso">tmpfile()</a> - テンポラリファイルを作成する</span></li>
+    <li class="member"><span class="function"><a href="function.sys-get-temp-dir.html" class="function" rel="rdfs-seeAlso">sys_get_temp_dir()</a> - 一時ファイル用に使用されるディレクトリのパスを返す</span></li>
+    <li class="member"><span class="function"><a href="function.unlink.html" class="function" rel="rdfs-seeAlso">unlink()</a> - ファイルを削除する</span></li>
    </ul>
   </p>
  </div>

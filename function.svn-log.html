@@ -29,7 +29,7 @@
   ]]]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>svn_log()</strong></span> は、指定したリビジョン URL
+   <span class="function"><strong>svn_log()</strong></span> は、指定したリビジョン URL
    <em><code class="parameter">repos_url</code></em> の中身の完全な履歴を返します。
    <em><code class="parameter">start_revision</code></em> を指定した場合は、そのリビジョンの履歴を返します。
    この関数は、<strong class="userinput"><code>svn log --verbose -r $start_revision $repos_url</code></strong>
@@ -43,9 +43,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">repos_url</code></em></dt>
 
-     <span class="term"><em><code class="parameter">repos_url</code></em></span>
      <dd>
 
       <p class="para">
@@ -53,11 +54,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">start_revision</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">start_revision</code></em></span>
      <dd>
 
       <p class="para">
@@ -66,11 +67,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">end_revision</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">end_revision</code></em></span>
      <dd>
 
       <p class="para">
@@ -81,11 +82,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">limit</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">limit</code></em></span>
      <dd>
 
       <p class="para">
@@ -93,11 +94,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -107,8 +108,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -210,8 +210,8 @@
  <div class="refsect1 examples" id="refsect1-function.svn-log-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4667">
-    <p><strong>例1  <span class="function"><strong>svn_log()</strong></span> の例</strong></p>
+   <div class="example" id="example-4669">
+    <p><strong>例1 <span class="function"><strong>svn_log()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">svn_log</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">23</span><span style="color: #007700">)&nbsp;);<br /></span><span style="color: #0000BB">?&gt;</span>

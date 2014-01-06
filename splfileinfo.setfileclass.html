@@ -13,7 +13,7 @@
 </div><hr /><div id="splfileinfo.setfileclass" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">SplFileInfo::setFileClass</h1>
-  <p class="verinfo">(PHP 5 &gt;= 5.1.2)</p><p class="refpurpose"><span class="refname">SplFileInfo::setFileClass</span> &mdash; <span class="dc-title"> <span class="methodname"><a href="splfileinfo.openfile.html" class="methodname">SplFileInfo::openFile()</a></span> で使用するクラス名を設定する</span></p>
+  <p class="verinfo">(PHP 5 &gt;= 5.1.2)</p><p class="refpurpose"><span class="refname">SplFileInfo::setFileClass</span> &mdash; <span class="dc-title"><span class="methodname"><a href="splfileinfo.openfile.html" class="methodname">SplFileInfo::openFile()</a></span> で使用するクラス名を設定する</span></p>
 
  </div>
 
@@ -36,9 +36,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">class_name</code></em></dt>
 
-     <span class="term"><em><code class="parameter">class_name</code></em></span>
      <dd>
 
       <p class="para">
@@ -46,8 +47,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -66,8 +66,8 @@
  <div class="refsect1 examples" id="refsect1-splfileinfo.setfileclass-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3941">
-    <p><strong>例1  <span class="function"><strong>SplFileInfo::setFileClass()</strong></span> の例</strong></p>
+   <div class="example" id="example-3943">
+    <p><strong>例1 <span class="function"><strong>SplFileInfo::setFileClass()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;SplFileObject&nbsp;を継承したクラスを作成します<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyFoo&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">SplFileObject&nbsp;</span><span style="color: #007700">{}<br /><br /></span><span style="color: #0000BB">$info&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SplFileInfo</span><span style="color: #007700">(</span><span style="color: #0000BB">__FILE__</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;使用するクラスを設定します<br /></span><span style="color: #0000BB">$info</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setFileClass</span><span style="color: #007700">(</span><span style="color: #DD0000">'MyFoo'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$info</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">openFile</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -91,7 +91,7 @@ object(MyFoo)#2 (0) { }
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="methodname"><a href="splfileinfo.openfile.html" class="methodname" rel="rdfs-seeAlso">SplFileInfo::openFile()</a> - ファイルの SplFileObject オブジェクトを取得する</span></li>
+    <li class="member"><span class="methodname"><a href="splfileinfo.openfile.html" class="methodname" rel="rdfs-seeAlso">SplFileInfo::openFile()</a> - ファイルの SplFileObject オブジェクトを取得する</span></li>
    </ul>
   </p>
  </div>

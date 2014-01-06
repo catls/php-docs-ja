@@ -27,7 +27,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>version_compare()</strong></span>は、ふたつの &quot;PHP 標準&quot; バージョン
+   <span class="function"><strong>version_compare()</strong></span>は、ふたつの &quot;PHP 標準&quot; バージョン
    番号文字列を比較します。この関数は、いくつかのバージョンの PHP でのみ
    動作するプログラムを書きたい場合に有用です。
   </p>
@@ -57,9 +57,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">version1</code></em></dt>
 
-     <span class="term"><em><code class="parameter">version1</code></em></span>
      <dd>
 
       <p class="para">
@@ -67,11 +68,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">version2</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">version2</code></em></span>
      <dd>
 
       <p class="para">
@@ -79,11 +80,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">operator</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">operator</code></em></span>
      <dd>
 
       <p class="para">
@@ -103,8 +104,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -114,7 +114,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.version-compare-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   デフォルトでは、 <span class="function"><strong>version_compare()</strong></span> の返り値は
+   デフォルトでは、<span class="function"><strong>version_compare()</strong></span> の返り値は
    最初のバージョンが 2 番目のバージョンより小さい場合に <em>-1</em>、
    同じ場合に <em>0</em>、そして 2 番目のバージョンのほうが小さい場合に
    <em>1</em> となります。
@@ -134,8 +134,8 @@
    この定数には、コードを実行している PHP のバージョンが格納されています。
   </p>
   <p class="para">
-   <div class="example" id="example-522">
-    <p><strong>例1  <span class="function"><strong>version_compare()</strong></span> の例</strong></p>
+   <div class="example" id="example-523">
+    <p><strong>例1 <span class="function"><strong>version_compare()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">version_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_VERSION</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'6.0.0'</span><span style="color: #007700">)&nbsp;&gt;=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'6.0.0&nbsp;より新しいバージョンの&nbsp;PHP&nbsp;を使っています。バージョンは&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_VERSION&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;です。\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">version_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_VERSION</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'5.3.0'</span><span style="color: #007700">)&nbsp;&gt;=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'5.3.0&nbsp;より新しいバージョンの&nbsp;PHP&nbsp;を使っています。バージョンは&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_VERSION&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;です。\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">version_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_VERSION</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'5.0.0'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&gt;='</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'PHP&nbsp;5&nbsp;を使っています。バージョンは&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_VERSION&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;です。\n"</span><span style="color: #007700">;<br />}<br /><br />if&nbsp;(</span><span style="color: #0000BB">version_compare</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_VERSION</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'5.0.0'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&lt;'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'PHP&nbsp;4&nbsp;を使っています。バージョンは&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_VERSION&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;です。\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -167,8 +167,8 @@
     <em>alpha</em> や
     <em>beta</em> のようなバージョン文字列は、大文字小文字を区別します。
     したがって、どこかから取得したバージョン文字列を PHP の標準に従わせるなら、
-    まず  <span class="function"><a href="function.strtolower.html" class="function">strtolower()</a></span> で小文字化してから
-     <span class="function"><strong>version_compare()</strong></span> を呼ぶ必要があります。
+    まず <span class="function"><a href="function.strtolower.html" class="function">strtolower()</a></span> で小文字化してから
+    <span class="function"><strong>version_compare()</strong></span> を呼ぶ必要があります。
    </p>
   </p></blockquote>
  </div>
@@ -178,9 +178,9 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.phpversion.html" class="function" rel="rdfs-seeAlso">phpversion()</a> - 現在の PHP バージョンを取得する</span></li>
-    <li class="member"> <span class="function"><a href="function.php-uname.html" class="function" rel="rdfs-seeAlso">php_uname()</a> - PHP が稼動しているオペレーティングシステムに関する情報を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.function-exists.html" class="function" rel="rdfs-seeAlso">function_exists()</a> - 指定した関数が定義されている場合に TRUE を返す</span></li>
+    <li class="member"><span class="function"><a href="function.phpversion.html" class="function" rel="rdfs-seeAlso">phpversion()</a> - 現在の PHP バージョンを取得する</span></li>
+    <li class="member"><span class="function"><a href="function.php-uname.html" class="function" rel="rdfs-seeAlso">php_uname()</a> - PHP が稼動しているオペレーティングシステムに関する情報を返す</span></li>
+    <li class="member"><span class="function"><a href="function.function-exists.html" class="function" rel="rdfs-seeAlso">function_exists()</a> - 指定した関数が定義されている場合に TRUE を返す</span></li>
    </ul>
   </p>
  </div>

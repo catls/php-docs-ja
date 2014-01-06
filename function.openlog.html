@@ -27,11 +27,11 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>openlog()</strong></span> は、プログラムによるシステムロガーへの接続をオープンします。
+   <span class="function"><strong>openlog()</strong></span> は、プログラムによるシステムロガーへの接続をオープンします。
   </p>
   <p class="para"> 
-    <span class="function"><strong>openlog()</strong></span> の使用は必須ではありません。この関数は、
-   必要に応じて  <span class="function"><a href="function.syslog.html" class="function">syslog()</a></span> により自動的に呼び出されます。
+   <span class="function"><strong>openlog()</strong></span> の使用は必須ではありません。この関数は、
+   必要に応じて <span class="function"><a href="function.syslog.html" class="function">syslog()</a></span> により自動的に呼び出されます。
    この場合、<em><code class="parameter">ident</code></em> のデフォルト値は
    <strong><code>FALSE</code></strong> となります。
   </p>
@@ -43,9 +43,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">ident</code></em></dt>
 
-     <span class="term"><em><code class="parameter">ident</code></em></span>
      <dd>
 
       <p class="para">
@@ -53,18 +54,18 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">option</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">option</code></em></span>
      <dd>
 
       <p class="para">
        <em><code class="parameter">option</code></em> 引数は、
        ログメッセージの生成時に使用されるロギング用オプションを指定します。
        <table class="doctable table">
-        <caption><strong> <span class="function"><strong>openlog()</strong></span> のオプション</strong></caption>
+        <caption><strong><span class="function"><strong>openlog()</strong></span> のオプション</strong></caption>
         
          <thead>
           <tr>
@@ -120,11 +121,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">facility</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">facility</code></em></span>
      <dd>
 
       <p class="para">
@@ -133,7 +134,7 @@
        (使用するシステムの syslog の設定に関して) 異なった facility 
        を有するメッセージをどのように処理するかを指定できるようになります。
        <table class="doctable table">
-        <caption><strong> <span class="function"><strong>openlog()</strong></span> の機能</strong></caption>
+        <caption><strong><span class="function"><strong>openlog()</strong></span> の機能</strong></caption>
         
          <thead>
           <tr>
@@ -220,8 +221,7 @@
       </p></blockquote>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -240,8 +240,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.syslog.html" class="function" rel="rdfs-seeAlso">syslog()</a> - システムログのメッセージを生成する</span></li>
-    <li class="member"> <span class="function"><a href="function.closelog.html" class="function" rel="rdfs-seeAlso">closelog()</a> - システムログへの接続を閉じる</span></li>
+    <li class="member"><span class="function"><a href="function.syslog.html" class="function" rel="rdfs-seeAlso">syslog()</a> - システムログのメッセージを生成する</span></li>
+    <li class="member"><span class="function"><a href="function.closelog.html" class="function" rel="rdfs-seeAlso">closelog()</a> - システムログへの接続を閉じる</span></li>
    </ul>
   </p>
  </div>

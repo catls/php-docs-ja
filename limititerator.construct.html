@@ -20,7 +20,7 @@
  <div class="refsect1 description" id="refsect1-limititerator.construct-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span>  <span class="methodname"><strong>LimitIterator::__construct</strong></span>
+   <span class="modifier">public</span> <span class="methodname"><strong>LimitIterator::__construct</strong></span>
     ( <span class="methodparam"><span class="type"><a href="class.iterator.html" class="type Iterator">Iterator</a></span> <code class="parameter">$iterator</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code><span class="initializer"> = 0</span></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$count</code><span class="initializer"> = -1</span></span>
@@ -39,9 +39,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">iterator</code></em></dt>
 
-     <span class="term"><em><code class="parameter">iterator</code></em></span>
      <dd>
 
       <p class="para">
@@ -49,11 +50,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">offset</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">offset</code></em></span>
      <dd>
 
       <p class="para">
@@ -61,11 +62,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">count</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">count</code></em></span>
      <dd>
 
       <p class="para">
@@ -73,8 +74,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -102,8 +102,8 @@
  <div class="refsect1 examples" id="refsect1-limititerator.construct-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3882">
-    <p><strong>例1  <span class="function"><strong>LimitIterator::__construct()</strong></span> の例</strong></p>
+   <div class="example" id="example-3884">
+    <p><strong>例1 <span class="function"><strong>LimitIterator::__construct()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$ait&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ArrayIterator</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'c'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'d'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'e'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$lit&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">LimitIterator</span><span style="color: #007700">(</span><span style="color: #0000BB">$ait</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br />foreach&nbsp;(</span><span style="color: #0000BB">$lit&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$value&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

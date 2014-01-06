@@ -66,9 +66,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">str</code></em></dt>
 
-     <span class="term"><em><code class="parameter">str</code></em></span>
      <dd>
 
       <p class="para">
@@ -76,11 +77,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">from</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">from</code></em></span>
      <dd>
 
       <p class="para">
@@ -88,11 +89,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">to</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">to</code></em></span>
      <dd>
 
       <p class="para">
@@ -100,11 +101,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">replace_pairs</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">replace_pairs</code></em></span>
      <dd>
 
       <p class="para">
@@ -115,8 +116,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -141,8 +141,8 @@
  <div class="refsect1 examples" id="refsect1-function.strtr-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4908">
-    <p><strong>例1  <span class="function"><strong>strtr()</strong></span> の例</strong></p>
+   <div class="example" id="example-4910">
+    <p><strong>例1 <span class="function"><strong>strtr()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;この形式の場合、strtr()&nbsp;はバイト単位での変換を行います。<br />//&nbsp;したがって、ここではシングルバイトエンコーディングを想定しています。<br /></span><span style="color: #0000BB">$addr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #0000BB">$addr</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"äåö"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"aao"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -153,13 +153,13 @@
    </div>
   </p>
   <p class="para">
-   次の例は、引数を二つだけ指定して  <span class="function"><strong>strtr()</strong></span>
+   次の例は、引数を二つだけ指定して <span class="function"><strong>strtr()</strong></span>
    をコールしたときの挙動を示すものです。置換の優先度
    (<em>&quot;h&quot;</em> よりもっと長いキーに一致しているので、この置換は行われていないこと)、
    そして一度置換した文字列はもう置換の対象にならないことを確認しましょう。
   </p>
-  <div class="example" id="example-4909">
-   <p><strong>例2 2 つの引数を伴う  <span class="function"><strong>strtr()</strong></span> の例</strong></p>
+  <div class="example" id="example-4911">
+   <p><strong>例2 2 つの引数を伴う <span class="function"><strong>strtr()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$trans&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"h"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"-"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hello"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"hi"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hi"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"hello"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"hi&nbsp;all,&nbsp;I&nbsp;said&nbsp;hello"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -176,10 +176,10 @@ hello all, I said hi
   </div>
   <p class="para">
    これらふたつのモードの挙動は大きく異なります。引数が三つの場合は
-    <span class="function"><strong>strtr()</strong></span> はバイト単位で置換し、二つの場合はより長い部分文字列を置換します。
+   <span class="function"><strong>strtr()</strong></span> はバイト単位で置換し、二つの場合はより長い部分文字列を置換します。
   </p>
-  <div class="example" id="example-4910">
-   <p><strong>例3  <span class="function"><strong>strtr()</strong></span> の挙動の比較</strong></p>
+  <div class="example" id="example-4912">
+   <p><strong>例3 <span class="function"><strong>strtr()</strong></span> の挙動の比較</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"baab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"01"</span><span style="color: #007700">),</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$trans&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"ab"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"01"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"baab"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -202,8 +202,8 @@ ba01
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.str-replace.html" class="function" rel="rdfs-seeAlso">str_replace()</a> - 検索文字列に一致したすべての文字列を置換する</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - 正規表現検索および置換を行う</span></li>
+    <li class="member"><span class="function"><a href="function.str-replace.html" class="function" rel="rdfs-seeAlso">str_replace()</a> - 検索文字列に一致したすべての文字列を置換する</span></li>
+    <li class="member"><span class="function"><a href="function.preg-replace.html" class="function" rel="rdfs-seeAlso">preg_replace()</a> - 正規表現検索および置換を行う</span></li>
    </ul>
   </p>
  </div>

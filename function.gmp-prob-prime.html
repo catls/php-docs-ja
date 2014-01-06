@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">a</code></em></dt>
 
-     <span class="term"><em><code class="parameter">a</code></em></span>
      <dd>
 
       <p class="para">
@@ -49,11 +50,11 @@
 あるいは数値に変換可能な数値形式の文字列。</p> 
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">reps</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">reps</code></em></span>
      <dd>
 
       <p class="para">
@@ -65,8 +66,7 @@
 あるいは数値に変換可能な数値形式の文字列。</p> 
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -86,8 +86,8 @@
  <div class="refsect1 examples" id="refsect1-function.gmp-prob-prime-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3426">
-    <p><strong>例1  <span class="function"><strong>gmp_prob_prime()</strong></span> の例</strong></p>
+   <div class="example" id="example-3427">
+    <p><strong>例1 <span class="function"><strong>gmp_prob_prime()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;明らかに素数ではありません<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_prob_prime</span><span style="color: #007700">(</span><span style="color: #DD0000">"6"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;おそらく素数です<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_prob_prime</span><span style="color: #007700">(</span><span style="color: #DD0000">"1111111111111111111"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;明らかに素数です<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_prob_prime</span><span style="color: #007700">(</span><span style="color: #DD0000">"11"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>

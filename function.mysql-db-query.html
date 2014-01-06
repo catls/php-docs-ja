@@ -27,8 +27,8 @@
 <a href="faq.databases.html#faq.databases.mysql.deprecated" class="link">それに関連する FAQ</a> を参照ください。
 この関数の代替として、これらが使えます。</p>
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="mysqli.select-db.html" class="function">mysqli_select_db()</a></span> してからクエリーを実行</li>
-    <li class="member"> <span class="methodname"><a href="pdo.construct.html" class="methodname">PDO::__construct()</a></span></li>
+    <li class="member"><span class="function"><a href="mysqli.select-db.html" class="function">mysqli_select_db()</a></span> してからクエリーを実行</li>
+    <li class="member"><span class="methodname"><a href="pdo.construct.html" class="methodname">PDO::__construct()</a></span></li>
    </ul>
   </div>
  </div>
@@ -43,7 +43,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>mysql_db_query()</strong></span> はデータベースを選択し、
+   <span class="function"><strong>mysql_db_query()</strong></span> はデータベースを選択し、
    そこでクエリーを実行します。
   </p>
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は PHP 5.3.0 で
@@ -57,9 +57,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">database</code></em></dt>
 
-     <span class="term"><em><code class="parameter">database</code></em></span>
      <dd>
 
       <p class="para">
@@ -67,11 +68,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">query</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">query</code></em></span>
      <dd>
 
       <p class="para">
@@ -83,19 +84,18 @@
       </p>
      </dd>
 
-    </dt>
-
+    
     <dt>
-<span class="term"><em><code class="parameter">
-link_identifier</code></em></span><dd>
+<em><code class="parameter">
+link_identifier</code></em></dt>
+<dd>
 <p class="para">MySQL 接続。
-指定されない場合、 <span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span> により直近にオープンされたリンクが
+指定されない場合、<span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span> により直近にオープンされたリンクが
 指定されたと仮定されます。そのようなリンクがない場合、引数を指定せずに
- <span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span> がコールした時と同様にリンクを確立します。
+<span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span> がコールした時と同様にリンクを確立します。
 リンクが見付からない、または、確立できない場合、
 <strong><code>E_WARNING</code></strong> レベルのエラーが生成されます。</p></dd>
 
-</dt>
 
    </dl>
 
@@ -140,8 +140,8 @@ link_identifier</code></em></span><dd>
        <td>4.0.6</td>
        <td>
         この関数は廃止予定です。使用しないでください。かわりに
-         <span class="function"><a href="function.mysql-select-db.html" class="function">mysql_select_db()</a></span>
-        あるいは  <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span> を使用してください。
+        <span class="function"><a href="function.mysql-select-db.html" class="function">mysql_select_db()</a></span>
+        あるいは <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span> を使用してください。
        </td>
       </tr>
 
@@ -156,8 +156,8 @@ link_identifier</code></em></span><dd>
  <div class="refsect1 examples" id="refsect1-function.mysql-db-query-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-1573">
-    <p><strong>例1  <span class="function"><strong>mysql_db_query()</strong></span> の別の例</strong></p>
+   <div class="example" id="example-1574">
+    <p><strong>例1 <span class="function"><strong>mysql_db_query()</strong></span> の別の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">$link&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql_host'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;connect&nbsp;to&nbsp;mysql'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /><br />if&nbsp;(!</span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql_dbname'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Could&nbsp;not&nbsp;select&nbsp;database'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /><br /></span><span style="color: #0000BB">$sql&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SELECT&nbsp;foo&nbsp;FROM&nbsp;bar&nbsp;WHERE&nbsp;id&nbsp;=&nbsp;42'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br />if&nbsp;(!</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"DB&nbsp;Error,&nbsp;could&nbsp;not&nbsp;query&nbsp;the&nbsp;database\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'MySQL&nbsp;Error:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /><br />while&nbsp;(</span><span style="color: #0000BB">$row&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_fetch_assoc</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #0000BB">mysql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -180,7 +180,7 @@ link_identifier</code></em></span><dd>
     実行するという目的でこの関数を利用することはできないということです。
     もしそのような場合は、もとのデータベースに改めて接続しなおす必要があります。
     この関数のかわりに、SQL クエリーの中で <em>database.table</em>
-    構文を用いたり  <span class="function"><a href="function.mysql-select-db.html" class="function">mysql_select_db()</a></span> を利用したりすることが
+    構文を用いたり <span class="function"><a href="function.mysql-select-db.html" class="function">mysql_select_db()</a></span> を利用したりすることが
     強く推奨されています。
    </p>
   </p></blockquote>
@@ -191,8 +191,8 @@ link_identifier</code></em></span><dd>
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.mysql-query.html" class="function" rel="rdfs-seeAlso">mysql_query()</a> - MySQL クエリを送信する</span></li>
-    <li class="member"> <span class="function"><a href="function.mysql-select-db.html" class="function" rel="rdfs-seeAlso">mysql_select_db()</a> - MySQL データベースを選択する</span></li>
+    <li class="member"><span class="function"><a href="function.mysql-query.html" class="function" rel="rdfs-seeAlso">mysql_query()</a> - MySQL クエリを送信する</span></li>
+    <li class="member"><span class="function"><a href="function.mysql-select-db.html" class="function" rel="rdfs-seeAlso">mysql_select_db()</a> - MySQL データベースを選択する</span></li>
    </ul>
   </p>
  </div>

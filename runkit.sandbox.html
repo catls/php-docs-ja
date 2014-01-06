@@ -31,7 +31,7 @@
 
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">
 サンドボックスのサポート
-( <span class="function"><a href="function.runkit-lint.html" class="function">runkit_lint()</a></span>,  <span class="function"><a href="function.runkit-lint-file.html" class="function">runkit_lint_file()</a></span>,
+(<span class="function"><a href="function.runkit-lint.html" class="function">runkit_lint()</a></span>, <span class="function"><a href="function.runkit-lint-file.html" class="function">runkit_lint_file()</a></span>,
 および <strong class="classname">Runkit_Sandbox</strong> クラスで使用)は、
 PHP 5.1.0 以降または特別なパッチを適用した
 PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にしておく必要があります。
@@ -56,9 +56,10 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">safe_mode</code></em></dt>
 
-     <span class="term"><em><code class="parameter">safe_mode</code></em></span>
      <dd>
 
       <p class="para">
@@ -70,11 +71,11 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">safe_mode_gid</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">safe_mode_gid</code></em></span>
      <dd>
 
       <p class="para">
@@ -86,11 +87,11 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">safe_mode_include_dir</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">safe_mode_include_dir</code></em></span>
      <dd>
 
       <p class="para">
@@ -106,11 +107,11 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">open_basedir</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">open_basedir</code></em></span>
      <dd>
 
       <p class="para">
@@ -122,11 +123,11 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">allow_url_fopen</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">allow_url_fopen</code></em></span>
      <dd>
 
       <p class="para">
@@ -136,11 +137,11 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">disable_functions</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">disable_functions</code></em></span>
      <dd>
 
       <p class="para">
@@ -150,11 +151,11 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">disable_classes</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">disable_classes</code></em></span>
      <dd>
 
       <p class="para">
@@ -164,11 +165,11 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">runkit.superglobal</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">runkit.superglobal</code></em></span>
      <dd>
 
       <p class="para">
@@ -179,11 +180,11 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">runkit.internal_override</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">runkit.internal_override</code></em></span>
      <dd>
 
       <p class="para">
@@ -193,13 +194,12 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
 
-  <div class="example" id="example-527">
+  <div class="example" id="example-528">
    <p><strong>例1 機能を制限したサンドボックスのインスタンス化</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -225,7 +225,7 @@ PHP 5.0 でのみ利用可能であり、スレッドセーフを有効にして
    できないということです。
   </p>
 
-  <div class="example" id="example-528">
+  <div class="example" id="example-529">
    <p><strong>例2 サンドボックス内部の変数の扱い</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -251,14 +251,14 @@ bool(false)
   <p class="para">
    サンドボックス内で定義されている関数は、すべてサンドボックス
    オブジェクトのメソッドとしてコールできます。これには、擬似関数として
-   扱われる以下のような言語構造も含みます。 <span class="function"><a href="function.eval.html" class="function">eval()</a></span>、
-    <span class="function"><a href="function.include.html" class="function">include</a></span>、 <span class="function"><a href="function.include-once.html" class="function">include_once</a></span>、
-    <span class="function"><a href="function.require.html" class="function">require</a></span>、 <span class="function"><a href="function.require-once.html" class="function">require_once</a></span>、
-    <span class="function"><a href="function.echo.html" class="function">echo</a></span>、 <span class="function"><a href="function.print.html" class="function">print</a></span>、
-    <span class="function"><a href="function.die.html" class="function">die()</a></span> および  <span class="function"><a href="function.exit.html" class="function">exit()</a></span>。
+   扱われる以下のような言語構造も含みます。<span class="function"><a href="function.eval.html" class="function">eval()</a></span>、
+   <span class="function"><a href="function.include.html" class="function">include</a></span>、<span class="function"><a href="function.include-once.html" class="function">include_once</a></span>、
+   <span class="function"><a href="function.require.html" class="function">require</a></span>、<span class="function"><a href="function.require-once.html" class="function">require_once</a></span>、
+   <span class="function"><a href="function.echo.html" class="function">echo</a></span>、<span class="function"><a href="function.print.html" class="function">print</a></span>、
+   <span class="function"><a href="function.die.html" class="function">die()</a></span> および <span class="function"><a href="function.exit.html" class="function">exit()</a></span>。
   </p>
 
-  <div class="example" id="example-529">
+  <div class="example" id="example-530">
    <p><strong>例3 サンドボックス内の関数のコール</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -282,7 +282,7 @@ fbc
    ようにしてください。
   </p>
 
-  <div class="example" id="example-530">
+  <div class="example" id="example-531">
    <p><strong>例4 サンドボックス内の関数に引数を渡す</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

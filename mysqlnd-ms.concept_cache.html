@@ -64,7 +64,7 @@
    As of PECL/mysqlnd_ms 1.3.0-beta the plugin is capable of transparently controlling
    PECL/mysqlnd_ms 1.1.0-alpha or newer to cache a read-only query if explicitly
    allowed by setting an appropriate quality of service through
-    <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>. Please, see the
+   <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>. Please, see the
    <a href="mysqlnd-ms.quickstart.cache.html" class="link">quickstart</a> for a code example.
    Both plugins must be installed, PECL/mysqlnd_ms must be compiled to support the
    cache feature and PHP 5.4.0 or newer has to be used.
@@ -73,7 +73,7 @@
    Applications have full control of cache usage and can request fresh data
    at any time, if need be. Thec ache usage can be enabled and disabled
    time during the execution of a script. The cache will be used
-   if  <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span> sets the quality of service
+   if <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span> sets the quality of service
    to eventual consistency and enables cache usage. Cache usage is disabled by
    requesting higher consistency levels, for example,
    session consistency (read your writes). Once the quality of service has been
@@ -89,7 +89,7 @@
   <p class="para">
    The TTL of a cache entry is computed on a per statement basis. Applications
    set an maximum age for the data they want to retrieve using
-    <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>. The age sets an approximate upper limit
+   <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>. The age sets an approximate upper limit
    of how many seconds the data returned may lag behind the master.
   </p>
   <p class="para">
@@ -133,7 +133,7 @@
      <span class="simpara">
       Search for the maximum value of <em>Seconds_Behind_Master</em> from
       all slaves that passed the previous conditions. Subtract the value from
-      the maximum age provided by the user with  <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
+      the maximum age provided by the user with <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
       Use the result as a TTL.
      </span>
     </li>

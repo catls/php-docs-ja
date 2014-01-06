@@ -41,9 +41,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">pattern</code></em></dt>
 
-     <span class="term"><em><code class="parameter">pattern</code></em></span>
      <dd>
 
       <p class="para">
@@ -55,11 +56,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">replacement</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">replacement</code></em></span>
      <dd>
 
       <p class="para">
@@ -95,7 +96,7 @@
        後方参照 <em>\\1</em> の後にリテラル
        <em>1</em> が続くのか、後方参照 <em>\\11</em> で
        その後には何も続かないのかが不明のため、
-        <span class="function"><strong>preg_replace()</strong></span> を混乱させる可能性があります。
+       <span class="function"><strong>preg_replace()</strong></span> を混乱させる可能性があります。
        この場合、解決策は、<em>\${1}1</em> を使用することです。
        こうすることで、<em>1</em> はリテラルとなり、後方参照
        <em>$1</em> を明確に作成できます。
@@ -113,11 +114,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">subject</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">subject</code></em></span>
      <dd>
 
       <p class="para">
@@ -130,11 +131,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">limit</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">limit</code></em></span>
      <dd>
 
       <p class="para">
@@ -144,11 +145,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">count</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">count</code></em></span>
      <dd>
 
       <p class="para">
@@ -156,8 +157,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -167,7 +167,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.preg-replace-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    <span class="function"><strong>preg_replace()</strong></span> は、
+   <span class="function"><strong>preg_replace()</strong></span> は、
    <em><code class="parameter">subject</code></em> 引数が配列の場合は配列を、
    その他の場合は文字列を返します。
   </p>
@@ -206,7 +206,7 @@
        <td>5.5.0</td>
        <td>
         <em>/e</em> 修飾子が非推奨になりました。かわりに
-         <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> を使いましょう。
+        <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> を使いましょう。
         セキュリティ上のリスクの関する詳細は
         <a href="reference.pcre.pattern.modifiers.html#reference.pcre.pattern.modifiers.eval" class="link">PREG_REPLACE_EVAL</a>
         のドキュメントを参照ください。
@@ -245,7 +245,7 @@
  <div class="refsect1 examples" id="refsect1-function.preg-replace-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4795">
+   <div class="example" id="example-4797">
     <p><strong>例1 数字リテラルが後に続く後方参照</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -263,7 +263,7 @@ April1,2003
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4796">
+   <div class="example" id="example-4798">
     <p><strong>例2 添字配列の使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -297,7 +297,7 @@ The slow black bear jumped over the lazy dog.
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4797">
+   <div class="example" id="example-4799">
     <p><strong>例3 複数値の置換</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -315,7 +315,7 @@ $startDate = 5/27/1999
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4798">
+   <div class="example" id="example-4800">
     <p><strong>例4 空白の削除</strong></p>
     <div class="example-contents"><p>
      この例は、文字列から余分な空白を取り除きます。
@@ -330,7 +330,7 @@ $startDate = 5/27/1999
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4799">
+   <div class="example" id="example-4801">
     <p><strong>例5 <em><code class="parameter">count</code></em> 引数の使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -360,8 +360,8 @@ xp***to
     その並びは値の小さい順になっているとは<em class="emphasis">限りません</em>。
     ですから、配列の添字を使って、どの <em><code class="parameter">pattern</code></em>
     が、どの <em><code class="parameter">replacement</code></em> に置換されるかを指定しようとする場合は、
-     <span class="function"><strong>preg_replace()</strong></span> をコールする前に、各配列に対し
-     <span class="function"><a href="function.ksort.html" class="function">ksort()</a></span> を実行しておくべきです。
+    <span class="function"><strong>preg_replace()</strong></span> をコールする前に、各配列に対し
+    <span class="function"><a href="function.ksort.html" class="function">ksort()</a></span> を実行しておくべきです。
    </p>
   </p></blockquote>
  </div>
@@ -372,11 +372,11 @@ xp***to
   <p class="para">
    <ul class="simplelist">
     <li class="member"><a href="pcre.pattern.html" class="link">PCRE のパターン</a></li>
-    <li class="member"> <span class="function"><a href="function.preg-filter.html" class="function" rel="rdfs-seeAlso">preg_filter()</a> - 正規表現による検索と置換を行う</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - 正規表現によるマッチングを行う</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-replace-callback.html" class="function" rel="rdfs-seeAlso">preg_replace_callback()</a> - 正規表現検索を行い、コールバック関数を使用して置換を行う</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-split.html" class="function" rel="rdfs-seeAlso">preg_split()</a> - 正規表現で文字列を分割する</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-last-error.html" class="function" rel="rdfs-seeAlso">preg_last_error()</a> - 直近の PCRE 正規表現処理のエラーコードを返す</span></li>
+    <li class="member"><span class="function"><a href="function.preg-filter.html" class="function" rel="rdfs-seeAlso">preg_filter()</a> - 正規表現による検索と置換を行う</span></li>
+    <li class="member"><span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - 正規表現によるマッチングを行う</span></li>
+    <li class="member"><span class="function"><a href="function.preg-replace-callback.html" class="function" rel="rdfs-seeAlso">preg_replace_callback()</a> - 正規表現検索を行い、コールバック関数を使用して置換を行う</span></li>
+    <li class="member"><span class="function"><a href="function.preg-split.html" class="function" rel="rdfs-seeAlso">preg_split()</a> - 正規表現で文字列を分割する</span></li>
+    <li class="member"><span class="function"><a href="function.preg-last-error.html" class="function" rel="rdfs-seeAlso">preg_last_error()</a> - 直近の PCRE 正規表現処理のエラーコードを返す</span></li>
    </ul>
   </p>
  </div>

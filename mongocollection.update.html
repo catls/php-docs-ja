@@ -34,11 +34,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">criteria</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -46,13 +47,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">new_object</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -60,13 +61,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">options</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -98,8 +99,8 @@
          </p>
          <p class="para">
           $criteria にマッチするすべてのドキュメントを更新します。
-           <span class="function"><strong>MongoCollection::update()</strong></span> は
-           <span class="function"><a href="mongocollection.remove.html" class="function">MongoCollection::remove()</a></span> と正反対の動きをします。
+          <span class="function"><strong>MongoCollection::update()</strong></span> は
+          <span class="function"><a href="mongocollection.remove.html" class="function">MongoCollection::remove()</a></span> と正反対の動きをします。
           デフォルトでは、マッチするすべてのドキュメントではなく
           ひとつのドキュメントだけを更新するのです。
           <em class="emphasis">複数ドキュメントを更新したいのかそうでないのかは、
@@ -135,8 +136,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -150,7 +150,7 @@
    それ以外の場合は <strong><code>TRUE</code></strong> を返します。
   </p>
   <p class="para">
-   状態を表す配列のフィールドについては  <span class="function"><a href="mongocollection.insert.html" class="function">MongoCollection::insert()</a></span> のドキュメントを参照ください。
+   状態を表す配列のフィールドについては <span class="function"><a href="mongocollection.insert.html" class="function">MongoCollection::insert()</a></span> のドキュメントを参照ください。
   </p>
  </div>
 
@@ -246,8 +246,8 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.update-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1468">
-   <p><strong>例1  <span class="function"><strong>MongoCollection::update()</strong></span></strong></p>
+  <div class="example" id="example-1469">
+   <p><strong>例1 <span class="function"><strong>MongoCollection::update()</strong></span></strong></p>
    <div class="example-contents"><p>
     address フィールドをドキュメントに追加します。
    </p></div>
@@ -276,8 +276,8 @@ array(4) {
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-1469">
-   <p><strong>例2  <span class="function"><strong>MongoCollection::update()</strong></span> での upsert</strong></p>
+  <div class="example" id="example-1470">
+   <p><strong>例2 <span class="function"><strong>MongoCollection::update()</strong></span> での upsert</strong></p>
    <div class="example-contents"><p>
     upsert を使うとコードを簡潔にすることができます。
     オブジェクトが存在しない (<em><code class="parameter">$criteria</code></em> に基づく) 場合は新たに作成し、
@@ -342,10 +342,10 @@ array(3) {
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-1470">
-   <p><strong>例3  <span class="function"><strong>MongoCollection::update()</strong></span> での複数更新</strong></p>
+  <div class="example" id="example-1471">
+   <p><strong>例3 <span class="function"><strong>MongoCollection::update()</strong></span> での複数更新</strong></p>
    <div class="example-contents"><p>
-    デフォルトでは  <span class="function"><strong>MongoCollection::update()</strong></span> は、
+    デフォルトでは <span class="function"><strong>MongoCollection::update()</strong></span> は、
     <em><code class="parameter">$criteria</code></em> にマッチするドキュメントが複数見つかっても最初のものだけを更新します。
     必要なら、&quot;multiple&quot; オプションでその挙動を変えることができます。
    </p></div>

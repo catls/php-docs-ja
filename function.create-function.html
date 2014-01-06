@@ -30,8 +30,8 @@
   </p>
   <div class="caution"><strong class="caution">警告</strong>
    <p class="para">
-    この関数は、内部的に  <span class="function"><a href="function.eval.html" class="function">eval()</a></span> を実行しているので、
-     <span class="function"><a href="function.eval.html" class="function">eval()</a></span> と同様にセキュリティ上のリスクがあります。
+    この関数は、内部的に <span class="function"><a href="function.eval.html" class="function">eval()</a></span> を実行しているので、
+    <span class="function"><a href="function.eval.html" class="function">eval()</a></span> と同様にセキュリティ上のリスクがあります。
     さらに、パフォーマンスやメモリ使用効率の面でも問題があります。
    </p>
    <p class="para">
@@ -51,9 +51,10 @@
    エスケープする必要があります。
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">args</code></em></dt>
 
-     <span class="term"><em><code class="parameter">args</code></em></span>
      <dd>
 
       <p class="para">
@@ -61,11 +62,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">code</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">code</code></em></span>
      <dd>
 
       <p class="para">
@@ -73,8 +74,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -92,9 +92,9 @@
  <div class="refsect1 examples" id="refsect1-function.create-function-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5101">
+   <div class="example" id="example-5103">
     <p><strong>例1 
-      <span class="function"><strong>create_function()</strong></span> による匿名関数の作成
+     <span class="function"><strong>create_function()</strong></span> による匿名関数の作成
     </strong></p>
     <div class="example-contents"><p>
      この関数を使用すると、(たとえば) 実行時に取得した情報をもとにして関数を作成できます。
@@ -113,9 +113,9 @@
    一般的なハンドラ関数を定義できます。
   </p>
   <p class="para">
-   <div class="example" id="example-5102">
+   <div class="example" id="example-5104">
     <p><strong>例2 
-      <span class="function"><strong>create_function()</strong></span> による一般的な処理関数の作成
+     <span class="function"><strong>create_function()</strong></span> による一般的な処理関数の作成
     </strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -147,11 +147,11 @@ similar(a,b) = 11(45.833333333333%)
   <p class="para">
    ラムダ形式の (匿名の) 関数の最も一般的な使用法は、
    コールバック関数を作成することでしょう。たとえば
-    <span class="function"><a href="function.array-walk.html" class="function">array_walk()</a></span> あるいは  <span class="function"><a href="function.usort.html" class="function">usort()</a></span>
+   <span class="function"><a href="function.array-walk.html" class="function">array_walk()</a></span> あるいは <span class="function"><a href="function.usort.html" class="function">usort()</a></span>
    などで使用します。
   </p>
   <p class="para">
-   <div class="example" id="example-5103">
+   <div class="example" id="example-5105">
     <p><strong>例3 コールバック関数としての匿名関数の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

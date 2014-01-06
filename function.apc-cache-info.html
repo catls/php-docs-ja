@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">cache_type</code></em></dt>
 
-     <span class="term"><em><code class="parameter">cache_type</code></em></span>
      <dd>
 
       <p class="para">
@@ -63,11 +64,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">limited</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">limited</code></em></span>
      <dd>
 
       <p class="para">
@@ -77,8 +78,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -94,7 +94,7 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
     もし APC キャッシュのデータを取得できなかった場合、
-     <span class="function"><strong>apc_cache_info()</strong></span> は警告を発生します。これが起こるのは、
+    <span class="function"><strong>apc_cache_info()</strong></span> は警告を発生します。これが起こるのは、
     一般的には APC が有効になっていない場合などです。
    </span>
   </p></blockquote>
@@ -141,8 +141,8 @@
  <div class="refsect1 examples" id="refsect1-function.apc-cache-info-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-405">
-    <p><strong>例1  <span class="function"><strong>apc_cache_info()</strong></span> の例</strong></p>
+   <div class="example" id="example-406">
+    <p><strong>例1 <span class="function"><strong>apc_cache_info()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">apc_cache_info</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -191,9 +191,9 @@ Array
   <p class="para">
    <ul class="simplelist">
     <li class="member"><a href="apc.configuration.html" class="link">APC 設定ディレクティブ</a></li>
-    <li class="member"> <span class="methodname"><a href="apciterator.gettotalsize.html" class="methodname" rel="rdfs-seeAlso">APCIterator::getTotalSize()</a> - キャッシュのサイズの合計を取得する</span></li>
-    <li class="member"> <span class="methodname"><a href="apciterator.gettotalhits.html" class="methodname" rel="rdfs-seeAlso">APCIterator::getTotalHits()</a> - キャッシュヒットの総数を取得する</span></li>
-    <li class="member"> <span class="methodname"><a href="apciterator.gettotalcount.html" class="methodname" rel="rdfs-seeAlso">APCIterator::getTotalCount()</a> - 総数を取得する</span></li>
+    <li class="member"><span class="methodname"><a href="apciterator.gettotalsize.html" class="methodname" rel="rdfs-seeAlso">APCIterator::getTotalSize()</a> - キャッシュのサイズの合計を取得する</span></li>
+    <li class="member"><span class="methodname"><a href="apciterator.gettotalhits.html" class="methodname" rel="rdfs-seeAlso">APCIterator::getTotalHits()</a> - キャッシュヒットの総数を取得する</span></li>
+    <li class="member"><span class="methodname"><a href="apciterator.gettotalcount.html" class="methodname" rel="rdfs-seeAlso">APCIterator::getTotalCount()</a> - 総数を取得する</span></li>
    </ul>
   </p>
  </div>

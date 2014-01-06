@@ -26,8 +26,8 @@
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">string</span>
-    <span class="methodname"><strong>Locale::lookup</strong></span>
+   <span class="type">string</span> 
+   <span class="methodname"><strong>Locale::lookup</strong></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$langtag</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$canonicalize</code><span class="initializer"> = false</span></span>
@@ -38,8 +38,8 @@
    手続き型
   </p>
   <div class="methodsynopsis dc-description">
-   <span class="type">string</span>
-    <span class="methodname"><strong>locale_lookup</strong></span>
+   <span class="type">string</span> 
+   <span class="methodname"><strong>locale_lookup</strong></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$langtag</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$canonicalize</code><span class="initializer"> = false</span></span>
@@ -59,9 +59,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">langtag</code></em></dt>
 
-     <span class="term"><em><code class="parameter">langtag</code></em></span>
      <dd>
 
       <p class="para">
@@ -70,11 +71,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">locale</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">locale</code></em></span>
      <dd>
 
       <p class="para">
@@ -82,13 +83,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+     
+       <dt>
 
-     <dt>
-
-       <span class="term">
          <em><code class="parameter">canonicalize</code></em>
-       </span>
+       </dt>
+
        <dd>
 
          <p class="para">
@@ -96,11 +97,11 @@
          </p>
        </dd>
 
-     </dt>
-
+     
+     
      <dt>
+<em><code class="parameter">default</code></em></dt>
 
-     <span class="term"><em><code class="parameter">default</code></em></span>
      <dd>
 
       <p class="para">
@@ -108,8 +109,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -127,8 +127,8 @@
 
  <div class="refsect1 examples" id="refsect1-locale.lookup-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-2560">
-   <p><strong>例1  <span class="function"><strong>locale_lookup()</strong></span> の例</strong></p>
+  <div class="example" id="example-2561">
+   <p><strong>例1 <span class="function"><strong>locale_lookup()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$arr&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'de-DEVA'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'de-DE-1996'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'de'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'de-De'<br /></span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">locale_lookup</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'de-DE-1996-x-prv1-prv2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'en_US'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -137,7 +137,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-2561">
+  <div class="example" id="example-2562">
    <p><strong>例2 オブジェクト指向の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -160,7 +160,7 @@ de_de_1996
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="locale.filtermatches.html" class="function" rel="rdfs-seeAlso">locale_filter_matches()</a> - 言語タグフィルタがロケールにマッチするかどうかを調べる</span></li>
+    <li class="member"><span class="function"><a href="locale.filtermatches.html" class="function" rel="rdfs-seeAlso">locale_filter_matches()</a> - 言語タグフィルタがロケールにマッチするかどうかを調べる</span></li>
    </ul>
   </p>
  </div>

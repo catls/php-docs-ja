@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">gmpnumber</code></em></dt>
 
-     <span class="term"><em><code class="parameter">gmpnumber</code></em></span>
      <dd>
 
       <p class="para">
@@ -45,8 +46,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -64,8 +64,8 @@
  <div class="refsect1 examples" id="refsect1-function.gmp-intval-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3413">
-    <p><strong>例1  <span class="function"><strong>gmp_intval()</strong></span> の例</strong></p>
+   <div class="example" id="example-3414">
+    <p><strong>例1 <span class="function"><strong>gmp_intval()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;正しい結果を表示します<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_intval</span><span style="color: #007700">(</span><span style="color: #DD0000">"2147483647"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;の整数型の制限をこえているので、正しい結果を表示しません<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_intval</span><span style="color: #007700">(</span><span style="color: #DD0000">"2147483648"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;正しい結果を表示します<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #DD0000">"2147483648"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -92,7 +92,7 @@
    <p class="simpara">
     この関数は、数値が実際に PHP の整数型に適合する場合(すなわち、
     符号付き long 型)にのみ有用な結果を返します。単に GMP
-    数を出力したい場合には、 <span class="function"><a href="function.gmp-strval.html" class="function">gmp_strval()</a></span> を使用してください。
+    数を出力したい場合には、<span class="function"><a href="function.gmp-strval.html" class="function">gmp_strval()</a></span> を使用してください。
    </p>
   </div>
  </div>

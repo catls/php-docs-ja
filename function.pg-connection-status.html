@@ -27,7 +27,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_connection_status()</strong></span> は、
+   <span class="function"><strong>pg_connection_status()</strong></span> は、
    <em><code class="parameter">connection</code></em> で指定した接続のステータスを返します。
   </p>
  </div>
@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">connection</code></em></dt>
 
-     <span class="term"><em><code class="parameter">connection</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,8 +49,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -68,8 +68,8 @@
  <div class="refsect1 examples" id="refsect1-function.pg-connection-status-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2051">
-    <p><strong>例1  <span class="function"><strong>pg_connection_status()</strong></span> の例</strong></p>
+   <div class="example" id="example-2052">
+    <p><strong>例1 <span class="function"><strong>pg_connection_status()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=publisher"</span><span style="color: #007700">)&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect"</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$stat&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connection_status</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">);<br />&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$stat&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">PGSQL_CONNECTION_OK</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Connection&nbsp;status&nbsp;ok'</span><span style="color: #007700">;<br />&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Connection&nbsp;status&nbsp;bad'</span><span style="color: #007700">;<br />&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -86,7 +86,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-connection-busy.html" class="function" rel="rdfs-seeAlso">pg_connection_busy()</a> - 接続がビジーかどうか調べる</span></li>
+    <li class="member"><span class="function"><a href="function.pg-connection-busy.html" class="function" rel="rdfs-seeAlso">pg_connection_busy()</a> - 接続がビジーかどうか調べる</span></li>
    </ul>
   </p>
  </div>

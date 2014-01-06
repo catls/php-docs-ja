@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">host</code></em></dt>
 
-     <span class="term"><em><code class="parameter">host</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,11 +49,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">dborport</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">dborport</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,11 +61,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">user</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">user</code></em></span>
      <dd>
 
       <p class="para">
@@ -72,11 +73,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">password</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">password</code></em></span>
      <dd>
 
       <p class="para">
@@ -84,8 +85,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -104,8 +104,8 @@
  <div class="refsect1 examples" id="refsect1-function.ovrimos-connect-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2031">
-    <p><strong>例1  <span class="function"><strong>ovrimos_connect()</strong></span> の例</strong></p>
+   <div class="example" id="example-2032">
+    <p><strong>例1 <span class="function"><strong>ovrimos_connect()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ovrimos_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"server.example.com"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"8001"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"admin"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Connection&nbsp;ok!"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ovrimos_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"select&nbsp;table_id,&nbsp;table_name&nbsp;from&nbsp;sys.tables"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Statement&nbsp;ok!"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ovrimos_result_all</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ovrimos_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ovrimos_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -122,7 +122,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.ovrimos-close.html" class="function" rel="rdfs-seeAlso">ovrimos_close()</a> - ovrimos への接続を閉じる</span></li>
+    <li class="member"><span class="function"><a href="function.ovrimos-close.html" class="function" rel="rdfs-seeAlso">ovrimos_close()</a> - ovrimos への接続を閉じる</span></li>
    </ul>
   </p>
  </div>

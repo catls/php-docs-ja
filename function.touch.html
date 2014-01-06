@@ -44,9 +44,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">filename</code></em></dt>
 
-     <span class="term"><em><code class="parameter">filename</code></em></span>
      <dd>
 
       <p class="para">
@@ -54,11 +55,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">time</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">time</code></em></span>
      <dd>
 
       <p class="para">
@@ -68,11 +69,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">atime</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">atime</code></em></span>
      <dd>
 
       <p class="para">
@@ -83,8 +84,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -131,8 +131,8 @@
  <div class="refsect1 examples" id="refsect1-function.touch-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2435">
-    <p><strong>例1  <span class="function"><strong>touch()</strong></span> の例</strong></p>
+   <div class="example" id="example-2436">
+    <p><strong>例1 <span class="function"><strong>touch()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">touch</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$filename&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'&nbsp;modification&nbsp;time&nbsp;has&nbsp;been&nbsp;changed&nbsp;to&nbsp;present&nbsp;time'</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Sorry,&nbsp;could&nbsp;not&nbsp;change&nbsp;modification&nbsp;time&nbsp;of&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$filename</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -143,8 +143,8 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2436">
-    <p><strong>例2  <span class="function"><strong>touch()</strong></span> で <em><code class="parameter">time</code></em> パラメータを使用する例</strong></p>
+   <div class="example" id="example-2437">
+    <p><strong>例2 <span class="function"><strong>touch()</strong></span> で <em><code class="parameter">time</code></em> パラメータを使用する例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;作成時刻を、ここでは&nbsp;1&nbsp;時間前に設定します<br /></span><span style="color: #0000BB">$time&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()&nbsp;-&nbsp;</span><span style="color: #0000BB">3600</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;ファイルを作成します<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">touch</span><span style="color: #007700">(</span><span style="color: #DD0000">'some_file.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$time</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'おっと、何かがおかしいようです...'</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'ファイルの作成に成功しました'</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

@@ -34,7 +34,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>mysqli_data_seek()</strong></span> 関数は、
+   <span class="function"><strong>mysqli_data_seek()</strong></span> 関数は、
    結果セットの任意の行 <em><code class="parameter">offset</code></em> にポインタを移動します。
   </p>
  </div>
@@ -46,26 +46,26 @@
    <dl>
 
     <dt>
-<span class="term"><em><code class="parameter">
-result</code></em></span><dd>
+<em><code class="parameter">
+result</code></em></dt>
+<dd>
 <p class="para">手続き型のみ:
- <span class="function"><a href="mysqli.query.html" class="function">mysqli_query()</a></span>、 <span class="function"><a href="mysqli.store-result.html" class="function">mysqli_store_result()</a></span>
-あるいは  <span class="function"><a href="mysqli.use-result.html" class="function">mysqli_use_result()</a></span> が返す結果セット ID。</p></dd>
-</dt>
+<span class="function"><a href="mysqli.query.html" class="function">mysqli_query()</a></span>、<span class="function"><a href="mysqli.store-result.html" class="function">mysqli_store_result()</a></span>
+あるいは <span class="function"><a href="mysqli.use-result.html" class="function">mysqli_use_result()</a></span> が返す結果セット ID。</p></dd>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">offset</code></em></dt>
 
-     <span class="term"><em><code class="parameter">offset</code></em></span>
      <dd>
 
       <p class="para">
        フィールドオフセット。ゼロから全行数 - 1 までの間
-      （0.. <span class="function"><a href="mysqli-result.num-rows.html" class="function">mysqli_num_rows()</a></span> - 1）である必要があります。
+      （0..<span class="function"><a href="mysqli-result.num-rows.html" class="function">mysqli_num_rows()</a></span> - 1）である必要があります。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -84,8 +84,8 @@ result</code></em></span><dd>
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    この関数は、 <span class="function"><a href="mysqli.store-result.html" class="function">mysqli_store_result()</a></span> あるいは
-     <span class="function"><a href="mysqli.query.html" class="function">mysqli_query()</a></span> によって取得した、
+    この関数は、<span class="function"><a href="mysqli.store-result.html" class="function">mysqli_store_result()</a></span> あるいは
+    <span class="function"><a href="mysqli.query.html" class="function">mysqli_query()</a></span> によって取得した、
     バッファに格納されている結果に対してのみ使用可能です。
    </p>
   </p></blockquote>
@@ -94,7 +94,7 @@ result</code></em></span><dd>
 
  <div class="refsect1 examples" id="refsect1-mysqli-result.data-seek-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1724">
+  <div class="example" id="example-1725">
    <p><strong>例1 オブジェクト指向型</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -104,7 +104,7 @@ result</code></em></span><dd>
    </div>
 
   </div>
-  <div class="example" id="example-1725">
+  <div class="example" id="example-1726">
    <p><strong>例2 手続き型</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -127,13 +127,13 @@ City: Benin City  Countrycode: NGA
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="mysqli.store-result.html" class="function" rel="rdfs-seeAlso">mysqli_store_result()</a> - 直近のクエリから結果セットを転送する</span></li>
-    <li class="member"> <span class="function"><a href="mysqli-result.fetch-row.html" class="function" rel="rdfs-seeAlso">mysqli_fetch_row()</a> - 結果の行を数値添字配列で取得する</span></li>
-    <li class="member"> <span class="function"><a href="mysqli-result.fetch-array.html" class="function" rel="rdfs-seeAlso">mysqli_fetch_array()</a> - 結果の行を連想配列・数値添字配列あるいはその両方の形式で取得する</span></li>
-    <li class="member"> <span class="function"><a href="mysqli-result.fetch-assoc.html" class="function" rel="rdfs-seeAlso">mysqli_fetch_assoc()</a> - 結果の行を連想配列で取得する</span></li>
-    <li class="member"> <span class="function"><a href="mysqli-result.fetch-object.html" class="function" rel="rdfs-seeAlso">mysqli_fetch_object()</a> - 結果セットの現在の行をオブジェクトとして返す</span></li>
-    <li class="member"> <span class="function"><a href="mysqli.query.html" class="function" rel="rdfs-seeAlso">mysqli_query()</a> - データベース上でクエリを実行する</span></li>
-    <li class="member"> <span class="function"><a href="mysqli-result.num-rows.html" class="function" rel="rdfs-seeAlso">mysqli_num_rows()</a> - 結果の行数を取得する</span></li>
+    <li class="member"><span class="function"><a href="mysqli.store-result.html" class="function" rel="rdfs-seeAlso">mysqli_store_result()</a> - 直近のクエリから結果セットを転送する</span></li>
+    <li class="member"><span class="function"><a href="mysqli-result.fetch-row.html" class="function" rel="rdfs-seeAlso">mysqli_fetch_row()</a> - 結果の行を数値添字配列で取得する</span></li>
+    <li class="member"><span class="function"><a href="mysqli-result.fetch-array.html" class="function" rel="rdfs-seeAlso">mysqli_fetch_array()</a> - 結果の行を連想配列・数値添字配列あるいはその両方の形式で取得する</span></li>
+    <li class="member"><span class="function"><a href="mysqli-result.fetch-assoc.html" class="function" rel="rdfs-seeAlso">mysqli_fetch_assoc()</a> - 結果の行を連想配列で取得する</span></li>
+    <li class="member"><span class="function"><a href="mysqli-result.fetch-object.html" class="function" rel="rdfs-seeAlso">mysqli_fetch_object()</a> - 結果セットの現在の行をオブジェクトとして返す</span></li>
+    <li class="member"><span class="function"><a href="mysqli.query.html" class="function" rel="rdfs-seeAlso">mysqli_query()</a> - データベース上でクエリを実行する</span></li>
+    <li class="member"><span class="function"><a href="mysqli-result.num-rows.html" class="function" rel="rdfs-seeAlso">mysqli_num_rows()</a> - 結果の行数を取得する</span></li>
    </ul>
   </p>
  </div>

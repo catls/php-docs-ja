@@ -116,11 +116,12 @@
  <p class="para">
   <dl>
 
-   <dt id="ini.mbstring.language">
-    <span class="term">
+   
+    <dt id="ini.mbstring.language">
      <em><code class="parameter">mbstring.language</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -131,13 +132,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.mbstring.encoding-translation">
-    <span class="term">
+   
+   
+    <dt id="ini.mbstring.encoding-translation">
      <em><code class="parameter">mbstring.encoding_translation</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -147,13 +148,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.mbstring.internal-encoding">
-    <span class="term">
+   
+   
+    <dt id="ini.mbstring.internal-encoding">
      <em><code class="parameter">mbstring.internal_encoding</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -161,13 +162,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.mbstring.http-input">
-    <span class="term">
+   
+   
+    <dt id="ini.mbstring.http-input">
      <em><code class="parameter">mbstring.http_input</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -175,13 +176,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.mbstring.http-output">
-    <span class="term">
+   
+   
+    <dt id="ini.mbstring.http-output">
      <em><code class="parameter">mbstring.http_output</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -189,28 +190,28 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.mbstring.detect-order">
-    <span class="term">
+   
+   
+    <dt id="ini.mbstring.detect-order">
      <em><code class="parameter">mbstring.detect_order</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
       文字コード検出のデフォルト値を定義します。
-       <span class="function"><a href="function.mb-detect-order.html" class="function">mb_detect_order()</a></span>も参照ください。
+      <span class="function"><a href="function.mb-detect-order.html" class="function">mb_detect_order()</a></span>も参照ください。
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.mbstring.substitute-character">
-    <span class="term">
+   
+   
+    <dt id="ini.mbstring.substitute-character">
      <em><code class="parameter">mbstring.substitute_character</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -218,13 +219,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.mbstring.func-overload">
-    <span class="term">
+   
+   
+    <dt id="ini.mbstring.func-overload">
      <em><code class="parameter">mbstring.func_overload</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -238,13 +239,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.mbstring.strict-detection">
-    <span class="term">
+   
+   
+    <dt id="ini.mbstring.strict-detection">
      <em><code class="parameter">mbstring.strict_detection</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -252,8 +253,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </p>
@@ -264,19 +264,19 @@
   フォームのデータを投稿する際にページで使用される文字エンコーディングと
   異なるエンコーディングを使用することができます。
   ブラウザで使用される文字エンコーディングを検出するには、
-   <span class="function"><a href="function.mb-http-input.html" class="function">mb_http_input()</a></span>
+  <span class="function"><a href="function.mb-http-input.html" class="function">mb_http_input()</a></span>
   を参照ください。
  </p>
  <p class="para">
   一般的に使用されるブラウザでは、
   指定したHTML文書の文字エンコーディングをかなり正確に推定することができますが、
-   <span class="function"><a href="function.header.html" class="function">header()</a></span> または設定パラメータ
+  <span class="function"><a href="function.header.html" class="function">header()</a></span> または設定パラメータ
   <a href="ini.core.html#ini.sect.data-handling" class="link">default_charset</a> により、
   <em>Content-Type</em> HTTP ヘッダで <em>charset</em>
   を設定する方がより良いでしょう。
  </p>
  <p class="para">
-  <div class="example" id="example-2692">
+  <div class="example" id="example-2693">
   <p><strong>例1 <var class="filename">php.ini</var> 設定の例</strong></p>
    <div class="example-contents">
 <div class="cdata"><pre>
@@ -319,7 +319,7 @@ mbstring.substitute_character = long    ; long の例: U+3000,JIS+7E7E
   </div>
  </p>
  <p class="para">
-  <div class="example" id="example-2693">
+  <div class="example" id="example-2694">
    <p><strong>例2 <em>EUC-JP</em> ユーザー用の <var class="filename">php.ini</var> の設定</strong></p>
    <div class="example-contents">
 <div class="cdata"><pre>
@@ -352,7 +352,7 @@ mbstring.substitute_character = none
   </div>
  </p>
  <p class="para">
-  <div class="example" id="example-2694">
+  <div class="example" id="example-2695">
    <p><strong>例3 <em>SJIS</em> ユーザー用の <var class="filename">php.ini</var>の 設定</strong></p>
    <div class="example-contents">
 <div class="cdata"><pre>

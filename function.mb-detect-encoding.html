@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">str</code></em></dt>
 
-     <span class="term"><em><code class="parameter">str</code></em></span>
      <dd>
 
       <p class="para">
@@ -47,11 +48,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">encoding_list</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">encoding_list</code></em></span>
      <dd>
 
       <p class="para">
@@ -64,11 +65,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">strict</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">strict</code></em></span>
      <dd>
 
       <p class="para">
@@ -78,8 +79,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -98,8 +98,8 @@
  <div class="refsect1 examples" id="refsect1-function.mb-detect-encoding-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2704">
-    <p><strong>例1  <span class="function"><strong>mb_detect_encoding()</strong></span> の例</strong></p>
+   <div class="example" id="example-2705">
+    <p><strong>例1 <span class="function"><strong>mb_detect_encoding()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;現在のdetect_orderで文字エンコーディングを検出&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">mb_detect_encoding</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;"auto"&nbsp;は&nbsp;mbstring.language&nbsp;の設定を使って展開されます&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">mb_detect_encoding</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"auto"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;カンマ区切りのリストで&nbsp;encoding_list&nbsp;文字エンコーディングを指定&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">mb_detect_encoding</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"JIS,&nbsp;eucjp-win,&nbsp;sjis-win"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;encoding_list&nbsp;を指定するために配列を使用&nbsp;*/<br /></span><span style="color: #0000BB">$ary</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"ASCII"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$ary</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"JIS"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$ary</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #DD0000">"EUC-JP"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">mb_detect_encoding</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ary</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -116,7 +116,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.mb-detect-order.html" class="function" rel="rdfs-seeAlso">mb_detect_order()</a> - 文字エンコーディング検出順序を設定あるいは取得する</span></li>
+    <li class="member"><span class="function"><a href="function.mb-detect-order.html" class="function" rel="rdfs-seeAlso">mb_detect_order()</a> - 文字エンコーディング検出順序を設定あるいは取得する</span></li>
    </ul>
   </p>
  </div>

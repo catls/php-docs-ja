@@ -35,8 +35,8 @@
    InterBase データベースへの持続的な接続をオープンします。
   </p>
   <p class="para">
-    <span class="function"><strong>ibase_pconnect()</strong></span> の動作は
-    <span class="function"><a href="function.ibase-connect.html" class="function">ibase_connect()</a></span> と非常に似ていますが、
+   <span class="function"><strong>ibase_pconnect()</strong></span> の動作は
+   <span class="function"><a href="function.ibase-connect.html" class="function">ibase_connect()</a></span> と非常に似ていますが、
    大きな違いが二つあります。
   </p>
   <p class="para">
@@ -48,7 +48,7 @@
    2 番目の違いとしては、InterBase サーバーへの接続は
    スクリプト終了時にも閉じられないということです。
    代わりに、そのリンクは今後使用するためにオープンされたままとなります
-   ( <span class="function"><a href="function.ibase-close.html" class="function">ibase_close()</a></span> は  <span class="function"><strong>ibase_pconnect()</strong></span>
+   (<span class="function"><a href="function.ibase-close.html" class="function">ibase_close()</a></span> は <span class="function"><strong>ibase_pconnect()</strong></span>
    によりオープンされたリンクを閉じません)。
    このため、この型のリンクは&#039;持続的(persistent)&#039;と呼ばれます。
   </p>
@@ -60,9 +60,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">database</code></em></dt>
 
-     <span class="term"><em><code class="parameter">database</code></em></span>
      <dd>
 
       <p class="para">
@@ -74,11 +75,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">username</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">username</code></em></span>
      <dd>
 
       <p class="para">
@@ -88,11 +89,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">password</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">password</code></em></span>
      <dd>
 
       <p class="para">
@@ -103,11 +104,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">charset</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">charset</code></em></span>
      <dd>
 
       <p class="para">
@@ -116,11 +117,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">buffers</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">buffers</code></em></span>
      <dd>
 
       <p class="para">
@@ -130,11 +131,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">dialect</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">dialect</code></em></span>
      <dd>
 
       <p class="para">
@@ -145,11 +146,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">role</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">role</code></em></span>
      <dd>
 
       <p class="para">
@@ -157,19 +158,18 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">sync</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">sync</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -188,8 +188,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.ibase-close.html" class="function" rel="rdfs-seeAlso">ibase_close()</a> - InterBase データベースへの接続を閉じる</span></li>
-    <li class="member"> <span class="function"><a href="function.ibase-connect.html" class="function" rel="rdfs-seeAlso">ibase_connect()</a> - データベースへの接続をオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.ibase-close.html" class="function" rel="rdfs-seeAlso">ibase_close()</a> - InterBase データベースへの接続を閉じる</span></li>
+    <li class="member"><span class="function"><a href="function.ibase-connect.html" class="function" rel="rdfs-seeAlso">ibase_connect()</a> - データベースへの接続をオープンする</span></li>
    </ul>
   </p>
  </div>

@@ -30,7 +30,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>openssl_csr_sign()</strong></span> は、
+   <span class="function"><strong>openssl_csr_sign()</strong></span> は、
    指定した CSR を用いて x509 証明書リソースを作成します。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -49,24 +49,25 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">csr</code></em></dt>
 
-     <span class="term"><em><code class="parameter">csr</code></em></span>
      <dd>
 
       <p class="para">
-        <span class="function"><a href="function.openssl-csr-new.html" class="function">openssl_csr_new()</a></span> で作成した CSR。
+       <span class="function"><a href="function.openssl-csr-new.html" class="function">openssl_csr_new()</a></span> で作成した CSR。
        <var class="filename">file://path/to/csr</var> 、あるいは
-        <span class="function"><a href="function.openssl-csr-export.html" class="function">openssl_csr_export()</a></span> で生成した文字列で指定した場合は
+       <span class="function"><a href="function.openssl-csr-export.html" class="function">openssl_csr_export()</a></span> で生成した文字列で指定した場合は
        PEM エンコードされた CSR も使用可能です。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">cacert</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">cacert</code></em></span>
      <dd>
 
       <p class="para">
@@ -75,11 +76,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">priv_key</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">priv_key</code></em></span>
      <dd>
 
       <p class="para">
@@ -88,11 +89,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">days</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">days</code></em></span>
      <dd>
 
       <p class="para">
@@ -100,25 +101,25 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">configargs</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">configargs</code></em></span>
      <dd>
 
       <p class="para">
        <em><code class="parameter">configargs</code></em> で証明書の詳細設定が可能です。
        <em><code class="parameter">configargs</code></em> についての詳細な情報は
-        <span class="function"><a href="function.openssl-csr-new.html" class="function">openssl_csr_new()</a></span> を参照ください。
+       <span class="function"><a href="function.openssl-csr-new.html" class="function">openssl_csr_new()</a></span> を参照ください。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">serial</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">serial</code></em></span>
      <dd>
 
       <p class="para">
@@ -127,8 +128,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -175,8 +175,8 @@
  <div class="refsect1 examples" id="refsect1-function.openssl-csr-sign-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-859">
-    <p><strong>例1  <span class="function"><strong>openssl_csr_sign()</strong></span> の例 -
+   <div class="example" id="example-860">
+    <p><strong>例1 <span class="function"><strong>openssl_csr_sign()</strong></span> の例 -
      CSR に署名する（あなた自身の CA を作成する）</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

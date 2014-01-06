@@ -34,7 +34,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>snmp3_walk()</strong></span> 関数は、
+   <span class="function"><strong>snmp3_walk()</strong></span> 関数は、
    <em><code class="parameter">hostname</code></em> で指定した <acronym title="Simple Network Management Protocol">SNMP</acronym>
    エージェントからすべての値を読み込みます。
   </p>
@@ -49,9 +49,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">host</code></em></dt>
 
-    <span class="term"><em><code class="parameter">host</code></em></span>
     <dd>
 
      <p class="para">
@@ -59,11 +60,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">sec_name</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">sec_name</code></em></span>
     <dd>
 
      <p class="para">
@@ -71,11 +72,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">sec_level</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">sec_level</code></em></span>
     <dd>
 
      <p class="para">
@@ -83,11 +84,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">auth_protocol</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">auth_protocol</code></em></span>
     <dd>
 
      <p class="para">
@@ -95,11 +96,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">auth_passphrase</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">auth_passphrase</code></em></span>
     <dd>
 
      <p class="para">
@@ -107,11 +108,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">priv_protocol</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">priv_protocol</code></em></span>
     <dd>
 
      <p class="para">
@@ -119,11 +120,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">priv_passphrase</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">priv_passphrase</code></em></span>
     <dd>
 
      <p class="para">
@@ -131,11 +132,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">object_id</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">object_id</code></em></span>
     <dd>
 
      <p class="para">
@@ -150,11 +151,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">timeout</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">timeout</code></em></span>
     <dd>
 
      <p class="para">
@@ -162,11 +163,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">retries</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">retries</code></em></span>
     <dd>
 
      <p class="para">
@@ -174,8 +175,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -195,8 +195,8 @@
  <div class="refsect1 examples" id="refsect1-function.snmp3-walk-examples">
   <h3 class="title">例</h3>
   <p class="para"> 
-   <div class="example" id="example-4563">
-    <p><strong>例1  <span class="function"><strong>snmp3_walk()</strong></span> の例</strong></p>
+   <div class="example" id="example-4565">
+    <p><strong>例1 <span class="function"><strong>snmp3_walk()</strong></span> の例</strong></p>
     <div class="example-contents"> 
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">snmp3_walk</span><span style="color: #007700">(</span><span style="color: #DD0000">'localhost'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'james'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'authPriv'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'SHA'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'secret007'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'AES'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'secret007'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'IF-MIB::ifName'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$ret</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -227,7 +227,7 @@ array (
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.snmp3-real-walk.html" class="function" rel="rdfs-seeAlso">snmp3_real_walk()</a> - 指定したすべてのオブジェクトとそのオブジェクト ID を返す</span></li>
+    <li class="member"><span class="function"><a href="function.snmp3-real-walk.html" class="function" rel="rdfs-seeAlso">snmp3_real_walk()</a> - 指定したすべてのオブジェクトとそのオブジェクト ID を返す</span></li>
    </ul>
   </p>
  </div>

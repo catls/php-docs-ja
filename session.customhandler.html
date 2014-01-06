@@ -15,13 +15,13 @@
   <p class="para">
    セッション情報をデータベースに保存する機能か他の保存法を実装するには、
    一連のユーザーレベルの保存関数を作成し、
-    <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span>を使用する必要があります。
+   <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span>を使用する必要があります。
    PHP 5.4.0 以降では、<a href="class.sessionhandlerinterface.html" class="classname">SessionHandlerInterface</a>
    を使ったり、<a href="class.sessionhandler.html" class="classname">SessionHandler</a> を継承して
    PHP の内部セッションハンドラを拡張したりしてセッションハンドラを作成できます。
   </p>
   <p class="para">
-    <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span> で指定したコールバックメソッドが、
+   <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span> で指定したコールバックメソッドが、
    セッションのライフサイクル内で PHP からコールされます。
    セッションの <em><code class="parameter">open</code></em>、<em><code class="parameter">read</code></em>、<em><code class="parameter">write</code></em>、
    <em><code class="parameter">close</code></em>、そしてセッションの削除 (<em><code class="parameter">destroy</code></em>)
@@ -29,7 +29,7 @@
   </p>
   <p class="para">
    したがって、PHP では常にセッション保存ハンドラが必要となります。デフォルトは、通常はファイルベースの保存ハンドラです。
-   自作の保存ハンドラは  <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span> で設定できます。
+   自作の保存ハンドラは <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span> で設定できます。
    内部的な保存ハンドラとして、デフォルト以外のものも PHP の拡張モジュールとして用意されています。
    <em><code class="parameter">sqlite</code></em> や <em><code class="parameter">memcache</code></em> そして
    <em><code class="parameter">memcached</code></em> などで、これらは <a href="session.configuration.html#ini.session.save-handler" class="link">session.save_handler</a>
@@ -44,7 +44,7 @@
    <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> に格納します。
   </p>
   <p class="para">
-   PHP のスクリプトが終了するとき (あるいは  <span class="function"><a href="function.session-write-close.html" class="function">session_write_close()</a></span> がコールされたとき) には、
+   PHP のスクリプトが終了するとき (あるいは <span class="function"><a href="function.session-write-close.html" class="function">session_write_close()</a></span> がコールされたとき) には、
    PHP が内部的にスーパーグローバル <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> をエンコードします。
    そして、それをセッション ID とともに <em><code class="parameter">write</code></em> コールバックに渡します。
    <em><code class="parameter">write</code></em> コールバックが終了すると、PHP は内部的に

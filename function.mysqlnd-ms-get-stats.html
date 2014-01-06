@@ -20,8 +20,8 @@
  <div class="refsect1 description" id="refsect1-function.mysqlnd-ms-get-stats-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">array</span>
-    <span class="methodname"><strong>mysqlnd_ms_get_stats</strong></span>
+   <span class="type">array</span> 
+   <span class="methodname"><strong>mysqlnd_ms_get_stats</strong></span>
     ( <span class="methodparam">void</span>
    )</div>
 
@@ -169,7 +169,7 @@
        It is not guaranteed whether the statement will be executed on a slave
        or not. This is how often the internal <em>is_select</em>
        function has guessed that a slave shall be used. Please, see also the
-       user space function  <span class="function"><a href="function.mysqlnd-ms-query-is-select.html" class="function">mysqlnd_ms_query_is_select()</a></span>.
+       user space function <span class="function"><a href="function.mysqlnd-ms-query-is-select.html" class="function">mysqlnd_ms_query_is_select()</a></span>.
       </td>
       <td>Since 1.1.0.</td>
      </tr>
@@ -185,7 +185,7 @@
        It is not guaranteed whether the statement will be executed on a slave
        or not. This is how often the internal <em>is_select</em>
        function has guessed that a master shall be used. Please, see also the
-       user space function  <span class="function"><a href="function.mysqlnd-ms-query-is-select.html" class="function">mysqlnd_ms_query_is_select()</a></span>.
+       user space function <span class="function"><a href="function.mysqlnd-ms-query-is-select.html" class="function">mysqlnd_ms_query_is_select()</a></span>.
       </td>
       <td>Since 1.1.0.</td>
      </tr>
@@ -506,8 +506,8 @@
  <div class="refsect1 examples" id="refsect1-function.mysqlnd-ms-get-stats-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-1839">
-    <p><strong>例1  <span class="function"><strong>mysqlnd_ms_get_stats()</strong></span> example</strong></p>
+   <div class="example" id="example-1840">
+    <p><strong>例1 <span class="function"><strong>mysqlnd_ms_get_stats()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlnd_ms.enable&nbsp;=&nbsp;%d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ini_get</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlnd_ms.enable"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlnd_ms.collect_statistics&nbsp;=&nbsp;%d\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ini_get</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlnd_ms.collect_statistics"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">mysqlnd_ms_get_stats</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>

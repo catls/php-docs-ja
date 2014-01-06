@@ -40,9 +40,10 @@ PHP が apache モジュールとしてインストールされた場合のみ�
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">filename</code></em></dt>
 
-     <span class="term"><em><code class="parameter">filename</code></em></span>
      <dd>
 
       <p class="para">
@@ -50,8 +51,7 @@ PHP が apache モジュールとしてインストールされた場合のみ�
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -95,8 +95,8 @@ PHP が apache モジュールとしてインストールされた場合のみ�
  <div class="refsect1 examples" id="refsect1-function.apache-lookup-uri-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4751">
-    <p><strong>例1  <span class="function"><strong>apache_lookup_uri()</strong></span> の例</strong></p>
+   <div class="example" id="example-4753">
+    <p><strong>例1 <span class="function"><strong>apache_lookup_uri()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$info&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">apache_lookup_uri</span><span style="color: #007700">(</span><span style="color: #DD0000">'index.php?var=value'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$info</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">file_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$info</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">filename</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'file&nbsp;exists!'</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

@@ -28,7 +28,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>openssl_sign()</strong></span> は、指定した 
+   <span class="function"><strong>openssl_sign()</strong></span> は、指定した 
    <em><code class="parameter">data</code></em> に関してハッシュ計算に SHA1 を使用して
    署名を計算し、その後 <em><code class="parameter">priv_key_id</code></em> で
    指定した秘密鍵を使用して暗号化を行います。data 自体は
@@ -42,20 +42,21 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">data</code></em></dt>
 
-     <span class="term"><em><code class="parameter">data</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">signature</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">signature</code></em></span>
      <dd>
 
       <p class="para">
@@ -63,22 +64,22 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">priv_key_id</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">priv_key_id</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">signature_alg</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">signature_alg</code></em></span>
      <dd>
 
       <p class="para">
@@ -88,8 +89,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -136,8 +136,8 @@
  <div class="refsect1 examples" id="refsect1-function.openssl-sign-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-869">
-    <p><strong>例1  <span class="function"><strong>openssl_sign()</strong></span> の例</strong></p>
+   <div class="example" id="example-870">
+    <p><strong>例1 <span class="function"><strong>openssl_sign()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$data&nbsp;に署名するデータが含まれていると仮定<br /><br />//&nbsp;ファイルから秘密鍵を取得するには、使用することができます<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/src/openssl-0.9.6/demos/sign/key.pem"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$priv_key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pkeyid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_get_privatekey</span><span style="color: #007700">(</span><span style="color: #0000BB">$priv_key</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名を計算<br /></span><span style="color: #0000BB">openssl_sign</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pkeyid</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリからキーを開放する<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkeyid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -154,7 +154,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.openssl-verify.html" class="function" rel="rdfs-seeAlso">openssl_verify()</a> - 署名を検証する</span></li>
+    <li class="member"><span class="function"><a href="function.openssl-verify.html" class="function" rel="rdfs-seeAlso">openssl_verify()</a> - 署名を検証する</span></li>
    </ul>
   </p>
  </div>

@@ -51,9 +51,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">input</code></em></dt>
 
-     <span class="term"><em><code class="parameter">input</code></em></span>
      <dd>
 
       <p class="para">
@@ -61,11 +62,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">offset</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">offset</code></em></span>
      <dd>
 
       <p class="para">
@@ -77,11 +78,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">length</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">length</code></em></span>
      <dd>
 
       <p class="para">
@@ -96,11 +97,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">replacement</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">replacement</code></em></span>
      <dd>
 
       <p class="para">
@@ -120,8 +121,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -137,8 +137,8 @@
  <div class="refsect1 examples" id="refsect1-function.array-splice-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4981">
-    <p><strong>例1  <span class="function"><strong>array_splice()</strong></span> の例</strong></p>
+   <div class="example" id="example-4983">
+    <p><strong>例1 <span class="function"><strong>array_splice()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"green")&nbsp;となる<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"yellow")&nbsp;となる<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"orange"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"orange")&nbsp;となる<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"black"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"maroon"</span><span style="color: #007700">));<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"green",<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"blue",&nbsp;"black",&nbsp;"maroon")&nbsp;となる<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"purple"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"green",<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"blue",&nbsp;"purple",&nbsp;"yellow");&nbsp;となる<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -149,8 +149,8 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4982">
-    <p><strong>例2  <span class="function"><strong>array_splice()</strong></span> の例</strong></p>
+   <div class="example" id="example-4984">
+    <p><strong>例2 <span class="function"><strong>array_splice()</strong></span> の例</strong></p>
     <div class="example-contents"><p>
      以下の文は、同様に <var class="varname"><var class="varname">$input</var></var> の値を変更します。
     </p></div>
@@ -169,9 +169,9 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.array-slice.html" class="function" rel="rdfs-seeAlso">array_slice()</a> - 配列の一部を展開する</span></li>
-    <li class="member"> <span class="function"><a href="function.unset.html" class="function" rel="rdfs-seeAlso">unset()</a> - 指定した変数の割当を解除する</span></li>
-    <li class="member"> <span class="function"><a href="function.array-merge.html" class="function" rel="rdfs-seeAlso">array_merge()</a> - ひとつまたは複数の配列をマージする</span></li>
+    <li class="member"><span class="function"><a href="function.array-slice.html" class="function" rel="rdfs-seeAlso">array_slice()</a> - 配列の一部を展開する</span></li>
+    <li class="member"><span class="function"><a href="function.unset.html" class="function" rel="rdfs-seeAlso">unset()</a> - 指定した変数の割当を解除する</span></li>
+    <li class="member"><span class="function"><a href="function.array-merge.html" class="function" rel="rdfs-seeAlso">array_merge()</a> - ひとつまたは複数の配列をマージする</span></li>
    </ul>
   </p>
  </div>

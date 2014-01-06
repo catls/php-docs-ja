@@ -26,7 +26,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>xslt_setopt()</strong></span> は、与えられた
+   <span class="function"><strong>xslt_setopt()</strong></span> は、与えられた
    <em><code class="parameter">processor</code></em> に <em><code class="parameter">newmask</code></em>
    で指定されるオプションを設定します。
   </p>
@@ -39,16 +39,17 @@
    <dl>
 
     <dt>
-<span class="term"><em><code class="parameter">
-processor</code></em></span><dd>
-<p class="para"> <span class="function"><a href="function.xslt-create.html" class="function">xslt_create()</a></span> で作成した
+<em><code class="parameter">
+processor</code></em></dt>
+<dd>
+<p class="para"><span class="function"><a href="function.xslt-create.html" class="function">xslt_create()</a></span> で作成した
 <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> プロセッサリンク ID。</p></dd>
 
-</dt>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">newmask</code></em></dt>
 
-     <span class="term"><em><code class="parameter">newmask</code></em></span>
      <dd>
 
       <p class="para">
@@ -84,8 +85,7 @@ processor</code></em></span><dd>
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -104,8 +104,8 @@ processor</code></em></span><dd>
  <div class="refsect1 examples" id="refsect1-function.xslt-setopt-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5558">
-    <p><strong>例1  <span class="function"><strong>xslt_setopt()</strong></span> の例</strong></p>
+   <div class="example" id="example-5560">
+    <p><strong>例1 <span class="function"><strong>xslt_setopt()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$xh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">xslt_create</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Sablotron&nbsp;にパブリックなエンティティを処理するよう伝える<br /></span><span style="color: #0000BB">xslt_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$xh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">XSLT_SABOPT_PARSE_PUBLIC_ENTITIES</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;空白の除去もしてくれるよう問い合わせてみる<br /></span><span style="color: #0000BB">xslt_setopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$xh</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">xslt_getopt</span><span style="color: #007700">(</span><span style="color: #0000BB">$xh</span><span style="color: #007700">)&nbsp;|&nbsp;</span><span style="color: #0000BB">XSLT_SABOPT_DISABLE_STRIPPING</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -122,7 +122,7 @@ processor</code></em></span><dd>
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.xslt-getopt.html" class="function" rel="rdfs-seeAlso">xslt_getopt()</a> - xsl プロセッサのオプションを取得する</span></li>
+    <li class="member"><span class="function"><a href="function.xslt-getopt.html" class="function" rel="rdfs-seeAlso">xslt_getopt()</a> - xsl プロセッサのオプションを取得する</span></li>
    </ul>
   </p>
  </div>

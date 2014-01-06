@@ -32,7 +32,7 @@
    ジェネレータが <a href="language.generators.syntax.html#control-structures.yield" class="link">yield</a> 式を指していないときにこのメソッドが呼ばれると、
    まずは最初の <a href="language.generators.syntax.html#control-structures.yield" class="link">yield</a> 式まで進めてから値を送信します。そのため、
    最初のジェネレータを指すためにわざわざ
-    <span class="methodname"><a href="generator.next.html" class="methodname">Generator::next()</a></span> を呼ぶ必要はありません (Python と同じです)。
+   <span class="methodname"><a href="generator.next.html" class="methodname">Generator::next()</a></span> を呼ぶ必要はありません (Python と同じです)。
   </p>
  </div>
 
@@ -41,9 +41,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">value</code></em></dt>
 
-    <span class="term"><em><code class="parameter">value</code></em></span>
     <dd>
 
      <p class="para">
@@ -51,8 +52,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -61,8 +61,8 @@
  <div class="refsect1 examples" id="refsect1-generator.send-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-308">
-    <p><strong>例1  <span class="methodname"><strong>Generator::send()</strong></span> による値の注入</strong></p>
+   <div class="example" id="example-309">
+    <p><strong>例1 <span class="methodname"><strong>Generator::send()</strong></span> による値の注入</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">printer</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(</span><span style="color: #0000BB">true</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">yield</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$printer&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">printer</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$printer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">send</span><span style="color: #007700">(</span><span style="color: #DD0000">'Hello&nbsp;world!'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$printer</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">send</span><span style="color: #007700">(</span><span style="color: #DD0000">'Bye&nbsp;world!'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

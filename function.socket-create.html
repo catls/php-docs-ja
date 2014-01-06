@@ -39,9 +39,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">domain</code></em></dt>
 
-     <span class="term"><em><code class="parameter">domain</code></em></span>
      <dd>
 
       <p class="para">
@@ -92,11 +93,11 @@
 
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">type</code></em></span>
      <dd>
 
       <p class="para">
@@ -166,17 +167,17 @@
 
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">protocol</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">protocol</code></em></span>
      <dd>
 
       <p class="para">
        <em><code class="parameter">protocol</code></em> は、ソケット上の通信で使われる
        <em><code class="parameter">domain</code></em> で指定されたファミリーに属するプロトコルを指定します。
-       正しい値は、 <span class="function"><a href="function.getprotobyname.html" class="function">getprotobyname()</a></span>
+       正しい値は、<span class="function"><a href="function.getprotobyname.html" class="function">getprotobyname()</a></span>
        を使うことで取得できます。利用したいプロトコルが、TCP または UDP
        の場合は、定数 <strong><code>SOL_TCP</code></strong> と
        <strong><code>SOL_UDP</code></strong> を指定することもできます。
@@ -233,8 +234,7 @@
 
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -244,11 +244,11 @@
  <div class="refsect1 returnvalues" id="refsect1-function.socket-create-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    <span class="function"><strong>socket_create()</strong></span> は、
+   <span class="function"><strong>socket_create()</strong></span> は、
    成功時にソケットリソース、失敗時に <strong><code>FALSE</code></strong> を返します。
-   実際のエラーコードは、 <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span> を
+   実際のエラーコードは、<span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span> を
    コールすることにより取得できます。このエラーコードをさらに
-    <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span>に渡すことにより、
+   <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span>に渡すことにより、
    エラーの内容を文字列で取得することが可能です。
   </p>
  </div>
@@ -287,7 +287,7 @@
   <h3 class="title">エラー / 例外</h3>
    <p class="para">
     <em><code class="parameter">domain</code></em> や <em><code class="parameter">type</code></em> に
-    不正な値が与えられた場合、 <span class="function"><strong>socket_create()</strong></span> は、これらを
+    不正な値が与えられた場合、<span class="function"><strong>socket_create()</strong></span> は、これらを
     それぞれ <strong><code>AF_INET</code></strong> と <strong><code>SOCK_STREAM</code></strong>
     であるとみなし、<strong><code>E_WARNING</code></strong> メッセージを出します。
    </p>
@@ -298,12 +298,12 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.socket-accept.html" class="function" rel="rdfs-seeAlso">socket_accept()</a> - ソケットへの接続を許可する</span></li>
-    <li class="member"> <span class="function"><a href="function.socket-bind.html" class="function" rel="rdfs-seeAlso">socket_bind()</a> - ソケットに名前をバインドする</span></li>
-    <li class="member"> <span class="function"><a href="function.socket-connect.html" class="function" rel="rdfs-seeAlso">socket_connect()</a> - ソケット上の接続を初期化する</span></li>
-    <li class="member"> <span class="function"><a href="function.socket-listen.html" class="function" rel="rdfs-seeAlso">socket_listen()</a> - ソケット上で接続待ち(listen)する</span></li>
-    <li class="member"> <span class="function"><a href="function.socket-last-error.html" class="function" rel="rdfs-seeAlso">socket_last_error()</a> - ソケットの直近のエラーを返す</span></li>
-    <li class="member"> <span class="function"><a href="function.socket-strerror.html" class="function" rel="rdfs-seeAlso">socket_strerror()</a> - ソケットエラーの内容を文字列として返す</span></li>
+    <li class="member"><span class="function"><a href="function.socket-accept.html" class="function" rel="rdfs-seeAlso">socket_accept()</a> - ソケットへの接続を許可する</span></li>
+    <li class="member"><span class="function"><a href="function.socket-bind.html" class="function" rel="rdfs-seeAlso">socket_bind()</a> - ソケットに名前をバインドする</span></li>
+    <li class="member"><span class="function"><a href="function.socket-connect.html" class="function" rel="rdfs-seeAlso">socket_connect()</a> - ソケット上の接続を初期化する</span></li>
+    <li class="member"><span class="function"><a href="function.socket-listen.html" class="function" rel="rdfs-seeAlso">socket_listen()</a> - ソケット上で接続待ち(listen)する</span></li>
+    <li class="member"><span class="function"><a href="function.socket-last-error.html" class="function" rel="rdfs-seeAlso">socket_last_error()</a> - ソケットの直近のエラーを返す</span></li>
+    <li class="member"><span class="function"><a href="function.socket-strerror.html" class="function" rel="rdfs-seeAlso">socket_strerror()</a> - ソケットエラーの内容を文字列として返す</span></li>
    </ul>
   </p>
  </div>

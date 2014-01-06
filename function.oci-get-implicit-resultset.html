@@ -35,13 +35,13 @@
   </p>
   <p class="para">
     The child statement can be used with any of the OCI8 fetching
-    functions:  <span class="function"><a href="function.oci-fetch.html" class="function">oci_fetch()</a></span>,  <span class="function"><a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a></span>,
-     <span class="function"><a href="function.oci-fetch-array.html" class="function">oci_fetch_array()</a></span>,  <span class="function"><a href="function.oci-fetch-object.html" class="function">oci_fetch_object()</a></span>,
-     <span class="function"><a href="function.oci-fetch-assoc.html" class="function">oci_fetch_assoc()</a></span> or  <span class="function"><a href="function.oci-fetch-row.html" class="function">oci_fetch_row()</a></span>
+    functions: <span class="function"><a href="function.oci-fetch.html" class="function">oci_fetch()</a></span>, <span class="function"><a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a></span>,
+    <span class="function"><a href="function.oci-fetch-array.html" class="function">oci_fetch_array()</a></span>, <span class="function"><a href="function.oci-fetch-object.html" class="function">oci_fetch_object()</a></span>,
+    <span class="function"><a href="function.oci-fetch-assoc.html" class="function">oci_fetch_assoc()</a></span> or <span class="function"><a href="function.oci-fetch-row.html" class="function">oci_fetch_row()</a></span>
   </p>
   <p class="para">
     Child statements inherit their parent statement&#039;s prefetch value,
-    or it can be explicitly set with  <span class="function"><a href="function.oci-set-prefetch.html" class="function">oci_set_prefetch()</a></span>.
+    or it can be explicitly set with <span class="function"><a href="function.oci-set-prefetch.html" class="function">oci_set_prefetch()</a></span>.
   </p>
  </div>
 
@@ -51,21 +51,21 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">statement</code></em></dt>
 
-     <span class="term"><em><code class="parameter">statement</code></em></span>
      <dd>
 
        <p class="para">A valid OCI8 statement identifier created
-         by  <span class="function"><a href="function.oci-parse.html" class="function">oci_parse()</a></span> and executed
-         by  <span class="function"><a href="function.oci-execute.html" class="function">oci_execute()</a></span>.  The statement
+         by <span class="function"><a href="function.oci-parse.html" class="function">oci_parse()</a></span> and executed
+         by <span class="function"><a href="function.oci-execute.html" class="function">oci_execute()</a></span>.  The statement
          identifier may or may not be associated with a SQL statement
          that returns Implicit Result Sets.
        </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -79,7 +79,7 @@
    on <em><code class="parameter">statement</code></em>.  Returns <strong><code>FALSE</code></strong> when child
    statements do not exist, or all child statements have been returned
    by previous calls
-   to  <span class="function"><strong>oci_get_implicit_resultset()</strong></span>.
+   to <span class="function"><strong>oci_get_implicit_resultset()</strong></span>.
   </p>
  </div>
 
@@ -87,7 +87,7 @@
  <div class="refsect1 examples" id="refsect1-function.oci-get-implicit-resultset-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2001">
+   <div class="example" id="example-2002">
     <p><strong>例1 Fetching Implicit Result Sets in a loop</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -100,7 +100,7 @@
   </p>
 
   <p class="para">
-   <div class="example" id="example-2002">
+   <div class="example" id="example-2003">
     <p><strong>例2 Getting child statement handles individually</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -113,7 +113,7 @@
   </p>
 
   <p class="para">
-   <div class="example" id="example-2003">
+   <div class="example" id="example-2004">
     <p><strong>例3 Explicitly setting the Prefetch Count</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -126,8 +126,8 @@
   </p>
 
   <p class="para">
-   <div class="example" id="example-2004">
-    <p><strong>例4 Implicit Result Set example without using  <span class="function"><strong>oci_get_implicit_resultset()</strong></span></strong></p>
+   <div class="example" id="example-2005">
+    <p><strong>例4 Implicit Result Set example without using <span class="function"><strong>oci_get_implicit_resultset()</strong></span></strong></p>
     <div class="example-contents"><p>
     All results from all queries are returned consecutively.
     </p></div>
@@ -150,7 +150,7 @@
 大量の行を返すクエリの場合、
 <a href="oci8.configuration.html#ini.oci8.default-prefetch" class="link">oci8.default_prefetch</a>
 を増やすか
- <span class="function"><a href="function.oci-set-prefetch.html" class="function">oci_set_prefetch()</a></span> を使えばパフォーマンスが劇的に向上します。
+<span class="function"><a href="function.oci-set-prefetch.html" class="function">oci_set_prefetch()</a></span> を使えばパフォーマンスが劇的に向上します。
 </p>
   </p></blockquote>
  </div>

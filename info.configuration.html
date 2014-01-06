@@ -136,26 +136,27 @@
  <p class="para">
   <dl>
 
-   <dt id="ini.assert.active">
-    <span class="term">
+   
+    <dt id="ini.assert.active">
      <em><code class="parameter">assert.active</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
-       <span class="function"><a href="function.assert.html" class="function">assert()</a></span> の評価を有効にします。
+      <span class="function"><a href="function.assert.html" class="function">assert()</a></span> の評価を有効にします。
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.assert.bail">
-    <span class="term">
+   
+    <dt id="ini.assert.bail">
      <em><code class="parameter">assert.bail</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -163,14 +164,14 @@
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.assert.warning">
-    <span class="term">
+   
+    <dt id="ini.assert.warning">
      <em><code class="parameter">assert.warning</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -178,14 +179,14 @@
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.assert.callback">
-    <span class="term">
+   
+    <dt id="ini.assert.callback">
      <em><code class="parameter">assert.callback</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -193,38 +194,38 @@
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.assert.quiet-eval">
-    <span class="term">
+   
+    <dt id="ini.assert.quiet-eval">
      <em><code class="parameter">assert.quiet_eval</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
-      assertion 式の評価時に  <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> の現在の
+      assertion 式の評価時に <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> の現在の
       設定を使用します。有効な場合、評価時にエラーは表示されません。
       (暗黙のうちに error_reporting(0) とします)
-      無効な場合、エラーは、 <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> の設定に
+      無効な場合、エラーは、<span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> の設定に
       基づき設定されます。
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.enable-dl">
-    <span class="term">
+   
+    <dt id="ini.enable-dl">
       <em><code class="parameter">enable_dl</code></em>
       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
       このディレクティブは、Apacheモジュール版のPHPを使用した場合にのみ
-      有用です。PHPの動的ロード拡張機能を <span class="function"><a href="function.dl.html" class="function">dl()</a></span>で
+      有用です。PHPの動的ロード拡張機能を<span class="function"><a href="function.dl.html" class="function">dl()</a></span>で
       仮想サーバー毎またはディレクトリ毎にオンまたはオフに変更することが
       できます。
      </p>
@@ -235,18 +236,18 @@
       無視することが可能になります。
       デフォルトでは、<a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">セーフモード</a>を
       使用している場合以外、動的ロードが可能です。<a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">セーフモード</a>においては、
-       <span class="function"><a href="function.dl.html" class="function">dl()</a></span> を使用することが常に不可能になります。      
+      <span class="function"><a href="function.dl.html" class="function">dl()</a></span> を使用することが常に不可能になります。      
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.max-execution-time">
-    <span class="term">
+   
+    <dt id="ini.max-execution-time">
      <em><code class="parameter">max_execution_time</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -261,10 +262,10 @@
      <p class="para">
       最大実行時間は、システムコール、ストリーム操作等の
       影響を受けません。より詳細な情報については、
-       <span class="function"><a href="function.set-time-limit.html" class="function">set_time_limit()</a></span> 関数の説明を参照ください。
+      <span class="function"><a href="function.set-time-limit.html" class="function">set_time_limit()</a></span> 関数の説明を参照ください。
      </p>
      <p class="para">
-      <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">セーフモード</a>で実行している場合にはこの設定を  <span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span>
+      <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">セーフモード</a>で実行している場合にはこの設定を <span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span>
       で変更することはできません。次善策としては <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">セーフモード</a> をオフにするか
       あるいは <var class="filename">php.ini</var> 上で制限時間を変えるしかありません。
      </p>
@@ -277,14 +278,14 @@
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.max-input-time">
-    <span class="term">
+   
+    <dt id="ini.max-input-time">
      <em><code class="parameter">max_input_time</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -294,14 +295,14 @@
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.max-input-nesting-level">
-    <span class="term">
+   
+    <dt id="ini.max-input-nesting-level">
      <em><code class="parameter">max_input_nesting_level</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -311,14 +312,14 @@
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.max-input-vars">
-    <span class="term">
+   
+    <dt id="ini.max-input-vars">
      <em><code class="parameter">max_input_vars</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -333,14 +334,14 @@
      </p>
     </dd>
 
-   </dt>
-
    
-   <dt id="ini.magic-quotes-gpc">
-    <span class="term">
+   
+   
+    <dt id="ini.magic-quotes-gpc">
      <em><code class="parameter">magic_quotes_gpc</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
      <dd>
 
      <div class="warning"><strong class="warning">警告</strong><p class="simpara">この機能は PHP 5.3.0 で
@@ -371,18 +372,18 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
       </p>
      </p></blockquote>
      <p class="para">
-       <span class="function"><a href="function.get-magic-quotes-gpc.html" class="function">get_magic_quotes_gpc()</a></span> も参照してください。
+      <span class="function"><a href="function.get-magic-quotes-gpc.html" class="function">get_magic_quotes_gpc()</a></span> も参照してください。
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.magic-quotes-runtime">
-    <span class="term">
+   
+    <dt id="ini.magic-quotes-runtime">
      <em><code class="parameter">magic_quotes_runtime</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <div class="warning"><strong class="warning">警告</strong><p class="simpara">この機能は PHP 5.3.0 で
@@ -400,62 +401,62 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
       <em><code class="parameter">magic_quotes_runtime</code></em> の影響を受ける関数は次のとおりです
       (PECL の関数は除きます)。
       <ul class="simplelist">
-       <li class="member"> <span class="function"><a href="function.get-meta-tags.html" class="function">get_meta_tags()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.file-get-contents.html" class="function">file_get_contents()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.file.html" class="function">file()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.fwrite.html" class="function">fwrite()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.fread.html" class="function">fread()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.fputcsv.html" class="function">fputcsv()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.stream-socket-recvfrom.html" class="function">stream_socket_recvfrom()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.exec.html" class="function">exec()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.system.html" class="function">system()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.passthru.html" class="function">passthru()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.stream-get-contents.html" class="function">stream_get_contents()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.bzread.html" class="function">bzread()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.gzfile.html" class="function">gzfile()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.gzgets.html" class="function">gzgets()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.gzwrite.html" class="function">gzwrite()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.gzread.html" class="function">gzread()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.dba-insert.html" class="function">dba_insert()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.dba-replace.html" class="function">dba_replace()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.dba-fetch.html" class="function">dba_fetch()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.ibase-fetch-row.html" class="function">ibase_fetch_row()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.ibase-fetch-assoc.html" class="function">ibase_fetch_assoc()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.ibase-fetch-object.html" class="function">ibase_fetch_object()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.mssql-fetch-row.html" class="function">mssql_fetch_row()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.mssql-fetch-object.html" class="function">mssql_fetch_object()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.mssql-fetch-array.html" class="function">mssql_fetch_array()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.mssql-fetch-assoc.html" class="function">mssql_fetch_assoc()</a></span></li>
-       <li class="member"> <span class="function"><a href="mysqli-result.fetch-row.html" class="function">mysqli_fetch_row()</a></span></li>
-       <li class="member"> <span class="function"><a href="mysqli-result.fetch-array.html" class="function">mysqli_fetch_array()</a></span></li>
-       <li class="member"> <span class="function"><a href="mysqli-result.fetch-assoc.html" class="function">mysqli_fetch_assoc()</a></span></li>
-       <li class="member"> <span class="function"><a href="mysqli-result.fetch-object.html" class="function">mysqli_fetch_object()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.pg-fetch-assoc.html" class="function">pg_fetch_assoc()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.pg-fetch-array.html" class="function">pg_fetch_array()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.pg-fetch-object.html" class="function">pg_fetch_object()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.pg-fetch-all.html" class="function">pg_fetch_all()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.pg-select.html" class="function">pg_select()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.sybase-fetch-object.html" class="function">sybase_fetch_object()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.sybase-fetch-array.html" class="function">sybase_fetch_array()</a></span></li>
-       <li class="member"> <span class="function"><a href="function.sybase-fetch-assoc.html" class="function">sybase_fetch_assoc()</a></span></li>
-       <li class="member"> <span class="function"><a href="splfileobject.fgets.html" class="function">SplFileObject::fgets()</a></span></li>
-       <li class="member"> <span class="function"><a href="splfileobject.fgetcsv.html" class="function">SplFileObject::fgetcsv()</a></span></li>
-       <li class="member"> <span class="function"><a href="splfileobject.fwrite.html" class="function">SplFileObject::fwrite()</a></span></li>
+       <li class="member"><span class="function"><a href="function.get-meta-tags.html" class="function">get_meta_tags()</a></span></li>
+       <li class="member"><span class="function"><a href="function.file-get-contents.html" class="function">file_get_contents()</a></span></li>
+       <li class="member"><span class="function"><a href="function.file.html" class="function">file()</a></span></li>
+       <li class="member"><span class="function"><a href="function.fgets.html" class="function">fgets()</a></span></li>
+       <li class="member"><span class="function"><a href="function.fwrite.html" class="function">fwrite()</a></span></li>
+       <li class="member"><span class="function"><a href="function.fread.html" class="function">fread()</a></span></li>
+       <li class="member"><span class="function"><a href="function.fputcsv.html" class="function">fputcsv()</a></span></li>
+       <li class="member"><span class="function"><a href="function.stream-socket-recvfrom.html" class="function">stream_socket_recvfrom()</a></span></li>
+       <li class="member"><span class="function"><a href="function.exec.html" class="function">exec()</a></span></li>
+       <li class="member"><span class="function"><a href="function.system.html" class="function">system()</a></span></li>
+       <li class="member"><span class="function"><a href="function.passthru.html" class="function">passthru()</a></span></li>
+       <li class="member"><span class="function"><a href="function.stream-get-contents.html" class="function">stream_get_contents()</a></span></li>
+       <li class="member"><span class="function"><a href="function.bzread.html" class="function">bzread()</a></span></li>
+       <li class="member"><span class="function"><a href="function.gzfile.html" class="function">gzfile()</a></span></li>
+       <li class="member"><span class="function"><a href="function.gzgets.html" class="function">gzgets()</a></span></li>
+       <li class="member"><span class="function"><a href="function.gzwrite.html" class="function">gzwrite()</a></span></li>
+       <li class="member"><span class="function"><a href="function.gzread.html" class="function">gzread()</a></span></li>
+       <li class="member"><span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span></li>
+       <li class="member"><span class="function"><a href="function.dba-insert.html" class="function">dba_insert()</a></span></li>
+       <li class="member"><span class="function"><a href="function.dba-replace.html" class="function">dba_replace()</a></span></li>
+       <li class="member"><span class="function"><a href="function.dba-fetch.html" class="function">dba_fetch()</a></span></li>
+       <li class="member"><span class="function"><a href="function.ibase-fetch-row.html" class="function">ibase_fetch_row()</a></span></li>
+       <li class="member"><span class="function"><a href="function.ibase-fetch-assoc.html" class="function">ibase_fetch_assoc()</a></span></li>
+       <li class="member"><span class="function"><a href="function.ibase-fetch-object.html" class="function">ibase_fetch_object()</a></span></li>
+       <li class="member"><span class="function"><a href="function.mssql-fetch-row.html" class="function">mssql_fetch_row()</a></span></li>
+       <li class="member"><span class="function"><a href="function.mssql-fetch-object.html" class="function">mssql_fetch_object()</a></span></li>
+       <li class="member"><span class="function"><a href="function.mssql-fetch-array.html" class="function">mssql_fetch_array()</a></span></li>
+       <li class="member"><span class="function"><a href="function.mssql-fetch-assoc.html" class="function">mssql_fetch_assoc()</a></span></li>
+       <li class="member"><span class="function"><a href="mysqli-result.fetch-row.html" class="function">mysqli_fetch_row()</a></span></li>
+       <li class="member"><span class="function"><a href="mysqli-result.fetch-array.html" class="function">mysqli_fetch_array()</a></span></li>
+       <li class="member"><span class="function"><a href="mysqli-result.fetch-assoc.html" class="function">mysqli_fetch_assoc()</a></span></li>
+       <li class="member"><span class="function"><a href="mysqli-result.fetch-object.html" class="function">mysqli_fetch_object()</a></span></li>
+       <li class="member"><span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span></li>
+       <li class="member"><span class="function"><a href="function.pg-fetch-assoc.html" class="function">pg_fetch_assoc()</a></span></li>
+       <li class="member"><span class="function"><a href="function.pg-fetch-array.html" class="function">pg_fetch_array()</a></span></li>
+       <li class="member"><span class="function"><a href="function.pg-fetch-object.html" class="function">pg_fetch_object()</a></span></li>
+       <li class="member"><span class="function"><a href="function.pg-fetch-all.html" class="function">pg_fetch_all()</a></span></li>
+       <li class="member"><span class="function"><a href="function.pg-select.html" class="function">pg_select()</a></span></li>
+       <li class="member"><span class="function"><a href="function.sybase-fetch-object.html" class="function">sybase_fetch_object()</a></span></li>
+       <li class="member"><span class="function"><a href="function.sybase-fetch-array.html" class="function">sybase_fetch_array()</a></span></li>
+       <li class="member"><span class="function"><a href="function.sybase-fetch-assoc.html" class="function">sybase_fetch_assoc()</a></span></li>
+       <li class="member"><span class="function"><a href="splfileobject.fgets.html" class="function">SplFileObject::fgets()</a></span></li>
+       <li class="member"><span class="function"><a href="splfileobject.fgetcsv.html" class="function">SplFileObject::fgetcsv()</a></span></li>
+       <li class="member"><span class="function"><a href="splfileobject.fwrite.html" class="function">SplFileObject::fwrite()</a></span></li>
       </ul>
      </p>
     </dd>
 
-   </dt>
+   
 
-
-   <dt id="ini.zend.enable-gc">
-    <span class="term">
+   
+    <dt id="ini.zend.enable-gc">
      <em><code class="parameter">zend.enable_gc</code></em>
      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -463,8 +464,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
      </p>
     </dd>
 
-   </dt>
-
+   
 
   </dl>
 

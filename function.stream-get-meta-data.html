@@ -34,20 +34,20 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">stream</code></em></dt>
 
-     <span class="term"><em><code class="parameter">stream</code></em></span>
      <dd>
 
       <p class="para">
-       ストリームは  <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> か、
-        <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> か、 <span class="function"><a href="function.pfsockopen.html" class="function">pfsockopen()</a></span> で
+       ストリームは <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> か、
+       <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> か、<span class="function"><a href="function.pfsockopen.html" class="function">pfsockopen()</a></span> で
        作成されたいずれのものも指定できます。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -63,7 +63,7 @@
    <li class="listitem">
     <p class="para">
      <em>timed_out</em> (bool) - 最後に
-      <span class="function"><a href="function.fread.html" class="function">fread()</a></span> または  <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span>
+     <span class="function"><a href="function.fread.html" class="function">fread()</a></span> または <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span>
      でデータを待っている時にタイムアウトした場合 <strong><code>TRUE</code></strong> を返します。
     </p>
    </li>
@@ -71,7 +71,7 @@
     <p class="para">
      <em>blocked</em> (bool) -
      ストリームがブロック I/O モードの場合に <strong><code>TRUE</code></strong> となります。
-      <span class="function"><a href="function.stream-set-blocking.html" class="function">stream_set_blocking()</a></span> を参照ください。
+     <span class="function"><a href="function.stream-set-blocking.html" class="function">stream_set_blocking()</a></span> を参照ください。
     </p>
    </li>
    <li class="listitem">
@@ -82,7 +82,7 @@
      たとえ <em>unread_bytes</em> が 0 でなくても
      <strong><code>TRUE</code></strong> になる場合があることに注意してください。
      まだデータがあるかどうかを調べるには、このパラメータではなく、
-      <span class="function"><a href="function.feof.html" class="function">feof()</a></span> を使ってください。
+     <span class="function"><a href="function.feof.html" class="function">feof()</a></span> を使ってください。
     </p>
    </li>
    <li class="listitem">
@@ -176,7 +176,7 @@
       <tr>
        <td>4.3.0</td>
        <td>
-         <span class="function"><a href="function.socket-get-status.html" class="function">socket_get_status()</a></span> がこの関数のエイリアスとなりました。
+        <span class="function"><a href="function.socket-get-status.html" class="function">socket_get_status()</a></span> がこの関数のエイリアスとなりました。
         PHP 4.3.0 より前のバージョンでは、この関数は最初の 4 つの項目を取得する関数で
         <em class="emphasis">ソケットベースのストリームでしか使えませんでした。</em>
        </td>
@@ -193,8 +193,8 @@
  <div class="refsect1 examples" id="refsect1-function.stream-get-meta-data-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4020">
-    <p><strong>例1  <span class="function"><strong>stream_get_meta_data()</strong></span> の例</strong></p>
+   <div class="example" id="example-4022">
+    <p><strong>例1 <span class="function"><strong>stream_get_meta_data()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$url&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'http://www.example.com/'</span><span style="color: #007700">;<br /><br />if&nbsp;(!</span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$url</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">trigger_error</span><span style="color: #007700">(</span><span style="color: #DD0000">"Unable&nbsp;to&nbsp;open&nbsp;URL&nbsp;(</span><span style="color: #0000BB">$url</span><span style="color: #DD0000">)"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">E_USER_ERROR</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">$meta&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_get_meta_data</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$meta</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -254,7 +254,7 @@ Array
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.get-headers.html" class="function" rel="rdfs-seeAlso">get_headers()</a> - HTTP リクエストに対するレスポンス内で
+    <li class="member"><span class="function"><a href="function.get-headers.html" class="function" rel="rdfs-seeAlso">get_headers()</a> - HTTP リクエストに対するレスポンス内で
    サーバーによって送出された全てのヘッダを取得する</span></li>
     <li class="member"><a href="reserved.variables.httpresponseheader.html" class="link">$http_response_header</a></li>
    </ul>

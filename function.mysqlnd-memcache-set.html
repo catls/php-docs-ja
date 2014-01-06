@@ -20,8 +20,8 @@
  <div class="refsect1 description" id="refsect1-function.mysqlnd-memcache-set-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">bool</span>
-    <span class="methodname"><strong>mysqlnd_memcache_set</strong></span>
+   <span class="type">bool</span> 
+   <span class="methodname"><strong>mysqlnd_memcache_set</strong></span>
     ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$mysql_connection</code></span>
    [, <span class="methodparam"><span class="type"><a href="class.memcached.html" class="type Memcached">Memcached</a></span> <code class="parameter">$memcache_connection</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
@@ -41,7 +41,7 @@
    サーバーの設定を自動検出し、InnoDB Memcache Daemon Plugin を使うのか
    MySQL Cluster NDB Memcache をサポートするのかを判断します。
    また、サーバーに問い合わせて、エクスポートされたテーブルやその他の設定も自動検出します。
-   これらの自動的な設定の結果を取得するには、 <span class="function"><a href="function.mysqlnd-memcache-get-config.html" class="function">mysqlnd_memcache_get_config()</a></span>
+   これらの自動的な設定の結果を取得するには、<span class="function"><a href="function.mysqlnd-memcache-get-config.html" class="function">mysqlnd_memcache_get_config()</a></span>
    を使います。
   </p>
  </div>
@@ -51,9 +51,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">mysql_connection</code></em></dt>
 
-    <span class="term"><em><code class="parameter">mysql_connection</code></em></span>
     <dd>
 
      <p class="para">
@@ -63,11 +64,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">memcache_connection</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">memcache_connection</code></em></span>
     <dd>
 
      <p class="para">
@@ -79,11 +80,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">pattern</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">pattern</code></em></span>
     <dd>
 
      <p class="para">
@@ -97,11 +98,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">callback</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">callback</code></em></span>
     <dd>
 
      <p class="para">
@@ -111,8 +112,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -130,10 +130,10 @@
  <div class="refsect1 examples" id="refsect1-function.mysqlnd-memcache-set-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-1934">
+   <div class="example" id="example-1935">
     <p><strong>例1 
-      <span class="function"><strong>mysqlnd_memcache_set()</strong></span> で、
-      <span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> をデバッグ用コールバックとして使う例</strong></p>
+     <span class="function"><strong>mysqlnd_memcache_set()</strong></span> で、
+     <span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> をデバッグ用コールバックとして使う例</strong></p>
 
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -160,7 +160,7 @@ var_dump won&#039;t be invoked:
   <p class="para">
    <ul class="simplelist">
     <li class="member">
-      <span class="function"><a href="function.mysqlnd-memcache-get-config.html" class="function" rel="rdfs-seeAlso">mysqlnd_memcache_get_config()</a> - プラグインの設定情報を返す</span>
+     <span class="function"><a href="function.mysqlnd-memcache-get-config.html" class="function" rel="rdfs-seeAlso">mysqlnd_memcache_get_config()</a> - プラグインの設定情報を返す</span>
     </li>
    </ul>
   </p>

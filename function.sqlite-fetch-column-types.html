@@ -37,7 +37,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>sqlite_fetch_column_types()</strong></span> は、
+   <span class="function"><strong>sqlite_fetch_column_types()</strong></span> は、
    指定されたテーブル <em><code class="parameter">table_name</code></em>
    からカラムのデータ型の配列を返します。
   </p>
@@ -49,9 +49,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">table_name</code></em></dt>
 
-     <span class="term"><em><code class="parameter">table_name</code></em></span>
      <dd>
 
       <p class="para">
@@ -59,26 +60,26 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">dbhandle</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">dbhandle</code></em></span>
      <dd>
 
       <p class="para">
        SQLite データベースリソース。手続きに従って、
-        <span class="function"><a href="function.sqlite-open.html" class="function">sqlite_open()</a></span> から返されます。
+       <span class="function"><a href="function.sqlite-open.html" class="function">sqlite_open()</a></span> から返されます。
        このパラメータは、
        オブジェクト指向言語型メソッドを使用する場合は不要です。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">result_type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">result_type</code></em></span>
      <dd>
 
       <p class="para">
@@ -93,8 +94,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -144,7 +144,7 @@
  <div class="refsect1 examples" id="refsect1-function.sqlite-fetch-column-types-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2146">
+   <div class="example" id="example-2147">
     <p><strong>例1 手続き型言語スタイルでの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -156,7 +156,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2147">
+   <div class="example" id="example-2148">
     <p><strong>例2 オブジェクト指向言語型スタイルでの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

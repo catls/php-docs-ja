@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">format</code></em></dt>
 
-     <span class="term"><em><code class="parameter">format</code></em></span>
      <dd>
 
       <p class="para">
@@ -103,7 +104,7 @@
 
           <tr>
            <td><em>a</em></td>
-           <td> <span class="methodname"><a href="datetime.diff.html" class="methodname">DateTime::diff()</a></span> の結果に使った場合は総日数、それ以外の場合は <em>(unknown)</em></td>
+           <td><span class="methodname"><a href="datetime.diff.html" class="methodname">DateTime::diff()</a></span> の結果に使った場合は総日数、それ以外の場合は <em>(unknown)</em></td>
            <td><em>4</em>, <em>18</em>, <em>8123</em></td>
           </tr>
 
@@ -162,8 +163,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -182,7 +182,7 @@
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <span class="methodname"><strong>DateInterval::format()</strong></span> メソッドは、
+    <span class="methodname"><strong>DateInterval::format()</strong></span> メソッドは、
     時刻文字列や日付セグメントでの繰り越しを再計算しません。
     これは意図的な仕様です。なぜなら <em>&quot;32 days&quot;</em>
     のようにオーバーフローした値は <em>&quot;1 month and 4 days&quot;</em>
@@ -196,7 +196,7 @@
  <div class="refsect1 examples" id="refsect1-dateinterval.format-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2286">
+   <div class="example" id="example-2287">
     <p><strong>例1 <a href="class.dateinterval.html" class="classname">DateInterval</a> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -214,7 +214,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2287">
+   <div class="example" id="example-2288">
     <p><strong>例2 <a href="class.dateinterval.html" class="classname">DateInterval</a> での繰り越しの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -232,10 +232,10 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2288">
+   <div class="example" id="example-2289">
     <p><strong>例3 
      <a href="class.dateinterval.html" class="classname">DateInterval</a> および
-      <span class="methodname"><a href="datetime.diff.html" class="methodname">DateTime::diff()</a></span> での修飾子 %a および %d
+     <span class="methodname"><a href="datetime.diff.html" class="methodname">DateTime::diff()</a></span> での修飾子 %a および %d
     </strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

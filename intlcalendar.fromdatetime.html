@@ -43,19 +43,19 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">dateTime</code></em></dt>
 
-    <span class="term"><em><code class="parameter">dateTime</code></em></span>
     <dd>
 
      <p class="para">
       A <a href="class.datetime.html" class="classname">DateTime</a> object or a <span class="type"><a href="language.types.string.html" class="type string">string</a></span> that
-      can be passed to  <span class="function"><a href="datetime.construct.html" class="function">DateTime::__construct()</a></span>.
+      can be passed to <span class="function"><a href="datetime.construct.html" class="function">DateTime::__construct()</a></span>.
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -75,8 +75,8 @@
  <div class="refsect1 examples" id="refsect1-intlcalendar.fromdatetime-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2596">
-   <p><strong>例1  <span class="function"><strong>IntlCalendar::fromDateTime()</strong></span></strong></p>
+   <div class="example" id="example-2597">
+   <p><strong>例1 <span class="function"><strong>IntlCalendar::fromDateTime()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'date.timezone'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Europe/Lisbon'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//same&nbsp;as&nbsp;IntlCalendar::fromDateTime(new&nbsp;DateTime(...))<br /></span><span style="color: #0000BB">$cal1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">IntlCalendar</span><span style="color: #007700">::</span><span style="color: #0000BB">fromDateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2013-02-28&nbsp;00:01:02&nbsp;Europe/Berlin'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//Note&nbsp;the&nbsp;timezone&nbsp;is&nbsp;Europe/Berlin,&nbsp;not&nbsp;the&nbsp;default&nbsp;Europe/Lisbon<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">IntlDateFormatter</span><span style="color: #007700">::</span><span style="color: #0000BB">formatObject</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'yyyy&nbsp;MMMM&nbsp;d&nbsp;HH:mm:ss&nbsp;VVVV'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'de_DE'</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;</span>

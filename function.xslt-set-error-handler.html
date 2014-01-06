@@ -39,16 +39,17 @@
    <dl>
 
     <dt>
-<span class="term"><em><code class="parameter">
-xh</code></em></span><dd>
-<p class="para"> <span class="function"><a href="function.xslt-create.html" class="function">xslt_create()</a></span> で作成した
+<em><code class="parameter">
+xh</code></em></dt>
+<dd>
+<p class="para"><span class="function"><a href="function.xslt-create.html" class="function">xslt_create()</a></span> で作成した
 <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> プロセッサリンク ID。</p></dd>
 
-</dt>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">handler</code></em></dt>
 
-     <span class="term"><em><code class="parameter">handler</code></em></span>
      <dd>
 
       <p class="para">
@@ -56,7 +57,7 @@ xh</code></em></span><dd>
        <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> プロセッサ、エラーレベル、エラーコードとメッセージの配列です。
        その関数は次のように表すことができます。
        <div class="methodsynopsis dc-description">
-         <span class="methodname"><span class="replaceable">error_handler</span></span>
+        <span class="methodname"><span class="replaceable">error_handler</span></span>
          ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$xh</code></span>
         , <span class="methodparam"><span class="type">int</span> <code class="parameter">$error_level</code></span>
         , <span class="methodparam"><span class="type">int</span> <code class="parameter">$error_code</code></span>
@@ -66,8 +67,7 @@ xh</code></em></span><dd>
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -84,8 +84,8 @@ xh</code></em></span><dd>
  
  <div class="refsect1 examples" id="refsect1-function.xslt-set-error-handler-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-5552">
-   <p><strong>例1  <span class="function"><strong>xslt_set_error_handler()</strong></span> の例</strong></p>
+  <div class="example" id="example-5554">
+   <p><strong>例1 <span class="function"><strong>xslt_set_error_handler()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;独自の&nbsp;XSLT&nbsp;エラーハンドラ<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">xslt_error_handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$handler</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$errno</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$level</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;差し当たり、引数を見るだけにする<br />&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">());<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;XML&nbsp;の内容&nbsp;:<br /></span><span style="color: #0000BB">$xml</span><span style="color: #007700">=</span><span style="color: #DD0000">'&lt;?xml&nbsp;version="1.0"?&gt;<br />&lt;para&gt;<br />&nbsp;oops,&nbsp;I&nbsp;misspelled&nbsp;the&nbsp;closing&nbsp;tag<br />&lt;/pata&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;XSL&nbsp;の内容&nbsp;:<br /></span><span style="color: #0000BB">$xsl</span><span style="color: #007700">=</span><span style="color: #DD0000">'&lt;?xml&nbsp;version="1.0"?&gt;<br />&lt;xsl:stylesheet&nbsp;version="1.0"&nbsp;xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;<br />&lt;xsl:template&nbsp;match="/"&gt;<br />&nbsp;&nbsp;&nbsp;&lt;strong&gt;&lt;xsl:value-of&nbsp;select="para"/&gt;&lt;/strong&gt;<br />&lt;/xsl:template&gt;<br />&lt;/xsl:stylesheet&gt;'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$xh&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">xslt_create</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">xslt_set_error_handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$xh</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"xslt_error_handler"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">xslt_process</span><span style="color: #007700">(</span><span style="color: #0000BB">$xh</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'arg:/_xml'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'arg:/_xsl'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"/_xml"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$xml</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"/_xsl"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$xsl</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -131,7 +131,7 @@ array(4) {
   <p class="para">
    <ul class="simplelist">
     <li class="member">オブジェクトメソッドをハンドラとして使用したい場合は
-      <span class="function"><a href="function.xslt-set-object.html" class="function" rel="rdfs-seeAlso">xslt_set_object()</a> - コールバック関数を解決するためのオブジェクトを設定する</span></li>
+     <span class="function"><a href="function.xslt-set-object.html" class="function" rel="rdfs-seeAlso">xslt_set_object()</a> - コールバック関数を解決するためのオブジェクトを設定する</span></li>
    </ul>
   </p>
  </div>

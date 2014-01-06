@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">handle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">handle</code></em></span>
      <dd>
 
       <p class="para">
@@ -45,8 +46,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -70,8 +70,8 @@
  <div class="refsect1 examples" id="refsect1-function.get-resource-type-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5250">
-    <p><strong>例1  <span class="function"><strong>get_resource_type()</strong></span> の例</strong></p>
+   <div class="example" id="example-5252">
+    <p><strong>例1 <span class="function"><strong>get_resource_type()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;mysql&nbsp;link&nbsp;を出力<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">get_resource_type</span><span style="color: #007700">(</span><span style="color: #0000BB">$c</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;stream&nbsp;を出力<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">get_resource_type</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;domxml&nbsp;document&nbsp;を出力<br /></span><span style="color: #0000BB">$doc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">new_xmldoc</span><span style="color: #007700">(</span><span style="color: #DD0000">"1.0"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">get_resource_type</span><span style="color: #007700">(</span><span style="color: #0000BB">$doc</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">doc</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>

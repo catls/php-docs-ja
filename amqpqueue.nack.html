@@ -28,7 +28,7 @@
   <p class="para rdfs-comment">
     メッセージ <em><code class="parameter">delivery_tag</code></em> を、明示的に受付前の状態にします。
     このメソッドをコールできるのは、まだ受け付けられていないメッセージだけです。
-    つまり、 <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> や  <span class="methodname"><a href="amqpqueue.get.html" class="methodname">AMQPQueue::get()</a></span>
+    つまり、<span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> や <span class="methodname"><a href="amqpqueue.get.html" class="methodname">AMQPQueue::get()</a></span>
     で <strong><code>AMQP_AUTOACK</code></strong> フラグを使った場合はこのメソッドを使えません。
   </p>
   <p class="para">
@@ -46,9 +46,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">delivery_tag</code></em></dt>
 
-    <span class="term"><em><code class="parameter">delivery_tag</code></em></span>
     <dd>
 
      <p class="para">
@@ -56,11 +57,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">flags</code></em></span>
     <dd>
 
      <p class="para">
@@ -68,8 +69,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>

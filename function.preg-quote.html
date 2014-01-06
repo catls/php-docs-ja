@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>preg_quote()</strong></span> は、<em><code class="parameter">str</code></em> 
+   <span class="function"><strong>preg_quote()</strong></span> は、<em><code class="parameter">str</code></em> 
    を引数とし、正規表現構文の特殊文字の前にバックスラッシュを挿入します。
    この関数は、実行時に生成される文字列をパターンとしてマッチングを行う必要があり、
    その文字列には正規表現の特殊文字が含まれているかも知れない場合に有用です。
@@ -43,9 +43,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">str</code></em></dt>
 
-     <span class="term"><em><code class="parameter">str</code></em></span>
      <dd>
 
       <p class="para">
@@ -53,11 +54,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">delimiter</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">delimiter</code></em></span>
      <dd>
 
       <p class="para">
@@ -68,8 +69,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -116,8 +116,8 @@
  <div class="refsect1 examples" id="refsect1-function.preg-quote-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4790">
-    <p><strong>例1  <span class="function"><strong>preg_quote()</strong></span> の例</strong></p>
+   <div class="example" id="example-4792">
+    <p><strong>例1 <span class="function"><strong>preg_quote()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$keywords&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'$40&nbsp;for&nbsp;a&nbsp;g3/400'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$keywords&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_quote</span><span style="color: #007700">(</span><span style="color: #0000BB">$keywords</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'/'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$keywords</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;\$40&nbsp;for&nbsp;a&nbsp;g3\/400&nbsp;を返します<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -128,7 +128,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4791">
+   <div class="example" id="example-4793">
     <p><strong>例2 テキスト内の単語の斜体変換</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -154,7 +154,7 @@
   <p class="para">
    <ul class="simplelist">
     <li class="member"><a href="pcre.pattern.html" class="link">PCRE パターン</a></li>
-    <li class="member"> <span class="function"><a href="function.escapeshellcmd.html" class="function" rel="rdfs-seeAlso">escapeshellcmd()</a> - シェルのメタ文字をエスケープする</span></li>
+    <li class="member"><span class="function"><a href="function.escapeshellcmd.html" class="function" rel="rdfs-seeAlso">escapeshellcmd()</a> - シェルのメタ文字をエスケープする</span></li>
    </ul>
   </p>
  </div>

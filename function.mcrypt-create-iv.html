@@ -42,9 +42,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">size</code></em></dt>
 
-     <span class="term"><em><code class="parameter">size</code></em></span>
      <dd>
 
       <p class="para">
@@ -52,11 +53,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">source</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">source</code></em></span>
      <dd>
 
       <p class="para">
@@ -71,15 +72,14 @@
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
         <strong><code>MCRYPT_RAND</code></strong> を使用する場合、乱数生成器を初期化するために、
-        必ず  <span class="function"><strong>mcrypt_create_iv()</strong></span> の前に  <span class="function"><a href="function.srand.html" class="function">srand()</a></span>
-        をコールしてください。 <span class="function"><a href="function.rand.html" class="function">rand()</a></span> のように、自動的に
+        必ず <span class="function"><strong>mcrypt_create_iv()</strong></span> の前に <span class="function"><a href="function.srand.html" class="function">srand()</a></span>
+        をコールしてください。<span class="function"><a href="function.rand.html" class="function">rand()</a></span> のように、自動的に
         初期化されるわけではありません。
        </p>
       </p></blockquote>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -119,7 +119,7 @@
       <tr>
        <td>5.3.0</td>
        <td>
-         <span class="function"><a href="function.srand.html" class="function">srand()</a></span> を最初に呼び出す必要はもはやありません。
+        <span class="function"><a href="function.srand.html" class="function">srand()</a></span> を最初に呼び出す必要はもはやありません。
         これは現在自動的に行われます。
        </td>
       </tr>
@@ -135,8 +135,8 @@
  <div class="refsect1 examples" id="refsect1-function.mcrypt-create-iv-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-838">
-    <p><strong>例1  <span class="function"><strong>mcrypt_create_iv()</strong></span> の例</strong></p>
+   <div class="example" id="example-839">
+    <p><strong>例1 <span class="function"><strong>mcrypt_create_iv()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;$size&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_get_iv_size</span><span style="color: #007700">(</span><span style="color: #0000BB">MCRYPT_CAST_256</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_MODE_CFB</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iv&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_create_iv</span><span style="color: #007700">(</span><span style="color: #0000BB">$size</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_DEV_RANDOM</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

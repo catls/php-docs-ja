@@ -26,8 +26,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   自分で作ったプロトコルハンドラとストリームを実装し、それを  <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
-   や  <span class="function"><a href="function.fread.html" class="function">fread()</a></span> といったファイルシステムの関数と利用することを可能にします。
+   自分で作ったプロトコルハンドラとストリームを実装し、それを <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
+   や <span class="function"><a href="function.fread.html" class="function">fread()</a></span> といったファイルシステムの関数と利用することを可能にします。
   </p>
  </div>
 
@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">protocol</code></em></dt>
 
-     <span class="term"><em><code class="parameter">protocol</code></em></span>
      <dd>
 
       <p class="para">
@@ -47,11 +48,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">classname</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">classname</code></em></span>
      <dd>
 
       <p class="para">
@@ -59,11 +60,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -73,8 +74,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -87,7 +87,7 @@
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-    <span class="function"><strong>stream_wrapper_register()</strong></span> は、
+   <span class="function"><strong>stream_wrapper_register()</strong></span> は、
    <em><code class="parameter">protocol</code></em> というハンドラが既にある場合、
    <strong><code>FALSE</code></strong> を返します。
   </p>
@@ -127,7 +127,7 @@
  <div class="refsect1 examples" id="refsect1-function.stream-wrapper-register-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4040">
+   <div class="example" id="example-4042">
     <p><strong>例1 ストリームラッパーの登録方法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -159,9 +159,9 @@ line3
    <ul class="simplelist">
     <li class="member"><a href="class.streamwrapper.html" class="xref">streamWrapper</a> プロトタイプクラス</li>
     <li class="member"><a href="stream.streamwrapper.example-1.html" class="xref">ストリームラッパーとして登録するクラスの例</a></li>
-    <li class="member"> <span class="function"><a href="function.stream-wrapper-unregister.html" class="function" rel="rdfs-seeAlso">stream_wrapper_unregister()</a> - URL ラッパーの登録を解除する</span></li>
-    <li class="member"> <span class="function"><a href="function.stream-wrapper-restore.html" class="function" rel="rdfs-seeAlso">stream_wrapper_restore()</a> - 事前に登録を解除された組み込みラッパーを復元する</span></li>
-    <li class="member"> <span class="function"><a href="function.stream-get-wrappers.html" class="function" rel="rdfs-seeAlso">stream_get_wrappers()</a> - 登録されているストリームのラッパーのリストを取得する</span></li>
+    <li class="member"><span class="function"><a href="function.stream-wrapper-unregister.html" class="function" rel="rdfs-seeAlso">stream_wrapper_unregister()</a> - URL ラッパーの登録を解除する</span></li>
+    <li class="member"><span class="function"><a href="function.stream-wrapper-restore.html" class="function" rel="rdfs-seeAlso">stream_wrapper_restore()</a> - 事前に登録を解除された組み込みラッパーを復元する</span></li>
+    <li class="member"><span class="function"><a href="function.stream-get-wrappers.html" class="function" rel="rdfs-seeAlso">stream_get_wrappers()</a> - 登録されているストリームのラッパーのリストを取得する</span></li>
    </ul>
   </p>
  </div>

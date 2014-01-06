@@ -105,11 +105,12 @@
  <p class="para">
   <dl>
 
-   <dt id="ini.amqp.host">
-     <span class="term">
+   
+     <dt id="ini.amqp.host">
       <em><code class="parameter">amqp.host</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -117,13 +118,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.amqp.vhost">
-     <span class="term">
+    
+    
+     <dt id="ini.amqp.vhost">
       <em><code class="parameter">amqp.vhost</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -131,13 +132,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.amqp.port">
-     <span class="term">
+    
+    
+     <dt id="ini.amqp.port">
       <em><code class="parameter">amqp.port</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -145,13 +146,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.amqp.login">
-     <span class="term">
+    
+    
+     <dt id="ini.amqp.login">
       <em><code class="parameter">amqp.login</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -159,13 +160,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.amqp.password">
-     <span class="term">
+    
+    
+     <dt id="ini.amqp.password">
       <em><code class="parameter">amqp.password</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -173,69 +174,68 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.amqp.auto-ack">
-     <span class="term">
+    
+    
+     <dt id="ini.amqp.auto-ack">
       <em><code class="parameter">amqp.auto_ack</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
-        <span class="methodname"><a href="amqpqueue.get.html" class="methodname">AMQPQueue::get()</a></span> や  <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> をコールするときに
+       <span class="methodname"><a href="amqpqueue.get.html" class="methodname">AMQPQueue::get()</a></span> や <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> をコールするときに
        クライアント側でメッセージの明示的な受け付けを要求するかどうか。この値を 1 にすると、
        これらのメソッドのコール時に <em>flags</em> フィールドが省略されていれば
        <strong><code>AMQP_AUTOACK</code></strong> フラグを渡します。
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.amqp.min-messages">
-     <span class="term">
+    
+    
+     <dt id="ini.amqp.min-messages">
       <em><code class="parameter">amqp.min_messages</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
-        <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> をコールする間に必要な最小のメッセージ数。
+       <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> をコールする間に必要な最小のメッセージ数。
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.amqp.max-messages">
-     <span class="term">
+    
+    
+     <dt id="ini.amqp.max-messages">
       <em><code class="parameter">amqp.max_messages</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
-        <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> をコールする間に必要な最大のメッセージ数。
+       <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> をコールする間に必要な最大のメッセージ数。
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="ini.amqp.prefetch-count">
-     <span class="term">
+    
+    
+     <dt id="ini.amqp.prefetch-count">
       <em><code class="parameter">amqp.prefetch_count</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
        <strong><code>AMQP_AUTOACK</code></strong> フラグを設定せずに
-        <span class="methodname"><a href="amqpqueue.get.html" class="methodname">AMQPQueue::get()</a></span> あるいは  <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span>
+       <span class="methodname"><a href="amqpqueue.get.html" class="methodname">AMQPQueue::get()</a></span> あるいは <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span>
        をコールするときに、サーバーからプリフェッチするメッセージの数。
       </p>
      </dd>
 
-    </dt>
-
+    
 
   </dl>
 

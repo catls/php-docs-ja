@@ -35,17 +35,17 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">a</code></em></dt>
 
-     <span class="term"><em><code class="parameter">a</code></em></span>
      <dd>
 
       <p class="para">GMP 数リソース、
 あるいは数値に変換可能な数値形式の文字列。</p> 
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -63,8 +63,8 @@
  <div class="refsect1 examples" id="refsect1-function.gmp-popcount-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3423">
-    <p><strong>例1  <span class="function"><strong>gmp_popcount()</strong></span> の例</strong></p>
+   <div class="example" id="example-3424">
+    <p><strong>例1 <span class="function"><strong>gmp_popcount()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$pop1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_init</span><span style="color: #007700">(</span><span style="color: #DD0000">"10000101"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;1&nbsp;が&nbsp;3&nbsp;つ<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_popcount</span><span style="color: #007700">(</span><span style="color: #0000BB">$pop1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$pop2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_init</span><span style="color: #007700">(</span><span style="color: #DD0000">"11111110"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;1&nbsp;が&nbsp;7&nbsp;つ<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_popcount</span><span style="color: #007700">(</span><span style="color: #0000BB">$pop2</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>

@@ -28,7 +28,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>substr_replace()</strong></span>は、文字列
+   <span class="function"><strong>substr_replace()</strong></span>は、文字列
    <em><code class="parameter">string</code></em>の <em><code class="parameter">start</code></em> および
    (オプションの) <em><code class="parameter">length</code></em> パラメータで区切られた部分を
    <em><code class="parameter">replacement</code></em> で指定した文字列に置換します。
@@ -41,9 +41,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">string</code></em></dt>
 
-     <span class="term"><em><code class="parameter">string</code></em></span>
      <dd>
 
       <p class="para">
@@ -57,11 +58,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">replacement</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">replacement</code></em></span>
      <dd>
 
       <p class="para">
@@ -69,11 +70,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">start</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">start</code></em></span>
      <dd>
 
       <p class="para">
@@ -88,11 +89,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">length</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">length</code></em></span>
      <dd>
 
       <p class="para">
@@ -109,8 +110,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -158,8 +158,8 @@
  <div class="refsect1 examples" id="refsect1-function.substr-replace-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4913">
-    <p><strong>例1 シンプルな  <span class="function"><strong>substr_replace()</strong></span> の例</strong></p>
+   <div class="example" id="example-4915">
+    <p><strong>例1 シンプルな <span class="function"><strong>substr_replace()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'ABCDEFGH:/MNRPQR/'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Original:&nbsp;</span><span style="color: #0000BB">$var</span><span style="color: #DD0000">&lt;hr&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;以下の2つの例は、全ての&nbsp;$var&nbsp;で&nbsp;'bob'&nbsp;で置換します。&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">))&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;$var&nbsp;の先頭に&nbsp;'bob'&nbsp;を挿入します&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;次の2つの例は、$var&nbsp;の&nbsp;'MNRPQR'&nbsp;を&nbsp;'bob'で置換します&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bob'</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">7</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;$var&nbsp;から&nbsp;'MNRPQR'&nbsp;を削除します&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">substr_replace</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -170,9 +170,9 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4914">
+   <div class="example" id="example-4916">
     <p><strong>例2 
-      <span class="function"><strong>substr_replace()</strong></span> で複数の文字列を一度に置換する例
+     <span class="function"><strong>substr_replace()</strong></span> で複数の文字列を一度に置換する例
     </strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -205,8 +205,8 @@ A: AAAXX; B: BBBX; C: CCC
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.str-replace.html" class="function" rel="rdfs-seeAlso">str_replace()</a> - 検索文字列に一致したすべての文字列を置換する</span></li>
-    <li class="member"> <span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - 文字列の一部分を返す</span></li>
+    <li class="member"><span class="function"><a href="function.str-replace.html" class="function" rel="rdfs-seeAlso">str_replace()</a> - 検索文字列に一致したすべての文字列を置換する</span></li>
+    <li class="member"><span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - 文字列の一部分を返す</span></li>
     <li class="member"><a href="language.types.string.html#language.types.string.substr" class="link">文字列への文字単位のアクセスと修正</a></li>
    </ul>
   </p>

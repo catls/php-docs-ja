@@ -31,7 +31,7 @@
    </p>
    <p class="para">
      プラグインを Yaf にロードするには
-      <span class="methodname"><a href="yaf-dispatcher.registerplugin.html" class="methodname">Yaf_Dispatcher::registerPlugin()</a></span>
+     <span class="methodname"><a href="yaf-dispatcher.registerplugin.html" class="methodname">Yaf_Dispatcher::registerPlugin()</a></span>
      を使います。登録を済ませれば、このインターフェイスに従って実装した
      すべてのメソッドが適切な場面で呼ばれます。
    </p>
@@ -40,7 +40,7 @@
 
  <div class="section">
   <h2 class="title">例</h2>
-  <div class="example" id="example-4152">
+  <div class="example" id="example-4154">
    <p><strong>例1 プラグインの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -82,37 +82,37 @@ string(20) &quot;dispatchLoopShutdown&quot;
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-plugin-abstract.dispatchloopshutdown.html" class="methodname">dispatchLoopShutdown</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="yaf-plugin-abstract.dispatchloopshutdown.html" class="methodname">dispatchLoopShutdown</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    , <span class="methodparam"><span class="type"><a href="class.yaf-response-abstract.html" class="type Yaf_Response_Abstract">Yaf_Response_Abstract</a></span> <code class="parameter">$response</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-plugin-abstract.dispatchloopstartup.html" class="methodname">dispatchLoopStartup</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="yaf-plugin-abstract.dispatchloopstartup.html" class="methodname">dispatchLoopStartup</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    , <span class="methodparam"><span class="type"><a href="class.yaf-response-abstract.html" class="type Yaf_Response_Abstract">Yaf_Response_Abstract</a></span> <code class="parameter">$response</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-plugin-abstract.postdispatch.html" class="methodname">postDispatch</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="yaf-plugin-abstract.postdispatch.html" class="methodname">postDispatch</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    , <span class="methodparam"><span class="type"><a href="class.yaf-response-abstract.html" class="type Yaf_Response_Abstract">Yaf_Response_Abstract</a></span> <code class="parameter">$response</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-plugin-abstract.predispatch.html" class="methodname">preDispatch</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="yaf-plugin-abstract.predispatch.html" class="methodname">preDispatch</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    , <span class="methodparam"><span class="type"><a href="class.yaf-response-abstract.html" class="type Yaf_Response_Abstract">Yaf_Response_Abstract</a></span> <code class="parameter">$response</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-plugin-abstract.preresponse.html" class="methodname">preResponse</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="yaf-plugin-abstract.preresponse.html" class="methodname">preResponse</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    , <span class="methodparam"><span class="type"><a href="class.yaf-response-abstract.html" class="type Yaf_Response_Abstract">Yaf_Response_Abstract</a></span> <code class="parameter">$response</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-plugin-abstract.routershutdown.html" class="methodname">routerShutdown</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="yaf-plugin-abstract.routershutdown.html" class="methodname">routerShutdown</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    , <span class="methodparam"><span class="type"><a href="class.yaf-response-abstract.html" class="type Yaf_Response_Abstract">Yaf_Response_Abstract</a></span> <code class="parameter">$response</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="yaf-plugin-abstract.routerstartup.html" class="methodname">routerStartup</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="yaf-plugin-abstract.routerstartup.html" class="methodname">routerStartup</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    , <span class="methodparam"><span class="type"><a href="class.yaf-response-abstract.html" class="type Yaf_Response_Abstract">Yaf_Response_Abstract</a></span> <code class="parameter">$response</code></span>
    )</div>

@@ -29,7 +29,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><a href="event.add.html" class="function">event_add()</a></span> で使うイベントを準備します。
+   <span class="function"><a href="event.add.html" class="function">event_add()</a></span> で使うイベントを準備します。
    <em><code class="parameter">events</code></em> で指定したイベントが発生したときに
    <em><code class="parameter">callback</code></em> で指定した関数をコールするように設定します。
    <em><code class="parameter">events</code></em> は、次のフラグ
@@ -42,7 +42,7 @@
    で設定すると、<em><code class="parameter">fd</code></em> をシグナル番号として解釈します。
   </p>
   <p class="para">
-   イベントを初期化したら、 <span class="function"><a href="function.event-base-set.html" class="function">event_base_set()</a></span>
+   イベントを初期化したら、<span class="function"><a href="function.event-base-set.html" class="function">event_base_set()</a></span>
    を使ってイベントをイベントベースに関連づけます。
   </p>
   <p class="para">
@@ -50,9 +50,10 @@
    <em><code class="parameter">callback</code></em> 関数に渡されます。
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">fd</code></em></dt>
 
-     <span class="term"><em><code class="parameter">fd</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,11 +61,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">events</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">events</code></em></span>
      <dd>
 
       <p class="para">
@@ -75,21 +76,20 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">arg</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">arg</code></em></span>
      <dd>
 
       <p class="para">
-       オプションのパラメータ。 <span class="function"><a href="event.set.html" class="function">event_set()</a></span>
+       オプションのパラメータ。<span class="function"><a href="event.set.html" class="function">event_set()</a></span>
        に <em><code class="parameter">arg</code></em> で渡されたもの。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -101,9 +101,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">event</code></em></dt>
 
-     <span class="term"><em><code class="parameter">event</code></em></span>
      <dd>
 
       <p class="para">
@@ -111,11 +112,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">fd</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">fd</code></em></span>
      <dd>
 
       <p class="para">
@@ -124,27 +125,27 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">events</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">events</code></em></span>
      <dd>
 
       <p class="para">
        指定したイベントを表すフラグの組み合わせ。
        <strong><code>EV_READ</code></strong> と <strong><code>EV_WRITE</code></strong>
        が使えます。追加のフラグ <strong><code>EV_PERSIST</code></strong>
-       を指定すると、 <span class="function"><a href="event.del.html" class="function">event_del()</a></span> がコールされるまでイベントが持続します。
+       を指定すると、<span class="function"><a href="event.del.html" class="function">event_del()</a></span> がコールされるまでイベントが持続します。
        指定しなければ、コールバックは一度だけしか実行されません。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">callback</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">callback</code></em></span>
      <dd>
 
       <p class="para">
@@ -152,11 +153,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">arg</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">arg</code></em></span>
      <dd>
 
       <p class="para">
@@ -164,8 +165,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -175,7 +175,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.event-set-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    <span class="function"><a href="event.set.html" class="function">event_set()</a></span> は成功した場合に <strong><code>TRUE</code></strong>、エラー時に <strong><code>FALSE</code></strong> を返します。
+   <span class="function"><a href="event.set.html" class="function">event_set()</a></span> は成功した場合に <strong><code>TRUE</code></strong>、エラー時に <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 

@@ -36,20 +36,21 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">a</code></em></dt>
 
-     <span class="term"><em><code class="parameter">a</code></em></span>
      <dd>
 
       <p class="para">GMP 数リソース、
 あるいは数値に変換可能な数値形式の文字列。</p> 
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">index</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">index</code></em></span>
      <dd>
 
       <p class="para">
@@ -57,8 +58,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -86,8 +86,8 @@
  <div class="refsect1 examples" id="refsect1-function.gmp-testbit-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3438">
-    <p><strong>例1  <span class="function"><strong>gmp_testbit()</strong></span> の例</strong></p>
+   <div class="example" id="example-3439">
+    <p><strong>例1 <span class="function"><strong>gmp_testbit()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$n&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_init</span><span style="color: #007700">(</span><span style="color: #DD0000">"1000000"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">gmp_testbit</span><span style="color: #007700">(</span><span style="color: #0000BB">$n</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">gmp_setbit</span><span style="color: #007700">(</span><span style="color: #0000BB">$n</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">gmp_testbit</span><span style="color: #007700">(</span><span style="color: #0000BB">$n</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -111,8 +111,8 @@ bool(true)
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.gmp-setbit.html" class="function" rel="rdfs-seeAlso">gmp_setbit()</a> - ビットを設定する</span></li>
-    <li class="member"> <span class="function"><a href="function.gmp-clrbit.html" class="function" rel="rdfs-seeAlso">gmp_clrbit()</a> - ビットをクリアする</span></li>
+    <li class="member"><span class="function"><a href="function.gmp-setbit.html" class="function" rel="rdfs-seeAlso">gmp_setbit()</a> - ビットを設定する</span></li>
+    <li class="member"><span class="function"><a href="function.gmp-clrbit.html" class="function" rel="rdfs-seeAlso">gmp_clrbit()</a> - ビットをクリアする</span></li>
    </ul>
   </p>
  </div>

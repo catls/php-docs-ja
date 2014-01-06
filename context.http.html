@@ -31,11 +31,12 @@
   <p class="para">
    <dl>
 
-    <dt id="context.http.method">
-     <span class="term">
+    
+     <dt id="context.http.method">
       <em><code class="parameter">method</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -47,13 +48,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.header">
-     <span class="term">
+    
+    
+     <dt id="context.http.header">
       <em><code class="parameter">header</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -64,13 +65,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.user-agent">
-     <span class="term">
+    
+    
+     <dt id="context.http.user-agent">
       <em><code class="parameter">user_agent</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -85,13 +86,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.content">
-     <span class="term">
+    
+    
+     <dt id="context.http.content">
       <em><code class="parameter">content</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -100,13 +101,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.proxy">
-     <span class="term">
+    
+    
+     <dt id="context.http.proxy">
       <em><code class="parameter">proxy</code></em>
       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -115,13 +116,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.request-fulluri">
-     <span class="term">
+    
+    
+     <dt id="context.http.request-fulluri">
       <em><code class="parameter">request_fulluri</code></em>
       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -135,13 +136,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.follow-location">
-     <span class="term">
+    
+    
+     <dt id="context.http.follow-location">
       <em><code class="parameter">follow_location</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -153,13 +154,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.max-redirects">
-     <span class="term">
+    
+    
+     <dt id="context.http.max-redirects">
       <em><code class="parameter">max_redirects</code></em>
       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -171,13 +172,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.protocol-version">
-     <span class="term">
+    
+    
+     <dt id="context.http.protocol-version">
       <em><code class="parameter">protocol_version</code></em>
       <span class="type"><a href="language.types.float.html" class="type float">float</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -195,13 +196,13 @@
       </p></blockquote>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.timeout">
-     <span class="term">
+    
+    
+     <dt id="context.http.timeout">
       <em><code class="parameter">timeout</code></em>
       <span class="type"><a href="language.types.float.html" class="type float">float</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -215,13 +216,13 @@
       </p>
      </dd>
 
-    </dt>
-
-    <dt id="context.http.ignore-errors">
-     <span class="term">
+    
+    
+     <dt id="context.http.ignore-errors">
       <em><code class="parameter">ignore_errors</code></em>
       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -232,8 +233,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -367,7 +367,7 @@
    <strong>HTTP ステータスライン</strong><br />
    <span class="simpara">
     このストリームラッパーがリダイレクトをたどると、
-     <span class="function"><a href="function.stream-get-meta-data.html" class="function">stream_get_meta_data()</a></span> が返す
+    <span class="function"><a href="function.stream-get-meta-data.html" class="function">stream_get_meta_data()</a></span> が返す
     <em>wrapper_data</em> のインデックス <em>0</em>
     の内容が必ずしもそのコンテンツの HTTP ステータスラインであるとは限らなくなります。
    </span>

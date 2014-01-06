@@ -31,7 +31,7 @@
   </p>
   <p class="para">
    一般に認証は、このメソッドを使うよりも
-    <span class="function"><strong>MongoClient::__construct()</strong></span> に組み込むことを推奨します。
+   <span class="function"><strong>MongoClient::__construct()</strong></span> に組み込むことを推奨します。
    接続時に認証を済ませておけば、接続が中断されて再接続したときにも自動的に認証をやり直します。
    このメソッドで後から認証した場合は、
    接続が中断されて再接続したらまたこのメソッドをコールし直さなければなりません。
@@ -64,11 +64,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">username</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -76,13 +77,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">password</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -90,8 +91,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>

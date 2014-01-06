@@ -63,9 +63,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">subject</code></em></dt>
 
-     <span class="term"><em><code class="parameter">subject</code></em></span>
      <dd>
 
       <p class="para">
@@ -73,11 +74,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">mask</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">mask</code></em></span>
      <dd>
 
       <p class="para">
@@ -85,11 +86,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">start</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">start</code></em></span>
      <dd>
 
       <p class="para">
@@ -97,7 +98,7 @@
       </p>
       <p class="para">
        <em><code class="parameter">start</code></em> に非負の値を指定すると、
-        <span class="function"><strong>strspn()</strong></span> は
+       <span class="function"><strong>strspn()</strong></span> は
        <em><code class="parameter">subject</code></em> の
        <em><code class="parameter">start</code></em> 番目の位置から調査を始めます。
        たとえば、文字列 &#039;<em>abcdef</em>&#039; において
@@ -107,17 +108,17 @@
       </p>
       <p class="para">
        <em><code class="parameter">start</code></em> に負の値を指定すると、
-        <span class="function"><strong>strspn()</strong></span> は
+       <span class="function"><strong>strspn()</strong></span> は
        <em><code class="parameter">subject</code></em> の最後から
        <em><code class="parameter">start</code></em> 番目の位置から調査を始めます。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">length</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">length</code></em></span>
      <dd>
 
       <p class="para">
@@ -136,8 +137,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -186,8 +186,8 @@
  <div class="refsect1 examples" id="refsect1-function.strspn-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4901">
-    <p><strong>例1  <span class="function"><strong>strspn()</strong></span> の例</strong></p>
+   <div class="example" id="example-4903">
+    <p><strong>例1 <span class="function"><strong>strspn()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;subjectの最初の文字がmaskのどの文字とも一致しません<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">strspn</span><span style="color: #007700">(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"o"</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;subject&nbsp;のオフセット&nbsp;1&nbsp;から&nbsp;2&nbsp;文字を調べます<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">strspn</span><span style="color: #007700">(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"o"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;subject&nbsp;のオフセット&nbsp;1&nbsp;から&nbsp;1&nbsp;文字を調べます<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">strspn</span><span style="color: #007700">(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"o"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -219,7 +219,7 @@ int(1)
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.strcspn.html" class="function" rel="rdfs-seeAlso">strcspn()</a> - マスクにマッチしない最初のセグメントの長さを返す</span></li>
+    <li class="member"><span class="function"><a href="function.strcspn.html" class="function" rel="rdfs-seeAlso">strcspn()</a> - マスクにマッチしない最初のセグメントの長さを返す</span></li>
    </ul>
   </p>
  </div>

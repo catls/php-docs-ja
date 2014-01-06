@@ -27,20 +27,20 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_fetch_array()</strong></span> は、取得した行（レコード）を
+   <span class="function"><strong>pg_fetch_array()</strong></span> は、取得した行（レコード）を
    配列で返します。
   </p>
   <p class="para">
-    <span class="function"><strong>pg_fetch_array()</strong></span> は拡張版の
-    <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span> です。結果配列のフィールド番号に
+   <span class="function"><strong>pg_fetch_array()</strong></span> は拡張版の
+   <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span> です。結果配列のフィールド番号に
    対応する要素にデータを格納し、それに加えてフィールド名をキーとした
    連想配列にも格納します。デフォルトで、両方ともが有効になっています。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">この関数は、
 NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定します。</span></p></blockquote>
   <p class="para">
-    <span class="function"><strong>pg_fetch_array()</strong></span> は、
-    <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span> に比べてきわめて遅いというわけでは
+   <span class="function"><strong>pg_fetch_array()</strong></span> は、
+   <span class="function"><a href="function.pg-fetch-row.html" class="function">pg_fetch_row()</a></span> に比べてきわめて遅いというわけでは
    「ありません」。そして、きわめて簡単に使用できます。
   </p>
  </div>
@@ -51,23 +51,24 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">result</code></em></dt>
 
-     <span class="term"><em><code class="parameter">result</code></em></span>
      <dd>
 
       <p class="para">
-        <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>,  <span class="function"><a href="function.pg-query-params.html" class="function">pg_query_params()</a></span>
-       あるいは  <span class="function"><a href="function.pg-execute.html" class="function">pg_execute()</a></span> から返される PostgreSQL の
+       <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>, <span class="function"><a href="function.pg-query-params.html" class="function">pg_query_params()</a></span>
+       あるいは <span class="function"><a href="function.pg-execute.html" class="function">pg_execute()</a></span> から返される PostgreSQL の
        クエリ結果リソース。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">row</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">row</code></em></span>
      <dd>
 
       <p class="para">
@@ -76,11 +77,11 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">result_type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">result_type</code></em></span>
      <dd>
 
       <p class="para">
@@ -89,15 +90,14 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
        は定数であり、次の値のどれかとすることが可能です。
        <strong><code>PGSQL_ASSOC</code></strong>、<strong><code>PGSQL_NUM</code></strong>
        および <strong><code>PGSQL_BOTH</code></strong>。
-       <strong><code>PGSQL_NUM</code></strong> を使用すると、 <span class="function"><strong>pg_fetch_array()</strong></span>
+       <strong><code>PGSQL_NUM</code></strong> を使用すると、<span class="function"><strong>pg_fetch_array()</strong></span>
        は数値添字の配列を返します。また、<strong><code>PGSQL_ASSOC</code></strong>
        を使用すると連想配列形式で返します。<strong><code>PGSQL_BOTH</code></strong>
        がデフォルト設定で、これは数値添字の配列と連想配列の両方を返します。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -150,8 +150,8 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
  <div class="refsect1 examples" id="refsect1-function.pg-fetch-array-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2065">
-    <p><strong>例1  <span class="function"><strong>pg_fetch_array()</strong></span> の例</strong></p>
+   <div class="example" id="example-2066">
+    <p><strong>例1 <span class="function"><strong>pg_fetch_array()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php&nbsp;<br /><br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=publisher"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"An&nbsp;error&nbsp;occurred.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;exit;<br />}<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;author,&nbsp;email&nbsp;FROM&nbsp;authors"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"An&nbsp;error&nbsp;occurred.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;exit;<br />}<br /><br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PGSQL_NUM</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;-&nbsp;Row&nbsp;1&nbsp;Author\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;-&nbsp;Row&nbsp;1&nbsp;E-mail\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;4.1.0&nbsp;以降、row&nbsp;パラメータはオプションです。result_type&nbsp;を指定<br />//&nbsp;したい場合は&nbsp;NULL&nbsp;を渡しておきます。pg_fetch_array&nbsp;を続けてコール<br />//&nbsp;すると、次の行を取得します。<br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PGSQL_ASSOC</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">"author"</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;-&nbsp;Row&nbsp;2&nbsp;Author\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">"email"</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;-&nbsp;Row&nbsp;2&nbsp;E-mail\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">"author"</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;-&nbsp;Row&nbsp;3&nbsp;Author\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;-&nbsp;Row&nbsp;3&nbsp;E-mail\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -168,9 +168,9 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-fetch-row.html" class="function" rel="rdfs-seeAlso">pg_fetch_row()</a> - 数値添字の配列として行を得る</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-fetch-object.html" class="function" rel="rdfs-seeAlso">pg_fetch_object()</a> - 行をオブジェクトとして得る</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-fetch-result.html" class="function" rel="rdfs-seeAlso">pg_fetch_result()</a> - 結果リソースから値を返す</span></li>
+    <li class="member"><span class="function"><a href="function.pg-fetch-row.html" class="function" rel="rdfs-seeAlso">pg_fetch_row()</a> - 数値添字の配列として行を得る</span></li>
+    <li class="member"><span class="function"><a href="function.pg-fetch-object.html" class="function" rel="rdfs-seeAlso">pg_fetch_object()</a> - 行をオブジェクトとして得る</span></li>
+    <li class="member"><span class="function"><a href="function.pg-fetch-result.html" class="function" rel="rdfs-seeAlso">pg_fetch_result()</a> - 結果リソースから値を返す</span></li>
    </ul>
   </p>
  </div>

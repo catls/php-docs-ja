@@ -31,7 +31,7 @@
   <p class="para">
    デフォルトでは、すべてのイベントは同じ優先度
    (<em><code class="parameter">npriorities</code></em>/2) で設定されます。
-    <span class="function"><strong>event_base_priority_init()</strong></span> を使うとイベントの優先度レベルの数値を変更でき、
+   <span class="function"><strong>event_base_priority_init()</strong></span> を使うとイベントの優先度レベルの数値を変更でき、
    イベントごとに優先度を設定することができます。
   </p>
  </div>
@@ -42,9 +42,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">event_base</code></em></dt>
 
-     <span class="term"><em><code class="parameter">event_base</code></em></span>
      <dd>
 
       <p class="para">
@@ -52,11 +53,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">npriorities</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">npriorities</code></em></span>
      <dd>
 
       <p class="para">
@@ -64,8 +65,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -75,7 +75,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.event-base-priority-init-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    <span class="function"><strong>event_base_priority_init()</strong></span> は、成功した場合に <strong><code>TRUE</code></strong>、
+   <span class="function"><strong>event_base_priority_init()</strong></span> は、成功した場合に <strong><code>TRUE</code></strong>、
    エラー時に <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>

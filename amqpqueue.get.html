@@ -26,7 +26,7 @@
 
      <p class="para rdfs-comment">
        次のメッセージをキューから取得します。もしメッセージがキューになければ、メッセージを取得せずすぐに <strong><code>FALSE</code></strong> を返します。
-       これは、 <span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> メソッドの非ブロック版です。
+       これは、<span class="methodname"><a href="amqpqueue.consume.html" class="methodname">AMQPQueue::consume()</a></span> メソッドの非ブロック版です。
      </p>
      <p class="para">
       今のところ、<em><code class="parameter">flags</code></em> パラメータに渡すフラグとしてサポートしているのは <strong><code>AMQP_AUTOACK</code></strong> だけです。
@@ -40,9 +40,10 @@
      <p class="para">
       <dl>
 
-      <dt>
+      
+       <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-       <span class="term"><em><code class="parameter">flags</code></em></span>
        <dd>
 
         <p class="para">
@@ -52,8 +53,7 @@
         </p>
        </dd>
 
-      </dt>
-
+      
      </dl>
 
      </p>
@@ -72,8 +72,8 @@
     <div class="refsect1 examples" id="refsect1-amqpqueue.get-examples">
      <h3 class="title">例</h3>
      <p class="para">
-      <div class="example" id="example-4200">
-       <p><strong>例1  <span class="methodname"><strong>AMQPQueue::get()</strong></span> の例</strong></p>
+      <div class="example" id="example-4202">
+       <p><strong>例1 <span class="methodname"><strong>AMQPQueue::get()</strong></span> の例</strong></p>
        <div class="example-contents">
    <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;デフォルトの設定で接続を作成します&nbsp;*/<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$connection&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">AMQPConnection</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$connection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">connect</span><span style="color: #007700">();<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$channel&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">AMQPChannel</span><span style="color: #007700">(</span><span style="color: #0000BB">$connection</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;キューオブジェクトを作成します&nbsp;*/<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$queue&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">AMQPQueue</span><span style="color: #007700">(</span><span style="color: #0000BB">$channel</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;キューを宣言します<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$queue</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">declare</span><span style="color: #007700">(</span><span style="color: #DD0000">'myqueue'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;メッセージを取得します<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$message&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$queue</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #0000BB">AMQP_AUTOACK</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$message</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getBody</span><span style="color: #007700">();<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">?&gt;</span>

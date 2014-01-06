@@ -40,9 +40,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">str</code></em></dt>
 
-     <span class="term"><em><code class="parameter">str</code></em></span>
      <dd>
 
       <p class="para">
@@ -50,26 +51,26 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">charset</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">charset</code></em></span>
      <dd>
 
       <p class="para">
        <em><code class="parameter">charset</code></em> は、<em><code class="parameter">str</code></em>
        の文字セット名です。デフォルトは、現在の NLS 設定
        (<em>mbstring.language</em>) によって決まります。
-        <span class="function"><a href="function.mb-internal-encoding.html" class="function">mb_internal_encoding()</a></span> を同じエンコーディングに設定しておかなければなりません。
+       <span class="function"><a href="function.mb-internal-encoding.html" class="function">mb_internal_encoding()</a></span> を同じエンコーディングに設定しておかなければなりません。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">transfer_encoding</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">transfer_encoding</code></em></span>
      <dd>
 
       <p class="para">
@@ -80,16 +81,16 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">linefeed</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">linefeed</code></em></span>
      <dd>
 
       <p class="para">
        <em><code class="parameter">linefeed</code></em> は EOL (行末) のマーカで、
-        <span class="function"><strong>mb_encode_mimeheader()</strong></span> が行を折りたたむ
+       <span class="function"><strong>mb_encode_mimeheader()</strong></span> が行を折りたたむ
        (<a href="http://www.faqs.org/rfcs/rfc2822" class="link external">&raquo;&nbsp;RFC</a> 用語で、
        ある一定より長い行を複数行に分割することを言います。
        分割する長さは、現在 74 文字に固定されています) 際に利用します。
@@ -97,11 +98,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">indent</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">indent</code></em></span>
      <dd>
 
       <p class="para">
@@ -110,8 +111,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -158,8 +158,8 @@
  <div class="refsect1 examples" id="refsect1-function.mb-encode-mimeheader-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2707">
-    <p><strong>例1  <span class="function"><strong>mb_encode_mimeheader()</strong></span> の例</strong></p>
+   <div class="example" id="example-2708">
+    <p><strong>例1 <span class="function"><strong>mb_encode_mimeheader()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"太郎"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;漢字<br /></span><span style="color: #0000BB">$mbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"kru"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$doma&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"gtinn.mon"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$addr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mb_encode_mimeheader</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"UTF-7"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Q"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;&lt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$mbox&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"@"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$doma&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&gt;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$addr</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -187,7 +187,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.mb-decode-mimeheader.html" class="function" rel="rdfs-seeAlso">mb_decode_mimeheader()</a> - MIME ヘッダフィールドの文字列をデコードする</span></li>
+    <li class="member"><span class="function"><a href="function.mb-decode-mimeheader.html" class="function" rel="rdfs-seeAlso">mb_decode_mimeheader()</a> - MIME ヘッダフィールドの文字列をデコードする</span></li>
    </ul>
   </p>
  </div>

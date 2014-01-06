@@ -85,11 +85,12 @@
  <p class="para">
   <dl>
 
-   <dt id="ini.ibm-db2.binmode">
-    <span class="term">
+   
+    <dt id="ini.ibm-db2.binmode">
      <em><code class="parameter">ibm_db2.binmode</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -115,33 +116,33 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.ibm-db2.i5-all-pconnect">
-    <span class="term">
+   
+   
+    <dt id="ini.ibm-db2.i5-all-pconnect">
      <em><code class="parameter">ibm_db2.i5_all_pconnect</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
       このオプションは、PHP アプリケーションにおける
-      i5  <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> のオープンおよびクローズをオーバーライドします。
+      i5 <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> のオープンおよびクローズをオーバーライドします。
       <em><code class="parameter">ibm_db2.i5_all_pconnect</code></em> = 1 の場合は、すべての db2 接続が持続的なもの
-      ( <span class="function"><a href="function.db2-pconnect.html" class="function">db2_pconnect()</a></span>) となります。i5/OS 上での  <span class="function"><a href="function.db2-pconnect.html" class="function">db2_pconnect()</a></span> は、
-       <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> よりはるかによいパフォーマンスを提供します。
+      (<span class="function"><a href="function.db2-pconnect.html" class="function">db2_pconnect()</a></span>) となります。i5/OS 上での <span class="function"><a href="function.db2-pconnect.html" class="function">db2_pconnect()</a></span> は、
+      <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> よりはるかによいパフォーマンスを提供します。
       このオプションは、PHP のソースコードを変更せずに
-       <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> を  <span class="function"><a href="function.db2-pconnect.html" class="function">db2_pconnect()</a></span>
+      <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> を <span class="function"><a href="function.db2-pconnect.html" class="function">db2_pconnect()</a></span>
       として動作させられるので便利です。
       <ul class="itemizedlist">
        <li class="listitem">
         <p class="para">
-         0  <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> のデフォルトのオープンおよびクローズです。
+         0 <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> のデフォルトのオープンおよびクローズです。
         </p>
        </li>
        <li class="listitem">
         <p class="para">
-         1  <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> は  <span class="function"><a href="function.db2-pconnect.html" class="function">db2_pconnect()</a></span>
+         1 <span class="function"><a href="function.db2-connect.html" class="function">db2_connect()</a></span> は <span class="function"><a href="function.db2-pconnect.html" class="function">db2_pconnect()</a></span>
          でオーバーライドされ、持続的な接続のみを使用します。
         </p>
        </li>
@@ -149,13 +150,13 @@
      </p>
     </dd>
 
-   </dt>
+      
    
-   <dt id="ini.ibm-db2.i5-allow-commit">
-    <span class="term">
+    <dt id="ini.ibm-db2.i5-allow-commit">
      <em><code class="parameter">ibm_db2.i5_allow_commit</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -176,13 +177,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.ibm-db2.i5-dbcs-alloc">
-    <span class="term">
+   
+   
+    <dt id="ini.ibm-db2.i5-dbcs-alloc">
      <em><code class="parameter">ibm_db2.i5_dbcs_alloc</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -203,13 +204,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.ibm-db2.instance-name">
-    <span class="term">
+   
+   
+    <dt id="ini.ibm-db2.instance-name">
      <em><code class="parameter">ibm_db2.instance_name</code></em>
      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -223,13 +224,13 @@
      </p>
     </dd>
 
-   </dt>
-
-   <dt id="ini.ibm-db2.i5-ignore-userid">
-    <span class="term">
+   
+   
+    <dt id="ini.ibm-db2.i5-ignore-userid">
      <em><code class="parameter">ibm_db2.i5_ignore_userid</code></em>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-    </span>
+    </dt>
+
     <dd>
 
      <p class="para">
@@ -260,8 +261,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </p>

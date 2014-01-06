@@ -42,9 +42,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">flag</code></em></dt>
 
-    <span class="term"><em><code class="parameter">flag</code></em></span>
     <dd>
 
      <p class="para">
@@ -57,8 +58,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -74,8 +74,8 @@
 
  <div class="refsect1 examples" id="refsect1-yaf-dispatcher.autorender-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-4124">
-   <p><strong>例1  <span class="function"><strong>Yaf_Dispatcher::autoRender()</strong></span> の例</strong></p>
+  <div class="example" id="example-4126">
+   <p><strong>例1 <span class="function"><strong>Yaf_Dispatcher::autoRender()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">IndexController&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Yaf_Controller_Abstract&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;init&nbsp;メソッドは、コントローラを初期化したときに呼ばれます&nbsp;*/&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">init</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getRequest</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">isXmlHttpRequest</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ajax&nbsp;リクエストの場合はレンダリングせず、<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;json&nbsp;文字列を出力します<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Yaf_Dispatcher</span><span style="color: #007700">::</span><span style="color: #0000BB">getInstance</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">autoRender</span><span style="color: #007700">(</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br /><br />}<br /></span><span style="color: #0000BB">?&gt;</span>

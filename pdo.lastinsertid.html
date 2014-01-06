@@ -49,9 +49,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">name</code></em></dt>
 
-     <span class="term"><em><code class="parameter">name</code></em></span>
      <dd>
 
       <p class="para">
@@ -59,8 +60,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -72,19 +72,19 @@
   <p class="para">
    もし <em><code class="parameter">name</code></em>
    パラメータにシーケンス名が指定されなかった場合、
-    <span class="function"><strong>PDO::lastInsertId()</strong></span>
+   <span class="function"><strong>PDO::lastInsertId()</strong></span>
    はデータベースに挿入された最後の行の行IDに相当する文字列を返します。
   </p>
   <p class="para">
    もし <em><code class="parameter">name</code></em>
    パラメータにシーケンス名が指定された場合、
-    <span class="function"><strong>PDO::lastInsertId()</strong></span>
+   <span class="function"><strong>PDO::lastInsertId()</strong></span>
    は指定されたシーケンスオブジェクトから取得した最後の値に相当する
    文字列を返します。
   </p>
   <p class="para">
    もし PDO ドライバがサポートしていない場合、
-    <span class="function"><strong>PDO::lastInsertId()</strong></span>
+   <span class="function"><strong>PDO::lastInsertId()</strong></span>
    は <em>IM001</em> SQLSTATE を発生させます。
   </p>
  </div>

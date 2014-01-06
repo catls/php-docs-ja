@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">states</code></em></dt>
 
-     <span class="term"><em><code class="parameter">states</code></em></span>
      <dd>
 
       <p class="para">
@@ -50,11 +51,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">shapeid</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">shapeid</code></em></span>
      <dd>
 
       <p class="para">
@@ -63,11 +64,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">depth</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">depth</code></em></span>
      <dd>
 
       <p class="para">
@@ -75,8 +76,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -94,8 +94,8 @@
  <div class="refsect1 examples" id="refsect1-function.swf-addbuttonrecord-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3572">
-    <p><strong>例1  <span class="function"><strong>swf_addbuttonrecord()</strong></span> の例</strong></p>
+   <div class="example" id="example-3574">
+    <p><strong>例1 <span class="function"><strong>swf_addbuttonrecord()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />swf_startButton</span><span style="color: #007700">(</span><span style="color: #0000BB">$objid</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">TYPE_MENUBUTTON</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">swf_addButtonRecord</span><span style="color: #007700">(</span><span style="color: #0000BB">BSDown</span><span style="color: #007700">|</span><span style="color: #0000BB">BSOver</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$buttonImageId</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">340</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">swf_onCondition</span><span style="color: #007700">(</span><span style="color: #0000BB">MenuEnter</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">swf_actionGetUrl</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"_level1"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">swf_onCondition</span><span style="color: #007700">(</span><span style="color: #0000BB">MenuExit</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">swf_actionGetUrl</span><span style="color: #007700">(</span><span style="color: #DD0000">""</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"_level1"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">swf_endButton</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>

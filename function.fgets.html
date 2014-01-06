@@ -36,22 +36,23 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">handle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">handle</code></em></span>
      <dd>
 
       <p class="para">ファイルポインタは、有効なファイルポインタである必要があり、
- <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> または  <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> で正常にオープンされた
-（そしてまだ  <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> でクローズされていない）
+<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> または <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> で正常にオープンされた
+（そしてまだ <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> でクローズされていない）
 ファイルを指している必要があります。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">length</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">length</code></em></span>
      <dd>
 
       <p class="para">
@@ -70,8 +71,7 @@
       </p></blockquote>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -109,7 +109,7 @@
       <tr>
        <td>4.3.0</td>
        <td>
-         <span class="function"><strong>fgets()</strong></span> はバイナリセーフとなりました。
+        <span class="function"><strong>fgets()</strong></span> はバイナリセーフとなりました。
        </td>
       </tr>
 
@@ -131,7 +131,7 @@
  <div class="refsect1 examples" id="refsect1-function.fgets-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2361">
+   <div class="example" id="example-2362">
     <p><strong>例1 行毎にファイルを読み込む</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -154,7 +154,7 @@
 </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    C 言語の  <span class="function"><strong>fgets()</strong></span> の動作に慣れている人は、
+    C 言語の <span class="function"><strong>fgets()</strong></span> の動作に慣れている人は、
     <em>EOF</em> を返す条件の違いについて注意する必要があります。
    </p>
   </p></blockquote>
@@ -165,14 +165,14 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.fgetss.html" class="function" rel="rdfs-seeAlso">fgetss()</a> - ファイルポインタから 1 行取り出し、HTML タグを取り除く</span></li>
-    <li class="member"> <span class="function"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - バイナリセーフなファイルの読み込み</span></li>
-    <li class="member"> <span class="function"><a href="function.fgetc.html" class="function" rel="rdfs-seeAlso">fgetc()</a> - ファイルポインタから1文字取り出す</span></li>
-    <li class="member"> <span class="function"><a href="function.stream-get-line.html" class="function" rel="rdfs-seeAlso">stream_get_line()</a> - 指定されたデリミタの位置までのデータを一行分としてストリームから読み込む</span></li>
-    <li class="member"> <span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - ファイルまたは URL をオープンする</span></li>
-    <li class="member"> <span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - プロセスへのファイルポインタをオープンする</span></li>
-    <li class="member"> <span class="function"><a href="function.fsockopen.html" class="function" rel="rdfs-seeAlso">fsockopen()</a> - インターネット接続もしくは Unix ドメインソケット接続をオープンする</span></li>
-    <li class="member"> <span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - ストリームにタイムアウトを設定する</span></li>
+    <li class="member"><span class="function"><a href="function.fgetss.html" class="function" rel="rdfs-seeAlso">fgetss()</a> - ファイルポインタから 1 行取り出し、HTML タグを取り除く</span></li>
+    <li class="member"><span class="function"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - バイナリセーフなファイルの読み込み</span></li>
+    <li class="member"><span class="function"><a href="function.fgetc.html" class="function" rel="rdfs-seeAlso">fgetc()</a> - ファイルポインタから1文字取り出す</span></li>
+    <li class="member"><span class="function"><a href="function.stream-get-line.html" class="function" rel="rdfs-seeAlso">stream_get_line()</a> - 指定されたデリミタの位置までのデータを一行分としてストリームから読み込む</span></li>
+    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - ファイルまたは URL をオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - プロセスへのファイルポインタをオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.fsockopen.html" class="function" rel="rdfs-seeAlso">fsockopen()</a> - インターネット接続もしくは Unix ドメインソケット接続をオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - ストリームにタイムアウトを設定する</span></li>
    </ul>
   </p>
  </div>

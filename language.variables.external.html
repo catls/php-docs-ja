@@ -64,7 +64,7 @@
      <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET['id']</a></var></var>によりアクセス可能なGETデータ
      が含まれます。
      <var class="varname"><var class="varname"><a href="reserved.variables.request.html" class="classname">$_REQUEST</a></var></var> および 
-      <span class="function"><a href="function.import-request-variables.html" class="function">import_request_variables()</a></span>も参照ください。
+     <span class="function"><a href="function.import-request-variables.html" class="function">import_request_variables()</a></span>も参照ください。
     </p>
 
     <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -99,8 +99,8 @@
       &quot;PHP!&quot;) という値は自動的に (It\&#039;s \&quot;PHP!\&quot;) となります。
       十年ほど前は、DB にデータを追加するときにはこれを使ってデータをエスケープしないといけないと言われていました。
       しかしこれは過去の遺産であり、今や無効にしておくべき機能です。
-       <span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span>、
-       <span class="function"><a href="function.stripslashes.html" class="function">stripslashes()</a></span>そして<a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">magic_quotes_sybase</a>も
+      <span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span>、
+      <span class="function"><a href="function.stripslashes.html" class="function">stripslashes()</a></span>そして<a href="sybase.configuration.html#ini.magic-quotes-sybase" class="link">magic_quotes_sybase</a>も
       参照してください。
      </p>
     </p></blockquote>
@@ -176,15 +176,15 @@ if ($_POST) {
      PHP は、<a href="http://www.faqs.org/rfcs/rfc6265" class="link external">&raquo;&nbsp;RFC 6265</a>
      に定義されたHTTP Cookieを完全にサポートします。Cookieは、リモート
      ブラウザにデータを保持し、再訪するユーザーを追跡し、特定する機構
-     です。 <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> 関数によりCookieをセットす
+     です。<span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> 関数によりCookieをセットす
      ることができます。Cookieは、HTTP ヘッダの一部なので、SetCookie
      関数をブラウザに何かを出力する前にコールする必要があります。
-     この制約は、 <span class="function"><a href="function.header.html" class="function">header()</a></span> 関数のものと同じです。
+     この制約は、<span class="function"><a href="function.header.html" class="function">header()</a></span> 関数のものと同じです。
      Cookieのデータは、<var class="varname"><var class="varname"><a href="reserved.variables.cookies.html" class="classname">$_COOKIE</a></var></var>, 
      <var class="varname"><var class="varname">$HTTP_COOKIE_VARS</var></var>のような適当なCookieデータ
      配列で参照可能です。また、 <var class="varname"><var class="varname"><a href="reserved.variables.request.html" class="classname">$_REQUEST</a></var></var>でも
      参照可能です。詳細および例については、
-      <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span>のマニュアルページを参照してください。
+     <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span>のマニュアルページを参照してください。
     </p>
 
     <p class="simpara">
@@ -206,8 +206,8 @@ if ($_POST) {
      上記スクリプトにおいては、2つの異なるCookieを生成されますが、
      この場合、スクリプトでは <var class="varname"><var class="varname">MyCookie</var></var> という単一の配列になります。
      一つのCookieに複数の値を設定したい場合、最初の値に
-      <span class="function"><a href="function.serialize.html" class="function">serialize()</a></span>または
-      <span class="function"><a href="function.explode.html" class="function">explode()</a></span>を用いることを考えてください。
+     <span class="function"><a href="function.serialize.html" class="function">serialize()</a></span>または
+     <span class="function"><a href="function.explode.html" class="function">explode()</a></span>を用いることを考えてください。
     </p>
 
     <p class="simpara">
@@ -220,7 +220,7 @@ if ($_POST) {
     </p>
 
     <div class="example" id="example-111">
-     <p><strong>例4  <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span>の例</strong></p>
+     <p><strong>例4 <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span>の例</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">'count'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">'count'</span><span style="color: #007700">]&nbsp;+&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">'count'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"Cart[</span><span style="color: #0000BB">$count</span><span style="color: #DD0000">]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$item</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -266,10 +266,10 @@ if ($_POST) {
      PHPは、変数の型を定義し、必要に応じて変換します。このため、ある変
      数の型がある時点で常に明らかであるわけではありません。PHPは、変数
      の型を調べる複数の関数をサポートしています。それらは、
-     <span class="function"><a href="function.gettype.html" class="function">gettype()</a></span>,  <span class="function"><a href="function.is-array.html" class="function">is_array()</a></span>,
-      <span class="function"><a href="function.is-float.html" class="function">is_float()</a></span>,  <span class="function"><a href="function.is-int.html" class="function">is_int()</a></span>,
-      <span class="function"><a href="function.is-object.html" class="function">is_object()</a></span>,
-      <span class="function"><a href="function.is-string.html" class="function">is_string()</a></span> です。
+    <span class="function"><a href="function.gettype.html" class="function">gettype()</a></span>, <span class="function"><a href="function.is-array.html" class="function">is_array()</a></span>,
+     <span class="function"><a href="function.is-float.html" class="function">is_float()</a></span>, <span class="function"><a href="function.is-int.html" class="function">is_int()</a></span>,
+     <span class="function"><a href="function.is-object.html" class="function">is_object()</a></span>,
+     <span class="function"><a href="function.is-string.html" class="function">is_string()</a></span> です。
      <a href="language.types.html" class="link">型</a>の章も参照ください。
     </p>
    </div>

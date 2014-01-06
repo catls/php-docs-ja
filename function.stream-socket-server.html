@@ -33,7 +33,7 @@
   </p>
   <p class="para">
    この関数は、ソケットのみを作成します。接続待ちの状態に入るには、
-    <span class="function"><a href="function.stream-socket-accept.html" class="function">stream_socket_accept()</a></span> 関数を使います。
+   <span class="function"><a href="function.stream-socket-accept.html" class="function">stream_socket_accept()</a></span> 関数を使います。
   </p>
  </div>
 
@@ -43,9 +43,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">local_socket</code></em></dt>
 
-     <span class="term"><em><code class="parameter">local_socket</code></em></span>
      <dd>
 
       <p class="para">
@@ -64,18 +65,18 @@
       </p>
       <p class="para">
        システムの種類によって、Unix ドメインのソケットが利用できない場合があります。
-       利用できるトランスポートの種類は、 <span class="function"><a href="function.stream-get-transports.html" class="function">stream_get_transports()</a></span>
+       利用できるトランスポートの種類は、<span class="function"><a href="function.stream-get-transports.html" class="function">stream_get_transports()</a></span>
        によって知ることができます。
        組み込みのトランスポートのリストは、<a href="transports.html" class="xref">サポートされるソケットトランスポートのリスト</a>
        を参照ください。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">errno</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">errno</code></em></span>
      <dd>
 
       <p class="para">
@@ -94,11 +95,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">errstr</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">errstr</code></em></span>
      <dd>
 
       <p class="para">
@@ -106,11 +107,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -124,19 +125,18 @@
       </p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">context</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">context</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -154,7 +154,7 @@
  <div class="refsect1 examples" id="refsect1-function.stream-socket-server-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4037">
+   <div class="example" id="example-4039">
     <p><strong>例1 TCP サーバーソケットの使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -167,7 +167,7 @@
   </p>
   <p class="para">
    下記の例は、PHP のスクリプトが、どうやって
-    <span class="function"><a href="function.stream-socket-client.html" class="function">stream_socket_client()</a></span> で示したような、
+   <span class="function"><a href="function.stream-socket-client.html" class="function">stream_socket_client()</a></span> で示したような、
    問い合わせに応答するタイムサーバーとして機能するかを示したものです。
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <span class="simpara">
@@ -175,7 +175,7 @@
      多くのシステムでは root 権限が必要となります。
     </span>
    </p></blockquote>
-   <div class="example" id="example-4038">
+   <div class="example" id="example-4040">
     <p><strong>例2 UDP サーバーソケットを利用する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -200,14 +200,14 @@
  <div class="refsect1 seealso" id="refsect1-function.stream-socket-server-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"> <span class="function"><a href="function.stream-socket-client.html" class="function" rel="rdfs-seeAlso">stream_socket_client()</a> - インターネットドメインまたは Unix ドメインのソケット接続を開く</span></li>
-   <li class="member"> <span class="function"><a href="function.stream-set-blocking.html" class="function" rel="rdfs-seeAlso">stream_set_blocking()</a> - ストリームのブロックモードを有効にする / 解除する</span></li>
-   <li class="member"> <span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - ストリームにタイムアウトを設定する</span></li>
-   <li class="member"> <span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - ファイルポインタから 1 行取得する</span></li>
-   <li class="member"> <span class="function"><a href="function.fgetss.html" class="function" rel="rdfs-seeAlso">fgetss()</a> - ファイルポインタから 1 行取り出し、HTML タグを取り除く</span></li>
-   <li class="member"> <span class="function"><a href="function.fwrite.html" class="function" rel="rdfs-seeAlso">fwrite()</a> - バイナリセーフなファイル書き込み処理</span></li>
-   <li class="member"> <span class="function"><a href="function.fclose.html" class="function" rel="rdfs-seeAlso">fclose()</a> - オープンされたファイルポインタをクローズする</span></li>
-   <li class="member"> <span class="function"><a href="function.feof.html" class="function" rel="rdfs-seeAlso">feof()</a> - ファイルポインタがファイル終端に達しているかどうか調べる</span></li>
+   <li class="member"><span class="function"><a href="function.stream-socket-client.html" class="function" rel="rdfs-seeAlso">stream_socket_client()</a> - インターネットドメインまたは Unix ドメインのソケット接続を開く</span></li>
+   <li class="member"><span class="function"><a href="function.stream-set-blocking.html" class="function" rel="rdfs-seeAlso">stream_set_blocking()</a> - ストリームのブロックモードを有効にする / 解除する</span></li>
+   <li class="member"><span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - ストリームにタイムアウトを設定する</span></li>
+   <li class="member"><span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - ファイルポインタから 1 行取得する</span></li>
+   <li class="member"><span class="function"><a href="function.fgetss.html" class="function" rel="rdfs-seeAlso">fgetss()</a> - ファイルポインタから 1 行取り出し、HTML タグを取り除く</span></li>
+   <li class="member"><span class="function"><a href="function.fwrite.html" class="function" rel="rdfs-seeAlso">fwrite()</a> - バイナリセーフなファイル書き込み処理</span></li>
+   <li class="member"><span class="function"><a href="function.fclose.html" class="function" rel="rdfs-seeAlso">fclose()</a> - オープンされたファイルポインタをクローズする</span></li>
+   <li class="member"><span class="function"><a href="function.feof.html" class="function" rel="rdfs-seeAlso">feof()</a> - ファイルポインタがファイル終端に達しているかどうか調べる</span></li>
    <li class="member"><a href="ref.curl.html" class="link">Curl 拡張モジュール</a></li>
   </ul>
  </div>

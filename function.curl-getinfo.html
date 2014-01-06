@@ -37,15 +37,16 @@
    <dl>
 
     <dt>
-<span class="term"><em><code class="parameter">ch</code></em>
-</span><dd>
-<p class="para"> <span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span>
-が返す cURL ハンドル。</p></dd>
+<em><code class="parameter">ch</code></em>
 </dt>
+<dd>
+<p class="para"><span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span>
+が返す cURL ハンドル。</p></dd>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">opt</code></em></dt>
 
-     <span class="term"><em><code class="parameter">opt</code></em></span>
      <dd>
 
       <p class="para">
@@ -130,7 +131,7 @@
         <li class="listitem">
          <span class="simpara">
           <strong><code>CURLINFO_HEADER_OUT</code></strong> - 送信したリクエスト文字列。
-          これを動作させるには、 <span class="function"><a href="function.curl-setopt.html" class="function">curl_setopt()</a></span> をコールする際に
+          これを動作させるには、<span class="function"><a href="function.curl-setopt.html" class="function">curl_setopt()</a></span> をコールする際に
           <strong><code>CURLINFO_HEADER_OUT</code></strong> オプションを使うようにしておく必要があります。
          </span>
         </li>
@@ -168,8 +169,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -291,7 +291,7 @@
     </li>
     <li class="listitem">
      <span class="simpara">
-      &quot;request_header&quot; (これが設定されるのは、事前に  <span class="function"><a href="function.curl-setopt.html" class="function">curl_setopt()</a></span>
+      &quot;request_header&quot; (これが設定されるのは、事前に <span class="function"><a href="function.curl-setopt.html" class="function">curl_setopt()</a></span>
       をコールしたときに <strong><code>CURLINFO_HEADER_OUT</code></strong> を設定した場合のみです)
      </span>
     </li>
@@ -332,8 +332,8 @@
  <div class="refsect1 examples" id="refsect1-function.curl-getinfo-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4212">
-    <p><strong>例1  <span class="function"><strong>curl_getinfo()</strong></span> の例</strong></p>
+   <div class="example" id="example-4214">
+    <p><strong>例1 <span class="function"><strong>curl_getinfo()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;curl&nbsp;ハンドルを作成します<br /></span><span style="color: #0000BB">$ch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_init</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.yahoo.com/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;実行します<br /></span><span style="color: #0000BB">curl_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;エラーが発生したかどうかを確認します<br /></span><span style="color: #007700">if(!</span><span style="color: #0000BB">curl_errno</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">))<br />{<br />&nbsp;</span><span style="color: #0000BB">$info&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">curl_getinfo</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /><br />&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Took&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'total_time'</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">'&nbsp;seconds&nbsp;to&nbsp;send&nbsp;a&nbsp;request&nbsp;to&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">'url'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;ハンドルを閉じます<br /></span><span style="color: #0000BB">curl_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$ch</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

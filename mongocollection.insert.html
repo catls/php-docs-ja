@@ -39,11 +39,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">a</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -59,13 +60,13 @@
       </p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">options</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -99,8 +100,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -120,11 +120,12 @@
    配列が返された場合、その中に含まれる要素は次のようになります。
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">ok</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -132,13 +133,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">err</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -147,13 +148,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">code</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -161,13 +162,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">errmsg</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -179,13 +180,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">n</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -194,13 +195,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">wtimeout</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -208,13 +209,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">waited</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -222,13 +223,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">wtime</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -237,13 +238,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">upserted</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -253,13 +254,13 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
 
-    <dt>
-
-     <span class="term">
       <em><code class="parameter">updatedExisting</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -269,8 +270,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -370,8 +370,8 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.insert-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1461">
-   <p><strong>例1  <span class="function"><strong>MongoCollection::insert()</strong></span> の <em>_id</em> の例</strong></p>
+  <div class="example" id="example-1462">
+   <p><strong>例1 <span class="function"><strong>MongoCollection::insert()</strong></span> の <em>_id</em> の例</strong></p>
    <div class="example-contents"><p>
     すでに存在しない場合は、<em>_id</em> フィールドを追加します。
     パラメータの渡しかたによって、生成された
@@ -414,8 +414,8 @@ array(1) {
    </div>
   </div>
 
-  <div class="example" id="example-1462">
-   <p><strong>例2  <span class="function"><strong>MongoCollection::insert()</strong></span> での確認つき書き込みの例</strong></p>
+  <div class="example" id="example-1463">
+   <p><strong>例2 <span class="function"><strong>MongoCollection::insert()</strong></span> での確認つき書き込みの例</strong></p>
    <div class="example-contents"><p>
     この例は、同じ _id を持つ二つの要素を追加しようとするものです。
     <em><code class="parameter">w</code></em> が設定されていれば、
@@ -435,10 +435,10 @@ array(1) {
  <div class="refsect1 seealso" id="refsect1-mongocollection.insert-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"> <span class="function"><a href="mongocollection.batchinsert.html" class="function" rel="rdfs-seeAlso">MongoCollection::batchInsert()</a> - 複数のドキュメントをコレクションに追加する</span></li>
-   <li class="member"> <span class="function"><a href="mongocollection.update.html" class="function" rel="rdfs-seeAlso">MongoCollection::update()</a> - 指定した条件にもとづいてレコードを更新する</span></li>
-   <li class="member"> <span class="function"><a href="mongocollection.find.html" class="function" rel="rdfs-seeAlso">MongoCollection::find()</a> - コレクションに問い合わせ、結果セットの MongoCursor を返す</span></li>
-   <li class="member"> <span class="function"><a href="mongocollection.remove.html" class="function" rel="rdfs-seeAlso">MongoCollection::remove()</a> - レコードをコレクションから削除する</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.batchinsert.html" class="function" rel="rdfs-seeAlso">MongoCollection::batchInsert()</a> - 複数のドキュメントをコレクションに追加する</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.update.html" class="function" rel="rdfs-seeAlso">MongoCollection::update()</a> - 指定した条件にもとづいてレコードを更新する</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.find.html" class="function" rel="rdfs-seeAlso">MongoCollection::find()</a> - コレクションに問い合わせ、結果セットの MongoCursor を返す</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.remove.html" class="function" rel="rdfs-seeAlso">MongoCollection::remove()</a> - レコードをコレクションから削除する</span></li>
    <li class="member">MongoDB コアドキュメントの <a href="docs.mongodb.org/manual/tutorial/insert-documents/" class="link external">&raquo;&nbsp;insert</a></li>
   </ul>
  </div>

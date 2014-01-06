@@ -30,7 +30,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_convert()</strong></span> は、<em><code class="parameter">assoc_array</code></em>
+   <span class="function"><strong>pg_convert()</strong></span> は、<em><code class="parameter">assoc_array</code></em>
    の中の値をチェックし、SQL 文の中で使用可能な形式に変換します。
    少なくとも <em><code class="parameter">assoc_array</code></em> の要素数以上のカラムを持つ
    テーブル <em><code class="parameter">table_name</code></em> が存在することが前提条件と
@@ -61,9 +61,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">connection</code></em></dt>
 
-     <span class="term"><em><code class="parameter">connection</code></em></span>
      <dd>
 
       <p class="para">
@@ -71,11 +72,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">table_name</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">table_name</code></em></span>
      <dd>
 
       <p class="para">
@@ -83,11 +84,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">assoc_array</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">assoc_array</code></em></span>
      <dd>
 
       <p class="para">
@@ -95,11 +96,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">options</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">options</code></em></span>
      <dd>
 
       <p class="para">
@@ -109,8 +110,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -128,8 +128,8 @@
  <div class="refsect1 examples" id="refsect1-function.pg-convert-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2052">
-    <p><strong>例1  <span class="function"><strong>pg_convert()</strong></span> の例</strong></p>
+   <div class="example" id="example-2053">
+    <p><strong>例1 <span class="function"><strong>pg_convert()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php&nbsp;<br />&nbsp;&nbsp;$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'dbname=foo'</span><span style="color: #007700">);<br />&nbsp;&nbsp;<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$tmp&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'author'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Joe&nbsp;Thackery'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'year'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2005</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'title'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'My&nbsp;Life,&nbsp;by&nbsp;Joe&nbsp;Thackery'<br />&nbsp;&nbsp;</span><span style="color: #007700">);<br />&nbsp;&nbsp;<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$vals&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_convert</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'authors'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$tmp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -146,7 +146,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-meta-data.html" class="function" rel="rdfs-seeAlso">pg_meta_data()</a> - テーブルからメタデータを取得する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-meta-data.html" class="function" rel="rdfs-seeAlso">pg_meta_data()</a> - テーブルからメタデータを取得する</span></li>
    </ul>
   </p>
  </div>

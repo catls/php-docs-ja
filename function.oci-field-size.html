@@ -36,9 +36,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">statement</code></em></dt>
 
-     <span class="term"><em><code class="parameter">statement</code></em></span>
      <dd>
 
       <p class="para">
@@ -46,11 +47,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">field</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">field</code></em></span>
      <dd>
 
       <p class="para">
@@ -58,8 +59,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -78,8 +78,8 @@
  <div class="refsect1 examples" id="refsect1-function.oci-field-size-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-1999">
-    <p><strong>例1  <span class="function"><strong>oci_field_size()</strong></span> の例</strong></p>
+   <div class="example" id="example-2000">
+    <p><strong>例1 <span class="function"><strong>oci_field_size()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"scott"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"tiger"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$stmt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;FROM&nbsp;emp"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">oci_execute</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;table&nbsp;border=\"1\"&gt;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;tr&gt;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;th&gt;Name&lt;/th&gt;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;th&gt;Type&lt;/th&gt;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;th&gt;Length&lt;/th&gt;"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;/tr&gt;"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$ncols&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_num_fields</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br /><br />for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">$ncols</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$column_name&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_field_name</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$column_type&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_field_type</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$column_size&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">oci_field_size</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;tr&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;td&gt;</span><span style="color: #0000BB">$column_name</span><span style="color: #DD0000">&lt;/td&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;td&gt;</span><span style="color: #0000BB">$column_type</span><span style="color: #DD0000">&lt;/td&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;td&gt;</span><span style="color: #0000BB">$column_size</span><span style="color: #DD0000">&lt;/td&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"&lt;/tr&gt;"</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;/table&gt;"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">oci_free_statement</span><span style="color: #007700">(</span><span style="color: #0000BB">$stmt</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">oci_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -97,10 +97,10 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
     PHP バージョン 5.0.0 以前では、代わりに
-     <span class="function"><a href="function.ocicolumnsize.html" class="function">ocicolumnsize()</a></span>
+    <span class="function"><a href="function.ocicolumnsize.html" class="function">ocicolumnsize()</a></span>
     を使用しなければなりません。
     まだこの名前を使用することができ、下位互換性のため
-     <span class="function"><strong>oci_field_size()</strong></span> への別名として残されていますが、
+    <span class="function"><strong>oci_field_size()</strong></span> への別名として残されていますが、
     推奨されません。
    </p>
   </p></blockquote>
@@ -111,8 +111,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.oci-num-fields.html" class="function" rel="rdfs-seeAlso">oci_num_fields()</a> - ある文における結果のカラム数を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.oci-field-name.html" class="function" rel="rdfs-seeAlso">oci_field_name()</a> - 文からのフィールド名を返す</span></li>
+    <li class="member"><span class="function"><a href="function.oci-num-fields.html" class="function" rel="rdfs-seeAlso">oci_num_fields()</a> - ある文における結果のカラム数を返す</span></li>
+    <li class="member"><span class="function"><a href="function.oci-field-name.html" class="function" rel="rdfs-seeAlso">oci_field_name()</a> - 文からのフィールド名を返す</span></li>
    </ul>
   </p>
  </div>

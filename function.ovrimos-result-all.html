@@ -36,22 +36,23 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">result_id</code></em></dt>
 
-     <span class="term"><em><code class="parameter">result_id</code></em></span>
      <dd>
 
       <p class="para">
-        <span class="function"><a href="function.ovrimos-execute.html" class="function">ovrimos_execute()</a></span>
-       あるいは  <span class="function"><a href="function.ovrimos-exec.html" class="function">ovrimos_exec()</a></span> が返す結果 ID。
+       <span class="function"><a href="function.ovrimos-execute.html" class="function">ovrimos_execute()</a></span>
+       あるいは <span class="function"><a href="function.ovrimos-exec.html" class="function">ovrimos_exec()</a></span> が返す結果 ID。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">format</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">format</code></em></span>
      <dd>
 
       <p class="para">
@@ -59,8 +60,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -79,7 +79,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    これにより SQL 命令が実行され、結果が HTML テーブルとして出力されます。
-   <div class="example" id="example-2035">
+   <div class="example" id="example-2036">
     <p><strong>例1 命令を準備、実行、結果を表示する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -91,8 +91,8 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2036">
-    <p><strong>例2 メタ情報つきの  <span class="function"><strong>ovrimos_result_all()</strong></span></strong></p>
+   <div class="example" id="example-2037">
+    <p><strong>例2 メタ情報つきの <span class="function"><strong>ovrimos_result_all()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ovrimos_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"db_host"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"8001"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"admin"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Connection&nbsp;ok!"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ovrimos_exec</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"select&nbsp;table_id,&nbsp;table_name<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from&nbsp;sys.tables&nbsp;where&nbsp;table_id&nbsp;=&nbsp;1"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">!=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Statement&nbsp;ok!&nbsp;cursor="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">ovrimos_cursor</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$colnb&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ovrimos_num_fields</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Output&nbsp;columns="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$colnb&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">$colnb</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ovrimos_field_name</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$type&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ovrimos_field_type</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$len&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ovrimos_field_len</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Column&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;name="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;type="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$type&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;len="&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$len&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ovrimos_result_all</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ovrimos_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ovrimos_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

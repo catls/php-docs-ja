@@ -37,7 +37,7 @@
   <p class="para rdfs-comment">
    変数が既にキャッシュに存在しない場合にのみ変数をユーザーキャッシュに追加します。
    追加された変数は、有効期限に達するか、
-    <span class="function"><a href="function.wincache-ucache-delete.html" class="function">wincache_ucache_delete()</a></span> あるいは  <span class="function"><a href="function.wincache-ucache-clear.html" class="function">wincache_ucache_clear()</a></span>
+   <span class="function"><a href="function.wincache-ucache-delete.html" class="function">wincache_ucache_delete()</a></span> あるいは <span class="function"><a href="function.wincache-ucache-clear.html" class="function">wincache_ucache_clear()</a></span>
    で削除されるまではキャッシュに残り続けます。
   </p>
  </div>
@@ -47,27 +47,28 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">key</code></em></dt>
 
-     <span class="term"><em><code class="parameter">key</code></em></span>
      <dd>
 
       <p class="para">
        変数を格納するときに、この名前のキーを使います。
        同じキーで既に変数が格納されているときは、この関数は失敗して <strong><code>FALSE</code></strong> を返します。
        <em><code class="parameter">key</code></em> は大文字小文字を区別します。同じキーがあっても値を上書きしたい場合は
-        <span class="function"><a href="function.wincache-ucache-set.html" class="function">wincache_ucache_set()</a></span> 関数をかわりに使います。
+       <span class="function"><a href="function.wincache-ucache-set.html" class="function">wincache_ucache_set()</a></span> 関数をかわりに使います。
        <em><code class="parameter">key</code></em> には name =&gt; value のペアの配列を渡すこともできます。
        この場合は name がキーとなります。
        この形式を使えば複数の値を一度の操作でキャッシュに格納できるので、競合状態になることを防げます。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">value</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">value</code></em></span>
      <dd>
 
       <p class="para">
@@ -81,11 +82,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">values</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">values</code></em></span>
      <dd>
 
       <p class="para">
@@ -93,11 +94,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">ttl</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">ttl</code></em></span>
      <dd>
 
       <p class="para">
@@ -105,14 +106,13 @@
        <em><code class="parameter">ttl</code></em> で指定した秒数が経過すると、
        格納されている変数はキャッシュから削除されます。
        このパラメータのデフォルト値は <em>0</em> で、これは
-        <span class="function"><a href="function.wincache-ucache-delete.html" class="function">wincache_ucache_delete()</a></span>
-       あるいは  <span class="function"><a href="function.wincache-ucache-clear.html" class="function">wincache_ucache_clear()</a></span>
+       <span class="function"><a href="function.wincache-ucache-delete.html" class="function">wincache_ucache_delete()</a></span>
+       あるいは <span class="function"><a href="function.wincache-ucache-clear.html" class="function">wincache_ucache_clear()</a></span>
        で明示的に削除するまでキャッシュに残り続けることを意味します。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -148,8 +148,8 @@
  <div class="refsect1 examples" id="refsect1-function.wincache-ucache-add-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-568">
-    <p><strong>例1  <span class="function"><strong>wincache_ucache_add()</strong></span> で <em><code class="parameter">key</code></em> を文字列にする例</strong></p>
+   <div class="example" id="example-569">
+    <p><strong>例1 <span class="function"><strong>wincache_ucache_add()</strong></span> で <em><code class="parameter">key</code></em> を文字列にする例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'BAR'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_add</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_add</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_get</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -168,8 +168,8 @@ string(3) &quot;BAR&quot;
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-569">
-    <p><strong>例2  <span class="function"><strong>wincache_ucache_add()</strong></span> で <em><code class="parameter">key</code></em> を配列にする例</strong></p>
+   <div class="example" id="example-570">
+    <p><strong>例2 <span class="function"><strong>wincache_ucache_add()</strong></span> で <em><code class="parameter">key</code></em> を配列にする例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$colors_array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'green'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'5'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Blue'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'6'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'yellow'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'7'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'cyan'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'8'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_add</span><span style="color: #007700">(</span><span style="color: #0000BB">$colors_array</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_add</span><span style="color: #007700">(</span><span style="color: #0000BB">$colors_array</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_get</span><span style="color: #007700">(</span><span style="color: #DD0000">'Blue'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -199,13 +199,13 @@ string(1) &quot;6&quot;
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.wincache-ucache-set.html" class="function" rel="rdfs-seeAlso">wincache_ucache_set()</a> - 変数をユーザーキャッシュに追加し、変数が既にキャッシュに存在する場合はそれを上書きする</span></li>
-    <li class="member"> <span class="function"><a href="function.wincache-ucache-get.html" class="function" rel="rdfs-seeAlso">wincache_ucache_get()</a> - ユーザーキャッシュに格納された変数を取得する</span></li>
-    <li class="member"> <span class="function"><a href="function.wincache-ucache-delete.html" class="function" rel="rdfs-seeAlso">wincache_ucache_delete()</a> - 変数をユーザーキャッシュから削除する</span></li>
-    <li class="member"> <span class="function"><a href="function.wincache-ucache-clear.html" class="function" rel="rdfs-seeAlso">wincache_ucache_clear()</a> - ユーザーキャッシュの中身全体を削除する</span></li>
-    <li class="member"> <span class="function"><a href="function.wincache-ucache-exists.html" class="function" rel="rdfs-seeAlso">wincache_ucache_exists()</a> - 変数がユーザーキャッシュに存在するかどうかを調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.wincache-ucache-meminfo.html" class="function" rel="rdfs-seeAlso">wincache_ucache_meminfo()</a> - ユーザーキャッシュのメモリ使用状況についての情報を取得する</span></li>
-    <li class="member"> <span class="function"><a href="function.wincache-ucache-info.html" class="function" rel="rdfs-seeAlso">wincache_ucache_info()</a> - ユーザーキャッシュにキャッシュされたファイルについての情報を取得する</span></li>
+    <li class="member"><span class="function"><a href="function.wincache-ucache-set.html" class="function" rel="rdfs-seeAlso">wincache_ucache_set()</a> - 変数をユーザーキャッシュに追加し、変数が既にキャッシュに存在する場合はそれを上書きする</span></li>
+    <li class="member"><span class="function"><a href="function.wincache-ucache-get.html" class="function" rel="rdfs-seeAlso">wincache_ucache_get()</a> - ユーザーキャッシュに格納された変数を取得する</span></li>
+    <li class="member"><span class="function"><a href="function.wincache-ucache-delete.html" class="function" rel="rdfs-seeAlso">wincache_ucache_delete()</a> - 変数をユーザーキャッシュから削除する</span></li>
+    <li class="member"><span class="function"><a href="function.wincache-ucache-clear.html" class="function" rel="rdfs-seeAlso">wincache_ucache_clear()</a> - ユーザーキャッシュの中身全体を削除する</span></li>
+    <li class="member"><span class="function"><a href="function.wincache-ucache-exists.html" class="function" rel="rdfs-seeAlso">wincache_ucache_exists()</a> - 変数がユーザーキャッシュに存在するかどうかを調べる</span></li>
+    <li class="member"><span class="function"><a href="function.wincache-ucache-meminfo.html" class="function" rel="rdfs-seeAlso">wincache_ucache_meminfo()</a> - ユーザーキャッシュのメモリ使用状況についての情報を取得する</span></li>
+    <li class="member"><span class="function"><a href="function.wincache-ucache-info.html" class="function" rel="rdfs-seeAlso">wincache_ucache_info()</a> - ユーザーキャッシュにキャッシュされたファイルについての情報を取得する</span></li>
     <li class="member"><a href="language.oop5.magic.html#object.sleep" class="link">__sleep()</a></li>
    </ul>
   </p>

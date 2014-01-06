@@ -59,7 +59,7 @@
 
    
   <p class="para">
-    <span class="function"><a href="function.serialize.html" class="function">serialize()</a></span> は、クラスに特殊な名前
+   <span class="function"><a href="function.serialize.html" class="function">serialize()</a></span> は、クラスに特殊な名前
    <a href="language.oop5.magic.html#object.sleep" class="link">__sleep()</a> の関数があるかどうかを調べます。
    もしあれば、シリアル化の前にその関数を実行します。
    この関数で、オブジェクトをクリアすることができます。
@@ -85,7 +85,7 @@
    この関数が有用です。
   </p>
   <p class="para">
-   逆に、 <span class="function"><a href="function.unserialize.html" class="function">unserialize()</a></span> は、
+   逆に、<span class="function"><a href="function.unserialize.html" class="function">unserialize()</a></span> は、
    特殊な名前 <a href="language.oop5.magic.html#object.wakeup" class="link">__wakeup()</a> を有する
    関数の存在を調べます。
    もし存在する場合、この関数は、オブジェクトが有する可能性が
@@ -96,7 +96,7 @@
    シリアル化の際に失われたデータベース接続を再度確立したり、
    その他の再初期化を行うことです。
   </p>
-   <div class="example" id="example-218">
+   <div class="example" id="example-219">
     <p><strong>例1 sleep および wakeup</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -127,7 +127,7 @@
     <p class="simpara">
      <a href="language.oop5.magic.html#object.tostring" class="link">__toString()</a> メソッド内から例外を投げることはできません。そうした場合、致命的なエラーが発生します。
     </p>
-   </div>  <div class="example" id="example-219">
+   </div>  <div class="example" id="example-220">
    <p><strong>例2 簡単な例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -146,10 +146,10 @@ Hello
    <p class="para">
     注意が必要なのは、PHP 5.2.0 より前では、
     <a href="language.oop5.magic.html#object.tostring" class="link">__toString()</a> メソッドは
-     <span class="function"><a href="function.echo.html" class="function">echo</a></span> または  <span class="function"><a href="function.print.html" class="function">print</a></span>
+    <span class="function"><a href="function.echo.html" class="function">echo</a></span> または <span class="function"><a href="function.print.html" class="function">print</a></span>
     と直接結合された場合のみコールされていたということです。
     PHP 5.2.0 以降では、これはすべての文字列コンテキスト
-    (たとえば  <span class="function"><a href="function.printf.html" class="function">printf()</a></span> における <em>%s</em> 修飾子)
+    (たとえば <span class="function"><a href="function.printf.html" class="function">printf()</a></span> における <em>%s</em> 修飾子)
     でコールされます。しかし、その他の型のコンテキスト
     (たとえば <em>%d</em> 修飾子) ではコールされません。
     PHP 5.2.0 以降では、<a href="language.oop5.magic.html#object.tostring" class="link">__toString()</a>
@@ -174,7 +174,7 @@ Hello
      この機能は PHP 5.3.0 以降で使用可能です。
     </p>
    </p></blockquote>
-   <div class="example" id="example-220">
+   <div class="example" id="example-221">
     <p><strong>例3 <a href="language.oop5.magic.html#object.invoke" class="link">__invoke()</a> の使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -202,14 +202,14 @@ bool(true)
 
    <p class="para">
     この <a href="language.oop5.static.html" class="link">static</a> メソッドは、
-    PHP 5.1.0 以降で  <span class="function"><a href="function.var-export.html" class="function">var_export()</a></span> によって
+    PHP 5.1.0 以降で <span class="function"><a href="function.var-export.html" class="function">var_export()</a></span> によって
     エクスポートされたクラスのためにコールされます。
    </p>
    <p class="para">
     このメソッドの唯一のパラメータは、エクスポートされたプロパティを
     <em>array(&#039;property&#039; =&gt; value, ...)</em> の形式で保持する配列です。
    </p>
-   <div class="example" id="example-221">
+   <div class="example" id="example-222">
     <p><strong>例4 <a href="language.oop5.magic.html#object.set-state" class="link">__set_state()</a> の使用法 (PHP 5.1.0 以降)</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

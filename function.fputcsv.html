@@ -28,7 +28,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>fputcsv()</strong></span> は、行（<em><code class="parameter">fields</code></em>
+   <span class="function"><strong>fputcsv()</strong></span> は、行（<em><code class="parameter">fields</code></em>
    配列として渡されたもの）を CSV としてフォーマットし、それを
    <em><code class="parameter">handle</code></em> で指定したファイルに書き込みます
    (いちばん最後に改行を追加します)。
@@ -41,22 +41,23 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">handle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">handle</code></em></span>
      <dd>
 
       <p class="para">ファイルポインタは、有効なファイルポインタである必要があり、
- <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> または  <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> で正常にオープンされた
-（そしてまだ  <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> でクローズされていない）
+<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> または <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> で正常にオープンされた
+（そしてまだ <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> でクローズされていない）
 ファイルを指している必要があります。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">fields</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">fields</code></em></span>
      <dd>
 
       <p class="para">
@@ -64,11 +65,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">delimiter</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">delimiter</code></em></span>
      <dd>
 
       <p class="para">
@@ -77,11 +78,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">enclosure</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">enclosure</code></em></span>
      <dd>
 
       <p class="para">
@@ -90,8 +91,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -109,8 +109,8 @@
  <div class="refsect1 examples" id="refsect1-function.fputcsv-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2386">
-    <p><strong>例1  <span class="function"><strong>fputcsv()</strong></span> の例</strong></p>
+   <div class="example" id="example-2387">
+    <p><strong>例1 <span class="function"><strong>fputcsv()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$list&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(<br />&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'aaa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bbb'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'ccc'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'dddd'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'123'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'456'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'789'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'"aaa"'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'"bbb"'</span><span style="color: #007700">)<br />);<br /><br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'file.csv'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$list&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$fields</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fputcsv</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$fields</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -146,7 +146,7 @@ aaa,bbb,ccc,dddd
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.fgetcsv.html" class="function" rel="rdfs-seeAlso">fgetcsv()</a> - ファイルポインタから行を取得し、CSVフィールドを処理する</span></li>
+    <li class="member"><span class="function"><a href="function.fgetcsv.html" class="function" rel="rdfs-seeAlso">fgetcsv()</a> - ファイルポインタから行を取得し、CSVフィールドを処理する</span></li>
    </ul>
   </p>
  </div>

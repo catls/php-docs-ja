@@ -35,11 +35,11 @@
   <h3 class="title">構文</h3>
   
   <div class="sect3" id="language.types.array.syntax.array-func">
-   <h4 class="title"> <span class="function"><a href="function.array.html" class="function">array()</a></span> で指定</h4>
+   <h4 class="title"><span class="function"><a href="function.array.html" class="function">array()</a></span> で指定</h4>
 
    <p class="para">
     <span class="type"><span class="type 配列">配列</span></span> は、言語に組み込まれた
-     <span class="function"><a href="function.array.html" class="function">array()</a></span> で作成することが可能です。この構造は、
+    <span class="function"><a href="function.array.html" class="function">array()</a></span> で作成することが可能です。この構造は、
     特定の数のカンマで区切られた
     <em><span class="replaceable">キー</span> =&gt; <span class="replaceable">値</span></em> の組を引数とします。
    </p>
@@ -194,7 +194,7 @@ array(4) {
     <p><strong>例4 数値添字配列でキーを省略する例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hallo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"world"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"hello"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"world"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -208,7 +208,7 @@ array(4) {
   [1]=&gt;
   string(3) &quot;bar&quot;
   [2]=&gt;
-  string(5) &quot;hallo&quot;
+  string(5) &quot;hello&quot;
   [3]=&gt;
   string(5) &quot;world&quot;
 }
@@ -281,7 +281,7 @@ string(3) &quot;foo&quot;
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
      角括弧と波括弧は、配列の要素にアクセスするときにはどちらも同じ意味で使えます
-     (つまり、この例で $array[42] と $array{42}
+     (つまり、この例で <em>$array[42]</em> と <em>$array{42}</em>
      は同じものを表しているということです)。
     </p>
    </p></blockquote>
@@ -352,7 +352,7 @@ $arr[] = <span class="replaceable">value</span>;
    <p class="para">
     ある値を変更するには、
     新しい値に値を代入します。特定のキー/値の組を削除したい場合には、
-     <span class="function"><a href="function.unset.html" class="function">unset()</a></span> を使用する必要があります。
+    <span class="function"><a href="function.unset.html" class="function">unset()</a></span> を使用する必要があります。
    </p>
 
    <div class="informalexample">
@@ -442,11 +442,11 @@ Array
 
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <span class="function"><a href="function.unset.html" class="function">unset()</a></span>関数は配列のキーを削除することが出来ます。
+    <span class="function"><a href="function.unset.html" class="function">unset()</a></span>関数は配列のキーを削除することが出来ます。
     ただし、これによってインデックスの再構築が行われるわけではないことに
     注意してください。
     &quot;通常の整数添字&quot; (0 から始まり、1 つずつ増加) のみを使用している場合、
-     <span class="function"><a href="function.array-values.html" class="function">array_values()</a></span>
+    <span class="function"><a href="function.array-values.html" class="function">array_values()</a></span>
     を用いてインデックスを再構築することができます。
    </p>
    
@@ -556,7 +556,7 @@ Good: 2
    </div>
 
    <p class="para">
-     <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> で
+    <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> で
     (<strong><code>E_ALL</code></strong> を指定する等により)
     <em>E_NOTICE</em> レベルのエラー出力を有効にした場合、
     上記のエラーが出力されます。
@@ -700,7 +700,7 @@ Good: 2
   <h3 class="title">比較</h3>
 
   <p class="para">
-    <span class="function"><a href="function.array-diff.html" class="function">array_diff()</a></span> と
+   <span class="function"><a href="function.array-diff.html" class="function">array_diff()</a></span> と
    <a href="language.operators.array.html" class="link">配列演算子</a>
    を用いると、配列を比較することができます。
   </p>
@@ -824,7 +824,7 @@ Array
   <p class="para">
    配列には順番が付けられます。異なったソート関数を用いて順番を変更することも可能です。
    より詳細な情報については、<a href="ref.array.html" class="link">配列関数</a> を参照ください。
-    <span class="function"><a href="function.count.html" class="function">count()</a></span> 関数を使用することで、
+   <span class="function"><a href="function.count.html" class="function">count()</a></span> 関数を使用することで、
    配列の要素数を数えることが可能です。
   </p>
 

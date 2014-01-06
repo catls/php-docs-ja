@@ -27,11 +27,11 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>flock()</strong></span> を使うと、(ほとんどの Unix、そして Windows さえ含む)
+   <span class="function"><strong>flock()</strong></span> を使うと、(ほとんどの Unix、そして Windows さえ含む)
    事実上すべてのプラットフォームで使用可能な、簡易な読み手/書き手モデルを実現できます。
   </p>
   <p class="para">
-   PHP 5.3.2 より前のバージョンでは、 <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span>
+   PHP 5.3.2 より前のバージョンでは、<span class="function"><a href="function.fclose.html" class="function">fclose()</a></span>
    でロックの解放も行います
    (これは、スクリプトが終了した場合にも自動的にコールされます)。
   </p>
@@ -51,20 +51,21 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">handle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">handle</code></em></span>
      <dd>
 
-      <p class="para"> <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
+      <p class="para"><span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
 を使用して作成したファイルシステムポインタリソース。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">operation</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">operation</code></em></span>
      <dd>
 
       <p class="para">
@@ -95,16 +96,16 @@
       </p>
       <p class="para">
        上の操作のいずれかに <strong><code>LOCK_NB</code></strong> をビットマスクとして追加すれば、
-       ロック中に  <span class="function"><strong>flock()</strong></span> でブロックを行わないことができます
+       ロック中に <span class="function"><strong>flock()</strong></span> でブロックを行わないことができます
        (Windows ではサポートされていません)。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">wouldblock</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">wouldblock</code></em></span>
      <dd>
 
       <p class="para">
@@ -113,8 +114,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -173,8 +173,8 @@
  <div class="refsect1 examples" id="refsect1-function.flock-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2381">
-    <p><strong>例1  <span class="function"><strong>flock()</strong></span> の例</strong></p>
+   <div class="example" id="example-2382">
+    <p><strong>例1 <span class="function"><strong>flock()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/tmp/lock.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r+"</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">flock</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">LOCK_EX</span><span style="color: #007700">))&nbsp;{&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;排他ロックを確保します<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">ftruncate</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ファイルを切り詰めます<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ここで何かを書きます\n"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">fflush</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;出力をフラッシュしてからロックを解放します<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">flock</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">LOCK_UN</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ロックを解放します<br /></span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ファイルを取得できません!"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -185,8 +185,8 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2382">
-    <p><strong>例2  <span class="function"><strong>flock()</strong></span> で <strong><code>LOCK_NB</code></strong> オプションを使う例</strong></p>
+   <div class="example" id="example-2383">
+    <p><strong>例2 <span class="function"><strong>flock()</strong></span> で <strong><code>LOCK_NB</code></strong> オプションを使う例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp/lock.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r+'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;LOCK_NB&nbsp;オプションを&nbsp;LOCK_EX&nbsp;で有効にします&nbsp;*/<br /></span><span style="color: #007700">if(!</span><span style="color: #0000BB">flock</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">LOCK_EX&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">LOCK_NB</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Unable&nbsp;to&nbsp;obtain&nbsp;lock'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit(-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -203,7 +203,7 @@
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <span class="function"><strong>flock()</strong></span> は、Windows 上ではアドバイザリロックではなく
+    <span class="function"><strong>flock()</strong></span> は、Windows 上ではアドバイザリロックではなく
     強制ロックを使います。強制ロックは Linux や System V 系の OS でもサポートされています。
     これは、そのファイルに setgid パーミッションが設定されていて
     グループの実行ビットがクリアされている場合に
@@ -213,16 +213,16 @@
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <span class="function"><strong>flock()</strong></span>は、ファイルポインタを必要とするため、
-    ( <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>へ引数&quot;w&quot;または&quot;w+&quot;を指定して)書き込
+    <span class="function"><strong>flock()</strong></span>は、ファイルポインタを必要とするため、
+    (<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>へ引数&quot;w&quot;または&quot;w+&quot;を指定して)書き込
     みモードでオープンすることにより丸めるファイルにアクセス保護する
     特別なロックファイルを使用する必要があるかもしれません。
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> が返すローカルファイルへのポインタ、あるいは
-     <span class="function"><a href="streamwrapper.stream-lock.html" class="function">streamWrapper::stream_lock()</a></span> メソッドを実装した
+    <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> が返すローカルファイルへのポインタ、あるいは
+    <span class="function"><a href="streamwrapper.stream-lock.html" class="function">streamWrapper::stream_lock()</a></span> メソッドを実装した
     ユーザー空間のストリームを指すファイルポインタに対してのみ使うことができます。
    </p>
   </p></blockquote>
@@ -234,14 +234,14 @@
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    いくつかのオーペレーティングシステムで <span class="function"><strong>flock()</strong></span>
+    いくつかのオーペレーティングシステムで<span class="function"><strong>flock()</strong></span>
     はプロセスレベルで実装されています。ISAPIのようなマルチスレッド
     型のサーバーAPIを使用している場合、同じサーバーインスタンスの並
     列スレッドで実行されている他のPHPスクリプトに対してファイルを保
-    護する際に  <span class="function"><strong>flock()</strong></span>を使用することはできません!
+    護する際に <span class="function"><strong>flock()</strong></span>を使用することはできません!
    </p>
    <p class="para">
-     <span class="function"><strong>flock()</strong></span>は<em>FAT</em>のような
+    <span class="function"><strong>flock()</strong></span>は<em>FAT</em>のような
     旧式のファイルシステムではサポートされていないため、
     そのような環境の場合は常に<strong><code>FALSE</code></strong>を返すことになります。
    （これは特にWindows98ユーザーにとって常に真です）

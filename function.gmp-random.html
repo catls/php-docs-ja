@@ -43,9 +43,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">limiter</code></em></dt>
 
-     <span class="term"><em><code class="parameter">limiter</code></em></span>
      <dd>
 
       <p class="para">
@@ -55,8 +56,7 @@
 あるいは数値に変換可能な数値形式の文字列。</p> 
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -74,8 +74,8 @@
  <div class="refsect1 examples" id="refsect1-function.gmp-random-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3427">
-    <p><strong>例1  <span class="function"><strong>gmp_random()</strong></span> の例</strong></p>
+   <div class="example" id="example-3428">
+    <p><strong>例1 <span class="function"><strong>gmp_random()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$rand1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_random</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;0&nbsp;から&nbsp;1&nbsp;*&nbsp;limb&nbsp;のビット数までの間の乱数<br /></span><span style="color: #0000BB">$rand2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_random</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;0&nbsp;から&nbsp;2&nbsp;*&nbsp;limb&nbsp;のビット数までの間の乱数<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$rand1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$rand2</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>

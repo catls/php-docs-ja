@@ -36,9 +36,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">prefix</code></em></dt>
 
-     <span class="term"><em><code class="parameter">prefix</code></em></span>
      <dd>
 
       <p class="para">
@@ -54,22 +55,21 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">more_entropy</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">more_entropy</code></em></span>
      <dd>
 
       <p class="para">
-       <strong><code>TRUE</code></strong> にすると、 <span class="function"><strong>uniqid()</strong></span> は
+       <strong><code>TRUE</code></strong> にすると、<span class="function"><strong>uniqid()</strong></span> は
        返り値の最後にさらに別のエントロピーを
        (線形合同法を使用して) 追加します。これにより、結果が一意になる可能性を高めます。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -87,8 +87,8 @@
  <div class="refsect1 examples" id="refsect1-function.uniqid-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3786">
-    <p><strong>例1  <span class="function"><strong>uniqid()</strong></span> の例</strong></p>
+   <div class="example" id="example-3788">
+    <p><strong>例1 <span class="function"><strong>uniqid()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;一意なID、たとえば&nbsp;4b3403665fea6&nbsp;*/<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"uniqid():&nbsp;%s\r\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">());<br /><br /></span><span style="color: #FF8000">/*&nbsp;IDに接頭辞をつけることもできます。これは次のように書くのと<br />&nbsp;*&nbsp;同じです<br />&nbsp;*<br />&nbsp;*&nbsp;$uniqid&nbsp;=&nbsp;$prefix&nbsp;.&nbsp;uniqid();<br />&nbsp;*&nbsp;$uniqid&nbsp;=&nbsp;uniqid($prefix);<br />&nbsp;*/<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"uniqid('php_'):&nbsp;%s\r\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">(</span><span style="color: #DD0000">'php_'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">/*&nbsp;more_entropy&nbsp;パラメータも使えます。Cygwin&nbsp;などのシステムで<br />&nbsp;*&nbsp;必要となるでしょう。これは、uniqid()&nbsp;が生成する値をたとえば<br />&nbsp;*&nbsp;4b340550242239.64159797&nbsp;のような形式にします。<br />&nbsp;*/<br /></span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"uniqid('',&nbsp;true):&nbsp;%s\r\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">uniqid</span><span style="color: #007700">(</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -142,9 +142,9 @@
   <div class="caution"><strong class="caution">警告</strong>
    <p class="para">
     この関数は、暗号学的にセキュアなトークンを返すわけではありません。
-    実際、追加のパラメータを何も渡さなければその返り値は  <span class="function"><a href="function.microtime.html" class="function">microtime()</a></span>
+    実際、追加のパラメータを何も渡さなければその返り値は <span class="function"><a href="function.microtime.html" class="function">microtime()</a></span>
     とほとんど変わりません。暗号学的にセキュアなトークンを生成したければ
-     <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function">openssl_random_pseudo_bytes()</a></span> を使いましょう。
+    <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function">openssl_random_pseudo_bytes()</a></span> を使いましょう。
    </p>
   </div>
   <blockquote class="note"><p><strong class="note">注意</strong>: 

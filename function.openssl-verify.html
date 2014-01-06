@@ -28,7 +28,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>openssl_verify()</strong></span> は、
+   <span class="function"><strong>openssl_verify()</strong></span> は、
    <em><code class="parameter">pub_key_id</code></em> が指す公開鍵を使用し、
    指定した <em><code class="parameter">data</code></em> に関して
    <em><code class="parameter">signature</code></em> が正しいことを確認します。
@@ -43,42 +43,43 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">data</code></em></dt>
 
-     <span class="term"><em><code class="parameter">data</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">signature</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">signature</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">pub_key_id</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">pub_key_id</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">signature_alg</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">signature_alg</code></em></span>
      <dd>
 
       <p class="para">
@@ -88,8 +89,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -137,8 +137,8 @@
  <div class="refsect1 examples" id="refsect1-function.openssl-verify-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-870">
-    <p><strong>例1  <span class="function"><strong>openssl_verify()</strong></span> の例</strong></p>
+   <div class="example" id="example-871">
+    <p><strong>例1 <span class="function"><strong>openssl_verify()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$data&nbsp;および&nbsp;$signature&nbsp;はデータおよび署名が含まれていると仮定<br /><br />//&nbsp;認証局から公開鍵を取得し、使用可能にする<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/src/openssl-0.9.6/demos/sign/cert.pem"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pubkeyid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_get_publickey</span><span style="color: #007700">(</span><span style="color: #0000BB">$cert</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名が正しいかどうかを確認<br /></span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_verify</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pubkeyid</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"正しいです"</span><span style="color: #007700">;<br />}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"正しくありません"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"署名を確認する際にエラーが発生しました"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #FF8000">//&nbsp;メモリからキーを開放<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkeyid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -155,7 +155,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.openssl-sign.html" class="function" rel="rdfs-seeAlso">openssl_sign()</a> - 署名を生成する</span></li>
+    <li class="member"><span class="function"><a href="function.openssl-sign.html" class="function" rel="rdfs-seeAlso">openssl_sign()</a> - 署名を生成する</span></li>
    </ul>
   </p>
  </div>

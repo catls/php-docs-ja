@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">class_name</code></em></dt>
 
-     <span class="term"><em><code class="parameter">class_name</code></em></span>
      <dd>
 
       <p class="para">
@@ -47,8 +48,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -67,8 +67,8 @@
  <div class="refsect1 examples" id="refsect1-splfileinfo.setinfoclass-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3942">
-    <p><strong>例1  <span class="function"><a href="splfileinfo.setfileclass.html" class="function">SplFileInfo::setFileClass()</a></span> の例</strong></p>
+   <div class="example" id="example-3944">
+    <p><strong>例1 <span class="function"><a href="splfileinfo.setfileclass.html" class="function">SplFileInfo::setFileClass()</a></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;SplFileInfo&nbsp;を継承したクラスを定義します<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyFoo&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">SplFileInfo&nbsp;</span><span style="color: #007700">{}<br /><br /></span><span style="color: #0000BB">$info&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SplFileInfo</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;使用するクラス名を設定します<br /></span><span style="color: #0000BB">$info</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setInfoClass</span><span style="color: #007700">(</span><span style="color: #DD0000">'MyFoo'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$info</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getFileInfo</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -92,7 +92,7 @@ object(MyFoo)#2 (0) { }
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="methodname"><a href="splfileinfo.getfileinfo.html" class="methodname" rel="rdfs-seeAlso">SplFileInfo::getFileInfo()</a> - ファイルの SplFileInfo オブジェクトを取得する</span></li>
+    <li class="member"><span class="methodname"><a href="splfileinfo.getfileinfo.html" class="methodname" rel="rdfs-seeAlso">SplFileInfo::getFileInfo()</a> - ファイルの SplFileInfo オブジェクトを取得する</span></li>
    </ul>
   </p>
  </div>

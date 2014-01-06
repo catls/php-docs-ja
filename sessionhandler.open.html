@@ -27,10 +27,10 @@
 
   <p class="para rdfs-comment">
    新しいセッションを作成するか、あるいは既存のセッションを再度初期化します。
-   PHP が自動的にセッションを開始させたり、あるいは  <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> を実行したときにコールされます。
+   PHP が自動的にセッションを開始させたり、あるいは <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> を実行したときにコールされます。
   </p>
   <p class="para">
-   このメソッドは、このハンドラが  <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span>
+   このメソッドは、このハンドラが <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span>
    で設定される前に ini 設定
    <a href="session.configuration.html#ini.session.save-handler" class="link">session.save_handler</a>
    で定義されていた PHP の保存ハンドラをラップします。
@@ -42,7 +42,7 @@
   </p>
   <p class="para">
    このメソッドに関する詳細は、
-    <span class="function"><a href="sessionhandlerinterface.open.html" class="function">SessionHandlerInterface::open()</a></span>
+   <span class="function"><a href="sessionhandlerinterface.open.html" class="function">SessionHandlerInterface::open()</a></span>
    のドキュメントを参照ください。
   </p>
  </div>
@@ -52,9 +52,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">save_path</code></em></dt>
 
-    <span class="term"><em><code class="parameter">save_path</code></em></span>
     <dd>
 
      <p class="para">
@@ -62,11 +63,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">session_id</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">session_id</code></em></span>
     <dd>
 
      <p class="para">
@@ -74,8 +75,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>

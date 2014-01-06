@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">iterations</code></em></dt>
 
-     <span class="term"><em><code class="parameter">iterations</code></em></span>
      <dd>
 
       <p class="para">
@@ -45,8 +46,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -72,8 +72,8 @@
  <div class="refsect1 examples" id="refsect1-imagick.setimageiterations-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3337">
-    <p><strong>例1 基本的な  <span class="function"><strong>Imagick::setImageIterations()</strong></span> の使用例</strong></p>
+   <div class="example" id="example-3338">
+    <p><strong>例1 基本的な <span class="function"><strong>Imagick::setImageIterations()</strong></span> の使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$imagick&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Imagick</span><span style="color: #007700">(</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">"Test.gif"</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$imagick&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">coalesceImages</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setImageIterations</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$imagick&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">deconstructImages</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">writeImages</span><span style="color: #007700">(</span><span style="color: #DD0000">'/path/to/save/OnceOnly.gif'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>

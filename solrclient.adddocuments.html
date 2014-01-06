@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">docs</code></em></dt>
 
-     <span class="term"><em><code class="parameter">docs</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,11 +49,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">allowDups</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">allowDups</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,11 +61,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">commitWithin</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">commitWithin</code></em></span>
      <dd>
 
       <p class="para">
@@ -72,8 +73,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -91,8 +91,8 @@
  <div class="refsect1 examples" id="refsect1-solrclient.adddocuments-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4720">
-    <p><strong>例1  <span class="methodname"><strong>SolrClient::addDocuments()</strong></span> example</strong></p>
+   <div class="example" id="example-4722">
+    <p><strong>例1 <span class="methodname"><strong>SolrClient::addDocuments()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$options&nbsp;</span><span style="color: #007700">=&nbsp;array<br />(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'hostname'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">SOLR_SERVER_HOSTNAME</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'login'&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">SOLR_SERVER_USERNAME</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'password'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">SOLR_SERVER_PASSWORD</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'port'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">SOLR_SERVER_PORT</span><span style="color: #007700">,<br />);<br /><br /></span><span style="color: #0000BB">$client&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SolrClient</span><span style="color: #007700">(</span><span style="color: #0000BB">$options</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$doc&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SolrInputDocument</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$doc</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'id'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">334455</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$doc</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'cat'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Software'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$doc</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'cat'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Lucene'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$doc2&nbsp;</span><span style="color: #007700">=&nbsp;clone&nbsp;</span><span style="color: #0000BB">$doc</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$doc2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">deleteField</span><span style="color: #007700">(</span><span style="color: #DD0000">'id'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$doc2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'id'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">334456</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$docs&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">$doc</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$doc2</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$updateResponse&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$client</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addDocuments</span><span style="color: #007700">(</span><span style="color: #0000BB">$docs</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$updateResponse</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getResponse</span><span style="color: #007700">());<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -125,7 +125,7 @@ SolrObject Object
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="methodname"><a href="solrclient.adddocument.html" class="methodname" rel="rdfs-seeAlso">SolrClient::addDocument()</a> - Adds a document to the index</span></li>
+    <li class="member"><span class="methodname"><a href="solrclient.adddocument.html" class="methodname" rel="rdfs-seeAlso">SolrClient::addDocument()</a> - Adds a document to the index</span></li>
    </ul>
   </p>
  </div>

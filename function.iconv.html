@@ -39,9 +39,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">in_charset</code></em></dt>
 
-     <span class="term"><em><code class="parameter">in_charset</code></em></span>
      <dd>
 
       <p class="para">
@@ -49,11 +50,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">out_charset</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">out_charset</code></em></span>
      <dd>
 
       <p class="para">
@@ -70,11 +71,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">str</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">str</code></em></span>
      <dd>
 
       <p class="para">
@@ -82,8 +83,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -101,8 +101,8 @@
  <div class="refsect1 examples" id="refsect1-function.iconv-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2479">
-    <p><strong>例1  <span class="function"><strong>iconv()</strong></span> の例</strong></p>
+   <div class="example" id="example-2480">
+    <p><strong>例1 <span class="function"><strong>iconv()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$text&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;the&nbsp;Euro&nbsp;symbol&nbsp;'€'."</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">'Original&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'TRANSLIT&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">iconv</span><span style="color: #007700">(</span><span style="color: #DD0000">"UTF-8"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ISO-8859-1//TRANSLIT"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'IGNORE&nbsp;&nbsp;&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">iconv</span><span style="color: #007700">(</span><span style="color: #DD0000">"UTF-8"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ISO-8859-1//IGNORE"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'Plain&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">iconv</span><span style="color: #007700">(</span><span style="color: #DD0000">"UTF-8"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ISO-8859-1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>

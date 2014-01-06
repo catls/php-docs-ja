@@ -27,7 +27,7 @@
   ]]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>array_multisort()</strong></span> は、複数の配列を一度に、
+   <span class="function"><strong>array_multisort()</strong></span> は、複数の配列を一度に、
    または、多次元の配列をその次元の一つでソートする際に使用可能です。
    この関数は、ソートの際にキーの相関を維持します。
   </p>
@@ -43,9 +43,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">array1</code></em></dt>
 
-     <span class="term"><em><code class="parameter">array1</code></em></span>
      <dd>
 
       <p class="para">
@@ -53,11 +54,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">array1_sort_order</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">array1_sort_order</code></em></span>
      <dd>
 
       <p class="para">
@@ -71,11 +72,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">array1_sort_flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">array1_sort_flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -97,13 +98,13 @@
          <span class="simpara">
           <strong><code>SORT_LOCALE_STRING</code></strong> -
           現在のロケールを考慮して、アイテムを文字列として比較します。利用するロケールは
-           <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> で変更できます。
+          <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> で変更できます。
          </span>
         </li>
         <li class="listitem">
          <span class="simpara">
           <strong><code>SORT_NATURAL</code></strong> -
-           <span class="function"><a href="function.natsort.html" class="function">natsort()</a></span> と同様の「自然順」で、アイテムを文字列として比較します。
+          <span class="function"><a href="function.natsort.html" class="function">natsort()</a></span> と同様の「自然順」で、アイテムを文字列として比較します。
          </span>
         </li>
         <li class="listitem">
@@ -122,11 +123,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">...</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">...</code></em></span>
      <dd>
 
       <p class="para">
@@ -134,8 +135,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -191,7 +191,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-multisort-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4964">
+   <div class="example" id="example-4966">
     <p><strong>例1 複数の配列をソートする</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -225,7 +225,7 @@ array(4) {
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4965">
+   <div class="example" id="example-4967">
     <p><strong>例2 多次元の配列をソートする</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -262,7 +262,7 @@ array(2) {
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4966">
+   <div class="example" id="example-4968">
     <p><strong>例3 データベースの結果をソートする</strong></p>
     <div class="example-contents"><p>
      この例では、配列 <var class="varname"><var class="varname">data</var></var>
@@ -286,7 +286,7 @@ volume | edition
     </div>
     <div class="example-contents"><p>
      データは <var class="varname"><var class="varname">data</var></var> という名前の配列に格納します。
-     これは、例えば  <span class="function"><a href="function.mysql-fetch-assoc.html" class="function">mysql_fetch_assoc()</a></span>
+     これは、例えば <span class="function"><a href="function.mysql-fetch-assoc.html" class="function">mysql_fetch_assoc()</a></span>
      の結果をループさせたりすれば得られます。
     </p></div>
     <div class="example-contents">
@@ -302,7 +302,7 @@ volume | edition
     </p></div>
     <div class="example-contents"><p>
      私たちが今もっているのは行方向の配列ですが、
-      <span class="function"><strong>array_multisort()</strong></span> で必要なのは列方向の配列です。
+     <span class="function"><strong>array_multisort()</strong></span> で必要なのは列方向の配列です。
      そこで、以下のコードで列方向の配列を得たあとでソートを行います。
     </p></div>
     <div class="example-contents">
@@ -330,7 +330,7 @@ volume | edition
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4967">
+   <div class="example" id="example-4969">
     <p><strong>例4 大文字・小文字を区別しないソート</strong></p>
     <div class="example-contents"><p>
      <strong><code>SORT_STRING</code></strong> と
@@ -370,7 +370,7 @@ Array
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.usort.html" class="function" rel="rdfs-seeAlso">usort()</a> - ユーザー定義の比較関数を使用して、配列を値でソートする</span></li>
+    <li class="member"><span class="function"><a href="function.usort.html" class="function" rel="rdfs-seeAlso">usort()</a> - ユーザー定義の比較関数を使用して、配列を値でソートする</span></li>
     <li class="member"><a href="array.sorting.html" class="link">配列ソート関数の比較</a></li>
    </ul>
   </p>

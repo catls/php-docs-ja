@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">a</code></em></dt>
 
-     <span class="term"><em><code class="parameter">a</code></em></span>
      <dd>
 
       <p class="para">
@@ -50,11 +51,11 @@
 あるいは数値に変換可能な数値形式の文字列。</p> 
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">b</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">b</code></em></span>
      <dd>
 
       <p class="para">
@@ -64,11 +65,11 @@
 あるいは数値に変換可能な数値形式の文字列。</p> 
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">round</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">round</code></em></span>
      <dd>
 
       <p class="para">
@@ -98,8 +99,7 @@
 あるいは数値に変換可能な数値形式の文字列。</p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -117,8 +117,8 @@
  <div class="refsect1 examples" id="refsect1-function.gmp-div-q-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3404">
-    <p><strong>例1  <span class="function"><strong>gmp_div_q()</strong></span> の例</strong></p>
+   <div class="example" id="example-3405">
+    <p><strong>例1 <span class="function"><strong>gmp_div_q()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$div1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_div_q</span><span style="color: #007700">(</span><span style="color: #DD0000">"100"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"5"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$div1</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$div2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_div_q</span><span style="color: #007700">(</span><span style="color: #DD0000">"1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"3"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$div2</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$div3&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_div_q</span><span style="color: #007700">(</span><span style="color: #DD0000">"1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"3"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">GMP_ROUND_PLUSINF</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$div3</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$div4&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_div_q</span><span style="color: #007700">(</span><span style="color: #DD0000">"-1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"4"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">GMP_ROUND_PLUSINF</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$div4</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$div5&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">gmp_div_q</span><span style="color: #007700">(</span><span style="color: #DD0000">"-1"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"4"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">GMP_ROUND_MINUSINF</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">gmp_strval</span><span style="color: #007700">(</span><span style="color: #0000BB">$div5</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -145,7 +145,7 @@
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    この関数は、 <span class="function"><a href="function.gmp-div.html" class="function">gmp_div()</a></span> のようにコールすることも可能です。
+    この関数は、<span class="function"><a href="function.gmp-div.html" class="function">gmp_div()</a></span> のようにコールすることも可能です。
    </p>
   </p></blockquote>
  </div>
@@ -155,8 +155,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.gmp-div-r.html" class="function" rel="rdfs-seeAlso">gmp_div_r()</a> - 除算の余りを計算する</span></li>
-    <li class="member"> <span class="function"><a href="function.gmp-div-qr.html" class="function" rel="rdfs-seeAlso">gmp_div_qr()</a> - 除算を行い、商と余りを得る</span></li>
+    <li class="member"><span class="function"><a href="function.gmp-div-r.html" class="function" rel="rdfs-seeAlso">gmp_div_r()</a> - 除算の余りを計算する</span></li>
+    <li class="member"><span class="function"><a href="function.gmp-div-qr.html" class="function" rel="rdfs-seeAlso">gmp_div_qr()</a> - 除算を行い、商と余りを得る</span></li>
    </ul>
   </p>
  </div>

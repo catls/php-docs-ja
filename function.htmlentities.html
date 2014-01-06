@@ -28,12 +28,12 @@
   ]]] )</div>
 
   <p class="para rdfs-comment">
-   この関数は <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span>と同じですが、
+   この関数は<span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span>と同じですが、
    HTML エンティティと等価な意味を有する文字をHTMLエンティティに変換します。
   </p>
   <p class="para">
    もしデコード (逆の処理) をしたい場合、
-    <span class="function"><a href="function.html-entity-decode.html" class="function">html_entity_decode()</a></span> を使用することができます。
+   <span class="function"><a href="function.html-entity-decode.html" class="function">html_entity_decode()</a></span> を使用することができます。
   </p>
  </div>
 
@@ -43,9 +43,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">string</code></em></dt>
 
-     <span class="term"><em><code class="parameter">string</code></em></span>
      <dd>
 
       <p class="para">
@@ -53,11 +54,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -155,15 +156,15 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">encoding</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">encoding</code></em></span>
      <dd>
 
       <p class="para">
-        <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span>と同様に、 <span class="function"><strong>htmlentities()</strong></span> はオプションの3番目の引数
+       <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span>と同様に、<span class="function"><strong>htmlentities()</strong></span> はオプションの3番目の引数
        <em><code class="parameter">charset</code></em> をとり、変換に使用されるエンコーディングを指定可能です。
        省略した場合のデフォルト値は、PHP 5.4.0 より前のバージョンでは
        ISO-8859-1、そして PHP 5.4.0 以降では UTF-8 となります。
@@ -307,8 +308,8 @@
       空文字列を指定すると、
       スクリプトのエンコーディング (Zend multibyte)、
       <a href="ini.core.html#ini.default-charset" class="link">default_charset</a>、
-      そして現在のロケール ( <span class="function"><a href="function.nl-langinfo.html" class="function">nl_langinfo()</a></span> および
-       <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> を参照ください)
+      そして現在のロケール (<span class="function"><a href="function.nl-langinfo.html" class="function">nl_langinfo()</a></span> および
+      <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> を参照ください)
       の順でエンコーディングを検出します。
       この方法はおすすめしません。
      </td>
@@ -329,11 +330,11 @@
 
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">double_encode</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">double_encode</code></em></span>
      <dd>
 
       <p class="para">
@@ -343,8 +344,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -434,8 +434,8 @@
  <div class="refsect1 examples" id="refsect1-function.htmlentities-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4834">
-    <p><strong>例1  <span class="function"><strong>htmlentities()</strong></span> の例</strong></p>
+   <div class="example" id="example-4836">
+    <p><strong>例1 <span class="function"><strong>htmlentities()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"A&nbsp;'quote'&nbsp;is&nbsp;&lt;b&gt;bold&lt;/b&gt;"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;出力:&nbsp;A&nbsp;'quote'&nbsp;is&nbsp;&amp;lt;b&amp;gt;bold&amp;lt;/b&amp;gt;<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;出力:&nbsp;A&nbsp;&amp;#039;quote&amp;#039;&nbsp;is&nbsp;&amp;lt;b&amp;gt;bold&amp;lt;/b&amp;gt;<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">htmlentities</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ENT_QUOTES</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -447,7 +447,7 @@
   </p>
   
   <p class="para">
-   <div class="example" id="example-4835">
+   <div class="example" id="example-4837">
     <p><strong>例2 <strong><code>ENT_IGNORE</code></strong> の使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -465,11 +465,11 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.html-entity-decode.html" class="function" rel="rdfs-seeAlso">html_entity_decode()</a> - HTML エンティティを適切な文字に変換する</span></li>
-    <li class="member"> <span class="function"><a href="function.get-html-translation-table.html" class="function" rel="rdfs-seeAlso">get_html_translation_table()</a> - htmlspecialchars および htmlentities で使用される変換テーブルを返す</span></li>
-    <li class="member"> <span class="function"><a href="function.htmlspecialchars.html" class="function" rel="rdfs-seeAlso">htmlspecialchars()</a> - 特殊文字を HTML エンティティに変換する</span></li>
-    <li class="member"> <span class="function"><a href="function.nl2br.html" class="function" rel="rdfs-seeAlso">nl2br()</a> - 改行文字の前に HTML の改行タグを挿入する</span></li>
-    <li class="member"> <span class="function"><a href="function.urlencode.html" class="function" rel="rdfs-seeAlso">urlencode()</a> - 文字列を URL エンコードする</span></li>
+    <li class="member"><span class="function"><a href="function.html-entity-decode.html" class="function" rel="rdfs-seeAlso">html_entity_decode()</a> - HTML エンティティを適切な文字に変換する</span></li>
+    <li class="member"><span class="function"><a href="function.get-html-translation-table.html" class="function" rel="rdfs-seeAlso">get_html_translation_table()</a> - htmlspecialchars および htmlentities で使用される変換テーブルを返す</span></li>
+    <li class="member"><span class="function"><a href="function.htmlspecialchars.html" class="function" rel="rdfs-seeAlso">htmlspecialchars()</a> - 特殊文字を HTML エンティティに変換する</span></li>
+    <li class="member"><span class="function"><a href="function.nl2br.html" class="function" rel="rdfs-seeAlso">nl2br()</a> - 改行文字の前に HTML の改行タグを挿入する</span></li>
+    <li class="member"><span class="function"><a href="function.urlencode.html" class="function" rel="rdfs-seeAlso">urlencode()</a> - 文字列を URL エンコードする</span></li>
    </ul>
   </p>
  </div>

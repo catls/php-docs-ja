@@ -46,9 +46,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">data</code></em></dt>
 
-     <span class="term"><em><code class="parameter">data</code></em></span>
      <dd>
 
       <p class="para">
@@ -56,11 +57,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">config</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">config</code></em></span>
      <dd>
 
       <p class="para">
@@ -75,11 +76,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">encoding</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">encoding</code></em></span>
      <dd>
 
       <p class="para">
@@ -93,8 +94,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -112,8 +112,8 @@
  <div class="refsect1 examples" id="refsect1-tidy.repairstring-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4056">
-    <p><strong>例1  <span class="function"><strong>tidy::repairString()</strong></span> の例</strong></p>
+   <div class="example" id="example-4058">
+    <p><strong>例1 <span class="function"><strong>tidy::repairString()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />ob_start</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;<br /></span><br />&lt;html&gt;<br />&nbsp;&nbsp;&lt;head&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;test&lt;/title&gt;<br />&nbsp;&nbsp;&lt;/head&gt;<br />&nbsp;&nbsp;&lt;body&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;error&lt;/i&gt;<br />&nbsp;&nbsp;&lt;/body&gt;<br />&lt;/html&gt;<br /><br /><span style="color: #0000BB">&lt;?php<br /><br />$buffer&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">ob_get_clean</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$tidy&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">tidy</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$clean&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$tidy</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">repairString</span><span style="color: #007700">(</span><span style="color: #0000BB">$buffer</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">$clean</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -151,9 +151,9 @@ Tidy 2.0 で追加されました。</span></p></blockquote>
  <div class="refsect1 seealso" id="refsect1-tidy.repairstring-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"> <span class="function"><a href="tidy.parsefile.html" class="function" rel="rdfs-seeAlso">tidy::parseFile()</a> - ファイルまたは URI にあるマークアップをパースする</span></li>
-   <li class="member"> <span class="function"><a href="tidy.parsestring.html" class="function" rel="rdfs-seeAlso">tidy::parseString()</a> - 文字列にストアされたドキュメントをパースする</span></li>
-   <li class="member"> <span class="function"><a href="tidy.repairfile.html" class="function" rel="rdfs-seeAlso">tidy::repairFile()</a> - ファイルを修正し、それを文字列として返す</span></li>
+   <li class="member"><span class="function"><a href="tidy.parsefile.html" class="function" rel="rdfs-seeAlso">tidy::parseFile()</a> - ファイルまたは URI にあるマークアップをパースする</span></li>
+   <li class="member"><span class="function"><a href="tidy.parsestring.html" class="function" rel="rdfs-seeAlso">tidy::parseString()</a> - 文字列にストアされたドキュメントをパースする</span></li>
+   <li class="member"><span class="function"><a href="tidy.repairfile.html" class="function" rel="rdfs-seeAlso">tidy::repairFile()</a> - ファイルを修正し、それを文字列として返す</span></li>
   </ul>
  </div>
 

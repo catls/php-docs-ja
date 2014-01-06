@@ -25,7 +25,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   補間方法を設定します。これは、 <span class="function"><a href="function.imagerotate.html" class="function">imagerotate()</a></span> など GD のさまざまな関数のレンダリングに影響を及ぼします。
+   補間方法を設定します。これは、<span class="function"><a href="function.imagerotate.html" class="function">imagerotate()</a></span> など GD のさまざまな関数のレンダリングに影響を及ぼします。
   </p>
  </div>
 
@@ -36,15 +36,16 @@
    <dl>
 
     <dt>
-<span class="term"><em><code class="parameter">
-image</code></em></span><dd>
-<p class="para"> <span class="function"><a href="function.imagecreatetruecolor.html" class="function">imagecreatetruecolor()</a></span>
+<em><code class="parameter">
+image</code></em></dt>
+<dd>
+<p class="para"><span class="function"><a href="function.imagecreatetruecolor.html" class="function">imagecreatetruecolor()</a></span>
 のような画像作成関数が返す画像リソース。</p></dd>
-</dt>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">method</code></em></dt>
 
-     <span class="term"><em><code class="parameter">method</code></em></span>
      <dd>
 
       <p class="para">
@@ -159,8 +160,7 @@ image</code></em></span><dd>
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -178,8 +178,8 @@ image</code></em></span><dd>
  <div class="refsect1 examples" id="refsect1-function.imagesetinterpolation-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3274">
-    <p><strong>例1  <span class="function"><strong>imagesetinterpolation()</strong></span> の例</strong></p>
+   <div class="example" id="example-3275">
+    <p><strong>例1 <span class="function"><strong>imagesetinterpolation()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;画像を読み込みます<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreate</span><span style="color: #007700">(</span><span style="color: #0000BB">500</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">500</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;デフォルトの補間方法は&nbsp;IMG_BILINEAR_FIXED&nbsp;ですが、これを<br />//&nbsp;'Mitchell'&nbsp;フィルターに変更します<br /></span><span style="color: #0000BB">imagesetinterpolation</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">IMG_MITCHELL</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;$im&nbsp;の作業を続けます<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -200,17 +200,17 @@ image</code></em></span><dd>
    <ul class="itemizedlist">
     <li class="listitem">
      <span class="simpara">
-       <span class="function"><a href="function.imageaffine.html" class="function">imageaffine()</a></span>
+      <span class="function"><a href="function.imageaffine.html" class="function">imageaffine()</a></span>
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-       <span class="function"><a href="function.imagerotate.html" class="function">imagerotate()</a></span>
+      <span class="function"><a href="function.imagerotate.html" class="function">imagerotate()</a></span>
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-       <span class="function"><a href="function.imagescale.html" class="function">imagescale()</a></span>
+      <span class="function"><a href="function.imagescale.html" class="function">imagescale()</a></span>
      </span>
     </li>
    </ul>

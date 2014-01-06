@@ -31,10 +31,10 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_update()</strong></span> は、<em>data</em> に関して
+   <span class="function"><strong>pg_update()</strong></span> は、<em>data</em> に関して
    <em>condition</em> にマッチするレコードを更新します。
    <em>options</em> が指定された場合、指定したオプションとともに
-    <span class="function"><a href="function.pg-convert.html" class="function">pg_convert()</a></span> が <em>data</em> 
+   <span class="function"><a href="function.pg-convert.html" class="function">pg_convert()</a></span> が <em>data</em> 
    に適用されます。
   </p>
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -50,9 +50,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">connection</code></em></dt>
 
-     <span class="term"><em><code class="parameter">connection</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,11 +61,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">table_name</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">table_name</code></em></span>
      <dd>
 
       <p class="para">
@@ -72,11 +73,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">data</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">data</code></em></span>
      <dd>
 
       <p class="para">
@@ -85,11 +86,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">condition</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">condition</code></em></span>
      <dd>
 
       <p class="para">
@@ -98,11 +99,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">options</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">options</code></em></span>
      <dd>
 
       <p class="para">
@@ -116,8 +117,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -136,8 +136,8 @@
  <div class="refsect1 examples" id="refsect1-function.pg-update-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2127">
-    <p><strong>例1  <span class="function"><strong>pg_update()</strong></span> の例</strong></p>
+   <div class="example" id="example-2128">
+    <p><strong>例1 <span class="function"><strong>pg_update()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php&nbsp;<br />&nbsp;&nbsp;$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'dbname=foo'</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'field1'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'AA'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'field2'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'BB'</span><span style="color: #007700">);<br />&nbsp;&nbsp;<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;これは安全です。なぜなら&nbsp;$_POST&nbsp;は自動的に変換されるからです。<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_update</span><span style="color: #007700">(</span><span style="color: #0000BB">$db</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'post_log'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br />&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$res</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"データが更新されました:&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"ユーザーが誤った入力を送信しました。\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -181,7 +181,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-convert.html" class="function" rel="rdfs-seeAlso">pg_convert()</a> - 連想配列の値を、SQL 文として実行可能な形式に変換する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-convert.html" class="function" rel="rdfs-seeAlso">pg_convert()</a> - 連想配列の値を、SQL 文として実行可能な形式に変換する</span></li>
    </ul>
   </p>
  </div>

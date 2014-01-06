@@ -47,11 +47,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">command</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -59,13 +60,13 @@
       </p>
      </dd>
 
-    </dt>
-   
-    <dt>
+       
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">options</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -80,8 +81,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -133,8 +133,8 @@
 
  <div class="refsect1 examples" id="refsect1-mongodb.command-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1409">
-   <p><strong>例1  <span class="function"><strong>MongoDB::command()</strong></span> による &quot;distinct&quot; の例</strong></p>
+  <div class="example" id="example-1410">
+   <p><strong>例1 <span class="function"><strong>MongoDB::command()</strong></span> による &quot;distinct&quot; の例</strong></p>
    <div class="example-contents"><p>
     あるキーの、すべての異なる値を探します。
    </p></div>
@@ -153,8 +153,8 @@
 87<br />
    </div>
   </div>
-  <div class="example" id="example-1410">
-   <p><strong>例2  <span class="function"><strong>MongoDB::command()</strong></span> での &quot;distinct&quot; の例</strong></p>
+  <div class="example" id="example-1411">
+   <p><strong>例2 <span class="function"><strong>MongoDB::command()</strong></span> での &quot;distinct&quot; の例</strong></p>
    <div class="example-contents"><p>
     重複を排除したすべての値をキーから取得します。条件は、値が 18 以上であることです。
    </p></div>
@@ -173,8 +173,8 @@
    </div>
   </div>
 
-  <div class="example" id="example-1411">
-   <p><strong>例3  <span class="function"><strong>MongoDB::command()</strong></span> での MapReduce の例</strong></p>
+  <div class="example" id="example-1412">
+   <p><strong>例3 <span class="function"><strong>MongoDB::command()</strong></span> での MapReduce の例</strong></p>
    <div class="example-contents"><p>
     &quot;sale&quot; イベント上のすべてのユーザーと、各ユーザーが何回販売したかを取得します。
    </p></div>
@@ -226,8 +226,8 @@ User 4af467e4fd543cce7b0ea8e2 had 1 sale(s).<br />
    </p></div>
   </div>
 
-  <div class="example" id="example-1412">
-   <p><strong>例4  <span class="function"><strong>MongoDB::command()</strong></span> での &quot;textSearch&quot; の例</strong></p>
+  <div class="example" id="example-1413">
+   <p><strong>例4 <span class="function"><strong>MongoDB::command()</strong></span> での &quot;textSearch&quot; の例</strong></p>
    <div class="example-contents"><p>
     MongoDB 2.4 以降では、&quot;text search&quot; 機能を使った全文検索ができます。
    </p></div>
@@ -295,8 +295,8 @@ Array<br />
    </div>
   </div>
 
-  <div class="example" id="example-1413">
-   <p><strong>例5  <span class="function"><strong>MongoDB::command()</strong></span> での &quot;geoNear&quot; の例</strong></p>
+  <div class="example" id="example-1414">
+   <p><strong>例5 <span class="function"><strong>MongoDB::command()</strong></span> での &quot;geoNear&quot; の例</strong></p>
    <div class="example-contents"><p>
     この例は、geoNear コマンドの使い方を示すものです。
    </p></div>
@@ -315,9 +315,9 @@ Array<br />
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="methodname"><a href="mongocollection.aggregate.html" class="methodname" rel="rdfs-seeAlso">MongoCollection::aggregate()</a> - aggregation フレームワークを使って集約する</span></li>
-    <li class="member"> <span class="methodname"><a href="mongocollection.findandmodify.html" class="methodname" rel="rdfs-seeAlso">MongoCollection::findAndModify()</a> - ドキュメントを更新して返す</span></li>
-    <li class="member"> <span class="methodname"><a href="mongocollection.group.html" class="methodname" rel="rdfs-seeAlso">MongoCollection::group()</a> - SQL の GROUP BY コマンドと似た処理を行う</span></li>
+    <li class="member"><span class="methodname"><a href="mongocollection.aggregate.html" class="methodname" rel="rdfs-seeAlso">MongoCollection::aggregate()</a> - aggregation フレームワークを使って集約する</span></li>
+    <li class="member"><span class="methodname"><a href="mongocollection.findandmodify.html" class="methodname" rel="rdfs-seeAlso">MongoCollection::findAndModify()</a> - ドキュメントを更新して返す</span></li>
+    <li class="member"><span class="methodname"><a href="mongocollection.group.html" class="methodname" rel="rdfs-seeAlso">MongoCollection::group()</a> - SQL の GROUP BY コマンドと似た処理を行う</span></li>
    </ul>
   </p>
   <p class="para">

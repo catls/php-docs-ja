@@ -26,12 +26,12 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_connect()</strong></span> は、<em><code class="parameter">connection_string</code></em>
+   <span class="function"><strong>pg_connect()</strong></span> は、<em><code class="parameter">connection_string</code></em>
    で指定された情報を用いてデータベースとの接続をオープンします。
   </p>
   <p class="para">
    同じ <em><code class="parameter">connection_string</code></em> 引数で 2 回
-    <span class="function"><strong>pg_connect()</strong></span> 関数がコールされた場合は、
+   <span class="function"><strong>pg_connect()</strong></span> 関数がコールされた場合は、
    <em><code class="parameter">connect_type</code></em> に
    <strong><code>PGSQL_CONNECT_FORCE_NEW</code></strong> を指定していない限り
    既存の接続が返されます。
@@ -50,9 +50,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">connection_string</code></em></dt>
 
-     <span class="term"><em><code class="parameter">connection_string</code></em></span>
      <dd>
 
       <p class="para">
@@ -82,11 +83,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">connect_type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">connect_type</code></em></span>
      <dd>
 
       <p class="para">
@@ -96,8 +97,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -115,8 +115,8 @@
  <div class="refsect1 examples" id="refsect1-function.pg-connect-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2048">
-    <p><strong>例1  <span class="function"><strong>pg_connect()</strong></span> の使用法</strong></p>
+   <div class="example" id="example-2049">
+    <p><strong>例1 <span class="function"><strong>pg_connect()</strong></span> の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=mary"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;"mary"という名前のデータベースに接続<br /><br /></span><span style="color: #0000BB">$dbconn2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=localhost&nbsp;port=5432&nbsp;dbname=mary"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;"localhost"のポート"5432"にて"mary"という名前のデータベースに接続<br /><br /></span><span style="color: #0000BB">$dbconn3&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=sheep&nbsp;port=5432&nbsp;dbname=mary&nbsp;user=lamb&nbsp;password=foo"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ユーザー名とパスワードを指定してホスト"sheep"上の"mary"という名前のデータベースに接続<br /><br /></span><span style="color: #0000BB">$conn_string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"host=sheep&nbsp;port=5432&nbsp;dbname=test&nbsp;user=lamb&nbsp;password=bar"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$dbconn4&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_string</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ユーザー名とパスワードを指定してホスト"sheep"上の"test"という名前のデータベースへ接続<br /><br /></span><span style="color: #0000BB">$dbconn5&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=localhost&nbsp;options='--client_encoding=UTF8'"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;"localhost"&nbsp;のデータベースに接続する際に、エンコーディングを&nbsp;UTF-8&nbsp;に指定<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -133,13 +133,13 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-pconnect.html" class="function" rel="rdfs-seeAlso">pg_pconnect()</a> - 持続的な PostgreSQL 接続をオープンする</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-close.html" class="function" rel="rdfs-seeAlso">pg_close()</a> - PostgreSQL 接続をクローズする</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-host.html" class="function" rel="rdfs-seeAlso">pg_host()</a> - 接続に関連するホスト名を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-port.html" class="function" rel="rdfs-seeAlso">pg_port()</a> - 接続に関連するポート番号を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-tty.html" class="function" rel="rdfs-seeAlso">pg_tty()</a> - 接続に関する TTY 名を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-options.html" class="function" rel="rdfs-seeAlso">pg_options()</a> - 接続に関連するオプションを取得する</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-dbname.html" class="function" rel="rdfs-seeAlso">pg_dbname()</a> - データベース名を取得する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-pconnect.html" class="function" rel="rdfs-seeAlso">pg_pconnect()</a> - 持続的な PostgreSQL 接続をオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.pg-close.html" class="function" rel="rdfs-seeAlso">pg_close()</a> - PostgreSQL 接続をクローズする</span></li>
+    <li class="member"><span class="function"><a href="function.pg-host.html" class="function" rel="rdfs-seeAlso">pg_host()</a> - 接続に関連するホスト名を返す</span></li>
+    <li class="member"><span class="function"><a href="function.pg-port.html" class="function" rel="rdfs-seeAlso">pg_port()</a> - 接続に関連するポート番号を返す</span></li>
+    <li class="member"><span class="function"><a href="function.pg-tty.html" class="function" rel="rdfs-seeAlso">pg_tty()</a> - 接続に関する TTY 名を返す</span></li>
+    <li class="member"><span class="function"><a href="function.pg-options.html" class="function" rel="rdfs-seeAlso">pg_options()</a> - 接続に関連するオプションを取得する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-dbname.html" class="function" rel="rdfs-seeAlso">pg_dbname()</a> - データベース名を取得する</span></li>
    </ul>
   </p>
  </div>

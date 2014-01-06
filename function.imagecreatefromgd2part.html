@@ -32,7 +32,7 @@
   </p>
   <div class="tip"><strong class="tip">ヒント</strong><p class="simpara"><a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">fopen wrappers</a> が有効の場合、この関数のファイル名として
 URL を使用することができます。ファイル名の指定方法に関する詳細は
- <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> を参照ください。
+<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> を参照ください。
 <a href="wrappers.html" class="xref">サポートするプロトコル/ラッパー</a> には、さまざまなラッパーの機能やその使用法、
 提供される定義済み変数などの情報がまとめられています。</p></div>
  </div>
@@ -42,9 +42,10 @@ URL を使用することができます。ファイル名の指定方法に関�
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">filename</code></em></dt>
 
-     <span class="term"><em><code class="parameter">filename</code></em></span>
      <dd>
 
       <p class="para">
@@ -52,11 +53,11 @@ URL を使用することができます。ファイル名の指定方法に関�
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">srcX</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">srcX</code></em></span>
      <dd>
 
       <p class="para">
@@ -64,11 +65,11 @@ URL を使用することができます。ファイル名の指定方法に関�
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">srcY</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">srcY</code></em></span>
      <dd>
 
       <p class="para">
@@ -76,28 +77,27 @@ URL を使用することができます。ファイル名の指定方法に関�
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">width</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">width</code></em></span>
      <dd>
 
       <p class="para">コピー元の幅。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">height</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">height</code></em></span>
      <dd>
 
       <p class="para">コピー元の高さ。</p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -111,8 +111,8 @@ URL を使用することができます。ファイル名の指定方法に関�
  <div class="refsect1 examples" id="refsect1-function.imagecreatefromgd2part-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3209">
-    <p><strong>例1  <span class="function"><strong>imagecreatefromgd2part()</strong></span> の例</strong></p>
+   <div class="example" id="example-3210">
+    <p><strong>例1 <span class="function"><strong>imagecreatefromgd2part()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;この例では、まず画像のサイズが必要となります<br /></span><span style="color: #0000BB">$image&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">'./test.gd2'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;画像のサイズを取得し、<br />//&nbsp;画像のインスタンスを作成します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefromgd2part</span><span style="color: #007700">(</span><span style="color: #DD0000">'./test.gd2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;(</span><span style="color: #0000BB">$image</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]&nbsp;/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">,&nbsp;(</span><span style="color: #0000BB">$image</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;画像処理をします。ここでは、PHP&nbsp;5&nbsp;以降の場合に<br />//&nbsp;エンボス処理を行っています<br /></span><span style="color: #007700">if(</span><span style="color: #0000BB">function_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'imagefilter'</span><span style="color: #007700">))<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">imagefilter</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">IMG_FILTER_EMBOSS</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;最適化した画像を保存します<br /></span><span style="color: #0000BB">imagegd2</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'./test_emboss.gd2'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

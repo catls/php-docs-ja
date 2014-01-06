@@ -20,8 +20,8 @@
  <div class="refsect1 description" id="refsect1-function.mysqlnd-ms-set-qos-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">bool</span>
-    <span class="methodname"><strong>mysqlnd_ms_set_qos</strong></span>
+   <span class="type">bool</span> 
+   <span class="methodname"><strong>mysqlnd_ms_set_qos</strong></span>
     ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$connection</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$service_level</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$service_level_option</code></span>
@@ -43,7 +43,7 @@
    a certain level of service from the cluster. The
    &quot;Quality of Service&quot; filter implements the necessary logic. The filter can either
    be configured in the plugins configuration file, or at runtime using
-    <span class="function"><strong>mysqlnd_ms_set_qos()</strong></span>.
+   <span class="function"><strong>mysqlnd_ms_set_qos()</strong></span>.
   </p>
   <p class="para">
    Similar results can be achieved with PECL mysqlnd_ms &lt; 1.2.0, if using
@@ -72,9 +72,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">connection</code></em></dt>
 
-    <span class="term"><em><code class="parameter">connection</code></em></span>
     <dd>
 
      <p class="para">
@@ -87,11 +88,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">service_level</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">service_level</code></em></span>
     <dd>
 
      <p class="para">
@@ -101,11 +102,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">service_level_option</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">service_level_option</code></em></span>
     <dd>
 
      <p class="para">
@@ -119,7 +120,7 @@
        It must be combined with a fourth function parameter, the
        <em><code class="parameter">option_value</code></em>. The <em><code class="parameter">option_value</code></em>
        shall be a global transaction ID obtained from
-        <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span>. If set, the
+       <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span>. If set, the
        plugin considers both master servers and asynchronous slaves for session
        consistency (read your writes). Otherwise, only masters are
        used to achieve session consistency. A slave is considered up-to-date and
@@ -146,11 +147,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">option_value</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">option_value</code></em></span>
     <dd>
 
      <p class="para">
@@ -159,8 +160,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -179,7 +179,7 @@
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <span class="function"><strong>mysqlnd_ms_set_qos()</strong></span> requires
+    <span class="function"><strong>mysqlnd_ms_set_qos()</strong></span> requires
     PHP &gt;= 5.4.0 and PECL mysqlnd_ms &gt;= 1.2.0. Internally, it is using
     a <em>mysqlnd</em> library C functionality not available with PHP 5.3.
    </p>
@@ -190,8 +190,8 @@
  <div class="refsect1 examples" id="refsect1-function.mysqlnd-ms-set-qos-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-1842">
-    <p><strong>例1  <span class="function"><strong>mysqlnd_ms_set_qos()</strong></span> example</strong></p>
+   <div class="example" id="example-1843">
+    <p><strong>例1 <span class="function"><strong>mysqlnd_ms_set_qos()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Open&nbsp;mysqlnd_ms&nbsp;connection&nbsp;using&nbsp;mysqli,&nbsp;PDO_MySQL&nbsp;or&nbsp;mysql&nbsp;extension&nbsp;*/<br /></span><span style="color: #0000BB">$mysqli&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">mysqli</span><span style="color: #007700">(</span><span style="color: #DD0000">"myapp"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"database"</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">)<br />&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;Of&nbsp;course,&nbsp;your&nbsp;error&nbsp;handling&nbsp;is&nbsp;nicer...&nbsp;*/<br />&nbsp;&nbsp;</span><span style="color: #007700">die(</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%d]&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">mysqli_connect_errno</span><span style="color: #007700">(),&nbsp;</span><span style="color: #0000BB">mysqli_connect_error</span><span style="color: #007700">()));<br /><br /></span><span style="color: #FF8000">/*&nbsp;Session&nbsp;consistency:&nbsp;read&nbsp;your&nbsp;writes&nbsp;*/<br /></span><span style="color: #0000BB">$ret&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysqlnd_ms_set_qos</span><span style="color: #007700">(</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MYSQLND_MS_QOS_CONSISTENCY_SESSION</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$ret</span><span style="color: #007700">)<br />&nbsp;&nbsp;die(</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%d]&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">errno</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">error</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">/*&nbsp;Will&nbsp;use&nbsp;master&nbsp;and&nbsp;return&nbsp;fresh&nbsp;data,&nbsp;client&nbsp;can&nbsp;see&nbsp;his&nbsp;last&nbsp;write&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;item,&nbsp;price&nbsp;FROM&nbsp;orders&nbsp;WHERE&nbsp;order_id&nbsp;=&nbsp;1"</span><span style="color: #007700">))<br />&nbsp;&nbsp;die(</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%d]&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">errno</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">error</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">/*&nbsp;Back&nbsp;to&nbsp;default:&nbsp;use&nbsp;of&nbsp;all&nbsp;slaves&nbsp;and&nbsp;masters&nbsp;permitted,&nbsp;stale&nbsp;data&nbsp;can&nbsp;happen&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">mysqlnd_ms_set_qos</span><span style="color: #007700">(</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MYSQLND_MS_QOS_CONSISTENCY_EVENTUAL</span><span style="color: #007700">))<br />&nbsp;&nbsp;die(</span><span style="color: #0000BB">sprintf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%d]&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">errno</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">error</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -209,7 +209,7 @@
   <p class="para">
    <ul class="simplelist">
     <li class="member">
-      <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function" rel="rdfs-seeAlso">mysqlnd_ms_get_last_gtid()</a> - Returns the latest global transaction ID</span>
+     <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function" rel="rdfs-seeAlso">mysqlnd_ms_get_last_gtid()</a> - Returns the latest global transaction ID</span>
     </li>
     <li class="member">
      <a href="mysqlnd-ms.qos-consistency.html" class="link">Service level and consistency concept</a>

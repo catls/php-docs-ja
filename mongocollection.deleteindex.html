@@ -36,15 +36,15 @@
 
   <p class="para">
    インデックスの作成時に、一意な名前が与えられます。この名前は、ユーザーが設定する
-   ( <span class="function"><a href="mongocollection.ensureindex.html" class="function">MongoCollection::ensureIndex()</a></span> の &quot;name&quot; オプション)
+   (<span class="function"><a href="mongocollection.ensureindex.html" class="function">MongoCollection::ensureIndex()</a></span> の &quot;name&quot; オプション)
    こともあれば、キーの名前や方向の組み合わせからドライバが自動生成することもあります。
-   この名前を使って、 <span class="function"><strong>MongoCollection::deleteIndex()</strong></span>
+   この名前を使って、<span class="function"><strong>MongoCollection::deleteIndex()</strong></span>
    による削除を行います。
   </p>
   <p class="para">
-   残念ながら、 <span class="function"><a href="mongocollection.ensureindex.html" class="function">MongoCollection::ensureIndex()</a></span>
+   残念ながら、<span class="function"><a href="mongocollection.ensureindex.html" class="function">MongoCollection::ensureIndex()</a></span>
    が生成する名前はシェルで作るものとは微妙に異なります。
-   そして過去との互換性の問題のため、 <span class="function"><strong>MongoCollection::deleteIndex()</strong></span>
+   そして過去との互換性の問題のため、<span class="function"><strong>MongoCollection::deleteIndex()</strong></span>
    では自分で設定した名前のインデックスを削除できません。
    シェルで作ったり自分で名前を設定したりしたインデックスを削除するいちばんの方法は、
    データベースコマンド <em>deleteIndexes</em>
@@ -74,11 +74,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">keys</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -86,8 +87,7 @@
       </p>
      </dd>
 
-    </dt>
-   
+       
    </dl>
 
   </p>
@@ -104,8 +104,8 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.deleteindex-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1437">
-   <p><strong>例1  <span class="function"><strong>MongoCollection::deleteIndex()</strong></span> の例</strong></p>
+  <div class="example" id="example-1438">
+   <p><strong>例1 <span class="function"><strong>MongoCollection::deleteIndex()</strong></span> の例</strong></p>
    <div class="example-contents"><p>
     この例は、文字列パラメータおよび配列パラメータを関数に渡します。
    </p></div>

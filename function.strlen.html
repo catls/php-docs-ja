@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">string</code></em></dt>
 
-     <span class="term"><em><code class="parameter">string</code></em></span>
      <dd>
 
       <p class="para">
@@ -45,8 +46,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -94,8 +94,8 @@
  <div class="refsect1 examples" id="refsect1-function.strlen-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4891">
-    <p><strong>例1  <span class="function"><strong>strlen()</strong></span> の例</strong></p>
+   <div class="example" id="example-4893">
+    <p><strong>例1 <span class="function"><strong>strlen()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'abcdef'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;6<br /><br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'&nbsp;ab&nbsp;cd&nbsp;'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;7<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -112,13 +112,13 @@
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <span class="function"><strong>strlen()</strong></span> が返すのはバイト数であり、
+    <span class="function"><strong>strlen()</strong></span> が返すのはバイト数であり、
     文字数ではありません。
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    配列に対して  <span class="function"><strong>strlen()</strong></span> を実行すると <strong><code>NULL</code></strong> を返し、
+    配列に対して <span class="function"><strong>strlen()</strong></span> を実行すると <strong><code>NULL</code></strong> を返し、
     <strong><code>E_WARNING</code></strong> レベルのエラーが発生します。
    </p>
   </p></blockquote>
@@ -129,9 +129,9 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.count.html" class="function" rel="rdfs-seeAlso">count()</a> - 変数に含まれるすべての要素、
+    <li class="member"><span class="function"><a href="function.count.html" class="function" rel="rdfs-seeAlso">count()</a> - 変数に含まれるすべての要素、
   あるいはオブジェクトに含まれる何かの数を数える</span></li>
-    <li class="member"> <span class="function"><a href="function.mb-strlen.html" class="function" rel="rdfs-seeAlso">mb_strlen()</a> - 文字列の長さを得る</span></li>
+    <li class="member"><span class="function"><a href="function.mb-strlen.html" class="function" rel="rdfs-seeAlso">mb_strlen()</a> - 文字列の長さを得る</span></li>
    </ul>
   </p>
  </div>

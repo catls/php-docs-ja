@@ -26,13 +26,13 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_pconnect()</strong></span> は PostgreSQL への接続を
+   <span class="function"><strong>pg_pconnect()</strong></span> は PostgreSQL への接続を
    オープンします。この関数は、他の PostgreSQL関数 が必要とする
    接続リソースを返します。
   </p>
   <p class="para">
    既存の接続と同じ <em><code class="parameter">connection_string</code></em> を用いて
-    <span class="function"><strong>pg_pconnect()</strong></span> が 2 回目にコールされた場合は、
+   <span class="function"><strong>pg_pconnect()</strong></span> が 2 回目にコールされた場合は、
    既存の接続を返します。ただし、<em><code class="parameter">connect_type</code></em>
    に <strong><code>PGSQL_CONNECT_FORCE_NEW</code></strong> を指定している場合は
    除きます。
@@ -45,8 +45,8 @@
    接続全体の数は <var class="filename">php.ini</var> ディレクティブ <a href="pgsql.configuration.html#ini.pgsql.max-links" class="link">pgsql.max_links</a> で設定可能です。
   </p>
   <p class="para">
-    <span class="function"><a href="function.pg-close.html" class="function">pg_close()</a></span> は、
-    <span class="function"><strong>pg_pconnect()</strong></span> によりオープンされた持続的接続は
+   <span class="function"><a href="function.pg-close.html" class="function">pg_close()</a></span> は、
+   <span class="function"><strong>pg_pconnect()</strong></span> によりオープンされた持続的接続は
    閉じません。
   </p>
  </div>
@@ -57,9 +57,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">connection_string</code></em></dt>
 
-     <span class="term"><em><code class="parameter">connection_string</code></em></span>
      <dd>
 
       <p class="para">
@@ -85,11 +86,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">connect_type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">connect_type</code></em></span>
      <dd>
 
       <p class="para">
@@ -99,8 +100,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -118,8 +118,8 @@
  <div class="refsect1 examples" id="refsect1-function.pg-pconnect-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2103">
-    <p><strong>例1  <span class="function"><strong>pg_pconnect()</strong></span> の使用法</strong></p>
+   <div class="example" id="example-2104">
+    <p><strong>例1 <span class="function"><strong>pg_pconnect()</strong></span> の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=mary"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;"mary"という名前のデータベースに接続<br /><br /></span><span style="color: #0000BB">$dbconn2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=localhost&nbsp;port=5432&nbsp;dbname=mary"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;"localhost"のポート"5432"にて"mary"という名前のデータベースに接続<br /><br /></span><span style="color: #0000BB">$dbconn3&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=sheep&nbsp;port=5432&nbsp;dbname=mary&nbsp;user=lamb&nbsp;password=foo"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ユーザー名とパスワードを指定してホスト"sheep"上の"mary"という名前のデータベースに接続<br /><br /></span><span style="color: #0000BB">$conn_string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"host=sheep&nbsp;port=5432&nbsp;dbname=test&nbsp;user=lamb&nbsp;password=bar"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$dbconn4&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_pconnect</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn_string</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ユーザー名とパスワードを指定してホスト"sheep"上の"test"という名前のデータベースへ接続<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -136,7 +136,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-connect.html" class="function" rel="rdfs-seeAlso">pg_connect()</a> - PostgreSQL 接続をオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.pg-connect.html" class="function" rel="rdfs-seeAlso">pg_connect()</a> - PostgreSQL 接続をオープンする</span></li>
     <li class="member">
      <a href="features.persistent-connections.html" class="link">
      持続的データベース接続</a>

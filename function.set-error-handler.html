@@ -33,21 +33,21 @@
    この関数は、実行時のエラー処理をユーザーが定義するために使用します。
    例えば、致命的なエラーの際にデータやファイルを消去する必要があるような
    アプリケーションや、ある条件のもとに
-   ( <span class="function"><a href="function.trigger-error.html" class="function">trigger_error()</a></span>を使用して)エラーを発生する必要がある
+   (<span class="function"><a href="function.trigger-error.html" class="function">trigger_error()</a></span>を使用して)エラーを発生する必要がある
    アプリケーションがこの場合にあたります。
   </p>
   <p class="para">
    コールバック関数が <strong><code>FALSE</code></strong> を返さない限り、<em><code class="parameter">error_types</code></em>
    で指定した型のエラーでは PHP 標準のエラーハンドラが完全にバイパスされることに注意してください。
-    <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> の設定にかかわらず、どのような場合でも
+   <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> の設定にかかわらず、どのような場合でも
    ユーザーが設定したエラーハンドラがコールされます。ただし、この場合でも
-   ハンドラで  <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> のカレントの値を読み、
+   ハンドラで <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> のカレントの値を読み、
    それにあわせて適切に動作させることは可能です。エラーを発生した命令の前に
    <a href="language.operators.errorcontrol.html" class="link">@ エラー制御演算子
    </a> が付加されている場合、この値は 0 となることには注意しましょう。
   </p>
   <p class="para">
-   ユーザーハンドラ関数は、必要に応じて  <span class="function"><a href="function.die.html" class="function">die()</a></span> を
+   ユーザーハンドラ関数は、必要に応じて <span class="function"><a href="function.die.html" class="function">die()</a></span> を
    コールする責任があることにも注意しましょう。エラーハンドラ関数が
    リターンした場合、スクリプトの実行は、エラーを発生した命令の次の命令に
    継続されます。
@@ -58,7 +58,7 @@
    <strong><code>E_CORE_ERROR</code></strong>, <strong><code>E_CORE_WARNING</code></strong>,
    <strong><code>E_COMPILE_ERROR</code></strong>,
    <strong><code>E_COMPILE_WARNING</code></strong> および
-    <span class="function"><strong>set_error_handler()</strong></span> がコールされたファイルで発生した
+   <span class="function"><strong>set_error_handler()</strong></span> がコールされたファイルで発生した
    大半の <strong><code>E_STRICT</code></strong> 。
   </p>
   <p class="para">
@@ -74,9 +74,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">error_handler</code></em></dt>
 
-     <span class="term"><em><code class="parameter">error_handler</code></em></span>
      <dd>
 
       <p class="para">
@@ -95,9 +96,10 @@
 
        <dl>
 
-        <dt>
+        
+         <dt>
+<em><code class="parameter">errno</code></em></dt>
 
-         <span class="term"><em><code class="parameter">errno</code></em></span>
          <dd>
 
           <span class="simpara">
@@ -106,11 +108,11 @@
           </span>
          </dd>
 
-        </dt>
+        
+        
+         <dt>
+<em><code class="parameter">errstr</code></em></dt>
 
-        <dt>
-
-         <span class="term"><em><code class="parameter">errstr</code></em></span>
          <dd>
 
           <span class="simpara">
@@ -119,11 +121,11 @@
           </span>
          </dd>
 
-        </dt>
+        
+        
+         <dt>
+<em><code class="parameter">errfile</code></em></dt>
 
-        <dt>
-
-         <span class="term"><em><code class="parameter">errfile</code></em></span>
          <dd>
 
           <span class="simpara">
@@ -132,11 +134,11 @@
           </span>
          </dd>
 
-        </dt>
+        
+        
+         <dt>
+<em><code class="parameter">errline</code></em></dt>
 
-        <dt>
-
-         <span class="term"><em><code class="parameter">errline</code></em></span>
          <dd>
 
           <span class="simpara">
@@ -145,11 +147,11 @@
           </span>
          </dd>
 
-        </dt>
+        
+        
+         <dt>
+<em><code class="parameter">errcontext</code></em></dt>
 
-        <dt>
-
-         <span class="term"><em><code class="parameter">errcontext</code></em></span>
          <dd>
 
           <span class="simpara">
@@ -162,8 +164,7 @@
           </span>
          </dd>
 
-        </dt>
-
+        
        </dl>
 
       </p>
@@ -172,11 +173,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">error_types</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">error_types</code></em></span>
      <dd>
 
       <p class="para">
@@ -192,8 +193,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -278,10 +278,10 @@
  <div class="refsect1 examples" id="refsect1-function.set-error-handler-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-455">
+   <div class="example" id="example-456">
     <p><strong>例1 
-      <span class="function"><strong>set_error_handler()</strong></span> および
-      <span class="function"><a href="function.trigger-error.html" class="function">trigger_error()</a></span> によるエラー処理
+     <span class="function"><strong>set_error_handler()</strong></span> および
+     <span class="function"><a href="function.trigger-error.html" class="function">trigger_error()</a></span> によるエラー処理
     </strong></p>
     <div class="example-contents"><p>
      以下の例では、エラーを発生させることによる内部例外の処理や
@@ -341,9 +341,9 @@ Aborting...&lt;br /&gt;
   <p class="para">
    <ul class="simplelist">
     <li class="member"><a href="class.errorexception.html" class="classname">ErrorException</a></li>
-    <li class="member"> <span class="function"><a href="function.error-reporting.html" class="function" rel="rdfs-seeAlso">error_reporting()</a> - 出力する PHP エラーの種類を設定する</span></li>
-    <li class="member"> <span class="function"><a href="function.restore-error-handler.html" class="function" rel="rdfs-seeAlso">restore_error_handler()</a> - 以前のエラーハンドラ関数を回復する</span></li>
-    <li class="member"> <span class="function"><a href="function.trigger-error.html" class="function" rel="rdfs-seeAlso">trigger_error()</a> - ユーザーレベルのエラー/警告/通知メッセージを生成する</span></li>
+    <li class="member"><span class="function"><a href="function.error-reporting.html" class="function" rel="rdfs-seeAlso">error_reporting()</a> - 出力する PHP エラーの種類を設定する</span></li>
+    <li class="member"><span class="function"><a href="function.restore-error-handler.html" class="function" rel="rdfs-seeAlso">restore_error_handler()</a> - 以前のエラーハンドラ関数を回復する</span></li>
+    <li class="member"><span class="function"><a href="function.trigger-error.html" class="function" rel="rdfs-seeAlso">trigger_error()</a> - ユーザーレベルのエラー/警告/通知メッセージを生成する</span></li>
     <li class="member"><a href="errorfunc.constants.html" class="link">エラーレベル定数</a></li>
     <li class="member"><a href="language.pseudo-types.html#language.types.callback" class="link">callback</a> 型に関する情報</li>
    </ul>

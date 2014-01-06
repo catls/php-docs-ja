@@ -45,7 +45,7 @@
     </li>
    </ul>
    どのサーバーがこのクエリを処理したのかを調べるには、クエリを実行した後に
-    <span class="function"><a href="mongocursor.info.html" class="function">MongoCursor::info()</a></span> をコールします。
+   <span class="function"><a href="mongocursor.info.html" class="function">MongoCursor::info()</a></span> をコールします。
    <em>server</em> フィールドが、クエリの送信先のサーバーです。
   </p>
   <p class="para">
@@ -58,9 +58,9 @@
   <p class="para">
    このメソッドは、静的クラス変数
    <var class="varname"><var class="varname">MongoCursor::$slaveOkay</var></var> を上書きします。
-   また、 <span class="function"><a href="mongo.setslaveokay.html" class="function">Mongo::setSlaveOkay()</a></span> や
-    <span class="function"><a href="mongodb.setslaveokay.html" class="function">MongoDB::setSlaveOkay()</a></span>、
-    <span class="function"><a href="mongocollection.setslaveokay.html" class="function">MongoCollection::setSlaveOkay()</a></span> も上書きします。
+   また、<span class="function"><a href="mongo.setslaveokay.html" class="function">Mongo::setSlaveOkay()</a></span> や
+   <span class="function"><a href="mongodb.setslaveokay.html" class="function">MongoDB::setSlaveOkay()</a></span>、
+   <span class="function"><a href="mongocollection.setslaveokay.html" class="function">MongoCollection::setSlaveOkay()</a></span> も上書きします。
   </p>
  </div>
 
@@ -70,11 +70,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">okay</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -82,8 +83,7 @@
       </p>
      </dd>
 
-    </dt>
-   
+       
    </dl>
 
   </p>
@@ -109,8 +109,8 @@
 
  <div class="refsect1 examples" id="refsect1-mongocursor.slaveokay-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1484">
-   <p><strong>例1  <span class="function"><strong>MongoCursor::slaveOkay()</strong></span> の例</strong></p>
+  <div class="example" id="example-1485">
+   <p><strong>例1 <span class="function"><strong>MongoCursor::slaveOkay()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />MongoCursor</span><span style="color: #007700">::</span><span style="color: #0000BB">$slaveOkay&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;セカンダリには問い合わせられません<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;セカンダリに問い合わせることができます<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">slaveOkay</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">MongoCursor</span><span style="color: #007700">::</span><span style="color: #0000BB">$slaveOkay&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;セカンダリに問い合わせることができます<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;セカンダリには問い合わせられません<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">slaveOkay</span><span style="color: #007700">(</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -126,8 +126,8 @@
   <h3 class="title">参考</h3>
   <ul class="simplelist">
    <li class="member"><a href="mongo.readpreferences.html" class="xref">優先読み込み</a></li>
-   <li class="member"> <span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname" rel="rdfs-seeAlso">MongoCursor::setReadPreference()</a> - このクエリの優先読み込みを設定する</span></li>
-   <li class="member"> <span class="methodname"><a href="mongocursor.getreadpreference.html" class="methodname" rel="rdfs-seeAlso">MongoCursor::getReadPreference()</a> - このクエリの優先読み込みを取得する</span></li>
+   <li class="member"><span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname" rel="rdfs-seeAlso">MongoCursor::setReadPreference()</a> - このクエリの優先読み込みを設定する</span></li>
+   <li class="member"><span class="methodname"><a href="mongocursor.getreadpreference.html" class="methodname" rel="rdfs-seeAlso">MongoCursor::getReadPreference()</a> - このクエリの優先読み込みを取得する</span></li>
   </ul>
  </div>
 

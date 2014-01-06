@@ -30,7 +30,7 @@
   ]]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>msg_send()</strong></span> は、<em><code class="parameter">queue</code></em>
+   <span class="function"><strong>msg_send()</strong></span> は、<em><code class="parameter">queue</code></em>
    で指定したメッセージキューに対して <em><code class="parameter">msgtype</code></em>
    で指定した型 (0 より大きい数値である必要があります) のメッセージ
    <em><code class="parameter">message</code></em> を送信します。
@@ -43,42 +43,43 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">queue</code></em></dt>
 
-     <span class="term"><em><code class="parameter">queue</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">msgtype</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">msgtype</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">message</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">message</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">serialize</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">serialize</code></em></span>
      <dd>
 
       <p class="para">
@@ -94,11 +95,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">blocking</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">blocking</code></em></span>
      <dd>
 
       <p class="para">
@@ -108,26 +109,25 @@
        オプションのパラメータ <em><code class="parameter">blocking</code></em>
        を <strong><code>FALSE</code></strong> に設定することでブロックモードではなくすることが可能で、
        この場合、もしキューの空き容量よりも大きなメッセージを送信すると
-        <span class="function"><strong>msg_send()</strong></span> はすぐに <strong><code>FALSE</code></strong> を返します。
+       <span class="function"><strong>msg_send()</strong></span> はすぐに <strong><code>FALSE</code></strong> を返します。
        また、オプションのパラメータ <em><code class="parameter">errorcode</code></em>
        を <strong><code>MSG_EAGAIN</code></strong> に設定すると、
        少し時間をおいてメッセージを再度送信しなければならないことが戻り値からわかります。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">errorcode</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">errorcode</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -152,10 +152,10 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.msg-remove-queue.html" class="function" rel="rdfs-seeAlso">msg_remove_queue()</a> - メッセージキューを破棄する</span></li>
-    <li class="member"> <span class="function"><a href="function.msg-receive.html" class="function" rel="rdfs-seeAlso">msg_receive()</a> - メッセージキューからメッセージを受信する</span></li>
-    <li class="member"> <span class="function"><a href="function.msg-stat-queue.html" class="function" rel="rdfs-seeAlso">msg_stat_queue()</a> - メッセージキューデータ構造体の情報を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.msg-set-queue.html" class="function" rel="rdfs-seeAlso">msg_set_queue()</a> - メッセージキューデータ構造体の情報を設定する</span></li>
+    <li class="member"><span class="function"><a href="function.msg-remove-queue.html" class="function" rel="rdfs-seeAlso">msg_remove_queue()</a> - メッセージキューを破棄する</span></li>
+    <li class="member"><span class="function"><a href="function.msg-receive.html" class="function" rel="rdfs-seeAlso">msg_receive()</a> - メッセージキューからメッセージを受信する</span></li>
+    <li class="member"><span class="function"><a href="function.msg-stat-queue.html" class="function" rel="rdfs-seeAlso">msg_stat_queue()</a> - メッセージキューデータ構造体の情報を返す</span></li>
+    <li class="member"><span class="function"><a href="function.msg-set-queue.html" class="function" rel="rdfs-seeAlso">msg_set_queue()</a> - メッセージキューデータ構造体の情報を設定する</span></li>
    </ul>
   </p>
  </div>

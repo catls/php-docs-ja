@@ -38,7 +38,7 @@
     一般に、カーソルを作るときに
     <strong class="classname">MongoCursor</strong> のコンストラクタを使うことはありません。
     新しいカーソルを作るには、(上の例のように)
-     <span class="function"><a href="mongocollection.find.html" class="function">MongoCollection::find()</a></span> をコールします。
+    <span class="function"><a href="mongocollection.find.html" class="function">MongoCollection::find()</a></span> をコールします。
    </p>
    <p class="para">
     上の例で、仮に <em>$collection</em> が
@@ -51,7 +51,7 @@
     結果セットが大規模になっても、それを反復処理して
     一度にメモリに取り込むデータ量を数メガバイト程度にすることができます。
     たとえばこのようにします。
-    <div class="example" id="example-1472">
+    <div class="example" id="example-1473">
      <p><strong>例2 <strong class="classname">MongoCursor</strong> の反復処理</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -67,7 +67,7 @@
    <p class="para">
     カーソルにデータベースの結果が &quot;含まれている&quot; わけではないことに注意しましょう。
     カーソルは単に結果を管理するだけのものです。つまり、
-    ( <span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> や  <span class="function"><a href="function.print-r.html" class="function">print_r()</a></span> で)
+    (<span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> や <span class="function"><a href="function.print-r.html" class="function">print_r()</a></span> で)
     カーソルの内容を出力してもドキュメントは見えません。
     単にカーソルオブジェクトが表示されるだけです。 
     ドキュメント自身を取得するには、上のメソッドのいずれかを使います。
@@ -85,7 +85,7 @@
    </p>
    <p class="para">
     クライアントが結果を取得しようとする (直接的あるいは間接的に
-     <span class="function"><a href="mongocursor.next.html" class="function">MongoCursor::next()</a></span> をコールする) と、
+    <span class="function"><a href="mongocursor.next.html" class="function">MongoCursor::next()</a></span> をコールする) と、
     そのカーソルはクエリ後の段階に進みます。
    </p>
    <p class="para">
@@ -139,133 +139,133 @@
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.addoption.html" class="methodname">addOption</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.addoption.html" class="methodname">addOption</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
    , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.awaitdata.html" class="methodname">awaitData</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.awaitdata.html" class="methodname">awaitData</a></span>
     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$wait</code><span class="initializer"> = true</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.batchsize.html" class="methodname">batchSize</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.batchsize.html" class="methodname">batchSize</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$batchSize</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span>  <span class="methodname"><a href="mongocursor.construct.html" class="methodname">__construct</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="mongocursor.construct.html" class="methodname">__construct</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.mongoclient.html" class="type MongoClient">MongoClient</a></span> <code class="parameter">$connection</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$query</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$fields</code><span class="initializer"> = array()</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="mongocursor.count.html" class="methodname">count</a></span>
+   <span class="modifier">public</span> <span class="type">int</span><span class="methodname"><a href="mongocursor.count.html" class="methodname">count</a></span>
     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$foundOnly</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocursor.current.html" class="methodname">current</a></span>
+   <span class="modifier">public</span> <span class="type">array</span><span class="methodname"><a href="mongocursor.current.html" class="methodname">current</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongocursor.dead.html" class="methodname">dead</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="mongocursor.dead.html" class="methodname">dead</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">protected</span> <span class="type">void</span> <span class="methodname"><a href="mongocursor.doquery.html" class="methodname">doQuery</a></span>
+   <span class="modifier">protected</span> <span class="type">void</span><span class="methodname"><a href="mongocursor.doquery.html" class="methodname">doQuery</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocursor.explain.html" class="methodname">explain</a></span>
+   <span class="modifier">public</span> <span class="type">array</span><span class="methodname"><a href="mongocursor.explain.html" class="methodname">explain</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.fields.html" class="methodname">fields</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.fields.html" class="methodname">fields</a></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$f</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocursor.getnext.html" class="methodname">getNext</a></span>
+   <span class="modifier">public</span> <span class="type">array</span><span class="methodname"><a href="mongocursor.getnext.html" class="methodname">getNext</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocursor.getreadpreference.html" class="methodname">getReadPreference</a></span>
+   <span class="modifier">public</span> <span class="type">array</span><span class="methodname"><a href="mongocursor.getreadpreference.html" class="methodname">getReadPreference</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongocursor.hasnext.html" class="methodname">hasNext</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="mongocursor.hasnext.html" class="methodname">hasNext</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.hint.html" class="methodname">hint</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.hint.html" class="methodname">hint</a></span>
     ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$index</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.immortal.html" class="methodname">immortal</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.immortal.html" class="methodname">immortal</a></span>
     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$liveForever</code><span class="initializer"> = true</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocursor.info.html" class="methodname">info</a></span>
+   <span class="modifier">public</span> <span class="type">array</span><span class="methodname"><a href="mongocursor.info.html" class="methodname">info</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongocursor.key.html" class="methodname">key</a></span>
+   <span class="modifier">public</span> <span class="type">string</span><span class="methodname"><a href="mongocursor.key.html" class="methodname">key</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.limit.html" class="methodname">limit</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.limit.html" class="methodname">limit</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$num</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongocursor.next.html" class="methodname">next</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="mongocursor.next.html" class="methodname">next</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.partial.html" class="methodname">partial</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.partial.html" class="methodname">partial</a></span>
     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = true</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongocursor.reset.html" class="methodname">reset</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="mongocursor.reset.html" class="methodname">reset</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongocursor.rewind.html" class="methodname">rewind</a></span>
+   <span class="modifier">public</span> <span class="type">void</span><span class="methodname"><a href="mongocursor.rewind.html" class="methodname">rewind</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.setflag.html" class="methodname">setFlag</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.setflag.html" class="methodname">setFlag</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$flag</code></span>
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$set</code><span class="initializer"> = true</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname">setReadPreference</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname">setReadPreference</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$read_preference</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$tags</code></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.skip.html" class="methodname">skip</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.skip.html" class="methodname">skip</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$num</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.slaveokay.html" class="methodname">slaveOkay</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.slaveokay.html" class="methodname">slaveOkay</a></span>
     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = true</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.snapshot.html" class="methodname">snapshot</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.snapshot.html" class="methodname">snapshot</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.sort.html" class="methodname">sort</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.sort.html" class="methodname">sort</a></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$fields</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.tailable.html" class="methodname">tailable</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.tailable.html" class="methodname">tailable</a></span>
     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$tail</code><span class="initializer"> = true</span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.timeout.html" class="methodname">timeout</a></span>
+   <span class="modifier">public</span> <span class="type">MongoCursor</span><span class="methodname"><a href="mongocursor.timeout.html" class="methodname">timeout</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$ms</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongocursor.valid.html" class="methodname">valid</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="mongocursor.valid.html" class="methodname">valid</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 
@@ -279,14 +279,15 @@
 
    <dl>
 
-    <dt id="mongocursor.props.slaveokay">
-     <span class="term"><var class="varname"><var class="varname">slaveOkay</var></var></span>
+    
+     <dt id="mongocursor.props.slaveokay"><var class="varname"><var class="varname">slaveOkay</var></var></dt>
+
      <dd>
 
       <p class="para">
        クエリに &quot;slaveOkay&quot; フラグが設定されていると、セカンダリ側での読み込みを許可します
        (セカンダリは、デフォルトでは単なるバックアップ用であり読み込みはできません)。
-        <span class="function"><a href="mongocursor.slaveokay.html" class="function">MongoCursor::slaveOkay()</a></span> で上書きすることができます。
+       <span class="function"><a href="mongocursor.slaveokay.html" class="function">MongoCursor::slaveOkay()</a></span> で上書きすることができます。
       </p>
       <p class="para">
        この機能は <em class="emphasis">非推奨</em> です。かわりに
@@ -294,24 +295,23 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt id="mongocursor.props.timeout"><var class="varname"><var class="varname">timeout</var></var></dt>
 
-    <dt id="mongocursor.props.timeout">
-     <span class="term"><var class="varname"><var class="varname">timeout</var></var></span>
      <dd>
 
       <p class="para">
        データベースからのすべての応答に対するタイムアウトをミリ秒単位で設定します。
        ずっと待ち続ける場合は <em>-1</em> を指定します。
-        <span class="function"><a href="mongocursor.timeout.html" class="function">MongoCursor::timeout()</a></span> で上書きすることができます。
+       <span class="function"><a href="mongocursor.timeout.html" class="function">MongoCursor::timeout()</a></span> で上書きすることができます。
        これは MongoDB サーバーに対する操作をキャンセルするわけではなく、
        単にドライバ側で応答を待つのをやめて
        <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローするだけです。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </div>

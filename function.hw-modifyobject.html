@@ -32,7 +32,7 @@
    修正することが可能となります。オブジェクトはオブジェクト ID
    <em><code class="parameter">object_to_change</code></em>により指定します。
    ある属性を修正するためには、古い属性を削除し、新規に追加する
-   必要があります。 <span class="function"><strong>hw_modifyobject()</strong></span> は、
+   必要があります。<span class="function"><strong>hw_modifyobject()</strong></span> は、
    削除する属性の値が文字列または配列でない限り、つねに属性を追加する前に
    属性の削除を行います。
   </p>
@@ -52,9 +52,9 @@
   </p>
   <p class="para">
    値 &#039;books&#039; を有する属性 &#039;Name&#039; を &#039;articles&#039; に変更したい場合、
-   二つの配列を作成し、 <span class="function"><strong>hw_modifyobject()</strong></span> をコールする
+   二つの配列を作成し、<span class="function"><strong>hw_modifyobject()</strong></span> をコールする
    必要があります。
-   <div class="example" id="example-4375">
+   <div class="example" id="example-4377">
     <p><strong>例1 属性を修正する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -68,7 +68,7 @@
    配列にて渡し、最後/3番目のパラメータは空の配列にします。
    新規に属性を追加する場合には、
    remove 配列におけるその属性の値を整数に設定してください。
-   <div class="example" id="example-4376">
+   <div class="example" id="example-4378">
     <p><strong>例2 完全に新規の属性を追加する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -89,7 +89,7 @@
       まずは、以下の例を見てみましょう。
     </span>
    </p></blockquote>
-   <div class="example" id="example-4377">
+   <div class="example" id="example-4379">
     <p><strong>例3 Title 属性を修正する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -100,7 +100,7 @@
 
    </div>
     または
-   <div class="example" id="example-4378">
+   <div class="example" id="example-4380">
    <p><strong>例4 Title 属性を修正する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -113,7 +113,7 @@
    この例では、英語のタイトル &#039;Books&#039; を削除し、
    英語のタイトル &#039;Articles&#039; およびドイツ語のタイトル
    &#039;Artikel&#039; を追加しています。
-   <div class="example" id="example-4379">
+   <div class="example" id="example-4381">
     <p><strong>例5 属性を削除する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -156,9 +156,9 @@
    </p></blockquote>
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <span class="simpara">
-     この関数のコールの前後に  <span class="function"><a href="function.hw-getandlock.html" class="function">hw_getandlock()</a></span> および 
-      <span class="function"><a href="function.hw-unlock.html" class="function">hw_unlock()</a></span> をコールする必要はありません。
-      <span class="function"><strong>hw_modifyobject()</strong></span> は内部的にこの処理を
+     この関数のコールの前後に <span class="function"><a href="function.hw-getandlock.html" class="function">hw_getandlock()</a></span> および 
+     <span class="function"><a href="function.hw-unlock.html" class="function">hw_unlock()</a></span> をコールする必要はありません。
+     <span class="function"><strong>hw_modifyobject()</strong></span> は内部的にこの処理を
      行います。
     </span>
    </p></blockquote>
@@ -170,9 +170,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">connection</code></em></dt>
 
-     <span class="term"><em><code class="parameter">connection</code></em></span>
      <dd>
 
       <p class="para">
@@ -180,11 +181,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">object_to_change</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">object_to_change</code></em></span>
      <dd>
 
       <p class="para">
@@ -192,11 +193,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">remove</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">remove</code></em></span>
      <dd>
 
       <p class="para">
@@ -204,11 +205,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">add</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">add</code></em></span>
      <dd>
 
       <p class="para">
@@ -216,24 +217,23 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">mode</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">mode</code></em></span>
      <dd>
 
       <p class="para">
        最後のパラメータは、修正を再帰的に行うかどうかを指定します。
        1 は、再帰的な修正を意味します。オブジェクトのいくつかを修正できない
        場合、通知されることなくスキップされます。
-        <span class="function"><a href="function.hw-error.html" class="function">hw_error()</a></span> は、いくつかのオブジェクトが
+       <span class="function"><a href="function.hw-error.html" class="function">hw_error()</a></span> は、いくつかのオブジェクトが
        修正されなかったことからエラーを発生しない可能性があります。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>

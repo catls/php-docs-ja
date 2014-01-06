@@ -27,7 +27,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_trace()</strong></span> は、PostgreSQL フロントエンド/
+   <span class="function"><strong>pg_trace()</strong></span> は、PostgreSQL フロントエンド/
    バックエンド間の通信をデバック用のファイルにトレースすることを有効にします。
    このトレース結果を完全に理解するためには、PostgreSQL 通信プロトコルの詳細に
    精通している必要があります。
@@ -48,47 +48,47 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">pathname</code></em></dt>
 
-     <span class="term"><em><code class="parameter">pathname</code></em></span>
      <dd>
 
       <p class="para">
        トレースログを書き込むファイルの名前（フルパスを含む）。
-        <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> と同じ。
+       <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> と同じ。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">mode</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">mode</code></em></span>
      <dd>
 
       <p class="para">
-       オプションのファイルアクセスモード。 <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
+       オプションのファイルアクセスモード。<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
        と同じです。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">connection</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">connection</code></em></span>
      <dd>
 
       <p class="para">
        PostgreSQL データベース接続リソース。<em><code class="parameter">connection</code></em>
        が指定されていない場合はデフォルトの接続が使用されます。
-       デフォルトの接続は、直近の  <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span>
-       あるいは  <span class="function"><a href="function.pg-pconnect.html" class="function">pg_pconnect()</a></span> によって作成されたものです。
+       デフォルトの接続は、直近の <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span>
+       あるいは <span class="function"><a href="function.pg-pconnect.html" class="function">pg_pconnect()</a></span> によって作成されたものです。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -106,8 +106,8 @@
  <div class="refsect1 examples" id="refsect1-function.pg-trace-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2122">
-    <p><strong>例1  <span class="function"><strong>pg_trace()</strong></span> の例</strong></p>
+   <div class="example" id="example-2123">
+    <p><strong>例1 <span class="function"><strong>pg_trace()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$pgsql_conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=mark&nbsp;host=localhost"</span><span style="color: #007700">);<br /><br />if&nbsp;(</span><span style="color: #0000BB">$pgsql_conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">pg_trace</span><span style="color: #007700">(</span><span style="color: #DD0000">'/tmp/trace.log'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pgsql_conn</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">pg_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;1"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">pg_untrace</span><span style="color: #007700">(</span><span style="color: #0000BB">$pgsql_conn</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;/tmp/trace.log&nbsp;にバックエンドの通信が記録される<br /></span><span style="color: #007700">}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #0000BB">pg_last_error</span><span style="color: #007700">(</span><span style="color: #0000BB">$pgsql_conn</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;exit;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -124,8 +124,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - ファイルまたは URL をオープンする</span></li>
-    <li class="member"> <span class="function"><a href="function.pg-untrace.html" class="function" rel="rdfs-seeAlso">pg_untrace()</a> - PostgreSQL 接続のトレースを無効にする</span></li>
+    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - ファイルまたは URL をオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.pg-untrace.html" class="function" rel="rdfs-seeAlso">pg_untrace()</a> - PostgreSQL 接続のトレースを無効にする</span></li>
    </ul>
   </p>
  </div>

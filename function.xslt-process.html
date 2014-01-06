@@ -30,7 +30,7 @@
   ]]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>xslt_process()</strong></span>関数は、<acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> 拡張モジュールの中心となる関数です。
+   <span class="function"><strong>xslt_process()</strong></span>関数は、<acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> 拡張モジュールの中心となる関数です。
    ほとんど全ての型の入力ソース (コンテナ) を用いて <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> 変換を実行可能です。
    これを実現しているのが、引数バッファです。
    引数バッファとは、<span class="productname">Sablotron</span> <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> プロセッサ
@@ -47,16 +47,17 @@
    <dl>
 
     <dt>
-<span class="term"><em><code class="parameter">
-xh</code></em></span><dd>
-<p class="para"> <span class="function"><a href="function.xslt-create.html" class="function">xslt_create()</a></span> で作成した
+<em><code class="parameter">
+xh</code></em></dt>
+<dd>
+<p class="para"><span class="function"><a href="function.xslt-create.html" class="function">xslt_create()</a></span> で作成した
 <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> プロセッサリンク ID。</p></dd>
 
-</dt>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">xmlcontainer</code></em></dt>
 
-     <span class="term"><em><code class="parameter">xmlcontainer</code></em></span>
      <dd>
 
       <p class="para">
@@ -64,11 +65,11 @@ xh</code></em></span><dd>
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">xslcontainer</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">xslcontainer</code></em></span>
      <dd>
 
       <p class="para">
@@ -76,11 +77,11 @@ xh</code></em></span><dd>
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">resultcontainer</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">resultcontainer</code></em></span>
      <dd>
 
       <p class="para">
@@ -90,26 +91,26 @@ xh</code></em></span><dd>
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">arguments</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">arguments</code></em></span>
      <dd>
 
       <p class="para">
-       <acronym title="eXtensible Markup Language">XML</acronym> や <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> のファイル名を  <span class="function"><strong>xslt_process()</strong></span>
+       <acronym title="eXtensible Markup Language">XML</acronym> や <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> のファイル名を <span class="function"><strong>xslt_process()</strong></span>
        関数に指定するかわりに、&quot;引数プレースホルダ&quot;
        を使用することもできます。これは、配列
        <em><code class="parameter">arguments</code></em> に指定した内容で置き換えられます。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">parameters</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">parameters</code></em></span>
      <dd>
 
       <p class="para">
@@ -123,8 +124,7 @@ xh</code></em></span><dd>
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -179,17 +179,17 @@ xh</code></em></span><dd>
  <div class="refsect1 examples" id="refsect1-function.xslt-process-examples">
   <h3 class="title">例</h3>
   <p class="para">
-    <span class="function"><strong>xslt_process()</strong></span>関数で変換する最も簡単な方法は、
+   <span class="function"><strong>xslt_process()</strong></span>関数で変換する最も簡単な方法は、
    <acronym title="eXtensible Markup Language">XML</acronym> ファイルを <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym>
    ファイルで変換し、結果を新しい <acronym title="eXtensible Markup Language">XML</acronym> ドキュメント
    (または HTML ドキュメント) を含む3番目のファイルに出力することです。
    これを <span class="productname">Sablotron</span> で行うのはとても簡単です。
   </p>
-  <div class="example" id="example-5548">
+  <div class="example" id="example-5550">
    <p><strong>例1 
     <acronym title="eXtensible Markup Language">XML</acronym> ファイルと <acronym>XSL</acronym> ファイルを新規
     <acronym title="eXtensible Markup Language">XML</acronym> ファイルに変換するために
-     <span class="function"><strong>xslt_process()</strong></span> を使用する
+    <span class="function"><strong>xslt_process()</strong></span> を使用する
    </strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -201,15 +201,15 @@ xh</code></em></span><dd>
   </div>
   <p class="para">
    この機能は優れていますが、特にWeb環境では、結果を直接出力したい場
-   合があります。そこで、 <span class="function"><strong>xslt_process()</strong></span>の3番目の
+   合があります。そこで、<span class="function"><strong>xslt_process()</strong></span>の3番目の
    引数を省略した場合(またはその引数にNULL値を指定した場合)、ファイ
    ルに書き込む替わりに自動的に <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> 変換後の出力を返します。
   </p>
   <p class="para">
-   <div class="example" id="example-5549">
+   <div class="example" id="example-5551">
    <p><strong>例2 
     <acronym title="eXtensible Markup Language">XML</acronym> ファイルと <acronym>XSL</acronym> ファイルを結果XMLデータを含む変数に変換するために
-     <span class="function"><strong>xslt_process()</strong></span> を使用する
+    <span class="function"><strong>xslt_process()</strong></span> を使用する
    </strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -228,18 +228,18 @@ xh</code></em></span><dd>
    実用アプリケーションでは、これらをファイルにダンプする際のオーバー
    ヘッドは大きいと言えます。このような場合こそ、<acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym>
    &quot;argument&quot; 構文が役に立ちます。
-    <span class="function"><strong>xslt_process()</strong></span>関数の <acronym title="eXtensible Markup Language">XML</acronym> および <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> 引数としてファ
-   イルの替わりに引数配列( <span class="function"><strong>xslt_process()</strong></span>関数の5番
+   <span class="function"><strong>xslt_process()</strong></span>関数の <acronym title="eXtensible Markup Language">XML</acronym> および <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> 引数としてファ
+   イルの替わりに引数配列(<span class="function"><strong>xslt_process()</strong></span>関数の5番
    目のパラメータ)で指定した値に置換される&quot;argument place
    holders&quot;を指定することが可能です。
    以下にファイルを全く使用せずに <acronym title="eXtensible Markup Language">XML</acronym> および <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> を結果変数に処理する例
    を示します。
   </p>
   <p class="para">
-   <div class="example" id="example-5550">
+   <div class="example" id="example-5552">
    <p><strong>例3 
     <acronym title="eXtensible Markup Language">XML</acronym> データを含む変数と <acronym title="eXtensible Stylesheet Language Transformations">XSLT</acronym> データを含む変数を <acronym title="eXtensible Markup Language">XML</acronym> データ出力結果を
-    含む変数に変換するために <span class="function"><strong>xslt_process()</strong></span>を使用
+    含む変数に変換するために<span class="function"><strong>xslt_process()</strong></span>を使用
     する
    </strong></p>
    <div class="example-contents">
@@ -252,7 +252,7 @@ xh</code></em></span><dd>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5551">
+   <div class="example" id="example-5553">
     <p><strong>例4 PHP 変数を XSL ファイルに渡す</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

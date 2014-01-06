@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">socket</code></em></dt>
 
-     <span class="term"><em><code class="parameter">socket</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,11 +49,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">data</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">data</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,11 +61,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -87,11 +88,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">address</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">address</code></em></span>
      <dd>
 
       <p class="para">
@@ -103,8 +104,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -122,8 +122,8 @@
  <div class="refsect1 examples" id="refsect1-function.stream-socket-sendto-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4036">
-    <p><strong>例1  <span class="function"><strong>stream_socket_sendto()</strong></span> の例</strong></p>
+   <div class="example" id="example-4038">
+    <p><strong>例1 <span class="function"><strong>stream_socket_sendto()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;localhost&nbsp;のポート&nbsp;1234&nbsp;へのソケットをオープンします&nbsp;*/<br /></span><span style="color: #0000BB">$socket&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_socket_client</span><span style="color: #007700">(</span><span style="color: #DD0000">'tcp://127.0.0.1:1234'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;普通のデータを普通のチャネルで送信します&nbsp;*/<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Normal&nbsp;data&nbsp;transmit."</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;帯域外のデータを送信します&nbsp;*/<br /></span><span style="color: #0000BB">stream_socket_sendto</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"Out&nbsp;of&nbsp;Band&nbsp;data."</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">STREAM_OOB</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;ソケットを閉じます&nbsp;*/<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -139,9 +139,9 @@
  <div class="refsect1 seealso" id="refsect1-function.stream-socket-sendto-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"> <span class="function"><a href="function.stream-socket-recvfrom.html" class="function" rel="rdfs-seeAlso">stream_socket_recvfrom()</a> - 接続されているかどうかにかかわらず、ソケットからのデータを受信する</span></li>
-   <li class="member"> <span class="function"><a href="function.stream-socket-client.html" class="function" rel="rdfs-seeAlso">stream_socket_client()</a> - インターネットドメインまたは Unix ドメインのソケット接続を開く</span></li>
-   <li class="member"> <span class="function"><a href="function.stream-socket-server.html" class="function" rel="rdfs-seeAlso">stream_socket_server()</a> - インターネットドメインまたは Unix ドメインのサーバーソケットを作成する</span></li>
+   <li class="member"><span class="function"><a href="function.stream-socket-recvfrom.html" class="function" rel="rdfs-seeAlso">stream_socket_recvfrom()</a> - 接続されているかどうかにかかわらず、ソケットからのデータを受信する</span></li>
+   <li class="member"><span class="function"><a href="function.stream-socket-client.html" class="function" rel="rdfs-seeAlso">stream_socket_client()</a> - インターネットドメインまたは Unix ドメインのソケット接続を開く</span></li>
+   <li class="member"><span class="function"><a href="function.stream-socket-server.html" class="function" rel="rdfs-seeAlso">stream_socket_server()</a> - インターネットドメインまたは Unix ドメインのサーバーソケットを作成する</span></li>
   </ul>
  </div>
 

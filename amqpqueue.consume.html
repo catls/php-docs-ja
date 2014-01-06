@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-     <dt>
+     
+      <dt>
+<em><code class="parameter">callback</code></em></dt>
 
-      <span class="term"><em><code class="parameter">callback</code></em></span>
       <dd>
 
        <p class="para">
@@ -49,16 +50,16 @@
         <a href="class.amqpqueue.html" class="classname">AMQPQueue</a> を受け取ることもできます。
        </p>
        <p class="para">
-          <span class="methodname"><strong>AMQPQueue::consume()</strong></span> は、
+         <span class="methodname"><strong>AMQPQueue::consume()</strong></span> は、
          コールバック関数が <strong><code>FALSE</code></strong> を返すまで PHP スクリプトに処理スレッドを戻しません。
        </p>
       </dd>
 
-     </dt>
+     
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -66,8 +67,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -93,8 +93,8 @@
  <div class="refsect1 examples" id="refsect1-amqpqueue.consume-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4199">
-    <p><strong>例1  <span class="methodname"><strong>AMQPQueue::consume()</strong></span> の例</strong></p>
+   <div class="example" id="example-4201">
+    <p><strong>例1 <span class="methodname"><strong>AMQPQueue::consume()</strong></span> の例</strong></p>
     <div class="example-contents">
      <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;デフォルトの設定で接続を作成します&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$connection&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">AMQPConnection</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$connection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">connect</span><span style="color: #007700">();<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$channel&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">AMQPChannel</span><span style="color: #007700">(</span><span style="color: #0000BB">$connection</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;キューオブジェクトを作成します&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$queue&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">AMQPQueue</span><span style="color: #007700">(</span><span style="color: #0000BB">$channel</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;キューを宣言します<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$queue</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">declare</span><span style="color: #007700">(</span><span style="color: #DD0000">'myqueue'</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">processMessage</span><span style="color: #007700">(</span><span style="color: #0000BB">$envelope</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$queue</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Message&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$envelope</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getBody</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;10&nbsp;件ごとに解放します<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">return&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;メッセージをキューから取得します<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$queue</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">consume</span><span style="color: #007700">(</span><span style="color: #DD0000">"processMessage"</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">?&gt;</span>

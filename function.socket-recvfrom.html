@@ -30,12 +30,12 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>socket_recvfrom()</strong></span> 関数は、
+   <span class="function"><strong>socket_recvfrom()</strong></span> 関数は、
    ポート <em><code class="parameter">port</code></em> (<strong><code>AF_UNIX</code></strong>
    型のソケットである場合を除く) 上の <em><code class="parameter">name</code></em>
    から受信した <em><code class="parameter">len</code></em> バイトのデータを
    <em><code class="parameter">buf</code></em> に格納します。
-    <span class="function"><strong>socket_recvfrom()</strong></span> は、
+   <span class="function"><strong>socket_recvfrom()</strong></span> は、
    接続済みのソケットだけでなく接続していないソケットに対しても使用可能です。
    さらに、フラグを指定することでこの関数の挙動を設定できます。
   </p>
@@ -57,9 +57,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">socket</code></em></dt>
 
-     <span class="term"><em><code class="parameter">socket</code></em></span>
      <dd>
 
       <p class="para">
@@ -68,12 +69,12 @@
       </p>
      </dd>
 
-    </dt>
+    
 
+    
+     <dt>
+<em><code class="parameter">buf</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">buf</code></em></span>
      <dd>
 
       <p class="para">
@@ -82,12 +83,12 @@
       </p>
      </dd>
 
-    </dt>
+    
 
+    
+     <dt>
+<em><code class="parameter">len</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">len</code></em></span>
      <dd>
 
       <p class="para">
@@ -95,12 +96,12 @@
       </p>
      </dd>
 
-    </dt>
+    
 
+    
+     <dt>
+<em><code class="parameter">flags</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">flags</code></em></span>
      <dd>
 
       <p class="para">
@@ -157,12 +158,12 @@
 
      </dd>
 
-    </dt>
+    
 
+    
+     <dt>
+<em><code class="parameter">name</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">name</code></em></span>
      <dd>
 
       <p class="para">
@@ -174,12 +175,12 @@
       </p>
      </dd>
 
-    </dt>
+    
 
+    
+     <dt>
+<em><code class="parameter">port</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">port</code></em></span>
      <dd>
 
       <p class="para">
@@ -191,8 +192,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
     
    </dl>
 
@@ -203,11 +203,11 @@
  <div class="refsect1 returnvalues" id="refsect1-function.socket-recvfrom-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    <span class="function"><strong>socket_recvfrom()</strong></span> は、受信したバイト数を返します。
+   <span class="function"><strong>socket_recvfrom()</strong></span> は、受信したバイト数を返します。
    あるいはエラー時には <strong><code>FALSE</code></strong> を返します。
-   エラーコードを取得するには  <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span>
+   エラーコードを取得するには <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span>
    をコールします。取得したエラーコードを
-    <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> に渡すと、
+   <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> に渡すと、
    そのエラーについての説明を得ることができます。
   </p>
  </div>
@@ -216,8 +216,8 @@
  <div class="refsect1 examples" id="refsect1-function.socket-recvfrom-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4594">
-    <p><strong>例1  <span class="function"><strong>socket_recvfrom()</strong></span> の例</strong></p>
+   <div class="example" id="example-4596">
+    <p><strong>例1 <span class="function"><strong>socket_recvfrom()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">E_STRICT</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$socket&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">socket_create</span><span style="color: #007700">(</span><span style="color: #0000BB">AF_INET</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SOCK_DGRAM</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SOL_UDP</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">socket_bind</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'127.0.0.1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1223</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$from&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$port&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">socket_recvfrom</span><span style="color: #007700">(</span><span style="color: #0000BB">$socket</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$buf</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$from</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$port</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"リモートアドレス&nbsp;</span><span style="color: #0000BB">$from</span><span style="color: #DD0000">&nbsp;のポート&nbsp;</span><span style="color: #0000BB">$port</span><span style="color: #DD0000">&nbsp;から&nbsp;</span><span style="color: #0000BB">$buf</span><span style="color: #DD0000">&nbsp;を受信しました"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -251,7 +251,7 @@
       <tr>
        <td>4.3.0</td>
        <td>
-         <span class="function"><strong>socket_recvfrom()</strong></span> はバイナリセーフとなりました。
+        <span class="function"><strong>socket_recvfrom()</strong></span> はバイナリセーフとなりました。
        </td>
       </tr>
 
@@ -267,10 +267,10 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.socket-recv.html" class="function" rel="rdfs-seeAlso">socket_recv()</a> - 接続したソケットからデータを受信する</span></li>
-    <li class="member"> <span class="function"><a href="function.socket-send.html" class="function" rel="rdfs-seeAlso">socket_send()</a> - 接続したソケットにデータを送信する</span></li>
-    <li class="member"> <span class="function"><a href="function.socket-sendto.html" class="function" rel="rdfs-seeAlso">socket_sendto()</a> - 接続しているかどうかによらずソケットにメッセージを送信する</span></li>
-    <li class="member"> <span class="function"><a href="function.socket-create.html" class="function" rel="rdfs-seeAlso">socket_create()</a> - ソケット（通信時の終端）を作成する</span></li>
+    <li class="member"><span class="function"><a href="function.socket-recv.html" class="function" rel="rdfs-seeAlso">socket_recv()</a> - 接続したソケットからデータを受信する</span></li>
+    <li class="member"><span class="function"><a href="function.socket-send.html" class="function" rel="rdfs-seeAlso">socket_send()</a> - 接続したソケットにデータを送信する</span></li>
+    <li class="member"><span class="function"><a href="function.socket-sendto.html" class="function" rel="rdfs-seeAlso">socket_sendto()</a> - 接続しているかどうかによらずソケットにメッセージを送信する</span></li>
+    <li class="member"><span class="function"><a href="function.socket-create.html" class="function" rel="rdfs-seeAlso">socket_create()</a> - ソケット（通信時の終端）を作成する</span></li>
    </ul>
   </p>
  </div>

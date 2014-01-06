@@ -51,9 +51,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">function_name</code></em></dt>
 
-     <span class="term"><em><code class="parameter">function_name</code></em></span>
      <dd>
 
       <p class="para">
@@ -61,11 +62,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">step_func</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">step_func</code></em></span>
      <dd>
 
       <p class="para">
@@ -75,7 +76,7 @@
       <p class="para">
        この関数は次のように定義しなければなりません。
        <div class="methodsynopsis dc-description">
-         <span class="methodname"><span class="replaceable">step</span></span>
+        <span class="methodname"><span class="replaceable">step</span></span>
          ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$context</code></span>
         , <span class="methodparam"><span class="type">int</span> <code class="parameter">$rownumber</code></span>
         , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value1</code></span>
@@ -94,11 +95,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">finalize_func</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">finalize_func</code></em></span>
      <dd>
 
       <p class="para">
@@ -111,7 +112,7 @@
       <p class="para">
        この関数は次のように定義しなければなりません。
        <div class="methodsynopsis dc-description">
-         <span class="methodname"><span class="replaceable">fini</span></span>
+        <span class="methodname"><span class="replaceable">fini</span></span>
          ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$context</code></span>
         , <span class="methodparam"><span class="type">int</span> <code class="parameter">$rownumber</code></span>
         )</div>
@@ -128,11 +129,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">num_args</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">num_args</code></em></span>
      <dd>
 
       <p class="para">
@@ -141,8 +142,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -160,7 +160,7 @@
  <div class="refsect1 examples" id="refsect1-pdo.sqlitecreateaggregate-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-989">
+   <div class="example" id="example-990">
     <p><strong>例1 集約関数 max_length の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -220,8 +220,8 @@
   <p class="para">
    <ul class="simplelist">
     <li class="member"><a href="pdo.sqlitecreatefunction.html" class="xref">PDO::sqliteCreateFunction</a></li>
-    <li class="member"> <span class="function"><a href="function.sqlite-create-function.html" class="function" rel="rdfs-seeAlso">sqlite_create_function()</a> - SQLステートメントで使用するために&quot;通常の&quot;ユーザー定義関数を登録する</span></li>
-    <li class="member"> <span class="function"><a href="function.sqlite-create-aggregate.html" class="function" rel="rdfs-seeAlso">sqlite_create_aggregate()</a> - SQLステートメントで使用する集約UDFを登録する</span></li>
+    <li class="member"><span class="function"><a href="function.sqlite-create-function.html" class="function" rel="rdfs-seeAlso">sqlite_create_function()</a> - SQLステートメントで使用するために&quot;通常の&quot;ユーザー定義関数を登録する</span></li>
+    <li class="member"><span class="function"><a href="function.sqlite-create-aggregate.html" class="function" rel="rdfs-seeAlso">sqlite_create_aggregate()</a> - SQLステートメントで使用する集約UDFを登録する</span></li>
    </ul>
   </p>
  </div>

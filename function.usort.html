@@ -46,9 +46,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">array</code></em></dt>
 
-     <span class="term"><em><code class="parameter">array</code></em></span>
      <dd>
 
       <p class="para">
@@ -56,11 +57,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">value_compare_func</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">value_compare_func</code></em></span>
      <dd>
 
       <p class="para">
@@ -78,8 +79,7 @@
       </div>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -126,7 +126,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="function.usort.examples.basic">
-    <p><strong>例1  <span class="function"><strong>usort()</strong></span> の例</strong></p>
+    <p><strong>例1 <span class="function"><strong>usort()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">cmp</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;?&nbsp;-</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">:&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">usort</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cmp"</span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">:&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -148,13 +148,13 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    もちろん、このような簡単な例では  <span class="function"><a href="function.rsort.html" class="function">rsort()</a></span>
+    もちろん、このような簡単な例では <span class="function"><a href="function.rsort.html" class="function">rsort()</a></span>
     関数の方がより適当です。
    </p>
   </p></blockquote>
   <p class="para">
    <div class="example" id="function.usort.examples.multi">
-    <p><strong>例2 多次元配列を使用する  <span class="function"><strong>usort()</strong></span> の例</strong></p>
+    <p><strong>例2 多次元配列を使用する <span class="function"><strong>usort()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">cmp</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">strcmp</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #DD0000">"fruit"</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">[</span><span style="color: #DD0000">"fruit"</span><span style="color: #007700">]);<br />}<br /><br /></span><span style="color: #0000BB">$fruits</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">][</span><span style="color: #DD0000">"fruit"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"lemons"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$fruits</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">][</span><span style="color: #DD0000">"fruit"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"apples"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$fruits</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">][</span><span style="color: #DD0000">"fruit"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"grapes"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">usort</span><span style="color: #007700">(</span><span style="color: #0000BB">$fruits</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cmp"</span><span style="color: #007700">);<br /><br />while&nbsp;(list(</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">each</span><span style="color: #007700">(</span><span style="color: #0000BB">$fruits</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"\$fruits[</span><span style="color: #0000BB">$key</span><span style="color: #DD0000">]:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">[</span><span style="color: #DD0000">"fruit"</span><span style="color: #007700">]&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -179,7 +179,7 @@ $fruits[2]: lemons
   <p class="para">
    <div class="example" id="function.usort.examples.object">
     <p><strong>例3 
-      <span class="function"><strong>usort()</strong></span> でオブジェクトのメンバ関数を使用する例
+     <span class="function"><strong>usort()</strong></span> でオブジェクトのメンバ関数を使用する例
     </strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -199,7 +199,7 @@ d
    </div>
    <div class="example" id="function.usort.examples.closure">
     <p><strong>例4 
-      <span class="function"><strong>usort()</strong></span> で <a href="functions.anonymous.html" class="link">クロージャ</a>
+     <span class="function"><strong>usort()</strong></span> で <a href="functions.anonymous.html" class="link">クロージャ</a>
      を使って多次元配列をソートする例
     </strong></p>
     <div class="example-contents">
@@ -225,7 +225,7 @@ z, c
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.uasort.html" class="function" rel="rdfs-seeAlso">uasort()</a> - ユーザー定義の比較関数で配列をソートし、連想インデックスを保持する</span></li>
+    <li class="member"><span class="function"><a href="function.uasort.html" class="function" rel="rdfs-seeAlso">uasort()</a> - ユーザー定義の比較関数で配列をソートし、連想インデックスを保持する</span></li>
     <li class="member"><a href="array.sorting.html" class="link">配列ソート関数の比較</a></li>
    </ul>
   </p>

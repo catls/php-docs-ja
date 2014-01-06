@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">imagetype</code></em></dt>
 
-     <span class="term"><em><code class="parameter">imagetype</code></em></span>
      <dd>
 
       <p class="para">
@@ -45,11 +46,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">include_dot</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">include_dot</code></em></span>
      <dd>
 
       <p class="para">
@@ -57,8 +58,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -76,8 +76,8 @@
  <div class="refsect1 examples" id="refsect1-function.image-type-to-extension-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3174">
-    <p><strong>例1  <span class="function"><strong>image_type_to_extension()</strong></span> の例</strong></p>
+   <div class="example" id="example-3175">
+    <p><strong>例1 <span class="function"><strong>image_type_to_extension()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;画像のインスタンスを作成します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;画像を保存します<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'./test'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">image_type_to_extension</span><span style="color: #007700">(</span><span style="color: #0000BB">IMAGETYPE_PNG</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

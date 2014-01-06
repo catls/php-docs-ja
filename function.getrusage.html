@@ -36,9 +36,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">who</code></em></dt>
 
-     <span class="term"><em><code class="parameter">who</code></em></span>
      <dd>
 
       <p class="para">
@@ -47,8 +48,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -67,8 +67,8 @@
  <div class="refsect1 examples" id="refsect1-function.getrusage-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-497">
-    <p><strong>例1  <span class="function"><strong>getrusage()</strong></span> の例</strong></p>
+   <div class="example" id="example-498">
+    <p><strong>例1 <span class="function"><strong>getrusage()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$dat&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getrusage</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #0000BB">$dat</span><span style="color: #007700">[</span><span style="color: #DD0000">"ru_nswap"</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;スワップの数<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$dat</span><span style="color: #007700">[</span><span style="color: #DD0000">"ru_majflt"</span><span style="color: #007700">];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ページフォルトの数<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$dat</span><span style="color: #007700">[</span><span style="color: #DD0000">"ru_utime.tv_sec"</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;使用するユーザー時間&nbsp;(秒)<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$dat</span><span style="color: #007700">[</span><span style="color: #DD0000">"ru_utime.tv_usec"</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;使用するユーザー時間&nbsp;(マイクロ秒)<br /></span><span style="color: #0000BB">?&gt;</span>

@@ -25,7 +25,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>com_get_active_object()</strong></span> は、新しい
+   <span class="function"><strong>com_get_active_object()</strong></span> は、新しい
    <a href="class.com.html" class="xref">COM</a> オブジェクトのインスタンスを作成することに
    似ています。しかし、オブジェクトがすでに実行中の場合には
    そのオブジェクトが返されるという点が違います。
@@ -41,9 +41,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">progid</code></em></dt>
 
-     <span class="term"><em><code class="parameter">progid</code></em></span>
      <dd>
 
       <p class="para">
@@ -53,11 +54,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">code_page</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">code_page</code></em></span>
      <dd>
 
       <p class="para">
@@ -65,8 +66,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -96,7 +96,7 @@
   <h3 class="title">注意</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Web 環境で  <span class="function"><strong>com_get_active_object()</strong></span> を使用する
+    Web 環境で <span class="function"><strong>com_get_active_object()</strong></span> を使用する
     ことは、あまり良い考えではありません。ほとんどの COM/OLE
     アプリケーションは複数のクライアントから同時に利用されることを
     考慮していないのです。(あの) Microsoft Office でさえもです!

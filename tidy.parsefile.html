@@ -48,23 +48,24 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">filename</code></em></dt>
 
-     <span class="term"><em><code class="parameter">filename</code></em></span>
      <dd>
 
       <p class="para">
        もし <em><code class="parameter">filename</code></em> パラメータが与えられた場合、
-       この関数はファイルを読み込み、 <span class="function"><strong>tidy_parse_file()</strong></span>
+       この関数はファイルを読み込み、<span class="function"><strong>tidy_parse_file()</strong></span>
        のように実行してファイルに基づいたオブジェクトを初期化します。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">config</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">config</code></em></span>
      <dd>
 
       <p class="para">
@@ -78,11 +79,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">encoding</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">encoding</code></em></span>
      <dd>
 
       <p class="para">
@@ -96,11 +97,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">use_include_path</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">use_include_path</code></em></span>
      <dd>
 
       <p class="para">
@@ -108,8 +109,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -127,8 +127,8 @@
  <div class="refsect1 examples" id="refsect1-tidy.parsefile-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4053">
-    <p><strong>例1  <span class="function"><strong>tidy::parseFile()</strong></span> の例</strong></p>
+   <div class="example" id="example-4055">
+    <p><strong>例1 <span class="function"><strong>tidy::parseFile()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$tidy&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">tidy</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$tidy</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">parseFile</span><span style="color: #007700">(</span><span style="color: #DD0000">'file.html'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$tidy</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">cleanRepair</span><span style="color: #007700">();<br /><br />if(!empty(</span><span style="color: #0000BB">$tidy</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">errorBuffer</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;following&nbsp;errors&nbsp;or&nbsp;warnings&nbsp;occurred:\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$tidy</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">errorBuffer</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -152,9 +152,9 @@ Tidy 2.0 で追加されました。</span></p></blockquote>
  <div class="refsect1 seealso" id="refsect1-tidy.parsefile-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"> <span class="function"><a href="tidy.parsestring.html" class="function" rel="rdfs-seeAlso">tidy::parsestring()</a> - 文字列にストアされたドキュメントをパースする</span></li>
-   <li class="member"> <span class="function"><a href="tidy.repairfile.html" class="function" rel="rdfs-seeAlso">tidy::repairfile()</a> - ファイルを修正し、それを文字列として返す</span></li>
-   <li class="member"> <span class="function"><a href="tidy.repairstring.html" class="function" rel="rdfs-seeAlso">tidy::repairstring()</a> - 別途提供される設定ファイルを使用して文字列を修正する</span></li>
+   <li class="member"><span class="function"><a href="tidy.parsestring.html" class="function" rel="rdfs-seeAlso">tidy::parsestring()</a> - 文字列にストアされたドキュメントをパースする</span></li>
+   <li class="member"><span class="function"><a href="tidy.repairfile.html" class="function" rel="rdfs-seeAlso">tidy::repairfile()</a> - ファイルを修正し、それを文字列として返す</span></li>
+   <li class="member"><span class="function"><a href="tidy.repairstring.html" class="function" rel="rdfs-seeAlso">tidy::repairstring()</a> - 別途提供される設定ファイルを使用して文字列を修正する</span></li>
   </ul>
  </div>
 

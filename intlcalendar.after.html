@@ -34,9 +34,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">calendar</code></em></dt>
 
-    <span class="term"><em><code class="parameter">calendar</code></em></span>
     <dd>
 
      <p class="para">
@@ -44,8 +45,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -57,7 +57,7 @@
    Returns <strong><code>TRUE</code></strong> if this objectʼs current time is after that of the
    <em><code class="parameter">calendar</code></em> argumentʼs time. Returns <strong><code>FALSE</code></strong> otherwise.
    Also returns <strong><code>FALSE</code></strong> on failure. You can use <a href="intl.configuration.html#ini.intl.use-exceptions" class="link">exceptions</a> or
-    <span class="function"><a href="function.intl-get-error-code.html" class="function">intl_get_error_code()</a></span> to detect error conditions.
+   <span class="function"><a href="function.intl-get-error-code.html" class="function">intl_get_error_code()</a></span> to detect error conditions.
   </p>
  </div>
 
@@ -66,8 +66,8 @@
  <div class="refsect1 examples" id="refsect1-intlcalendar.after-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2591">
-   <p><strong>例1  <span class="function"><strong>IntlCalendar::after()</strong></span></strong></p>
+   <div class="example" id="example-2592">
+   <p><strong>例1 <span class="function"><strong>IntlCalendar::after()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$cal1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">IntlCalendar</span><span style="color: #007700">::</span><span style="color: #0000BB">createInstance</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$cal2&nbsp;</span><span style="color: #007700">=&nbsp;clone&nbsp;</span><span style="color: #0000BB">$cal1</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal1</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">after</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal2</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//false<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cal2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">after</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal1</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//false<br /><br /></span><span style="color: #0000BB">$cal1</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">roll</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlCalendar</span><span style="color: #007700">::</span><span style="color: #0000BB">FIELD_MILLISECOND</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal1</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">after</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal2</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//true<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$cal2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">after</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal1</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//false</span>

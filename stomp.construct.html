@@ -22,7 +22,7 @@
   <h3 class="title">説明</h3>
   <p class="para">オブジェクト指向型 (constructor):</p>
    <div class="methodsynopsis dc-description">
-    <span class="modifier">public</span>  <span class="methodname"><strong>Stomp::__construct</strong></span>
+    <span class="modifier">public</span> <span class="methodname"><strong>Stomp::__construct</strong></span>
      ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$broker</code><span class="initializer"> = ini_get(&quot;stomp.default_broker_uri&quot;)</span></span>
     [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$username</code></span>
     [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
@@ -49,9 +49,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">broker</code></em></dt>
 
-     <span class="term"><em><code class="parameter">broker</code></em></span>
      <dd>
 
       <p class="para">
@@ -59,11 +60,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">username</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">username</code></em></span>
      <dd>
 
       <p class="para">
@@ -71,11 +72,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">password</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">password</code></em></span>
      <dd>
 
       <p class="para">
@@ -83,12 +84,11 @@
       </p>
      </dd>
 
-    </dt>
-
+    
     <dt>
-<span class="term"><em><code class="parameter">headers</code></em></span><dd>
+<em><code class="parameter">headers</code></em></dt>
+<dd>
 <p class="para">追加のヘッダ (例: receipt) を含む連想配列。</p></dd>
-</dt>
 
    </dl>
 
@@ -134,7 +134,7 @@
  <div class="refsect1 examples" id="refsect1-stomp.construct-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4640">
+   <div class="example" id="example-4642">
     <p><strong>例1 オブジェクト指向型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -146,7 +146,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4641">
+   <div class="example" id="example-4643">
     <p><strong>例2 手続き型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

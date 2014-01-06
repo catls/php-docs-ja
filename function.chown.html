@@ -38,9 +38,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">filename</code></em></dt>
 
-     <span class="term"><em><code class="parameter">filename</code></em></span>
      <dd>
 
       <p class="para">
@@ -48,11 +49,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">user</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">user</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,8 +61,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -79,8 +79,8 @@
  <div class="refsect1 examples" id="refsect1-function.chown-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2349">
-    <p><strong>例1 シンプルな  <span class="function"><strong>chown()</strong></span> の例</strong></p>
+   <div class="example" id="example-2350">
+    <p><strong>例1 シンプルな <span class="function"><strong>chown()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;使用するファイル名とユーザー名<br /></span><span style="color: #0000BB">$file_name</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"foo.php"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$path&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"/home/sites/php.net/public_html/sandbox/"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$file_name&nbsp;</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$user_name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"root"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;ユーザーを設定します<br /></span><span style="color: #0000BB">chown</span><span style="color: #007700">(</span><span style="color: #0000BB">$path</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$user_name</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;結果を確認します<br /></span><span style="color: #0000BB">$stat&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stat</span><span style="color: #007700">(</span><span style="color: #0000BB">$path</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">posix_getpwuid</span><span style="color: #007700">(</span><span style="color: #0000BB">$stat</span><span style="color: #007700">[</span><span style="color: #DD0000">'uid'</span><span style="color: #007700">]));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -125,7 +125,7 @@ Array
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.chmod.html" class="function" rel="rdfs-seeAlso">chmod()</a> - ファイルのモードを変更する</span></li>
+    <li class="member"><span class="function"><a href="function.chmod.html" class="function" rel="rdfs-seeAlso">chmod()</a> - ファイルのモードを変更する</span></li>
    </ul>
   </p>
  </div>

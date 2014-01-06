@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>array_reduce()</strong></span> は、配列 <em><code class="parameter">array</code></em>
+   <span class="function"><strong>array_reduce()</strong></span> は、配列 <em><code class="parameter">array</code></em>
    の各要素に <em><code class="parameter">callback</code></em> 関数を繰り返し適用し、
    配列を一つの値に減らします。
   </p>
@@ -37,9 +37,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">array</code></em></dt>
 
-     <span class="term"><em><code class="parameter">array</code></em></span>
      <dd>
 
       <p class="para">
@@ -47,11 +48,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">callback</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">callback</code></em></span>
      <dd>
 
       <p class="para">
@@ -65,11 +66,11 @@
 
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">initial</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">initial</code></em></span>
      <dd>
 
       <p class="para">
@@ -79,8 +80,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -93,7 +93,7 @@
   </p>
   <p class="para">
    配列が空で <em><code class="parameter">initial</code></em> が渡されなかった場合は、
-    <span class="function"><strong>array_reduce()</strong></span> は <strong><code>NULL</code></strong> を返します。
+   <span class="function"><strong>array_reduce()</strong></span> は <strong><code>NULL</code></strong> を返します。
   </p>
  </div>
 
@@ -129,8 +129,8 @@
  <div class="refsect1 examples" id="refsect1-function.array-reduce-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4973">
-    <p><strong>例1  <span class="function"><strong>array_reduce()</strong></span> の例</strong></p>
+   <div class="example" id="example-4975">
+    <p><strong>例1 <span class="function"><strong>array_reduce()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">rsum</span><span style="color: #007700">(</span><span style="color: #0000BB">$v</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$v&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">rmul</span><span style="color: #007700">(</span><span style="color: #0000BB">$v</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$v&nbsp;</span><span style="color: #007700">*=&nbsp;</span><span style="color: #0000BB">$w</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$v</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$x&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reduce</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rsum"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reduce</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rmul"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_reduce</span><span style="color: #007700">(</span><span style="color: #0000BB">$x</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"rsum"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"No&nbsp;data&nbsp;to&nbsp;reduce"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -153,10 +153,10 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.array-filter.html" class="function" rel="rdfs-seeAlso">array_filter()</a> - コールバック関数を使用して、配列の要素をフィルタリングする</span></li>
-    <li class="member"> <span class="function"><a href="function.array-map.html" class="function" rel="rdfs-seeAlso">array_map()</a> - 指定した配列の要素にコールバック関数を適用する</span></li>
-    <li class="member"> <span class="function"><a href="function.array-unique.html" class="function" rel="rdfs-seeAlso">array_unique()</a> - 配列から重複した値を削除する</span></li>
-    <li class="member"> <span class="function"><a href="function.array-count-values.html" class="function" rel="rdfs-seeAlso">array_count_values()</a> - 配列の値の数を数える</span></li>
+    <li class="member"><span class="function"><a href="function.array-filter.html" class="function" rel="rdfs-seeAlso">array_filter()</a> - コールバック関数を使用して、配列の要素をフィルタリングする</span></li>
+    <li class="member"><span class="function"><a href="function.array-map.html" class="function" rel="rdfs-seeAlso">array_map()</a> - 指定した配列の要素にコールバック関数を適用する</span></li>
+    <li class="member"><span class="function"><a href="function.array-unique.html" class="function" rel="rdfs-seeAlso">array_unique()</a> - 配列から重複した値を削除する</span></li>
+    <li class="member"><span class="function"><a href="function.array-count-values.html" class="function" rel="rdfs-seeAlso">array_count_values()</a> - 配列の値の数を数える</span></li>
    </ul>
   </p>
  </div>

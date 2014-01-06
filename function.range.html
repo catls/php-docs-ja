@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">start</code></em></dt>
 
-     <span class="term"><em><code class="parameter">start</code></em></span>
      <dd>
 
       <p class="para">
@@ -45,11 +46,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">end</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">end</code></em></span>
      <dd>
 
       <p class="para">
@@ -57,11 +58,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">step</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">step</code></em></span>
      <dd>
 
       <p class="para">
@@ -71,8 +72,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -110,7 +110,7 @@
       <tr>
        <td>4.1.0 から 4.3.2</td>
        <td>
-        PHP 4.1.0 から 4.3.2 までは、 <span class="function"><strong>range()</strong></span>
+        PHP 4.1.0 から 4.3.2 までは、<span class="function"><strong>range()</strong></span>
         は数値文字を文字 (string) として認識し、数値 (integer) としては認識しません。
         その代わり、文字列シーケンスが使用されます。例えば、
         <em>&quot;4242&quot;</em> は <em>&quot;4&quot;</em> として扱われます。
@@ -120,7 +120,7 @@
       <tr>
        <td>4.1.0</td>
        <td>
-        4.1.0 より前のバージョンでは、 <span class="function"><strong>range()</strong></span> 関数は、
+        4.1.0 より前のバージョンでは、<span class="function"><strong>range()</strong></span> 関数は、
         昇順の整数配列のみを生成しました。
         文字シーケンス及び降順の配列のサポートが 4.1.0 で追加されました。
         文字のシーケンスは一文字のみに限定されます。それより長い文字が指定された場合は、
@@ -138,8 +138,8 @@
  <div class="refsect1 examples" id="refsect1-function.range-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5026">
-    <p><strong>例1  <span class="function"><strong>range()</strong></span> の例</strong></p>
+   <div class="example" id="example-5028">
+    <p><strong>例1 <span class="function"><strong>range()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;array(0,&nbsp;1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6,&nbsp;7,&nbsp;8,&nbsp;9,&nbsp;10,&nbsp;11,&nbsp;12)<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;step&nbsp;引数は&nbsp;PHP&nbsp;5.0.0&nbsp;以降で使用できます<br />//&nbsp;array(0,&nbsp;10,&nbsp;20,&nbsp;30,&nbsp;40,&nbsp;50,&nbsp;60,&nbsp;70,&nbsp;80,&nbsp;90,&nbsp;100)<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$number</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;文字列シーケンスは&nbsp;PHP&nbsp;4.1.0&nbsp;以降で使用できます<br />//&nbsp;array('a',&nbsp;'b',&nbsp;'c',&nbsp;'d',&nbsp;'e',&nbsp;'f',&nbsp;'g',&nbsp;'h',&nbsp;'i');<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'i'</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$letter</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$letter</span><span style="color: #007700">;<br />}<br /></span><span style="color: #FF8000">//&nbsp;array('c',&nbsp;'b',&nbsp;'a');<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #DD0000">'c'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'a'</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$letter</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$letter</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -155,8 +155,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.shuffle.html" class="function" rel="rdfs-seeAlso">shuffle()</a> - 配列をシャッフルする</span></li>
-    <li class="member"> <span class="function"><a href="function.array-fill.html" class="function" rel="rdfs-seeAlso">array_fill()</a> - 配列を指定した値で埋める</span></li>
+    <li class="member"><span class="function"><a href="function.shuffle.html" class="function" rel="rdfs-seeAlso">shuffle()</a> - 配列をシャッフルする</span></li>
+    <li class="member"><span class="function"><a href="function.array-fill.html" class="function" rel="rdfs-seeAlso">array_fill()</a> - 配列を指定した値で埋める</span></li>
     <li class="member"><a href="control-structures.foreach.html" class="link">foreach</a></li>
    </ul>
   </p>

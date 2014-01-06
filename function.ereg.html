@@ -41,9 +41,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">pattern</code></em></dt>
 
-     <span class="term"><em><code class="parameter">pattern</code></em></span>
      <dd>
 
       <p class="para">
@@ -51,11 +52,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">string</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">string</code></em></span>
      <dd>
 
       <p class="para">
@@ -63,11 +64,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">regs</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">regs</code></em></span>
      <dd>
 
       <p class="para">
@@ -84,8 +85,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -126,9 +126,9 @@
         PHP 4.1.0 以前(4.1.0 を含む)のバージョンでは、<em>$regs</em>
         にはちょうど 10 個の要素が代入されました。これは、実際にマッチした
         括弧付きのサブ文字列が 10 より多くても少なくても同じでした。ただし、
-         <span class="function"><strong>ereg()</strong></span> にはより多くの部分文字列にマッチする
+        <span class="function"><strong>ereg()</strong></span> にはより多くの部分文字列にマッチする
         能力があります。マッチするものが見付からなかった場合、
-        <em>$regs</em> は、 <span class="function"><strong>ereg()</strong></span> により
+        <em>$regs</em> は、<span class="function"><strong>ereg()</strong></span> により
         書き換えられません。
        </td>
       </tr>
@@ -144,8 +144,8 @@
  <div class="refsect1 examples" id="refsect1-function.ereg-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4807">
-    <p><strong>例1  <span class="function"><strong>ereg()</strong></span> の例</strong></p>
+   <div class="example" id="example-4809">
+    <p><strong>例1 <span class="function"><strong>ereg()</strong></span> の例</strong></p>
     <div class="example-contents"><p>
      以下のサンプルコードは、ISO フォーマット(YYYY-MM-DD) で格納されている
      日付を DD.MM.YYYY フォーマットで表示するものです。
@@ -172,8 +172,8 @@ PCRE への変換についてのヘルプは <a href="reference.pcre.pattern.pos
 相違点の一覧</a> を参照ください。</p></p></blockquote>
   <div class="tip"><strong class="tip">ヒント</strong>
    <p class="para">
-     <span class="function"><strong>ereg()</strong></span> は PHP 5.3.0 以降で非推奨になりました。この関数のかわりに
-     <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span> を使うことを推奨します。
+    <span class="function"><strong>ereg()</strong></span> は PHP 5.3.0 以降で非推奨になりました。この関数のかわりに
+    <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span> を使うことを推奨します。
    </p>
   </div>
  </div>
@@ -183,13 +183,13 @@ PCRE への変換についてのヘルプは <a href="reference.pcre.pattern.pos
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.eregi.html" class="function" rel="rdfs-seeAlso">eregi()</a> - 大文字小文字を区別せずに正規表現によるマッチングを行う</span></li>
-    <li class="member"> <span class="function"><a href="function.ereg-replace.html" class="function" rel="rdfs-seeAlso">ereg_replace()</a> - 正規表現による置換を行う</span></li>
-    <li class="member"> <span class="function"><a href="function.eregi-replace.html" class="function" rel="rdfs-seeAlso">eregi_replace()</a> - 大文字小文字を区別せずに正規表現による置換を行う</span></li>
-    <li class="member"> <span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - 正規表現によるマッチングを行う</span></li>
-    <li class="member"> <span class="function"><a href="function.strpos.html" class="function" rel="rdfs-seeAlso">strpos()</a> - 文字列内の部分文字列が最初に現れる場所を見つける</span></li>
-    <li class="member"> <span class="function"><a href="function.strstr.html" class="function" rel="rdfs-seeAlso">strstr()</a> - 文字列が最初に現れる位置を見つける</span></li>
-    <li class="member"> <span class="function"><a href="function.quotemeta.html" class="function" rel="rdfs-seeAlso">quotemeta()</a> - メタ文字をクォートする</span></li>
+    <li class="member"><span class="function"><a href="function.eregi.html" class="function" rel="rdfs-seeAlso">eregi()</a> - 大文字小文字を区別せずに正規表現によるマッチングを行う</span></li>
+    <li class="member"><span class="function"><a href="function.ereg-replace.html" class="function" rel="rdfs-seeAlso">ereg_replace()</a> - 正規表現による置換を行う</span></li>
+    <li class="member"><span class="function"><a href="function.eregi-replace.html" class="function" rel="rdfs-seeAlso">eregi_replace()</a> - 大文字小文字を区別せずに正規表現による置換を行う</span></li>
+    <li class="member"><span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - 正規表現によるマッチングを行う</span></li>
+    <li class="member"><span class="function"><a href="function.strpos.html" class="function" rel="rdfs-seeAlso">strpos()</a> - 文字列内の部分文字列が最初に現れる場所を見つける</span></li>
+    <li class="member"><span class="function"><a href="function.strstr.html" class="function" rel="rdfs-seeAlso">strstr()</a> - 文字列が最初に現れる位置を見つける</span></li>
+    <li class="member"><span class="function"><a href="function.quotemeta.html" class="function" rel="rdfs-seeAlso">quotemeta()</a> - メタ文字をクォートする</span></li>
    </ul>
   </p>
  </div>

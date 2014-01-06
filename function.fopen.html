@@ -28,7 +28,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>fopen()</strong></span> は、<em><code class="parameter">filename</code></em>
+   <span class="function"><strong>fopen()</strong></span> は、<em><code class="parameter">filename</code></em>
    で指定されたリソースをストリームに結び付けます。
   </p>
  </div>
@@ -39,9 +39,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">filename</code></em></dt>
 
-     <span class="term"><em><code class="parameter">filename</code></em></span>
      <dd>
 
       <p class="para">
@@ -94,11 +95,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">mode</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">mode</code></em></span>
      <dd>
 
       <p class="para">
@@ -107,7 +108,7 @@
        この指定は、下表のうちのどれかとなります。
        <table class="doctable table">
         <caption><strong>
-          <span class="function"><strong>fopen()</strong></span> で使用可能な
+         <span class="function"><strong>fopen()</strong></span> で使用可能な
          <em><code class="parameter">mode</code></em> のリスト
         </strong></caption>
         
@@ -175,7 +176,7 @@
            <td><em>&#039;x&#039;</em></td>
            <td>
             書き込みのみでオープンします。ファイルポインタをファイルの先頭に置きます。
-            ファイルが既に存在する場合には  <span class="function"><strong>fopen()</strong></span> は失敗し、
+            ファイルが既に存在する場合には <span class="function"><strong>fopen()</strong></span> は失敗し、
             <strong><code>E_WARNING</code></strong> レベルのエラーを発行します。
             ファイルが存在しない場合には新規作成を試みます。
             これは <em>open(2)</em> システムコールにおける
@@ -200,10 +201,10 @@
             ファイルが既に存在する場合でもそれを (<em>&#039;w&#039;</em> のように) 切り詰めたりせず、
             また (<em>&#039;x&#039;</em> のように) 関数のコールが失敗することもありません。
             ファイルポインタをファイルの先頭に置きます。これは、アドバイザリ・ロック
-            ( <span class="function"><a href="function.flock.html" class="function">flock()</a></span> を参照ください) を確保してからファイルを変更したい場合に便利です。
+            (<span class="function"><a href="function.flock.html" class="function">flock()</a></span> を参照ください) を確保してからファイルを変更したい場合に便利です。
             <em>&#039;w&#039;</em> を使うと、ロックを取得する前にファイルを切り詰めてしまいます
             (もしファイルを切り詰めたいのなら、ロックを要求した後で
-             <span class="function"><a href="function.ftruncate.html" class="function">ftruncate()</a></span> を使うこともできます)。
+            <span class="function"><a href="function.ftruncate.html" class="function">ftruncate()</a></span> を使うこともできます)。
            </td>
           </tr>
 
@@ -258,7 +259,7 @@
       </p></blockquote>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
-        互換性維持のために、 <span class="function"><strong>fopen()</strong></span> でファイルをオープンする際は
+        互換性維持のために、<span class="function"><strong>fopen()</strong></span> でファイルをオープンする際は
         常に <em>&#039;b&#039;</em> フラグを指定することが強く推奨されます。
        </p>
       </p></blockquote>
@@ -272,11 +273,11 @@
       </p></blockquote>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">use_include_path</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">use_include_path</code></em></span>
      <dd>
 
       <p class="para">
@@ -286,11 +287,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">context</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">context</code></em></span>
      <dd>
 
       <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">コンテキストのサポートは、
@@ -298,8 +299,7 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
 <a href="book.stream.html" class="xref">ストリーム</a> を参照してください。</span></p></blockquote>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -378,8 +378,8 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
  <div class="refsect1 examples" id="refsect1-function.fopen-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2384">
-    <p><strong>例1  <span class="function"><strong>fopen()</strong></span> の例</strong></p>
+   <div class="example" id="example-2385">
+    <p><strong>例1 <span class="function"><strong>fopen()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/rasmus/file.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/rasmus/file.gif"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"wb"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"ftp://user:password@example.com/somefile.txt"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -400,7 +400,7 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
 error_reporting</a> を警告を発生しないレベルまで小さくする必要があります。
 PHP 4.3.7 以降では、<em>https://</em> ラッパーでストリームをオープンする際に
 バグがある IIS サーバーソフトウエアを検出することができ、この警告を抑制することができます。
-あなたが <em>ssl://</em> ソケットを作成するために   <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> を使用している場合、
+あなたが <em>ssl://</em> ソケットを作成するために  <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> を使用している場合、
 自らこの警告を検出し、抑制する必要があります。</p></div>
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara"> <a href="features.safe-mode.html" class="link">セーフモード</a> が有効の場合、PHP は、
 操作を行うディレクトリが、実行するスクリプトと同じ UID (所有者)を有しているか
@@ -416,7 +416,7 @@ PHP 4.3.7 以降では、<em>https://</em> ラッパーでストリームをオ�
    <p class="para">
     この関数は、<em><code class="parameter">filename</code></em> がディレクトリの場合でも成功することがあります。
     <em><code class="parameter">filename</code></em> がファイルなのかディレクトリなのかがはっきりしない場合は、
-    まず  <span class="function"><a href="function.is-dir.html" class="function">is_dir()</a></span> を使ってから  <span class="function"><strong>fopen()</strong></span> を呼ぶようにしましょう。
+    まず <span class="function"><a href="function.is-dir.html" class="function">is_dir()</a></span> を使ってから <span class="function"><strong>fopen()</strong></span> を呼ぶようにしましょう。
    </p>
   </p></blockquote>
  </div>
@@ -427,18 +427,18 @@ PHP 4.3.7 以降では、<em>https://</em> ラッパーでストリームをオ�
   <p class="para">
    <ul class="simplelist">
     <li class="member"><a href="wrappers.html" class="xref">サポートするプロトコル/ラッパー</a></li>
-    <li class="member"> <span class="function"><a href="function.fclose.html" class="function" rel="rdfs-seeAlso">fclose()</a> - オープンされたファイルポインタをクローズする</span></li>
-    <li class="member"> <span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - ファイルポインタから 1 行取得する</span></li>
-    <li class="member"> <span class="function"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - バイナリセーフなファイルの読み込み</span></li>
-    <li class="member"> <span class="function"><a href="function.fwrite.html" class="function" rel="rdfs-seeAlso">fwrite()</a> - バイナリセーフなファイル書き込み処理</span></li>
-    <li class="member"> <span class="function"><a href="function.fsockopen.html" class="function" rel="rdfs-seeAlso">fsockopen()</a> - インターネット接続もしくは Unix ドメインソケット接続をオープンする</span></li>
-    <li class="member"> <span class="function"><a href="function.file.html" class="function" rel="rdfs-seeAlso">file()</a> - ファイル全体を読み込んで配列に格納する</span></li>
-    <li class="member"> <span class="function"><a href="function.file-exists.html" class="function" rel="rdfs-seeAlso">file_exists()</a> - ファイルまたはディレクトリが存在するかどうか調べる</span></li>
-    <li class="member"> <span class="function"><a href="function.is-readable.html" class="function" rel="rdfs-seeAlso">is_readable()</a> - ファイルが存在し、読み込み可能であるかどうかを知る</span></li>
-    <li class="member"> <span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - ストリームにタイムアウトを設定する</span></li>
-    <li class="member"> <span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - プロセスへのファイルポインタをオープンする</span></li>
-    <li class="member"> <span class="function"><a href="function.stream-context-create.html" class="function" rel="rdfs-seeAlso">stream_context_create()</a> - ストリームコンテキストを作成する</span></li>
-    <li class="member"> <span class="function"><a href="function.umask.html" class="function" rel="rdfs-seeAlso">umask()</a> - 現在の umask を変更する</span></li>
+    <li class="member"><span class="function"><a href="function.fclose.html" class="function" rel="rdfs-seeAlso">fclose()</a> - オープンされたファイルポインタをクローズする</span></li>
+    <li class="member"><span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - ファイルポインタから 1 行取得する</span></li>
+    <li class="member"><span class="function"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - バイナリセーフなファイルの読み込み</span></li>
+    <li class="member"><span class="function"><a href="function.fwrite.html" class="function" rel="rdfs-seeAlso">fwrite()</a> - バイナリセーフなファイル書き込み処理</span></li>
+    <li class="member"><span class="function"><a href="function.fsockopen.html" class="function" rel="rdfs-seeAlso">fsockopen()</a> - インターネット接続もしくは Unix ドメインソケット接続をオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.file.html" class="function" rel="rdfs-seeAlso">file()</a> - ファイル全体を読み込んで配列に格納する</span></li>
+    <li class="member"><span class="function"><a href="function.file-exists.html" class="function" rel="rdfs-seeAlso">file_exists()</a> - ファイルまたはディレクトリが存在するかどうか調べる</span></li>
+    <li class="member"><span class="function"><a href="function.is-readable.html" class="function" rel="rdfs-seeAlso">is_readable()</a> - ファイルが存在し、読み込み可能であるかどうかを知る</span></li>
+    <li class="member"><span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - ストリームにタイムアウトを設定する</span></li>
+    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - プロセスへのファイルポインタをオープンする</span></li>
+    <li class="member"><span class="function"><a href="function.stream-context-create.html" class="function" rel="rdfs-seeAlso">stream_context_create()</a> - ストリームコンテキストを作成する</span></li>
+    <li class="member"><span class="function"><a href="function.umask.html" class="function" rel="rdfs-seeAlso">umask()</a> - 現在の umask を変更する</span></li>
     <li class="member"><a href="class.splfileobject.html" class="classname">SplFileObject</a></li>
    </ul>
   </p>

@@ -30,7 +30,7 @@
    why the node was used, if lazy connections have been used and if global transaction
    ID injection has been performed. The monitoring information provided enables
    user to verify plugin decisions and to plan their cluster resources based on usage pattern.
-   The function  <span class="function"><a href="function.mysqlnd-ms-get-stats.html" class="function">mysqlnd_ms_get_stats()</a></span>
+   The function <span class="function"><a href="function.mysqlnd-ms-get-stats.html" class="function">mysqlnd_ms_get_stats()</a></span>
    is used to access the statistics. Please, see the functions description for a list
    of available statistics.
   </p>
@@ -45,7 +45,7 @@
    script cannot rely on the fact that it sees only its own changes to statistics.
   </p>
   <p class="para">
-   <div class="example" id="example-1834">
+   <div class="example" id="example-1835">
     <p><strong>例1 Verify plugin activity in a non-threaded deployment model</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_ms.enable=1
@@ -68,14 +68,14 @@ mysqlnd_ms.collect_statistics=1</pre>
    contributed to the overall statistics.
   </p>
   <p class="para">
-   Utilizing PHPs  <span class="function"><a href="function.register-shutdown-function.html" class="function">register_shutdown_function()</a></span> function or the
+   Utilizing PHPs <span class="function"><a href="function.register-shutdown-function.html" class="function">register_shutdown_function()</a></span> function or the
    <em>auto_append_file</em> PHP configuration directive it is
    easily possible to dump statistics into, for example, a log file when a script
    finishes. Instead of using a log file it is also possible to send the statistics
    to an external monitoring tool for recording and display.
   </p>
   <p class="para">
-   <div class="example" id="example-1835">
+   <div class="example" id="example-1836">
     <p><strong>例2 Recording statistics during shutdown</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_ms.enable=1

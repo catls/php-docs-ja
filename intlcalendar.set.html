@@ -54,9 +54,10 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
-   <dt>
+   
+    <dt>
+<em><code class="parameter">field</code></em></dt>
 
-    <span class="term"><em><code class="parameter">field</code></em></span>
     <dd>
 
      
@@ -70,11 +71,11 @@
 
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">value</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">value</code></em></span>
     <dd>
 
      <p class="para">
@@ -82,11 +83,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">year</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">year</code></em></span>
     <dd>
 
      <p class="para">
@@ -94,11 +95,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">month</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">month</code></em></span>
     <dd>
 
      <p class="para">
@@ -106,11 +107,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">dayOfMonth</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">dayOfMonth</code></em></span>
     <dd>
 
      <p class="para">
@@ -121,11 +122,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">hour</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">hour</code></em></span>
     <dd>
 
      <p class="para">
@@ -133,11 +134,11 @@
      </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">minute</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">minute</code></em></span>
     <dd>
 
      <p class="para">
@@ -145,11 +146,11 @@
       </p>
     </dd>
 
-   </dt>
+   
+   
+    <dt>
+<em><code class="parameter">second</code></em></dt>
 
-   <dt>
-
-    <span class="term"><em><code class="parameter">second</code></em></span>
     <dd>
 
      <p class="para">
@@ -157,8 +158,7 @@
      </p>
     </dd>
 
-   </dt>
-
+   
   </dl>
 
  </div>
@@ -176,8 +176,8 @@
  <div class="refsect1 examples" id="refsect1-intlcalendar.set-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2619">
-   <p><strong>例1  <span class="function"><strong>IntlCalendar::set()</strong></span></strong></p>
+   <div class="example" id="example-2620">
+   <p><strong>例1 <span class="function"><strong>IntlCalendar::set()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'date.timezone'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Europe/Lisbon'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'intl.default_locale'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'pt_PT'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//Calls&nbsp;made&nbsp;later&nbsp;have&nbsp;priority<br /></span><span style="color: #0000BB">$cal&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">IntlGregorianCalendar</span><span style="color: #007700">(</span><span style="color: #0000BB">2013</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">6&nbsp;</span><span style="color: #FF8000">/*&nbsp;July&nbsp;*/</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cal</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlCalendar</span><span style="color: #007700">::</span><span style="color: #0000BB">FIELD_YEAR</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2012</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cal</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlCalendar</span><span style="color: #007700">::</span><span style="color: #0000BB">FIELD_EXTENDED_YEAR</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2011</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlDateFormatter</span><span style="color: #007700">::</span><span style="color: #0000BB">formatObject</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal</span><span style="color: #007700">));<br /><br /><br /></span><span style="color: #0000BB">$cal&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">IntlGregorianCalendar</span><span style="color: #007700">(</span><span style="color: #0000BB">2013</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">6&nbsp;</span><span style="color: #FF8000">/*&nbsp;July&nbsp;*/</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cal</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlCalendar</span><span style="color: #007700">::</span><span style="color: #0000BB">FIELD_YEAR</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2012</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cal</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlCalendar</span><span style="color: #007700">::</span><span style="color: #0000BB">FIELD_EXTENDED_YEAR</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2011</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//the&nbsp;time&nbsp;has&nbsp;not&nbsp;been&nbsp;recalculated&nbsp;yet.&nbsp;If&nbsp;we&nbsp;clear&nbsp;the&nbsp;extended&nbsp;year,<br />//the&nbsp;year&nbsp;set&nbsp;before&nbsp;will&nbsp;be&nbsp;used<br /></span><span style="color: #0000BB">$cal</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">clear</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlCalendar</span><span style="color: #007700">::</span><span style="color: #0000BB">FIELD_EXTENDED_YEAR</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlDateFormatter</span><span style="color: #007700">::</span><span style="color: #0000BB">formatObject</span><span style="color: #007700">(</span><span style="color: #0000BB">$cal</span><span style="color: #007700">));</span>
@@ -201,9 +201,9 @@ string(20) &quot;01/07/2012, 00:00:00&quot;
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="methodname"><a href="intlcalendar.get.html" class="methodname" rel="rdfs-seeAlso">IntlCalendar::get()</a> - Get the value for a field</span></li>
-    <li class="member"> <span class="methodname"><a href="intlcalendar.add.html" class="methodname" rel="rdfs-seeAlso">IntlCalendar::add()</a> - Add a (signed) amount of time to a field</span></li>
-    <li class="member"> <span class="methodname"><a href="intlcalendar.roll.html" class="methodname" rel="rdfs-seeAlso">IntlCalendar::roll()</a> - Add value to field without carrying into more significant fields</span></li>
+    <li class="member"><span class="methodname"><a href="intlcalendar.get.html" class="methodname" rel="rdfs-seeAlso">IntlCalendar::get()</a> - Get the value for a field</span></li>
+    <li class="member"><span class="methodname"><a href="intlcalendar.add.html" class="methodname" rel="rdfs-seeAlso">IntlCalendar::add()</a> - Add a (signed) amount of time to a field</span></li>
+    <li class="member"><span class="methodname"><a href="intlcalendar.roll.html" class="methodname" rel="rdfs-seeAlso">IntlCalendar::roll()</a> - Add value to field without carrying into more significant fields</span></li>
    </ul>
   </p>
  </div>

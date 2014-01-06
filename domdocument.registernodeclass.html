@@ -40,9 +40,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">baseclass</code></em></dt>
 
-     <span class="term"><em><code class="parameter">baseclass</code></em></span>
      <dd>
 
       <p class="para">
@@ -51,11 +52,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">extendedclass</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">extendedclass</code></em></span>
      <dd>
 
       <p class="para">
@@ -65,8 +66,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -116,7 +116,7 @@
  <div class="refsect1 examples" id="refsect1-domdocument.registernodeclass-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5409">
+   <div class="example" id="example-5411">
     <p><strong>例1 新しいメソッドを DOMElement に追加し、コードを書きやすくする</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -135,7 +135,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5410">
+   <div class="example" id="example-5412">
     <p><strong>例2 カスタムクラス形式での要素の取得</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -154,13 +154,13 @@ text in child
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5411">
+   <div class="example" id="example-5413">
     <p><strong>例3 オーナードキュメントの取得</strong></p>
     <div class="example-contents"><p>
      自作の <a href="class.domdocument.html" class="classname">DOMDocument</a> インスタンスを作成すると、
      <var class="varname"><var class="varname">ownerDocument</var></var> プロパティが作成元のクラスを指すようになります。
      つまり <a href="class.domdocument.html" class="classname">DOMDocument</a> の
-      <span class="function"><strong>DOMDocument::registerNodeClass()</strong></span> を使う必要はない
+     <span class="function"><strong>DOMDocument::registerNodeClass()</strong></span> を使う必要はない
      (実際、使えない) ということです。
     </p></div>
     <div class="example-contents">

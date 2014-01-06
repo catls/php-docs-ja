@@ -30,8 +30,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>radius_add_server()</strong></span> は複数回コールされることも
-   ありえます。また、 <span class="function"><a href="function.radius-config.html" class="function">radius_config()</a></span> とともに
+   <span class="function"><strong>radius_add_server()</strong></span> は複数回コールされることも
+   ありえます。また、<span class="function"><a href="function.radius-config.html" class="function">radius_config()</a></span> とともに
    使用されることでしょう。最大で 10 までのサーバーを指定できます。
    複数のサーバーが指定されると、有効なレスポンスを受信するか
    あるいは各サーバーへの接続回数が <em><code class="parameter">max_tries</code></em>
@@ -45,20 +45,21 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">radius_handle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">radius_handle</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">hostname</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">hostname</code></em></span>
      <dd>
 
       <p class="para">
@@ -67,11 +68,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">port</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">port</code></em></span>
      <dd>
 
       <p class="para">
@@ -86,11 +87,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">secret</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">secret</code></em></span>
      <dd>
 
       <p class="para">
@@ -100,11 +101,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">timeout</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">timeout</code></em></span>
      <dd>
 
       <p class="para">
@@ -113,11 +114,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">max_tries</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">max_tries</code></em></span>
      <dd>
 
       <p class="para">
@@ -126,8 +127,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -145,8 +145,8 @@
  <div class="refsect1 examples" id="refsect1-function.radius-add-server-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-613">
-    <p><strong>例1  <span class="function"><strong>radius_add_server()</strong></span> の例</strong></p>
+   <div class="example" id="example-614">
+    <p><strong>例1 <span class="function"><strong>radius_add_server()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">radius_add_server</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'radius.example.com'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1812</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'testing123'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'RadiusError:'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">radius_strerror</span><span style="color: #007700">(</span><span style="color: #0000BB">$res</span><span style="color: #007700">).&nbsp;</span><span style="color: #DD0000">"\n&lt;br&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;exit;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -163,7 +163,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.radius-config.html" class="function" rel="rdfs-seeAlso">radius_config()</a> - 指定した設定ファイルをライブラリに読み込ませる</span></li>
+    <li class="member"><span class="function"><a href="function.radius-config.html" class="function" rel="rdfs-seeAlso">radius_config()</a> - 指定した設定ファイルをライブラリに読み込ませる</span></li>
    </ul>
   </p>
  </div>

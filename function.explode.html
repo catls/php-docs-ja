@@ -39,9 +39,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">delimiter</code></em></dt>
 
-     <span class="term"><em><code class="parameter">delimiter</code></em></span>
      <dd>
 
       <p class="para">
@@ -49,11 +50,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">string</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">string</code></em></span>
      <dd>
 
       <p class="para">
@@ -61,11 +62,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">limit</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">limit</code></em></span>
      <dd>
 
       <p class="para">
@@ -82,15 +83,14 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
   <p class="para">
-   歴史的理由により、 <span class="function"><a href="function.implode.html" class="function">implode()</a></span>
+   歴史的理由により、<span class="function"><a href="function.implode.html" class="function">implode()</a></span>
    はいずれのパラメータ順も受け入れることができますが、
-    <span class="function"><strong>explode()</strong></span> はそうできません。
+   <span class="function"><strong>explode()</strong></span> はそうできません。
    <em><code class="parameter">string</code></em> 引数の前に必ず
    <em><code class="parameter">delimiter</code></em> 引数がくるように確認する必要があります。
   </p>
@@ -105,7 +105,7 @@
   </p>
   <p class="para">
    空の文字列 (&quot;&quot;) が <em><code class="parameter">delimiter</code></em> として使用された場合、
-    <span class="function"><strong>explode()</strong></span> は <strong><code>FALSE</code></strong>
+   <span class="function"><strong>explode()</strong></span> は <strong><code>FALSE</code></strong>
    を返します。<em><code class="parameter">delimiter</code></em> に引数
    <em><code class="parameter">string</code></em> に含まれていない値が含まれている場合は、
    <em><code class="parameter">limit</code></em> が負の値なら空の配列、そうでなければ
@@ -153,8 +153,8 @@
  <div class="refsect1 examples" id="refsect1-function.explode-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4826">
-    <p><strong>例1  <span class="function"><strong>explode()</strong></span> の例</strong></p>
+   <div class="example" id="example-4828">
+    <p><strong>例1 <span class="function"><strong>explode()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;例&nbsp;1<br /></span><span style="color: #0000BB">$pizza&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"piece1&nbsp;piece2&nbsp;piece3&nbsp;piece4&nbsp;piece5&nbsp;piece6"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$pieces&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">explode</span><span style="color: #007700">(</span><span style="color: #DD0000">"&nbsp;"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pizza</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$pieces</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;piece1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$pieces</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;piece2<br /><br />//&nbsp;例&nbsp;2<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"foo:*:1023:1000::/home/foo:/bin/sh"</span><span style="color: #007700">;<br />list(</span><span style="color: #0000BB">$user</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pass</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$uid</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$gid</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$gecos</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$home</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$shell</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">explode</span><span style="color: #007700">(</span><span style="color: #DD0000">":"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$user</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;foo<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$pass</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;*<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -165,8 +165,8 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4827">
-    <p><strong>例2  <span class="function"><strong>explode()</strong></span> の返り値の例</strong></p>
+   <div class="example" id="example-4829">
+    <p><strong>例2 <span class="function"><strong>explode()</strong></span> の返り値の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;&nbsp;デリミタを含まない文字列の場合は、<br />&nbsp;&nbsp;&nbsp;単に元の文字列だけを含む一要素の配列を返します<br />*/<br /></span><span style="color: #0000BB">$input1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"hello"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$input2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"hello,there"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">explode</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">','</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$input1&nbsp;</span><span style="color: #007700">)&nbsp;);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">explode</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">','</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$input2&nbsp;</span><span style="color: #007700">)&nbsp;);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -191,7 +191,7 @@ array(2)
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4828">
+   <div class="example" id="example-4830">
     <p><strong>例3 <em><code class="parameter">limit</code></em> パラメータの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -232,12 +232,12 @@ Array
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.preg-split.html" class="function" rel="rdfs-seeAlso">preg_split()</a> - 正規表現で文字列を分割する</span></li>
-    <li class="member"> <span class="function"><a href="function.str-split.html" class="function" rel="rdfs-seeAlso">str_split()</a> - 文字列を配列に変換する</span></li>
-    <li class="member"> <span class="function"><a href="function.mb-split.html" class="function" rel="rdfs-seeAlso">mb_split()</a> - マルチバイト文字列を正規表現により分割する</span></li>
-    <li class="member"> <span class="function"><a href="function.str-word-count.html" class="function" rel="rdfs-seeAlso">str_word_count()</a> - 文字列に使用されている単語についての情報を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.strtok.html" class="function" rel="rdfs-seeAlso">strtok()</a> - 文字列をトークンに分割する</span></li>
-    <li class="member"> <span class="function"><a href="function.implode.html" class="function" rel="rdfs-seeAlso">implode()</a> - 配列要素を文字列により連結する</span></li>
+    <li class="member"><span class="function"><a href="function.preg-split.html" class="function" rel="rdfs-seeAlso">preg_split()</a> - 正規表現で文字列を分割する</span></li>
+    <li class="member"><span class="function"><a href="function.str-split.html" class="function" rel="rdfs-seeAlso">str_split()</a> - 文字列を配列に変換する</span></li>
+    <li class="member"><span class="function"><a href="function.mb-split.html" class="function" rel="rdfs-seeAlso">mb_split()</a> - マルチバイト文字列を正規表現により分割する</span></li>
+    <li class="member"><span class="function"><a href="function.str-word-count.html" class="function" rel="rdfs-seeAlso">str_word_count()</a> - 文字列に使用されている単語についての情報を返す</span></li>
+    <li class="member"><span class="function"><a href="function.strtok.html" class="function" rel="rdfs-seeAlso">strtok()</a> - 文字列をトークンに分割する</span></li>
+    <li class="member"><span class="function"><a href="function.implode.html" class="function" rel="rdfs-seeAlso">implode()</a> - 配列要素を文字列により連結する</span></li>
    </ul>
   </p>
  </div>

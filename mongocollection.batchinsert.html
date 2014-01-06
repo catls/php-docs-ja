@@ -33,11 +33,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">a</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -48,18 +49,18 @@
        <p class="para">
         追加するドキュメントが <em>_id</em> のキーあるいはプロパティを持たない場合は、
         新しい <a href="class.mongoid.html" class="classname">MongoId</a> インスタンスを作ってそれを代入します。
-        この挙動に関する詳しい情報は  <span class="function"><a href="mongocollection.insert.html" class="function">MongoCollection::insert()</a></span> を参照ください。
+        この挙動に関する詳しい情報は <span class="function"><a href="mongocollection.insert.html" class="function">MongoCollection::insert()</a></span> を参照ください。
        </p>
       </p></blockquote>
      </dd>
 
-    </dt>
-   
-    <dt>
+       
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">options</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -74,10 +75,10 @@
           これを設定すると、(ID の重複などが原因で)
           一括インサートが失敗したときにもデータベースは処理を続行します。
           その結果、一括インサート処理の挙動が一件ごとのインサートを繰り返したときと同じになります。
-          ただし、 <span class="function"><a href="mongodb.lasterror.html" class="function">MongoDB::lastError()</a></span> をコールすると、
+          ただし、<span class="function"><a href="mongodb.lasterror.html" class="function">MongoDB::lastError()</a></span> をコールすると、
           直近の操作が失敗していなくても何か失敗があればエラーが設定されています。
           複数のエラーが発生したときには、
-           <span class="function"><a href="mongodb.lasterror.html" class="function">MongoDB::lastError()</a></span> が返すのは最後に発生したエラーだけとなります。
+          <span class="function"><a href="mongodb.lasterror.html" class="function">MongoDB::lastError()</a></span> が返すのは最後に発生したエラーだけとなります。
          </p>
          <blockquote class="note"><p><strong class="note">注意</strong>: 
           <p class="para">
@@ -118,8 +119,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -196,8 +196,8 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.batchinsert-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1433">
-   <p><strong>例1  <span class="function"><strong>MongoCollection::batchInsert()</strong></span> の例</strong></p>
+  <div class="example" id="example-1434">
+   <p><strong>例1 <span class="function"><strong>MongoCollection::batchInsert()</strong></span> の例</strong></p>
    <div class="example-contents"><p>
     バッチ挿入を使用すると、多くの要素を一度にデータベースに追加できます。
    </p></div>
@@ -224,8 +224,8 @@ string(5) &quot;user3&quot;
    </div>
   </div>
 
-  <div class="example" id="example-1434">
-   <p><strong>例2  <span class="function"><strong>MongoCollection::batchInsert()</strong></span> でエラーを無視する例</strong></p>
+  <div class="example" id="example-1435">
+   <p><strong>例2 <span class="function"><strong>MongoCollection::batchInsert()</strong></span> でエラーを無視する例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$con&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Mongo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$con</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">demo</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$doc1&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoId</span><span style="color: #007700">(</span><span style="color: #DD0000">'4cb4ab6d7addf98506010001'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'desc'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"ONE"</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">$doc2&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoId</span><span style="color: #007700">(</span><span style="color: #DD0000">'4cb4ab6d7addf98506010002'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'desc'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"TWO"</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">$doc3&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoId</span><span style="color: #007700">(</span><span style="color: #DD0000">'4cb4ab6d7addf98506010002'</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;same&nbsp;_id&nbsp;as&nbsp;above<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'desc'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"THREE"</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">$doc4&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoId</span><span style="color: #007700">(</span><span style="color: #DD0000">'4cb4ab6d7addf98506010004'</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'desc'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"FOUR"</span><span style="color: #007700">,<br />);<br /><br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">selectCollection</span><span style="color: #007700">(</span><span style="color: #DD0000">'c'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">batchInsert</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #0000BB">$doc1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$doc2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$doc3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$doc4</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'continueOnError'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">)<br />);<br /><br /></span><span style="color: #0000BB">$docs&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">();<br />foreach&nbsp;(</span><span style="color: #0000BB">$docs&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$doc</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$doc</span><span style="color: #007700">[</span><span style="color: #DD0000">'desc'</span><span style="color: #007700">]);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -249,10 +249,10 @@ string(4) &quot;FOUR&quot;
  <div class="refsect1 seealso" id="refsect1-mongocollection.batchinsert-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"> <span class="function"><a href="mongocollection.insert.html" class="function" rel="rdfs-seeAlso">MongoCollection::insert()</a> - ドキュメントをコレクションに追加する</span></li>
-   <li class="member"> <span class="function"><a href="mongocollection.update.html" class="function" rel="rdfs-seeAlso">MongoCollection::update()</a> - 指定した条件にもとづいてレコードを更新する</span></li>
-   <li class="member"> <span class="function"><a href="mongocollection.find.html" class="function" rel="rdfs-seeAlso">MongoCollection::find()</a> - コレクションに問い合わせ、結果セットの MongoCursor を返す</span></li>
-   <li class="member"> <span class="function"><a href="mongocollection.remove.html" class="function" rel="rdfs-seeAlso">MongoCollection::remove()</a> - レコードをコレクションから削除する</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.insert.html" class="function" rel="rdfs-seeAlso">MongoCollection::insert()</a> - ドキュメントをコレクションに追加する</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.update.html" class="function" rel="rdfs-seeAlso">MongoCollection::update()</a> - 指定した条件にもとづいてレコードを更新する</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.find.html" class="function" rel="rdfs-seeAlso">MongoCollection::find()</a> - コレクションに問い合わせ、結果セットの MongoCursor を返す</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.remove.html" class="function" rel="rdfs-seeAlso">MongoCollection::remove()</a> - レコードをコレクションから削除する</span></li>
    <li class="member">MongoDB コアドキュメントの <a href="docs.mongodb.org/manual/tutorial/insert-documents/" class="link external">&raquo;&nbsp;insert</a></li>
   </ul>
  </div>

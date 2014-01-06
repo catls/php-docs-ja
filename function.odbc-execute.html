@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><a href="function.odbc-prepare.html" class="function">odbc_prepare()</a></span> で準備された命令を実行します。
+   <span class="function"><a href="function.odbc-prepare.html" class="function">odbc_prepare()</a></span> で準備された命令を実行します。
   </p>
  </div>
 
@@ -36,21 +36,22 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">result_id</code></em></dt>
 
-     <span class="term"><em><code class="parameter">result_id</code></em></span>
      <dd>
 
       <p class="para">
-        <span class="function"><a href="function.odbc-prepare.html" class="function">odbc_prepare()</a></span> で取得した結果 ID リソース。
+       <span class="function"><a href="function.odbc-prepare.html" class="function">odbc_prepare()</a></span> で取得した結果 ID リソース。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">parameters_array</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">parameters_array</code></em></span>
      <dd>
 
       <p class="para">
@@ -68,13 +69,12 @@
        空白などの別の文字を前後に付加する必要があります。
        それにより、パラメータがファイル名とみなされることがなくなります
        (もしこのオプションが不要なら、別の仕組み、たとえば
-        <span class="function"><a href="function.odbc-exec.html" class="function">odbc_exec()</a></span>
+       <span class="function"><a href="function.odbc-exec.html" class="function">odbc_exec()</a></span>
        で直接クエリを実行するなどを使用する必要があります)。
       </span>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -92,8 +92,8 @@
  <div class="refsect1 examples" id="refsect1-function.odbc-execute-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-891">
-    <p><strong>例1  <span class="function"><strong>odbc_execute()</strong></span> および  <span class="function"><a href="function.odbc-prepare.html" class="function">odbc_prepare()</a></span> の例</strong></p>
+   <div class="example" id="example-892">
+    <p><strong>例1 <span class="function"><strong>odbc_execute()</strong></span> および <span class="function"><a href="function.odbc-prepare.html" class="function">odbc_prepare()</a></span> の例</strong></p>
     <div class="example-contents"><p>
      次のコードは、myproc の 3 つのパラメータがすべて IN
      パラメータである場合にのみ <var class="varname"><var class="varname">$success</var></var>
@@ -161,7 +161,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.odbc-prepare.html" class="function" rel="rdfs-seeAlso">odbc_prepare()</a> - 実行用に文を準備する</span></li>
+    <li class="member"><span class="function"><a href="function.odbc-prepare.html" class="function" rel="rdfs-seeAlso">odbc_prepare()</a> - 実行用に文を準備する</span></li>
    </ul>
   </p>
  </div>

@@ -24,7 +24,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>array_flip()</strong></span> は、配列を反転して返します。
+   <span class="function"><strong>array_flip()</strong></span> は、配列を反転して返します。
    すなわち、<em><code class="parameter">array</code></em> のキーが値となり、
    <em><code class="parameter">array</code></em> の値がキーとなります。
   </p>
@@ -46,9 +46,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">array</code></em></dt>
 
-     <span class="term"><em><code class="parameter">array</code></em></span>
      <dd>
 
       <p class="para">
@@ -56,8 +57,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -75,8 +75,8 @@
  <div class="refsect1 examples" id="refsect1-function.array-flip-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4945">
-    <p><strong>例1  <span class="function"><strong>array_flip()</strong></span> の例</strong></p>
+   <div class="example" id="example-4947">
+    <p><strong>例1 <span class="function"><strong>array_flip()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$trans&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_flip</span><span style="color: #007700">(</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$original&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -87,8 +87,8 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4946">
-    <p><strong>例2  <span class="function"><strong>array_flip()</strong></span> の例 : 衝突</strong></p>
+   <div class="example" id="example-4948">
+    <p><strong>例2 <span class="function"><strong>array_flip()</strong></span> の例 : 衝突</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$trans&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"c"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$trans&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">array_flip</span><span style="color: #007700">(</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -117,9 +117,9 @@ Array
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.array-values.html" class="function" rel="rdfs-seeAlso">array_values()</a> - 配列の全ての値を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.array-keys.html" class="function" rel="rdfs-seeAlso">array_keys()</a> - 配列のキーすべて、あるいはその一部を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.array-reverse.html" class="function" rel="rdfs-seeAlso">array_reverse()</a> - 要素を逆順にした配列を返す</span></li>
+    <li class="member"><span class="function"><a href="function.array-values.html" class="function" rel="rdfs-seeAlso">array_values()</a> - 配列の全ての値を返す</span></li>
+    <li class="member"><span class="function"><a href="function.array-keys.html" class="function" rel="rdfs-seeAlso">array_keys()</a> - 配列のキーすべて、あるいはその一部を返す</span></li>
+    <li class="member"><span class="function"><a href="function.array-reverse.html" class="function" rel="rdfs-seeAlso">array_reverse()</a> - 要素を逆順にした配列を返す</span></li>
    </ul>
   </p>
  </div>

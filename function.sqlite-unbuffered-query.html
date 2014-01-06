@@ -47,8 +47,8 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>sqlite_unbuffered_query()</strong></span> は
-    <span class="function"><a href="function.sqlite-query.html" class="function">sqlite_query()</a></span> と同じですが、
+   <span class="function"><strong>sqlite_unbuffered_query()</strong></span> は
+   <span class="function"><a href="function.sqlite-query.html" class="function">sqlite_query()</a></span> と同じですが、
    連続的に前方のみにアクセス可能な結果セットが返され、
    各レコードを１件ずつ読み込むことだけしかできないところが異なります。
   </p>
@@ -59,10 +59,10 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <span class="function"><a href="function.sqlite-seek.html" class="function">sqlite_seek()</a></span>,
-     <span class="function"><a href="function.sqlite-rewind.html" class="function">sqlite_rewind()</a></span>,  <span class="function"><a href="function.sqlite-next.html" class="function">sqlite_next()</a></span>,
-     <span class="function"><a href="function.sqlite-current.html" class="function">sqlite_current()</a></span> および
-     <span class="function"><a href="function.sqlite-num-rows.html" class="function">sqlite_num_rows()</a></span> のような関数は、この関数から返
+    <span class="function"><a href="function.sqlite-seek.html" class="function">sqlite_seek()</a></span>,
+    <span class="function"><a href="function.sqlite-rewind.html" class="function">sqlite_rewind()</a></span>, <span class="function"><a href="function.sqlite-next.html" class="function">sqlite_next()</a></span>,
+    <span class="function"><a href="function.sqlite-current.html" class="function">sqlite_current()</a></span> および
+    <span class="function"><a href="function.sqlite-num-rows.html" class="function">sqlite_num_rows()</a></span> のような関数は、この関数から返
     された結果ハンドルでは動作しません。
    </p>
   </p></blockquote>
@@ -74,24 +74,25 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">dbhandle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">dbhandle</code></em></span>
      <dd>
 
       <p class="para">
        SQLite データベースリソース。手続きに従って、
-        <span class="function"><a href="function.sqlite-open.html" class="function">sqlite_open()</a></span> から返されます。
+       <span class="function"><a href="function.sqlite-open.html" class="function">sqlite_open()</a></span> から返されます。
        このパラメータは、
        オブジェクト指向言語型メソッドを使用する場合は不要です。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">query</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">query</code></em></span>
      <dd>
 
       <p class="para">
@@ -103,11 +104,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">result_type</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">result_type</code></em></span>
      <dd>
 
       <p class="para">オプションの <em><code class="parameter">result_type</code></em>
@@ -119,22 +120,21 @@
 <strong><code>SQLITE_BOTH</code></strong> がこの関数のデフォルトです。</p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">error_msg</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">error_msg</code></em></span>
      <dd>
 
       <p class="para">
        もしエラーが発生した場合、ここに保存されます。SQL 構文のエラーは
-        <span class="function"><a href="function.sqlite-last-error.html" class="function">sqlite_last_error()</a></span> 関数で取得することが
+       <span class="function"><a href="function.sqlite-last-error.html" class="function">sqlite_last_error()</a></span> 関数で取得することが
        できないため、このパラメータが特に重要となります。
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -152,7 +152,7 @@
    結果セットを返します。失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-    <span class="function"><strong>sqlite_unbuffered_query()</strong></span> は、
+   <span class="function"><strong>sqlite_unbuffered_query()</strong></span> は、
    各レコードを順番に読み込む場合にのみ利用可能な
    シーケンシャルで前進のみ可能な結果セットを返します。
   </p>
@@ -192,7 +192,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.sqlite-query.html" class="function" rel="rdfs-seeAlso">sqlite_query()</a> - 指定したデータベースに対してクエリを実行し、結果ハンドル
+    <li class="member"><span class="function"><a href="function.sqlite-query.html" class="function" rel="rdfs-seeAlso">sqlite_query()</a> - 指定したデータベースに対してクエリを実行し、結果ハンドル
   を返す</span></li>
    </ul>
   </p>

@@ -28,12 +28,12 @@
   ]]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>sem_get()</strong></span> は、
+   <span class="function"><strong>sem_get()</strong></span> は、
    System V セマフォを指定したキーでアクセスするために使用可能な
    ID を返します。
   </p>
   <p class="para">
-   同じキーで  <span class="function"><strong>sem_get()</strong></span> を 2 度コールした場合、
+   同じキーで <span class="function"><strong>sem_get()</strong></span> を 2 度コールした場合、
    別のセマフォ ID が返されます。
    しかし、どちらの ID も同じそのセマフォをアクセスします。
   </p>
@@ -45,20 +45,21 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">key</code></em></dt>
 
-     <span class="term"><em><code class="parameter">key</code></em></span>
      <dd>
 
       <p class="para">
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">max_acquire</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">max_acquire</code></em></span>
      <dd>
 
       <p class="para">
@@ -67,11 +68,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">perm</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">perm</code></em></span>
      <dd>
 
       <p class="para">
@@ -81,11 +82,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">auto_release</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">auto_release</code></em></span>
      <dd>
 
       <p class="para">
@@ -93,8 +94,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -138,13 +138,26 @@
  </div>
 
 
+ <div class="refsect1 notes" id="refsect1-function.sem-get-notes">
+  <h3 class="title">注意</h3>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="simpara">
+    PHP 以外のところで作られたセマフォに <span class="function"><strong>sem_get()</strong></span> でアクセスするときには、
+    3 つのセマフォのセットとして作ったものでなければいけないことに注意しましょう
+    (たとえば、C の <em>semget()</em> 関数で作るなら、<em>nsems</em> に 3 を指定します)。
+    そうしないと、PHP からそのセマフォにアクセスできなくなります。
+   </p>
+  </div>
+ </div>
+
+
  <div class="refsect1 seealso" id="refsect1-function.sem-get-seealso">
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.sem-acquire.html" class="function" rel="rdfs-seeAlso">sem_acquire()</a> - セマフォを得る</span></li>
-    <li class="member"> <span class="function"><a href="function.sem-release.html" class="function" rel="rdfs-seeAlso">sem_release()</a> - セマフォを解放する</span></li>
-    <li class="member"> <span class="function"><a href="function.ftok.html" class="function" rel="rdfs-seeAlso">ftok()</a> - パス名とプロジェクト ID を、System V IPC キーに変換する</span></li>
+    <li class="member"><span class="function"><a href="function.sem-acquire.html" class="function" rel="rdfs-seeAlso">sem_acquire()</a> - セマフォを得る</span></li>
+    <li class="member"><span class="function"><a href="function.sem-release.html" class="function" rel="rdfs-seeAlso">sem_release()</a> - セマフォを解放する</span></li>
+    <li class="member"><span class="function"><a href="function.ftok.html" class="function" rel="rdfs-seeAlso">ftok()</a> - パス名とプロジェクト ID を、System V IPC キーに変換する</span></li>
    </ul>
   </p>
  </div>

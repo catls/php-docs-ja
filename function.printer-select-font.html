@@ -36,9 +36,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">printer_handle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">printer_handle</code></em></span>
      <dd>
 
       <p class="para">
@@ -47,11 +48,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">font_handle</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">font_handle</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,8 +61,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -79,8 +79,8 @@
  <div class="refsect1 examples" id="refsect1-function.printer-select-font-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5377">
-    <p><strong>例1  <span class="function"><strong>printer_select_font()</strong></span> の例</strong></p>
+   <div class="example" id="example-5379">
+    <p><strong>例1 <span class="function"><strong>printer_select_font()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">printer_open</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">printer_start_doc</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"My&nbsp;Document"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_start_page</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">printer_create_font</span><span style="color: #007700">(</span><span style="color: #DD0000">"Arial"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">148</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">76</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PRINTER_FW_MEDIUM</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">50</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_select_font</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_draw_text</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"PHP&nbsp;is&nbsp;simply&nbsp;cool"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">40</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">40</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_delete_font</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">printer_end_page</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_end_doc</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

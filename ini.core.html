@@ -193,11 +193,12 @@
     <p class="para">
      <dl>
 
-      <dt id="ini.short-open-tag">
-       <span class="term">
+      
+       <dt id="ini.short-open-tag">
         <em><code class="parameter">short_open_tag</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -223,14 +224,14 @@
         </p></blockquote>
        </dd>
 
-      </dt>
+      
 
-
-     <dt id="ini.asp-tags">
-      <span class="term">
+     
+      <dt id="ini.asp-tags">
        <em><code class="parameter">asp_tags</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <span class="simpara">
@@ -243,14 +244,14 @@
        </span>
       </dd>
 
-     </dt>
+     
 
-
-      <dt id="ini.precision">
-       <span class="term">
+      
+       <dt id="ini.precision">
         <em><code class="parameter">precision</code></em>
         <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <span class="simpara">
@@ -258,14 +259,14 @@
         </span>
        </dd>
 
-      </dt>
+      
 
-
-     <dt id="ini.serialize-precision">
-      <span class="term">
+     
+      <dt id="ini.serialize-precision">
        <em><code class="parameter">serialize_precision</code></em>
        <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <span class="simpara">
@@ -273,14 +274,14 @@
        </span>
       </dd>
 
-     </dt>
-
      
-      <dt id="ini.y2k-compliance">
-       <span class="term">
+     
+      
+       <dt id="ini.y2k-compliance">
         <em><code class="parameter">y2k_compliance</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <span class="simpara">
@@ -289,15 +290,15 @@
         </span>
        </dd>
 
-      </dt>
+      
 
 
-
-     <dt id="ini.allow-call-time-pass-reference">
-      <span class="term">
+     
+      <dt id="ini.allow-call-time-pass-reference">
        <em><code class="parameter">allow_call_time_pass_reference</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -359,14 +360,14 @@
        </p>
       </dd>
 
-     </dt>
+     
 
-
-      <dt id="ini.expose-php">
-       <span class="term">
+      
+       <dt id="ini.expose-php">
         <em><code class="parameter">expose_php</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -375,32 +376,32 @@
         PHP のロゴの guid も公開されるので、PHP を有効にしたサイトの URL にそれを追加すると
         guids are also exposed, thus appending them to the URL of a PHP enabled site
         (例: <a href="http://www.php.net/?=PHPE9568F34-D428-11d2-A769-00AA001ACF42" class="link external">&raquo;&nbsp;http://www.php.net/?=PHPE9568F34-D428-11d2-A769-00AA001ACF42</a>)
-        ロゴが表示されるようになります。この設定は  <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span>
+        ロゴが表示されるようになります。この設定は <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span>
         の出力にも影響し、無効にすると PHP のロゴやクレジット情報が表示されなくなっていました。
        </p>
        <blockquote class="note"><p><strong class="note">注意</strong>: 
         <p class="para">
-         PHP 5.5.0 からは、これらの guid や  <span class="function"><a href="function.php-logo-guid.html" class="function">php_logo_guid()</a></span> 関数が削除され、
+         PHP 5.5.0 からは、これらの guid や <span class="function"><a href="function.php-logo-guid.html" class="function">php_logo_guid()</a></span> 関数が削除され、
          guid の代わりに URI を使うようになりました。したがって、URL の後に guid
          を追加して PHP のロゴにアクセスするという方法は、使えなくなります。
          同様に、<em><code class="parameter">expose_php</code></em> をオフにしても、
-          <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span> における PHP ロゴの表示には影響しなくなります。
+         <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span> における PHP ロゴの表示には影響しなくなります。
         </p>
        </p></blockquote>
        <p class="para">
-         <span class="function"><a href="function.php-logo-guid.html" class="function">php_logo_guid()</a></span> および  <span class="function"><a href="function.phpcredits.html" class="function">phpcredits()</a></span>
+        <span class="function"><a href="function.php-logo-guid.html" class="function">php_logo_guid()</a></span> および <span class="function"><a href="function.phpcredits.html" class="function">phpcredits()</a></span>
         も参照ください。
        </p>
        </dd>
 
-      </dt>
+      
 
-
-     <dt id="ini.disable-functions">
-      <span class="term">
+     
+      <dt id="ini.disable-functions">
        <em><code class="parameter">disable_functions</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -421,14 +422,14 @@
        </p>
       </dd>
 
-     </dt>
-
      
-     <dt id="ini.disable-classes">
-      <span class="term">
+     
+     
+      <dt id="ini.disable-classes">
        <em><code class="parameter">disable_classes</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <span class="simpara">
@@ -449,14 +450,14 @@
        </p></blockquote>
       </dd>
 
-     </dt>
-
      
-      <dt id="ini.zend.ze1-compatibility-mode">
-       <span class="term">
+     
+      
+       <dt id="ini.zend.ze1-compatibility-mode">
         <em><code class="parameter">zend.ze1_compatibility_mode</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
       <dd>
 
        <p class="para">
@@ -481,14 +482,14 @@
        
       </dd>
 
-     </dt>
-
      
-     <dt id="ini.zend.multibyte">
-      <span class="term">
+     
+     
+      <dt id="ini.zend.multibyte">
        <em><code class="parameter">zend.multibyte</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -496,14 +497,14 @@
        </p>
       </dd>
 
-     </dt>
-
      
-     <dt id="ini.zend.script-encoding">
-      <span class="term">
+     
+     
+      <dt id="ini.zend.script-encoding">
        <em><code class="parameter">zend.script_encoding</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -513,14 +514,14 @@
        </p>
       </dd>
 
-     </dt>
-
      
-     <dt id="ini.zend.signal-check">
-      <span class="term">
+     
+     
+      <dt id="ini.zend.signal-check">
        <em><code class="parameter">zend.signal_check</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -528,33 +529,33 @@
        </p>
       </dd>
 
-     </dt>
-
      
-     <dt id="ini.detect-unicode">
-      <span class="term">
+     
+     
+      <dt id="ini.detect-unicode">
        <em><code class="parameter">detect_unicode</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
         BOM (Byte Order Mark) を調べ、
         ファイルが有効なマルチバイト文字を含むかどうかを確認します。
         この検出は、
-         <span class="function"><a href="function.halt-compiler.html" class="function">__halt_compiler()</a></span> の処理より前に行われます。
+        <span class="function"><a href="function.halt-compiler.html" class="function">__halt_compiler()</a></span> の処理より前に行われます。
         Zend Multibyte モードでのみ利用可能です。
        </p>
       </dd>
 
-     </dt>
+     
 
-
-     <dt id="ini.exit-on-timeout">
-      <span class="term">
+     
+      <dt id="ini.exit-on-timeout">
        <em><code class="parameter">exit_on_timeout</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -565,8 +566,7 @@
        </p>
       </dd>
 
-     </dt>
-
+     
      
     </dl>
 
@@ -609,11 +609,12 @@
    <p class="para">
     <dl>
 
-     <dt id="ini.memory-limit">
-      <span class="term">
+     
+      <dt id="ini.memory-limit">
        <em><code class="parameter">memory_limit</code></em>
        <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -627,8 +628,8 @@
         コンパイル時に configure で
         <strong class="option configure">--enable-memory-limit</strong>
  を指定しなければなりません。
-        このコンパイルフラグは、関数  <span class="function"><a href="function.memory-get-usage.html" class="function">memory_get_usage()</a></span> および
-         <span class="function"><a href="function.memory-get-peak-usage.html" class="function">memory_get_peak_usage()</a></span>
+        このコンパイルフラグは、関数 <span class="function"><a href="function.memory-get-usage.html" class="function">memory_get_usage()</a></span> および
+        <span class="function"><a href="function.memory-get-peak-usage.html" class="function">memory_get_peak_usage()</a></span>
         を 5.2.1 より前のバージョンで使う際にも必要となります。
        </p>
 
@@ -639,8 +640,7 @@
 
       </dd>
 
-     </dt>
-
+     
     </dl>
 
    </p>
@@ -691,11 +691,12 @@
    <p class="para">
     <dl>
 
-     <dt id="ini.realpath-cache-size">
-      <span class="term">
+     
+      <dt id="ini.realpath-cache-size">
        <em><code class="parameter">realpath_cache_size</code></em>
        <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -715,13 +716,13 @@
        </p>
       </dd>
 
-     </dt>
-
-     <dt id="ini.realpath-cache-ttl">
-      <span class="term">
+     
+     
+      <dt id="ini.realpath-cache-ttl">
        <em><code class="parameter">realpath_cache_ttl</code></em>
        <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -732,8 +733,7 @@
        </p>
       </dd>
 
-     </dt>
-
+     
     </dl>
 
    </p>
@@ -887,11 +887,12 @@
     <p class="para">
      <dl>
 
-      <dt id="ini.track-vars">
-       <span class="term">
+      
+       <dt id="ini.track-vars">
         <em><code class="parameter">track_vars</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -908,14 +909,14 @@
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.arg-separator.output">
-       <span class="term">
+      
+       <dt id="ini.arg-separator.output">
         <em><code class="parameter">arg_separator.output</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -923,14 +924,14 @@
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.arg-separator.input">
-       <span class="term">
+      
+       <dt id="ini.arg-separator.input">
         <em><code class="parameter">arg_separator.input</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -944,14 +945,14 @@
         </p></blockquote>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.variables-order">
-       <span class="term">
+      
+       <dt id="ini.variables-order">
         <em><code class="parameter">variables_order</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1003,14 +1004,14 @@
         </p></blockquote>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.request-order">
-       <span class="term">
+      
+       <dt id="ini.request-order">
         <em><code class="parameter">request_order</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1029,14 +1030,14 @@
        </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.auto-globals-jit">
-       <span class="term">
+      
+       <dt id="ini.auto-globals-jit">
         <em><code class="parameter">auto_globals_jit</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1063,14 +1064,14 @@
        </div>
        </dd>
 
-      </dt>
+      
 
-
-     <dt id="ini.register-globals">
-      <span class="term">
+     
+      <dt id="ini.register-globals">
        <em><code class="parameter">register_globals</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -1088,7 +1089,7 @@
        </p>
        <p class="para">
         <code class="systemitem systemitem">register_globals</code>は、
-        ( <span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span>で)実行時に設定することができないことに
+        (<span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span>で)実行時に設定することができないことに
         注意してください。しかし、前記のようにホストが許可している場合には、
         <var class="filename">.htaccess</var> を使用することができます。
         <var class="filename">.htaccess</var> エントリの例を以下に示します。
@@ -1106,14 +1107,14 @@
 PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
       </dd>
 
-     </dt>
+     
 
-
-      <dt id="ini.register-argc-argv">
-       <span class="term">
+      
+       <dt id="ini.register-argc-argv">
         <em><code class="parameter">register_argc_argv</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <span class="simpara">
@@ -1126,14 +1127,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </span>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.register-long-arrays">
-       <span class="term">
+      
+       <dt id="ini.register-long-arrays">
         <em><code class="parameter">register_long_arrays</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <span class="simpara">
@@ -1154,14 +1155,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
 PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </dd>
 
-      </dt>
-
+      
      
-     <dt id="ini.enable-post-data-reading">
-      <span class="term">
+     
+      <dt id="ini.enable-post-data-reading">
        <em><code class="parameter">enable_post_data_reading</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <span class="simpara">
@@ -1174,14 +1175,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </span>
       </dd>
 
-     </dt>
+     
 
-
-      <dt id="ini.post-max-size">
-       <span class="term">
+      
+       <dt id="ini.post-max-size">
         <em><code class="parameter">post_max_size</code></em>
         <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <span class="simpara">
@@ -1228,14 +1229,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
 
       </dd>
 
-     </dt>
+     
 
-
-      <dt id="ini.gpc-order">
-       <span class="term">
+      
+       <dt id="ini.gpc-order">
         <em><code class="parameter">gpc_order</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1253,19 +1254,19 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p></blockquote>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.auto-prepend-file">
-       <span class="term">
+      
+       <dt id="ini.auto-prepend-file">
         <em><code class="parameter">auto_prepend_file</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
          メインファイルの前に自動的に付加されるファイルの名前を指定します。
-         このファイルは、 <span class="function"><a href="function.require.html" class="function">require</a></span> 関数のコール時と同様に読み込まれます。
+         このファイルは、<span class="function"><a href="function.require.html" class="function">require</a></span> 関数のコール時と同様に読み込まれます。
          このため、<a href="ini.core.html#ini.include-path" class="link">include_path</a>
          が使用されます。
         </p>
@@ -1275,19 +1276,19 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.auto-append-file">
-       <span class="term">
+      
+       <dt id="ini.auto-append-file">
         <em><code class="parameter">auto_append_file</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
          メインファイルの後に自動的に追加されるファイルの名前を指定します。
-         このファイルは、 <span class="function"><a href="function.require.html" class="function">require</a></span> 関数のコール時と同様に読み込まれます。
+         このファイルは、<span class="function"><a href="function.require.html" class="function">require</a></span> 関数のコール時と同様に読み込まれます。
          このため、<a href="ini.core.html#ini.include-path" class="link">include_path</a>
          が使用されます。
         </p>
@@ -1296,35 +1297,35 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
          指定するとこの自動付加機能はオフとなります。
          <blockquote class="note"><p><strong class="note">注意</strong>: 
           <span class="simpara">
-           スクリプトが  <span class="function"><a href="function.exit.html" class="function">exit()</a></span> で終了する場合、
+           スクリプトが <span class="function"><a href="function.exit.html" class="function">exit()</a></span> で終了する場合、
            この自動付加機能は使用されません 。
          </span>
          </p></blockquote>
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.default-mimetype">
-       <span class="term">
+      
+       <dt id="ini.default-mimetype">
         <em><code class="parameter">default_mimetype</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.default-charset">
-       <span class="term">
+      
+       <dt id="ini.default-charset">
         <em><code class="parameter">default_charset</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1334,14 +1335,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.always-populate-raw-post-data">
-       <span class="term">
+      
+       <dt id="ini.always-populate-raw-post-data">
         <em><code class="parameter">always_populate_raw_post_data</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1355,8 +1356,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
-
+      
      
     </dl>
 
@@ -1518,17 +1518,18 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
     <p class="para">
      <dl>
 
-      <dt id="ini.include-path">
-       <span class="term">
+      
+       <dt id="ini.include-path">
         <em><code class="parameter">include_path</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
-          <span class="function"><a href="function.require.html" class="function">require</a></span>、 <span class="function"><a href="function.include.html" class="function">include</a></span>、
-          <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>、 <span class="function"><a href="function.file.html" class="function">file()</a></span>、
-          <span class="function"><a href="function.readfile.html" class="function">readfile()</a></span> および  <span class="function"><a href="function.file-get-contents.html" class="function">file_get_contents()</a></span>
+         <span class="function"><a href="function.require.html" class="function">require</a></span>、<span class="function"><a href="function.include.html" class="function">include</a></span>、
+         <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>、<span class="function"><a href="function.file.html" class="function">file()</a></span>、
+         <span class="function"><a href="function.readfile.html" class="function">readfile()</a></span> および <span class="function"><a href="function.file-get-contents.html" class="function">file_get_contents()</a></span>
          関数がファイルを
          探すディレクトリのリストを指定します。フォーマットは、システ
          ムの環境変数 <span class="envar">PATH</span>と同じです。つまり、UNIXでは
@@ -1543,10 +1544,10 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         <a href="" class="link">warning</a>
         あるいは <a href="" class="link">error</a>
         が発生するまで続けます。インクルードパスを実行時に変更したり設定したりするには
-         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
+        <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-5624">
+         <div class="example" id="example-5626">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1556,7 +1557,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-5625">
+         <div class="example" id="example-5627">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1582,7 +1583,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-5626">
+        <div class="example" id="example-5628">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>
@@ -1593,14 +1594,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
        </dd>
 
-      </dt>
+      
 
-
-     <dt id="ini.open-basedir">
-      <span class="term">
+     
+      <dt id="ini.open-basedir">
        <em><code class="parameter">open_basedir</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -1610,7 +1611,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
        <p class="para">
         スクリプトから
-         <span class="function"><a href="function.include.html" class="function">include</a></span> や  <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
+        <span class="function"><a href="function.include.html" class="function">include</a></span> や <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>
         などでファイルシステムにアクセスしようとしたときに、そのファイルの場所をチェックします。
         ファイルが指定したディレクトリツリーの外にある場合は、PHP
         はそのファイルへのアクセスを拒否します。
@@ -1632,7 +1633,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         特別な値 <code class="systemitem systemitem">.</code> は、
         スクリプトの作業ディレクトリを表します。これをベースディレクトリとすることもできますが、
         少し危険です。スクリプトの作業ディレクトリは
-         <span class="function"><a href="function.chdir.html" class="function">chdir()</a></span> で容易に変更できるからです。
+        <span class="function"><a href="function.chdir.html" class="function">chdir()</a></span> で容易に変更できるからです。
        </p>
        <p class="para">
         <var class="filename">httpd.conf</var> で、(たとえばバーチャルホスト単位で)
@@ -1668,7 +1669,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
          PHP 5.3.0 以降では、open_basedir の設定を実行時に厳しくできるようになりました。
          open_basedir が <var class="filename">php.ini</var> で <em>/www/</em>
          と設定されているときに、スクリプト内で
-          <span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span> を使って設定を厳しくして
+         <span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span> を使って設定を厳しくして
          <em>/www/tmp/</em> のようにできるということです。
          複数のディレクトリを指定するときには、定数 <strong><code>PATH_SEPARATOR</code></strong>
          を使えば OS に依存しない記述ができます。
@@ -1676,14 +1677,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p></blockquote>
       </dd>
 
-     </dt>
-
      
-      <dt id="ini.doc-root">
-       <span class="term">
+     
+      
+       <dt id="ini.doc-root">
         <em><code class="parameter">doc_root</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1698,14 +1699,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.user-dir">
-       <span class="term">
+      
+       <dt id="ini.user-dir">
         <em><code class="parameter">user_dir</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1715,32 +1716,32 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.extension-dir">
-       <span class="term">
+      
+       <dt id="ini.extension-dir">
         <em><code class="parameter">extension_dir</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
          動的にロード可能な拡張モジュールを置くディレクトリを
          指定します。
          <a href="info.configuration.html#ini.enable-dl" class="link">enable_dl</a> と
-          <span class="function"><a href="function.dl.html" class="function">dl()</a></span> も参照ください。
+         <span class="function"><a href="function.dl.html" class="function">dl()</a></span> も参照ください。
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.extension">
-       <span class="term">
+      
+       <dt id="ini.extension">
         <em><code class="parameter">extension</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1748,14 +1749,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
+     
 
-
-     <dt id="ini.zend-extension">
-      <span class="term">
+     
+      <dt id="ini.zend-extension">
        <em><code class="parameter">zend_extension</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -1764,14 +1765,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
+     
 
-
-     <dt id="ini.zend-extension-debug">
-      <span class="term">
+     
+      <dt id="ini.zend-extension-debug">
        <em><code class="parameter">zend_extension_debug</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -1781,14 +1782,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
+     
 
-
-     <dt id="ini.zend-extension-debug-ts">
-      <span class="term">
+     
+      <dt id="ini.zend-extension-debug-ts">
        <em><code class="parameter">zend_extension_debug_ts</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -1798,14 +1799,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
+     
 
-
-     <dt id="ini.zend-extension-ts">
-      <span class="term">
+     
+      <dt id="ini.zend-extension-ts">
        <em><code class="parameter">zend_extension_ts</code></em>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -1815,14 +1816,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.cgi.check-shebang-line">
-       <span class="term">
+      
+       <dt id="ini.cgi.check-shebang-line">
         <em><code class="parameter">cgi.check_shebang_line</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1834,15 +1835,15 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
+      
 
 
-
-      <dt id="ini.cgi.fix-pathinfo">
-       <span class="term">
+      
+       <dt id="ini.cgi.fix-pathinfo">
         <em><code class="parameter">cgi.fix_pathinfo</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1859,14 +1860,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.cgi.force-redirect">
-       <span class="term">
+      
+       <dt id="ini.cgi.force-redirect">
         <em><code class="parameter">cgi.force_redirect</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1885,14 +1886,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p></blockquote>
        </dd>
 
-      </dt>
+      
 
-
-      <dt id="ini.cgi.redirect-status-env">
-       <span class="term">
+      
+       <dt id="ini.cgi.redirect-status-env">
         <em><code class="parameter">cgi.redirect_status_env</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1909,14 +1910,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p></blockquote>
        </dd>
 
-      </dt>
-
+      
      
-     <dt id="ini.cgi.rfc2616-headers">
-      <span class="term">
+     
+      <dt id="ini.cgi.rfc2616-headers">
        <em><code class="parameter">cgi.rfc2616_headers</code></em>
        <span class="type"><a href="language.types.integer.html" class="type int">int</a></span>
-      </span>
+      </dt>
+
       <dd>
 
       <p class="para">
@@ -1937,14 +1938,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
-
      
-      <dt id="ini.fastcgi.impersonate">
-       <span class="term">
+     
+      
+       <dt id="ini.fastcgi.impersonate">
         <em><code class="parameter">fastcgi.impersonate</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -1959,14 +1960,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
+      
 
-
-     <dt id="ini.fastcgi.logging">
-      <span class="term">
+     
+      <dt id="ini.fastcgi.logging">
        <em><code class="parameter">fastcgi.logging</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -1975,8 +1976,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
-
+     
 
      </dl>
 
@@ -2054,11 +2054,12 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
    <p class="para">
     <dl>
 
-     <dt id="ini.file-uploads">
-      <span class="term">
+     
+      <dt id="ini.file-uploads">
        <em><code class="parameter">file_uploads</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -2071,14 +2072,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
+     
 
-
-      <dt id="ini.upload-tmp-dir">
-       <span class="term">
+      
+       <dt id="ini.upload-tmp-dir">
         <em><code class="parameter">upload_tmp_dir</code></em>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -2095,14 +2096,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
        </dd>
 
-      </dt>
+      
 
-
-     <dt id="ini.upload-max-filesize">
-      <span class="term">
+     
+      <dt id="ini.upload-max-filesize">
        <em><code class="parameter">upload_max_filesize</code></em>
        <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -2116,14 +2117,14 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
 
       </dd>
 
-     </dt>
-
      
-     <dt id="ini.max-file-uploads">
-      <span class="term">
+     
+     
+      <dt id="ini.max-file-uploads">
        <em><code class="parameter">max_file_uploads</code></em>
        <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -2133,8 +2134,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
-
+     
     </dl>
 
    </p>
@@ -2176,11 +2176,12 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
     <p class="para">
      <dl>
 
-      <dt id="ini.sql.safe-mode">
-       <span class="term">
+      
+       <dt id="ini.sql.safe-mode">
         <em><code class="parameter">sql.safe_mode</code></em>
         <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-       </span>
+       </dt>
+
        <dd>
 
         <p class="para">
@@ -2190,8 +2191,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>
        </dd>
 
-      </dt>
-
+      
      </dl>
 
     </p>
@@ -2233,11 +2233,12 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
    <p class="para">
     <dl>
 
-     <dt id="ini.windows-show-crt-warning">
-      <span class="term">
+     
+      <dt id="ini.windows-show-crt-warning">
        <em><code class="parameter">windows_show_crt_warning</code></em>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </span>
+      </dt>
+
       <dd>
 
        <p class="para">
@@ -2246,8 +2247,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        </p>
       </dd>
 
-     </dt>
-
+     
     </dl>
 
    </p>

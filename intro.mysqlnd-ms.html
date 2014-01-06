@@ -288,7 +288,7 @@
     読み込み/書き込みの分離機能は、複数ステートメントの場合を考慮しません。
     複数のステートメントも単一のステートメントとみなします。
     そして、その先頭の文字を見て、どこで実行させるのかを判断します。たとえば
-     <span class="function"><a href="mysqli.multi-query.html" class="function">mysqli_multi_query()</a></span> を使って
+    <span class="function"><a href="mysqli.multi-query.html" class="function">mysqli_multi_query()</a></span> を使って
     <em>SELECT id FROM test ; INSERT INTO test(id) VALUES (1)</em>
     を実行したとすると、この処理はスレーブサーバーに送られます。先頭が
     <em>SELECT</em> で始まるからです。後半には

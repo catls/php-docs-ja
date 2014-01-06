@@ -69,11 +69,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">key</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -81,13 +82,13 @@
       </p>
      </dd>
 
-    </dt>
-   
-    <dt>
+       
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">value</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -95,8 +96,7 @@
       </p>
      </dd>
 
-    </dt>
-   
+       
    </dl>
 
   </p>
@@ -122,15 +122,15 @@
 
  <div class="refsect1 examples" id="refsect1-mongocursor.addoption-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1474">
-   <p><strong>例1  <span class="function"><strong>MongoCursor::addOption()</strong></span> の例</strong></p>
+  <div class="example" id="example-1475">
+   <p><strong>例1 <span class="function"><strong>MongoCursor::addOption()</strong></span> の例</strong></p>
    <div class="example-contents"><p>
-     <span class="function"><a href="mongocursor.skip.html" class="function">MongoCursor::skip()</a></span> を使って何百万件もの結果をスキップすると、
+    <span class="function"><a href="mongocursor.skip.html" class="function">MongoCursor::skip()</a></span> を使って何百万件もの結果をスキップすると、
     処理速度が低下します。これを回避する方法のひとつが、クエリのオプション
     <em>$min</em> あるいは <em>$max</em> を使うことです。
     これらは便利ですが、検索するフィールドにインデックスがなければなりません。
     この例は、<em>$min</em> を
-     <span class="function"><a href="mongocursor.skip.html" class="function">MongoCursor::skip()</a></span> の代替として使う方法を示します。
+    <span class="function"><a href="mongocursor.skip.html" class="function">MongoCursor::skip()</a></span> の代替として使う方法を示します。
    </p></div>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

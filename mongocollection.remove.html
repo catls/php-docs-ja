@@ -33,11 +33,12 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">criteria</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -45,13 +46,13 @@
       </p>
      </dd>
 
-    </dt>
-   
-    <dt>
+       
+    
+     <dt>
 
-     <span class="term">
       <em><code class="parameter">options</code></em>
-     </span>
+     </dt>
+
      <dd>
 
       <p class="para">
@@ -97,8 +98,7 @@
       </p>
      </dd>
 
-    </dt>
-   
+       
    </dl>
 
   </p>
@@ -112,7 +112,7 @@
    それ以外の場合は <strong><code>TRUE</code></strong> を返します。
   </p>
   <p class="para">
-   状態を表す配列のフィールドについては  <span class="function"><a href="mongocollection.insert.html" class="function">MongoCollection::insert()</a></span> のドキュメントを参照ください。
+   状態を表す配列のフィールドについては <span class="function"><a href="mongocollection.insert.html" class="function">MongoCollection::insert()</a></span> のドキュメントを参照ください。
   </p>
  </div>
 
@@ -203,8 +203,8 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.remove-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1463">
-   <p><strong>例1  <span class="function"><strong>MongoCollection::remove()</strong></span> で justOne を使う例</strong></p>
+  <div class="example" id="example-1464">
+   <p><strong>例1 <span class="function"><strong>MongoCollection::remove()</strong></span> で justOne を使う例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$radioactive&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">radioactive</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;プルトニウムがあとどれだけ残っているかを数えます<br /></span><span style="color: #0000BB">$remaining&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$radioactive</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">count</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'type'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">94</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$halflife&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$remaining</span><span style="color: #007700">/</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;それを半減させます<br /></span><span style="color: #007700">while&nbsp;(</span><span style="color: #0000BB">$halflife&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$radioactive</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">remove</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'type'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">94</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">"justOne"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$halflife</span><span style="color: #007700">--;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -219,8 +219,8 @@
  <div class="refsect1 seealso" id="refsect1-mongocollection.remove-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"> <span class="function"><a href="mongocollection.insert.html" class="function" rel="rdfs-seeAlso">MongoCollection::insert()</a> - ドキュメントをコレクションに追加する</span></li>
-   <li class="member"> <span class="function"><a href="mongocollection.update.html" class="function" rel="rdfs-seeAlso">MongoCollection::update()</a> - 指定した条件にもとづいてレコードを更新する</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.insert.html" class="function" rel="rdfs-seeAlso">MongoCollection::insert()</a> - ドキュメントをコレクションに追加する</span></li>
+   <li class="member"><span class="function"><a href="mongocollection.update.html" class="function" rel="rdfs-seeAlso">MongoCollection::update()</a> - 指定した条件にもとづいてレコードを更新する</span></li>
    <li class="member">MongoDB コアドキュメントの <a href="docs.mongodb.org/manual/tutorial/remove-documents/" class="link external">&raquo;&nbsp;remove</a></li>
   </ul>
  </div>

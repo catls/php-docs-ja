@@ -28,7 +28,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>openssl_csr_new()</strong></span> は、新しい CSR (Certificate Signing Request)
+   <span class="function"><strong>openssl_csr_new()</strong></span> は、新しい CSR (Certificate Signing Request)
    を <em><code class="parameter">dn</code></em> の情報に基づいて作成します。dn は、証明書で使用される識別名です。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -47,9 +47,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">dn</code></em></dt>
 
-     <span class="term"><em><code class="parameter">dn</code></em></span>
      <dd>
 
       <p class="para">
@@ -57,25 +58,25 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">privkey</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">privkey</code></em></span>
      <dd>
 
       <p class="para">
-       <em><code class="parameter">privkey</code></em> には、事前に  <span class="function"><a href="function.openssl-pkey-new.html" class="function">openssl_pkey_new()</a></span>
+       <em><code class="parameter">privkey</code></em> には、事前に <span class="function"><a href="function.openssl-pkey-new.html" class="function">openssl_pkey_new()</a></span>
        （あるいはその他の openssl_pkey 系の関数）で作成した秘密鍵を設定します。
        これに対応する公開鍵が、CSR への署名に使用されます。
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">configargs</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">configargs</code></em></span>
      <dd>
 
       <p class="para">
@@ -164,11 +165,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">extraattribs</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">extraattribs</code></em></span>
      <dd>
 
       <p class="para">
@@ -179,8 +180,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -198,7 +198,7 @@
  <div class="refsect1 examples" id="refsect1-function.openssl-csr-new-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-858">
+   <div class="example" id="example-859">
     <p><strong>例1 自己署名証明書の作成</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

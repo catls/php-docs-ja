@@ -71,7 +71,7 @@
    reporting mode, the plugin will silently ignore the lack of the table or bail out.
   </p>
   <p class="para">
-   <div class="example" id="example-1775">
+   <div class="example" id="example-1776">
     <p><strong>例1 Create counter table on master</strong></p>
     <div class="example-contents">
 <div class="sqlcode"><pre class="sqlcode">CREATE TABLE `trx` (
@@ -102,7 +102,7 @@ INSERT INTO `trx`(`trx_id`) VALUES (1);</pre>
    transaction ID injection.
   </p>
   <p class="para">
-   <div class="example" id="example-1776">
+   <div class="example" id="example-1777">
     <p><strong>例2 Plugin config: SQL for client-side GTID injection</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -131,7 +131,7 @@ INSERT INTO `trx`(`trx_id`) VALUES (1);</pre>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1777">
+   <div class="example" id="example-1778">
     <p><strong>例3 Transparent global transaction ID injection</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -173,7 +173,7 @@ array(1) {
    </p>
   </p></blockquote>
   <p class="para">
-   <div class="example" id="example-1778">
+   <div class="example" id="example-1779">
     <p><strong>例4 Plugin config: SQL for fetching GTID</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -203,7 +203,7 @@ array(1) {
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1779">
+   <div class="example" id="example-1780">
     <p><strong>例5 Obtaining GTID after injection</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -224,7 +224,7 @@ GTID after transaction 8
   <p class="para">
    Applications can ask PECL mysqlnd_ms for a global transaction ID which
    belongs to the last write operation performed by the application.
-   The function  <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span> returns the
+   The function <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span> returns the
    GTID obtained when executing the SQL statement from
    the <em>fetch_last_gtid</em> entry of the
    <em>global_transaction_id_injection</em> section from
@@ -246,7 +246,7 @@ GTID after transaction 8
    to fetch the GTID. Otherwise, it is greater.
   </p>
   <p class="para">
-   <div class="example" id="example-1780">
+   <div class="example" id="example-1781">
     <p><strong>例6 Plugin config: Checking for a certain GTID</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -277,7 +277,7 @@ GTID after transaction 8
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-1781">
+   <div class="example" id="example-1782">
     <p><strong>例7 Session consistency service level and GTID combined</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -289,11 +289,11 @@ GTID after transaction 8
    </div>
   </p>
   <p class="para">
-   A GTID returned from  <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span>
+   A GTID returned from <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span>
    can be used as an option for the session consistency service level.
    Session consistency delivers read your writes. Session consistency can
    be requested by calling
-    <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
+   <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>.
    In the example, the plugin will execute the <em>SELECT</em>
    statement either on the master or on a slave which has replicated
    the previous <em>INSERT</em> already.
@@ -330,14 +330,14 @@ GTID after transaction 8
   <p class="para">
     Using the following configuration any of the above described functionality can
     be used together with the server-side global transaction ID feature.
-     <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span> and  <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>
+    <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span> and <span class="function"><a href="function.mysqlnd-ms-set-qos.html" class="function">mysqlnd_ms_set_qos()</a></span>
     continue to work as described above. The only difference is that the server
     does not use a simple sequence number but a string containing of a server identifier
     and a sequence number. Thus, users cannot easily derive an order from GTIDs returned
-    by  <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span>.
+    by <span class="function"><a href="function.mysqlnd-ms-get-last-gtid.html" class="function">mysqlnd_ms_get_last_gtid()</a></span>.
   </p>
   <p class="para">
-   <div class="example" id="example-1782">
+   <div class="example" id="example-1783">
     <p><strong>例8 Plugin config: using MySQL 5.6.5-m8 built-in GTID feature</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{

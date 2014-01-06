@@ -35,9 +35,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">login</code></em></dt>
 
-     <span class="term"><em><code class="parameter">login</code></em></span>
      <dd>
 
       <p class="para">
@@ -45,8 +46,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -73,8 +73,8 @@
  <div class="refsect1 examples" id="refsect1-amqpconnection.setlogin-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4190">
-    <p><strong>例1  <span class="methodname"><strong>AMQPConnection::setLogin()</strong></span> の例</strong></p>
+   <div class="example" id="example-4192">
+    <p><strong>例1 <span class="methodname"><strong>AMQPConnection::setLogin()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;新しい接続を作成します&nbsp;*/<br /></span><span style="color: #0000BB">$cnn&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">AMQPConnection</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;ログイン文字列を設定します<br /></span><span style="color: #0000BB">$cnn</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setLogin</span><span style="color: #007700">(</span><span style="color: #DD0000">'myusername'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>

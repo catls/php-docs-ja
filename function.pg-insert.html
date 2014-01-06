@@ -30,11 +30,11 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>pg_insert()</strong></span> は、
+   <span class="function"><strong>pg_insert()</strong></span> は、
    <em>table_name</em> で指定したテーブルに
    <em>assoc_array</em> の値をを挿入します。
    <em><code class="parameter">options</code></em> が指定されている場合、そのオプションと
-   ともに  <span class="function"><a href="function.pg-convert.html" class="function">pg_convert()</a></span> が
+   ともに <span class="function"><a href="function.pg-convert.html" class="function">pg_convert()</a></span> が
    <em>assoc_array</em> に適用されます。
   </p>
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -50,9 +50,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">connection</code></em></dt>
 
-     <span class="term"><em><code class="parameter">connection</code></em></span>
      <dd>
 
       <p class="para">
@@ -60,11 +61,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">table_name</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">table_name</code></em></span>
      <dd>
 
       <p class="para">
@@ -74,11 +75,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">assoc_array</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">assoc_array</code></em></span>
      <dd>
 
       <p class="para">
@@ -87,11 +88,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">options</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">options</code></em></span>
      <dd>
 
       <p class="para">
@@ -106,8 +107,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -126,8 +126,8 @@
  <div class="refsect1 examples" id="refsect1-function.pg-insert-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2083">
-    <p><strong>例1  <span class="function"><strong>pg_insert()</strong></span> の例</strong></p>
+   <div class="example" id="example-2084">
+    <p><strong>例1 <span class="function"><strong>pg_insert()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php&nbsp;<br />&nbsp;&nbsp;$dbconn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'dbname=foo'</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;これは安全です。なぜなら&nbsp;$_POST&nbsp;は自動的に変換されるからです。<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">pg_insert</span><span style="color: #007700">(</span><span style="color: #0000BB">$dbconn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'post_log'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">);<br />&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$res</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"POST&nbsp;data&nbsp;is&nbsp;successfully&nbsp;logged\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"User&nbsp;must&nbsp;have&nbsp;sent&nbsp;wrong&nbsp;inputs\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -171,7 +171,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.pg-convert.html" class="function" rel="rdfs-seeAlso">pg_convert()</a> - 連想配列の値を、SQL 文として実行可能な形式に変換する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-convert.html" class="function" rel="rdfs-seeAlso">pg_convert()</a> - 連想配列の値を、SQL 文として実行可能な形式に変換する</span></li>
    </ul>
   </p>
  </div>

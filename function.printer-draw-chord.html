@@ -43,9 +43,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">printer_handle</code></em></dt>
 
-     <span class="term"><em><code class="parameter">printer_handle</code></em></span>
      <dd>
 
       <p class="para">
@@ -54,11 +55,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">rec_x</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">rec_x</code></em></span>
      <dd>
 
       <p class="para">
@@ -66,11 +67,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">rec_y</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">rec_y</code></em></span>
      <dd>
 
       <p class="para">
@@ -78,11 +79,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">rec_x1</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">rec_x1</code></em></span>
      <dd>
 
       <p class="para">
@@ -90,11 +91,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">rec_y1</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">rec_y1</code></em></span>
      <dd>
 
       <p class="para">
@@ -102,11 +103,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">rad_x</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">rad_x</code></em></span>
      <dd>
 
       <p class="para">
@@ -114,11 +115,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">rad_y</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">rad_y</code></em></span>
      <dd>
 
       <p class="para">
@@ -126,11 +127,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">rad_x1</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">rad_x1</code></em></span>
      <dd>
 
       <p class="para">
@@ -138,11 +139,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">rad_y1</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">rad_y1</code></em></span>
      <dd>
 
       <p class="para">
@@ -150,8 +151,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -169,8 +169,8 @@
  <div class="refsect1 examples" id="refsect1-function.printer-draw-chord-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5365">
-    <p><strong>例1  <span class="function"><strong>printer_draw_chord()</strong></span> の例</strong></p>
+   <div class="example" id="example-5367">
+    <p><strong>例1 <span class="function"><strong>printer_draw_chord()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$handle&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">printer_open</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">printer_start_doc</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"My&nbsp;Document"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_start_page</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$pen&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">printer_create_pen</span><span style="color: #007700">(</span><span style="color: #0000BB">PRINTER_PEN_SOLID</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"000000"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_select_pen</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pen</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$brush&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">printer_create_brush</span><span style="color: #007700">(</span><span style="color: #0000BB">PRINTER_BRUSH_SOLID</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"2222FF"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_select_brush</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$brush</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">printer_draw_chord</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">500</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">500</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">500</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">printer_delete_brush</span><span style="color: #007700">(</span><span style="color: #0000BB">$brush</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_delete_pen</span><span style="color: #007700">(</span><span style="color: #0000BB">$pen</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">printer_end_page</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_end_doc</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">printer_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$handle</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

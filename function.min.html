@@ -31,9 +31,9 @@
    ] )</div>
 
   <p class="para rdfs-comment">
-   パラメータとして配列をひとつだけ渡した場合は、  <span class="function"><strong>min()</strong></span>
+   パラメータとして配列をひとつだけ渡した場合は、 <span class="function"><strong>min()</strong></span>
    は配列の中で最も小さい数値を返します。
-   ふたつ以上のパラメータを指定した場合は、 <span class="function"><strong>min()</strong></span>
+   ふたつ以上のパラメータを指定した場合は、<span class="function"><strong>min()</strong></span>
    はそれらの中で最も小さいものを返します。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -41,7 +41,7 @@
     PHP は、数値として解釈できない <span class="type"><a href="language.types.string.html" class="type string">string</a></span> を <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> と比較する場合には
     <em>0</em> と評価します。しかし、もしそれが最小値であった
     場合、返り値はもとの文字列となります。<em>0</em> と評価される
-    引数が複数存在した場合、 <span class="function"><strong>mix()</strong></span> はもしその中に
+    引数が複数存在した場合、<span class="function"><strong>mix()</strong></span> はもしその中に
     文字列があればアルファベット順で一番小さな文字列の値を返し、
     そうでなければ数値の <em>0</em> が返されます。
    </p>
@@ -53,9 +53,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">values</code></em></dt>
 
-     <span class="term"><em><code class="parameter">values</code></em></span>
      <dd>
 
       <p class="para">
@@ -63,11 +64,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+ 
+     <dt>
+<em><code class="parameter">value1</code></em></dt>
 
- <dt>
-
-     <span class="term"><em><code class="parameter">value1</code></em></span>
      <dd>
 
       <p class="para">
@@ -75,11 +76,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">value2</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">value2</code></em></span>
      <dd>
 
       <p class="para">
@@ -87,11 +88,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">...</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">...</code></em></span>
      <dd>
 
       <p class="para">
@@ -99,8 +100,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -109,7 +109,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.min-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    <span class="function"><strong>min()</strong></span> は、パラメータとして渡した値の中で
+   <span class="function"><strong>min()</strong></span> は、パラメータとして渡した値の中で
    数値として最も小さいものを返します。
   </p>
  </div>
@@ -117,8 +117,8 @@
  <div class="refsect1 examples" id="refsect1-function.min-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3463">
-    <p><strong>例1  <span class="function"><strong>min()</strong></span> の例</strong></p>
+   <div class="example" id="example-3464">
+    <p><strong>例1 <span class="function"><strong>min()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">min</span><span style="color: #007700">(array(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;2<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'hello'</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #DD0000">'hello'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;hello<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #DD0000">'hello'</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /><br />//&nbsp;複数の配列を渡すと、mix&nbsp;はその要素を左から順に比較します。<br />//&nbsp;この例では&nbsp;2&nbsp;==&nbsp;2&nbsp;ですが&nbsp;4&nbsp;&lt;&nbsp;5&nbsp;となります。<br /></span><span style="color: #0000BB">$val&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">min</span><span style="color: #007700">(array(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;array(2,&nbsp;4,&nbsp;8)<br /><br />//&nbsp;配列と配列でない値が渡された場合は常に<br />//&nbsp;配列が最大と判定されるため、配列が返されることはありません。<br /></span><span style="color: #0000BB">$val&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">min</span><span style="color: #007700">(</span><span style="color: #DD0000">'string'</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">7</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">42</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;string<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -128,14 +128,28 @@
 
    </div>
   </p>
+
+  <p class="para">
+   <div class="example" id="example-3465">
+    <p><strong>例2 <span class="function"><strong>min()</strong></span> における NULL/FALSE の扱い</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;オペランドの中にひとつでも&nbsp;boolean&nbsp;値が含まれている場合は、boolean&nbsp;型としての比較を行います<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">min</span><span style="color: #007700">(-</span><span style="color: #0000BB">100</span><span style="color: #007700">,-</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;NULL&nbsp;&nbsp;-&nbsp;(bool)NULL&nbsp;&nbsp;&lt;&nbsp;(bool)-100&nbsp;is&nbsp;FALSE&nbsp;&lt;&nbsp;TRUE<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">min</span><span style="color: #007700">(-</span><span style="color: #0000BB">100</span><span style="color: #007700">,-</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;FALSE&nbsp;-&nbsp;(bool)FALSE&nbsp;&lt;&nbsp;(bool)-100&nbsp;is&nbsp;FALSE&nbsp;&lt;&nbsp;TRUE<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+
  </div>
 
  <div class="refsect1 seealso" id="refsect1-function.min-seealso">
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="function.max.html" class="function" rel="rdfs-seeAlso">max()</a> - 最大値を返す</span></li>
-    <li class="member"> <span class="function"><a href="function.count.html" class="function" rel="rdfs-seeAlso">count()</a> - 変数に含まれるすべての要素、
+    <li class="member"><span class="function"><a href="function.max.html" class="function" rel="rdfs-seeAlso">max()</a> - 最大値を返す</span></li>
+    <li class="member"><span class="function"><a href="function.count.html" class="function" rel="rdfs-seeAlso">count()</a> - 変数に含まれるすべての要素、
   あるいはオブジェクトに含まれる何かの数を数える</span></li>
    </ul>
   </p>

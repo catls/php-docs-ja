@@ -28,12 +28,12 @@
 
 
   <p class="para rdfs-comment">
-    <span class="function"><strong>Memcache::connect()</strong></span> は、memcached サーバーへの接続を
+   <span class="function"><strong>Memcache::connect()</strong></span> は、memcached サーバーへの接続を
    確立します。
-    <span class="function"><strong>Memcache::connect()</strong></span> を使用してオープンされた接続は、
+   <span class="function"><strong>Memcache::connect()</strong></span> を使用してオープンされた接続は、
    スクリプトの実行終了時に自動的に閉じられます。
-    <span class="function"><a href="memcache.close.html" class="function">Memcache::close()</a></span> を使用して閉じることも可能です。
-    <span class="function"><strong>memcache_connect()</strong></span> 関数を使用することも可能です。
+   <span class="function"><a href="memcache.close.html" class="function">Memcache::close()</a></span> を使用して閉じることも可能です。
+   <span class="function"><strong>memcache_connect()</strong></span> 関数を使用することも可能です。
   </p>
  
  </div>
@@ -44,9 +44,10 @@
   <p class="para">
    <dl>
 
-    <dt>
+    
+     <dt>
+<em><code class="parameter">host</code></em></dt>
 
-     <span class="term"><em><code class="parameter">host</code></em></span>
      <dd>
 
       <p class="para">
@@ -59,11 +60,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">port</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">port</code></em></span>
      <dd>
 
       <p class="para">
@@ -78,11 +79,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+<em><code class="parameter">timeout</code></em></dt>
 
-    <dt>
-
-     <span class="term"><em><code class="parameter">timeout</code></em></span>
      <dd>
 
       <p class="para">
@@ -93,8 +94,7 @@
       </p>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -126,8 +126,8 @@
  <div class="refsect1 examples" id="refsect1-memcache.connect-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4409">
-    <p><strong>例1  <span class="function"><strong>Memcache::connect()</strong></span> の例</strong></p>
+   <div class="example" id="example-4411">
+    <p><strong>例1 <span class="function"><strong>Memcache::connect()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;手続き型の&nbsp;API&nbsp;*/<br /><br /></span><span style="color: #0000BB">$memcache_obj&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">memcache_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'memcache_host'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">11211</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;オブジェクト指向の&nbsp;API&nbsp;*/<br /><br /></span><span style="color: #0000BB">$memcache&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Memcache</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$memcache</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'memcache_host'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">11211</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -144,8 +144,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"> <span class="function"><a href="memcache.pconnect.html" class="function" rel="rdfs-seeAlso">Memcache::pconnect()</a> - memcached サーバーへの持続的な接続をオープンする</span></li>
-    <li class="member"> <span class="function"><a href="memcache.close.html" class="function" rel="rdfs-seeAlso">Memcache::close()</a> - memcached サーバーとの接続を閉じる</span></li>
+    <li class="member"><span class="function"><a href="memcache.pconnect.html" class="function" rel="rdfs-seeAlso">Memcache::pconnect()</a> - memcached サーバーへの持続的な接続をオープンする</span></li>
+    <li class="member"><span class="function"><a href="memcache.close.html" class="function" rel="rdfs-seeAlso">Memcache::close()</a> - memcached サーバーとの接続を閉じる</span></li>
    </ul>
   </p>
  </div>

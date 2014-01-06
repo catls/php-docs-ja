@@ -29,7 +29,7 @@
  <div class="section" id="com.com">
   <h2 class="title">メソッド</h2>
   <div class="methodsynopsis dc-description">
-    <span class="methodname"><strong>COM::COM</strong></span>
+   <span class="methodname"><strong>COM::COM</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$module_name</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$server_name</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$codepage</code></span>
@@ -40,9 +40,10 @@
    COM クラスのコンストラクタ。 パラメータには以下のような意味があります。
    <dl>
 
-    <dt>
+    
+     <dt>
+module_name</dt>
 
-     <span class="term">module_name</span>
      <dd>
 
       <span class="simpara">
@@ -67,11 +68,11 @@
       </span>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+server_name</dt>
 
-    <dt>
-
-     <span class="term">server_name</span>
      <dd>
 
       <span class="simpara">
@@ -152,11 +153,11 @@
       </p>
      </dd>
 
-    </dt>
+    
+    
+     <dt>
+codepage</dt>
 
-    <dt>
-
-     <span class="term">codepage</span>
      <dd>
 
       <span class="simpara">
@@ -181,8 +182,7 @@
       </span>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </p>
@@ -251,7 +251,7 @@
  <div class="section" id="class.com.iteratormethods">
   <h2 class="title">反復処理のための疑似メソッド</h2>
   <p class="para">
-   以下の疑似メソッドは、  <span class="function"><a href="function.com-isenum.html" class="function">com_isenum()</a></span> が <strong><code>TRUE</code></strong>
+   以下の疑似メソッドは、 <span class="function"><a href="function.com-isenum.html" class="function">com_isenum()</a></span> が <strong><code>TRUE</code></strong>
    を返す場合のみ利用可能で、この場合、これらのメソッドは、
    通常は COM オブジェクトにより提供される同じ名前を有する全ての
    メソッドを隠蔽します。これらのメソッドは PHP 5 では完全に廃止されています。

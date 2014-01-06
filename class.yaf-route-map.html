@@ -23,9 +23,9 @@
    <p class="para">
      <strong class="classname">Yaf_Route_Map</strong> は標準で組み込まれているルートです。
      単純に URI エンドポイント (URI の中で、ベース URL の後に続く部分。
-      <span class="methodname"><a href="yaf-request-abstract.setbaseuri.html" class="methodname">Yaf_Request_Abstract::setBaseUri()</a></span> を参照ください)
+     <span class="methodname"><a href="yaf-request-abstract.setbaseuri.html" class="methodname">Yaf_Request_Abstract::setBaseUri()</a></span> を参照ください)
      をコントローラ名やアクション名に変換します
-     (どちらになるかは  <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span> に渡すパラメータで決まります)。
+     (どちらになるかは <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span> に渡すパラメータで決まります)。
      その規則は次のとおりです。
      A =&gt; controller A.
      A/B/C =&gt; controller A_B_C.
@@ -33,10 +33,10 @@
     </p>
 
     <p class="para">
-      <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span> の二番目のパラメータを指定すると、
+     <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span> の二番目のパラメータを指定すると、
      URI の中でデリミタより前の部分だけを使ってルーティングを行います。
      デリミタ以降の部分は、ルーティングリクエストのパラメータとして使います
-     ( <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span> のサンプルを参照ください)。
+     (<span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">Yaf_Route_Map::__construct()</a></span> のサンプルを参照ください)。
    </p>
   </div>
 
@@ -74,12 +74,12 @@
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span>  <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">__construct</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="yaf-route-map.construct.html" class="methodname">__construct</a></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$controller_prefer</code><span class="initializer"> = false</span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$delimiter</code><span class="initializer"> = &#039;&#039;</span></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="yaf-route-map.route.html" class="methodname">route</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="yaf-route-map.route.html" class="methodname">route</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    )</div>
 
@@ -94,24 +94,24 @@
    <h2 class="title">プロパティ</h2>
    <dl>
 
-    <dt id="yaf-route-map.props.ctl-router">
-     <span class="term"><var class="varname"><var class="varname">_ctl_router</var></var></span>
+    
+     <dt id="yaf-route-map.props.ctl-router"><var class="varname"><var class="varname">_ctl_router</var></var></dt>
+
      <dd>
 
       <p class="para"/>
      </dd>
 
-    </dt>
+    
+    
+     <dt id="yaf-route-map.props.delimeter"><var class="varname"><var class="varname">_delimeter</var></var></dt>
 
-    <dt id="yaf-route-map.props.delimeter">
-     <span class="term"><var class="varname"><var class="varname">_delimeter</var></var></span>
      <dd>
 
       <p class="para"/>
      </dd>
 
-    </dt>
-
+    
    </dl>
 
   </div>
