@@ -56,7 +56,7 @@
 &lt;form enctype=&quot;multipart/form-data&quot; action=&quot;__URL__&quot; method=&quot;POST&quot;&gt;
     &lt;!-- MAX_FILE_SIZE は、必ず &quot;file&quot; input フィールドより前になければなりません --&gt;
     &lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;30000&quot; /&gt;
-    &lt;!-- input 要素の名前が $_FILES 配列での名前となります --&gt;
+    &lt;!-- input 要素の name 属性の値が、$_FILES 配列のキーになります --&gt;
     このファイルをアップロード: &lt;input name=&quot;userfile&quot; type=&quot;file&quot; /&gt;
     &lt;input type=&quot;submit&quot; value=&quot;ファイルを送信&quot; /&gt;
 &lt;/form&gt;</pre>
@@ -68,8 +68,8 @@
       必要があります。
      </p></div>
      <div class="example-contents"><p>
-      hidden フィールド<em>MAX_FILE_SIZE</em> は、
-      input フィールド file の前に置く必要があります。
+      &quot;<em>MAX_FILE_SIZE</em>&quot; hidden フィールドは、
+      &quot;file&quot; input フィールドの前に置く必要があります。
       この値は、PHP で取得可能なファイルの最大サイズを規定します。この値はバイト数で指定します。
       <em>MAX_FILE_SIZE</em> は常に指定しておくべきです。
       巨大なファイルを転送しようとして長時間待ち続け、
