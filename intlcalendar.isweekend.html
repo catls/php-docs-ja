@@ -19,14 +19,29 @@
 
  <div class="refsect1 description" id="refsect1-intlcalendar.isweekend-description">
   <h3 class="title">説明</h3>
+  <p class="para">
+   オブジェクト指向型
+  </p>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><strong>IntlCalendar::isWeekend</strong></span>
     ([ <span class="methodparam"><span class="type">float</span> <code class="parameter">$date</code><span class="initializer"> = NULL</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
+   手続き型
+  </p>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>intlcal_is_weekend</strong></span>
+    ( <span class="methodparam"><span class="type"><a href="class.intlcalendar.html" class="type IntlCalendar">IntlCalendar</a></span> <code class="parameter">$cal</code></span>
+   [, <span class="methodparam"><span class="type">float</span> <code class="parameter">$date</code><span class="initializer"> = NULL</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
    Returns whether either the obejctʼs current time or the provided timestamp
    occur during a weekend in this objectʼs calendar system.
+  </p>
+  <p class="para">
+   This function requires ICU 4.4 or later.
   </p>
  </div>
 
@@ -35,6 +50,18 @@
   <h3 class="title">パラメータ</h3>
   <dl>
 
+   
+    <dt>
+<em><code class="parameter">cal</code></em></dt>
+
+    <dd>
+
+     <p class="para">
+      The IntlCalendar resource.
+     </p>
+    </dd>
+
+   
    
     <dt>
 <em><code class="parameter">date</code></em></dt>

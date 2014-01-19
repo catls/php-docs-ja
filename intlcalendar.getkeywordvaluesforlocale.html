@@ -19,8 +19,21 @@
 
  <div class="refsect1 description" id="refsect1-intlcalendar.getkeywordvaluesforlocale-description">
   <h3 class="title">説明</h3>
+  <p class="para">
+   オブジェクト指向型
+  </p>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="modifier">static</span> <span class="type"><a href="class.iterator.html" class="type Iterator">Iterator</a></span> <span class="methodname"><strong>IntlCalendar::getKeywordValuesForLocale</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
+   , <span class="methodparam"><span class="type">boolean</span> <code class="parameter">$commonlyUsed</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   手続き型
+  </p>
+  <div class="methodsynopsis dc-description">
+   <span class="type"><a href="class.iterator.html" class="type Iterator">Iterator</a></span> <span class="methodname"><strong>intlcal_get_keyword_values_for_locale</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    , <span class="methodparam"><span class="type">boolean</span> <code class="parameter">$commonlyUsed</code></span>
@@ -30,6 +43,9 @@
    For a given locale key, get the set of values for that key that would result
    in a different behavior. For now, only the <em>&#039;calendar&#039;</em>
    keyword is supported.
+  </p>
+  <p class="para">
+   This function requires ICU 4.2 or later.
   </p>
 
  </div>

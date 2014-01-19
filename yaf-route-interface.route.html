@@ -27,6 +27,12 @@
   <p class="para rdfs-comment">
     <span class="methodname"><strong>Yaf_Route_Interface::route()</strong></span>
     は、ルーターを自作するときに唯一実装する必要のあるメソッドです。
+    <blockquote class="note"><p><strong class="note">注意</strong>: 
+     <p class="para">
+      2.3.0 以降では、実装すべきメソッドがひとつ増えました。
+      <span class="methodname"><a href="yaf-assemble-interface.assemble.html" class="methodname">Yaf_Route_Interface::assemble()</a></span> を参照ください。
+     </p>
+    </p></blockquote>
   </p>
   <p class="para">
     このメソッドが <strong><code>TRUE</code></strong> を返せば、そこでルーティングが終わります。それ以外の場合は
@@ -45,9 +51,6 @@
     リクエストをルーティングしたことを示すため、このメソッドは最後に
     <span class="methodname"><a href="yaf-request-abstract.setrouted.html" class="methodname">Yaf_Request_Abstract::setRouted()</a></span> を呼ぶ必要があります。
    </p>
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
 
  </div>
 
