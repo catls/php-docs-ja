@@ -36,7 +36,7 @@
    Ruby on Rails のルーティング方式を参考にしており、
    ウェブサーバーの URL リライト機能に関する事前知識は不要です。
    Apache の場合は、次のような mod_rewrite ルールを書けば使えます。
-   <div class="example" id="example-4173">
+   <div class="example" id="example-4176">
     <p><strong>例1 Apache 用のリライトルール</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">RewriteEngine on
@@ -46,7 +46,7 @@ RewriteRule !\.(js|ico|gif|jpg|png|css|html)$ index.php</pre>
 
    </div>
    あるいは、次のようにもできます (こちらのほうを推奨します)。
-   <div class="example" id="example-4174">
+   <div class="example" id="example-4177">
     <p><strong>例2 Apache 用のリライトルール</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">RewriteEngine On
@@ -60,7 +60,7 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
   </div>
    Lighttpd の場合は、次のようなリライトルールを指定します。
-   <div class="example" id="example-4175">
+   <div class="example" id="example-4178">
     <p><strong>例3 Lighttpd 用のリライトルール</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">url.rewrite-once = (
@@ -73,7 +73,7 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
   </div>
    Nginx の場合は、次のようなリライトルールを指定します。
-   <div class="example" id="example-4176">
+   <div class="example" id="example-4179">
     <p><strong>例4 Nginx 用のリライトルール</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">server {
@@ -115,7 +115,7 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
    <p class="para">
    ルートのマッチングの例を示します。
-   <div class="example" id="example-4177">
+   <div class="example" id="example-4180">
     <p><strong>例5 <a href="class.yaf-route-static.html" class="classname">Yaf_Route_Static</a> のデフォルトルート</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">// このように設定しているものとします
@@ -190,11 +190,11 @@ http://example/blog/archive/list/sort/alpha/date/desc
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="yaf-router.addconfig.html" class="methodname">addConfig</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="yaf-router.addconfig.html" class="methodname">addConfig</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-config-abstract.html" class="type Yaf_Config_Abstract">Yaf_Config_Abstract</a></span> <code class="parameter">$config</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="yaf-router.addroute.html" class="methodname">addRoute</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="yaf-router.addroute.html" class="methodname">addRoute</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    , <span class="methodparam"><span class="type"><span class="type Yaf_Route_Abstract">Yaf_Route_Abstract</span></span> <code class="parameter">$route</code></span>
    )</div>
@@ -203,19 +203,19 @@ http://example/blog/archive/list/sort/alpha/date/desc
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">string</span><span class="methodname"><a href="yaf-router.getcurrentroute.html" class="methodname">getCurrentRoute</a></span>
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="yaf-router.getcurrentroute.html" class="methodname">getCurrentRoute</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">Yaf_Route_Interface</span><span class="methodname"><a href="yaf-router.getroute.html" class="methodname">getRoute</a></span>
+   <span class="modifier">public</span> <span class="type">Yaf_Route_Interface</span> <span class="methodname"><a href="yaf-router.getroute.html" class="methodname">getRoute</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span><span class="methodname"><a href="yaf-router.getroutes.html" class="methodname">getRoutes</a></span>
+   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="yaf-router.getroutes.html" class="methodname">getRoutes</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span><span class="methodname"><a href="yaf-router.route.html" class="methodname">route</a></span>
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="yaf-router.route.html" class="methodname">route</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
    )</div>
 

@@ -24,7 +24,7 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$signature</code></span>
    , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$pub_key_id</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$signature_alg</code><span class="initializer"> = OPENSSL_ALGO_SHA1</span></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$signature_alg</code><span class="initializer"> = OPENSSL_ALGO_SHA1</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
@@ -50,6 +50,7 @@
      <dd>
 
       <p class="para">
+       署名を作成するときに使ったデータの文字列。
       </p>
      </dd>
 
@@ -61,6 +62,7 @@
      <dd>
 
       <p class="para">
+       生のバイナリ文字列。<span class="function"><a href="function.openssl-sign.html" class="function">openssl_sign()</a></span> もしくはそれと同等の手段を使って生成したもの。
       </p>
      </dd>
 
@@ -72,7 +74,12 @@
      <dd>
 
       <p class="para">
+       <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> - <span class="function"><a href="function.openssl-get-publickey.html" class="function">openssl_get_publickey()</a></span> が返す鍵。
       </p>
+      <p class="para">
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span> - PEM フォーマットの鍵 (&quot;-----BEGIN PUBLIC KEY-----
+MIIBCgK...&quot; など)。
+      </p>     
      </dd>
 
     
@@ -83,9 +90,10 @@
      <dd>
 
       <p class="para">
-       詳細な情報は、
-       <a href="openssl.signature-algos.html" class="link">署名アルゴリズム</a>
-       の一覧を参照ください。
+       <span class="type"><a href="language.types.integer.html" class="type int">int</a></span> - いずれかの <a href="openssl.signature-algos.html" class="link">署名アルゴリズム</a>。
+      </p>
+      <p class="para">
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span> - <span class="function"><a href="function.openssl-get-md-methods.html" class="function">openssl_get_md_methods()</a></span> が返す文字列 (&quot;sha1WithRSAEncryption&quot; や &quot;sha512&quot; など)。
       </p>
      </dd>
 
@@ -137,11 +145,21 @@
  <div class="refsect1 examples" id="refsect1-function.openssl-verify-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-871">
+   <div class="example" id="example-872">
     <p><strong>例1 <span class="function"><strong>openssl_verify()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$data&nbsp;および&nbsp;$signature&nbsp;はデータおよび署名が含まれていると仮定<br /><br />//&nbsp;認証局から公開鍵を取得し、使用可能にする<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/src/openssl-0.9.6/demos/sign/cert.pem"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pubkeyid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_get_publickey</span><span style="color: #007700">(</span><span style="color: #0000BB">$cert</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名が正しいかどうかを確認<br /></span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_verify</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pubkeyid</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"正しいです"</span><span style="color: #007700">;<br />}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"正しくありません"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"署名を確認する際にエラーが発生しました"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #FF8000">//&nbsp;メモリからキーを開放<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkeyid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$data&nbsp;および&nbsp;$signature&nbsp;はデータおよび署名が含まれていると仮定<br /><br />//&nbsp;認証局から公開鍵を取得し、使用可能にする<br /></span><span style="color: #0000BB">$pubkeyid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_get_public</span><span style="color: #007700">(</span><span style="color: #DD0000">"file://src/openssl-0.9.6/demos/sign/cert.pem"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名が正しいかどうかを確認<br /></span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_verify</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pubkeyid</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"正しいです"</span><span style="color: #007700">;<br />}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"正しくありません"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"署名を確認する際にエラーが発生しました"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #FF8000">//&nbsp;メモリからキーを開放<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pubkeyid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+   <div class="example" id="example-873">
+    <p><strong>例2 <span class="function"><strong>openssl_verify()</strong></span> の例</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;署名したいデータ<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'my&nbsp;data'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;新しい秘密鍵と公開鍵を作成<br /></span><span style="color: #0000BB">$private_key_res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_new</span><span style="color: #007700">(array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"private_key_bits"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2048</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"private_key_type"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">OPENSSL_KEYTYPE_RSA</span><span style="color: #007700">,<br />));<br /></span><span style="color: #0000BB">$details&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_get_details</span><span style="color: #007700">(</span><span style="color: #0000BB">$private_key_res</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$public_key_res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_get_public</span><span style="color: #007700">(</span><span style="color: #0000BB">$details</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名を作成<br /></span><span style="color: #0000BB">openssl_sign</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$private_key_res</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"sha1WithRSAEncryption"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名を検証<br /></span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_verify</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$public_key_res</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">OPENSSL_ALGO_SHA1</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"valid"</span><span style="color: #007700">;<br />}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"invalid"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"error:&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">openssl_error_string</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

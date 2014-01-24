@@ -24,15 +24,14 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$signature</code></span>
    , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$priv_key_id</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$signature_alg</code><span class="initializer"> = OPENSSL_ALGO_SHA1</span></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$signature_alg</code><span class="initializer"> = OPENSSL_ALGO_SHA1</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>openssl_sign()</strong></span> は、指定した 
-   <em><code class="parameter">data</code></em> に関してハッシュ計算に SHA1 を使用して
-   署名を計算し、その後 <em><code class="parameter">priv_key_id</code></em> で
-   指定した秘密鍵を使用して暗号化を行います。data 自体は
-   暗号化されないことに注意してください。
+   <span class="function"><strong>openssl_sign()</strong></span> は、指定した
+   <em><code class="parameter">data</code></em> の署名を作ります。
+   <em><code class="parameter">priv_key_id</code></em> で指定した秘密鍵を使用して、暗号のデジタル署名を生成します。
+   data 自体は暗号化されないことに注意してください。
   </p>
  </div>
 
@@ -49,6 +48,7 @@
      <dd>
 
       <p class="para">
+       署名したいデータの文字列。
       </p>
      </dd>
 
@@ -72,6 +72,10 @@
      <dd>
 
       <p class="para">
+       <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> - <span class="function"><a href="function.openssl-get-privatekey.html" class="function">openssl_get_privatekey()</a></span> が返す鍵。
+      </p>
+      <p class="para">
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span> - PEM フォーマットの鍵。
       </p>
      </dd>
 
@@ -83,9 +87,10 @@
      <dd>
 
       <p class="para">
-       詳細な情報は、
-       <a href="openssl.signature-algos.html" class="link">署名アルゴリズム</a>
-       の一覧を参照ください。
+       <span class="type"><a href="language.types.integer.html" class="type int">int</a></span> - いずれかの <a href="openssl.signature-algos.html" class="link">署名アルゴリズム</a>。
+      </p>
+      <p class="para">
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span> - <span class="function"><a href="function.openssl-get-md-methods.html" class="function">openssl_get_md_methods()</a></span> が返す文字列 (&quot;sha256WithRSAEncryption&quot; や &quot;sha384&quot; など)。
       </p>
      </dd>
 
@@ -140,12 +145,23 @@
     <p><strong>例1 <span class="function"><strong>openssl_sign()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$data&nbsp;に署名するデータが含まれていると仮定<br /><br />//&nbsp;ファイルから秘密鍵を取得するには、使用することができます<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/src/openssl-0.9.6/demos/sign/key.pem"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$priv_key&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pkeyid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_get_privatekey</span><span style="color: #007700">(</span><span style="color: #0000BB">$priv_key</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名を計算<br /></span><span style="color: #0000BB">openssl_sign</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pkeyid</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリからキーを開放する<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkeyid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$data&nbsp;に署名するデータが含まれていると仮定<br /><br />//&nbsp;ファイルから秘密鍵を取得して準備<br /></span><span style="color: #0000BB">$pkeyid&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_get_private</span><span style="color: #007700">(</span><span style="color: #DD0000">"file://src/openssl-0.9.6/demos/sign/key.pem"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名を計算<br /></span><span style="color: #0000BB">openssl_sign</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pkeyid</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリからキーを開放する<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkeyid</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
    </div>
+   <div class="example" id="example-871">
+    <p><strong>例2 <span class="function"><strong>openssl_sign()</strong></span> の例</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;署名したいデータ<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'my&nbsp;data'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;新しい秘密鍵と公開鍵を作成<br /></span><span style="color: #0000BB">$new_key_pair&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_new</span><span style="color: #007700">(array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"private_key_bits"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2048</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"private_key_type"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">OPENSSL_KEYTYPE_RSA</span><span style="color: #007700">,<br />));<br /></span><span style="color: #0000BB">openssl_pkey_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$new_key_pair</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$private_key_pem</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$details&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_get_details</span><span style="color: #007700">(</span><span style="color: #0000BB">$new_key_pair</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$public_key_pem&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$details</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;署名を作成<br /></span><span style="color: #0000BB">openssl_sign</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$private_key_pem</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">OPENSSL_ALGO_SHA256</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;それらを保存<br /></span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'private_key.pem'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$private_key_pem</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'public_key.pem'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$public_key_pem</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">file_put_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'signature.dat'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;署名を検証<br /></span><span style="color: #0000BB">$r&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_verify</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$signature</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$public_key_pem</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"sha256WithRSAEncryption"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$r</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+ 
   </p>
  </div>
 
