@@ -150,6 +150,14 @@
       <p class="para">
        ハッシュしたい文字列。
       </p>
+      <div class="caution"><strong class="caution">警告</strong>
+       <p class="para">
+        <strong><code>CRYPT_BLOWFISH</code></strong> を使うと、
+        <em><code class="parameter">str</code></em> が最大 72 文字までに切り詰められます。
+        このアルゴリズムを使い、同じソルトで 72 バイトを超える文字列のハッシュを計算すると、
+        同じ結果になってしまいます。
+       </p>
+      </div>
      </dd>
 
     

@@ -30,6 +30,11 @@
    <span class="function"><strong>session_regenerate_id()</strong></span> は現在のセッションIDを
    新しいものと置き換えます。その際、現在のセッション情報は維持されます。
   </p>
+  <p class="para">
+   <a href="session.configuration.html#ini.session.use-trans-sid" class="link">session.use_trans_sid</a> が有効な場合は、
+   <span class="function"><strong>session_regenerate_id()</strong></span> を呼んでから出力を始めないといけません。
+   それ以前の出力には、古いセッション ID が使われます。
+  </p>
  </div>
 
 
