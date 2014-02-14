@@ -29,6 +29,10 @@
    クエリにより変更されたタプル(インスタンス/レコード/行)の数を
    返します。
   </p>
+  <p class="para">
+   PostgreSQL 9.0 以降は、SELECT を実行したときには選択された行の数を返すようになりました。
+   それ以前のバージョンでは、SELECT が返す結果は 0 でした。
+  </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
     この関数は、以前は <span class="function"><strong>pg_cmdtuples()</strong></span> と呼ばれていました。
@@ -74,7 +78,7 @@
  <div class="refsect1 examples" id="refsect1-function.pg-affected-rows-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2047">
+   <div class="example" id="example-2048">
     <p><strong>例1 <span class="function"><strong>pg_affected_rows()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

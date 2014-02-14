@@ -88,9 +88,9 @@
 
      <tr>
       <td><a href="mongo.configuration.html#ini.mongo.native-long" class="link">mongo.native_long</a></td>
-      <td>0<a href="mongo.configuration.html#ini.mongo.native-long" class="link">*</a></td>
+      <td>1</td>
       <td>PHP_INI_ALL</td>
-      <td class="empty">&nbsp;</td>
+      <td>1.5.0 までのデフォルト値は 0</td>
      </tr>
 
      <tr>
@@ -298,7 +298,7 @@ mongo.cmd = &quot;:&quot;
 
      <p class="para">
       <em class="emphasis">
-       この項目のデフォルトは 2.0.0 からは <strong><code>TRUE</code></strong> に変わりました。
+       この項目のデフォルトは 1.5.0 からは <strong><code>TRUE</code></strong> に変わりました。
        設定したい値 (おそらく <strong><code>TRUE</code></strong> でしょう) をきちんと設定しておくようにしましょう。
        そうすれば、ドライバをアップグレードしたときにいきなり挙動が変わることがなくなります。
       </em>
