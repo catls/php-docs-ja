@@ -20,9 +20,11 @@
     Use it with asynchronous clusters such as classical MySQL replication.
    </p>
    <p class="para">
-    As of MySQL 5.6.5-m8 the MySQL server features built-in global transaction identifiers.
+    As of MySQL 5.6.5-m8 release candidate the MySQL server features built-in global transaction identifiers.
     The MySQL built-in global transaction ID feature is supported by PECL/mysqlnd_ms 1.3.0-alpha or
-    later.
+    later. However, the final feature set found in MySQL 5.6 production releases to date is not
+    sufficient to support the ideas discussed below in all cases. Please, see also the
+    <a href="mysqlnd-ms.gtid.html" class="link">concepts section</a>.
    </p>
   </p></blockquote>
   <p class="para">
@@ -311,6 +313,16 @@ GTID after transaction 8
   <p class="para">
    <em class="emphasis">Use of the server-side global transaction ID feature</em>
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <strong>Insufficient server support in MySQL 5.6</strong><br />
+   <p class="para">
+    The plugin has been developed against a pre-production version of MySQL 5.6.
+    It turns out that all released production versions of MySQL 5.6 do not provide
+    clients with enough information to enforce session consistency based on GTIDs.
+    Please, read the <a href="mysqlnd-ms.gtid.html" class="link">concepts section</a>
+    for details.
+   </p>
+  </p></blockquote>
   <p class="para">
    Starting with MySQL 5.6.5-m8 the MySQL Replication system features server-side
    global transaction IDs. Transaction identifiers are automatically generated and
@@ -320,8 +332,8 @@ GTID after transaction 8
   </p>
   <p class="para">
     Clients can continue to use global transaction identifier to achieve
-    session consistency when reading from MySQL Replication slaves. The algorithm
-    works as described above. Different SQL statements must be configured for
+    session consistency when reading from MySQL Replication slaves in some cases but not all!
+    The algorithm  works as described above. Different SQL statements must be configured for
     <em>fetch_last_gtid</em> and <em>check_for_gtid</em>.
     The statements are given below. Please note, MySQL 5.6.5-m8 is a development
     version. Details of the server implementation may change in the future and require

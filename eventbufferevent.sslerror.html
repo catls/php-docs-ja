@@ -20,7 +20,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type"><span class="type void">void</span></span> 
+   <span class="type">string</span> 
    <span class="methodname"><strong>EventBufferEvent::sslError</strong></span>
     ( <span class="methodparam">void</span>
    )</div>
@@ -45,7 +45,8 @@
  <div class="refsect1 returnvalues" id="refsect1-eventbufferevent.sslerror-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns <strong><code>FALSE</code></strong>, if there is no more error to return.
+   Returns OpenSSL error string reported on the buffer event,
+   or <strong><code>FALSE</code></strong>, if there is no more error to return.
   </p>
  </div>
 

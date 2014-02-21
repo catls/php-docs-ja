@@ -20,13 +20,9 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">int</span> 
+   <span class="type">string</span> 
    <span class="methodname"><strong>EventBufferEvent::read</strong></span>
     ( <span class="methodparam">
-    <span class="type">string</span>
-     <code class="parameter reference">&$data</code>
-   </span>
-   , <span class="methodparam">
     <span class="type">int</span>
      <code class="parameter">$size</code>
    </span>
@@ -35,9 +31,7 @@
   <p class="para rdfs-comment">
    Removes up to
    <em><code class="parameter">size</code></em>
-   bytes from the input buffer, storing them into
-   <em><code class="parameter">data</code></em>
-   .
+   bytes from the input buffer. Returns a string of data read from the input buffer.
   </p>
  </div>
 
@@ -48,27 +42,13 @@
    
     <dt>
 
-     <em><code class="parameter">data</code></em>
-    </dt>
-
-    <dd>
-
-     <p class="para">
-      Storage for the read data.
-     </p>
-    </dd>
-
-   
-   
-    <dt>
-
      <em><code class="parameter">size</code></em>
     </dt>
 
     <dd>
 
      <p class="para">
-      Maximum numbe rof bytes to read
+      Maximum number of bytes to read
      </p>
     </dd>
 
@@ -80,7 +60,7 @@
  <div class="refsect1 returnvalues" id="refsect1-eventbufferevent.read-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the number of bytes actually removed.
+   Returns string of data read from the input buffer.
   </p>
  </div>
 
