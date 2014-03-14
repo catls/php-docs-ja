@@ -22,7 +22,7 @@
     </li>
     <li class="listitem">
      <span class="simpara">
-      Motto/theme: Maintenance
+      Motto/theme: Maintenance and initial MySQL Fabric support
      </span>
     </li>
    </ul>
@@ -53,6 +53,33 @@
       from doing GTID checks either.
      </p>
     </li>
+    <li class="listitem">
+      <p class="para">
+        Fixed #66064 - Random once load balancer ignoring weights
+      </p>
+      <p class="para">
+        Due to a config parsing bug random load balancing has ignored node
+        weights if, and only if, the sticky flag was set (random once).
+      </p>
+    </li>
+    <li class="listitem">
+      <p class="para">
+        Fixed #65496 - Wrong check for slave delay
+      </p>
+      <p class="para">
+       The quality of service filter has erroneously ignored slaves
+       that lag for zero (0) seconds if a any maximum lag had been set.
+       Although a slave was not lagging behind, it was excluded from the
+       load balancing list if a maximum age was set by the QoS filter.
+       This was due to using the wrong comparison operator in the source
+       of the filter.
+      </p>
+    </li>
+    <li class="listitem">
+      <p class="para">
+        Fixed #65408 - Compile failure with -Werror=format-security
+      </p>
+     </li>
    </ul>
   </p>
   <p class="para">
@@ -70,6 +97,16 @@
       desired operation. Immediately failing over to another node
       is not necessary in response to the error. Instead, a retry loop
       can be performed. Common situation when using MySQL Cluster.
+     </p>
+    </li>
+    <li class="listitem">
+    <p class="para">
+      Introduced most basic support for the MySQL Fabric High Availability and sharding
+      framework. Please, consider this pre-alpha quality. Both the
+      server side framework and the client side code is supposed to work flawless.
+      However, testing has not been performed to the level of prior plugin
+      alpha releases. Either sides are moving targets,
+      API changes may happen at any time without prior warning.
      </p>
     </li>
    </ul>

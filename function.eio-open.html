@@ -31,7 +31,7 @@
 
   <p class="para rdfs-comment">
   <span class="function"><strong>eio_open()</strong></span> は、
-  <em><code class="parameter">path</code></em> で指定したファイルをアクセスモード <em><code class="parameter">mode</code></em> で開きます。
+  <code class="parameter">path</code> で指定したファイルをアクセスモード <code class="parameter">mode</code> で開きます。
   </p>
 
 
@@ -44,7 +44,7 @@
 
    
     <dt>
-<em><code class="parameter">path</code></em></dt>
+<code class="parameter">path</code></dt>
 
     <dd>
 
@@ -60,7 +60,7 @@
    
    
     <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
     <dd>
 
@@ -75,7 +75,7 @@
    
    
     <dt>
-<em><code class="parameter">mode</code></em></dt>
+<code class="parameter">mode</code></dt>
 
     <dd>
 
@@ -89,12 +89,12 @@
    
    
     <dt>
-<em><code class="parameter">pri</code></em></dt>
+<code class="parameter">pri</code></dt>
 
     <dd>
 
     <p class="para">リクエストの優先順位。<strong><code>EIO_PRI_DEFAULT</code></strong>、<strong><code>EIO_PRI_MIN</code></strong>、<strong><code>EIO_PRI_MAX</code></strong> あるいは <strong><code>NULL</code></strong> を指定します。
-<strong><code>NULL</code></strong> を渡した場合、<em><code class="parameter">pri</code></em> は内部的に
+<strong><code>NULL</code></strong> を渡した場合、<code class="parameter">pri</code> は内部的に
 <strong><code>EIO_PRI_DEFAULT</code></strong> となります。
 </p>
 
@@ -103,12 +103,12 @@
    
    
     <dt>
-<em><code class="parameter">callback</code></em></dt>
+<code class="parameter">callback</code></dt>
 
     <dd>
 
      <p class="para">
-<em><code class="parameter">callback</code></em> 関数が、リクエスト終了時にコールされます。
+<code class="parameter">callback</code> 関数が、リクエスト終了時にコールされます。
 この関数のプロトタイプは、<div class="example-contents"><div class="phpcode"><code><span style="color: #000000">
 void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;$req]);</span>
 </code></div></div>
@@ -118,7 +118,7 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
 
 
 <dt>
-<em><code class="parameter">data</code></em></dt>
+<code class="parameter">data</code></dt>
 
 <dd>
 <p class="para">は、リクエストに渡すカスタムデータです。</p></dd>
@@ -126,7 +126,7 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
 
 
 <dt>
-<em><code class="parameter">result</code></em></dt>
+<code class="parameter">result</code></dt>
 
 <dd>
 <p class="para">にはリクエスト固有の結果が格納されます。基本的には、対応するシステムコールが返すそのままの値となります。</p></dd>
@@ -134,7 +134,7 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
 
 
 <dt>
-<em><code class="parameter">req</code></em></dt>
+<code class="parameter">req</code></dt>
 
 <dd>
 <p class="para">はオプションで指定するリクエストリソースです。
@@ -150,12 +150,12 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
    
    
     <dt>
-<em><code class="parameter">data</code></em></dt>
+<code class="parameter">data</code></dt>
 
     <dd>
 
      <p class="para">
-      <em><code class="parameter">callback</code></em> に渡す任意の引数。
+      <code class="parameter">callback</code> に渡す任意の引数。
      </p>
     </dd>
 
@@ -169,9 +169,9 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
   <h3 class="title">返り値</h3>
   <p class="para">
    <span class="function"><strong>eio_open()</strong></span> は、成功した場合に
-   <em><code class="parameter">callback</code></em> の <em><code class="parameter">result</code></em>
+   <code class="parameter">callback</code> の <code class="parameter">result</code>
    引数でファイルディスクリプタを返します。
-   それ以外の場合は、<em><code class="parameter">result</code></em> は <strong><code>-1</code></strong> になります。
+   それ以外の場合は、<code class="parameter">result</code> は <strong><code>-1</code></strong> になります。
   </p>
  </div>
 

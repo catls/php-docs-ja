@@ -49,11 +49,11 @@
    <a href="class.evchild.html" class="classname">EvChild</a> ウォッチャーオブジェクトを作ります。
   </p>
   <p class="para">
-   プロセス ID <em><code class="parameter">pid</code></em>
-   (<em><code class="parameter">pid</code></em> is <strong><code>0</code></strong> の場合は任意の <em class="emphasis">PID</em>)
+   プロセス ID <code class="parameter">pid</code>
+   (<code class="parameter">pid</code> is <strong><code>0</code></strong> の場合は任意の <em class="emphasis">PID</em>)
    の状態の変更を受信したときに、コールバックを呼びます
    (状態が変わるのは、プロセスが停止したり強制終了させられたり、
-   <em><code class="parameter">trace</code></em> が <strong><code>TRUE</code></strong> になったり、さらにプロセスを一時停止したり再開したりしたときです)。
+   <code class="parameter">trace</code> が <strong><code>TRUE</code></strong> になったり、さらにプロセスを一時停止したり再開したりしたときです)。
    言い換えると、あるプロセスが <strong><code>SIGCHLD</code></strong> を受信したときに、
    <em class="emphasis">Ev</em> はすべての変更された子プロセスやゾンビ子プロセスの exit/wait
    状態を取得してコールバックを呼びます。
@@ -66,7 +66,7 @@
    <a href="class.evchild.html" class="classname">EvChild</a> ウォッチャーをインストールできます。
   </p>
   <p class="para">
-   exit/tracing ステータスや <em><code class="parameter">pid</code></em> にアクセスするには、
+   exit/tracing ステータスや <code class="parameter">pid</code> にアクセスするには、
    ウォッチャーオブジェクトのプロパティ <var class="varname"><var class="varname">rstatus</var></var> および <var class="varname"><var class="varname">rpid</var></var>
    を使います。
   </p>
@@ -87,7 +87,7 @@
    
     <dt>
 
-     <em><code class="parameter">pid</code></em>
+     <code class="parameter">pid</code>
     </dt>
 
     <dd>
@@ -101,7 +101,7 @@
    
     <dt>
 
-     <em><code class="parameter">trace</code></em>
+     <code class="parameter">trace</code>
     </dt>
 
     <dd>
@@ -116,7 +116,7 @@
    
     <dt>
 
-     <em><code class="parameter">callback</code></em>
+     <code class="parameter">callback</code>
     </dt>
 
     <dd>
@@ -131,7 +131,7 @@
    
     <dt>
 
-     <em><code class="parameter">data</code></em>
+     <code class="parameter">data</code>
     </dt>
 
     <dd>
@@ -145,7 +145,7 @@
    
     <dt>
 
-     <em><code class="parameter">priority</code></em>
+     <code class="parameter">priority</code>
     </dt>
 
     <dd>

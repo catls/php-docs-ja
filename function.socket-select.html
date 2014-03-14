@@ -44,12 +44,12 @@
 
     
      <dt>
-<em><code class="parameter">read</code></em></dt>
+<code class="parameter">read</code></dt>
 
      <dd>
 
       <p class="para">
-       配列 <em><code class="parameter">read</code></em> に挙げられたソケットでは、
+       配列 <code class="parameter">read</code> に挙げられたソケットでは、
        文字が読み込み可能になっているかどうか（厳密に言うと、読み込みが
        ブロックされていないかどうか - 実際には、ソケット記述子はファイルの
        終端でも有効です。そのような場合、<span class="function"><a href="function.socket-read.html" class="function">socket_read()</a></span>
@@ -60,12 +60,12 @@
     
     
      <dt>
-<em><code class="parameter">write</code></em></dt>
+<code class="parameter">write</code></dt>
 
      <dd>
 
       <p class="para">
-       配列 <em><code class="parameter">write</code></em> に挙げられたソケットでは、
+       配列 <code class="parameter">write</code> に挙げられたソケットでは、
        書き込みがブロックされていないかどうかを監視します。
       </p>
      </dd>
@@ -73,12 +73,12 @@
     
     
      <dt>
-<em><code class="parameter">except</code></em></dt>
+<code class="parameter">except</code></dt>
 
      <dd>
 
       <p class="para">
-       配列 <em><code class="parameter">except</code></em> に挙げられたソケットでは、
+       配列 <code class="parameter">except</code> に挙げられたソケットでは、
        例外を監視します。
       </p>
      </dd>
@@ -86,18 +86,18 @@
     
     
      <dt>
-<em><code class="parameter">tv_sec</code></em></dt>
+<code class="parameter">tv_sec</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">tv_sec</code></em> および <em><code class="parameter">tv_usec</code></em>
+       <code class="parameter">tv_sec</code> および <code class="parameter">tv_usec</code>
        は、ともに<em>タイムアウト</em>を指定するパラメータです。
        <em>タイムアウト</em>は、<span class="function"><strong>socket_select()</strong></span>
        が結果を返すまでの経過時間の最大値です。
-       <em><code class="parameter">tv_sec</code></em> はゼロにすることも可能で、そうすると
+       <code class="parameter">tv_sec</code> はゼロにすることも可能で、そうすると
        <span class="function"><strong>socket_select()</strong></span> は結果をすぐに返します。
-       これはポーリングをする際に有用です。<em><code class="parameter">tv_sec</code></em>
+       これはポーリングをする際に有用です。<code class="parameter">tv_sec</code>
        に <strong><code>NULL</code></strong>（タイムアウトしない）を指定すると、
        <span class="function"><strong>socket_select()</strong></span> は無期限にブロックします。
       </p>
@@ -106,7 +106,7 @@
     
     
      <dt>
-<em><code class="parameter">tv_usec</code></em></dt>
+<code class="parameter">tv_usec</code></dt>
 
      <dd>
 
@@ -233,7 +233,7 @@
      </li>
      <li class="listitem">
       <span class="simpara">
-       ほとんどのソケット実装で、<em><code class="parameter">except</code></em> でキャッチできる
+       ほとんどのソケット実装で、<code class="parameter">except</code> でキャッチできる
        例外はただひとつ、すなわちソケットが受け取ったデータが帯域外で
        あったということだけです。
       </span>

@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">subject</code></em></dt>
+<code class="parameter">subject</code></dt>
 
      <dd>
 
@@ -64,29 +64,29 @@
     
     
      <dt>
-<em><code class="parameter">limit</code></em></dt>
+<code class="parameter">limit</code></dt>
 
      <dd>
 
       <p class="para">
        これを指定した場合、最大
-       <em><code class="parameter">limit</code></em> 個の部分文字列を返します。
+       <code class="parameter">limit</code> 個の部分文字列を返します。
        残りの文字列は、最後の部分文字列に含めて返されます。
-       <em><code class="parameter">limit</code></em> が -1、0 あるいは <strong><code>NULL</code></strong> の場合は「制限が無い」ことを意味します。
+       <code class="parameter">limit</code> が -1、0 あるいは <strong><code>NULL</code></strong> の場合は「制限が無い」ことを意味します。
        制限を指定せずに
-       <em><code class="parameter">flags</code></em> パラメータを指定したい場合などに <strong><code>NULL</code></strong> を使用します。
+       <code class="parameter">flags</code> パラメータを指定したい場合などに <strong><code>NULL</code></strong> を使用します。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">flags</code></em> は、次のフラグを組み合わせたものとする
+       <code class="parameter">flags</code> は、次のフラグを組み合わせたものとする
        （ビット和演算子 <em>|</em> で組み合わせる）ことが可能です。
        <dl>
 
@@ -126,7 +126,7 @@
            このフラグを設定した場合、各マッチに対応する文字列のオフセットも返されます。
            これにより、返り値は配列となり、配列の要素 <em>0</em>
            はマッチした文字列、 要素 <em>1</em>
-           は <em><code class="parameter">subject</code></em> におけるマッチした文字列のオフセット値となることに
+           は <code class="parameter">subject</code> におけるマッチした文字列のオフセット値となることに
            注意してください。
           </p>
          </dd>
@@ -147,8 +147,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.preg-split-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">pattern</code></em> にマッチした境界で分割した
-   <em><code class="parameter">subject</code></em> の部分文字列の配列を返します。
+   <code class="parameter">pattern</code> にマッチした境界で分割した
+   <code class="parameter">subject</code> の部分文字列の配列を返します。
   </p>
  </div>
 
@@ -192,7 +192,7 @@
  <div class="refsect1 examples" id="refsect1-function.preg-split-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4796">
+   <div class="example" id="example-4798">
     <p><strong>例1 <span class="function"><strong>preg_split()</strong></span> の例 : 検索文字列のある部分を取得</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -215,7 +215,7 @@ Array
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4797">
+   <div class="example" id="example-4799">
     <p><strong>例2 文字列を文字要素に分割</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -241,7 +241,7 @@ Array
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4798">
+   <div class="example" id="example-4800">
     <p><strong>例3 文字列をマッチするものとそのオフセットに分割</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

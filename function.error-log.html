@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">message</code></em></dt>
+<code class="parameter">message</code></dt>
 
      <dd>
 
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">message_type</code></em></dt>
+<code class="parameter">message_type</code></dt>
 
      <dd>
 
@@ -67,7 +67,7 @@
           <tr>
            <td>0</td>
            <td>
-            <em><code class="parameter">message</code></em> は、オペレーティング・システム
+            <code class="parameter">message</code> は、オペレーティング・システム
             のシステムログのメカニズムまたはファイルのいずれかを使って
             PHP のシステム・ロガーに送られます。どちらが使われるかは、
             設定ディレクティブ <a href="errorfunc.configuration.html#ini.error-log" class="link">error_log</a> 
@@ -78,10 +78,10 @@
           <tr>
            <td>1</td>
            <td>
-            <em><code class="parameter">message</code></em> は、<em><code class="parameter">destination
-            </code></em> パラメータで指定されたアドレスに、電子メール
+            <code class="parameter">message</code> は、<code class="parameter">destination
+            </code> パラメータで指定されたアドレスに、電子メール
             により送られます。このメッセージタイプの場合にのみ、
-            4 番目のパラメータである <em><code class="parameter">extra_headers</code></em>
+            4 番目のパラメータである <code class="parameter">extra_headers</code>
             が使われます。
            </td>
           </tr>
@@ -96,9 +96,9 @@
           <tr>
            <td>3</td>
            <td>
-            <em><code class="parameter">message</code></em> は <em><code class="parameter">destination
-            </code></em> で指定されたファイルに追加されます。
-            明示的に指定しない限り、<em><code class="parameter">message</code></em> の
+            <code class="parameter">message</code> は <code class="parameter">destination
+            </code> で指定されたファイルに追加されます。
+            明示的に指定しない限り、<code class="parameter">message</code> の
             最後には改行文字は追加されません。
            </td>
           </tr>
@@ -106,7 +106,7 @@
           <tr>
            <td>4</td>
            <td>
-           <em><code class="parameter">message</code></em> は、直接 SAPI
+           <code class="parameter">message</code> は、直接 SAPI
            のログ出力ハンドラに送信されます。
            </td>
           </tr>
@@ -121,25 +121,25 @@
     
     
      <dt>
-<em><code class="parameter">destination</code></em></dt>
+<code class="parameter">destination</code></dt>
 
      <dd>
 
       <p class="para">
        メッセージの送信先。その設定は、上で説明している
-       <em><code class="parameter">message_type</code></em> パラメータの値によります。
+       <code class="parameter">message_type</code> パラメータの値によります。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">extra_headers</code></em></dt>
+<code class="parameter">extra_headers</code></dt>
 
      <dd>
 
       <p class="para">
-       追加のヘッダ。<em><code class="parameter">message_type</code></em> パラメータが
+       追加のヘッダ。<code class="parameter">message_type</code> パラメータが
        <em>1</em> に設定される場合に利用されます。
        このメッセージタイプは、<span class="function"><a href="function.mail.html" class="function">mail()</a></span> と同様に
        内部関数を利用します。
@@ -166,13 +166,13 @@
   <div class="warning"><strong class="warning">警告</strong>
    <p class="simpara">
     <span class="function"><strong>error_log()</strong></span> はバイナリセーフではありません。
-    <em><code class="parameter">message</code></em> に null 文字があれば、そこで切り詰められます。
+    <code class="parameter">message</code> に null 文字があれば、そこで切り詰められます。
    </p>
   </div>
   <div class="tip"><strong class="tip">ヒント</strong>
    <p class="simpara">
-    <em><code class="parameter">message</code></em> に null 文字を含めてはいけません。
-    <em><code class="parameter">message</code></em> の送り先はファイルやメール、そして syslog などになることもあります。
+    <code class="parameter">message</code> に null 文字を含めてはいけません。
+    <code class="parameter">message</code> の送り先はファイルやメール、そして syslog などになることもあります。
     <span class="function"><a href="function.base64-encode.html" class="function">base64_encode()</a></span> や <span class="function"><a href="function.rawurlencode.html" class="function">rawurlencode()</a></span>、<span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span>
     などの関数で適切に変換してから <span class="function"><strong>error_log()</strong></span> に渡す必要があります。
    </p>
@@ -214,7 +214,7 @@
      <tr>
        <td>5.2.7</td>
        <td>
-        <em><code class="parameter">message_type</code></em> の値として 4 が使用できるようになりました。
+        <code class="parameter">message_type</code> の値として 4 が使用できるようになりました。
        </td>
       </tr>
 

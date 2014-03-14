@@ -30,16 +30,16 @@
 
   <p class="para rdfs-comment">
    <span class="function"><a href="event.add.html" class="function">event_add()</a></span> で使うイベントを準備します。
-   <em><code class="parameter">events</code></em> で指定したイベントが発生したときに
-   <em><code class="parameter">callback</code></em> で指定した関数をコールするように設定します。
-   <em><code class="parameter">events</code></em> は、次のフラグ
+   <code class="parameter">events</code> で指定したイベントが発生したときに
+   <code class="parameter">callback</code> で指定した関数をコールするように設定します。
+   <code class="parameter">events</code> は、次のフラグ
    <strong><code>EV_TIMEOUT</code></strong>、<strong><code>EV_SIGNAL</code></strong>、
    <strong><code>EV_READ</code></strong>、<strong><code>EV_WRITE</code></strong>
    および <strong><code>EV_PERSIST</code></strong> の組み合わせとなります。
   </p>
   <p class="para">
-   <strong><code>EV_SIGNAL</code></strong> ビットを <em><code class="parameter">events</code></em>
-   で設定すると、<em><code class="parameter">fd</code></em> をシグナル番号として解釈します。
+   <strong><code>EV_SIGNAL</code></strong> ビットを <code class="parameter">events</code>
+   で設定すると、<code class="parameter">fd</code> をシグナル番号として解釈します。
   </p>
   <p class="para">
    イベントを初期化したら、<span class="function"><a href="function.event-base-set.html" class="function">event_base_set()</a></span>
@@ -47,12 +47,12 @@
   </p>
   <p class="para">
    マッチするイベントが発生したら、これらの三つの引数が
-   <em><code class="parameter">callback</code></em> 関数に渡されます。
+   <code class="parameter">callback</code> 関数に渡されます。
    <dl>
 
     
      <dt>
-<em><code class="parameter">fd</code></em></dt>
+<code class="parameter">fd</code></dt>
 
      <dd>
 
@@ -64,7 +64,7 @@
     
     
      <dt>
-<em><code class="parameter">events</code></em></dt>
+<code class="parameter">events</code></dt>
 
      <dd>
 
@@ -79,13 +79,13 @@
     
     
      <dt>
-<em><code class="parameter">arg</code></em></dt>
+<code class="parameter">arg</code></dt>
 
      <dd>
 
       <p class="para">
        オプションのパラメータ。<span class="function"><a href="event.set.html" class="function">event_set()</a></span>
-       に <em><code class="parameter">arg</code></em> で渡されたもの。
+       に <code class="parameter">arg</code> で渡されたもの。
       </p>
      </dd>
 
@@ -103,7 +103,7 @@
 
     
      <dt>
-<em><code class="parameter">event</code></em></dt>
+<code class="parameter">event</code></dt>
 
      <dd>
 
@@ -115,7 +115,7 @@
     
     
      <dt>
-<em><code class="parameter">fd</code></em></dt>
+<code class="parameter">fd</code></dt>
 
      <dd>
 
@@ -128,7 +128,7 @@
     
     
      <dt>
-<em><code class="parameter">events</code></em></dt>
+<code class="parameter">events</code></dt>
 
      <dd>
 
@@ -144,7 +144,7 @@
     
     
      <dt>
-<em><code class="parameter">callback</code></em></dt>
+<code class="parameter">callback</code></dt>
 
      <dd>
 
@@ -156,7 +156,7 @@
     
     
      <dt>
-<em><code class="parameter">arg</code></em></dt>
+<code class="parameter">arg</code></dt>
 
      <dd>
 

@@ -27,8 +27,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   文字列 <em><code class="parameter">haystack</code></em> の中で、
-   <em><code class="parameter">needle</code></em> が最後に現れる位置を探します。
+   文字列 <code class="parameter">haystack</code> の中で、
+   <code class="parameter">needle</code> が最後に現れる位置を探します。
   </p>
  </div>
 
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">haystack</code></em></dt>
+<code class="parameter">haystack</code></dt>
 
      <dd>
 
@@ -52,12 +52,12 @@
     
     
      <dt>
-<em><code class="parameter">needle</code></em></dt>
+<code class="parameter">needle</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">needle</code></em> が文字列でない場合は、
+       <code class="parameter">needle</code> が文字列でない場合は、
        それを整数に変換し、その番号に対応する文字として扱います。
       </p>
      </dd>
@@ -65,7 +65,7 @@
     
     
      <dt>
-<em><code class="parameter">offset</code></em></dt>
+<code class="parameter">offset</code></dt>
 
      <dd>
 
@@ -86,7 +86,7 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    needle が見つかった位置を、
-   <em><code class="parameter">haystack</code></em> 文字列の先頭 (offset の値とは無関係) からの相対位置で返します。
+   <code class="parameter">haystack</code> 文字列の先頭 (offset の値とは無関係) からの相対位置で返します。
    文字列の開始位置は 0 であり、1 ではないことに注意しましょう。
   </p>
   <p class="para">
@@ -112,7 +112,7 @@
       <tr>
        <td>5.0.0</td>
        <td>
-        <em><code class="parameter">needle</code></em>
+        <code class="parameter">needle</code>
         は 1 文字以上の文字列を指定可能です。
        </td>
       </tr>
@@ -120,7 +120,7 @@
       <tr>
        <td>5.0.0</td>
        <td>
-        <em><code class="parameter">offset</code></em> パラメータが追加されました。
+        <code class="parameter">offset</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -135,7 +135,7 @@
  <div class="refsect1 examples" id="refsect1-function.strrpos-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4895">
+   <div class="example" id="example-4897">
     <p><strong>例1 needle が haystack の中にあるかどうかの確認</strong></p>
     <div class="example-contents"><p>
      &quot;位置 0 に文字が見つかった&quot; と &quot;文字が見つからなかった&quot;
@@ -151,7 +151,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4896">
+   <div class="example" id="example-4898">
     <p><strong>例2 オフセットつきの検索</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

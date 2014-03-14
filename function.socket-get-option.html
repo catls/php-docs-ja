@@ -28,7 +28,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>socket_get_option()</strong></span> 関数は、ソケット
-   <em><code class="parameter">socket</code></em> のオプション <em><code class="parameter">optname</code></em>
+   <code class="parameter">socket</code> のオプション <code class="parameter">optname</code>
    の値を取得します。<span class="function"><strong>socket_get_option()</strong></span> は、失敗した場合に
    <strong><code>FALSE</code></strong> を返します。
   </p>
@@ -42,7 +42,7 @@
 
     
      <dt>
-<em><code class="parameter">socket</code></em></dt>
+<code class="parameter">socket</code></dt>
 
      <dd>
 
@@ -55,14 +55,14 @@
     
     
      <dt>
-<em><code class="parameter">level</code></em></dt>
+<code class="parameter">level</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">level</code></em> パラメータは、オプションのプロトコルレベルを指定します。
+       <code class="parameter">level</code> パラメータは、オプションのプロトコルレベルを指定します。
        例えば、オプションをソケットレベルで取得するには
-       <em><code class="parameter">level</code></em> パラメータに <strong><code>SOL_SOCKET</code></strong> を指定します。
+       <code class="parameter">level</code> パラメータに <strong><code>SOL_SOCKET</code></strong> を指定します。
        <strong><code>TCP</code></strong> のようなそれ以外のレベルの場合、そのレベルのプロトコル番号を指定します。
        プロトコル番号は <span class="function"><a href="function.getprotobyname.html" class="function">getprotobyname()</a></span>
        関数を使用して取得可能です。
@@ -72,7 +72,7 @@
     
     
      <dt>
-<em><code class="parameter">optname</code></em></dt>
+<code class="parameter">optname</code></dt>
 
      <dd>
 
@@ -136,7 +136,7 @@
           <td>
            <p class="para">
             データがまだ残っているうちに <span class="function"><a href="function.socket-close.html" class="function">socket_close()</a></span>
-            をコールした場合に、<em><code class="parameter">socket</code></em> を残存させるかどうかを報告します。
+            をコールした場合に、<code class="parameter">socket</code> を残存させるかどうかを報告します。
             デフォルトでは、ソケットが閉じられる際には未送信のデータをすべて送信しようとします。
             接続ベースのソケットでは、
             <span class="function"><a href="function.socket-close.html" class="function">socket_close()</a></span> は接続先がデータを認識するまで閉じるのを待ちます。
@@ -168,7 +168,7 @@
          <tr>
           <td><strong><code>SO_OOBINLINE</code></strong></td>
           <td>
-           <em><code class="parameter">socket</code></em>
+           <code class="parameter">socket</code>
            が帯域外のデータをインラインに残し続けるかを報告します。
           </td>
           <td>
@@ -209,7 +209,7 @@
          <tr>
           <td><strong><code>SO_TYPE</code></strong></td>
           <td>
-           <em><code class="parameter">socket</code></em> の型 (たとえば <strong><code>SOCK_STREAM</code></strong>) を報告します。
+           <code class="parameter">socket</code> の型 (たとえば <strong><code>SOCK_STREAM</code></strong>) を報告します。
           </td>
           <td>
            <span class="type"><a href="language.types.integer.html" class="type int">int</a></span> (<span class="function"><a href="function.socket-set-option.html" class="function">socket_set_option()</a></span> で設定することはできません)
@@ -229,7 +229,7 @@
          <tr>
           <td><strong><code>SO_RCVLOWAT</code></strong></td>
           <td>
-           <em><code class="parameter">socket</code></em> の入力操作を行う際の最小バイト数を報告します。
+           <code class="parameter">socket</code> の入力操作を行う際の最小バイト数を報告します。
           </td>
           <td>
            <span class="type"><a href="language.types.integer.html" class="type int">int</a></span>
@@ -263,7 +263,7 @@
          <tr>
           <td><strong><code>SO_SNDLOWAT</code></strong></td>
           <td>
-           <em><code class="parameter">socket</code></em>
+           <code class="parameter">socket</code>
            の出力操作を行う際の最小バイト数を報告します。
           </td>
           <td>

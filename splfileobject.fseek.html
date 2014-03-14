@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">offset</code></em> を <em><code class="parameter">whence</code></em> で指定される位置に追加することで、ファイルの始めからバイト単位でファイルポイントを移動させます。
+   <code class="parameter">offset</code> を <code class="parameter">whence</code> で指定される位置に追加することで、ファイルの始めからバイト単位でファイルポイントを移動させます。
   </p>
  </div>
 
@@ -38,32 +38,32 @@
 
     
      <dt>
-<em><code class="parameter">offset</code></em></dt>
+<code class="parameter">offset</code></dt>
 
      <dd>
 
       <p class="para">
-       オフセットです。負の値はポインタを戻すために使うことができます。これは SEEK_END が <em><code class="parameter">whence</code></em> の値として使われるときに便利です。
+       オフセットです。負の値はポインタを戻すために使うことができます。これは SEEK_END が <code class="parameter">whence</code> の値として使われるときに便利です。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">whence</code></em></dt>
+<code class="parameter">whence</code></dt>
 
      <dd>
 
       <p class="para">
-      <em><code class="parameter">whence</code></em> の値は次のようなものになります:
+      <code class="parameter">whence</code> の値は次のようなものになります:
        <ul class="simplelist">
-        <li class="member"><strong><code>SEEK_SET</code></strong> - <em><code class="parameter">offset</code></em> バイトに等しい位置にセットします。</li>
-        <li class="member"><strong><code>SEEK_CUR</code></strong> - 現在の位置に <em><code class="parameter">offset</code></em> を加えた位置にセットします。</li>
-        <li class="member"><strong><code>SEEK_END</code></strong> - 終端に <em><code class="parameter">offset</code></em> を加えた位置にセットします。</li>
+        <li class="member"><strong><code>SEEK_SET</code></strong> - <code class="parameter">offset</code> バイトに等しい位置にセットします。</li>
+        <li class="member"><strong><code>SEEK_CUR</code></strong> - 現在の位置に <code class="parameter">offset</code> を加えた位置にセットします。</li>
+        <li class="member"><strong><code>SEEK_END</code></strong> - 終端に <code class="parameter">offset</code> を加えた位置にセットします。</li>
        </ul>
       </p>
       <p class="para">
-       <em><code class="parameter">whence</code></em> が指定されない場合、<strong><code>SEEK_SET</code></strong> が前提になります。
+       <code class="parameter">whence</code> が指定されない場合、<strong><code>SEEK_SET</code></strong> が前提になります。
       </p>
      </dd>
 

@@ -40,7 +40,7 @@
   </p>
   <p class="simpara">
    オプションの引数
-   <em><code class="parameter">min</code></em>,<em><code class="parameter">max</code></em> を付けずに
+   <code class="parameter">min</code>,<code class="parameter">max</code> を付けずに
    コールした場合、<span class="function"><strong>mt_rand()</strong></span> は 0 から
    <span class="function"><a href="function.mt-getrandmax.html" class="function">mt_getrandmax()</a></span> の間の擬似乱数値を返します。
    例えば、5 から 15 まで(端点を含む)の間の乱数値を得たい場合には
@@ -55,7 +55,7 @@
 
     
      <dt>
-<em><code class="parameter">min</code></em></dt>
+<code class="parameter">min</code></dt>
 
      <dd>
 
@@ -67,7 +67,7 @@
     
     
      <dt>
-<em><code class="parameter">max</code></em></dt>
+<code class="parameter">max</code></dt>
 
      <dd>
 
@@ -85,10 +85,10 @@
  <div class="refsect1 returnvalues" id="refsect1-function.mt-rand-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">min</code></em> (あるいは 0)
-   から <em><code class="parameter">max</code></em> (あるいは <span class="function"><a href="function.mt-getrandmax.html" class="function">mt_getrandmax()</a></span>、それぞれ端点を含む)
+   <code class="parameter">min</code> (あるいは 0)
+   から <code class="parameter">max</code> (あるいは <span class="function"><a href="function.mt-getrandmax.html" class="function">mt_getrandmax()</a></span>、それぞれ端点を含む)
    までの間のランダムな整数値を返します。
-   <em><code class="parameter">max</code></em> が <em><code class="parameter">min</code></em> より小さい場合は
+   <code class="parameter">max</code> が <code class="parameter">min</code> より小さい場合は
    <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
@@ -110,7 +110,7 @@
       <tr>
        <td>5.3.4</td>
        <td>
-        <em><code class="parameter">max</code></em> &lt; <em><code class="parameter">min</code></em> の場合に
+        <code class="parameter">max</code> &lt; <code class="parameter">min</code> の場合に
         <strong><code>E_WARNING</code></strong> を発行して <strong><code>FALSE</code></strong> を返すようになりました。
        </td>
       </tr>
@@ -156,7 +156,7 @@
   <div class="caution"><strong class="caution">警告</strong>
    <p class="para">
     64 ビット版の PHP で
-    <em><code class="parameter">max</code></em> を <em>2^32</em>
+    <code class="parameter">max</code> を <em>2^32</em>
     より大きくすると、<span class="function"><strong>mt_rand()</strong></span>
     の返り値の分布にバイアスがかかり、偶数よりになります。
    </p>

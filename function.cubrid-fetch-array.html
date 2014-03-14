@@ -40,15 +40,15 @@
 
    
     <dt>
-<em><code class="parameter">result</code></em></dt>
+<code class="parameter">result</code></dt>
 
     <dd>
-<p class="para"><em><code class="parameter">Result</code></em> comes from a call to <span class="function"><a href="function.cubrid-execute.html" class="function">cubrid_execute()</a></span></p></dd>
+<p class="para"><code class="parameter">Result</code> comes from a call to <span class="function"><a href="function.cubrid-execute.html" class="function">cubrid_execute()</a></span></p></dd>
 
    
    
     <dt>
-<em><code class="parameter">type</code></em></dt>
+<code class="parameter">type</code></dt>
 
     <dd>
 <p class="para">Array type of the fetched result CUBRID_NUM, CUBRID_ASSOC,
@@ -65,7 +65,7 @@
   <h3 class="title">返り値</h3>
   <p class="para">Returns an array of strings that corresponds to the fetched row, when process is successful.</p>
   <p class="para"><strong><code>FALSE</code></strong>, when there are no more rows; NULL, when process is unsuccessful.</p>
-  <p class="para">The type of returned array depends on how type is defined. By using CUBRID_BOTH (default), you&#039;ll get an array with both associative and number indices, and you can decide which data type to use by setting the <em><code class="parameter">type</code></em> argument. The <em><code class="parameter">type</code></em> variable can be set to one of the following values:</p>
+  <p class="para">The type of returned array depends on how type is defined. By using CUBRID_BOTH (default), you&#039;ll get an array with both associative and number indices, and you can decide which data type to use by setting the <code class="parameter">type</code> argument. The <code class="parameter">type</code> variable can be set to one of the following values:</p>
     <ul class="simplelist">
         <li class="member">CUBRID_NUM : Numerical array (0-based)</li>
         <li class="member">CUBRID_ASSOC : Associative array</li>

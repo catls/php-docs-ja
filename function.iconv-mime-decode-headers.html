@@ -39,7 +39,7 @@
 
     
      <dt>
-<em><code class="parameter">encoded_headers</code></em></dt>
+<code class="parameter">encoded_headers</code></dt>
 
      <dd>
 
@@ -51,12 +51,12 @@
     
     
      <dt>
-<em><code class="parameter">mode</code></em></dt>
+<code class="parameter">mode</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">mode</code></em> は、<span class="function"><strong>iconv_mime_decode_headers()</strong></span>
+       <code class="parameter">mode</code> は、<span class="function"><strong>iconv_mime_decode_headers()</strong></span>
        が不正な形式の <em>MIME</em> ヘッダフィールドに遭遇した場合の
        振る舞いを定義します。以下のビットマスクの組み合わせで指定が可能です。
        <table class="doctable table">
@@ -103,12 +103,12 @@
     
     
      <dt>
-<em><code class="parameter">charset</code></em></dt>
+<code class="parameter">charset</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションの <em><code class="parameter">charset</code></em> パラメータは、結果の
+       オプションの <code class="parameter">charset</code> パラメータは、結果の
        文字セットを指定します。指定されなかった場合は
        <a href="iconv.configuration.html" class="link">iconv.internal_encoding</a>
        が用いられます。
@@ -126,7 +126,7 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合は連想配列を返します。その中身には
-   <em><code class="parameter">encoded_headers</code></em> で指定した
+   <code class="parameter">encoded_headers</code> で指定した
    <em>MIME</em> ヘッダフィールドがすべて含まれています。
    デコード中にエラーが発生した場合は <strong><code>FALSE</code></strong> を返します。
   </p>

@@ -26,11 +26,11 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>msg_get_queue()</strong></span> は、指定した <em><code class="parameter">key</code></em>
+   <span class="function"><strong>msg_get_queue()</strong></span> は、指定した <code class="parameter">key</code>
    で System V メッセージキューにアクセスするために使用される ID を返します。
-   最初にコールされた際には、オプションの <em><code class="parameter">perms</code></em>
+   最初にコールされた際には、オプションの <code class="parameter">perms</code>
    でメッセージキューを作成します。同じ
-   <em><code class="parameter">key</code></em> で 2 度目に <span class="function"><strong>msg_get_queue()</strong></span>
+   <code class="parameter">key</code> で 2 度目に <span class="function"><strong>msg_get_queue()</strong></span>
    がコールされると別の ID が返されますが、どちらの ID も同じメッセージキューを指します。
   </p>
  </div>
@@ -43,7 +43,7 @@
 
     
      <dt>
-<em><code class="parameter">key</code></em></dt>
+<code class="parameter">key</code></dt>
 
      <dd>
 
@@ -55,13 +55,13 @@
     
     
      <dt>
-<em><code class="parameter">perms</code></em></dt>
+<code class="parameter">perms</code></dt>
 
      <dd>
 
       <p class="para">
        キューのパーミッション。デフォルトは 0666 です。
-       メッセージキューがすでに存在する場合には、<em><code class="parameter">perms</code></em>
+       メッセージキューがすでに存在する場合には、<code class="parameter">perms</code>
        は無視されます。
       </p>
      </dd>

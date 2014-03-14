@@ -29,8 +29,8 @@
   <p class="para rdfs-comment">
    関数 <span class="function"><strong>sscanf()</strong></span> は、<span class="function"><a href="function.printf.html" class="function">printf()</a></span>
    の入力版です。<span class="function"><strong>sscanf()</strong></span> は、文字列
-   <em><code class="parameter">str</code></em> を読み込み、これを指定したフォーマット
-   <em><code class="parameter">format</code></em> に基づき解釈します。
+   <code class="parameter">str</code> を読み込み、これを指定したフォーマット
+   <code class="parameter">format</code> に基づき解釈します。
    このフォーマットは、<span class="function"><a href="function.sprintf.html" class="function">sprintf()</a></span>のマニュアルに記述されています。
   </p>
   <p class="para">
@@ -48,7 +48,7 @@
 
     
      <dt>
-<em><code class="parameter">str</code></em></dt>
+<code class="parameter">str</code></dt>
 
      <dd>
 
@@ -60,12 +60,12 @@
     
     
      <dt>
-<em><code class="parameter">format</code></em></dt>
+<code class="parameter">format</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">str</code></em> を解釈するフォーマット。
+       <code class="parameter">str</code> を解釈するフォーマット。
        <span class="function"><a href="function.sprintf.html" class="function">sprintf()</a></span> のドキュメントにある説明と比べて、以下の違いがあります。
        <ul class="simplelist">
         <li class="member">
@@ -91,7 +91,7 @@
     
     
      <dt>
-<em><code class="parameter">...</code></em></dt>
+<code class="parameter">...</code></dt>
 
      <dd>
 
@@ -117,8 +117,8 @@
    参照渡しにする必要があります。
   </p>
   <p class="para">
-   <em><code class="parameter">format</code></em> で期待する部分文字列のほうが
-   実際に <em><code class="parameter">str</code></em> に存在するものより多い場合は
+   <code class="parameter">format</code> で期待する部分文字列のほうが
+   実際に <code class="parameter">str</code> に存在するものより多い場合は
    <em>-1</em> を返します。
   </p>
  </div>
@@ -127,7 +127,7 @@
  <div class="refsect1 examples" id="refsect1-function.sscanf-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4867">
+   <div class="example" id="example-4869">
     <p><strong>例1 <span class="function"><strong>sscanf()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -142,7 +142,7 @@
    オプションのパラメータが指定された場合、この関数は、代入された値の数を返します。
   </p>
   <p class="para">
-   <div class="example" id="example-4868">
+   <div class="example" id="example-4870">
     <p><strong>例2 <span class="function"><strong>sscanf()</strong></span> - オプションパラメータの使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

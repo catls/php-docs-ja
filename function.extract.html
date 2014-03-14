@@ -41,15 +41,15 @@
 
     
      <dt>
-<em><code class="parameter">array</code></em></dt>
+<code class="parameter">array</code></dt>
 
      <dd>
 
       <p class="para">
-       この関数は連想配列 <em><code class="parameter">var_array</code></em>
+       この関数は連想配列 <code class="parameter">var_array</code>
        を引数とし、そのキーを変数名、値を変数の値として処理します。
-       各キー/値の組に関して、<em><code class="parameter">flags</code></em> および
-       <em><code class="parameter">prefix</code></em> パラメータに基づき、
+       各キー/値の組に関して、<code class="parameter">flags</code> および
+       <code class="parameter">prefix</code> パラメータに基づき、
        現在のシンボルテーブルに変数を一つ作成します。
       </p>
       <p class="para">
@@ -62,13 +62,13 @@
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
        無効または数値キーおよび衝突に関する対処法は、
-       <em><code class="parameter">flags</code></em> で定義されます。
+       <code class="parameter">flags</code> で定義されます。
        これは以下の値のどれかとなります。
        <dl>
 
@@ -103,7 +103,7 @@
          <dd>
 
           <span class="simpara">
-           衝突があった場合、<em><code class="parameter">prefix</code></em>
+           衝突があった場合、<code class="parameter">prefix</code>
            を前につけた新しい変数となります。
           </span>
          </dd>
@@ -116,7 +116,7 @@
          <dd>
 
           <span class="simpara">
-           全ての変数の前に <em><code class="parameter">prefix</code></em> を付けます。
+           全ての変数の前に <code class="parameter">prefix</code> を付けます。
           </span>
          </dd>
 
@@ -129,7 +129,7 @@
 
           <span class="simpara">
            無効または数値の変数名のみに接頭辞
-           <em><code class="parameter">prefix</code></em> を付けます。
+           <code class="parameter">prefix</code> を付けます。
           </span>
          </dd>
 
@@ -171,10 +171,10 @@
           <span class="simpara">
            変数を参照として展開します。
            これはインポート済みの変数が、
-           <em><code class="parameter">array</code></em>
+           <code class="parameter">array</code>
            パラメータの値に常に参照付けられることを意味します。
            このフラグを単独で使用するか、
-           あるいは<em><code class="parameter">flags</code></em>と和算することにより、
+           あるいは<code class="parameter">flags</code>と和算することにより、
            他のフラグとそれを組み合わせることができます。
           </span>
          </dd>
@@ -184,7 +184,7 @@
 
       </p>
       <p class="para">
-       <em><code class="parameter">flags</code></em> が指定されない場合、
+       <code class="parameter">flags</code> が指定されない場合、
        <strong><code>EXTR_OVERWRITE</code></strong> とみなされます。
       </p>
      </dd>
@@ -192,13 +192,13 @@
     
     
      <dt>
-<em><code class="parameter">prefix</code></em></dt>
+<code class="parameter">prefix</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">prefix</code></em> は、
-       <em><code class="parameter">flags</code></em> が
+       <code class="parameter">prefix</code> は、
+       <code class="parameter">flags</code> が
        <strong><code>EXTR_PREFIX_SAME</code></strong>、<strong><code>EXTR_PREFIX_ALL</code></strong>、
        <strong><code>EXTR_PREFIX_INVALID</code></strong> あるいは
        <strong><code>EXTR_PREFIX_IF_EXISTS</code></strong> の場合にのみ必要であることに注意してください。
@@ -269,7 +269,7 @@
  <div class="refsect1 examples" id="refsect1-function.extract-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5006">
+   <div class="example" id="example-5008">
     <p><strong>例1 <span class="function"><strong>extract()</strong></span> の例</strong></p>
     <div class="example-contents"><p>
      extract の使用例としては、シンボルテーブルに
@@ -315,7 +315,7 @@ blue, large, sphere, medium
     <a href="security.globals.html" class="link">register_globals</a>
     を信頼しているような古いコードを一時的に実行したい場合、
     <strong><code>EXTR_SKIP</code></strong> のような
-    <em><code class="parameter">flags</code></em>
+    <code class="parameter">flags</code>
     の値が上書きされていないことを確認してください。そして
     <a href="ini.html" class="link"><var class="filename">php.ini</var></a> の
     <a href="ini.core.html#ini.variables-order" class="link">variables_order</a>

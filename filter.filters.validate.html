@@ -32,7 +32,7 @@
         <td><strong><code>FILTER_VALIDATE_BOOLEAN</code></strong></td>
         <td>&quot;boolean&quot;</td>
         <td>
-         <em><code class="parameter">default</code></em>
+         <code class="parameter">default</code>
         </td>
         <td>
           <strong><code>FILTER_NULL_ON_FAILURE</code></strong>
@@ -55,7 +55,7 @@
         <td><strong><code>FILTER_VALIDATE_EMAIL</code></strong></td>
         <td>&quot;validate_email&quot;</td>
         <td>
-         <em><code class="parameter">default</code></em>
+         <code class="parameter">default</code>
         </td>
         <td class="empty">&nbsp;</td>
         <td>値が e-mail 形式であるかどうかを検証します。</td>
@@ -65,8 +65,8 @@
         <td><strong><code>FILTER_VALIDATE_FLOAT</code></strong></td>
         <td>&quot;float&quot;</td>
         <td>
-         <em><code class="parameter">default</code></em>,
-         <em><code class="parameter">decimal</code></em>
+         <code class="parameter">default</code>,
+         <code class="parameter">decimal</code>
         </td>
         <td>
          <strong><code>FILTER_FLAG_ALLOW_THOUSAND</code></strong>
@@ -78,9 +78,9 @@
         <td><strong><code>FILTER_VALIDATE_INT</code></strong></td>
         <td>&quot;int&quot;</td>
         <td>
-         <em><code class="parameter">default</code></em>,
-         <em><code class="parameter">min_range</code></em>,
-         <em><code class="parameter">max_range</code></em>
+         <code class="parameter">default</code>,
+         <code class="parameter">min_range</code>,
+         <code class="parameter">max_range</code>
         </td>
         <td>
          <strong><code>FILTER_FLAG_ALLOW_OCTAL</code></strong>,
@@ -93,7 +93,7 @@
         <td><strong><code>FILTER_VALIDATE_IP</code></strong></td>
         <td>&quot;validate_ip&quot;</td>
         <td>
-         <em><code class="parameter">default</code></em>
+         <code class="parameter">default</code>
         </td>
         <td>
          <strong><code>FILTER_FLAG_IPV4</code></strong>,
@@ -112,13 +112,13 @@
         <td><strong><code>FILTER_VALIDATE_REGEXP</code></strong></td>
         <td>&quot;validate_regexp&quot;</td>
         <td>
-         <em><code class="parameter">default</code></em>,
-         <em><code class="parameter">regexp</code></em>
+         <code class="parameter">default</code>,
+         <code class="parameter">regexp</code>
         </td>
         <td class="empty">&nbsp;</td>
         <td>
          値が、<a href="book.pcre.html" class="link">Perl 互換の</a>
-         正規表現 <em><code class="parameter">regexp</code></em> に一致するかどうかを検証します。
+         正規表現 <code class="parameter">regexp</code> に一致するかどうかを検証します。
         </td>
        </tr>
 
@@ -126,7 +126,7 @@
         <td><strong><code>FILTER_VALIDATE_URL</code></strong></td>
         <td>&quot;validate_url&quot;</td>
         <td>
-         <em><code class="parameter">default</code></em>
+         <code class="parameter">default</code>
         </td>
         <td>
          <strong><code>FILTER_FLAG_PATH_REQUIRED</code></strong>,
@@ -135,9 +135,9 @@
         <td>
          値が URL 形式である (<a href="http://www.faqs.org/rfcs/rfc2396" class="link external">&raquo;&nbsp;http://www.faqs.org/rfcs/rfc2396</a> に準拠している) かどうか、
          オプションで、必須コンポーネントが含まれているかどうかを検証します。
-         妥当な URL が、HTTP プロトコル <em><code class="parameter">http://</code></em> を指定しているとは限りません。
+         妥当な URL が、HTTP プロトコル <code class="parameter">http://</code> を指定しているとは限りません。
          つまり、その URL が期待通りのプロトコル
-         (<em><code class="parameter">ssh://</code></em> や <em><code class="parameter">mailto:</code></em> など)
+         (<code class="parameter">ssh://</code> や <code class="parameter">mailto:</code> など)
          を使っているかどうか、さらなる検証が必要だということです。
          この関数は、ASCII の URL のみを正しいとみなすことに注意しましょう。
          国際化ドメイン名 (非 ASCII 文字を含むもの) は失敗します。
@@ -157,7 +157,7 @@
      それより前のバージョンでは、（<strong><code>FILTER_VALIDATE_FLOAT</code></strong> を使った場合に）float としてしか有効と見なされませんでした。
     </p>
     <p class="para">
-     オプションに <em><code class="parameter">default</code></em> を設定すると、値が検証されなかったときに <em><code class="parameter">default</code></em> の値を使います。
+     オプションに <code class="parameter">default</code> を設定すると、値が検証されなかったときに <code class="parameter">default</code> の値を使います。
     </p>
    </p></blockquote>
  </div><hr /><div class="manualnavbar" style="text-align: center;">

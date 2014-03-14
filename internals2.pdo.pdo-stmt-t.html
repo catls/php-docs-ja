@@ -119,10 +119,10 @@ struct _pdo_stmt_t {
     カラム数に設定した値に応じて、PDO がこのフィールドを確保します。
     <span class="function"><strong>SKEL_stmt_describe()</strong></span> の中で、各カラムの内容を
     設定する必要があります。各カラムについて設定する必要があるのは、
-    <em><code class="parameter">precision</code></em>、<em><code class="parameter">maxlen</code></em>、
-    <em><code class="parameter">name</code></em>、<em><code class="parameter">namelen</code></em> および
-    <em><code class="parameter">param_type</code></em> です。
-    <em><code class="parameter">name</code></em> は、<span class="function"><strong>emalloc()</strong></span>
+    <code class="parameter">precision</code>、<code class="parameter">maxlen</code>、
+    <code class="parameter">name</code>、<code class="parameter">namelen</code> および
+    <code class="parameter">param_type</code> です。
+    <code class="parameter">name</code> は、<span class="function"><strong>emalloc()</strong></span>
     を使用して確保することが期待されています。PDO は、しかるべき時に
     <span class="function"><strong>efree()</strong></span> を実行します。
    </p>

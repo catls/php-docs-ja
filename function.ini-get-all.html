@@ -38,7 +38,7 @@
 
     
      <dt>
-<em><code class="parameter">extension</code></em></dt>
+<code class="parameter">extension</code></dt>
 
      <dd>
 
@@ -51,7 +51,7 @@
     
     
      <dt>
-<em><code class="parameter">details</code></em></dt>
+<code class="parameter">details</code></dt>
 
      <dd>
 
@@ -74,7 +74,7 @@
    ディレクティブ名をキーとする連想配列を返します。
   </p>
   <p class="para">
-   <em><code class="parameter">details</code></em> が <strong><code>TRUE</code></strong> (デフォルト) の場合、
+   <code class="parameter">details</code> が <strong><code>TRUE</code></strong> (デフォルト) の場合、
    配列の値は、
    <em>global_value</em> (<var class="filename">php.ini</var>で設定されている)、
    <em>local_value</em> (おそらく<span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span>または
@@ -82,7 +82,7 @@
    を含む配列となります。
   </p>
   <p class="para">
-   <em><code class="parameter">details</code></em> が <strong><code>FALSE</code></strong> の場合、
+   <code class="parameter">details</code> が <strong><code>FALSE</code></strong> の場合、
    配列の値はそのオプションの現在の値となります。
   </p>
   <p class="para">
@@ -114,7 +114,7 @@
       <tr>
        <td>5.3.0</td>
        <td>
-        <em><code class="parameter">details</code></em> が追加されました。
+        <code class="parameter">details</code> が追加されました。
        </td>
       </tr>
 
@@ -182,7 +182,7 @@ Array
     </div>
    </div>
    <div class="example" id="example-500">
-    <p><strong>例2 <em><code class="parameter">details</code></em> を無効にする例</strong></p>
+    <p><strong>例2 <code class="parameter">details</code> を無効にする例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">ini_get_all</span><span style="color: #007700">(</span><span style="color: #DD0000">"pcre"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5.3.0&nbsp;で追加されました<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">ini_get_all</span><span style="color: #007700">(</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5.3.0&nbsp;で追加されました<br /></span><span style="color: #0000BB">?&gt;</span>

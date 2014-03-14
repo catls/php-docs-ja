@@ -20,7 +20,7 @@
  <div class="refsect1 description" id="refsect1-mongoclient.construct-description">
   <h3 class="title">説明</h3>
   <div class="constructorsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>MongoClient::__construct()</strong></span>
+   <span class="modifier">public</span> <span class="methodname"><strong>MongoClient::__construct</strong></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$server</code><span class="initializer"> = &quot;mongodb://localhost:27017&quot;</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array(&quot;connect&quot; =&gt; <strong><code>TRUE</code></strong>)</span></span>
   ]] )</div>
@@ -32,7 +32,7 @@
    に接続します。
   </p>
   <p class="para">
-   <em><code class="parameter">server</code></em> は次のような形式にしなければなりません。
+   <code class="parameter">server</code> は次のような形式にしなければなりません。
    <div class="example-contents">
 <div class="cdata"><pre>
 mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
@@ -68,7 +68,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
   </p>
   <p class="para">
    オプションのクエリ文字列を使って、追加オプションを指定できます。
-   同じオプションを <em><code class="parameter">options</code></em> 配列でもサポートしているので、
+   同じオプションを <code class="parameter">options</code> 配列でもサポートしているので、
    そちらでももう一度説明します。
    オプションの使いかたについては <a href="" class="link">下のサンプル</a>
    を参照ください。
@@ -89,7 +89,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
     
      <dt>
 
-      <em><code class="parameter">server</code></em>
+      <code class="parameter">server</code>
      </dt>
 
      <dd>
@@ -103,7 +103,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
     
      <dt>
 
-      <em><code class="parameter">options</code></em>
+      <code class="parameter">options</code>
      </dt>
 
      <dd>
@@ -575,7 +575,7 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
          
           <dt>
 
-           <em><code class="parameter">&quot;persist&quot;</code></em>
+           <code class="parameter">&quot;persist&quot;</code>
           </dt>
 
           <dd>
@@ -617,7 +617,7 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
          
           <dt>
 
-           <em><code class="parameter">server</code></em>
+           <code class="parameter">server</code>
           </dt>
 
           <dd>
@@ -631,7 +631,7 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
          
           <dt>
 
-           <em><code class="parameter">connect</code></em>
+           <code class="parameter">connect</code>
           </dt>
 
           <dd>
@@ -647,7 +647,7 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
          
           <dt>
 
-           <em><code class="parameter">persistent</code></em>
+           <code class="parameter">persistent</code>
           </dt>
 
           <dd>
@@ -661,7 +661,7 @@ $m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
          
           <dt>
 
-           <em><code class="parameter">paired</code></em>
+           <code class="parameter">paired</code>
           </dt>
 
           <dd>

@@ -46,7 +46,7 @@
 
     
      <dt>
-<em><code class="parameter">statement</code></em></dt>
+<code class="parameter">statement</code></dt>
 
      <dd>
 
@@ -60,7 +60,7 @@ CURSOR</em> ステートメント ID。</p>
     
     
      <dt>
-<em><code class="parameter">output</code></em></dt>
+<code class="parameter">output</code></dt>
 
      <dd>
 
@@ -80,7 +80,7 @@ CURSOR</em> ステートメント ID。</p>
     
     
      <dt>
-<em><code class="parameter">skip</code></em></dt>
+<code class="parameter">skip</code></dt>
 
      <dd>
 
@@ -93,25 +93,25 @@ CURSOR</em> ステートメント ID。</p>
     
     
      <dt>
-<em><code class="parameter">maxrows</code></em></dt>
+<code class="parameter">maxrows</code></dt>
 
      <dd>
 
       <p class="para">
        読み込む行数。デフォルトは -1 で、これは
-       <em><code class="parameter">skip</code></em> + 1 番目の行以降のすべての行を意味します。
+       <code class="parameter">skip</code> + 1 番目の行以降のすべての行を意味します。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
-       パラメータ <em><code class="parameter">flags</code></em> は、
+       パラメータ <code class="parameter">flags</code> は、
        配列の構造をあらわし、また連想配列を使うかどうかもあらわします。
        <table class="doctable table">
         <caption><strong><span class="function"><strong>oci_fetch_all()</strong></span> の配列構造モード</strong></caption>
@@ -179,7 +179,7 @@ CURSOR</em> ステートメント ID。</p>
        Oracle のデフォルトである大文字小文字を区別しないカラム名の場合は、
        配列のキーは大文字となります。大文字小文字を区別するカラム名の場合は、
        配列のキーの大文字小文字は実際のカラム名と同じになります。
-       <span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> で <em><code class="parameter">output</code></em>
+       <span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> で <code class="parameter">output</code>
        を確認し、大文字小文字を適切に指定するようにしましょう。
       </p>
       <p class="para">
@@ -198,7 +198,7 @@ CURSOR</em> ステートメント ID。</p>
  <div class="refsect1 returnvalues" id="refsect1-function.oci-fetch-all-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">output</code></em> の行数を返します。これは 0 以上の値となります。
+   <code class="parameter">output</code> の行数を返します。これは 0 以上の値となります。
    失敗した場合に <strong><code>FALSE</code></strong> を返します.
   </p>
  </div>
@@ -249,7 +249,7 @@ CURSOR</em> ステートメント ID。</p>
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     <em><code class="parameter">skip</code></em> を使うのは、非常に非効率的です。
+     <code class="parameter">skip</code> を使うのは、非常に非効率的です。
      読み飛ばす行もすべて PHP がデータベースから受け取る結果セットに含まれ、
      そのあとで読み飛ばす部分が捨てられます。
      それよりは、SQL を使って取得開始位置と取得範囲をはじめから指定した方がより効率的です。

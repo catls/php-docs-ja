@@ -129,7 +129,7 @@ struct _pdo_dbh_t {
   <tr><td><a href="#internals2.pdo.dbh.co.max-esc">*******</a></td><td>
    <p class="para">
     もしドライバがネイティブのプリペアドステートメントをサポートしない
-    (<em><code class="parameter">supports_placeholders</code></em> が
+    (<code class="parameter">supports_placeholders</code> が
     <strong><code>PDO_PLACEHOLDER_NONE</code></strong> となっている)
     場合、<span class="function"><strong>SKEL_handle_quoter()</strong></span> 関数によって
     1 文字の長さが最大どれだけになるかをこの値に設定する必要があります。
@@ -144,7 +144,7 @@ struct _pdo_dbh_t {
     もし何らかの理由でドライバが DSN を変更する必要がある場合は、
     <span class="function"><strong>SKEL_handle_factory()</strong></span> の中で更新しなければ
     なりません。このメンバを変更することは避けるべきです。
-    もし変更する際には、<em><code class="parameter">data_source_len</code></em>
+    もし変更する際には、<code class="parameter">data_source_len</code>
     が正しい値であることを確かめる必要があります。
    </p>
   </td></tr>

@@ -26,7 +26,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>pg_dbname()</strong></span> は、
-   PostgreSQL <em><code class="parameter">connection</code></em> リソースで指定した
+   PostgreSQL <code class="parameter">connection</code> リソースで指定した
    データベースの名前を返します。
   </p>
  </div>
@@ -39,12 +39,12 @@
 
     
      <dt>
-<em><code class="parameter">connection</code></em></dt>
+<code class="parameter">connection</code></dt>
 
      <dd>
 
       <p class="para">
-       PostgreSQL データベース接続リソース。<em><code class="parameter">connection</code></em>
+       PostgreSQL データベース接続リソース。<code class="parameter">connection</code>
        が指定されていない場合はデフォルトの接続が使用されます。
        デフォルトの接続は、直近の <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span>
        あるいは <span class="function"><a href="function.pg-pconnect.html" class="function">pg_pconnect()</a></span> によって作成されたものです。
@@ -61,7 +61,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.pg-dbname-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">connection</code></em> が指すデータベースの名前を表す
+   <code class="parameter">connection</code> が指すデータベースの名前を表す
    文字列を返します。エラー時には <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>

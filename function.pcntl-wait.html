@@ -38,8 +38,8 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    この関数は、<em><code class="parameter">pid</code></em> に <em>-1</em>
-    を指定し、<em><code class="parameter">options</code></em> を何も設定せずに
+    この関数は、<code class="parameter">pid</code> に <em>-1</em>
+    を指定し、<code class="parameter">options</code> を何も設定せずに
     <span class="function"><a href="function.pcntl-waitpid.html" class="function">pcntl_waitpid()</a></span> をコールするのと等価です。
    </p>
   </p></blockquote>
@@ -53,13 +53,13 @@
 
     
      <dt>
-<em><code class="parameter">status</code></em></dt>
+<code class="parameter">status</code></dt>
 
      <dd>
 
       <p class="para">
        <span class="function"><strong>pcntl_wait()</strong></span> は、パラメータ
-       <em><code class="parameter">status</code></em> の中にステータス情報を保存します。
+       <code class="parameter">status</code> の中にステータス情報を保存します。
        このステータスは、次の関数を用いて評価可能です。
        <span class="function"><a href="function.pcntl-wifexited.html" class="function">pcntl_wifexited()</a></span>、
        <span class="function"><a href="function.pcntl-wifstopped.html" class="function">pcntl_wifstopped()</a></span>、
@@ -73,20 +73,20 @@
     
     
      <dt>
-<em><code class="parameter">options</code></em></dt>
+<code class="parameter">options</code></dt>
 
      <dd>
 
       <p class="para">
        システム上で wait3 が使用可能な場合 (ほとんどの BSD 系システムが
-       該当します)、オプションのパラメータ <em><code class="parameter">options</code></em>
+       該当します)、オプションのパラメータ <code class="parameter">options</code>
        を使用可能です。このパラメータが指定されない場合、wait はシステムコールに
-       対して使用されます。wait3 が使用できない場合、<em><code class="parameter">options
-       </code></em> に値を設定しても何の影響も及ぼしません。
-       <em><code class="parameter">options</code></em> の値は、次の 2 つのグローバル定数の
+       対して使用されます。wait3 が使用できない場合、<code class="parameter">options
+       </code> に値を設定しても何の影響も及ぼしません。
+       <code class="parameter">options</code> の値は、次の 2 つのグローバル定数の
        ゼロまたはそれ以上の論理和です。
        <table class="doctable table">
-        <caption><strong><em><code class="parameter">options</code></em> のとりうる値</strong></caption>
+        <caption><strong><code class="parameter">options</code> のとりうる値</strong></caption>
         
          <tbody class="tbody">
           <tr>

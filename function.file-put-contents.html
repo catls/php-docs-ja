@@ -32,7 +32,7 @@
    <span class="function"><a href="function.fclose.html" class="function">fclose()</a></span> を続けてコールしてデータをファイルに書き込むのと等価です。
   </p>
   <p class="para">
-   <em><code class="parameter">filename</code></em> が存在しない場合はファイルを作成します。
+   <code class="parameter">filename</code> が存在しない場合はファイルを作成します。
    存在する場合はそのファイルを上書きします。ただし
    <strong><code>FILE_APPEND</code></strong> フラグが設定されている場合は別です。
   </p>
@@ -46,7 +46,7 @@
 
     
      <dt>
-<em><code class="parameter">filename</code></em></dt>
+<code class="parameter">filename</code></dt>
 
      <dd>
 
@@ -58,7 +58,7 @@
     
     
      <dt>
-<em><code class="parameter">data</code></em></dt>
+<code class="parameter">data</code></dt>
 
      <dd>
 
@@ -67,12 +67,12 @@
        もしくは <span class="type"><span class="type ストリーム">ストリーム</span></span> リソースのいずれかを指定可能です。
       </p>
       <p class="para">
-       <em><code class="parameter">data</code></em> が <span class="type"><span class="type ストリーム">ストリーム</span></span> リソースの場合は、
+       <code class="parameter">data</code> が <span class="type"><span class="type ストリーム">ストリーム</span></span> リソースの場合は、
        ストリームのバッファに残っている内容が指定したファイルにコピーされます。
        これは、<span class="function"><a href="function.stream-copy-to-stream.html" class="function">stream_copy_to_stream()</a></span> の挙動と似ています。
       </p>
       <p class="para">
-       <em><code class="parameter">data</code></em> に一次元の配列を指定することもできます。この場合は
+       <code class="parameter">data</code> に一次元の配列を指定することもできます。この場合は
        <em>file_put_contents($filename, implode(&#039;&#039;, $array))</em>
        と同じ意味になります。
       </p>
@@ -81,12 +81,12 @@
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">flags</code></em> の値は、以下のフラグを組み合わせたものとなります
+       <code class="parameter">flags</code> の値は、以下のフラグを組み合わせたものとなります
        組み合わせる際には、論理 OR
        (<em>|</em>) 演算子で連結します。
       </p>
@@ -108,7 +108,7 @@
             <strong><code>FILE_USE_INCLUDE_PATH</code></strong>
            </td>
            <td>
-            <em><code class="parameter">filename</code></em> をインクルードディレクトリから探します。
+            <code class="parameter">filename</code> をインクルードディレクトリから探します。
             詳細な情報は <a href="ini.core.html#ini.include-path" class="link">include_path</a> を参照ください。
            </td>
           </tr>
@@ -118,7 +118,7 @@
             <strong><code>FILE_APPEND</code></strong>
            </td>
            <td>
-            <em><code class="parameter">filename</code></em> がすでに存在する場合に、
+            <code class="parameter">filename</code> がすでに存在する場合に、
             データをファイルに上書きするするのではなく追記します。
            </td>
           </tr>
@@ -143,7 +143,7 @@
     
     
      <dt>
-<em><code class="parameter">context</code></em></dt>
+<code class="parameter">context</code></dt>
 
      <dd>
 
@@ -227,7 +227,7 @@
        <td>5.1.0</td>
        <td>
         <strong><code>LOCK_EX</code></strong> のサポートが追加され、
-        <em><code class="parameter">data</code></em>
+        <code class="parameter">data</code>
         パラメータにストリームリソースを指定することが可能になりました。
        </td>
       </tr>

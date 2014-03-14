@@ -28,13 +28,13 @@
 
   <p class="para rdfs-comment">
     The <span class="function"><strong>cubrid_move_cursor()</strong></span> function is used to move the
-    current cursor location of <em><code class="parameter">req_identifier</code></em> by the
-    value set in the <em><code class="parameter">offset</code></em> argument, to the direction
-    set in the <em><code class="parameter">origin</code></em> argument. To set the
-    <em><code class="parameter">origin</code></em> argument, you can use CUBRID_CURSOR_FIRST
+    current cursor location of <code class="parameter">req_identifier</code> by the
+    value set in the <code class="parameter">offset</code> argument, to the direction
+    set in the <code class="parameter">origin</code> argument. To set the
+    <code class="parameter">origin</code> argument, you can use CUBRID_CURSOR_FIRST
     for the first part of the result, CUBRID_CURSOR_CURRENT for the current
     location of the result, or CUBRID_CURSOR_LAST for the last part of the
-    result.  If <em><code class="parameter">origin</code></em> argument is not explicitly
+    result.  If <code class="parameter">origin</code> argument is not explicitly
     designated, then the function uses CUBRID_CURSOR_CURRENT as its default
     value.
   </p>
@@ -54,7 +54,7 @@
 
     
   <dt>
-<em><code class="parameter">req_identifier</code></em></dt>
+<code class="parameter">req_identifier</code></dt>
 
   <dd>
 <p class="para">Request identifier.</p></dd>
@@ -62,7 +62,7 @@
    
    
   <dt>
-<em><code class="parameter">offset</code></em></dt>
+<code class="parameter">offset</code></dt>
 
   <dd>
 <p class="para">Number of units you want to move the cursor.</p></dd>
@@ -70,7 +70,7 @@
    
   
   <dt>
-<em><code class="parameter">origin</code></em></dt>
+<code class="parameter">origin</code></dt>
 
   <dd>
 <p class="para">Location where you want to move the cursor from CUBRID_CURSOR_FIRST, CUBRID_CURSOR_CURRENT, CUBRID_CURSOR_LAST.</p></dd>

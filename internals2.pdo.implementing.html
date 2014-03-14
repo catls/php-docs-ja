@@ -162,7 +162,7 @@ PHP_MSHUTDOWN_FUNCTION(pdo_SKEL)
     PDO ソース内のファイル pdo_sqlstate.c には、PDO が明示的に理解する
     一般的な SQLSTATE コードのテーブルがあります。エラーコードの設定は、
     この関数がコールされる前に終わっていなければなりません。この関数は、
-    グローバル変数 <em><code class="parameter">pdo_err</code></em> に
+    グローバル変数 <code class="parameter">pdo_err</code> に
     dbh あるいは stmt (stmt が NULL でない場合)
     で見つかったエラーを設定します。
    </p>
@@ -355,7 +355,7 @@ long sql_len, pdo_stmt_t *stmt, zval *driver_options TSRMLS_DC)</pre></div></pre
     この関数は、PHP スクリプトで
     <span class="function"><a href="pdo.query.html" class="function">PDO::query()</a></span> および <span class="function"><a href="pdo.prepare.html" class="function">PDO::prepare()</a></span>
     がコールされた場合に PDO から呼び出されます。この関数の目的は、
-    実行する SQL を準備し、渡された <em><code class="parameter">stmt</code></em> に
+    実行する SQL を準備し、渡された <code class="parameter">stmt</code> に
     しかるべき値を格納することです。
    </p>
 
@@ -870,7 +870,7 @@ len</dt>
 
      <dd>
 
-      <p class="para">パラメータ <em><code class="parameter">name</code></em> の長さ。</p>
+      <p class="para">パラメータ <code class="parameter">name</code> の長さ。</p>
      </dd>
 
     

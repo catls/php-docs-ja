@@ -26,11 +26,11 @@
   ] )</div>
 
   <p class="simpara">
-   <em><code class="parameter">array</code></em> 配列の各要素にユーザー定義関数
-   <em><code class="parameter">callback</code></em> を適用します。
+   <code class="parameter">array</code> 配列の各要素にユーザー定義関数
+   <code class="parameter">callback</code> を適用します。
   </p>
   <p class="para">
-   <span class="function"><strong>array_walk()</strong></span> は <em><code class="parameter">array</code></em>
+   <span class="function"><strong>array_walk()</strong></span> は <code class="parameter">array</code>
    の内部配列ポインタに影響されません。<span class="function"><strong>array_walk()</strong></span>
    はポインタの位置に関わらず配列の全てに渡って適用されます。
   </p>
@@ -43,7 +43,7 @@
 
     
      <dt>
-<em><code class="parameter">array</code></em></dt>
+<code class="parameter">array</code></dt>
 
      <dd>
 
@@ -55,20 +55,20 @@
     
     
      <dt>
-<em><code class="parameter">callback</code></em></dt>
+<code class="parameter">callback</code></dt>
 
      <dd>
 
       <p class="para">
        通常、
-       <em><code class="parameter">callback</code></em> は引数を二つとります。
-       <em><code class="parameter">array</code></em> パラメータの値が最初の引数、
+       <code class="parameter">callback</code> は引数を二つとります。
+       <code class="parameter">array</code> パラメータの値が最初の引数、
        キー/添字は二番目の引数となります。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
-        <em><code class="parameter">callback</code></em> により配列の値そのものを変更する必要がある場合、
-        <em><code class="parameter">callback</code></em> の最初の引数は
+        <code class="parameter">callback</code> により配列の値そのものを変更する必要がある場合、
+        <code class="parameter">callback</code> の最初の引数は
         <a href="language.references.html" class="link">参照</a>
         として渡す必要があります。この場合、配列の要素に加えた変更は、
         配列自体に対して行われます。
@@ -78,7 +78,7 @@
         <p class="para">
           内部関数の多く (たとえば <span class="function"><a href="function.strtolower.html" class="function">strtolower()</a></span>) は、
           期待しているよりも多い引数を受け取ると警告が発生します。
-          そのため、<em><code class="parameter">callback</code></em>
+          そのため、<code class="parameter">callback</code>
           に直接指定することはできません。
         </p>
       </p></blockquote>
@@ -94,13 +94,13 @@
     
     
      <dt>
-<em><code class="parameter">userdata</code></em></dt>
+<code class="parameter">userdata</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションの <em><code class="parameter">userdata</code></em> パラメータが指定された場合、
-       コールバック関数 <em><code class="parameter">callback</code></em>
+       オプションの <code class="parameter">userdata</code> パラメータが指定された場合、
+       コールバック関数 <code class="parameter">callback</code>
        への三番目の引数として渡されます。
       </p>
      </dd>
@@ -121,8 +121,8 @@
  <div class="refsect1 errors" id="refsect1-function.array-walk-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   <em><code class="parameter">callback</code></em> 関数が、指定された引数より多いパラメータを必要とする
-   場合、<span class="function"><strong>array_walk()</strong></span>が<em><code class="parameter">callback</code></em>
+   <code class="parameter">callback</code> 関数が、指定された引数より多いパラメータを必要とする
+   場合、<span class="function"><strong>array_walk()</strong></span>が<code class="parameter">callback</code>
    をコールする度にエラーレベル <a href="errorfunc.constants.html" class="link">E_WARNING</a> が
    発生します。
   </p>
@@ -131,7 +131,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-walk-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4992">
+   <div class="example" id="example-4994">
     <p><strong>例1 <span class="function"><strong>array_walk()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

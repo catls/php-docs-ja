@@ -89,7 +89,7 @@
 
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -101,7 +101,7 @@
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
@@ -110,7 +110,7 @@
        クォートや無効な符号単位シーケンス、そして文書型の扱いを指定します。
        デフォルトは <em>ENT_COMPAT | ENT_HTML401</em> です。
        <table class="doctable table">
-        <caption><strong>利用可能な <em><code class="parameter">flags</code></em> 定数</strong></caption>
+        <caption><strong>利用可能な <code class="parameter">flags</code> 定数</strong></caption>
         
          <thead>
           <tr>
@@ -203,14 +203,16 @@
     
     
      <dt>
-<em><code class="parameter">encoding</code></em></dt>
+<code class="parameter">encoding</code></dt>
 
      <dd>
 
       <p class="para">
-       変換に使用されるエンコーディングを指定します。
-       省略した場合のデフォルト値は、PHP 5.4.0 より前のバージョンでは
-       ISO-8859-1、そして PHP 5.4.0 以降では UTF-8 となります。
+       PHP 5.6.0 以降では、デフォルト値として <a href="ini.core.html#ini.default-charset" class="link">default_charset</a>
+       の値を使います。それ以前のデフォルト値は、
+       PHP 5.4.0 より前のバージョンでは
+       ISO-8859-1、そして PHP 5.4.0 以降では UTF-8 でした。
+       この引数は表向きには任意指定となっていますが、コードにあわせて正しい値を指定しておくことを強く推奨します。
       </p>
       <p class="para">
        この関数を使ううえでは
@@ -218,7 +220,7 @@
        <em>UTF-8</em>、<em>cp866</em>、
        <em>cp1251</em>、<em>cp1252</em> そして
        <em>KOI8-R</em> は事実上同等です。
-       <em><code class="parameter">string</code></em> 自体がそのエンコーディングにおける有効な文字列である限り、
+       <code class="parameter">string</code> 自体がそのエンコーディングにおける有効な文字列である限り、
        これらのエンコーディングでは
        <span class="function"><strong>htmlspecialchars()</strong></span> の影響が及ぶ文字がみな同じ位置にあるからです。
       </p>
@@ -385,12 +387,12 @@
     
     
      <dt>
-<em><code class="parameter">double_encode</code></em></dt>
+<code class="parameter">double_encode</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">double_encode</code></em> をオフにすると、PHP
+       <code class="parameter">double_encode</code> をオフにすると、PHP
        は既存の html エンティティをエンコードしません。
        デフォルトでは、既存のエンティティも含めてすべてを変換します。
       </p>
@@ -409,8 +411,8 @@
    変換後の文字列を返します。
   </p>
   <p class="para">
-   入力の <em><code class="parameter">string</code></em> の中に
-   エンコーディング <em><code class="parameter">encoding</code></em> における無効なコードユニットシーケンスが含まれており、
+   入力の <code class="parameter">string</code> の中に
+   エンコーディング <code class="parameter">encoding</code> における無効なコードユニットシーケンスが含まれており、
    かつ <strong><code>ENT_IGNORE</code></strong> フラグが設定されていなければ、
    <span class="function"><strong>htmlspecialchars()</strong></span> は空文字列を返します。
   </p>
@@ -434,7 +436,7 @@
       <tr>
        <td>5.4.0</td>
        <td>
-        <em><code class="parameter">encoding</code></em> パラメータのデフォルトが
+        <code class="parameter">encoding</code> パラメータのデフォルトが
         UTF-8 に変わりました。
        </td>
       </tr>
@@ -458,14 +460,14 @@
       <tr>
        <td>5.2.3</td>
        <td>
-        <em><code class="parameter">double_encode</code></em> パラメータが追加されました。
+        <code class="parameter">double_encode</code> パラメータが追加されました。
        </td>
       </tr>
 
       <tr>
        <td>4.1.0</td>
        <td>
-        <em><code class="parameter">encoding</code></em> パラメータが追加されました。
+        <code class="parameter">encoding</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -480,7 +482,7 @@
  <div class="refsect1 examples" id="refsect1-function.htmlspecialchars-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4833">
+   <div class="example" id="example-4835">
     <p><strong>例1 <span class="function"><strong>htmlspecialchars()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

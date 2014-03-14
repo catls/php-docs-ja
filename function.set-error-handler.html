@@ -27,7 +27,7 @@
 
   <p class="para rdfs-comment">
    スクリプトのエラー処理を行うユーザー関数
-   (<em><code class="parameter">error_handler</code></em>)を設定します。
+   (<code class="parameter">error_handler</code>)を設定します。
   </p>
   <p class="para">
    この関数は、実行時のエラー処理をユーザーが定義するために使用します。
@@ -37,7 +37,7 @@
    アプリケーションがこの場合にあたります。
   </p>
   <p class="para">
-   コールバック関数が <strong><code>FALSE</code></strong> を返さない限り、<em><code class="parameter">error_types</code></em>
+   コールバック関数が <strong><code>FALSE</code></strong> を返さない限り、<code class="parameter">error_types</code>
    で指定した型のエラーでは PHP 標準のエラーハンドラが完全にバイパスされることに注意してください。
    <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> の設定にかかわらず、どのような場合でも
    ユーザーが設定したエラーハンドラがコールされます。ただし、この場合でも
@@ -76,7 +76,7 @@
 
     
      <dt>
-<em><code class="parameter">error_handler</code></em></dt>
+<code class="parameter">error_handler</code></dt>
 
      <dd>
 
@@ -98,12 +98,12 @@
 
         
          <dt>
-<em><code class="parameter">errno</code></em></dt>
+<code class="parameter">errno</code></dt>
 
          <dd>
 
           <span class="simpara">
-           最初のパラメータ <em><code class="parameter">errno</code></em> は、発生させる
+           最初のパラメータ <code class="parameter">errno</code> は、発生させる
            エラーのレベルを整数で格納します。
           </span>
          </dd>
@@ -111,12 +111,12 @@
         
         
          <dt>
-<em><code class="parameter">errstr</code></em></dt>
+<code class="parameter">errstr</code></dt>
 
          <dd>
 
           <span class="simpara">
-           2 番目のパラメータ <em><code class="parameter">errstr</code></em> は、
+           2 番目のパラメータ <code class="parameter">errstr</code> は、
            エラーメッセージを文字列で格納します。
           </span>
          </dd>
@@ -124,12 +124,12 @@
         
         
          <dt>
-<em><code class="parameter">errfile</code></em></dt>
+<code class="parameter">errfile</code></dt>
 
          <dd>
 
           <span class="simpara">
-           3 番目のパラメータ <em><code class="parameter">errfile</code></em> はオプションで、
+           3 番目のパラメータ <code class="parameter">errfile</code> はオプションで、
            エラーが発生したファイルの名前を文字列で格納します。
           </span>
          </dd>
@@ -137,12 +137,12 @@
         
         
          <dt>
-<em><code class="parameter">errline</code></em></dt>
+<code class="parameter">errline</code></dt>
 
          <dd>
 
           <span class="simpara">
-           4 番目のパラメータ <em><code class="parameter">errline</code></em> はオプションで、
+           4 番目のパラメータ <code class="parameter">errline</code> はオプションで、
            エラーが発生した行番号を整数で格納します。
           </span>
          </dd>
@@ -150,15 +150,15 @@
         
         
          <dt>
-<em><code class="parameter">errcontext</code></em></dt>
+<code class="parameter">errcontext</code></dt>
 
          <dd>
 
           <span class="simpara">
-           5 番目のパラメータ <em><code class="parameter">errcontext</code></em> はオプションで、
+           5 番目のパラメータ <code class="parameter">errcontext</code> はオプションで、
            エラーが発生した場所のアクティブシンボルテーブルを指す配列です。
            つまり、エラーが発生したスコープ内でのすべての変数の内容を格納した
-           配列が <em><code class="parameter">errcontext</code></em> だということです。
+           配列が <code class="parameter">errcontext</code> だということです。
            ユーザーエラーハンドラは、決してエラーコンテキストを書き換えては
            いけません。
           </span>
@@ -176,7 +176,7 @@
     
     
      <dt>
-<em><code class="parameter">error_types</code></em></dt>
+<code class="parameter">error_types</code></dt>
 
      <dd>
 
@@ -184,10 +184,10 @@
        設定パラメータ
        <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a>
        で表示するエラーを制御するのと全く同様に、
-       <em><code class="parameter">error_handler</code></em> の起動を制御する際に
+       <code class="parameter">error_handler</code> の起動を制御する際に
        使用可能です。
        このマスクを指定しない場合、
-       <em><code class="parameter">error_handler</code></em> は
+       <code class="parameter">error_handler</code> は
        <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> の設定によらず
        全てのエラーに関してコールされます。
       </p>
@@ -229,7 +229,7 @@
       <tr>
        <td>5.5.0</td>
        <td>
-        <em><code class="parameter">error_handler</code></em> に <strong><code>NULL</code></strong> を渡せるようになりました。
+        <code class="parameter">error_handler</code> に <strong><code>NULL</code></strong> を渡せるようになりました。
        </td>
       </tr>
 
@@ -245,14 +245,14 @@
       <tr>
        <td>5.0.0</td>
        <td>
-        <em><code class="parameter">error_types</code></em> パラメータが追加されました。
+        <code class="parameter">error_types</code> パラメータが追加されました。
        </td>
       </tr>
 
       <tr>
        <td>4.3.0</td>
        <td>
-        <em><code class="parameter">error_handler</code></em> として、関数名のかわりに
+        <code class="parameter">error_handler</code> として、関数名のかわりに
         オブジェクトへのリファレンスとメソッド名を含む配列を指定することも
         できます。
        </td>
@@ -261,7 +261,7 @@
       <tr>
        <td>4.0.2</td>
        <td>
-        ユーザー定義関数 <em><code class="parameter">error_handler</code></em> で 3 つの
+        ユーザー定義関数 <code class="parameter">error_handler</code> で 3 つの
         オプションパラメータが利用できるようになりました。filename, line number, 
         および context です。
        </td>

@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">string</code></em> に含まれるすべての改行文字 (<em>\r\n</em>、
+   <code class="parameter">string</code> に含まれるすべての改行文字 (<em>\r\n</em>、
    <em>\n\r</em>、<em>\n</em> および <em>\r</em>)
    の前に &#039;&lt;br /&gt;&#039; あるいは &#039;&lt;br&gt;&#039; を挿入して返します。
   </p>
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">is_xhtml</code></em></dt>
+<code class="parameter">is_xhtml</code></dt>
 
      <dd>
 
@@ -79,7 +79,7 @@
  <div class="refsect1 examples" id="refsect1-function.nl2br-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4844">
+   <div class="example" id="example-4846">
     <p><strong>例1 <span class="function"><strong>nl2br()</strong></span> の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -96,8 +96,8 @@ foo isn&#039;t&lt;br /&gt;
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-4845">
-    <p><strong>例2 <em><code class="parameter">is_xhtml</code></em> パラメータの使用による、妥当な HTML 形式のマークアップの生成</strong></p>
+   <div class="example" id="example-4847">
+    <p><strong>例2 <code class="parameter">is_xhtml</code> パラメータの使用による、妥当な HTML 形式のマークアップの生成</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">nl2br</span><span style="color: #007700">(</span><span style="color: #DD0000">"Welcome\r\nThis&nbsp;is&nbsp;my&nbsp;HTML&nbsp;document"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -113,7 +113,7 @@ This is my HTML document
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-4846">
+   <div class="example" id="example-4848">
     <p><strong>例3 さまざまな改行文字</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -153,7 +153,7 @@ string&lt;br /&gt;
       <tr>
        <td>5.3.0</td>
        <td>
-         オプションの <em><code class="parameter">is_xhtml</code></em> パラメータが追加されました。
+         オプションの <code class="parameter">is_xhtml</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -162,7 +162,7 @@ string&lt;br /&gt;
        <td>
         <span class="function"><strong>nl2br()</strong></span> は XHTML 準拠となりました。
         PHP 4.0.5 より前の全てのバージョンでは、
-        <span class="function"><strong>nl2br()</strong></span> は、<em><code class="parameter">string</code></em>
+        <span class="function"><strong>nl2br()</strong></span> は、<code class="parameter">string</code>
         の全ての改行記号の前に &#039;&lt;br /&gt;&#039; の代わりに &#039;&lt;br&gt;&#039;
         を挿入して返します。
        </td>

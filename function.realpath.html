@@ -26,7 +26,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>realpath()</strong></span> は、
-   入力 <em><code class="parameter">path</code></em> のシンボリックリンクをすべて展開し、
+   入力 <code class="parameter">path</code> のシンボリックリンクをすべて展開し、
    「/./」「/../」「/」などの参照をすべて解決することにより、正規化した絶対パスを返します。
   </p>
  </div>
@@ -39,7 +39,7 @@
 
     
      <dt>
-<em><code class="parameter">path</code></em></dt>
+<code class="parameter">path</code></dt>
 
      <dd>
 
@@ -105,7 +105,7 @@
        <td>5.3.0</td>
        <td>
         これより前のバージョンでは、*BSD システムでは <span class="function"><strong>realpath()</strong></span>
-        は最後の <em><code class="parameter">path</code></em>
+        は最後の <code class="parameter">path</code>
         コンポーネントのみが存在しない場合には失敗となりませんでした。
         このバージョン以降では失敗となります。
        </td>
@@ -114,7 +114,7 @@
       <tr>
        <td>5.0.0</td>
        <td>
-        これより前のバージョンでは、<em><code class="parameter">path</code></em> に空白や <strong><code>NULL</code></strong>
+        これより前のバージョンでは、<code class="parameter">path</code> に空白や <strong><code>NULL</code></strong>
         を指定すると <span class="function"><strong>realpath()</strong></span> はスクリプトディレクトリ名を返していました。
        </td>
       </tr>

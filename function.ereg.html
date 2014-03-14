@@ -27,8 +27,8 @@
   ] )</div>
 
   <p class="simpara">
-   <em><code class="parameter">pattern</code></em> で指定した正規表現
-   により、大文字小文字を区別して <em><code class="parameter">string</code></em> を検索します。
+   <code class="parameter">pattern</code> で指定した正規表現
+   により、大文字小文字を区別して <code class="parameter">string</code> を検索します。
   </p>
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は PHP 5.3.0 で
 <em class="emphasis">非推奨</em>となりました。
@@ -43,7 +43,7 @@
 
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -55,7 +55,7 @@
     
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -67,14 +67,14 @@
     
     
      <dt>
-<em><code class="parameter">regs</code></em></dt>
+<code class="parameter">regs</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">pattern</code></em> の括弧でくくられた部分文字列に
-       マッチし、かつこの関数が 3 番目の引数 <em><code class="parameter">regs</code></em> を
-       指定してコールされた場合、マッチした部分が配列 <em><code class="parameter">regs</code></em>
+       <code class="parameter">pattern</code> の括弧でくくられた部分文字列に
+       マッチし、かつこの関数が 3 番目の引数 <code class="parameter">regs</code> を
+       指定してコールされた場合、マッチした部分が配列 <code class="parameter">regs</code>
        に格納されます。
       </p>
       <p class="para">
@@ -95,12 +95,12 @@
  <div class="refsect1 returnvalues" id="refsect1-function.ereg-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">string</code></em> の中で <em><code class="parameter">pattern</code></em>
+   <code class="parameter">string</code> の中で <code class="parameter">pattern</code>
    がマッチした場合にはマッチした文字列の長さを返し、マッチしなかった場合
    またはエラーとなった場合は <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-   オプションのパラメータ <em><code class="parameter">regs</code></em> が渡されなかったり
+   オプションのパラメータ <code class="parameter">regs</code> が渡されなかったり
    マッチした文字列の長さが 0 だったりした場合は、この関数は 1 を返します。
   </p>
  </div>
@@ -144,7 +144,7 @@
  <div class="refsect1 examples" id="refsect1-function.ereg-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4803">
+   <div class="example" id="example-4805">
     <p><strong>例1 <span class="function"><strong>ereg()</strong></span> の例</strong></p>
     <div class="example-contents"><p>
      以下のサンプルコードは、ISO フォーマット(YYYY-MM-DD) で格納されている

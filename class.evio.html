@@ -30,7 +30,7 @@
    </p>
    <p class="para">
     The number of read and/or write event watchers per
-    <em><code class="parameter">fd</code></em>
+    <code class="parameter">fd</code>
     is unlimited. Setting all file descriptors to non-blocking mode is also
     usually a good idea(but not required).
    </p>
@@ -50,7 +50,7 @@
    </p>
    <p class="para">
     If for some reason it is impossible to run the
-    <em><code class="parameter">fd</code></em>
+    <code class="parameter">fd</code>
     in non-blocking mode, then separately re-test whether a file descriptor is
     really ready. Some people additionally use
     <strong><code>SIGALRM</code></strong>

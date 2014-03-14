@@ -27,9 +27,9 @@
 
   <p class="para rdfs-comment">
    関数 <span class="function"><strong>dio_fcntl()</strong></span> は、ファイル記述子
-   <em><code class="parameter">fd</code></em> において <em><code class="parameter">cmd</code></em>
+   <code class="parameter">fd</code> において <code class="parameter">cmd</code>
    で指定された処理を行います。いくつかのコマンドでは、オプションの引数
-   <em><code class="parameter">args</code></em> の指定が必要となります。
+   <code class="parameter">args</code> の指定が必要となります。
   </p>
  </div>
 
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">fd</code></em></dt>
+<code class="parameter">fd</code></dt>
 
      <dd>
 
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">cmd</code></em></dt>
+<code class="parameter">cmd</code></dt>
 
      <dd>
 
@@ -83,14 +83,14 @@
         </li>
         <li class="listitem">
          <p class="para">
-          <strong><code>F_DUPFD</code></strong> - <em><code class="parameter">args</code></em>
+          <strong><code>F_DUPFD</code></strong> - <code class="parameter">args</code>
           以上で最小のファイル記述子を探し、それを返します。
          </p>
         </li>
         <li class="listitem">
          <p class="para">
           <strong><code>F_SETFL</code></strong> - ファイル記述子のフラグを
-          <em><code class="parameter">args</code></em> で指定した値に設定します。指定できる値は
+          <code class="parameter">args</code> で指定した値に設定します。指定できる値は
           <strong><code>O_APPEND</code></strong>、<strong><code>O_NONBLOCK</code></strong>
           あるいは <strong><code>O_ASYNC</code></strong> のいずれかです。
           <strong><code>O_ASYNC</code></strong> を使用するには、
@@ -104,13 +104,13 @@
     
     
      <dt>
-<em><code class="parameter">args</code></em></dt>
+<code class="parameter">args</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">args</code></em> は連想配列で、
-       <em><code class="parameter">cmd</code></em> が <strong><code>F_SETLK</code></strong> あるいは
+       <code class="parameter">args</code> は連想配列で、
+       <code class="parameter">cmd</code> が <strong><code>F_SETLK</code></strong> あるいは
        <strong><code>F_SETLLW</code></strong> の際に以下のキーを保持します。
        <ul class="itemizedlist">
         <li class="listitem">

@@ -27,8 +27,8 @@
   ] )</div>
 
   <p class="simpara">
-   <span class="function"><strong>fwrite()</strong></span>は<em><code class="parameter">string</code></em>の内容を
-   <em><code class="parameter">handle</code></em>が指しているファイル・ストリームに書き込みます。
+   <span class="function"><strong>fwrite()</strong></span>は<code class="parameter">string</code>の内容を
+   <code class="parameter">handle</code>が指しているファイル・ストリームに書き込みます。
   </p>
  </div>
 
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">handle</code></em></dt>
+<code class="parameter">handle</code></dt>
 
      <dd>
 
@@ -51,7 +51,7 @@
     
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -63,20 +63,20 @@
     
     
      <dt>
-<em><code class="parameter">length</code></em></dt>
+<code class="parameter">length</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">length</code></em>パラメータが与えられている場合、
-       <em><code class="parameter">length</code></em>バイト数分の書き込みが完了したか、
-       <em><code class="parameter">string</code></em>が終わりに達したかのいずれか早い方の
+       <code class="parameter">length</code>パラメータが与えられている場合、
+       <code class="parameter">length</code>バイト数分の書き込みが完了したか、
+       <code class="parameter">string</code>が終わりに達したかのいずれか早い方の
        事象により書き込みは中止されます。
       </p>
       <p class="para">
-       <em><code class="parameter">length</code></em> パラメータが指定されている場合、
+       <code class="parameter">length</code> パラメータが指定されている場合、
        <a href="info.configuration.html#ini.magic-quotes-runtime" class="link">magic_quotes_runtime</a>
-       構成オプションは無視され、<em><code class="parameter">string</code></em>からの
+       構成オプションは無視され、<code class="parameter">string</code>からの
        スラッシュ文字の取り除きは行われないことに注意してください。
       </p>
      </dd>
@@ -123,9 +123,9 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
     <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> を使用して追記モードでオープンした
-    <em><code class="parameter">handle</code></em> の場合、
+    <code class="parameter">handle</code> の場合、
     <span class="function"><strong>fwrite()</strong></span> はアトミックになります
-    (ただし、一部のプラットフォームにおいて <em><code class="parameter">string</code></em>
+    (ただし、一部のプラットフォームにおいて <code class="parameter">string</code>
     がファイルシステムのブロックサイズを超えない場合、
     そしてローカルファイルシステム上のファイルである場合に限ります)。
     アトミックであるとは、つまり <span class="function"><strong>fwrite()</strong></span>

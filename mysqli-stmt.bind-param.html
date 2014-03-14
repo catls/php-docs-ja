@@ -45,7 +45,7 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
     データのサイズがパケットサイズの最大値（max_allowed_packet）を
-    こえた場合、<em><code class="parameter">types</code></em> に <em>b</em> を
+    こえた場合、<code class="parameter">types</code> に <em>b</em> を
     指定して <span class="function"><a href="mysqli-stmt.send-long-data.html" class="function">mysqli_stmt_send_long_data()</a></span> を使用し、
     データをパケットに分割して送信する必要があります。
    </p>
@@ -68,15 +68,15 @@
    <dl>
 
     <dt>
-<em><code class="parameter">
-stmt</code></em></dt>
+<code class="parameter">
+stmt</code></dt>
 <dd>
 <p class="para">手続き型のみ:
 <span class="function"><a href="mysqli.stmt-init.html" class="function">mysqli_stmt_init()</a></span> が返すステートメント ID。</p></dd>
 
     
      <dt>
-<em><code class="parameter">types</code></em></dt>
+<code class="parameter">types</code></dt>
 
      <dd>
 
@@ -124,13 +124,13 @@ stmt</code></em></dt>
     
     
      <dt>
-<em><code class="parameter">var1</code></em></dt>
+<code class="parameter">var1</code></dt>
 
      <dd>
 
       <p class="para">
        変数の数。文字列
-       <em><code class="parameter">types</code></em>
+       <code class="parameter">types</code>
        の長さは、ステートメント中のパラメータの数と一致する必要があります。
       </p>
      </dd>

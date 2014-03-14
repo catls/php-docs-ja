@@ -27,8 +27,8 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">filtername</code></em> で指定されたフィルタを、
-   <em><code class="parameter">stream</code></em> に付加されているフィルタのリストに加えます。
+   <code class="parameter">filtername</code> で指定されたフィルタを、
+   <code class="parameter">stream</code> に付加されているフィルタのリストに加えます。
   </p>
  </div>
 
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">stream</code></em></dt>
+<code class="parameter">stream</code></dt>
 
      <dd>
 
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">filtername</code></em></dt>
+<code class="parameter">filtername</code></dt>
 
      <dd>
 
@@ -64,7 +64,7 @@
     
     
      <dt>
-<em><code class="parameter">read_write</code></em></dt>
+<code class="parameter">read_write</code></dt>
 
      <dd>
 
@@ -78,19 +78,19 @@
        <em>ライトフィルターチェィン</em>にも追加します。
        <strong><code>STREAM_FILTER_READ</code></strong>・
        <strong><code>STREAM_FILTER_WRITE</code></strong>・
-       <strong><code>STREAM_FILTER_ALL</code></strong> を <em><code class="parameter">read_write</code></em>パラメータに渡すことで、この挙動を変えることができます。
+       <strong><code>STREAM_FILTER_ALL</code></strong> を <code class="parameter">read_write</code>パラメータに渡すことで、この挙動を変えることができます。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">params</code></em></dt>
+<code class="parameter">params</code></dt>
 
      <dd>
 
       <p class="para">
-       このフィルタは、指定された <em><code class="parameter">params</code></em> と共に、
+       このフィルタは、指定された <code class="parameter">params</code> と共に、
        リストの<em class="emphasis">末尾</em>に追加され、ストリームに対する操作の中で最後に呼び出されます。
        フィルタをリストの先頭に加えたいときは、<span class="function"><a href="function.stream-filter-prepend.html" class="function">stream_filter_prepend()</a></span>
        を使ってください。
@@ -166,7 +166,7 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <strong>カスタム(ユーザー)フィルタを使うには</strong><br />
    <span class="simpara">
-    カスタムフィルタを <em><code class="parameter">filtername</code></em> に指定するためには、
+    カスタムフィルタを <code class="parameter">filtername</code> に指定するためには、
     まず <span class="function"><a href="function.stream-filter-register.html" class="function">stream_filter_register()</a></span> 関数でそれを登録しておく
     必要があります。
    </span>

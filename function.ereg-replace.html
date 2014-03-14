@@ -27,9 +27,9 @@
    )</div>
 
   <p class="simpara">
-   この関数は、<em><code class="parameter">string</code></em> をスキャンして
-   <em><code class="parameter">pattern</code></em> にマッチするものを探し、
-   マッチしたテキストを <em><code class="parameter">replacement</code></em>
+   この関数は、<code class="parameter">string</code> をスキャンして
+   <code class="parameter">pattern</code> にマッチするものを探し、
+   マッチしたテキストを <code class="parameter">replacement</code>
    で置換します。
   </p>
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は PHP 5.3.0 で
@@ -45,7 +45,7 @@
 
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -57,13 +57,13 @@
     
     
      <dt>
-<em><code class="parameter">replacement</code></em></dt>
+<code class="parameter">replacement</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">pattern</code></em> の中に括弧でくくられた部分
-       文字列が含まれている場合、<em><code class="parameter">replacement</code></em>
+       <code class="parameter">pattern</code> の中に括弧でくくられた部分
+       文字列が含まれている場合、<code class="parameter">replacement</code>
        の中に <em>\<span class="replaceable">数字</span></em>
        のような部分文字列を埋め込むこともできます。この部分は、
        「数字」番目の括弧でくくられた部分文字列にマッチする文字列に
@@ -77,7 +77,7 @@
     
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -108,7 +108,7 @@
    たとえば、以下のサンプルコードは &quot;This was a test&quot; と 3 回表示します。
   </p>
   <p class="para">
-   <div class="example" id="example-4800">
+   <div class="example" id="example-4802">
     <p><strong>例1 <span class="function"><strong>ereg_replace()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -121,13 +121,13 @@
   </p>
   <p class="para">
    注意しなければならないのは、パラメータ
-   <em><code class="parameter">replacement</code></em> として整数値を使用する場合、
+   <code class="parameter">replacement</code> として整数値を使用する場合、
    期待する結果が得られない可能性があるということです。これは、
    <span class="function"><strong>ereg_replace()</strong></span> がその数値を文字コードとして
    解釈し使用するためです。例えば、次のようになります。
   </p>
   <p class="para">
-   <div class="example" id="example-4801">
+   <div class="example" id="example-4803">
     <p><strong>例2 <span class="function"><strong>ereg_replace()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -139,7 +139,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4802">
+   <div class="example" id="example-4804">
     <p><strong>例3 URL をリンクで置換する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

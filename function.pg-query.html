@@ -27,7 +27,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>pg_query()</strong></span> は、指定したデータベース
-   <em><code class="parameter">connection</code></em> 上で <em><code class="parameter">query</code></em>
+   <code class="parameter">connection</code> 上で <code class="parameter">query</code>
    を実行します。
    特別な理由がない限り、この関数よりも <span class="function"><a href="function.pg-query-params.html" class="function">pg_query_params()</a></span> を使うほうがいいでしょう。
   </p>
@@ -39,7 +39,7 @@
   <p class="para">
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <span class="simpara">
-     <em><code class="parameter">connection</code></em>は省略可能ですが、それは推奨されません。
+     <code class="parameter">connection</code>は省略可能ですが、それは推奨されません。
      なぜならスクリプトのバグが発見しにくくなるためです。
     </span>
    </p></blockquote>
@@ -61,12 +61,12 @@
 
     
      <dt>
-<em><code class="parameter">connection</code></em></dt>
+<code class="parameter">connection</code></dt>
 
      <dd>
 
       <p class="para">
-       PostgreSQL データベース接続リソース。<em><code class="parameter">connection</code></em>
+       PostgreSQL データベース接続リソース。<code class="parameter">connection</code>
        が指定されていない場合はデフォルトの接続が使用されます。
        デフォルトの接続は、直近の <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span>
        あるいは <span class="function"><a href="function.pg-pconnect.html" class="function">pg_pconnect()</a></span> によって作成されたものです。
@@ -76,7 +76,7 @@
     
     
      <dt>
-<em><code class="parameter">query</code></em></dt>
+<code class="parameter">query</code></dt>
 
      <dd>
 

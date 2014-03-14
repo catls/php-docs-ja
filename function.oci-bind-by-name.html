@@ -30,8 +30,8 @@
 
   <p class="para rdfs-comment">
    PHP の変数
-   <em><code class="parameter">variable</code></em> を Oracle プレースホルダ
-   <em><code class="parameter">bv_name</code></em> にバインドします。
+   <code class="parameter">variable</code> を Oracle プレースホルダ
+   <code class="parameter">bv_name</code> にバインドします。
    バインドは Oracle データベースのパフォーマンスに影響を及ぼす重要な仕組みで、
    SQL インジェクション攻撃を防ぐための方法にもなります。
   </p>
@@ -61,14 +61,14 @@
 
   <p class="para">
     <em>OUT</em> 変数を使う場合は
-    <em><code class="parameter">maxlength</code></em> を指定しなければなりません。
+    <code class="parameter">maxlength</code> を指定しなければなりません。
     これを用いて、返される値を格納するのに必要なメモリを PHP が確保します。
   </p>
 
   <p class="para">
     <em>IN</em> 変数の場合も、もし PHP
     の変数にさまざまな値を格納してステートメントを何度も実行するのであれば
-    <em><code class="parameter">maxlength</code></em> を設定しておくことを推奨します。
+    <code class="parameter">maxlength</code> を設定しておくことを推奨します。
     そうしないと、最初に渡した PHP の変数の値にあわせて
     Oracle がデータの長さを切り詰めてしまう可能性があります。
     最大長がどの程度になるかわからない場合は現在のデータサイズで
@@ -108,7 +108,7 @@
 
     
      <dt>
-<em><code class="parameter">statement</code></em></dt>
+<code class="parameter">statement</code></dt>
 
      <dd>
 
@@ -120,13 +120,13 @@
     
     
      <dt>
-<em><code class="parameter">bv_name</code></em></dt>
+<code class="parameter">bv_name</code></dt>
 
      <dd>
 
       <p class="para">
        コロンを先頭につけたバインド変数プレースホルダをステートメント内で使います。
-       コロンは <em><code class="parameter">bv_name</code></em> では必須ではありません。
+       コロンは <code class="parameter">bv_name</code> では必須ではありません。
        Oracle はクエスチョンマークをプレースホルダとして使いません。
       </p>
      </dd>
@@ -134,40 +134,40 @@
     
     
      <dt>
-<em><code class="parameter">variable</code></em></dt>
+<code class="parameter">variable</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">bv_name</code></em> に関連づける PHP の変数。
+       <code class="parameter">bv_name</code> に関連づける PHP の変数。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">maxlength</code></em></dt>
+<code class="parameter">maxlength</code></dt>
 
      <dd>
 
       <p class="para">
        バインド時の最大長。-1 に設定した場合、
-       <em><code class="parameter">variable</code></em> の現在の長さを最大長として設定します。
+       <code class="parameter">variable</code> の現在の長さを最大長として設定します。
        この場合は、<span class="function"><strong>oci_bind_by_name()</strong></span> がコールされたときに
-       <em><code class="parameter">variable</code></em> が存在してデータが格納されている必要があります。
+       <code class="parameter">variable</code> が存在してデータが格納されている必要があります。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">type</code></em></dt>
+<code class="parameter">type</code></dt>
 
      <dd>
 
       <p class="para">
        Oracle がデータを扱うときのデータ型。デフォルトの
-       <em><code class="parameter">type</code></em> は
+       <code class="parameter">type</code> は
        <strong><code>SQLT_CHR</code></strong> です。
        Oracle は、可能な場合はこの型とデータベースのカラム
        (あるいは PL/SQL の変数) の型の間で変換を行います。
@@ -176,11 +176,11 @@
        抽象データ型 (LOB/ROWID/BFILE) をバインドする必要がある場合、まず
        <span class="function"><a href="function.oci-new-descriptor.html" class="function">oci_new_descriptor()</a></span>
        関数を使用してこれを確保する必要があります。
-       <em><code class="parameter">length</code></em> は抽象データ型用には
+       <code class="parameter">length</code> は抽象データ型用には
        使用されず、-1 を設定する必要があります。
       </p>
       <p class="para">
-       <em><code class="parameter">type</code></em> に設定できる値は以下のとおりです。
+       <code class="parameter">type</code> に設定できる値は以下のとおりです。
        <ul class="itemizedlist">
         <li class="listitem">
          <p class="para">
@@ -489,7 +489,7 @@
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-     PHP の <em><code class="parameter">variable</code></em> 引数は参照渡しです。
+     PHP の <code class="parameter">variable</code> 引数は参照渡しです。
      ループの形式によっては期待通りの動きをしないこともあります。
    </p>
    <div class="informalexample">

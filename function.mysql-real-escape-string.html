@@ -42,7 +42,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   現在の接続の文字セットで <em><code class="parameter">unescaped_string</code></em>
+   現在の接続の文字セットで <code class="parameter">unescaped_string</code>
    の特殊文字をエスケープし、 <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span>
    で安全に利用できる形式に変換します。バイナリデータを挿入しようとしている場合、
    必ずこの関数を利用しなければなりません。
@@ -82,7 +82,7 @@
 
     
      <dt>
-<em><code class="parameter">unescaped_string</code></em></dt>
+<code class="parameter">unescaped_string</code></dt>
 
      <dd>
 
@@ -93,8 +93,8 @@
 
     
     <dt>
-<em><code class="parameter">
-link_identifier</code></em></dt>
+<code class="parameter">
+link_identifier</code></dt>
 <dd>
 <p class="para">MySQL 接続。
 指定されない場合、<span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span> により直近にオープンされたリンクが
@@ -165,7 +165,7 @@ SELECT * FROM users WHERE user=&#039;aidan&#039; AND password=&#039;&#039; OR &#
     <span class="function"><strong>mysql_real_escape_string()</strong></span> を利用する前に、MySQL
     接続が確立されている必要があります。もし存在しなければ、
     <strong><code>E_WARNING</code></strong> レベルのエラーが生成され、<strong><code>FALSE</code></strong>
-    が返されます。<em><code class="parameter">link_identifier</code></em> が指定されなかった場合は、
+    が返されます。<code class="parameter">link_identifier</code> が指定されなかった場合は、
     直近の MySQL 接続が用いられます。
    </p>
   </p></blockquote>

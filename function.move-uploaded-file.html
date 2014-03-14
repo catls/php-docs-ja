@@ -26,11 +26,11 @@
    )</div>
 
   <p class="para rdfs-comment">
-   この関数は、<em><code class="parameter">filename</code></em>
+   この関数は、<code class="parameter">filename</code>
    で指定されたファイルが
    (PHP の HTTP POST アップロード機構によりアップロードされたという意味で)
    有効なアップロードファイルであるかどうかを確認します。
-   そのファイルが有効な場合、<em><code class="parameter">destination</code></em>
+   そのファイルが有効な場合、<code class="parameter">destination</code>
    で指定したファイル名に移動されます。
   </p>
   <p class="para">
@@ -48,7 +48,7 @@
 
     
      <dt>
-<em><code class="parameter">filename</code></em></dt>
+<code class="parameter">filename</code></dt>
 
      <dd>
 
@@ -60,7 +60,7 @@
     
     
      <dt>
-<em><code class="parameter">destination</code></em></dt>
+<code class="parameter">destination</code></dt>
 
      <dd>
 
@@ -82,12 +82,12 @@
    成功した場合に <strong><code>TRUE</code></strong> を返します。
   </p>
   <p class="para">
-   <em><code class="parameter">filename</code></em> が有効なアップロードファイルでない場合、
+   <code class="parameter">filename</code> が有効なアップロードファイルでない場合、
    処理は行われず、<span class="function"><strong>move_uploaded_file()</strong></span> は
    <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-   <em><code class="parameter">filename</code></em> が有効なアップロードファイルであるが、
+   <code class="parameter">filename</code> が有効なアップロードファイルであるが、
    何らかの理由により、移動できない場合、処理は行われず、
    <span class="function"><strong>move_uploaded_file()</strong></span> は
    <strong><code>FALSE</code></strong> を返します。加えて、警告が出力されます。
@@ -120,8 +120,8 @@
     <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a>
     の両者を考慮しています。
     しかしながら、アップロードされたファイルを移動する
-    <em><code class="parameter">destination</code></em> パスのみ制限が設けられます。
-    そこでは <em><code class="parameter">filename</code></em>
+    <code class="parameter">destination</code> パスのみ制限が設けられます。
+    そこでは <code class="parameter">filename</code>
     がそれらの制限に抵触する可能性があるためです。
     <span class="function"><strong>move_uploaded_file()</strong></span> は PHP
     を通じてアップロードされたファイルのみを移動できるようにすることで

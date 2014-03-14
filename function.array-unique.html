@@ -26,13 +26,13 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">array</code></em> を入力とし、値に重複のない新規配列を返します。
+   <code class="parameter">array</code> を入力とし、値に重複のない新規配列を返します。
   </p>
   <p class="para">
    キーは保持されることに注意してください。
    <span class="function"><strong>array_unique()</strong></span> はまず文字列として値をソートし、
    各値の最初のキーを保持し、2回目以降の全てのキーを無視します。
-   これは、ソート前の <em><code class="parameter">array</code></em>
+   これは、ソート前の <code class="parameter">array</code>
    で最初の関連する値のキーが保持されるという意味ではありません。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -55,7 +55,7 @@
 
     
      <dt>
-<em><code class="parameter">array</code></em></dt>
+<code class="parameter">array</code></dt>
 
      <dd>
 
@@ -67,12 +67,12 @@
     
     
      <dt>
-<em><code class="parameter">sort_flags</code></em></dt>
+<code class="parameter">sort_flags</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションの 2 番目のパラメータ <em><code class="parameter">sort_flags</code></em>
+       オプションの 2 番目のパラメータ <code class="parameter">sort_flags</code>
        にこれらの値を使用して、ソートの挙動を変更します。
       </p>
       <p class="para">
@@ -130,7 +130,7 @@
       <tr>
        <td>5.2.10</td>
        <td>
-        <em><code class="parameter">sort_flags</code></em> のデフォルト値を
+        <code class="parameter">sort_flags</code> のデフォルト値を
         <strong><code>SORT_STRING</code></strong> に戻しました。
        </td>
       </tr>
@@ -138,7 +138,7 @@
       <tr>
        <td>5.2.9</td>
        <td>
-        オプションの <em><code class="parameter">sort_flags</code></em> が追加され、
+        オプションの <code class="parameter">sort_flags</code> が追加され、
         デフォルトは <strong><code>SORT_REGULAR</code></strong> となりました。5.2.9 より前のバージョンでは、
         この関数は内部的に <strong><code>SORT_STRING</code></strong> によるソートを行っていました。
        </td>
@@ -155,7 +155,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-unique-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4987">
+   <div class="example" id="example-4989">
     <p><strong>例1 <span class="function"><strong>array_unique()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -178,7 +178,7 @@ Array
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4988">
+   <div class="example" id="example-4990">
     <p><strong>例2 <span class="function"><strong>array_unique()</strong></span> と型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

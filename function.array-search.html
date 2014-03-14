@@ -26,8 +26,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">haystack</code></em> において
-   <em><code class="parameter">needle</code></em> を検索します。
+   <code class="parameter">haystack</code> において
+   <code class="parameter">needle</code> を検索します。
   </p>
  </div>
 
@@ -38,7 +38,7 @@
 
     
      <dt>
-<em><code class="parameter">needle</code></em></dt>
+<code class="parameter">needle</code></dt>
 
      <dd>
 
@@ -47,7 +47,7 @@
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
-        <em><code class="parameter">needle</code></em> が文字列の場合、
+        <code class="parameter">needle</code> が文字列の場合、
         大文字小文字を区別して比較が行われます。
        </p>
       </p></blockquote>
@@ -56,7 +56,7 @@
     
     
      <dt>
-<em><code class="parameter">haystack</code></em></dt>
+<code class="parameter">haystack</code></dt>
 
      <dd>
 
@@ -68,13 +68,13 @@
     
     
      <dt>
-<em><code class="parameter">strict</code></em></dt>
+<code class="parameter">strict</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションの3番目のパラメータ <em><code class="parameter">strict</code></em> に <strong><code>TRUE</code></strong> が指定された場合、<span class="function"><strong>array_search()</strong></span> は <em class="emphasis">identical</em> 要素を <em><code class="parameter">haystack</code></em> から探します。
-  つまり、 <em><code class="parameter">haystack</code></em> の中で <em><code class="parameter">needle</code></em> の型に一致するかどうか、そしてオブジェクトが同一のインスタンスであるかどうかも確認します。
+       オプションの3番目のパラメータ <code class="parameter">strict</code> に <strong><code>TRUE</code></strong> が指定された場合、<span class="function"><strong>array_search()</strong></span> は <em class="emphasis">identical</em> 要素を <code class="parameter">haystack</code> から探します。
+  つまり、 <code class="parameter">haystack</code> の中で <code class="parameter">needle</code> の型に一致するかどうか、そしてオブジェクトが同一のインスタンスであるかどうかも確認します。
       </p>
      </dd>
 
@@ -87,13 +87,13 @@
  <div class="refsect1 returnvalues" id="refsect1-function.array-search-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">needle</code></em> が見つかった場合に配列のキー、
+   <code class="parameter">needle</code> が見つかった場合に配列のキー、
    それ以外の場合に <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-   もし <em><code class="parameter">haystack</code></em> に 1 つ以上の
-   <em><code class="parameter">needle</code></em> に見つかった場合、
-   最初にマッチしたキーが返されます。全てのマッチした値に対するキーを返すためには、代わりに <span class="function"><a href="function.array-keys.html" class="function">array_keys()</a></span> にパラメータ <em><code class="parameter">search_value</code></em> を付けて使用してください。
+   もし <code class="parameter">haystack</code> に 1 つ以上の
+   <code class="parameter">needle</code> に見つかった場合、
+   最初にマッチしたキーが返されます。全てのマッチした値に対するキーを返すためには、代わりに <span class="function"><a href="function.array-keys.html" class="function">array_keys()</a></span> にパラメータ <code class="parameter">search_value</code> を付けて使用してください。
   </p>
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は論理値
 <strong><code>FALSE</code></strong> を返す可能性がありますが、<strong><code>FALSE</code></strong> として評価される値を返す可能性もあります。
@@ -139,7 +139,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-search-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4974">
+   <div class="example" id="example-4976">
     <p><strong>例1 <span class="function"><strong>array_search()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -56,7 +56,7 @@
 
     
      <dt>
-<em><code class="parameter">sessionhandler</code></em></dt>
+<code class="parameter">sessionhandler</code></dt>
 
      <dd>
 
@@ -70,7 +70,7 @@
     
     
      <dt>
-<em><code class="parameter">register_shutdown</code></em></dt>
+<code class="parameter">register_shutdown</code></dt>
 
      <dd>
 
@@ -90,7 +90,7 @@
 
     
      <dt>
-<em><code class="parameter">open(string $savePath, string $sessionName)</code></em></dt>
+<code class="parameter">open(string $savePath, string $sessionName)</code></dt>
 
      <dd>
 
@@ -105,7 +105,7 @@
     
     
      <dt>
-<em><code class="parameter">close()</code></em></dt>
+<code class="parameter">close()</code></dt>
 
      <dd>
 
@@ -119,23 +119,23 @@
     
     
      <dt>
-<em><code class="parameter">read(string $sessionId)</code></em></dt>
+<code class="parameter">read(string $sessionId)</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">read</code></em> コールバックは、常にセッションエンコード (シリアライズ)
+       <code class="parameter">read</code> コールバックは、常にセッションエンコード (シリアライズ)
        された文字列を返さなければなりません。何もデータを読み込まなかった場合は空文字列を返します。
       </p>
       <p class="para">
        このコールバックは、セッションが開始したときや
        <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> がコールされたときに PHP が内部的に実行します。
        このコールバックを実行する前に、PHP は
-       <em><code class="parameter">open</code></em> コールバックを実行します。
+       <code class="parameter">open</code> コールバックを実行します。
       </p>
       <p class="para">
        このコールバックが返す値は、
-       <em><code class="parameter">write</code></em> コールバックがストレージに渡した形式とまったく同じシリアライズ形式でなければなりません。
+       <code class="parameter">write</code> コールバックがストレージに渡した形式とまったく同じシリアライズ形式でなければなりません。
        返された値を PHP が自動的にアンシリアライズして、スーパーグローバル <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var>
        に格納します。データの形式は <span class="function"><a href="function.serialize.html" class="function">serialize()</a></span> したものと似ていますが、実際は違う形式であることに注意しましょう。
        シリアライズの方法は ini 設定 <a href="session.configuration.html#ini.session.serialize-handler" class="link">session.serialize_handler</a> で指定します。
@@ -145,12 +145,12 @@
     
     
      <dt>
-<em><code class="parameter">write(string $sessionId, string $data)</code></em></dt>
+<code class="parameter">write(string $sessionId, string $data)</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">write</code></em> コールバックは、セッションの保存や終了が必要となったときにコールされます。
+       <code class="parameter">write</code> コールバックは、セッションの保存や終了が必要となったときにコールされます。
        このコールバックが受け取るのは、現在のセッション ID とシリアライズ後のスーパーグローバル <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> です。
        PHP が内部で利用するシリアライズ方法は、ini 設定
        <a href="session.configuration.html#ini.session.serialize-handler" class="link">session.serialize_handler</a> で指定します。
@@ -158,12 +158,12 @@
       <p class="para">
        このコールバックに渡されたシリアライズ後のセッションデータを、
        渡されたセッション ID に対応させて格納しなければなりません。
-       このデータを取得した <em><code class="parameter">read</code></em> コールバックは、
-       <em><code class="parameter">write</code></em> コールバックに最初に渡されたのとまったく同じ値を返さなければなりません。
+       このデータを取得した <code class="parameter">read</code> コールバックは、
+       <code class="parameter">write</code> コールバックに最初に渡されたのとまったく同じ値を返さなければなりません。
       </p>
       <p class="para">
        このコールバックが実行されるのは、PHP のスクリプトが終了するときか、あるいは明示的に <span class="function"><a href="function.session-write-close.html" class="function">session_write_close()</a></span>
-       がコールされたときです。この関数の実行後には、PHP が内部的に <em><code class="parameter">close</code></em>
+       がコールされたときです。この関数の実行後には、PHP が内部的に <code class="parameter">close</code>
        コールバックを実行することに注意しましょう。
        <blockquote class="note"><p><strong class="note">注意</strong>: 
         <p class="para">
@@ -179,7 +179,7 @@
     
     
      <dt>
-<em><code class="parameter">destroy($sessionId)</code></em></dt>
+<code class="parameter">destroy($sessionId)</code></dt>
 
      <dd>
 
@@ -195,7 +195,7 @@
     
     
      <dt>
-<em><code class="parameter">gc($lifetime)</code></em></dt>
+<code class="parameter">gc($lifetime)</code></dt>
 
      <dd>
 
@@ -227,7 +227,7 @@
  <div class="refsect1 examples" id="refsect1-function.session-set-save-handler-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4764">
+   <div class="example" id="example-4766">
     <p><strong>例1 
      自作のセッションハンドラ: 完全なコードは <a href="class.sessionhandlerinterface.html" class="classname">SessionHandlerInterface</a> を参照
     </strong></p>
@@ -249,14 +249,14 @@
     </div>
 
    </div>
-   <div class="example" id="example-4765">
+   <div class="example" id="example-4767">
     <p><strong>例2 セッション保存ハンドラでオブジェクトを使う例</strong></p>
     <div class="example-contents"><p>
      このコードは、PHP 5.4.0 より前のバージョンで動作します。
     </p></div>
     <div class="example-contents"><p>
      この例では、ファイルベースのセッションストレージをつくります。これは
-     PHP のデフォルトのセッション保存ハンドラである <em><code class="parameter">files</code></em>
+     PHP のデフォルトのセッション保存ハンドラである <code class="parameter">files</code>
      と似たものです。この例をさらに拡張すれば、
      PHP がサポートするお好みのデータベースを使ってセッションを保存させるようにするのも簡単です。
     </p></div>
@@ -284,9 +284,9 @@
     オブジェクトをセッション保存ハンドラとして使うときには、
     シャットダウン関数を PHP に登録しておくことが重要です。
     これで、PHP スクリプトの終了時に内部的にオブジェクトを破棄する処理による副作用や、
-    <em><code class="parameter">write</code></em> および <em><code class="parameter">close</code></em>
+    <code class="parameter">write</code> および <code class="parameter">close</code>
     がコールされてしまうことを防げます。
-    一般的には、<em><code class="parameter">&#039;session_write_close&#039;</code></em> を
+    一般的には、<code class="parameter">&#039;session_write_close&#039;</code> を
     <span class="function"><a href="function.register-shutdown-function.html" class="function">register_shutdown_function()</a></span> 関数で登録しなければなりません。
    </p>
    <p class="para">
@@ -299,8 +299,8 @@
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    PHP 5.0.5 以降、<em><code class="parameter">write</code></em> ハンドラおよび
-    <em><code class="parameter">close</code></em> ハンドラはオブジェクトが破棄されたあとにコールされます。
+    PHP 5.0.5 以降、<code class="parameter">write</code> ハンドラおよび
+    <code class="parameter">close</code> ハンドラはオブジェクトが破棄されたあとにコールされます。
     そのため、これらのハンドラでオブジェクトを使ったり例外をスローしたりすることはできません。
     例外をキャッチできないのでその情報をトレースすることもできず、
     例外は単純に無視されてしまいます。

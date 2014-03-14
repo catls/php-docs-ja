@@ -30,7 +30,7 @@
    関数 <span class="function"><strong>socket_read()</strong></span> は、関数
    <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> または
    <span class="function"><a href="function.socket-accept.html" class="function">socket_accept()</a></span> により作成されたソケット
-   リソース <em><code class="parameter">socket</code></em> から読み込みます。
+   リソース <code class="parameter">socket</code> から読み込みます。
   </p>
  </div>
 
@@ -42,7 +42,7 @@
 
     
      <dt>
-<em><code class="parameter">socket</code></em></dt>
+<code class="parameter">socket</code></dt>
 
      <dd>
 
@@ -55,29 +55,29 @@
     
     
      <dt>
-<em><code class="parameter">length</code></em></dt>
+<code class="parameter">length</code></dt>
 
      <dd>
 
       <p class="para">
-       読み込まれる最大バイト長は、<em><code class="parameter">length</code></em> パラメータで
+       読み込まれる最大バイト長は、<code class="parameter">length</code> パラメータで
        指定します。
        読み込みを終了するために
        <strong><code>\r</code></strong>、<strong><code>\n</code></strong>、
        <strong><code>\0</code></strong> を使用することが可能です
-       (これは、以下に示す <em><code class="parameter">type</code></em> に依存します)。
+       (これは、以下に示す <code class="parameter">type</code> に依存します)。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">type</code></em></dt>
+<code class="parameter">type</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションのパラメータ <em><code class="parameter">type</code></em> は、名前のある定数です。
+       オプションのパラメータ <code class="parameter">type</code> は、名前のある定数です。
        <ul class="itemizedlist">
         <li class="listitem">
          <span class="simpara">
@@ -139,7 +139,7 @@
       <tr>
        <td>4.1.0</td>
        <td>
-        <em><code class="parameter">type</code></em> のデフォルト値が
+        <code class="parameter">type</code> のデフォルト値が
         <strong><code>PHP_NORMAL_READ</code></strong> から
         <strong><code>PHP_BINARY_READ</code></strong> に変わりました。
        </td>

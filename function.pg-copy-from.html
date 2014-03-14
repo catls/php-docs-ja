@@ -31,7 +31,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>pg_copy_from()</strong></span> は、<em><code class="parameter">rows</code></em>
+   <span class="function"><strong>pg_copy_from()</strong></span> は、<code class="parameter">rows</code>
    の内容をテーブルに挿入します。レコードを挿入するために、内部では
    <em>COPY FROM</em> SQL コマンドを発行します。
   </p>
@@ -45,7 +45,7 @@
 
     
      <dt>
-<em><code class="parameter">connection</code></em></dt>
+<code class="parameter">connection</code></dt>
 
      <dd>
 
@@ -57,26 +57,26 @@
     
     
      <dt>
-<em><code class="parameter">table_name</code></em></dt>
+<code class="parameter">table_name</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">rows</code></em> をコピーするテーブルの名前。
+       <code class="parameter">rows</code> をコピーするテーブルの名前。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">rows</code></em></dt>
+<code class="parameter">rows</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">table_name</code></em> にコピーするデータの配列。
-       <em><code class="parameter">rows</code></em> の個々の値が <em><code class="parameter">table_name</code></em>
-       のひとつの行となります。<em><code class="parameter">rows</code></em> の個々の値は、
+       <code class="parameter">table_name</code> にコピーするデータの配列。
+       <code class="parameter">rows</code> の個々の値が <code class="parameter">table_name</code>
+       のひとつの行となります。<code class="parameter">rows</code> の個々の値は、
        それぞれのフィールドに対応する値が区切り文字で区切られており、最後は
        改行で終了していなければなりません。
       </p>
@@ -85,12 +85,12 @@
     
     
      <dt>
-<em><code class="parameter">delimiter</code></em></dt>
+<code class="parameter">delimiter</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">rows</code></em> の要素内で、各フィールドに対応する値を
+       <code class="parameter">rows</code> の要素内で、各フィールドに対応する値を
        区切る文字。デフォルトは <em>TAB</em> です。
       </p>
      </dd>
@@ -98,12 +98,12 @@
     
     
      <dt>
-<em><code class="parameter">null_as</code></em></dt>
+<code class="parameter">null_as</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">rows</code></em> の中で、SQL の <em>NULL</em> 
+       <code class="parameter">rows</code> の中で、SQL の <em>NULL</em> 
        をどのように表現するか。デフォルトは \N (&quot;\\N&quot;) です。
       </p>
      </dd>

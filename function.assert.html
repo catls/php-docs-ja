@@ -27,17 +27,17 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>assert()</strong></span> は、指定した
-   <em><code class="parameter">assertion</code></em> を調べて、結果が
+   <code class="parameter">assertion</code> を調べて、結果が
    <strong><code>FALSE</code></strong> の場合に適切な動作をします。
   </p>
   <p class="para">
-   <em><code class="parameter">assertion</code></em> が文字列として指定された場合、
+   <code class="parameter">assertion</code> が文字列として指定された場合、
    <span class="function"><strong>assert()</strong></span>によりPHPコードとして評価されます。
-   文字列 <em><code class="parameter">assertion</code></em>が優れているところは、
+   文字列 <code class="parameter">assertion</code>が優れているところは、
    assertion のチェックがオフになった場合のオーバーヘッドがより少な
    いことであり、assertionが失敗した場合のメッセージを式
-   <em><code class="parameter">assertion</code></em>に有しています。
-   つまり、もし論理型の条件を <em><code class="parameter">assertion</code></em> 
+   <code class="parameter">assertion</code>に有しています。
+   つまり、もし論理型の条件を <code class="parameter">assertion</code> 
    として渡した場合、この条件が <span class="function"><a href="function.assert-options.html" class="function">assert_options()</a></span>
    関数で指定したハンドラ関数への引数とはならないということです。
    条件はハンドラ関数をコールする前に文字列に変換され、論理型の
@@ -80,7 +80,7 @@
    (もしある場合のみ。1 または &quot;two&quot; のようなリテラルの値は、
    この引数に渡されません)。
    PHP 5.4.8 以降では、オプションの4番目の引数を指定できます。これを設定すると、
-   <em><code class="parameter">description</code></em> を <span class="function"><strong>assert()</strong></span>
+   <code class="parameter">description</code> を <span class="function"><strong>assert()</strong></span>
    に渡せるようになります。
   </p>
  </div>
@@ -93,7 +93,7 @@
 
     
      <dt>
-<em><code class="parameter">assertion</code></em></dt>
+<code class="parameter">assertion</code></dt>
 
      <dd>
 
@@ -105,13 +105,13 @@
     
     
      <dt>
-<em><code class="parameter">description</code></em></dt>
+<code class="parameter">description</code></dt>
 
      <dd>
 
       <p class="para">
        オプションの説明で、
-       <em><code class="parameter">assertion</code></em> が失敗したときのメッセージにこれを含めます。
+       <code class="parameter">assertion</code> が失敗したときのメッセージにこれを含めます。
       </p>
      </dd>
 
@@ -147,8 +147,8 @@
       <tr>
        <td>5.4.8</td>
        <td>
-        <em><code class="parameter">description</code></em> パラメータが追加されました。
-        <em><code class="parameter">description</code></em> はまた、
+        <code class="parameter">description</code> パラメータが追加されました。
+        <code class="parameter">description</code> はまた、
         <strong><code>ASSERT_CALLBACK</code></strong> モードのコールバック関数の4番目の引数にも指定できるようになりました。
        </td>
       </tr>

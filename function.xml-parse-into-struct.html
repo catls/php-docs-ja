@@ -29,8 +29,8 @@
 
   <p class="para rdfs-comment">
    この関数は、XML 文字列を処理し、2つの配列構造体に代入します。
-   ひとつめの配列 (<em><code class="parameter">index</code></em>) は、配列
-   <em><code class="parameter">values</code></em> にある適当な値の位置を指すポインタを保持しています。
+   ひとつめの配列 (<code class="parameter">index</code>) は、配列
+   <code class="parameter">values</code> にある適当な値の位置を指すポインタを保持しています。
    これら最後の二つのパラメータは参照渡しとする必要があります。
   </p>
  </div>
@@ -43,7 +43,7 @@
 
     
      <dt>
-<em><code class="parameter">parser</code></em></dt>
+<code class="parameter">parser</code></dt>
 
      <dd>
 
@@ -55,7 +55,7 @@
     
     
      <dt>
-<em><code class="parameter">data</code></em></dt>
+<code class="parameter">data</code></dt>
 
      <dd>
 
@@ -67,7 +67,7 @@
     
     
      <dt>
-<em><code class="parameter">values</code></em></dt>
+<code class="parameter">values</code></dt>
 
      <dd>
 
@@ -79,7 +79,7 @@
     
     
      <dt>
-<em><code class="parameter">index</code></em></dt>
+<code class="parameter">index</code></dt>
 
      <dd>
 
@@ -111,7 +111,7 @@
    以下の例は、この関数により生成された配列の内部構造を示すものです。
    <em>note</em>タグを<em>para</em>タグの中に埋
    め込んで使用した後、これをパースし、生成された構造体を出力します。
-   <div class="example" id="example-5525">
+   <div class="example" id="example-5527">
     <p><strong>例1 <span class="function"><strong>xml_parse_into_struct()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -178,7 +178,7 @@ Array
    得る構造体を生成します。つまり、XMLのファイルを表すオブジェクトを
    容易に作成することが可能です。次のXMLファイルを見てみましょう。
    このファイルでは、アミノ酸の情報に関する小さなデータベースを表します。
-   <div class="example" id="example-5526">
+   <div class="example" id="example-5528">
     <p><strong>例2 moldb.xml - 分子情報の小さなデータベース</strong></p>
     <div class="example-contents">
 <div class="xmlcode"><pre class="xmlcode">&lt;?xml version=&quot;1.0&quot;?&gt;
@@ -204,7 +204,7 @@ Array
 
    </div>
    ドキュメントを処理し、適当なオブジェクトを生成するいくつかのコード
-   <div class="example" id="example-5527">
+   <div class="example" id="example-5529">
     <p><strong>例3 
      parsemoldb.php - moldb.xml を処理し、分子オブジェクトの配列に代入
     </strong></p>

@@ -27,7 +27,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><a href="function.strlen.html" class="function">strlen()</a></span> とは違い、<span class="function"><strong>iconv_strlen()</strong></span>
-   は与えられたバイト列 <em><code class="parameter">str</code></em> 中に現れる文字の数を
+   は与えられたバイト列 <code class="parameter">str</code> 中に現れる文字の数を
    指定された文字セットに基づいて数えます。この結果は、必ずしも文字列の
    バイト数と一致するとは限りません。
   </p>
@@ -41,7 +41,7 @@
 
     
      <dt>
-<em><code class="parameter">str</code></em></dt>
+<code class="parameter">str</code></dt>
 
      <dd>
 
@@ -53,13 +53,13 @@
     
     
      <dt>
-<em><code class="parameter">charset</code></em></dt>
+<code class="parameter">charset</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">charset</code></em> パラメータが指定されなかった場合、
-       <em><code class="parameter">str</code></em> のエンコードは
+       <code class="parameter">charset</code> パラメータが指定されなかった場合、
+       <code class="parameter">str</code> のエンコードは
        <a href="iconv.configuration.html" class="link">iconv.internal_encoding</a>
        であると判断されます。
       </p>
@@ -75,7 +75,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.iconv-strlen-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">str</code></em> の文字数を返します。
+   <code class="parameter">str</code> の文字数を返します。
   </p>
  </div>
 

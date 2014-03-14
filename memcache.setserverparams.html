@@ -52,7 +52,7 @@
 
     
      <dt>
-<em><code class="parameter">host</code></em></dt>
+<code class="parameter">host</code></dt>
 
      <dd>
 
@@ -64,7 +64,7 @@
     
     
      <dt>
-<em><code class="parameter">port</code></em></dt>
+<code class="parameter">port</code></dt>
 
      <dd>
 
@@ -76,7 +76,7 @@
     
     
      <dt>
-<em><code class="parameter">timeout</code></em></dt>
+<code class="parameter">timeout</code></dt>
 
      <dd>
 
@@ -91,7 +91,7 @@
     
     
      <dt>
-<em><code class="parameter">retry_interval</code></em></dt>
+<code class="parameter">retry_interval</code></dt>
 
      <dd>
 
@@ -101,24 +101,24 @@
        自動的な再試行を行いません。
        <span class="function"><a href="function.dl.html" class="function">dl()</a></span> を使用してこの拡張モジュールが動的に
        読み込まれている場合は、このパラメータおよび
-       <em><code class="parameter">persistent</code></em> は何の効果も及ぼしません。
+       <code class="parameter">persistent</code> は何の効果も及ぼしません。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">status</code></em></dt>
+<code class="parameter">status</code></dt>
 
      <dd>
 
       <p class="para">
        サーバーがオンライン状態であるかどうかを制御します。このパラメータを
-       <strong><code>FALSE</code></strong> にし、<em><code class="parameter">retry_interval</code></em> を -1
+       <strong><code>FALSE</code></strong> にし、<code class="parameter">retry_interval</code> を -1
        と設定すると、失敗したサーバーもコネクションプールに残します。
        これにより、キー配布アルゴリズムに影響を与えないようにします。
        このサーバーへのリクエストは、フェイルオーバーされるか失敗します。
-       どちらになるかは <em><code class="parameter">memcache.allow_failover</code></em>
+       どちらになるかは <code class="parameter">memcache.allow_failover</code>
        の設定によって決まります。デフォルトは <strong><code>TRUE</code></strong> で、
        サーバーがオンライン状態であることを意味します。
       </p>
@@ -127,7 +127,7 @@
     
     
      <dt>
-<em><code class="parameter">failure_callback</code></em></dt>
+<code class="parameter">failure_callback</code></dt>
 
      <dd>
 

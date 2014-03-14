@@ -29,7 +29,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>socket_create_pair()</strong></span> は、接続されており区別できない
-   2 つのソケットを作成し、それを <em><code class="parameter">fd</code></em> に保存します。
+   2 つのソケットを作成し、それを <code class="parameter">fd</code> に保存します。
    この関数は、一般に IPC（InterProcess Communication: プロセス間通信）
    で使用します。
   </p>
@@ -43,12 +43,12 @@
 
     
      <dt>
-<em><code class="parameter">domain</code></em></dt>
+<code class="parameter">domain</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">domain</code></em> は、ソケットで使用するプロトコルの種類を指定します。
+       <code class="parameter">domain</code> は、ソケットで使用するプロトコルの種類を指定します。
        完全な一覧は <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> を参照ください。
       </p>
      </dd>
@@ -56,12 +56,12 @@
     
     
      <dt>
-<em><code class="parameter">type</code></em></dt>
+<code class="parameter">type</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">type</code></em> では、ソケットが使用する通信の形式を選択します。
+       <code class="parameter">type</code> では、ソケットが使用する通信の形式を選択します。
        完全な一覧は <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> を参照ください。
       </p>
      </dd>
@@ -69,12 +69,12 @@
     
     
      <dt>
-<em><code class="parameter">protocol</code></em></dt>
+<code class="parameter">protocol</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">protocol</code></em> は、指定した <em><code class="parameter">domain</code></em>
+       <code class="parameter">protocol</code> は、指定した <code class="parameter">domain</code>
        の中の特定のプロトコルを指定します。これは、返されるソケットとの通信に使用されます。
        使用可能な値の名前は <span class="function"><a href="function.getprotobyname.html" class="function">getprotobyname()</a></span>
        で取得可能です。もし要求されるプロトコルが TCP あるいは UDP の場合、
@@ -89,7 +89,7 @@
     
     
      <dt>
-<em><code class="parameter">fd</code></em></dt>
+<code class="parameter">fd</code></dt>
 
      <dd>
 

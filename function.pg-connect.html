@@ -26,13 +26,13 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>pg_connect()</strong></span> は、<em><code class="parameter">connection_string</code></em>
+   <span class="function"><strong>pg_connect()</strong></span> は、<code class="parameter">connection_string</code>
    で指定された情報を用いてデータベースとの接続をオープンします。
   </p>
   <p class="para">
-   同じ <em><code class="parameter">connection_string</code></em> 引数で 2 回
+   同じ <code class="parameter">connection_string</code> 引数で 2 回
    <span class="function"><strong>pg_connect()</strong></span> 関数がコールされた場合は、
-   <em><code class="parameter">connect_type</code></em> に
+   <code class="parameter">connect_type</code> に
    <strong><code>PGSQL_CONNECT_FORCE_NEW</code></strong> を指定していない限り
    既存の接続が返されます。
   </p>
@@ -52,13 +52,13 @@
 
     
      <dt>
-<em><code class="parameter">connection_string</code></em></dt>
+<code class="parameter">connection_string</code></dt>
 
      <dd>
 
       <p class="para">
        すべてデフォルトのパラメータを使用する場合には
-       <em><code class="parameter">connection_string</code></em> を空にすることが可能です。
+       <code class="parameter">connection_string</code> を空にすることが可能です。
        または 1 つ以上のパラメータを空白で区切って指定することも可能です。
        個々のパラメータは <em>keyword = value</em> の形式で
        設定します。等号の前後の空白はあってもなくてもかまいません。
@@ -69,16 +69,16 @@
       </p>
       <p class="para">
        現在利用できるパラメータは以下のとおりです。
-       <em><code class="parameter">host</code></em>, <em><code class="parameter">hostaddr</code></em>, <em><code class="parameter">port</code></em>,
-       <em><code class="parameter">dbname</code></em> (デフォルトは <em><code class="parameter">user</code></em> の値), <em><code class="parameter">user</code></em>,
-       <em><code class="parameter">password</code></em>, <em><code class="parameter">connect_timeout</code></em>,
-       <em><code class="parameter">options</code></em>, <em><code class="parameter">tty</code></em>（無視されます）, <em><code class="parameter">sslmode</code></em>,
-       <em><code class="parameter">requiressl</code></em>（非推奨。代わりに <em><code class="parameter">sslmode</code></em> を推奨します）
-       および <em><code class="parameter">service</code></em> 。これらのうち実際にどの
+       <code class="parameter">host</code>, <code class="parameter">hostaddr</code>, <code class="parameter">port</code>,
+       <code class="parameter">dbname</code> (デフォルトは <code class="parameter">user</code> の値), <code class="parameter">user</code>,
+       <code class="parameter">password</code>, <code class="parameter">connect_timeout</code>,
+       <code class="parameter">options</code>, <code class="parameter">tty</code>（無視されます）, <code class="parameter">sslmode</code>,
+       <code class="parameter">requiressl</code>（非推奨。代わりに <code class="parameter">sslmode</code> を推奨します）
+       および <code class="parameter">service</code> 。これらのうち実際にどの
        パラメータが使えるかは、PostgreSQL のバージョンに依存します。
       </p>
       <p class="para">
-       <em><code class="parameter">options</code></em> パラメータを使うと、
+       <code class="parameter">options</code> パラメータを使うと、
        サーバー側で実行されるコマンドラインパラメータを指定することができます。
       </p>
      </dd>
@@ -86,13 +86,13 @@
     
     
      <dt>
-<em><code class="parameter">connect_type</code></em></dt>
+<code class="parameter">connect_type</code></dt>
 
      <dd>
 
       <p class="para">
        <strong><code>PGSQL_CONNECT_FORCE_NEW</code></strong> が渡された場合は、
-       たとえ <em><code class="parameter">connection_string</code></em> が既存の接続と
+       たとえ <code class="parameter">connection_string</code> が既存の接続と
        まったく同一であっても新しい接続をオープンします。
       </p>
      </dd>

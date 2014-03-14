@@ -139,6 +139,21 @@ Name\Space\f
    </p>
   </div>
 
+  <div class="sect2" id="migration56.new-features.default-encoding">
+   <h3 class="title">Default character encoding</h3>
+
+   <p class="para">
+    <a href="ini.core.html#ini.default-charset" class="link">default_charset</a> is used
+    as default character encoding of PHP. Default value is changed to
+    &quot;UTF-8&quot; from empty. mbstring and iconv module uses default_charset
+    setting if its own settings are not specified. Functions
+    like <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span> that accepts encoding
+    parameter
+    uses <a href="ini.core.html#ini.default-charset" class="link">default_charset</a> as
+    default encoding.
+   </p>
+  </div>
+
   <div class="sect2" id="migration56.new-features.reusable-input">
    <h3 class="title"><a href="wrappers.php.html#wrappers.php.input" class="link"><em>php://input</em></a> が再利用可能に</h3>
 

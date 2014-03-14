@@ -30,8 +30,8 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>svn_log()</strong></span> は、指定したリビジョン URL
-   <em><code class="parameter">repos_url</code></em> の中身の完全な履歴を返します。
-   <em><code class="parameter">start_revision</code></em> を指定した場合は、そのリビジョンの履歴を返します。
+   <code class="parameter">repos_url</code> の中身の完全な履歴を返します。
+   <code class="parameter">start_revision</code> を指定した場合は、そのリビジョンの履歴を返します。
    この関数は、<strong class="userinput"><code>svn log --verbose -r $start_revision $repos_url</code></strong>
    と同等です。
   </p>
@@ -45,7 +45,7 @@
 
     
      <dt>
-<em><code class="parameter">repos_url</code></em></dt>
+<code class="parameter">repos_url</code></dt>
 
      <dd>
 
@@ -57,7 +57,7 @@
     
     
      <dt>
-<em><code class="parameter">start_revision</code></em></dt>
+<code class="parameter">start_revision</code></dt>
 
      <dd>
 
@@ -70,13 +70,13 @@
     
     
      <dt>
-<em><code class="parameter">end_revision</code></em></dt>
+<code class="parameter">end_revision</code></dt>
 
      <dd>
 
       <p class="para">
        ログを取得したい最後のリビジョン番号。デフォルトは、
-       <em><code class="parameter">start_revision</code></em> を指定した場合はそれと同じで
+       <code class="parameter">start_revision</code> を指定した場合はそれと同じで
        指定しなかった場合は
        <strong><code>SVN_REVISION_INITIAL</code></strong> となります。
       </p>
@@ -85,7 +85,7 @@
     
     
      <dt>
-<em><code class="parameter">limit</code></em></dt>
+<code class="parameter">limit</code></dt>
 
      <dd>
 
@@ -97,7 +97,7 @@
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 

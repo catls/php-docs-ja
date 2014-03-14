@@ -34,7 +34,7 @@
    ありえます。また、<span class="function"><a href="function.radius-config.html" class="function">radius_config()</a></span> とともに
    使用されることでしょう。最大で 10 までのサーバーを指定できます。
    複数のサーバーが指定されると、有効なレスポンスを受信するか
-   あるいは各サーバーへの接続回数が <em><code class="parameter">max_tries</code></em>
+   あるいは各サーバーへの接続回数が <code class="parameter">max_tries</code>
    をこえるまでラウンドロビン形式でのアクセスを試みます。
   </p>
  </div>
@@ -47,7 +47,7 @@
 
     
      <dt>
-<em><code class="parameter">radius_handle</code></em></dt>
+<code class="parameter">radius_handle</code></dt>
 
      <dd>
 
@@ -58,12 +58,12 @@
     
     
      <dt>
-<em><code class="parameter">hostname</code></em></dt>
+<code class="parameter">hostname</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">hostname</code></em> はサーバーのホストを
+       <code class="parameter">hostname</code> はサーバーのホストを
        FQDN あるいはドット区切りの IP アドレス形式で指定します。
       </p>
      </dd>
@@ -71,12 +71,12 @@
     
     
      <dt>
-<em><code class="parameter">port</code></em></dt>
+<code class="parameter">port</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">port</code></em> は、サーバーとの接続に使用する UDP
+       <code class="parameter">port</code> は、サーバーとの接続に使用する UDP
        ポートを指定します。0 を指定すると、このライブラリは
        ネットワークサービスデータベースから
        <code class="systemitem systemitem">radius/udp</code> あるいは
@@ -90,12 +90,12 @@
     
     
      <dt>
-<em><code class="parameter">secret</code></em></dt>
+<code class="parameter">secret</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">secret</code></em> パラメータには、サーバーホストに
+       <code class="parameter">secret</code> パラメータには、サーバーホストに
        対する共有秘密鍵が渡されます。Radius プロトコルは、共有秘密鍵の
        最初の 128 バイト以外を無視します。
       </p>
@@ -104,12 +104,12 @@
     
     
      <dt>
-<em><code class="parameter">timeout</code></em></dt>
+<code class="parameter">timeout</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">timeout</code></em> パラメータには、サーバーから
+       <code class="parameter">timeout</code> パラメータには、サーバーから
        応答を受信する際のタイムアウトを秒単位で指定します。
       </p>
      </dd>
@@ -117,13 +117,13 @@
     
     
      <dt>
-<em><code class="parameter">max_tries</code></em></dt>
+<code class="parameter">max_tries</code></dt>
 
      <dd>
 
       <p class="para">
        結果が返ってこなかった場合に最大何回までリクエストを繰り返すかを
-       <em><code class="parameter">max_tries</code></em> に指定します。
+       <code class="parameter">max_tries</code> に指定します。
       </p>
      </dd>
 

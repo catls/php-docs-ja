@@ -28,10 +28,10 @@
 
   <p class="para rdfs-comment">
     The <span class="function"><strong>cubrid_get()</strong></span> function is used to get the attribute
-    of the instance of the given <em><code class="parameter">oid</code></em>.  You can get
+    of the instance of the given <code class="parameter">oid</code>.  You can get
     single attribute by using string data type for the
-    <em><code class="parameter">attr</code></em> argument, or many attributes by using array
-    data type for the <em><code class="parameter">attr</code></em> argument.
+    <code class="parameter">attr</code> argument, or many attributes by using array
+    data type for the <code class="parameter">attr</code> argument.
   </p>
  </div>
 
@@ -43,7 +43,7 @@
 
     
   <dt>
-<em><code class="parameter">conn_identifier</code></em></dt>
+<code class="parameter">conn_identifier</code></dt>
 
   <dd>
 <p class="para">Connection identifier.</p></dd>
@@ -51,7 +51,7 @@
    
    
   <dt>
-<em><code class="parameter">oid</code></em></dt>
+<code class="parameter">oid</code></dt>
 
   <dd>
 <p class="para">OID of the instance that you want to read.</p></dd>
@@ -59,7 +59,7 @@
    
    
   <dt>
-<em><code class="parameter">attr</code></em></dt>
+<code class="parameter">attr</code></dt>
 
   <dd>
 <p class="para">Name of the attribute that you want to read.</p></dd>
@@ -76,10 +76,10 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    Content of the requested attribute, when process is successful; When
-   <em><code class="parameter">attr</code></em> is set with string data type, the result is
-   returned as a string; when <em><code class="parameter">attr</code></em> is set with array
+   <code class="parameter">attr</code> is set with string data type, the result is
+   returned as a string; when <code class="parameter">attr</code> is set with array
    data type (0-based numerical array), then the result is returned in
-   associative array. When <em><code class="parameter">attr</code></em> is omitted, then all
+   associative array. When <code class="parameter">attr</code> is omitted, then all
    attributes are received in array form.
   </p>
   <p class="para">

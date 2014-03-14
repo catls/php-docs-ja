@@ -27,7 +27,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">string</code></em> を、正規表現によって配列に分割します。
+   <code class="parameter">string</code> を、正規表現によって配列に分割します。
   </p>
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は PHP 5.3.0 で
 <em class="emphasis">非推奨</em>となりました。
@@ -42,7 +42,7 @@
 
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -64,7 +64,7 @@
     
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -76,14 +76,14 @@
     
     
      <dt>
-<em><code class="parameter">limit</code></em></dt>
+<code class="parameter">limit</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">limit</code></em> が指定された場合、返される配列には
-       最大 <em><code class="parameter">limit</code></em> の要素が含まれます。この場合、
-       最後の要素には <em><code class="parameter">string</code></em> の残りの部分が全て
+       <code class="parameter">limit</code> が指定された場合、返される配列には
+       最大 <code class="parameter">limit</code> の要素が含まれます。この場合、
+       最後の要素には <code class="parameter">string</code> の残りの部分が全て
        入っています。
       </p>
      </dd>
@@ -99,14 +99,14 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    文字列の配列を返します。配列の各要素は、大文字小文字を区別する正規表現
-   <em><code class="parameter">pattern</code></em> により区切られた
-   <em><code class="parameter">string</code></em> 中の部分文字列です。
+   <code class="parameter">pattern</code> により区切られた
+   <code class="parameter">string</code> 中の部分文字列です。
   </p>
   <p class="para">
-   <em><code class="parameter">pattern</code></em> が <span class="replaceable">n</span> 回
+   <code class="parameter">pattern</code> が <span class="replaceable">n</span> 回
    現れる場合、返される配列には、
    <em><span class="replaceable">n</span>+1</em> 個のアイテムが
-   含まれます。例えば、<em><code class="parameter">pattern</code></em> が現れない場合、
+   含まれます。例えば、<code class="parameter">pattern</code> が現れない場合、
    1 個の要素のみを有する配列が返されます。もちろん、これは
    エラーを生じた場合、<span class="function"><strong>split()</strong></span> は
    <strong><code>FALSE</code></strong> を返します。
@@ -117,7 +117,7 @@
  <div class="refsect1 examples" id="refsect1-function.split-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4806">
+   <div class="example" id="example-4808">
     <p><strong>例1 <span class="function"><strong>split()</strong></span> の例</strong></p>
     <div class="example-contents"><p>
      <var class="filename">/etc/passwd</var> の行から最初の 4 つのフィールドを
@@ -133,7 +133,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4807">
+   <div class="example" id="example-4809">
     <p><strong>例2 <span class="function"><strong>split()</strong></span> の例</strong></p>
     <div class="example-contents"><p>
      スラッシュ、ドット、ハイフンをデリミタとすると日付を処理する例を

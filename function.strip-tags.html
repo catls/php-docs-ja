@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   この関数は、指定した文字列 (<em><code class="parameter">str</code></em>)
+   この関数は、指定した文字列 (<code class="parameter">str</code>)
    から全ての NUL バイトと HTML および PHP タグを取り除きます。
    この関数は、<span class="function"><a href="function.fgetss.html" class="function">fgetss()</a></span> 関数と同じタグ除去アルゴリズムを使用します。
   </p>
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">str</code></em></dt>
+<code class="parameter">str</code></dt>
 
      <dd>
 
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">allowable_tags</code></em></dt>
+<code class="parameter">allowable_tags</code></dt>
 
      <dd>
 
@@ -62,7 +62,7 @@
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
         HTML コメントや PHP タグも削除されるようになりました。この機能はハードコードされており、
-        <em><code class="parameter">allowable_tags</code></em> で変更することはできません。
+        <code class="parameter">allowable_tags</code> で変更することはできません。
        </p>
       </p></blockquote>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -131,7 +131,7 @@
  <div class="refsect1 examples" id="refsect1-function.strip-tags-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4880">
+   <div class="example" id="example-4882">
     <p><strong>例1 <span class="function"><strong>strip_tags()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -162,7 +162,7 @@ Test paragraph. Other text
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    この関数は、<em><code class="parameter">allowable_tags</code></em> で許可した全てのタグの属性を修正しません。
+    この関数は、<code class="parameter">allowable_tags</code> で許可した全てのタグの属性を修正しません。
     これには、<em>style</em>
     および <em>onmouseover</em>属性が含まれており、
     悪意のあるユーザーが他のユーザーに見せるようなテキストを投稿する際に危険な行為を行う可能性があります。
@@ -171,7 +171,7 @@ Test paragraph. Other text
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
     HTML の中にあるタグの中で 1023 バイトより長い名前のものがあれば、
-    たとえ <em><code class="parameter">allowable_tags</code></em>
+    たとえ <code class="parameter">allowable_tags</code>
     パラメータに指定していたとしても無効なタグと見なされます。
    </p>
   </p></blockquote>

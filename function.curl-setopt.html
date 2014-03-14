@@ -38,7 +38,7 @@
    <dl>
 
     <dt>
-<em><code class="parameter">ch</code></em>
+<code class="parameter">ch</code>
 </dt>
 <dd>
 <p class="para"><span class="function"><a href="function.curl-init.html" class="function">curl_init()</a></span>
@@ -46,7 +46,7 @@
 
     
      <dt>
-<em><code class="parameter">option</code></em></dt>
+<code class="parameter">option</code></dt>
 
      <dd>
 
@@ -58,23 +58,23 @@
     
     
      <dt>
-<em><code class="parameter">value</code></em></dt>
+<code class="parameter">value</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">option</code></em> に設定する値。
+       <code class="parameter">option</code> に設定する値。
       </p>
       <p class="para">
-       <em><code class="parameter">value</code></em> には、
-       <em><code class="parameter">option</code></em> の以下の値に関して
+       <code class="parameter">value</code> には、
+       <code class="parameter">option</code> の以下の値に関して
        bool 値を指定する必要があります。
        <table class="doctable informaltable">
         
          <thead>
           <tr>
            <th>オプション</th>
-           <th><em><code class="parameter">value</code></em> への設定値</th>
+           <th><code class="parameter">value</code> への設定値</th>
            <th>注記</th>
           </tr>
 
@@ -180,7 +180,7 @@
            <td style="vertical-align: top;">
             <strong><code>TRUE</code></strong> を設定すると、ドキュメントの更新日時を取得しようと試みます。
             この値を取得するには、<span class="function"><a href="function.curl-getinfo.html" class="function">curl_getinfo()</a></span> で
-            <em><code class="parameter">CURLINFO_FILETIME</code></em> オプションを用います。
+            <code class="parameter">CURLINFO_FILETIME</code> オプションを用います。
            </td>
            <td style="vertical-align: top;">
            </td>
@@ -473,15 +473,15 @@
 
       </p>
       <p class="para">
-       <em><code class="parameter">value</code></em> には、
-       <em><code class="parameter">option</code></em> の以下の値に関して
+       <code class="parameter">value</code> には、
+       <code class="parameter">option</code> の以下の値に関して
        整数値を指定する必要があります。
        <table class="doctable informaltable">
         
          <thead>
           <tr>
            <th>オプション</th>
-           <th><em><code class="parameter">value</code></em> への設定値</th>
+           <th><code class="parameter">value</code> への設定値</th>
            <th>注記</th>
           </tr>
 
@@ -502,8 +502,8 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_CLOSEPOLICY</code></strong></td>
            <td style="vertical-align: top;">
-            <em><code class="parameter">CURLCLOSEPOLICY_LEAST_RECENTLY_USED</code></em> あるいは
-            <em><code class="parameter">CURLCLOSEPOLICY_OLDEST</code></em> です。
+            <code class="parameter">CURLCLOSEPOLICY_LEAST_RECENTLY_USED</code> あるいは
+            <code class="parameter">CURLCLOSEPOLICY_OLDEST</code> です。
             他にも 3 つの <em>CURLCLOSEPOLICY_</em> 定数が存在しますが、
             cURL はそれらをまだサポートしていません。
            </td>
@@ -559,10 +559,10 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_HTTP_VERSION</code></strong></td>
            <td style="vertical-align: top;">
-            <em><code class="parameter">CURL_HTTP_VERSION_NONE</code></em> (デフォルト。
+            <code class="parameter">CURL_HTTP_VERSION_NONE</code> (デフォルト。
             使用するバージョンを決めるのは cURL にまかせる)、
-            <em><code class="parameter">CURL_HTTP_VERSION_1_0</code></em> (HTTP/1.0 を使用する)、
-            あるいは <em><code class="parameter">CURL_HTTP_VERSION_1_1</code></em> (HTTP/1.1 を使用する)
+            <code class="parameter">CURL_HTTP_VERSION_1_0</code> (HTTP/1.0 を使用する)、
+            あるいは <code class="parameter">CURL_HTTP_VERSION_1_1</code> (HTTP/1.1 を使用する)
             のいずれかです。
            </td>
            <td style="vertical-align: top;">
@@ -574,12 +574,12 @@
            <td style="vertical-align: top;">
             <p class="para">
              使用する HTTP 認証方法。以下の中から選びます。
-             <em><code class="parameter">CURLAUTH_BASIC</code></em>、
-             <em><code class="parameter">CURLAUTH_DIGEST</code></em>、
-             <em><code class="parameter">CURLAUTH_GSSNEGOTIATE</code></em>、
-             <em><code class="parameter">CURLAUTH_NTLM</code></em>、
-             <em><code class="parameter">CURLAUTH_ANY</code></em> および
-             <em><code class="parameter">CURLAUTH_ANYSAFE</code></em>。
+             <code class="parameter">CURLAUTH_BASIC</code>、
+             <code class="parameter">CURLAUTH_DIGEST</code>、
+             <code class="parameter">CURLAUTH_GSSNEGOTIATE</code>、
+             <code class="parameter">CURLAUTH_NTLM</code>、
+             <code class="parameter">CURLAUTH_ANY</code> および
+             <code class="parameter">CURLAUTH_ANYSAFE</code>。
             </p>
             <p class="para">
              2 つ以上の方法を組み合わせるには、ビット演算子 <em>|</em>（or）
@@ -587,12 +587,12 @@
              問い合わせたうえで最適な方法を選択します。
             </p>
             <p class="para">
-             <em><code class="parameter">CURLAUTH_ANY</code></em> は
+             <code class="parameter">CURLAUTH_ANY</code> は
              <em>CURLAUTH_BASIC | CURLAUTH_DIGEST | CURLAUTH_GSSNEGOTIATE | CURLAUTH_NTLM</em>
              のエイリアスです。
             </p>
             <p class="para">
-              <em><code class="parameter">CURLAUTH_ANYSAFE</code></em> は
+              <code class="parameter">CURLAUTH_ANYSAFE</code> は
               <em>CURLAUTH_DIGEST | CURLAUTH_GSSNEGOTIATE | CURLAUTH_NTLM</em>
               のエイリアスです。
             </p>
@@ -678,19 +678,19 @@
             </p>
             <p class="para">
              使用できるプロトコルオプションは次のとおりです。
-             <em><code class="parameter">CURLPROTO_HTTP</code></em>,
-             <em><code class="parameter">CURLPROTO_HTTPS</code></em>,
-             <em><code class="parameter">CURLPROTO_FTP</code></em>,
-             <em><code class="parameter">CURLPROTO_FTPS</code></em>,
-             <em><code class="parameter">CURLPROTO_SCP</code></em>,
-             <em><code class="parameter">CURLPROTO_SFTP</code></em>,
-             <em><code class="parameter">CURLPROTO_TELNET</code></em>,
-             <em><code class="parameter">CURLPROTO_LDAP</code></em>,
-             <em><code class="parameter">CURLPROTO_LDAPS</code></em>,
-             <em><code class="parameter">CURLPROTO_DICT</code></em>,
-             <em><code class="parameter">CURLPROTO_FILE</code></em>,
-             <em><code class="parameter">CURLPROTO_TFTP</code></em>,
-             <em><code class="parameter">CURLPROTO_ALL</code></em>
+             <code class="parameter">CURLPROTO_HTTP</code>,
+             <code class="parameter">CURLPROTO_HTTPS</code>,
+             <code class="parameter">CURLPROTO_FTP</code>,
+             <code class="parameter">CURLPROTO_FTPS</code>,
+             <code class="parameter">CURLPROTO_SCP</code>,
+             <code class="parameter">CURLPROTO_SFTP</code>,
+             <code class="parameter">CURLPROTO_TELNET</code>,
+             <code class="parameter">CURLPROTO_LDAP</code>,
+             <code class="parameter">CURLPROTO_LDAPS</code>,
+             <code class="parameter">CURLPROTO_DICT</code>,
+             <code class="parameter">CURLPROTO_FILE</code>,
+             <code class="parameter">CURLPROTO_TFTP</code>,
+             <code class="parameter">CURLPROTO_ALL</code>
             </p>
            </td>
            <td style="vertical-align: top;">
@@ -704,8 +704,8 @@
             プロキシ接続に使用する HTTP 認証の方法。
             <strong><code>CURLOPT_HTTPAUTH</code></strong> で説明したのと同じオプションを
             指定可能です。プロキシ認証でサポートされているのは、今のところ
-            <em><code class="parameter">CURLAUTH_BASIC</code></em> および
-            <em><code class="parameter">CURLAUTH_NTLM</code></em> のみです。
+            <code class="parameter">CURLAUTH_BASIC</code> および
+            <code class="parameter">CURLAUTH_NTLM</code> のみです。
            </td>
            <td style="vertical-align: top;">
             cURL 7.10.7 で追加されました。
@@ -725,8 +725,8 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_PROXYTYPE</code></strong></td>
            <td style="vertical-align: top;">
-            <em><code class="parameter">CURLPROXY_HTTP</code></em>（デフォルト）あるいは
-            <em><code class="parameter">CURLPROXY_SOCKS5</code></em>。
+            <code class="parameter">CURLPROXY_HTTP</code>（デフォルト）あるいは
+            <code class="parameter">CURLPROXY_SOCKS5</code>。
            </td>
            <td style="vertical-align: top;">
             cURL 7.10 で追加されました。
@@ -789,12 +789,12 @@
             <strong><code>CURLOPT_TIMEVALUE</code></strong> の扱いを決定します。
             <strong><code>CURLOPT_TIMEVALUE</code></strong> で指定した時刻以降に
             変更されたページのみを返す場合は
-            <em><code class="parameter">CURL_TIMECOND_IFMODSINCE</code></em> を使用します。
+            <code class="parameter">CURL_TIMECOND_IFMODSINCE</code> を使用します。
             <strong><code>CURLOPT_HEADER</code></strong> が <strong><code>TRUE</code></strong> だと仮定すると、
             ページが変更されていない場合は
             <em>&quot;304 Not Modified&quot;</em> ヘッダが返されます。
-            <em><code class="parameter">CURL_TIMECOND_IFUNMODSINCE</code></em> は反対の意味です。
-            デフォルトは <em><code class="parameter">CURL_TIMECOND_IFMODSINCE</code></em>
+            <code class="parameter">CURL_TIMECOND_IFUNMODSINCE</code> は反対の意味です。
+            デフォルトは <code class="parameter">CURL_TIMECOND_IFMODSINCE</code>
             です。
            </td>
            <td style="vertical-align: top;">
@@ -828,7 +828,7 @@
            <td style="vertical-align: top;">
             1970 年 1 月 1 日からの経過秒数。この値は
             <strong><code>CURLOPT_TIMECONDITION</code></strong> で使用されます。デフォルトでは
-            <em><code class="parameter">CURL_TIMECOND_IFMODSINCE</code></em> が設定されます。
+            <code class="parameter">CURL_TIMECOND_IFMODSINCE</code> が設定されます。
            </td>
            <td style="vertical-align: top;">
            </td>
@@ -894,15 +894,15 @@
 
       </p>
       <p class="para">
-       <em><code class="parameter">value</code></em> は、
-       <em><code class="parameter">option</code></em> パラメータの
+       <code class="parameter">value</code> は、
+       <code class="parameter">option</code> パラメータの
        以下の値に関して文字列である必要があります。
        <table class="doctable informaltable">
         
          <thead>
           <tr>
            <th>オプション</th>
-           <th><em><code class="parameter">value</code></em> への設定値</th>
+           <th><code class="parameter">value</code> への設定値</th>
            <th>注記</th>
           </tr>
 
@@ -1079,14 +1079,14 @@
              &#039;<em>para1=val1&amp;para2=val2&amp;...</em>&#039;
              のように url エンコードされた文字列形式で渡すこともできますし、
              フィールド名をキー、データを値とする配列で渡すこともできます。
-             <em><code class="parameter">value</code></em> が配列の場合、
+             <code class="parameter">value</code> が配列の場合、
              <em>Content-Type</em> ヘッダには
              <em>multipart/form-data</em> を設定します。
             </span>
             <span class="simpara">
              PHP 5.2.0 以降、このオプションに
              <em>@</em> プレフィックスつきでファイルを渡したときは
-             <em><code class="parameter">value</code></em> が配列でなければならなくなりました。
+             <code class="parameter">value</code> が配列でなければならなくなりました。
             </span>
             <span class="simpara">
              PHP 5.5.0 以降、<em>@</em> プレフィックスは非推奨になりました。
@@ -1319,15 +1319,15 @@
 
       </p>
       <p class="para">
-       <em><code class="parameter">value</code></em> には、
-       <em><code class="parameter">option</code></em> の以下の値に関して
+       <code class="parameter">value</code> には、
+       <code class="parameter">option</code> の以下の値に関して
        配列を指定する必要があります。
        <table class="doctable informaltable">
         
          <thead>
           <tr>
            <th>オプション</th>
-           <th><em><code class="parameter">value</code></em> への設定値</th>
+           <th><code class="parameter">value</code> への設定値</th>
            <th>注記</th>
           </tr>
 
@@ -1381,15 +1381,15 @@
 
       </p>
       <p class="para">
-       <em><code class="parameter">value</code></em> はストリームリソース（例えば
+       <code class="parameter">value</code> はストリームリソース（例えば
        <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> が作成するもの）であり、以下の
-       <em><code class="parameter">option</code></em> パラメータに設定します。
+       <code class="parameter">option</code> パラメータに設定します。
        <table class="doctable informaltable">
         
          <thead>
           <tr>
            <th>オプション</th>
-           <th><em><code class="parameter">value</code></em> に設定する内容</th>
+           <th><code class="parameter">value</code> に設定する内容</th>
           </tr>
 
          </thead>
@@ -1430,15 +1430,15 @@
 
       </p>
       <p class="para">
-       <em><code class="parameter">value</code></em> には、
-       <em><code class="parameter">option</code></em> の以下の値に関して
+       <code class="parameter">value</code> には、
+       <code class="parameter">option</code> の以下の値に関して
        有効な関数あるいはクロージャの名前を指定する必要があります。
        <table class="doctable informaltable">
         
          <thead>
           <tr>
            <th>オプション</th>
-           <th><em><code class="parameter">value</code></em> への設定値</th>
+           <th><code class="parameter">value</code> への設定値</th>
           </tr>
 
          </thead>
@@ -1525,7 +1525,7 @@
          <thead>
           <tr>
            <th>オプション</th>
-           <th><em><code class="parameter">value</code></em> への設定値</th>
+           <th><code class="parameter">value</code> への設定値</th>
           </tr>
 
          </thead>

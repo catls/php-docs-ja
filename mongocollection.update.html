@@ -37,7 +37,7 @@
     
      <dt>
 
-      <em><code class="parameter">criteria</code></em>
+      <code class="parameter">criteria</code>
      </dt>
 
      <dd>
@@ -51,7 +51,7 @@
     
      <dt>
 
-      <em><code class="parameter">new_object</code></em>
+      <code class="parameter">new_object</code>
      </dt>
 
      <dd>
@@ -65,7 +65,7 @@
     
      <dt>
 
-      <em><code class="parameter">options</code></em>
+      <code class="parameter">options</code>
      </dt>
 
      <dd>
@@ -80,15 +80,15 @@
           <em>&quot;upsert&quot;</em>
          </p>
          <p class="para">
-          <em><code class="parameter">$criteria</code></em> にマッチするレコードが見つからない場合に
+          <code class="parameter">$criteria</code> にマッチするレコードが見つからない場合に
           新しいドキュメントを追加します。
          </p>
          <p class="para">
           新しいドキュメントを追加するときに
-          <em><code class="parameter">$new_object</code></em> にアトミックな修正子
+          <code class="parameter">$new_object</code> にアトミックな修正子
           (<em>$</em> 演算子) が含まれていれば、この操作を
-          <em><code class="parameter">$criteria</code></em> パラメータに適用して新しいドキュメントを作ります。
-          <em><code class="parameter">$new_object</code></em> がアトミックな修正子を含まない場合は、
+          <code class="parameter">$criteria</code> パラメータに適用して新しいドキュメントを作ります。
+          <code class="parameter">$new_object</code> がアトミックな修正子を含まない場合は、
           そのままの形式で新しいドキュメントに使います。
           詳細は、以下の upsert の例を参照ください。
          </p>
@@ -179,7 +179,7 @@
       <tr>
        <td>1.3.0</td>
        <td>
-        <em><code class="parameter">options</code></em> パラメータで、boolean
+        <code class="parameter">options</code> パラメータで、boolean
         だけを渡して upsert を指定することができなくなりました。
         同じことをするには <em>array(&#039;upsert&#039;&#039; =&gt; true)</em>
         としなければなりません。
@@ -189,7 +189,7 @@
       <tr>
        <td>1.2.11</td>
        <td>
-        <em><code class="parameter">options</code></em> が <span class="type"><span class="type scalar">scalar</span></span> のときに <strong><code>E_DEPRECATED</code></strong> を発行するようになりました。
+        <code class="parameter">options</code> が <span class="type"><span class="type scalar">scalar</span></span> のときに <strong><code>E_DEPRECATED</code></strong> を発行するようになりました。
        </td>
       </tr>
 
@@ -230,7 +230,7 @@
       <tr>
        <td>1.0.1</td>
        <td>
-        <em><code class="parameter">options</code></em> パラメータが boolean から配列に変わりました。
+        <code class="parameter">options</code> パラメータが boolean から配列に変わりました。
         1.0.1 より前のバージョンでは二番目のパラメータはオプションの boolean
         値で、upsert を指定するものでした。
        </td>
@@ -280,14 +280,14 @@ array(4) {
    <p><strong>例2 <span class="function"><strong>MongoCollection::update()</strong></span> での upsert</strong></p>
    <div class="example-contents"><p>
     upsert を使うとコードを簡潔にすることができます。
-    オブジェクトが存在しない (<em><code class="parameter">$criteria</code></em> に基づく) 場合は新たに作成し、
+    オブジェクトが存在しない (<code class="parameter">$criteria</code> に基づく) 場合は新たに作成し、
     存在する場合はそれを更新するという操作を一行で書けるからです。
    </p></div>
    <div class="example-contents"><p>
-    次の例では、<em><code class="parameter">$new_object</code></em> にアトミックな修正子が含まれています。
+    次の例では、<code class="parameter">$new_object</code> にアトミックな修正子が含まれています。
     コレクションは空なので upsert は新たなドキュメントを追加することになり、
     これらの操作を
-    <em><code class="parameter">$criteria</code></em> パラメータに適用してドキュメントを作ります。
+    <code class="parameter">$criteria</code> パラメータに適用してドキュメントを作ります。
    </p></div>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -312,9 +312,9 @@ array(3) {
 </pre></div>
    </div>
    <div class="example-contents"><p>
-    <em><code class="parameter">$new_object</code></em> がアトミックな修正子
+    <code class="parameter">$new_object</code> がアトミックな修正子
     (<em>$</em> 演算子) を含まない場合、upsert は
-    <em><code class="parameter">$new_object</code></em> をそのままの形式で新しいドキュメントに使います。
+    <code class="parameter">$new_object</code> をそのままの形式で新しいドキュメントに使います。
     これは通常の update の挙動と同じです。
     アトミックな修正子を使わなければ、ドキュメント全体が上書きされます。
    </p></div>
@@ -346,7 +346,7 @@ array(3) {
    <p><strong>例3 <span class="function"><strong>MongoCollection::update()</strong></span> での複数更新</strong></p>
    <div class="example-contents"><p>
     デフォルトでは <span class="function"><strong>MongoCollection::update()</strong></span> は、
-    <em><code class="parameter">$criteria</code></em> にマッチするドキュメントが複数見つかっても最初のものだけを更新します。
+    <code class="parameter">$criteria</code> にマッチするドキュメントが複数見つかっても最初のものだけを更新します。
     必要なら、&quot;multiple&quot; オプションでその挙動を変えることができます。
    </p></div>
    <div class="example-contents"><p>

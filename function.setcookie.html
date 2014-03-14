@@ -54,10 +54,10 @@
  <div class="refsect1 parameters" id="refsect1-function.setcookie-parameters">
   <h3 class="title">パラメータ</h3>
   <p class="para">
-   <em><code class="parameter">name</code></em> 以外の全ての引数はオプションです。
+   <code class="parameter">name</code> 以外の全ての引数はオプションです。
    全ての引数に関して引数の指定をスキップするために空文字列
    (<em class="emphasis">&quot;&quot;</em>) とすることが可能です。
-   <em><code class="parameter">expire</code></em> および <em><code class="parameter">secure</code></em>
+   <code class="parameter">expire</code> および <code class="parameter">secure</code>
    は数値なので、空文字列でスキップすることはできません。代わりにゼロ
    (<em class="emphasis">0</em>) を使用してください。
   </p>
@@ -68,7 +68,7 @@
 
     
      <dt>
-<em><code class="parameter">name</code></em></dt>
+<code class="parameter">name</code></dt>
 
      <dd>
 
@@ -80,14 +80,14 @@
     
     
      <dt>
-<em><code class="parameter">value</code></em></dt>
+<code class="parameter">value</code></dt>
 
      <dd>
 
       <p class="para">
        クッキーの値。この値はクライアントのコンピュータに保存されますので、
        重要な情報は格納しないでください。
-       <em><code class="parameter">name</code></em> が <em>&#039;cookiename&#039;</em> だとすると、
+       <code class="parameter">name</code> が <em>&#039;cookiename&#039;</em> だとすると、
        その値は <var class="varname"><var class="varname"><a href="reserved.variables.cookies.html" class="classname">$_COOKIE['cookiename']</a></var></var> で取得することができます。
       </p>
      </dd>
@@ -95,7 +95,7 @@
     
     
      <dt>
-<em><code class="parameter">expire</code></em></dt>
+<code class="parameter">expire</code></dt>
 
      <dd>
 
@@ -114,7 +114,7 @@
       <p class="para">
        <blockquote class="note"><p><strong class="note">注意</strong>: 
         <p class="para">
-         <em><code class="parameter">expire</code></em> パラメータには、<em>Wdy, DD-Mon-YYYY
+         <code class="parameter">expire</code> パラメータには、<em>Wdy, DD-Mon-YYYY
          HH:MM:SS GMT</em> といった形式ではなく Unix
          タイムスタンプを渡していることにお気づきでしょうか。
          これは、PHP の内部で自動的に変換を行っているからです。
@@ -126,14 +126,14 @@
     
     
      <dt>
-<em><code class="parameter">path</code></em></dt>
+<code class="parameter">path</code></dt>
 
      <dd>
 
       <p class="para">
        サーバー上での、クッキーを有効としたいパス
        <em>&#039;/&#039;</em> をセットすると、クッキーは
-       <em><code class="parameter">domain</code></em> 配下の全てで有効となります。
+       <code class="parameter">domain</code> 配下の全てで有効となります。
        <em>&#039;/foo/&#039;</em> をセットすると、クッキーは
        <em>/foo/</em> ディレクトリとそのサブディレクトリ配下
        (例えば <em>/foo/bar/</em>) で有効となります。
@@ -144,7 +144,7 @@
     
     
      <dt>
-<em><code class="parameter">domain</code></em></dt>
+<code class="parameter">domain</code></dt>
 
      <dd>
 
@@ -166,7 +166,7 @@
     
     
      <dt>
-<em><code class="parameter">secure</code></em></dt>
+<code class="parameter">secure</code></dt>
 
      <dd>
 
@@ -182,7 +182,7 @@
     
     
      <dt>
-<em><code class="parameter">httponly</code></em></dt>
+<code class="parameter">httponly</code></dt>
 
      <dd>
 
@@ -320,7 +320,7 @@ one : cookieone
       <tr>
        <td>5.2.0</td>
        <td>
- <em><code class="parameter">httponly</code></em> パラメータが追加されました。
+ <code class="parameter">httponly</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -361,7 +361,7 @@ one : cookieone
       アクセスすることができません。クッキーが正常にセットされたか
       テストするために、クッキーの有効期限が切れる前に次のページを
       ロードしてクッキーをチェックしてください。
-      有効期限は <em><code class="parameter">expire</code></em> 引数でセットされます。
+      有効期限は <code class="parameter">expire</code> 引数でセットされます。
       クッキーの利用についてデバッグするのに良い方法は
       <em>print_r($_COOKIE);</em> をコールすることです。
      </span>

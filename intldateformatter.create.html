@@ -40,7 +40,7 @@
   </p>
   <div class="constructorsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="methodname"><strong>IntlDateFormatter::__construct()</strong></span>
+   <span class="methodname"><strong>IntlDateFormatter::__construct</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$datetype</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timetype</code></span>
@@ -75,7 +75,7 @@
 
     
      <dt>
-<em><code class="parameter">locale</code></em></dt>
+<code class="parameter">locale</code></dt>
 
      <dd>
 
@@ -89,7 +89,7 @@
     
     
      <dt>
-<em><code class="parameter">datetype</code></em></dt>
+<code class="parameter">datetype</code></dt>
 
      <dd>
 
@@ -106,7 +106,7 @@
     
     
      <dt>
-<em><code class="parameter">timetype</code></em></dt>
+<code class="parameter">timetype</code></dt>
 
      <dd>
 
@@ -123,14 +123,14 @@
     
     
      <dt>
-<em><code class="parameter">timezone</code></em></dt>
+<code class="parameter">timezone</code></dt>
 
      <dd>
 
       <p class="para">
        タイムゾーン ID。デフォルト (そして、<strong><code>NULL</code></strong> が渡されたときにも使われるもの)
        は <span class="function"><a href="function.date-default-timezone-get.html" class="function">date_default_timezone_get()</a></span> が返す ID、あるいは
-       <em><code class="parameter">calendar</code></em> パラメータに <a href="class.intlcalendar.html" class="classname">IntlCalendar</a>
+       <code class="parameter">calendar</code> パラメータに <a href="class.intlcalendar.html" class="classname">IntlCalendar</a>
        オブジェクトが渡されていればそのタイムゾーンを使います。
        この ID は、ICU のデータベースにある妥当な識別子である必要があります。あるいは、
        オフセットを明示した <em>GMT-05:30</em> のような形式になります。
@@ -144,7 +144,7 @@
     
     
      <dt>
-<em><code class="parameter">calendar</code></em></dt>
+<code class="parameter">calendar</code></dt>
 
      <dd>
 
@@ -156,14 +156,14 @@
        渡された <a href="class.intlcalendar.html" class="classname">IntlCalendar</a> は、クローンされます。
        <a href="class.intldateformatter.html" class="classname">IntlDateFormatter</a> によって元のオブジェクトが書き換えられることはありません。
        これは、利用するカレンダーの型 (グレゴリオ暦、イスラム暦、ペルシア暦など) の判定に使います。
-       また、<em><code class="parameter">timezone</code></em> パラメータに <strong><code>NULL</code></strong> を指定した場合にはタイムゾーンの判定にも使います。
+       また、<code class="parameter">timezone</code> パラメータに <strong><code>NULL</code></strong> を指定した場合にはタイムゾーンの判定にも使います。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -209,19 +209,19 @@
        <td>
         <p class="para">
          <a href="class.intlcalendar.html" class="classname">IntlCalendar</a> オブジェクトを
-         <em><code class="parameter">calendar</code></em> に渡せるようになりました。
+         <code class="parameter">calendar</code> に渡せるようになりました。
         </p>
         <p class="para">
          <a href="class.intltimezone.html" class="classname">IntlTimeZone</a> オブジェクトや
          <a href="class.datetimezone.html" class="classname">DateTimeZone</a> オブジェクトを
-         <em><code class="parameter">timezone</code></em> に渡せるようになりました。
+         <code class="parameter">timezone</code> に渡せるようになりました。
         </p>
         <p class="para">
          無効なタイムゾーン ID (空文字列を含む) を
-         <em><code class="parameter">timezone</code></em> で指定できなくなりました。
+         <code class="parameter">timezone</code> で指定できなくなりました。
         </p>
         <p class="para">
-         <em><code class="parameter">timezone</code></em> に <strong><code>NULL</code></strong> を指定した場合は、ICU のデフォルトではなく
+         <code class="parameter">timezone</code> に <strong><code>NULL</code></strong> を指定した場合は、ICU のデフォルトではなく
          <span class="function"><a href="function.date-default-timezone-get.html" class="function">date_default_timezone_get()</a></span> が返すタイムゾーンを使うようになりました。
         </p>
        </td>

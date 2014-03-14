@@ -29,14 +29,14 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">string</code></em>から
-   <em><code class="parameter">pattern</code></em>にマッチする文字列を検索し、
-   一致した文字列を<em><code class="parameter">callback</code></em>関数の出力で置換します。
+   <code class="parameter">string</code>から
+   <code class="parameter">pattern</code>にマッチする文字列を検索し、
+   一致した文字列を<code class="parameter">callback</code>関数の出力で置換します。
   </p>
   <p class="para">
     この関数の動作は<span class="function"><a href="function.mb-ereg-replace.html" class="function">mb_ereg_replace()</a></span>とほぼ同じですが、
-    <em><code class="parameter">replacement</code></em>パラメータの代わりに
-    <em><code class="parameter">callback</code></em>を指定するところが異なります。
+    <code class="parameter">replacement</code>パラメータの代わりに
+    <code class="parameter">callback</code>を指定するところが異なります。
   </p>
  </div>
 
@@ -48,7 +48,7 @@
 
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -56,27 +56,27 @@
         正規表現パターン。
       </p>
       <p class="para">
-        <em><code class="parameter">pattern</code></em>ではマルチバイト文字列を使用可能です。
+        <code class="parameter">pattern</code>ではマルチバイト文字列を使用可能です。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">callback</code></em></dt>
+<code class="parameter">callback</code></dt>
 
      <dd>
 
       <p class="para">
         コールバック関数で、
-        <em><code class="parameter">subject</code></em>文字列で一致した要素を配列で
+        <code class="parameter">subject</code>文字列で一致した要素を配列で
         指定してコールされます。
         このコールバック関数は、置換した文字列を返す必要があります。
       </p>
       <p class="para">
         しばしば、
         <span class="function"><strong>mb_ereg_replace_callback()</strong></span>の
-        <em><code class="parameter">callback</code></em>関数が必要となるのは一度だけである
+        <code class="parameter">callback</code>関数が必要となるのは一度だけである
         場合があります。
         この場合、
         <span class="function"><strong>mb_ereg_replace_callback()</strong></span>をコールする際の
@@ -93,7 +93,7 @@
     
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -105,12 +105,12 @@
     
     
      <dt>
-<em><code class="parameter">option</code></em></dt>
+<code class="parameter">option</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">option</code></em>
+       <code class="parameter">option</code>
        パラメータにより検索条件を指定できます。このパラメータに 
        <em>i</em>が指定された場合、 大文字/小文字が無視されます。
        <em>x</em> が指定された場合、

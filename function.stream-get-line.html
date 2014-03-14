@@ -29,8 +29,8 @@
    指定したハンドルから一行取得します。
   </p>
   <p class="para">
-   読み込みは、<em><code class="parameter">length</code></em> バイト読まれたか、
-   <em><code class="parameter">ending</code></em> で指定された文字列がストリームに見つかった
+   読み込みは、<code class="parameter">length</code> バイト読まれたか、
+   <code class="parameter">ending</code> で指定された文字列がストリームに見つかった
    か (この文字列は返値に <em class="emphasis">含まれません</em>)、あるいは
    <acronym title="End Of File">EOF</acronym> に達したとき、のうち一番最初に遭遇したところで停止します。
   </p>
@@ -50,7 +50,7 @@
 
     
      <dt>
-<em><code class="parameter">handle</code></em></dt>
+<code class="parameter">handle</code></dt>
 
      <dd>
 
@@ -62,7 +62,7 @@
     
     
      <dt>
-<em><code class="parameter">length</code></em></dt>
+<code class="parameter">length</code></dt>
 
      <dd>
 
@@ -74,7 +74,7 @@
     
     
      <dt>
-<em><code class="parameter">ending</code></em></dt>
+<code class="parameter">ending</code></dt>
 
      <dd>
 
@@ -93,8 +93,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stream-get-line-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   最大 <em><code class="parameter">length</code></em> バイトの、
-   <em><code class="parameter">handle</code></em> で指定されたリソースから読み込んだデータを返します。
+   最大 <code class="parameter">length</code> バイトの、
+   <code class="parameter">handle</code> で指定されたリソースから読み込んだデータを返します。
   </p>
   <p class="para">
    エラーが発生した際には、<strong><code>FALSE</code></strong> を返します。

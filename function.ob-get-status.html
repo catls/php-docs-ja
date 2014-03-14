@@ -26,7 +26,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>ob_get_status()</strong></span> は、トップレベルの出力バッファの
-   ステータス情報を返します。<em><code class="parameter">full_status</code></em> が
+   ステータス情報を返します。<code class="parameter">full_status</code> が
    <strong><code>TRUE</code></strong> に設定されている場合は、すべてのアクティブな出力バッファの
    ステータス情報を返します。
   </p>
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">full_status</code></em></dt>
+<code class="parameter">full_status</code></dt>
 
      <dd>
 
@@ -61,8 +61,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.ob-get-status-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   パラメータ <em><code class="parameter">full_status</code></em> を指定していなかったり
-   <em><code class="parameter">full_status</code></em> = <strong><code>FALSE</code></strong> としていた場合は、
+   パラメータ <code class="parameter">full_status</code> を指定していなかったり
+   <code class="parameter">full_status</code> = <strong><code>FALSE</code></strong> としていた場合は、
    以下の要素を保持する配列が返されます。
    <div class="informalexample">
     <div class="example-contents screen">
@@ -88,7 +88,7 @@
    </div>
   </p>
   <p class="para">
-   <em><code class="parameter">full_status</code></em> = <strong><code>TRUE</code></strong> を指定してコールした場合、
+   <code class="parameter">full_status</code> = <strong><code>TRUE</code></strong> を指定してコールした場合、
    出力バッファごとにひとつの要素を保持する配列が返されます。
    出力レベルが配列のキーとして使用され、対応する値として
    各出力レベルのステータス情報を配列として保持します。

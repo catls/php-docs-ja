@@ -32,7 +32,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>eio_sync_file_range()</strong></span> は、ファイルディスクリプタ
-   <em><code class="parameter">fd</code></em> が指すオープン中のファイルをディスクに同期します。
+   <code class="parameter">fd</code> が指すオープン中のファイルをディスクに同期します。
   </p>
 
  </div>
@@ -44,7 +44,7 @@
 
    
     <dt>
-<em><code class="parameter">fd</code></em></dt>
+<code class="parameter">fd</code></dt>
 
     <dd>
 
@@ -56,7 +56,7 @@
    
    
     <dt>
-<em><code class="parameter">offset</code></em></dt>
+<code class="parameter">offset</code></dt>
 
     <dd>
 
@@ -68,13 +68,13 @@
    
    
     <dt>
-<em><code class="parameter">nbytes</code></em></dt>
+<code class="parameter">nbytes</code></dt>
 
     <dd>
 
      <p class="para">
      同期させる範囲の長さをバイト単位で指定する。
-     <em><code class="parameter">nbytes</code></em> がゼロの場合は、<em><code class="parameter">offset</code></em>
+     <code class="parameter">nbytes</code> がゼロの場合は、<code class="parameter">offset</code>
      からファイルの末尾までのすべての範囲を同期します。
      </p>
     </dd>
@@ -82,7 +82,7 @@
    
    
     <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
     <dd>
 
@@ -100,12 +100,12 @@
    
    
     <dt>
-<em><code class="parameter">pri</code></em></dt>
+<code class="parameter">pri</code></dt>
 
     <dd>
 
     <p class="para">リクエストの優先順位。<strong><code>EIO_PRI_DEFAULT</code></strong>、<strong><code>EIO_PRI_MIN</code></strong>、<strong><code>EIO_PRI_MAX</code></strong> あるいは <strong><code>NULL</code></strong> を指定します。
-<strong><code>NULL</code></strong> を渡した場合、<em><code class="parameter">pri</code></em> は内部的に
+<strong><code>NULL</code></strong> を渡した場合、<code class="parameter">pri</code> は内部的に
 <strong><code>EIO_PRI_DEFAULT</code></strong> となります。
 </p>
 
@@ -114,12 +114,12 @@
    
    
     <dt>
-<em><code class="parameter">callback</code></em></dt>
+<code class="parameter">callback</code></dt>
 
     <dd>
 
      <p class="para">
-<em><code class="parameter">callback</code></em> 関数が、リクエスト終了時にコールされます。
+<code class="parameter">callback</code> 関数が、リクエスト終了時にコールされます。
 この関数のプロトタイプは、<div class="example-contents"><div class="phpcode"><code><span style="color: #000000">
 void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;$req]);</span>
 </code></div></div>
@@ -129,7 +129,7 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
 
 
 <dt>
-<em><code class="parameter">data</code></em></dt>
+<code class="parameter">data</code></dt>
 
 <dd>
 <p class="para">は、リクエストに渡すカスタムデータです。</p></dd>
@@ -137,7 +137,7 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
 
 
 <dt>
-<em><code class="parameter">result</code></em></dt>
+<code class="parameter">result</code></dt>
 
 <dd>
 <p class="para">にはリクエスト固有の結果が格納されます。基本的には、対応するシステムコールが返すそのままの値となります。</p></dd>
@@ -145,7 +145,7 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
 
 
 <dt>
-<em><code class="parameter">req</code></em></dt>
+<code class="parameter">req</code></dt>
 
 <dd>
 <p class="para">はオプションで指定するリクエストリソースです。
@@ -161,12 +161,12 @@ void&nbsp;callback(mixed&nbsp;$data,&nbsp;int&nbsp;$result[,&nbsp;resource&nbsp;
    
    
     <dt>
-<em><code class="parameter">data</code></em></dt>
+<code class="parameter">data</code></dt>
 
     <dd>
 
      <p class="para">
-     <em><code class="parameter">callback</code></em> に渡す任意の引数。
+     <code class="parameter">callback</code> に渡す任意の引数。
      </p>
     </dd>
 

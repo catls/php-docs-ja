@@ -30,19 +30,25 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>pg_convert()</strong></span> は、<em><code class="parameter">assoc_array</code></em>
+   <span class="function"><strong>pg_convert()</strong></span> は、<code class="parameter">assoc_array</code>
    の中の値をチェックし、SQL 文の中で使用可能な形式に変換します。
-   少なくとも <em><code class="parameter">assoc_array</code></em> の要素数以上のカラムを持つ
-   テーブル <em><code class="parameter">table_name</code></em> が存在することが前提条件と
-   なります。<em><code class="parameter">assoc_array</code></em> の要素名が
-   <em><code class="parameter">table_name</code></em> のフィールド名と一致し、また
+   少なくとも <code class="parameter">assoc_array</code> の要素数以上のカラムを持つ
+   テーブル <code class="parameter">table_name</code> が存在することが前提条件と
+   なります。<code class="parameter">assoc_array</code> の要素名が
+   <code class="parameter">table_name</code> のフィールド名と一致し、また
    要素に対応する値はフィールドのデータ型と互換性がなければなりません。
    成功した場合に変換後の値の配列、それ以外の場合に <strong><code>FALSE</code></strong> を返します。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    論理型のフィールドが <em><code class="parameter">table_name</code></em> にあった場合、
-    対応する <em><code class="parameter">assoc_array</code></em> では定数 <strong><code>TRUE</code></strong> を使用
+    PHP 5.6.0 以降は、boolean 値も受け付けるようになりました。
+    PostgreSQL の boolean 型に変換します。
+    boolean 値の文字列表現にも対応しています。
+    <strong><code>NULL</code></strong> は、PostgreSQL の NULL に変換します。
+   </p>
+   <p class="para">
+    PHP 5.6.0 より前のバージョンでは、論理型のフィールドが <code class="parameter">table_name</code> にあった場合、
+    対応する <code class="parameter">assoc_array</code> では定数 <strong><code>TRUE</code></strong> を使用
     しないでください。これは文字列 &#039;TRUE&#039; に変換されてしまい、PostgreSQL
     では論理型として無効な形式になります。代わりに t、true、1、y、yes
     のうちのひとつを用いてください。
@@ -63,7 +69,7 @@
 
     
      <dt>
-<em><code class="parameter">connection</code></em></dt>
+<code class="parameter">connection</code></dt>
 
      <dd>
 
@@ -75,7 +81,7 @@
     
     
      <dt>
-<em><code class="parameter">table_name</code></em></dt>
+<code class="parameter">table_name</code></dt>
 
      <dd>
 
@@ -87,7 +93,7 @@
     
     
      <dt>
-<em><code class="parameter">assoc_array</code></em></dt>
+<code class="parameter">assoc_array</code></dt>
 
      <dd>
 
@@ -99,12 +105,12 @@
     
     
      <dt>
-<em><code class="parameter">options</code></em></dt>
+<code class="parameter">options</code></dt>
 
      <dd>
 
       <p class="para">
-       <strong><code>PGSQL_CONV_IGNORE_DEFAULT</code></strong>, 
+       <strong><code>PGSQL_CONV_IGNORE_DEFAULT</code></strong>,
        <strong><code>PGSQL_CONV_FORCE_NULL</code></strong> あるいは
        <strong><code>PGSQL_CONV_IGNORE_NOT_NULL</code></strong> の組み合わせ。
       </p>
@@ -142,11 +148,46 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-function.pg-convert-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.6.0</td>
+       <td>
+        実験的な関数ではなくなりました。Boolean/NULL をサポートするようになりました。
+        未知のデータ型やサポートしていないデータ型は、バリデーションなしにエスケープします。
+        <span class="function"><strong>pg_convert()</strong></span> は任意のデータ型で使えるようになりました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 seealso" id="refsect1-function.pg-convert-seealso">
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
     <li class="member"><span class="function"><a href="function.pg-meta-data.html" class="function" rel="rdfs-seeAlso">pg_meta_data()</a> - テーブルからメタデータを取得する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-insert.html" class="function" rel="rdfs-seeAlso">pg_insert()</a> - テーブルに配列を挿入する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-select.html" class="function" rel="rdfs-seeAlso">pg_select()</a> - レコードを選択する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-update.html" class="function" rel="rdfs-seeAlso">pg_update()</a> - テーブルを更新する</span></li>
+    <li class="member"><span class="function"><a href="function.pg-delete.html" class="function" rel="rdfs-seeAlso">pg_delete()</a> - レコードを削除する</span></li>
    </ul>
   </p>
  </div>

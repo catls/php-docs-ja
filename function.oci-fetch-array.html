@@ -33,10 +33,10 @@
    <strong><code>FALSE</code></strong> は、もう行がないことを意味します。
   </p>
   <p class="para">
-   <em><code class="parameter">statement</code></em> が Oracle Database 12c
+   <code class="parameter">statement</code> が Oracle Database 12c
    の暗黙の結果セットを返す PL/SQL ブロックである場合、
    すべてのセットからの行を続けて取得します。
-   <em><code class="parameter">statement</code></em> が
+   <code class="parameter">statement</code> が
    <span class="function"><a href="function.oci-get-implicit-resultset.html" class="function">oci_get_implicit_resultset()</a></span> の戻す値である場合、
    ひとつの子クエリーからの行のサブセットだけを返します。
   </p>
@@ -53,7 +53,7 @@
 
     
      <dt>
-<em><code class="parameter">statement</code></em></dt>
+<code class="parameter">statement</code></dt>
 
      <dd>
 
@@ -70,7 +70,7 @@ CURSOR</em> ステートメント ID。</p>
     
     
      <dt>
-<em><code class="parameter">mode</code></em></dt>
+<code class="parameter">mode</code></dt>
 
      <dd>
 
@@ -124,7 +124,7 @@ CURSOR</em> ステートメント ID。</p>
 
       </p>
       <p class="para">
-       デフォルトの <em><code class="parameter">mode</code></em> は <strong><code>OCI_BOTH</code></strong> です。
+       デフォルトの <code class="parameter">mode</code> は <strong><code>OCI_BOTH</code></strong> です。
       </p>
       <p class="para">
        加算演算子 &quot;+&quot; を使うと、複数のモードを同時に指定できます。
@@ -143,7 +143,7 @@ CURSOR</em> ステートメント ID。</p>
   <h3 class="title">返り値</h3>
   <p class="para">
    連想配列や数値添字配列を返します。
-   <em><code class="parameter">statement</code></em> にもう行がない場合は
+   <code class="parameter">statement</code> にもう行がない場合は
    <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">

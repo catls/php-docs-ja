@@ -47,7 +47,7 @@
 
     
      <dt>
-<em><code class="parameter">expression</code></em></dt>
+<code class="parameter">expression</code></dt>
 
      <dd>
 
@@ -59,13 +59,13 @@
     
     
      <dt>
-<em><code class="parameter">return</code></em></dt>
+<code class="parameter">return</code></dt>
 
      <dd>
 
       <p class="para">
        <span class="function"><strong>print_r()</strong></span> の結果を取得したい場合には
-       <em><code class="parameter">return</code></em> 引数を使います。
+       <code class="parameter">return</code> 引数を使います。
        この引数が <strong><code>TRUE</code></strong> の場合には、
        <span class="function"><strong>print_r()</strong></span> は情報を表示するかわりに情報を返します。
       </p>
@@ -87,7 +87,7 @@
    表示されます。<span class="type"><a href="language.types.object.html" class="type object">object</a></span> に関しても同様の表示形式となります。
   </p>
   <p class="para">
-   <em><code class="parameter">return</code></em> パラメータが <strong><code>TRUE</code></strong> の場合は、
+   <code class="parameter">return</code> パラメータが <strong><code>TRUE</code></strong> の場合は、
    この関数は <span class="type"><a href="language.types.string.html" class="type string">string</a></span> を返します。それ以外の場合の返り値は <strong><code>TRUE</code></strong> です。
   </p>
  </div>
@@ -96,7 +96,7 @@
  <div class="refsect1 notes" id="refsect1-function.print-r-notes">
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">
-<em><code class="parameter">return</code></em> パラメータを使う場合、この関数は内部的に出力バッファリングを使います。
+<code class="parameter">return</code> パラメータを使う場合、この関数は内部的に出力バッファリングを使います。
 そのため、<span class="function"><a href="function.ob-start.html" class="function">ob_start()</a></span> コールバック関数の中では使えません。</p></p></blockquote>
  </div>
 
@@ -118,7 +118,7 @@
       <tr>
        <td>4.3.0</td>
        <td>
-        <em><code class="parameter">return</code></em> 引数が PHP 4.3.0 以降追加されました。
+        <code class="parameter">return</code> 引数が PHP 4.3.0 以降追加されました。
         PHP4.3.0 より前のバージョンを使っている場合で
         <span class="function"><strong>print_r()</strong></span> の結果を取得したい場合には、
         <a href="ref.outcontrol.html" class="link">出力制御関数</a>を使用してください。
@@ -148,7 +148,7 @@
  <div class="refsect1 examples" id="refsect1-function.print-r-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5263">
+   <div class="example" id="example-5265">
     <p><strong>例1 <span class="function"><strong>print_r()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -177,8 +177,8 @@ Array
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5264">
-    <p><strong>例2 <em><code class="parameter">return</code></em> 引数の例</strong></p>
+   <div class="example" id="example-5266">
+    <p><strong>例2 <code class="parameter">return</code> 引数の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$b&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(</span><span style="color: #DD0000">'m'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'monkey'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'foo'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'x'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array&nbsp;(</span><span style="color: #DD0000">'x'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'y'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'z'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$results&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;print_r&nbsp;の結果が&nbsp;$results&nbsp;に格納されます<br /></span><span style="color: #0000BB">?&gt;</span>

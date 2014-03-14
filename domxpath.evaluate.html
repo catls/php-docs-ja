@@ -28,7 +28,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   与えられた XPath 式 <em><code class="parameter">expression</code></em> を実行し、
+   与えられた XPath 式 <code class="parameter">expression</code> を実行し、
    可能であれば型付けされた結果を返します。
   </p>
  </div>
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">expression</code></em></dt>
+<code class="parameter">expression</code></dt>
 
      <dd>
 
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">contextnode</code></em></dt>
+<code class="parameter">contextnode</code></dt>
 
      <dd>
 
@@ -65,12 +65,12 @@
     
     
      <dt>
-<em><code class="parameter">registerNodeNS</code></em></dt>
+<code class="parameter">registerNodeNS</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションの <em><code class="parameter">registerNodeNS</code></em> で、
+       オプションの <code class="parameter">registerNodeNS</code> で、
        コンテキストノードの自動登録を無効にすることができます。
       </p>
      </dd>
@@ -85,12 +85,12 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    可能であれば型付けされた結果、あるいは指定された XPath 式
-   <em><code class="parameter">expression</code></em> にマッチするすべてのノードを含む
+   <code class="parameter">expression</code> にマッチするすべてのノードを含む
    <a href="class.domnodelist.html" class="classname">DOMNodeList</a> を返します。
   </p>
   <p class="para">
-   <em><code class="parameter">expression</code></em> が不正な形式な場合や
-   <em><code class="parameter">contextnode</code></em> が無効な場合は、
+   <code class="parameter">expression</code> が不正な形式な場合や
+   <code class="parameter">contextnode</code> が無効な場合は、
    <span class="methodname"><strong>DOMXPath::evaluate()</strong></span> は <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
@@ -112,7 +112,7 @@
       <tr>
        <td>5.3.3</td>
        <td>
-         <em><code class="parameter">registerNodeNS</code></em> パラメータが追加されました。
+         <code class="parameter">registerNodeNS</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -126,7 +126,7 @@
  <div class="refsect1 examples" id="refsect1-domxpath.evaluate-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5427">
+   <div class="example" id="example-5429">
     <p><strong>例1 英語の書籍の数を取得する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -38,7 +38,7 @@
 
     
      <dt>
-<em><code class="parameter">ftp_stream</code></em></dt>
+<code class="parameter">ftp_stream</code></dt>
 
      <dd>
 
@@ -50,7 +50,7 @@
     
     
      <dt>
-<em><code class="parameter">option</code></em></dt>
+<code class="parameter">option</code></dt>
 
      <dd>
 
@@ -64,7 +64,7 @@
            <td><strong><code>FTP_TIMEOUT_SEC</code></strong></td>
            <td>
             全てのネットワーク関連関数に関して秒単位でタイムアウトを変更
-            します。<em><code class="parameter">value</code></em>は、
+            します。<code class="parameter">value</code>は、
             0 より大きい整数値である必要があります。
             デフォルトのタイムアウトは90秒です。
            </td>
@@ -74,7 +74,7 @@
            <td><strong><code>FTP_AUTOSEEK</code></strong></td>
            <td>
             有効になっている場合は、GET や PUT のリクエストが
-            <em><code class="parameter">resumepos</code></em> や <em><code class="parameter">startpos</code></em>
+            <code class="parameter">resumepos</code> や <code class="parameter">startpos</code>
             のパラメータ付きで実行されるとファイル中の該当位置をシークします。
             デフォルトで有効になっています。
            </td>
@@ -90,12 +90,12 @@
     
     
      <dt>
-<em><code class="parameter">value</code></em></dt>
+<code class="parameter">value</code></dt>
 
      <dd>
 
       <p class="para">
-       このパラメータの内容は、どの <em><code class="parameter">option</code></em> 
+       このパラメータの内容は、どの <code class="parameter">option</code> 
        を変更しようとしているかによって変わります。
       </p>
      </dd>
@@ -110,8 +110,8 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    オプションが設定できた場合に <strong><code>TRUE</code></strong> 、そうでない場合に <strong><code>FALSE</code></strong> を返します。
-   <em><code class="parameter">option</code></em> がサポートされていなかった場合や
-   <em><code class="parameter">option</code></em> が想定していない値を <em><code class="parameter">value</code></em>
+   <code class="parameter">option</code> がサポートされていなかった場合や
+   <code class="parameter">option</code> が想定していない値を <code class="parameter">value</code>
    に渡した場合は警告メッセージが発生します。
   </p>
  </div>

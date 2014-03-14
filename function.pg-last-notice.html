@@ -27,7 +27,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>pg_last_notice()</strong></span> は、<em><code class="parameter">connection</code></em>
+   <span class="function"><strong>pg_last_notice()</strong></span> は、<code class="parameter">connection</code>
    で指定した PostgreSQL サーバーからの直近の通知メッセージを返します。
    たとえば、テーブルに <em>SERIAL</em> カラムを作成する場合などに
    PostgreSQL サーバーは通知メッセージを送信します。
@@ -57,7 +57,7 @@
 
     
      <dt>
-<em><code class="parameter">connection</code></em></dt>
+<code class="parameter">connection</code></dt>
 
      <dd>
 
@@ -76,7 +76,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.pg-last-notice-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   指定された <em><code class="parameter">connection</code></em> の直近の通知を文字列で
+   指定された <code class="parameter">connection</code> の直近の通知を文字列で
    返します。エラー時には <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>

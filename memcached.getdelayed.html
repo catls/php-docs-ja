@@ -27,18 +27,18 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>Memcached::getDelayed()</strong></span> は、<em><code class="parameter">keys</code></em>
+   <span class="function"><strong>Memcached::getDelayed()</strong></span> は、<code class="parameter">keys</code>
    配列で指定した複数のキーのアイテムに対するリクエストを memcache に発行します。
    このメソッドはサーバーからの応答を待たずにすぐに結果を返します。
    アイテムを使用したくなったときには
    <span class="methodname"><a href="memcached.fetch.html" class="methodname">Memcached::fetch()</a></span> あるいは
    <span class="methodname"><a href="memcached.fetchall.html" class="methodname">Memcached::fetchAll()</a></span> をコールします。
-   <em><code class="parameter">with_cas</code></em> が true の場合は
+   <code class="parameter">with_cas</code> が true の場合は
    CAS トークンの値もリクエストします。
   </p>
   <p class="para">
    結果を明示的に取得するのではなく、<a href="memcached.callbacks.html" class="link">result コールバック</a> を
-   <em><code class="parameter">value_cb</code></em> パラメータで指定することもできます。
+   <code class="parameter">value_cb</code> パラメータで指定することもできます。
   </p>
  </div>
 
@@ -50,7 +50,7 @@
 
     
      <dt>
-<em><code class="parameter">keys</code></em></dt>
+<code class="parameter">keys</code></dt>
 
      <dd>
 
@@ -62,7 +62,7 @@
     
     
      <dt>
-<em><code class="parameter">with_cas</code></em></dt>
+<code class="parameter">with_cas</code></dt>
 
      <dd>
 
@@ -74,7 +74,7 @@
     
     
      <dt>
-<em><code class="parameter">value_cb</code></em></dt>
+<code class="parameter">value_cb</code></dt>
 
      <dd>
 

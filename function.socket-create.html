@@ -41,12 +41,12 @@
 
     
      <dt>
-<em><code class="parameter">domain</code></em></dt>
+<code class="parameter">domain</code></dt>
 
      <dd>
 
       <p class="para">
-       パラメータ <em><code class="parameter">domain</code></em> には、
+       パラメータ <code class="parameter">domain</code> には、
        ソケットが利用するプロトコルファミリーを指定します。
       </p>
       <table class="doctable table">
@@ -96,12 +96,12 @@
     
     
      <dt>
-<em><code class="parameter">type</code></em></dt>
+<code class="parameter">type</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">type</code></em> パラメータは、
+       <code class="parameter">type</code> パラメータは、
        ソケットが利用する通信方式を指定します。
       </p>
       <table class="doctable table">
@@ -170,13 +170,13 @@
     
     
      <dt>
-<em><code class="parameter">protocol</code></em></dt>
+<code class="parameter">protocol</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">protocol</code></em> は、ソケット上の通信で使われる
-       <em><code class="parameter">domain</code></em> で指定されたファミリーに属するプロトコルを指定します。
+       <code class="parameter">protocol</code> は、ソケット上の通信で使われる
+       <code class="parameter">domain</code> で指定されたファミリーに属するプロトコルを指定します。
        正しい値は、<span class="function"><a href="function.getprotobyname.html" class="function">getprotobyname()</a></span>
        を使うことで取得できます。利用したいプロトコルが、TCP または UDP
        の場合は、定数 <strong><code>SOL_TCP</code></strong> と
@@ -286,7 +286,7 @@
  <div class="refsect1 errors" id="refsect1-function.socket-create-errors">
   <h3 class="title">エラー / 例外</h3>
    <p class="para">
-    <em><code class="parameter">domain</code></em> や <em><code class="parameter">type</code></em> に
+    <code class="parameter">domain</code> や <code class="parameter">type</code> に
     不正な値が与えられた場合、<span class="function"><strong>socket_create()</strong></span> は、これらを
     それぞれ <strong><code>AF_INET</code></strong> と <strong><code>SOCK_STREAM</code></strong>
     であるとみなし、<strong><code>E_WARNING</code></strong> メッセージを出します。

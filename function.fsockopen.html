@@ -29,7 +29,7 @@
   ]]]] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">hostname</code></em> で指定したリソースへのソケット接続を開始します。
+   <code class="parameter">hostname</code> で指定したリソースへのソケット接続を開始します。
   </p>
   <p class="para">
    <a href="transports.html" class="xref">サポートされるソケットトランスポートのリスト</a> に記述されているように、PHP は
@@ -55,14 +55,14 @@
 
     
      <dt>
-<em><code class="parameter">hostname</code></em></dt>
+<code class="parameter">hostname</code></dt>
 
      <dd>
 
       <p class="para">
        OpenSSL サポートが <a href="openssl.installation.html" class="link">インストール</a>
        されている場合、
-       <em><code class="parameter">hostname</code></em> の前に <em>ssl://</em> または
+       <code class="parameter">hostname</code> の前に <em>ssl://</em> または
        <em>tls://</em> を付加することにより、TCP/IP
        経由でリモートホストに接続する際に SSL または
        TLS クライアント接続を使用することができます。
@@ -72,7 +72,7 @@
     
     
      <dt>
-<em><code class="parameter">port</code></em></dt>
+<code class="parameter">port</code></dt>
 
      <dd>
 
@@ -86,7 +86,7 @@
     
     
      <dt>
-<em><code class="parameter">errno</code></em></dt>
+<code class="parameter">errno</code></dt>
 
      <dd>
 
@@ -95,7 +95,7 @@
        で発生したエラーのエラー番号が格納されます。
       </p>
       <p class="para">
-       <em><code class="parameter">errno</code></em> は <em>0</em> なのに関数が
+       <code class="parameter">errno</code> は <em>0</em> なのに関数が
        <strong><code>FALSE</code></strong> を返す場合、<em>connect()</em>
        をコールする前にエラーを発生したことを示します。
        この場合、おそらくはソケットの初期化に原因があります。
@@ -105,7 +105,7 @@
     
     
      <dt>
-<em><code class="parameter">errstr</code></em></dt>
+<code class="parameter">errstr</code></dt>
 
      <dd>
 
@@ -117,7 +117,7 @@
     
     
      <dt>
-<em><code class="parameter">timeout</code></em></dt>
+<code class="parameter">timeout</code></dt>
 
      <dd>
 
@@ -127,7 +127,7 @@
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
         ソケット経由でデータを読み書きする際のタイムアウトを設定する必要がある場合、
-        <span class="function"><strong>fsockopen()</strong></span> の <em><code class="parameter">timeout</code></em> パラメータは、
+        <span class="function"><strong>fsockopen()</strong></span> の <code class="parameter">timeout</code> パラメータは、
         ソケットに接続する間にだけ適用されるため、
         <span class="function"><a href="function.socket-set-timeout.html" class="function">socket_set_timeout()</a></span> を使用してください。
        </p>
@@ -156,7 +156,7 @@
  <div class="refsect1 errors" id="refsect1-function.fsockopen-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   <em><code class="parameter">hostname</code></em> が有効なドメインでない場合は
+   <code class="parameter">hostname</code> が有効なドメインでない場合は
    <strong><code>E_WARNING</code></strong> をスローします。
   </p>
  </div>
@@ -178,7 +178,7 @@
       <tr>
        <td>4.3.0</td>
        <td>
-        <em><code class="parameter">timeout</code></em> パラメータが
+        <code class="parameter">timeout</code> パラメータが
         win32 もサポートするようになりました。
        </td>
       </tr>

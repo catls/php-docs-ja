@@ -35,7 +35,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>snmp3_walk()</strong></span> 関数は、
-   <em><code class="parameter">hostname</code></em> で指定した <acronym title="Simple Network Management Protocol">SNMP</acronym>
+   <code class="parameter">hostname</code> で指定した <acronym title="Simple Network Management Protocol">SNMP</acronym>
    エージェントからすべての値を読み込みます。
   </p>
   <p class="para">
@@ -51,7 +51,7 @@
 
    
     <dt>
-<em><code class="parameter">host</code></em></dt>
+<code class="parameter">host</code></dt>
 
     <dd>
 
@@ -63,7 +63,7 @@
    
    
     <dt>
-<em><code class="parameter">sec_name</code></em></dt>
+<code class="parameter">sec_name</code></dt>
 
     <dd>
 
@@ -75,7 +75,7 @@
    
    
     <dt>
-<em><code class="parameter">sec_level</code></em></dt>
+<code class="parameter">sec_level</code></dt>
 
     <dd>
 
@@ -87,7 +87,7 @@
    
    
     <dt>
-<em><code class="parameter">auth_protocol</code></em></dt>
+<code class="parameter">auth_protocol</code></dt>
 
     <dd>
 
@@ -99,7 +99,7 @@
    
    
     <dt>
-<em><code class="parameter">auth_passphrase</code></em></dt>
+<code class="parameter">auth_passphrase</code></dt>
 
     <dd>
 
@@ -111,7 +111,7 @@
    
    
     <dt>
-<em><code class="parameter">priv_protocol</code></em></dt>
+<code class="parameter">priv_protocol</code></dt>
 
     <dd>
 
@@ -123,7 +123,7 @@
    
    
     <dt>
-<em><code class="parameter">priv_passphrase</code></em></dt>
+<code class="parameter">priv_passphrase</code></dt>
 
     <dd>
 
@@ -135,18 +135,18 @@
    
    
     <dt>
-<em><code class="parameter">object_id</code></em></dt>
+<code class="parameter">object_id</code></dt>
 
     <dd>
 
      <p class="para">
-      <strong><code>NULL</code></strong> の場合は <em><code class="parameter">object_id</code></em> は
+      <strong><code>NULL</code></strong> の場合は <code class="parameter">object_id</code> は
       <acronym title="Simple Network Management Protocol">SNMP</acronym> オブジェクトツリーのルートとなり、
       ツリー配下のすべてのオブジェクトを配列で返します。
      </p>
      <p class="para">
-      <em><code class="parameter">object_id</code></em> を指定すると、
-      その <em><code class="parameter">object_id</code></em> 以下のすべての
+      <code class="parameter">object_id</code> を指定すると、
+      その <code class="parameter">object_id</code> 以下のすべての
       <acronym title="Simple Network Management Protocol">SNMP</acronym> オブジェクトを返します。
      </p>
     </dd>
@@ -154,7 +154,7 @@
    
    
     <dt>
-<em><code class="parameter">timeout</code></em></dt>
+<code class="parameter">timeout</code></dt>
 
     <dd>
 
@@ -166,7 +166,7 @@
    
    
     <dt>
-<em><code class="parameter">retries</code></em></dt>
+<code class="parameter">retries</code></dt>
 
     <dd>
 
@@ -184,7 +184,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.snmp3-walk-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">object_id</code></em> をルートとするすべての
+   <code class="parameter">object_id</code> をルートとするすべての
    <acronym title="Simple Network Management Protocol">SNMP</acronym> オブジェクトの値の配列、あるいはエラー時に
    <strong><code>FALSE</code></strong> を返します。
   </p>

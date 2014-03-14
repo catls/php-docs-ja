@@ -46,7 +46,7 @@
 
     
      <dt>
-<em><code class="parameter">host</code></em></dt>
+<code class="parameter">host</code></dt>
 
      <dd>
 
@@ -55,7 +55,7 @@
        このパラメータには別のトランスポート層を指定することもできます。たとえば
        <em>unix:///path/to/memcached.sock</em>
        のようにすると Unix ドメインソケットを使用できます。この場合、
-       <em><code class="parameter">port</code></em> は <em>0</em>
+       <code class="parameter">port</code> は <em>0</em>
        を指定しなければなりません。
       </p>
      </dd>
@@ -63,7 +63,7 @@
     
     
      <dt>
-<em><code class="parameter">port</code></em></dt>
+<code class="parameter">port</code></dt>
 
      <dd>
 
@@ -73,7 +73,7 @@
        とします。
       </p>
       <p class="para">
-        <em><code class="parameter">port</code></em> を指定しなかったときのデフォルトは
+        <code class="parameter">port</code> を指定しなかったときのデフォルトは
         <a href="memcache.ini.html#ini.memcache.default-port" class="link">memcache.default_port</a>
         となります。そのため、このメソッドをコールするときにはポートを明示しておくことをおすすめします。
       </p>
@@ -82,7 +82,7 @@
     
     
      <dt>
-<em><code class="parameter">timeout</code></em></dt>
+<code class="parameter">timeout</code></dt>
 
      <dd>
 
@@ -105,7 +105,7 @@
   <h3 class="title">注意</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    <em><code class="parameter">port</code></em> を省略した場合は、PHP の ini 設定
+    <code class="parameter">port</code> を省略した場合は、PHP の ini 設定
     <a href="memcache.ini.html#ini.memcache.default-port" class="link">memcache.default_port</a>
     の値をデフォルトとして使います。
     もしこの値がアプリケーションのどこかで変更されていれば、予期せぬ結果を引き起こすかもしれません。

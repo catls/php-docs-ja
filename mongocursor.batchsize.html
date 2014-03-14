@@ -41,7 +41,7 @@
     
      <dt>
 
-      <em><code class="parameter">batchSize</code></em>
+      <code class="parameter">batchSize</code>
      </dt>
 
      <dd>
@@ -50,12 +50,12 @@
        バッチで返す結果の数。バッチごとにサーバーとのやりとりが発生します。
       </p>
       <p class="para">
-       <em><code class="parameter">batchSize</code></em> が <em class="emphasis">2 以上</em>
+       <code class="parameter">batchSize</code> が <em class="emphasis">2 以上</em>
        の場合は、取得するオブジェクトの各バッチのサイズを表します。
        これをうまく調整すれば、パフォーマンスとデータ転送量を最適化できます。
       </p>
       <p class="para">
-       <em><code class="parameter">batchSize</code></em> が <em>1</em> あるいは負の数の場合は、
+       <code class="parameter">batchSize</code> が <em>1</em> あるいは負の数の場合は、
        返すドキュメントの最大数を batchSize の絶対値までに抑え、
        結果を返した後にカーソルを閉じます。
        たとえば batchSize を <em>-10</em>
@@ -64,7 +64,7 @@
       </p>
       <div class="warning"><strong class="warning">警告</strong>
        <p class="para">
-        <em><code class="parameter">batchSize</code></em> が <em>1</em>
+        <code class="parameter">batchSize</code> が <em>1</em>
         あるいは <em>-1</em> の場合は特別で、
         このカーソルからは 1 件のドキュメントしか返せなくなります。
        </p>

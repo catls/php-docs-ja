@@ -26,7 +26,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> を使用してソケット
-   <em><code class="parameter">socket</code></em> を作成した後、
+   <code class="parameter">socket</code> を作成した後、
    <span class="function"><a href="function.socket-bind.html" class="function">socket_bind()</a></span> で名前に関連付け、
    <span class="function"><a href="function.socket-listen.html" class="function">socket_listen()</a></span> で接続をモニタします。この関数は、
    このソケットへの接続を許可します。接続に成功すると、新規の
@@ -34,7 +34,7 @@
    ソケット上に複数の接続がキューで待っている場合、最初の接続が使用
    されます。接続待ちがない場合、<span class="function"><strong>socket_accept()</strong></span>
    は接続が存在するまでブロックされます。
-   <em><code class="parameter">socket</code></em> が
+   <code class="parameter">socket</code> が
    <span class="function"><a href="function.socket-set-blocking.html" class="function">socket_set_blocking()</a></span> または
    <span class="function"><a href="function.socket-set-nonblock.html" class="function">socket_set_nonblock()</a></span> により非ブロックモードで
    作成された場合、<strong><code>FALSE</code></strong> が返されます。
@@ -42,7 +42,7 @@
   <p class="para">
    <span class="function"><strong>socket_accept()</strong></span> により返されたソケットリソースは、
    新規接続を許可するために使用することはできません。この場合でも
-   元の接続待ちのソケット <em><code class="parameter">socket</code></em> は
+   元の接続待ちのソケット <code class="parameter">socket</code> は
    オープンされたままであり、再使用可能です。
   </p>
  </div>
@@ -55,7 +55,7 @@
 
     
      <dt>
-<em><code class="parameter">socket</code></em></dt>
+<code class="parameter">socket</code></dt>
 
      <dd>
 

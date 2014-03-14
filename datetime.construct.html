@@ -22,7 +22,7 @@
   <h3 class="title">説明</h3>
   <p class="para">オブジェクト指向型</p>
   <div class="constructorsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>DateTime::__construct()</strong></span>
+   <span class="modifier">public</span> <span class="methodname"><strong>DateTime::__construct</strong></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$time</code><span class="initializer"> = &quot;now&quot;</span></span>
    [, <span class="methodparam"><span class="type"><a href="class.datetimezone.html" class="type DateTimeZone">DateTimeZone</a></span> <code class="parameter">$timezone</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
   ]] )</div>
@@ -46,39 +46,39 @@
 
    
     <dt>
-<em><code class="parameter">time</code></em></dt>
+<code class="parameter">time</code></dt>
 
     <dd>
 
      <p class="para">日付/時刻 文字列。有効な書式については <a href="datetime.formats.html" class="link">日付と時刻の書式</a> で説明しています。</p>
      <p class="para">
       ここに <strong><code>NULL</code></strong> を指定して
-      <em><code class="parameter">$timezone</code></em> パラメータを使うと、現在時刻を取得できます。
+      <code class="parameter">$timezone</code> パラメータを使うと、現在時刻を取得できます。
      </p>
     </dd>
 
    
    
     <dt>
-<em><code class="parameter">timezone</code></em></dt>
+<code class="parameter">timezone</code></dt>
 
     <dd>
 
      <p class="para">
-      <em><code class="parameter">$time</code></em> のタイムゾーンを表す
+      <code class="parameter">$time</code> のタイムゾーンを表す
       <a href="class.datetimezone.html" class="classname">DateTimeZone</a> オブジェクト。
      </p>
      <p class="para">
-      <em><code class="parameter">$timezone</code></em> を省略した場合は、
+      <code class="parameter">$timezone</code> を省略した場合は、
       現在のタイムゾーンを使います。
      </p>
      <blockquote class="note"><p><strong class="note">注意</strong>: 
       <p class="para">
-       <em><code class="parameter">$time</code></em> パラメータが UNIX タイムスタンプ
+       <code class="parameter">$time</code> パラメータが UNIX タイムスタンプ
        (<em>@946684800</em> など)
        であったりタイムゾーンつきで指定した場合
        (<em>2010-01-28T15:00:00+02:00</em> など) は、
-       <em><code class="parameter">$timezone</code></em> パラメータや現在のタイムゾーンは無視されます。
+       <code class="parameter">$timezone</code> パラメータや現在のタイムゾーンは無視されます。
       </p>
      </p></blockquote>
     </dd>
@@ -123,7 +123,7 @@
       <tr>
        <td>5.3.0</td>
        <td>
-        <em><code class="parameter">time</code></em> が
+        <code class="parameter">time</code> が
         <a href="datetime.formats.html" class="link">日付と時刻の書式</a>
         として無効な場合に、例外がスローされるようになりました。
         これまではエラーが発生していました。

@@ -29,7 +29,7 @@
   ]]]] )</div>
 
   <p class="para rdfs-comment">
-   MIME ヘッダエンコーディング方式によって文字列 <em><code class="parameter">str</code></em>
+   MIME ヘッダエンコーディング方式によって文字列 <code class="parameter">str</code>
    をエンコードします。
   </p>
  </div>
@@ -42,7 +42,7 @@
 
     
      <dt>
-<em><code class="parameter">str</code></em></dt>
+<code class="parameter">str</code></dt>
 
      <dd>
 
@@ -54,12 +54,12 @@
     
     
      <dt>
-<em><code class="parameter">charset</code></em></dt>
+<code class="parameter">charset</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">charset</code></em> は、<em><code class="parameter">str</code></em>
+       <code class="parameter">charset</code> は、<code class="parameter">str</code>
        の文字セット名です。デフォルトは、現在の NLS 設定
        (<em>mbstring.language</em>) によって決まります。
        <span class="function"><a href="function.mb-internal-encoding.html" class="function">mb_internal_encoding()</a></span> を同じエンコーディングに設定しておかなければなりません。
@@ -69,12 +69,12 @@
     
     
      <dt>
-<em><code class="parameter">transfer_encoding</code></em></dt>
+<code class="parameter">transfer_encoding</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">transfer_encoding</code></em> は MIME エンコーディングの
+       <code class="parameter">transfer_encoding</code> は MIME エンコーディングの
        方式を指定します。<em>&quot;B&quot;</em> (Base64) または
        <em>&quot;Q&quot;</em> (Quoted-Printable) のどちらかでなければなりません。
        デフォルトは <em>&quot;B&quot;</em> です。
@@ -84,12 +84,12 @@
     
     
      <dt>
-<em><code class="parameter">linefeed</code></em></dt>
+<code class="parameter">linefeed</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">linefeed</code></em> は EOL (行末) のマーカで、
+       <code class="parameter">linefeed</code> は EOL (行末) のマーカで、
        <span class="function"><strong>mb_encode_mimeheader()</strong></span> が行を折りたたむ
        (<a href="http://www.faqs.org/rfcs/rfc2822" class="link external">&raquo;&nbsp;RFC</a> 用語で、
        ある一定より長い行を複数行に分割することを言います。
@@ -101,13 +101,13 @@
     
     
      <dt>
-<em><code class="parameter">indent</code></em></dt>
+<code class="parameter">indent</code></dt>
 
      <dd>
 
       <p class="para">
        最初の行の字下げ (ヘッダで
-       <em><code class="parameter">str</code></em> の前におく文字数)。
+       <code class="parameter">str</code> の前におく文字数)。
       </p>
      </dd>
 
@@ -143,7 +143,7 @@
       <tr>
        <td>5.0.0</td>
        <td>
-        <em><code class="parameter">indent</code></em> パラメータが追加されました。
+        <code class="parameter">indent</code> パラメータが追加されました。
        </td>
       </tr>
 

@@ -20,7 +20,7 @@
  <div class="refsect1 description" id="refsect1-memcached.construct-description">
   <h3 class="title">説明</h3>
   <div class="constructorsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>Memcached::__construct()</strong></span>
+   <span class="modifier">public</span> <span class="methodname"><strong>Memcached::__construct</strong></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$persistent_id</code></span>
   ] )</div>
 
@@ -37,15 +37,15 @@
 
     
      <dt>
-<em><code class="parameter">persistent_id</code></em></dt>
+<code class="parameter">persistent_id</code></dt>
 
      <dd>
 
       <p class="para">
        デフォルトでは、Memcached のインスタンスはリクエストの終了時に破棄されます。
        リクエスト間で持続するインスタンスを作成するには、
-       <em><code class="parameter">persistent_id</code></em> でそのインスタンスの一意な ID を指定します。
-       同じ <em><code class="parameter">persistent_id</code></em> で作られたすべてのインスタンスは同じ接続を共有します。
+       <code class="parameter">persistent_id</code> でそのインスタンスの一意な ID を指定します。
+       同じ <code class="parameter">persistent_id</code> で作られたすべてのインスタンスは同じ接続を共有します。
       </p>
      </dd>
 

@@ -28,7 +28,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>fopen()</strong></span> は、<em><code class="parameter">filename</code></em>
+   <span class="function"><strong>fopen()</strong></span> は、<code class="parameter">filename</code>
    で指定されたリソースをストリームに結び付けます。
   </p>
  </div>
@@ -41,20 +41,20 @@
 
     
      <dt>
-<em><code class="parameter">filename</code></em></dt>
+<code class="parameter">filename</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">filename</code></em> が &quot;スキーム://...&quot; の形式である場合、
+       <code class="parameter">filename</code> が &quot;スキーム://...&quot; の形式である場合、
        それは URL とみなされ、PHP はそのプロトコルのハンドラ
        (ラッパーともいいます) を探します。
        もしもそのプロトコルに対するラッパーが登録されていない場合、
        PHP はスクリプトに潜在的な問題があることを示す NOTICE を発行したうえで、
-       <em><code class="parameter">filename</code></em> を通常のファイルとみなしてオープンすることを試みます。
+       <code class="parameter">filename</code> を通常のファイルとみなしてオープンすることを試みます。
       </p>
       <p class="para">
-       PHP は、<em><code class="parameter">filename</code></em> がローカルのファイルを示しているとみなすと、
+       PHP は、<code class="parameter">filename</code> がローカルのファイルを示しているとみなすと、
        そのファイルへのストリームをオープンします。
        そのファイルはPHPからアクセスできるものでなければなりません。
        ファイルのパーミッションが (パラメータで指定された)
@@ -63,7 +63,7 @@
        を有効にしている場合は更なるアクセス制限が加えられることがあります。
       </p>
       <p class="para">
-       <em><code class="parameter">filename</code></em> が登録されているプロトコルを示していると
+       <code class="parameter">filename</code> が登録されているプロトコルを示していると
        PHP が判断し、かつそのプロトコルがネットワーク URL として登録されていれば、
        PHP は <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">allow_url_fopen</a>
        が有効となっているかどうかチェックします。
@@ -98,23 +98,23 @@
     
     
      <dt>
-<em><code class="parameter">mode</code></em></dt>
+<code class="parameter">mode</code></dt>
 
      <dd>
 
       <p class="para">
-       パラメータ <em><code class="parameter">mode</code></em> は、
+       パラメータ <code class="parameter">mode</code> は、
        そのストリームに要するアクセス形式を指定します。
        この指定は、下表のうちのどれかとなります。
        <table class="doctable table">
         <caption><strong>
          <span class="function"><strong>fopen()</strong></span> で使用可能な
-         <em><code class="parameter">mode</code></em> のリスト
+         <code class="parameter">mode</code> のリスト
         </strong></caption>
         
          <thead>
           <tr>
-           <th><em><code class="parameter">mode</code></em></th>
+           <th><code class="parameter">mode</code></th>
            <th>説明</th>
           </tr>
 
@@ -240,7 +240,7 @@
         それに対し、<em>&#039;b&#039;</em>を使って強制的にバイナリモードにすることもできます。
         その場合データの変換はされません。
         このフラグを使用するには、<em>&#039;b&#039;</em> または <em>&#039;t&#039;</em>を
-        <em><code class="parameter">mode</code></em>引数の最後に追加してください。
+        <code class="parameter">mode</code>引数の最後に追加してください。
        </p>
        <p class="para">
         デフォルトの変換モードは SAPI と使用している PHP のバージョンによって異なります。
@@ -276,12 +276,12 @@
     
     
      <dt>
-<em><code class="parameter">use_include_path</code></em></dt>
+<code class="parameter">use_include_path</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションの３番目の引数<em><code class="parameter">use_include_path</code></em>に&#039;1&#039;又は
+       オプションの３番目の引数<code class="parameter">use_include_path</code>に&#039;1&#039;又は
        <strong><code>TRUE</code></strong> を設定することにより、<a href="ini.core.html#ini.include-path" class="link">include_path</a>
        のファイルの検索も行うこともできます。
       </p>
@@ -290,7 +290,7 @@
     
     
      <dt>
-<em><code class="parameter">context</code></em></dt>
+<code class="parameter">context</code></dt>
 
      <dd>
 
@@ -414,8 +414,8 @@ PHP 4.3.7 以降では、<em>https://</em> ラッパーでストリームをオ�
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    この関数は、<em><code class="parameter">filename</code></em> がディレクトリの場合でも成功することがあります。
-    <em><code class="parameter">filename</code></em> がファイルなのかディレクトリなのかがはっきりしない場合は、
+    この関数は、<code class="parameter">filename</code> がディレクトリの場合でも成功することがあります。
+    <code class="parameter">filename</code> がファイルなのかディレクトリなのかがはっきりしない場合は、
     まず <span class="function"><a href="function.is-dir.html" class="function">is_dir()</a></span> を使ってから <span class="function"><strong>fopen()</strong></span> を呼ぶようにしましょう。
    </p>
   </p></blockquote>

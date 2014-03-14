@@ -26,7 +26,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>sqlite_escape_string()</strong></span> は、
-   <em><code class="parameter">item</code></em> で指定した文字列を
+   <code class="parameter">item</code> で指定した文字列を
    SQLite SQLステートメントで使用できるように正しくクオートします。
    この際、シングルクオート(<em>&#039;</em>)は2重にされ、
    クエリ文字列のバイナリセーフでない文字がチェックされます。
@@ -50,7 +50,7 @@
 
     
      <dt>
-<em><code class="parameter">item</code></em></dt>
+<code class="parameter">item</code></dt>
 
      <dd>
 
@@ -58,7 +58,7 @@
        クォートしたい文字列。
       </p>
       <p class="para">
-       <em><code class="parameter">item</code></em>が<em>NUL</em>文字を含む場合、
+       <code class="parameter">item</code>が<em>NUL</em>文字を含む場合、
        または、16進表現の<em>0x01</em>で始まる場合、
        PHPはバイナリデータを安全に保存/取得するためのバイナリエンコーディ
        ングを適用します。

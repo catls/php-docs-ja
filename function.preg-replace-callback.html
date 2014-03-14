@@ -30,8 +30,8 @@
 
   <p class="para rdfs-comment">
    この関数の動作は、ほぼ <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span> と同じですが、
-   <em><code class="parameter">replacement</code></em> の代わりに
-   <em><code class="parameter">callback</code></em> を指定するところが異なります。
+   <code class="parameter">replacement</code> の代わりに
+   <code class="parameter">callback</code> を指定するところが異なります。
   </p>
  </div>
 
@@ -43,7 +43,7 @@
 
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -56,7 +56,7 @@
     
     
      <dt>
-<em><code class="parameter">callback</code></em></dt>
+<code class="parameter">callback</code></dt>
 
      <dd>
 
@@ -74,7 +74,7 @@
       </p>
       <p class="para">
        <span class="function"><strong>preg_replace_callback()</strong></span> 用の
-       <em><code class="parameter">callback</code></em> 関数が、
+       <code class="parameter">callback</code> 関数が、
        ひとつの場所だけで必要となることがあります。
        そんな場合は、
        <a href="functions.anonymous.html" class="link">無名関数</a>
@@ -85,7 +85,7 @@
        汚染しないようにすることができます。
       </p>
       <p class="para">
-       <div class="example" id="example-4788">
+       <div class="example" id="example-4790">
         <p><strong>例1 
          <span class="function"><strong>preg_replace_callback()</strong></span> と無名関数
         </strong></p>
@@ -103,7 +103,7 @@
     
     
      <dt>
-<em><code class="parameter">subject</code></em></dt>
+<code class="parameter">subject</code></dt>
 
      <dd>
 
@@ -116,12 +116,12 @@
     
     
      <dt>
-<em><code class="parameter">limit</code></em></dt>
+<code class="parameter">limit</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">subject</code></em> 文字列における
+       <code class="parameter">subject</code> 文字列における
        各パターンの最大置換回数。デフォルトは
        <em>-1</em> (無制限) です。
       </p>
@@ -130,7 +130,7 @@
     
     
      <dt>
-<em><code class="parameter">count</code></em></dt>
+<code class="parameter">count</code></dt>
 
      <dd>
 
@@ -150,13 +150,13 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    <span class="function"><strong>preg_replace_callback()</strong></span> は、
-   <em><code class="parameter">subject</code></em> が配列の場合には配列を、
+   <code class="parameter">subject</code> が配列の場合には配列を、
    それ以外の場合は文字列を返します。
    エラー時の返り値は <strong><code>NULL</code></strong> となります。
   </p>
   <p class="para">
    マッチするものが見つかった場合は新しい subject
-   を返し、それ以外の場合はもとの <em><code class="parameter">subject</code></em>
+   を返し、それ以外の場合はもとの <code class="parameter">subject</code>
    をそのまま返します。
   </p>
  </div>
@@ -179,7 +179,7 @@
       <tr>
        <td>5.1.0</td>
        <td>
-        パラメータ <em><code class="parameter">count</code></em> が追加されました。
+        パラメータ <code class="parameter">count</code> が追加されました。
        </td>
       </tr>
 
@@ -194,7 +194,7 @@
  <div class="refsect1 examples" id="refsect1-function.preg-replace-callback-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4789">
+   <div class="example" id="example-4791">
     <p><strong>例2 <span class="function"><strong>preg_replace_callback()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -213,7 +213,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4790">
+   <div class="example" id="example-4792">
     <p><strong>例3 
      カプセル化された BB code を処理するための、
      <span class="function"><strong>preg_replace_callback()</strong></span> での再帰構造の使用

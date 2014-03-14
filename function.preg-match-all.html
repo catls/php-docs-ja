@@ -29,10 +29,10 @@
   ]]] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">subject</code></em> を検索し、
-   <em><code class="parameter">pattern</code></em> に指定した正規表現にマッチした
-   すべての文字列を、<em><code class="parameter">flags</code></em> で指定した
-   順番で、<em><code class="parameter">matches</code></em> に代入します。
+   <code class="parameter">subject</code> を検索し、
+   <code class="parameter">pattern</code> に指定した正規表現にマッチした
+   すべての文字列を、<code class="parameter">flags</code> で指定した
+   順番で、<code class="parameter">matches</code> に代入します。
   </p>
   <p class="para">
    正規表現にマッチすると、そのマッチした文字列の後から
@@ -48,7 +48,7 @@
 
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -60,7 +60,7 @@
     
     
      <dt>
-<em><code class="parameter">subject</code></em></dt>
+<code class="parameter">subject</code></dt>
 
      <dd>
 
@@ -72,13 +72,13 @@
     
     
      <dt>
-<em><code class="parameter">matches</code></em></dt>
+<code class="parameter">matches</code></dt>
 
      <dd>
 
       <p class="para">
        マッチしたすべての内容を含む、
-       <em><code class="parameter">flags</code></em>
+       <code class="parameter">flags</code>
        で指定した形式の多次元配列。
       </p>
      </dd>
@@ -86,7 +86,7 @@
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
@@ -172,7 +172,7 @@ example: , this is a test
           <p class="para">
            このフラグを設定した場合、各マッチに対応する文字列のオフセットも返されます。
            これにより、返り値は配列となり、配列の要素 <em>0</em> はマッチした文字列、 
-           要素 <em>1</em> は <em><code class="parameter">subject</code></em> における
+           要素 <em>1</em> は <code class="parameter">subject</code> における
            マッチした文字列のオフセット値となることに注意してください。 
           </p>
          </dd>
@@ -182,7 +182,7 @@ example: , this is a test
 
       </p>
       <p class="para">
-       <em><code class="parameter">flags</code></em> を指定しない場合は、
+       <code class="parameter">flags</code> を指定しない場合は、
        <strong><code>PREG_PATTERN_ORDER</code></strong> が指定されたことになります。
       </p>
      </dd>
@@ -190,22 +190,22 @@ example: , this is a test
     
     
      <dt>
-<em><code class="parameter">offset</code></em></dt>
+<code class="parameter">offset</code></dt>
 
      <dd>
 
       <p class="para">
        通常、検索は対象文字列の先頭から開始されます。
-       オプションのパラメータ <em><code class="parameter">offset</code></em> を使用して
+       オプションのパラメータ <code class="parameter">offset</code> を使用して
        検索の開始位置を (バイト単位で) 指定することも可能です。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
-        <em><code class="parameter">offset</code></em> を用いるのと、
+        <code class="parameter">offset</code> を用いるのと、
         <em>substr($subject, $offset)</em> を
         <span class="function"><strong>preg_match_all()</strong></span>の対象文字列として指定するのとは
         等価ではありません。
-        これは、<em><code class="parameter">pattern</code></em> には、
+        これは、<code class="parameter">pattern</code> には、
         <em class="emphasis">^</em>, <em class="emphasis">$</em> や
         <em class="emphasis">(?&lt;=x)</em> のような言明を含めることができるためです。
         これに関する例については、
@@ -247,15 +247,15 @@ example: , this is a test
       <tr>
        <td>5.4.0</td>
        <td>
-        <em><code class="parameter">matches</code></em> パラメータが必須ではなくなりました。
+        <code class="parameter">matches</code> パラメータが必須ではなくなりました。
        </td>
       </tr>
 
       <tr>
        <td>5.3.6</td>
        <td>
-        <em><code class="parameter">offset</code></em> が
-        <em><code class="parameter">subject</code></em> よりも長いときに <strong><code>FALSE</code></strong> を返すようになりました。
+        <code class="parameter">offset</code> が
+        <code class="parameter">subject</code> よりも長いときに <strong><code>FALSE</code></strong> を返すようになりました。
        </td>
       </tr>
 
@@ -274,7 +274,7 @@ example: , this is a test
       <tr>
        <td>4.3.3</td>
        <td>
-        パラメータ <em><code class="parameter">offset</code></em> が追加されました。
+        パラメータ <code class="parameter">offset</code> が追加されました。
        </td>
       </tr>
 
@@ -296,7 +296,7 @@ example: , this is a test
  <div class="refsect1 examples" id="refsect1-function.preg-match-all-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4779">
+   <div class="example" id="example-4781">
     <p><strong>例1 テキストからすべての電話番号を得る</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -308,7 +308,7 @@ example: , this is a test
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4780">
+   <div class="example" id="example-4782">
     <p><strong>例2 HTML タグにマッチするものを見付ける（貪欲）</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -336,7 +336,7 @@ part 4: &lt;/a&gt;
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4781">
+   <div class="example" id="example-4783">
     <p><strong>例3 名前つきサブパターンの使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

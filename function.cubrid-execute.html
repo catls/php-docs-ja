@@ -35,17 +35,17 @@
     <p class="para rdfs-comment">
       The <span class="function"><strong>cubrid_execute()</strong></span> function is used to execute the
       given SQL statement. It executes the query by using
-      <em><code class="parameter">conn_identifier</code></em> and SQL, and then returns the
+      <code class="parameter">conn_identifier</code> and SQL, and then returns the
       request identifier created. It is used for simple execution of query,
       where the parameter binding is not needed. In addition, the
       <span class="function"><strong>cubrid_execute()</strong></span> function is used to execute the
       prepared statement by means of <span class="function"><a href="function.cubrid-prepare.html" class="function">cubrid_prepare()</a></span> and
       <span class="function"><a href="function.cubrid-bind.html" class="function">cubrid_bind()</a></span>. At this time, you need to specify
-      arguments of <em><code class="parameter">request_identifier</code></em> and
-      <em><code class="parameter">option</code></em>.
+      arguments of <code class="parameter">request_identifier</code> and
+      <code class="parameter">option</code>.
     </p>
     <p class="para">
-     The <em><code class="parameter">option</code></em> is used to determine whether to get OID
+     The <code class="parameter">option</code> is used to determine whether to get OID
      after query execution and whether to execute the query in synchronous or
      asynchronous mode. CUBRID_INCLUDE_OID and CUBRID_ASYNC (or
      CUBRID_EXEC_QUERY_ALL if you want to execute multiple SQL statements) can
@@ -74,7 +74,7 @@
      </ul>
     </p>
     <p class="para">
-     If the first argument is <em><code class="parameter">request_identifier</code></em> to
+     If the first argument is <code class="parameter">request_identifier</code> to
      execute the <span class="function"><a href="function.cubrid-prepare.html" class="function">cubrid_prepare()</a></span> function, you can specify
      an option, CUBRID_ASYNC only.
     </p>
@@ -88,7 +88,7 @@
 
         
       <dt>
-<em><code class="parameter">conn_identifier</code></em></dt>
+<code class="parameter">conn_identifier</code></dt>
 
       <dd>
 <p class="para">Connection identifier.</p></dd>
@@ -96,7 +96,7 @@
        
        
       <dt>
-<em><code class="parameter">sql</code></em></dt>
+<code class="parameter">sql</code></dt>
 
       <dd>
 <p class="para">SQL to be executed.</p></dd>
@@ -104,7 +104,7 @@
        
        
       <dt>
-<em><code class="parameter">option</code></em></dt>
+<code class="parameter">option</code></dt>
 
       <dd>
 <p class="para">Query execution option CUBRID_INCLUDE_OID, CUBRID_ASYNC, CUBRID_EXEC_QUERY_ALL.</p></dd>
@@ -112,7 +112,7 @@
        
         
       <dt>
-<em><code class="parameter">request_identifier</code></em></dt>
+<code class="parameter">request_identifier</code></dt>
 
       <dd>
 <p class="para"><span class="function"><a href="function.cubrid-prepare.html" class="function">cubrid_prepare()</a></span> identifier.</p></dd>

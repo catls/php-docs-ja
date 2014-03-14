@@ -18,8 +18,8 @@
   あるいは非アクティブ (一時停止) の状態になります。
   コールバックを実行できるのは、アクティブなウォッチャーだけです。
   すべてのコールバックは、少なくとも二つの引数を付けて呼ばれます。
-  <em><code class="parameter">watcher</code></em> (ウォッチャー)、そして
-  <em><code class="parameter">revents</code></em> (受け取ったイベントのビットマスク) です。
+  <code class="parameter">watcher</code> (ウォッチャー)、そして
+  <code class="parameter">revents</code> (受け取ったイベントのビットマスク) です。
  </p>
  <p class="para">
   ウォッチャーのコールバックは、ウォッチャーのコンストラクタ
@@ -49,7 +49,7 @@
    
     <dt>
 
-     <em><code class="parameter">watcher</code></em>
+     <code class="parameter">watcher</code>
     </dt>
 
     <dd>
@@ -63,7 +63,7 @@
    
     <dt>
 
-     <em><code class="parameter">revents</code></em>
+     <code class="parameter">revents</code>
     </dt>
 
     <dd>
@@ -79,7 +79,7 @@
  </p>
  <p class="para">
   ウォッチャーの型によって、
-  <em><code class="parameter">revents</code></em> に関連するビットが割り当てられています。
+  <code class="parameter">revents</code> に関連するビットが割り当てられています。
   そのため、複数のウォッチャーに対して同じコールバックを使えます。
   イベントのマスクは、イベントの型にちなんだ名前になっています。たとえば
   <a href="class.evchild.html" class="classname">EvChild</a> (あるいは <span class="methodname"><a href="evloop.child.html" class="methodname">EvLoop::child()</a></span>)

@@ -31,23 +31,23 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>socket_recvfrom()</strong></span> 関数は、
-   ポート <em><code class="parameter">port</code></em> (<strong><code>AF_UNIX</code></strong>
-   型のソケットである場合を除く) 上の <em><code class="parameter">name</code></em>
-   から受信した <em><code class="parameter">len</code></em> バイトのデータを
-   <em><code class="parameter">buf</code></em> に格納します。
+   ポート <code class="parameter">port</code> (<strong><code>AF_UNIX</code></strong>
+   型のソケットである場合を除く) 上の <code class="parameter">name</code>
+   から受信した <code class="parameter">len</code> バイトのデータを
+   <code class="parameter">buf</code> に格納します。
    <span class="function"><strong>socket_recvfrom()</strong></span> は、
    接続済みのソケットだけでなく接続していないソケットに対しても使用可能です。
    さらに、フラグを指定することでこの関数の挙動を設定できます。
   </p>
   <p class="para">
-   <em><code class="parameter">name</code></em> と <em><code class="parameter">port</code></em>
+   <code class="parameter">name</code> と <code class="parameter">port</code>
    は参照渡しとしなければなりません。接続していないソケットの場合は、
-   <em><code class="parameter">name</code></em> はリモートホストの IP アドレスか
+   <code class="parameter">name</code> はリモートホストの IP アドレスか
    UNIX ソケットへのパスとなります。接続済みのソケットの場合は、
-   <em><code class="parameter">name</code></em> は <strong><code>NULL</code></strong> とします。
+   <code class="parameter">name</code> は <strong><code>NULL</code></strong> とします。
    また、<strong><code>AF_INET</code></strong> あるいは
    <strong><code>AF_INET6</code></strong> 形式のまだ接続していないソケットの場合、
-   <em><code class="parameter">port</code></em> にはリモートホストのポート番号を指定します。
+   <code class="parameter">port</code> にはリモートホストのポート番号を指定します。
   </p>
  </div>
 
@@ -59,12 +59,12 @@
 
     
      <dt>
-<em><code class="parameter">socket</code></em></dt>
+<code class="parameter">socket</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">socket</code></em> には、
+       <code class="parameter">socket</code> には、
        socket_create() で作成したソケットリソースを指定します。
       </p>
      </dd>
@@ -73,13 +73,13 @@
 
     
      <dt>
-<em><code class="parameter">buf</code></em></dt>
+<code class="parameter">buf</code></dt>
 
      <dd>
 
       <p class="para">
        受信したデータが
-       <em><code class="parameter">buf</code></em> に格納されます。
+       <code class="parameter">buf</code> に格納されます。
       </p>
      </dd>
 
@@ -87,12 +87,12 @@
 
     
      <dt>
-<em><code class="parameter">len</code></em></dt>
+<code class="parameter">len</code></dt>
 
      <dd>
 
       <p class="para">
-       最大 <em><code class="parameter">len</code></em> バイトまでのデータをリモートホストから取得します。
+       最大 <code class="parameter">len</code> バイトまでのデータをリモートホストから取得します。
       </p>
      </dd>
 
@@ -100,17 +100,17 @@
 
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">flags</code></em> の値は、以下のフラグの任意の組み合わせを
+       <code class="parameter">flags</code> の値は、以下のフラグの任意の組み合わせを
        論理 OR 演算子 (<em>|</em>) で連結したものとなります。
       </p>
       
       <table class="doctable table">
-       <caption><strong><em><code class="parameter">flags</code></em> に使用できる値</strong></caption>
+       <caption><strong><code class="parameter">flags</code> に使用できる値</strong></caption>
        
         <thead>
          <tr>
@@ -139,7 +139,7 @@
          <tr>
           <td><strong><code>MSG_WAITALL</code></strong></td>
           <td>
-           少なくとも <em><code class="parameter">len</code></em> バイト受信するまではブロックする。
+           少なくとも <code class="parameter">len</code> バイト受信するまではブロックする。
            しかし、もし何らかのシグナルを受信したりリモートホストとの接続が切断された場合は
            これより少ないバイト数を返す可能性がある。
           </td>
@@ -162,15 +162,15 @@
 
     
      <dt>
-<em><code class="parameter">name</code></em></dt>
+<code class="parameter">name</code></dt>
 
      <dd>
 
       <p class="para">
        <strong><code>AF_UNIX</code></strong> 型のソケットの場合は、
-       <em><code class="parameter">name</code></em> はファイルへのパスとなります。
+       <code class="parameter">name</code> はファイルへのパスとなります。
        それ以外の場合は、未接続のソケットの場合には
-       <em><code class="parameter">name</code></em> はリモートホストの IP アドレスとなります。
+       <code class="parameter">name</code> はリモートホストの IP アドレスとなります。
        接続済みソケットの場合は <strong><code>NULL</code></strong> となります。
       </p>
      </dd>
@@ -179,7 +179,7 @@
 
     
      <dt>
-<em><code class="parameter">port</code></em></dt>
+<code class="parameter">port</code></dt>
 
      <dd>
 
@@ -188,7 +188,7 @@
        <strong><code>AF_INET6</code></strong> 型のソケットに対してのみ適用され、
        データを受信するリモートホストのポートを指定します。
        接続済みソケットの場合は
-       <em><code class="parameter">port</code></em> は <strong><code>NULL</code></strong> となります。
+       <code class="parameter">port</code> は <strong><code>NULL</code></strong> となります。
       </p>
      </dd>
 

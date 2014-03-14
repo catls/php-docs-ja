@@ -26,7 +26,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">key</code></em> が指す要素をユーザーキャッシュから削除します。
+   <code class="parameter">key</code> が指す要素をユーザーキャッシュから削除します。
   </p>
  </div>
 
@@ -37,14 +37,14 @@
 
     
      <dt>
-<em><code class="parameter">key</code></em></dt>
+<code class="parameter">key</code></dt>
 
      <dd>
 
       <p class="para">
        変数をキャッシュに格納するときに使ったキーの名前。
-       <em><code class="parameter">key</code></em> は大文字小文字を区別します。
-       <em><code class="parameter">key</code></em> にはキーの配列を指定することもできます。
+       <code class="parameter">key</code> は大文字小文字を区別します。
+       <code class="parameter">key</code> にはキーの配列を指定することもできます。
       </p>
      </dd>
 
@@ -60,7 +60,7 @@
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-   <em><code class="parameter">key</code></em> が配列のときは、配列の要素がどれも削除できなかった場合に <strong><code>FALSE</code></strong>
+   <code class="parameter">key</code> が配列のときは、配列の要素がどれも削除できなかった場合に <strong><code>FALSE</code></strong>
    を返します。それ以外の場合は、削除されたすべてのキーを含む配列を返します。
   </p>
  </div>
@@ -69,7 +69,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-574">
-    <p><strong>例1 <span class="function"><strong>wincache_ucache_delete()</strong></span> で <em><code class="parameter">key</code></em> に文字列を使う例</strong></p>
+    <p><strong>例1 <span class="function"><strong>wincache_ucache_delete()</strong></span> で <code class="parameter">key</code> に文字列を使う例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />wincache_ucache_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_delete</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -88,7 +88,7 @@ bool(false)
   </p>
   <p class="para">
    <div class="example" id="example-575">
-    <p><strong>例2 <span class="function"><strong>wincache_ucache_delete()</strong></span> で <em><code class="parameter">key</code></em> に配列を使う例</strong></p>
+    <p><strong>例2 <span class="function"><strong>wincache_ucache_delete()</strong></span> で <code class="parameter">key</code> に配列を使う例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$array1&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'green'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'5'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'blue'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'6'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'yellow'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'7'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'cyan'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'8'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">wincache_ucache_set</span><span style="color: #007700">(</span><span style="color: #0000BB">$array1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$array2&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'green'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'blue'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'yellow'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'cyan'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_delete</span><span style="color: #007700">(</span><span style="color: #0000BB">$array2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -109,7 +109,7 @@ array(4) { [0]=&gt; string(5) &quot;green&quot;
   </p>
   <p class="para">
    <div class="example" id="example-576">
-    <p><strong>例3 <span class="function"><strong>wincache_ucache_delete()</strong></span> で <em><code class="parameter">key</code></em> に配列を使い、いくつかの要素の削除に失敗する例</strong></p>
+    <p><strong>例3 <span class="function"><strong>wincache_ucache_delete()</strong></span> で <code class="parameter">key</code> に配列を使い、いくつかの要素の削除に失敗する例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$array1&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'green'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'5'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'blue'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'6'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'yellow'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'7'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'cyan'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'8'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">wincache_ucache_set</span><span style="color: #007700">(</span><span style="color: #0000BB">$array1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$array2&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'red'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'yellow'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'cyan'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">wincache_ucache_delete</span><span style="color: #007700">(</span><span style="color: #0000BB">$array2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>

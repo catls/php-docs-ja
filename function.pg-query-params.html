@@ -40,17 +40,17 @@
     サポートされます。それ以前のバージョンでは失敗します。
   </p>
   <p class="para">
-    パラメータを使用する際は、<em><code class="parameter">query</code></em> 文字列内で
+    パラメータを使用する際は、<code class="parameter">query</code> 文字列内で
     $1、$2 のように参照されます。
-    <em><code class="parameter">query</code></em> の中で同じパラメータを何度も使えます。
+    <code class="parameter">query</code> の中で同じパラメータを何度も使えます。
     その場合は、それぞれに同じ値が渡されます。
-    <em><code class="parameter">params</code></em> で
+    <code class="parameter">params</code> で
     実際の値を指定します。<strong><code>NULL</code></strong> を指定すると、SQL の <em>NULL</em>
     とみなされます。
   </p>
   <p class="para">
     <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span> に対する <span class="function"><strong>pg_query_params()</strong></span>
-    の最大の利点は、パラメータの値を <em><code class="parameter">query</code></em> 文字列から
+    の最大の利点は、パラメータの値を <code class="parameter">query</code> 文字列から
     分離できることです。そのため、退屈でエラーの元となりやすいクォート・
     エスケープなどをしなくてもよくなります。<span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>
     と異なり、<span class="function"><strong>pg_query_params()</strong></span> ではひとつの SQL
@@ -67,12 +67,12 @@
 
     
      <dt>
-<em><code class="parameter">connection</code></em></dt>
+<code class="parameter">connection</code></dt>
 
      <dd>
 
       <p class="para">
-       PostgreSQL データベース接続リソース。<em><code class="parameter">connection</code></em>
+       PostgreSQL データベース接続リソース。<code class="parameter">connection</code>
        が指定されていない場合はデフォルトの接続が使用されます。
        デフォルトの接続は、直近の <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span>
        あるいは <span class="function"><a href="function.pg-pconnect.html" class="function">pg_pconnect()</a></span> によって作成されたものです。
@@ -82,7 +82,7 @@
     
     
      <dt>
-<em><code class="parameter">query</code></em></dt>
+<code class="parameter">query</code></dt>
 
      <dd>
 
@@ -104,7 +104,7 @@
     
     
      <dt>
-<em><code class="parameter">params</code></em></dt>
+<code class="parameter">params</code></dt>
 
      <dd>
 

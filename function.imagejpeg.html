@@ -26,7 +26,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>imagejpeg()</strong></span> は、画像 <em><code class="parameter">image</code></em> から
+   <span class="function"><strong>imagejpeg()</strong></span> は、画像 <code class="parameter">image</code> から
    <acronym title="Joint Photographic Experts Group">JPEG</acronym> ファイルを作成します。
   </p>
  </div>
@@ -37,21 +37,21 @@
    <dl>
 
     <dt>
-<em><code class="parameter">
-image</code></em></dt>
+<code class="parameter">
+image</code></dt>
 <dd>
 <p class="para"><span class="function"><a href="function.imagecreatetruecolor.html" class="function">imagecreatetruecolor()</a></span>
 のような画像作成関数が返す画像リソース。</p></dd>
 
     
      <dt>
-<em><code class="parameter">filename</code></em></dt>
+<code class="parameter">filename</code></dt>
 
      <dd>
 
       <p class="para">ファイルの保存先のパス。省略したり <strong><code>NULL</code></strong> を設定したりした場合は、画像ストリームを直接出力します。</p>
       <p class="para">
-       <em><code class="parameter">quality</code></em>
+       <code class="parameter">quality</code>
        パラメータを指定するためにこの引数をスキップするには、
        <strong><code>NULL</code></strong> を指定します。
       </p>
@@ -60,12 +60,12 @@ image</code></em></dt>
     
     
      <dt>
-<em><code class="parameter">quality</code></em></dt>
+<code class="parameter">quality</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">quality</code></em> はオプションであり、0(品質は最低
+       <code class="parameter">quality</code> はオプションであり、0(品質は最低
        ですが、ファイルはより小さい)から100(品質は最高ですが、ファイルは
        最大)の範囲で指定します。デフォルトは IJG 品質値(75)です。
       </p>

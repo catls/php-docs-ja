@@ -26,8 +26,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>array_reduce()</strong></span> は、配列 <em><code class="parameter">array</code></em>
-   の各要素に <em><code class="parameter">callback</code></em> 関数を繰り返し適用し、
+   <span class="function"><strong>array_reduce()</strong></span> は、配列 <code class="parameter">array</code>
+   の各要素に <code class="parameter">callback</code> 関数を繰り返し適用し、
    配列を一つの値に減らします。
   </p>
  </div>
@@ -39,7 +39,7 @@
 
     
      <dt>
-<em><code class="parameter">array</code></em></dt>
+<code class="parameter">array</code></dt>
 
      <dd>
 
@@ -51,7 +51,7 @@
     
     
      <dt>
-<em><code class="parameter">callback</code></em></dt>
+<code class="parameter">callback</code></dt>
 
      <dd>
 
@@ -69,12 +69,12 @@
     
     
      <dt>
-<em><code class="parameter">initial</code></em></dt>
+<code class="parameter">initial</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションの <em><code class="parameter">intial</code></em>
+       オプションの <code class="parameter">intial</code>
        が利用可能な場合、処理の最初で使用されたり、
        配列が空の場合の最終結果として使用されます。
       </p>
@@ -92,7 +92,7 @@
    結果の値を返します。
   </p>
   <p class="para">
-   配列が空で <em><code class="parameter">initial</code></em> が渡されなかった場合は、
+   配列が空で <code class="parameter">initial</code> が渡されなかった場合は、
    <span class="function"><strong>array_reduce()</strong></span> は <strong><code>NULL</code></strong> を返します。
   </p>
  </div>
@@ -114,7 +114,7 @@
       <tr>
        <td>5.3.0</td>
        <td>
-        <em><code class="parameter">initial</code></em> に <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> を指定できるようになりました。
+        <code class="parameter">initial</code> に <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> を指定できるようになりました。
         これまでは <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> のみでした。
        </td>
       </tr>
@@ -129,7 +129,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-reduce-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4969">
+   <div class="example" id="example-4971">
     <p><strong>例1 <span class="function"><strong>array_reduce()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

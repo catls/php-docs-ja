@@ -39,14 +39,14 @@
     以降の接続でのみ使用可能です。それ以前のバージョンでは失敗します。
   </p>
   <p class="para">
-    この関数は <em><code class="parameter">stmtname</code></em> という名前の
-    プリペアドステートメントを <em><code class="parameter">query</code></em> 文字列から作成します。
+    この関数は <code class="parameter">stmtname</code> という名前の
+    プリペアドステートメントを <code class="parameter">query</code> 文字列から作成します。
     この文字列には 1 つの SQL コマンドが含まれている必要があります。
-    <em><code class="parameter">stmtname</code></em> を &quot;&quot; にすることで無名ステートメントを
+    <code class="parameter">stmtname</code> を &quot;&quot; にすることで無名ステートメントを
     作成することが可能で、既存の無名ステートメントは自動的に上書きされます。
     それ以外の場合、もしカレントのセッションで既に定義済みのステートメント名を
     使用した場合にはエラーとなります。パラメータを使用する際は、
-    <em><code class="parameter">query</code></em> 内で $1、$2 のような形式で参照されます。
+    <code class="parameter">query</code> 内で $1、$2 のような形式で参照されます。
   </p>
   <p class="para">
     <span class="function"><strong>pg_prepare()</strong></span> で使用するプリペアドステートメントは、
@@ -66,12 +66,12 @@
 
     
      <dt>
-<em><code class="parameter">connection</code></em></dt>
+<code class="parameter">connection</code></dt>
 
      <dd>
 
       <p class="para">
-       PostgreSQL データベース接続リソース。<em><code class="parameter">connection</code></em>
+       PostgreSQL データベース接続リソース。<code class="parameter">connection</code>
        が指定されていない場合はデフォルトの接続が使用されます。
        デフォルトの接続は、直近の <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span>
        あるいは <span class="function"><a href="function.pg-pconnect.html" class="function">pg_pconnect()</a></span> によって作成されたものです。
@@ -81,7 +81,7 @@
     
     
      <dt>
-<em><code class="parameter">stmtname</code></em></dt>
+<code class="parameter">stmtname</code></dt>
 
      <dd>
 
@@ -95,7 +95,7 @@
     
     
      <dt>
-<em><code class="parameter">query</code></em></dt>
+<code class="parameter">query</code></dt>
 
      <dd>
 

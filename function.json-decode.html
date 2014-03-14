@@ -41,12 +41,12 @@
 
     
      <dt>
-<em><code class="parameter">json</code></em></dt>
+<code class="parameter">json</code></dt>
 
      <dd>
 
       <p class="para">
-       デコード対象となる <em><code class="parameter">json</code></em> 文字列。
+       デコード対象となる <code class="parameter">json</code> 文字列。
       </p>
       <p class="para">
        この関数は UTF-8 でエンコードされた文字列でのみ動作します。
@@ -60,7 +60,7 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
     
     
      <dt>
-<em><code class="parameter">assoc</code></em></dt>
+<code class="parameter">assoc</code></dt>
 
      <dd>
 
@@ -72,7 +72,7 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
     
     
      <dt>
-<em><code class="parameter">depth</code></em></dt>
+<code class="parameter">depth</code></dt>
 
      <dd>
 
@@ -84,7 +84,7 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
     
     
      <dt>
-<em><code class="parameter">options</code></em></dt>
+<code class="parameter">options</code></dt>
 
      <dd>
 
@@ -105,11 +105,11 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
  <div class="refsect1 returnvalues" id="refsect1-function.json-decode-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">json</code></em> でエンコードされたデータを、適切な PHP の型として返します。
+   <code class="parameter">json</code> でエンコードされたデータを、適切な PHP の型として返します。
    <em>true</em>、<em>false</em> および
    <em>null</em> (大文字小文字を区別しません) はそれぞれ <strong><code>TRUE</code></strong>、<strong><code>FALSE</code></strong>
    そして <strong><code>NULL</code></strong> として返されます。
-   <em><code class="parameter">json</code></em> のデコードに失敗したり
+   <code class="parameter">json</code> のデコードに失敗したり
    エンコードされたデータが再帰制限を超えているなどの場合、<strong><code>NULL</code></strong> を返します。
   </p>
  </div>
@@ -174,7 +174,7 @@ array(5) {
 
    </div>
    <div class="example" id="example-3763">
-    <p><strong>例4 <em><code class="parameter">depth</code></em> エラー</strong></p>
+    <p><strong>例4 <code class="parameter">depth</code> エラー</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;データをエンコードします<br /></span><span style="color: #0000BB">$json&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'English'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'One'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'January'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">),<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'French'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Une'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Janvier'<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br />&nbsp;&nbsp;&nbsp;&nbsp;)<br />);<br /><br /></span><span style="color: #FF8000">//&nbsp;エラーを定義します<br /></span><span style="color: #0000BB">$constants&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">get_defined_constants</span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$json_errors&nbsp;</span><span style="color: #007700">=&nbsp;array();<br />foreach&nbsp;(</span><span style="color: #0000BB">$constants</span><span style="color: #007700">[</span><span style="color: #DD0000">"json"</span><span style="color: #007700">]&nbsp;as&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">strncmp</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"JSON_ERROR_"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">11</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$json_errors</span><span style="color: #007700">[</span><span style="color: #0000BB">$value</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;さまざまな深さのエラーを表示します<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">range</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$depth</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">json_decode</span><span style="color: #007700">(</span><span style="color: #0000BB">$json</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$depth</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Last&nbsp;error:&nbsp;'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$json_errors</span><span style="color: #007700">[</span><span style="color: #0000BB">json_last_error</span><span style="color: #007700">()],&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -271,13 +271,13 @@ object(stdClass)#1 (1) {
       <tr>
        <td>5.4.0</td>
        <td>
-        <em><code class="parameter">options</code></em> パラメータが追加されました。
+        <code class="parameter">options</code> パラメータが追加されました。
        </td>
       </tr>
 
       <tr>
        <td>5.3.0</td>
-       <td>オプションの <em><code class="parameter">depth</code></em> が追加されました。デフォルトの再帰の深さが 128 から 512 に増えました。</td>
+       <td>オプションの <code class="parameter">depth</code> が追加されました。デフォルトの再帰の深さが 128 から 512 に増えました。</td>
       </tr>
 
       <tr>

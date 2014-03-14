@@ -61,12 +61,12 @@
 
     
      <dt>
-<em><code class="parameter">hour</code></em></dt>
+<code class="parameter">hour</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">month</code></em>、<em><code class="parameter">day</code></em> と <em><code class="parameter">year</code></em>
+       <code class="parameter">month</code>、<code class="parameter">day</code> と <code class="parameter">year</code>
        で決まる日付の 0 時から数えた「時」。負の値は、その日の 0 時から前にさかのぼった時間を表します。
        23 より大きい値は、その翌日以降の該当する時間を表します。
       </p>
@@ -75,12 +75,12 @@
     
     
      <dt>
-<em><code class="parameter">minute</code></em></dt>
+<code class="parameter">minute</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">hour</code></em> 時 0 分から数えた「分」。
+       <code class="parameter">hour</code> 時 0 分から数えた「分」。
        負の値は、その前の時刻を表します。
        59 より大きい値は、その次の時間以降の該当する時間を表します。
       </p>
@@ -89,12 +89,12 @@
     
     
      <dt>
-<em><code class="parameter">second</code></em></dt>
+<code class="parameter">second</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">minute</code></em> 分 0 秒から数えた「秒」。
+       <code class="parameter">minute</code> 分 0 秒から数えた「秒」。
        負の値は、その前の時刻を表します。
        59 より大きい値は、その次の分以降の該当する時間を表します。
       </p>
@@ -103,7 +103,7 @@
     
     
      <dt>
-<em><code class="parameter">month</code></em></dt>
+<code class="parameter">month</code></dt>
 
      <dd>
 
@@ -118,7 +118,7 @@
     
     
      <dt>
-<em><code class="parameter">day</code></em></dt>
+<code class="parameter">day</code></dt>
 
      <dd>
 
@@ -133,7 +133,7 @@
     
     
      <dt>
-<em><code class="parameter">year</code></em></dt>
+<code class="parameter">year</code></dt>
 
      <dd>
 
@@ -141,7 +141,7 @@
        年。2 桁または 4 桁の値を指定可能で、
        0-69 の間の値は 2000-2069 に、70-100 は 1970-2000 にマップされます。
        今日最も一般的なシステム、すなわち time_t が 32 ビットの符号付き整数である
-       システムでは <em><code class="parameter">year</code></em> として有効な範囲は 1901 から
+       システムでは <code class="parameter">year</code> として有効な範囲は 1901 から
        2038 の間です。しかし、PHP 5.1.0 より前のバージョンではこの範囲が
        1970 から 2038 に制限されているシステム (たとえば Windows) もありました。
       </p>
@@ -150,7 +150,7 @@
     
     
      <dt>
-<em><code class="parameter">is_dst</code></em></dt>
+<code class="parameter">is_dst</code></dt>
 
      <dd>
 
@@ -160,7 +160,7 @@
        にセットされます。
        不明な場合、PHP はサマータイムかどうか推測しようとします。
        PHP を実行しているシステムで DST が有効になっている、もしくは
-       <em><code class="parameter">is_dst</code></em> が 1 にセットされている場合、
+       <code class="parameter">is_dst</code> が 1 にセットされている場合、
        一部の時刻は有効になりません。
        もし DST が有効で例えば 2:00 の場合、2:00 から 3:00 までの全ての時刻は
        無効になり、<span class="function"><strong>mktime()</strong></span> は不確定な値 (通常は負数)
@@ -225,7 +225,7 @@
        <td>5.3.0</td>
        <td>
         <span class="function"><strong>mktime()</strong></span> は、
-        <em><code class="parameter">is_dst</code></em> パラメータを使用した場合に
+        <code class="parameter">is_dst</code> パラメータを使用した場合に
         <strong><code>E_DEPRECATED</code></strong> をスローするようになりました。
        </td>
       </tr>
@@ -233,7 +233,7 @@
       <tr>
        <td>5.1.0</td>
        <td>
-        <em><code class="parameter">is_dst</code></em> パラメータは廃止されました。
+        <code class="parameter">is_dst</code> パラメータは廃止されました。
         エラー時には <em>-1</em> ではなく <strong><code>FALSE</code></strong>
         を返すようになりました。
         年月日がすべてゼロとすることが可能になりました。

@@ -35,8 +35,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   SQLite データベース <em><code class="parameter">database</code></em>が利用可能となるまでの
-   最大の待ち時間を <em><code class="parameter">milliseconds</code></em> に設定します。
+   SQLite データベース <code class="parameter">database</code>が利用可能となるまでの
+   最大の待ち時間を <code class="parameter">milliseconds</code> に設定します。
   </p>
  </div>
 
@@ -48,7 +48,7 @@
 
     
      <dt>
-<em><code class="parameter">dbhandle</code></em></dt>
+<code class="parameter">dbhandle</code></dt>
 
      <dd>
 
@@ -63,13 +63,13 @@
     
     
      <dt>
-<em><code class="parameter">milliseconds</code></em></dt>
+<code class="parameter">milliseconds</code></dt>
 
      <dd>
 
       <p class="para">
        ミリ秒での数。
-       <em><code class="parameter">milliseconds</code></em> が <em>0</em>の場合、
+       <code class="parameter">milliseconds</code> が <em>0</em>の場合、
        ビジーハンドラは無効となり、他のプロセス/スレッドが更新用にデータベー
        スをロックしている際に、sqliteは<em>SQLITE_BUSY</em>を
        直ちに返します。

@@ -27,8 +27,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">address</code></em> で指定した名前を
-   <em><code class="parameter">socket</code></em> で指定したソケットにバインドします。
+   <code class="parameter">address</code> で指定した名前を
+   <code class="parameter">socket</code> で指定したソケットにバインドします。
    これは、<span class="function"><a href="function.socket-connect.html" class="function">socket_connect()</a></span> あるいは
    <span class="function"><a href="function.socket-listen.html" class="function">socket_listen()</a></span> を使用して接続が確立される前に行われます。
   </p>
@@ -42,7 +42,7 @@
 
     
      <dt>
-<em><code class="parameter">socket</code></em></dt>
+<code class="parameter">socket</code></dt>
 
      <dd>
 
@@ -54,18 +54,18 @@
     
     
      <dt>
-<em><code class="parameter">address</code></em></dt>
+<code class="parameter">address</code></dt>
 
      <dd>
 
       <p class="para">
        ソケットの種類が <strong><code>AF_INET</code></strong> の場合、
-       <em><code class="parameter">address</code></em> はドットで 4 つに区切られた表記
+       <code class="parameter">address</code> はドットで 4 つに区切られた表記
        （例: <em>127.0.0.1</em>）の IP アドレス。
       </p>
       <p class="para">
        ソケットの種類が <strong><code>AF_UNIX</code></strong> の場合、
-       <em><code class="parameter">address</code></em> は Unix ドメインソケット
+       <code class="parameter">address</code> は Unix ドメインソケット
        （例: <var class="filename">/tmp/my.sock</var>）。
       </p>
      </dd>
@@ -73,12 +73,12 @@
     
     
      <dt>
-<em><code class="parameter">port</code></em>（オプション）</dt>
+<code class="parameter">port</code>（オプション）</dt>
 
      <dd>
 
       <p class="para">
-       パラメータ <em><code class="parameter">port</code></em> は
+       パラメータ <code class="parameter">port</code> は
        <strong><code>AF_INET</code></strong> ソケットにバインドする場合にのみ使用され、
        接続するリモートホストのポートを指定します。
       </p>

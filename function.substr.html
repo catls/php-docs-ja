@@ -27,8 +27,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   文字列 <em><code class="parameter">string</code></em> の、<em><code class="parameter">start</code></em>
-   で指定された位置から <em><code class="parameter">length</code></em> バイト分の文字列を返します。
+   文字列 <code class="parameter">string</code> の、<code class="parameter">start</code>
+   で指定された位置から <code class="parameter">length</code> バイト分の文字列を返します。
   </p>
  </div>
 
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -52,30 +52,30 @@
     
     
      <dt>
-<em><code class="parameter">start</code></em></dt>
+<code class="parameter">start</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">start</code></em> が正の場合、返される文字列は、
-       <em><code class="parameter">string</code></em> の 0 から数えて
-       <em><code class="parameter">start</code></em>番目から始まる文字列となります。
+       <code class="parameter">start</code> が正の場合、返される文字列は、
+       <code class="parameter">string</code> の 0 から数えて
+       <code class="parameter">start</code>番目から始まる文字列となります。
        例えば、文字列&#039;<em>abcdef</em>&#039;において位置
        <em>0</em>にある文字は、&#039;<em>a</em>&#039;であり、
        位置<em>2</em>には&#039;<em>c</em>&#039;があります。
       </p>
       <p class="para">
-       <em><code class="parameter">start</code></em> が負の場合、返される文字列は、
-       <em><code class="parameter">string</code></em>の後ろから数えて
-       <em><code class="parameter">start</code></em>番目から始まる文字列となります。
+       <code class="parameter">start</code> が負の場合、返される文字列は、
+       <code class="parameter">string</code>の後ろから数えて
+       <code class="parameter">start</code>番目から始まる文字列となります。
       </p>
       <p class="para">
-       <em><code class="parameter">string</code></em> の長さが
-       <em><code class="parameter">start</code></em> 文字以下の場合は <strong><code>FALSE</code></strong> が返されます。
+       <code class="parameter">string</code> の長さが
+       <code class="parameter">start</code> 文字以下の場合は <strong><code>FALSE</code></strong> が返されます。
       </p>
       <p class="para">
-       <div class="example" id="example-4911">
-        <p><strong>例1 負の <em><code class="parameter">start</code></em> の使用</strong></p>
+       <div class="example" id="example-4913">
+        <p><strong>例1 負の <code class="parameter">start</code> の使用</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$rest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;"f"&nbsp;を返す<br /></span><span style="color: #0000BB">$rest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">2</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;"ef"&nbsp;を返す<br /></span><span style="color: #0000BB">$rest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;"d"&nbsp;を返す<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -90,33 +90,33 @@
     
     
      <dt>
-<em><code class="parameter">length</code></em></dt>
+<code class="parameter">length</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">length</code></em> が指定され、かつ正である場合、
-       返される文字列は <em><code class="parameter">start</code></em>
-       (<em><code class="parameter">string</code></em> の長さに依存します)
-       から数えて<em><code class="parameter">length</code></em>文字数分となります。
+       <code class="parameter">length</code> が指定され、かつ正である場合、
+       返される文字列は <code class="parameter">start</code>
+       (<code class="parameter">string</code> の長さに依存します)
+       から数えて<code class="parameter">length</code>文字数分となります。
       </p>
       <p class="para">
-       <em><code class="parameter">length</code></em> が指定され、かつ負である場合、
-       <em><code class="parameter">string</code></em> の終端からその文字数分の文字が省略されます
-       (<em><code class="parameter">start</code></em> が負の場合は、
+       <code class="parameter">length</code> が指定され、かつ負である場合、
+       <code class="parameter">string</code> の終端からその文字数分の文字が省略されます
+       (<code class="parameter">start</code> が負の場合は、
        開始位置を算出したあとで)。
-       もし <em><code class="parameter">start</code></em> が切り出し位置を超える場合、
+       もし <code class="parameter">start</code> が切り出し位置を超える場合、
        false が返されます。
       </p>
       <p class="para">
-       <em><code class="parameter">length</code></em> が指定され、かつ <em>0</em>、<strong><code>NULL</code></strong>、もしくは <strong><code>FALSE</code></strong> であれば、空の文字が返されます。
+       <code class="parameter">length</code> が指定され、かつ <em>0</em>、<strong><code>NULL</code></strong>、もしくは <strong><code>FALSE</code></strong> であれば、空の文字が返されます。
       </p>
       <p class="para">
-       <em><code class="parameter">length</code></em> を省略した場合は、
-       <em><code class="parameter">start</code></em> の位置から文字列の最後までの部分文字列を返します。
+       <code class="parameter">length</code> を省略した場合は、
+       <code class="parameter">start</code> の位置から文字列の最後までの部分文字列を返します。
       </p>
-      <div class="example" id="example-4912">
-       <p><strong>例2 負の <em><code class="parameter">length</code></em> の使用</strong></p>
+      <div class="example" id="example-4914">
+       <p><strong>例2 負の <code class="parameter">length</code> の使用</strong></p>
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$rest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;"abcde"&nbsp;を返す<br /></span><span style="color: #0000BB">$rest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;"cde"&nbsp;を返す<br /></span><span style="color: #0000BB">$rest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">4</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;false&nbsp;を返す<br /></span><span style="color: #0000BB">$rest&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #DD0000">"abcdef"</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;"de"&nbsp;を返す<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -159,7 +159,7 @@
       <tr>
        <td>5.2.2 - 5.2.6</td>
        <td>
-        <em><code class="parameter">start</code></em> が負の切り出しを意味したり
+        <code class="parameter">start</code> が負の切り出しを意味したり
         切り出し位置を超える値になった場合に false を返すようになりました。
         それ以外のバージョンでは、文字列の先頭から取得します。
        </td>
@@ -176,7 +176,7 @@
  <div class="refsect1 examples" id="refsect1-function.substr-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4913">
+   <div class="example" id="example-4915">
     <p><strong>例3 基本的な <span class="function"><strong>substr()</strong></span> の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -186,7 +186,7 @@
     </div>
 
    </div> 
-   <div class="example" id="example-4914">
+   <div class="example" id="example-4916">
     <p><strong>例4 <span class="function"><strong>substr()</strong></span> でのキャストの挙動</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -216,7 +216,7 @@
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
    エラー時に <strong><code>FALSE</code></strong> を返します。
-   <div class="example" id="example-4915">
+   <div class="example" id="example-4917">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">substr</span><span style="color: #007700">(</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(false)<br /></span><span style="color: #0000BB">?&gt;</span>

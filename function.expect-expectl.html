@@ -33,12 +33,12 @@
    あるいは <acronym title="End Of File">EOF</acronym> に達するのいずれかにあてはまるまで待ち続けます。
   </p>
   <p class="para">
-   <em><code class="parameter">match</code></em>
+   <code class="parameter">match</code>
    を指定すると、検索結果がそこに保存されます。
-   一致した文字列が <em><code class="parameter">match[0]</code></em> に保存され、
+   一致した文字列が <code class="parameter">match[0]</code> に保存され、
    元のパターンの中の (括弧で囲まれた) 部分に一致する文字列が
-   <em><code class="parameter">match[1]</code></em>、<em><code class="parameter">match[2]</code></em>、
-   と順に、最大 <em><code class="parameter">match[9]</code></em> まで
+   <code class="parameter">match[1]</code>、<code class="parameter">match[2]</code>、
+   と順に、最大 <code class="parameter">match[9]</code> まで
    (libexpect の制限です) 保存されます。
   </p>
  </div>
@@ -50,7 +50,7 @@
 
     
      <dt>
-<em><code class="parameter">expect</code></em></dt>
+<code class="parameter">expect</code></dt>
 
      <dd>
 
@@ -63,7 +63,7 @@
     
     
      <dt>
-<em><code class="parameter">cases</code></em></dt>
+<code class="parameter">cases</code></dt>
 
      <dd>
 
@@ -161,7 +161,7 @@
       <tr>
        <td>0.2.1</td>
        <td>
-       バージョン 0.2.1 より前では、<em><code class="parameter">match</code></em>
+       バージョン 0.2.1 より前では、<code class="parameter">match</code>
        パラメータに返されるのはマッチした文字列であり、
        部分文字列の配列ではありませんでした。
        </td>

@@ -29,7 +29,7 @@
 
   <p class="para rdfs-comment">
    リモート <acronym title="Simple Network Management Protocol">SNMP</acronym> エージェントに対して、
-   <em><code class="parameter">object_id</code></em> で指定した SNMP オブジェクトの値を設定させます。
+   <code class="parameter">object_id</code> で指定した SNMP オブジェクトの値を設定させます。
   </p>
  </div>
 
@@ -39,20 +39,20 @@
   <dl>
 
    <p class="para">
-    <em><code class="parameter">object_id</code></em> が文字列のときは、
-    <em><code class="parameter">type</code></em> と <em><code class="parameter">value</code></em>
+    <code class="parameter">object_id</code> が文字列のときは、
+    <code class="parameter">type</code> と <code class="parameter">value</code>
     も文字列にしなければなりません。
-    <em><code class="parameter">object_id</code></em> が配列のときは、
-    <em><code class="parameter">value</code></em> も同じサイズの配列にして、対応する値を含めなければなりません。
-    <em><code class="parameter">type</code></em> は、文字列でもいいし
-    (この値を、すべての <em><code class="parameter">object_id</code></em>-<em><code class="parameter">value</code></em> ペアに適用する)、
+    <code class="parameter">object_id</code> が配列のときは、
+    <code class="parameter">value</code> も同じサイズの配列にして、対応する値を含めなければなりません。
+    <code class="parameter">type</code> は、文字列でもいいし
+    (この値を、すべての <code class="parameter">object_id</code>-<code class="parameter">value</code> ペアに適用する)、
     同じサイズの配列 (OID ごとに設定する) でもかまいません。
     その他の組み合わせで指定すると、E_WARNING
     メッセージが表示されます。
    </p>
    
     <dt>
-<em><code class="parameter">object_id</code></em></dt>
+<code class="parameter">object_id</code></dt>
 
     <dd>
 
@@ -72,7 +72,7 @@
    
    
     <dt>
-<em><code class="parameter">type</code></em></dt>
+<code class="parameter">type</code></dt>
 
     <dd>
 
@@ -136,7 +136,7 @@
 
      <p class="para">
  MIB ファイルが &quot;snmp_read_mib&quot; や libsnmp の設定で MIB ツリーに読み込まれている場合は、
- <em><code class="parameter">type</code></em> に &#039;=&#039; を使うことができます。
+ <code class="parameter">type</code> に &#039;=&#039; を使うことができます。
  これはすべてのオブジェクト ID を表し、型は自動的に MIB から読み込みます。
 </p>
 
@@ -167,7 +167,7 @@
    
    
     <dt>
-<em><code class="parameter">value</code></em></dt>
+<code class="parameter">value</code></dt>
 
     <dd>
 
@@ -195,9 +195,9 @@
 <p class="para">
  このメソッドは、デフォルトでは一切例外をスローしません。ライブラリでエラーが発生したときに
  SNMPException をスローさせるには SNMP クラスパラメータ
- <em><code class="parameter">exceptions_enabled</code></em> に値を設定しなければなりません。
+ <code class="parameter">exceptions_enabled</code> に値を設定しなければなりません。
  詳細は <a href="class.snmp.html#snmp.props.exceptions-enabled" class="link">
- <em><code class="parameter">SNMP::$exceptions_enabled</code></em> の説明</a>を参照ください。
+ <code class="parameter">SNMP::$exceptions_enabled</code> の説明</a>を参照ください。
 </p>
 </div>
 

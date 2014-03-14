@@ -27,7 +27,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">haystack</code></em> の中で <em><code class="parameter">needle</code></em>
+   <code class="parameter">haystack</code> の中で <code class="parameter">needle</code>
    が最初に現れる場所を含めてそこから文字列の終わりまでを返します。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -39,8 +39,8 @@
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    もし特定の <em><code class="parameter">haystack</code></em> に
-    <em><code class="parameter">needle</code></em> があるかどうかを調べるだけの場合、
+    もし特定の <code class="parameter">haystack</code> に
+    <code class="parameter">needle</code> があるかどうかを調べるだけの場合、
     より高速でメモリ消費も少ない <span class="function"><a href="function.strpos.html" class="function">strpos()</a></span>
     を代わりに使用してください。
    </p>
@@ -55,7 +55,7 @@
 
     
      <dt>
-<em><code class="parameter">haystack</code></em></dt>
+<code class="parameter">haystack</code></dt>
 
      <dd>
 
@@ -67,12 +67,12 @@
     
     
      <dt>
-<em><code class="parameter">needle</code></em></dt>
+<code class="parameter">needle</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">needle</code></em> が文字列でない場合は、
+       <code class="parameter">needle</code> が文字列でない場合は、
        それを整数に変換し、その番号に対応する文字として扱います。
       </p>
      </dd>
@@ -80,14 +80,14 @@
     
     
      <dt>
-<em><code class="parameter">before_needle</code></em></dt>
+<code class="parameter">before_needle</code></dt>
 
      <dd>
 
       <p class="para">
        <strong><code>TRUE</code></strong> にすると、<span class="function"><strong>strstr()</strong></span>
-       の返り値は、<em><code class="parameter">haystack</code></em> の中で最初に
-       <em><code class="parameter">needle</code></em> があらわれる箇所より前の部分となります (needle は含めません)。
+       の返り値は、<code class="parameter">haystack</code> の中で最初に
+       <code class="parameter">needle</code> があらわれる箇所より前の部分となります (needle は含めません)。
       </p>
      </dd>
 
@@ -102,7 +102,7 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    部分文字列を返します。
-   <em><code class="parameter">needle</code></em> が見つからない場合は <strong><code>FALSE</code></strong> を返します。
+   <code class="parameter">needle</code> が見つからない場合は <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
@@ -124,7 +124,7 @@
       <tr>
        <td>5.3.0</td>
        <td>
-        オプションの <em><code class="parameter">before_needle</code></em> パラメータが追加されました。
+        オプションの <code class="parameter">before_needle</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -146,7 +146,7 @@
  <div class="refsect1 examples" id="refsect1-function.strstr-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4898">
+   <div class="example" id="example-4900">
     <p><strong>例1 <span class="function"><strong>strstr()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -30,16 +30,16 @@
   ]]]]] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">remote_socket</code></em> で指定された接続先との、
+   <code class="parameter">remote_socket</code> で指定された接続先との、
    ストリームまたはデータグラム接続を確立します。
    作成されるソケットのタイプは、<em>[トランスポート]://[ターゲット]</em>
    という形式の URL フォーマットによって指定された
    トランスポートによって決定されます。
    TCP や UDP といったインターネットドメインのソケット (AF_INET)
-   には、<em><code class="parameter">remote_socket</code></em> パラメータの
+   には、<code class="parameter">remote_socket</code> パラメータの
    <em>ターゲット</em> の部分は、ホスト名または IP アドレスと、
    それに続くコロンで区切られたポート番号から構成されていなければなりません。
-   Unix ドメインのソケットの場合は、<em><code class="parameter">ターゲット</code></em>
+   Unix ドメインのソケットの場合は、<code class="parameter">ターゲット</code>
    の部分は、ファイルシステムにおけるソケットのファイルを指定しなくては
    いけません。
   </p>
@@ -60,7 +60,7 @@
 
     
      <dt>
-<em><code class="parameter">remote_socket</code></em></dt>
+<code class="parameter">remote_socket</code></dt>
 
      <dd>
 
@@ -72,7 +72,7 @@
     
     
      <dt>
-<em><code class="parameter">errno</code></em></dt>
+<code class="parameter">errno</code></dt>
 
      <dd>
 
@@ -84,7 +84,7 @@
     
     
      <dt>
-<em><code class="parameter">errstr</code></em></dt>
+<code class="parameter">errstr</code></dt>
 
      <dd>
 
@@ -96,7 +96,7 @@
     
     
      <dt>
-<em><code class="parameter">timeout</code></em></dt>
+<code class="parameter">timeout</code></dt>
 
      <dd>
 
@@ -112,7 +112,7 @@
          ソケット上のデータの読み書きに関してタイムアウトを設定する必要がある場合は、
          <span class="function"><a href="function.stream-set-timeout.html" class="function">stream_set_timeout()</a></span> を使ってください。
          <span class="function"><strong>stream_socket_client()</strong></span> に渡される
-         <em><code class="parameter">timeout</code></em> は、ソケットの接続時にのみ適用されます。
+         <code class="parameter">timeout</code> は、ソケットの接続時にのみ適用されます。
         </p>
        </p></blockquote>
       </p>
@@ -121,7 +121,7 @@
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
@@ -137,7 +137,7 @@
     
     
      <dt>
-<em><code class="parameter">context</code></em></dt>
+<code class="parameter">context</code></dt>
 
      <dd>
 
@@ -167,16 +167,16 @@
  <div class="refsect1 errors" id="refsect1-function.stream-socket-client-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   失敗した場合は、<em><code class="parameter">errno</code></em> と
-   <em><code class="parameter">errstr</code></em> に
+   失敗した場合は、<code class="parameter">errno</code> と
+   <code class="parameter">errstr</code> に
    システムレベルの <em>connect()</em>
    関数の実行時に発生したシステムレベルのエラーを表す値を返します。
-   もし、<em><code class="parameter">errno</code></em> に返された値が <em>0</em>
+   もし、<code class="parameter">errno</code> に返された値が <em>0</em>
    で、かつ、 この関数が <strong><code>FALSE</code></strong> を返した時は、
    <em>connect()</em> システムコールの前に何らかのエラーが
    発生したことを示しています。これは、多くの場合、ソケットの初期化
-   に失敗したことで起こります。<em><code class="parameter">errno</code></em> と 
-   <em><code class="parameter">errstr</code></em> パラメータは常に参照渡しされることに
+   に失敗したことで起こります。<code class="parameter">errno</code> と 
+   <code class="parameter">errstr</code> パラメータは常に参照渡しされることに
    留意してください。
   </p>
  </div>

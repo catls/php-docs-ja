@@ -43,24 +43,24 @@
 
     
      <dt>
-<em><code class="parameter">database</code></em></dt>
+<code class="parameter">database</code></dt>
 
      <dd>
 
       <p class="para">
-       データベースへのカタログ接続の場合には、<em><code class="parameter">database</code></em>
+       データベースへのカタログ接続の場合には、<code class="parameter">database</code>
        は DB2 クライアントカタログ内でのデータベースエイリアスを表します。
       </p>
       <p class="para">
        データベースへの非カタログ接続の場合には、
-       <em><code class="parameter">database</code></em> は以下のような形式の接続文字列を表します。
-       <pre class="literallayout">DATABASE=<em><code class="parameter">database</code></em>;HOSTNAME=<em><code class="parameter">hostname</code></em>;PORT=<em><code class="parameter">port</code></em>;PROTOCOL=TCPIP;UID=<em><code class="parameter">username</code></em>;PWD=<em><code class="parameter">password</code></em>;</pre>
+       <code class="parameter">database</code> は以下のような形式の接続文字列を表します。
+       <pre class="literallayout">DATABASE=<code class="parameter">database</code>;HOSTNAME=<code class="parameter">hostname</code>;PORT=<code class="parameter">port</code>;PROTOCOL=TCPIP;UID=<code class="parameter">username</code>;PWD=<code class="parameter">password</code>;</pre>
        それぞれのパラメータは以下の内容を表します。
        <dl>
 
         
          <dt>
-<em><code class="parameter">database</code></em></dt>
+<code class="parameter">database</code></dt>
 
          <dd>
 
@@ -72,7 +72,7 @@
         
         
          <dt>
-<em><code class="parameter">hostname</code></em></dt>
+<code class="parameter">hostname</code></dt>
 
          <dd>
 
@@ -84,7 +84,7 @@
         
         
          <dt>
-<em><code class="parameter">port</code></em></dt>
+<code class="parameter">port</code></dt>
 
          <dd>
 
@@ -96,7 +96,7 @@
         
         
          <dt>
-<em><code class="parameter">username</code></em></dt>
+<code class="parameter">username</code></dt>
 
          <dd>
 
@@ -108,7 +108,7 @@
         
         
          <dt>
-<em><code class="parameter">password</code></em></dt>
+<code class="parameter">password</code></dt>
 
          <dd>
 
@@ -126,7 +126,7 @@
     
     
      <dt>
-<em><code class="parameter">username</code></em></dt>
+<code class="parameter">username</code></dt>
 
      <dd>
 
@@ -141,7 +141,7 @@
     
     
      <dt>
-<em><code class="parameter">password</code></em></dt>
+<code class="parameter">password</code></dt>
 
      <dd>
 
@@ -156,7 +156,7 @@
     
     
      <dt>
-<em><code class="parameter">options</code></em></dt>
+<code class="parameter">options</code></dt>
 
      <dd>
 
@@ -167,7 +167,7 @@
 
         
          <dt>
-<em><code class="parameter">autocommit</code></em></dt>
+<code class="parameter">autocommit</code></dt>
 
          <dd>
 
@@ -184,7 +184,7 @@
         
         
          <dt>
-<em><code class="parameter">DB2_ATTR_CASE</code></em></dt>
+<code class="parameter">DB2_ATTR_CASE</code></dt>
 
          <dd>
 
@@ -205,7 +205,7 @@
         
         
          <dt>
-<em><code class="parameter">CURSOR</code></em></dt>
+<code class="parameter">CURSOR</code></dt>
 
          <dd>
 
@@ -233,7 +233,7 @@
 
         
          <dt>
-<em><code class="parameter">trustedcontext</code></em></dt>
+<code class="parameter">trustedcontext</code></dt>
 
          <dd>
 
@@ -266,7 +266,7 @@ db2set DB2COMM=TCPIP</pre>
 
         
          <dt>
-<em><code class="parameter">i5_lib</code></em></dt>
+<code class="parameter">i5_lib</code></dt>
 
          <dd>
 
@@ -279,7 +279,7 @@ db2set DB2COMM=TCPIP</pre>
         
         
          <dt>
-<em><code class="parameter">i5_naming</code></em></dt>
+<code class="parameter">i5_naming</code></dt>
 
          <dd>
 
@@ -301,21 +301,21 @@ db2set DB2COMM=TCPIP</pre>
         
         
          <dt>
-<em><code class="parameter">i5_commit</code></em></dt>
+<code class="parameter">i5_commit</code></dt>
 
          <dd>
 
           <p class="para">
-           <em><code class="parameter">i5_commit</code></em> 属性は、
+           <code class="parameter">i5_commit</code> 属性は、
            <span class="function"><strong>db2_connect()</strong></span> の前に設定しなければなりません。
            接続が確立された後にこの値が変更され、その接続がリモートデータソースに対するものだった場合は、
            その接続ハンドルに対してもう一度 <span class="function"><strong>db2_connect()</strong></span>
            がコールされるまで変更は反映されません。
            <blockquote class="note"><p><strong class="note">注意</strong>: 
             <p class="para">
-             php.ini の設定は <em><code class="parameter">ibm_db2.i5_allow_commit</code></em>==0
+             php.ini の設定は <code class="parameter">ibm_db2.i5_allow_commit</code>==0
              あるいは <em>DB2_I5_TXN_NO_COMMIT</em> がデフォルトです。
-             しかし、その設定よりも <em><code class="parameter">i5_commit</code></em>
+             しかし、その設定よりも <code class="parameter">i5_commit</code>
              オプションの内容のほうが優先されます。
             </p>
            </p></blockquote>           
@@ -346,7 +346,7 @@ db2set DB2COMM=TCPIP</pre>
         
         
          <dt>
-<em><code class="parameter">i5_query_optimize</code></em></dt>
+<code class="parameter">i5_query_optimize</code></dt>
 
          <dd>
 
@@ -370,7 +370,7 @@ db2set DB2COMM=TCPIP</pre>
         
         
          <dt>
-<em><code class="parameter">i5_dbcs_alloc</code></em></dt>
+<code class="parameter">i5_dbcs_alloc</code></dt>
 
          <dd>
 
@@ -383,16 +383,16 @@ db2set DB2COMM=TCPIP</pre>
            DBCS トランザクションカラムサイズ用の DB2 6X アロケーションを無効にします。
           </p>
           <p class="para">
-           注意: php.ini では <em><code class="parameter">ibm_db2.i5_dbcs_alloc</code></em>==0 あるいは
+           注意: php.ini では <code class="parameter">ibm_db2.i5_dbcs_alloc</code>==0 あるいは
            <em>DB2_I5_DBCS_ALLOC_OFF</em> がデフォルト設定となっています。
-           しかし、<em><code class="parameter">i5_dbcs_alloc</code></em> の値のほうが優先されます。
+           しかし、<code class="parameter">i5_dbcs_alloc</code> の値のほうが優先されます。
           </p>
          </dd>
 
         
         
          <dt>
-<em><code class="parameter">i5_date_fmt</code></em></dt>
+<code class="parameter">i5_date_fmt</code></dt>
 
          <dd>
 
@@ -429,7 +429,7 @@ db2set DB2COMM=TCPIP</pre>
         
         
          <dt>
-<em><code class="parameter">i5_date_sep</code></em></dt>
+<code class="parameter">i5_date_sep</code></dt>
 
          <dd>
 
@@ -457,7 +457,7 @@ db2set DB2COMM=TCPIP</pre>
         
         
          <dt>
-<em><code class="parameter">i5_time_fmt</code></em></dt>
+<code class="parameter">i5_time_fmt</code></dt>
 
          <dd>
 
@@ -485,7 +485,7 @@ db2set DB2COMM=TCPIP</pre>
         
         
          <dt>
-<em><code class="parameter">i5_time_sep</code></em></dt>
+<code class="parameter">i5_time_sep</code></dt>
 
          <dd>
 
@@ -510,7 +510,7 @@ db2set DB2COMM=TCPIP</pre>
         
         
          <dt>
-<em><code class="parameter">i5_decimal_sep</code></em></dt>
+<code class="parameter">i5_decimal_sep</code></dt>
 
          <dd>
 
@@ -536,7 +536,7 @@ db2set DB2COMM=TCPIP</pre>
 
         
          <dt>
-<em><code class="parameter">i5_libl</code></em></dt>
+<code class="parameter">i5_libl</code></dt>
 
          <dd>
 
@@ -547,7 +547,7 @@ db2set DB2COMM=TCPIP</pre>
           </p>
           <blockquote class="note"><p><strong class="note">注意</strong>: 
            <p class="para">
-            <em><code class="parameter">i5_libl</code></em> は qsys2/qcmdexc(&#039;cmd&#039;,cmdlen) をコールします。
+            <code class="parameter">i5_libl</code> は qsys2/qcmdexc(&#039;cmd&#039;,cmdlen) をコールします。
             これは i5/OS V5R4 以降でのみ使用可能です。
            </p>
           </p></blockquote>

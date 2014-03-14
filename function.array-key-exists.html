@@ -26,9 +26,9 @@
    )</div>
 
   <p class="para rdfs-comment">
-   指定した <em><code class="parameter">key</code></em> が配列に設定されている場合、
+   指定した <code class="parameter">key</code> が配列に設定されている場合、
    <span class="function"><strong>array_key_exists()</strong></span> は <strong><code>TRUE</code></strong> を返します。
-   <em><code class="parameter">key</code></em> は配列添字として使用できる全ての値を使用可能です。
+   <code class="parameter">key</code> は配列添字として使用できる全ての値を使用可能です。
   </p>
  </div>
 
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">key</code></em></dt>
+<code class="parameter">key</code></dt>
 
      <dd>
 
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">array</code></em></dt>
+<code class="parameter">array</code></dt>
 
      <dd>
 
@@ -79,7 +79,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-key-exists-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4948">
+   <div class="example" id="example-4950">
     <p><strong>例1 <span class="function"><strong>array_key_exists()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -90,7 +90,7 @@
 
    </div>
   </p>
-  <div class="example" id="example-4949">
+  <div class="example" id="example-4951">
    <p><strong>例2 <span class="function"><strong>array_key_exists()</strong></span> 対 <span class="function"><a href="function.isset.html" class="function">isset()</a></span></strong></p>
    <div class="example-contents"><p>
     <span class="function"><a href="function.isset.html" class="function">isset()</a></span> は <strong><code>NULL</code></strong> 値を持つ配列キーに対して
@@ -118,11 +118,11 @@
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
-     過去との互換性を保つため、<em><code class="parameter">key</code></em>
-     が仮に <em><code class="parameter">array</code></em> で指定したオブジェクトのプロパティであっても
+     過去との互換性を保つため、<code class="parameter">key</code>
+     が仮に <code class="parameter">array</code> で指定したオブジェクトのプロパティであっても
      <span class="function"><strong>array_key_exists()</strong></span> は <strong><code>TRUE</code></strong> を返します。
      しかし、この挙動に頼ってはいけません。
-     <em><code class="parameter">array</code></em> にはオブジェクトではなく配列を渡すようにしましょう。
+     <code class="parameter">array</code> にはオブジェクトではなく配列を渡すようにしましょう。
     </p>
     <p class="para">
      オブジェクトのプロパティが存在するかどうかを調べるには、

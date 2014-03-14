@@ -25,8 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">stream</code></em>
-   で指定されたファイルポインタに <em><code class="parameter">buffer</code></em>
+   <code class="parameter">stream</code>
+   で指定されたファイルポインタに <code class="parameter">buffer</code>
    で表されたバイト数分だけ出力バッファを設定します。
   </p>
   <p class="simpara">
@@ -45,7 +45,7 @@
 
     
      <dt>
-<em><code class="parameter">stream</code></em></dt>
+<code class="parameter">stream</code></dt>
 
      <dd>
 
@@ -57,13 +57,13 @@
     
     
      <dt>
-<em><code class="parameter">buffer</code></em></dt>
+<code class="parameter">buffer</code></dt>
 
      <dd>
 
       <p class="para">
        バッファのバイト数。
-       <em><code class="parameter">buffer</code></em> が 0 であれば、書き込み操作はバッファされなくなります。
+       <code class="parameter">buffer</code> が 0 であれば、書き込み操作はバッファされなくなります。
        これにより、<span class="function"><a href="function.fwrite.html" class="function">fwrite()</a></span> による書き込み操作が、他の
        プロセスが同じ出力ストリームに対して何らかの書き込み操作を行う前に
        完了することが保証されます。

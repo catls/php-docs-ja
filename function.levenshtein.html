@@ -35,19 +35,19 @@
    )</div>
 
   <p class="para rdfs-comment">
-   レーベンシュタイン距離は、<em><code class="parameter">str1</code></em> を
-   <em><code class="parameter">str2</code></em> に変換するために置換、挿入、削除
+   レーベンシュタイン距離は、<code class="parameter">str1</code> を
+   <code class="parameter">str2</code> に変換するために置換、挿入、削除
    しなければならない最小の文字数として定義されます。アルゴリズムの複雑さは、
    <em>O(m*n)</em> です。
    ここで、<em>n</em> および <em>m</em> はそれぞれ
-   <em><code class="parameter">str1</code></em> および <em><code class="parameter">str2</code></em> の長さです
+   <code class="parameter">str1</code> および <code class="parameter">str2</code> の長さです
    (O(max(n,m)**3) となる <span class="function"><a href="function.similar-text.html" class="function">similar_text()</a></span> よりは良いですが、
    まだかなりの計算量です)。
   </p>
   <p class="para">
    上記の最も簡単な形式では、この関数はパラメータとして引数を二つだけとり、
-   <em><code class="parameter">str1</code></em> から
-   <em><code class="parameter">str2</code></em> に変換する際に必要な
+   <code class="parameter">str1</code> から
+   <code class="parameter">str2</code> に変換する際に必要な
    挿入、置換、削除演算の数のみを計算します。
   </p>
   <p class="para">
@@ -65,7 +65,7 @@
 
     
      <dt>
-<em><code class="parameter">str1</code></em></dt>
+<code class="parameter">str1</code></dt>
 
      <dd>
 
@@ -77,7 +77,7 @@
     
     
      <dt>
-<em><code class="parameter">str2</code></em></dt>
+<code class="parameter">str2</code></dt>
 
      <dd>
 
@@ -89,7 +89,7 @@
     
     
      <dt>
-<em><code class="parameter">cost_ins</code></em></dt>
+<code class="parameter">cost_ins</code></dt>
 
      <dd>
 
@@ -101,7 +101,7 @@
     
     
      <dt>
-<em><code class="parameter">cost_rep</code></em></dt>
+<code class="parameter">cost_rep</code></dt>
 
      <dd>
 
@@ -113,7 +113,7 @@
     
     
      <dt>
-<em><code class="parameter">cost_del</code></em></dt>
+<code class="parameter">cost_del</code></dt>
 
      <dd>
 
@@ -141,7 +141,7 @@
  <div class="refsect1 examples" id="refsect1-function.levenshtein-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4836">
+   <div class="example" id="example-4838">
     <p><strong>例1 <span class="function"><strong>levenshtein()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

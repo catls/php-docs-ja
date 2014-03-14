@@ -27,8 +27,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">haystack</code></em> において
-   <em><code class="parameter">needle</code></em> が最初に見つかった位置を含めてそこから最後までを返します。
+   <code class="parameter">haystack</code> において
+   <code class="parameter">needle</code> が最初に見つかった位置を含めてそこから最後までを返します。
   </p>
  </div>
 
@@ -40,7 +40,7 @@
 
     
      <dt>
-<em><code class="parameter">haystack</code></em></dt>
+<code class="parameter">haystack</code></dt>
 
      <dd>
 
@@ -52,12 +52,12 @@
     
     
      <dt>
-<em><code class="parameter">needle</code></em></dt>
+<code class="parameter">needle</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">needle</code></em> が文字列でない場合は、
+       <code class="parameter">needle</code> が文字列でない場合は、
        それを整数に変換し、その番号に対応する文字として扱います。
       </p>
      </dd>
@@ -65,14 +65,14 @@
     
     
      <dt>
-<em><code class="parameter">before_needle</code></em></dt>
+<code class="parameter">before_needle</code></dt>
 
      <dd>
 
       <p class="para">
        <strong><code>TRUE</code></strong> にすると、<span class="function"><strong>stristr()</strong></span>
-       の返り値は、<em><code class="parameter">haystack</code></em> の中で最初に
-       <em><code class="parameter">needle</code></em> があらわれる箇所より前の部分となります (needle は含めません)。
+       の返り値は、<code class="parameter">haystack</code> の中で最初に
+       <code class="parameter">needle</code> があらわれる箇所より前の部分となります (needle は含めません)。
       </p>
      </dd>
 
@@ -81,7 +81,7 @@
 
   </p>
   <p class="para">
-   <em><code class="parameter">needle</code></em> および <em><code class="parameter">haystack</code></em>
+   <code class="parameter">needle</code> および <code class="parameter">haystack</code>
    は大文字小文字を区別せずに評価されます。
   </p>
  </div>
@@ -90,7 +90,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stristr-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   マッチした部分文字列を返します。<em><code class="parameter">needle</code></em>
+   マッチした部分文字列を返します。<code class="parameter">needle</code>
    が見つからない場合は <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
@@ -113,7 +113,7 @@
       <tr>
        <td>5.3.0</td>
        <td>
-        オプションの <em><code class="parameter">before_needle</code></em> パラメータが追加されました。
+        オプションの <code class="parameter">before_needle</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -135,7 +135,7 @@
  <div class="refsect1 examples" id="refsect1-function.stristr-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4884">
+   <div class="example" id="example-4886">
     <p><strong>例1 <span class="function"><strong>stristr()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -147,7 +147,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4885">
+   <div class="example" id="example-4887">
     <p><strong>例2 文字列が見つかるかどうかをテストする</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -159,7 +159,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4886">
+   <div class="example" id="example-4888">
     <p><strong>例3 文字列以外の needle の指定</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

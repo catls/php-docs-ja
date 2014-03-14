@@ -30,8 +30,8 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>openssl_seal()</strong></span> は、ランダムに生成された秘密鍵により 
-   RC4 を使用して <em><code class="parameter">data</code></em> をシール(暗号化)
-   します。このキーは、<em><code class="parameter">pub_key_ids</code></em> を ID とする
+   RC4 を使用して <code class="parameter">data</code> をシール(暗号化)
+   します。このキーは、<code class="parameter">pub_key_ids</code> を ID とする
    公開鍵で暗号化されます。これは、暗号化されたデータを複数の受信者に
    送信できることを意味します（この際、各受信者は送信側に公開鍵を
    提供します）。各受信者は、暗号化されたデータとその受信者の
@@ -47,7 +47,7 @@
 
     
      <dt>
-<em><code class="parameter">data</code></em></dt>
+<code class="parameter">data</code></dt>
 
      <dd>
 
@@ -58,7 +58,7 @@
     
     
      <dt>
-<em><code class="parameter">sealed_data</code></em></dt>
+<code class="parameter">sealed_data</code></dt>
 
      <dd>
 
@@ -69,7 +69,7 @@
     
     
      <dt>
-<em><code class="parameter">env_keys</code></em></dt>
+<code class="parameter">env_keys</code></dt>
 
      <dd>
 
@@ -80,7 +80,7 @@
     
     
      <dt>
-<em><code class="parameter">pub_key_ids</code></em></dt>
+<code class="parameter">pub_key_ids</code></dt>
 
      <dd>
 
@@ -100,8 +100,8 @@
   <p class="para">
    成功時にシール(暗号化)されたデータの長さ、エラー時に <strong><code>FALSE</code></strong>
    を返します。成功時には、暗号化されたデータが
-   <em><code class="parameter">sealed_data</code></em> に、エンベロープキーが
-   <em><code class="parameter">env_keys</code></em> に返されます。
+   <code class="parameter">sealed_data</code> に、エンベロープキーが
+   <code class="parameter">env_keys</code> に返されます。
   </p>
  </div>
 

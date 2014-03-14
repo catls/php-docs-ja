@@ -28,7 +28,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>stream_socket_recvfrom()</strong></span> は、
-   リモートソケットから最大 <em><code class="parameter">length</code></em> バイトのデータを
+   リモートソケットから最大 <code class="parameter">length</code> バイトのデータを
    受け取ります。
   </p>
  </div>
@@ -41,7 +41,7 @@
 
     
      <dt>
-<em><code class="parameter">socket</code></em></dt>
+<code class="parameter">socket</code></dt>
 
      <dd>
 
@@ -53,26 +53,26 @@
     
     
      <dt>
-<em><code class="parameter">length</code></em></dt>
+<code class="parameter">length</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">socket</code></em> から受信するバイト数。
+       <code class="parameter">socket</code> から受信するバイト数。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">flags</code></em> は以下の値の組み合わせです。
+       <code class="parameter">flags</code> は以下の値の組み合わせです。
        <table class="doctable table">
-        <caption><strong><em><code class="parameter">flags</code></em> でとりうる値</strong></caption>
+        <caption><strong><code class="parameter">flags</code> でとりうる値</strong></caption>
         
          <tbody class="tbody">
           <tr>
@@ -102,12 +102,12 @@
     
     
      <dt>
-<em><code class="parameter">address</code></em></dt>
+<code class="parameter">address</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">address</code></em> が指定された場合、
+       <code class="parameter">address</code> が指定された場合、
        そこにはリモートソケットのアドレスが保存されます。
       </p>
      </dd>
@@ -148,7 +148,7 @@
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    受信したメッセージが <em><code class="parameter">length</code></em> パラメータより
+    受信したメッセージが <code class="parameter">length</code> パラメータより
     長かった場合、ソケットの型によっては（例えば UDP など）超過分の
     バイトデータが捨てられてしまう可能性があります。
    </p>

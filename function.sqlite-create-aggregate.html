@@ -47,11 +47,11 @@
   <p class="para">
    この関数と <span class="function"><a href="function.sqlite-create-function.html" class="function">sqlite_create_function()</a></span> の主な違い
    は、二つの関数が集約を管理するために必要であることです。
-   <em><code class="parameter">step_func</code></em>は、結果セットの各レコードに関して
+   <code class="parameter">step_func</code>は、結果セットの各レコードに関して
    コールされます。PHP関数は、結果を加算し、集約コンテキストに保存する
    必要があります。
    全レコードが処理された後、
-   <em><code class="parameter">finalize_func</code></em>がコールされ、
+   <code class="parameter">finalize_func</code>がコールされ、
    集約コンテキストからデータが取得され、結果が返されます。
    コールバック関数は SQLite が認識可能な型 (すなわち
    <a href="language.types.intro.html" class="link">スカラー型</a>)
@@ -67,7 +67,7 @@
 
     
      <dt>
-<em><code class="parameter">dbhandle</code></em></dt>
+<code class="parameter">dbhandle</code></dt>
 
      <dd>
 
@@ -82,7 +82,7 @@
     
     
      <dt>
-<em><code class="parameter">function_name</code></em></dt>
+<code class="parameter">function_name</code></dt>
 
      <dd>
 
@@ -94,7 +94,7 @@
     
     
      <dt>
-<em><code class="parameter">step_func</code></em></dt>
+<code class="parameter">step_func</code></dt>
 
      <dd>
 
@@ -107,7 +107,7 @@
     
     
      <dt>
-<em><code class="parameter">finalize_func</code></em></dt>
+<code class="parameter">finalize_func</code></dt>
 
      <dd>
 
@@ -121,7 +121,7 @@
     
     
      <dt>
-<em><code class="parameter">num_args</code></em></dt>
+<code class="parameter">num_args</code></dt>
 
      <dd>
 
@@ -163,17 +163,17 @@
   <p class="para">
    この例では、テーブルのあるカラムに存在する最長な文字列長を計算する
    集約関数を生成します。各レコードに対して <em>max_len_step</em>
-   関数がコールされ、<em><code class="parameter">context</code></em> パラメータが渡されます。
+   関数がコールされ、<code class="parameter">context</code> パラメータが渡されます。
    コンテキストパラメータは他の PHP 変数と同様で、
    配列もしくはオブジェクト値を保持するよう設定されます。
    この例では、単純にこれまでの最大長を保持するために使用しています。
-   もし <em><code class="parameter">string</code></em> が現在の最大長よりも長い場合、
+   もし <code class="parameter">string</code> が現在の最大長よりも長い場合、
    新しい最大長を保持するためにコンテキストを更新します。
   </p>
   <p class="para">
    全てのレコードが処理された後、SQLite は集約結果を決定するために
    <em>max_len_finalize</em> 関数をコールします。
-   ここで、<em><code class="parameter">context</code></em> 内に見つかったデータに基づいた
+   ここで、<code class="parameter">context</code> 内に見つかったデータに基づいた
    計算のような処理を実行することができます。
    ただ、この簡単な例では、クエリの処理が進むと共に結果を計算しているので、
    単純にコンテキストの値を返す必要があります。

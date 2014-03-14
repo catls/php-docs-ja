@@ -28,7 +28,7 @@
   ]]]] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">local_socket</code></em> で指定された接続ポイントに、
+   <code class="parameter">local_socket</code> で指定された接続ポイントに、
    ストリームまたはデータグラムソケットによる接続を作成します。
   </p>
   <p class="para">
@@ -45,7 +45,7 @@
 
     
      <dt>
-<em><code class="parameter">local_socket</code></em></dt>
+<code class="parameter">local_socket</code></dt>
 
      <dd>
 
@@ -56,10 +56,10 @@
       </p>
       <p class="para">
        TCP や UDP といったインターネットドメインのソケット (<strong><code>AF_INET</code></strong>)
-       には、<em><code class="parameter">remote_socket</code></em> パラメータの
+       には、<code class="parameter">remote_socket</code> パラメータの
        <em>ターゲット</em> の部分は、ホスト名または IP アドレスと、
        それに続くコロンで区切られたポート番号から構成されていなければなりません。
-       Unix ドメインのソケットの場合は、<em><code class="parameter">ターゲット</code></em>
+       Unix ドメインのソケットの場合は、<code class="parameter">ターゲット</code>
        の部分は、ファイルシステムにおけるソケットのファイルを指定しなくては
        いけません。
       </p>
@@ -75,22 +75,22 @@
     
     
      <dt>
-<em><code class="parameter">errno</code></em></dt>
+<code class="parameter">errno</code></dt>
 
      <dd>
 
       <p class="para">
        オプションの
-       <em><code class="parameter">errno</code></em> と <em><code class="parameter">errstr</code></em>
+       <code class="parameter">errno</code> と <code class="parameter">errstr</code>
        パラメータが存在するときは、そこにシステムレベルの
        <em>socket()</em>、<em>bind()</em> および
        <em>listen()</em> のコールにおいて発生した
        実際のシステムレベルのエラーを返します。
-       もし、<em><code class="parameter">errno</code></em> に返された値が <em>0</em>
+       もし、<code class="parameter">errno</code> に返された値が <em>0</em>
        で、かつ <strong><code>FALSE</code></strong> が返された場合、<em>bind()</em>
        コールを行う前にエラーが発生したことを示しており、これは多くの場合
        ソケットの初期化に失敗したことを示しています。
-       <em><code class="parameter">errno</code></em> と <em><code class="parameter">errstr</code></em>
+       <code class="parameter">errno</code> と <code class="parameter">errstr</code>
        パラメータは常に参照渡しとなることに留意してください。
       </p>
      </dd>
@@ -98,19 +98,19 @@
     
     
      <dt>
-<em><code class="parameter">errstr</code></em></dt>
+<code class="parameter">errstr</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">errno</code></em> の説明を参照ください。
+       <code class="parameter">errno</code> の説明を参照ください。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
@@ -120,7 +120,7 @@
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
         UDP ソケットに対しては、<strong><code>STREAM_SERVER_BIND</code></strong> を
-        <em><code class="parameter">flags</code></em> パラメータとして使用する必要があります。
+        <code class="parameter">flags</code> パラメータとして使用する必要があります。
        </p>
       </p></blockquote>
      </dd>
@@ -128,7 +128,7 @@
     
     
      <dt>
-<em><code class="parameter">context</code></em></dt>
+<code class="parameter">context</code></dt>
 
      <dd>
 

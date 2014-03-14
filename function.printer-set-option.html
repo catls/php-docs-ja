@@ -39,12 +39,12 @@
 
     
      <dt>
-<em><code class="parameter">printer_handle</code></em></dt>
+<code class="parameter">printer_handle</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">printer_handle</code></em>
+       <code class="parameter">printer_handle</code>
        には、プリンタへの有効なハンドルを指定する必要があります。
       </p>
      </dd>
@@ -52,7 +52,7 @@
     
     
      <dt>
-<em><code class="parameter">option</code></em></dt>
+<code class="parameter">option</code></dt>
 
      <dd>
 
@@ -62,7 +62,7 @@
         <li class="listitem">
          <span class="simpara">
           <strong><code>PRINTER_COPIES</code></strong>:
-          印刷する部数を指定します。<em><code class="parameter">value</code></em> 
+          印刷する部数を指定します。<code class="parameter">value</code> 
           は整数値である必要があります。
          </span>
         </li>
@@ -70,20 +70,20 @@
          <span class="simpara">
           <strong><code>PRINTER_MODE</code></strong>:
           データの種類 (text、raw あるいは emf) を指定します。
-          <em><code class="parameter">value</code></em> は文字列である必要があります。
+          <code class="parameter">value</code> は文字列である必要があります。
          </span>
         </li>
         <li class="listitem">
          <span class="simpara">
           <strong><code>PRINTER_TITLE</code></strong>:
-          文書の名前を指定します。<em><code class="parameter">value</code></em> 
+          文書の名前を指定します。<code class="parameter">value</code> 
           は文字列である必要があります。
          </span>
         </li>
         <li class="listitem">
          <span class="simpara">
           <strong><code>PRINTER_ORIENTATION</code></strong>:
-          用紙の向きを指定します。<em><code class="parameter">value</code></em> 
+          用紙の向きを指定します。<code class="parameter">value</code> 
           は <strong><code>PRINTER_ORIENTATION_PORTRAIT</code></strong> あるいは
           <strong><code>PRINTER_ORIENTATION_LANDSCAPE</code></strong> のいずれかです。
          </span>
@@ -91,14 +91,14 @@
         <li class="listitem">
          <span class="simpara">
           <strong><code>PRINTER_RESOLUTION_Y</code></strong>:
-          y 方向の解像度を DPI で指定します。<em><code class="parameter">value</code></em> 
+          y 方向の解像度を DPI で指定します。<code class="parameter">value</code> 
           は整数値である必要があります。
          </span>
         </li>
         <li class="listitem">
          <span class="simpara">
           <strong><code>PRINTER_RESOLUTION_X</code></strong>:
-          x 方向の解像度を DPI で指定します。<em><code class="parameter">value</code></em> 
+          x 方向の解像度を DPI で指定します。<code class="parameter">value</code> 
           は整数値である必要があります。
          </span>
         </li>
@@ -108,8 +108,8 @@
           定義済みの用紙フォーマットを指定します。
           <strong><code>PRINTER_PAPER_WIDTH</code></strong> および <strong><code>PRINTER_PAPER_LENGTH</code></strong>
           を使用して独自の用紙を指定したい場合には、
-          <em><code class="parameter">value</code></em> には <strong><code>PRINTER_FORMAT_CUSTOM</code></strong> を指定します。
-          <em><code class="parameter">value</code></em> は、以下の定数のいずれかです。
+          <code class="parameter">value</code> には <strong><code>PRINTER_FORMAT_CUSTOM</code></strong> を指定します。
+          <code class="parameter">value</code> は、以下の定数のいずれかです。
          </span>
          <ul class="itemizedlist">
           <li class="listitem">
@@ -173,7 +173,7 @@
           <strong><code>PRINTER_PAPER_LENGTH</code></strong>:
           <strong><code>PRINTER_PAPER_FORMAT</code></strong> が <strong><code>PRINTER_FORMAT_CUSTOM</code></strong> に指定されている場合、
           ミリ単位での用紙の長さを <strong><code>PRINTER_PAPER_LENGTH</code></strong> で指定します。
-          <em><code class="parameter">value</code></em> は整数値である必要があります。
+          <code class="parameter">value</code> は整数値である必要があります。
          </span>
         </li>
         <li class="listitem">
@@ -181,7 +181,7 @@
           <strong><code>PRINTER_PAPER_WIDTH</code></strong>:
           <strong><code>PRINTER_PAPER_FORMAT</code></strong> が <strong><code>PRINTER_FORMAT_CUSTOM</code></strong> に指定されている場合、
           ミリ単位での用紙の幅を <strong><code>PRINTER_PAPER_WIDTH</code></strong> で指定します。
-          <em><code class="parameter">value</code></em> は整数値である必要があります。
+          <code class="parameter">value</code> は整数値である必要があります。
          </span>
         </li>
         <li class="listitem">
@@ -190,14 +190,14 @@
           印刷時の倍率を指定します。実際の大きさに scale/100
           を掛けた大きさでページが印刷されます。例えば、値を 50
           に設定した場合には、出力内容は実際の大きさの半分となります。
-          <em><code class="parameter">value</code></em> は整数値である必要があります。
+          <code class="parameter">value</code> は整数値である必要があります。
          </span>
         </li>
         <li class="listitem">
          <span class="simpara">
           <strong><code>PRINTER_BACKGROUND_COLOR</code></strong>:
           デバイスコンテキストの背景色を指定します。
-          <em><code class="parameter">value</code></em> は rgb 情報を十六進表現で表した
+          <code class="parameter">value</code> は rgb 情報を十六進表現で表した
           文字列である必要があります。つまり、&quot;005533&quot; のようになります。
          </span>
         </li>
@@ -205,7 +205,7 @@
          <span class="simpara">
           <strong><code>PRINTER_TEXT_COLOR</code></strong>:
           デバイスコンテキストの文字色を指定します。
-          <em><code class="parameter">value</code></em> は rgb 情報を十六進表現で表した
+          <code class="parameter">value</code> は rgb 情報を十六進表現で表した
           文字列である必要があります。つまり、&quot;005533&quot; のようになります。
          </span>
         </li>
@@ -213,7 +213,7 @@
          <span class="simpara">
           <strong><code>PRINTER_TEXT_ALIGN</code></strong>:
           デバイスコンテキストのテキストの配置を指定します。
-          <em><code class="parameter">value</code></em> には、
+          <code class="parameter">value</code> には、
           以下の定数を ORで組み合わせて指定することができます。
          </span>
          <ul class="itemizedlist">
@@ -262,12 +262,12 @@
     
     
      <dt>
-<em><code class="parameter">value</code></em></dt>
+<code class="parameter">value</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">option</code></em> の値。
+       <code class="parameter">option</code> の値。
       </p>
      </dd>
 
@@ -289,7 +289,7 @@
  <div class="refsect1 examples" id="refsect1-function.printer-set-option-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5375">
+   <div class="example" id="example-5377">
     <p><strong>例1 <span class="function"><strong>printer_set_option()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

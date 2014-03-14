@@ -27,13 +27,13 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   引数 <em><code class="parameter">pid</code></em> で指定した子プロセスが終了する・
+   引数 <code class="parameter">pid</code> で指定した子プロセスが終了する・
    現在のプロセスを終了させるシグナルが送信される・シグナル処理関数を
    コールするシグナルが送信される
    のいずれかが発生するまで、現在のプロセスの実行を中断します。
   </p>
   <p class="para">
-   <em><code class="parameter">pid</code></em> でリクエストされた子プロセスが、 コール時に
+   <code class="parameter">pid</code> でリクエストされた子プロセスが、 コール時に
    既に終了している場合(&quot;ゾンビ&quot;プロセスと呼ばれます)、この関数は
    直ちに処理を返します。子プロセスにより使用される全てのシステム
    リソースは、解放されます。waitpid のシステムでの動作に関する詳細は、
@@ -49,20 +49,20 @@
 
     
      <dt>
-<em><code class="parameter">pid</code></em></dt>
+<code class="parameter">pid</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">pid</code></em> の値は、次のどれかとなります。
+       <code class="parameter">pid</code> の値は、次のどれかとなります。
        <table class="doctable table">
-        <caption><strong><em><code class="parameter">pid</code></em> のとりうる値</strong></caption>
+        <caption><strong><code class="parameter">pid</code> のとりうる値</strong></caption>
         
          <tbody class="tbody">
           <tr>
            <td><em>&lt; -1</em></td>
            <td>
-            プロセスグループ ID が <em><code class="parameter">pid</code></em> の絶対値に等しい
+            プロセスグループ ID が <code class="parameter">pid</code> の絶対値に等しい
             子プロセスを待ちます。
            </td>
           </tr>
@@ -85,7 +85,7 @@
           <tr>
            <td><em>&gt; 0</em></td>
            <td>
-            プロセス ID が <em><code class="parameter">pid</code></em> の値に等しい
+            プロセス ID が <code class="parameter">pid</code> の値に等しい
             子プロセスを待ちます。
            </td>
           </tr>
@@ -97,9 +97,9 @@
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
-        <em>-1</em> を <em><code class="parameter">pid</code></em> に指定した際の動きは、
+        <em>-1</em> を <code class="parameter">pid</code> に指定した際の動きは、
         <span class="function"><a href="function.pcntl-wait.html" class="function">pcntl_wait()</a></span> の機能と
-        (<em><code class="parameter">options</code></em> を除いて) 同じです。
+        (<code class="parameter">options</code> を除いて) 同じです。
        </p>
       </p></blockquote>
      </dd>
@@ -107,13 +107,13 @@
     
     
      <dt>
-<em><code class="parameter">status</code></em></dt>
+<code class="parameter">status</code></dt>
 
      <dd>
 
       <p class="para">
        <span class="function"><strong>pcntl_waitpid()</strong></span> は、パラメータ
-       <em><code class="parameter">status</code></em> の中にステータス情報を保存します。
+       <code class="parameter">status</code> の中にステータス情報を保存します。
        このステータスは、次の関数を用いて評価可能です。
        <span class="function"><a href="function.pcntl-wifexited.html" class="function">pcntl_wifexited()</a></span>、
        <span class="function"><a href="function.pcntl-wifstopped.html" class="function">pcntl_wifstopped()</a></span>、
@@ -127,15 +127,15 @@
     
     
      <dt>
-<em><code class="parameter">options</code></em></dt>
+<code class="parameter">options</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">options</code></em> の値は、次の 2 つのグローバル定数の
+       <code class="parameter">options</code> の値は、次の 2 つのグローバル定数の
        ゼロまたはそれ以上の論理和です。
        <table class="doctable table">
-        <caption><strong><em><code class="parameter">options</code></em> のとりうる値</strong></caption>
+        <caption><strong><code class="parameter">options</code> のとりうる値</strong></caption>
         
          <tbody class="tbody">
           <tr>

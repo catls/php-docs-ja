@@ -31,7 +31,7 @@
    あるいはシステム上で使えるその他のアルゴリズムを使用します。
   </p>
   <p class="para">
-   <em><code class="parameter">salt</code></em> パラメータは必須ではありませんが、これを省略すると
+   <code class="parameter">salt</code> パラメータは必須ではありませんが、これを省略すると
    <span class="function"><strong>crypt()</strong></span> が作るパスワードが弱いものになってしまいます。
    PHP 5.6 以降は、このパラメータを省略した場合に E_NOTICE が発生するようになりました。
    十分に強いソルトを指定して、セキュリティを確保しましょう。
@@ -55,7 +55,7 @@
   <p class="para">
    標準の DES ベースの場合、<span class="function"><strong>crypt()</strong></span>
    は出力の最初の 2 文字を salt として使用します。また、
-   <em><code class="parameter">str</code></em> の最初の 8 文字しか使用しません。
+   <code class="parameter">str</code> の最初の 8 文字しか使用しません。
    つまり、最初の 8 文字が同じである長い文字列は、
    同じ salt を使う限り同じ結果となります。
   </p>
@@ -143,7 +143,7 @@
 
     
      <dt>
-<em><code class="parameter">str</code></em></dt>
+<code class="parameter">str</code></dt>
 
      <dd>
 
@@ -153,7 +153,7 @@
       <div class="caution"><strong class="caution">警告</strong>
        <p class="para">
         <strong><code>CRYPT_BLOWFISH</code></strong> を使うと、
-        <em><code class="parameter">str</code></em> が最大 72 文字までに切り詰められます。
+        <code class="parameter">str</code> が最大 72 文字までに切り詰められます。
         このアルゴリズムを使い、同じソルトで 72 バイトを超える文字列のハッシュを計算すると、
         同じ結果になってしまいます。
        </p>
@@ -163,7 +163,7 @@
     
     
      <dt>
-<em><code class="parameter">salt</code></em></dt>
+<code class="parameter">salt</code></dt>
 
      <dd>
 
@@ -206,7 +206,7 @@
       <tr>
        <td>5.6.0</td>
        <td>
-        <em><code class="parameter">salt</code></em> を省略下場合に E_NOTICE が発生するようになりました。
+        <code class="parameter">salt</code> を省略下場合に E_NOTICE が発生するようになりました。
        </td>
       </tr>
 
@@ -255,7 +255,7 @@
  <div class="refsect1 examples" id="refsect1-function.crypt-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4818">
+   <div class="example" id="example-4820">
     <p><strong>例1 <span class="function"><strong>crypt()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -267,7 +267,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4819">
+   <div class="example" id="example-4821">
     <p><strong>例2 <span class="function"><strong>crypt()</strong></span> を htpasswd で使用する例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -279,7 +279,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4820">
+   <div class="example" id="example-4822">
     <p><strong>例3 異なるハッシュ形式を用いた <span class="function"><strong>crypt()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

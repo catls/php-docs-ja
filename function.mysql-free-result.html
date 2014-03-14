@@ -41,7 +41,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>mysql_free_result()</strong></span> は、結果 ID <em><code class="parameter">result</code></em>
+   <span class="function"><strong>mysql_free_result()</strong></span> は、結果 ID <code class="parameter">result</code>
    に関するすべてのメモリを開放します。
   </p>
   <p class="para">
@@ -59,8 +59,8 @@
    <dl>
 
     <dt>
-<em><code class="parameter">
-result</code></em></dt>
+<code class="parameter">
+result</code></dt>
 <dd>
 <p class="para">評価された結果 <span class="type"><span class="type リソース">リソース</span></span>。
 この結果は、<span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span> のコールにより得られたものです。</p>
@@ -78,7 +78,7 @@ result</code></em></dt>
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-   <em><code class="parameter">result</code></em> がリソースではなかった場合、
+   <code class="parameter">result</code> がリソースではなかった場合、
    E_WARNING レベルのエラーが発生します。
    <span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span> が <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>
    を返すのは SELECT, SHOW, EXPLAIN, そして DESCRIBE

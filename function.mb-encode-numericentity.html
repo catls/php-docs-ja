@@ -28,7 +28,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">str</code></em>の中で指定した文字コードを
+   <code class="parameter">str</code>の中で指定した文字コードを
    HTML 数値エンティティから文字コードに変換します。
   </p>
  </div>
@@ -41,7 +41,7 @@
 
     
      <dt>
-<em><code class="parameter">str</code></em></dt>
+<code class="parameter">str</code></dt>
 
      <dd>
 
@@ -53,23 +53,23 @@
     
     
      <dt>
-<em><code class="parameter">convmap</code></em></dt>
+<code class="parameter">convmap</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">convmap</code></em> は、変換するコード領域を指定する配列です。
+       <code class="parameter">convmap</code> は、変換するコード領域を指定する配列です。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">encoding</code></em></dt>
+<code class="parameter">encoding</code></dt>
 
      <dd>
 
-      <p class="para"><em><code class="parameter">encoding</code></em> 
+      <p class="para"><code class="parameter">encoding</code> 
 パラメータには文字エンコーディングを指定します。省略した場合は、
 内部文字エンコーディングを使用します。</p>
      </dd>
@@ -77,7 +77,7 @@
     
     
      <dt>
-<em><code class="parameter">is_hex</code></em></dt>
+<code class="parameter">is_hex</code></dt>
 
      <dd>
 
@@ -117,7 +117,7 @@
       <tr>
        <td>5.4.0</td>
        <td>
-        <em><code class="parameter">is_hex</code></em> パラメータが追加されました。
+        <code class="parameter">is_hex</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -133,7 +133,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-2713">
-    <p><strong>例1 <em><code class="parameter">convmap</code></em> の例</strong></p>
+    <p><strong>例1 <code class="parameter">convmap</code> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$convmap&nbsp;</span><span style="color: #007700">=&nbsp;array&nbsp;(<br />&nbsp;</span><span style="color: #0000BB">int&nbsp;start_code1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;end_code1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;offset1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;mask1</span><span style="color: #007700">,<br />&nbsp;</span><span style="color: #0000BB">int&nbsp;start_code2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;end_code2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;offset2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;mask2</span><span style="color: #007700">,<br />&nbsp;........<br />&nbsp;</span><span style="color: #0000BB">int&nbsp;start_codeN</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;end_codeN</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;offsetN</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">int&nbsp;maskN&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;start_codeN&nbsp;および&nbsp;end_codeN&nbsp;に&nbsp;Unicode&nbsp;値を指定<br />//&nbsp;値に&nbsp;offsetN&nbsp;を追加、マスク&nbsp;maskN&nbsp;を指定してビット毎の'AND'をとり、<br />//&nbsp;数値エンティティに値を変換します。<br /></span><span style="color: #0000BB">?&gt;</span>

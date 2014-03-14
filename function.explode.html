@@ -28,8 +28,8 @@
 
   <p class="para rdfs-comment">
    文字列の配列を返します。この配列の各要素は、
-   <em><code class="parameter">string</code></em> を文字列
-   <em><code class="parameter">delimiter</code></em> で区切った部分文字列となります。
+   <code class="parameter">string</code> を文字列
+   <code class="parameter">delimiter</code> で区切った部分文字列となります。
   </p>
  </div>
 
@@ -41,7 +41,7 @@
 
     
      <dt>
-<em><code class="parameter">delimiter</code></em></dt>
+<code class="parameter">delimiter</code></dt>
 
      <dd>
 
@@ -53,7 +53,7 @@
     
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -65,21 +65,21 @@
     
     
      <dt>
-<em><code class="parameter">limit</code></em></dt>
+<code class="parameter">limit</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">limit</code></em> に正の値が指定された場合、返される配列には
-       最大 <em><code class="parameter">limit</code></em> の要素が含まれ、その最後の要素には
-       <em><code class="parameter">string</code></em> の残りの部分が全て含まれます。
+       <code class="parameter">limit</code> に正の値が指定された場合、返される配列には
+       最大 <code class="parameter">limit</code> の要素が含まれ、その最後の要素には
+       <code class="parameter">string</code> の残りの部分が全て含まれます。
       </p>
       <p class="para">
-       もし <em><code class="parameter">limit</code></em> パラメータが負の場合、
-       最後の -<em><code class="parameter">limit</code></em> 個の要素を除く全ての構成要素が返されます。
+       もし <code class="parameter">limit</code> パラメータが負の場合、
+       最後の -<code class="parameter">limit</code> 個の要素を除く全ての構成要素が返されます。
       </p>
       <p class="para">
-       <em><code class="parameter">limit</code></em> パラメータがゼロの場合は、1 を指定したものとみなされます。
+       <code class="parameter">limit</code> パラメータがゼロの場合は、1 を指定したものとみなされます。
       </p>
      </dd>
 
@@ -91,8 +91,8 @@
    歴史的理由により、<span class="function"><a href="function.implode.html" class="function">implode()</a></span>
    はいずれのパラメータ順も受け入れることができますが、
    <span class="function"><strong>explode()</strong></span> はそうできません。
-   <em><code class="parameter">string</code></em> 引数の前に必ず
-   <em><code class="parameter">delimiter</code></em> 引数がくるように確認する必要があります。
+   <code class="parameter">string</code> 引数の前に必ず
+   <code class="parameter">delimiter</code> 引数がくるように確認する必要があります。
   </p>
  </div>
 
@@ -100,16 +100,16 @@
  <div class="refsect1 returnvalues" id="refsect1-function.explode-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <em><code class="parameter">string</code></em> の内容を
-   <em><code class="parameter">delimiter</code></em> で分割した文字列の配列を返します。
+   <code class="parameter">string</code> の内容を
+   <code class="parameter">delimiter</code> で分割した文字列の配列を返します。
   </p>
   <p class="para">
-   空の文字列 (&quot;&quot;) が <em><code class="parameter">delimiter</code></em> として使用された場合、
+   空の文字列 (&quot;&quot;) が <code class="parameter">delimiter</code> として使用された場合、
    <span class="function"><strong>explode()</strong></span> は <strong><code>FALSE</code></strong>
-   を返します。<em><code class="parameter">delimiter</code></em> に引数
-   <em><code class="parameter">string</code></em> に含まれていない値が含まれている場合は、
-   <em><code class="parameter">limit</code></em> が負の値なら空の配列、そうでなければ
-   引数 <em><code class="parameter">string</code></em> を含む配列を返します。
+   を返します。<code class="parameter">delimiter</code> に引数
+   <code class="parameter">string</code> に含まれていない値が含まれている場合は、
+   <code class="parameter">limit</code> が負の値なら空の配列、そうでなければ
+   引数 <code class="parameter">string</code> を含む配列を返します。
   </p>
  </div>
 
@@ -131,14 +131,14 @@
       <tr>
        <td>5.1.0</td>
        <td>
-        <em><code class="parameter">limit</code></em> に負の数を指定できるようになりました。
+        <code class="parameter">limit</code> に負の数を指定できるようになりました。
        </td>
       </tr>
 
       <tr>
        <td>4.0.1</td>
        <td>
-        <em><code class="parameter">limit</code></em> パラメータが追加されました。
+        <code class="parameter">limit</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -153,7 +153,7 @@
  <div class="refsect1 examples" id="refsect1-function.explode-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4822">
+   <div class="example" id="example-4824">
     <p><strong>例1 <span class="function"><strong>explode()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -165,7 +165,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4823">
+   <div class="example" id="example-4825">
     <p><strong>例2 <span class="function"><strong>explode()</strong></span> の返り値の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -191,8 +191,8 @@ array(2)
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4824">
-    <p><strong>例3 <em><code class="parameter">limit</code></em> パラメータの例</strong></p>
+   <div class="example" id="example-4826">
+    <p><strong>例3 <code class="parameter">limit</code> パラメータの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'one|two|three|four'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;正の値を持つ&nbsp;limit<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">explode</span><span style="color: #007700">(</span><span style="color: #DD0000">'|'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;負の値を持つ&nbsp;limit&nbsp;(PHP&nbsp;5.1&nbsp;以降)<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">explode</span><span style="color: #007700">(</span><span style="color: #DD0000">'|'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>

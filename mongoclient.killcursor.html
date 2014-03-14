@@ -45,7 +45,7 @@
     
      <dt>
 
-      <em><code class="parameter">server_hash</code></em>
+      <code class="parameter">server_hash</code>
      </dt>
 
      <dd>
@@ -60,7 +60,7 @@
     
      <dt>
 
-      <em><code class="parameter">id</code></em>
+      <code class="parameter">id</code>
      </dt>
 
      <dd>
@@ -84,7 +84,7 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    カーソルの削除処理を実行した場合に <strong><code>TRUE</code></strong>、
-   引数に何か問題があった場合 (<em><code class="parameter">server_hash</code></em> が間違っている場合など) に <strong><code>FALSE</code></strong> を返します。
+   引数に何か問題があった場合 (<code class="parameter">server_hash</code> が間違っている場合など) に <strong><code>FALSE</code></strong> を返します。
    この返り値は、実際にカーソルが削除されたかどうかを表すもの<em class="emphasis">ではありません</em>。
    サーバーからは、カーソルの削除に成功したかどうかの情報を得られないからです。
   </p>
@@ -94,7 +94,7 @@
  <div class="refsect1 errors" id="refsect1-mongoclient.killcursor-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   指定した <em><code class="parameter">server_hash</code></em> が既存の接続にマッチしない場合に警告が発生します。
+   指定した <code class="parameter">server_hash</code> が既存の接続にマッチしない場合に警告が発生します。
    その場合、カーソルの削除は試みません。
   </p>
  </div>

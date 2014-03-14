@@ -39,7 +39,7 @@
 
     
      <dt>
-<em><code class="parameter">algo</code></em></dt>
+<code class="parameter">algo</code></dt>
 
      <dd>
 
@@ -53,7 +53,7 @@
     
     
      <dt>
-<em><code class="parameter">password</code></em></dt>
+<code class="parameter">password</code></dt>
 
      <dd>
 
@@ -65,7 +65,7 @@
     
     
      <dt>
-<em><code class="parameter">salt</code></em></dt>
+<code class="parameter">salt</code></dt>
 
      <dd>
 
@@ -77,7 +77,7 @@
     
     
      <dt>
-<em><code class="parameter">iterations</code></em></dt>
+<code class="parameter">iterations</code></dt>
 
      <dd>
 
@@ -89,14 +89,14 @@
     
     
      <dt>
-<em><code class="parameter">length</code></em></dt>
+<code class="parameter">length</code></dt>
 
      <dd>
 
       <p class="para">
-       出力する文字列の長さ。<em><code class="parameter">raw_output</code></em> が <strong><code>TRUE</code></strong>
+       出力する文字列の長さ。<code class="parameter">raw_output</code> が <strong><code>TRUE</code></strong>
        の場合、これは派生キーのバイト長になります。
-       <em><code class="parameter">raw_output</code></em> が <strong><code>FALSE</code></strong> の場合、
+       <code class="parameter">raw_output</code> が <strong><code>FALSE</code></strong> の場合、
        これは派生キーのバイト長の二倍になります (キーの全バイトが十六進二桁で返されるからです)。
       </p>
      </dd>
@@ -104,7 +104,7 @@
     
     
      <dt>
-<em><code class="parameter">raw_output</code></em></dt>
+<code class="parameter">raw_output</code></dt>
 
      <dd>
 
@@ -123,7 +123,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.hash-pbkdf2-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   小文字の16進数を含む文字列が返されます。<em><code class="parameter">raw_output</code></em> が <strong><code>TRUE</code></strong> の場合、派生キーの生のバイナリ表現が返されます。
+   小文字の16進数を含む文字列が返されます。<code class="parameter">raw_output</code> が <strong><code>TRUE</code></strong> の場合、派生キーの生のバイナリ表現が返されます。
   </p>
  </div>
 
@@ -131,7 +131,7 @@
  <div class="refsect1 errors" id="refsect1-function.hash-pbkdf2-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-    <strong><code>E_WARNING</code></strong> が発生するのはアルゴリズムが未知である場合、<em><code class="parameter">iterations</code></em> パラメータが <em>0</em> 以下である場合、<em><code class="parameter">length</code></em> が <em>0</em> 以下である場合、<em><code class="parameter">salt</code></em> が長すぎる場合
+    <strong><code>E_WARNING</code></strong> が発生するのはアルゴリズムが未知である場合、<code class="parameter">iterations</code> パラメータが <em>0</em> 以下である場合、<code class="parameter">length</code> が <em>0</em> 以下である場合、<code class="parameter">salt</code> が長すぎる場合
    (<strong><code>INT_MAX</code></strong><em> - 4</em> よりも大きい) です。
   </p>
  </div>

@@ -28,9 +28,9 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   この関数は、<em><code class="parameter">subject</code></em> の中に現れるすべての
-   <em><code class="parameter">search</code></em>(大文字小文字を区別しない)を
-   <em><code class="parameter">replace</code></em> に置き換えた文字列あるいは配列を返します。
+   この関数は、<code class="parameter">subject</code> の中に現れるすべての
+   <code class="parameter">search</code>(大文字小文字を区別しない)を
+   <code class="parameter">replace</code> に置き換えた文字列あるいは配列を返します。
    一般に、凝った置換ルールが必要ないのであれば、
    <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span> で <em>i</em>
    修正子を使用するかわりにこの関数を使用すべきです。
@@ -41,19 +41,19 @@
  <div class="refsect1 parameters" id="refsect1-function.str-ireplace-parameters">
   <h3 class="title">パラメータ</h3>
   <p class="para">
-   <em><code class="parameter">search</code></em> および
-   <em><code class="parameter">replace</code></em> が配列の場合は、
+   <code class="parameter">search</code> および
+   <code class="parameter">replace</code> が配列の場合は、
    <span class="function"><strong>str_ireplace()</strong></span> はそれぞれの配列から取り出した
-   値を使用して <em><code class="parameter">subject</code></em> の置換を行います。
-   <em><code class="parameter">replace</code></em> の要素数が
-   <em><code class="parameter">search</code></em> より少ない場合は、残りの要素は
-   空の文字列に置き換えられます。もし <em><code class="parameter">search</code></em>
-   が配列で <em><code class="parameter">replace</code></em> が文字列だった場合は
-   すべての <em><code class="parameter">search</code></em> が同じ文字列に置き換えられます。
+   値を使用して <code class="parameter">subject</code> の置換を行います。
+   <code class="parameter">replace</code> の要素数が
+   <code class="parameter">search</code> より少ない場合は、残りの要素は
+   空の文字列に置き換えられます。もし <code class="parameter">search</code>
+   が配列で <code class="parameter">replace</code> が文字列だった場合は
+   すべての <code class="parameter">search</code> が同じ文字列に置き換えられます。
    しかし、逆は意味がありません。
   </p>
   <p class="para">
-   <em><code class="parameter">search</code></em> あるいは <em><code class="parameter">replace</code></em>
+   <code class="parameter">search</code> あるいは <code class="parameter">replace</code>
    が配列の場合は、配列の最初の要素から順に処理されます。
   </p>
   <p class="para">
@@ -61,7 +61,7 @@
 
     
      <dt>
-<em><code class="parameter">search</code></em></dt>
+<code class="parameter">search</code></dt>
 
      <dd>
 
@@ -74,12 +74,12 @@
     
     
      <dt>
-<em><code class="parameter">replace</code></em></dt>
+<code class="parameter">replace</code></dt>
 
      <dd>
 
       <p class="para">
-       見つかった <em><code class="parameter">search</code></em> を置き換える値。
+       見つかった <code class="parameter">search</code> を置き換える値。
        配列を使えば、複数の値を指定することもできます。
       </p>
      </dd>
@@ -87,7 +87,7 @@
     
     
      <dt>
-<em><code class="parameter">subject</code></em></dt>
+<code class="parameter">subject</code></dt>
 
      <dd>
 
@@ -96,7 +96,7 @@
        <em class="emphasis">haystack (干し草の山)</em> と呼ばれることもあります。
       </p>
       <p class="para">
-       <em><code class="parameter">subject</code></em> が配列の場合は、そのすべての要素に
+       <code class="parameter">subject</code> が配列の場合は、そのすべての要素に
        対して検索と置換が行われ、返される結果も配列となります。
       </p>
      </dd>
@@ -104,7 +104,7 @@
     
     
      <dt>
-<em><code class="parameter">count</code></em></dt>
+<code class="parameter">count</code></dt>
 
      <dd>
 
@@ -145,7 +145,7 @@
       <tr>
        <td>5.0.0</td>
        <td>
-        <em><code class="parameter">count</code></em> パラメータが追加されました。
+        <code class="parameter">count</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -160,7 +160,7 @@
  <div class="refsect1 examples" id="refsect1-function.str-ireplace-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4869">
+   <div class="example" id="example-4871">
     <p><strong>例1 <span class="function"><strong>str_ireplace()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

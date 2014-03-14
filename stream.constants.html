@@ -62,7 +62,7 @@
      <tr id="constant.psfs-pass-on">
       <td><strong><code>PSFS_PASS_ON</code></strong> *</td>
       <td><em>返値</em>: ユーザー空間のフィルタが
-      バケットを <em><code class="parameter">$out</code></em> に返したことを
+      バケットを <code class="parameter">$out</code> に返したことを
       示します。
       </td>
      </tr>
@@ -70,7 +70,7 @@
      <tr id="constant.psfs-feed-me">
       <td><strong><code>PSFS_FEED_ME</code></strong> *</td>
       <td><em>返値</em>: ユーザー空間のフィルタが
-       <em><code class="parameter">$out</code></em> にバケットを返さなかったことを
+       <code class="parameter">$out</code> にバケットを返さなかったことを
        示します。(つまり、変換されたデータを返す用意ができていないという
        ことです。)
       </td>
@@ -167,7 +167,7 @@
        該当するストリームにおいて、リクエストされたリモートのドメイン名の
        解決に成功したか、失敗したことを示します。
        このとき、何が起こっているかについては、
-       <em><code class="parameter">severity</code></em> を参照ください。
+       <code class="parameter">severity</code> を参照ください。
       </td>
      </tr>
 
@@ -183,7 +183,7 @@
       <td>
        指定されたリソースにアクセスするためには、さらに認証情報が必要です。
        通常に、<strong><code>STREAM_NOTIFY_SEVERITY_ERR</code></strong> の
-       <em><code class="parameter">severity</code></em> (深刻度) と共に通知されます。
+       <code class="parameter">severity</code> (深刻度) と共に通知されます。
       </td>
      </tr>
 
@@ -191,7 +191,7 @@
       <td><strong><code>STREAM_NOTIFY_MIME_TYPE_IS</code></strong></td>
       <td>
        リソースの <em>mime タイプ</em> が確認されました。
-       どのタイプと判定されたかについては、<em><code class="parameter">message</code></em>
+       どのタイプと判定されたかについては、<code class="parameter">message</code>
        を見てください。
       </td>
      </tr>
@@ -207,7 +207,7 @@
       <td><strong><code>STREAM_NOTIFY_REDIRECTED</code></strong></td>
       <td>
        外部リソースへのアクセスは、別の場所にリダイレクトされました。
-       詳細を知るには、<em><code class="parameter">message</code></em> を調べてみてください。
+       詳細を知るには、<code class="parameter">message</code> を調べてみてください。
       </td>
      </tr>
 
@@ -215,8 +215,8 @@
       <td><strong><code>STREAM_NOTIFY_PROGRESS</code></strong></td>
       <td>
        ストリームにおける転送の進捗が、
-       <em><code class="parameter">bytes_transferred</code></em> または、場合によっては
-       <em><code class="parameter">bytes_max</code></em> に現れていることを示します。
+       <code class="parameter">bytes_transferred</code> または、場合によっては
+       <code class="parameter">bytes_max</code> に現れていることを示します。
       </td>
      </tr>
 
@@ -232,7 +232,7 @@
       <td>
        ストリームにおいて一般的なエラーが発生したことを示します。
        エラーの詳細については、
-       <em><code class="parameter">message</code></em> と <em><code class="parameter">message_code</code></em>
+       <code class="parameter">message</code> と <code class="parameter">message_code</code>
        を調べてみてください。
       </td>
      </tr>

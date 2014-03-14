@@ -55,7 +55,7 @@
 
     
      <dt>
-<em><code class="parameter">servername</code></em></dt>
+<code class="parameter">servername</code></dt>
 
      <dd>
 
@@ -68,7 +68,7 @@
     
     
      <dt>
-<em><code class="parameter">username</code></em></dt>
+<code class="parameter">username</code></dt>
 
      <dd>
 
@@ -80,7 +80,7 @@
     
     
      <dt>
-<em><code class="parameter">password</code></em></dt>
+<code class="parameter">password</code></dt>
 
      <dd>
 
@@ -92,7 +92,7 @@
     
     
      <dt>
-<em><code class="parameter">new_link</code></em></dt>
+<code class="parameter">new_link</code></dt>
 
      <dd>
 
@@ -125,7 +125,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-1549">
-    <p><strong>例1 <span class="function"><strong>mssql_pconnect()</strong></span> で <em><code class="parameter">new_link</code></em> を使う例</strong></p>
+    <p><strong>例1 <span class="function"><strong>mssql_pconnect()</strong></span> で <code class="parameter">new_link</code> を使う例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;MSSQL&nbsp;に接続し、データベースを選択します<br /></span><span style="color: #0000BB">$link1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">'MANGO\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'php'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;新しいリンクを作成します<br /></span><span style="color: #0000BB">$link2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mssql_pconnect</span><span style="color: #007700">(</span><span style="color: #DD0000">'MANGO\SQLEXPRESS'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'sa'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'phpfi'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">mssql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'random'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$link2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

@@ -41,7 +41,7 @@
 
     
      <dt>
-<em><code class="parameter">to</code></em></dt>
+<code class="parameter">to</code></dt>
 
      <dd>
 
@@ -63,7 +63,7 @@
     
     
      <dt>
-<em><code class="parameter">subject</code></em></dt>
+<code class="parameter">subject</code></dt>
 
      <dd>
 
@@ -81,7 +81,7 @@
     
     
      <dt>
-<em><code class="parameter">message</code></em></dt>
+<code class="parameter">message</code></dt>
 
      <dd>
 
@@ -111,7 +111,7 @@
     
     
      <dt>
-<em><code class="parameter">additional_headers</code></em>（オプション）</dt>
+<code class="parameter">additional_headers</code>（オプション）</dt>
 
      <dd>
 
@@ -127,7 +127,7 @@
        <p class="para">
         メールを送信する際には、<em class="emphasis">必ず</em> 
         <em>From</em> ヘッダが含まれていなければなりません。
-        <em><code class="parameter">additional_headers</code></em> パラメータで指定するか、
+        <code class="parameter">additional_headers</code> パラメータで指定するか、
         あるいは <var class="filename">php.ini</var> にデフォルト値を指定します。
        </p>
        <p class="para">
@@ -153,12 +153,12 @@
     
     
      <dt>
-<em><code class="parameter">additional_parameters</code></em>（オプション）</dt>
+<code class="parameter">additional_parameters</code>（オプション）</dt>
 
      <dd>
 
       <p class="para">
-       パラメータ <em><code class="parameter">additional_parameters</code></em> は、
+       パラメータ <code class="parameter">additional_parameters</code> は、
        追加のフラグをコマンドラインオプションとしてメール送信プログラムに渡す際に使用可能です。
        メール送信プログラムは、設定オプション
        <em>sendmail_path</em> により設定されます。例えば、
@@ -234,7 +234,7 @@
        <td>4.2.3</td>
        <td>
         <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">safe_mode</a> 時には
-        <em><code class="parameter">additional_parameters</code></em> パラメータを無効に
+        <code class="parameter">additional_parameters</code> パラメータを無効に
         しました。もし用いられた場合には <span class="function"><strong>mail()</strong></span> 関数は
         警告メッセージを出して <strong><code>FALSE</code></strong> を返します。
        </td>
@@ -243,7 +243,7 @@
       <tr>
        <td>4.0.5</td>
        <td>
-        <em><code class="parameter">additional_parameters</code></em> パラメータが追加されました。
+        <code class="parameter">additional_parameters</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -288,7 +288,7 @@
     <p><strong>例3 追加ヘッダ及び追加コマンドラインパラメータを指定してメールを送信する</strong></p>
     <div class="example-contents"><p>
      <em>sendmail_path</em> を用いてメールを送信する際に利用する
-     追加パラメータとして、<em><code class="parameter">additional_parameters</code></em>
+     追加パラメータとして、<code class="parameter">additional_parameters</code>
      が用いられます。
     </p></div>
     <div class="example-contents">
@@ -347,7 +347,7 @@
     PHP によってパースされます。
    </p>
    <p class="para">
-    そのため、<em><code class="parameter">to</code></em> 引数には
+    そのため、<code class="parameter">to</code> 引数には
     &quot;Something &lt;someone@example.com&gt;&quot; 形式の
     メールアドレスを与えることはできません。
     MTA と通信する際に mail コマンドはこれを適切にパースできません。

@@ -200,9 +200,9 @@ substr(string, location, length)</dt>
      <dd>
 
       <span class="simpara">
-       指定した文字列 <em><code class="parameter">string</code></em> の、
-       位置 <em><code class="parameter">location</code></em> から始まる
-       長さ <em><code class="parameter">length</code></em> の部分文字列を返します。
+       指定した文字列 <code class="parameter">string</code> の、
+       位置 <code class="parameter">location</code> から始まる
+       長さ <code class="parameter">length</code> の部分文字列を返します。
       </span>
      </dd>
 
@@ -222,9 +222,9 @@ duplicateClip(clip, name, depth)</dt>
 
       <span class="simpara">
        指定したムービークリップ (またの名をスプライト)
-       <em><code class="parameter">clip</code></em> を複製します。
-       新しいムービークリップの名前は <em><code class="parameter">name</code></em> で、
-       深度は <em><code class="parameter">depth</code></em> となります。
+       <code class="parameter">clip</code> を複製します。
+       新しいムービークリップの名前は <code class="parameter">name</code> で、
+       深度は <code class="parameter">depth</code> となります。
       </span>
      </dd>
 
@@ -261,8 +261,8 @@ startDrag(target, lock, [left, top, right, bottom])</dt>
      <dd>
 
       <span class="simpara">
-       ムービークリップ <em><code class="parameter">target</code></em> のドラッグを開始します。
-       引数 <em><code class="parameter">lock</code></em> で、マウスをロックするかどうか (?)
+       ムービークリップ <code class="parameter">target</code> のドラッグを開始します。
+       引数 <code class="parameter">lock</code> で、マウスをロックするかどうか (?)
        を指定します - 0 (<strong><code>FALSE</code></strong>) あるいは 1 (<strong><code>TRUE</code></strong>) を指定します。
        オプションのパラメータでは、ドラッグする範囲のを指定します。
       </span>
@@ -301,9 +301,9 @@ getURL(url, target, [method])</dt>
      <dd>
 
       <span class="simpara">
-       指定した URL を読み込みます。引数 <em><code class="parameter">target</code></em> は、
+       指定した URL を読み込みます。引数 <code class="parameter">target</code> は、
        (たとえば &quot;_top&quot; や &quot;_blank&quot; のような) HTML ドキュメントの target
-       に対応します。オプションの引数 <em><code class="parameter">method</code></em> は、
+       に対応します。オプションの引数 <code class="parameter">method</code> は、
        サーバーに変数を返したい場合に POST あるいは GET を指定します。
       </span>
      </dd>
@@ -316,7 +316,7 @@ loadMovie(url, target)</dt>
      <dd>
 
       <span class="simpara">
-       指定した URL を読み込みます。引数 <em><code class="parameter">target</code></em> は、
+       指定した URL を読み込みます。引数 <code class="parameter">target</code> は、
        (おそらく) フレームの名前か
        あるいは特別な値 &quot;_level0&quot; (現在のムービーを置き換える) 、
        &quot;_level1&quot; (現在のムービーの前面に新しいムービーを表示する) 
@@ -404,7 +404,7 @@ gotoFrame(num)</dt>
      <dd>
 
       <span class="simpara">
-       フレーム番号 <em><code class="parameter">num</code></em> に移動します。
+       フレーム番号 <code class="parameter">num</code> に移動します。
        フレーム番号は 0 からはじまります。
       </span>
      </dd>
@@ -417,7 +417,7 @@ gotoFrame(name)</dt>
      <dd>
 
       <span class="simpara">
-       <em><code class="parameter">name</code></em> という名前のフレームに移動します。
+       <code class="parameter">name</code> という名前のフレームに移動します。
        これは便利です。というのもまだフレームのラベルを追加していないからです。
       </span>
      </dd>

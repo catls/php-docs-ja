@@ -31,7 +31,7 @@
    <span class="function"><strong>Memcached::cas()</strong></span> は「チェックして設定」という操作を行います。
    アイテムが格納されるのは、クライアントが最後にアイテムを取得して以降に
    他のクライアントによるそのアイテムの更新がなかった場合のみです。
-   チェックは <em><code class="parameter">cas_token</code></em> パラメータを使用して行います。
+   チェックは <code class="parameter">cas_token</code> パラメータを使用して行います。
    これは一意な 64 ビットの値で、既存のアイテムに対して memcache が割り当てます。
    このトークンを取得する方法については
    <span class="methodname"><strong>Memcached::get*()</strong></span> メソッドのドキュメントを参照ください。
@@ -47,7 +47,7 @@
 
     
      <dt>
-<em><code class="parameter">cas_token</code></em></dt>
+<code class="parameter">cas_token</code></dt>
 
      <dd>
 
@@ -59,7 +59,7 @@
     
     
      <dt>
-<em><code class="parameter">key</code></em></dt>
+<code class="parameter">key</code></dt>
 
      <dd>
 
@@ -71,7 +71,7 @@
     
     
      <dt>
-<em><code class="parameter">value</code></em></dt>
+<code class="parameter">value</code></dt>
 
      <dd>
 
@@ -83,7 +83,7 @@
     
     
      <dt>
-<em><code class="parameter">expiration</code></em></dt>
+<code class="parameter">expiration</code></dt>
 
      <dd>
 

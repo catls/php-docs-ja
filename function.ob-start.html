@@ -66,23 +66,23 @@
 
     
      <dt>
-<em><code class="parameter">output_callback</code></em></dt>
+<code class="parameter">output_callback</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションの引数 <em><code class="parameter">output_callback</code></em>
+       オプションの引数 <code class="parameter">output_callback</code>
        関数を指定することが可能です。この関数は、パラメータとして文字列をとり、
        文字列を返します。このコールバック関数は、
        出力バッファがフラッシュ (送信) あるいは消去
        (<span class="function"><a href="function.ob-flush.html" class="function">ob_flush()</a></span>, <span class="function"><a href="function.ob-clean.html" class="function">ob_clean()</a></span>
        あるいは同等の関数で) された場合、
        またはリクエストの最後にブラウザに出力をフラッシュする際にコールされます。
-       <em><code class="parameter">output_callback</code></em> がコールされた際に、
+       <code class="parameter">output_callback</code> がコールされた際に、
        この関数は出力バッファの内容をパラメータとして受け取ります。このコールバック関数は、
        新規の出力バッファを実際に出力される結果として返す必要があり、
        この結果はブラウザに送信されます。
-       <em><code class="parameter">output_callback</code></em> がコール可能な関数ではない場合は
+       <code class="parameter">output_callback</code> がコール可能な関数ではない場合は
        <strong><code>FALSE</code></strong> を返します。
        コールバックのシグネチャは、次のとおりです。
       </p>
@@ -97,7 +97,7 @@
 
         
          <dt>
-<em><code class="parameter">buffer</code></em></dt>
+<code class="parameter">buffer</code></dt>
 
          <dd>
 
@@ -109,7 +109,7 @@
         
         
          <dt>
-<em><code class="parameter">phase</code></em></dt>
+<code class="parameter">phase</code></dt>
 
          <dd>
 
@@ -123,11 +123,11 @@
 
       </p>
       <p class="para">
-       <em><code class="parameter">output_callback</code></em> が <strong><code>FALSE</code></strong>
+       <code class="parameter">output_callback</code> が <strong><code>FALSE</code></strong>
        を返すと、元の入力がそのままブラウザに送信されます。
       </p>
       <p class="para">
-       <em><code class="parameter">output_callback</code></em> パラメータに <strong><code>NULL</code></strong> 値を渡すと、
+       <code class="parameter">output_callback</code> パラメータに <strong><code>NULL</code></strong> 値を渡すと、
        これをバイパスすることができます。
       </p>
       <p class="para">
@@ -156,13 +156,13 @@
     
     
      <dt>
-<em><code class="parameter">chunk_size</code></em></dt>
+<code class="parameter">chunk_size</code></dt>
 
      <dd>
 
       <p class="para">
-       オプションのパラメータ <em><code class="parameter">chunk_size</code></em> が渡された場合、
-       バッファの長さが <em><code class="parameter">chunk_size</code></em> バイトを超えるたびに、
+       オプションのパラメータ <code class="parameter">chunk_size</code> が渡された場合、
+       バッファの長さが <code class="parameter">chunk_size</code> バイトを超えるたびに、
        出力の後でバッファがフラッシュされます。
        デフォルト値は <em>0</em> で、これは出力関数がコールされるのが
        出力バッファが閉じたときだけであることを意味します。
@@ -176,12 +176,12 @@
     
     
      <dt>
-<em><code class="parameter">flags</code></em></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">flags</code></em> はビットマスクで、出力バッファ上でどんな操作ができるのかを制御します。
+       <code class="parameter">flags</code> はビットマスクで、出力バッファ上でどんな操作ができるのかを制御します。
        デフォルトでは、出力バッファのクリーン、フラッシュ、削除がすべてできるようになっています。
        これは、明示的に
        <strong><code>PHP_OUTPUT_HANDLER_CLEANABLE</code></strong> |
@@ -269,9 +269,9 @@
        <td>5.4.0</td>
        <td>
         <span class="function"><strong>ob_start()</strong></span> の三番目のパラメータが
-        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <em><code class="parameter">erase</code></em>
+        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <code class="parameter">erase</code>
         (これを <strong><code>FALSE</code></strong> にすると、スクリプトの実行が終了するまで出力バッファを削除できなくなります)
-        から <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> <em><code class="parameter">flags</code></em> に変わりました。
+        から <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> <code class="parameter">flags</code> に変わりました。
         残念ながら、そのせいで API の互換性が崩れてしまい。
         PHP 5.4.0 より前のバージョンで三番目のパラメータを使っていたコードは、
         そのままでは期待通りに動かなくなりました。
@@ -291,7 +291,7 @@
       <tr>
        <td>4.3.2</td>
        <td>
-        <em><code class="parameter">output_callback</code></em> を実行することができない場合に
+        <code class="parameter">output_callback</code> を実行することができない場合に
         <strong><code>FALSE</code></strong> を返すように変更されました。
        </td>
       </tr>
@@ -299,7 +299,7 @@
       <tr>
        <td>4.2.0</td>
        <td>
-        <em><code class="parameter">erase</code></em> パラメータが追加されました。
+        <code class="parameter">erase</code> パラメータが追加されました。
        </td>
       </tr>
 

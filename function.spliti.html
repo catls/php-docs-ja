@@ -27,7 +27,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">string</code></em> を、正規表現によって配列に分割します。
+   <code class="parameter">string</code> を、正規表現によって配列に分割します。
   </p>
   <p class="para">
    この関数は、アルファベット文字にマッチさせる際に大文字小文字を
@@ -46,7 +46,7 @@
 
     
      <dt>
-<em><code class="parameter">pattern</code></em></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -68,7 +68,7 @@
     
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -80,14 +80,14 @@
     
     
      <dt>
-<em><code class="parameter">limit</code></em></dt>
+<code class="parameter">limit</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">limit</code></em> が指定された場合、返される配列には
-       最大 <em><code class="parameter">limit</code></em> の要素が含まれます。この場合、
-       最後の要素には <em><code class="parameter">string</code></em> の残りの部分が全て
+       <code class="parameter">limit</code> が指定された場合、返される配列には
+       最大 <code class="parameter">limit</code> の要素が含まれます。この場合、
+       最後の要素には <code class="parameter">string</code> の残りの部分が全て
        入っています。
       </p>
      </dd>
@@ -103,16 +103,16 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    文字列の配列を返します。配列の各要素は、大文字小文字を区別する正規表現
-   <em><code class="parameter">pattern</code></em> により区切られた
-   <em><code class="parameter">string</code></em> 中の部分文字列です。
+   <code class="parameter">pattern</code> により区切られた
+   <code class="parameter">string</code> 中の部分文字列です。
   </p>
   <p class="para">
-   <em><code class="parameter">pattern</code></em> が <span class="replaceable">n</span> 回
+   <code class="parameter">pattern</code> が <span class="replaceable">n</span> 回
    現れる場合、返される配列には、
    <em><span class="replaceable">n</span>+1</em> 個のアイテムが
-   含まれます。例えば、<em><code class="parameter">pattern</code></em> が現れない場合、
+   含まれます。例えば、<code class="parameter">pattern</code> が現れない場合、
    1 個の要素のみを有する配列が返されます。もちろん、これは
-   <em><code class="parameter">string</code></em> が空の場合でも有効です。
+   <code class="parameter">string</code> が空の場合でも有効です。
    エラーを生じた場合、<span class="function"><strong>spliti()</strong></span> は
    <strong><code>FALSE</code></strong> を返します。
   </p>
@@ -123,7 +123,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    この例では &#039;a&#039; を区切り文字として文字列を分割します。
-   <div class="example" id="example-4808">
+   <div class="example" id="example-4810">
     <p><strong>例1 <span class="function"><strong>spliti()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

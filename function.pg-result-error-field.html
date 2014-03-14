@@ -26,10 +26,10 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>pg_result_error_field()</strong></span> は、<em><code class="parameter">result</code></em>
+   <span class="function"><strong>pg_result_error_field()</strong></span> は、<code class="parameter">result</code>
    リソースに関するエラーメッセージの特定のフィールドを返します。
    PostgreSQL 7.4 以降のサーバーでのみ有効です。エラーフィールドは
-   <em><code class="parameter">fieldcode</code></em> で定義します。
+   <code class="parameter">fieldcode</code> で定義します。
   </p>
   <p class="para">
    <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span> や <span class="function"><a href="function.pg-query-params.html" class="function">pg_query_params()</a></span>
@@ -53,7 +53,7 @@
 
     
      <dt>
-<em><code class="parameter">result</code></em></dt>
+<code class="parameter">result</code></dt>
 
      <dd>
 
@@ -65,12 +65,12 @@
     
     
      <dt>
-<em><code class="parameter">fieldcode</code></em></dt>
+<code class="parameter">fieldcode</code></dt>
 
      <dd>
 
         <p class="para">
-         以下の <em><code class="parameter">fieldcode</code></em> が使用可能です。 <strong><code>PGSQL_DIAG_SEVERITY</code></strong>、
+         以下の <code class="parameter">fieldcode</code> が使用可能です。 <strong><code>PGSQL_DIAG_SEVERITY</code></strong>、
          <strong><code>PGSQL_DIAG_SQLSTATE</code></strong>、<strong><code>PGSQL_DIAG_MESSAGE_PRIMARY</code></strong>、
          <strong><code>PGSQL_DIAG_MESSAGE_DETAIL</code></strong>、
          <strong><code>PGSQL_DIAG_MESSAGE_HINT</code></strong>、<strong><code>PGSQL_DIAG_STATEMENT_POSITION</code></strong>、

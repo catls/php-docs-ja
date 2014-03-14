@@ -89,12 +89,12 @@ php &gt; $foo[TAB]ThisIsAReallyLongVariableName</pre>
 
   <p class="para">
    PHP 5.4.0 以降、<acronym title="Command Line Interpreter/Interface">CLI</acronym> <acronym title="Server Application Programming Interface">SAPI</acronym> に二つの新たな
-   <var class="filename">php.ini</var> 設定が追加されました。<em><code class="parameter">cli.pager</code></em> と
-   <em><code class="parameter">cli.prompt</code></em> です。<em><code class="parameter">cli.pager</code></em>
+   <var class="filename">php.ini</var> 設定が追加されました。<code class="parameter">cli.pager</code> と
+   <code class="parameter">cli.prompt</code> です。<code class="parameter">cli.pager</code>
    は、外部のプログラム (<var class="filename">less</var> など)
    を出力のページャとして指定することができます。
    出力が画面に直接送られるかわりに、このページャに送られるようになります。
-   <em><code class="parameter">cli.prompt</code></em> を指定すると、
+   <code class="parameter">cli.prompt</code> を指定すると、
    <em>php &gt;</em> プロンプトを変更することができます。
   </p>
 
@@ -106,7 +106,7 @@ php &gt; $foo[TAB]ThisIsAReallyLongVariableName</pre>
   <div class="example" id="example-380">
    <p><strong>例3 対話シェル内での <var class="filename">php.ini</var> の設定</strong></p>
    <div class="example-contents"><p>
-    <em><code class="parameter">cli.prompt</code></em> を設定します。
+    <code class="parameter">cli.prompt</code> を設定します。
    </p></div>
    <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">php &gt; #cli.prompt=hello world :&gt; 
@@ -140,9 +140,9 @@ php &gt;</pre>
   </div>
 
   <p class="para">
-   <em><code class="parameter">cli.prompt</code></em> の設定は、次のようなエスケープシーケンスに対応しています。
+   <code class="parameter">cli.prompt</code> の設定は、次のようなエスケープシーケンスに対応しています。
    <table class="doctable table">
-    <caption><strong><em><code class="parameter">cli.prompt</code></em> のエスケープシーケンス</strong></caption>
+    <caption><strong><code class="parameter">cli.prompt</code> のエスケープシーケンス</strong></caption>
     
      <thead>
       <tr>

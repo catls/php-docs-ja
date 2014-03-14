@@ -27,11 +27,11 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">handle</code></em> が指しているファイルのファイル位置識別子を
-   ファイル・ストリーム中の <em><code class="parameter">offset</code></em> バイト目に
+   <code class="parameter">handle</code> が指しているファイルのファイル位置識別子を
+   ファイル・ストリーム中の <code class="parameter">offset</code> バイト目に
    セットします。新規位置は、ファイルの先頭からのバイト数で
-   測られます。これは <em><code class="parameter">whence</code></em> で指定した位置に
-   <em><code class="parameter">offset</code></em> を追加することにより得られます。
+   測られます。これは <code class="parameter">whence</code> で指定した位置に
+   <code class="parameter">offset</code> を追加することにより得られます。
   </p>
   <p class="para">
    一般的に、ファイルの終端より先の位置に移動することも許されています。
@@ -50,7 +50,7 @@
 
     
      <dt>
-<em><code class="parameter">handle</code></em></dt>
+<code class="parameter">handle</code></dt>
 
      <dd>
 
@@ -61,7 +61,7 @@
     
     
      <dt>
-<em><code class="parameter">offset</code></em></dt>
+<code class="parameter">offset</code></dt>
 
      <dd>
 
@@ -70,8 +70,8 @@
       </p>
       <p class="para">
        ファイルの終端から数えた位置に移動するには、負の値を
-       <em><code class="parameter">offset</code></em> に渡して
-       <em><code class="parameter">whence</code></em> を
+       <code class="parameter">offset</code> に渡して
+       <code class="parameter">whence</code> を
        <strong><code>SEEK_END</code></strong> に設定しなければなりません。
       </p>
      </dd>
@@ -79,16 +79,16 @@
     
     
      <dt>
-<em><code class="parameter">whence</code></em></dt>
+<code class="parameter">whence</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">whence</code></em> の値は以下のようになります。
+       <code class="parameter">whence</code> の値は以下のようになります。
        <ul class="simplelist">
-        <li class="member"><strong><code>SEEK_SET</code></strong> - 位置を <em><code class="parameter">offset</code></em> バイト目に設定する</li>
-        <li class="member"><strong><code>SEEK_CUR</code></strong> - 現在の位置に <em><code class="parameter">offset</code></em> を加えた位置に設定する</li>
-        <li class="member"><strong><code>SEEK_END</code></strong> - ファイル終端に <em><code class="parameter">offset</code></em> を加えた位置に設定する</li>
+        <li class="member"><strong><code>SEEK_SET</code></strong> - 位置を <code class="parameter">offset</code> バイト目に設定する</li>
+        <li class="member"><strong><code>SEEK_CUR</code></strong> - 現在の位置に <code class="parameter">offset</code> を加えた位置に設定する</li>
+        <li class="member"><strong><code>SEEK_END</code></strong> - ファイル終端に <code class="parameter">offset</code> を加えた位置に設定する</li>
        </ul>
       </p>
      </dd>

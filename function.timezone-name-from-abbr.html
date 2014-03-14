@@ -35,7 +35,7 @@
 
     
      <dt>
-<em><code class="parameter">abbr</code></em></dt>
+<code class="parameter">abbr</code></dt>
 
      <dd>
 
@@ -47,13 +47,13 @@
     
     
      <dt>
-<em><code class="parameter">gmtOffset</code></em></dt>
+<code class="parameter">gmtOffset</code></dt>
 
      <dd>
 
       <p class="para">
        GMT からのオフセット秒数。デフォルトは -1 で、
-       この場合は <em><code class="parameter">abbr</code></em>
+       この場合は <code class="parameter">abbr</code>
        に対応するタイムゾーンのうち最初に見つかったものを返します。
        それ以外の場合は指定したオフセットを探し、
        そこで見つからなかった場合には
@@ -64,20 +64,20 @@
     
     
      <dt>
-<em><code class="parameter">isdst</code></em></dt>
+<code class="parameter">isdst</code></dt>
 
      <dd>
 
       <p class="para">
        夏時間のインジケータ。デフォルトは -1 で、
        タイムゾーンが夏時間を持っているかどうかは考慮せずに検索します。
-       この値を 1 にすると、<em><code class="parameter">gmtOffset</code></em>
+       この値を 1 にすると、<code class="parameter">gmtOffset</code>
        は夏時間を考慮したオフセットと見なします。
-       0 の場合は、<em><code class="parameter">gmtOffset</code></em>
+       0 の場合は、<code class="parameter">gmtOffset</code>
        は夏時間を考慮しないオフセットと見なします。
-       <em><code class="parameter">abbr</code></em> が存在しない場合、
-       タイムゾーンの検索は <em><code class="parameter">gmtOffset</code></em> と
-       <em><code class="parameter">isdst</code></em> だけで行います。
+       <code class="parameter">abbr</code> が存在しない場合、
+       タイムゾーンの検索は <code class="parameter">gmtOffset</code> と
+       <code class="parameter">isdst</code> だけで行います。
       </p>
      </dd>
 

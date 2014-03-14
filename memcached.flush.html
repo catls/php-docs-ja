@@ -26,7 +26,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>Memcached::flush()</strong></span> は、既存のキャッシュ内のすべてのアイテムを即時
-   (デフォルト) あるいは指定した <em><code class="parameter">delay</code></em> の後に無効化します。
+   (デフォルト) あるいは指定した <code class="parameter">delay</code> の後に無効化します。
    無効化した後は、取得系のコマンドには一切アイテムを返さなくなります
    (<span class="function"><strong>Memcached::flush()</strong></span> がアイテムを無効化したあとで同名のキーを改めて格納した場合は別です)。
    既存のアイテムが確保していたメモリはその時点では開放されません。
@@ -42,7 +42,7 @@
 
     
      <dt>
-<em><code class="parameter">delay</code></em></dt>
+<code class="parameter">delay</code></dt>
 
      <dd>
 

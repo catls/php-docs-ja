@@ -29,9 +29,9 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>substr_replace()</strong></span>は、文字列
-   <em><code class="parameter">string</code></em>の <em><code class="parameter">start</code></em> および
-   (オプションの) <em><code class="parameter">length</code></em> パラメータで区切られた部分を
-   <em><code class="parameter">replacement</code></em> で指定した文字列に置換します。
+   <code class="parameter">string</code>の <code class="parameter">start</code> および
+   (オプションの) <code class="parameter">length</code> パラメータで区切られた部分を
+   <code class="parameter">replacement</code> で指定した文字列に置換します。
   </p>
  </div>
 
@@ -43,7 +43,7 @@
 
     
      <dt>
-<em><code class="parameter">string</code></em></dt>
+<code class="parameter">string</code></dt>
 
      <dd>
 
@@ -52,8 +52,8 @@
       </p>
       <p class="para">
        文字列の配列を指定することもでき、各文字列について順に置換を行います。
-       この場合、他のパラメータ <em><code class="parameter">replacement</code></em>、<em><code class="parameter">start</code></em>
-       および <em><code class="parameter">length</code></em> がスカラ値なら
+       この場合、他のパラメータ <code class="parameter">replacement</code>、<code class="parameter">start</code>
+       および <code class="parameter">length</code> がスカラ値なら
        それを各入力文字列に順次適用し、配列なら各入力文字列に対応する要素の値を適用します。
       </p>
      </dd>
@@ -61,7 +61,7 @@
     
     
      <dt>
-<em><code class="parameter">replacement</code></em></dt>
+<code class="parameter">replacement</code></dt>
 
      <dd>
 
@@ -73,40 +73,40 @@
     
     
      <dt>
-<em><code class="parameter">start</code></em></dt>
+<code class="parameter">start</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">start</code></em> が正の場合、置換は
-       <em><code class="parameter">string</code></em> で <em><code class="parameter">start</code></em>
+       <code class="parameter">start</code> が正の場合、置換は
+       <code class="parameter">string</code> で <code class="parameter">start</code>
        番目の文字から始まります。
       </p>
       <p class="para">
-       <em><code class="parameter">start</code></em> が負の場合、置換は
-       <em><code class="parameter">string</code></em> の終端から
-       <em><code class="parameter">start</code></em> 番目の文字から始まります。
+       <code class="parameter">start</code> が負の場合、置換は
+       <code class="parameter">string</code> の終端から
+       <code class="parameter">start</code> 番目の文字から始まります。
       </p>
      </dd>
 
     
     
      <dt>
-<em><code class="parameter">length</code></em></dt>
+<code class="parameter">length</code></dt>
 
      <dd>
 
       <p class="para">
        正の値を指定した場合、
-       <em><code class="parameter">string</code></em> の置換される部分の長さを表します。
-       負の場合、置換を停止する位置が <em><code class="parameter">string</code></em>
+       <code class="parameter">string</code> の置換される部分の長さを表します。
+       負の場合、置換を停止する位置が <code class="parameter">string</code>
        の終端から何文字目であるかを表します。このパラメータが省略された場合、
-       デフォルト値は strlen(<em><code class="parameter">string</code></em>)、すなわち、
-       <em><code class="parameter">string</code></em> の終端まで置換することになります。
-       当然、もし <em><code class="parameter">length</code></em> がゼロだったら、
-       この関数は <em><code class="parameter">string</code></em> の最初から
-       <em><code class="parameter">start</code></em> の位置に
-       <em><code class="parameter">replacement</code></em> を挿入するということになります。
+       デフォルト値は strlen(<code class="parameter">string</code>)、すなわち、
+       <code class="parameter">string</code> の終端まで置換することになります。
+       当然、もし <code class="parameter">length</code> がゼロだったら、
+       この関数は <code class="parameter">string</code> の最初から
+       <code class="parameter">start</code> の位置に
+       <code class="parameter">replacement</code> を挿入するということになります。
       </p>
      </dd>
 
@@ -120,7 +120,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.substr-replace-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   結果の文字列を返します。もし、<em><code class="parameter">string</code></em>
+   結果の文字列を返します。もし、<code class="parameter">string</code>
    が配列の場合、配列が返されます。
   </p>
  </div>
@@ -158,7 +158,7 @@
  <div class="refsect1 examples" id="refsect1-function.substr-replace-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4909">
+   <div class="example" id="example-4911">
     <p><strong>例1 シンプルな <span class="function"><strong>substr_replace()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -170,7 +170,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4910">
+   <div class="example" id="example-4912">
     <p><strong>例2 
      <span class="function"><strong>substr_replace()</strong></span> で複数の文字列を一度に置換する例
     </strong></p>

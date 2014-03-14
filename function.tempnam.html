@@ -42,7 +42,7 @@
 
     
      <dt>
-<em><code class="parameter">dir</code></em></dt>
+<code class="parameter">dir</code></dt>
 
      <dd>
 
@@ -54,7 +54,7 @@
     
     
      <dt>
-<em><code class="parameter">prefix</code></em></dt>
+<code class="parameter">prefix</code></dt>
 
      <dd>
 
@@ -102,9 +102,9 @@
        <td>
         PHP 4.0.6 より前では、関数 <span class="function"><strong>tempnam()</strong></span>
         の動作はシステムに依存していました。Windows において <var class="varname"><var class="varname">TMP</var></var> 環境変数は
-        <em><code class="parameter">dir</code></em> パラメータを上書きします。Linux においては、
+        <code class="parameter">dir</code> パラメータを上書きします。Linux においては、
         <var class="varname"><var class="varname">TMPDIR</var></var> 環境変数が優先されます。一方 SVR4 においては、
-        指定したディレクトリが存在する場合は、常に <em><code class="parameter">dir</code></em>
+        指定したディレクトリが存在する場合は、常に <code class="parameter">dir</code>
         パラメータを使用します。疑問がある場合は、tempnam(3)
         に関するシステムドキュメントを参照ください。
        </td>
@@ -150,10 +150,10 @@
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-    PHP が指定されたパラメータ <em><code class="parameter">dir</code></em>
+    PHP が指定されたパラメータ <code class="parameter">dir</code>
     にファイルを生成することができない場合、
     システム標準のフォールバックが実行されます。
-    NTFS では、指定した <em><code class="parameter">dir</code></em>
+    NTFS では、指定した <code class="parameter">dir</code>
     に 65534 を超える数のファイルが存在する場合にも同じことが起こります。
    </span>
   </p></blockquote>

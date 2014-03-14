@@ -33,13 +33,13 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>imagecopymergegray()</strong></span> は、
-   <em><code class="parameter">src_im</code></em> の X,Y座標
-   <em><code class="parameter">src_x</code></em>, <em><code class="parameter">src_y </code></em> から
-   始まる幅<em><code class="parameter">src_w</code></em>、高さ
-   <em><code class="parameter">src_h</code></em> の領域を
-   <em><code class="parameter">dst_im</code></em>にコピーします。
-   定義された部分は、x、y座標<em><code class="parameter">dst_x</code></em>、
-   <em><code class="parameter">dst_y</code></em>にコピーされます。
+   <code class="parameter">src_im</code> の X,Y座標
+   <code class="parameter">src_x</code>, <code class="parameter">src_y </code> から
+   始まる幅<code class="parameter">src_w</code>、高さ
+   <code class="parameter">src_h</code> の領域を
+   <code class="parameter">dst_im</code>にコピーします。
+   定義された部分は、x、y座標<code class="parameter">dst_x</code>、
+   <code class="parameter">dst_y</code>にコピーされます。
   </p>
   <p class="para">
    この関数は <span class="function"><a href="function.imagecopymerge.html" class="function">imagecopymerge()</a></span> と同じですが、マー
@@ -56,7 +56,7 @@
 
     
      <dt>
-<em><code class="parameter">dst_im</code></em></dt>
+<code class="parameter">dst_im</code></dt>
 
      <dd>
 
@@ -66,7 +66,7 @@
     
     
      <dt>
-<em><code class="parameter">src_im</code></em></dt>
+<code class="parameter">src_im</code></dt>
 
      <dd>
 
@@ -76,7 +76,7 @@
     
     
      <dt>
-<em><code class="parameter">dst_x</code></em></dt>
+<code class="parameter">dst_x</code></dt>
 
      <dd>
 
@@ -88,7 +88,7 @@
     
     
      <dt>
-<em><code class="parameter">dst_y</code></em></dt>
+<code class="parameter">dst_y</code></dt>
 
      <dd>
 
@@ -100,7 +100,7 @@
     
     
      <dt>
-<em><code class="parameter">src_x</code></em></dt>
+<code class="parameter">src_x</code></dt>
 
      <dd>
 
@@ -112,7 +112,7 @@
     
     
      <dt>
-<em><code class="parameter">src_y</code></em></dt>
+<code class="parameter">src_y</code></dt>
 
      <dd>
 
@@ -124,7 +124,7 @@
     
     
      <dt>
-<em><code class="parameter">src_w</code></em></dt>
+<code class="parameter">src_w</code></dt>
 
      <dd>
 
@@ -134,7 +134,7 @@
     
     
      <dt>
-<em><code class="parameter">src_h</code></em></dt>
+<code class="parameter">src_h</code></dt>
 
      <dd>
 
@@ -144,16 +144,16 @@
     
     
      <dt>
-<em><code class="parameter">pct</code></em></dt>
+<code class="parameter">pct</code></dt>
 
      <dd>
 
       <p class="para">
-        <em><code class="parameter">src_im</code></em> が <em><code class="parameter">pct</code></em>
+        <code class="parameter">src_im</code> が <code class="parameter">pct</code>
         にしたがってグレースケールに変換されます。
-        <em><code class="parameter">pct</code></em> が 0 の場合は完全なグレースケール、
+        <code class="parameter">pct</code> が 0 の場合は完全なグレースケール、
         100 の場合は何も変わらない状態となります。
-        <em><code class="parameter">pct</code></em> = 100 の場合、パレット画像に対してはこの関数は
+        <code class="parameter">pct</code> = 100 の場合、パレット画像に対してはこの関数は
         <span class="function"><a href="function.imagecopy.html" class="function">imagecopy()</a></span> と同じ動作となります
         (アルファコンポーネントを無視する点だけが違います)。
         一方 true color 画像については、この関数はアルファ透過度を実装しています。

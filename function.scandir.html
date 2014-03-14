@@ -29,7 +29,7 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <em><code class="parameter">directory</code></em> 内のファイルおよびディレクトリを
+   <code class="parameter">directory</code> 内のファイルおよびディレクトリを
    配列で返します。
   </p>
 
@@ -43,7 +43,7 @@
 
     
      <dt>
-<em><code class="parameter">directory</code></em></dt>
+<code class="parameter">directory</code></dt>
 
      <dd>
 
@@ -55,13 +55,13 @@
     
     
      <dt>
-<em><code class="parameter">sorting_order</code></em></dt>
+<code class="parameter">sorting_order</code></dt>
 
      <dd>
 
       <p class="para">
        デフォルトでは、ソート順はアルファベット昇順です。
-       オプションの <em><code class="parameter">sorting_order</code></em>
+       オプションの <code class="parameter">sorting_order</code>
        に <strong><code>SCANDIR_SORT_DESCENDING</code></strong> を設定した場合、
        ソート順はアルファベット降順になります。
        <strong><code>SCANDIR_SORT_NONE</code></strong> を設定すると、
@@ -72,12 +72,12 @@
     
     
      <dt>
-<em><code class="parameter">context</code></em></dt>
+<code class="parameter">context</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">context</code></em> パラメータの説明については、
+       <code class="parameter">context</code> パラメータの説明については、
        マニュアルの<a href="ref.stream.html" class="link">ストリーム</a>
        を参照ください。
       </p> 
@@ -94,7 +94,7 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合にファイル名の配列、失敗した場合に <strong><code>FALSE</code></strong> を返します。
-   <em><code class="parameter">directory</code></em> がディレクトリではない場合は、
+   <code class="parameter">directory</code> がディレクトリではない場合は、
    <strong><code>FALSE</code></strong> を返し、<strong><code>E_WARNING</code></strong> レベルのエラーを
    発行します。
   </p> 
@@ -118,7 +118,7 @@
       <tr>
        <td>5.4.0</td>
        <td>
-        <em><code class="parameter">sorting_order</code></em> <a href="dir.constants.html" class="link">定数</a>
+        <code class="parameter">sorting_order</code> <a href="dir.constants.html" class="link">定数</a>
         が追加されました。これまでのバージョンでは、非ゼロの値を指定するとすべて降順となっていました。
         つまり、PHP のバージョンにかかわらず、次のようになります。
         <em>0</em> を指定すれば昇順、<em>1</em> を指定すれば降順。

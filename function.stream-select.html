@@ -44,12 +44,12 @@
 
     
      <dt>
-<em><code class="parameter">read</code></em></dt>
+<code class="parameter">read</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">read</code></em> 配列に列挙されたストリームに対しては、
+       <code class="parameter">read</code> 配列に列挙されたストリームに対しては、
        何らかのデータがそのストリーム内で読み出せる状態にあるかどうか
        監視が行われます
        (より正確にいえば、ブロックしないで読み出せる状態かどうか -
@@ -61,12 +61,12 @@
     
     
      <dt>
-<em><code class="parameter">write</code></em></dt>
+<code class="parameter">write</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">write</code></em> 配列に列挙されたストリームに対しては、
+       <code class="parameter">write</code> 配列に列挙されたストリームに対しては、
        ブロックしないで書き込みができるかどうかの監視が行われます。
       </p>
      </dd>
@@ -74,20 +74,20 @@
     
     
      <dt>
-<em><code class="parameter">except</code></em></dt>
+<code class="parameter">except</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">except</code></em> 配列に列挙されたストリームに対しては、
+       <code class="parameter">except</code> 配列に列挙されたストリームに対しては、
        重大な例外（&quot;帯域外の&quot;）データが発生したかどうかの監視が行われます。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
         <span class="function"><strong>stream_select()</strong></span> の終了時には、
         どのストリームの状態が実際に変化したのかが分かるよう、
-        配列 <em><code class="parameter">read</code></em>、<em><code class="parameter">write</code></em> および
-        <em><code class="parameter">except</code></em> に変更が加えられます。
+        配列 <code class="parameter">read</code>、<code class="parameter">write</code> および
+        <code class="parameter">except</code> に変更が加えられます。
        </p>
       </p></blockquote>
       <span class="simpara">
@@ -103,24 +103,24 @@
     
     
      <dt>
-<em><code class="parameter">tv_sec</code></em></dt>
+<code class="parameter">tv_sec</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">tv_sec</code></em> と <em><code class="parameter">tv_usec</code></em>
+       <code class="parameter">tv_sec</code> と <code class="parameter">tv_usec</code>
        は、一体となって、<em class="emphasis">timeout</em> パラメータを表現します。
-       <em><code class="parameter">tv_sec</code></em> は秒数を指定し、一方
-       <em><code class="parameter">tv_usec</code></em> はマイクロ秒数を指定します。
+       <code class="parameter">tv_sec</code> は秒数を指定し、一方
+       <code class="parameter">tv_usec</code> はマイクロ秒数を指定します。
        <em class="emphasis">timeout</em> は、<span class="function"><strong>stream_select()</strong></span>
        の実行から戻るまでの時間の上限です。
-       <em><code class="parameter">tv_sec</code></em> および <em><code class="parameter">tv_usec</code></em>
+       <code class="parameter">tv_sec</code> および <code class="parameter">tv_usec</code>
        の両方に <em>0</em> を指定すると
        <span class="function"><strong>stream_select()</strong></span> はデータを待たずに一瞬で戻ります。
        これは現在のストリームの状態を示します。
       </p>
       <p class="para">
-       <em><code class="parameter">tv_sec</code></em> が <strong><code>NULL</code></strong> (タイムアウトなし) の場合、
+       <code class="parameter">tv_sec</code> が <strong><code>NULL</code></strong> (タイムアウトなし) の場合、
        <span class="function"><strong>stream_select()</strong></span> はブロックしつづけ、調べている
        ストリームのひとつでイベントが発生する（あるいはシグナルがシステム
        コールを中断する）まで終了しません。
@@ -150,12 +150,12 @@
     
     
      <dt>
-<em><code class="parameter">tv_usec</code></em></dt>
+<code class="parameter">tv_usec</code></dt>
 
      <dd>
 
       <p class="para">
-       <em><code class="parameter">tv_sec</code></em> の説明を参照ください。
+       <code class="parameter">tv_sec</code> の説明を参照ください。
       </p>
      </dd>
 
@@ -184,8 +184,8 @@
    <div class="example" id="example-4035">
     <p><strong>例1 <span class="function"><strong>stream_select()</strong></span> の例</strong></p>
     <div class="example-contents"><p>
-     この例では、<em><code class="parameter">$stream1</code></em> あるいは
-     <em><code class="parameter">$stream2</code></em> のどちらかに読み込めるデータが
+     この例では、<code class="parameter">$stream1</code> あるいは
+     <code class="parameter">$stream2</code> のどちらかに読み込めるデータが
      到達したかどうかを調べます。
      タイムアウトが <em>0</em> なので、すぐに結果を返します。
     </p></div>

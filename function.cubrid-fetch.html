@@ -38,15 +38,15 @@
 
     
   <dt>
-<em><code class="parameter">result</code></em></dt>
+<code class="parameter">result</code></dt>
 
   <dd>
-<p class="para"><em><code class="parameter">result</code></em> comes from a call to <span class="function"><a href="function.cubrid-execute.html" class="function">cubrid_execute()</a></span></p></dd>
+<p class="para"><code class="parameter">result</code> comes from a call to <span class="function"><a href="function.cubrid-execute.html" class="function">cubrid_execute()</a></span></p></dd>
 
    
    
   <dt>
-<em><code class="parameter">type</code></em></dt>
+<code class="parameter">type</code></dt>
 
   <dd>
 <p class="para">Array type of the fetched result CUBRID_NUM, CUBRID_ASSOC,
@@ -64,14 +64,14 @@
   <h3 class="title">返り値</h3>
   <p class="para">Result array or object, when process is successful.</p>
   <p class="para"><strong><code>FALSE</code></strong>, when there are no more rows; NULL, when process is unsuccessful.</p>
-  <p class="para">The result can be received either as an array or as an object, and you can decide which data type to use by setting the <em><code class="parameter">type</code></em> argument. The <em><code class="parameter">type</code></em> variable can be set to one of the following values:</p>
+  <p class="para">The result can be received either as an array or as an object, and you can decide which data type to use by setting the <code class="parameter">type</code> argument. The <code class="parameter">type</code> variable can be set to one of the following values:</p>
     <ul class="simplelist">
         <li class="member">CUBRID_NUM : Numerical array (0-based)</li>
         <li class="member">CUBRID_ASSOC : Associative array</li>
         <li class="member">CUBRID_BOTH : Numerical &amp; Associative array (default)</li>
         <li class="member">CUBRID_OBJECT : object that has the attribute name as the column name of query result</li>
     </ul>  
-  <p class="para">When <em><code class="parameter">type</code></em> argument is omitted, the result will be received using CUBRID_BOTH option as default. When you want to receive query result in object data type, the column name of the result must obey the naming rules for identifiers in PHP.  For example, column name such as &quot;count(*)&quot; cannot be received in object type.</p>
+  <p class="para">When <code class="parameter">type</code> argument is omitted, the result will be received using CUBRID_BOTH option as default. When you want to receive query result in object data type, the column name of the result must obey the naming rules for identifiers in PHP.  For example, column name such as &quot;count(*)&quot; cannot be received in object type.</p>
  </div>
 
 

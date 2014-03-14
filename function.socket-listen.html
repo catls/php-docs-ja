@@ -26,10 +26,10 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   ソケット <em><code class="parameter">socket</code></em> が
+   ソケット <code class="parameter">socket</code> が
    <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> を用いて作成され、
    <span class="function"><a href="function.socket-bind.html" class="function">socket_bind()</a></span> で名前が付けられた後、
-   <em><code class="parameter">socket</code></em> 上の接続要求を待つための通信ができるようになります。
+   <code class="parameter">socket</code> 上の接続要求を待つための通信ができるようになります。
   </p>
   <p class="para">
    <span class="function"><strong>socket_listen()</strong></span> は、ソケットが
@@ -46,7 +46,7 @@
 
     
      <dt>
-<em><code class="parameter">socket</code></em></dt>
+<code class="parameter">socket</code></dt>
 
      <dd>
 
@@ -58,12 +58,12 @@
     
     
      <dt>
-<em><code class="parameter">backlog</code></em></dt>
+<code class="parameter">backlog</code></dt>
 
      <dd>
 
       <p class="para">
-       最大 <em><code class="parameter">backlog</code></em> 個の接続を処理用の
+       最大 <code class="parameter">backlog</code> 個の接続を処理用の
        キューで待ち受けることが可能です。もし待ちうけ用のキューが
        いっぱいになった場合、クライアントでは <em>ECONNREFUSED</em>
        の通知とともにエラーが発生します。あるいは、もし基盤となるプロトコルが
@@ -72,7 +72,7 @@
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
-        <em><code class="parameter">backlog</code></em> パラメータに指定できる値の最大値は
+        <code class="parameter">backlog</code> パラメータに指定できる値の最大値は
         プラットフォームに大きく依存します。Linux では、最大値は
         <strong><code>SOMAXCONN</code></strong> に切り詰められます。win32 では、
         もし <strong><code>SOMAXCONN</code></strong> を渡した場合、backlog の
