@@ -752,7 +752,10 @@ bool(false)
    リソースは常に <em>&quot;Resource id #1&quot;</em>
    という文字列に変換されます。<em>1</em> は実行中の
    PHP によって割り当てられる
-   <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> のユニークな番号です。
+   <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> の番号です。
+   この文字列の構造に依存したコードを書いてはいけません (この構造は変わる可能性があります)
+   が、スクリプトの実行中 (ウェブのリクエストや CLI プロセスの処理中) は、指定したリソースに対してこの文字列が一意に割り当てられることが保証されます。
+   他のリソースで同じ文字列が再利用されることはありません。
    リソースの型を知るためには <span class="function"><a href="function.get-resource-type.html" class="function">get_resource_type()</a></span>
    を使用してください。
   </p>

@@ -55,14 +55,40 @@
 
      <dd>
 
-      <p class="para">
-       コールバック関数。
-      </p>
       <div class="methodsynopsis dc-description">
        <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><span class="replaceable">callback</span></span>
-        ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter reference">&$result</code></span>
+        ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$carry</code></span>
        , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$item</code></span>
        )</div>
+
+      <dl>
+
+       
+        <dt>
+<code class="parameter">carry</code></dt>
+
+        <dd>
+
+         <p class="para">
+          前回の反復処理の結果を保持します。最初の反復処理のときには、
+          <code class="parameter">initial</code> の値を保持しています。
+         </p>
+        </dd>
+
+       
+       
+        <dt>
+<code class="parameter">item</code></dt>
+
+        <dd>
+
+         <p class="para">
+          現在の反復処理の値を保持します。
+         </p>
+        </dd>
+
+       
+      </dl>
 
      </dd>
 
@@ -129,7 +155,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-reduce-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4971">
+   <div class="example" id="example-4989">
     <p><strong>例1 <span class="function"><strong>array_reduce()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

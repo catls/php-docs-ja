@@ -101,12 +101,43 @@
     </li>
     <li class="listitem">
     <p class="para">
-      Introduced most basic support for the MySQL Fabric High Availability and sharding
-      framework. Please, consider this pre-alpha quality. Both the
-      server side framework and the client side code is supposed to work flawless.
-      However, testing has not been performed to the level of prior plugin
-      alpha releases. Either sides are moving targets,
-      API changes may happen at any time without prior warning.
+      Introduced <a href="mysqlnd-ms.quickstart.mysql_fabric.html" class="link">most basic support</a>
+      for the MySQL Fabric High Availability and sharding framework.
+    </p>
+    <p class="para">
+      Please, consider this pre-alpha quality. Both the
+      server side framework and the client side code is supposed to work flawless
+      considering the MySQL Fabric quickstart examples only. However, testing has not been
+      performed to the level of prior plugin  alpha releases.
+      Either sides are moving targets, API changes may happen at any
+      time without prior warning.
+     </p>
+     <p class="para">
+      As this is work in progress, the manual may not yet reflect allow
+      feature limitations and known bugs.
+     </p>
+    </li>
+    <li class="listitem">
+    <p class="para">
+      New
+      <a href="function.mysqlnd-ms-get-stats.html" class="link">statistics</a>
+      to monitor the Fabric XML RPC call <em>sharding.lookup_servers</em>:
+      <em>fabric_sharding_lookup_servers_success</em>,
+      <em>fabric_sharding_lookup_servers_failure</em>,
+      <em>fabric_sharding_lookup_servers_time_total</em>,
+      <em>fabric_sharding_lookup_servers_bytes_total</em>,
+      <em>fabric_sharding_lookup_servers_xml_failure</em>.
+     </p>
+    </li>
+   <li class="listitem">
+    <p class="para">
+      New functions related to MySQL Fabric:
+      <a href="function.mysqlnd-ms-fabric-select-shard.html" class="link">
+      <span class="function"><a href="function.mysqlnd-ms-fabric-select-shard.html" class="function">mysqlnd_ms_fabric_select_shard()</a></span></a>,
+      <a href="function.mysqlnd-ms-fabric-select-global.html" class="link">
+      <span class="function"><a href="function.mysqlnd-ms-fabric-select-global.html" class="function">mysqlnd_ms_fabric_select_global()</a></span></a>,
+      <a href="function.mysqlnd-ms-dump-servers.html" class="link">
+      <span class="function"><a href="function.mysqlnd-ms-dump-servers.html" class="function">mysqlnd_ms_dump_servers()</a></span></a>.
      </p>
     </li>
    </ul>

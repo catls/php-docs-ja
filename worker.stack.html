@@ -7,13 +7,13 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="worker.shutdown.html">Worker::shutdown</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="worker.start.html">Worker::start</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="worker.unstack.html">Worker::unstack</a></div>
  <div class="up"><a href="class.worker.html">Worker</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="worker.stack" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Worker::stack</h1>
-  <p class="verinfo">(PECL pthreads &gt;= 0.36)</p><p class="refpurpose"><span class="refname">Worker::stack</span> &mdash; <span class="dc-title">スタック処理</span></p>
+  <p class="verinfo">(PECL pthreads &gt;= 2.0.0)</p><p class="refpurpose"><span class="refname">Worker::stack</span> &mdash; <span class="dc-title">スタック処理</span></p>
 
  </div>
 
@@ -21,7 +21,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><strong>Worker::stack</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="class.stackable.html" class="type Stackable">Stackable</a></span> <code class="parameter">$work</code></span>
+    ( <span class="methodparam"><span class="type"><span class="type Stackable">Stackable</span></span> <code class="parameter">$work</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -62,7 +62,7 @@
  <div class="refsect1 examples" id="refsect1-worker.stack-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3705">
+   <div class="example" id="example-3725">
     <p><strong>例1 ワーカースレッド内で実行する Stackable をワーカーに渡す</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -83,7 +83,7 @@ int(1)
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="worker.shutdown.html">Worker::shutdown</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="worker.start.html">Worker::start</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="worker.unstack.html">Worker::unstack</a></div>
  <div class="up"><a href="class.worker.html">Worker</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

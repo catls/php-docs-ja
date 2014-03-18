@@ -496,6 +496,74 @@
       <td>Since 1.6.0.</td>
      </tr>
 
+     <tr>
+      <td>
+       <em>fabric_sharding_lookup_servers_success</em>
+      </td>
+      <td>
+       Number of successful <em>sharding.lookup_servers</em>
+       remote procedure calls to MySQL Fabric.
+       A call is considered successful if the plugin could reach MySQL
+       Fabric and got any reply. The reply itself may or may not be
+       understood by the plugin. Success refers to the network transport
+       only. If the reply was not understood or indicates a valid error condition,
+       <em>fabric_sharding_lookup_servers_xml_failure</em>
+       gets incremented.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>fabric_sharding_lookup_servers_failure</em>
+      </td>
+      <td>
+       Number of failed <em>sharding.lookup_servers</em>
+       remote procedure calls to MySQL Fabric.
+       A remote procedure call is considered failed if there was a
+       network error in connecting to, writing to or reading from
+       MySQL Fabric.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>fabric_sharding_lookup_servers_time_total</em>
+      </td>
+      <td>
+       Time spent connecting to,writing to and reading from MySQL
+       Fabrich during the <em>sharding.lookup_servers</em>
+       remote procedure call. The value is aggregated for all calls. Time is
+       measured in microseconds.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>fabric_sharding_lookup_servers_bytes_total</em>
+      </td>
+      <td>
+       Total number of bytes received from MySQL Fabric in reply to
+       <em>sharding.lookup_servers</em> calls.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>fabric_sharding_lookup_servers_xml_failure</em>
+      </td>
+      <td>
+       How often a reply from MySQL Fabric to
+       <em>sharding.lookup_servers</em> calls was not understood.
+       Please note, the current experimental implementation does not
+       distinguish between valid errors returned and malformed replies.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
     </tbody>
    
   </table>
@@ -506,7 +574,7 @@
  <div class="refsect1 examples" id="refsect1-function.mysqlnd-ms-get-stats-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-1842">
+   <div class="example" id="example-1856">
     <p><strong>例1 <span class="function"><strong>mysqlnd_ms_get_stats()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

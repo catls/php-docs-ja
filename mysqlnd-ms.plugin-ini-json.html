@@ -46,7 +46,7 @@
    <var class="filename">php.ini</var> format.
   </p>
   <p class="para">
-   <div class="example" id="example-1806">
+   <div class="example" id="example-1816">
     <p><strong>例1 Converting a PHP array (hash) into JSON format</strong></p>
     <div class="example-contents"><p>
      Or alternatively, a developer may be more familiar with the PHP <span class="type"><a href="language.types.array.html" class="type array">array</a></span>
@@ -101,7 +101,7 @@ Dumping file contents...
    section name match, then the plugin will load the settings for that section.
   </p>
   <p class="para" id="mysqlnd-ms.plugin-ini-json.using-section">
-   <div class="example" id="example-1807">
+   <div class="example" id="example-1817">
     <p><strong>例2 Using section names example</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -186,7 +186,7 @@ Dumping file contents...
    for slave and master servers may be used.
   </p>
   <p class="para">
-   <div class="example" id="example-1808">
+   <div class="example" id="example-1818">
     <p><strong>例3 List of anonymous slaves</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">&quot;slave&quot;: [
@@ -210,7 +210,7 @@ Dumping file contents...
    of a server list, and done so using the <em>JSON object</em> type.
   </p>
   <p class="para">
-   <div class="example" id="example-1809">
+   <div class="example" id="example-1819">
     <p><strong>例4 Master list using symbolic names</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">&quot;master&quot;: {
@@ -241,7 +241,7 @@ Dumping file contents...
    keyword. All other settings are optional.
   </p>
   <p class="para">
-   <div class="example" id="example-1810">
+   <div class="example" id="example-1820">
     <p><strong>例5 Keywords to configure a server</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -292,7 +292,7 @@ Dumping file contents...
    <em>roundrobin</em> provide the same functionality.
   </p>
   <p class="para">
-   <div class="example" id="example-1811">
+   <div class="example" id="example-1821">
     <p><strong>例6 New <em>roundrobin</em> filter, old functionality</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -331,7 +331,7 @@ Dumping file contents...
    filter. Some filters accept parameters. The <em>user</em> filter
    requires and accepts a mandatory <em>callback</em> parameter
    to set the callback previously set through the function <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span>.
-   <div class="example" id="example-1812">
+   <div class="example" id="example-1822">
     <p><strong>例7 The <em>user</em> filter replaces <span class="function"><a href="function.mysqlnd-ms-set-user-pick-server.html" class="function">mysqlnd_ms_set_user_pick_server()</a></span></strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">&quot;filters&quot;: {
@@ -353,7 +353,7 @@ Dumping file contents...
    This problem has been cured in version 1.5.0.
   </p>
   <p class="para">
-   <div class="example" id="example-1813">
+   <div class="example" id="example-1823">
     <p><strong>例8 Common error message in case of configuration file issues (upto version 1.5.0)</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -384,7 +384,7 @@ Fatal error: Call to a member function fetch_assoc() on a non-object in Command 
    of type <em>E_WARNING</em> will be emitted.
  </p>
  <p class="para">
-   <div class="example" id="example-1814">
+   <div class="example" id="example-1824">
     <p><strong>例9 Improved configuration file validation since 1.5.0</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -408,7 +408,7 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) (mysqlnd_ms) Failed to parse config file
    help detecting misspelled section names.
   </p>
   <p class="para">
-   <div class="example" id="example-1815">
+   <div class="example" id="example-1825">
     <p><strong>例10 Possibly more precise error due to <em>mysqlnd_ms.force_config_usage=1</em></strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_ms.force_config_usage=1</pre>
@@ -758,6 +758,200 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
 
     
     
+     <dt id="ini.mysqlnd-ms-plugin-config-v2.fabric">
+      <code class="parameter">fabric</code>
+      <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+        MySQL Fabric related settings. If the plugin is used together with MySQL
+        Fabric, then the plugins configuration file no longer contains lists of MySQL servers.
+        Instead, the plugin will ask MySQL Fabric which list of servers to use to
+        perform a certain task.
+      </p>
+      <p class="para">
+        A minimum plugin configuration for use with MySQL Fabric contains a list
+        of one or more MySQL Fabric hosts that the plugin can query. If more
+        than one MySQL Fabric host is  configured, the plugin will use a roundrobin
+        strategy to choose among them. Other strategies are currently not available.
+      </p>
+      <p class="para">
+       <div class="example" id="example-1826">
+        <p><strong>例11 Minimum pluging configuration for use with MySQL Fabric</strong></p>
+        <div class="example-contents">
+<div class="inicode"><pre class="inicode">{
+    &quot;myapp&quot;: {
+        &quot;fabric&quot;: {
+            &quot;hosts&quot;: [
+                {
+                    &quot;host&quot; : &quot;127.0.0.1&quot;,
+                    &quot;port&quot; : 8080
+                }
+            ]
+        }
+    }
+}</pre>
+</div>
+        </div>
+
+       </div>
+      </p>
+      <p class="para">
+       Each MySQL Fabric host is described using a JSON object with the following
+       members.
+      </p>
+      <table class="doctable informaltable">
+       
+        <col width="1*" />
+        <col width="7*" />
+        <col width="2*" />
+        <thead>
+         <tr>
+          <th>Keyword</th>
+          <th>Description</th>
+          <th>Version</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         <tr>
+          <td>
+            <em>host</em>
+          </td>
+          <td>
+           <p class="para">
+            Host name of the MySQL Fabric host.
+           </p>
+          </td>
+          <td>Since 1.6.0.</td>
+         </tr>
+
+         <tr>
+          <td>
+            <em>port</em>
+          </td>
+          <td>
+           <p class="para">
+            The TCP/IP port on which the MySQL Fabric host listens
+            for remote procedure calls sent by clients such as
+            the plugin.
+           </p>
+          </td>
+          <td>Since 1.6.0.</td>
+         </tr>
+
+        </tbody>
+       
+      </table>
+
+      <p class="para">
+       The plugin is using PHP streams to communicate with MySQL Fabric
+       through XML RPC over HTTP. By default no timeouts are set
+       for the network communication. Thus, the plugin defaults to PHP
+       stream default timeouts. Those defaults are out of control of
+       the plugin itself.
+      </p>
+      <p class="para">
+        An optional timeout value can be set to overrule the PHP streams
+        default timeout setting. Setting the timeout in the plugins
+        configuration file has the same effect as
+        setting a timeout for a PHP user space HTTP connection established
+        through PHP streams.
+      </p>
+      <p class="para">
+       The plugins Fabric timeout value unit is seconds. The allowed value
+       range is from 0 to 65535. The setting exists since version 1.6.
+      </p>
+      <p class="para">
+       <div class="example" id="example-1827">
+        <p><strong>例12 Optional timeout for communication with Fabric</strong></p>
+        <div class="example-contents">
+<div class="inicode"><pre class="inicode">{
+    &quot;myapp&quot;: {
+        &quot;fabric&quot;: {
+            &quot;hosts&quot;: [
+                {
+                    &quot;host&quot; : &quot;127.0.0.1&quot;,
+                    &quot;port&quot; : 8080
+                }
+            ],
+            &quot;timeout&quot;: 2
+        }
+    }
+}</pre>
+</div>
+        </div>
+
+       </div>
+      </p>
+      <p class="para">
+       <a href="mysqlnd-ms.plugin-ini-json.html#ini.mysqlnd-ms-plugin-config-v2.trx-stickiness" class="link">Transaction stickiness</a>
+       and MySQL Fabric logic can collide. The stickiness option disables switching
+       between servers for the duration of a transaction. When using Fabric and
+       sharding the user may (erroneously) start a local transaction on one share and
+       then attempt to switch to a different shard using either
+       <a href="function.mysqlnd-ms-fabric-select-shard.html" class="link">
+       <span class="function"><a href="function.mysqlnd-ms-fabric-select-shard.html" class="function">mysqlnd_ms_fabric_select_shard()</a></span></a> or
+       <a href="function.mysqlnd-ms-fabric-select-global.html" class="link">
+       <span class="function"><a href="function.mysqlnd-ms-fabric-select-global.html" class="function">mysqlnd_ms_fabric_select_global()</a></span></a>. In this case, the
+       plugin will not reject the request to switch servers in the middle of a transaction
+       but allow the user to switch to another server regardless of the transaction
+       stickiness setting used. It is clearly a user error to write such code.
+      </p>
+      <p class="para">
+       If transaction stickiness is enabled and you would like to get an error of type
+       warning when calling  <a href="function.mysqlnd-ms-fabric-select-shard.html" class="link">
+       <span class="function"><a href="function.mysqlnd-ms-fabric-select-shard.html" class="function">mysqlnd_ms_fabric_select_shard()</a></span></a> or
+       <a href="function.mysqlnd-ms-fabric-select-global.html" class="link">
+       <span class="function"><a href="function.mysqlnd-ms-fabric-select-global.html" class="function">mysqlnd_ms_fabric_select_global()</a></span></a>,
+       set the boolean flag <em>trx_warn_server_list_changes</em>.
+      </p>
+<p class="para">
+       <div class="example" id="example-1828">
+        <p><strong>例13 Warnings about the violation of transaction boundaries</strong></p>
+        <div class="example-contents">
+<div class="inicode"><pre class="inicode">{
+    &quot;myapp&quot;: {
+        &quot;fabric&quot;: {
+            &quot;hosts&quot;: [
+                {
+                    &quot;host&quot; : &quot;127.0.0.1&quot;,
+                    &quot;port&quot; : 8080
+                }
+            ],
+            &quot;trx_warn_serverlist_changes&quot;: 1
+        },
+        &quot;trx_stickiness&quot;: &quot;on&quot;
+    }
+}</pre>
+</div>
+        </div>
+
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$link&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">mysqli</span><span style="color: #007700">(</span><span style="color: #DD0000">"myapp"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"root"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">""</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"test"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;For&nbsp;the&nbsp;demo&nbsp;the&nbsp;call&nbsp;may&nbsp;fail.<br />&nbsp;&nbsp;Failed&nbsp;or&nbsp;not&nbsp;we&nbsp;get&nbsp;into&nbsp;the&nbsp;state<br />&nbsp;&nbsp;needed&nbsp;for&nbsp;the&nbsp;example.<br />*/<br /></span><span style="color: #007700">@</span><span style="color: #0000BB">mysqlnd_ms_fabric_select_global</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$link</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">begin_transaction</span><span style="color: #007700">();<br />@</span><span style="color: #0000BB">$link</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"DROP&nbsp;TABLE&nbsp;IF&nbsp;EXISTS&nbsp;test"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;Switching&nbsp;servers/shards&nbsp;is&nbsp;a&nbsp;mistake&nbsp;due&nbsp;to&nbsp;open<br />&nbsp;&nbsp;local&nbsp;transaction!<br />*/<br /></span><span style="color: #0000BB">mysqlnd_ms_select_global</span><span style="color: #007700">(</span><span style="color: #0000BB">$link</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+         </div>
+
+         <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+        <div class="example-contents screen">
+<div class="cdata"><pre>
+PHP Warning: mysqlnd_ms_fabric_select_global(): (mysqlnd_ms) Fabric server exchange in the middle of a transaction in %s on line %d
+</pre></div>
+        </div>
+       </div>
+      </p>
+      <p class="para">
+       Please, consider the feature experimental. Changes to syntax and semantics may  happen.
+      </p>
+     </dd>
+
+    
+    
      <dt id="ini.mysqlnd-ms-plugin-config-v2.filters">
       <code class="parameter">filters</code>
       <span class="type"><a href="language.types.object.html" class="type object">object</a></span>
@@ -800,8 +994,8 @@ Warning: mysqli::mysqli(): (mysqlnd_ms) Exclusive usage of configuration enforce
        handle.
       </p>
       <p class="para">
-       <div class="example" id="example-1816">
-        <p><strong>例11 Invalid filter sequence</strong></p>
+       <div class="example" id="example-1829">
+        <p><strong>例14 Invalid filter sequence</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -871,8 +1065,8 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        stands for random load balancing policy.
       </p>
       <p class="para">
-       <div class="example" id="example-1817">
-        <p><strong>例12 Random load balancing with <em>random</em> filter</strong></p>
+       <div class="example" id="example-1830">
+        <p><strong>例15 Random load balancing with <em>random</em> filter</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -908,8 +1102,8 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        load balancing strategy.
       </p>
       <p class="para">
-       <div class="example" id="example-1818">
-        <p><strong>例13 Random once load balancing with <em>random</em> filter</strong></p>
+       <div class="example" id="example-1831">
+        <p><strong>例16 Random once load balancing with <em>random</em> filter</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;filters&quot;: {
@@ -933,8 +1127,8 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        to reference servers for assigning a priority with <em>weight</em>.
       </p>
       <p class="para">
-       <div class="example" id="example-1819">
-        <p><strong>例14 Referencing error</strong></p>
+       <div class="example" id="example-1832">
+        <p><strong>例17 Referencing error</strong></p>
         <div class="example-contents screen">
 <div class="cdata"><pre>
 [E_RECOVERABLE_ERROR] mysqli_real_connect(): (mysqlnd_ms) Unknown server &#039;slave3&#039; in &#039;random&#039; filter configuration. Stopping in %s on line %d
@@ -951,8 +1145,8 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        all servers is one.
       </p>
       <p class="para">
-       <div class="example" id="example-1820">
-        <p><strong>例15 Assigning a <em>weight</em> for load balancing</strong></p>
+       <div class="example" id="example-1833">
+        <p><strong>例18 Assigning a <em>weight</em> for load balancing</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
    &quot;myapp&quot;: {
@@ -1088,8 +1282,8 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        configured slave server.
       </p>
       <p class="para">
-       <div class="example" id="example-1821">
-        <p><strong>例16 <em>roundrobin</em> filter</strong></p>
+       <div class="example" id="example-1834">
+        <p><strong>例19 <em>roundrobin</em> filter</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -1207,8 +1401,8 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
        the plugin to prevent an endless loop.
       </p>
       <p class="para">
-       <div class="example" id="example-1822">
-        <p><strong>例17 Setting a callback</strong></p>
+       <div class="example" id="example-1835">
+        <p><strong>例20 Setting a callback</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -1378,8 +1572,8 @@ PHP Warning:  mysqli::query(): Couldn&#039;t fetch mysqli in filter_warning.php 
       </table>
 
      <p class="para">
-      <div class="example" id="example-1823">
-        <p><strong>例18 Using a callback</strong></p>
+      <div class="example" id="example-1836">
+        <p><strong>例21 Using a callback</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -1471,8 +1665,8 @@ User has connected to &#039;myapp&#039;...
        random master and slave lists extracted from the functions input.
       </p>
       <p class="para">
-      <div class="example" id="example-1824">
-        <p><strong>例19 Returning random masters and slaves</strong></p>
+      <div class="example" id="example-1837">
+        <p><strong>例22 Returning random masters and slaves</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">pick_server</span><span style="color: #007700">(</span><span style="color: #0000BB">$connected</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$query</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$masters</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$slaves</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$last_used_connection</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$in_transaction</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$picked_masters&nbsp;</span><span style="color: #007700">=&nbsp;array()<br />&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$masters&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">mt_rand</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$picked_masters</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$picked_slaves&nbsp;</span><span style="color: #007700">=&nbsp;array()<br />&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$slaves&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">mt_rand</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$picked_slaves</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />&nbsp;&nbsp;return&nbsp;array(</span><span style="color: #0000BB">$picked_masters</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$picked_slaves</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -1581,8 +1775,8 @@ User has connected to &#039;myapp&#039;...
              <em>(mysqlnd_ms) Unknown master &#039;server_alias_name&#039; (section &#039;name_of_group&#039;) in &#039;node_groups&#039; filter configuration</em>.
             </p>
             <p class="para">
-             <div class="example" id="example-1825">
-               <p><strong>例20 Manual partitioning</strong></p>
+             <div class="example" id="example-1838">
+               <p><strong>例23 Manual partitioning</strong></p>
                 <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
   &quot;myapp&quot;: {
@@ -1722,8 +1916,8 @@ User has connected to &#039;myapp&#039;...
               emit a warning.
             </p>
             <p class="para">
-             <div class="example" id="example-1826">
-               <p><strong>例21 Global limit on slave lag</strong></p>
+             <div class="example" id="example-1839">
+               <p><strong>例24 Global limit on slave lag</strong></p>
                 <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -1844,8 +2038,8 @@ User has connected to &#039;myapp&#039;...
        pitfalls and risks of using <em>failover=master</em>.
       </p>
       <p class="para">
-       <div class="example" id="example-1827">
-        <p><strong>例22 Optional master failover when failing to connect to slave (PECL/mysqlnd_ms &lt; 1.4.0)</strong></p>
+       <div class="example" id="example-1840">
+        <p><strong>例25 Optional master failover when failing to connect to slave (PECL/mysqlnd_ms &lt; 1.4.0)</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -1873,8 +2067,8 @@ User has connected to &#039;myapp&#039;...
        object.
       </p>
       <p class="para">
-       <div class="example" id="example-1828">
-        <p><strong>例23 New syntax since 1.4.0</strong></p>
+       <div class="example" id="example-1841">
+        <p><strong>例26 New syntax since 1.4.0</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -2035,8 +2229,8 @@ User has connected to &#039;myapp&#039;...
        connections are opened.
       </p>
       <p class="para">
-       <div class="example" id="example-1829">
-        <p><strong>例24 Disabling lazy connection</strong></p>
+       <div class="example" id="example-1842">
+        <p><strong>例27 Disabling lazy connection</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -2130,8 +2324,8 @@ User has connected to &#039;myapp&#039;...
        <em>set_charset</em> is of no meaning anymore.
       </p>
       <p class="para">
-       <div class="example" id="example-1830">
-        <p><strong>例25 String escaping on a lazy connection handle</strong></p>
+       <div class="example" id="example-1843">
+        <p><strong>例28 String escaping on a lazy connection handle</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -2188,8 +2382,8 @@ User has connected to &#039;myapp&#039;...
        <em>INSERT</em> yet.
       </p>
       <p class="para">
-       <div class="example" id="example-1831">
-        <p><strong>例26 Master on write for consistent reads</strong></p>
+       <div class="example" id="example-1844">
+        <p><strong>例29 Master on write for consistent reads</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -2283,8 +2477,8 @@ User has connected to &#039;myapp&#039;...
        a transaction.
       </p>
       <p class="para">
-       <div class="example" id="example-1832">
-        <p><strong>例27 Using master to execute transactions</strong></p>
+       <div class="example" id="example-1845">
+        <p><strong>例30 Using master to execute transactions</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
@@ -2321,8 +2515,8 @@ User has connected to &#039;myapp&#039;...
        Those errors will be generated by the failing query function.
       </p>
       <p class="para">
-       <div class="example" id="example-1833">
-        <p><strong>例28 No automatic failover, error handling pitfall</strong></p>
+       <div class="example" id="example-1846">
+        <p><strong>例31 No automatic failover, error handling pitfall</strong></p>
         <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;assumption:&nbsp;automatic&nbsp;failover&nbsp;configured&nbsp;*/<br /></span><span style="color: #0000BB">$mysqli&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">mysqli</span><span style="color: #007700">(</span><span style="color: #DD0000">"myapp"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"username"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"database"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;sets&nbsp;plugin&nbsp;internal&nbsp;state&nbsp;in_trx&nbsp;=&nbsp;1&nbsp;*/<br /></span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">autocommit</span><span style="color: #007700">(</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;assumption:&nbsp;server&nbsp;fails&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(!(</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;'Assume&nbsp;this&nbsp;query&nbsp;fails'&nbsp;AS&nbsp;_msg&nbsp;FROM&nbsp;DUAL"</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;</span><span style="color: #FF8000">/*&nbsp;handle&nbsp;failure&nbsp;of&nbsp;transaction,&nbsp;plugin&nbsp;internal&nbsp;state&nbsp;is&nbsp;still&nbsp;in_trx&nbsp;=&nbsp;1&nbsp;*/<br />&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"[%d]&nbsp;%s"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">errno</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">error</span><span style="color: #007700">);<br />&nbsp;</span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;If&nbsp;using&nbsp;autocommit()&nbsp;based&nbsp;transaction&nbsp;detection&nbsp;it&nbsp;is&nbsp;a<br />&nbsp;&nbsp;MUST&nbsp;to&nbsp;call&nbsp;autocommit(true).&nbsp;Otherwise&nbsp;the&nbsp;plugin&nbsp;assumes<br />&nbsp;&nbsp;the&nbsp;current&nbsp;transaction&nbsp;continues&nbsp;and&nbsp;connection<br />&nbsp;&nbsp;changes&nbsp;remain&nbsp;forbidden.<br />&nbsp;*/<br />&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">autocommit</span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />&nbsp;</span><span style="color: #FF8000">/*&nbsp;Likewise,&nbsp;you'll&nbsp;want&nbsp;to&nbsp;start&nbsp;a&nbsp;new&nbsp;transaction&nbsp;*/<br />&nbsp;</span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">autocommit</span><span style="color: #007700">(</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br />}<br /></span><span style="color: #FF8000">/*&nbsp;latin1&nbsp;used&nbsp;from&nbsp;now&nbsp;on&nbsp;*/<br /></span><span style="color: #0000BB">$mysqli</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">set_charset</span><span style="color: #007700">(</span><span style="color: #DD0000">"latin1"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -2381,8 +2575,8 @@ User has connected to &#039;myapp&#039;...
        forwarded to the application by the end of the loop.
       </p>
       <p class="para">
-       <div class="example" id="example-1834">
-        <p><strong>例29 Retry loop for transient errors</strong></p>
+       <div class="example" id="example-1847">
+        <p><strong>例32 Retry loop for transient errors</strong></p>
         <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
     &quot;myapp&quot;: {
