@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="class.mongogridfsexception.html">MongoGridFSException</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongowriteconcernexception.getdocument.html">MongoWriteConcernException::getDocument</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="book.msql.html">mSQL</a></div>
  <div class="up"><a href="book.mongo.html">Mongo</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -47,7 +47,20 @@
   <p class="para">
   既存のメソッドの中で、初期のバージョンから改良が加えられたものをまとめます。
   </p>
-  <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>1.4.5</td><td><a href='mongocursor.batchsize.html'>MongoCursor::batchSize</a></td><td>1.4.5 より前のバージョンでは、このメソッドは、
+  <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>1.5.0</td><td><a href='mongobindata.construct.html'>MongoBinData::__construct</a></td><td>デフォルトが 2
+        (MongoBinData::BYTE_ARRAY) から
+        0 (MongoBinData::GENERIC) に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>オプション &quot;timeout&quot; の名前が
+       &quot;socketTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>オプション &quot;wtimeout&quot; の名前が
+       &quot;wTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>オプション &quot;wtimeout&quot; の名前が
+       &quot;wTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>オプション &quot;timeout&quot; の名前が
+       &quot;socketTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>オプション &quot;timeout&quot; の名前が
+       &quot;socketTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>オプション &quot;wtimeout&quot; の名前が
+       &quot;wTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>オプション &quot;timeout&quot; の名前が
+       &quot;socketTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>オプション &quot;wtimeout&quot; の名前が
+       &quot;wTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.toindexstring.html'>MongoCollection::toIndexString</a></td><td>このメソッドは非推奨になりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>オプション &quot;timeout&quot; の名前が
+       &quot;socketTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>オプション &quot;wtimeout&quot; の名前が
+       &quot;wTimeoutMS&quot; に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.slaveokay.html'>MongoCursor::slaveOkay</a></td><td>このメソッドは非推奨になりました。かわりに
+        MongoCursor::setReadPreference と  を使いましょう。</td></tr></tbody><tbody class="gen-changelog v1-5-0"><tr><td>1.4.5</td><td><a href='mongocursor.batchsize.html'>MongoCursor::batchSize</a></td><td>1.4.5 より前のバージョンでは、このメソッドは、
          カーソルの反復処理が始まっている場合に MongoCursorException をスローしていました。</td></tr></tbody><tbody class="gen-changelog v1-4-5"><tr><td>1.4.0</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>&quot;wTimeoutMS&quot; オプションが追加されました。これは
          &quot;wTimeout&quot; の代替です。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.hint.html'>MongoCursor::hint</a></td><td>index 引数に、文字列でインデックス名を指定できるよういなりました。
          これより前のバージョンでは、配列またはオブジェクトしか渡せませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.setflag.html'>MongoCursor::setFlag</a></td><td>フラグ 3 (OPLOG_REPLAY) をサポートするようになりました。
@@ -235,7 +248,7 @@
 
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="class.mongogridfsexception.html">MongoGridFSException</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongowriteconcernexception.getdocument.html">MongoWriteConcernException::getDocument</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="book.msql.html">mSQL</a></div>
  <div class="up"><a href="book.mongo.html">Mongo</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

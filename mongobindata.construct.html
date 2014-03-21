@@ -22,7 +22,7 @@
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>MongoBinData::__construct</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code><span class="initializer"> = 2</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code><span class="initializer"> = 0</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
@@ -101,6 +101,15 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>1.5.0</td>
+       <td>
+        デフォルトが <em>2</em>
+        (<strong><code>MongoBinData::BYTE_ARRAY</code></strong>) から
+        <em>0</em> (<strong><code>MongoBinData::GENERIC</code></strong>) に変わりました。
+       </td>
+      </tr>
+
       <tr>
        <td>1.2.11</td>
        <td>

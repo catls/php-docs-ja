@@ -151,31 +151,43 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
           <em>&quot;fsync&quot;</em>
          </p>
          <p class="para">
-          <em>fsync</em> を設定すると、データベース上のすべての書き込み操作は、
+          <em>&quot;fsync&quot;</em> を設定すると、データベース上のすべての書き込み操作は、
           その書き込みがディスクに同期されるまでは成功とみなさないようになります。
           書き込み処理の速度は大幅に低下しますが、書き込みがきちんと成功してディスクに書き出されたことを保証できます。
-          MongoDB のジャーナリングを有効にしている (デフォルト) 場合、同期は
-          <em class="emphasis">ジャーナル</em>に対してのみ発生します。ジャーナリングが無効になっている場合は、
-          <em>fsync</em> を使うと完全にディスクにフラッシュすることになります。
          </p>
-         <div class="warning"><strong class="warning">警告</strong>
-          <p class="para">
-           このオプションは<em class="emphasis">使わない</em>ようにして、かわりに
-           <em>journal</em> オプションを使いましょう。これを
-           <em>w</em> と組み合わせて使うことになるでしょう。
-          </p>
-         </div>
+         <p class="para">
+          MongoDB のジャーナリングを有効にしている (デフォルト) 場合、このオプションは
+          <em class="emphasis">&quot;journal&quot;</em> と同じ意味になります。
+          ジャーナリングが無効になっている場合は、このオプションは、
+          書き込み操作がディスク上のデータベースファイルに同期されることを保証します。
+         </p>
+         <blockquote class="note"><p><strong class="note">注意</strong>: 
+          <span class="simpara">
+           ジャーナリングを有効にしている場合は、<em>&quot;fsync&quot;</em> ではなく
+           <em>&quot;journal&quot;</em> を使うことを強く推奨します。
+           <em>&quot;fsync&quot;</em> と
+           <em>&quot;journal&quot;</em> を同時に使わないようにしましょう。
+           同時に使うとエラーが発生します。
+          </span>
+         </p></blockquote>
         </li>
         <li class="listitem">
          <p class="para">
           <em>&quot;journal&quot;</em>
          </p>
          <p class="para">
-          <em>journal</em> を設定すると、データベース上のすべての書き込み操作が、
-          データベースサーバーがジャーナルををディスクにフラッシュするまでブロックされます。
+          <em>&quot;journal&quot;</em> を設定すると、データベース上のすべての書き込み操作が、
+          データベースがジャーナルへの変更をディスクにフラッシュするまでブロックされます。
           書き込み処理の速度は多少低下しますが、書き込みがきちんと成功して、
           万一システムに障害が発生したとしても復旧可能なことを保証できます。
          </p>
+         <blockquote class="note"><p><strong class="note">注意</strong>: 
+          <span class="simpara">
+           ジャーナリングが無効になっている場合にこのオプションを使うと、
+           MongoDB 2.6+ ではエラーが発生して書き込みが失敗します。
+           それより前のバージョンでは、単純にこのオプションを無視します。
+          </span>
+         </p></blockquote>
         </li>
         <li class="listitem">
          <p class="para">

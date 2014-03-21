@@ -4618,6 +4618,7 @@
 <li><a href="mongocode.tostring.html" class="index">MongoCode::__toString</a> - このコードを文字列で返す</li>
 <li><a href="mongocollection.aggregate.html" class="index">MongoCollection::aggregate</a> - aggregation フレームワークを使って集約する</li>
 <li><a href="mongocollection.batchinsert.html" class="index">MongoCollection::batchInsert</a> - 複数のドキュメントをコレクションに追加する</li>
+<li><a href="mongocollection.commandcursor.html" class="index">MongoCollection::commandCursor</a> - Execute a database command and retrieve results through a cursor</li>
 <li><a href="mongocollection.count.html" class="index">MongoCollection::count</a> - コレクション内のドキュメント数を数える</li>
 <li><a href="mongocollection.createdbref.html" class="index">MongoCollection::createDBRef</a> - データベースへの参照を作成する</li>
 <li><a href="mongocollection.deleteindex.html" class="index">MongoCollection::deleteIndex</a> - コレクションからインデックスを削除する</li>
@@ -4647,6 +4648,15 @@
 <li><a href="mongocollection.construct.html" class="index">MongoCollection::__construct</a> - 新しいコレクションを作成する</li>
 <li><a href="mongocollection.get.html" class="index">MongoCollection::__get</a> - コレクションを取得する</li>
 <li><a href="mongocollection.--tostring.html" class="index">MongoCollection::__toString</a> - このコレクションの文字列表現</li>
+<li><a href="mongocommandcursor.batchsize.html" class="index">MongoCommandCursor::batchSize</a> - Limits the number of elements returned in one batch.</li>
+<li><a href="mongocommandcursor.current.html" class="index">MongoCommandCursor::current</a> - Returns the current element</li>
+<li><a href="mongocommandcursor.dead.html" class="index">MongoCommandCursor::dead</a> - Checks if there are documents that have not been sent yet from the database for this cursor</li>
+<li><a href="mongocommandcursor.info.html" class="index">MongoCommandCursor::info</a> - Gets the query, fields, limit, and skip for this cursor</li>
+<li><a href="mongocommandcursor.key.html" class="index">MongoCommandCursor::key</a> - Returns the current result's _id</li>
+<li><a href="mongocommandcursor.next.html" class="index">MongoCommandCursor::next</a> - Advances the cursor to the next result</li>
+<li><a href="mongocommandcursor.rewind.html" class="index">MongoCommandCursor::rewind</a> - Executes the command and resets the cursor to the start of the result set</li>
+<li><a href="mongocommandcursor.valid.html" class="index">MongoCommandCursor::valid</a> - Fetches a new result item, and returns whether it could</li>
+<li><a href="mongocommandcursor.construct.html" class="index">MongoCommandCursor::__construct</a> - Create a new command cursor</li>
 <li><a href="mongocursor.addoption.html" class="index">MongoCursor::addOption</a> - トップレベルの キー/値 のペアをクエリに追加する</li>
 <li><a href="mongocursor.awaitdata.html" class="index">MongoCursor::awaitData</a> - 追尾可能なカーソルで、データがないときにしばらく待つかどうかを設定する</li>
 <li><a href="mongocursor.batchsize.html" class="index">MongoCursor::batchSize</a> - ひとつのバッチで返す要素数を制限する</li>
@@ -4671,7 +4681,7 @@
 <li><a href="mongocursor.setflag.html" class="index">MongoCursor::setFlag</a> - 専用のメソッドが存在しない任意のフラグを設定する</li>
 <li><a href="mongocursor.setreadpreference.html" class="index">MongoCursor::setReadPreference</a> - このクエリの優先読み込みを設定する</li>
 <li><a href="mongocursor.skip.html" class="index">MongoCursor::skip</a> - 結果をスキップする</li>
-<li><a href="mongocursor.slaveokay.html" class="index">MongoCursor::slaveOkay</a> - このクエリをセカンダリ上で完了できるかどうかを設定する</li>
+<li><a href="mongocursor.slaveokay.html" class="index">MongoCursor::slaveOkay</a> - このクエリをセカンダリ上で完了できるかどうかを設定する [非推奨]</li>
 <li><a href="mongocursor.snapshot.html" class="index">MongoCursor::snapshot</a> - このクエリでスナップショットモードを使う</li>
 <li><a href="mongocursor.sort.html" class="index">MongoCursor::sort</a> - 指定したフィールドで結果をソートする</li>
 <li><a href="mongocursor.tailable.html" class="index">MongoCursor::tailable</a> - このカーソルが、最後の結果を取得した後もオープンしたままにしておくかどうかを設定する</li>
@@ -4712,6 +4722,7 @@
 <li><a href="mongodbref.create.html" class="index">MongoDBRef::create</a> - 新しいデータベース参照を作成する</li>
 <li><a href="mongodbref.get.html" class="index">MongoDBRef::get</a> - 参照が指すオブジェクトを取得する</li>
 <li><a href="mongodbref.isref.html" class="index">MongoDBRef::isRef</a> - 配列がデータベース参照か否かを調べる</li>
+<li><a href="mongodeletebatch.construct.html" class="index">MongoDeleteBatch::__construct</a> - Description</li>
 <li><a href="mongogridfs.delete.html" class="index">MongoGridFS::delete</a> - ファイルをデータベースから削除する</li>
 <li><a href="mongogridfs.drop.html" class="index">MongoGridFS::drop</a> - ファイルコレクションおよびチャンクコレクションを削除する</li>
 <li><a href="mongogridfs.find.html" class="index">MongoGridFS::find</a> - ファイルを問い合わせる</li>
@@ -4741,6 +4752,7 @@
 <li><a href="mongoid.construct.html" class="index">MongoId::__construct</a> - 新しい ID を作成する</li>
 <li><a href="mongoid.set-state.html" class="index">MongoId::__set_state</a> - ダミー MongoId を作成する</li>
 <li><a href="mongoid.tostring.html" class="index">MongoId::__toString</a> - この ID の 16 進表現を返す</li>
+<li><a href="mongoinsertbatch.construct.html" class="index">MongoInsertBatch::__construct</a> - Description</li>
 <li><a href="mongoint32.construct.html" class="index">MongoInt32::__construct</a> - 新しい 32 ビット整数値を作成する</li>
 <li><a href="mongoint32.tostring.html" class="index">MongoInt32::__toString</a> - この 32 ビット整数値の文字列表現を返す</li>
 <li><a href="mongoint64.construct.html" class="index">MongoInt64::__construct</a> - 新しい 64 ビット整数値を作成する</li>
@@ -4759,6 +4771,11 @@
 <li><a href="mongoresultexception.getdocument.html" class="index">MongoResultException::getDocument</a> - 結果ドキュメントを取得する</li>
 <li><a href="mongotimestamp.construct.html" class="index">MongoTimestamp::__construct</a> - 新しいタイムスタンプを作成する</li>
 <li><a href="mongotimestamp.tostring.html" class="index">MongoTimestamp::__toString</a> - このタイムスタンプを文字列形式で返す</li>
+<li><a href="mongoupdatebatch.construct.html" class="index">MongoUpdateBatch::__construct</a> - Description</li>
+<li><a href="mongowritebatch.add.html" class="index">MongoWriteBatch::add</a> - Adds an CRUD operation to a batch</li>
+<li><a href="mongowritebatch.execute.html" class="index">MongoWriteBatch::execute</a> - Description</li>
+<li><a href="mongowritebatch.construct.html" class="index">MongoWriteBatch::__construct</a> - Description</li>
+<li><a href="mongowriteconcernexception.getdocument.html" class="index">MongoWriteConcernException::getDocument</a> - Get the error document</li>
 <li><a href="function.move-uploaded-file.html" class="index">move_uploaded_file</a> - アップロードされたファイルを新しい位置に移動する</li>
 <li><a href="function.mqseries-back.html" class="index">mqseries_back</a> - MQSeries MQBACK</li>
 <li><a href="function.mqseries-begin.html" class="index">mqseries_begin</a> - MQseries MQBEGIN</li>
@@ -8516,6 +8533,7 @@
 <li><a href="thread.getcurrentthread.html" class="index">Thread::getCurrentThread</a> - Identification</li>
 <li><a href="thread.getcurrentthreadid.html" class="index">Thread::getCurrentThreadId</a> - Identification</li>
 <li><a href="thread.getthreadid.html" class="index">Thread::getThreadId</a> - 識別</li>
+<li><a href="thread.globally.html" class="index">Thread::globally</a> - Execution</li>
 <li><a href="thread.isjoined.html" class="index">Thread::isJoined</a> - 状態を検出する</li>
 <li><a href="thread.isstarted.html" class="index">Thread::isStarted</a> - 状態を検出する</li>
 <li><a href="thread.join.html" class="index">Thread::join</a> - 同期処理</li>
