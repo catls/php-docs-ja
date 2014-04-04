@@ -23,7 +23,8 @@
    <span class="modifier">public</span> <span class="methodname"><strong>MongoClient::__construct</strong></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$server</code><span class="initializer"> = &quot;mongodb://localhost:27017&quot;</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array(&quot;connect&quot; =&gt; <strong><code>TRUE</code></strong>)</span></span>
-  ]] )</div>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$driver_options</code></span>
+  ]]] )</div>
 
   <p class="para rdfs-comment">
    パラメータを省略した場合は、&quot;localhost:27017&quot; (あるいは php.ini の
@@ -333,6 +334,34 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
      </dd>
 
     
+
+    
+     <dt>
+
+      <code class="parameter">driver_options</code>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       MongoDB ドライバーへのオプションの配列。SSL 用の接続コンテキストのオプションや、
+       ログ出力用のコールバックも含みます。
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          <em>&quot;context&quot;</em>
+         </p>
+         <p class="para">
+          コンテキストオプションを渡す方法。このオプションで、SSL 証明書の設定ができます。
+          詳細は <a href="context.ssl.html" class="link">SSL コンテキストオプション</a> を参照ください。
+          詳しい使いかたは <a href="mongoclient.construct.html#mongoclient.construct.context.ssl" class="link">この例</a> を参照ください。
+         </p>
+        </li>
+       </ul>
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -363,7 +392,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
 
  <div class="refsect1 examples" id="mongo.mongoclient.construct.examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1401">
+  <div class="example" id="example-1429">
    <p><strong>例1 <span class="function"><strong>MongoClient::__construct()</strong></span> でのレプリカセットの例</strong></p>
    <div class="example-contents"><p>
     この例は、レプリカセットに接続する方法を示します。
@@ -397,7 +426,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
     を参照ください。
    </p></div>
   </div>
-  <div class="example" id="example-1402">
+  <div class="example" id="example-1430">
    <p><strong>例2 ドメインソケットへの接続</strong></p>
    <div class="example-contents"><p>
     バージョン 1.0.9 以降では、ローカルで実行している MongoDB への接続に
@@ -427,15 +456,14 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
    </div>
 
   </div>
-  <div class="example" id="example-1403">
+  <div class="example" id="example-1431">
    <p><strong>例3 <span class="function"><strong>MongoClient::__construct()</strong></span> での認証の例</strong></p>
    <div class="example-contents"><p>
     認証を使うには、admin データベースにユーザーが存在しなければなりません。
     Mongo シェルでユーザーを作るには、次のようにします。
    </p></div>
    <div class="example-contents">
-<div class="cdata"><pre>
-&gt; use admin
+<div class="shellcode"><pre class="shellcode">&gt; use admin
 switched to db admin
 &gt; db.addUser(&quot;testUser&quot;, &quot;testPass&quot;);
 {
@@ -443,8 +471,8 @@ switched to db admin
         &quot;user&quot; : &quot;testUser&quot;,
         &quot;pwd&quot; : &quot;03b9b27e0abf1865e2f6fcbd9845dd59&quot;
 }
-&gt;
-</pre></div>
+&gt;</pre>
+</div>
    </div>
 
    <div class="example-contents"><p>
@@ -459,7 +487,7 @@ switched to db admin
    </div>
 
   </div>
-  <div class="example" id="example-1404">
+  <div class="example" id="example-1432">
    <p><strong>例4 <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -474,7 +502,7 @@ switched to db admin
    </p></div>
   </div>
 
-  <div class="example" id="example-1405">
+  <div class="example" id="example-1433">
    <p><strong>例5 <span class="function"><strong>MongoClient::__construct()</strong></span> でのオプションの例</strong></p>
    <div class="example-contents"><p>
     オプションは、接続文字列のクエリ文字列で渡すだけでなく、
@@ -485,35 +513,44 @@ switched to db admin
     にする設定を、すべての書き込み操作のデフォルトとします。
    </p></div>
    <div class="example-contents">
-<div class="cdata"><pre>
-&lt;?php
-$m = new MongoClient(&quot;mongodb://localhost/?journal=true&amp;readPreference=secondary&quot;);
-?&gt;
-</pre></div>
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(</span><span style="color: #DD0000">"mongodb://localhost/?journal=true&amp;readPreference=secondary"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
    </div>
 
    <div class="example-contents"><p>
     同じ設定を、このようにすることもできます。
    </p></div>
    <div class="example-contents">
-<div class="cdata"><pre>
-&lt;?php
-$options = array(
-    &#039;journal&#039; =&gt; true,
-    &#039;readPreference&#039; =&gt; &#039;secondary&#039;,
-);
-$m = new MongoClient(&quot;mongodb://localhost/&quot;, $options);
-?&gt;
-</pre></div>
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$options&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'journal'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'readPreference'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'secondary'</span><span style="color: #007700">,<br />);<br /></span><span style="color: #0000BB">$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(</span><span style="color: #DD0000">"mongodb://localhost/"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$options</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
    </div>
 
   </div>
 
-  <div class="example" id="example-1406">
+  <div class="example" id="example-1434">
    <p><strong>例6 <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;"east"&nbsp;データセンターにある最も近いサーバーを優先します<br /></span><span style="color: #0000BB">$uri&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mongodb://rs1.example.com,rs2.example.com/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$uri&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'?readPreference=nearest'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$uri&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&amp;readPreferenceTags=dc:east'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(</span><span style="color: #0000BB">$uri</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">'replicaSet'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'rs'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>
+    詳細な情報は、このマニュアルの <a href="mongo.readpreferences.html" class="link">優先読み込み</a>
+    のページを参照ください。
+   </p></div>
+  </div>
+
+  <div class="example" id="mongoclient.construct.context.ssl">
+   <p><strong>例7 <span class="function"><strong>MongoClient::__construct()</strong></span> で SSL 証明書を使って接続する例</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$ctx&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">(&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'ssl'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'local_cert'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'/vagrant/certs/client.pem'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'cafile'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'/vagrant/certs/ca.pem'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;)<br />)&nbsp;);<br /><br /></span><span style="color: #0000BB">$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"mongodb://mongod/?ssl=true"</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;array(),&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'context'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$ctx</span><span style="color: #007700">)<br />);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>

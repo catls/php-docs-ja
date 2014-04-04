@@ -47,7 +47,7 @@
 <code class="parameter">collection</code></dt>
 
     <dd>
-<p class="para">The <a href="class.mongocollection.html" class="classname">MongoCollection</a> to execute the batch on. Its <a href="mongo.writeconcerns.html" class="link">WriteConcern</a> will be copied and used as default WriteConcerns if none given as <code class="parameter">$write_options</code> or during <span class="methodname"><a href="mongowritebatch.execute.html" class="methodname">MongoWriteBatch::execute()</a></span>.</p></dd>
+<p class="para">バッチを実行する <a href="class.mongocollection.html" class="classname">MongoCollection</a>。確認付き書き込みのデフォルトは <a href="mongo.writeconcerns.html" class="link">WriteConcern</a> をコピーします。<code class="parameter">$write_options</code> で指定したり、<span class="methodname"><a href="mongowritebatch.execute.html" class="methodname">MongoWriteBatch::execute()</a></span> で指定したりすることもできます。</p></dd>
 
    
    
@@ -71,13 +71,13 @@
     <dt id="mongowritebatch.construct.write_options"><code class="parameter">write_options</code></dt>
 
     <dd>
-<p class="para">An array of Write Options.<table class="doctable informaltable"><thead><tr><th>key</th><th>value meaning</th></tr>
+<p class="para">書き込みオプションの配列。<table class="doctable informaltable"><thead><tr><th>キー</th><th>値</th></tr>
 </thead>
-<tbody class="tbody"><tr><td>w (int|string)</td><td><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> value</td></tr>
-<tr><td>wtimeout (int)</td><td><a href="mongo.writeconcerns.html" class="link">Maximum time to wait for Replication</a></td></tr>
-<tr><td>ordered</td><td>Determins if MongoDB must apply this batch in order (sequentally, one item at a time) or can rearrange it. Defaults to <strong><code>TRUE</code></strong></td></tr>
-<tr><td>j (bool)</td><td>Wait for journaling on the primary. This value is discouraged, use WriteConcern instead</td></tr>
-<tr><td>fsync (bool)</td><td>Wait for fsync on the primary. This value is discouraged, use WriteConcern instead</td></tr>
+<tbody class="tbody"><tr><td>w (int|string)</td><td><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の値</td></tr>
+<tr><td>wtimeout (int)</td><td><a href="mongo.writeconcerns.html" class="link">レプリケーションを待つ時間の最大値</a></td></tr>
+<tr><td>ordered</td><td>MongoDB にこのバッチを順番どおりに実行させるのか、あるいは並べ替えを許すのかを指定する。デフォルトは <strong><code>TRUE</code></strong></td></tr>
+<tr><td>j (bool)</td><td>プライマリーへのジャーナリングを待つかどうか。これは非推奨なので、かわりに確認付き書き込みを使うこと</td></tr>
+<tr><td>fsync (bool)</td><td>プライマリーへの fsync を待つかどうか。これは非推奨なので、かわりに確認付き書き込みを使うこと</td></tr>
 </tbody></table>
 </p></dd>
 

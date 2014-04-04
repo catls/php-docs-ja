@@ -163,7 +163,7 @@
           と Mongo に言われた場合などに有用です。
          </p>
         </li>
-        <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">Integer, defaults to <em>MongoCursor::$timeout</em>.  If acknowledged writes are used, this sets how long (in milliseconds) for the client to wait for a database response.  If the database does not respond within the timeout period, a <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> will be thrown.</p><div class="warning"><strong class="warning">警告</strong><p class="para">Deprecated in favour of the <em>&quot;socketTimeoutMS&quot;</em> option</p></div></li>
+        <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p><div class="warning"><strong class="warning">警告</strong><p class="para">非推奨です。かわりに <em>&quot;socketTimeoutMS&quot;</em> オプションを使いましょう。</p></div></li>
         <li class="listitem"><p class="para"><em>&quot;safe&quot;</em></p><p class="para"><em class="emphasis">非推奨</em>。<a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の <em>w</em> オプションを使いましょう。</p></li>
        </ul>
       </p>
@@ -279,7 +279,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.ensureindex-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1456">
+  <div class="example" id="example-1486">
    <p><strong>例1 <span class="function"><strong>MongoCollection::ensureIndex()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -289,7 +289,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-1457">
+  <div class="example" id="example-1487">
    <p><strong>例2 重複を削除する例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -300,7 +300,7 @@
 
   </div>
 
-  <div class="example" id="example-1458">
+  <div class="example" id="example-1488">
    <p><strong>例3 地理空間のインデックス</strong></p>
    <div class="example-contents"><p>
     Mongo は地理空間のインデックスをサポートしています。

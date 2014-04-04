@@ -238,7 +238,7 @@
      PHP 5.3 以降では、変数を含まないヒアドキュメントではこの制約はなくなりました。
     </p>
 
-    <div class="example" id="example-73">
+    <div class="example" id="example-86">
      <p><strong>例1 間違った例</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -258,7 +258,7 @@
     ヒアドキュメントの内部で複雑な変数を表わす場合には注意が必要です。
    </p>
 
-   <div class="example" id="example-74"> 
+   <div class="example" id="example-87"> 
     <p><strong>例2 ヒアドキュメントで文字列を括る例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -281,7 +281,7 @@ This should print a capital &#039;A&#039;: A</pre></div>
     関数の引数にデータを渡すこともできます。
    </p>
 
-   <div class="example" id="example-75"> 
+   <div class="example" id="example-88"> 
     <p><strong>例3 ヒアドキュメントを引数に使用する例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -297,7 +297,7 @@ This should print a capital &#039;A&#039;: A</pre></div>
     ヒアドキュメント構文で初期化できるようになりました。
    </p>
 
-   <div class="example" id="example-76"> 
+   <div class="example" id="example-89"> 
     <p><strong>例4 ヒアドキュメントを用いた静的な値の初期化</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -312,7 +312,7 @@ This should print a capital &#039;A&#039;: A</pre></div>
     PHP 5.3.0 以降では、ヒアドキュメントの宣言をダブルクォートで囲めるようにもなりました。
    </p>
 
-   <div class="example" id="example-77"> 
+   <div class="example" id="example-90"> 
     <p><strong>例5 ヒアドキュメントでのダブルクォート</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -350,7 +350,7 @@ This should print a capital &#039;A&#039;: A</pre></div>
     の識別子にも当てはまります。特に終了識別子の書き方に関する決まりに注意しましょう。
    </p>
    
-   <div class="example" id="example-78">
+   <div class="example" id="example-91">
     <p><strong>例6 Nowdoc による文字列のクォートの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -375,7 +375,7 @@ This should not print a capital &#039;A&#039;: \x41</pre></div>
     </p>
    </p></blockquote>
     
-   <div class="example" id="example-79">
+   <div class="example" id="example-92">
     <p><strong>例7 静的データの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -444,7 +444,7 @@ He drank some juice made of .
      シンプルな変数の場合と同じ規則が、オブジェクトのプロパティに対しても適用されます。
     </p>
 
-    <div class="example" id="example-80"><p><strong>例8 簡単な構文の例</strong></p>
+    <div class="example" id="example-93"><p><strong>例8 簡単な構文の例</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$juices&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"orange"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"koolaid1"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"purple"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">koolaid1</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">people&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$john&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"John&nbsp;Smith"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$jane&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Jane&nbsp;Smith"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$robert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Robert&nbsp;Paulsen"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$smith&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Smith"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$people&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">people</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">&nbsp;then&nbsp;said&nbsp;hello&nbsp;to&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">jane</span><span style="color: #DD0000">."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">'s&nbsp;wife&nbsp;greeted&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">robert</span><span style="color: #DD0000">."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">robert</span><span style="color: #DD0000">&nbsp;greeted&nbsp;the&nbsp;two&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">smiths</span><span style="color: #DD0000">."</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;動作しません<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -586,7 +586,7 @@ I am bar.
     </p>
    </div>
 
-   <div class="example" id="example-81">
+   <div class="example" id="example-94">
     <p><strong>例9 文字列の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -603,7 +603,7 @@ I am bar.
     <em>&quot;foo&quot;</em> のようなオフセットを指定しても単に <em>0</em> にキャストされるだけでした。
    </p>
 
-   <div class="example" id="example-82">
+   <div class="example" id="example-95">
     <p><strong>例10 PHP 5.3 と PHP 5.4 の違い</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -237,6 +237,9 @@
      <p class="para">
       オペコード・キャッシュを有効にします。
       無効にした場合、コードは最適化もキャッシュもされません。
+      <em>opcache.enable</em> の設定を、実行時に
+      <span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span> で有効化することはできません。
+      実行時にできるのは、無効化だけです。スクリプト内で有効化しようとすると、警告が発生します。
      </p>
     </dd>
 

@@ -261,6 +261,17 @@
           </tr>
 
           <tr>
+           <td style="vertical-align: top;"><strong><code>CURLOPT_TCP_NODELAY</code></strong></td>
+           <td style="vertical-align: top;">
+            TCP_NODELAY オプションを設定するか解除するかを、long 値で渡します (1 = 設定、0 = 解除)。
+            デフォルトは、解除された状態です。
+           </td>
+           <td style="vertical-align: top;">
+            PHP 5.2.1 以降のバージョンで、libcurl 7.11.2 以降と組み合わせてコンパイルしたときに利用可能です。
+           </td>
+          </tr>
+
+          <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_FTPASCII</code></strong></td>
            <td style="vertical-align: top;">
             <strong><code>CURLOPT_TRANSFERTEXT</code></strong> のエイリアスです。
@@ -1655,7 +1666,7 @@
  <div class="refsect1 examples" id="refsect1-function.curl-setopt-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4258">
+   <div class="example" id="example-4292">
     <p><strong>例1 新規に cURL セッションを初期化、ウェブページを取得する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -1667,7 +1678,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4259">
+   <div class="example" id="example-4293">
     <p><strong>例2 ファイルのアップロード</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
