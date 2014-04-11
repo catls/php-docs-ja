@@ -301,7 +301,7 @@
 <li class='gen-index index-for-c'>c<ul id='refentry-index-for-c'>
 <li><a href="cachingiterator.count.html" class="index">CachingIterator::count</a> - イテレータ内の要素の数</li>
 <li><a href="cachingiterator.current.html" class="index">CachingIterator::current</a> - 現在の要素を返す</li>
-<li><a href="cachingiterator.getcache.html" class="index">CachingIterator::getCache</a> - The getCache purpose</li>
+<li><a href="cachingiterator.getcache.html" class="index">CachingIterator::getCache</a> - キャッシュの内容を取得する</li>
 <li><a href="cachingiterator.getflags.html" class="index">CachingIterator::getFlags</a> - 使用しているフラグを取得する</li>
 <li><a href="cachingiterator.getinneriterator.html" class="index">CachingIterator::getInnerIterator</a> - 内部イテレータを返す</li>
 <li><a href="cachingiterator.hasnext.html" class="index">CachingIterator::hasNext</a> - 内部イテレータが有効な次の要素を持つかどうかをチェックする</li>
@@ -4617,8 +4617,8 @@
 <li><a href="mongocode.construct.html" class="index">MongoCode::__construct</a> - 新しいコードオブジェクトを作成する</li>
 <li><a href="mongocode.tostring.html" class="index">MongoCode::__toString</a> - このコードを文字列で返す</li>
 <li><a href="mongocollection.aggregate.html" class="index">MongoCollection::aggregate</a> - aggregation フレームワークを使って集約する</li>
+<li><a href="mongocollection.aggregatecursor.html" class="index">MongoCollection::aggregateCursor</a> - Execute an aggregation pipeline command and retrieve results through a cursor</li>
 <li><a href="mongocollection.batchinsert.html" class="index">MongoCollection::batchInsert</a> - 複数のドキュメントをコレクションに追加する</li>
-<li><a href="mongocollection.commandcursor.html" class="index">MongoCollection::commandCursor</a> - Execute a database command and retrieve results through a cursor</li>
 <li><a href="mongocollection.count.html" class="index">MongoCollection::count</a> - コレクション内のドキュメント数を数える</li>
 <li><a href="mongocollection.createdbref.html" class="index">MongoCollection::createDBRef</a> - データベースへの参照を作成する</li>
 <li><a href="mongocollection.createindex.html" class="index">MongoCollection::createIndex</a> - Creates an index on the given field(s)</li>
@@ -4650,6 +4650,7 @@
 <li><a href="mongocollection.get.html" class="index">MongoCollection::__get</a> - コレクションを取得する</li>
 <li><a href="mongocollection.--tostring.html" class="index">MongoCollection::__toString</a> - このコレクションの文字列表現</li>
 <li><a href="mongocommandcursor.batchsize.html" class="index">MongoCommandCursor::batchSize</a> - Limits the number of elements returned in one batch.</li>
+<li><a href="mongocommandcursor.createfromdocument.html" class="index">MongoCommandCursor::createFromDocument</a> - Create a new command cursor from an existing cursor document</li>
 <li><a href="mongocommandcursor.current.html" class="index">MongoCommandCursor::current</a> - Returns the current element</li>
 <li><a href="mongocommandcursor.dead.html" class="index">MongoCommandCursor::dead</a> - Checks if there are documents that have not been sent yet from the database for this cursor</li>
 <li><a href="mongocommandcursor.info.html" class="index">MongoCommandCursor::info</a> - Gets the query, fields, limit, and skip for this cursor</li>
@@ -5228,7 +5229,7 @@
 <li><a href="function.ncurses-border.html" class="index">ncurses_border</a> - 属性付きの文字で画面周囲に境界を描画する</li>
 <li><a href="function.ncurses-bottom-panel.html" class="index">ncurses_bottom_panel</a> - パネルをスタックの最下部に移動する</li>
 <li><a href="function.ncurses-can-change-color.html" class="index">ncurses_can_change_color</a> - 端末の色を変更可能かどうか確認する</li>
-<li><a href="function.ncurses-cbreak.html" class="index">ncurses_cbreak</a> - 入力のバッファリングを変更する</li>
+<li><a href="function.ncurses-cbreak.html" class="index">ncurses_cbreak</a> - 入力のバッファリングをオフにする</li>
 <li><a href="function.ncurses-clear.html" class="index">ncurses_clear</a> - スクリーンをクリアする</li>
 <li><a href="function.ncurses-clrtobot.html" class="index">ncurses_clrtobot</a> - 現在位置から最下部までスクリーンをクリアする</li>
 <li><a href="function.ncurses-clrtoeol.html" class="index">ncurses_clrtoeol</a> - 現在位置から行末までスクリーンをクリアする</li>
@@ -5852,6 +5853,10 @@
 <li><a href="function.openssl-random-pseudo-bytes.html" class="index">openssl_random_pseudo_bytes</a> - 疑似乱数のバイト文字列を生成する</li>
 <li><a href="function.openssl-seal.html" class="index">openssl_seal</a> - データをシール(暗号化)する</li>
 <li><a href="function.openssl-sign.html" class="index">openssl_sign</a> - 署名を生成する</li>
+<li><a href="function.openssl-spki-export.html" class="index">openssl_spki_export</a> - Exports a valid PEM formatted public key signed public key and challenge</li>
+<li><a href="function.openssl-spki-export-challenge.html" class="index">openssl_spki_export_challenge</a> - Exports the challenge assoicated with a signed public key and challenge</li>
+<li><a href="function.openssl-spki-new.html" class="index">openssl_spki_new</a> - Generate a new signed public key and challenge</li>
+<li><a href="function.openssl-spki-verify.html" class="index">openssl_spki_verify</a> - Verifies a signed public key and challenge</li>
 <li><a href="function.openssl-verify.html" class="index">openssl_verify</a> - 署名を検証する</li>
 <li><a href="function.openssl-x509-checkpurpose.html" class="index">openssl_x509_checkpurpose</a> - 証明書が特定の目的に使用可能かどうか確認する</li>
 <li><a href="function.openssl-x509-check-private-key.html" class="index">openssl_x509_check_private_key</a> - 秘密鍵が証明書に対応するかを確認する</li>
@@ -7654,6 +7659,7 @@
 <li><a href="sphinxclient.status.html" class="index">SphinxClient::status</a> - Queries searchd status</li>
 <li><a href="sphinxclient.updateattributes.html" class="index">SphinxClient::updateAttributes</a> - Update document attributes</li>
 <li><a href="sphinxclient.construct.html" class="index">SphinxClient::__construct</a> - 新しい SphinxClient オブジェクトを作成する</li>
+<li><a href="spldoublylinkedlist.add.html" class="index">SplDoublyLinkedList::add</a> - Add/insert a new value at the specified index</li>
 <li><a href="spldoublylinkedlist.bottom.html" class="index">SplDoublyLinkedList::bottom</a> - 双方向リンクリストの最初のノードを取得する</li>
 <li><a href="spldoublylinkedlist.count.html" class="index">SplDoublyLinkedList::count</a> - 双方向リンクリストの要素数を数える</li>
 <li><a href="spldoublylinkedlist.current.html" class="index">SplDoublyLinkedList::current</a> - 現在の配列の要素を返す</li>
@@ -8902,6 +8908,7 @@
 <li><a href="function.uopz-copy.html" class="index">uopz_copy</a> - Copy a function</li>
 <li><a href="function.uopz-delete.html" class="index">uopz_delete</a> - Delete a function</li>
 <li><a href="function.uopz-extend.html" class="index">uopz_extend</a> - Extend a class at runtime</li>
+<li><a href="function.uopz-flags.html" class="index">uopz_flags</a> - Get or set flags on function or class</li>
 <li><a href="function.uopz-function.html" class="index">uopz_function</a> - Creates a function at runtime</li>
 <li><a href="function.uopz-implement.html" class="index">uopz_implement</a> - Implements an interface at runtime</li>
 <li><a href="function.uopz-overload.html" class="index">uopz_overload</a> - Overload a VM opcode</li>

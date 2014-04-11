@@ -41,31 +41,30 @@
 
   
    <p class="para">
-    All encrypted client streams now enable peer verification by default. By
-    default, this will use OpenSSL&#039;s default CA bundle to verify the peer
-    certificate. In most cases, no changes will need to be made to communicate
-    with servers with valid SSL certificates, as distributors generally
-    configure OpenSSL to use known good CA bundles.
+    暗号化されたすべてのクライアントストリームで、ピア検証がデフォルトで有効になりました。
+    デフォルトでは、OpenSSL のデフォルト CA バンドルを使ってピア証明書を検証します。
+    たいていの場合は、正しい SSL 証明書を持つサーバーと通信するならこれを変更する必要はありません。
+    OpenSSL が、よく知られた CA バンドルを使うように設定されているからです。
    </p>
    
    <p class="para">
-    The default CA bundle may be overridden on a global basis by setting
-    either the openssl.cafile or openssl.capath configuration setting, or on a
-    per request basis by using the
-    <a href="context.ssl.html#context.ssl.cafile" class="link"><code class="parameter">cafile</code></a> or
+    デフォルトの CA バンドルを上書きすることもできます。
+    openssl.cafile あるいは openssl.capath を設定するえばグローバルに変更でき、コンテキストオプション
+    <a href="context.ssl.html#context.ssl.cafile" class="link"><code class="parameter">cafile</code></a> あるいは
     <a href="context.ssl.html#context.ssl.capath" class="link"><code class="parameter">capath</code></a>
-    context options.
+    を使えばリクエスト単位で変更できます。
    </p>
 
    <p class="para">
-    While not recommended in general, it is possible to disable peer
+    一般的にはおすすめできませんが、
     certificate verification for a request by setting the
+    コンテキストオプション
     <a href="context.ssl.html#context.ssl.verify-peer" class="link"><code class="parameter">verify_peer</code></a>
-    context option to <strong><code>FALSE</code></strong>, and to disable peer name validation by setting
-    the
+    を <strong><code>FALSE</code></strong> にしてリクエストでのピア証明書の検証を無効化することもできます。
+    また同じく、ピア名の検証も、コンテキストオプション
     <code class="parameter">verify_peer_name</code>
     
-    context option to <strong><code>FALSE</code></strong>.
+    を <strong><code>FALSE</code></strong> にすれば無効化できます。
    </p>
 
  </div>

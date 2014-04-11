@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongocommandcursor.batchsize.html">MongoCommandCursor::batchSize</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongocommandcursor.current.html">MongoCommandCursor::current</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongocommandcursor.createfromdocument.html">MongoCommandCursor::createFromDocument</a></div>
  <div class="up"><a href="class.mongocommandcursor.html">MongoCommandCursor</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="mongocommandcursor.construct" class="refentry">
@@ -27,9 +27,15 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   Users are not supposed to create a
-   <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> manually, but instead use
-   <span class="methodname"><a href="mongocollection.commandcursor.html" class="methodname">MongoCollection::commandCursor()</a></span>.
+   In many instances, you do not have to create a
+   <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> manually, but instead one of the
+   helper functions such as
+   <span class="methodname"><a href="mongocollection.aggregatecursor.html" class="methodname">MongoCollection::aggregateCursor()</a></span> and
+   <span class="methodname"><strong>MongoCollection::parallelCollectionScan()</strong></span>. However,
+   if the server adds new commands that can return cursors, then manually
+   creating <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> objects is required.
+   However, it might be easier to use the
+   <span class="methodname"><a href="mongocommandcursor.createfromdocument.html" class="methodname">MongoCommandCursor::createFromDocument()</a></span> instead.
   </p>
  </div>
 
@@ -97,7 +103,7 @@
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongocommandcursor.batchsize.html">MongoCommandCursor::batchSize</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongocommandcursor.current.html">MongoCommandCursor::current</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongocommandcursor.createfromdocument.html">MongoCommandCursor::createFromDocument</a></div>
  <div class="up"><a href="class.mongocommandcursor.html">MongoCommandCursor</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

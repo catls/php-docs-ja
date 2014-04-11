@@ -23,8 +23,10 @@
    <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>uopz_compose</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$classes</code></span>
-   [, <span class="methodparam"><span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> <code class="parameter">$__construct</code></span>
-  ] )</div>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$methods</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$properties</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
+  ]]] )</div>
 
   <p class="para rdfs-comment">
  Creates a new class of the given name that implements, extends, or uses all of the provided classes
@@ -60,6 +62,42 @@
     </dd>
 
    
+   
+    <dt>
+<code class="parameter">methods</code></dt>
+
+    <dd>
+
+     <p class="para">
+ An associative array of methods, values are either closures or [modifiers =&gt; closure]
+     </p>   
+    </dd>
+ 
+   
+    
+    <dt>
+<code class="parameter">properties</code></dt>
+
+    <dd>
+
+     <p class="para">
+ An associative array of properties, keys are names, values are modifiers
+     </p>    
+    </dd>
+
+   
+    
+    <dt>
+<code class="parameter">flags</code></dt>
+
+    <dd>
+
+     <p class="para">
+ Entry type, by default ZEND_ACC_CLASS
+     </p>
+    </dd>
+
+   
   </dl>
 
  </div>
@@ -79,7 +117,7 @@
    <p><strong>例1 <span class="function"><strong>uopz_compose()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">myClass&nbsp;</span><span style="color: #007700">{}<br />trait&nbsp;</span><span style="color: #0000BB">myTrait&nbsp;</span><span style="color: #007700">{}<br />interface&nbsp;</span><span style="color: #0000BB">myInterface&nbsp;</span><span style="color: #007700">{}<br /><br /></span><span style="color: #0000BB">uopz_compose</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Composed</span><span style="color: #007700">::class,&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">myClass</span><span style="color: #007700">::class,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">myTrait</span><span style="color: #007700">::class,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">myInterface</span><span style="color: #007700">::class<br />]);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;</span><span style="color: #0000BB">class_uses</span><span style="color: #007700">(</span><span style="color: #0000BB">Composed</span><span style="color: #007700">::class),<br />&nbsp;</span><span style="color: #0000BB">class_parents</span><span style="color: #007700">(</span><span style="color: #0000BB">Composed</span><span style="color: #007700">::class),<br />&nbsp;</span><span style="color: #0000BB">class_implements</span><span style="color: #007700">(</span><span style="color: #0000BB">Composed</span><span style="color: #007700">::class));<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">myClass&nbsp;</span><span style="color: #007700">{}<br />trait&nbsp;</span><span style="color: #0000BB">myTrait&nbsp;</span><span style="color: #007700">{}<br />interface&nbsp;</span><span style="color: #0000BB">myInterface&nbsp;</span><span style="color: #007700">{}<br /><br /></span><span style="color: #0000BB">uopz_compose</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Composed</span><span style="color: #007700">::class,&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">myClass</span><span style="color: #007700">::class,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">myTrait</span><span style="color: #007700">::class,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">myInterface</span><span style="color: #007700">::class<br />&nbsp;&nbsp;&nbsp;&nbsp;],&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"__construct"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />]);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;</span><span style="color: #0000BB">class_uses</span><span style="color: #007700">(</span><span style="color: #0000BB">Composed</span><span style="color: #007700">::class),<br />&nbsp;</span><span style="color: #0000BB">class_parents</span><span style="color: #007700">(</span><span style="color: #0000BB">Composed</span><span style="color: #007700">::class),<br />&nbsp;</span><span style="color: #0000BB">class_implements</span><span style="color: #007700">(</span><span style="color: #0000BB">Composed</span><span style="color: #007700">::class));<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>

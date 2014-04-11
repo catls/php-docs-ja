@@ -18,31 +18,30 @@
 
   
    <p class="para">
-    All encrypted client streams now enable peer verification by default. By
-    default, this will use OpenSSL&#039;s default CA bundle to verify the peer
-    certificate. In most cases, no changes will need to be made to communicate
-    with servers with valid SSL certificates, as distributors generally
-    configure OpenSSL to use known good CA bundles.
+    暗号化されたすべてのクライアントストリームで、ピア検証がデフォルトで有効になりました。
+    デフォルトでは、OpenSSL のデフォルト CA バンドルを使ってピア証明書を検証します。
+    たいていの場合は、正しい SSL 証明書を持つサーバーと通信するならこれを変更する必要はありません。
+    OpenSSL が、よく知られた CA バンドルを使うように設定されているからです。
    </p>
    
    <p class="para">
-    The default CA bundle may be overridden on a global basis by setting
-    either the openssl.cafile or openssl.capath configuration setting, or on a
-    per request basis by using the
-    <a href="context.ssl.html#context.ssl.cafile" class="link"><code class="parameter">cafile</code></a> or
+    デフォルトの CA バンドルを上書きすることもできます。
+    openssl.cafile あるいは openssl.capath を設定するえばグローバルに変更でき、コンテキストオプション
+    <a href="context.ssl.html#context.ssl.cafile" class="link"><code class="parameter">cafile</code></a> あるいは
     <a href="context.ssl.html#context.ssl.capath" class="link"><code class="parameter">capath</code></a>
-    context options.
+    を使えばリクエスト単位で変更できます。
    </p>
 
    <p class="para">
-    While not recommended in general, it is possible to disable peer
+    一般的にはおすすめできませんが、
     certificate verification for a request by setting the
+    コンテキストオプション
     <a href="context.ssl.html#context.ssl.verify-peer" class="link"><code class="parameter">verify_peer</code></a>
-    context option to <strong><code>FALSE</code></strong>, and to disable peer name validation by setting
-    the
+    を <strong><code>FALSE</code></strong> にしてリクエストでのピア証明書の検証を無効化することもできます。
+    また同じく、ピア名の検証も、コンテキストオプション
     <code class="parameter">verify_peer_name</code>
     
-    context option to <strong><code>FALSE</code></strong>.
+    を <strong><code>FALSE</code></strong> にすれば無効化できます。
    </p>
 
  </div>
@@ -329,6 +328,140 @@ array(8) {
 </pre></div>
    </div>
   </div>
+ </div>
+
+ <div class="sect2" id="migration56.openssl.spki">
+  <h3 class="title">SPKI support</h3>
+
+  <p class="para">
+   Support has been added for generating, extracting and verifying signed
+   public key and challenges (SPKAC). <span class="function"><a href="function.openssl-spki-new.html" class="function">openssl_spki_new()</a></span>,
+   <span class="function"><a href="function.openssl-spki-verify.html" class="function">openssl_spki_verify()</a></span>,
+   <span class="function"><a href="function.openssl-spki-export-challenge.html" class="function">openssl_spki_export_challenge()</a></span>, and
+   <span class="function"><a href="function.openssl-spki-export.html" class="function">openssl_spki_export()</a></span> have been added to create, verify
+   export PEM public key and associated challenge from SPKAC&#039;s generated from
+   a <em>KeyGen</em> HTML5 element.
+  </p>
+
+  <dl>
+
+   
+    <dt>
+<code class="parameter">openssl_spki_new</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Generates a new SPKAC using private key, challenge string and hashing
+      algorithm.
+     </p>
+
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$pkey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_new</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">openssl_pkey_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'secret&nbsp;passphrase'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$spkac&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_spki_new</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'challenge&nbsp;sring'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <p class="para">上の例の出力は以下となります。</p>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+SPKAC=MIIBXjCByDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA3L0IfUijj7+A8CPC8EmhcdNoe5fUAog7OrBdhn7EkxFButUp40P7+LiYiygYG1TmoI/a5EgsLU3s9twEz3hmgY9mYIqb/rb+SF8qlD/K6KVyUORC7Wlz1Df4L8O3DuRGzx6/+3jIW6cPBpfgH1sVuYS1vDBsP/gMMIxwTsKJ4P0CAwEAARYkYjViMzYxMTktNjY5YS00ZDljLWEyYzctMGZjNGFhMjVlMmE2MA0GCSqGSIb3DQEBAwUAA4GBAF7hu0ifzmjonhAak2FhhBRsKFDzXdKIkrWxVNe8e0bZzMrWOxFM/rqBgeH3/gtOUDRS5Fnzyq425UsTYbjfiKzxGeCYCQJb1KJ2V5Ij/mIJHZr53WYEXHQTNMGR8RPm7IxwVXVSHIgAfXsXZ9IXNbFbcaLRiSTr9/N4U+MXUWL7
+</pre></div>
+      </div>
+     </div>
+    </dd>
+
+   
+
+   
+    <dt>
+<code class="parameter">openssl_spki_verify</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Verifies provided SPKAC.
+     </p>
+
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$pkey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_new</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">openssl_pkey_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'secret&nbsp;passphrase'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$spkac&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_spki_new</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'challenge&nbsp;sring'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">openssl_spki_verify</span><span style="color: #007700">(</span><span style="color: #0000BB">$spkac</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </dd>
+
+   
+
+   
+    <dt>
+<code class="parameter">openssl_spki_export_challenge</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Exports associated challenge from provided SPKAC.
+     </p>
+
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$pkey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_new</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">openssl_pkey_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'secret&nbsp;passphrase'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$spkac&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_spki_new</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'challenge&nbsp;sring'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$challenge&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_spki_export_challenge</span><span style="color: #007700">(</span><span style="color: #0000BB">$spkac</span><span style="color: #007700">):<br />echo&nbsp;</span><span style="color: #0000BB">$challenge</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <p class="para">上の例の出力は以下となります。</p>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+challenge string
+</pre></div>
+      </div>
+     </div>
+    </dd>
+
+   
+
+   
+    <dt>
+<code class="parameter">openssl_spki_export</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Exports the PEM formatted RSA public key from SPKAC.
+     </p>
+
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$pkey&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_pkey_new</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">openssl_pkey_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'secret&nbsp;passphrase'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$spkac&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_spki_new</span><span style="color: #007700">(</span><span style="color: #0000BB">$pkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'challenge&nbsp;sring'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">openssl_spki_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$spkac</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <p class="para">上の例の出力は以下となります。</p>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcvQh9SKOPv4DwI8LwSaFx02h7
+l9QCiDs6sF2GfsSTEUG61SnjQ/v4uJiLKBgbVOagj9rkSCwtTez23ATPeGaBj2Zg
+ipv+tv5IXyqUP8ropXJQ5ELtbXPUN/gvw7cO5EbPHr/7eMhbpw8Gl+AfWxW5hLW8
+MGw/+AwwjHBOwong/QIDAQAB
+-----END PUBLIC KEY-----
+</pre></div>
+      </div>
+     </div>
+    </dd>
+
+   
+  </dl>
+
  </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration56.new-functions.html">New functions</a></div>
