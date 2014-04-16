@@ -1,5 +1,4 @@
 #!/bin/bash
-#set -e
 
 BASE_DIR=$(cd $(dirname $0)/../;pwd)
 TMP_DIR=${BASE_DIR}/tmp
@@ -15,6 +14,10 @@ function check_update() {
 
     wget ${_CHECK_URL} -O check.html > /dev/null 2>&1
     UPDATED_TIME=$(grep 'Date:' check.html | grep php_manual_ja.tar.gz | egrep -o 'Date:\s?([0-9]{1,2} [a-zA-Z]{3} [0-9]{4})')
+    if [ -z "$UPDATED_TIME" ];then
+        echo '$UPDATE_TIMEの取得に失敗しました。'
+        return 0
+    fi
     if grep "${UPDATED_TIME}" update-date >/dev/null;then
         return 0
     else
@@ -29,6 +32,11 @@ function update() {
     cd ${TMP_DIR}
 
     wget ${_TAR_URL} -O php_manual_ja.tar.gz  > /dev/null 2>&1
+    if [ "$?" -ne 0 ];then
+        echo "php_manual_ja.tar.gzの取得に失敗しました。"
+        return 0
+    fi
+
     tar xzf php_manual_ja.tar.gz && rm php_manual_ja.tar.gz
 
     rm -fr ${DOC_DIR}
@@ -36,16 +44,16 @@ function update() {
 
     return 1
 }
-function github_push() {
+function git_commit() {
     cd ${BASE_DIR}
 
     git add -A .
     git commit -am "updated ${UPDATED_TIME}"
     git push origin master
 
-    echo "php-docsを更新しました。${UPDATED_TIME}"
+    echo "php-docs-jaを更新しました。${UPDATED_TIME}"
     echo "HEAD :$(git rev-parse HEAD)"
     echo "HEAD^:$(git rev-parse HEAD^)"
 }
 
-check_update || update || github_push
+check_update || update || git_commit
