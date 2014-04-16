@@ -13,7 +13,7 @@
 </div><hr /><div id="mongocollection.aggregatecursor" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoCollection::aggregateCursor</h1>
-  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">MongoCollection::aggregateCursor</span> &mdash; <span class="dc-title">Execute an aggregation pipeline command and retrieve results through a cursor</span></p>
+  <p class="verinfo">(PECL mongo &gt;=1.5.0)</p><p class="refpurpose"><span class="refname">MongoCollection::aggregateCursor</span> &mdash; <span class="dc-title">Execute an aggregation pipeline command and retrieve results through a cursor</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-mongocollection.aggregatecursor-description">
@@ -57,41 +57,48 @@
     
     
      <dt>
-
-      <code class="parameter">options</code>
-     </dt>
+<code class="parameter">options</code></dt>
 
      <dd>
 
-      <p class="para">
-       Options for the aggregation commant.
-       <ul class="itemizedlist">
-        <li class="listitem">
-         <p class="para">
-          <em>&quot;cursor&quot;</em>
-         </p>
-         <p class="para">
-          It is possible to configure how many initial documents the server
-          should return with the first result set. The default initial batch size
-          is <em>101</em>. You can change it by adding the
-          <em>cursor</em> option:
-         </p>
-         <div class="example-contents">
+      <p class="para">Options for the aggregation command. Valid options include:</p>
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <p class="para"><em>&quot;allowDiskUse&quot;</em></p>
+        <p class="para">Allow aggregation stages to write to temporary files</p>
+       </li>
+       <li class="listitem">
+        <p class="para"><em>&quot;cursor&quot;</em></p>
+        <p class="para">
+         It is possible to configure how many initial documents the server
+         should return with the first result set. The default initial batch size
+         is <em>101</em>. You can change it by adding the
+         <em>batchSize</em> option:
+        </p>
+        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">aggregateCursor</span><span style="color: #007700">(&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$pipeline</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;</span><span style="color: #DD0000">"cursor"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">"batchSize"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">4&nbsp;</span><span style="color: #007700">]&nbsp;]<br />);</span>
 </span>
 </code></div>
-         </div>
+        </div>
 
-         <p class="para">
-          This option does only configure the first batch size. To configure the
-          size of future batches, please use the
-          <span class="methodname"><a href="mongocommandcursor.batchsize.html" class="methodname">MongoCommandCursor::batchSize()</a></span> method on the
-          returned <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> object.
-         </p>
-        </li>
-       </ul>
-      </p>
+        <p class="para">
+         This option only configures the size of the first batch. To configure
+         the size of future batches, please use the
+         <span class="methodname"><a href="mongocommandcursor.batchsize.html" class="methodname">MongoCommandCursor::batchSize()</a></span> method on the
+         returned <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> object.
+        </p>
+       </li>
+       <li class="listitem">
+        <p class="para"><em>&quot;explain&quot;</em></p>
+        <p class="para">
+         Return information on the processing of the pipeline. If you need to
+         use this option, you should consider using
+         <span class="methodname"><a href="mongocollection.aggregate.html" class="methodname">MongoCollection::aggregate()</a></span>.
+        </p>
+       </li>
+       <li class="listitem"><p class="para"><em>&quot;maxTimeMS&quot;</em></p><p class="para">操作を行う累積時間の制限 (アイドル時間を含まない) を、ミリ秒単位で指定します。この時間内に操作が完了しなければ、<a href="class.mongoexecutiontimeoutexception.html" class="classname">MongoExecutionTimeoutException</a> をスローします。</p></li>
+      </ul>
      </dd>
 
        
@@ -118,7 +125,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.aggregatecursor-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1477">
+  <div class="example" id="example-1480">
    <p><strong>例1 <span class="function"><strong>MongoCollection::aggregateCursor()</strong></span> example</strong></p>
    <div class="example-contents"><p>
     Finding all of the distinct values for a key.
@@ -139,7 +146,7 @@ Sally: 22<br />
    </div>
   </div>
 
-  <div class="example" id="example-1478">
+  <div class="example" id="example-1481">
    <p><strong>例2 <span class="function"><strong>MongoCollection::aggregateCursor()</strong></span>
    example with different initial batch size</strong></p>
    <div class="example-contents"><p>

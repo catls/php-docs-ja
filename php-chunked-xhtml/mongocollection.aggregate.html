@@ -68,9 +68,27 @@
 
     <dd>
 
-     <p class="para">
-      コマンドの引数 (<em>allowDiskUse</em> や <em>explain</em> あるいは <em>cursor</em> など) の配列。
-     </p>
+     <p class="para">集約コマンドのオプション。以下のオプションが使えます。</p>
+     <ul class="itemizedlist">
+      <li class="listitem">
+       <p class="para"><em>&quot;allowDiskUse&quot;</em></p>
+       <p class="para">集約時に、テンポラリファイルへの書き込みを許可します。</p>
+      </li>
+      <li class="listitem">
+       <p class="para"><em>&quot;cursor&quot;</em></p>
+       <p class="para">
+        カーソルオブジェクトの作成を制御するオプション。
+        このオプションを使う必要がある場合は、
+        <span class="methodname"><a href="mongocollection.aggregatecursor.html" class="methodname">MongoCollection::aggregateCursor()</a></span>
+        を使うことを検討しましょう。
+       </p>
+      </li>
+      <li class="listitem">
+       <p class="para"><em>&quot;explain&quot;</em></p>
+       <p class="para">パイプライン処理の情報を返します。</p>
+      </li>
+      <li class="listitem"><p class="para"><em>&quot;maxTimeMS&quot;</em></p><p class="para">操作を行う累積時間の制限 (アイドル時間を含まない) を、ミリ秒単位で指定します。この時間内に操作が完了しなければ、<a href="class.mongoexecutiontimeoutexception.html" class="classname">MongoExecutionTimeoutException</a> をスローします。</p></li>
+     </ul>
     </dd>
 
    
@@ -480,6 +498,7 @@ array(2) {
  <div class="refsect1 seealso" id="refsect1-mongocollection.aggregate-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
+   <li class="member"><span class="methodname"><a href="mongocollection.aggregatecursor.html" class="methodname" rel="rdfs-seeAlso">MongoCollection::aggregateCursor()</a> - Execute an aggregation pipeline command and retrieve results through a cursor</span></li>
    <li class="member">MongoDB <a href="http://docs.mongodb.org/manual/core/aggregation-pipeline/" class="link external">&raquo;&nbsp;aggregation フレームワーク</a></li>
   </ul>
  </div>
