@@ -21,8 +21,8 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><strong>Countable::count</strong></span>
-    ( <span class="methodparam">void</span>
-   )</div>
+    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code><span class="initializer"> = COUNT_NORMAL</span></span>
+  ] )</div>
 
   <p class="para rdfs-comment">
    このメソッドは、<a href="class.countable.html" class="classname">Countable</a> を実装したオブジェクトで
@@ -33,7 +33,27 @@
 
  <div class="refsect1 parameters" id="refsect1-countable.count-parameters">
   <h3 class="title">パラメータ</h3>
-  <p class="para">この関数にはパラメータはありません。</p>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">mode</code></dt>
+
+     <dd>
+
+      <p class="para">
+       オプションのパラメータ <code class="parameter">mode</code> には
+       <strong><code>COUNT_NORMAL</code></strong> あるいは <strong><code>COUNT_RECURSIVE</code></strong>
+       を設定します。これは、<span class="function"><a href="function.count.html" class="function">count()</a></span> の第 2 パラメータにどの値を渡すのかを表します。
+       これは、多次元の配列や Countable の全要素を数えるときに有用です。
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
  </div>
 
 
@@ -50,10 +70,39 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-countable.count-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.6</td>
+       <td>
+        オプションのパラメータ <code class="parameter">mode</code> が追加されました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-countable.count-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3999">
+   <div class="example" id="example-4000">
     <p><strong>例1 <span class="function"><strong>Countable::count()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

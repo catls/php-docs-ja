@@ -42,7 +42,6 @@
 
       <p class="para">
        ID として使用する文字列。24 桁の十六進数でなければなりません。
-       無効な文字列をコンストラクタに渡すと、それを無視して新たな id 値を作成します。
       </p>
      </dd>
 
@@ -61,9 +60,36 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-mongoid.construct-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>1.4.0</td>
+      <td>
+       無効な文字列を渡したときに例外をスローするようになりました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-mongoid.construct-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1547">
+  <div class="example" id="example-1548">
    <p><strong>例1 <span class="function"><strong>MongoId::__construct()</strong></span> example</strong></p>
    <div class="example-contents"><p>
     この例は、新しい ID を作成する方法を示します。
@@ -86,7 +112,7 @@
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-1548">
+  <div class="example" id="example-1549">
    <p><strong>例2 パラメータの例</strong></p>
    <div class="example-contents"><p>この例は、文字列パラメータを使用して MongoId を指定した値で初期化する方法を示します。</p></div>
    <div class="example-contents">
@@ -112,6 +138,7 @@ bool(true)
   <p class="para">
    <ul class="simplelist">
     <li class="member"><span class="methodname"><a href="mongoid.tostring.html" class="methodname" rel="rdfs-seeAlso">MongoId::__toString()</a> - この ID の 16 進表現を返す</span></li>
+    <li class="member"><span class="methodname"><a href="mongoid.isvalid.html" class="methodname" rel="rdfs-seeAlso">MongoId::isvalid()</a> - Check if a value is a valid ObjectId</span></li>
    </ul>
   </p>
  </div>
