@@ -70,7 +70,8 @@
      <dd>
 
       <p class="para">
-       追加時のオプション。
+       追加操作についてのオプションの配列。
+       現在利用可能なオプションは、以下のとおりです。
        <ul class="itemizedlist">
         <li class="listitem"><p class="para"><em>&quot;fsync&quot;</em></p>
 <p class="para">Boolean 型で、デフォルトは <strong><code>FALSE</code></strong> です。
@@ -87,13 +88,18 @@
 <p class="para"><em>&quot;w&quot;</em></p>
 <p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcerns</a> を参照ください。<a href="class.mongoclient.html" class="classname">MongoClient</a> でのデフォルト値は <em>1</em> です。
 </p></li>
+        <li class="listitem"><p class="para"><em>&quot;wTimeoutMS&quot;</em></p><p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の確認をいつまで待つか。<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルトは <em>10000</em> ミリ秒です。</p></li>
+       </ul>
+      </p>
+      <p class="para">
+       以下のオプションは廃止予定です。使ってはいけません。
+       <ul class="itemizedlist">
+        <li class="listitem"><p class="para"><em>&quot;safe&quot;</em></p><p class="para"><em class="emphasis">非推奨</em>。<a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の <em>w</em> オプションを使いましょう。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p><div class="warning"><strong class="warning">警告</strong><p class="para">非推奨です。かわりに <em>&quot;socketTimeoutMS&quot;</em> オプションを使いましょう。</p></div></li>
         <li class="listitem"><p class="para"><em>&quot;wtimeout&quot;</em></p>
 <p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の確認をいつまで待つか。
 <a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルトは <em>10000</em> ミリ秒です。</p>
 <div class="warning"><strong class="warning">警告</strong><p class="para">非推奨です。かわりに <em>&quot;wTimeoutMS&quot;</em> オプションを使いましょう。</p></div></li>
-        <li class="listitem"><p class="para"><em>&quot;wTimeoutMS&quot;</em></p><p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の確認をいつまで待つか。<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルトは <em>10000</em> ミリ秒です。</p></li>
-        <li class="listitem"><p class="para"><em>&quot;safe&quot;</em></p><p class="para"><em class="emphasis">非推奨</em>。<a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の <em>w</em> オプションを使いましょう。</p></li>
-        <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p><div class="warning"><strong class="warning">警告</strong><p class="para">非推奨です。かわりに <em>&quot;socketTimeoutMS&quot;</em> オプションを使いましょう。</p></div></li>
        </ul>
       </p>
      </dd>
@@ -303,23 +309,41 @@
      <tbody class="tbody">
       <tr>
        <td>1.5.0</td>
-       <td>オプション <em>&quot;wtimeout&quot;</em> の名前が
-       <em>&quot;wTimeoutMS&quot;</em> に変わりました。</td>
+       <td>
+        <p class="para">
+         <em>&quot;wTimeoutMS&quot;</em> オプションが追加されました。これは
+         <em>&quot;wtimeout&quot;</em> を置き換えるものです。
+         <em>&quot;wtimeout&quot;</em> を使うと
+         <strong><code>E_DEPRECATED</code></strong> が発生します。
+        </p>
+        <p class="para">
+         <em>&quot;socketTimeoutMS&quot;</em> オプションが追加されました。これは
+         <em>&quot;timeout&quot;</em> を置き換えるものです。
+         <em>&quot;timeout&quot;</em> を使うと
+         <strong><code>E_DEPRECATED</code></strong> が発生します。
+        </p>
+        <p class="para">
+         <em>&quot;safe&quot;</em> を使うと
+         <strong><code>E_DEPRECATED</code></strong> が発生します。
+        </p>
+       </td>
       </tr>
 
       <tr>
-       <td>1.5.0</td>
-       <td>オプション <em>&quot;timeout&quot;</em> の名前が
-       <em>&quot;socketTimeoutMS&quot;</em> に変わりました。</td>
+       <td>1.3.4</td>
+       <td><em>&quot;wtimeout&quot;</em> オプションが追加されました。</td>
       </tr>
 
       <tr>
        <td>1.3.0</td>
        <td>
-        <code class="parameter">options</code> パラメータで、boolean
-        だけを渡して確認付きの書き込みを指定することができなくなりました。
-        同じことをするには <em>array(&#039;w&#039; =&gt; 1)</em>
-        (<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルト) としなければなりません。
+        <p class="para"><em>&quot;w&quot;</em> オプションが追加されました。</p>
+        <p class="para">
+         <code class="parameter">options</code> パラメータで、boolean
+         だけを渡して確認付きの書き込みを指定することができなくなりました。
+         同じことをするには <em>array(&#039;w&#039; =&gt; 1)</em>
+         (<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルト) としなければなりません。
+        </p>
        </td>
       </tr>
 
