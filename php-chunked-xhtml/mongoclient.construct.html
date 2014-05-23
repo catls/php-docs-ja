@@ -114,6 +114,62 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
        <ul class="itemizedlist">
         <li class="listitem">
          <p class="para">
+          <em>&quot;authMechanism&quot;</em>
+         </p>
+         <p class="para">
+          以下の機構が選べます。
+          <table class="doctable informaltable">
+           
+            <thead>
+             <tr>
+              <th>認証機構</th>
+              <th>説明</th>
+              <th>利用可能</th>
+             </tr>
+
+            </thead>
+
+            <tbody class="tbody">
+             <tr>
+              <td>MONGODB-CR</td>
+              <td>チャレンジレスポンス方式を使った認証。デフォルトです。</td>
+              <td>すべてのバージョンの MongoDB</td>
+             </tr>
+
+             <tr>
+              <td>X509</td>
+              <td>X509 証明書による認証。</td>
+              <td>MongoDB 2.6。<a href="book.openssl.html" class="xref">OpenSSL</a> が有効な場合のみ。</td>
+             </tr>
+
+             <tr>
+              <td>PLAIN</td>
+              <td>暗号化されていないユーザー名とパスワードによる認証。SSL 接続上でのみ使うこと。サードパーティの LDAP サーバー経由での MongoDB へのログインの際に利用する。</td>
+              <td>MongoDB Enterprise 2.4。CyrusSASL2 を使うようにドライバをコンパイルしておく必要がある。</td>
+             </tr>
+
+             <tr>
+              <td>GSSAPI</td>
+              <td>ケルベロス認証</td>
+              <td>MongoDB Enterprise 2.4。CyrusSASL2 を使うようにドライバをコンパイルしておく必要がある。</td>
+             </tr>
+
+            </tbody>
+           
+          </table>
+
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <em>&quot;authSource&quot;</em>
+         </p>
+         <p class="para">
+          ユーザーが定義されているデータベース名を設定します。
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
           <em>&quot;connect&quot;</em>
          </p>
          <p class="para">
@@ -192,6 +248,15 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
         </li>
         <li class="listitem">
          <p class="para">
+          <em>&quot;gssapiServiceName&quot;</em>
+         </p>
+         <p class="para">
+          <a href="http://docs.mongodb.org/manual/core/kerberos/#kerberos-service-principal" class="link external">&raquo;&nbsp;Kerberos サービスプリンシパル</a>
+          を設定します。authMechanism=GSSAPI の場合にのみ用いられるもので、デフォルトは &quot;mongodb&quot; です。
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
           <em>&quot;password&quot;</em>
          </p>
          <p class="para">
@@ -243,6 +308,16 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
         </li>
         <li class="listitem">
          <p class="para">
+          <em>&quot;secondaryAcceptableLatencyMS&quot;</em>
+         </p>
+         <p class="para">
+          セカンダリから (優先読み込みを使って) 読み込むときに、
+          <em>secondaryAcceptableLatencyMS</em> 以上はなれているセカンダリからは読み込みません。
+          デフォルトは <em>15</em> です。
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
           <em>&quot;socketTimeoutMS&quot;</em>
          </p>
          <p class="para">
@@ -254,6 +329,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
             に達してしまうと、サーバーが実際に書き込みを受信したかどうかを知るすべがなくなります。
            </span>
           </p></blockquote>
+          デフォルトは 30 秒です。カーソルごとに設定するには <span class="methodname"><a href="mongocursor.timeout.html" class="methodname">MongoCursor::timeout()</a></span> を使います。
          </p>
         </li>
         <li class="listitem">
@@ -311,14 +387,22 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
        </ul>
       </p>
       <p class="para">
-       The following options are deprecated and should no longer be used:
+       以下のオプションは廃止予定です。使ってはいけません。
        <ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          <em>&quot;slaveOkay&quot;</em>
+         </p>
+         <p class="para">
+          非推奨です。<a href="mongo.readpreferences.html" class="link">優先読み込み</a> のオプションを使いましょう。
+         </p>
+        </li>
         <li class="listitem">
          <p class="para">
           <em>&quot;timeout&quot;</em>
          </p>
          <p class="para">
-          &quot;connectTimeoutMS&quot; へのエイリアス。非推奨です。
+          <em>&quot;connectTimeoutMS&quot;</em> へのエイリアス。非推奨です。
          </p>
         </li>
         <li class="listitem">
@@ -326,7 +410,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
           <em>&quot;wTimeout&quot;</em>
          </p>
          <p class="para">
-          &quot;wTimeoutMS&quot; へのエイリアス。非推奨です。
+          <em>&quot;wTimeoutMS&quot;</em> へのエイリアス。非推奨です。
          </p>
         </li>
        </ul>
@@ -344,17 +428,17 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
      <dd>
 
       <p class="para">
-       MongoDB ドライバーへのオプションの配列。SSL 用の接続コンテキストのオプションや、
-       ログ出力用のコールバックも含みます。
+       MongoDB ドライバーへのオプションの配列。<a href="mongo.connecting.ssl.html#mongo.connecting.context.ssl" class="link">SSL 用の接続コンテキストのオプション</a>や、
+       <a href="context.mongodb.html" class="link">ログ出力用のコールバック</a>も含みます。
        <ul class="itemizedlist">
         <li class="listitem">
          <p class="para">
           <em>&quot;context&quot;</em>
          </p>
          <p class="para">
-          コンテキストオプションを渡す方法。このオプションで、SSL 証明書の設定ができます。
+          新しい接続をアタッチするストリームコンテキスト。このオプションで、SSL 証明書の設定などができます。
           詳細は <a href="context.ssl.html" class="link">SSL コンテキストオプション</a> を参照ください。
-          詳しい使いかたは <a href="mongoclient.construct.html#mongoclient.construct.context.ssl" class="link">この例</a> を参照ください。
+          詳しい使いかたは <a href="mongo.connecting.ssl.html#mongo.connecting.context.ssl" class="link">SSL 接続</a>のチュートリアルを参照ください。
          </p>
         </li>
        </ul>
@@ -392,7 +476,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
 
  <div class="refsect1 examples" id="mongo.mongoclient.construct.examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1437">
+  <div class="example" id="example-1441">
    <p><strong>例1 <span class="function"><strong>MongoClient::__construct()</strong></span> でのレプリカセットの例</strong></p>
    <div class="example-contents"><p>
     この例は、レプリカセットに接続する方法を示します。
@@ -426,7 +510,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
     を参照ください。
    </p></div>
   </div>
-  <div class="example" id="example-1438">
+  <div class="example" id="example-1442">
    <p><strong>例2 ドメインソケットへの接続</strong></p>
    <div class="example-contents"><p>
     バージョン 1.0.9 以降では、ローカルで実行している MongoDB への接続に
@@ -456,7 +540,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
    </div>
 
   </div>
-  <div class="example" id="example-1439">
+  <div class="example" id="example-1443">
    <p><strong>例3 <span class="function"><strong>MongoClient::__construct()</strong></span> での認証の例</strong></p>
    <div class="example-contents"><p>
     認証を使うには、admin データベースにユーザーが存在しなければなりません。
@@ -487,7 +571,7 @@ switched to db admin
    </div>
 
   </div>
-  <div class="example" id="example-1440">
+  <div class="example" id="example-1444">
    <p><strong>例4 <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -502,7 +586,7 @@ switched to db admin
    </p></div>
   </div>
 
-  <div class="example" id="example-1441">
+  <div class="example" id="example-1445">
    <p><strong>例5 <span class="function"><strong>MongoClient::__construct()</strong></span> でのオプションの例</strong></p>
    <div class="example-contents"><p>
     オプションは、接続文字列のクエリ文字列で渡すだけでなく、
@@ -531,26 +615,11 @@ switched to db admin
 
   </div>
 
-  <div class="example" id="example-1442">
+  <div class="example" id="example-1446">
    <p><strong>例6 <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;"east"&nbsp;データセンターにある最も近いサーバーを優先します<br /></span><span style="color: #0000BB">$uri&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'mongodb://rs1.example.com,rs2.example.com/'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$uri&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'?readPreference=nearest'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$uri&nbsp;</span><span style="color: #007700">.=&nbsp;</span><span style="color: #DD0000">'&amp;readPreferenceTags=dc:east'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(</span><span style="color: #0000BB">$uri</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">'replicaSet'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'rs'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-   <div class="example-contents"><p>
-    詳細な情報は、このマニュアルの <a href="mongo.readpreferences.html" class="link">優先読み込み</a>
-    のページを参照ください。
-   </p></div>
-  </div>
-
-  <div class="example" id="mongoclient.construct.context.ssl">
-   <p><strong>例7 <span class="function"><strong>MongoClient::__construct()</strong></span> で SSL 証明書を使って接続する例</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$ctx&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">(&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'ssl'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'local_cert'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'/vagrant/certs/client.pem'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'cafile'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'/vagrant/certs/ca.pem'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;)<br />)&nbsp;);<br /><br /></span><span style="color: #0000BB">$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"mongodb://mongod/?ssl=true"</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;array(),&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;array(</span><span style="color: #DD0000">'context'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$ctx</span><span style="color: #007700">)<br />);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -578,11 +647,34 @@ switched to db admin
 
      <tbody class="tbody">
       <tr>
+       <td>1.5.0</td>
+       <td>
+        <p class="para">
+         <em>&quot;authMechanism&quot;</em>、<em>&quot;gssapiServiceName&quot;</em> および <em>&quot;secondaryAcceptableLatencyMS&quot;</em>
+         が追加されました。
+        </p>
+       </td>
+      </tr>
+
+      <tr>
        <td>1.4.0</td>
        <td>
         <p class="para">
          <em>&quot;wTimeoutMS&quot;</em> オプションが追加されました。これは
          <em>&quot;wTimeout&quot;</em> の代替です。
+        </p>
+        <p class="para">
+         <em>&quot;slaveOkay&quot;</em> や <em>&quot;timeout&quot;</em> を使うと
+         <strong><code>E_DEPRECATED</code></strong> が発生します。
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>1.5.0</td>
+       <td>
+        <p class="para">
+         <em>&quot;authSource&quot;</em> が追加されました。
         </p>
        </td>
       </tr>

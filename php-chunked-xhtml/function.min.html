@@ -117,7 +117,7 @@
  <div class="refsect1 examples" id="refsect1-function.min-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3550">
+   <div class="example" id="example-3553">
     <p><strong>例1 <span class="function"><strong>min()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -130,11 +130,11 @@
   </p>
 
   <p class="para">
-   <div class="example" id="example-3551">
+   <div class="example" id="example-3554">
     <p><strong>例2 <span class="function"><strong>min()</strong></span> における NULL/FALSE の扱い</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;オペランドの中にひとつでも&nbsp;boolean&nbsp;値が含まれている場合は、boolean&nbsp;型としての比較を行います<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">min</span><span style="color: #007700">(-</span><span style="color: #0000BB">100</span><span style="color: #007700">,-</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;NULL&nbsp;&nbsp;-&nbsp;(bool)NULL&nbsp;&nbsp;&lt;&nbsp;(bool)-100&nbsp;is&nbsp;FALSE&nbsp;&lt;&nbsp;TRUE<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">min</span><span style="color: #007700">(-</span><span style="color: #0000BB">100</span><span style="color: #007700">,-</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;FALSE&nbsp;-&nbsp;(bool)FALSE&nbsp;&lt;&nbsp;(bool)-100&nbsp;is&nbsp;FALSE&nbsp;&lt;&nbsp;TRUE<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;オペランドの中にひとつでも&nbsp;boolean&nbsp;値が含まれている場合は、boolean&nbsp;型としての比較を行います<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">min</span><span style="color: #007700">(-</span><span style="color: #0000BB">100</span><span style="color: #007700">,-</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">));&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;NULL&nbsp;&nbsp;-&nbsp;(bool)NULL&nbsp;&nbsp;&lt;&nbsp;(bool)-100&nbsp;is&nbsp;FALSE&nbsp;&lt;&nbsp;TRUE<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">min</span><span style="color: #007700">(-</span><span style="color: #0000BB">100</span><span style="color: #007700">,-</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">FALSE</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">100</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;FALSE&nbsp;-&nbsp;(bool)FALSE&nbsp;&lt;&nbsp;(bool)-100&nbsp;is&nbsp;FALSE&nbsp;&lt;&nbsp;TRUE<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

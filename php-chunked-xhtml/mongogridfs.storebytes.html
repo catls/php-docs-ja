@@ -97,13 +97,13 @@
 
  <div class="refsect1 errors" id="refsect1-mongogridfs.storebytes-errors">
   <h3 class="title">エラー / 例外</h3>
-  <p class="para">&quot;w&quot; オプションが設定されていて書き込みが失敗した場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。</p><p class="para">&quot;w&quot; オプションの値が 1 より大きく設定されていて、操作の完了までの時間が <var class="varname"><var class="varname">MongoCursor::$timeout</var></var> ミリ秒をこえた場合に <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。サーバー上での操作は止めません。これはクライアント側でのタイムアウトです。<em>MongoCollection::$wtimeout</em> はミリ秒です。</p>
+  <p class="para"><em>&quot;w&quot;</em> オプションが設定されていて書き込みが失敗した場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。</p><p class="para"><em>&quot;w&quot;</em> オプションの値が 1 より大きく設定されていて、操作の完了までの時間が <var class="varname"><var class="varname">MongoCursor::$timeout</var></var> ミリ秒をこえた場合に <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。サーバー上での操作は止めません。これはクライアント側でのタイムアウトです。<em>MongoCollection::$wtimeout</em> はミリ秒です。</p>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-mongogridfs.storebytes-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1565">
+  <div class="example" id="example-1568">
    <p><strong>例1 <span class="function"><strong>MongoGridFS::storeBytes()</strong></span> でのメタデータの追加</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

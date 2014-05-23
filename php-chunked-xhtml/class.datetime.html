@@ -55,7 +55,7 @@
      <span class="modifier">const</span>
      <span class="type">string</span>
       <var class="fieldsynopsis_varname"><a href="class.datetime.html#datetime.constants.cookie"><var class="varname">COOKIE</var></a></var>
-     <span class="initializer"> = &quot;l, d-M-y H:i:s T&quot;</span>
+     <span class="initializer"> = &quot;l, d-M-Y H:i:s T&quot;</span>
     ;</div>
 
     <div class="fieldsynopsis">
@@ -245,7 +245,7 @@
      <dd>
 
       <span class="simpara">
-       HTTP Cookies (例: Monday, 15-Aug-05 15:52:01 UTC)
+       HTTP Cookies (例: Monday, 15-Aug-2005 15:52:01 UTC)
       </span>
      </dd>
 
@@ -410,6 +410,14 @@
        <td>5.5.0</td>
        <td>
         <a href="class.datetimeinterface.html" class="classname">DateTimeInterface</a> を実装するようになりました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.4.24</td>
+       <td>
+        COOKIE 定数が、RFC 1036 に準拠するように (年を4桁で表すように) なりました。
+        以前のバージョンでは、RFC 850 に従って年を2桁で表していました。
        </td>
       </tr>
 

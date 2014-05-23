@@ -83,23 +83,20 @@
 <em>&quot;fsync&quot;</em> と <em>&quot;j&quot;</em> を同時に指定すると、エラーになります。
 </span></p></blockquote></li>
         <li class="listitem"><p class="para"><em>&quot;j&quot;</em></p><p class="para">デフォルトは <strong><code>FALSE</code></strong> です。これを指定すると、追加をジャーナルに同期させるまで成功したと見なさないようになります。<strong><code>TRUE</code></strong> にすると確認付き書き込みと見なされ、<em>&quot;w&quot;</em> の設定を <em>0</em> に上書きします。</p><blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">このオプションを使っているときにジャーナリングを無効にすると、MongoDB 2.6 以降ではエラーが発生して書き込みに失敗します。古いバージョンのサーバーでは、単純にオプションの師弟を無視します。</span></p></blockquote></li>
-        <li class="listitem"><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p><p class="para"><em>&quot;socketTimeoutMS&quot;</em></p></li>
+        <li class="listitem"><p class="para"><em>&quot;socketTimeoutMS&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p></li>
         <li class="listitem">
 <p class="para"><em>&quot;w&quot;</em></p>
 <p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcerns</a> を参照ください。<a href="class.mongoclient.html" class="classname">MongoClient</a> でのデフォルト値は <em>1</em> です。
 </p></li>
-        <li class="listitem"><p class="para"><em>&quot;wTimeoutMS&quot;</em></p><p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の確認をいつまで待つか。<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルトは <em>10000</em> ミリ秒です。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;wTimeoutMS&quot;</em></p><p class="para"><a href="mongo.writeconcerns.html" class="link">write concern</a> の確認をいつまで待つか。<a href="class.mongoclient.html" class="classname">MongoClient</a> でのデフォルトは <em>10000</em> ミリ秒です。</p></li>
        </ul>
       </p>
       <p class="para">
        以下のオプションは廃止予定です。使ってはいけません。
        <ul class="itemizedlist">
-        <li class="listitem"><p class="para"><em>&quot;safe&quot;</em></p><p class="para"><em class="emphasis">非推奨</em>。<a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の <em>w</em> オプションを使いましょう。</p></li>
-        <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p><div class="warning"><strong class="warning">警告</strong><p class="para">非推奨です。かわりに <em>&quot;socketTimeoutMS&quot;</em> オプションを使いましょう。</p></div></li>
-        <li class="listitem"><p class="para"><em>&quot;wtimeout&quot;</em></p>
-<p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の確認をいつまで待つか。
-<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルトは <em>10000</em> ミリ秒です。</p>
-<div class="warning"><strong class="warning">警告</strong><p class="para">非推奨です。かわりに <em>&quot;wTimeoutMS&quot;</em> オプションを使いましょう。</p></div></li>
+        <li class="listitem"><p class="para"><em>&quot;safe&quot;</em></p><p class="para">非推奨。<a href="mongo.writeconcerns.html" class="link">write concern</a> の <em>w</em> オプションを使いましょう。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">非推奨。<em>&quot;socketTimeoutMS&quot;</em> のエイリアス。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;wtimeout&quot;</em></p><p class="para">廃止予定。<em>&quot;wTimeoutMS&quot;</em> のエイリアスです。</p></li>
        </ul>
       </p>
      </dd>
@@ -289,7 +286,7 @@
    protected や private なプロパティを持つオブジェクトを追加しようとすると、
    キーの長さがゼロのエラーを引き起こします。
   </p>
-  <p class="para">&quot;w&quot; オプションが設定されていて書き込みが失敗した場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。</p><p class="para">&quot;w&quot; オプションの値が 1 より大きく設定されていて、操作の完了までの時間が <var class="varname"><var class="varname">MongoCursor::$timeout</var></var> ミリ秒をこえた場合に <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。サーバー上での操作は止めません。これはクライアント側でのタイムアウトです。<em>MongoCollection::$wtimeout</em> はミリ秒です。</p>
+  <p class="para"><em>&quot;w&quot;</em> オプションが設定されていて書き込みが失敗した場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。</p><p class="para"><em>&quot;w&quot;</em> オプションの値が 1 より大きく設定されていて、操作の完了までの時間が <var class="varname"><var class="varname">MongoCursor::$timeout</var></var> ミリ秒をこえた場合に <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。サーバー上での操作は止めません。これはクライアント側でのタイムアウトです。<em>MongoCollection::$wtimeout</em> はミリ秒です。</p>
  </div>
 
 
@@ -403,7 +400,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.insert-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1514">
+  <div class="example" id="example-1517">
    <p><strong>例1 <span class="function"><strong>MongoCollection::insert()</strong></span> の <em>_id</em> の例</strong></p>
    <div class="example-contents"><p>
     すでに存在しない場合は、<em>_id</em> フィールドを追加します。
@@ -447,7 +444,7 @@ array(1) {
    </div>
   </div>
 
-  <div class="example" id="example-1515">
+  <div class="example" id="example-1518">
    <p><strong>例2 <span class="function"><strong>MongoCollection::insert()</strong></span> での確認つき書き込みの例</strong></p>
    <div class="example-contents"><p>
     この例は、同じ _id を持つ二つの要素を追加しようとするものです。

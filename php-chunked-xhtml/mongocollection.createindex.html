@@ -84,7 +84,7 @@
         <li class="listitem"><p class="para"><em>&quot;sparse&quot;</em></p><p class="para">Specify <strong><code>TRUE</code></strong> to create a sparse index, which only indexes documents containing a specified field. The default value is <strong><code>FALSE</code></strong>.</p></li>
         <li class="listitem"><p class="para"><em>&quot;expireAfterSeconds&quot;</em></p><p class="para">The value of this option should specify the number of seconds after which a document should be considered expired and automatically removed from the collection. This option is only compatible with single-field indexes where the field will contain <a href="class.mongodate.html" class="classname">MongoDate</a> values.</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">This feature is available in MongoDB 2.2+. See <a href="http://docs.mongodb.org/manual/tutorial/expire-data/" class="link external">&raquo;&nbsp;Expire Data from Collections by Setting TTL</a> for more information.</p></p></blockquote></li>
         <li class="listitem"><p class="para"><em>&quot;name&quot;</em></p><p class="para">A optional name that uniquely identifies the index.</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">By default, the driver will generate an index name based on the index&#039;s field(s) and ordering or type. For example, a compound index <em>array(&quot;x&quot; =&gt; 1, &quot;y&quot; =&gt; -1)</em> would be named <em>&quot;x_1_y_-1&quot;</em> and a geospatial index <em>array(&quot;loc&quot; =&gt; &quot;2dsphere&quot;)</em> would be named <em>&quot;loc_2dsphere&quot;</em>. For indexes with many fields, it is possible that the generated name might exceed MongoDB&#039;s <a href="http://docs.mongodb.org/manual/reference/limits/#Index-Name-Length" class="link external">&raquo;&nbsp;limit for index names</a>. The <em>&quot;name&quot;</em> option may be used in that case to supply a shorter name.</p></p></blockquote></li>
-        <li class="listitem"><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p><p class="para"><em>&quot;socketTimeoutMS&quot;</em></p></li>
+        <li class="listitem"><p class="para"><em>&quot;socketTimeoutMS&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p></li>
        </ul>
       </p>
       <p class="para">
@@ -100,18 +100,15 @@
 <p class="para"><em>&quot;w&quot;</em></p>
 <p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcerns</a> を参照ください。<a href="class.mongoclient.html" class="classname">MongoClient</a> でのデフォルト値は <em>1</em> です。
 </p></li>
-        <li class="listitem"><p class="para"><em>&quot;wTimeoutMS&quot;</em></p><p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の確認をいつまで待つか。<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルトは <em>10000</em> ミリ秒です。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;wTimeoutMS&quot;</em></p><p class="para"><a href="mongo.writeconcerns.html" class="link">write concern</a> の確認をいつまで待つか。<a href="class.mongoclient.html" class="classname">MongoClient</a> でのデフォルトは <em>10000</em> ミリ秒です。</p></li>
        </ul>
       </p>
       <p class="para">
        The following options are deprecated and should no longer be used:
        <ul class="itemizedlist">
-        <li class="listitem"><p class="para"><em>&quot;safe&quot;</em></p><p class="para"><em class="emphasis">非推奨</em>。<a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の <em>w</em> オプションを使いましょう。</p></li>
-        <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p><div class="warning"><strong class="warning">警告</strong><p class="para">非推奨です。かわりに <em>&quot;socketTimeoutMS&quot;</em> オプションを使いましょう。</p></div></li>
-        <li class="listitem"><p class="para"><em>&quot;wtimeout&quot;</em></p>
-<p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcern</a> の確認をいつまで待つか。
-<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルトは <em>10000</em> ミリ秒です。</p>
-<div class="warning"><strong class="warning">警告</strong><p class="para">非推奨です。かわりに <em>&quot;wTimeoutMS&quot;</em> オプションを使いましょう。</p></div></li>
+        <li class="listitem"><p class="para"><em>&quot;safe&quot;</em></p><p class="para">非推奨。<a href="mongo.writeconcerns.html" class="link">write concern</a> の <em>w</em> オプションを使いましょう。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">非推奨。<em>&quot;socketTimeoutMS&quot;</em> のエイリアス。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;wtimeout&quot;</em></p><p class="para">廃止予定。<em>&quot;wTimeoutMS&quot;</em> のエイリアスです。</p></li>
        </ul>
       </p>
      </dd>
@@ -162,13 +159,13 @@
    Throws <a href="class.mongoresultexception.html" class="classname">MongoResultException</a> if the server could not
    create the index due to an error.
   </p>
-  <p class="para">&quot;w&quot; オプションが設定されていて書き込みが失敗した場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。</p><p class="para">&quot;w&quot; オプションの値が 1 より大きく設定されていて、操作の完了までの時間が <var class="varname"><var class="varname">MongoCursor::$timeout</var></var> ミリ秒をこえた場合に <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。サーバー上での操作は止めません。これはクライアント側でのタイムアウトです。<em>MongoCollection::$wtimeout</em> はミリ秒です。</p>
+  <p class="para"><em>&quot;w&quot;</em> オプションが設定されていて書き込みが失敗した場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。</p><p class="para"><em>&quot;w&quot;</em> オプションの値が 1 より大きく設定されていて、操作の完了までの時間が <var class="varname"><var class="varname">MongoCursor::$timeout</var></var> ミリ秒をこえた場合に <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。サーバー上での操作は止めません。これはクライアント側でのタイムアウトです。<em>MongoCollection::$wtimeout</em> はミリ秒です。</p>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-mongocollection.createindex-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1486">
+  <div class="example" id="example-1489">
    <p><strong>例1 <span class="function"><strong>MongoCollection::createIndex()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -178,7 +175,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-1487">
+  <div class="example" id="example-1490">
    <p><strong>例2 Geospatial Indexing</strong></p>
    <div class="example-contents"><p>
     Mongo supports geospatial indexes, which allow you to search for documents
@@ -193,7 +190,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-1488">
+  <div class="example" id="example-1491">
    <p><strong>例3 Drop duplicates example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
