@@ -133,7 +133,7 @@ Transient error retries before error: 2
   <p class="para">
    However, functions that
    <a href="mysqlnd-ms.pooling.html" class="link">control connection state</a>
-   are dispatched to all all connections. The retry loop settings are applied
+   are dispatched to all connections. The retry loop settings are applied
    to every  connection on which the command is to be run. Thus, such a function
    may interrupt program execution for longer than a function that is run
    on one server only. For example, <em>set_autocommit()</em> is
