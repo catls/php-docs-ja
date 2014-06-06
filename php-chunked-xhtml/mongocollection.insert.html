@@ -82,7 +82,7 @@
 <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">ジャーナリングが有効な場合は、<em>&quot;fsync&quot;</em> のかわりに <em>&quot;j&quot;</em> を使いましょう。
 <em>&quot;fsync&quot;</em> と <em>&quot;j&quot;</em> を同時に指定すると、エラーになります。
 </span></p></blockquote></li>
-        <li class="listitem"><p class="para"><em>&quot;j&quot;</em></p><p class="para">デフォルトは <strong><code>FALSE</code></strong> です。これを指定すると、追加をジャーナルに同期させるまで成功したと見なさないようになります。<strong><code>TRUE</code></strong> にすると確認付き書き込みと見なされ、<em>&quot;w&quot;</em> の設定を <em>0</em> に上書きします。</p><blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">このオプションを使っているときにジャーナリングを無効にすると、MongoDB 2.6 以降ではエラーが発生して書き込みに失敗します。古いバージョンのサーバーでは、単純にオプションの師弟を無視します。</span></p></blockquote></li>
+        <li class="listitem"><p class="para"><em>&quot;j&quot;</em></p><p class="para">デフォルトは <strong><code>FALSE</code></strong> です。これを指定すると、追加をジャーナルに同期させるまで成功したと見なさないようになります。<strong><code>TRUE</code></strong> にすると確認付き書き込みと見なされ、<em>&quot;w&quot;</em> の設定を <em>0</em> に上書きします。</p><blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">このオプションを使っているときにジャーナリングを無効にすると、MongoDB 2.6 以降ではエラーが発生して書き込みに失敗します。古いバージョンのサーバーでは、単純にオプションの指定を無視します。</span></p></blockquote></li>
         <li class="listitem"><p class="para"><em>&quot;socketTimeoutMS&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p></li>
         <li class="listitem">
 <p class="para"><em>&quot;w&quot;</em></p>
