@@ -21,9 +21,10 @@
     変更または未定義とすることはできません。
    </p>
    <p class="simpara">
-    定数に指定できるのは、スカラデータ
-    (<span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>, <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>, 
+    PHP 5.6 より前のバージョンでは、定数に指定できるのは、スカラデータ
+    (<span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>, <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>,
     <span class="type"><a href="language.types.float.html" class="type double">double</a></span>, <span class="type"><a href="language.types.string.html" class="type string">string</a></span>) のみです。
+    PHP 5.6 以降では、<span class="type"><a href="language.types.array.html" class="type array">array</a></span> の定数も指定できるようになりました。
     <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> の定数を指定することもできますが、
     予期せぬ結果を引き起こすことがあるので避けるべきです。
    </p>
@@ -82,14 +83,14 @@
      </li>
      <li class="listitem">
       <span class="simpara">
-       定数は、スカラー値としてのみ評価可能です。
+       定数は、スカラー値 (PHP 5.6 以降は、スカラー値あるいは配列) としてのみ評価可能です。
       </span>
      </li>
     </ul>
    </p>
     
    <p class="para">
-    <div class="example" id="example-126">
+    <div class="example" id="example-127">
      <p><strong>例1 定数の定義</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -102,11 +103,11 @@
    </p>
 
    <p class="para">
-    <div class="example" id="example-127">
+    <div class="example" id="example-128">
      <p><strong>例2 <em>const</em> キーワードによる定数の定義</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5.3.0&nbsp;以降で動作します<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">CONSTANT&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Hello&nbsp;World'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">CONSTANT</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5.3.0&nbsp;以降で動作します<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">CONSTANT&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Hello&nbsp;World'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">CONSTANT</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">q</span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5.6.0&nbsp;以降で動作します<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">ANOTHER_CONST&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">CONSTANT</span><span style="color: #007700">.</span><span style="color: #DD0000">';&nbsp;Goodbye&nbsp;World'</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">ANOTHER_CONST</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
      </div>
@@ -119,8 +120,8 @@
      <span class="function"><a href="function.define.html" class="function">define()</a></span> による定数の定義とは反対に、
      <em>const</em> キーワードで定義した定数はトップレベルのスコープで宣言しなければなりません。
      これはコンパイル時に定義されるからです。
-     つまり、関数やループ、そして
-     <em>if</em> 文の内部では宣言できないということです。
+     つまり、関数、ループ、<em>if</em> 文、または
+     <em>try</em>/<em>catch</em> ブロックの内部では宣言できないということです。
     </p>
    </p></blockquote>
 

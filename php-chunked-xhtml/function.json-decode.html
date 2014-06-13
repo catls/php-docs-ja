@@ -107,7 +107,7 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
   <p class="para">
    <code class="parameter">json</code> でエンコードされたデータを、適切な PHP の型として返します。
    <em>true</em>、<em>false</em> および
-   <em>null</em> (大文字小文字を区別しません) はそれぞれ <strong><code>TRUE</code></strong>、<strong><code>FALSE</code></strong>
+   <em>null</em> はそれぞれ <strong><code>TRUE</code></strong>、<strong><code>FALSE</code></strong>
    そして <strong><code>NULL</code></strong> として返されます。
    <code class="parameter">json</code> のデコードに失敗したり
    エンコードされたデータが再帰制限を超えているなどの場合、<strong><code>NULL</code></strong> を返します。
@@ -118,7 +118,7 @@ JSON の標準規格では、これらの値は配列やオブジェクトの内
  <div class="refsect1 examples" id="refsect1-function.json-decode-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3853">
+   <div class="example" id="example-3859">
     <p><strong>例1 <span class="function"><strong>json_decode()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -148,7 +148,7 @@ array(5) {
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-3854">
+   <div class="example" id="example-3860">
     <p><strong>例2 無効なオブジェクトプロパティへのアクセス</strong></p>
     <div class="example-contents"><p>
      オブジェクトの中にある、
@@ -163,7 +163,7 @@ array(5) {
     </div>
 
    </div>
-   <div class="example" id="example-3855">
+   <div class="example" id="example-3861">
     <p><strong>例3 <span class="function"><strong>json_decode()</strong></span> でのありがちな間違い</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -173,7 +173,7 @@ array(5) {
     </div>
 
    </div>
-   <div class="example" id="example-3856">
+   <div class="example" id="example-3862">
     <p><strong>例4 <code class="parameter">depth</code> エラー</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -211,7 +211,7 @@ Last error: JSON_ERROR_DEPTH
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-3857">
+   <div class="example" id="example-3863">
     <p><strong>例5 <span class="function"><strong>json_decode()</strong></span> で大きな整数値を扱う例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -268,6 +268,16 @@ object(stdClass)#1 (1) {
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.6.0</td>
+       <td>
+        <em>true</em>、
+        <em>false</em> および <em>null</em>
+        は、すべて小文字のものだけを有効な値として受け付けるようになりました。
+        大文字が含まれる場合は警告が発生します。
+       </td>
+      </tr>
+
       <tr>
        <td>5.4.0</td>
        <td>

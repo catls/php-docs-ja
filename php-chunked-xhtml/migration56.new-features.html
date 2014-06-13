@@ -287,7 +287,20 @@ bool(false)
   </p>
  </div>
 
- 
+ <div class="sect2" id="migration56.new-features.postgresql">
+  <h3 class="title"><a href="book.pgsql.html" class="link">pgsql</a> async support</h3>
+
+  <p class="para">
+   The <a href="book.pgsql.html" class="link">pgsql</a> extension now supports
+   asynchronous connections and queries, thereby enabling non-blocking
+   behaviour when interacting with PostgreSQL databases. Asynchronous
+   connections may be established via the
+   <strong><code>PGSQL_CONNECT_ASYNC</code></strong> constant, and the new
+   <span class="function"><strong>pg_connect_poll()</strong></span>, <span class="function"><strong>pg_socket()</strong></span>,
+   <span class="function"><strong>pg_consume_input()</strong></span> and <span class="function"><strong>pg_flush()</strong></span>
+   functions may be used to handle asynchronous connections and queries.
+  </p>
+ </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration56.incompatible.html">Backward incompatible changes</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="migration56.deprecated.html">Deprecated features in PHP 5.6.x</a></div>

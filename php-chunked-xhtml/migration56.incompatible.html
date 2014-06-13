@@ -17,6 +17,51 @@
   note of some backward incompatible changes:
  </p>
 
+ <div class="sect2" id="migration56.incompatible.array-keys">
+  <h3 class="title">Array keys won&#039;t be overwritten when defining an array as a property of a class via an array literal</h3>
+
+  <p class="para">
+   Previously, arrays declared as class properties which mixed explicit and
+   implicit keys could have array elements silently overwritten if an explicit
+   key was the same as a sequential implicit key. For example:
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;</span><span style="color: #0000BB">ONE&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$array&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">self</span><span style="color: #007700">::</span><span style="color: #0000BB">ONE&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'quux'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;];<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">((new&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">array</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">上の例の PHP 5.5 での出力は、このようになります。</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+array(2) {
+  [0]=&gt;
+  string(3) &quot;bar&quot;
+  [1]=&gt;
+  string(4) &quot;quux&quot;
+}
+
+</pre></div>
+   </div>
+   <p class="para">上の例の PHP 5.6 での出力は、このようになります。</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+array(3) {
+  [1]=&gt;
+  string(3) &quot;foo&quot;
+  [2]=&gt;
+  string(3) &quot;bar&quot;
+  [3]=&gt;
+  string(4) &quot;quux&quot;
+}
+</pre></div>
+   </div>
+  </div>
+ </div>
+
  <div class="sect2" id="migration56.incompatible.json-decode">
   <h3 class="title"><span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> strictness</h3>
 

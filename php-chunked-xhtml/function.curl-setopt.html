@@ -421,6 +421,20 @@
           </tr>
 
           <tr>
+           <td style="vertical-align: top;"><strong><code>CURLOPT_SAFE_UPLOAD</code></strong></td>
+           <td style="vertical-align: top;">
+            <strong><code>TRUE</code></strong> にすると、<strong><code>CURLOPT_POSTFIELDS</code></strong>
+            でのファイルアップロードの際の <em>@</em> プレフィックスを無効にします。
+            つまり、<em>@</em> で始まる値を安全に渡せるようになるということです。
+            アップロードには <a href="class.curlfile.html" class="classname">CURLFile</a> が使われるでしょう。
+           </td>
+           <td style="vertical-align: top;">
+            PHP 5.5.0 で追加されました。今のところデフォルトは <strong><code>FALSE</code></strong> ですが、
+            将来的にはデフォルトが変わるでしょう。
+           </td>
+          </tr>
+
+          <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_SSL_VERIFYPEER</code></strong></td>
            <td style="vertical-align: top;">
             <strong><code>FALSE</code></strong> を設定すると、cURL はサーバー証明書の検証を行いません。
@@ -1105,6 +1119,9 @@
             <span class="simpara">
              PHP 5.5.0 以降、<em>@</em> プレフィックスは非推奨になりました。
              また、ファイルを <a href="class.curlfile.html" class="classname">CURLFile</a> で送信できるようになりました。
+             <em>@</em> プレフィックスを無効化して、
+             <em>@</em> で始まる値を安全に渡せるようにするには、
+             <strong><code>CURLOPT_SAFE_UPLOAD</code></strong> オプションを <strong><code>TRUE</code></strong> と設定します。
             </span>
            </td>
            <td style="vertical-align: top;">
@@ -1666,7 +1683,7 @@
  <div class="refsect1 examples" id="refsect1-function.curl-setopt-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4312">
+   <div class="example" id="example-4318">
     <p><strong>例1 新規に cURL セッションを初期化、ウェブページを取得する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -1678,7 +1695,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4313">
+   <div class="example" id="example-4319">
     <p><strong>例2 ファイルのアップロード</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
