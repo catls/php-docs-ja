@@ -28,8 +28,7 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>version_compare()</strong></span>は、ふたつの &quot;PHP 標準&quot; バージョン
-   番号文字列を比較します。この関数は、いくつかのバージョンの PHP でのみ
-   動作するプログラムを書きたい場合に有用です。
+   番号文字列を比較します。
   </p>
   <p class="para">
    この関数はまず、バージョン文字列の
@@ -37,7 +36,7 @@
    <em>+</em> をドット <em>.</em> で置き換えます。
    さらに、数値でない部分の前後にドット <em>.</em> を追加します。
    例えば &#039;4.3.2RC1&#039; は &#039;4.3.2.RC.1&#039; となります。
-   次に、explode(&#039;.&#039;, $ver) とするのと同じように結果を分割し、左から右へ
+   次に、左から右へ
    各部分を比較していきます。特殊な文字列が含まれている場合は以下の順で
    並べ替えます:
    <em>ここにないすべての文字列</em> &lt; 
@@ -90,14 +89,11 @@
       <p class="para">
        三番目のオプション引数 <code class="parameter">operator</code> を指定した場合、
        特定の関係を調べることが可能です。指定可能な演算子を以下に示します。
-       <em>&lt;</em>,
-       <em>lt</em>, <em>&lt;=</em>,
-       <em>le</em>, <em>&gt;</em>,
-       <em>gt</em>, <em>&gt;=</em>,
-       <em>ge</em>, <em>==</em>,
-       <em>=</em>, <em>eq</em>,
-       <em>!=</em>, <em>&lt;&gt;</em>,
-       <em>ne</em>
+       <em>&lt;</em>, <em>lt</em>,
+       <em>&lt;=</em>, <em>le</em>, <em>&gt;</em>,
+       <em>gt</em>, <em>&gt;=</em>, <em>ge</em>,
+       <em>==</em>, <em>=</em>, <em>eq</em>,
+       <em>!=</em>, <em>&lt;&gt;</em>, <em>ne</em>
       </p>
       <p class="para">
        このパラメータは大文字小文字を区別するので、すべて小文字で指定しなければなりません。
