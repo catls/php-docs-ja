@@ -2,16 +2,16 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Transactions</title>
+  <title>Local transactions</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd-ms.quickstart.sqlhints.html">SQL Hints</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mysqlnd-ms.quickstart.qos-consistency.html">Service level and consistency</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysqlnd-ms.quickstart.xa_transactions.html">XA/Distributed Transactions</a></div>
  <div class="up"><a href="mysqlnd-ms.quickstart.html">Quickstart and Examples</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="mysqlnd-ms.quickstart.transactions" class="section">
-  <h2 class="title">Transactions</h2>
+  <h2 class="title">Local transactions</h2>
   <p class="para">
    The current version of the plugin is not transaction safe by default,
    because it is not aware of running transactions in all cases. SQL transactions are
@@ -86,7 +86,7 @@
   </p>
    <p class="para">
    API based transaction boundary detection has been improved with PHP 5.5.0 and
-   PECL/mysqlnd_ms 1.5.0 to cover not only calls to <span class="function"><a href="mysqli.autocommit.html" class="function">mysqli_autocommit()</a></span>
+   <em>PECL/mysqlnd_ms</em> 1.5.0 to cover not only calls to <span class="function"><a href="mysqli.autocommit.html" class="function">mysqli_autocommit()</a></span>
    but also <span class="function"><strong>mysqli_begin()</strong></span>,
    <span class="function"><a href="mysqli.commit.html" class="function">mysqli_commit()</a></span> and <span class="function"><a href="mysqli.rollback.html" class="function">mysqli_rollback()</a></span>.
   </p>
@@ -143,7 +143,7 @@
   </p>
  </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mysqlnd-ms.quickstart.sqlhints.html">SQL Hints</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mysqlnd-ms.quickstart.qos-consistency.html">Service level and consistency</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mysqlnd-ms.quickstart.xa_transactions.html">XA/Distributed Transactions</a></div>
  <div class="up"><a href="mysqlnd-ms.quickstart.html">Quickstart and Examples</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

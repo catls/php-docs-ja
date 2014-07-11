@@ -49,8 +49,7 @@
      </p>
      <p class="para">
       :name 形式を使って、マッチしたセグメントに名前を付けることができます。
-      また、* で残りのすべてのセグメントにマッチさせられます。
-      rest segments.
+      また、* で残りの URL セグメントにマッチさせられます。
      </p>
     </dd>
 
@@ -63,7 +62,7 @@
 
      <p class="para">
       リクエスト URI がパターンにマッチしたときに、
-      <a href="class.yaf-route-rewrite.html" class="classname">Yaf_Route_Rewrite</a> はこれを使ってルーティング先を判断します。
+      <a href="class.yaf-route-rewrite.html" class="classname">Yaf_Route_Rewrite</a> はこれを使ってルーティング先のモジュール、コントローラ、アクションを判断します。
      </p>
      <p class="para">
       この配列で指定するモジュール、コントローラ、アクションはすべて任意指定で、
@@ -99,7 +98,7 @@
 
  <div class="refsect1 examples" id="refsect1-yaf-route-rewrite.construct-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-4276">
+  <div class="example" id="example-4282">
    <p><strong>例1 <span class="function"><strong>Yaf_Route_Rewrite()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -132,7 +131,7 @@ array(
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-4277">
+  <div class="example" id="example-4283">
    <p><strong>例2 <span class="function"><strong>Yaf_Route_Rewrite()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -163,7 +162,7 @@ array(
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-4278">
+  <div class="example" id="example-4284">
    <p><strong>例3 <span class="function"><strong>Yaf_Route_Rewrite()</strong></span> (2.3.0 以降) の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
