@@ -160,6 +160,13 @@
        </tr>
 
        <tr>
+        <td><a href="ini.core.html#ini.zend.detect-unicode" class="link">zend.detect-unicode</a></td>
+        <td>NULL</td>
+        <td>PHP_INI_ALL</td>
+        <td>Available since PHP 5.4.0</td>
+       </tr>
+
+       <tr>
         <td><a href="ini.core.html#ini.zend.signal-check" class="link">zend.signal_check</a></td>
         <td>&quot;0&quot;</td>
         <td>PHP_INI_SYSTEM</td>
@@ -174,11 +181,10 @@
        </tr>
 
        <tr>
-        <td><a href="ini.core.html#ini.detect-unicode" class="link">detect_unicode</a></td>
+        <td>detect_unicode</td>
         <td>&quot;1&quot;</td>
         <td>PHP_INI_ALL</td>
-        <td>PHP 5.1.0 以降で利用可能。この非推奨の機能は、<em class="emphasis">きっと</em> 
-将来 <em class="emphasis">削除</em> されるでしょう。</td>
+        <td>PHP 5.1.0 以降で利用可能。PHP 5.4.0 で名前を <a href="ini.core.html#ini.zend.detect-unicode" class="link">zend.detect-unicode</a> に変更。</td>
        </tr>
 
       </tbody>
@@ -494,6 +500,10 @@
 
        <p class="para">
         マルチバイトエンコーディングで書かれたソースファイルをパースできるようにします。
+        zend.multibyte を有効にしないと、マルチバイト文字データの中に特殊文字を含むエンコーディング
+        (SJIS や BIG5 など) を使えません。
+        ISO-8859-1 互換のエンコーディングである UTF-8 や
+        EUC などを使う場合は、このオプションは不要です。
        </p>
       </dd>
 
@@ -511,6 +521,27 @@
         この値を使うのは、
         <a href="control-structures.declare.html#control-structures.declare.encoding" class="link">declare(encoding=...)</a>
         ディレクティブがスクリプトの先頭に存在しない場合です。
+        ISO-8859-1 非互換のエンコーディングを使う場合は、
+        zend.multibyte と zend.script_encoding を両方とも指定する必要があります。
+       </p>
+      </dd>
+
+     
+
+     
+      <dt id="ini.zend.detect-unicode">
+       <code class="parameter">zend.detect_unicode</code>
+       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        BOM (Byte Order Mark) を調べ、
+        ファイルが有効なマルチバイト文字を含むかどうかを確認します。
+        この検出は、
+        <span class="function"><a href="function.halt-compiler.html" class="function">__halt_compiler()</a></span> の処理より前に行われます。
+        Zend Multibyte モードでのみ利用可能です。
        </p>
       </dd>
 
@@ -531,25 +562,6 @@
 
      
      
-     
-      <dt id="ini.detect-unicode">
-       <code class="parameter">detect_unicode</code>
-       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
-      </dt>
-
-      <dd>
-
-       <p class="para">
-        BOM (Byte Order Mark) を調べ、
-        ファイルが有効なマルチバイト文字を含むかどうかを確認します。
-        この検出は、
-        <span class="function"><a href="function.halt-compiler.html" class="function">__halt_compiler()</a></span> の処理より前に行われます。
-        Zend Multibyte モードでのみ利用可能です。
-       </p>
-      </dd>
-
-     
-
      
       <dt id="ini.exit-on-timeout">
        <code class="parameter">exit_on_timeout</code>
@@ -1598,7 +1610,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-5734">
+         <div class="example" id="example-5750">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1608,7 +1620,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-5735">
+         <div class="example" id="example-5751">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1634,7 +1646,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-5736">
+        <div class="example" id="example-5752">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>

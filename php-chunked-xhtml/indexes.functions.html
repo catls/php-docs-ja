@@ -914,7 +914,7 @@
 <li><a href="datetimeimmutable.createfromformat.html" class="index">DateTimeImmutable::createFromFormat</a> - 指定した書式でフォーマットした新しい DateTimeImmutable オブジェクトを返す</li>
 <li><a href="datetimeimmutable.createfrommutable.html" class="index">DateTimeImmutable::createFromMutable</a> - Returns new DateTimeImmutable object encapsulating the given DateTime object</li>
 <li><a href="datetimeimmutable.getlasterrors.html" class="index">DateTimeImmutable::getLastErrors</a> - 警告およびエラーを返す</li>
-<li><a href="datetimeimmutable.modify.html" class="index">DateTimeImmutable::modify</a> - タイムスタンプを変更する</li>
+<li><a href="datetimeimmutable.modify.html" class="index">DateTimeImmutable::modify</a> - タイムスタンプを変更した新しいオブジェクトを作る</li>
 <li><a href="datetimeimmutable.setdate.html" class="index">DateTimeImmutable::setDate</a> - 日付を設定する</li>
 <li><a href="datetimeimmutable.setisodate.html" class="index">DateTimeImmutable::setISODate</a> - ISO 日付を設定する</li>
 <li><a href="datetimeimmutable.settime.html" class="index">DateTimeImmutable::setTime</a> - 時刻を設定する</li>
@@ -1981,7 +1981,7 @@
 <li><a href="function.floatval.html" class="index">floatval</a> - 変数の float 値を取得する</li>
 <li><a href="function.flock.html" class="index">flock</a> - 汎用のファイルロックを行う</li>
 <li><a href="function.floor.html" class="index">floor</a> - 端数の切り捨て</li>
-<li><a href="function.flush.html" class="index">flush</a> - 出力バッファをフラッシュする</li>
+<li><a href="function.flush.html" class="index">flush</a> - システム出力バッファをフラッシュする</li>
 <li><a href="function.fmod.html" class="index">fmod</a> - 引数で除算をした際の剰余を返す</li>
 <li><a href="function.fnmatch.html" class="index">fnmatch</a> - ファイル名がパターンにマッチするか調べる</li>
 <li><a href="function.fopen.html" class="index">fopen</a> - ファイルまたは URL をオープンする</li>
@@ -7647,6 +7647,7 @@
 <li><a href="solrresponse.getresponse.html" class="index">SolrResponse::getResponse</a> - サーバーからの XML レスポンスを表現する SolrObject を返す</li>
 <li><a href="solrresponse.setparsemode.html" class="index">SolrResponse::setParseMode</a> - パースモードを設定</li>
 <li><a href="solrresponse.success.html" class="index">SolrResponse::success</a> - リクエストが成功したか</li>
+<li><a href="solrserverexception.getinternalinfo.html" class="index">SolrServerException::getInternalInfo</a> - Returns internal information where the Exception was thrown</li>
 <li><a href="solrupdateresponse.construct.html" class="index">SolrUpdateResponse::__construct</a> - コンストラクタ</li>
 <li><a href="solrupdateresponse.destruct.html" class="index">SolrUpdateResponse::__destruct</a> - デストラクタ</li>
 <li><a href="solrutils.digestxmlresponse.html" class="index">SolrUtils::digestXmlResponse</a> - Parses an response XML string into a SolrObject</li>
@@ -8556,6 +8557,21 @@
 <li><a href="function.sybase-set-message-handler.html" class="index">sybase_set_message_handler</a> - サーバーでメッセージが発生した際にコールされるハンドラを指定する</li>
 <li><a href="function.sybase-unbuffered-query.html" class="index">sybase_unbuffered_query</a> - Sybase クエリを送信し、ブロックしない</li>
 <li><a href="function.symlink.html" class="index">symlink</a> - シンボリックリンクを作成する</li>
+<li><a href="syncevent.fire.html" class="index">SyncEvent::fire</a> - Fires/sets the event</li>
+<li><a href="syncevent.reset.html" class="index">SyncEvent::reset</a> - Resets a manual event</li>
+<li><a href="syncevent.wait.html" class="index">SyncEvent::wait</a> - Waits for the event to be fired/set</li>
+<li><a href="syncevent.construct.html" class="index">SyncEvent::__construct</a> - Constructs a new SyncEvent object</li>
+<li><a href="syncmutex.lock.html" class="index">SyncMutex::lock</a> - Waits for an exclusive lock</li>
+<li><a href="syncmutex.unlock.html" class="index">SyncMutex::unlock</a> - Unlocks the mutex</li>
+<li><a href="syncmutex.construct.html" class="index">SyncMutex::__construct</a> - Constructs a new SyncMutex object</li>
+<li><a href="syncreaderwriter.readlock.html" class="index">SyncReaderWriter::readlock</a> - Waits for a read lock</li>
+<li><a href="syncreaderwriter.readunlock.html" class="index">SyncReaderWriter::readunlock</a> - Releases a read lock</li>
+<li><a href="syncreaderwriter.writelock.html" class="index">SyncReaderWriter::writelock</a> - Waits for an exclusive write lock</li>
+<li><a href="syncreaderwriter.writeunlock.html" class="index">SyncReaderWriter::writeunlock</a> - Releases a write lock</li>
+<li><a href="syncreaderwriter.construct.html" class="index">SyncReaderWriter::__construct</a> - Constructs a new SyncReaderWriter object</li>
+<li><a href="syncsemaphore.lock.html" class="index">SyncSemaphore::lock</a> - Decreases the count of the semaphore or waits</li>
+<li><a href="syncsemaphore.unlock.html" class="index">SyncSemaphore::unlock</a> - Increases the count of the semaphore</li>
+<li><a href="syncsemaphore.construct.html" class="index">SyncSemaphore::__construct</a> - Constructs a new SyncSemaphore object</li>
 <li><a href="function.syslog.html" class="index">syslog</a> - システムログのメッセージを生成する</li>
 <li><a href="function.system.html" class="index">system</a> - 外部プログラムを実行し、出力を表示する</li>
 <li><a href="function.sys-getloadavg.html" class="index">sys_getloadavg</a> - システムの平均負荷を取得する</li>

@@ -305,6 +305,16 @@ Array
     また、値の中で特別な意味を持ちます。
    </span>
   </p></blockquote>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    等号が含まれないエントリは無視されます。
+    つまり、&quot;foo&quot; というエントリは無視されますが、
+    &quot;bar =&quot; は、空の値を持つエントリとして追加されます。
+    たとえば MySQL の <var class="filename">my.cnf</var> には
+    &quot;no-auto-rehash&quot; という設定項目がありますが、この項目には何も値を設定しません。
+    そのため、この項目は無視されます。
+   </p>
+  </p></blockquote>
  </div>
 
  

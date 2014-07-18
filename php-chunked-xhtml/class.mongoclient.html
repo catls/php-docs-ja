@@ -364,13 +364,15 @@
 
      <dd>
 
-      <span class="simpara">
-       このプロパティに <strong><code>TRUE</code></strong> を設定するのは、
-       ReadPreference およびタグセット (レプリカセット接続の場合)
-       に基づいたデータベース接続がオープンしている場合です。
-       それ以外の場合は <strong><code>FALSE</code></strong> を設定します。
+      <p class="para">
+       このプロパティに <strong><code>TRUE</code></strong> が設定されるのは、データベース接続がオープンしている場合です。
+       それ以外の場合は <strong><code>FALSE</code></strong> が設定されます。
+       レプリカセットへの接続の場合は、現在の優先読み込みにマッチするノードに接続している場合にのみ <strong><code>TRUE</code></strong> となります。
        このプロパティは、認証を考慮しません。
-      </span>
+      </p>
+      <p class="para">
+       このプロパティは、バージョン 1.5.0 以降で <em class="emphasis">非推奨</em> となりました。
+      </p>
      </dd>
 
     
@@ -379,12 +381,15 @@
 
      <dd>
 
-      <span class="simpara">
+      <p class="para">
        このプロパティはもう使われておらず、値は <strong><code>NULL</code></strong> に設定されます。
        バージョン 1.1.x より前のドライバでは、持続的接続を使う場合にここに文字列
        (<em>&quot;recycled&quot;</em> や <em>&quot;new&quot;</em> など)
        が設定されていました。
-      </span>
+      </p>
+      <p class="para">
+       このプロパティは、バージョン 1.5.0 以降で <em class="emphasis">非推奨</em> となりました。
+      </p>
      </dd>
 
     
