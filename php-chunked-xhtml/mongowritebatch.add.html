@@ -65,8 +65,9 @@
         <tr>
          <td>MongoWriteBatch::COMMAND_UPDATE</td>
          <td>
-          <span class="simpara">Raw update operation. Required keys are: array(&quot;q&quot; =&gt; <a href="mongocollection.update.html#mongocollection.update.criteria" class="link">array(&quot;criteria&quot;)</a>, &quot;u&quot; =&gt; array(&quot;new data&quot;))</span>
-          <span class="simpara">Optionally with the &quot;multi&quot; and &quot;upsert&quot; keys as boolean values</span>
+          <p class="para">Raw update operation. Required keys are: array(&quot;q&quot; =&gt; <a href="mongocollection.update.html#mongocollection.update.criteria" class="link">array(&quot;criteria&quot;)</a>, &quot;u&quot; =&gt; array(&quot;new data&quot;))</p>
+          <p class="para">Optionally with the &quot;multi&quot; and &quot;upsert&quot; keys as boolean values</p>
+          <p class="para">&quot;upsert&quot;: If set to true, creates a new document when no document matches the query criteria. The default value is false, which does not insert a new document when no match is found.</p>
          </td>
         </tr>
 
