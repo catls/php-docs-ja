@@ -92,8 +92,10 @@
        <li class="listitem">
         <p class="para"><em>&quot;explain&quot;</em></p>
         <p class="para">
-         Return information on the processing of the pipeline. If you need to
-         use this option, you should consider using
+         Return information on the processing of the pipeline. This option may
+         cause the command to return a result document that is unsuitable for
+         constructing a <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a>. If you need
+         to use this option, you should consider using
          <span class="methodname"><a href="mongocollection.aggregate.html" class="methodname">MongoCollection::aggregate()</a></span>.
         </p>
        </li>

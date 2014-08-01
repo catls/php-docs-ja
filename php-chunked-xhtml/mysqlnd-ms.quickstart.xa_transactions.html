@@ -15,14 +15,19 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <strong>Version requirement</strong><br />
    <p class="para">
-    XA related functions have  been introduced in PECL mysqlnd_ms version 1.6.0-alpha.
+    XA related functions have been introduced in PECL mysqlnd_ms version 1.6.0-alpha.
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <strong>Experimental</strong><br />
+   <strong>Early adaptors wanted</strong><br />
    <p class="para">
     The feature is currently under development. There may be issues and/or
-    feature limitations. Do not use in production environments.
+    feature limitations. Do not use in production environments, although
+    early lab tests indicate reasonable quality.
+   </p>
+   <p class="para">
+     Please, contact the development team if you are interested in this feature.
+     We are looking for real life feedback to complement the feature.
    </p>
   </p></blockquote>
   <p class="para">
@@ -177,7 +182,7 @@ Warning: mysqlnd_ms_xa_begin(): (mysqlnd_ms) Some work is done outside global tr
    Please, make sure to use a transactional and crash-safe
    storage engine for the tables, such as InnoDB. InnoDB is the default
    table engine in recent versions of the MySQL server. Make also sure
-   the database server itself is higly available.
+   the database server itself is highly available.
   </p>
   <p class="para">
    If a state store has been configured, the plugin can perform a garbage collection.

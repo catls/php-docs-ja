@@ -32,6 +32,11 @@
    <span class="function"><a href="function.ob-get-contents.html" class="function">ob_get_contents()</a></span> および
    <span class="function"><a href="function.ob-end-clean.html" class="function">ob_end_clean()</a></span> を同時に実行するのと同じです。
   </p>
+  <p class="para">
+   出力バッファを開始するときに、
+   <span class="function"><a href="function.ob-start.html" class="function">ob_start()</a></span> で <a href="outcontrol.constants.html#constant.php-output-handler-cleanable" class="link">PHP_OUTPUT_HANDLER_CLEANABLE</a>
+   フラグを指定する必要があります。指定しなければ、<span class="function"><strong>ob_get_clean()</strong></span> は動作しません。
+  </p>
  </div>
 
 

@@ -31,6 +31,12 @@
    <span class="function"><strong>ob_end_flush()</strong></span> の前に
    <span class="function"><a href="function.ob-get-contents.html" class="function">ob_get_contents()</a></span> をコールする必要があります。
   </p>
+  <p class="para">
+   出力バッファを開始するときに、
+   <span class="function"><a href="function.ob-start.html" class="function">ob_start()</a></span> で <a href="outcontrol.constants.html#constant.php-output-handler-flushable" class="link">PHP_OUTPUT_HANDLER_FLUSHABLE</a>
+   および <a href="outcontrol.constants.html#constant.php-output-handler-removable" class="link">PHP_OUTPUT_HANDLER_REMOVABLE</a>
+   フラグを指定する必要があります。指定しなければ、<span class="function"><strong>ob_end_flush()</strong></span> は動作しません。
+  </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
     この関数は <span class="function"><a href="function.ob-get-flush.html" class="function">ob_get_flush()</a></span> に似ていますが、
