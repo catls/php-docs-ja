@@ -48,33 +48,33 @@
      <dt>
  <code class="parameter">server</code> </dt>
  <dd>
- <p class="para"> An array containing the basic information about the server that was picked. <table class="doctable informaltable">  <thead> <tr> <th>key</th> <th>value</th> </tr>
- </thead>
- <tbody class="tbody"> <tr> <td>hash</td> <td>server hash, example: <em>localhost:27017;-;X;56052</em></td> </tr>
- <tr> <td>type</td> <td>Node type (primary/secondary/mongos/arbiter): <em>2</em></td> </tr>
- <tr> <td>max_bson_size</td> <td>The maximum BSON Size over the wire this node accepts: <em>16777216</em></td> </tr>
- <tr> <td>max_message_size</td> <td>The maximum Message Size over the wire this node accepts: <em>48000000</em></td> </tr>
- <tr> <td>request_id</td> <td>The request identifier for this message: <em>42</em></td> </tr>
- </tbody>  </table>
- </p> </dd>
- 
+<p class="para">選んだサーバーについての基本情報を含む配列。<table class="doctable informaltable"><thead><tr><th>キー</th><th>値</th></tr>
+</thead>
+<tbody class="tbody"><tr><td>hash</td><td>ハーバーハッシュ。例：<em>localhost:27017;-;X;56052</em></td></tr>
+<tr><td>type</td><td>ノード型 (primary/secondary/mongos/arbiter)。例：<em>2</em></td></tr>
+<tr><td>max_bson_size</td><td>このノードがネットワーク越しに受け付ける BSON の最大サイズ。例：<em>16777216</em></td></tr>
+<tr><td>max_message_size</td><td>このノードがネットワーク越しに受け入れるメッセージの最大サイズ。例：<em>48000000</em></td></tr>
+<tr><td>request_id</td><td>このメッセージのリクエスト識別子。例：<em>42</em></td></tr>
+</tbody></table>
+</p></dd>
+
     <dt>
  <code class="parameter">writeOptions</code> </dt>
  <dd>
- <p class="para"> <table class="doctable informaltable">  <thead> <tr> <th>key</th> <th>value</th> </tr>
- </thead>
- <tbody class="tbody"> <tr> <td>ordered</td> <td>boolean, if the operation (in case of batch operation) must be executed sequentually (ordered=true)</td> </tr>
- <tr> <td>writeConcern</td> <td>An array of writeConcern options (see below)</td> </tr>
- </tbody>  </table>
- <table class="doctable table"> <caption><strong>writeConcern array values</strong></caption>  <thead> <tr> <th>key</th> <th>value</th> </tr>
- </thead>
- <tbody class="tbody"> <tr> <td>fsync</td> <td>boolean, force flushing to disk before returning</td> </tr>
- <tr> <td>j</td> <td>boolean, force journal write before returning</td> </tr>
- <tr> <td>wtimeout</td> <td>integer, milliseconds, maximum time the primary is allowed to wait to verify replication</td> </tr>
- <tr> <td>w</td> <td>integer=server count, or string=replication-tag</td> </tr>
- </tbody>  </table>
- </p> </dd>
- 
+<p class="para"><table class="doctable informaltable"><thead><tr><th>キー</th><th>値</th></tr>
+</thead>
+<tbody class="tbody"><tr><td>ordered</td><td>boolean で、バッチ操作をシーケンシャルに行う必要がある (orderd = true) かどうかを表します。</td></tr>
+<tr><td>writeConcern</td><td>書き込み確認のオプションの配列 (以下を参照ください)</td></tr>
+</tbody></table>
+<table class="doctable table"><caption><strong>書き込み確認の配列の値</strong></caption><thead><tr><th>キー</th><th>値</th></tr>
+</thead>
+<tbody class="tbody"><tr><td>fsync</td><td>boolean で、強制的にディスクへのフラッシュをしてから返します。</td></tr>
+<tr><td>j</td><td>boolean で、強制的にジャーナルに書き出してから返します。</td></tr>
+<tr><td>wtimeout</td><td>integer で、プライマリがレプリケーションの検証までに待つ最大の時間をミリ秒で指定します。</td></tr>
+<tr><td>w</td><td>integer でサーバー数、あるいは文字列でレプリケーションタグを指定します。</td></tr>
+</tbody></table>
+</p></dd>
+
    
     <dt>
 
@@ -92,14 +92,14 @@
      <dt>
  <code class="parameter">protocolOptions</code> </dt>
  <dd>
- <p class="para"> <table class="doctable informaltable">  <thead> <tr> <th>key</th> <th>value</th> </tr>
- </thead>
- <tbody class="tbody"> <tr> <td>message_length</td> <td>The total size (in bytes) of the encoded message being sent over the wire</td> </tr>
- <tr> <td>request_id</td> <td>The request identifier for this message: <em>42</em></td> </tr>
- <tr> <td>namespace</td> <td>The MongoDB namespace used for the protocol message <em>dbname.collectionname</em></td> </tr>
- </tbody>  </table>
- </p> </dd>
- 
+ <p class="para"><table class="doctable informaltable"><thead><tr><th>キー</th><th>値</th></tr>
+</thead>
+<tbody class="tbody"><tr><td>message_length</td><td>ネットワーク越しに送信するエンコード済みメッセージのサイズ (バイト数)。</td></tr>
+<tr><td>request_id</td><td>このメッセージのリクエスト識別子。例：<em>42</em></td></tr>
+<tr><td>namespace</td><td>プロトコルメッセージに使う、MongoDB 名前空間。例：<em>dbname.collectionname</em></td></tr>
+</tbody></table>
+</p></dd>
+
   </dl>
 
  </div>

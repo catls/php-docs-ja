@@ -86,7 +86,7 @@
 <p class="para"><a href="mongo.writeconcerns.html" class="link">WriteConcerns</a> を参照ください。<a href="class.mongoclient.html" class="classname">MongoClient</a> でのデフォルト値は <em>1</em> です。
 </p></li>
         <li class="listitem"><p class="para"><em>&quot;wtimeout&quot;</em></p><p class="para">廃止予定。<em>&quot;wTimeoutMS&quot;</em> のエイリアスです。</p></li>
-        <li class="listitem"><p class="para"><em>&quot;wTimeoutMS&quot;</em></p><p class="para"><a href="mongo.writeconcerns.html" class="link">write concern</a> の確認をいつまで待つか。<a href="class.mongoclient.html" class="classname">MongoClient</a> でのデフォルトは <em>10000</em> ミリ秒です。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;wTimeoutMS&quot;</em></p><p class="para">このオプションは、<a href="mongo.writeconcerns.html" class="link">書き込み確認</a>を待つ制限時間をミリ秒単位で指定します。これが書き込み操作に適用されるのは、<em>&quot;w&quot;</em> が <em>1</em> より大きい場合のみです。というのも、タイムアウトはレプリケーションに関する機能だからです。この時間内に書き込み確認ができなかった場合は <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。<em>0</em> を指定すると、永遠にブロックし続けます。<a href="class.mongoclient.html" class="classname">MongoClient</a> でのデフォルトは <em>10000</em> ミリ秒 (10 秒) です。</p></li>
         <li class="listitem"><p class="para"><em>&quot;safe&quot;</em></p><p class="para">非推奨。<a href="mongo.writeconcerns.html" class="link">write concern</a> の <em>w</em> オプションを使いましょう。</p></li>
         <li class="listitem"><p class="para"><em>&quot;timeout&quot;</em></p><p class="para">非推奨。<em>&quot;socketTimeoutMS&quot;</em> のエイリアス。</p></li>
        </ul>
@@ -118,7 +118,7 @@
    protected や private なプロパティを持つオブジェクトを追加しようとすると、
    キーの長さがゼロのエラーを引き起こします。
   </p>
-  <p class="para"><em>&quot;w&quot;</em> オプションが設定されていて書き込みが失敗した場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。</p><p class="para"><em>&quot;w&quot;</em> オプションの値が 1 より大きく設定されていて、操作の完了までの時間が <var class="varname"><var class="varname">MongoCursor::$timeout</var></var> ミリ秒をこえた場合に <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。サーバー上での操作は止めません。これはクライアント側でのタイムアウトです。<em>MongoCollection::$wtimeout</em> はミリ秒です。</p>
+  <p class="para"><em>&quot;w&quot;</em> オプションが設定されていて書き込みが失敗した場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。</p><p class="para"><em>&quot;w&quot;</em> オプションの値が 1 より大きく設定されていて、操作の完了までの時間が <var class="varname"><var class="varname">MongoCursor::$timeout</var></var> ミリ秒をこえた場合に <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。サーバー上での操作は止めません。これはクライアント側でのタイムアウトです。<var class="varname"><var class="varname">MongoCollection::$wtimeout</var></var> はミリ秒です。</p>
  </div>
 
 

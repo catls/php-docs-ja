@@ -257,6 +257,28 @@
      </dd>
 
     
+    
+     <dt id="context.ssl.peer-fingerprint">
+      <code class="parameter">peer_fingerprint</code>
+      <span class="type"><a href="language.types.string.html" class="type string">string</a></span> | <span class="type"><a href="language.types.array.html" class="type array">array</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       リモート証明書のダイジェストが指定したハッシュに一致しない場合に、異常終了させます。
+      </p>
+      <p class="para">
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span> を指定する場合は、その長さでハッシュアルゴリズムを判断します。
+       &quot;md5&quot; (32) あるいは &quot;sha1&quot; (40) のいずれかです。
+      </p>
+      <p class="para">
+       <span class="type"><a href="language.types.array.html" class="type array">array</a></span> を指定する場合は、キーがハッシュアルゴリズムで、
+       それに対応する値がダイジェストとなります。
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -277,6 +299,13 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.6.0</td>
+       <td>
+        <code class="parameter">peer_fingerprint</code> が追加されました。
+       </td>
+      </tr>
+
       <tr>
        <td>5.4.13</td>
        <td>

@@ -10,9 +10,8 @@
  <div class="next" style="text-align: right; float: right;"><a href="timezones.html">サポートされるタイムゾーンのリスト</a></div>
  <div class="up"><a href="datetime.formats.html">サポートする日付と時刻の書式</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="datetime.formats.relative" class="section">
+</div><hr /><div id="datetime.formats.relative" class="sect1">
   <h2 class="title">相対的な書式</h2>
-
   <p class="para">
    このページでは、
    <span class="function"><a href="function.strtotime.html" class="function">strtotime()</a></span> や <a href="class.datetime.html" class="classname">DateTime</a> そして
@@ -140,14 +139,14 @@
      </tr>
 
      <tr>
-      <td>&#039;first day&#039; &#039; of&#039;?</td>
+      <td>&#039;first day of&#039;</td>
       <td>現在月の最初の日にします。
       この書式に続けて月名を指定する使いかたが最適です。</td>
       <td>&quot;first day of January 2008&quot;</td>
      </tr>
 
      <tr>
-      <td>&#039;last day&#039; &#039; of&#039;?</td>
+      <td>&#039;last day of&#039;</td>
       <td>現在月の最後の日にします。
       この書式に続いて月名を指定する使いかたが最適です。</td>
       <td>&quot;last day of next month&quot;</td>
@@ -331,6 +330,35 @@
     その合計である 61 日後となるわけです。
    </p>
   </p></blockquote>
+  
+  <div class="sect2">
+   <h3 class="title">変更履歴</h3>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>5.3.3</td>
+        <td>
+         &quot;first day&quot; と &quot;last day&quot; が、それぞれ &quot;+1 day&quot; と &quot;-1 day&quot;
+         のように振る舞うようになりました。以前はそれぞれ &quot;first day of&quot; と &quot;last day of&quot; でした。
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+  </div>
  </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="datetime.formats.compound.html">複合的な書式</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="timezones.html">サポートされるタイムゾーンのリスト</a></div>

@@ -60,14 +60,14 @@ link</code></dt>
      <dd>
 
       <p class="para">
-       The option that you want to set. It can be one of the following values:
+       指定したいオプション。以下のいずれかの値を指定します。
        <table class="doctable table">
-        <caption><strong>Valid options</strong></caption>
+        <caption><strong>有効なオプション</strong></caption>
         
          <thead>
           <tr>
-           <th>Name</th>
-           <th>Description</th>
+           <th>名前</th>
+           <th>説明</th>
           </tr>
 
          </thead>
@@ -75,11 +75,13 @@ link</code></dt>
          <tbody class="tbody">
           <tr>
            <td><strong><code>MYSQLI_STORE_RESULT_COPY_DATA</code></strong></td>
-           <td>Copy results from the internal mysqlnd buffer into the PHP variables fetched. By default,
-           mysqlnd will use a reference logic to avoid copying and duplicating results held in memory.
-           For certain result sets, for example, result sets with many small rows, the copy approach can
-           reduce the overall memory usage because PHP variables holding results may be
-           released earlier (available with mysqlnd only, since PHP 5.6.0)</td>
+           <td>
+           結果を、内部の mysqlnd バッファーから PHP の変数にコピーします。
+           デフォルトでは、mysqlnd は参照を利用しており、メモリ内の結果をコピーしたり複製したりしないようにしています。
+           ある種の結果セット (短めの行を大量に保持する結果セットなど) の場合は、
+           コピーしたほうが、全体的なメモリ使用量を抑えることができます。
+           結果を保持する PHP の変数のほうが、解放されるのが早いからです。
+           これは mysqlnd でのみ利用可能で、PHP 5.6.0 以降で使えます。</td>
           </tr>
 
          </tbody>

@@ -648,6 +648,81 @@
       <td>Since 1.6.0.</td>
      </tr>
 
+     <tr>
+      <td>
+       <em>pool_masters_total</em>
+      </td>
+      <td>
+       Number of master servers (connections) in the internal connection pool.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>pool_slaves_total</em>
+      </td>
+      <td>
+       Number of slave servers (connections) in the internal connection pool.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>pool_masters_active</em>
+      </td>
+      <td>
+       Number of master servers (connections) from the internal connection pool
+       which are currently used for picking a connection.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>pool_slaves_active</em>
+      </td>
+      <td>
+       Number of slave servers (connections) from the internal connection pool
+       which are currently used for picking a connection.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+       <tr>
+      <td>
+       <em>pool_updates</em>
+      </td>
+      <td>
+       How often the active connection list has been replaced and a
+       new set of master and slave servers had been installed.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>pool_master_reactivated</em>
+      </td>
+      <td>
+       How often a master connection has been reused after being
+       flushed from the active list.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
+     <tr>
+      <td>
+       <em>pool_slave_reactivated</em>
+      </td>
+      <td>
+       How often a slave connection has been reused after being
+       flushed from the active list.
+      </td>
+      <td>Since 1.6.0.</td>
+     </tr>
+
     </tbody>
    
   </table>

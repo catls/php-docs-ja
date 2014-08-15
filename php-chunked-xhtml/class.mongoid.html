@@ -33,7 +33,7 @@
     リレーショナルデータベースにおける自動インクリメントの役割を果たします。
     つまり、データ自体が必然的にもつ一意なキーがない場合にそれを提供するということです。
     自動インクリメントは共有データベースではうまく動作しません。
-    次の番号を瞬時に見つけることが不可能だからです。
+    次の番号を瞬時に見つけることが難しいからです。
     このクラスは、共有環境であっても一意となる値をすばやく生成することができます。
    </p>
    <p class="para">
@@ -72,7 +72,7 @@ C:7:&quot;MongoId&quot;:24:{4af9f23d8ead0e1d32000000}
     <div class="fieldsynopsis">
      <span class="modifier">public</span>
      <span class="type">string</span>
-      <var class="varname"><a href="class.mongoid.html#mongoid.props.id">$<var class="varname">id</var></a></var>
+      <var class="varname"><a href="class.mongoid.html#mongoid.props.id">$<var class="varname">$id</var></a></var>
      <span class="initializer"> = <strong><code>NULL</code></strong></span>
     ;</div>
 
@@ -121,13 +121,20 @@ C:7:&quot;MongoId&quot;:24:{4af9f23d8ead0e1d32000000}
    <dl>
 
     
-     <dt id="mongoid.props.id"><var class="varname"><var class="varname">id</var></var></dt>
+     <dt id="mongoid.props.id"><var class="varname"><var class="varname">$id</var></var></dt>
 
      <dd>
 
       <span class="simpara">
        このフィールドには、このオブジェクトの文字列表現が含まれます。
       </span>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+        <span class="simpara">
+          このプロパティの名前は <em>$</em> で始まります。アクセスするには、
+          <a href="language.types.string.html#language.types.string.parsing.complex" class="link">複雑な構文</a> (<em>$mongoId-&gt;{&#039;$id&#039;}</em> 形式)
+          を利用します。
+        </span>
+      </p></blockquote>
      </dd>
 
     
@@ -138,7 +145,7 @@ C:7:&quot;MongoId&quot;:24:{4af9f23d8ead0e1d32000000}
   <div class="section">
    <h2 class="title">参考</h2>
    <p class="para">
-    MongoDB コアドキュメントの <a href="http://docs.mongodb.org/manual/reference/object-id/" class="link external">&raquo;&nbsp;id</a>
+    MongoDB コアドキュメントの <a href="http://docs.mongodb.org/manual/reference/object-id/" class="link external">&raquo;&nbsp;ObjectIds</a>
     を参照ください。
    </p>
   </div>

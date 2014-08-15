@@ -377,11 +377,17 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
           <em>&quot;wTimeoutMS&quot;</em>
          </p>
          <p class="para">
-          このオプションは &quot;w&quot; と組み合わせて使います。
-          書き込み操作がうまくいくまでサーバーが何ミリ秒待つのかを制御します。
-          これよりも長い時間がかかると、サーバーからドライバに対して「長すぎる」
-          という通知を出し、ドライバが
+          このオプションは、
+          <a href="mongo.writeconcerns.html" class="link">書き込み確認</a>
+          を待つ制限時間をミリ秒単位で指定します。
+          これが書き込み操作に適用されるのは、
+          <em>&quot;w&quot;</em> が <em>1</em> より大きい場合のみです。
+          というのも、タイムアウトはレプリケーションに関する機能だからです。
+          この時間内に書き込み確認ができなかった場合は
           <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。
+          <em>0</em> を指定すると、永遠にブロックし続けます。
+          デフォルト値は <em>10000</em>
+          (10 秒) です。
          </p>
         </li>
        </ul>
@@ -659,6 +665,10 @@ switched to db admin
       <tr>
        <td>1.4.0</td>
        <td>
+        <p class="para">
+         <em>&quot;ssl&quot;</em> オプションが追加されました。これは
+         <a href="mongo.connecting.ssl.html" class="link">SSL 接続</a> をサポートするものです。
+        </p>
         <p class="para">
          <em>&quot;wTimeoutMS&quot;</em> オプションが追加されました。これは
          <em>&quot;wTimeout&quot;</em> の代替です。
