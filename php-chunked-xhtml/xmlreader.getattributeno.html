@@ -31,6 +31,7 @@
   </p>
  </div>
 
+
  <div class="refsect1 parameters" id="refsect1-xmlreader.getattributeno-parameters">
   <h3 class="title">パラメータ</h3>
   <p class="para">
@@ -53,14 +54,46 @@
   </p>
  </div>
 
+
  <div class="refsect1 returnvalues" id="refsect1-xmlreader.getattributeno-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
    属性の値を返します。指定した位置 <code class="parameter">index</code> に
    属性が見つからなかったり、現在位置が要素ではなかったりした場合には
-   空の文字列を返します。
+   空の文字列 (PHP 5.6 より前のバージョン) あるいは <strong><code>NULL</code></strong> (PHP 5.6 以降) を返します。
   </p>
  </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-xmlreader.getattributeno-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.6.0</td>
+       <td>
+        <span class="methodname"><strong>XMLReader::getAttributeNo()</strong></span> は、
+        属性が存在しない場合に <strong><code>NULL</code></strong> を返すようになりました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
 
  <div class="refsect1 seealso" id="refsect1-xmlreader.getattributeno-seealso">
   <h3 class="title">参考</h3>

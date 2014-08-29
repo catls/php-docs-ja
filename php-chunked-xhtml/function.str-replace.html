@@ -130,55 +130,6 @@
  </div>
 
 
- <div class="refsect1 changelog" id="refsect1-function.str-replace-changelog">
-  <h3 class="title">変更履歴</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        <code class="parameter">count</code> パラメータが追加されました。
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.3</td>
-       <td>
-        この関数の挙動がかわりました。以前のバージョンにはバグがあり、
-        <code class="parameter">search</code> と <code class="parameter">replace</code>
-        の両方に配列を指定した場合に、
-        空の <code class="parameter">search</code> 添字をスキップしても
-        <code class="parameter">replace</code> 配列上の内部ポインタが進みませんでした。
-        このバグは PHP 4.3.3 で修正されたので、このバグを前提としたスクリプトは、
-        この関数をコールする前に空の検索値を削除しておく必要があります。
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.5</td>
-       <td>
-        ほとんどのパラメータに配列を渡せるようになりました。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
  <div class="refsect1 examples" id="refsect1-function.str-replace-examples">
   <h3 class="title">例</h3>
   <p class="para">

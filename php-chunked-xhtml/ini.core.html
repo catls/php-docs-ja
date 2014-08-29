@@ -1340,12 +1340,31 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
 
        <dd>
 
-        <p class="para">
-        PHP 5.6.0 以降は &quot;UTF-8&quot; がデフォルトになり、モジュールや関数のデフォルト文字エンコーディングとしてこの値を使います。
-        PHP は、デフォルトで常にContent-type:ヘッダで
-        character encodingを出力するようになっています。
-        空文字列を指定することは、おすすめしません。
-        </p>
+       <p class="para">
+        PHP 5.6.0 以降は &quot;UTF-8&quot; がデフォルトになり、
+        <span class="function"><a href="function.htmlentities.html" class="function">htmlentities()</a></span> や
+        <span class="function"><a href="function.html-entity-decode.html" class="function">html_entity_decode()</a></span> そして
+        <span class="function"><a href="function.htmlspecialchars.html" class="function">htmlspecialchars()</a></span> で
+        <code class="parameter">encoding</code> パラメータを省略した場合は、このデフォルト値を利用します。
+        また、<code class="parameter">default_charset</code> の値は、
+        <a href="book.iconv.html" class="link">iconv</a> 関数で
+        <a href="iconv.configuration.html#ini.iconv.input-encoding" class="link"><code class="parameter">iconv.input_encoding</code></a>、
+        <a href="iconv.configuration.html#ini.iconv.output-encoding" class="link"><code class="parameter">iconv.output_encoding</code></a>、
+        <a href="iconv.configuration.html#ini.iconv.internal-encoding" class="link"><code class="parameter">iconv.internal_encoding</code></a>
+        が未設定の場合や、
+        <a href="book.mbstring.html" class="link">mbstring</a> 関数で
+        <a href="mbstring.configuration.html#ini.mbstring.http-input" class="link"><code class="parameter">mbstring.http_input</code></a>
+        <a href="mbstring.configuration.html#ini.mbstring.http-output" class="link"><code class="parameter">mbstring.http_output</code></a>
+        <a href="mbstring.configuration.html#ini.mbstring.internal-encoding" class="link"><code class="parameter">mbstring.internal_encoding</code></a>
+        が未設定の場合のデフォルトとしても用いられます。
+       </p>
+       <p class="para">
+        すべてのバージョンの PHP は、PHP から送信する Content-Type ヘッダのデフォルト値としてこれを使います。
+        ただし、<span class="function"><a href="function.header.html" class="function">header()</a></span> で上書きされている場合は別です。
+       </p>
+       <p class="para">
+        <code class="parameter">default_charset</code> に空文字列を指定することは、おすすめしません。
+       </p>
        </dd>
 
       
@@ -1403,20 +1422,30 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
       
        <dt id="ini.always-populate-raw-post-data">
         <code class="parameter">always_populate_raw_post_data</code>
-        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+        <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
        </dt>
 
        <dd>
 
         <p class="para">
-         常に <var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> にアクセス可能とします。
-         この変数には生の POST データが格納されています。指定しなかった場合は、
+         <strong><code>TRUE</code></strong> に設定すると、PHP は常に
+         <var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> にアクセス可能とします。
+         この変数には生の POST データが格納されています。
+         指定しなかった場合は、
          データの MIME 型が判別できない場合のみこの変数にアクセス可能となります。
-         しかし、生の POST データにアクセスする方法としては
-         <a href="wrappers.php.html" class="link">php://input</a> のほうが推奨されます。
-         <var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> は、
-         <em>enctype=&quot;multipart/form-data&quot;</em> の場合には無効です。
         </p>
+       <p class="para">
+        生の POST データにアクセスする方法としては
+        <a href="wrappers.php.html" class="link">php://input</a> のほうが推奨されます。
+        <var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> は、PHP 5.6.0 以降で非推奨となります。
+        <code class="parameter">always_populate_raw_post_data</code>
+        を <em>-1</em> にすると、将来のバージョンでの PHP の挙動を事前に体験できます。
+        つまり、<var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> がはじめから定義されていない状態のことです。
+       </p>
+       <p class="para">
+        設定がどうであろうと、<em>enctype=&quot;multipart/form-data&quot;</em>
+        の場合は <var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> は使えません。
+       </p>
        </dd>
 
       
@@ -1610,7 +1639,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-5723">
+         <div class="example" id="example-5713">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1620,7 +1649,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-5724">
+         <div class="example" id="example-5714">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1646,7 +1675,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-5725">
+        <div class="example" id="example-5715">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>

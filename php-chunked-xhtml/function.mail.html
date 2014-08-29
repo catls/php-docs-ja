@@ -224,30 +224,12 @@
 
      <tbody class="tbody">
       <tr>
-       <td>4.3.0（Windows のみ）</td>
-       <td>
-        すべてのカスタムヘッダ（From、Cc、Bcc や Date など）がサポート
-        されるようになり、大文字・小文字を区別しないようになりました
-        （カスタムヘッダは MTA でパースされるのではなく PHP でパースされます。
-        PHP &lt; 4.3 では Cc ヘッダのみがサポートされており、大文字・小文字が
-        区別されていました）。
-       </td>
-      </tr>
-
-      <tr>
        <td>4.2.3</td>
        <td>
         <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">safe_mode</a> 時には
         <code class="parameter">additional_parameters</code> パラメータを無効に
         しました。もし用いられた場合には <span class="function"><strong>mail()</strong></span> 関数は
         警告メッセージを出して <strong><code>FALSE</code></strong> を返します。
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.0.5</td>
-       <td>
-        <code class="parameter">additional_parameters</code> パラメータが追加されました。
        </td>
       </tr>
 
@@ -262,7 +244,7 @@
  <div class="refsect1 examples" id="refsect1-function.mail-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3475">
+   <div class="example" id="example-3478">
     <p><strong>例1 メールを送信する</strong></p>
     <div class="example-contents"><p>
      <span class="function"><strong>mail()</strong></span> を用いて単純なメールを送信する。
@@ -275,7 +257,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-3476">
+   <div class="example" id="example-3479">
     <p><strong>例2 追加ヘッダを付加してメールを送信する</strong></p>
     <div class="example-contents"><p>
      基本ヘッダに加え、MUA に From および Reply-To アドレスを通知する。
@@ -288,7 +270,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-3477">
+   <div class="example" id="example-3480">
     <p><strong>例3 追加ヘッダ及び追加コマンドラインパラメータを指定してメールを送信する</strong></p>
     <div class="example-contents"><p>
      <em>sendmail_path</em> を用いてメールを送信する際に利用する
@@ -303,7 +285,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-3478">
+   <div class="example" id="example-3481">
     <p><strong>例4 HTML メールを送信する</strong></p>
     <div class="example-contents"><p>
      <span class="function"><strong>mail()</strong></span> を用いて HTML メールを送信することも可能です。

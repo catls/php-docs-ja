@@ -84,7 +84,7 @@
         <li class="listitem"><p class="para"><em>&quot;sparse&quot;</em></p><p class="para"><strong><code>TRUE</code></strong> を指定すると、疎なインデックスを作ります。これは、指定したフィールドを含むドキュメントだけをインデックスします。デフォルト値は <strong><code>FALSE</code></strong> です。</p></li>
         <li class="listitem"><p class="para"><em>&quot;expireAfterSeconds&quot;</em></p><p class="para">このオプションの値に指定するのは、ドキュメントを有効期限切れとみなしてコレクションから自動削除するまでの秒数です。このオプションが使えるのは、単一フィールドインデックスで、フィールドに <a href="class.mongodate.html" class="classname">MongoDate</a> の値を含む場合のみです。</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">この機能が使えるのは、MongoDB 2.2 以降です。詳細は <a href="http://docs.mongodb.org/manual/tutorial/expire-data/" class="link external">&raquo;&nbsp;Expire Data from Collections by Setting TTL</a> を参照ください。</p></p></blockquote></li>
         <li class="listitem"><p class="para"><em>&quot;name&quot;</em></p><p class="para">オプションの、インデックスを一意に特定するための名前。</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">ドライバーがデフォルトで生成するインデックス名は、インデックスのフィールドと、並び順あるいは型に基づくものです。たとえば、複合インデックス <em>array(&quot;x&quot; =&gt; 1, &quot;y&quot; =&gt; -1)</em> の名前は <em>&quot;x_1_y_-1&quot;</em> であり、地理空間インデックス <em>array(&quot;loc&quot; =&gt; &quot;2dsphere&quot;)</em> の名前は <em>&quot;loc_2dsphere&quot;</em> となります。多数のフィールドからなるインデックスの場合、自動生成される名前が MongoDB の <a href="http://docs.mongodb.org/manual/reference/limits/#Index-Name-Length" class="link external">&raquo;&nbsp;インデックス名の制限</a> を超えてしまう可能性があります。<em>&quot;name&quot;</em> オプションは、そんな場合に短い名前を用意するときなどに使えます。</p></p></blockquote></li>
-        <li class="listitem"><p class="para"><em>&quot;socketTimeoutMS&quot;</em></p><p class="para">整数で、デフォルトは <em>MongoCursor::$timeout</em> です。確認付き書き込みを使っている場合、これはクライアントがデータベースからのレスポンスを待ち続ける時間 (ミリ秒) を表します。この時間内にデータベースからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。</p></li>
+        <li class="listitem"><p class="para"><em>&quot;socketTimeoutMS&quot;</em></p><p class="para">このオプションは、ソケット通信の制限時間を、ミリ秒単位で指定します。この時間内にサーバーからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。この場合、サーバー側で書き込み処理が行われたのかどうかを判断できなくなります。<em>-1</em> を指定すると、永遠にブロックします。<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルト値は <em>30000</em> (30 秒) です。</p></li>
        </ul>
       </p>
       <p class="para">
@@ -165,7 +165,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongocollection.createindex-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1494">
+  <div class="example" id="example-1497">
    <p><strong>例1 <span class="function"><strong>MongoCollection::createIndex()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -175,7 +175,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-1495">
+  <div class="example" id="example-1498">
    <p><strong>例2 Geospatial Indexing</strong></p>
    <div class="example-contents"><p>
     Mongo supports geospatial indexes, which allow you to search for documents
@@ -190,7 +190,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-1496">
+  <div class="example" id="example-1499">
    <p><strong>例3 Drop duplicates example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

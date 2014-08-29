@@ -120,7 +120,7 @@
    <code class="parameter">str</code> より大きい場合に正の数、
    等しい場合に 0 を返します。<code class="parameter">offset</code> が
    <code class="parameter">main_str</code> の長さ以上であるか、あるいは <code class="parameter">length</code>
-   が設定されていて 1 未満である場合、<span class="function"><strong>substr_compare()</strong></span>
+   が設定されていて 1 未満である場合 (PHP 5.6 より前のバージョン)、<span class="function"><strong>substr_compare()</strong></span>
    は警告を表示して <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
@@ -140,6 +140,13 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.6.0</td>
+       <td>
+        <code class="parameter">length</code> を <em>0</em> にもできるようになりました。
+       </td>
+      </tr>
+
       <tr>
        <td>5.1.0</td>
        <td>

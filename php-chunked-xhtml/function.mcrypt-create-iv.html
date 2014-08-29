@@ -22,7 +22,7 @@
   <div class="methodsynopsis dc-description">
    <span class="type">string</span> <span class="methodname"><strong>mcrypt_create_iv</strong></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$size</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$source</code><span class="initializer"> = MCRYPT_DEV_RANDOM</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$source</code><span class="initializer"> = MCRYPT_DEV_URANDOM</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
@@ -69,14 +69,10 @@
        5.3.0 より前は、 Windows でサポートされているのは <strong><code>MCRYPT_RAND</code></strong>
        のみでした。
       </p>
-      <blockquote class="note"><p><strong class="note">注意</strong>: 
-       <p class="para">
-        <strong><code>MCRYPT_RAND</code></strong> を使用する場合、乱数生成器を初期化するために、
-        必ず <span class="function"><strong>mcrypt_create_iv()</strong></span> の前に <span class="function"><a href="function.srand.html" class="function">srand()</a></span>
-        をコールしてください。<span class="function"><a href="function.rand.html" class="function">rand()</a></span> のように、自動的に
-        初期化されるわけではありません。
-       </p>
-      </p></blockquote>
+      <p class="para">
+       このパラメータのデフォルト値は、PHP 5.6.0 より前のバージョンでは
+       <strong><code>MCRYPT_DEV_RANDOM</code></strong> でした。
+      </p>
      </dd>
 
     
@@ -109,6 +105,14 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.6.0</td>
+       <td>
+        <code class="parameter">source</code> のデフォルト値が
+        <strong><code>MCRYPT_DEV_URANDOM</code></strong> になりました。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.3.0</td>
        <td>
         <strong><code>MCRYPT_DEV_RANDOM</code></strong> 及び
@@ -135,7 +139,7 @@
  <div class="refsect1 examples" id="refsect1-function.mcrypt-create-iv-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-875">
+   <div class="example" id="example-877">
     <p><strong>例1 <span class="function"><strong>mcrypt_create_iv()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

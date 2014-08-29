@@ -2,19 +2,19 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>OpenSSL changes in PHP 5.6.x</title>
+  <title>PHP 5.6.x における OpenSSL 関連の変更</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration56.new-functions.html">New functions</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration56.extensions.html">Other changes to extensions</a></div>
- <div class="up"><a href="migration56.html">Migrating from PHP 5.5.x to PHP 5.6.x</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration56.new-functions.html">新しい関数</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration56.extensions.html">その他の拡張モジュールに対する変更</a></div>
+ <div class="up"><a href="migration56.html">PHP 5.5.x から PHP 5.6.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="migration56.openssl" class="sect1">
- <h2 class="title">OpenSSL changes in PHP 5.6.x</h2>
+ <h2 class="title">PHP 5.6.x における OpenSSL 関連の変更</h2>
 
  <div class="sect2" id="migration56.openssl.peer-verification">
-  <h3 class="title">Stream wrappers now verify peer certificates and host names by default when using SSL/TLS</h3>
+  <h3 class="title">ストリームラッパーが、SSL/TLS を使っている場合のピア証明書とホスト名の検証にデフォルトで対応</h3>
 
   
    <p class="para">
@@ -47,69 +47,69 @@
  </div>
 
  <div class="sect2" id="migration56.openssl.fingerprint">
-  <h3 class="title">Certificate fingerprints</h3>
+  <h3 class="title">証明書のフィンガープリント</h3>
 
   <p class="para">
-   Support has been added for extracting and verifying certificate
-   fingerprints. <span class="function"><a href="function.openssl-x509-fingerprint.html" class="function">openssl_x509_fingerprint()</a></span> has been added
-   to extract a fingerprint from an X.509 certificate, and two
-   <a href="context.ssl.html" class="link">SSL stream context</a> options have been
-   added: <em>capture_peer_cert</em> to capture the peer&#039;s X.509
-   certificate, and <em>peer_fingerprint</em> to assert that the
-   peer&#039;s certificate should match the given fingerprint.
+   証明書のフィンガープリントの抽出と、その検証に対応しました。
+   新たに追加された <span class="function"><a href="function.openssl-x509-fingerprint.html" class="function">openssl_x509_fingerprint()</a></span> 関数が、
+   X.509 証明書からフィンガープリントを抽出します。また、
+   <a href="context.ssl.html" class="link">SSL ストリームコンテキスト</a>
+   に二つのオプションが追加されました。
+   <em>capture_peer_cert</em> はピアの X.509 証明書を取り込み、
+   <em>peer_fingerprint</em> はピアの証明書が指定したフィンガープリントにマッチすることを確かめます。
   </p>
  </div>
 
  <div class="sect2" id="migration56.openssl.ciphers">
-  <h3 class="title">Default ciphers updated</h3>
+  <h3 class="title">デフォルトの暗号の更新</h3>
 
   <p class="para">
-   The default ciphers used by PHP have been updated to a more secure list
-   based on the
-   <a href="https://wiki.mozilla.org/Security/Server_Side_TLS#Recommended_Ciphersuite" class="link external">&raquo;&nbsp;Mozilla cipher recommendations</a>,
-   with two additional exclusions: anonymous Diffie-Hellman ciphers, and RC4.
+   PHP がデフォルトで使う暗号が更新され、
+   <a href="https://wiki.mozilla.org/Security/Server_Side_TLS#Recommended_Ciphersuite" class="link external">&raquo;&nbsp;Mozilla cipher recommendations</a>
+   に基づいた、よりセキュアなリストになりました。
+   リストにない例外は、anonymous Diffie-Hellman ciphers と RC4 です。
   </p>
 
   <p class="para">
-   This list can be accessed via the new
-   <strong><code>OPENSSL_DEFAULT_STREAM_CIPHERS</code></strong> constant, and can be
-   overridden (as in previous PHP versions) by setting the
+   新しい定数
+   <strong><code>OPENSSL_DEFAULT_STREAM_CIPHERS</code></strong> で、この一覧にアクセスできます。
+   また、(過去のバージョンの PHP のように) 上書きもできます。上書きをするには、コンテキストオプション
    <a href="context.ssl.html#context.ssl.ciphers" class="link"><code class="parameter">ciphers</code></a>
-   context option.
+   を設定します。
   </p>
  </div>
 
  <div class="sect2" id="migration56.openssl.tls-compression">
-  <h3 class="title">Compression disabled by default</h3>
+  <h3 class="title">デフォルトでの圧縮の無効化</h3>
 
   <p class="para">
-   SSL/TLS compression has been disabled by default to mitigate the CRIME
-   attack. PHP 5.4.13 added a
+   SSL/TLS の圧縮が、デフォルトで無効になりました。これは、CRIME 攻撃への対応です。
+   PHP 5.4.13 で新たにコンテキストオプション
    <a href="context.ssl.html#context.ssl.disable-compression" class="link"><code class="parameter">disable_compression</code></a>
-   context option to allow compression to be disabled: this is now set to
-   <strong><code>TRUE</code></strong> (that is, compression is disabled) by default.
+   が加わり、圧縮を無効にできるようになりました。そのデフォルト値が <strong><code>TRUE</code></strong> （つまり圧縮が無効になっている)
+   に変わったのです。
   </p>
  </div>
 
  <div class="sect2" id="migration56.openssl.honor-cipher-order">
-  <h3 class="title">Allow servers to prefer their cipher order</h3>
+  <h3 class="title">サーバーの暗号の優先が可能に</h3>
 
   <p class="para">
-   The <code class="parameter">honor_cipher_order</code> SSL context option has been
-   added to allow encrypted stream servers to mitigate BEAST vulnerabilities
-   by preferring the server&#039;s ciphers to the client&#039;s.
+   SSL コンテキストオプション <code class="parameter">honor_cipher_order</code>
+   が追加されました。これによって、暗号化されたストリームサーバーでの BEAST
+   脆弱性を除去するために、サーバーの暗号をクライアントよりも優先させられるようになります。
   </p>
  </div>
 
  <div class="sect2" id="migration56.openssl.metadata">
-  <h3 class="title">Access the negotiated protocol and cipher</h3>
+  <h3 class="title">ネゴシエート済みのプロトコルと暗号へのアクセス</h3>
 
   <p class="para">
-   The protocol and cipher that were negotiated for an encrypted stream can
-   now be accessed via <span class="function"><a href="function.stream-get-meta-data.html" class="function">stream_get_meta_data()</a></span> or
-   <span class="function"><a href="function.stream-context-get-options.html" class="function">stream_context_get_options()</a></span> when the
-   <code class="parameter">capture_session_meta</code> SSL context option is set to
-   <strong><code>TRUE</code></strong>.
+   暗号化ストリームでネゴシエート済みのプロトコルと暗号へのアクセスが、
+   <span class="function"><a href="function.stream-get-meta-data.html" class="function">stream_get_meta_data()</a></span> あるいは
+   <span class="function"><a href="function.stream-context-get-options.html" class="function">stream_context_get_options()</a></span> でできるようになりました。
+   これは、SSL コンテキストオプション
+   <code class="parameter">capture_session_meta</code> が <strong><code>TRUE</code></strong> になっている場合に有効です。
   </p>
 
   <div class="informalexample">
@@ -139,15 +139,16 @@ array(4) {
  </div>
 
  <div class="sect2" id="migration56.openssl.forward-secrecy">
-  <h3 class="title">New options for perfect forward secrecy in encrypted stream servers</h3>
+  <h3 class="title">暗号化ストリームサーバーでの前方秘匿性に関する新たなオプション</h3>
 
   <p class="para">
-   Encrypted client streams already support perfect forward secrecy, as it is
-   generally controlled by the server. PHP encrypted server streams using
-   certificates capable of perfect forward secrecy do not need to take any
-   additional action to enable PFS; however a number of new SSL context options
-   have been added to allow more control over PFS and deal with any
-   compatibility issues that may arise. 
+   暗号化クライアントストリームはすでに前方秘匿性に対応しています。
+   というのも、一般に前方秘匿性は、サーバーが制御するものだからです。
+   PHP の暗号化サーバーストリームが使っている証明書は前方秘匿性に対応しており、
+   何もしなくても有効になっています。
+   しかし、前方秘匿性に関してより決め細やかな制御をしたり、
+   互換性に関する問題に対応したりするために、
+   新たな SSL コンテキストオプションがいくつか追加されました。
   </p>
 
   <dl>
@@ -159,8 +160,8 @@ array(4) {
     <dd>
 
      <p class="para">
-      This option allows the selection of a specific curve for use with ECDH
-      ciphers. If not specified, <em>prime256v1</em> will be used.
+      このオプションで、ECDH 暗号で使う曲線を選択できるようになります。
+      省略した場合は <em>prime256v1</em> を使います。
      </p>
     </dd>
 
@@ -172,8 +173,8 @@ array(4) {
     <dd>
 
      <p class="para">
-      A path to a file containing parametrs for Diffie-Hellman key exchange,
-      such as that created by the following command:
+      Diffie-Hellman 鍵交換用のパラメータを含むファイルへのパス。
+      このファイルは、たとえば以下のようなコマンドで生成したものです。
      </p>
      <div class="example-contents">
 <div class="shellcode"><pre class="shellcode">openssl dhparam -out /path/to/my/certs/dh-2048.pem 2048</pre>
@@ -190,8 +191,8 @@ array(4) {
     <dd>
 
      <p class="para">
-      If set to <strong><code>TRUE</code></strong>, a new key pair will be created when using
-      Diffie-Hellman parameters, thereby improving forward secrecy.
+      <strong><code>TRUE</code></strong> にすると、Diffie-Hellman パラメータを使うときに、
+      新たな鍵ペアを作成します。これにより、前方秘匿性が向上します。
      </p>
     </dd>
 
@@ -203,8 +204,8 @@ array(4) {
     <dd>
 
      <p class="para">
-      If set to <strong><code>TRUE</code></strong>, a new key pair will always be generated when ECDH
-      cipher suites are negotiated. This improves forward secrecy.
+      <strong><code>TRUE</code></strong> にすると、ECDH 暗号スイートでのネゴシエート時に
+      新たな鍵ペアを作成します。これにより、前方秘匿性が向上します。
      </p>
     </dd>
 
@@ -214,38 +215,39 @@ array(4) {
  </div>
 
  <div class="sect2" id="migration56.openssl.crypto-method">
-  <h3 class="title">SSL/TLS version selection</h3>
+  <h3 class="title">SSL/TLS のバージョンの選択</h3>
 
   <p class="para">
-   It is now possible to select specific versions of SSL and TLS via the
-   <code class="parameter">crypto_method</code> SSL context option or by specifying a
-   specific transport when creating a stream wrapper (for example, by calling
-   <span class="function"><a href="function.stream-socket-client.html" class="function">stream_socket_client()</a></span> or
-   <span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span>).
+   SSL や TLS の、特定のバージョンを指定できるようになりました。SSL コンテキストオプション
+   <code class="parameter">crypto_method</code> を利用するか、
+   あるいはストリームラッパーの作成時に
+   (<span class="function"><a href="function.stream-socket-client.html" class="function">stream_socket_client()</a></span> あるいは
+   <span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span> を呼んで)
+   トランスポートを指定します。
   </p>
 
   <p class="para">
-   The <code class="parameter">crypto_method</code> SSL context option accepts a
-   bitmask enumerating the protocols that are permitted, as does the
-   <code class="parameter">crypto_type</code> of
-   <span class="function"><a href="function.stream-socket-enable-crypto.html" class="function">stream_socket_enable_crypto()</a></span>.
+   SSL コンテキストオプション <code class="parameter">crypto_method</code> には、
+   <span class="function"><a href="function.stream-socket-enable-crypto.html" class="function">stream_socket_enable_crypto()</a></span> 関数の
+   <code class="parameter">crypto_type</code> と同様に、
+   許可するプロトコルをビットマスクで指定します。
    
   </p>
 
   <table class="segmentedlist">
-   <caption><strong>Selected protocol versions and corresponding options</strong></caption>
-   <thead><tr><th>Protocol(s)</th>
-   <th>Client flag</th>
-   <th>Server flag</th>
-   <th>Transport</th>
+   <caption><strong>プロトコルのバージョンと、対応するオプション</strong></caption>
+   <thead><tr><th>プロトコル</th>
+   <th>クライアントのフラグ</th>
+   <th>サーバーのフラグ</th>
+   <th>トランスポート</th>
    </tr></thead><tbody><tr class="seglistitem">
-    <td class="seg">Any TLS or SSL version</td>
+    <td class="seg">任意のバージョンの TLS あるいは SSL</td>
     <td class="seg"><strong><code>STREAM_CRYPTO_METHOD_ANY_CLIENT</code></strong></td>
     <td class="seg"><strong><code>STREAM_CRYPTO_METHOD_ANY_SERVER</code></strong></td>
     <td class="seg"><em>ssl://</em></td>
    </tr>
    <tr class="seglistitem">
-    <td class="seg">Any TLS version</td>
+    <td class="seg">任意のバージョンの TLS</td>
     <td class="seg"><strong><code>STREAM_CRYPTO_METHOD_TLS_CLIENT</code></strong></td>
     <td class="seg"><strong><code>STREAM_CRYPTO_METHOD_TLS_SERVER</code></strong></td>
     <td class="seg"><em>tls://</em></td>
@@ -279,7 +281,7 @@ array(4) {
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;Requiring&nbsp;TLS&nbsp;1.0&nbsp;or&nbsp;better&nbsp;when&nbsp;using&nbsp;file_get_contents():<br /></span><span style="color: #0000BB">$ctx&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'ssl'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'crypto_method'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">STREAM_CRYPTO_METHOD_TLS_CLIENT</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;],<br />]);<br /></span><span style="color: #0000BB">$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'https://google.com/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ctx</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Requiring&nbsp;TLS&nbsp;1.1&nbsp;or&nbsp;1.2:<br /></span><span style="color: #0000BB">$ctx&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'ssl'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'crypto_method'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">STREAM_CRYPTO_METHOD_TLSv_1_1_CLIENT&nbsp;</span><span style="color: #007700">|<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">STREAM_CRYPTO_METHOD_TLSv_1_2_CLIENT</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;],<br />]);<br /></span><span style="color: #0000BB">$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'https://google.com/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ctx</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Connecting&nbsp;using&nbsp;the&nbsp;tlsv1.2://&nbsp;stream&nbsp;socket&nbsp;transport.<br /></span><span style="color: #0000BB">$sock&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_socket_client</span><span style="color: #007700">(</span><span style="color: #DD0000">'tlsv1.2://google.com:443/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;file_get_contents()&nbsp;を使うには&nbsp;TLS&nbsp;1.0&nbsp;以降が必要です<br /></span><span style="color: #0000BB">$ctx&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'ssl'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'crypto_method'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">STREAM_CRYPTO_METHOD_TLS_CLIENT</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;],<br />]);<br /></span><span style="color: #0000BB">$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'https://google.com/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ctx</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;TLS&nbsp;1.1&nbsp;あるいは&nbsp;1.2&nbsp;が必要です<br /></span><span style="color: #0000BB">$ctx&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'ssl'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'crypto_method'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">STREAM_CRYPTO_METHOD_TLSv_1_1_CLIENT&nbsp;</span><span style="color: #007700">|<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">STREAM_CRYPTO_METHOD_TLSv_1_2_CLIENT</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;],<br />]);<br /></span><span style="color: #0000BB">$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'https://google.com/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ctx</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;接続時に&nbsp;tlsv1.2://&nbsp;ストリームソケットトランスポートを利用します<br /></span><span style="color: #0000BB">$sock&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_socket_client</span><span style="color: #007700">(</span><span style="color: #DD0000">'tlsv1.2://google.com:443/'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -288,12 +290,11 @@ array(4) {
  </div>
 
  <div class="sect2" id="migration56.openssl.default-certificate-paths">
-  <h3 class="title"><span class="function"><strong>openssl_get_cert_locations()</strong></span> added</h3>
+  <h3 class="title"><span class="function"><a href="function.openssl-get-cert-locations.html" class="function">openssl_get_cert_locations()</a></span> の追加</h3>
 
   <p class="para">
-   The <span class="function"><strong>openssl_get_cert_locations()</strong></span> function has been
-   added: it returns the default locations PHP will search when looking for
-   CA bundles.
+   <span class="function"><a href="function.openssl-get-cert-locations.html" class="function">openssl_get_cert_locations()</a></span> 関数が追加されました。
+   この関数は、PHP が CA バンドルを探す際のデフォルトの場所を返します。
   </p>
 
   <div class="informalexample">
@@ -331,16 +332,16 @@ array(8) {
  </div>
 
  <div class="sect2" id="migration56.openssl.spki">
-  <h3 class="title">SPKI support</h3>
+  <h3 class="title">SPKI のサポート</h3>
 
   <p class="para">
-   Support has been added for generating, extracting and verifying signed
-   public key and challenges (SPKAC). <span class="function"><a href="function.openssl-spki-new.html" class="function">openssl_spki_new()</a></span>,
-   <span class="function"><a href="function.openssl-spki-verify.html" class="function">openssl_spki_verify()</a></span>,
-   <span class="function"><a href="function.openssl-spki-export-challenge.html" class="function">openssl_spki_export_challenge()</a></span>, and
-   <span class="function"><a href="function.openssl-spki-export.html" class="function">openssl_spki_export()</a></span> have been added to create, verify
-   export PEM public key and associated challenge from SPKAC&#039;s generated from
-   a <em>KeyGen</em> HTML5 element.
+   署名された公開鍵およびチャレンジ (SPKAC) の生成や抽出、そして検証のサポートが追加されました。
+   新たに追加された関数 <span class="function"><a href="function.openssl-spki-new.html" class="function">openssl_spki_new()</a></span>、
+   <span class="function"><a href="function.openssl-spki-verify.html" class="function">openssl_spki_verify()</a></span>、
+   <span class="function"><a href="function.openssl-spki-export-challenge.html" class="function">openssl_spki_export_challenge()</a></span> そして
+   <span class="function"><a href="function.openssl-spki-export.html" class="function">openssl_spki_export()</a></span> で、
+   SPKAC が HTML5 の <em>KeyGen</em> 要素から生成した
+   PEM 公開鍵とチャレンジの作成、検証、エクスポートを行います。
   </p>
 
   <dl>
@@ -352,8 +353,8 @@ array(8) {
     <dd>
 
      <p class="para">
-      Generates a new SPKAC using private key, challenge string and hashing
-      algorithm.
+      秘密鍵とチャレンジ文字列、そしてハッシュアルゴリズムを指定して、
+      新しい SPKAC を生成します。
      </p>
 
      <div class="informalexample">
@@ -382,7 +383,7 @@ SPKAC=MIIBXjCByDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA3L0IfUijj7+A8CPC8EmhcdNoe5
     <dd>
 
      <p class="para">
-      Verifies provided SPKAC.
+      指定した SPKAC を検証します。
      </p>
 
      <div class="informalexample">
@@ -405,7 +406,7 @@ SPKAC=MIIBXjCByDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA3L0IfUijj7+A8CPC8EmhcdNoe5
     <dd>
 
      <p class="para">
-      Exports associated challenge from provided SPKAC.
+      指定した SPKAC から、関連付けられたチャレンジをエクスポートします。
      </p>
 
      <div class="informalexample">
@@ -434,7 +435,7 @@ challenge string
     <dd>
 
      <p class="para">
-      Exports the PEM formatted RSA public key from SPKAC.
+      PEM フォーマットされた RSA 公開鍵を、SPKAC からエクスポートします。
      </p>
 
      <div class="informalexample">
@@ -464,8 +465,8 @@ MGw/+AwwjHBOwong/QIDAQAB
 
  </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration56.new-functions.html">New functions</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration56.extensions.html">Other changes to extensions</a></div>
- <div class="up"><a href="migration56.html">Migrating from PHP 5.5.x to PHP 5.6.x</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration56.new-functions.html">新しい関数</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration56.extensions.html">その他の拡張モジュールに対する変更</a></div>
+ <div class="up"><a href="migration56.html">PHP 5.5.x から PHP 5.6.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

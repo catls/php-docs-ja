@@ -231,30 +231,6 @@
        </td>
       </tr>
 
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        ロック処理と <code class="parameter">mode</code> 修正子
-        <em>&quot;l&quot;</em>, <em>&quot;d&quot;</em>, <em>&quot;-&quot;</em>,
-        <em>&quot;t&quot;</em>
-        が追加されました。
-        以前のバージョンの PHP では、GDBM 以外のデータベースハンドラで
-        同時データベースアクセスに対する保護を行うためには、セマフォを
-        使用する必要がありました。
-        <a href="book.sem.html" class="link">System V セマフォサポート</a> を参照ください。
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.5</td>
-       <td>
-        オープンモード <em>&quot;c&quot;</em> はいくつかの内部ハンドラでは正常に動作せず、
-        既存のデータベースにデータを追加するのではなく、データベースを
-        切り捨ててしまっていました。また、<em>dbm</em> と <em>ndbm</em> は典型的な設定で
-        モード <em>&quot;c&quot;</em> の処理が正常に動作しません（これは修正できません）。
-       </td>
-      </tr>
-
      </tbody>
     
    </table>

@@ -111,6 +111,21 @@
 
   
   
+   <dt id="constant.pgsql-connect-async">
+    <strong><code>PGSQL_CONNECT_ASYNC</code></strong> 
+    (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+      <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span> に渡し、非同期接続を確立させます。
+      PHP 5.6.0 で追加されました。
+    </span>
+   </dd>
+
+  
+  
    <dt id="constant.pgsql-connection-bad">
     <strong><code>PGSQL_CONNECTION_BAD</code></strong> 
     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
@@ -793,6 +808,81 @@
      このオプションは、メタデータのルックアップを除外します。
      <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span> や <span class="function"><a href="function.pg-send-query.html" class="function">pg_send_query()</a></span>
      と同程度の速度になります。
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-failed">
+    <strong><code>PGSQL_POLLING_FAILED</code></strong>
+    (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <span class="function"><a href="function.pg-connect-poll.html" class="function">pg_connect_poll()</a></span> が返す値です。
+     接続の試行に失敗したことを示します。
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-reading">
+    <strong><code>PGSQL_POLLING_READING</code></strong>
+    (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <span class="function"><a href="function.pg-connect-poll.html" class="function">pg_connect_poll()</a></span> が返す値です。
+     接続が、PostgreSQL のソケットが読み込み可能になるのを待っていることを示します。
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-writing">
+    <strong><code>PGSQL_POLLING_WRITING</code></strong>
+    (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <span class="function"><a href="function.pg-connect-poll.html" class="function">pg_connect_poll()</a></span> が返す値です。
+     接続が、PostgreSQL のソケットが書き込み可能になるのを待っていることを示します。
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-ok">
+    <strong><code>PGSQL_POLLING_OK</code></strong>
+    (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <span class="function"><a href="function.pg-connect-poll.html" class="function">pg_connect_poll()</a></span> が返す値です。
+     接続が、利用可能になったことを示します。
+    </span>
+   </dd>
+
+  
+  
+   <dt id="constant.pgsql-polling-active">
+    <strong><code>PGSQL_POLLING_ACTIVE</code></strong>
+    (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     <span class="function"><a href="function.pg-connect-poll.html" class="function">pg_connect_poll()</a></span> が返す値です。
+     接続が、現在アクティブであることを示します。
     </span>
    </dd>
 

@@ -429,8 +429,8 @@
             アップロードには <a href="class.curlfile.html" class="classname">CURLFile</a> が使われるでしょう。
            </td>
            <td style="vertical-align: top;">
-            PHP 5.5.0 で追加されました。今のところデフォルトは <strong><code>FALSE</code></strong> ですが、
-            将来的にはデフォルトが変わるでしょう。
+            PHP 5.5.0 で追加され、デフォルトは <strong><code>FALSE</code></strong> でした。
+            PHP 5.6.0 以降は、デフォルトが <strong><code>TRUE</code></strong> に変わります。
            </td>
           </tr>
 
@@ -1609,6 +1609,13 @@
       <tr>
        <td>5.6.0</td>
        <td>
+        <strong><code>CURL_SAFE_UPLOAD</code></strong> のデフォルトが <strong><code>TRUE</code></strong> になりました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.6.0</td>
+       <td>
         <strong><code>CURLOPT_CLOSEPOLICY</code></strong> およびそれに関連する値が削除されました。
        </td>
       </tr>
@@ -1683,7 +1690,7 @@
  <div class="refsect1 examples" id="refsect1-function.curl-setopt-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4335">
+   <div class="example" id="example-4338">
     <p><strong>例1 新規に cURL セッションを初期化、ウェブページを取得する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -1695,7 +1702,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4336">
+   <div class="example" id="example-4339">
     <p><strong>例2 ファイルのアップロード</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

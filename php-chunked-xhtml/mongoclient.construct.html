@@ -192,6 +192,12 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
          </p>
          <p class="para">
           接続を開こうとしてタイムアウトになるまでの時間の長さ（ミリ秒単位）。
+          デフォルトは <em>60000</em> (60 秒) です。
+         </p>
+         <p class="para">
+          <em>-1</em> を指定すると、接続タイムアウトを適用せず、PHP は
+          <a href="filesystem.configuration.html#ini.default-socket-timeout" class="link">default_socket_timeout</a>
+          を利用します。
          </p>
         </li>
         <li class="listitem">
@@ -321,16 +327,23 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
           <em>&quot;socketTimeoutMS&quot;</em>
          </p>
          <p class="para">
-          ソケットの送受信がタイムアウトになるまでの時間の長さ。
-          <blockquote class="note"><p><strong class="note">注意</strong>: 
-           <span class="simpara">
-            これはクライアント側のタイムアウトです。
-            <em>insert</em> が <em>&quot;socketTimeoutMS&quot;</em>
-            に達してしまうと、サーバーが実際に書き込みを受信したかどうかを知るすべがなくなります。
-           </span>
-          </p></blockquote>
-          デフォルトは 30 秒です。カーソルごとに設定するには <span class="methodname"><a href="mongocursor.timeout.html" class="methodname">MongoCursor::timeout()</a></span> を使います。
+          ソケットの操作 (読み書き) がタイムアウトになるまでの時間の長さ。
+          ミリ秒単位で、デフォルトは <em>30000</em> (30 秒) です。
          </p>
+         <p class="para">
+          <em>-1</em> を設定すると、ソケットの操作を永遠にブロックします。
+          このオプションは、操作単位以外でも設定できます。
+          クエリごとに設定するには <span class="methodname"><a href="mongocursor.timeout.html" class="methodname">MongoCursor::timeout()</a></span>、
+          書き込みメソッドごとに設定するには <em>&quot;socketTimeoutMS&quot;</em> オプションを使います。
+         </p>
+         <blockquote class="note"><p><strong class="note">注意</strong>: 
+          <span class="simpara">
+           これはクライアント側のタイムアウトです。書き込み操作がタイムアウトに達してしまうと、
+           サーバーが実際に書き込みを受信したかどうかを知るすべがなくなります。そして、
+           書き込みの結果を返す代わりに
+           <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。
+          </span>
+         </p></blockquote>
         </li>
         <li class="listitem">
          <p class="para">
@@ -482,7 +495,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
 
  <div class="refsect1 examples" id="mongo.mongoclient.construct.examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1446">
+  <div class="example" id="example-1449">
    <p><strong>例1 <span class="function"><strong>MongoClient::__construct()</strong></span> でのレプリカセットの例</strong></p>
    <div class="example-contents"><p>
     この例は、レプリカセットに接続する方法を示します。
@@ -516,7 +529,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
     を参照ください。
    </p></div>
   </div>
-  <div class="example" id="example-1447">
+  <div class="example" id="example-1450">
    <p><strong>例2 ドメインソケットへの接続</strong></p>
    <div class="example-contents"><p>
     バージョン 1.0.9 以降では、ローカルで実行している MongoDB への接続に
@@ -546,7 +559,7 @@ mongodb://[username:password@]host1[:port1][,host2[:port2:],...]/db
    </div>
 
   </div>
-  <div class="example" id="example-1448">
+  <div class="example" id="example-1451">
    <p><strong>例3 <span class="function"><strong>MongoClient::__construct()</strong></span> での認証の例</strong></p>
    <div class="example-contents"><p>
     認証を使うには、admin データベースにユーザーが存在しなければなりません。
@@ -577,7 +590,7 @@ switched to db admin
    </div>
 
   </div>
-  <div class="example" id="example-1449">
+  <div class="example" id="example-1452">
    <p><strong>例4 <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -592,7 +605,7 @@ switched to db admin
    </p></div>
   </div>
 
-  <div class="example" id="example-1450">
+  <div class="example" id="example-1453">
    <p><strong>例5 <span class="function"><strong>MongoClient::__construct()</strong></span> でのオプションの例</strong></p>
    <div class="example-contents"><p>
     オプションは、接続文字列のクエリ文字列で渡すだけでなく、
@@ -621,7 +634,7 @@ switched to db admin
 
   </div>
 
-  <div class="example" id="example-1451">
+  <div class="example" id="example-1454">
    <p><strong>例6 <span class="function"><strong>MongoClient::__construct()</strong></span> での優先読み込みの例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

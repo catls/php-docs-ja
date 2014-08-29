@@ -66,7 +66,8 @@
    </p>
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <span class="simpara">
-     <var class="filename">php://input</var> でオープンしたストリームは、は一度しか読み込めません。
+     PHP 5.6 より前のバージョンでは、
+     <var class="filename">php://input</var> でオープンしたストリームは、一度しか読み込めません。
      また、このストリームは seek 操作をサポートしていません。
      しかし、SAPI の実装によっては、別の <var class="filename">php://input</var>
      ストリームをオープンして読み込みを再開できる可能性もあります。
@@ -335,6 +336,13 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.6.0</td>
+       <td>
+        <var class="filename">php://input</var> が再利用可能になりました。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.3.6</td>
        <td>
         <var class="filename">php://fd</var> が追加されました。
@@ -366,7 +374,7 @@
 
  <div class="refsect1 examples" id="refsect1-wrappers.php-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-334">
+  <div class="example" id="example-335">
    <p><strong>例1 php://temp/maxmemory</strong></p>
    <div class="example-contents"><p>
     このオプションパラメータは、<var class="filename">php://temp</var>
@@ -380,7 +388,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-335">
+  <div class="example" id="example-336">
    <p><strong>例2 php://filter/resource=&lt;フィルタの対象となるストリーム&gt;</strong></p>
    <div class="example-contents"><p>
     このパラメータは、
@@ -395,7 +403,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-336">
+  <div class="example" id="example-337">
    <p><strong>例3 php://filter/read=&lt;読み込みチェーンに適用するフィルタのリスト&gt;</strong></p>
    <div class="example-contents"><p>
     このパラメータは 1 つ以上のフィルタ名を
@@ -409,7 +417,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-337">
+  <div class="example" id="example-338">
    <p><strong>例4 php://filter/write=&lt;書き込みチェーンに適用するフィルタのリスト&gt;</strong></p>
    <div class="example-contents"><p>
     このパラメータは 1 つ以上のフィルタ名を

@@ -98,19 +98,6 @@
 
      <tbody class="tbody">
       <tr>
-       <td>4.0.6</td>
-       <td>
-        PHP 4.0.6 より前では、関数 <span class="function"><strong>tempnam()</strong></span>
-        の動作はシステムに依存していました。Windows において <var class="varname"><var class="varname">TMP</var></var> 環境変数は
-        <code class="parameter">dir</code> パラメータを上書きします。Linux においては、
-        <var class="varname"><var class="varname">TMPDIR</var></var> 環境変数が優先されます。一方 SVR4 においては、
-        指定したディレクトリが存在する場合は、常に <code class="parameter">dir</code>
-        パラメータを使用します。疑問がある場合は、tempnam(3)
-        に関するシステムドキュメントを参照ください。
-       </td>
-      </tr>
-
-      <tr>
        <td>4.0.3</td>
        <td>
         この関数の動作は 4.0.3 で変更されました。文字列が生成された時間の間や
@@ -132,7 +119,7 @@
  <div class="refsect1 examples" id="refsect1-function.tempnam-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2525">
+   <div class="example" id="example-2528">
     <p><strong>例1 <span class="function"><strong>tempnam()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

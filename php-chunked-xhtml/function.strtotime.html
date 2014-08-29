@@ -173,15 +173,6 @@
        </td>
       </tr>
 
-      <tr>
-       <td>4.4.0</td>
-       <td>
-        バージョン 4.4.0 より前の PHP では、<em>&quot;next&quot;</em>
-        が誤って +2 として計算されます。これを解決するには、代わりに
-        <em>&quot;+1&quot;</em> を使用します。
-       </td>
-      </tr>
-
      </tbody>
     
    </table>
@@ -193,7 +184,7 @@
  <div class="refsect1 examples" id="refsect1-function.strtotime-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2413">
+   <div class="example" id="example-2416">
     <p><strong>例1 A <span class="function"><strong>strtotime()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -205,7 +196,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2414">
+   <div class="example" id="example-2417">
     <p><strong>例2 失敗のチェック</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -234,13 +225,14 @@
     タイムスタンプの有効な範囲は、通常、Fri, 13 Dec 1901 20:45:54
     UTC から Tue, 19 Jan 2038 03:14:07 UTC までです (これらは、32
     ビット符号付整数の最大及び最小に一致します)。
-    さらに全てのプラットフォームが負のタイムスタンプをサポートしている
-    わけではありませんので、日付の範囲は Unix
+   </p>
+   <p class="para">
+    全てのプラットフォームが負のタイムスタンプをサポートしている
+    わけではありませんので、PHP 5.1.0 より前のバージョンでは、日付の範囲が Unix
     エポック以前にはならないかも知れません。
     これは、例えば Windows やいくつかの Linux ディストリビューション、
     いくつかの他のオペレーティングシステムでは
     1970 年 1 月 1 日以前の日付では動作しない事を意味しています。
-    PHP 5.1.0 以降のバージョンでは、この制限はなくなっています。
    </p>
    <p class="para">
     64 ビット版の PHP では、タイムスタンプの有効範囲は事実上無制限です。
