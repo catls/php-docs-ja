@@ -106,7 +106,7 @@
   </p>
 
   <p class="simpara">
-   PHP 4.3.0 以降、誰かが従来の外部機構による認証を行ってきたページの
+   誰かが従来の外部機構による認証を行ってきたページの
    パスワードを暴くようなスクリプトを書くことを防ぐために、
    特定のページに関して外部認証が可能でかつ <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">セーフモード</a> が有効の場合、
    PHP_AUTH 変数はセットされません。
@@ -154,19 +154,10 @@
    しかし、ユーザーは <em>&#039;_&#039;</em> キーを押すことにより認証情報をクリアすることが可能です。
   </p>
   <p class="simpara">
-   PHP4.3.3 までは、Microsoft の IIS サーバーと CGI 版の PHP の組み合わせでは、
-   この機能は、IIS の制約により使用することができなかったことにも
-   注意してください。PHP 4.3.3 以降においてこの機能を使用するには、
+   IIS サーバーと CGI 版の PHP の組み合わせで HTTP 認証を使うには、
    IIS の設定の &quot;<em>ディレクトリセキュリティ</em>&quot; の &quot;<em>編集</em>&quot; ボタンを押して
    &quot;<em>匿名アクセス</em>&quot; のみをオンにしてください。
    その他のフィールドはオフのままにしてください。
-  </p>
-  <p class="simpara">
-   他の制限としては、IIS モジュール (ISAPI) と PHP 4 を使用している場合に、
-   <em>PHP_AUTH_*</em> 変数が使用できないことがあります。
-   しかし、代わりに<em>HTTP_AUTHORIZATION</em> を使うことができます。
-   例えば、次のようなコードを考慮してください。<em>list($user, $pw) = explode(&#039;:&#039;,
-   base64_decode(substr($_SERVER[&#039;HTTP_AUTHORIZATION&#039;], 6)));</em>
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <strong>IIS に関する注意:</strong><br />

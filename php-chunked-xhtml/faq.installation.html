@@ -500,7 +500,7 @@ cgi error:
       読み込まれているか否かを示しています。ディレクトリパスだけが
       表示されている場合は、読み込まれていないということなので、
       そのディレクトリに <var class="filename">php.ini</var> を置いてください。
-      <var class="filename">php.ini</var> が PATH にある場合それが読み込まれます。
+      <var class="filename">php.ini</var> が <span class="envar">PATH</span> にある場合それが読み込まれます。
      </p>
      <p class="para">
       <var class="filename">php.ini</var> が読み込まれていてかつ PHP をモジュールとして実行
@@ -516,7 +516,7 @@ cgi error:
    <dl class="qandaentry" id="faq.installation.addtopath">
     <dt><strong>
      
-      Windows で PHP のディレクトリを <var class="varname"><var class="varname">PATH</var></var>
+      Windows で PHP のディレクトリを <span class="envar">PATH</span>
       に追加するにはどうすればいいのですか?
      
     </strong></dt>
@@ -575,14 +575,14 @@ cgi error:
      <blockquote class="note"><p><strong class="note">注意</strong>: 
       <span class="simpara">
        上の作業を行った後は、必ずコンピュータを再起動し、
-       <var class="varname"><var class="varname">PATH</var></var> の変更が適用されていることを確認しましょう。
+       <span class="envar">PATH</span> の変更が適用されていることを確認しましょう。
       </span>
      </p></blockquote>
-     <p class="para"> 
+     <p class="para">
       PHP マニュアルでは、これまでファイルを Windows のシステムディレクトリに
       コピーするよう推奨してきました。なぜなら、このディレクトリ
       （<var class="filename">C:\Windows</var>、<var class="filename">C:\WINNT</var>、など）
-      にはデフォルトでシステムの PATH が通っていたからです。ファイルを
+      にはデフォルトでシステムの <span class="envar">PATH</span> が通っていたからです。ファイルを
       Windows のシステムディレクトリにコピーすることはずいぶん昔に非推奨と
       なっており、これはさまざまな問題のもととなりえます。
      </p>

@@ -32,6 +32,20 @@
    <dl>
 
     
+     <dt id="context.ssl.peer-name">
+      <code class="parameter">peer_name</code>
+      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       使用するピア名。省略した場合は、ストリームをオープンしたときに使ったホスト名をもとに、名前を推測します。
+      </p>
+     </dd>
+
+    
+    
      <dt id="context.ssl.verify-peer">
       <code class="parameter">verify_peer</code>
       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
@@ -43,7 +57,24 @@
        SSL サーバー証明書の検証を要求するかどうか。
       </p>
       <p class="para">
-       デフォルトは <strong><code>FALSE</code></strong> です。
+       デフォルトは <strong><code>TRUE</code></strong> です。
+      </p>
+     </dd>
+
+    
+    
+     <dt id="context.ssl.verify-peer-name">
+      <code class="parameter">verify_peer_name</code>
+      <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       ピア名の検証を要求するかどうか。
+      </p>
+      <p class="para">
+       デフォルトは <strong><code>TRUE</code></strong> です。
       </p>
      </dd>
 
@@ -145,6 +176,12 @@
        行います。もし一般名がこれにマッチしなかった場合、接続の試行は
        失敗します。
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+        <span class="simpara">
+          このオプションは非推奨です。PHP 5.6.0 以降では <code class="parameter">peer_name</code>
+          を使いましょう。
+        </span>
+      </p></blockquote>
      </dd>
 
     
@@ -240,6 +277,12 @@
        設定すると、この値がサーバー名として用いられるようになります。
        設定されていない場合は、ストリームをオープンしたときに使ったホスト名からサーバー名を推測します。
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+        <span class="simpara">
+          このオプションは非推奨です。PHP 5.6.0 以降では <code class="parameter">peer_name</code>
+          を使いましょう。
+        </span>
+      </p></blockquote>
      </dd>
 
     
@@ -302,7 +345,8 @@
       <tr>
        <td>5.6.0</td>
        <td>
-        <code class="parameter">peer_fingerprint</code> が追加されました。
+        <code class="parameter">peer_fingerprint</code> と <code class="parameter">verify_peer_name</code> が追加されました。
+        <code class="parameter">verify_peer</code> のデフォルトが <strong><code>TRUE</code></strong> に変わりました。
        </td>
       </tr>
 

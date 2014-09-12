@@ -53,14 +53,6 @@
 
   <div class="sect2" id="configure.options">
    <h3 class="title">PHP の Configure オプション</h3>
-   <blockquote class="note"><p><strong class="note">注意</strong>: 
-    <p class="para">
-     これらのオプションは PHP 4.1.0 の時点でのものです。
-     しかし、中にはもっと古い PHP 有効なものがあるかもしれません。
-     古いバージョンをコンパイルされる場合、
-     おそらくいくつかのオプションは使えないでしょう。
-    </p>
-   </p></blockquote>
    
 
 
@@ -193,22 +185,6 @@
 
      <p class="para">
       zlib のインストールディレクトリを指定します。
-     </p>
-    </dd>
-
-   
-
-   
-    <dt id="configure.enable-trans-sid">
-     <strong class="option configure">--enable-trans-sid</strong>
-
-    </dt>
-
-    <dd>
-
-     <p class="para">
-      透過的なセッション ID の伝播を有効にします。PHP 4.1.2 以前でのみ
-      有効です。PHP 4.2.0 以降、この機能は常に有効となっています。
      </p>
     </dd>
 
@@ -883,24 +859,6 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
 
    
 
-   
-    <dt id="configure.with-fastcgi">
-     <strong class="option configure">--with-fastcgi</strong>
-
-    </dt>
-
-    <dd>
-
-     <p class="para">
-      PHP を FastCGI アプリケーションとしてビルドします。PHP 4.3.0 以降、
-      このオプションは使用できません。代わりに
-      <strong class="option configure">--enable-fastcgi</strong>
- を使用してください。
-     </p>
-    </dd>
-
-   
-
   
 
    
@@ -913,7 +871,6 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
 
      <p class="para">
       有効にすると、CGI モジュールが FastCGI のサポートつきでビルドされます。
-      PHP 4.3.0 で使用可能になりました。
      </p>
      <p class="para">
       PHP 5.3.0 以降、この引数は存在しません。かわりに
@@ -933,7 +890,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
 
      <p class="para">
       無効にすると、<var class="filename">/info.php/test?a=b</var> のようなパスは
-      動作しません。PHP 4.3.0 で使用可能になりました。詳細な情報は
+      動作しません。詳細な情報は
       <a href="http://httpd.apache.org/docs/current/mod/core.html#acceptpathinfo" class="link external">&raquo;&nbsp;Apache マニュアル</a>
       を参照ください。
      </p>

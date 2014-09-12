@@ -76,7 +76,7 @@
       <p class="para">
        この関数は次のように定義しなければなりません。
        <div class="methodsynopsis dc-description">
-        <span class="methodname"><span class="replaceable">step</span></span>
+        <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><span class="replaceable">step</span></span>
          ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$context</code></span>
         , <span class="methodparam"><span class="type">int</span> <code class="parameter">$rownumber</code></span>
         , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value1</code></span>
@@ -92,6 +92,10 @@
       </p>
       <p class="para">
        <var class="varname"><var class="varname">rownumber</var></var> は現在の行番号を保持します。
+      </p>
+      <p class="para">
+       この関数の返り値を、次のステップあるいはファイナライズ関数の
+       <code class="parameter">context</code> 引数として使います。
       </p>
      </dd>
 
@@ -112,7 +116,7 @@
       <p class="para">
        この関数は次のように定義しなければなりません。
        <div class="methodsynopsis dc-description">
-        <span class="methodname"><span class="replaceable">fini</span></span>
+        <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><span class="replaceable">fini</span></span>
          ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$context</code></span>
         , <span class="methodparam"><span class="type">int</span> <code class="parameter">$rownumber</code></span>
         )</div>

@@ -90,16 +90,8 @@
    </p></blockquote>
 
    <p class="para">
-    オートグローバル <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES</a></var></var>
-    は、PHP 4.1.0 以降に存在します
-    (<var class="varname"><var class="varname">$HTTP_POST_FILES</var></var> は、これ以前のバージョンに存在します)。
-    これらの配列には、全てアップロードされたファイルの情報が
-    含まれています。
-   </p>
-
-   <p class="para">
-    <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES</a></var></var>
-    の内容は次のようになります。ここでは、上の例のスクリプトで使われたように、
+    グローバルの <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES</a></var></var> には、アップロードされたファイルの情報が含まれます。
+    サンプルのフォームからの内容は次のようになります。ここでは、上の例のスクリプトで使われたように、
     アップロードファイルの名前として <em class="emphasis">userfile</em> を
     使用することを仮定していることに注意してください。
     実際にはどんな名前にすることもできます。
@@ -166,7 +158,6 @@
        <p class="para">
         このファイルアップロードに関する
         <a href="features.file-upload.errors.html" class="link">エラーコード</a>
-        <em class="emphasis">[&#039;error&#039;]</em>は、PHP 4.2.0 で追加されました。
        </p>
       </dd>
 
@@ -211,7 +202,7 @@
     これはあくまでいくつかのチェックの中のひとつとしてのみ実行するように
     してください。なぜなら、この値を設定するのはあくまでもクライアントであり、
     PHP 側では何もチェックしていないからです。
-    PHP 4.2.0 以降、
+    また、
     <var class="varname"><var class="varname"><a href="reserved.variables.files.html" class="classname">$_FILES['userfile']['error']</a></var></var> を使用することができ、
     <a href="features.file-upload.errors.html" class="link">エラーコード</a>
     に基づき、ロジックを構成することができます。
