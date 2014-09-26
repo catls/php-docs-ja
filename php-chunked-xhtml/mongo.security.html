@@ -125,17 +125,10 @@
    関数をユーザーの入力に対して決して使ってはいけません。
   </p>
   <div class="example-contents">
-<div class="cdata"><pre>
-&lt;?php
-
-// これはやっちゃだめ!
-
-// $jsShellInput は &quot;db.users.drop();&quot; です
-$scope = array(&quot;input&quot; =&gt; $jsShellInput);
-$db-&gt;execute(new MongoCode(&quot;eval(input);&quot;, $scope));
-
-?&gt;
-</pre></div>
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;これはやっちゃだめ!<br /><br />//&nbsp;$jsShellInput&nbsp;は&nbsp;"db.users.drop();"&nbsp;です<br /></span><span style="color: #0000BB">$scope&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"input"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$jsShellInput</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">MongoCode</span><span style="color: #007700">(</span><span style="color: #DD0000">"eval(input);"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$scope</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
   </div>
 
   <p class="para">

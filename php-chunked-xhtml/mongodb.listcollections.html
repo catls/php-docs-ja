@@ -93,11 +93,11 @@
   <div class="example" id="example-1483">
    <p><strong>例1 <span class="function"><strong>MongoDB::listCollections()</strong></span> の例</strong></p>
    <div class="example-contents"><p>
-    次の例は、データベース内の各コレクションを削除します。
+    次の例は、データベース内の各コレクションの件数を数えます。
    </p></div>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">selectDB</span><span style="color: #007700">(</span><span style="color: #DD0000">"sample"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$list&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">listCollections</span><span style="color: #007700">();<br />foreach&nbsp;(</span><span style="color: #0000BB">$list&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"removing&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #DD0000">...&nbsp;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">drop</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"gone\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">selectDB</span><span style="color: #007700">(</span><span style="color: #DD0000">"demo"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$list&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">listCollections</span><span style="color: #007700">();<br />foreach&nbsp;(</span><span style="color: #0000BB">$list&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"amount&nbsp;of&nbsp;documents&nbsp;in&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #DD0000">:&nbsp;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">count</span><span style="color: #007700">(),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -106,9 +106,10 @@
 たとえば以下のようになります。</p></div>
    <div class="example-contents screen">
 <div class="cdata"><pre>
-removing sample.blog.posts... gone
-removing sample.critical.docs... gone
-removing sample.taxes... gone
+...
+amount of documents in demo.pubs: 4
+amount of documents in demo.elephpants: 3
+amount of documents in demo.cities: 22840
 ...
 </pre></div>
    </div>
