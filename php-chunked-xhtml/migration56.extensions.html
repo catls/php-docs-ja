@@ -13,6 +13,47 @@
 </div><hr /><div id="migration56.extensions" class="sect1">
  <h2 class="title">その他の拡張モジュールに対する変更</h2>
 
+ <div class="sect2" id="migration56.extensions.curl">
+  <h3 class="title"><a href="book.curl.html" class="link">cURL</a></h3>
+
+  <p class="para">
+   cURL ライブラリで非推奨とされてきた以下の定数が、削除されました。
+  </p>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>CURLOPT_CLOSEPOLICY</code></strong>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>CURLCLOSEPOLICY_CALLBACK</code></strong>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>CURLCLOSEPOLICY_LEAST_RECENTLY_USED</code></strong>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>CURLCLOSEPOLICY_LEAST_TRAFFIC</code></strong>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>CURLCLOSEPOLICY_OLDEST</code></strong>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <strong><code>CURLCLOSEPOLICY_SLOWEST</code></strong>
+    </span>
+   </li>
+  </ul>
+ </div>
+
  <div class="sect2" id="migration56.extensions.oci8">
   <h3 class="title"><a href="book.oci8.html" class="link">OCI8</a></h3>
 

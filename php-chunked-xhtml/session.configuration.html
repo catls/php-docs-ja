@@ -342,6 +342,19 @@
       により、セッションをハイジャックをすることが可能となります。
      </p>
     </div>
+    <div class="caution"><strong class="caution">警告</strong>
+     <p class="para">
+      オプションのディレクトリレベル定数 <em>N</em> で、
+      1 あるいは 2 以外の値を使うのは、大半のサイトでは不適切です。
+      大量のディレクトリが必要になってしまうからです。たとえば、この値を 3 にすると、
+      ファイルシステム上のディレクトリの数が <em>64^3</em> にもなり、
+      ディスク容量や inode の無駄遣いになってしまいます。
+     </p>
+     <p class="para">
+      <em>N</em> を 2 より大きくするのは、
+      それを必要とするような大規模サイトに限るようにしましょう。
+     </p>
+    </div>
     <blockquote class="note"><p><strong class="note">注意</strong>: 
      <span class="simpara">
       PHP 4.3.6 以前では、WindowsユーザーがPHPのsession関数を使用するためには、

@@ -804,8 +804,19 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLOPT_SSLVERSION</code></strong></td>
            <td style="vertical-align: top;">
-            使用する SSL のバージョン（2 あるいは 3）。デフォルトでは
-            PHP が自動的に判断しますが、これを手動で設定する必要がある場合もあります。
+            <strong><code>CURL_SSLVERSION_DEFAULT</code></strong> (0)、
+            <strong><code>CURL_SSLVERSION_TLSv1</code></strong> (1)、
+            <strong><code>CURL_SSLVERSION_SSLv2</code></strong> (2)、
+            <strong><code>CURL_SSLVERSION_SSLv3</code></strong> (3)、
+            <strong><code>CURL_SSLVERSION_TLSv1_0</code></strong> (4)、
+            <strong><code>CURL_SSLVERSION_TLSv1_1</code></strong> (5)、
+            <strong><code>CURL_SSLVERSION_TLSv1_2</code></strong> (6) のいずれかの値。
+            <blockquote class="note"><p><strong class="note">注意</strong>: 
+             <p class="para">
+              この値は何も設定せず、デフォルトに任せるのが最適です。
+              2 や 3 を設定すると、SSLv2 および SSLv3 の既知の脆弱性の影響を受けるため、非常に危険です。
+             </p>
+            </p></blockquote>
            </td>
            <td style="vertical-align: top;">
            </td>

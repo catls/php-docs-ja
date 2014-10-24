@@ -46,18 +46,25 @@
 
     
     
-     <dt>
+ 
+  <dt>
 <code class="parameter">filter</code></dt>
 
-     <dd>
+  <dd>
 
-      <p class="para">
-       適用するフィルタの ID。<a href="filter.filters.html" class="xref">フィルタの型</a>
-       に、利用できるフィルタの一覧があります。
-      </p>
-     </dd>
+   <p class="para">
+    適用するフィルタの ID。<a href="filter.filters.html" class="xref">フィルタの型</a>
+    に、利用できるフィルタの一覧があります。
+   </p>
+   <p class="para">
+    省略した場合は <strong><code>FILTER_DEFAULT</code></strong> を使います。これは
+    <a href="filter.filters.sanitize.html" class="link"><strong><code>FILTER_UNSAFE_RAW</code></strong></a> と同等です。
+    結果的に、デフォルトでは何もフィルタリングをしません。
+   </p>
+  </dd>
 
-    
+ 
+
     
      <dt>
 <code class="parameter">options</code></dt>
