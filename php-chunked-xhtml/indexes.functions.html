@@ -1384,6 +1384,7 @@
 <li><a href="event.construct.html" class="index">Event::__construct</a> - Constructs Event object</li>
 <li><a href="eventbase.dispatch.html" class="index">EventBase::dispatch</a> - Dispatch pending events</li>
 <li><a href="eventbase.exit.html" class="index">EventBase::exit</a> - Stop dispatching events</li>
+<li><a href="eventbase.free.html" class="index">EventBase::free</a> - Free resources allocated for this event base</li>
 <li><a href="eventbase.getfeatures.html" class="index">EventBase::getFeatures</a> - Returns bitmask of features supported</li>
 <li><a href="eventbase.getmethod.html" class="index">EventBase::getMethod</a> - Returns event method in use</li>
 <li><a href="eventbase.gettimeofdaycached.html" class="index">EventBase::getTimeOfDayCached</a> - Returns the current event base time</li>
@@ -1419,6 +1420,7 @@
 <li><a href="eventbuffer.unlock.html" class="index">EventBuffer::unlock</a> - Releases lock acquired by EventBuffer::lock</li>
 <li><a href="eventbuffer.write.html" class="index">EventBuffer::write</a> - Write contents of the buffer to a file or socket</li>
 <li><a href="eventbuffer.construct.html" class="index">EventBuffer::__construct</a> - Constructs EventBuffer object</li>
+<li><a href="eventbufferevent.close.html" class="index">EventBufferEvent::close</a> - Closes file descriptor associated with the current buffer event</li>
 <li><a href="eventbufferevent.connect.html" class="index">EventBufferEvent::connect</a> - Connect buffer event's file descriptor to given address or
   UNIX socket</li>
 <li><a href="eventbufferevent.connecthost.html" class="index">EventBufferEvent::connectHost</a> - Connects to a hostname with optionally asyncronous DNS resolving</li>
@@ -1440,6 +1442,10 @@
 <li><a href="eventbufferevent.setwatermark.html" class="index">EventBufferEvent::setWatermark</a> - Adjusts read and/or write watermarks</li>
 <li><a href="eventbufferevent.sslerror.html" class="index">EventBufferEvent::sslError</a> - Returns most recent OpenSSL error reported on the buffer event</li>
 <li><a href="eventbufferevent.sslfilter.html" class="index">EventBufferEvent::sslFilter</a> - Create a new SSL buffer event to send its data over another buffer event</li>
+<li><a href="eventbufferevent.sslgetcipherinfo.html" class="index">EventBufferEvent::sslGetCipherInfo</a> - Returns a textual description of the cipher.</li>
+<li><a href="eventbufferevent.sslgetciphername.html" class="index">EventBufferEvent::sslGetCipherName</a> - Returns the current cipher name of the SSL connection.</li>
+<li><a href="eventbufferevent.sslgetcipherversion.html" class="index">EventBufferEvent::sslGetCipherVersion</a> - Returns version of cipher used by current SSL connection.</li>
+<li><a href="eventbufferevent.sslgetprotocol.html" class="index">EventBufferEvent::sslGetProtocol</a> - Returns the name of the protocol used for current SSL connection.</li>
 <li><a href="eventbufferevent.sslrenegotiate.html" class="index">EventBufferEvent::sslRenegotiate</a> - Tells a bufferevent to begin SSL renegotiation.</li>
 <li><a href="eventbufferevent.sslsocket.html" class="index">EventBufferEvent::sslSocket</a> - Creates a new SSL buffer event to send its data over an SSL on a socket</li>
 <li><a href="eventbufferevent.write.html" class="index">EventBufferEvent::write</a> - Adds data to a buffer event's output buffer</li>
@@ -4727,9 +4733,9 @@
 <li><a href="mongotimestamp.construct.html" class="index">MongoTimestamp::__construct</a> - 新しいタイムスタンプを作成する</li>
 <li><a href="mongotimestamp.tostring.html" class="index">MongoTimestamp::__toString</a> - このタイムスタンプを文字列形式で返す</li>
 <li><a href="mongoupdatebatch.construct.html" class="index">MongoUpdateBatch::__construct</a> - Description</li>
-<li><a href="mongowritebatch.add.html" class="index">MongoWriteBatch::add</a> - Adds an CRUD operation to a batch</li>
-<li><a href="mongowritebatch.execute.html" class="index">MongoWriteBatch::execute</a> - Description</li>
-<li><a href="mongowritebatch.construct.html" class="index">MongoWriteBatch::__construct</a> - Description</li>
+<li><a href="mongowritebatch.add.html" class="index">MongoWriteBatch::add</a> - Adds a write operation to a batch</li>
+<li><a href="mongowritebatch.execute.html" class="index">MongoWriteBatch::execute</a> - Executes a batch of write operations</li>
+<li><a href="mongowritebatch.construct.html" class="index">MongoWriteBatch::__construct</a> - Creates a new batch of write operations</li>
 <li><a href="mongowriteconcernexception.getdocument.html" class="index">MongoWriteConcernException::getDocument</a> - Get the error document</li>
 <li><a href="function.move-uploaded-file.html" class="index">move_uploaded_file</a> - アップロードされたファイルを新しい位置に移動する</li>
 <li><a href="function.mqseries-back.html" class="index">mqseries_back</a> - MQSeries MQBACK</li>
