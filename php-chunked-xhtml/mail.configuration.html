@@ -45,6 +45,13 @@
     </tr>
 
     <tr>
+     <td><a href="mail.configuration.html#ini.mail.force_extra_parameters" class="link">mail.force_extra_parameters</a></td>
+     <td>NULL</td>
+     <td>PHP_INI_PERDIR</td>
+     <td>PHP 5.0.0 以降で使用可能 (PHP_INI_SYSTEM|PHP_INI_PERDIR)</td>
+    </tr>
+
+    <tr>
      <td><a href="mail.configuration.html#ini.smtp" class="link">SMTP</a></td>
       <td>&quot;localhost&quot;</td>
       <td>PHP_INI_ALL</td>
@@ -115,6 +122,23 @@
      がコールされるたびにこのファイルに記録します。
      ログに含まれる内容は、スクリプトのフルパスと行番号、そして
      <em>To</em> アドレスとヘッダです。
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.mail.force_extra_parameters">
+    <code class="parameter">mail.force_extra_parameters</code>
+    <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     指定したパラメータを、sendmail バイナリへの追加パラメータとして強制的に渡します。
+     これらのパラメータは、たとえセーフモードであっても、常に
+     <span class="function"><a href="function.mail.html" class="function">mail()</a></span> の第 5 パラメータの値を上書きします。
     </p>
    </dd>
 

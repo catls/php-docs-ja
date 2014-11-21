@@ -67,7 +67,7 @@
 </pre></div>
     </div>
     <p class="para">
-     しかし、このスクリプトの出力は以下のようになります。
+     しかし、PHP 5.4.0 より前のバージョンでは、このスクリプトの出力は以下のようになります。
     </p>
     <div class="example-contents screen">
 <div class="cdata"><pre>
@@ -81,6 +81,12 @@
      (<em>print</em> の返り値が <em>continue</em>
      への数値引数として渡されます)。
     </p>
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <p class="para">
+     PHP 5.4.0 移行では、先ほどの例を実行すると
+     <strong><code>E_COMPILE_ERROR</code></strong> エラーが発生するようになりました。
+    </p>
+   </p></blockquote>
    </div>
   </p>
   <p class="para">

@@ -69,7 +69,7 @@
 
       <p class="para">
        挿入する要素数。
-       正の数でなければなりません。
+       ゼロ以上の数でなければなりません。
       </p>
      </dd>
 
@@ -105,8 +105,38 @@
  <div class="refsect1 errors" id="refsect1-function.array-fill-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   <code class="parameter">num</code> が 1 より小さい場合に
+   <code class="parameter">num</code> がゼロより小さい場合に
    <strong><code>E_WARNING</code></strong> が発生します。
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.array-fill-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.6.0</td>
+       <td>
+        <code class="parameter">num</code> にゼロを指定できるようになりました。これより前のバージョンでは、
+        <code class="parameter">num</code> には正の数しか指定できませんでした。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 
