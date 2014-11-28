@@ -76,8 +76,9 @@
      <dd>
 
       <p class="para">
-       An array of options for the index creation. Currently available options
-       include:
+       An array of options for the index creation. We pass all given options
+       straight to the server, but a non-exhaustive list of currently
+       available options include:
        <ul class="itemizedlist">
         <li class="listitem"><p class="para"><em>&quot;unique&quot;</em></p><p class="para"><strong><code>TRUE</code></strong> を指定すると、一意なインデックスを作ります。デフォルト値は <strong><code>FALSE</code></strong> です。このオプションを使えるのは、昇順もしくは降順のインデックスだけです。</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">MongoDB がフィールドをインデックスするとき、もしそのフィールドに値を含まないドキュメントがあれば、<strong><code>NULL</code></strong> 値をインデックスします。このフィールドを含まないドキュメントが複数あった場合、一意なインデックスは、最初に出現したドキュメント以外を受け付けません。これを防ぐには <em>&quot;sparse&quot;</em> オプションを使います。このオプションを指定すれば、インデックス対象のフィールドが存在しないドキュメントはインデックスしなくなります。</p></p></blockquote></li>
         <li class="listitem"><p class="para"><em>&quot;sparse&quot;</em></p><p class="para"><strong><code>TRUE</code></strong> を指定すると、疎なインデックスを作ります。これは、指定したフィールドを含むドキュメントだけをインデックスします。デフォルト値は <strong><code>FALSE</code></strong> です。</p></li>
