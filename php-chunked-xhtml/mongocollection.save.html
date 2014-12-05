@@ -21,7 +21,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>MongoCollection::save</strong></span>
-    ( <span class="methodparam"><span class="type"><span class="type array|object">array|object</span></span> <code class="parameter">$a</code></span>
+    ( <span class="methodparam"><span class="type"><span class="type array|object">array|object</span></span> <code class="parameter">$document</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ] )</div>
 
@@ -40,7 +40,7 @@
     
      <dt>
 
-      <code class="parameter">a</code>
+      <code class="parameter">document</code>
      </dt>
 
      <dd>
@@ -170,9 +170,6 @@
       <tr>
        <td>1.0.9</td>
        <td>
-        <p class="para">
-         <em>&quot;safe&quot;</em> オプションに整数値がわたせるようになりました (以前は boolean のみでした)。
-        </p>
         <p class="para">
          <em>&quot;fsync&quot;</em> オプションが追加されました。
         </p>

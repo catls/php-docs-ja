@@ -321,10 +321,7 @@
         
          &quot;safe&quot; オプションを使っている場合の返り値の型が配列に変わりました。
          配列にはエラー情報が含まれています。&quot;safe&quot; オプションを使わない場合は、今までどおり
-         boolean のままです。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>&quot;safe&quot; オプションに整数値がわたせるようになりました (以前は boolean のみでした)。
-        
-        
-         &quot;fsync&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;safe&quot; オプションに整数値がわたせるようになりました (以前は boolean のみでした)。
+         boolean のままです。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>&quot;fsync&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;safe&quot; オプションに整数値がわたせるようになりました (以前は boolean のみでした)。
         
         
          &quot;fsync&quot; オプションが追加されました。
@@ -333,9 +330,7 @@
          &quot;safe&quot; オプションを使っている場合の返り値の型が配列に変わりました。
          配列にはエラー情報が含まれています。&quot;safe&quot; オプションを使わない場合は、今までどおり
          boolean のままです。</td></tr></tbody><tbody class="gen-changelog v1-0-9"><tr><td>1.0.7</td><td><a href='mongocollection.count.html'>MongoCollection::count</a></td><td>limit および skip が
-        それぞれ二番目、三番目のパラメータとして追加されました。</td></tr></tbody><tbody class="gen-changelog v1-0-7"><tr><td>1.0.5</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>&quot;name&quot; オプションで、インデックス名の作成を上書きできるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>二番目のパラメータがオプションの配列に変わりました。1.0.5
-        より前のバージョンでは、二番目のパラメータは &quot;safe&quot;
-        オプションを表す boolean 値でした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>二番目のパラメータがオプションの配列に変わりました。1.0.5
+        それぞれ二番目、三番目のパラメータとして追加されました。</td></tr></tbody><tbody class="gen-changelog v1-0-7"><tr><td>1.0.5</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>&quot;name&quot; オプションで、インデックス名の作成を上書きできるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>二番目のパラメータがオプションの配列に変わりました。1.0.5
         より前のバージョンでは、二番目のパラメータは &quot;safe&quot;
         オプションを表す boolean 値でした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;safe&quot; オプションが追加されました。</td></tr></tbody><tbody class="gen-changelog v1-0-5"><tr><td>1.0.2</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>コンストラクタがオプションの配列を受け取るようになりました。
          以前のバージョンでは、コンストラクタは以下のパラメータを受け取っていました。
@@ -381,7 +376,9 @@
            
             ペア接続を行うかどうか。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>options パラメータが boolean から配列に変わりました。
         1.0.2 より前のバージョンでは二番目のパラメータはオプションの boolean
-        値で、一意なインデックスを指定するものでした。</td></tr></tbody><tbody class="gen-changelog v1-0-2"><tr><td>1.0.1</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;safe&quot; オプションが設定されていて追加に失敗した場合に
+        値で、一意なインデックスを指定するものでした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>二番目のパラメータがオプションの配列に変わりました。1.0.2
+        より前のバージョンでは、二番目のパラメータは &quot;safe&quot;
+        オプションを表す boolean 値でした。</td></tr></tbody><tbody class="gen-changelog v1-0-2"><tr><td>1.0.1</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;safe&quot; オプションが設定されていて追加に失敗した場合に
         MongoCursorException をスローするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>options パラメータが boolean から配列に変わりました。
         1.0.1 より前のバージョンでは二番目のパラメータはオプションの boolean
         値で、upsert を指定するものでした。</td></tr></tbody></table>
