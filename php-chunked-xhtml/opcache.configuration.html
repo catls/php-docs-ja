@@ -212,6 +212,13 @@
       <td class="empty">&nbsp;</td>
      </tr>
 
+     <tr>
+      <td><a href="opcache.configuration.html#ini.opcache.restrict-api" class="link">opcache.restrict-api</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
     </tbody>
    
   </table>
@@ -669,6 +676,21 @@
       Windows 上で共有メモリ・セグメントに使用される基底。
       すべての PHP 処理は、共有メモリを同じアドレス空間にマップしなければいけません。
       このディレクティブを使用すると、&quot;Unable to reattach to base address&quot; （基底アドレスに再アタッチできません） というエラーを修復できます。
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.opcache.restrict-api">
+     <code class="parameter">opcache.restrict-api</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      OPcache API 関数の呼び出しを、指定した文字列から始まるパス上の PHP スクリプトからだけに制限します。
+      デフォルトは &quot;&quot; で、これは、何も制限しないことを意味します。
      </p>
     </dd>
 
