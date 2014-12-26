@@ -116,7 +116,7 @@
  <div class="refsect1 examples" id="refsect1-function.preg-quote-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4913">
+   <div class="example" id="example-4917">
     <p><strong>例1 <span class="function"><strong>preg_quote()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -128,11 +128,11 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4914">
+   <div class="example" id="example-4918">
     <p><strong>例2 テキスト内の単語の斜体変換</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;この例では、preg_quote($word)&nbsp;を使って、アスタリスクが<br />//&nbsp;正規表現での特殊な意味を帯びないようにしています<br /><br /></span><span style="color: #0000BB">$textbody&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"This&nbsp;book&nbsp;is&nbsp;*very*&nbsp;difficult&nbsp;to&nbsp;find."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$word&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"*very*"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$textbody&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_replace&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"/"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">preg_quote</span><span style="color: #007700">(</span><span style="color: #0000BB">$word</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"/"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&lt;i&gt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$word&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;/i&gt;"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$textbody</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;この例では、preg_quote($word)&nbsp;を使って、アスタリスクが<br />//&nbsp;正規表現での特殊な意味を帯びないようにしています<br /><br /></span><span style="color: #0000BB">$textbody&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"This&nbsp;book&nbsp;is&nbsp;*very*&nbsp;difficult&nbsp;to&nbsp;find."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$word&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"*very*"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$textbody&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_replace&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"/"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">preg_quote</span><span style="color: #007700">(</span><span style="color: #0000BB">$word</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'/'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"/"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"&lt;i&gt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$word&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;/i&gt;"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$textbody</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

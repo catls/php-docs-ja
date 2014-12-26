@@ -14,7 +14,7 @@
  <h2 class="title">新機能</h2>
 
  <div class="sect2" id="migration56.new-features.const-scalar-exprs">
-  <h3 class="title">定数のスカラー式</h3>
+  <h3 class="title">定数式</h3>
 
   <p class="para">
    数値や文字列リテラルと定数を、これまでのバージョンでは静的な値が想定されていた場面
@@ -35,6 +35,27 @@
 <div class="cdata"><pre>
 4
 THREE の値は 3
+</pre></div>
+   </div>
+  </div>
+
+  <p class="para">
+   配列も、
+   <em>const</em> キーワードで定数として定義できるようになりました。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">ARR&nbsp;</span><span style="color: #007700">=&nbsp;[</span><span style="color: #DD0000">'a'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">];<br /><br />echo&nbsp;</span><span style="color: #0000BB">ARR</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">上の例の出力は以下となります。</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+a
 </pre></div>
    </div>
   </div>

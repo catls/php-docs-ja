@@ -21,28 +21,24 @@
   <div class="section" id="mongocommandcursor.intro">
    <h2 class="title">導入</h2>
    <p class="para">
-    A command cursor is used to iterate through the results of a database
-    command. A command cursor is similar to a normal
-    <a href="class.mongocursor.html" class="classname">MongoCursor</a> except that you use it for iterating
-    through the result of a server command instead of a the result of a query.
+    A command cursor is similar to a <a href="class.mongocursor.html" class="classname">MongoCursor</a> except
+    that you use it for iterating through the results of a database command
+    instead of a normal query. Command cursors are useful for iterating over
+    large result sets that might exceed the document size limit (currently 16MB)
+    of a single <span class="function"><a href="mongodb.command.html" class="function">MongoDB::command()</a></span> response.
    </p>
    <p class="para">
-    You don&#039;t generally create cursors using the 
-    <strong class="classname">MongoCommandCursor</strong> constructor, you get a new cursor by
-    calling <span class="function"><strong>MongoCollection::commandCursor()</strong></span>.
+    While you can create command cursors using
+    <span class="function"><a href="mongocommandcursor.construct.html" class="function">MongoCommandCursor::__construct()</a></span> or the
+    <span class="function"><a href="mongocommandcursor.createfromdocument.html" class="function">MongoCommandCursor::createFromDocument()</a></span> factory method,
+    you will generally want to use command-specific helpers such as
+    <span class="function"><a href="mongocollection.aggregatecursor.html" class="function">MongoCollection::aggregateCursor()</a></span>.
    </p>
    <p class="para">
-    Using a command cursor instead of
-    <span class="methodname"><a href="mongodb.command.html" class="methodname">MongoDB::command()</a></span> means that you can iterate over
-    a much larger resultset as the return of
-    <span class="methodname"><a href="mongodb.command.html" class="methodname">MongoDB::command()</a></span> is limited to the maximum
-    document size (currently 16MB).
-   </p>
-   <p class="para">
-    Note that the cursor does not &quot;contain&quot; the database command results, it
-    just manages them.  Thus, if you print a cursor (with, say,
-    <span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> or <span class="function"><a href="function.print-r.html" class="function">print_r()</a></span>), you&#039;ll
-    just get the cursor object, not your documents.
+    Note that the cursor does not &quot;contain&quot; the database command&#039;s results; it
+    just manages iteration through them. Thus, if you print a cursor (f.e. with
+    <span class="function"><a href="function.var-dump.html" class="function">var_dump()</a></span> or <span class="function"><a href="function.print-r.html" class="function">print_r()</a></span>), you will see
+    the cursor object but not the result documents.
    </p>
   </div>
 
@@ -50,24 +46,21 @@
    <h2 class="title">Cursor Stages</h2>
    <p class="para">
     A <strong class="classname">MongoCommandCursor</strong> has two &quot;life stages&quot;: pre-
-    and post- query. When a cursor is created, it has not yet contacted the
-    database, so it is in its pre-query state.  In this state, the client can
-    further specify what they want the query to do, including configuring the
-    batch size.
+    and post- command. When a cursor is created, it has not yet contacted the
+    database, so it is in its pre-command state. When the client first attempts
+    to get a result (by calling <span class="function"><a href="mongocommandcursor.rewind.html" class="function">MongoCommandCursor::rewind()</a></span>,
+    directly or indirectly), the cursor moves into the post-command state.
    </p>
    <p class="para">
-    When the client attempts to get a result (by calling
-    <span class="function"><a href="mongocommandcursor.next.html" class="function">MongoCommandCursor::next()</a></span>, directly or indirectly),
-    the cursor moves into the post-command stage.  At this point, the command
-    has been executed by the database and only its batch size can be
-    configured.
+    The command cursor&#039;s batch size and socket timeout may be configured in both
+    the pre- and post- command states.
    </p>
    <p class="para">
     <div class="example" id="mongocommandcursor.stages.adding-options">
      <p><strong>例1 Adding options to <strong class="classname">MongoCommandCursor</strong></strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$cursor&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoCommandCursor</span><span style="color: #007700">(...);<br /><br /></span><span style="color: #FF8000">//&nbsp;database&nbsp;has&nbsp;not&nbsp;yet&nbsp;been&nbsp;queried,&nbsp;so&nbsp;more&nbsp;options&nbsp;can&nbsp;be&nbsp;added<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">4&nbsp;</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getNext</span><span style="color: #007700">());<br /></span><span style="color: #FF8000">//&nbsp;now&nbsp;database&nbsp;has&nbsp;been&nbsp;queried&nbsp;and&nbsp;more&nbsp;options&nbsp;cannot&nbsp;be&nbsp;added<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$cursor&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoCommandCursor</span><span style="color: #007700">(...);<br /><br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">4&nbsp;</span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
      </div>
@@ -140,6 +133,10 @@
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">MongoCommandCursor</span> <span class="methodname"><a href="mongocommandcursor.timeout.html" class="methodname">timeout</a></span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$ms</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongocommandcursor.valid.html" class="methodname">valid</a></span>
     ( <span class="methodparam">void</span>
    )</div>
@@ -152,8 +149,8 @@
   <div class="section">
    <h2 class="title">参考</h2>
    <ul class="simplelist">
-    <li class="member"><span class="methodname"><a href="mongodb.command.html" class="methodname">MongoDb::command()</a></span></li>
-    <li class="member"><span class="methodname"><strong>MongoCollection::commandCursor()</strong></span></li>
+    <li class="member"><span class="methodname"><a href="mongodb.command.html" class="methodname">MongoDB::command()</a></span></li>
+    <li class="member"><span class="methodname"><a href="mongocollection.aggregatecursor.html" class="methodname">MongoCollection::aggregateCursor()</a></span></li>
    </ul>
   </div>
 
@@ -221,7 +218,13 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongocommandcursor.batchsize.html">MongoCommandCursor::batchSize</a> — Limits the number of elements returned in one batch.</li><li><a href="mongocommandcursor.construct.html">MongoCommandCursor::__construct</a> — Create a new command cursor</li><li><a href="mongocommandcursor.createfromdocument.html">MongoCommandCursor::createFromDocument</a> — Create a new command cursor from an existing cursor document</li><li><a href="mongocommandcursor.current.html">MongoCommandCursor::current</a> — Returns the current element</li><li><a href="mongocommandcursor.dead.html">MongoCommandCursor::dead</a> — Checks if there are documents that have not been sent yet from the database for this cursor</li><li><a href="mongocommandcursor.info.html">MongoCommandCursor::info</a> — Gets the query, fields, limit, and skip for this cursor</li><li><a href="mongocommandcursor.key.html">MongoCommandCursor::key</a> — Returns the current result's _id</li><li><a href="mongocommandcursor.next.html">MongoCommandCursor::next</a> — Advances the cursor to the next result</li><li><a href="mongocommandcursor.rewind.html">MongoCommandCursor::rewind</a> — Executes the command and resets the cursor to the start of the result set</li><li><a href="mongocommandcursor.valid.html">MongoCommandCursor::valid</a> — Fetches a new result item, and returns whether it could</li></ul>
+
+
+ 
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongocommandcursor.batchsize.html">MongoCommandCursor::batchSize</a> — Limits the number of elements returned in one batch.</li><li><a href="mongocommandcursor.construct.html">MongoCommandCursor::__construct</a> — Create a new command cursor</li><li><a href="mongocommandcursor.createfromdocument.html">MongoCommandCursor::createFromDocument</a> — Create a new command cursor from an existing cursor document</li><li><a href="mongocommandcursor.current.html">MongoCommandCursor::current</a> — Returns the current element</li><li><a href="mongocommandcursor.dead.html">MongoCommandCursor::dead</a> — Checks if there are documents that have not been sent yet from the database for this cursor</li><li><a href="mongocommandcursor.info.html">MongoCommandCursor::info</a> — Gets the query, fields, limit, and skip for this cursor</li><li><a href="mongocommandcursor.key.html">MongoCommandCursor::key</a> — Returns the current result's _id</li><li><a href="mongocommandcursor.next.html">MongoCommandCursor::next</a> — Advances the cursor to the next result</li><li><a href="mongocommandcursor.rewind.html">MongoCommandCursor::rewind</a> — Executes the command and resets the cursor to the start of the result set</li><li><a href="mongocommandcursor.timeout.html">MongoCommandCursor::timeout</a> — Sets a client-side timeout for this command</li><li><a href="mongocommandcursor.valid.html">MongoCommandCursor::valid</a> — Fetches a new result item, and returns whether it could</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongocursor.valid.html">MongoCursor::valid</a></div>
