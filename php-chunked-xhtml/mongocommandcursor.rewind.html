@@ -24,6 +24,9 @@
     ( <span class="methodparam">void</span>
    )</div>
 
+  <p class="para rdfs-comment">
+   If the cursor has already started iteration, the command will be re-executed.
+  </p>
  </div>
 
 
@@ -34,39 +37,10 @@
 
 
  <div class="refsect1 returnvalues" id="refsect1-mongocommandcursor.rewind-returnvalues">
-  <h3 class="title">返り値</h3>  
+  <h3 class="title">返り値</h3>
   <p class="para">
    The raw server result document.
   </p>
-  <div class="example-contents screen"><br />
-array(2) {<br />
-  [&quot;cursor&quot;]=&gt;<br />
-  array(3) {<br />
-    [&quot;id&quot;]=&gt;<br />
-    object(MongoInt64)#5 (1) {<br />
-      [&quot;value&quot;]=&gt;<br />
-      string(12) &quot;310050110216&quot;<br />
-    }<br />
-    [&quot;ns&quot;]=&gt;<br />
-    string(9) &quot;demo.test&quot;<br />
-    [&quot;firstBatch&quot;]=&gt;<br />
-    array(1) {<br />
-      [0]=&gt;<br />
-      array(2) {<br />
-        [&quot;_id&quot;]=&gt;<br />
-        object(MongoId)#6 (1) {<br />
-          [&quot;$id&quot;]=&gt;<br />
-          string(24) &quot;52f5691544670a8077b0dc51&quot;<br />
-        }<br />
-        [&quot;value&quot;]=&gt;<br />
-        string(2) &quot;42&quot;<br />
-      }<br />
-    }<br />
-  }<br />
-  [&quot;ok&quot;]=&gt;<br />
-  float(1)<br />
-}<br />
-  </div>
  </div>
 
 
@@ -74,9 +48,71 @@ array(2) {<br />
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
    Throws <a href="class.mongoconnectionexception.html" class="classname">MongoConnectionException</a> if it cannot reach the
-   database and <strong class="classname">MongoCommandCursorTimeoutException</strong> if the
+   database and <a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> if the
    timeout is exceeded.
   </p>
+  <p class="para">
+   Throws <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> if the cursor was created
+   with <span class="function"><a href="mongocommandcursor.createfromdocument.html" class="function">MongoCommandCursor::createFromDocument()</a></span> and has
+   already started iteration. Such cursors cannot be iterated multiple times, as
+   they lack the original command necessary for re-execution.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-mongocommandcursor.rewind-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-1563">
+   <p><strong>例1 <span class="function"><strong>MongoCommandCursor::rewind()</strong></span></strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$rawResult&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$commandCursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rewind</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Command&nbsp;cursor&nbsp;is&nbsp;now&nbsp;reset&nbsp;to&nbsp;the&nbsp;start&nbsp;of&nbsp;the&nbsp;result&nbsp;set<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$rawResult</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+array(2) {
+  [&quot;cursor&quot;]=&gt;
+  array(3) {
+    [&quot;id&quot;]=&gt;
+    object(MongoInt64)#5 (1) {
+      [&quot;value&quot;]=&gt;
+      string(12) &quot;310050110216&quot;
+    }
+    [&quot;ns&quot;]=&gt;
+    string(9) &quot;demo.test&quot;
+    [&quot;firstBatch&quot;]=&gt;
+    array(1) {
+      [0]=&gt;
+      array(2) {
+        [&quot;_id&quot;]=&gt;
+        object(MongoId)#6 (1) {
+          [&quot;$id&quot;]=&gt;
+          string(24) &quot;52f5691544670a8077b0dc51&quot;
+        }
+        [&quot;value&quot;]=&gt;
+        string(2) &quot;42&quot;
+      }
+    }
+  }
+  [&quot;ok&quot;]=&gt;
+  float(1)
+}
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-mongocommandcursor.rewind-seealso">
+  <h3 class="title">参考</h3>
+  <ul class="simplelist">
+   <li class="member"><span class="methodname"><a href="iterator.rewind.html" class="methodname" rel="rdfs-seeAlso">Iterator::rewind()</a> - イテレータの最初の要素に巻き戻す</span></li>
+  </ul>
  </div>
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

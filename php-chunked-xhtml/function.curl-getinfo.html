@@ -105,7 +105,10 @@
         </li>
         <li class="listitem">
          <span class="simpara">
-          <strong><code>CURLINFO_REDIRECT_URL</code></strong> - 最終的な URL (<strong><code>CURLOPT_FOLLOWLOCATION</code></strong> オプションが有効な場合)
+          <strong><code>CURLINFO_REDIRECT_URL</code></strong> - <strong><code>CURLOPT_FOLLOWLOCATION</code></strong> オプションが無効な場合:
+          直近のトランザクションで見つかったリダイレクト先 URL。これを、次に手動でリクエストしなければいけません。
+          <strong><code>CURLOPT_FOLLOWLOCATION</code></strong> オプションが有効な場合: これは空になります。
+          この場合のリダイレクト先 URL は、<strong><code>CURLINFO_EFFECTIVE_URL</code></strong> となります。
          </span>
         </li>
         <li class="listitem">
@@ -188,6 +191,12 @@
           <strong><code>CURLINFO_CONTENT_TYPE</code></strong> - 要求されたドキュメントの
           <em>Content-Type:</em>。
           NULL は、サーバーが適切な <em>Content-Type:</em> ヘッダを返さなかったことを示す
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>CURLINFO_PRIVATE</code></strong> - この cURL ハンドルに関連づけられたプライベートデータ。
+          事前に <span class="function"><a href="function.curl-setopt.html" class="function">curl_setopt()</a></span> の <strong><code>CURLOPT_PRIVATE</code></strong> オプションで設定したもの。
          </span>
         </li>
        </ul>
@@ -346,6 +355,7 @@
      </span>
     </li>
    </ul>
+   プライベートデータはこの連想配列には含まれず、<strong><code>CURLINFO_PRIVATE</code></strong> オプションで個別に取得しなければいけないことに注意しましょう。
   </p>
  </div>
 
@@ -372,6 +382,13 @@
       </tr>
 
       <tr>
+       <td>5.2.4</td>
+       <td>
+        <strong><code>CURLINFO_PRIVATE</code></strong> が追加されました。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.1.3</td>
        <td>
         <strong><code>CURLINFO_HEADER_OUT</code></strong> が追加されました。
@@ -389,7 +406,7 @@
  <div class="refsect1 examples" id="refsect1-function.curl-getinfo-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4335">
+   <div class="example" id="example-4336">
     <p><strong>例1 <span class="function"><strong>curl_getinfo()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

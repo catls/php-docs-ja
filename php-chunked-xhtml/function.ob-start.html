@@ -266,6 +266,15 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.0.0</td>
+       <td>
+        <span class="function"><strong>ob_start()</strong></span> を出力バッファコールバックの内部で使う場合、
+        この関数は <strong><code>E_ERROR</code></strong> の代わりに
+        <strong><code>E_RECOVERABLE_ERROR</code></strong> を発行して、カスタムエラーハンドラで対応できるようにします。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.4.0</td>
        <td>
         <span class="function"><strong>ob_start()</strong></span> の三番目のパラメータが

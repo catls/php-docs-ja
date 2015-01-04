@@ -21,7 +21,7 @@
   <div class="methodsynopsis dc-description">
    <span class="type">string</span> 
    <span class="methodname"><strong>XSLTProcessor::transformToXML</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="class.domdocument.html" class="type DOMDocument">DOMDocument</a></span> <code class="parameter">$doc</code></span>
+    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$doc</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -43,7 +43,8 @@
      <dd>
 
       <p class="para">
-       変換されるノードを指定します。
+       変換対象となる、<span class="type"><a href="class.domdocument.html" class="type DOMDocument">DOMDocument</a></span> オブジェクトあるいは
+       <span class="type"><a href="class.simplexmlelement.html" class="type SimpleXMLElement">SimpleXMLElement</a></span> オブジェクトを指定します。
       </p>
      </dd>
 
@@ -63,7 +64,7 @@
  <div class="refsect1 examples" id="refsect1-xsltprocessor.transformtoxml-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5644">
+   <div class="example" id="example-5645">
     <p><strong>例1 文字列への変換</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -25,7 +25,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   This returns <strong><code>NULL</code></strong> until <span class="function"><a href="mongocommandcursor.next.html" class="function">MongoCommandCursor::next()</a></span> is called.
+   This returns <strong><code>NULL</code></strong> until <span class="function"><a href="mongocommandcursor.rewind.html" class="function">MongoCommandCursor::rewind()</a></span> is called.
   </p>
  </div>
 
@@ -39,8 +39,17 @@
  <div class="refsect1 returnvalues" id="refsect1-mongocommandcursor.current-returnvalues">
   <h3 class="title">返り値</h3>  
   <p class="para">
-   The current result as an associative array.
+   The current result document as an associative array. <strong><code>NULL</code></strong> will be returned
+   if there is no result.
   </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-mongocommandcursor.current-seealso">
+  <h3 class="title">参考</h3>
+  <ul class="simplelist">
+   <li class="member"><span class="methodname"><a href="iterator.current.html" class="methodname" rel="rdfs-seeAlso">Iterator::current()</a> - 現在の要素を返す</span></li>
+  </ul>
  </div>
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

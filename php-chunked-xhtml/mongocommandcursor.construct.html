@@ -23,19 +23,18 @@
    <span class="modifier">public</span> <span class="methodname"><strong>MongoCommandCursor::__construct</strong></span>
     ( <span class="methodparam"><span class="type"><a href="class.mongoclient.html" class="type MongoClient">MongoClient</a></span> <code class="parameter">$connection</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$command</code><span class="initializer"> = array()</span></span>
-  ] )</div>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$command</code><span class="initializer"> = array()</span></span>
+   )</div>
 
   <p class="para rdfs-comment">
-   In many instances, you do not have to create a
-   <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> manually, but instead one of the
-   helper functions such as
-   <span class="methodname"><a href="mongocollection.aggregatecursor.html" class="methodname">MongoCollection::aggregateCursor()</a></span> and
-   <span class="methodname"><a href="mongocollection.parallelcollectionscan.html" class="methodname">MongoCollection::parallelCollectionScan()</a></span>. However,
-   if the server adds new commands that can return cursors, then manually
-   creating <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> objects is required.
-   However, it might be easier to use the
-   <span class="methodname"><a href="mongocommandcursor.createfromdocument.html" class="methodname">MongoCommandCursor::createFromDocument()</a></span> instead.
+   Generally, you should not have to construct a
+   <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> manually, as there are helper
+   functions such as <span class="methodname"><a href="mongocollection.aggregatecursor.html" class="methodname">MongoCollection::aggregateCursor()</a></span>
+   and <span class="methodname"><a href="mongocollection.parallelcollectionscan.html" class="methodname">MongoCollection::parallelCollectionScan()</a></span>;
+   however, if the server introduces new commands that can return cursors, this
+   constructor will be useful in the absence of specific helper methods. You may
+   also consider using
+   <span class="methodname"><a href="mongocommandcursor.createfromdocument.html" class="methodname">MongoCommandCursor::createFromDocument()</a></span>.
   </p>
  </div>
 
@@ -58,7 +57,7 @@
       </p>
      </dd>
 
-       
+    
     
      <dt>
 
@@ -68,11 +67,12 @@
      <dd>
 
       <p class="para">
-       Full name of database and collection.
+       Full name of the database and collection (e.g.
+       <em>&quot;test.foo&quot;</em>)
       </p>
      </dd>
 
-       
+    
     
      <dt>
 
@@ -86,7 +86,7 @@
       </p>
      </dd>
 
-       
+    
    </dl>
 
   </p>
@@ -107,7 +107,7 @@
    <p><strong>例1 <span class="function"><strong>MongoCommandCursor()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">demo</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;setup&nbsp;the&nbsp;pipeline<br /></span><span style="color: #0000BB">$pipeline&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$group'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'$country_code'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'timezones'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$addToSet'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'$timezone'&nbsp;</span><span style="color: #007700">]<br />&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;],<br />&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$sort'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">]&nbsp;],<br />];<br /><br /></span><span style="color: #FF8000">//&nbsp;run&nbsp;the&nbsp;command,&nbsp;and&nbsp;return&nbsp;a&nbsp;MongoCommandCursor&nbsp;object<br /></span><span style="color: #0000BB">$r&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$d</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">commandCursor</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;MongoClient&nbsp;object<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'demo.cities'</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;namespace<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'aggregate'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'cities'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'pipeline'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$pipeline</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;]<br />);<br /><br />foreach(</span><span style="color: #0000BB">$r&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$document</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">…<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Define&nbsp;the&nbsp;aggregation&nbsp;pipeline<br /></span><span style="color: #0000BB">$pipeline&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$group'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'$country_code'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'timezones'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$addToSet'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'$timezone'&nbsp;</span><span style="color: #007700">]<br />&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;],<br />&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$sort'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">]&nbsp;],<br />];<br /><br /></span><span style="color: #FF8000">//&nbsp;Construct&nbsp;a&nbsp;MongoCommandCursor&nbsp;object<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoCommandCursor</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;MongoClient&nbsp;object<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'demo.cities'</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;namespace<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'aggregate'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'cities'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'pipeline'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$pipeline</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'cursor'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'batchSize'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">0&nbsp;</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;]<br />);<br /><br />foreach(</span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">…<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -119,7 +119,7 @@
  <div class="refsect1 seealso" id="refsect1-mongocommandcursor.construct-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"><span class="function"><a href="mongocommandcursor.createfromdocument.html" class="function" rel="rdfs-seeAlso">MongoCommandCursor::createFromDocument()</a> - Create a new command cursor from an existing cursor document</span></li>
+   <li class="member"><span class="function"><a href="mongocommandcursor.createfromdocument.html" class="function" rel="rdfs-seeAlso">MongoCommandCursor::createFromDocument()</a> - Create a new command cursor from an existing command response document</span></li>
    <li class="member"><span class="function"><a href="mongocollection.aggregatecursor.html" class="function" rel="rdfs-seeAlso">MongoCollection::aggregateCursor()</a> - Execute an aggregation pipeline command and retrieve results through a cursor</span></li>
    <li class="member"><span class="function"><a href="mongocollection.parallelcollectionscan.html" class="function" rel="rdfs-seeAlso">MongoCollection::parallelCollectionScan()</a> - Returns an array of cursors to iterator over a full collection in parallel</span></li>
   </ul>

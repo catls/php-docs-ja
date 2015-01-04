@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Gets the query, fields, limit, and skip for this cursor</title>
+  <title>Gets information about the cursor's creation and iteration</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongocommandcursor.info" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoCommandCursor::info</h1>
-  <p class="verinfo">(PECL mongo &gt;=1.5.0)</p><p class="refpurpose"><span class="refname">MongoCommandCursor::info</span> &mdash; <span class="dc-title">Gets the query, fields, limit, and skip for this cursor</span></p>
+  <p class="verinfo">(PECL mongo &gt;=1.5.0)</p><p class="refpurpose"><span class="refname">MongoCommandCursor::info</span> &mdash; <span class="dc-title">Gets information about the cursor&#039;s creation and iteration</span></p>
 
  </div>
 
@@ -25,7 +25,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   This can be called before or after the query.
+   This can be called before or after the cursor has started iterating.
   </p>
  </div>
 
@@ -37,10 +37,11 @@
 
 
  <div class="refsect1 returnvalues" id="refsect1-mongocommandcursor.info-returnvalues">
-  <h3 class="title">返り値</h3>  
+  <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the namespace, limit, skip, query, fields, connection and iteration
-   information for this cursor.  
+   Returns the namespace, batch size, limit, skip, flags, query, and projected
+   fields for this cursor. If the cursor has started iterating, additional
+   information about iteration and the connection will be included.
   </p>
  </div>
 
@@ -51,7 +52,7 @@
    <p><strong>例1 <span class="function"><strong>MongoCommandCursor::info()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">test</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">test</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">commandCursor</span><span style="color: #007700">(&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'aggregate'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'test'</span><span style="color: #007700">,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'pipeline'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$match'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$exists'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true&nbsp;</span><span style="color: #007700">]&nbsp;]&nbsp;],<br />&nbsp;&nbsp;&nbsp;&nbsp;]<br />]&nbsp;);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Before&nbsp;iteration&nbsp;started:\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">info</span><span style="color: #007700">());<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Aftere&nbsp;iteration&nbsp;started:\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rewind</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">info</span><span style="color: #007700">());<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoCommandCursor</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;MongoClient&nbsp;object<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'demo.cities'</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;namespace<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'aggregate'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'cities'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'pipeline'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;[&nbsp;</span><span style="color: #DD0000">'$match'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'_id'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'$exists'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true&nbsp;</span><span style="color: #007700">]&nbsp;]&nbsp;]&nbsp;],<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'cursor'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[&nbsp;</span><span style="color: #DD0000">'batchSize'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;]<br />);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"Before&nbsp;iteration&nbsp;started:\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">info</span><span style="color: #007700">());<br /><br />echo&nbsp;</span><span style="color: #DD0000">"\nAfter&nbsp;iteration&nbsp;started:\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rewind</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">info</span><span style="color: #007700">());<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -62,97 +63,103 @@
 <div class="cdata"><pre>
 Before iteration started:
 array(8) {
-  &#039;ns&#039; =&gt;
-  string(9) &quot;test.test&quot;
-  &#039;limit&#039; =&gt;
+  [&quot;ns&quot;]=&gt;
+  string(11) &quot;demo.cities&quot;
+  [&quot;limit&quot;]=&gt;
   int(0)
-  &#039;batchSize&#039; =&gt;
+  [&quot;batchSize&quot;]=&gt;
   int(0)
-  &#039;skip&#039; =&gt;
+  [&quot;skip&quot;]=&gt;
   int(0)
-  &#039;flags&#039; =&gt;
+  [&quot;flags&quot;]=&gt;
   int(0)
-  &#039;query&#039; =&gt;
-  array(2) {
-    &#039;aggregate&#039; =&gt;
-    string(4) &quot;test&quot;
-    &#039;pipeline&#039; =&gt;
+  [&quot;query&quot;]=&gt;
+  array(3) {
+    [&quot;aggregate&quot;]=&gt;
+    string(6) &quot;cities&quot;
+    [&quot;pipeline&quot;]=&gt;
     array(1) {
-      [0] =&gt;
+      [0]=&gt;
       array(1) {
-        &#039;$match&#039; =&gt;
+        [&quot;$match&quot;]=&gt;
         array(1) {
-          &#039;_id&#039; =&gt;
+          [&quot;_id&quot;]=&gt;
           array(1) {
-            &#039;$exists&#039; =&gt;
+            [&quot;$exists&quot;]=&gt;
             bool(true)
           }
         }
       }
     }
+    [&quot;cursor&quot;]=&gt;
+    array(1) {
+      [&quot;batchSize&quot;]=&gt;
+      int(1)
+    }
   }
-  &#039;fields&#039; =&gt;
+  [&quot;fields&quot;]=&gt;
   NULL
-  &#039;started_iterating&#039; =&gt;
+  [&quot;started_iterating&quot;]=&gt;
   bool(false)
 }
-Aftere iteration started:
+
+After iteration started:
 array(17) {
-  &#039;ns&#039; =&gt;
-  string(9) &quot;test.test&quot;
-  &#039;limit&#039; =&gt;
+  [&quot;ns&quot;]=&gt;
+  string(11) &quot;demo.cities&quot;
+  [&quot;limit&quot;]=&gt;
   int(0)
-  &#039;batchSize&#039; =&gt;
-  int(101)
-  &#039;skip&#039; =&gt;
+  [&quot;batchSize&quot;]=&gt;
   int(0)
-  &#039;flags&#039; =&gt;
+  [&quot;skip&quot;]=&gt;
   int(0)
-  &#039;query&#039; =&gt;
+  [&quot;flags&quot;]=&gt;
+  int(0)
+  [&quot;query&quot;]=&gt;
   array(3) {
-    &#039;aggregate&#039; =&gt;
-    string(4) &quot;test&quot;
-    &#039;pipeline&#039; =&gt;
+    [&quot;aggregate&quot;]=&gt;
+    string(6) &quot;cities&quot;
+    [&quot;pipeline&quot;]=&gt;
     array(1) {
-      [0] =&gt;
+      [0]=&gt;
       array(1) {
-        &#039;$match&#039; =&gt;
+        [&quot;$match&quot;]=&gt;
         array(1) {
-          &#039;_id&#039; =&gt;
+          [&quot;_id&quot;]=&gt;
           array(1) {
-            &#039;$exists&#039; =&gt;
+            [&quot;$exists&quot;]=&gt;
             bool(true)
           }
         }
       }
     }
-    &#039;cursor&#039; =&gt;
+    [&quot;cursor&quot;]=&gt;
     array(1) {
-      &#039;batchSize&#039; =&gt;
-      int(101)
+      [&quot;batchSize&quot;]=&gt;
+      int(1)
     }
   }
-  &#039;fields&#039; =&gt;
+  [&quot;fields&quot;]=&gt;
   NULL
-  &#039;started_iterating&#039; =&gt;
+  [&quot;started_iterating&quot;]=&gt;
   bool(true)
-  &#039;id&#039; =&gt;
+  [&quot;id&quot;]=&gt;
+  int(185840310129)
+  [&quot;at&quot;]=&gt;
   int(0)
-  &#039;at&#039; =&gt;
+  [&quot;numReturned&quot;]=&gt;
   int(0)
-  &#039;numReturned&#039; =&gt;
-  int(0)
-  &#039;server&#039; =&gt;
-  string(24) &quot;localhost:27017;-;.;2316&quot;
-  &#039;host&#039; =&gt;
+  [&quot;server&quot;]=&gt;
+  string(25) &quot;localhost:27017;-;.;23991&quot;
+  [&quot;host&quot;]=&gt;
   string(9) &quot;localhost&quot;
-  &#039;port&#039; =&gt;
+  [&quot;port&quot;]=&gt;
   int(27017)
-  &#039;connection_type_desc&#039; =&gt;
+  [&quot;connection_type_desc&quot;]=&gt;
   string(10) &quot;STANDALONE&quot;
-  &#039;firstBatchAt&#039; =&gt;
+  [&quot;firstBatchAt&quot;]=&gt;
   int(0)
-  &#039;firstBatchNumReturned&#039; =&gt;
+  [&quot;firstBatchNumReturned&quot;]=&gt;
   int(1)
 }
 </pre></div>

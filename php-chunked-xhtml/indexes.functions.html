@@ -4607,22 +4607,22 @@
 <li><a href="mongocollection.get.html" class="index">MongoCollection::__get</a> - コレクションを取得する</li>
 <li><a href="mongocollection.--tostring.html" class="index">MongoCollection::__toString</a> - このコレクションの文字列表現</li>
 <li><a href="mongocommandcursor.batchsize.html" class="index">MongoCommandCursor::batchSize</a> - Limits the number of elements returned in one batch.</li>
-<li><a href="mongocommandcursor.createfromdocument.html" class="index">MongoCommandCursor::createFromDocument</a> - Create a new command cursor from an existing cursor document</li>
+<li><a href="mongocommandcursor.createfromdocument.html" class="index">MongoCommandCursor::createFromDocument</a> - Create a new command cursor from an existing command response document</li>
 <li><a href="mongocommandcursor.current.html" class="index">MongoCommandCursor::current</a> - Returns the current element</li>
-<li><a href="mongocommandcursor.dead.html" class="index">MongoCommandCursor::dead</a> - Checks if there are documents that have not been sent yet from the database for this cursor</li>
-<li><a href="mongocommandcursor.info.html" class="index">MongoCommandCursor::info</a> - Gets the query, fields, limit, and skip for this cursor</li>
-<li><a href="mongocommandcursor.key.html" class="index">MongoCommandCursor::key</a> - Returns the current result's _id</li>
+<li><a href="mongocommandcursor.dead.html" class="index">MongoCommandCursor::dead</a> - Checks if there are results that have not yet been sent from the database</li>
+<li><a href="mongocommandcursor.info.html" class="index">MongoCommandCursor::info</a> - Gets information about the cursor's creation and iteration</li>
+<li><a href="mongocommandcursor.key.html" class="index">MongoCommandCursor::key</a> - Returns the current result's index within the result set</li>
 <li><a href="mongocommandcursor.next.html" class="index">MongoCommandCursor::next</a> - Advances the cursor to the next result</li>
 <li><a href="mongocommandcursor.rewind.html" class="index">MongoCommandCursor::rewind</a> - Executes the command and resets the cursor to the start of the result set</li>
 <li><a href="mongocommandcursor.timeout.html" class="index">MongoCommandCursor::timeout</a> - Sets a client-side timeout for this command</li>
-<li><a href="mongocommandcursor.valid.html" class="index">MongoCommandCursor::valid</a> - Fetches a new result item, and returns whether it could</li>
+<li><a href="mongocommandcursor.valid.html" class="index">MongoCommandCursor::valid</a> - Checks if the cursor is reading a valid result.</li>
 <li><a href="mongocommandcursor.construct.html" class="index">MongoCommandCursor::__construct</a> - Create a new command cursor</li>
 <li><a href="mongocursor.addoption.html" class="index">MongoCursor::addOption</a> - トップレベルの キー/値 のペアをクエリに追加する</li>
 <li><a href="mongocursor.awaitdata.html" class="index">MongoCursor::awaitData</a> - 追尾可能なカーソルで、データがないときにしばらく待つかどうかを設定する</li>
 <li><a href="mongocursor.batchsize.html" class="index">MongoCursor::batchSize</a> - ひとつのバッチで返す要素数を制限する</li>
 <li><a href="mongocursor.count.html" class="index">MongoCursor::count</a> - このクエリの結果の数を数える</li>
 <li><a href="mongocursor.current.html" class="index">MongoCursor::current</a> - 現在の要素を返す</li>
-<li><a href="mongocursor.dead.html" class="index">MongoCursor::dead</a> - このカーソルにまだデータベースから送信されていないドキュメントがあるかどうかを調べる</li>
+<li><a href="mongocursor.dead.html" class="index">MongoCursor::dead</a> - まだデータベースから送信されていないドキュメントがあるかどうかを調べる</li>
 <li><a href="mongocursor.doquery.html" class="index">MongoCursor::doQuery</a> - クエリを実行する</li>
 <li><a href="mongocursor.explain.html" class="index">MongoCursor::explain</a> - 最適化やデバッグの際に有効な、クエリの explain を返す</li>
 <li><a href="mongocursor.fields.html" class="index">MongoCursor::fields</a> - クエリのフィールドを設定する</li>
@@ -4631,8 +4631,8 @@
 <li><a href="mongocursor.hasnext.html" class="index">MongoCursor::hasNext</a> - このカーソルにまだ要素があるかどうかを調べる</li>
 <li><a href="mongocursor.hint.html" class="index">MongoCursor::hint</a> - クエリについてのヒントをデータベースに与える</li>
 <li><a href="mongocursor.immortal.html" class="index">MongoCursor::immortal</a> - このカーソルをタイムアウトさせるかどうかを設定する</li>
-<li><a href="mongocursor.info.html" class="index">MongoCursor::info</a> - このカーソルの query、fields、limit そして skip を取得する</li>
-<li><a href="mongocursor.key.html" class="index">MongoCursor::key</a> - 現在の結果の _id を返す</li>
+<li><a href="mongocursor.info.html" class="index">MongoCursor::info</a> - カーソルの作成と走査に関する情報を取得する</li>
+<li><a href="mongocursor.key.html" class="index">MongoCursor::key</a> - 現在の結果の _id、あるいは結果セット内のインデックスを返す</li>
 <li><a href="mongocursor.limit.html" class="index">MongoCursor::limit</a> - 返す結果の数を制限する</li>
 <li><a href="mongocursor.maxtimems.html" class="index">MongoCursor::maxTimeMS</a> - Sets a server-side timeout for this query</li>
 <li><a href="mongocursor.next.html" class="index">MongoCursor::next</a> - カーソルを次の結果に進めてその結果を返す</li>
@@ -5666,7 +5666,7 @@
 <li><a href="function.oci-field-type-raw.html" class="index">oci_field_type_raw</a> - Oracle におけるフィールドの型を問い合わせる</li>
 <li><a href="function.oci-free-descriptor.html" class="index">oci_free_descriptor</a> - ディスクリプタを解放する</li>
 <li><a href="function.oci-free-statement.html" class="index">oci_free_statement</a> - 文やカーソルに関連付けられた全てのリソースを解放する</li>
-<li><a href="function.oci-get-implicit-resultset.html" class="index">oci_get_implicit_resultset</a> - Returns the next child statement resource from a parent statement resource that has Oracle Database 12c Implicit Result Sets</li>
+<li><a href="function.oci-get-implicit-resultset.html" class="index">oci_get_implicit_resultset</a> - Oracle Database 12c の暗黙の結果セットを持つ親ステートメント・リソースから次の子ステートメント・リソースを返す</li>
 <li><a href="function.oci-internal-debug.html" class="index">oci_internal_debug</a> - 内部デバッグ用の出力を有効または無効にする</li>
 <li><a href="function.oci-lob-copy.html" class="index">oci_lob_copy</a> - ラージオブジェクトをコピーする</li>
 <li><a href="function.oci-lob-is-equal.html" class="index">oci_lob_is_equal</a> - 2 つの LOB/FILE ロケータの等価性を比較する</li>
@@ -5737,8 +5737,8 @@
 <li><a href="function.odbc-tables.html" class="index">odbc_tables</a> - 指定したデータソースに保存されたテーブルの名前のリストを取得する</li>
 <li><a href="wrappers.audio.html" class="index">ogg://</a> - オーディオストリーム</li>
 <li><a href="function.opcache-compile-file.html" class="index">opcache_compile_file</a> - PHP スクリプトを、実行せずにコンパイルしてキャッシュする</li>
-<li><a href="function.opcache-get-configuration.html" class="index">opcache_get_configuration</a> - Get configuration information about the cache</li>
-<li><a href="function.opcache-get-status.html" class="index">opcache_get_status</a> - Get status information about the cache</li>
+<li><a href="function.opcache-get-configuration.html" class="index">opcache_get_configuration</a> - キャッシュについての構成情報を取得</li>
+<li><a href="function.opcache-get-status.html" class="index">opcache_get_status</a> - キャッシュについてのステータス情報を取得</li>
 <li><a href="function.opcache-invalidate.html" class="index">opcache_invalidate</a> - キャッシュされたスクリプトを無効にする</li>
 <li><a href="function.opcache-reset.html" class="index">opcache_reset</a> - opcode のキャッシュ内容をリセットする</li>
 <li><a href="function.openal-buffer-create.html" class="index">openal_buffer_create</a> - OpenAL バッファを生成する</li>

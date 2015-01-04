@@ -24,7 +24,8 @@
     PHP 5.6 より前のバージョンでは、定数に指定できるのは、スカラデータ
     (<span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>, <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>,
     <span class="type"><a href="language.types.float.html" class="type double">double</a></span>, <span class="type"><a href="language.types.string.html" class="type string">string</a></span>) のみです。
-    PHP 5.6 以降では、<span class="type"><a href="language.types.array.html" class="type array">array</a></span> の定数も指定できるようになりました。
+    PHP 5.6 以降では、定数をスカラー式として定義できるようになりました。
+    また、<span class="type"><a href="language.types.array.html" class="type array">array</a></span> の定数も指定できるようになりました。
     <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> の定数を指定することもできますが、
     予期せぬ結果を引き起こすことがあるので避けるべきです。
    </p>
@@ -66,8 +67,8 @@
      </li>
      <li class="listitem">
       <span class="simpara">
-      定数を定義することができるのは、<span class="function"><a href="function.define.html" class="function">define()</a></span>関数
-      のみです。単なる代入による定義はできません。
+      PHP 5.3 より前のバージョンでは、定数を定義することができるのは、<span class="function"><a href="function.define.html" class="function">define()</a></span>
+      関数のみです。単なる代入による定義はできません。
       </span>
      </li>
      <li class="listitem">
