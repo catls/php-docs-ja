@@ -83,10 +83,10 @@
       <strong class="classname">MongoCommandCursor</strong>
      </span>
      <span class="oointerface">implements 
-      <span class="interfacename"><a href="class.iterator.html" class="interfacename">Iterator</a></span>
+      <span class="interfacename"><strong class="interfacename">MongoCursorInterface</strong></span>
      </span>
      <span class="oointerface">, 
-      <span class="interfacename"><strong class="interfacename">MongoCursorInterface</strong></span>
+      <span class="interfacename"><a href="class.iterator.html" class="interfacename">Iterator</a></span>
      </span>
      {</div>
     
@@ -117,6 +117,10 @@
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocommandcursor.getreadpreference.html" class="methodname">getReadPreference</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocommandcursor.info.html" class="methodname">info</a></span>
     ( <span class="methodparam">void</span>
    )</div>
@@ -132,6 +136,11 @@
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocommandcursor.rewind.html" class="methodname">rewind</a></span>
     ( <span class="methodparam">void</span>
    )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">MongoCommandCursor</span> <span class="methodname"><a href="mongocommandcursor.setreadpreference.html" class="methodname">setReadPreference</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$read_preference</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$tags</code></span>
+  ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCommandCursor</span> <span class="methodname"><a href="mongocommandcursor.timeout.html" class="methodname">timeout</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$ms</code></span>
@@ -190,13 +199,8 @@
 
 
 
- 
 
 
-
-
-
- 
 
 
 
@@ -224,7 +228,26 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongocommandcursor.batchsize.html">MongoCommandCursor::batchSize</a> — Limits the number of elements returned in one batch.</li><li><a href="mongocommandcursor.construct.html">MongoCommandCursor::__construct</a> — Create a new command cursor</li><li><a href="mongocommandcursor.createfromdocument.html">MongoCommandCursor::createFromDocument</a> — Create a new command cursor from an existing command response document</li><li><a href="mongocommandcursor.current.html">MongoCommandCursor::current</a> — Returns the current element</li><li><a href="mongocommandcursor.dead.html">MongoCommandCursor::dead</a> — Checks if there are results that have not yet been sent from the database</li><li><a href="mongocommandcursor.info.html">MongoCommandCursor::info</a> — Gets information about the cursor's creation and iteration</li><li><a href="mongocommandcursor.key.html">MongoCommandCursor::key</a> — Returns the current result's index within the result set</li><li><a href="mongocommandcursor.next.html">MongoCommandCursor::next</a> — Advances the cursor to the next result</li><li><a href="mongocommandcursor.rewind.html">MongoCommandCursor::rewind</a> — Executes the command and resets the cursor to the start of the result set</li><li><a href="mongocommandcursor.timeout.html">MongoCommandCursor::timeout</a> — Sets a client-side timeout for this command</li><li><a href="mongocommandcursor.valid.html">MongoCommandCursor::valid</a> — Checks if the cursor is reading a valid result.</li></ul>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongocommandcursor.batchsize.html">MongoCommandCursor::batchSize</a> — Limits the number of elements returned in one batch.</li><li><a href="mongocommandcursor.construct.html">MongoCommandCursor::__construct</a> — Create a new command cursor</li><li><a href="mongocommandcursor.createfromdocument.html">MongoCommandCursor::createFromDocument</a> — Create a new command cursor from an existing command response document</li><li><a href="mongocommandcursor.current.html">MongoCommandCursor::current</a> — Returns the current element</li><li><a href="mongocommandcursor.dead.html">MongoCommandCursor::dead</a> — Checks if there are results that have not yet been sent from the database</li><li><a href="mongocommandcursor.getreadpreference.html">MongoCommandCursor::getReadPreference</a> — Get the read preference for this command</li><li><a href="mongocommandcursor.info.html">MongoCommandCursor::info</a> — Gets information about the cursor's creation and iteration</li><li><a href="mongocommandcursor.key.html">MongoCommandCursor::key</a> — Returns the current result's index within the result set</li><li><a href="mongocommandcursor.next.html">MongoCommandCursor::next</a> — Advances the cursor to the next result</li><li><a href="mongocommandcursor.rewind.html">MongoCommandCursor::rewind</a> — Executes the command and resets the cursor to the start of the result set</li><li><a href="mongocommandcursor.setreadpreference.html">MongoCommandCursor::setReadPreference</a> — Set the read preference for this command</li><li><a href="mongocommandcursor.timeout.html">MongoCommandCursor::timeout</a> — Sets a client-side timeout for this command</li><li><a href="mongocommandcursor.valid.html">MongoCommandCursor::valid</a> — Checks if the cursor is reading a valid result.</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongocursor.valid.html">MongoCursor::valid</a></div>

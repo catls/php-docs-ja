@@ -33,6 +33,14 @@
    just like the <a href="class.mongocursor.html" class="classname">MongoCursor</a> objects that are returned
    by the <span class="methodname"><a href="mongocollection.find.html" class="methodname">MongoCollection::find()</a></span> method.
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    The resulting <a href="class.mongocommandcursor.html" class="classname">MongoCommandCursor</a> will inherit this
+    collection&#039;s read preference.
+    <span class="methodname"><a href="mongocommandcursor.setreadpreference.html" class="methodname">MongoCommandCursor::setReadPreference()</a></span> may be used
+    to change the read preference before iterating on the cursor.
+   </span>
+  </p></blockquote>
  </div>
 
 

@@ -3565,6 +3565,7 @@
 <li><a href="imagick.writeimages.html" class="index">Imagick::writeImages</a> - 画像あるいは画像シーケンスを書き込む</li>
 <li><a href="imagick.writeimagesfile.html" class="index">Imagick::writeImagesFile</a> - フレームをファイルハンドルに書き出す</li>
 <li><a href="imagick.construct.html" class="index">Imagick::__construct</a> - Imagick のコンストラクタ</li>
+<li><a href="imagick.tostring.html" class="index">Imagick::__toString</a> - Returns the image as a string.</li>
 <li><a href="imagickdraw.affine.html" class="index">ImagickDraw::affine</a> - 現在のアフィン変換行列を設定する</li>
 <li><a href="imagickdraw.annotation.html" class="index">ImagickDraw::annotation</a> - 画像上にテキストを描画する</li>
 <li><a href="imagickdraw.arc.html" class="index">ImagickDraw::arc</a> - 円弧を描画する</li>
@@ -4610,10 +4611,12 @@
 <li><a href="mongocommandcursor.createfromdocument.html" class="index">MongoCommandCursor::createFromDocument</a> - Create a new command cursor from an existing command response document</li>
 <li><a href="mongocommandcursor.current.html" class="index">MongoCommandCursor::current</a> - Returns the current element</li>
 <li><a href="mongocommandcursor.dead.html" class="index">MongoCommandCursor::dead</a> - Checks if there are results that have not yet been sent from the database</li>
+<li><a href="mongocommandcursor.getreadpreference.html" class="index">MongoCommandCursor::getReadPreference</a> - Get the read preference for this command</li>
 <li><a href="mongocommandcursor.info.html" class="index">MongoCommandCursor::info</a> - Gets information about the cursor's creation and iteration</li>
 <li><a href="mongocommandcursor.key.html" class="index">MongoCommandCursor::key</a> - Returns the current result's index within the result set</li>
 <li><a href="mongocommandcursor.next.html" class="index">MongoCommandCursor::next</a> - Advances the cursor to the next result</li>
 <li><a href="mongocommandcursor.rewind.html" class="index">MongoCommandCursor::rewind</a> - Executes the command and resets the cursor to the start of the result set</li>
+<li><a href="mongocommandcursor.setreadpreference.html" class="index">MongoCommandCursor::setReadPreference</a> - Set the read preference for this command</li>
 <li><a href="mongocommandcursor.timeout.html" class="index">MongoCommandCursor::timeout</a> - Sets a client-side timeout for this command</li>
 <li><a href="mongocommandcursor.valid.html" class="index">MongoCommandCursor::valid</a> - Checks if the cursor is reading a valid result.</li>
 <li><a href="mongocommandcursor.construct.html" class="index">MongoCommandCursor::__construct</a> - Create a new command cursor</li>
@@ -4661,7 +4664,7 @@
 <li><a href="mongodb.dropcollection.html" class="index">MongoDB::dropCollection</a> - コレクションを削除する [非推奨]</li>
 <li><a href="mongodb.execute.html" class="index">MongoDB::execute</a> - JavaScript コードをデータベースサーバー上で実行する</li>
 <li><a href="mongodb.forceerror.html" class="index">MongoDB::forceError</a> - データベースのエラーを作成する</li>
-<li><a href="mongodb.getcollectioninfo.html" class="index">MongoDB::getCollectionInfo</a> - Returns information about indexes on this collection</li>
+<li><a href="mongodb.getcollectioninfo.html" class="index">MongoDB::getCollectionInfo</a> - Returns information about collections in this database</li>
 <li><a href="mongodb.getcollectionnames.html" class="index">MongoDB::getCollectionNames</a> - このデータベースのすべてのコレクションを取得する</li>
 <li><a href="mongodb.getdbref.html" class="index">MongoDB::getDBRef</a> - データベース参照が指すドキュメントを取得する</li>
 <li><a href="mongodb.getgridfs.html" class="index">MongoDB::getGridFS</a> - このデータベースに格納されているファイルを扱うためのツールキットを取得する</li>
@@ -7283,6 +7286,34 @@
 <li><a href="solrclient.construct.html" class="index">SolrClient::__construct</a> - Constructor for the SolrClient object</li>
 <li><a href="solrclient.destruct.html" class="index">SolrClient::__destruct</a> - SolrClient に対するデストラクタ</li>
 <li><a href="solrclientexception.getinternalinfo.html" class="index">SolrClientException::getInternalInfo</a> - 例外がスローされた際の内部情報を返す</li>
+<li><a href="solrdismaxquery.addbigramphrasefield.html" class="index">SolrDisMaxQuery::addBigramPhraseField</a> - Adds a Phrase Bigram Field (pf2 parameter)</li>
+<li><a href="solrdismaxquery.addboostquery.html" class="index">SolrDisMaxQuery::addBoostQuery</a> - Adds a boost query field with value and optional boost (bq parameter)</li>
+<li><a href="solrdismaxquery.addphrasefield.html" class="index">SolrDisMaxQuery::addPhraseField</a> - Adds a Phrase Field (pf parameter)</li>
+<li><a href="solrdismaxquery.addqueryfield.html" class="index">SolrDisMaxQuery::addQueryField</a> - Add a query field with optional boost (qf parameter)</li>
+<li><a href="solrdismaxquery.addtrigramphrasefield.html" class="index">SolrDisMaxQuery::addTrigramPhraseField</a> - Adds a Trigram Phrase Field (pf3 parameter)</li>
+<li><a href="solrdismaxquery.adduserfield.html" class="index">SolrDisMaxQuery::addUserField</a> - Adds a field to User Fields Parameter (uf)</li>
+<li><a href="solrdismaxquery.removebigramphrasefield.html" class="index">SolrDisMaxQuery::removeBigramPhraseField</a> - Removes phrase bigram field (pf2 parameter)</li>
+<li><a href="solrdismaxquery.removeboostquery.html" class="index">SolrDisMaxQuery::removeBoostQuery</a> - Removes a boost query partial by field name (bq)</li>
+<li><a href="solrdismaxquery.removephrasefield.html" class="index">SolrDisMaxQuery::removePhraseField</a> - Removes a Phrase Field (pf parameter)</li>
+<li><a href="solrdismaxquery.removequeryfield.html" class="index">SolrDisMaxQuery::removeQueryField</a> - Removes a Query Field (qf parameter)</li>
+<li><a href="solrdismaxquery.removetrigramphrasefield.html" class="index">SolrDisMaxQuery::removeTrigramPhraseField</a> - Removes a Trigram Phrase Field (pf3 parameter)</li>
+<li><a href="solrdismaxquery.removeuserfield.html" class="index">SolrDisMaxQuery::removeUserField</a> - Removes a field from The User Fields Parameter (uf)</li>
+<li><a href="solrdismaxquery.setbigramphrasefields.html" class="index">SolrDisMaxQuery::setBigramPhraseFields</a> - Sets Bigram Phrase Fields and their boosts (and slops) using pf2 parameter</li>
+<li><a href="solrdismaxquery.setbigramphraseslop.html" class="index">SolrDisMaxQuery::setBigramPhraseSlop</a> - Sets Bigram Phrase Slop (ps2 parameter)</li>
+<li><a href="solrdismaxquery.setboostfunction.html" class="index">SolrDisMaxQuery::setBoostFunction</a> - Sets a Boost Function (bf parameter).</li>
+<li><a href="solrdismaxquery.setboostquery.html" class="index">SolrDisMaxQuery::setBoostQuery</a> - Directly Sets Boost Query Parameter (bq)</li>
+<li><a href="solrdismaxquery.setminimummatch.html" class="index">SolrDisMaxQuery::setMinimumMatch</a> - Set Minimum &quot;Should&quot; Match (mm)</li>
+<li><a href="solrdismaxquery.setphrasefields.html" class="index">SolrDisMaxQuery::setPhraseFields</a> - Sets  Phrase Fields and their boosts (and slops) using pf2 parameter</li>
+<li><a href="solrdismaxquery.setphraseslop.html" class="index">SolrDisMaxQuery::setPhraseSlop</a> - Sets the default slop on phrase queries (ps parameter)</li>
+<li><a href="solrdismaxquery.setqueryalt.html" class="index">SolrDisMaxQuery::setQueryAlt</a> - Set Query Alternate (q.alt parameter)</li>
+<li><a href="solrdismaxquery.setqueryphraseslop.html" class="index">SolrDisMaxQuery::setQueryPhraseSlop</a> - specifies the amount of slop permitted on phrase queries explicitly included in the user's query string (qf parameter)</li>
+<li><a href="solrdismaxquery.settiebreaker.html" class="index">SolrDisMaxQuery::setTieBreaker</a> - Sets Tie Breaker parameter (tie parameter)</li>
+<li><a href="solrdismaxquery.settrigramphrasefields.html" class="index">SolrDisMaxQuery::setTrigramPhraseFields</a> - Directly Sets Trigram Phrase Fields (pf3 parameter)</li>
+<li><a href="solrdismaxquery.settrigramphraseslop.html" class="index">SolrDisMaxQuery::setTrigramPhraseSlop</a> - Sets Trigram Phrase Slop (ps3 parameter)</li>
+<li><a href="solrdismaxquery.setuserfields.html" class="index">SolrDisMaxQuery::setUserFields</a> - Sets User Fields parameter (uf)</li>
+<li><a href="solrdismaxquery.usedismaxqueryparser.html" class="index">SolrDisMaxQuery::useDisMaxQueryParser</a> - Switch QueryParser to be DisMax Query Parser</li>
+<li><a href="solrdismaxquery.useedismaxqueryparser.html" class="index">SolrDisMaxQuery::useEDisMaxQueryParser</a> - Switch QueryParser to be EDisMax</li>
+<li><a href="solrdismaxquery.construct.html" class="index">SolrDisMaxQuery::__construct</a> - Class Constructor</li>
 <li><a href="solrdocument.addfield.html" class="index">SolrDocument::addField</a> - 文書にフィールドを追加</li>
 <li><a href="solrdocument.clear.html" class="index">SolrDocument::clear</a> - Drops all the fields in the document</li>
 <li><a href="solrdocument.current.html" class="index">SolrDocument::current</a> - 現行のフィールドを取得</li>

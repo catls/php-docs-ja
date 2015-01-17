@@ -92,7 +92,7 @@ array(3) {
    
    <p class="para">
     デフォルトの CA バンドルを上書きすることもできます。
-    openssl.cafile あるいは openssl.capath を設定するえばグローバルに変更でき、コンテキストオプション
+    openssl.cafile あるいは openssl.capath を設定すればグローバルに変更でき、コンテキストオプション
     <a href="context.ssl.html#context.ssl.cafile" class="link"><code class="parameter">cafile</code></a> あるいは
     <a href="context.ssl.html#context.ssl.capath" class="link"><code class="parameter">capath</code></a>
     を使えばリクエスト単位で変更できます。
@@ -100,7 +100,6 @@ array(3) {
 
    <p class="para">
     一般的にはおすすめできませんが、
-    certificate verification for a request by setting the
     コンテキストオプション
     <a href="context.ssl.html#context.ssl.verify-peer" class="link"><code class="parameter">verify_peer</code></a>
     を <strong><code>FALSE</code></strong> にしてリクエストでのピア証明書の検証を無効化することもできます。
