@@ -210,9 +210,27 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.6.5</td>
+       <td>
+        <code class="parameter">salt</code> として &quot;*0&quot; が渡されたときに、
+        他の crypt の実装にあわせて &quot;*1&quot; を返すようになりました。
+        これより前のバージョンの PHP 5.6 では、間違った DES ハッシュを返していました。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.6.0</td>
        <td>
         <code class="parameter">salt</code> を省略下場合に E_NOTICE が発生するようになりました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.5.21</td>
+       <td>
+        <code class="parameter">salt</code> として &quot;*0&quot; が渡されたときに、
+        他の crypt の実装にあわせて &quot;*1&quot; を返すようになりました。
+        これより前のバージョンの PHP では、間違った DES ハッシュを返していました。
        </td>
       </tr>
 
@@ -261,7 +279,7 @@
  <div class="refsect1 examples" id="refsect1-function.crypt-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4980">
+   <div class="example" id="example-4982">
     <p><strong>例1 <span class="function"><strong>crypt()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -273,7 +291,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4981">
+   <div class="example" id="example-4983">
     <p><strong>例2 <span class="function"><strong>crypt()</strong></span> を htpasswd で使用する例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -285,7 +303,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4982">
+   <div class="example" id="example-4984">
     <p><strong>例3 異なるハッシュ形式を用いた <span class="function"><strong>crypt()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
