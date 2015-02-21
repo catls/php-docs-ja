@@ -52,7 +52,7 @@
    it contains a list of one or more MySQL Fabric hosts
   </p>
     <p class="para">
-   <div class="example" id="example-1884">
+   <div class="example" id="example-1883">
     <p><strong>例1 Plugin config: Fabric hosts instead of MySQL servers</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">{
@@ -74,10 +74,8 @@
   </p>
   <p class="para">
    Users utilize the new functions
-   <a href="function.mysqlnd-ms-fabric-select-shard.html" class="link">
-   <span class="function"><a href="function.mysqlnd-ms-fabric-select-shard.html" class="function">mysqlnd_ms_fabric_select_shard()</a></span></a> and
-   <a href="function.mysqlnd-ms-fabric-select-global.html" class="link">
-   <span class="function"><a href="function.mysqlnd-ms-fabric-select-global.html" class="function">mysqlnd_ms_fabric_select_global()</a></span></a> to switch to
+   <span class="function"><a href="function.mysqlnd-ms-fabric-select-shard.html" class="function">mysqlnd_ms_fabric_select_shard()</a></span> and
+   <span class="function"><a href="function.mysqlnd-ms-fabric-select-global.html" class="function">mysqlnd_ms_fabric_select_global()</a></span> to switch to
    the set of servers responsible for a given shard key. Then, the
    plugin picks an appropriate server for running queries on.
    When doing so, the plugin takes care of additional
@@ -89,7 +87,7 @@
    the <em>id</em> column of the table as a shard key.
   </p>
   <p class="para">
-   <div class="example" id="example-1885">
+   <div class="example" id="example-1884">
     <p><strong>例2 Manual partitioning using SQL hints</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -104,10 +102,9 @@
    The example creates the sharded table, inserts a record and reads
    the record thereafter. All SQL data definition language (DDL)
    operations on a sharded table  must be applied to the so called global server group.
-   Prior to creatingor altering a sharded table,
-   <a href="function.mysqlnd-ms-fabric-select-global.html" class="link">
-   <span class="function"><a href="function.mysqlnd-ms-fabric-select-global.html" class="function">mysqlnd_ms_fabric_select_global()</a></span></a> is called
-   to switch the given connection to the corresponsing servers of the global
+   Prior to creating or altering a sharded table,
+   <span class="function"><a href="function.mysqlnd-ms-fabric-select-global.html" class="function">mysqlnd_ms_fabric_select_global()</a></span> is called
+   to switch the given connection to the corresponding servers of the global
    group. Data manipulation (DML) SQL statements must be sent to the shards
    directly. The <a href="function.mysqlnd-ms-fabric-select-shard.html" class="link">
    <span class="function"><a href="function.mysqlnd-ms-fabric-select-shard.html" class="function">mysqlnd_ms_fabric_select_shard()</a></span></a> switches a

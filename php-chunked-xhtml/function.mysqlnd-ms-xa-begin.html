@@ -49,7 +49,7 @@
    function. The failing server does not become a participant in the global
    transaction. The user may retry executing a query on the server and hereby retry
    injecting <em>XA BEGIN</em>, abort the global transaction because
-   not all required servers can participat or, ignore continue the global without
+   not all required servers can participate, or ignore and continue the global without
    the failed server.
   </p>
   <p class="para">
@@ -110,7 +110,7 @@
 
      <p class="para">
       Global transaction identifier (gtrid). The gtrid is a binary string
-      upto 64 bytes long. Please note, depending on your character set settings,
+      up to 64 bytes long. Please note, depending on your character set settings,
       64 characters may require more than 64 bytes to store.
      </p>
      <p class="para">
@@ -146,7 +146,7 @@
      <p class="para">
        Setting a low value may make the garbage collection check the progress
        too often. Please note, checking the status of a global transaction may
-       involve connecting to all recorded participants and possibly issueing
+       involve connecting to all recorded participants and possibly issuing
        queries on the servers.
      </p>
     </dd>
@@ -177,7 +177,7 @@
      <a href="mysqlnd-ms.configuration.html" class="link">Runtime configuration</a>
     </li>
     <li class="member">
-     <a href="function.mysqlnd-ms-get-stats.html" class="link"><span class="function"><a href="function.mysqlnd-ms-get-stats.html" class="function" rel="rdfs-seeAlso">mysqlnd_ms_get_stats()</a> - Returns query distribution and connection statistics</span></a>
+     <span class="function"><a href="function.mysqlnd-ms-get-stats.html" class="function" rel="rdfs-seeAlso">mysqlnd_ms_get_stats()</a> - Returns query distribution and connection statistics</span>
     </li>
    </ul>
   </p>

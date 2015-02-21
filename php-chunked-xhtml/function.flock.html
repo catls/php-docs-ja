@@ -40,7 +40,7 @@
    (これは、アクセスする全プログラムが同一のロックの方法を使用する必要があり、
    そうでない場合は動作しないことを意味します)。
    デフォルトでは、要求したロックが確保されるまでこの関数はブロックします。
-   (非 Windows プラットフォームでは) 以下で説明する <strong><code>LOCK_NB</code></strong>
+   以下で説明する <strong><code>LOCK_NB</code></strong>
    オプションでこの挙動を制御することができます。
   </p>
  </div>
@@ -96,8 +96,7 @@
       </p>
       <p class="para">
        上の操作のいずれかに <strong><code>LOCK_NB</code></strong> をビットマスクとして追加すれば、
-       ロック中に <span class="function"><strong>flock()</strong></span> でブロックを行わないことができます
-       (Windows ではサポートされていません)。
+       ロック中に <span class="function"><strong>flock()</strong></span> でブロックを行わないことができます。
       </p>
      </dd>
 
@@ -162,7 +161,7 @@
  <div class="refsect1 examples" id="refsect1-function.flock-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2485">
+   <div class="example" id="example-2484">
     <p><strong>例1 <span class="function"><strong>flock()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -174,7 +173,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-2486">
+   <div class="example" id="example-2485">
     <p><strong>例2 <span class="function"><strong>flock()</strong></span> で <strong><code>LOCK_NB</code></strong> オプションを使う例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

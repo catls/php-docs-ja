@@ -58,7 +58,7 @@
    to using the feature.
   </p>
   <p class="para">
-   <div class="example" id="example-1898">
+   <div class="example" id="example-1897">
     <p><strong>例1 General pattern for XA transactions</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -82,7 +82,7 @@
   <p class="para">
    Should a client that has initiated a global transaction crash after all the
    participating servers gave their promise to be ready to commit, then the servers
-   must wait for a decision. The servers are not allowed to uniliterally decide on the
+   must wait for a decision. The servers are not allowed to unilaterally decide on the
    transaction.
   </p>
   <p class="para">
@@ -113,8 +113,8 @@
     Errors during the second phase can be ignored, handled by yourself or solved
     by the build-int garbage collection logic. Ignoring them is not recommended
     as you may experience unfinished global transactions on your servers that block
-    resources virtually indefinetly. Handling the errors requires knowing the
-    participants, checking their state and issueing appropriate SQL commands on them.
+    resources virtually indefinitely. Handling the errors requires knowing the
+    participants, checking their state and issuing appropriate SQL commands on them.
     There are no user API calls to expose this very information. You will have to
     configure a state store and make the plugin record its actions in it to receive
     the desired facts.
@@ -189,7 +189,7 @@
     the situation, then the problem must be solved by an operator.
   </p>
   <p class="para">
-    The function <a href="function.mysqlnd-ms-get-stats.html" class="link"><span class="function"><a href="function.mysqlnd-ms-get-stats.html" class="function">mysqlnd_ms_get_stats()</a></span></a>
+    The function <span class="function"><a href="function.mysqlnd-ms-get-stats.html" class="function">mysqlnd_ms_get_stats()</a></span>
     provides some statistics on how many XA transactions have been started,
     committed, failed or rolled back.
   </p>
