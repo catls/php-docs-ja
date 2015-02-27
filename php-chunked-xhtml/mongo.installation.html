@@ -15,7 +15,7 @@
  <p class="para">
   MongoDB PHP ドライバは、ほぼすべてのシステムで動作します。
   Windows、Mac OS X、Unix そして Linux。リトルエンディアンマシンおよびビッグエンディアンマシン。
-  32 ビットマシンおよび 64 ビットマシン。PHP 5.2、5.3、5.4 および 5.5。
+  32 ビットマシンおよび 64 ビットマシン。PHP 5.3 から 5.6 (1.6 より前のバージョンは、PHP 5.2 もサポートします)。
  </p>
  <p class="para">
   この <a href="http://pecl.php.net/" class="link external">&raquo;&nbsp;PECL</a> 拡張
@@ -183,13 +183,6 @@ DLL ファイルを PHP のフォルダから Windows のシステムディレ�
 
   <div class="section" id="mongo.installation.osx">
    <h2 class="title">OS X</h2>
-
-   <p class="para">
-    autoconf が見つからない場合は、Xcode をインストールしなければなりません
-    (これは、OS X のインストール DVD の中にあります。あるいは Apple
-    のウェブサイトから無料でダウンロードすることもできます)。
-   </p>
-   
    <p class="para">
     たいていの場合は、pecl でインストールするのがいちばん簡単です。
     <div class="example-contents">
@@ -199,14 +192,34 @@ DLL ファイルを PHP のフォルダから Windows のシステムディレ�
 
    </p>
    <p class="para">
-    XAMPP を使っている場合は、次のコマンドでドライバをコンパイルすることができます。
+    If you are using <a href="https://github.com/Homebrew/homebrew-php" class="link external">&raquo;&nbsp;Homebrew</a>, the
+    PHP tap includes formulae for the driver. For example, you might install the
+    driver for PHP 5.6 using the following command:
     <div class="example-contents">
-<div class="shellcode"><pre class="shellcode">sudo /Applications/XAMPP/xamppfiles/bin/pecl install mongo</pre>
+<div class="shellcode"><pre class="shellcode">$ brew install php56-mongo</pre>
 </div>
     </div>
 
    </p>
+   <p class="para">
+    If you are using <a href="https://www.apachefriends.org/" class="link external">&raquo;&nbsp;XAMPP</a>, note that it
+    has its own pecl binary and php.ini configuration. You should be able to
+    install the driver with the following command:
+    <div class="example-contents">
+<div class="shellcode"><pre class="shellcode">$ sudo /Applications/XAMPP/xamppfiles/bin/pecl install mongo</pre>
+</div>
+    </div>
 
+   </p>
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <strong>Xcode dependency for compiling on OS X</strong><br />
+   <p class="para">
+    Compiling the driver on OS X will require Xcode developer tools, which may
+    be installed with <code class="code">xcode-select --install</code>. If that command is
+    not available, you may first need to install the
+    <a href="https://developer.apple.com/downloads/index.action?name=Command%20Line%20Tools" class="link external">&raquo;&nbsp;Command Line Tools</a> package.
+   </p>
+  </p></blockquote>
   </div>
 
   <div class="section" id="mongo.installation.gentoo">
@@ -267,34 +280,24 @@ $ sudo make install</pre>
   <ul class="itemizedlist">
    <li class="listitem">
     <p class="para">
+     <a href="http://justinhileman.info/article/reinstalling-php-on-mac-os-x/" class="link external">&raquo;&nbsp;
+      (Re)installing PHP on Mac OS X
+     </a>
+    </p>
+    <p class="para">
+     This article by Justin Hileman details the process of installing PHP and
+     additional extensions with Homebrew on OS X. This complements the earlier
+     instructions on this page for installing the driver with Homebrew.
+    </p>
+   </li>
+   <li class="listitem">
+    <p class="para">
      <a href="http://www.vimeo.com/8005503" class="link external">&raquo;&nbsp;
       PHP 5.3.1 with Xdebug, MongoDB and Lithium on Ubuntu 9.10 / Apache 2.2
      </a>
     </p>
-    <p class="para">
-     Jon Adams によるすばらしい動画です。
-     Apache, PHP, Xdebug, MongoDB, そして Lithium のインストール手順をひとつひとつ説明しています。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <a href="http://javierav.com/2009-10-instalando-mongodb-driver-php-en-ubuntu-9-04.html" class="link external">&raquo;&nbsp;
-      Installing MongoDB and the PHP driver on Ubuntu 9.04
-     </a>
-    </p>
-    <p class="para">
-     Javier Aranda によるスペイン語の記事です (<a href="http://translate.google.com/translate?js=n&prev=_t&hl=en&ie=UTF-8&layout=2&eotf=1&sl=auto&tl=en&u=http://javierav.com/2009-10-instalando-mongodb-driver-php-en-ubuntu-9-04.html" class="link external">&raquo;&nbsp;
-      英語訳</a>)。
-    </p>
-   </li>
-   <li class="listitem">
-    <p class="para">
-     <a href="http://technosophos.com/content/os-x-installing-mongodb-and-php-mongo-driver" class="link external">&raquo;&nbsp;
-      OS X: Installing MongoDB and the PHP Mongo Driver
-     </a>
-    </p>
-    <p class="para">
-     Matt Butcher によるものです。
+    <p class="para">This screencast by Jon Adams demonstrates how to quickly get up and
+      running with PHP 5.3.1, Xdebug, and MongoDB on Ubuntu 9.10 with Apache.
     </p>
    </li>
   </ul>
