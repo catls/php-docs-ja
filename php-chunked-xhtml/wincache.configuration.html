@@ -194,7 +194,25 @@
       <td>NULL</td>
       <td>NULL</td>
       <td>PHP_INI_SYSTEM</td>
-      <td>WinCache 1.2.0 以降で使用可能</td>
+      <td>WinCache 1.2.0 以降で使用可能。1.3.7 で削除。</td>
+     </tr>
+
+     <tr>
+      <td><a href="wincache.configuration.html#ini.wincache.reroute_enabled" class="link">wincache.reroute_enabled</a></td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>      
+      <td>PHP_INI_SYSTEM | PHP_INI_PERDIR</td>
+      <td>WinCache 1.3.7 以降で使用可能</td>
+     </tr>
+
+     <tr>
+      <td><a href="wincache.configuration.html#ini.wincache.srwlocks" class="link">wincache.srwlocks</a></td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>      
+      <td>PHP_INI_SYSTEM</td>
+      <td>WinCache 1.3.6.3 以降で使用可能</td>
      </tr>
 
     </tbody>
@@ -507,6 +525,37 @@
       reroute.ini ファイルへの絶対パスあるいは相対パスを指定します。
       このファイルには、同等の WinCache 関数で実装を置き換える PHP 関数の一覧を記述します。
       相対パスで指定した場合は、php-cgi.exe の場所を基準としたパスとみなします。
+     </span>
+     <span class="simpara">
+      このオプションは 1.3.7 で削除されました。1.3.7 以降で同様の機能を使うには、<em>wincache.reroute_enabled</em> を参照ください。
+     </span>
+    </dd>
+
+   
+   
+    <dt id="ini.wincache.reroute_enabled">
+     <code class="parameter">wincache.reroute_enabled</code>
+     <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      ファイルキャッシュを用いたファイル入出力関数群のリルートを有効あるいは無効にします。
+     </span>
+    </dd>
+
+   
+   
+    <dt id="ini.wincache.srwlocks">
+     <code class="parameter">wincache.srwlocks</code>
+     <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+    </dt>
+
+    <dd>
+
+     <span class="simpara">
+      共有のリーダーロック／ライターロックを有効あるいは無効にします。WinCache におけるデッドロックのトラブルシューティングの際には、無効にしておくと便利です。
      </span>
     </dd>
 

@@ -20,7 +20,6 @@
        <tr>
         <th>ID</th>
         <th>名前</th>
-        <th>オプション</th>
         <th>フラグ</th>
         <th>説明</th>
        </tr>
@@ -32,7 +31,6 @@
         <td><strong><code>FILTER_SANITIZE_EMAIL</code></strong></td>
         <td>&quot;email&quot;</td>
         <td class="empty">&nbsp;</td>
-        <td class="empty">&nbsp;</td>
         <td>
          英字、数字および
          <em>!#$%&amp;&#039;*+-/=?^_`{|}~@.[]</em>
@@ -43,7 +41,6 @@
        <tr>
         <td><strong><code>FILTER_SANITIZE_ENCODED</code></strong></td>
         <td>&quot;encoded&quot;</td>
-        <td class="empty">&nbsp;</td>
         <td>
          <strong><code>FILTER_FLAG_STRIP_LOW</code></strong>,
          <strong><code>FILTER_FLAG_STRIP_HIGH</code></strong>,
@@ -60,14 +57,12 @@
         <td><strong><code>FILTER_SANITIZE_MAGIC_QUOTES</code></strong></td>
         <td>&quot;magic_quotes&quot;</td>
         <td class="empty">&nbsp;</td>
-        <td class="empty">&nbsp;</td>
         <td><span class="function"><a href="function.addslashes.html" class="function">addslashes()</a></span> を適用します。</td>
        </tr>
 
        <tr>
         <td><strong><code>FILTER_SANITIZE_NUMBER_FLOAT</code></strong></td>
         <td>&quot;number_float&quot;</td>
-        <td class="empty">&nbsp;</td>
         <td>
          <strong><code>FILTER_FLAG_ALLOW_FRACTION</code></strong>,
          <strong><code>FILTER_FLAG_ALLOW_THOUSAND</code></strong>,
@@ -84,7 +79,6 @@
         <td><strong><code>FILTER_SANITIZE_NUMBER_INT</code></strong></td>
         <td>&quot;number_int&quot;</td>
         <td class="empty">&nbsp;</td>
-        <td class="empty">&nbsp;</td>
         <td>
          数字、プラス記号、マイナス記号
          以外のすべての文字を取り除きます。
@@ -94,7 +88,6 @@
        <tr>
         <td><strong><code>FILTER_SANITIZE_SPECIAL_CHARS</code></strong></td>
         <td>&quot;special_chars&quot;</td>
-        <td class="empty">&nbsp;</td>
         <td>
          <strong><code>FILTER_FLAG_STRIP_LOW</code></strong>,
          <strong><code>FILTER_FLAG_STRIP_HIGH</code></strong>,
@@ -110,7 +103,6 @@
        <tr>
         <td><strong><code>FILTER_SANITIZE_FULL_SPECIAL_CHARS</code></strong></td>
         <td>&quot;full_special_chars&quot;</td>
-        <td class="empty">&nbsp;</td>
         <td>
          <strong><code>FILTER_FLAG_NO_ENCODE_QUOTES</code></strong>,
         </td>
@@ -130,7 +122,6 @@
        <tr>
         <td><strong><code>FILTER_SANITIZE_STRING</code></strong></td>
         <td>&quot;string&quot;</td>
-        <td class="empty">&nbsp;</td>
         <td>
          <strong><code>FILTER_FLAG_NO_ENCODE_QUOTES</code></strong>,
          <strong><code>FILTER_FLAG_STRIP_LOW</code></strong>,
@@ -149,14 +140,12 @@
         <td><strong><code>FILTER_SANITIZE_STRIPPED</code></strong></td>
         <td>&quot;stripped&quot;</td>
         <td class="empty">&nbsp;</td>
-        <td class="empty">&nbsp;</td>
         <td>&quot;string&quot; フィルタのエイリアス。</td>
        </tr>
 
        <tr>
         <td><strong><code>FILTER_SANITIZE_URL</code></strong></td>
         <td>&quot;url&quot;</td>
-        <td class="empty">&nbsp;</td>
         <td class="empty">&nbsp;</td>
         <td>
          英字、数字および
@@ -168,7 +157,6 @@
        <tr>
         <td><strong><code>FILTER_UNSAFE_RAW</code></strong></td>
         <td>&quot;unsafe_raw&quot;</td>
-        <td class="empty">&nbsp;</td>
         <td>
          <strong><code>FILTER_FLAG_STRIP_LOW</code></strong>,
          <strong><code>FILTER_FLAG_STRIP_HIGH</code></strong>,
