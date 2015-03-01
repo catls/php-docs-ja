@@ -21,7 +21,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>MongoId::__construct</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$id</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+    ([ <span class="methodparam"><span class="type"><span class="type string|MongoId">string|MongoId</span></span> <code class="parameter">$id</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
   ] )</div>
 
  </div>
@@ -41,7 +41,8 @@
      <dd>
 
       <p class="para">
-       ID として使用する文字列。24 桁の十六進数でなければなりません。
+       文字列 (24 桁の十六進数でなければなりません) あるいは
+       <a href="class.mongoid.html" class="classname">MongoId</a> のインスタンス。
       </p>
      </dd>
 

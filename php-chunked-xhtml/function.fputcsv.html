@@ -25,7 +25,8 @@
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$fields</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$delimiter</code><span class="initializer"> = &quot;,&quot;</span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$enclosure</code><span class="initializer"> = &#039;&quot;&#039;</span></span>
-  ]] )</div>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$escape_char</code><span class="initializer"> = &quot;\&quot;</span></span>
+  ]]] )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>fputcsv()</strong></span> は、行（<code class="parameter">fields</code>
@@ -92,6 +93,19 @@
      </dd>
 
     
+    
+     <dt>
+<code class="parameter">escape_char</code></dt>
+
+     <dd>
+
+      <p class="para">
+       オプションの <code class="parameter">escape_char</code> は、エスケープ文字
+       (一文字だけ) を指定します。
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -102,6 +116,35 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    書き込んだ文字列の長さを返します。失敗した場合に <strong><code>FALSE</code></strong> を返します。
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.fputcsv-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.5.4</td>
+       <td>
+        <code class="parameter">escape_char</code> パラメータが追加されました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 

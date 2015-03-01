@@ -22,7 +22,7 @@
  <div class="refsect1 description" id="refsect1-pdostatement.fetchcolumn-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><strong>PDOStatement::fetchColumn</strong></span>
+   <span class="modifier">public</span> <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>PDOStatement::fetchColumn</strong></span>
     ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$column_number</code><span class="initializer"> = 0</span></span>
   ] )</div>
 
@@ -31,6 +31,14 @@
    結果セットの次行から単一カラムを返します。
    行がもうない場合には <strong><code>FALSE</code></strong> を返します。
   </p>
+
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    <span class="function"><strong>PDOStatement::fetchColumn()</strong></span> は、boolean のカラムを取得するときに使っていけません。
+    boolean 値としての <strong><code>FALSE</code></strong> と、もう取得する行がない場合の <strong><code>FALSE</code></strong> を区別できないからです。
+    かわりに <span class="function"><a href="pdostatement.fetch.html" class="function">PDOStatement::fetch()</a></span> を使いましょう。
+   </p>
+  </p></blockquote>
  </div>
 
 

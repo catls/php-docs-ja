@@ -71,9 +71,24 @@
         <span class="function"><strong>strip_tags()</strong></span> はタグの大文字小文字を区別せず、
         <em>&lt;</em> から始まって最初に空白文字か
         <em>&gt;</em> があらわれるまでをタグとみなします。
-        つまり、<em>strip_tags(&quot;&lt;br/&gt;&quot;, &quot;&lt;br&gt;&quot;)</em>
-        は空文字列を返すということです。
        </p>
+      </p></blockquote>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        PHP 5.3.4 以降では、<code class="parameter">str</code> から自己終了型の XHTML タグを取り除きたい場合は、
+        そのタグも含めておく必要があります。たとえば、
+        <em>&lt;br&gt;</em> と
+        <em>&lt;br/&gt;</em> の両方を取り除くには、以下のようにしなければいけません。
+       </p>
+       <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />strip_tags</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'&lt;br&gt;&lt;br/&gt;'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
       </p></blockquote>
      </dd>
 
@@ -106,6 +121,16 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>5.3.4</td>
+       <td>
+        <span class="function"><strong>strip_tags()</strong></span> は、
+        自己終了型の XHTML タグを除去しなくなりました。
+        ただし、その自己終了型 XHTML タグが
+        <code class="parameter">allowable_tags</code> に渡されている場合を除きます。
+       </td>
+      </tr>
+
       <tr>
        <td>5.0.0</td>
        <td>
