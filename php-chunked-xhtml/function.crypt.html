@@ -279,11 +279,11 @@
  <div class="refsect1 examples" id="refsect1-function.crypt-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4982">
+   <div class="example" id="example-4983">
     <p><strong>例1 <span class="function"><strong>crypt()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$hashed_password&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #DD0000">'mypassword'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;saltを自動的に生成させます<br /><br />/*&nbsp;異なったハッシュアルゴリズムが使用された際の問題を避けるために<br />&nbsp;&nbsp;&nbsp;crypt()の結果全体をパスワード比較用のsaltとして渡す必要があります。<br />&nbsp;&nbsp;&nbsp;(上記のように標準DESに基づくパスワードハッシュは2文字のsaltを使用します<br />&nbsp;&nbsp;&nbsp;が、MD5に基づくハッシュは12文字のsaltを使用します)&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">hash_equals</span><span style="color: #007700">(</span><span style="color: #0000BB">$hashed_password</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #0000BB">$user_input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$hashed_password</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Password&nbsp;verified!"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$hashed_password&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #DD0000">'mypassword'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;saltを自動的に生成させます<br /><br />/*&nbsp;異なったハッシュアルゴリズムが使用された際の問題を避けるために<br />&nbsp;&nbsp;&nbsp;crypt()の結果全体をパスワード比較用のsaltとして渡す必要があります。<br />&nbsp;&nbsp;&nbsp;(上記のように標準DESに基づくパスワードハッシュは2文字のsaltを使用します<br />&nbsp;&nbsp;&nbsp;が、MD5に基づくハッシュは12文字のsaltを使用します)&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">hash_equals</span><span style="color: #007700">(</span><span style="color: #0000BB">$hashed_password</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #0000BB">$user_input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$hashed_password</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Password&nbsp;verified!"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -291,7 +291,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4983">
+   <div class="example" id="example-4984">
     <p><strong>例2 <span class="function"><strong>crypt()</strong></span> を htpasswd で使用する例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -303,7 +303,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4984">
+   <div class="example" id="example-4985">
     <p><strong>例3 異なるハッシュ形式を用いた <span class="function"><strong>crypt()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
