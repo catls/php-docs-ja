@@ -89,6 +89,25 @@
 
 
 
+
+
+ <div class="refsect1 examples" id="refsect1-imagick.subimagematch-examples">
+  <h3 class="title">例</h3>
+  <p class="para">
+    <div class="example" id="example-3587">
+      <p><strong>例1  <span class="function"><strong>Imagick::subImageMatch()</strong></span></strong></p>
+      <div class="example-contents">
+      <div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">subImageMatch</span><span style="color: #007700">(</span><span style="color: #0000BB">$imagePath</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imagick&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;\</span><span style="color: #0000BB">Imagick</span><span style="color: #007700">(</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #0000BB">$imagePath</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imagick2&nbsp;</span><span style="color: #007700">=&nbsp;clone&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imagick2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">cropimage</span><span style="color: #007700">(</span><span style="color: #0000BB">40</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">40</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">250</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">110</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$imagick2</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">vignetteimage</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$similarity&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bestMatch&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$comparison&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">subImageMatch</span><span style="color: #007700">(</span><span style="color: #0000BB">$imagick2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bestMatch</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$similarity</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$comparison</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setImageFormat</span><span style="color: #007700">(</span><span style="color: #DD0000">'png'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-Type:&nbsp;image/png"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$imagick</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getImageBlob</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+    </div>
+  </p>
+ </div>
+
+
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="imagick.stripimage.html">Imagick::stripImage</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="imagick.swirlimage.html">Imagick::swirlImage</a></div>
