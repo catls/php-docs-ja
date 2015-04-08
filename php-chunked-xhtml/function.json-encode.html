@@ -228,7 +228,42 @@ Associative array always output as object: {&quot;foo&quot;:&quot;bar&quot;,&quo
     </div>
    </div>
    <div class="example" id="example-4203">
-    <p><strong>例3 シーケンシャルな配列とそうでない配列の例</strong></p>
+    <p><strong>例3 JSON_NUMERIC_CHECK オプションの例</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Strings&nbsp;representing&nbsp;numbers&nbsp;automatically&nbsp;turned&nbsp;into&nbsp;numbers"</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$numbers&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'+123123'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'-123123'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'1.2e3'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'0.00001'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;</span><span style="color: #0000BB">$numbers</span><span style="color: #007700">,<br />&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$numbers</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_NUMERIC_CHECK</span><span style="color: #007700">)<br />);<br />echo&nbsp;</span><span style="color: #DD0000">"Strings&nbsp;containing&nbsp;improperly&nbsp;formatted&nbsp;numbers"</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$strings&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'+a33123456789'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'a123'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;</span><span style="color: #0000BB">$strings</span><span style="color: #007700">,<br />&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$strings</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_NUMERIC_CHECK</span><span style="color: #007700">)<br />);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Strings representing numbers automatically turned into numbers
+array(4) {
+  [0]=&gt;
+  string(7) &quot;+123123&quot;
+  [1]=&gt;
+  string(7) &quot;-123123&quot;
+  [2]=&gt;
+  string(5) &quot;1.2e3&quot;
+  [3]=&gt;
+  string(7) &quot;0.00001&quot;
+}
+string(28) &quot;[123123,-123123,1200,1.0e-5]&quot;
+Strings containing improperly formatted numbers
+array(2) {
+  [0]=&gt;
+  string(13) &quot;+a33123456789&quot;
+  [1]=&gt;
+  string(4) &quot;a123&quot;
+}
+string(24) &quot;[&quot;+a33123456789&quot;,&quot;a123&quot;]&quot;
+</pre></div>
+    </div>
+   </div>
+   <div class="example" id="example-4204">
+    <p><strong>例4 シーケンシャルな配列とそうでない配列の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Sequential&nbsp;array"</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$sequential&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"baz"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blong"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;</span><span style="color: #0000BB">$sequential</span><span style="color: #007700">,<br />&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$sequential</span><span style="color: #007700">)<br />);<br /><br />echo&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">.</span><span style="color: #DD0000">"Non-sequential&nbsp;array"</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$nonsequential&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"baz"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">"blong"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;</span><span style="color: #0000BB">$nonsequential</span><span style="color: #007700">,<br />&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$nonsequential</span><span style="color: #007700">)<br />);<br /><br />echo&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">.</span><span style="color: #DD0000">"Sequential&nbsp;array&nbsp;with&nbsp;one&nbsp;key&nbsp;unset"</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />unset(</span><span style="color: #0000BB">$sequential</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;</span><span style="color: #0000BB">$sequential</span><span style="color: #007700">,<br />&nbsp;</span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #0000BB">$sequential</span><span style="color: #007700">)<br />);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -278,6 +313,7 @@ string(33) &quot;{&quot;0&quot;:&quot;foo&quot;,&quot;2&quot;:&quot;baz&quot;,&q
 </pre></div>
     </div>
    </div>
+   
   </p>
  </div>
 

@@ -50,12 +50,13 @@ B
 
   <p class="para">
    <a href="ini.core.html#ini.always-populate-raw-post-data" class="link">always_populate_raw_post_data</a>
-   を使うと、<strong><code>E_DEPRECATED</code></strong> が発生するようになりました。
+   を使うと、<var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> に値が入っている場合に
+   <strong><code>E_DEPRECATED</code></strong> が発生するようになりました。
    新しいコードでは、<var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> ではなく
    <a href="wrappers.php.html#wrappers.php.input" class="link"><em>php://input</em></a>
    を使うようにしましょう。<var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var>
    は、将来のバージョンで削除される予定です。
-   この新しい振る舞い (<var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> が定義されていない状態)
+   この新しい振る舞い (<var class="varname"><var class="varname"><a href="reserved.variables.httprawpostdata.html" class="classname">$HTTP_RAW_POST_DATA</a></var></var> が定義されておらず、<strong><code>E_DEPRECATED</code></strong> が発生しない状態)
    を試すには、
    <a href="ini.core.html#ini.always-populate-raw-post-data" class="link">always_populate_raw_post_data</a>
    に <em>-1</em> を設定します。
