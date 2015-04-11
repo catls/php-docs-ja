@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="class.mongodb-driver-cursor.html">MongoDB\Driver\Cursor</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-cursor.current.html">MongoDB\Driver\Cursor::current</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-cursor.getid.html">MongoDB\Driver\Cursor::getId</a></div>
  <div class="up"><a href="class.mongodb-driver-cursor.html">MongoDB\Driver\Cursor</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="mongodb-driver-cursor.construct" class="refentry">
@@ -20,10 +20,9 @@
  <div class="refsect1 description" id="refsect1-mongodb-driver-cursor.construct-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>MongoDB\Driver\Cursor::__construct</strong></span>
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname"><strong>MongoDB\Driver\Cursor::__construct</strong></span>
     ( <span class="methodparam"><span class="type"><span class="type Server">Server</span></span> <code class="parameter">$server</code></span>
-   , <span class="methodparam"><span class="type"><span class="type CursorId">CursorId</span></span> <code class="parameter">$cursorId</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$firstBatch</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$responseDocument</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -51,19 +50,7 @@
    
    
     <dt>
-<code class="parameter">cursorId</code></dt>
-
-    <dd>
-
-     <p class="para">
-      
-     </p>
-    </dd>
-
-   
-   
-    <dt>
-<code class="parameter">firstBatch</code></dt>
+<code class="parameter">responseDocument</code></dt>
 
     <dd>
 
@@ -97,7 +84,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongodb-driver-cursor.construct-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1639">
+  <div class="example" id="example-1632">
    <p><strong>例1 <span class="function"><strong>MongoDB\Driver\Cursor::__construct()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -128,7 +115,7 @@
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="class.mongodb-driver-cursor.html">MongoDB\Driver\Cursor</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-cursor.current.html">MongoDB\Driver\Cursor::current</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-cursor.getid.html">MongoDB\Driver\Cursor::getId</a></div>
  <div class="up"><a href="class.mongodb-driver-cursor.html">MongoDB\Driver\Cursor</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>
