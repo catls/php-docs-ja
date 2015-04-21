@@ -20,13 +20,13 @@
  <div class="refsect1 description" id="refsect1-function.session-reset-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>session_reset</strong></span>
+   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>session_reset</strong></span>
     ( <span class="methodparam">void</span>
    )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>session_reset()</strong></span> reinitializes a session with
-   original values stored in session storage. This function requires active session and
+   original values stored in session storage. This function requires an active session and
    discards changes in $_SESSION.
   </p>
  </div>
@@ -35,8 +35,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.session-reset-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   This function returns <strong><code>TRUE</code></strong> if a session was successfully reinitialized,
-   otherwise <strong><code>FALSE</code></strong>.
+   値を返しません。
   </p>
  </div>
 
