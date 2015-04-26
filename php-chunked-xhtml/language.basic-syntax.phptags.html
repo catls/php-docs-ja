@@ -28,6 +28,39 @@
  オプションつきで PHP を configure した場合でないと使えないからです)。
    </p>
    <p class="para">
+    <table class="doctable table">
+     <caption><strong>変更履歴</strong></caption>
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>7.0.0</td>
+         <td>
+          ASP タグ (&lt;% , %&gt; , &lt;%=) や script タグ (&lt;script language=php&gt;)
+          が PHP から削除されました。
+         </td>
+       </tr>
+
+       <tr>
+        <td>5.4.0</td>
+         <td>
+          short_open_tag の設定にかかわらず、&lt;?= は常に使えるようになりました。
+         </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+   <p class="para">
     ファイル全体が純粋な PHP コードである場合は、ファイルの最後の終了タグは省略するのがおすすめです。
     終了タグの後に余分な空白や改行があると、予期せぬ挙動を引き起こす場合があるからです。
     余分な空白や改行のせいで PHP が出力バッファリングを開始し、その時点の内容を意図せず出力してしまうことになります。

@@ -248,6 +248,31 @@
         詳細な情報は、<a href="language.basic-syntax.phpmode.html" class="link">
          HTML からのエスケープ</a>を参照ください。
        </span>
+       <p class="para">
+        <table class="doctable table">
+         <caption><strong><em>asp_tags</em> の変更履歴</strong></caption>
+         
+          <thead>
+           <tr>
+            <th>バージョン</th>
+            <th>説明</th>
+           </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+           <tr>
+            <td>7.0.0</td>
+            <td>
+             PHP から削除されました。
+            </td>
+           </tr>
+
+          </tbody>
+         
+        </table>
+
+       </p>
       </dd>
 
      
@@ -1207,7 +1232,39 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
          </p>
         </p></blockquote>
        </p>
+       <p class="para">
+        <table class="doctable table">
+         <caption><strong><em>post_max_size</em> の変更履歴</strong></caption>
+         
+          <thead>
+           <tr>
+            <th>バージョン</th>
+            <th>説明</th>
+           </tr>
 
+          </thead>
+
+          <tbody class="tbody">
+           <tr>
+            <td>5.3.4</td>
+            <td>
+             コンテンツタイプが application/x-www-form-urlencoded であったり、あるいは PHP に登録されていないものであった場合は、
+             <code class="parameter">post_max_size</code> = 0 にしても上限を無効にできなくなりました。
+            </td>
+           </tr>
+
+           <tr>
+            <td>5.3.2 , 5.2.12</td>
+            <td>
+             <code class="parameter">post_max_size</code> を 0 にすることで、サイズを無制限にできるようになりました。
+            </td>
+           </tr>
+
+          </tbody>
+         
+        </table>
+
+       </p>
       </dd>
 
      
@@ -1608,7 +1665,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-6040">
+         <div class="example" id="example-6041">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1618,7 +1675,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-6041">
+         <div class="example" id="example-6042">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1644,7 +1701,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-6042">
+        <div class="example" id="example-6043">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>
