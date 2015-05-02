@@ -69,7 +69,7 @@
     <dd>
 
      <p class="para">
-      Optionally, a <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a> to route the command to. If none given, defaults to the Read Preferences set by the <a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection URI</a>.
+      オプションで、コマンドを渡す <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a> を指定します。省略した場合は、<a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection URI</a> で設定したデフォルトの優先読み込みを使います。
      </p>
     </dd>
 
@@ -83,7 +83,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongodb-driver-manager.executecommand-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns <a href="class.mongodb-driver-cursor.html" class="classname">MongoDB\Driver\Cursor</a> on success, throws exception (instanceof <a href="class.mongodb-driver-exception.html" class="classname">MongoDB\Driver\Exception</a>) on failure.
+   Returns <a href="class.mongodb-driver-cursor.html" class="classname">MongoDB\Driver\Cursor</a> on success, 失敗した場合に例外 (<a href="class.mongodb-driver-exception.html" class="classname">MongoDB\Driver\Exception</a> のインスタンス) をスローします.
   </p>
  </div>
 
@@ -91,8 +91,8 @@
  <div class="refsect1 errors" id="refsect1-mongodb-driver-manager.executecommand-errors">
   <h3 class="title">エラー / 例外</h3>
   <ul class="simplelist">
-   <li class="member">Throws <a href="class.mongodb-driver-authenticationexception.html" class="classname">MongoDB\Driver\AuthenticationException</a> if authentication is needed and fails</li><li class="member">Throws <a href="class.mongodb-driver-connectionexception.html" class="classname">MongoDB\Driver\ConnectionException</a> if connection to the server fails for other then authentication reasons</li>
-   <li class="member">Throws <a href="class.mongodb-driver-duplicatekeyexception.html" class="classname">MongoDB\Driver\DuplicateKeyException</a> if a write causes Duplicate Key error</li><li class="member">Throws <a href="class.mongodb-driver-writeexception.html" class="classname">MongoDB\Driver\WriteException</a> on Write Error</li><li class="member">Throws <a href="class.mongodb-driver-writeconcernexception.html" class="classname">MongoDB\Driver\WriteConcernException</a> on Write Concern failure</li>
+   <li class="member">認証が必要な場面で認証に失敗した場合に <a href="class.mongodb-driver-authenticationexception.html" class="classname">MongoDB\Driver\AuthenticationException</a> をスローします。</li><li class="member">サーバーへの接続が認証以外の理由で失敗した場合に <a href="class.mongodb-driver-connectionexception.html" class="classname">MongoDB\Driver\ConnectionException</a> をスローします。</li>
+   <li class="member">書き込み時にキー重複エラーが発生した場合に <a href="class.mongodb-driver-duplicatekeyexception.html" class="classname">MongoDB\Driver\DuplicateKeyException</a> をスローします。</li><li class="member">書き込みが失敗した場合に <a href="class.mongodb-driver-writeexception.html" class="classname">MongoDB\Driver\WriteException</a> をスローします。</li><li class="member">書き込み確認が失敗した場合に <a href="class.mongodb-driver-writeconcernexception.html" class="classname">MongoDB\Driver\WriteConcernException</a> をスローします。</li>
    <li class="member">Throws <a href="class.mongodb-driver-runtimeexception.html" class="classname">MongoDB\Driver\RuntimeException</a> on other errors (invalid command, command arguments, ...)</li>
   </ul>
  </div>

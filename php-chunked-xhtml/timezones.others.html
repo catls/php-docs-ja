@@ -212,21 +212,21 @@
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="simpara">
- If you disregard the above warning, please also note that the IANA
- timezone database that provides PHP&#039;s timezone support uses POSIX style
- signs, which results in the <em>Etc/GMT+n</em> and
- <em>Etc/GMT-n</em> time zones being reversed from common usage.
+ 上の警告を無視する場合は、PHP のタイムゾーンサポートで使っている IANA タイムゾーンデータベースが
+ POSIX スタイルの符号を使っていることに気をつけましょう。つまり、
+ <em>Etc/GMT+n</em> や
+ <em>Etc/GMT-n</em> といったタイムゾーンの符号が、一般的な使いかたとは逆転するのです。
 </p>
 <p class="simpara">
- For example, the time zone 8 hours ahead of GMT that is used in China and
- Western Australia (among other places) is actually
- <em>Etc/GMT-8</em> in this database, not
- <em>Etc/GMT+8</em> as you would normally expect.
+ たとえば、GMT より8時間進んでいるタイムゾーン (中国やオーストラリア西部など)
+ は、このデータベースでは
+ <em>Etc/GMT-8</em> となります。ふつうは
+ <em>Etc/GMT+8</em> であろうと想定するでしょうが、そうではありません。
 </p>
 <p class="simpara">
- Once again, it is strongly recommended that you use the correct time zone
- for your location, such as <em>Asia/Shanghai</em> or
- <em>Australia/Perth</em> for the above examples.
+ 改めて言いますが、その場所にあわせた正確なタイムゾーンを使うことを推奨します。すなわち、先の例なら
+ <em>Asia/Shanghai</em> や
+ <em>Australia/Perth</em> を使うということです。
 </p>
   </div>
 

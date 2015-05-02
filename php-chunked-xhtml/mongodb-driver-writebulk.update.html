@@ -45,7 +45,7 @@
     <dd>
 
      <p class="para">
-      The search filter.
+      検索フィルタ。
      </p>
     </dd>
 
@@ -59,7 +59,7 @@
     <dd>
 
      <p class="para">
-      Either an array of update operators, or the full object to be replaced with
+      更新演算子の配列、あるいは置き換え用の完全なオブジェクト。
      </p>
     </dd>
 
@@ -78,10 +78,10 @@
        
         <thead>
          <tr>
-          <th>Option</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
+          <th>オプション</th>
+          <th>型</th>
+          <th>説明</th>
+          <th>デフォルト</th>
          </tr>
 
         </thead>
@@ -90,14 +90,14 @@
          <tr>
           <td>multi</td>
           <td>boolean</td>
-          <td>Update only the first matching document (multi=false), or all matching documents (multi=true)</td>
+          <td>マッチする最初のドキュメントだけを更新する (multi=false)、あるいはマッチするすべてのドキュメントを更新する (multi=true)</td>
           <td>false</td>
          </tr>
 
          <tr>
           <td>upsert</td>
           <td>boolean</td>
-          <td>If <code class="parameter">filter</code> does not match an existing document, insert the <code class="parameter">newObj</code> as a new object, applying any atomic modifiers to the <code class="parameter">filter</code> if applicable.</td>
+          <td><code class="parameter">filter</code> が既存のドキュメントにマッチしない場合に、<code class="parameter">newObj</code> を新しいオブジェクトとして追加して、可能であれば任意のアトミック修飾子を <code class="parameter">filter</code> に適用する。</td>
           <td>0</td>
          </tr>
 
@@ -126,7 +126,7 @@
  <div class="refsect1 errors" id="refsect1-mongodb-driver-writebulk.update-errors">
   <h3 class="title">エラー / 例外</h3>
   <ul class="simplelist">
-   <li class="member">Throws <strong class="classname">MongoDB\Driver\InvalidArgumentException</strong> on argument parsing errors.</li>
+   <li class="member">引数のパースに失敗した場合に <strong class="classname">MongoDB\Driver\InvalidArgumentException</strong> をスローします。</li>
   </ul>
  </div>
 

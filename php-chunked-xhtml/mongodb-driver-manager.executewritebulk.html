@@ -50,7 +50,7 @@
     <dd>
 
      <p class="para">
-      A fully qualified namespace (databaseName.collectionName)
+      完全修飾形式の名前空間 (databaseName.collectionName)。
      </p>
     </dd>
 
@@ -76,7 +76,7 @@
     <dd>
 
      <p class="para">
-Optionally, a <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>. If none given, default to the Write Concern set by the <a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection URI</a>.
+      オプションで、<a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a> を指定します。省略した場合のデフォルトは、<a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection URI</a> で設定したものとなります。
      </p>
     </dd>
 
@@ -91,7 +91,7 @@ Optionally, a <a href="class.mongodb-driver-writeconcern.html" class="classname"
   <h3 class="title">返り値</h3>
   
   <p class="para">
-   Returns <a href="class.mongodb-driver-writeresult.html" class="classname">MongoDB\Driver\WriteResult</a> on success, throws exception (instanceof <a href="class.mongodb-driver-exception.html" class="classname">MongoDB\Driver\Exception</a>) on failure.
+   成功した場合に <a href="class.mongodb-driver-writeresult.html" class="classname">MongoDB\Driver\WriteResult</a> を返します。失敗した場合に例外 (<a href="class.mongodb-driver-exception.html" class="classname">MongoDB\Driver\Exception</a> のインスタンス) をスローします。
   </p>
 
  </div>
@@ -100,8 +100,8 @@ Optionally, a <a href="class.mongodb-driver-writeconcern.html" class="classname"
  <div class="refsect1 errors" id="refsect1-mongodb-driver-manager.executewritebulk-errors">
   <h3 class="title">エラー / 例外</h3>
   <ul class="simplelist">
-   <li class="member">Throws <a href="class.mongodb-driver-authenticationexception.html" class="classname">MongoDB\Driver\AuthenticationException</a> if authentication is needed and fails</li><li class="member">Throws <a href="class.mongodb-driver-connectionexception.html" class="classname">MongoDB\Driver\ConnectionException</a> if connection to the server fails for other then authentication reasons</li>
-   <li class="member">Throws <a href="class.mongodb-driver-bulkwriteexception.html" class="classname">MongoDB\Driver\BulkWriteException</a> on any write failure (WriteError and WriteConcern failures)</li>
+   <li class="member">認証が必要な場面で認証に失敗した場合に <a href="class.mongodb-driver-authenticationexception.html" class="classname">MongoDB\Driver\AuthenticationException</a> をスローします。</li><li class="member">サーバーへの接続が認証以外の理由で失敗した場合に <a href="class.mongodb-driver-connectionexception.html" class="classname">MongoDB\Driver\ConnectionException</a> をスローします。</li>
+   <li class="member">書き込みが失敗した場合 (WriteError や WriteConcern が失敗した場合) に <a href="class.mongodb-driver-bulkwriteexception.html" class="classname">MongoDB\Driver\BulkWriteException</a> をスローします。</li>
    <li class="member">Throws <a href="class.mongodb-driver-runtimeexception.html" class="classname">MongoDB\Driver\RuntimeException</a> on other errors.</li>
   </ul>
  </div>

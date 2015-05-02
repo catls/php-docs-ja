@@ -47,7 +47,7 @@
     <dd>
 
      <p class="para">
-      A fully qualified namespace (databaseName.collectionName)
+      完全修飾形式の名前空間 (databaseName.collectionName)。
      </p>
     </dd>
 
@@ -61,7 +61,7 @@
     <dd>
 
      <p class="para">
-      The search filter.
+      検索フィルタ。
      </p>
     </dd>
 
@@ -75,7 +75,7 @@
     <dd>
 
      <p class="para">
-      Either an array of update operators, or the full object to be replaced with
+      更新演算子の配列、あるいは置き換え用の完全なオブジェクト。
      </p>
     </dd>
 
@@ -94,10 +94,10 @@
        
         <thead>
          <tr>
-          <th>Option</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
+          <th>オプション</th>
+          <th>型</th>
+          <th>説明</th>
+          <th>デフォルト</th>
          </tr>
 
         </thead>
@@ -106,14 +106,14 @@
          <tr>
           <td>multi</td>
           <td>boolean</td>
-          <td>Update only the first matching document (multi=false), or all matching documents (multi=true)</td>
+          <td>マッチする最初のドキュメントだけを更新する (multi=false)、あるいはマッチするすべてのドキュメントを更新する (multi=true)</td>
           <td>false</td>
          </tr>
 
          <tr>
           <td>upsert</td>
           <td>boolean</td>
-          <td>If <code class="parameter">filter</code> does not match an existing document, insert the <code class="parameter">newObj</code> as a new object, applying any atomic modifiers to the <code class="parameter">filter</code> if applicable.</td>
+          <td><code class="parameter">filter</code> が既存のドキュメントにマッチしない場合に、<code class="parameter">newObj</code> を新しいオブジェクトとして追加して、可能であれば任意のアトミック修飾子を <code class="parameter">filter</code> に適用する。</td>
           <td>0</td>
          </tr>
 
@@ -134,7 +134,7 @@
     <dd>
 
      <p class="para">
-Optionally, a <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>. If none given, default to the Write Concern set by the <a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection URI</a>.
+      オプションで、<a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a> を指定します。省略した場合のデフォルトは、<a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection URI</a> で設定したものとなります。
      </p>
     </dd>
 
@@ -149,7 +149,7 @@ Optionally, a <a href="class.mongodb-driver-writeconcern.html" class="classname"
   <h3 class="title">返り値</h3>
   
   <p class="para">
-   Returns <a href="class.mongodb-driver-writeresult.html" class="classname">MongoDB\Driver\WriteResult</a> on success, throws exception (instanceof <a href="class.mongodb-driver-exception.html" class="classname">MongoDB\Driver\Exception</a>) on failure.
+   成功した場合に <a href="class.mongodb-driver-writeresult.html" class="classname">MongoDB\Driver\WriteResult</a> を返します。失敗した場合に例外 (<a href="class.mongodb-driver-exception.html" class="classname">MongoDB\Driver\Exception</a> のインスタンス) をスローします。
   </p>
 
  </div>
@@ -158,8 +158,8 @@ Optionally, a <a href="class.mongodb-driver-writeconcern.html" class="classname"
  <div class="refsect1 errors" id="refsect1-mongodb-driver-manager.executeupdate-errors">
   <h3 class="title">エラー / 例外</h3>
   <ul class="simplelist">
-   <li class="member">Throws <a href="class.mongodb-driver-authenticationexception.html" class="classname">MongoDB\Driver\AuthenticationException</a> if authentication is needed and fails</li><li class="member">Throws <a href="class.mongodb-driver-connectionexception.html" class="classname">MongoDB\Driver\ConnectionException</a> if connection to the server fails for other then authentication reasons</li>
-   <li class="member">Throws <a href="class.mongodb-driver-duplicatekeyexception.html" class="classname">MongoDB\Driver\DuplicateKeyException</a> if a write causes Duplicate Key error</li><li class="member">Throws <a href="class.mongodb-driver-writeexception.html" class="classname">MongoDB\Driver\WriteException</a> on Write Error</li><li class="member">Throws <a href="class.mongodb-driver-writeconcernexception.html" class="classname">MongoDB\Driver\WriteConcernException</a> on Write Concern failure</li>
+   <li class="member">認証が必要な場面で認証に失敗した場合に <a href="class.mongodb-driver-authenticationexception.html" class="classname">MongoDB\Driver\AuthenticationException</a> をスローします。</li><li class="member">サーバーへの接続が認証以外の理由で失敗した場合に <a href="class.mongodb-driver-connectionexception.html" class="classname">MongoDB\Driver\ConnectionException</a> をスローします。</li>
+   <li class="member">書き込み時にキー重複エラーが発生した場合に <a href="class.mongodb-driver-duplicatekeyexception.html" class="classname">MongoDB\Driver\DuplicateKeyException</a> をスローします。</li><li class="member">書き込みが失敗した場合に <a href="class.mongodb-driver-writeexception.html" class="classname">MongoDB\Driver\WriteException</a> をスローします。</li><li class="member">書き込み確認が失敗した場合に <a href="class.mongodb-driver-writeconcernexception.html" class="classname">MongoDB\Driver\WriteConcernException</a> をスローします。</li>
   </ul>
  </div>
 
@@ -217,20 +217,20 @@ upsertedId[0]: object(BSON\ObjectID)#3 (1) {
      
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    On write failure,
-    <span class="methodname"><a href="mongodb-driver-writeresult.getwriteerrors.html" class="methodname">MongoDB\Driver\WriteResult::getWriteErrors()</a></span> will
-    only ever have one <a href="class.mongodb-driver-writeerror.html" class="classname">MongoDB\Driver\WriteError</a> in the
-    array, and <span class="methodname"><a href="mongodb-driver-writeerror.getindex.html" class="methodname">MongoDB\Driver\WriteError::getIndex()</a></span>
-    will always be 0 (the index of this operation in the batch).
+    書き込みが失敗した場合は、
+    <span class="methodname"><a href="mongodb-driver-writeresult.getwriteerrors.html" class="methodname">MongoDB\Driver\WriteResult::getWriteErrors()</a></span> の配列内には
+    <a href="class.mongodb-driver-writeerror.html" class="classname">MongoDB\Driver\WriteError</a> がひとつだけしか含まれません。
+    また <span class="methodname"><a href="mongodb-driver-writeerror.getindex.html" class="methodname">MongoDB\Driver\WriteError::getIndex()</a></span> は常に 0
+    (バッチ内におけるこの操作のインデックス) となります。
    </p>
   </p></blockquote>
 
      
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    <span class="methodname"><a href="mongodb-driver-writeresult.getupsertedids.html" class="methodname">MongoDB\Driver\WriteResult::getUpsertedIds()</a></span> will
-    only ever have one <a href="class.bson-objectid.html" class="classname">BSON\ObjectID</a> in the 
-    array, and the index always be 0 (the index of this operation in the batch).
+    <span class="methodname"><a href="mongodb-driver-writeresult.getupsertedids.html" class="methodname">MongoDB\Driver\WriteResult::getUpsertedIds()</a></span> の配列内には
+    <a href="class.bson-objectid.html" class="classname">BSON\ObjectID</a> がひとつだけしか含まれません。
+    また、インデックスは常に 0 (バッチ内におけるこの操作のインデックス) となります。
    </p>
   </p></blockquote>
 
