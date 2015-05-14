@@ -66,8 +66,7 @@
        表せない文字を、見た目の似ている別の文字に置き換える機能です。
        文字列 <em>//IGNORE</em> を追加すると、指定された文字集合で
        表せない文字は黙って切り捨てられます。
-       それ以外の場合は、<code class="parameter">str</code> の中に変換できない文字が
-       出現した時点で変換が打ち切られ、<strong><code>E_NOTICE</code></strong> が発生します。
+       それ以外の場合は <strong><code>E_NOTICE</code></strong> が発生し、この関数は <strong><code>FALSE</code></strong> を返します。
       </p>
      </dd>
 
@@ -98,6 +97,37 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-function.iconv-changelog">
+   <h3 class="title">変更履歴</h3>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>5.4.0</td>
+        <td>
+         このバージョン以降は、出力文字セットに <em>//IGNORE</em> が指定されていない限り、
+         無効な文字に対して <strong><code>FALSE</code></strong> を返すようになりました。
+         以前のバージョンでは、出力文字列の一部だけを返していました。
+        </td>
+       </tr>
+
+    </tbody>
+   
+  </table>
+
+ </p>
+</div>
+
+
  <div class="refsect1 examples" id="refsect1-function.iconv-examples">
   <h3 class="title">例</h3>
   <p class="para">
@@ -119,7 +149,6 @@ TRANSLIT : This is the Euro symbol &#039;EUR&#039;.
 IGNORE   : This is the Euro symbol &#039;&#039;.
 Plain    :
 Notice: iconv(): Detected an illegal character in input string in .\iconv-example.php on line 7
-This is the Euro symbol &#039;
 </pre></div>
     </div>
    </div>
