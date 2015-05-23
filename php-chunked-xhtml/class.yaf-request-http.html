@@ -21,7 +21,25 @@
   <div class="section" id="yaf-request-http.intro">
    <h2 class="title">導入</h2>
    <p class="para">
-
+    クライアントからのあらゆるリクエストは、
+    <strong class="classname">Yaf_Request_Http</strong> として初期化されます。
+    URI のクエリ文字列や POST パラメータなどの情報は、このクラスのメソッド経由で取得できます。
+    <blockquote class="note"><p><strong class="note">注意</strong>: 
+     <p class="para">
+      セキュリティの観点から、Yaf では $_GET/$_POST が読み込み専用となっています。つまり、
+      これらのグローバル変数の値を書き換えたとしても、
+      <span class="methodname"><strong>Yaf_Request_Http::getQurey()</strong></span> や
+      <span class="methodname"><a href="yaf-request-http.getpost.html" class="methodname">Yaf_Request_Http::getPost()</a></span> からはそれを取得できないということです。
+     </p>
+     <p class="para">
+      しかし、ユニットテストの際などに、どうしても書き換えが必要になることもあります。
+      Yaf のビルド時に --enable-yaf-debug を指定すると、ユーザーがスクリプトで設定した値も Yaf で読み込めるようになります。
+     </p>
+     <p class="para">
+      その際に、Yaf は E_STRICT レベルの警告
+      「Strict Standards: you are running yaf in debug mode」を発します。
+     </p>
+    </p></blockquote>
    </p>
   </div>
 
