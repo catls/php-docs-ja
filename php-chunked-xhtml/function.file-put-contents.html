@@ -129,6 +129,11 @@
            </td>
            <td>
             書き込み処理中に、ファイルに対する排他ロックを確保します。
+            つまり、<span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> の呼び出しから
+            <span class="function"><a href="function.fwrite.html" class="function">fwrite()</a></span> の呼び出しまでの間に
+            <span class="function"><a href="function.flock.html" class="function">flock()</a></span> の呼び出しが発生するということです。
+            これは、モード &quot;x&quot; で
+            <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> を呼び出すことと同等ではありません。
            </td>
           </tr>
 
@@ -177,7 +182,7 @@
  <div class="refsect1 examples" id="refsect1-function.file-put-contents-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2556">
+   <div class="example" id="example-2557">
     <p><strong>例1 シンプルな使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -187,7 +192,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-2557">
+   <div class="example" id="example-2558">
     <p><strong>例2 フラグの使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

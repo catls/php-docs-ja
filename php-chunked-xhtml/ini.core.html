@@ -864,13 +864,6 @@
        </tr>
 
         <tr>
-        <td><a href="ini.core.html#ini.gpc-order" class="link">gpc_order</a></td>
-         <td>&quot;GPC&quot;</td>
-         <td>PHP_INI_ALL</td>
-         <td>PHP 5.0.0 で削除。</td>
-        </tr>
-
-        <tr>
         <td><a href="ini.core.html#ini.auto-prepend-file" class="link">auto_prepend_file</a></td>
          <td>&quot;&quot;</td>
          <td>PHP_INI_PERDIR</td>
@@ -1270,31 +1263,6 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
      
 
       
-       <dt id="ini.gpc-order">
-        <code class="parameter">gpc_order</code>
-        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
-       </dt>
-
-       <dd>
-
-        <p class="para">
-        GET/POST/COOKIE 変数処理の順番を設定します。この命令の
-        デフォルトの設定は、&quot;GPC&quot;です。例えばこれを&quot;GP&quot;にすると、PHPはクッキーを
-        完全に無視し、GETメソッド変数を同名のPOSTメソッド変数で上書き
-        します。
-        </p>
-        <blockquote class="note"><p><strong class="note">注意</strong>: 
-         <p class="para">
-         このオプションは、PHP 5.0.0 で削除されました。
-         代わりに、<a href="ini.core.html#ini.variables-order" class="link">variables_order</a>
-         を使用してください。
-         </p>
-        </p></blockquote>
-       </dd>
-
-      
-
-      
        <dt id="ini.auto-prepend-file">
         <code class="parameter">auto_prepend_file</code>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
@@ -1665,7 +1633,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-6042">
+         <div class="example" id="example-6043">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1675,7 +1643,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-6043">
+         <div class="example" id="example-6044">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1701,7 +1669,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-6044">
+        <div class="example" id="example-6045">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>

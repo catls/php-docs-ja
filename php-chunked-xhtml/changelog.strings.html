@@ -14,7 +14,8 @@
  <h1>変更履歴</h1>
 
  <p class="para">この拡張モジュールのクラス/関数/メソッドには次のような変更がありました。</p>
- <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>5.6.5</td><td><a href='function.crypt.html'>crypt</a></td><td>salt として &quot;*0&quot; が渡されたときに、
+ <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>7.0.0</td><td><a href='function.setlocale.html'>setlocale</a></td><td>category パラメータが文字列を受け付けなくなりました。
+        このバージョン以降では、定数 LC_* だけしか使えません。</td></tr></tbody><tbody class="gen-changelog v7-0-0"><tr><td>5.6.5</td><td><a href='function.crypt.html'>crypt</a></td><td>salt として &quot;*0&quot; が渡されたときに、
         他の crypt の実装にあわせて &quot;*1&quot; を返すようになりました。
         これより前のバージョンの PHP 5.6 では、間違った DES ハッシュを返していました。</td></tr></tbody><tbody class="gen-changelog v5-6-5"><tr><td>5.6.0</td><td><a href='function.crypt.html'>crypt</a></td><td>salt を省略下場合に E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>encoding パラメータのデフォルト値が、
    default_charset の設定値に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>encoding パラメータのデフォルト値が、
@@ -28,10 +29,10 @@
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
         ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>encoding パラメータのデフォルトが
-        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>encoding パラメータのデフォルトが
         UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
         ENT_HTML401、ENT_XML1、
-        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars-decode.html'>htmlspecialchars_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
+        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>encoding パラメータのデフォルトが
+        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars-decode.html'>htmlspecialchars_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.number-format.html'>number_format</a></td><td>この関数は、
         dec_point や
         thousands_sep に複数バイトを指定できるようになりました。

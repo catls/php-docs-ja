@@ -52,7 +52,7 @@
       </p>
       <p class="para">
        <a href="reference.pcre.pattern.modifiers.html" class="link">PCRE 修飾子</a>
-       も使えます。非推奨の &#039;<em>e</em>&#039; (PREG_REPLACE_EVAL) は、この関数でだけ使える修飾子です。
+       も使えます。
       </p>
      </dd>
 
@@ -182,8 +182,10 @@
  <div class="refsect1 errors" id="refsect1-function.preg-replace-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   &quot;\e&quot; 修飾子を使うと、
+   PHP 5.5.0 以降で &quot;\e&quot; 修飾子を使うと、
    <strong><code>E_DEPRECATED</code></strong> レベルのエラーが発生します。
+   PHP 7.0.0 以降では
+   <strong><code>E_WARNING</code></strong> レベルのエラーが発生し、 &quot;\e&quot; 修飾子は何の効力も持たなくなります。
   </p>
  </div>
 
@@ -202,6 +204,14 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        <em>/e</em> 修飾子をサポートしなくなりました。かわりに
+        <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> を使いましょう。
+       </td>
+      </tr>
+
       <tr>
        <td>5.5.0</td>
        <td>
@@ -231,7 +241,7 @@
  <div class="refsect1 examples" id="refsect1-function.preg-replace-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5251">
+   <div class="example" id="example-5252">
     <p><strong>例1 数字リテラルが後に続く後方参照</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -249,7 +259,7 @@ April1,2003
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5252">
+   <div class="example" id="example-5253">
     <p><strong>例2 添字配列の使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -283,7 +293,7 @@ The slow black bear jumped over the lazy dog.
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5253">
+   <div class="example" id="example-5254">
     <p><strong>例3 複数値の置換</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -301,7 +311,7 @@ $startDate = 5/27/1999
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5254">
+   <div class="example" id="example-5255">
     <p><strong>例4 空白の削除</strong></p>
     <div class="example-contents"><p>
      この例は、文字列から余分な空白を取り除きます。
@@ -316,7 +326,7 @@ $startDate = 5/27/1999
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5255">
+   <div class="example" id="example-5256">
     <p><strong>例5 <code class="parameter">count</code> 引数の使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
