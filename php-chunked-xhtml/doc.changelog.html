@@ -15,7 +15,7 @@
 
     <p class="para">標準添付の拡張モジュールには次のような変更がありました。</p>
     
-    <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>7.0.0</td><td><a href='function.gmmktime.html'>gmmktime</a></td><td>is_dst パラメータが削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-generic-end.html'>mcrypt_generic_end</a></td><td>mcrypt_generic_end 関数が削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>is_dst パラメータが削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ob-start.html'>ob_start</a></td><td>ob_start を出力バッファコールバックの内部で使う場合、
+    <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>7.0.0</td><td><a href='function.define.html'>define</a></td><td>array が使えるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getrusage.html'>getrusage</a></td><td>This function is now supported on Windows.</td></tr><tr><td>&nbsp;</td><td><a href='function.gmmktime.html'>gmmktime</a></td><td>is_dst パラメータが削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-generic-end.html'>mcrypt_generic_end</a></td><td>mcrypt_generic_end 関数が削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>is_dst パラメータが削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ob-start.html'>ob_start</a></td><td>ob_start を出力バッファコールバックの内部で使う場合、
         この関数は E_ERROR の代わりに
         E_RECOVERABLE_ERROR を発行して、カスタムエラーハンドラで対応できるようにします。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-replace.html'>preg_replace</a></td><td>/e 修飾子をサポートしなくなりました。かわりに
         preg_replace_callback を使いましょう。</td></tr><tr><td>&nbsp;</td><td><a href='function.setlocale.html'>setlocale</a></td><td>category パラメータが文字列を受け付けなくなりました。
@@ -24,7 +24,7 @@
         これより前のバージョンの PHP 5.6 では、間違った DES ハッシュを返していました。</td></tr></tbody><tbody class="gen-changelog v5-6-5"><tr><td>5.6.3</td><td><a href='function.pack.html'>pack</a></td><td>&quot;q&quot;、&quot;Q&quot;、&quot;J&quot;、&quot;P&quot; が追加され、64ビットの数値が使えるようになりました。</td></tr></tbody><tbody class="gen-changelog v5-6-3"><tr><td>5.6.0</td><td><a href='function.array-fill.html'>array_fill</a></td><td>num にゼロを指定できるようになりました。これより前のバージョンでは、
         num には正の数しか指定できませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-filter.html'>array_filter</a></td><td>オプションのパラメータ flag と、定数
        ARRAY_FILTER_USE_KEY および
-       ARRAY_FILTER_USE_BOTH が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>salt を省略下場合に E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURL_SAFE_UPLOAD のデフォルトが TRUE になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_CLOSEPOLICY およびそれに関連する値が削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.hash-algos.html'>hash_algos</a></td><td>gost-crypto のサポートが追加されました。GOST ハッシュ関数の実装には、
+       ARRAY_FILTER_USE_BOTH が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>salt を省略下場合に E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_CLOSEPOLICY およびそれに関連する値が削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURL_SAFE_UPLOAD のデフォルトが TRUE になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.hash-algos.html'>hash_algos</a></td><td>gost-crypto のサポートが追加されました。GOST ハッシュ関数の実装には、
         RFC 4357, section 11.2
         で定義されている CryptoPro S-box テーブルを使っています。</td></tr><tr><td>&nbsp;</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>encoding パラメータのデフォルト値が、
    default_charset の設定値に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>encoding パラメータのデフォルト値が、
@@ -81,8 +81,8 @@
          date_default_timezone_get が返すタイムゾーンを使うようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='intldateformatter.format.html'>IntlDateFormatter::format</a></td><td>IntlCalendar オブジェクトを
         value に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='intldateformatter.setcalendar.html'>IntlDateFormatter::setCalendar</a></td><td>IntlCalendar オブジェクトを渡せるようになりました。</td></tr></tbody><tbody class="gen-changelog v5-5-0/PECL 3-0-0"><tr><td>5.5.0</td><td><a href='dateperiod.construct.html'>DatePeriod::__construct</a></td><td>start の型が
         DateTimeImmutable に変わりました。
-        これより前のバージョンでは、DateTime でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_SHARE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>cURL リソースを、
-        CURLOPT_PROGRESSFUNCTION コールバックの最初の引数として渡すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.empty.html'>empty</a></td><td>empty が、変数だけではなく式にも対応するようになりました。
+        これより前のバージョンでは、DateTime でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>cURL リソースを、
+        CURLOPT_PROGRESSFUNCTION コールバックの最初の引数として渡すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_SHARE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.empty.html'>empty</a></td><td>empty が、変数だけではなく式にも対応するようになりました。
          variables.</td></tr><tr><td>&nbsp;</td><td><a href='function.gd-info.html'>gd_info</a></td><td>WebP Support が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagerotate.html'>imagerotate</a></td><td>imagesetinterpolation 関数で設定した補間方式の影響を受けるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.iterator-to-array.html'>iterator_to_array</a></td><td>iterator_to_array で
         use_keys パラメータを有効にしたときの、
         integer や string 以外の型に対するサポートを強化しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>パラメータ depth が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-connect.html'>mysql_connect</a></td><td>この関数は E_DEPRECATED エラーを発するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-db-name.html'>mysql_db_name</a></td><td>mysql_list_dbs 関数は非推奨となり、
@@ -130,10 +130,10 @@
         以前は、PHP が Apache モジュールあるいは
         Netscape/iPlanet/SunONE の NSAPI サーバーモジュール としてインストールされた時だけサポートされました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gzcompress.html'>gzcompress</a></td><td>encoding パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gzdeflate.html'>gzdeflate</a></td><td>encoding パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gzencode.html'>gzencode</a></td><td>FORCE_DEFLATE が RFC 1950 準拠の出力を生成するようになりました。
         output.</td></tr><tr><td>&nbsp;</td><td><a href='function.hash.html'>hash</a></td><td>tiger アルゴリズムで、ビッグエンディアンのバイトオーダーを使うようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.hash-algos.html'>hash_algos</a></td><td>joaat、fnv132 および fnv164 のサポートを追加し、Salsa10 および Salsa20 のサポートを削除しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
-        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
-        ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>encoding パラメータのデフォルトが
-        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>encoding パラメータのデフォルトが
+        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
+        ENT_HTML401、ENT_XML1、
+        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>encoding パラメータのデフォルトが
         UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
         ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars-decode.html'>htmlspecialchars_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
@@ -144,8 +144,7 @@
         が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-encode-numericentity.html'>mb_encode_numericentity</a></td><td>is_hex パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.number-format.html'>number_format</a></td><td>この関数は、
         dec_point や
         thousands_sep に複数バイトを指定できるようになりました。
-        それまでは、複数のバイトを指定しても先頭の 1 バイトしか使われませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='function.ob-start.html'>ob_start</a></td><td>チャンクサイズに 1 を指定したときに、
-        1 バイトのチャンクを出力バッファに送るようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ob-start.html'>ob_start</a></td><td>ob_start の三番目のパラメータが
+        それまでは、複数のバイトを指定しても先頭の 1 バイトしか使われませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='function.ob-start.html'>ob_start</a></td><td>ob_start の三番目のパラメータが
         boolean erase
         (これを FALSE にすると、スクリプトの実行が終了するまで出力バッファを削除できなくなります)
         から integer flags に変わりました。
@@ -153,7 +152,8 @@
         PHP 5.4.0 より前のバージョンで三番目のパラメータを使っていたコードは、
         そのままでは期待通りに動かなくなりました。
         この例
-        のようにして、両方のバージョンでの互換性を保つ必要があります。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-decrypt.html'>openssl_decrypt</a></td><td>raw_output パラメータが options に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-encrypt.html'>openssl_encrypt</a></td><td>raw_output パラメータが options に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-match-all.html'>preg_match_all</a></td><td>matches パラメータが必須ではなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.scandir.html'>scandir</a></td><td>sorting_order 定数
+        のようにして、両方のバージョンでの互換性を保つ必要があります。</td></tr><tr><td>&nbsp;</td><td><a href='function.ob-start.html'>ob_start</a></td><td>チャンクサイズに 1 を指定したときに、
+        1 バイトのチャンクを出力バッファに送るようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-decrypt.html'>openssl_decrypt</a></td><td>raw_output パラメータが options に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-encrypt.html'>openssl_encrypt</a></td><td>raw_output パラメータが options に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-match-all.html'>preg_match_all</a></td><td>matches パラメータが必須ではなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.scandir.html'>scandir</a></td><td>sorting_order 定数
         が追加されました。これまでのバージョンでは、非ゼロの値を指定するとすべて降順となっていました。
         つまり、PHP のバージョンにかかわらず、次のようになります。
         0 を指定すれば昇順、1 を指定すれば降順。
@@ -230,9 +230,9 @@ NULL から DateTime に変更されました。</td></tr><tr><td>&nbsp;</td><td
         安定性に問題があったためです。
         現在 dl が使える SAPI は CLI と Embed(組み込み) だけです。
         かわりに 拡張モジュール読み込みディレクティブ
-         を使ってください。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>これより前のバージョンでは、authns
+         を使ってください。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>この関数は、Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>これより前のバージョンでは、authns
         パラメータを指定したときには addtl
-        パラメータも必須となっていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>この関数は、Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.error-reporting.html'>error_reporting</a></td><td>E_DEPRECATED と E_USER_DEPRECATED が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.exif-imagetype.html'>exif_imagetype</a></td><td>アイコンをサポートしました。</td></tr><tr><td>&nbsp;</td><td><a href='function.expm1.html'>expm1</a></td><td>この関数はすべてのプラットフォームで使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fgetcsv.html'>fgetcsv</a></td><td>escape パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fnmatch.html'>fnmatch</a></td><td>この関数は Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-arg.html'>func_get_arg</a></td><td>ある関数内で include や
+        パラメータも必須となっていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.error-reporting.html'>error_reporting</a></td><td>E_DEPRECATED と E_USER_DEPRECATED が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.exif-imagetype.html'>exif_imagetype</a></td><td>アイコンをサポートしました。</td></tr><tr><td>&nbsp;</td><td><a href='function.expm1.html'>expm1</a></td><td>この関数はすべてのプラットフォームで使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fgetcsv.html'>fgetcsv</a></td><td>escape パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fnmatch.html'>fnmatch</a></td><td>この関数は Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-arg.html'>func_get_arg</a></td><td>ある関数内で include や
         require を使って別のファイルを読み込んでいるときに
         別のファイル側からこの関数をコールすると、警告を発生して
         FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-arg.html'>func_get_arg</a></td><td>この関数はパラメータリスト内で使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-args.html'>func_get_args</a></td><td>ある関数内で include や
