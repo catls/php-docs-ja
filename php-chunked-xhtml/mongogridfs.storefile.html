@@ -21,7 +21,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>MongoGridFS::storeFile</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+    ( <span class="methodparam"><span class="type"><span class="type string|resource">string|resource</span></span> <code class="parameter">$filename</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$metadata</code><span class="initializer"> = array()</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ]] )</div>
@@ -43,7 +43,7 @@
      <dd>
 
       <p class="para">
-       格納するファイルの名前。
+       格納するファイルの名前、あるいは読み込み可能なストリーム。
       </p>
      </dd>
 
