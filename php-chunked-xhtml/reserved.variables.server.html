@@ -30,16 +30,15 @@
    で定義されています。したがって、これらについては定義されていることを
    期待することができます。
   </p>
-
-  <p class="simpara">
-   <var class="varname"><var class="varname">$HTTP_SERVER_VARS</var></var> の最初の情報は同じですが、
-   これは<a href="language.variables.superglobals.html" class="link">スーパーグローバル</a>ではありません
-   (<var class="varname"><var class="varname">HTTP_SERVER_VARS</var></var> と
-   <var class="varname"><var class="varname">$_SERVER</var></var> は異なる変数であり、
-   PHP は異なる変数として処理を行うことに注意してください)。
-   また、PHP 5.4.0 以降は長い形式の配列が削除されました。
-   そのため、<var class="varname"><var class="varname">$HTTP_SERVER_VARS</var></var> は使えません。
-  </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+     PHP 5.4.0 より前のバージョンでは、<var class="varname"><var class="varname">$HTTP_SERVER_VARS</var></var> にも同じ初期情報が含まれていましたが、これは
+     <a href="language.variables.superglobals.html" class="link">スーパーグローバル</a> ではありませんでした
+     (<var class="varname"><var class="varname">HTTP_SERVER_VARS</var></var> と
+     <var class="varname"><var class="varname">$_SERVER</var></var> は異なる変数であり、
+     PHP は異なる変数として処理を行うことに注意してください)。
+   </span>
+  </p></blockquote>
  </div>
 
 

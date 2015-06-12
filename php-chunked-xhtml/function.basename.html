@@ -89,7 +89,7 @@
     <p><strong>例1 <span class="function"><strong>basename()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"1)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/sudoers.d"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">".d"</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"2)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/passwd"</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"3)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/"</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"4)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"."</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"5)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"1)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/sudoers.d"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">".d"</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"2)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/sudoers.d"</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"3)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/passwd"</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"4)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/"</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"5)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"."</span><span style="color: #007700">).</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"6)&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">basename</span><span style="color: #007700">(</span><span style="color: #DD0000">"/"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -98,10 +98,11 @@
     <div class="example-contents screen">
 <div class="cdata"><pre>
 1) sudoers
-2) passwd
-3) etc
-4) .
-5) 
+2) sudoers.d
+3) passwd
+4) etc
+5) .
+6) 
 </pre></div>
     </div>
    </div>

@@ -133,6 +133,20 @@
  </div>
 
 
+ <div class="refsect1 notes" id="refsect1-function.ssh2-auth-pubkey-file-notes">
+  <h3 class="title">注意</h3>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    この関数が使っている libssh ライブラリは、部分的な認証のサポートがうまくできません。
+    公開鍵とパスワードの両方が必要な場合に、まるで関数が失敗したかのように見えてしまいます。
+    この場合の関数呼び出しの失敗は、単に認証がまだ完了していないということを表しているにすぎません。
+    この呼び出し失敗は無視し、続けて <span class="function"><a href="function.ssh2-auth-password.html" class="function">ssh2_auth_password()</a></span>
+    を呼ばなければ認証は完了しません。
+   </p>
+  </p></blockquote>
+ </div>
+
+
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.ssh2-auth-password.html">ssh2_auth_password</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.ssh2-connect.html">ssh2_connect</a></div>
