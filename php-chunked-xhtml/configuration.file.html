@@ -145,6 +145,49 @@ include_path = &quot;.;c:\php\lib&quot;</pre>
     例: <em>open_basedir = ${open_basedir}
     &quot;:/new/dir&quot;</em>
    </p>
+  <div class="sect2" id="configuration.file.changelog">
+   <h3 class="title">変更履歴</h3>
+
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>7.0.0</td>
+        <td>
+         ハッシュ記号 (<em>#</em>) をコメントとみなさないようになりました。
+        </td>
+       </tr>
+
+       <tr>
+        <td>5.3.0</td>
+        <td>
+         ハッシュ記号 (<em>#</em>) をコメントとして使ってはいけないようになりました。
+         もし使うと、廃止予定だという警告を発します。
+        </td>
+       </tr>
+
+       <tr>
+        <td>5.1.0</td>
+        <td>
+         .ini ファイル内で既存の .ini 変数を参照できるようになりました。
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+  </div>
   </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="configuration.html">実行時設定</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="configuration.file.per-user.html">.user.ini ファイル</a></div>
