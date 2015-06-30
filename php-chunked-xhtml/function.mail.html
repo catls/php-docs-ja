@@ -121,9 +121,15 @@
       <p class="para">
        通常、これは追加のヘッダ（From、Cc、Bcc）のために用いられます。
        複数のヘッダを追加する場合は CRLF（\r\n）で区切ります。
-       If outside data are used to compose this header, the data should be sanitized
-       so that no unwanted headers could be injected. 
+       外部からのデータを用いてヘッダを組み立てる際には、想定外のヘッダが注入されることを防ぐための処理が必要です。
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        <code class="parameter">additional_headers</code> は、メールヘッダインジェクション対策を行っていません。
+        したがって、指定したヘッダが安全なものであり、ヘッダ以外のものを含まないようにするのはユーザー側の役目となります。
+        複数の改行文字を置くことでメール本文を始めたりしてはいけません。
+       </p>
+      </p></blockquote>      
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
         メールを送信する際には、<em class="emphasis">必ず</em> 
