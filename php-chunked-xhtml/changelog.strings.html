@@ -22,14 +22,14 @@
    default_charset の設定値に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>encoding パラメータのデフォルト値が、
    default_charset の設定値に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.substr-compare.html'>substr_compare</a></td><td>length を 0 にもできるようになりました。</td></tr></tbody><tbody class="gen-changelog v5-6-0"><tr><td>5.5.21</td><td><a href='function.crypt.html'>crypt</a></td><td>salt として &quot;*0&quot; が渡されたときに、
         他の crypt の実装にあわせて &quot;*1&quot; を返すようになりました。
-        これより前のバージョンの PHP では、間違った DES ハッシュを返していました。</td></tr></tbody><tbody class="gen-changelog v5-5-21"><tr><td>5.5.1</td><td><a href='function.hex2bin.html'>hex2bin</a></td><td>入力が16進文字列として不正な場合に、警告を発するようになりました。</td></tr></tbody><tbody class="gen-changelog v5-5-1"><tr><td>5.4.4</td><td><a href='function.hex2bin.html'>hex2bin</a></td><td>入力の文字列長が奇数の場合に警告を発するようになりました。
+        これより前のバージョンの PHP では、間違った DES ハッシュを返していました。</td></tr></tbody><tbody class="gen-changelog v5-5-21"><tr><td>5.5.1</td><td><a href='function.hex2bin.html'>hex2bin</a></td><td>入力が16進文字列として不正な場合に、警告を発するようになりました。</td></tr></tbody><tbody class="gen-changelog v5-5-1"><tr><td>5.4.32, 5.5.16</td><td><a href='function.ucwords.html'>ucwords</a></td><td>delimiters パラメータが追加されました。</td></tr></tbody><tbody class="gen-changelog v5-4-32, 5-5-16"><tr><td>5.4.4</td><td><a href='function.hex2bin.html'>hex2bin</a></td><td>入力の文字列長が奇数の場合に警告を発するようになりました。
         PHP 5.4.0 ではそんな文字列も黙って受け入れていましたが、
         最終バイトは切り捨てられていました。</td></tr></tbody><tbody class="gen-changelog v5-4-4"><tr><td>5.4.0</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>定数 ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>encoding パラメータのデフォルトが UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
-        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
-        ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>encoding パラメータのデフォルトが
-        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
+        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
+        ENT_HTML401、ENT_XML1、
+        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
         ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>encoding パラメータのデフォルトが
         UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars-decode.html'>htmlspecialchars_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
@@ -40,10 +40,10 @@
         が追加され、高ビット攻撃に対応できるようになりました。</td></tr></tbody><tbody class="gen-changelog v5-3-7"><tr><td>5.3.4</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>encoding パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strip-tags.html'>strip_tags</a></td><td>strip_tags は、
         自己終了型の XHTML タグを除去しなくなりました。
         ただし、その自己終了型 XHTML タグが
-        allowable_tags に渡されている場合を除きます。</td></tr></tbody><tbody class="gen-changelog v5-3-4"><tr><td>5.3.3</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>デフォルトのエンコーディングが ISO-8859-1 から UTF-8 に変わりました。</td></tr></tbody><tbody class="gen-changelog v5-3-3"><tr><td>5.3.2</td><td><a href='function.crypt.html'>crypt</a></td><td>Blowfish で無効な rounds を指定したときに、DES に切り替えるのではなく
-        &quot;failure&quot; 文字列 (&quot;*0&quot; あるいは &quot;*1&quot;) を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>SHA-256 および SHA-512 による暗号化が追加されました。Ulrich Drepper の
+        allowable_tags に渡されている場合を除きます。</td></tr></tbody><tbody class="gen-changelog v5-3-4"><tr><td>5.3.3</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>デフォルトのエンコーディングが ISO-8859-1 から UTF-8 に変わりました。</td></tr></tbody><tbody class="gen-changelog v5-3-3"><tr><td>5.3.2</td><td><a href='function.crypt.html'>crypt</a></td><td>SHA-256 および SHA-512 による暗号化が追加されました。Ulrich Drepper の
         実装
-        を使っています。</td></tr></tbody><tbody class="gen-changelog v5-3-2"><tr><td>5.3.0</td><td><a href='function.crypt.html'>crypt</a></td><td>PHP に MD5 crypt, Standard DES, Extended DES および Blowfish
+        を使っています。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>Blowfish で無効な rounds を指定したときに、DES に切り替えるのではなく
+        &quot;failure&quot; 文字列 (&quot;*0&quot; あるいは &quot;*1&quot;) を返すようになりました。</td></tr></tbody><tbody class="gen-changelog v5-3-2"><tr><td>5.3.0</td><td><a href='function.crypt.html'>crypt</a></td><td>PHP に MD5 crypt, Standard DES, Extended DES および Blowfish
         の実装が含まれるようになりました。システム側でこれらのアルゴリズムがサポートされていない場合に、
         この実装を使用します。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_IGNORE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_IGNORE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.nl2br.html'>nl2br</a></td><td>オプションの is_xhtml パラメータが追加されました。
          以前のバージョンでは、杖に '&lt;br /&gt;' が挿入されていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.setlocale.html'>setlocale</a></td><td>category パラメータに

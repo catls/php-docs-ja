@@ -19,6 +19,41 @@
     引数の評価は、左から右の順番で行われます。
    </p>
    <p class="para">
+      <table class="doctable informaltable">
+       
+        <thead>
+         <tr>
+          <th>バージョン</th>
+          <th>説明</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         <tr>
+          <td>5.1.0</td>
+          <td>クラス、インターフェイス、そして配列の型宣言に対応しました。</td>
+         </tr>
+
+         <tr>
+          <td>5.4.0</td>
+          <td><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> の型宣言に対応しました。</td>
+         </tr>
+
+         <tr>
+          <td>7.0.0</td>
+          <td>スカラー型 (<span class="type"><a href="language.types.integer.html" class="type int">int</a></span>, 
+           <span class="type"><a href="language.types.float.html" class="type float">float</a></span>, 
+           <span class="type"><a href="language.types.string.html" class="type string">string</a></span>, 
+           <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>) の型宣言に対応しました。</td>
+         </tr>
+
+        </tbody>
+       
+      </table>
+
+     </p>  
+   <p class="para">
     PHP は、値渡し(デフォルト)、
     <a href="functions.arguments.html#functions.arguments.by-reference" class="link">参照渡し</a>、
     <a href="functions.arguments.html#functions.arguments.default" class="link">デフォルト引数値</a>
@@ -27,7 +62,7 @@
     もサポートしてます。
    </p>
    <p class="para">
-    <div class="example" id="example-168">
+    <div class="example" id="example-167">
      <p><strong>例1 Passing arrays to functions</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -53,7 +88,7 @@
      アンパサンド(&amp;) を引数名の前に付加することができます。    
     </p>
     <p class="para">
-     <div class="example" id="example-169">
+     <div class="example" id="example-168">
       <p><strong>例2 Passing function parameters by reference</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -75,7 +110,7 @@
      定義することができます。
     </p>
     <p class="para">
-     <div class="example" id="example-170">
+     <div class="example" id="example-169">
       <p><strong>例3 関数におけるデフォルトパラメータの使用法</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -99,7 +134,7 @@ Making a cup of espresso.
      例えば、
     </p>
     <p class="para">
-     <div class="example" id="example-171">
+     <div class="example" id="example-170">
       <p><strong>例4 スカラー型以外をデフォルト値として使用する</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -122,7 +157,7 @@ Making a cup of espresso.
      コードを見てみましょう。
     </p>
     <p class="para">
-     <div class="example" id="example-172">
+     <div class="example" id="example-171">
       <p><strong>例5 関数の引数のデフォルト値の 間違った使用法</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -145,7 +180,7 @@ Making a bowl of raspberry .
      ここで、上の例を次のコードと比べてみましょう。
     </p>
     <p class="para">
-     <div class="example" id="example-173">
+     <div class="example" id="example-172">
       <p><strong>例6 関数の引数のデフォルト値の 正しい使用法</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -168,7 +203,89 @@ Making a bowl of acidophilus raspberry.
      </span>
     </p></blockquote>
    </div>
+   <div class="sect2" id="functions.scalar-type-declaration">
+    <h3 class="title">Scalar Type Declaration</h3>
+    <p class="para">
+    <blockquote class="note"><p><strong class="note">注意</strong>: 
+     <p class="para">
+      Type declaration is also known as Type Hinting.
+     </p>
+    </p></blockquote>
+     PHP 7 introduces scalar type declaration. Functions are now able to force parameters
+     to be <span class="type"><a href="language.types.string.html" class="type string">string</a></span>, <span class="type"><a href="language.types.integer.html" class="type int">int</a></span>, <span class="type"><a href="language.types.float.html" class="type float">float</a></span> or <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>.
+     By default all PHP Files are in weakly typed mode. 
+     To enable strict type checking, <a href="control-structures.declare.html" class="link">declare(strict_types=1)</a>
+     directive must be the first
+     statement in the file. strict_types has two options, 1 for strict type
+     checking and 0 for weak type checking. This only affects the file this is stated in and not
+     files either included in this file or other files that include this file.
+     Whether or not the function being called was declared in a file that uses strict or weak 
+     type checking is irrelevant. The type checking mode depends on the file where the function is called from.
+    </p>
+    <p class="para">
+     <div class="example" id="example-173">
+      <p><strong>例7 Scalar Type Declaration examples</strong></p>
+       <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;error&nbsp;if&nbsp;this&nbsp;is&nbsp;not&nbsp;the&nbsp;first&nbsp;statement<br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">"foo.php"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;strictly&nbsp;type-checked&nbsp;function&nbsp;call<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foobar</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;strictly&nbsp;type-checked&nbsp;function&nbsp;call<br /></span><span style="color: #007700">}<br />&nbsp;<br />class&nbsp;</span><span style="color: #0000BB">baz&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">foobar</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;strictly&nbsp;type-checked&nbsp;function&nbsp;call<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />}</span>
+</span>
+</code></div>
+  </div>
 
+  <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;file&nbsp;1<br /><br />/*<br />&nbsp;file&nbsp;1&nbsp;-&nbsp;strictly&nbsp;type&nbsp;checked<br />&nbsp;file&nbsp;2&nbsp;-&nbsp;weakly&nbsp;type&nbsp;checked<br />*/<br /><br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'file2.php'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">a</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;strictly&nbsp;type&nbsp;checked<br /></span><span style="color: #0000BB">b</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;strictly&nbsp;type&nbsp;checked<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">a</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$a</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;<br /></span><br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #FF8000">//&nbsp;file&nbsp;2<br /><br /></span><span style="color: #0000BB">b</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;weakly&nbsp;type&nbsp;checked<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">b</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$a</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+  </div>
+
+  <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #FF8000">//&nbsp;file&nbsp;1<br /><br />/*<br />&nbsp;file&nbsp;1&nbsp;-&nbsp;weakly&nbsp;type&nbsp;checked<br />&nbsp;file&nbsp;2&nbsp;-&nbsp;strictly&nbsp;type&nbsp;checked<br />*/<br /><br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">'file2.php'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">a</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;weakly&nbsp;type&nbsp;checked<br /></span><span style="color: #0000BB">b</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;weakly&nbsp;type&nbsp;checked<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">a</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$a</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /><br /><br /></span><span style="color: #0000BB">?&gt;<br /></span><br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #FF8000">//&nbsp;file&nbsp;2<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">b</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;strictly&nbsp;type&nbsp;checked<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">b</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$a</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+
+
+    <div class="sect3">
+      <p class="para">
+        <div class="example" id="example-174">
+          <p><strong>例8 Type Widening</strong></p>
+          <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br />function&nbsp;</span><span style="color: #0000BB">a</span><span style="color: #007700">(</span><span style="color: #0000BB">float&nbsp;$a</span><span style="color: #007700">)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;float(1)<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;int(1)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #0000BB">a</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);</span>
+</span>
+</code></div>
+          </div>
+
+        </div>
+      </p>
+    </div>
+    <div class="sect3" id="functions.scalar-type-declaration-error">
+     <h4 class="title">Type Error</h4>
+     <p class="para">Absences of a <a href="language.exceptions.html" class="link"><em>try</em></a> <a href="language.exceptions.html#language.exceptions.catch" class="link"><em>catch</em></a> block will result in a <strong><code>E_ERROR</code></strong></p>
+      <div class="example" id="example-175">
+       <p><strong>例9 Type Error with try catch</strong></p>
+       <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br />function&nbsp;</span><span style="color: #0000BB">show</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$intNum</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /><br /><br />try&nbsp;{<br /><br />&nbsp;</span><span style="color: #0000BB">show</span><span style="color: #007700">(</span><span style="color: #DD0000">"1"</span><span style="color: #007700">);<br /><br />}&nbsp;catch&nbsp;(</span><span style="color: #0000BB">TypeError&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br /><br />&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getmessage</span><span style="color: #007700">());&nbsp;</span><span style="color: #FF8000">//&nbsp;&nbsp;"Argument&nbsp;1&nbsp;passed&nbsp;to&nbsp;show()&nbsp;must&nbsp;be&nbsp;of&nbsp;the&nbsp;type&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;integer,&nbsp;string&nbsp;given,&nbsp;called&nbsp;in&nbsp;%s&nbsp;on&nbsp;line&nbsp;%d"<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+       </div>
+
+       <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br />function&nbsp;</span><span style="color: #0000BB">show</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$intNum</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;<br />}<br /><br />&nbsp;</span><span style="color: #0000BB">show</span><span style="color: #007700">(</span><span style="color: #DD0000">"1"</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;Error<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+       </div>
+
+      </div>
+    </div>
+   </div>
    <div class="sect2" id="functions.variable-arg-list">
     <h3 class="title">可変長引数リスト</h3>
     
@@ -190,8 +307,8 @@ Making a bowl of acidophilus raspberry.
       その関数が可変長の引数を受け取ることを示せます。
       引数は、指定した変数に配列として渡されます。次の例を参照ください。
 
-      <div class="example" id="example-174">
-       <p><strong>例7 <em>...</em> を使った、可変長引数へのアクセス</strong></p>
+      <div class="example" id="example-176">
+       <p><strong>例10 <em>...</em> を使った、可変長引数へのアクセス</strong></p>
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(...</span><span style="color: #0000BB">$numbers</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$acc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$numbers&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$acc&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$acc</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -212,8 +329,8 @@ Making a bowl of acidophilus raspberry.
       関数を呼び出すときに <em>...</em> を使うと、
       配列変数や <a href="class.traversable.html" class="classname">Traversable</a> クラスを引数リストに含めることができます。
 
-      <div class="example" id="example-175">
-       <p><strong>例8 引数での <em>...</em> の使用例</strong></p>
+      <div class="example" id="example-177">
+       <p><strong>例11 引数での <em>...</em> の使用例</strong></p>
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">add</span><span style="color: #007700">(...[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">]).</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">];<br />echo&nbsp;</span><span style="color: #0000BB">add</span><span style="color: #007700">(...</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -242,8 +359,8 @@ Making a bowl of acidophilus raspberry.
       <a href="language.oop5.typehinting.html" class="link">タイプヒント</a> を付加することもできます。
       タイプヒントがある場合、<em>...</em> が取り込むすべての引数はそのヒントに従わなければいけません。
 
-      <div class="example" id="example-176">
-       <p><strong>例9 タイプヒントつきの可変長引数</strong></p>
+      <div class="example" id="example-178">
+       <p><strong>例12 タイプヒントつきの可変長引数</strong></p>
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">total_intervals</span><span style="color: #007700">(</span><span style="color: #0000BB">$unit</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DateInterval&nbsp;</span><span style="color: #007700">...</span><span style="color: #0000BB">$intervals</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$time&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">$intervals&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$interval</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$time&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$interval</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">$unit</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$time</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P1D'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateInterval</span><span style="color: #007700">(</span><span style="color: #DD0000">'P2D'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">total_intervals</span><span style="color: #007700">(</span><span style="color: #DD0000">'d'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">).</span><span style="color: #DD0000">'&nbsp;days'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;これは失敗します。null&nbsp;は&nbsp;DateInterval&nbsp;オブジェクトではないからです。<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">total_intervals</span><span style="color: #007700">(</span><span style="color: #DD0000">'d'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -282,8 +399,8 @@ Catchable fatal error: Argument 2 passed to total_intervals() must be an instanc
       先ほどの最初の例を、PHP 5.5 以前のバージョンで実装すると、以下のようになります。
       earlier:
 
-      <div class="example" id="example-177">
-       <p><strong>例10 可変長引数へのアクセス (PHP 5.5 以前)</strong></p>
+      <div class="example" id="example-179">
+       <p><strong>例13 可変長引数へのアクセス (PHP 5.5 以前)</strong></p>
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$acc&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;(</span><span style="color: #0000BB">func_get_args</span><span style="color: #007700">()&nbsp;as&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$acc&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$acc</span><span style="color: #007700">;<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

@@ -108,20 +108,11 @@ integer     : [+-]?decimal
 
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
+    PHP 7 より前のバージョンでは、
     8 進数の整数値として不正な数字（例: 8 または 9）が渡された場合、
     数値の残りの部分は無視されます。
+    PHP 7 以降では、パースエラーが発生します。
    </p>
-
-   <div class="example" id="example-83">
-    <p><strong>例2 おかしな 8 進数</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">01090</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;010（8&nbsp;進数）=&nbsp;8（10&nbsp;進数）<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
   </div>
  </div>
 
@@ -135,8 +126,8 @@ integer     : [+-]?decimal
    <span class="type"><a href="language.types.float.html" class="type float">float</a></span>が代わりに返されます。
   </p>
 
-  <div class="example" id="example-84">
-   <p><strong>例3 32 ビットシステムにおける整数のオーバーフロー</strong></p>
+  <div class="example" id="example-83">
+   <p><strong>例2 32 ビットシステムにおける整数のオーバーフロー</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$large_number&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2147483647</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$large_number</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;int(2147483647)<br /><br /></span><span style="color: #0000BB">$large_number&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2147483648</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$large_number</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;float(2147483648)<br /><br /></span><span style="color: #0000BB">$million&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1000000</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$large_number&nbsp;</span><span style="color: #007700">=&nbsp;&nbsp;</span><span style="color: #0000BB">50000&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">$million</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$large_number</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;float(50000000000)<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -146,8 +137,8 @@ integer     : [+-]?decimal
 
   </div>
 
-  <div class="example" id="example-85">
-   <p><strong>例4 64 ビットシステムにおける整数のオーバーフロー</strong></p>
+  <div class="example" id="example-84">
+   <p><strong>例3 64 ビットシステムにおける整数のオーバーフロー</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$large_number&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">9223372036854775807</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$large_number</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;int(9223372036854775807)<br /><br /></span><span style="color: #0000BB">$large_number&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">9223372036854775808</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$large_number</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;float(9.2233720368548E+18)<br /><br /></span><span style="color: #0000BB">$million&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1000000</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$large_number&nbsp;</span><span style="color: #007700">=&nbsp;&nbsp;</span><span style="color: #0000BB">50000000000000&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">$million</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$large_number</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;float(5.0E+19)<br /></span><span style="color: #0000BB">?&gt;</span>

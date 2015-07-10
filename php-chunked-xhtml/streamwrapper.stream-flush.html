@@ -25,7 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   このメソッドは、<span class="function"><a href="function.fflush.html" class="function">fflush()</a></span> に対応してコールされます。
+   このメソッドがコールされるのは、<span class="function"><a href="function.fflush.html" class="function">fflush()</a></span> への対応をする場合やストリームを閉じる場合です。
+   フラッシュしていないデータが残っていれば、それを書き出します。
   </p>
   <p class="para">
    データをストリームにキャッシュした状態でまだストレージに格納していないのなら、
