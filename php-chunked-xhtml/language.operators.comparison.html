@@ -128,53 +128,10 @@
      </div>
 
      <div class="example-contents">
-<div class="cdata"><pre>
-&lt;?php  
-// Integer
-echo 1 &lt;=&gt; 1; // 0
-echo 1 &lt;=&gt; 2; // -1
-echo 2 &lt;=&gt; 1; // 1
- 
-// Float
-echo 1.5 &lt;=&gt; 1.5; // 0
-echo 1.5 &lt;=&gt; 2.5; // -1
-echo 2.5 &lt;=&gt; 1.5; // 1
- 
-// 文字列
-echo &quot;a&quot; &lt;=&gt; &quot;a&quot;; // 0
-echo &quot;a&quot; &lt;=&gt; &quot;b&quot;; // -1
-echo &quot;b&quot; &lt;=&gt; &quot;a&quot;; // 1
- 
-echo &quot;a&quot; &lt;=&gt; &quot;aa&quot;; // -1
-echo &quot;zz&quot; &lt;=&gt; &quot;aa&quot;; // 1
- 
-// 配列
-echo [] &lt;=&gt; []; // 0
-echo [1, 2, 3] &lt;=&gt; [1, 2, 3]; // 0
-echo [1, 2, 3] &lt;=&gt; []; // 1
-echo [1, 2, 3] &lt;=&gt; [1, 2, 1]; // 1
-echo [1, 2, 3] &lt;=&gt; [1, 2, 4]; // -1
- 
-// オブジェクト
-$a = (object) [&quot;a&quot; =&gt; &quot;b&quot;]; 
-$b = (object) [&quot;a&quot; =&gt; &quot;b&quot;]; 
-echo $a &lt;=&gt; $b; // 0
- 
-$a = (object) [&quot;a&quot; =&gt; &quot;b&quot;]; 
-$b = (object) [&quot;a&quot; =&gt; &quot;c&quot;]; 
-echo $a &lt;=&gt; $b; // -1
- 
-$a = (object) [&quot;a&quot; =&gt; &quot;c&quot;]; 
-$b = (object) [&quot;a&quot; =&gt; &quot;b&quot;]; 
-echo $a &lt;=&gt; $b; // 1
- 
-// 値だけを比較します
-$a = (object) [&quot;a&quot; =&gt; &quot;b&quot;]; 
-$b = (object) [&quot;b&quot; =&gt; &quot;b&quot;]; 
-echo $a &lt;=&gt; $b; // 1
-
-?&gt;
-</pre></div>
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php&nbsp;&nbsp;<br /></span><span style="color: #FF8000">//&nbsp;Integer<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br />&nbsp;<br />//&nbsp;Float<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">2.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">2.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br />&nbsp;<br />//&nbsp;文字列<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br />&nbsp;<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"aa"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"zz"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"aa"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br />&nbsp;<br />//&nbsp;配列<br /></span><span style="color: #007700">echo&nbsp;[]&nbsp;&lt;=&gt;&nbsp;[];&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">]&nbsp;&lt;=&gt;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">]&nbsp;&lt;=&gt;&nbsp;[];&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /></span><span style="color: #007700">echo&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">]&nbsp;&lt;=&gt;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /></span><span style="color: #007700">echo&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">]&nbsp;&lt;=&gt;&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br />&nbsp;<br />//&nbsp;オブジェクト<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;(object)&nbsp;[</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">];&nbsp;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;(object)&nbsp;[</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">];&nbsp;<br />echo&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br />&nbsp;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;(object)&nbsp;[</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">];&nbsp;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;(object)&nbsp;[</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"c"</span><span style="color: #007700">];&nbsp;<br />echo&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br />&nbsp;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;(object)&nbsp;[</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"c"</span><span style="color: #007700">];&nbsp;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;(object)&nbsp;[</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">];&nbsp;<br />echo&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br />&nbsp;<br />//&nbsp;値だけを比較します<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;(object)&nbsp;[</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">];&nbsp;<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;(object)&nbsp;[</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">];&nbsp;<br />echo&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
       
      </div>
 
