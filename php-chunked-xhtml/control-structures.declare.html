@@ -27,6 +27,7 @@ declare (命令)
 
   </div>
  </p>
+
  <p class="para">
     <em>命令</em>の箇所で、セットされた<em>
     declare</em>ブロックの挙動を指定することが出来ます。
@@ -37,11 +38,33 @@ declare (命令)
     (<a href="control-structures.declare.html#control-structures.declare.encoding" class="link">encoding</a>
     に関しては以下を参照ください) です。
  </p>
- <blockquote class="note"><p><strong class="note">注意</strong>: 
-  <span class="simpara">
-   encoding ディレクティブは PHP 5.3.0 で追加されました。
-  </span>
- </p></blockquote>
+ <p class="para">
+  <table class="doctable informaltable">
+       
+        <thead>
+         <tr>
+          <th>バージョン</th>
+          <th>説明</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         <tr>
+          <td>5.3.0</td>
+          <td>encoding ディレクティブが追加されました。</td>
+         </tr>
+
+         <tr>
+          <td>7.0.0</td>
+          <td>strict_types ディレクティブが追加されました。</td>
+         </tr>
+
+        </tbody>
+       
+      </table>
+
+ </p>
  <p class="para">
   ディレクティブの処理は、ファイルをコンパイルする際に行われるので、
   ディテクティブの値として渡せるのは、リテラルだけとなります。

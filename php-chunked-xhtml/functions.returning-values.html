@@ -20,11 +20,35 @@
     箇所に制御を戻すことが出来ます。詳細に関しては
     <span class="function"><a href="function.return.html" class="function">return</a></span> を参照してください。
    </p>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>7.0.0</td>
+        <td>戻り値の型宣言が追加されました。</td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p> 
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
      <span class="function"><a href="function.return.html" class="function">return</a></span> を省略した場合は <strong><code>NULL</code></strong> を返します。
     </p>
    </p></blockquote>
+   <div class="sect2">
+    <h3 class="title">return の使いかた</h3>
    <p class="para">
     <div class="example" id="example-180">
      <p><strong>例1 <span class="function"><a href="function.return.html" class="function">return</a></span> の使用法</strong></p>
@@ -72,6 +96,74 @@
    <p class="simpara">
     リファレンスに関するさらに詳しい情報が<a href="language.references.html" class="link">リファレンスの説明</a>にあります。
    </p>
+  </div>   
+  <div class="sect2">
+     <h3 class="title">戻り値の型宣言</h3>
+     <p class="para">
+       PHP 7 以降で、戻り値の型宣言が導入されました。関数の戻り値が定義済みの型になるよう強制できるようになります。
+       これを有効にするには、
+       <a href="control-structures.declare.html" class="link">declare(strict_types=1)</a> と設定しなければいけません。
+       このディレクティブが 0 であったり未設定であったりする場合は、関数に対して弱い型チェックをするようになります。
+       このディレクティブが有効なのはそれを記入したファイル内で宣言した関数だけであり、
+       このファイルからインクルードした別のファイルには影響しません。
+       また、他のファイルからこのファイルをインクルードした場合にも、インクルード元のファイルには影響しません。
+       関数が呼び出し元がどこであるかは、気にする必要はありません。
+       宣言できる型は Classe、Interface、Array、Int、Float、String、Bool です。
+     </p>
+  <p class="para">
+    <div class="example" id="example-183">
+     <p><strong>例4 strict_types ディレクティブの影響</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;file1.php<br /><br />//&nbsp;file&nbsp;1&nbsp;-&nbsp;厳密な型チェック<br />//&nbsp;file&nbsp;2&nbsp;-&nbsp;弱い型チェック<br /><br /></span><span style="color: #007700">include&nbsp;</span><span style="color: #DD0000">"file2.php"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">a</span><span style="color: #007700">());&nbsp;</span><span style="color: #FF8000">//&nbsp;正しく動作します<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">b</span><span style="color: #007700">());&nbsp;</span><span style="color: #FF8000">//&nbsp;TypeError&nbsp;となります<br /><br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">b</span><span style="color: #007700">()&nbsp;:&nbsp;</span><span style="color: #0000BB">int</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"1"</span><span style="color: #007700">;&nbsp;&nbsp;<br />}<br /></span><span style="color: #0000BB">?&gt;<br /></span><br /><br /><span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;file2.php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">a</span><span style="color: #007700">():&nbsp;</span><span style="color: #0000BB">int</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"1"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+  </p>
+  <p class="para">
+    <div class="example" id="example-184">
+     <p><strong>例5 戻り値の型</strong></p>
+     <div class="example-contents"><p>
+      関数のシグネチャは、親クラスでの宣言と一致する必要があります。親が戻り値の型を宣言していない場合は、
+      子の側で型を宣言できます。
+     </p></div>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br />interface&nbsp;</span><span style="color: #0000BB">Numbers</span><span style="color: #007700">{<br />&nbsp;&nbsp;abstract&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">one</span><span style="color: #007700">()&nbsp;:&nbsp;</span><span style="color: #0000BB">int&nbsp;</span><span style="color: #007700">;<br />&nbsp;&nbsp;abstract&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">two</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;戻り値の型を定義していません<br /></span><span style="color: #007700">}<br /><br />class&nbsp;</span><span style="color: #0000BB">NumClass&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">Numbers<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">one</span><span style="color: #007700">()&nbsp;&nbsp;:&nbsp;</span><span style="color: #0000BB">int&nbsp;</span><span style="color: #007700">{&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;戻り値の型は抽象クラスと同じ<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">return&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">two</span><span style="color: #007700">()&nbsp;&nbsp;{&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;親の抽象クラスの関数で、<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">return&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;戻り値の型が定義されていません<br />&nbsp;&nbsp;</span><span style="color: #007700">}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">display&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">NumClass<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">one</span><span style="color: #007700">()&nbsp;:&nbsp;</span><span style="color: #0000BB">int&nbsp;</span><span style="color: #FF8000">//&nbsp;戻り値の型は親クラスと同じ<br />&nbsp;&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">two</span><span style="color: #007700">()&nbsp;:&nbsp;</span><span style="color: #0000BB">int&nbsp;</span><span style="color: #FF8000">//&nbsp;戻り値の型は親クラスと同じ<br />&nbsp;&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$dis&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">display</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$dis</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">one</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$dis</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">two</span><span style="color: #007700">());<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+ </p>
+ <p class="para">
+    <div class="example" id="example-185">
+     <p><strong>例6 クラスを戻す</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br />interface&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">make</span><span style="color: #007700">();<br />}<br />class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">make</span><span style="color: #007700">():&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">{&nbsp;</span><span style="color: #FF8000">//&nbsp;有効<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">return&nbsp;new&nbsp;</span><span style="color: #0000BB">B</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+  </p>
+    <p class="para">
+     <div class="example" id="example-186">
+     <p><strong>例7 TypeError</strong></p>
+      <div class="example-contents"><p>戻り値の型が不正な場合は TypeError となります。</p></div> 
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br />function&nbsp;</span><span style="color: #0000BB">show</span><span style="color: #007700">():&nbsp;</span><span style="color: #0000BB">int</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"1"</span><span style="color: #007700">;<br />}<br /><br />try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">show</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;<br />}&nbsp;catch&nbsp;(</span><span style="color: #0000BB">TypeError&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">());&nbsp;</span><span style="color: #FF8000">//&nbsp;string(121)&nbsp;"Return&nbsp;value&nbsp;of&nbsp;show()&nbsp;must&nbsp;be&nbsp;of&nbsp;the&nbsp;type&nbsp;integer,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;string&nbsp;returned&nbsp;in&nbsp;%s&nbsp;on&nbsp;line&nbsp;5"<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    </p>
+   </div>
   </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="functions.arguments.html">関数の引数</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="functions.variable-functions.html">可変関数</a></div>
