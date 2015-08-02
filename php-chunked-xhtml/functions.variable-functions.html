@@ -66,6 +66,18 @@
 
     </div>
    </p>
+   <p class="para">
+     PHP 5.4.0 移行では、変数に格納されたあらゆる <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> を呼び出せます。
+    <div class="example" id="example-190">
+     <p><strong>例4 複雑な callable</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+class&nbsp;Foo<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;bar()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"bar\n";<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;baz()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"baz\n";<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />$func&nbsp;=&nbsp;array("Foo",&nbsp;"bar");<br />$func();&nbsp;//&nbsp;"bar"&nbsp;を表示します<br />$f&nbsp;=&nbsp;array(new&nbsp;Foo,&nbsp;"baz");<br />$func();&nbsp;//&nbsp;"baz"&nbsp;を表示します<br />$f&nbsp;=&nbsp;"Foo::bar";<br />$func();&nbsp;//&nbsp;PHP&nbsp;7.0.0&nbsp;以降では&nbsp;"bar"&nbsp;を表示します。それより前のバージョンでは&nbsp;fatal&nbsp;error&nbsp;となっていました</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
       
    <p class="para">
     <span class="function"><a href="function.is-callable.html" class="function">is_callable()</a></span> や <span class="function"><a href="function.call-user-func.html" class="function">call_user_func()</a></span>、
@@ -73,6 +85,40 @@
     <span class="function"><a href="function.function-exists.html" class="function">function_exists()</a></span>も参照してください。
    </p>
    
+   <div class="sect2">
+    <h3 class="title">変更履歴</h3>
+    <p class="para">
+     <table class="doctable informaltable">
+      
+       <thead>
+        <tr>
+         <th>バージョン</th>
+         <th>説明</th>
+        </tr>
+
+       </thead>
+
+       <tbody class="tbody">
+        <tr>
+         <td>7.0.0</td>
+         <td>
+          &#039;ClassName::methodName&#039; 形式を可変関数として使えるようになりました。
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.4.0</td>
+         <td>
+          callable の配列を、可変関数として使えるようになりました。
+         </td>
+        </tr>
+
+       </tbody>
+      
+     </table>
+
+    </p>
+   </div>
   </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="functions.returning-values.html">返り値</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="functions.internal.html">内部（ビルトイン）関数</a></div>
