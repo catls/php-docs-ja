@@ -47,14 +47,17 @@ foreach (array_expression as $key =&gt; $value)
  <p class="para">
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    <em>foreach</em>の実行開始時に内部配列ポインタは、
+    PHP 5 では、<em>foreach</em>の実行開始時に内部配列ポインタは、
     配列の先頭要素を指すように自動的にリセットされます。
     このため、<em>foreach</em>ループの前に
     <span class="function"><a href="function.reset.html" class="function">reset()</a></span>をコールする必要はありません。
    </p>
    <p class="para">
-    <em>foreach</em> は内部の配列ポインタに依存するので、
+    PHP 5 では、<em>foreach</em> は内部の配列ポインタに依存するので、
     ループ内で配列ポインタを変更すると予期せぬ振る舞いを引き起こします。
+   </p>
+   <p class="para">
+    PHP 7 では、<em>foreach</em> は内部の配列ポインタを使わなくなりました。
    </p>
   </p></blockquote>
  </p>

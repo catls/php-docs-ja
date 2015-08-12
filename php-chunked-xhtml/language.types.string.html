@@ -178,6 +178,14 @@
        </td>
       </tr>
 
+      <tr>
+       <td><em>\u{[0-9a-f]{1,6}}</em></td>
+       <td>
+        正規表現にマッチする文字シーケンスは、Unicode のコードポイントです。
+        そのコードポイントの UTF-8 表現を文字列として出力します (PHP 7.0.0 で追加されました)。
+       </td>
+      </tr>
+
      </tbody>
     
    </table>
@@ -367,13 +375,6 @@ This should not print a capital &#039;A&#039;: \x41</pre></div>
     </div>
    </div>
    
-   <blockquote class="note"><p><strong class="note">注意</strong>: 
-    <p class="para">
-     ヒアドキュメントと異なり、Nowdoc は任意の静的データコンテキストで使用できます。
-     典型的な使用例は、クラスのプロパティや定数の初期化です。
-    </p>
-   </p></blockquote>
-    
    <div class="example" id="example-91">
     <p><strong>例7 静的データの例</strong></p>
     <div class="example-contents">

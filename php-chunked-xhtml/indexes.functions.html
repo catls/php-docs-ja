@@ -667,7 +667,7 @@
 <li><a href="function.closelog.html" class="index">closelog</a> - システムログへの接続を閉じる</li>
 <li><a href="closure.bind.html" class="index">Closure::bind</a> - バインドされたオブジェクトとクラスのスコープでクロージャを複製する</li>
 <li><a href="closure.bindto.html" class="index">Closure::bindTo</a> - 新しくバインドしたオブジェクトとクラスのスコープで、クロージャを複製する</li>
-<li><a href="closure.call.html" class="index">Closure::call</a> - Calls the closure with the given parameters and returns the result, with $this bound to the given object $to</li>
+<li><a href="closure.call.html" class="index">Closure::call</a> - Binds and calls the closure</li>
 <li><a href="closure.construct.html" class="index">Closure::__construct</a> - インスタンス作成を無効化したコンストラクタ</li>
 <li><a href="collator.asort.html" class="index">Collator::asort</a> - インデックスの情報を保持しつつ配列を並べ替える</li>
 <li><a href="collator.compare.html" class="index">Collator::compare</a> - ふたつの Unicode 文字列を比較する</li>
@@ -3977,6 +3977,65 @@
 <li><a href="intlcalendar.settimezone.html" class="index">IntlCalendar::setTimeZone</a> - Set the timezone used by this calendar</li>
 <li><a href="intlcalendar.todatetime.html" class="index">IntlCalendar::toDateTime</a> - Convert an IntlCalendar into a DateTime object</li>
 <li><a href="intlcalendar.construct.html" class="index">IntlCalendar::__construct</a> - Private constructor for disallowing instantiation</li>
+<li><a href="intlchar.charage.html" class="index">IntlChar::charAge</a> - 説明</li>
+<li><a href="intlchar.chardigitvalue.html" class="index">IntlChar::charDigitValue</a> - 説明</li>
+<li><a href="intlchar.chardirection.html" class="index">IntlChar::charDirection</a> - 説明</li>
+<li><a href="intlchar.charfromname.html" class="index">IntlChar::charFromName</a> - 説明</li>
+<li><a href="intlchar.charmirror.html" class="index">IntlChar::charMirror</a> - 説明</li>
+<li><a href="intlchar.charname.html" class="index">IntlChar::charName</a> - 説明</li>
+<li><a href="intlchar.chartype.html" class="index">IntlChar::charType</a> - 説明</li>
+<li><a href="intlchar.chr.html" class="index">IntlChar::chr</a> - 説明</li>
+<li><a href="intlchar.digit.html" class="index">IntlChar::digit</a> - 説明</li>
+<li><a href="intlchar.enumcharnames.html" class="index">IntlChar::enumCharNames</a> - 説明</li>
+<li><a href="intlchar.enumchartypes.html" class="index">IntlChar::enumCharTypes</a> - 説明</li>
+<li><a href="intlchar.foldcase.html" class="index">IntlChar::foldCase</a> - 説明</li>
+<li><a href="intlchar.fordigit.html" class="index">IntlChar::forDigit</a> - 説明</li>
+<li><a href="intlchar.getbidipairedbracket.html" class="index">IntlChar::getBidiPairedBracket</a> - 説明</li>
+<li><a href="intlchar.getblockcode.html" class="index">IntlChar::getBlockCode</a> - 説明</li>
+<li><a href="intlchar.getcombiningclass.html" class="index">IntlChar::getCombiningClass</a> - 説明</li>
+<li><a href="intlchar.getfc-nfkc-closure.html" class="index">IntlChar::getFC_NFKC_Closure</a> - 説明</li>
+<li><a href="intlchar.getintpropertymaxvalue.html" class="index">IntlChar::getIntPropertyMaxValue</a> - 説明</li>
+<li><a href="intlchar.getintpropertyminvalue.html" class="index">IntlChar::getIntPropertyMinValue</a> - 説明</li>
+<li><a href="intlchar.getintpropertyvalue.html" class="index">IntlChar::getIntPropertyValue</a> - 説明</li>
+<li><a href="intlchar.getnumericvalue.html" class="index">IntlChar::getNumericValue</a> - 説明</li>
+<li><a href="intlchar.getpropertyenum.html" class="index">IntlChar::getPropertyEnum</a> - 説明</li>
+<li><a href="intlchar.getpropertyname.html" class="index">IntlChar::getPropertyName</a> - 説明</li>
+<li><a href="intlchar.getpropertyvalueenum.html" class="index">IntlChar::getPropertyValueEnum</a> - 説明</li>
+<li><a href="intlchar.getpropertyvaluename.html" class="index">IntlChar::getPropertyValueName</a> - 説明</li>
+<li><a href="intlchar.getunicodeversion.html" class="index">IntlChar::getUnicodeVersion</a> - 説明</li>
+<li><a href="intlchar.hasbinaryproperty.html" class="index">IntlChar::hasBinaryProperty</a> - 説明</li>
+<li><a href="intlchar.isalnum.html" class="index">IntlChar::isalnum</a> - 説明</li>
+<li><a href="intlchar.isalpha.html" class="index">IntlChar::isalpha</a> - 説明</li>
+<li><a href="intlchar.isbase.html" class="index">IntlChar::isbase</a> - 説明</li>
+<li><a href="intlchar.isblank.html" class="index">IntlChar::isblank</a> - 説明</li>
+<li><a href="intlchar.iscntrl.html" class="index">IntlChar::iscntrl</a> - 説明</li>
+<li><a href="intlchar.isdefined.html" class="index">IntlChar::isdefined</a> - 説明</li>
+<li><a href="intlchar.isdigit.html" class="index">IntlChar::isdigit</a> - 説明</li>
+<li><a href="intlchar.isgraph.html" class="index">IntlChar::isgraph</a> - 説明</li>
+<li><a href="intlchar.isidignorable.html" class="index">IntlChar::isIDIgnorable</a> - 説明</li>
+<li><a href="intlchar.isidpart.html" class="index">IntlChar::isIDPart</a> - 説明</li>
+<li><a href="intlchar.isidstart.html" class="index">IntlChar::isIDStart</a> - 説明</li>
+<li><a href="intlchar.isisocontrol.html" class="index">IntlChar::isISOControl</a> - 説明</li>
+<li><a href="intlchar.isjavaidpart.html" class="index">IntlChar::isJavaIDPart</a> - 説明</li>
+<li><a href="intlchar.isjavaidstart.html" class="index">IntlChar::isJavaIDStart</a> - 説明</li>
+<li><a href="intlchar.isjavaspacechar.html" class="index">IntlChar::isJavaSpaceChar</a> - 説明</li>
+<li><a href="intlchar.islower.html" class="index">IntlChar::islower</a> - 説明</li>
+<li><a href="intlchar.ismirrored.html" class="index">IntlChar::isMirrored</a> - 説明</li>
+<li><a href="intlchar.isprint.html" class="index">IntlChar::isprint</a> - 説明</li>
+<li><a href="intlchar.ispunct.html" class="index">IntlChar::ispunct</a> - 説明</li>
+<li><a href="intlchar.isspace.html" class="index">IntlChar::isspace</a> - 説明</li>
+<li><a href="intlchar.istitle.html" class="index">IntlChar::istitle</a> - 説明</li>
+<li><a href="intlchar.isualphabetic.html" class="index">IntlChar::isUAlphabetic</a> - 説明</li>
+<li><a href="intlchar.isulowercase.html" class="index">IntlChar::isULowercase</a> - 説明</li>
+<li><a href="intlchar.isupper.html" class="index">IntlChar::isupper</a> - 説明</li>
+<li><a href="intlchar.isuuppercase.html" class="index">IntlChar::isUUppercase</a> - 説明</li>
+<li><a href="intlchar.isuwhitespace.html" class="index">IntlChar::isUWhiteSpace</a> - 説明</li>
+<li><a href="intlchar.iswhitespace.html" class="index">IntlChar::isWhitespace</a> - 説明</li>
+<li><a href="intlchar.isxdigit.html" class="index">IntlChar::isxdigit</a> - 説明</li>
+<li><a href="intlchar.ord.html" class="index">IntlChar::ord</a> - 説明</li>
+<li><a href="intlchar.tolower.html" class="index">IntlChar::tolower</a> - 説明</li>
+<li><a href="intlchar.totitle.html" class="index">IntlChar::totitle</a> - 説明</li>
+<li><a href="intlchar.toupper.html" class="index">IntlChar::toupper</a> - 説明</li>
 <li><a href="intlcodepointbreakiterator.getlastcodepoint.html" class="index">IntlCodePointBreakIterator::getLastCodePoint</a> - Get last code point passed over after advancing or receding the iterator</li>
 <li><a href="intldateformatter.create.html" class="index">IntlDateFormatter::create</a> - Date Formatter を作成する</li>
 <li><a href="intldateformatter.format.html" class="index">IntlDateFormatter::format</a> - 日付/時刻 の値を文字列としてフォーマットする</li>
@@ -8603,14 +8662,14 @@
 <li><a href="threaded.synchronized.html" class="index">Threaded::synchronized</a> - Synchronization</li>
 <li><a href="threaded.unlock.html" class="index">Threaded::unlock</a> - Synchronization</li>
 <li><a href="threaded.wait.html" class="index">Threaded::wait</a> - Synchronization</li>
-<li><a href="throwable.getcode.html" class="index">Throwable::getCode</a> - 説明</li>
-<li><a href="throwable.getfile.html" class="index">Throwable::getFile</a> - 説明</li>
-<li><a href="throwable.getline.html" class="index">Throwable::getLine</a> - 説明</li>
-<li><a href="throwable.getmessage.html" class="index">Throwable::getMessage</a> - 説明</li>
-<li><a href="throwable.getprevious.html" class="index">Throwable::getPrevious</a> - 説明</li>
-<li><a href="throwable.gettrace.html" class="index">Throwable::getTrace</a> - 説明</li>
-<li><a href="throwable.gettraceasstring.html" class="index">Throwable::getTraceAsString</a> - 説明</li>
-<li><a href="throwable.tostring.html" class="index">Throwable::__toString</a> - 説明</li>
+<li><a href="throwable.getcode.html" class="index">Throwable::getCode</a> - Gets the exception code</li>
+<li><a href="throwable.getfile.html" class="index">Throwable::getFile</a> - Gets the file in which the exception occurred</li>
+<li><a href="throwable.getline.html" class="index">Throwable::getLine</a> - Gets the line on which the object was instantiated</li>
+<li><a href="throwable.getmessage.html" class="index">Throwable::getMessage</a> - Gets the message</li>
+<li><a href="throwable.getprevious.html" class="index">Throwable::getPrevious</a> - Returns the previous Throwable</li>
+<li><a href="throwable.gettrace.html" class="index">Throwable::getTrace</a> - Gets the stack trace</li>
+<li><a href="throwable.gettraceasstring.html" class="index">Throwable::getTraceAsString</a> - Gets the stack trace as a string</li>
+<li><a href="throwable.tostring.html" class="index">Throwable::__toString</a> - Gets a string representation of the thrown object</li>
 <li><a href="tidy.props.errorbuffer.html" class="index">tidy::$errorBuffer</a> - 指定したドキュメントのパースで発生した警告とエラーを返す</li>
 <li><a href="tidy.body.html" class="index">tidy::body</a> - Tidy パースツリーの &lt;body&gt; タグから始まる tidyNode オブジェクトを返す</li>
 <li><a href="tidy.cleanrepair.html" class="index">tidy::cleanRepair</a> - パースされたマークアップに設定に基く誤りの修正を行う</li>
@@ -9611,6 +9670,8 @@
 <li><a href="ziparchive.setarchivecomment.html" class="index">ZipArchive::setArchiveComment</a> - ZIP アーカイブのコメントを設定する</li>
 <li><a href="ziparchive.setcommentindex.html" class="index">ZipArchive::setCommentIndex</a> - インデックスを使用してエントリのコメントを設定する</li>
 <li><a href="ziparchive.setcommentname.html" class="index">ZipArchive::setCommentName</a> - 名前を使用してエントリのコメントを設定する</li>
+<li><a href="ziparchive.setcompressionindex.html" class="index">ZipArchive::setCompressionIndex</a> - Set the compression method of an entry defined by its index</li>
+<li><a href="ziparchive.setcompressionname.html" class="index">ZipArchive::setCompressionName</a> - Set the compression method of an entry defined by its name</li>
 <li><a href="ziparchive.setexternalattributesindex.html" class="index">ZipArchive::setExternalAttributesIndex</a> - Set the external attributes of an entry defined by its index</li>
 <li><a href="ziparchive.setexternalattributesname.html" class="index">ZipArchive::setExternalAttributesName</a> - Set the external attributes of an entry defined by its name</li>
 <li><a href="ziparchive.setpassword.html" class="index">ZipArchive::setPassword</a> - Set the password for the active archive</li>

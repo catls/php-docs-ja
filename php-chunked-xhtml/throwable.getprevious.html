@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>説明</title>
+  <title>Returns the previous Throwable</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,8 @@
 </div><hr /><div id="throwable.getprevious" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Throwable::getPrevious</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">Throwable::getPrevious</span> &mdash; <span class="dc-title">
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">Throwable::getPrevious</span> &mdash; <span class="dc-title">Returns the previous Throwable</span></p>
+
  </div>
 
  <div class="refsect1 description" id="refsect1-throwable.getprevious-description">
@@ -24,6 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
+   Returns any previous Throwable (for example, one provided as the third
+   parameter to <span class="methodname"><a href="exception.construct.html" class="methodname">Exception::__construct()</a></span>).
   </p>
  </div>
 
@@ -37,14 +40,20 @@
  <div class="refsect1 returnvalues" id="refsect1-throwable.getprevious-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   Returns the previous <a href="class.throwable.html" class="classname">Throwable</a> if available, or
+   <strong><code>NULL</code></strong> otherwise.
   </p>
  </div>
 
 
- <div class="refsect1 errors" id="refsect1-throwable.getprevious-errors">
-  <h3 class="title">エラー / 例外</h3>
+ <div class="refsect1 seealso" id="refsect1-throwable.getprevious-seealso">
+  <h3 class="title">参考</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="methodname"><a href="exception.getprevious.html" class="methodname" rel="rdfs-seeAlso">Exception::getPrevious()</a> - 前の例外を返す</span></li>
+   </ul>
+  </p>
  </div>
-
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="throwable.gettraceasstring.html">Throwable::getTraceAsString</a></div>

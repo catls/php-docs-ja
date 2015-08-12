@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>The Throwable Interface</title>
+  <title>Throwable</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -12,7 +12,7 @@
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="class.throwable" class="reference">
 
- <h1 class="title">The Throwable Interface</h1>
+ <h1 class="title">Throwable</h1>
  
 
  <div class="partintro"><p class="verinfo">(PHP 7)</p>
@@ -21,8 +21,17 @@
   <div class="section" id="throwable.intro">
    <h2 class="title">導入</h2>
    <p class="para">
-    Interface to create an exceptions and errors. Throwable is implemented by Error and Exception class.
+    <strong class="classname">Throwable</strong> is the base interface for any object that
+    can be thrown via a <a href="language.exceptions.html" class="link"><em>throw</em></a> statement in PHP 7, including
+    <a href="class.error.html" class="classname">Error</a> and <a href="class.exception.html" class="classname">Exception</a>.
    </p>
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <p class="para">
+     PHP classes cannot implement the <strong class="classname">Throwable</strong>
+     interface directly, and must instead extend
+     <a href="class.exception.html" class="classname">Exception</a>.
+    </p>
+   </p></blockquote>
   </div>
 
 
@@ -139,7 +148,7 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="throwable.getmessage.html">Throwable::getMessage</a> — 説明</li><li><a href="throwable.getcode.html">Throwable::getCode</a> — 説明</li><li><a href="throwable.getfile.html">Throwable::getFile</a> — 説明</li><li><a href="throwable.getline.html">Throwable::getLine</a> — 説明</li><li><a href="throwable.gettrace.html">Throwable::getTrace</a> — 説明</li><li><a href="throwable.gettraceasstring.html">Throwable::getTraceAsString</a> — 説明</li><li><a href="throwable.getprevious.html">Throwable::getPrevious</a> — 説明</li><li><a href="throwable.tostring.html">Throwable::__toString</a> — 説明</li></ul>
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="throwable.getmessage.html">Throwable::getMessage</a> — Gets the message</li><li><a href="throwable.getcode.html">Throwable::getCode</a> — Gets the exception code</li><li><a href="throwable.getfile.html">Throwable::getFile</a> — Gets the file in which the exception occurred</li><li><a href="throwable.getline.html">Throwable::getLine</a> — Gets the line on which the object was instantiated</li><li><a href="throwable.gettrace.html">Throwable::getTrace</a> — Gets the stack trace</li><li><a href="throwable.gettraceasstring.html">Throwable::getTraceAsString</a> — Gets the stack trace as a string</li><li><a href="throwable.getprevious.html">Throwable::getPrevious</a> — Returns the previous Throwable</li><li><a href="throwable.tostring.html">Throwable::__toString</a> — Gets a string representation of the thrown object</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="iteratoraggregate.getiterator.html">IteratorAggregate::getIterator</a></div>

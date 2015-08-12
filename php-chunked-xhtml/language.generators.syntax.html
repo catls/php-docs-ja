@@ -50,7 +50,7 @@
     ジェネレータ関数の実行を一時停止します。
    </p>
 
-   <div class="example" id="example-303">
+   <div class="example" id="example-304">
     <p><strong>例1 値を yield する単純な例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -80,7 +80,7 @@
     <p class="para">
      yield を式のコンテキスト (代入文の右辺など)
      で使うときは、yield 文を括弧で囲む必要があります。
-     たとえば次のようになります。
+     たとえば、PHP 5 では次のようになります。
     </p>
 
     <div class="informalexample">
@@ -93,7 +93,7 @@ $data&nbsp;=&nbsp;(yield&nbsp;$value);</span>
     </div>
 
     <p class="para">
-     次のように書くと、パースエラーになります。
+     次のように書くと、PHP 5 ではパースエラーになります。
     </p>
 
     <div class="informalexample">
@@ -104,6 +104,10 @@ $data&nbsp;=&nbsp;yield&nbsp;$value;</span>
      </div>
 
     </div>
+
+    <p class="para">
+     PHP 7 では、この制限はありません。
+    </p>
 
     <p class="para">
      この構文は、
@@ -125,7 +129,7 @@ $data&nbsp;=&nbsp;yield&nbsp;$value;</span>
      キーと値のペアを yield する構文は連想配列の定義とよく似ており、次のようになります。
     </p>
 
-    <div class="example" id="example-304">
+    <div class="example" id="example-305">
      <p><strong>例2 キー/値 のペアの yield</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -175,7 +179,7 @@ $data&nbsp;=&nbsp;(yield&nbsp;$key&nbsp;=&gt;&nbsp;$value);</span>
      何も引数を渡さずに yield を呼ぶと、<strong><code>NULL</code></strong> 値を yield します。キーは自動的に割り振られます。
     </p>
 
-    <div class="example" id="example-305">
+    <div class="example" id="example-306">
      <p><strong>例3 <strong><code>NULL</code></strong> の yield</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -209,7 +213,7 @@ array(3) {
      ときと同じように、関数名の前にアンパサンドを付けます。
     </p>
 
-    <div class="example" id="example-306">
+    <div class="example" id="example-307">
      <p><strong>例4 参照による値の yield</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

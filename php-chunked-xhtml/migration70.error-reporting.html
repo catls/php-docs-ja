@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Changes to the error reporting</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="migration70.removed-exts-sapis.html">Removed Extensions and SAPIs</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration70.ini-changes.html">Changes to INI File Handling</a></div>
+ <div class="up"><a href="migration70.html">Migrating from PHP 5.6.x to PHP 7.0.x</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="migration70.error-reporting" class="sect1">
+ <h2 class="title">Changes to the error reporting</h2>
+
+ <div class="sect2" id="migration70.new-features.engine-exceptions">
+  <h3 class="title">Engine exceptions</h3>
+  <p class="para">
+    
+  </p>
+  
+ </div>
+
+ <div class="sect2" id="migration70.error-reporting.exceptions-hierarchy">
+  <h3 class="title">Changes to the exceptions hierarchy</h3>
+
+  <p class="para">
+    
+  </p>
+  
+ </div>
+
+ <div class="sect2" id="migration70.error-reporting.e-strict">
+  <h3 class="title">E_STRICT notices severity changes</h3>
+
+  <p class="para">
+   All of the <strong><code>E_STRICT</code></strong> notices have been reclassified to
+   other levels. <strong><code>E_STRICT</code></strong> constant is retained, so calls like
+   <em>error_reporting(E_ALL|E_STRICT)</em> will not cause an error.
+  </p>
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong><strong><code>E_STRICT</code></strong> notices severity changes</strong></caption>
+     
+      <thead>
+       <tr>
+        <th>Situation</th>
+        <th>New level/behaviour</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>Indexing by a resource</td>
+        <td><strong><code>E_NOTICE</code></strong></td>
+       </tr>
+
+       <tr>
+        <td>Abstract static methods</td>
+        <td>Notice removed, triggers no error</td>
+       </tr>
+
+       <tr>
+        <td>&quot;Redefining&quot; a constructor</td>
+        <td>Notice removed, triggers no error</td>
+       </tr>
+
+       <tr>
+        <td>Signature mismatch during inheritance</td>
+        <td><strong><code>E_WARNING</code></strong></td>
+       </tr>
+
+       <tr>
+        <td>Same (compatible) property in two used traits</td>
+        <td><strong><code>Notice removed, triggers no error</code></strong></td>
+       </tr>
+
+       <tr>
+        <td>Accessing static property non-statically</td>
+        <td><strong><code>E_NOTICE</code></strong></td>
+       </tr>
+
+       <tr>
+        <td>Only variables should be assigned by reference</td>
+        <td><strong><code>E_NOTICE</code></strong></td>
+       </tr>
+
+       <tr>
+        <td>Only variables should be passed by reference</td>
+        <td><strong><code>E_NOTICE</code></strong></td>
+       </tr>
+
+       <tr>
+        <td>Calling non-static methods statically</td>
+        <td><strong><code>E_DEPRECATED</code></strong></td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+ </div>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="migration70.removed-exts-sapis.html">Removed Extensions and SAPIs</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration70.ini-changes.html">Changes to INI File Handling</a></div>
+ <div class="up"><a href="migration70.html">Migrating from PHP 5.6.x to PHP 7.0.x</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -78,6 +78,12 @@
     <span class="function"><strong>realpath()</strong></span> は <strong><code>FALSE</code></strong> を返します。
    </p>
   </p></blockquote>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    大文字小文字を区別しないファイルシステムの場合は、<span class="function"><strong>realpath()</strong></span>
+    が大文字小文字をどちらかにそろえるかもしれないし、そろえないかもしれません。
+   </p>
+  </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">
     PHP の数値型は符号付整数であり、
     多くのプラットフォームでは 32 ビットの整数を取るため、
@@ -131,7 +137,7 @@
  <div class="refsect1 examples" id="refsect1-function.realpath-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2625">
+   <div class="example" id="example-2629">
     <p><strong>例1 <span class="function"><strong>realpath()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -147,7 +153,7 @@
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-2626">
+   <div class="example" id="example-2630">
     <p><strong>例2 Windows 上での <span class="function"><strong>realpath()</strong></span></strong></p>
     <div class="example-contents"><p>
      Windows 上で <span class="function"><strong>realpath()</strong></span>
