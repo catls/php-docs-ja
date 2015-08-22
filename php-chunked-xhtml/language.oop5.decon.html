@@ -50,13 +50,13 @@
 
   </div>
   <p class="para">
-   下位互換性を維持するため、PHP 5 が指定されたクラスの
-   <a href="language.oop5.decon.html#object.construct" class="link">__construct()</a> 関数をみつけられなくて、
-   かつそれが親クラスのコンストラクタを継承していない場合には、
-   古い形式のコンストラクタ関数、つまり、そのクラスの名前と同じ関数が探されます。
+   下位互換性を維持するため、あるクラスがもしその親クラスの
+   <a href="language.oop5.decon.html#object.construct" class="link">__construct()</a> を継承していなければ、
+   __construct() あるいは古い形式のコンストラクタ (クラス名と同じ名前の関数)
+   のうちどちらか先に現れたほうを、コンストラクタとして扱います。
    実際、互換性の問題が発生する可能性があるのは、
    そのクラスが <a href="language.oop5.decon.html#object.construct" class="link">__construct()</a> という名前のメソッドを
-   有しており、それが異なる用途で使用されている場合です。
+   異なる用途で用いており、その定義が古い形式のコンストラクタよりも字句的に前にある場合です。
   </p>
    <p class="para">
     他のメソッドと異なり、親の <a href="language.oop5.decon.html#object.construct" class="link">__construct()</a>

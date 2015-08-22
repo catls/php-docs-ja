@@ -150,13 +150,19 @@
    <code class="parameter">subject</code> の中で、全て
    <code class="parameter">mask</code> の中の文字からなる最初のセグメントの長さを返します。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    <code class="parameter">start</code> パラメータを設定した場合は、返される長さはその位置からのものとなります。
+    <code class="parameter">subject</code> の先頭からの長さではありません。
+   </p>
+  </p></blockquote>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-function.strspn-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5375">
+   <div class="example" id="example-5378">
     <p><strong>例1 <span class="function"><strong>strspn()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

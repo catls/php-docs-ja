@@ -2,35 +2,37 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>New features</title>
+  <title>新機能</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration70.incompatible.html">Backward incompatible changes</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration70.sapi-changes.html">Changes in SAPI Modules</a></div>
- <div class="up"><a href="migration70.html">Migrating from PHP 5.6.x to PHP 7.0.x</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration70.incompatible.html">下位互換性のない変更点</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration70.sapi-changes.html">SAPI モジュールの変更</a></div>
+ <div class="up"><a href="migration70.html">PHP 5.6.x から PHP 7.0.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="migration70.new-features" class="sect1">
- <h2 class="title">New features</h2>
+ <h2 class="title">新機能</h2>
 
  <div class="sect2" id="migration70.new-features.scalar-type-declarations">
-  <h3 class="title">Scalar type declarations</h3>
+  <h3 class="title">スカラー型宣言</h3>
 
   <p class="para">
-   Scalar
-   <a href="functions.arguments.html#functions.arguments.type-declaration" class="link">type declarations</a>
-   come in two flavours: coercive (default) and strict. The following types
-   for parameters can now be enforced (either coercively or strictly): strings
-    (<span class="type"><a href="language.types.string.html" class="type string">string</a></span>), integers (<em>int</em>), floating-point
-    numbers (<span class="type"><a href="language.types.float.html" class="type float">float</a></span>), and booleans (<em>bool</em>). They
-    augment the other types introduced in PHP 5: class names, interfaces,
-    <span class="type"><a href="language.types.array.html" class="type array">array</a></span> and <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span>.
+   スカラー
+   <a href="functions.arguments.html#functions.arguments.type-declaration" class="link">型宣言</a>
+   には二つの方式があります。デフォルトの自動変換 (coercive) モードと、
+   厳密に判断する strict モードです。
+   パラメータとして、
+   文字列 (<span class="type"><a href="language.types.string.html" class="type string">string</a></span>)、整数 (<em>int</em>)、浮動小数点数
+   (<span class="type"><a href="language.types.float.html" class="type float">float</a></span>)、boolean (<em>bool</em>)
+   といった型をいずれかの方式で強制できるようになりました。
+   これらは、PHP 5 で導入された型宣言 (クラス名やインターフェイス、配列そして <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span>)
+   を強化するものです。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Coercive&nbsp;mode<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sumOfInts</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;</span><span style="color: #007700">...</span><span style="color: #0000BB">$ints</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">array_sum</span><span style="color: #007700">(</span><span style="color: #0000BB">$ints</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sumOfInts</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'3'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4.1</span><span style="color: #007700">));</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;デフォルトのモード<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sumOfInts</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;</span><span style="color: #007700">...</span><span style="color: #0000BB">$ints</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">array_sum</span><span style="color: #007700">(</span><span style="color: #0000BB">$ints</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sumOfInts</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'3'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4.1</span><span style="color: #007700">));</span>
 </span>
 </code></div>
    </div>
@@ -44,36 +46,32 @@ int(9)
   </div>
 
   <p class="para">
-   To enable strict mode, a single <a href="control-structures.declare.html" class="link"><em>declare</em></a> directive must be placed at the
-   top of the file. This means that the strictness of typing for scalars is
-   configured on a per-file basis. This directive not only affects the type
-   declarations of parameters, but also a function&#039;s return type (see
-   <a href="functions.returning-values.html#functions.returning-values.type-declaration" class="link">return type declarations</a>,
-   built-in PHP functions, and functions from loaded
-   extensions.
+   strict モードを有効にするには、ファイルの先頭に <a href="control-structures.declare.html" class="link"><em>declare</em></a> ディレクティブを置く必要があります。
+   つまり、スカラー型を厳密に扱うかどうかは、ファイル単位で定めるということです。
+   このディレクティブは、パラメータの型宣言だけでなく、関数の戻り値の型
+   (<a href="functions.returning-values.html#functions.returning-values.type-declaration" class="link">戻り値の型宣言</a>を参照ください)
+   や PHP の標準関数、そして拡張モジュールの関数にも影響を及ぼします。
   </p>
 
   <p class="para">
-   Full documentation and examples of scalar type declarations can be found in
-   the
-   <a href="functions.arguments.html#functions.arguments.type-declaration" class="link">type declaration</a>
-   reference.
+   スカラー型宣言に関するドキュメントやサンプルについては、
+   <a href="functions.arguments.html#functions.arguments.type-declaration" class="link">型宣言</a>
+   を参照ください。
   </p>
  </div>
 
  <div class="sect2" id="migration70.new-features.return-type-declarations">
-  <h3 class="title">Return type declarations</h3>
+  <h3 class="title">戻り値の型宣言</h3>
 
   <p class="para">
-   PHP 7 adds support for 
-   <a href="functions.returning-values.html#functions.returning-values.type-declaration" class="link">return type declarations</a>.
-   Similarly to
-   <a href="functions.arguments.html#functions.arguments.type-declaration" class="link">argument type declarations</a>,
-   return type declarations specify the type of the value that will be
-   returned from a function. The same
-   <a href="functions.arguments.html#functions.arguments.type-declaration.types" class="link">types</a>
-   are available for return type declarations as are available for argument
-   type declarations.
+   PHP 7 では、
+   <a href="functions.returning-values.html#functions.returning-values.type-declaration" class="link">戻り値の型宣言</a>
+   もできるようになりました。
+   <a href="functions.arguments.html#functions.arguments.type-declaration" class="link">引数の型宣言</a>
+   と同様に、戻り値の型宣言では、関数が戻す値がどの型になるかを宣言します。
+   戻り値の型宣言で使える
+   <a href="functions.arguments.html#functions.arguments.type-declaration.types" class="link">型</a>
+   は、引数の型宣言で使えるものと同じです。
   </p>
 
   <div class="informalexample">
@@ -98,27 +96,27 @@ Array
   </div>
 
   <p class="para">
-   Full documentation and examples of return type declarations can be found in
-   the
-   <a href="functions.returning-values.html#functions.returning-values.type-declaration" class="link">return type declarations</a>.
-   reference.
+   詳細なドキュメントやサンプルについては、
+   <a href="functions.returning-values.html#functions.returning-values.type-declaration" class="link">戻り値の型宣言</a>.
+   を参照ください。
   </p>
  </div>
 
  <div class="sect2" id="migration70.new-features.null-coalesce-op">
-  <h3 class="title">Null coalesce operator</h3>
+  <h3 class="title">Null 合体演算子</h3>
 
   <p class="para">
-   The null coalesce operator (<em>??</em>) has been added as
-   syntactic sugar for the common case of needing to use a ternary in
-   conjunction with <span class="function"><a href="function.isset.html" class="function">isset()</a></span>. It returns its first operand
-   if it exists and is not <strong><code>NULL</code></strong>; otherwise it returns its second operand.
+   null 合体演算子 (<em>??</em>) がシンタックスシュガーとして追加されました。
+   三項演算子と <span class="function"><a href="function.isset.html" class="function">isset()</a></span> を組み合わせる
+   よくありがちなパターンを、より簡単に書くためのものです。
+   この演算子は、もし第一オペランドが非 <strong><code>NULL</code></strong> の値であればそれを返し、
+   そうでない場合は第二オペランドを返します。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Fetches&nbsp;the&nbsp;value&nbsp;of&nbsp;$_GET['user']&nbsp;and&nbsp;returns&nbsp;'nobody'<br />//&nbsp;if&nbsp;it&nbsp;does&nbsp;not&nbsp;exist.<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">]&nbsp;??&nbsp;</span><span style="color: #DD0000">'nobody'</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;equivalent&nbsp;to:<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;isset(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">])&nbsp;?&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">]&nbsp;:&nbsp;</span><span style="color: #DD0000">'nobody'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Coalesces&nbsp;can&nbsp;be&nbsp;chained:&nbsp;this&nbsp;will&nbsp;return&nbsp;the&nbsp;first<br />//&nbsp;defined&nbsp;value&nbsp;out&nbsp;of&nbsp;$_GET['user'],&nbsp;$_POST['user'],&nbsp;and<br />//&nbsp;'nobody'.<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">]&nbsp;??&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">]&nbsp;??&nbsp;</span><span style="color: #DD0000">'nobody'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$_GET['user']&nbsp;を取得します。もし存在しない場合は<br />//&nbsp;'nobody'&nbsp;を用います。<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">]&nbsp;??&nbsp;</span><span style="color: #DD0000">'nobody'</span><span style="color: #007700">;<br /></span><span style="color: #FF8000">//&nbsp;上のコードは、次のコードと同じ意味です。<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;isset(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">])&nbsp;?&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">]&nbsp;:&nbsp;</span><span style="color: #DD0000">'nobody'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;合体演算子を連結することもできます。次のように書くと、<br />//&nbsp;$_GET['user']、$_POST['user']&nbsp;そして&nbsp;'nobody'<br />//&nbsp;の順に調べて、非&nbsp;&amp;null;&nbsp;が定義されている最初の値を返します。<br /></span><span style="color: #0000BB">$username&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">]&nbsp;??&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'user'</span><span style="color: #007700">]&nbsp;??&nbsp;</span><span style="color: #DD0000">'nobody'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -129,18 +127,20 @@ Array
  </div>
 
  <div class="sect2" id="migration70.new-features.spaceship-op">
-  <h3 class="title">Spaceship operator</h3>
+  <h3 class="title">宇宙船演算子</h3>
   <p class="para">
-   The spaceship operator is used for comparing two expressions. It returns an
-   <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> less than, equal to, or greater than zero when
-   <var class="varname"><var class="varname">$a</var></var> is respectively less than, equal to, or greater than
-   <var class="varname"><var class="varname">$b</var></var>. Comparisons are performed according to PHP&#039;s usual
-   <a href="types.comparisons.html" class="link">type comparison rules</a>.
+   宇宙船演算子は、二つの式を比較するために使うものです。
+   <var class="varname"><var class="varname">$a</var></var> が <var class="varname"><var class="varname">$b</var></var> より大きい場合は正の数、
+   <var class="varname"><var class="varname">$a</var></var> と <var class="varname"><var class="varname">$b</var></var> が等しい場合はゼロ、
+   <var class="varname"><var class="varname">$a</var></var> が <var class="varname"><var class="varname">$b</var></var> より大きい場合は負の数をそれぞれ返します。
+   比較の際には、
+   <a href="types.comparisons.html" class="link">PHP 型の比較表</a>
+   のルールを用います。
   </p>
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Integers<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /><br />//&nbsp;Floats<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">2.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">2.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br />&nbsp;<br />//&nbsp;Strings<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;整数値<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /><br />//&nbsp;浮動小数点数値<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">1.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">2.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">2.5&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #0000BB">1.5</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br />&nbsp;<br />//&nbsp;文字列<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;0<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;-1<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">&lt;=&gt;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;1<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -151,18 +151,17 @@ Array
  </div>
 
  <div class="sect2" id="migration70.new-features.define-array">
-  <h3 class="title">Constant arrays using <span class="function"><a href="function.define.html" class="function">define()</a></span></h3>
+  <h3 class="title"><span class="function"><a href="function.define.html" class="function">define()</a></span> を用いた配列定数の定義</h3>
 
   <p class="para">
-   <span class="type"><a href="language.types.array.html" class="type Array">Array</a></span> constants can now be defined with
-   <span class="function"><a href="function.define.html" class="function">define()</a></span>. In PHP 5.6, they could only be defined with
-   <a href="language.constants.syntax.html" class="link"><em>const</em></a>.
+   <span class="function"><a href="function.define.html" class="function">define()</a></span> で配列の定数を定義できるようになりました。
+   PHP 5.6 までのバージョンでは、配列の定数は <a href="language.constants.syntax.html" class="link"><em>const</em></a> でしか定義できませんでした。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />define</span><span style="color: #007700">(</span><span style="color: #DD0000">'ANIMALS'</span><span style="color: #007700">,&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dog'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'cat'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'bird'<br /></span><span style="color: #007700">]);<br /><br />echo&nbsp;</span><span style="color: #0000BB">ANIMALS</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;outputs&nbsp;"cat"<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />define</span><span style="color: #007700">(</span><span style="color: #DD0000">'ANIMALS'</span><span style="color: #007700">,&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dog'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'cat'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'bird'<br /></span><span style="color: #007700">]);<br /><br />echo&nbsp;</span><span style="color: #0000BB">ANIMALS</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;"cat"&nbsp;と出力します<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -171,12 +170,12 @@ Array
  </div>
 
  <div class="sect2" id="migration70.new-features.anonymous-classes">
-  <h3 class="title">Anonymous classes</h3>
+  <h3 class="title">無名クラス</h3>
 
   <p class="para">
-   Support for anonymous classes has been added via <em>new
-   class</em>. These can be used in place of full class definitions for
-   throwaway objects:
+   無名クラスをサポートするようになりました。<em>new
+   class</em> を使って利用します。
+   その場限りの使い捨てのオブジェクトなどで、完全なクラス定義のかわりとして使えます。
   </p>
 
   <div class="informalexample">
@@ -197,18 +196,19 @@ object(class@anonymous)#2 (0) {
   </div>
 
   <p class="para">
-   Full documentation can be found in the 
-   <a href="language.oop5.anonymous.html" class="link">anonymous class reference</a>.
+   詳細なドキュメントは
+   <a href="language.oop5.anonymous.html" class="link">無名クラス</a>
+   を参照ください。
   </p>
  </div>
 
  <div class="sect2" id="migration70.new-features.unicode-codepoint-escape-syntax">
-  <h3 class="title">Unicode codepoint escape syntax</h3>
+  <h3 class="title">Unicode コードポイントエスケープ構文</h3>
 
   <p class="para">
-   This takes a Unicode codepoint in hexadecimal form, and outputs that
-   codepoint in UTF-8 to a double-quoted string or a heredoc. Any valid
-   codepoint is accepted, with leading 0&#039;s being optional.
+   Unicode のコードポイントを十六進形式で受け取って、
+   それを UTF-8 で (ダブルクォートで囲まれた文字列あるいはヒアドキュメントとして) 出力します。
+   妥当な形式のコードポイントならあらゆるものが使えます。先頭のゼロは省略してもかまいません。
   </p>
 
   <div class="informalexample">
@@ -222,7 +222,7 @@ echo&nbsp;"\u{aa}";<br />echo&nbsp;"\u{0000aa}";<br />echo&nbsp;"\u{9999}";</spa
    <div class="example-contents screen">
 <div class="cdata"><pre>
 ª
-ª (same as before but with optional leading 0&#039;s)
+ª (先頭のゼロを省略せずに書いても、前の行と同じ結果になります)
 香
 </pre></div>
    </div>
@@ -233,14 +233,15 @@ echo&nbsp;"\u{aa}";<br />echo&nbsp;"\u{0000aa}";<br />echo&nbsp;"\u{9999}";</spa
   <h3 class="title"><span class="methodname"><a href="closure.call.html" class="methodname">Closure::call()</a></span></h3>
 
   <p class="para">
-   <span class="methodname"><a href="closure.call.html" class="methodname">Closure::call()</a></span> is a more performant, shorthand way
-   of temporarily binding an object scope to a closure and invoking it.
+   <span class="methodname"><a href="closure.call.html" class="methodname">Closure::call()</a></span>
+   は、オブジェクトのスコープをクロージャに一時的に束縛して実行するための、
+   より高性能で簡潔な方法です。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{private&nbsp;</span><span style="color: #0000BB">$x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;}<br /><br /></span><span style="color: #FF8000">//&nbsp;Pre&nbsp;PHP&nbsp;7&nbsp;code<br /></span><span style="color: #0000BB">$getXCB&nbsp;</span><span style="color: #007700">=&nbsp;function()&nbsp;{return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x</span><span style="color: #007700">;};<br /></span><span style="color: #0000BB">$getX&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$getXCB</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindTo</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'A'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;intermediate&nbsp;closure<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$getX</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7+&nbsp;code<br /></span><span style="color: #0000BB">$getX&nbsp;</span><span style="color: #007700">=&nbsp;function()&nbsp;{return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x</span><span style="color: #007700">;};<br />echo&nbsp;</span><span style="color: #0000BB">$getX</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">call</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">);</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">A&nbsp;</span><span style="color: #007700">{private&nbsp;</span><span style="color: #0000BB">$x&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;}<br /><br /></span><span style="color: #FF8000">//&nbsp;以前のバージョンのコード<br /></span><span style="color: #0000BB">$getXCB&nbsp;</span><span style="color: #007700">=&nbsp;function()&nbsp;{return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x</span><span style="color: #007700">;};<br /></span><span style="color: #0000BB">$getX&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$getXCB</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindTo</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'A'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;中間クロージャが必要<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$getX</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7&nbsp;以降でのコード<br /></span><span style="color: #0000BB">$getX&nbsp;</span><span style="color: #007700">=&nbsp;function()&nbsp;{return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">x</span><span style="color: #007700">;};<br />echo&nbsp;</span><span style="color: #0000BB">$getX</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">call</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">A</span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
@@ -255,18 +256,19 @@ echo&nbsp;"\u{aa}";<br />echo&nbsp;"\u{0000aa}";<br />echo&nbsp;"\u{9999}";</spa
   </div>
  </div>
  <div class="sect2" id="migration70.new-features.filtered-unserialize">
-  <h3 class="title">Filtered <span class="function"><a href="function.unserialize.html" class="function">unserialize()</a></span></h3>
+  <h3 class="title"><span class="function"><a href="function.unserialize.html" class="function">unserialize()</a></span> のフィルタリング</h3>
 
   <p class="para">
-   This feature seeks to provide better security when unserializing objects on
-   untrusted data. It prevents possible code injections by enabling the
-   developer to whitelist classes that can be unserialized.
+   この仕組みは、信頼できないデータからオブジェクトを復元する際に、
+   よりセキュリティを高められるようにするために用意されたものです。
+   デシリアライズ可能なクラスの一覧をホワイトリストとして定義することで、
+   コードインジェクション攻撃を防ぎます。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;converts&nbsp;all&nbsp;objects&nbsp;into&nbsp;__PHP_Incomplete_Class&nbsp;object<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">"allowed_classes"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;converts&nbsp;all&nbsp;objects&nbsp;into&nbsp;__PHP_Incomplete_Class&nbsp;object&nbsp;except&nbsp;those&nbsp;of&nbsp;MyClass&nbsp;and&nbsp;MyClass2<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">"allowed_classes"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">"MyClass"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"MyClass2"</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;default&nbsp;behaviour&nbsp;(same&nbsp;as&nbsp;omitting&nbsp;the&nbsp;second&nbsp;argument)&nbsp;that&nbsp;accepts&nbsp;all&nbsp;classes<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">"allowed_classes"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">]);</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;オブジェクトはすべて、__PHP_Incomplete_Class&nbsp;のオブジェクトに変換します<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">"allowed_classes"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;MyClassとMyClass2以外のすべてのオブジェクトを、__PHP_Incomplete_Class&nbsp;のオブジェクトに変換します<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">"allowed_classes"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">"MyClass"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"MyClass2"</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;デフォルト&nbsp;(第二引数を省略した場合)&nbsp;の挙動は以下のようになり、すべてのオブジェクトをそのまま復元します<br /></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">unserialize</span><span style="color: #007700">(</span><span style="color: #0000BB">$foo</span><span style="color: #007700">,&nbsp;[</span><span style="color: #DD0000">"allowed_classes"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">]);</span>
 </span>
 </code></div>
    </div>
@@ -278,9 +280,9 @@ echo&nbsp;"\u{aa}";<br />echo&nbsp;"\u{0000aa}";<br />echo&nbsp;"\u{9999}";</spa
   <h3 class="title"><a href="class.intlchar.html" class="classname">IntlChar</a></h3>
 
   <p class="para">
-   The new <a href="class.intlchar.html" class="classname">IntlChar</a> class seeks to expose additional
-   ICU functionality. The class itself defines a number of static methods and
-   constants that can be used to manipulate unicode characters.
+   ICU のさらなる機能を利用するために、新しく <a href="class.intlchar.html" class="classname">IntlChar</a>
+   クラスが追加されました。このクラスには数々の static メソッドと定数が定義されており、
+   これらを使って Unicode の文字を操作できます。
   </p>
 
   <div class="informalexample">
@@ -302,38 +304,25 @@ bool(true)
   </div>
 
   <p class="para">
-   In order to use this class, the <a href="book.intl.html" class="link">Intl</a> extension must be installed.
+   このクラスを使うには、<a href="book.intl.html" class="link">Intl</a> 拡張モジュールをインストールしなければいけません。
   </p>
  </div>
 
  <div class="sect2" id="migration70.new-features.expectations">
-  <h3 class="title">Expectations</h3>
+  <h3 class="title">Expectation</h3>
 
   <p class="para">
-   Expectations are backwards compatible enhancement to the older
-   <span class="function"><a href="function.assert.html" class="function">assert()</a></span> function. They enable for zero-cost assertions
-   in production code, and provide the ability to throw custom exceptions on
-   error.
+   Expectation は、かつての
+   <span class="function"><a href="function.assert.html" class="function">assert()</a></span> 関数を、下位互換性を保ったまま拡張したものです。
+   これを用いると、コストをかけずに実運用コードの中にアサーションを組み込めます。
+   そして、エラーが発生した際に自作の例外をスローできるようになります。
   </p>
 
   <p class="para">
-   <span class="function"><a href="function.assert.html" class="function">assert()</a></span> has the following prototype:
-  </p>
-
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="cdata"><pre>
-void assert (mixed $expression [, mixed $message]);
-</pre></div>
-   </div>
-
-  </div>
-
-  <p class="para">
-   As with the old API, if <var class="varname"><var class="varname">$expression</var></var> is a string, then it will be
-   evaluated. If the first argument is falsy, then the assertion fails. The
-   second argument can either be a plain string (causing an AssertionException
-   to be triggered), or a custom exception object containing an error message.
+   かつての <span class="function"><a href="function.assert.html" class="function">assert()</a></span> 関数と同じく、
+   最初の引数に文字列を渡すとその文字列を評価します。
+   二番目の引数には、単純な文字列あるいは自作の例外オブジェクト (エラーメッセージを含むもの) を指定できます。
+   文字列を指定した場合は AssertionError を発生させます。
   </p>
 
   <div class="informalexample">
@@ -353,38 +342,61 @@ Fatal error: Uncaught CustomError: Some error message
   </div>
 
   <p class="para">
-   With this feature comes two PHP.ini settings (along with their default values):
-    - zend.assertions = 1
-    - assert.exception = 0
+   この機能に関連する php.ini の設定項目とそのデフォルト値は、以下のとおりです。
   </p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <a href="ini.core.html#ini.zend.assertions" class="link">zend.assertions</a> = 1
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <a href="info.configuration.html#ini.assert.exception" class="link">assert.exception</a> = 0
+    </span>
+   </li>
+  </ul>
 
   <p class="para">
-   zend.assertions has three values:
-    - 1 = generate and execute code (development mode)
-    - 0 = generate code and jump around at it at runtime
-    - -1 = don&#039;t generate any code (zero-cost, production mode)
+   <a href="ini.core.html#ini.zend.assertions" class="link">zend.assertions</a> には以下の値を設定できます。
   </p>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     1 = コードを生成して実行する (開発モード)
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     0 = コードを生成するが、実行時には読み飛ばす
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     -1 = コードを生成しない (運用モード。コストがかからない)
+    </span>
+   </li>
+  </ul>
 
   <p class="para">
-   assert.exception means that an exception is thrown when an assertion fails.
-   This is switched off by default to remain compatible with the old
-   <span class="function"><a href="function.assert.html" class="function">assert()</a></span> function.
+   <a href="info.configuration.html#ini.assert.exception" class="link">assert.exception</a>
+   は、アサーションに失敗したときに例外をスローするかどうかを表します。
+   デフォルトはオフで、これはかつての <span class="function"><a href="function.assert.html" class="function">assert()</a></span> 関数と同じ挙動です。
   </p>
  </div>
  <div class="sect2" id="migration70.new-features.group-use-declarations">
-  <h3 class="title">Group <em>use</em> Declarations</h3>
+  <h3 class="title"><em>use</em> 宣言のグループ化</h3>
 
   <p class="para">
-   This gives the ability to group multiple <em>use</em> declarations
-   according to the parent namespace. This seeks to remove code verbosity when
-   importing multiple classes, functions, or constants that come under the same
-   namespace.
+   これは、複数の <em>use</em> 宣言を名前空間単位でまとめられるようにする機能です。
+   同じ名前空間に属する複数のクラスや関数そして定数をインポートする際に、
+   コードが冗長にならないようにすることが狙いです。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;Pre&nbsp;PHP&nbsp;7&nbsp;code<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassA</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassB</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassC&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br /><br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_a</span><span style="color: #007700">;<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_b</span><span style="color: #007700">;<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_c</span><span style="color: #007700">;<br /><br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstA</span><span style="color: #007700">;<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstB</span><span style="color: #007700">;<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstC</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7+&nbsp;code<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">ClassA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ClassB</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ClassC&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">};<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">fn_a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fn_b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fn_c</span><span style="color: #007700">};<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">ConstA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ConstB</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ConstC</span><span style="color: #007700">};</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;以前のバージョンのコード<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassA</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassB</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassC&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br /><br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_a</span><span style="color: #007700">;<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_b</span><span style="color: #007700">;<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_c</span><span style="color: #007700">;<br /><br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstA</span><span style="color: #007700">;<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstB</span><span style="color: #007700">;<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstC</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7&nbsp;以降のコード<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">ClassA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ClassB</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ClassC&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">};<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">fn_a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fn_b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fn_c</span><span style="color: #007700">};<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">ConstA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ConstB</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ConstC</span><span style="color: #007700">};</span>
 </span>
 </code></div>
    </div>
@@ -392,15 +404,15 @@ Fatal error: Uncaught CustomError: Some error message
   </div>
  </div>
  <div class="sect2" id="migration70.new-features.generator-return-expressions">
-  <h3 class="title">Generator Return Expressions</h3>
+  <h3 class="title">ジェネレータでの return</h3>
 
   <p class="para">
-   This feature builds upon the generator functionality introduced into PHP 5.5.
-   It enables for a <em>return</em> statement to be used within a
-   generator to enable for a final expression to be returned (return by
-   reference is not allowed). This value can be fetched using the new 
-   <em>Generator::getReturn()</em> method, which may only be used
-   once the generator has finishing yielding values.
+   PHP 5.5 で導入されたジェネレータの機能拡張です。
+   ジェネレータの内部で <em>return</em> 文が使えるようになりました。
+   これを使えば、ジェネレータが最終的に返す式を指定できます (参照を返すことはできません)。
+   この値を取得するには、新しいメソッド
+   <em>Generator::getReturn()</em> を用います。
+   このメソッドを使うのは、ジェネレータが値の生成を終えた後の一度だけになるでしょう。
   </p>
 
   <div class="informalexample">
@@ -422,26 +434,26 @@ Fatal error: Uncaught CustomError: Some error message
   </div>
 
   <p class="para">
-   Being able to explicitly return a final value from a generator is a handy
-   ability to have. This is because it enables for a final value to be returned
-   by a generator (from perhaps some form of coroutine computation) that can be
-   specifically handled by the client code executing the generator. This is far
-   simpler than forcing the client code to firstly check whether the final
-   value has been yielded, and then if so, to handle that value specifically.
+   ジェネレータの最終値を明示的に返せる機能は、あれば便利なものです。
+   ジェネレータを実行したクライアント側のコードが、
+   ジェネレータが最後に返す値 (何らかのコルーチンの計算結果) を特別扱いできるようになるからです。
+   「取得した値が最後の値かどうかをまず調べて、最後であれば特別扱いする」
+   という処理をクライアント側で書くよりは、ずっとシンプルになります。
   </p>
  </div>
  <div class="sect2" id="migration70.new-features.generator-delegation">
-  <h3 class="title">Generator Delegation</h3>
+  <h3 class="title">ジェネレータの委譲</h3>
 
   <p class="para">
-   Generator delegation builds upon the ability of being able to return
-   expressions from generators. It does this by using an new syntax of
-   <em>yield from &lt;expr&gt;</em>, where &lt;expr&gt; can be any
-   <em>Traversable</em> <span class="type"><a href="language.types.object.html" class="type object">object</a></span> or <span class="type"><a href="language.types.array.html" class="type array">array</a></span>.
-   This &lt;expr&gt; will be advanced until no longer valid, and then execution
-   will continue in the calling generator. This feature enables
-   <em>yield</em> statements to be broken down into smaller
-   operations, thereby promoting cleaner code that has greater reusability.
+   ジェネレータから値を返せるようになったことで、ジェネレータの委譲ができるようになりました。
+   新しい構文
+   <em>yield from &lt;expr&gt;</em>
+   を利用します。&lt;expr&gt; の部分には、任意の
+   <em>Traversable</em> オブジェクトあるいは配列が使えます。
+   この &lt;expr&gt; が値を戻さなくなるまで処理を進めた後に、
+   呼び出し元のジェネレータの処理を続行します。
+   この機能を使えば <em>yield</em> 文を複数の小さな操作に分割できるようになります。
+   コードもよりクリーンになり、再利用性も高まるでしょう。
   </p>
 
   <div class="informalexample">
@@ -464,11 +476,11 @@ Fatal error: Uncaught CustomError: Some error message
   </div>
  </div>
  <div class="sect2" id="migration70.new-features.intdiv">
-  <h3 class="title">Integer Division with <span class="function"><a href="function.intdiv.html" class="function">intdiv()</a></span></h3>
+  <h3 class="title"><span class="function"><a href="function.intdiv.html" class="function">intdiv()</a></span> による整数の除算</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.intdiv.html" class="function">intdiv()</a></span> function has been introduced to handle
-   division where an integer is to be returned.
+   <span class="function"><a href="function.intdiv.html" class="function">intdiv()</a></span> 関数が導入されました。
+   これは、商を整数で返す除算を扱うものです。
   </p>
 
   <div class="informalexample">
@@ -488,18 +500,17 @@ int(3)
   </div>
  </div>
  <div class="sect2" id="migration70.new-features.session-start-options">
-  <h3 class="title"><span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> Options</h3>
+  <h3 class="title"><span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> のオプション</h3>
 
   <p class="para">
-   This feature gives the ability to pass in an array of options to the
-   <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> function. This is used to set
-   session-based php.ini options:
+   <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> 関数に、オプションの配列を渡せるようになりました。
+   これを用いて、セッションベースの php.ini オプションを設定できます。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />session_start</span><span style="color: #007700">([</span><span style="color: #DD0000">'cache_limiter'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'private'</span><span style="color: #007700">]);&nbsp;</span><span style="color: #FF8000">//&nbsp;sets&nbsp;the&nbsp;session.cache_limiter&nbsp;option&nbsp;to&nbsp;private</span>
+<span style="color: #0000BB">&lt;?php<br /><br />session_start</span><span style="color: #007700">([</span><span style="color: #DD0000">'cache_limiter'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'private'</span><span style="color: #007700">]);&nbsp;</span><span style="color: #FF8000">//&nbsp;このセッション内に限った&nbsp;session.cache_limiter&nbsp;オプションを設定します</span>
 </span>
 </code></div>
    </div>
@@ -507,31 +518,28 @@ int(3)
   </div>
 
   <p class="para">
-   This feature also introduces a new php.ini setting (session.lazy_write)
-   that is, by default, set to true and means that session data is only
-   rewritten if it changes.
+   この機能とともに、新しい php.ini 項目 session.lazy_write が追加されました。
+   デフォルトは true で、このときは、セッションのデータが変更された場合にだけ再書き込みを行います。
   </p>
  </div>
  <div class="sect2" id="migration70.new-features.preg-repace-callback-array-function">
-  <h3 class="title"><span class="function"><strong>preg_replace_callback_array()</strong></span> Function</h3>
+  <h3 class="title"><span class="function"><a href="function.preg-replace-callback-array.html" class="function">preg_replace_callback_array()</a></span> 関数</h3>
 
   <p class="para">
-   This new function enables code to be written more cleanly when using the
-   <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> function. Prior to PHP 7,
-   callbacks that needed to be executed per regular expression required the
-   callback function (second parameter of
-   <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span>) to be polluted with lots of
-   branching (a hacky method at best).
+   この関数は、
+   <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> 関数を使ったコードをよりすっきりと書けるようにするものです。
+   これまでのバージョンの PHP では、正規表現ごとにコールバックを実行したければ、
+   コールバック関数 (<span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> の第二パラメータ)
+   が分岐だらけになってしまっていました。
   </p>
 
   <p class="para">
-   Now, callbacks can be registered to each regular expression using an
-   associative array, where the key is a regular expression and the value is a
-   callback.
+   PHP 7 以降では、個々の正規表現に対するコールバックを連想配列で登録できるようになりました。
+   連想配列のキーが正規表現で、その値がコールバックとなります。
   </p>
 
   <p class="para">
-   Function Signature:
+   関数のシグネチャは次のとおりです。
   </p>
 
   <div class="example-contents">
@@ -544,7 +552,7 @@ string preg_replace_callback_array(array $regexesAndCallbacks, string $input);
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$tokenStream&nbsp;</span><span style="color: #007700">=&nbsp;[];&nbsp;</span><span style="color: #FF8000">//&nbsp;[tokenName,&nbsp;lexeme]&nbsp;pairs<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;'end'<br /></span><span style="color: #DD0000">$a&nbsp;=&nbsp;3;&nbsp;//&nbsp;variable&nbsp;initialisation<br /></span><span style="color: #007700">end;<br /><br /></span><span style="color: #FF8000">//&nbsp;Pre&nbsp;PHP&nbsp;7&nbsp;code<br /></span><span style="color: #0000BB">preg_replace_callback</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~\$[a-z_][a-z\d_]*~i'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~=~'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~[\d]+~'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~;~'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~//.*~'<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'$'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_VARIABLE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'='</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_ASSIGN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">ctype_digit</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_NUM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">';'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_TERMINATE_STMT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'//'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_COMMENT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$input<br /></span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7+&nbsp;code<br /></span><span style="color: #0000BB">preg_replace_callback_array</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~\$[a-z_][a-z\d_]*~i'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_VARIABLE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~=~'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_ASSIGN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~[\d]+~'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_NUM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~;~'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_TERMINATE_STMT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~//.*~'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_COMMENT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;],<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$input<br /></span><span style="color: #007700">);</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$tokenStream&nbsp;</span><span style="color: #007700">=&nbsp;[];&nbsp;</span><span style="color: #FF8000">//&nbsp;[tokenName,&nbsp;lexeme]&nbsp;のペア<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;'end'<br /></span><span style="color: #DD0000">$a&nbsp;=&nbsp;3;&nbsp;//&nbsp;変数の初期化<br /></span><span style="color: #007700">end;<br /><br /></span><span style="color: #FF8000">//&nbsp;以前のバージョンのコード<br /></span><span style="color: #0000BB">preg_replace_callback</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~\$[a-z_][a-z\d_]*~i'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~=~'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~[\d]+~'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~;~'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~//.*~'<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'$'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_VARIABLE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'='</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_ASSIGN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">ctype_digit</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_NUM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">';'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_TERMINATE_STMT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">strpos</span><span style="color: #007700">(</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #DD0000">'//'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_COMMENT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$input<br /></span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7&nbsp;以降でのコード<br /></span><span style="color: #0000BB">preg_replace_callback_array</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~\$[a-z_][a-z\d_]*~i'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_VARIABLE'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~=~'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_ASSIGN'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~[\d]+~'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_NUM'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~;~'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_TERMINATE_STMT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'~//.*~'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$match</span><span style="color: #007700">)&nbsp;use&nbsp;(&amp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$tokenStream</span><span style="color: #007700">[]&nbsp;=&nbsp;[</span><span style="color: #DD0000">'T_COMMENT'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$match</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]];<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;],<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$input<br /></span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
@@ -552,16 +560,15 @@ string preg_replace_callback_array(array $regexesAndCallbacks, string $input);
   </div>
  </div>
  <div class="sect2" id="migration70.new-features.csprng-functions">
-  <h3 class="title"><a href="book.csprng.html" class="link">CSPRNG</a> Functions</h3>
+  <h3 class="title"><a href="book.csprng.html" class="link">CSPRNG</a> 関数</h3>
 
   <p class="para">
-   This feature introduces two new functions for generating cryptographically
-   secure integers and strings. They expose simple APIs and are
-   platform-independent.
+   暗号論的に安全な整数値および文字列を生成する、二つの新しい関数を提供します。
+   API はシンプルで、プラットフォームに依存しません。
   </p>
 
   <p class="para">
-   Function Signatures:
+   関数のシグネチャは次のとおりです。
   </p>
 
   <div class="example-contents">
@@ -573,23 +580,23 @@ int random_int(int min, int max);
 
 
   <p class="para">
-   Both functions will emit an E_WARNING and return <em>false</em> if
-   a source of sufficient randomness cannot be found.
+   十分なランダム性を持つソースが見つからない場合は、
+   どちらの関数も E_WARNING を発行して <em>false</em> を返します。
   </p>
  </div>
 
  <div class="sect2" id="migration70.new-features.list-arrayaccess">
   <h3 class="title">
-   <span class="function"><a href="function.list.html" class="function">list()</a></span> can always unpack objects implementing
-   <a href="class.arrayaccess.html" class="classname">ArrayAccess</a>
+   <span class="function"><a href="function.list.html" class="function">list()</a></span> が常に、
+   <a href="class.arrayaccess.html" class="classname">ArrayAccess</a> を実装したオブジェクトをアンパックできるように
   </h3>
 
   <p class="para">
   </p>
  </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration70.incompatible.html">Backward incompatible changes</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration70.sapi-changes.html">Changes in SAPI Modules</a></div>
- <div class="up"><a href="migration70.html">Migrating from PHP 5.6.x to PHP 7.0.x</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration70.incompatible.html">下位互換性のない変更点</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration70.sapi-changes.html">SAPI モジュールの変更</a></div>
+ <div class="up"><a href="migration70.html">PHP 5.6.x から PHP 7.0.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

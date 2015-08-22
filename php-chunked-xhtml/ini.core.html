@@ -46,7 +46,7 @@
          <td>async_send</td>
          <td>&quot;0&quot;</td>
          <td>PHP_INI_ALL</td>
-         <td class="empty">&nbsp;</td>
+         <td>PHP 4.2.0 以降で利用可能。PHP 4.3.0 で削除。</td>
         </tr>
 
        </tbody>
@@ -171,6 +171,13 @@
         <td>&quot;0&quot;</td>
         <td>PHP_INI_SYSTEM</td>
         <td>PHP 5.4.0 以降で利用可能。</td>
+       </tr>
+
+       <tr>
+        <td><a href="ini.core.html#ini.zend.assertions" class="link">zend.assertions</a></td>
+        <td>&quot;1&quot;</td>
+        <td>PHP_INI_ALL</td>
+        <td>PHP 7.0.0 以降で利用可能。</td>
        </tr>
 
        <tr>
@@ -473,12 +480,23 @@
         このディレクティブは <var class="filename">php.ini</var> で設定しなければなりません。
         たとえばこれを <var class="filename">httpd.conf</var> で設定することはできません。
        </span>
-       <blockquote class="note"><p><strong class="note">注意</strong>: 
-        <strong>バージョンに関するメモ</strong><br />
-        <span class="simpara">
-         このディレクティブは PHP 4.3.2 以降で使用可能です。
-        </span>
-       </p></blockquote>
+      </dd>
+
+     
+
+     
+      <dt id="ini.zend.assertions">
+       <code class="parameter">zend.assertions</code>
+       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+      </dt>
+
+      <dd>
+
+       <span class="simpara">
+        <em>1</em> にすると、アサーションのコードを生成して実行します (開発モード)。
+        <em>0</em> にすると、アサーションのコードは生成しますが実行時にはスキップします (実行しません)。
+        <em>-1</em> にすると、アサーションのコードを生成せず、アサーションのコストがゼロになります (実運用モード)。
+       </span>
       </dd>
 
      
@@ -1215,7 +1233,7 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        <p class="para">
         <blockquote class="note"><p><strong class="note">注意</strong>: 
          <p class="para">
-          PHP では、ビット値を表すショートカット K (kilo)、M (mega) および
+          PHP では、バイト値を表すショートカット K (kilo)、M (mega) および
           G (giga) を使用することができます。
           これらを使用した場合、PHP が規約にしたがって自動的に値を判断します。
           32 ビット符号付き整数の最大値を上回る値を指定しないように注意しましょう
@@ -1320,6 +1338,8 @@ PHP 5.4.0 で<em class="emphasis">削除</em>されました。</p></div>
        <dd>
 
         <p class="para">
+        デフォルトでは、PHP は文字エンコーディングを Content-Type ヘッダで出力します。
+        文字セットの送信を無効にするには、ここに空文字列を設定しましょう。
         </p>
        </dd>
 
@@ -1634,7 +1654,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-6060">
+         <div class="example" id="example-6073">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1644,7 +1664,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-6061">
+         <div class="example" id="example-6074">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1670,7 +1690,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-6062">
+        <div class="example" id="example-6075">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>
