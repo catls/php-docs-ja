@@ -112,6 +112,23 @@
     </p>
    </p></blockquote>
   </div>
+  <div class="sect2" id="language.namespaces.importing.group">
+   <h3 class="title"><em>use</em> 宣言のグループ化</h3>
+   <p class="para">
+    これは、複数の <em>use</em> 宣言を名前空間単位でまとめられるようにする機能です。
+    同じ名前空間に属する複数のクラスや関数そして定数をインポートする際に、
+    コードが冗長にならないようにすることが狙いです。
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;以前のバージョンのコード<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassA</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassB</span><span style="color: #007700">;<br />use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ClassC&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br /><br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_a</span><span style="color: #007700">;<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_b</span><span style="color: #007700">;<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">fn_c</span><span style="color: #007700">;<br /><br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstA</span><span style="color: #007700">;<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstB</span><span style="color: #007700">;<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\</span><span style="color: #0000BB">ConstC</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7&nbsp;以降のコード<br /></span><span style="color: #007700">use&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">ClassA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ClassB</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ClassC&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">};<br />use&nbsp;function&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">fn_a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fn_b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">fn_c</span><span style="color: #007700">};<br />use&nbsp;const&nbsp;</span><span style="color: #0000BB">some</span><span style="color: #007700">\namespace\{</span><span style="color: #0000BB">ConstA</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ConstB</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">ConstC</span><span style="color: #007700">};</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </div>
  </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="language.namespaces.nsconstants.html">namespace キーワードおよび __NAMESPACE__ 定数</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="language.namespaces.global.html">グローバル空間</a></div>

@@ -26,22 +26,11 @@
    <var class="varname"><var class="varname">PHP_AUTH_TYPE</var></var> にそれぞれユーザー名、
    パスワード、認証型が代入された状態で呼ばれます。
    定義済みの変数は、配列
-   <var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER</a></var></var> および
-   <var class="varname"><var class="varname">$HTTP_SERVER_VARS</var></var> でアクセス可能です。
+   <var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER</a></var></var> でアクセス可能です。
    &quot;Basic&quot; 認証および &quot;Digest&quot; 認証 (PHP 5.1.0 以降)
    の両者がサポートされています。詳細は、
    <span class="function"><a href="function.header.html" class="function">header()</a></span>を参照ください。
   </p>
-
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <strong>PHP バージョンに関する注意</strong><br />
-   <p class="para">
-    <var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER</a></var></var> のような
-    <a href="language.variables.superglobals.html" class="link">スーパーグローバル</a>は、
-    PHP <a href="http://www.php.net/releases/4_1_0.php" class="link external">&raquo;&nbsp;4.1.0</a>
-    以降で利用可能となりました。
-   </p>
-  </p></blockquote>
 
   <p class="para">
    ページ上でクライアント認証を強制するスクリプトの例を以下に示します。
