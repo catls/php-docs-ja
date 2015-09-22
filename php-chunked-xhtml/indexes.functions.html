@@ -667,7 +667,7 @@
 <li><a href="function.closelog.html" class="index">closelog</a> - システムログへの接続を閉じる</li>
 <li><a href="closure.bind.html" class="index">Closure::bind</a> - バインドされたオブジェクトとクラスのスコープでクロージャを複製する</li>
 <li><a href="closure.bindto.html" class="index">Closure::bindTo</a> - 新しくバインドしたオブジェクトとクラスのスコープで、クロージャを複製する</li>
-<li><a href="closure.call.html" class="index">Closure::call</a> - Binds and calls the closure</li>
+<li><a href="closure.call.html" class="index">Closure::call</a> - クロージャを束縛して呼び出す</li>
 <li><a href="closure.construct.html" class="index">Closure::__construct</a> - インスタンス作成を無効化したコンストラクタ</li>
 <li><a href="collator.asort.html" class="index">Collator::asort</a> - インデックスの情報を保持しつつ配列を並べ替える</li>
 <li><a href="collator.compare.html" class="index">Collator::compare</a> - ふたつの Unicode 文字列を比較する</li>
@@ -1356,7 +1356,7 @@
 <li><a href="function.ereg-replace.html" class="index">ereg_replace</a> - 正規表現による置換を行う</li>
 <li><a href="errorexception.getseverity.html" class="index">ErrorException::getSeverity</a> - 例外の深刻度を取得する</li>
 <li><a href="errorexception.construct.html" class="index">ErrorException::__construct</a> - 例外を作成する</li>
-<li><a href="function.error-clear-last.html" class="index">error_clear_last</a> - Clear the last error occurred</li>
+<li><a href="function.error-clear-last.html" class="index">error_clear_last</a> - Clear the most recent error</li>
 <li><a href="function.error-get-last.html" class="index">error_get_last</a> - 最後に発生したエラーを取得する</li>
 <li><a href="function.error-log.html" class="index">error_log</a> - 定義されたエラー処理ルーチンにエラーメッセージを送信する</li>
 <li><a href="function.error-reporting.html" class="index">error_reporting</a> - 出力する PHP エラーの種類を設定する</li>
@@ -2057,6 +2057,7 @@
 <li><a href="function.gc-disable.html" class="index">gc_disable</a> - 循環参照コレクタを無効にする</li>
 <li><a href="function.gc-enable.html" class="index">gc_enable</a> - 循環参照コレクタを有効にする</li>
 <li><a href="function.gc-enabled.html" class="index">gc_enabled</a> - 循環参照コレクタの状態を返す</li>
+<li><a href="function.gc-mem-caches.html" class="index">gc_mem_caches</a> - Reclaims memory used by the Zend Engine memory manager</li>
 <li><a href="function.gd-info.html" class="index">gd_info</a> - 現在インストールされているGDライブラリに関する情報を取得する</li>
 <li><a href="gearmanclient.addoptions.html" class="index">GearmanClient::addOptions</a> - Add client options</li>
 <li><a href="gearmanclient.addserver.html" class="index">GearmanClient::addServer</a> - Add a job server to the client</li>
@@ -2247,6 +2248,7 @@
 <li><a href="function.get-object-vars.html" class="index">get_object_vars</a> - 指定したオブジェクトのプロパティを取得する</li>
 <li><a href="function.get-parent-class.html" class="index">get_parent_class</a> - オブジェクトの親クラスの名前を取得する</li>
 <li><a href="function.get-required-files.html" class="index">get_required_files</a> - get_included_files のエイリアス</li>
+<li><a href="function.get-resources.html" class="index">get_resources</a> - Returns active resources</li>
 <li><a href="function.get-resource-type.html" class="index">get_resource_type</a> - リソース型を返す</li>
 <li><a href="function.glob.html" class="index">glob</a> - パターンにマッチするパス名を探す</li>
 <li><a href="wrappers.glob.html" class="index">glob://</a> - パターンにマッチするパス名の検索</li>
@@ -3980,65 +3982,65 @@
 <li><a href="intlcalendar.settimezone.html" class="index">IntlCalendar::setTimeZone</a> - Set the timezone used by this calendar</li>
 <li><a href="intlcalendar.todatetime.html" class="index">IntlCalendar::toDateTime</a> - Convert an IntlCalendar into a DateTime object</li>
 <li><a href="intlcalendar.construct.html" class="index">IntlCalendar::__construct</a> - Private constructor for disallowing instantiation</li>
-<li><a href="intlchar.charage.html" class="index">IntlChar::charAge</a> - 説明</li>
-<li><a href="intlchar.chardigitvalue.html" class="index">IntlChar::charDigitValue</a> - 説明</li>
-<li><a href="intlchar.chardirection.html" class="index">IntlChar::charDirection</a> - 説明</li>
-<li><a href="intlchar.charfromname.html" class="index">IntlChar::charFromName</a> - 説明</li>
-<li><a href="intlchar.charmirror.html" class="index">IntlChar::charMirror</a> - 説明</li>
-<li><a href="intlchar.charname.html" class="index">IntlChar::charName</a> - 説明</li>
-<li><a href="intlchar.chartype.html" class="index">IntlChar::charType</a> - 説明</li>
-<li><a href="intlchar.chr.html" class="index">IntlChar::chr</a> - 説明</li>
-<li><a href="intlchar.digit.html" class="index">IntlChar::digit</a> - 説明</li>
-<li><a href="intlchar.enumcharnames.html" class="index">IntlChar::enumCharNames</a> - 説明</li>
-<li><a href="intlchar.enumchartypes.html" class="index">IntlChar::enumCharTypes</a> - 説明</li>
-<li><a href="intlchar.foldcase.html" class="index">IntlChar::foldCase</a> - 説明</li>
-<li><a href="intlchar.fordigit.html" class="index">IntlChar::forDigit</a> - 説明</li>
-<li><a href="intlchar.getbidipairedbracket.html" class="index">IntlChar::getBidiPairedBracket</a> - 説明</li>
-<li><a href="intlchar.getblockcode.html" class="index">IntlChar::getBlockCode</a> - 説明</li>
-<li><a href="intlchar.getcombiningclass.html" class="index">IntlChar::getCombiningClass</a> - 説明</li>
-<li><a href="intlchar.getfc-nfkc-closure.html" class="index">IntlChar::getFC_NFKC_Closure</a> - 説明</li>
-<li><a href="intlchar.getintpropertymaxvalue.html" class="index">IntlChar::getIntPropertyMaxValue</a> - 説明</li>
-<li><a href="intlchar.getintpropertyminvalue.html" class="index">IntlChar::getIntPropertyMinValue</a> - 説明</li>
-<li><a href="intlchar.getintpropertyvalue.html" class="index">IntlChar::getIntPropertyValue</a> - 説明</li>
-<li><a href="intlchar.getnumericvalue.html" class="index">IntlChar::getNumericValue</a> - 説明</li>
-<li><a href="intlchar.getpropertyenum.html" class="index">IntlChar::getPropertyEnum</a> - 説明</li>
-<li><a href="intlchar.getpropertyname.html" class="index">IntlChar::getPropertyName</a> - 説明</li>
-<li><a href="intlchar.getpropertyvalueenum.html" class="index">IntlChar::getPropertyValueEnum</a> - 説明</li>
-<li><a href="intlchar.getpropertyvaluename.html" class="index">IntlChar::getPropertyValueName</a> - 説明</li>
-<li><a href="intlchar.getunicodeversion.html" class="index">IntlChar::getUnicodeVersion</a> - 説明</li>
-<li><a href="intlchar.hasbinaryproperty.html" class="index">IntlChar::hasBinaryProperty</a> - 説明</li>
-<li><a href="intlchar.isalnum.html" class="index">IntlChar::isalnum</a> - 説明</li>
-<li><a href="intlchar.isalpha.html" class="index">IntlChar::isalpha</a> - 説明</li>
-<li><a href="intlchar.isbase.html" class="index">IntlChar::isbase</a> - 説明</li>
-<li><a href="intlchar.isblank.html" class="index">IntlChar::isblank</a> - 説明</li>
-<li><a href="intlchar.iscntrl.html" class="index">IntlChar::iscntrl</a> - 説明</li>
-<li><a href="intlchar.isdefined.html" class="index">IntlChar::isdefined</a> - 説明</li>
-<li><a href="intlchar.isdigit.html" class="index">IntlChar::isdigit</a> - 説明</li>
-<li><a href="intlchar.isgraph.html" class="index">IntlChar::isgraph</a> - 説明</li>
-<li><a href="intlchar.isidignorable.html" class="index">IntlChar::isIDIgnorable</a> - 説明</li>
-<li><a href="intlchar.isidpart.html" class="index">IntlChar::isIDPart</a> - 説明</li>
-<li><a href="intlchar.isidstart.html" class="index">IntlChar::isIDStart</a> - 説明</li>
-<li><a href="intlchar.isisocontrol.html" class="index">IntlChar::isISOControl</a> - 説明</li>
-<li><a href="intlchar.isjavaidpart.html" class="index">IntlChar::isJavaIDPart</a> - 説明</li>
-<li><a href="intlchar.isjavaidstart.html" class="index">IntlChar::isJavaIDStart</a> - 説明</li>
-<li><a href="intlchar.isjavaspacechar.html" class="index">IntlChar::isJavaSpaceChar</a> - 説明</li>
-<li><a href="intlchar.islower.html" class="index">IntlChar::islower</a> - 説明</li>
-<li><a href="intlchar.ismirrored.html" class="index">IntlChar::isMirrored</a> - 説明</li>
-<li><a href="intlchar.isprint.html" class="index">IntlChar::isprint</a> - 説明</li>
-<li><a href="intlchar.ispunct.html" class="index">IntlChar::ispunct</a> - 説明</li>
-<li><a href="intlchar.isspace.html" class="index">IntlChar::isspace</a> - 説明</li>
-<li><a href="intlchar.istitle.html" class="index">IntlChar::istitle</a> - 説明</li>
-<li><a href="intlchar.isualphabetic.html" class="index">IntlChar::isUAlphabetic</a> - 説明</li>
-<li><a href="intlchar.isulowercase.html" class="index">IntlChar::isULowercase</a> - 説明</li>
-<li><a href="intlchar.isupper.html" class="index">IntlChar::isupper</a> - 説明</li>
-<li><a href="intlchar.isuuppercase.html" class="index">IntlChar::isUUppercase</a> - 説明</li>
-<li><a href="intlchar.isuwhitespace.html" class="index">IntlChar::isUWhiteSpace</a> - 説明</li>
-<li><a href="intlchar.iswhitespace.html" class="index">IntlChar::isWhitespace</a> - 説明</li>
-<li><a href="intlchar.isxdigit.html" class="index">IntlChar::isxdigit</a> - 説明</li>
-<li><a href="intlchar.ord.html" class="index">IntlChar::ord</a> - 説明</li>
-<li><a href="intlchar.tolower.html" class="index">IntlChar::tolower</a> - 説明</li>
-<li><a href="intlchar.totitle.html" class="index">IntlChar::totitle</a> - 説明</li>
-<li><a href="intlchar.toupper.html" class="index">IntlChar::toupper</a> - 説明</li>
+<li><a href="intlchar.charage.html" class="index">IntlChar::charAge</a> - Get the &quot;age&quot; of the code point</li>
+<li><a href="intlchar.chardigitvalue.html" class="index">IntlChar::charDigitValue</a> - Get the decimal digit value of a decimal digit character</li>
+<li><a href="intlchar.chardirection.html" class="index">IntlChar::charDirection</a> - Get bidirectional category value for a code point</li>
+<li><a href="intlchar.charfromname.html" class="index">IntlChar::charFromName</a> - Find Unicode character by name and return its code point value</li>
+<li><a href="intlchar.charmirror.html" class="index">IntlChar::charMirror</a> - Get the &quot;mirror-image&quot; character for a code point</li>
+<li><a href="intlchar.charname.html" class="index">IntlChar::charName</a> - Retrieve the name of a Unicode character</li>
+<li><a href="intlchar.chartype.html" class="index">IntlChar::charType</a> - Get the general category value for a code point</li>
+<li><a href="intlchar.chr.html" class="index">IntlChar::chr</a> - Return Unicode character by code point value</li>
+<li><a href="intlchar.digit.html" class="index">IntlChar::digit</a> - Get the decimal digit value of a code point for a given radix</li>
+<li><a href="intlchar.enumcharnames.html" class="index">IntlChar::enumCharNames</a> - Enumerate all assigned Unicode characters within a range</li>
+<li><a href="intlchar.enumchartypes.html" class="index">IntlChar::enumCharTypes</a> - Enumerate all code points with their Unicode general categories</li>
+<li><a href="intlchar.foldcase.html" class="index">IntlChar::foldCase</a> - Perform case folding on a code point</li>
+<li><a href="intlchar.fordigit.html" class="index">IntlChar::forDigit</a> - Get character representation for a given digit and radix</li>
+<li><a href="intlchar.getbidipairedbracket.html" class="index">IntlChar::getBidiPairedBracket</a> - Get the paired bracket character for a code point</li>
+<li><a href="intlchar.getblockcode.html" class="index">IntlChar::getBlockCode</a> - Get the Unicode allocation block containing a code point</li>
+<li><a href="intlchar.getcombiningclass.html" class="index">IntlChar::getCombiningClass</a> - Get the combining class of a code point</li>
+<li><a href="intlchar.getfc-nfkc-closure.html" class="index">IntlChar::getFC_NFKC_Closure</a> - Get the FC_NFKC_Closure property for a code point</li>
+<li><a href="intlchar.getintpropertymaxvalue.html" class="index">IntlChar::getIntPropertyMaxValue</a> - Get the max value for a Unicode property</li>
+<li><a href="intlchar.getintpropertyminvalue.html" class="index">IntlChar::getIntPropertyMinValue</a> - Get the min value for a Unicode property</li>
+<li><a href="intlchar.getintpropertyvalue.html" class="index">IntlChar::getIntPropertyValue</a> - Get the value for a Unicode property for a code point</li>
+<li><a href="intlchar.getnumericvalue.html" class="index">IntlChar::getNumericValue</a> - Get the numeric value for a Unicode code point</li>
+<li><a href="intlchar.getpropertyenum.html" class="index">IntlChar::getPropertyEnum</a> - Get the property constant value for a given property name</li>
+<li><a href="intlchar.getpropertyname.html" class="index">IntlChar::getPropertyName</a> - Get the Unicode name for a property</li>
+<li><a href="intlchar.getpropertyvalueenum.html" class="index">IntlChar::getPropertyValueEnum</a> - Get the property value for a given value name</li>
+<li><a href="intlchar.getpropertyvaluename.html" class="index">IntlChar::getPropertyValueName</a> - Get the Unicode name for a property value</li>
+<li><a href="intlchar.getunicodeversion.html" class="index">IntlChar::getUnicodeVersion</a> - Get the Unicode version</li>
+<li><a href="intlchar.hasbinaryproperty.html" class="index">IntlChar::hasBinaryProperty</a> - Check a binary Unicode property for a code point</li>
+<li><a href="intlchar.isalnum.html" class="index">IntlChar::isalnum</a> - Check if code point is an alphanumeric character</li>
+<li><a href="intlchar.isalpha.html" class="index">IntlChar::isalpha</a> - Check if code point is a letter character</li>
+<li><a href="intlchar.isbase.html" class="index">IntlChar::isbase</a> - Check if code point is a base character</li>
+<li><a href="intlchar.isblank.html" class="index">IntlChar::isblank</a> - Check if code point is a &quot;blank&quot; or &quot;horizontal space&quot; character</li>
+<li><a href="intlchar.iscntrl.html" class="index">IntlChar::iscntrl</a> - Check if code point is a control character</li>
+<li><a href="intlchar.isdefined.html" class="index">IntlChar::isdefined</a> - Check whether the code point is defined</li>
+<li><a href="intlchar.isdigit.html" class="index">IntlChar::isdigit</a> - Check if code point is a digit character</li>
+<li><a href="intlchar.isgraph.html" class="index">IntlChar::isgraph</a> - Check if code point is a graphic character</li>
+<li><a href="intlchar.isidignorable.html" class="index">IntlChar::isIDIgnorable</a> - Check if code point is an ignorable character</li>
+<li><a href="intlchar.isidpart.html" class="index">IntlChar::isIDPart</a> - Check if code point is permissible in an identifier</li>
+<li><a href="intlchar.isidstart.html" class="index">IntlChar::isIDStart</a> - Check if code point is permissible as the first character in an identifier</li>
+<li><a href="intlchar.isisocontrol.html" class="index">IntlChar::isISOControl</a> - Check if code point is an ISO control code</li>
+<li><a href="intlchar.isjavaidpart.html" class="index">IntlChar::isJavaIDPart</a> - Check if code point is permissible in a Java identifier</li>
+<li><a href="intlchar.isjavaidstart.html" class="index">IntlChar::isJavaIDStart</a> - Check if code point is permissible as the first character in a Java identifier</li>
+<li><a href="intlchar.isjavaspacechar.html" class="index">IntlChar::isJavaSpaceChar</a> - Check if code point is a space character according to Java</li>
+<li><a href="intlchar.islower.html" class="index">IntlChar::islower</a> - Check if code point is a lowercase letter</li>
+<li><a href="intlchar.ismirrored.html" class="index">IntlChar::isMirrored</a> - Check if code point has the Bidi_Mirrored property</li>
+<li><a href="intlchar.isprint.html" class="index">IntlChar::isprint</a> - Check if code point is a printable character</li>
+<li><a href="intlchar.ispunct.html" class="index">IntlChar::ispunct</a> - Check if code point is punctuation character</li>
+<li><a href="intlchar.isspace.html" class="index">IntlChar::isspace</a> - Check if code point is a space character</li>
+<li><a href="intlchar.istitle.html" class="index">IntlChar::istitle</a> - Check if code point is a titlecase letter</li>
+<li><a href="intlchar.isualphabetic.html" class="index">IntlChar::isUAlphabetic</a> - Check if code point has the Alphabetic Unicode property</li>
+<li><a href="intlchar.isulowercase.html" class="index">IntlChar::isULowercase</a> - Check if code point has the Lowercase Unicode property</li>
+<li><a href="intlchar.isupper.html" class="index">IntlChar::isupper</a> - Check if code point has the general category &quot;Lu&quot; (uppercase letter)</li>
+<li><a href="intlchar.isuuppercase.html" class="index">IntlChar::isUUppercase</a> - Check if code point has the Uppercase Unicode property</li>
+<li><a href="intlchar.isuwhitespace.html" class="index">IntlChar::isUWhiteSpace</a> - Check if code point has the White_Space Unicode property</li>
+<li><a href="intlchar.iswhitespace.html" class="index">IntlChar::isWhitespace</a> - Check if code point is a whitespace character according to ICU</li>
+<li><a href="intlchar.isxdigit.html" class="index">IntlChar::isxdigit</a> - Check if code point is a hexadecimal digit</li>
+<li><a href="intlchar.ord.html" class="index">IntlChar::ord</a> - Return Unicode code point value of character</li>
+<li><a href="intlchar.tolower.html" class="index">IntlChar::tolower</a> - Make Unicode character lowercase</li>
+<li><a href="intlchar.totitle.html" class="index">IntlChar::totitle</a> - Make Unicode character titlecase</li>
+<li><a href="intlchar.toupper.html" class="index">IntlChar::toupper</a> - Make Unicode character uppercase</li>
 <li><a href="intlcodepointbreakiterator.getlastcodepoint.html" class="index">IntlCodePointBreakIterator::getLastCodePoint</a> - Get last code point passed over after advancing or receding the iterator</li>
 <li><a href="intldateformatter.create.html" class="index">IntlDateFormatter::create</a> - Date Formatter を作成する</li>
 <li><a href="intldateformatter.format.html" class="index">IntlDateFormatter::format</a> - 日付/時刻 の値を文字列としてフォーマットする</li>
@@ -4097,7 +4099,7 @@
 <li><a href="function.intl-is-failure.html" class="index">intl_is_failure</a> - 指定したエラーコードが失敗を表すかどうかを調べる</li>
 <li><a href="function.intval.html" class="index">intval</a> - 変数の整数としての値を取得する</li>
 <li><a href="function.in-array.html" class="index">in_array</a> - 配列に値があるかチェックする</li>
-<li><a href="function.ip2long.html" class="index">ip2long</a> - ドット表記の (IPv4) IP アドレスを、適切なアドレスに変換する</li>
+<li><a href="function.ip2long.html" class="index">ip2long</a> - ドット表記の (IPv4) IP アドレスを、長整数表現に変換する</li>
 <li><a href="function.iptcembed.html" class="index">iptcembed</a> - バイナリ IPTC データを JPEG イメージに埋めこむ</li>
 <li><a href="function.iptcparse.html" class="index">iptcparse</a> - バイナリの IPTC ブロックのタグをパースする</li>
 <li><a href="function.isset.html" class="index">isset</a> - 変数がセットされていること、そして NULL でないことを検査する</li>
@@ -4126,7 +4128,7 @@
 <li><a href="function.is-scalar.html" class="index">is_scalar</a> - 変数がスカラかどうかを調べる</li>
 <li><a href="function.is-soap-fault.html" class="index">is_soap_fault</a> - SOAP コールが失敗したかどうかを調べる</li>
 <li><a href="function.is-string.html" class="index">is_string</a> - 変数の型が文字列かどうかを調べる</li>
-<li><a href="function.is-subclass-of.html" class="index">is_subclass_of</a> - あるオブジェクトが指定したクラスのサブクラスに属するかどうかを調べる</li>
+<li><a href="function.is-subclass-of.html" class="index">is_subclass_of</a> - あるオブジェクトが指定したクラスのサブクラスに属するか (あるいは指定したインターフェイスを実装しているか) どうかを調べる</li>
 <li><a href="function.is-tainted.html" class="index">is_tainted</a> - 文字列が汚染されているかどうかを調べる</li>
 <li><a href="function.is-uploaded-file.html" class="index">is_uploaded_file</a> - HTTP POST でアップロードされたファイルかどうかを調べる</li>
 <li><a href="function.is-writable.html" class="index">is_writable</a> - ファイルが書き込み可能かどうかを調べる</li>
@@ -4345,7 +4347,7 @@
 <li><a href="function.log-killcursor.html" class="index">log_killcursor</a> - Callback When Executing KILLCURSOR operations</li>
 <li><a href="function.log-reply.html" class="index">log_reply</a> - Callback When Reading the MongoDB reply</li>
 <li><a href="function.log-write-batch.html" class="index">log_write_batch</a> - Callback When Writing Batches</li>
-<li><a href="function.long2ip.html" class="index">long2ip</a> - (IPv4) インターネットアドレスをインターネット標準ドット表記に変換する</li>
+<li><a href="function.long2ip.html" class="index">long2ip</a> - 長整数評言のインターネットアドレスを (IPv4) インターネット標準ドット表記に変換する</li>
 <li><a href="function.lstat.html" class="index">lstat</a> - ファイルあるいはシンボリックリンクの情報を取得する</li>
 <li><a href="function.ltrim.html" class="index">ltrim</a> - 文字列の最初から空白 (もしくはその他の文字) を取り除く</li>
 <li><a href="lua.assign.html" class="index">Lua::assign</a> - PHP 変数を Lua にアサイン</li>
@@ -4805,7 +4807,7 @@
 <li><a href="mongodb.createdbref.html" class="index">MongoDB::createDBRef</a> - データベース参照を作成する</li>
 <li><a href="mongodb.drop.html" class="index">MongoDB::drop</a> - このデータベースを削除する</li>
 <li><a href="mongodb.dropcollection.html" class="index">MongoDB::dropCollection</a> - コレクションを削除する [非推奨]</li>
-<li><a href="mongodb.execute.html" class="index">MongoDB::execute</a> - JavaScript コードをデータベースサーバー上で実行する</li>
+<li><a href="mongodb.execute.html" class="index">MongoDB::execute</a> - JavaScript コードをデータベースサーバー上で実行する [非推奨]</li>
 <li><a href="mongodb.forceerror.html" class="index">MongoDB::forceError</a> - データベースのエラーを作成する</li>
 <li><a href="mongodb.getcollectioninfo.html" class="index">MongoDB::getCollectionInfo</a> - Returns information about collections in this database</li>
 <li><a href="mongodb.getcollectionnames.html" class="index">MongoDB::getCollectionNames</a> - このデータベースのすべてのコレクション名の配列を取得する</li>
@@ -6563,6 +6565,7 @@
 <li><a href="function.posix-seteuid.html" class="index">posix_seteuid</a> - 現在のプロセスの実効 UID を設定する</li>
 <li><a href="function.posix-setgid.html" class="index">posix_setgid</a> - 現在のプロセスの GID を設定する</li>
 <li><a href="function.posix-setpgid.html" class="index">posix_setpgid</a> - ジョブ制御のプロセスグループ ID を設定する</li>
+<li><a href="function.posix-setrlimit.html" class="index">posix_setrlimit</a> - Set system resource limits</li>
 <li><a href="function.posix-setsid.html" class="index">posix_setsid</a> - 現在のプロセスをセッションリーダーにする</li>
 <li><a href="function.posix-setuid.html" class="index">posix_setuid</a> - 現在のプロセスの UID を設定する</li>
 <li><a href="function.posix-strerror.html" class="index">posix_strerror</a> - 指定したエラー番号に対応するシステムのエラーメッセージを取得する</li>
@@ -8680,14 +8683,14 @@
 <li><a href="threaded.synchronized.html" class="index">Threaded::synchronized</a> - Synchronization</li>
 <li><a href="threaded.unlock.html" class="index">Threaded::unlock</a> - Synchronization</li>
 <li><a href="threaded.wait.html" class="index">Threaded::wait</a> - Synchronization</li>
-<li><a href="throwable.getcode.html" class="index">Throwable::getCode</a> - Gets the exception code</li>
-<li><a href="throwable.getfile.html" class="index">Throwable::getFile</a> - Gets the file in which the exception occurred</li>
-<li><a href="throwable.getline.html" class="index">Throwable::getLine</a> - Gets the line on which the object was instantiated</li>
-<li><a href="throwable.getmessage.html" class="index">Throwable::getMessage</a> - Gets the message</li>
-<li><a href="throwable.getprevious.html" class="index">Throwable::getPrevious</a> - Returns the previous Throwable</li>
-<li><a href="throwable.gettrace.html" class="index">Throwable::getTrace</a> - Gets the stack trace</li>
-<li><a href="throwable.gettraceasstring.html" class="index">Throwable::getTraceAsString</a> - Gets the stack trace as a string</li>
-<li><a href="throwable.tostring.html" class="index">Throwable::__toString</a> - Gets a string representation of the thrown object</li>
+<li><a href="throwable.getcode.html" class="index">Throwable::getCode</a> - 例外コードを取得する</li>
+<li><a href="throwable.getfile.html" class="index">Throwable::getFile</a> - 例外が発生したファイル名を取得する</li>
+<li><a href="throwable.getline.html" class="index">Throwable::getLine</a> - オブジェクトのインスタンスが作られた行番号を取得する</li>
+<li><a href="throwable.getmessage.html" class="index">Throwable::getMessage</a> - メッセージを取得する</li>
+<li><a href="throwable.getprevious.html" class="index">Throwable::getPrevious</a> - ひとつ前の Throwable を返す</li>
+<li><a href="throwable.gettrace.html" class="index">Throwable::getTrace</a> - スタックトレースを取得する</li>
+<li><a href="throwable.gettraceasstring.html" class="index">Throwable::getTraceAsString</a> - スタックトレースを文字列として取得する</li>
+<li><a href="throwable.tostring.html" class="index">Throwable::__toString</a> - スローされたオブジェクトの文字列表現を取得する</li>
 <li><a href="tidy.props.errorbuffer.html" class="index">tidy::$errorBuffer</a> - 指定したドキュメントのパースで発生した警告とエラーを返す</li>
 <li><a href="tidy.body.html" class="index">tidy::body</a> - Tidy パースツリーの &lt;body&gt; タグから始まる tidyNode オブジェクトを返す</li>
 <li><a href="tidy.cleanrepair.html" class="index">tidy::cleanRepair</a> - パースされたマークアップに設定に基く誤りの修正を行う</li>

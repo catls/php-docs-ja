@@ -6,8 +6,8 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration70.new-features.html">新機能</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration70.deprecated.html">PHP 7.0.x で推奨されなくなる機能</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration70.constants.html">新しいグローバル定数</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration70.removed-exts-sapis.html">削除された拡張モジュールおよび SAPI</a></div>
  <div class="up"><a href="migration70.html">PHP 5.6.x から PHP 7.0.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="migration70.sapi-changes" class="sect1">
@@ -16,22 +16,27 @@
  <div class="sect2" id="migration70.sapi-changes.fpm">
   <h3 class="title"><a href="book.fpm.html" class="link">FPM</a></h3>
 
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <span class="simpara">
-     Fixed bug #65933 (Cannot specify config lines longer than 1024 bytes).
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     Listen = port now listen on all addresses (IPv6 and IPv4-mapped).
-    </span>
-   </li>
-  </ul>
+  <div class="sect3" id="migration70.sapi-changes.fpm.listen">
+   <h4 class="title">
+    制限のない <a href="install.fpm.configuration.html#listen" class="link">listen</a> ポートは、
+    IPv4 と IPv6 の両方をリスンするようになりました。
+   </h4>
+
+   <p class="para">
+    PHP 5 では、<a href="install.fpm.configuration.html#listen" class="link">listen</a> ディレクティブにポート番号だけを指定した場合は、
+    すべてのインターフェイス上で IPv4 だけをリスンしていました。PHP 7 では、
+    IPv4 と IPv6 の両方のリクエストを受け付けるようになります。
+   </p>
+
+   <p class="para">
+    特定の IP アドレスを指定しているディレクティブには何も影響を及ぼしません。
+    IP アドレスを指定している場合は、そのアドレスとプロトコルだけを受け付けます。
+   </p>
+  </div>
  </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration70.new-features.html">新機能</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration70.deprecated.html">PHP 7.0.x で推奨されなくなる機能</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration70.constants.html">新しいグローバル定数</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration70.removed-exts-sapis.html">削除された拡張モジュールおよび SAPI</a></div>
  <div class="up"><a href="migration70.html">PHP 5.6.x から PHP 7.0.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

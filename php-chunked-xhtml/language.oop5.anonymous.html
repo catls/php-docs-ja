@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Anonymous classes</title>
+  <title>無名クラス</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -11,17 +11,17 @@
  <div class="up"><a href="language.oop5.html">クラスとオブジェクト</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="language.oop5.anonymous" class="sect1">
- <h2 class="title">Anonymous classes</h2>
+ <h2 class="title">無名クラス</h2>
 
  <p class="para">
-  Support for anonymous classes was added in PHP 7. Anonymous classes are
-  useful when simple, one-off objects need to be created.
+  PHP 7 で、無名クラスをサポートするようになりました。
+  その場限りの使い捨てのオブジェクトが必要になった場合に便利です。
  </p>
 
  <div class="informalexample">
   <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;Pre&nbsp;PHP&nbsp;7&nbsp;code<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Logger<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">log</span><span style="color: #007700">(</span><span style="color: #0000BB">$msg</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$msg</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$util</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setLogger</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">Logger</span><span style="color: #007700">());<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7+&nbsp;code<br /></span><span style="color: #0000BB">$util</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setLogger</span><span style="color: #007700">(new&nbsp;class&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">log</span><span style="color: #007700">(</span><span style="color: #0000BB">$msg</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$msg</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />});</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7&nbsp;より前のバージョンのコード<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Logger<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">log</span><span style="color: #007700">(</span><span style="color: #0000BB">$msg</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$msg</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$util</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setLogger</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">Logger</span><span style="color: #007700">());<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7&nbsp;以降のコード<br /></span><span style="color: #0000BB">$util</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setLogger</span><span style="color: #007700">(new&nbsp;class&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">log</span><span style="color: #007700">(</span><span style="color: #0000BB">$msg</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$msg</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />});</span>
 </span>
 </code></div>
   </div>
@@ -29,8 +29,9 @@
  </div>
 
  <p class="para">
-  They can pass arguments through to their constructors, extend other classes,
-  implement interfaces, and use traits just like a normal class can:
+  コンストラクタを使って引数を渡したり、他のクラスを継承したり、
+  インターフェイスを実装したり、トレイトを使ったりといった、
+  普通のクラスと同じようなことが可能です。
  </p>
 
  <div class="informalexample">
@@ -53,12 +54,11 @@ object(class@anonymous)#1 (1) {
  </div>
 
  <p class="para">
-  Nesting an anonymous class within another class does not give it access to
-  any private or protected methods or properties of that outer class. In order
-  to use the outer class&#039; protected properties or methods, the anonymous class
-  can extend the outer class. To use the private or protected properties of
-  the outer class in the anonymous class, they must be passed through its
-  constructor:
+  無名クラスを別のクラス内で作っても、卒塔婆輪のクラスの private や protected なメソッドそしてプロパティにはアクセスできません。
+  外側のクラスの protected プロパティやメソッドにアクセスするには、
+  無名クラスに外側のクラスを継承させます。
+  外側のクラスの private あるいは protected なプロパティを無名クラスで使うには、
+  コンストラクタでそれを渡す必要があります。
  </p>
 
  <div class="informalexample">

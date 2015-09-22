@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>説明</title>
+  <title>Get the combining class of a code point</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,8 @@
 </div><hr /><div id="intlchar.getcombiningclass" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">IntlChar::getCombiningClass</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">IntlChar::getCombiningClass</span> &mdash; <span class="dc-title">
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">IntlChar::getCombiningClass</span> &mdash; <span class="dc-title">Get the combining class of a code point</span></p>
+
  </div>
 
  <div class="refsect1 description" id="refsect1-intlchar.getcombiningclass-description">
@@ -24,13 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   Returns the combining class of the code point.
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -44,9 +40,7 @@
 
     <dd>
 
-     <p class="para">
-      
-     </p>
+     <p class="para">コードポイントを表す <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> 型の値 (例: <em class="emphasis">U+2603 SNOWMAN</em> を表す <em>0x2603</em>)、あるいは UTF-8 文字列としてエンコードされた文字 (例: <em>&quot;\u{2603}&quot;</em>)。</p>
     </dd>
 
    
@@ -58,10 +52,32 @@
  <div class="refsect1 returnvalues" id="refsect1-intlchar.getcombiningclass-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   
+   Returns the combining class of the character.
   </p>
  </div>
 
+
+ <div class="refsect1 examples" id="refsect1-intlchar.getcombiningclass-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-2920">
+   <p><strong>例1 さまざまなコードポイントの例</strong></p>
+   <div class="example-contents">
+    <div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getCombiningClass</span><span style="color: #007700">(</span><span style="color: #DD0000">"A"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getCombiningClass</span><span style="color: #007700">(</span><span style="color: #DD0000">"\u{0334}"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getCombiningClass</span><span style="color: #007700">(</span><span style="color: #DD0000">"\u{0358}"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+   <div class="example-contents screen">
+    <div class="cdata"><pre>
+int(0)
+int(1)
+int(232)
+</pre></div>
+   </div>
+  </div>
+ </div>
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

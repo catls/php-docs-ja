@@ -13,11 +13,33 @@
 </div><hr /><div id="migration70.other-changes" class="sect1">
  <h2 class="title">その他の変更</h2>
 
- <div class="sect2" id="migration70.other-changes.div-by-zero">
-  <h3 class="title">ゼロ除算に対する変更</h3>
+ <div class="sect2" id="migration70.other-changes.loosening-reserved-words">
+  <h3 class="title">予約語の制約の緩和</h3>
 
   <p class="para">
-    ...
+   クラスやインターフェイスそしてトレイトの内部で、
+   プロパティや定数そしてメソッドの名前にグローバルな予約語を使えるようになりました。
+   これで、今後新たなキーワードが導入された場合でも下位互換性を維持しやすくなります。
+   そして、API の命名の制約も軽減できるでしょう。
+  </p>
+
+  <p class="para">
+   これは、流れるようなインターフェイスを用いた内部 DSL を作る際などに便利です。
+  </p>
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;'new',&nbsp;'private',&nbsp;'for'&nbsp;は、これまでなら使うことができませんでした<br /></span><span style="color: #0000BB">Project</span><span style="color: #007700">::new(</span><span style="color: #DD0000">'Project&nbsp;Name'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">private</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">for</span><span style="color: #007700">(</span><span style="color: #DD0000">'purpose&nbsp;here'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">with</span><span style="color: #007700">(</span><span style="color: #DD0000">'username&nbsp;here'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <p class="para">
+   唯一の例外は <em>class</em> キーワードで、このキーワードを定数名として使うことはできません。
+   これを許してしまうと、クラス名の解決に使う構文
+   (<em>ClassName::class</em>) と衝突してしまうからです。
   </p>
  </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">

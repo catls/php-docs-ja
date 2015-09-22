@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>説明</title>
+  <title>Get the Unicode version</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,8 @@
 </div><hr /><div id="intlchar.getunicodeversion" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">IntlChar::getUnicodeVersion</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">IntlChar::getUnicodeVersion</span> &mdash; <span class="dc-title">
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">IntlChar::getUnicodeVersion</span> &mdash; <span class="dc-title">Get the Unicode version</span></p>
+
  </div>
 
  <div class="refsect1 description" id="refsect1-intlchar.getunicodeversion-description">
@@ -24,13 +25,12 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   Gets the Unicode version information.
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
+  <p class="para">
+   The version array is filled in with the version information for the Unicode standard that is currently used by ICU.
+   For example, Unicode version 3.1.1 is represented as an array with the values <em>[3, 1, 1, 0]</em>.
+  </p>
  </div>
 
 
@@ -43,10 +43,49 @@
  <div class="refsect1 returnvalues" id="refsect1-intlchar.getunicodeversion-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   
+   An array containing the Unicode version number.
   </p>
  </div>
 
+
+ <div class="refsect1 examples" id="refsect1-intlchar.getunicodeversion-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-2930">
+   <p><strong>例1 さまざまなプロパティの例</strong></p>
+   <div class="example-contents">
+    <div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getUnicodeVersion</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+   <div class="example-contents screen">
+    <div class="cdata"><pre>
+array(4) {
+  [0]=&gt;
+  int(7)
+  [1]=&gt;
+  int(0)
+  [2]=&gt;
+  int(0)
+  [3]=&gt;
+  int(0)
+}
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-intlchar.getunicodeversion-seealso">
+  <h3 class="title">参考</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="intlchar.charage.html" class="function" rel="rdfs-seeAlso">IntlChar::charAge()</a> - Get the &quot;age&quot; of the code point</span></li>
+   </ul>
+  </p>
+ </div>
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

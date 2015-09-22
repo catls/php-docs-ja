@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Binds and calls the closure</title>
+  <title>クロージャを束縛して呼び出す</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="closure.call" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Closure::call</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">Closure::call</span> &mdash; <span class="dc-title">Binds and calls the closure</span></p>
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">Closure::call</span> &mdash; <span class="dc-title">クロージャを束縛して呼び出す</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-closure.call-description">
@@ -25,8 +25,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   Temporarily binds the closure to <code class="parameter">newthis</code>, and calls
-   it with any given parameters.
+   クロージャを一時的に <code class="parameter">newthis</code> に束縛し、
+   指定したパラメータでそれを呼び出します。
   </p>
  </div>
 
@@ -41,8 +41,7 @@
     <dd>
 
      <p class="para">
-      The <span class="type"><a href="language.types.object.html" class="type object">object</a></span> to bind the closure to for the duration of the
-      call.
+      この呼び出しの間だけクロージャを束縛するオブジェクト。
      </p>
     </dd>
 
@@ -54,8 +53,7 @@
     <dd>
 
      <p class="para">
-      Zero or more parameters, which will be given as parameters to the
-      closure.
+      クロージャに渡すパラメータがある場合は、ここで指定します。
      </p>
     </dd>
 
@@ -67,14 +65,14 @@
  <div class="refsect1 returnvalues" id="refsect1-closure.call-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the return value of the closure.
+   クロージャの戻り値を返します。
   </p>
  </div>
 
  <div class="refsect1 examples" id="refsect1-closure.call-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-338">
-   <p><strong>例1 <span class="function"><strong>Closure::call()</strong></span> example</strong></p>
+  <div class="example" id="example-342">
+   <p><strong>例1 <span class="function"><strong>Closure::call()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Value&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">value&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">getValue</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">value</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$three&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Value</span><span style="color: #007700">(</span><span style="color: #0000BB">3</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$four&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Value</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$closure&nbsp;</span><span style="color: #007700">=&nbsp;function&nbsp;(</span><span style="color: #0000BB">$delta</span><span style="color: #007700">)&nbsp;{&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getValue</span><span style="color: #007700">()&nbsp;+&nbsp;</span><span style="color: #0000BB">$delta</span><span style="color: #007700">);&nbsp;};<br /></span><span style="color: #0000BB">$closure</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">call</span><span style="color: #007700">(</span><span style="color: #0000BB">$three</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$closure</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">call</span><span style="color: #007700">(</span><span style="color: #0000BB">$four</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

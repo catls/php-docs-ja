@@ -32,12 +32,12 @@
    の文字がどれも含まれて<em class="emphasis">いない</em>最初のセグメントの長さを返します。
   </p>
   <p class="para">
-   If <code class="parameter">start</code> and <code class="parameter">length</code>
-   are omitted, then all of <code class="parameter">subject</code> will be
-   examined. If they are included, then the effect will be the same as
-   calling <em>strcspn(substr($subject, $start, $length),
-   $mask)</em> (see <a href="function.substr.html" class="xref">substr</a>
-   for more information).
+   <code class="parameter">start</code> と <code class="parameter">length</code>
+   を省略した場合は、<code class="parameter">subject</code> の全体を調べます。
+   これらのパラメータを指定した場合は、
+   <em>strcspn(substr($subject, $start, $length),
+   $mask)</em> のようにするのと同じ動きになります (詳細は <a href="function.substr.html" class="xref">substr</a>
+   を参照ください)。
   </p>
  </div>
 
@@ -81,21 +81,19 @@
        <code class="parameter">subject</code> の中で調べ始める位置。
       </p>
       <p class="para">
-       If <code class="parameter">start</code> is given and is non-negative,
-       then <span class="function"><strong>strcspn()</strong></span> will begin
-       examining <code class="parameter">subject</code> at
-       the <code class="parameter">start</code>&#039;th position. For instance, in
-       the string &#039;<em>abcdef</em>&#039;, the character at
-       position <em>0</em> is &#039;<em>a</em>&#039;, the
-       character at position <em>2</em> is
-       &#039;<em>c</em>&#039;, and so forth.
+       <code class="parameter">start</code> に非負の値を指定した場合は、
+       <span class="function"><strong>strcspn()</strong></span> は、
+       <code class="parameter">subject</code> の
+       <code class="parameter">start</code> 番目の文字から調べ始めます。
+       たとえば &#039;<em>abcdef</em>&#039; という文字列があったとすると、
+       <em>0</em> 番目の文字が &#039;<em>a</em>&#039; で
+       <em>2</em> 番目の文字は &#039;<em>c</em>&#039; のようになります。
       </p>
       <p class="para">
-       If <code class="parameter">start</code> is given and is negative,
-       then <span class="function"><a href="function.strspn.html" class="function">strspn()</a></span> will begin
-       examining <code class="parameter">subject</code> at
-       the <code class="parameter">start</code>&#039;th position from the end
-       of <code class="parameter">subject</code>.
+       <code class="parameter">start</code> に負の値を指定した場合は、
+       <span class="function"><a href="function.strspn.html" class="function">strspn()</a></span> は、
+       <code class="parameter">subject</code> の後ろから
+       <code class="parameter">start</code> 番目の文字から調べ始めます。
       </p>
      </dd>
 
@@ -110,16 +108,15 @@
        <code class="parameter">subject</code> の中での調べるセグメントの長さ。
       </p>
       <p class="para">
-       If <code class="parameter">length</code> is given and is non-negative,
-       then <code class="parameter">subject</code> will be examined
-       for <code class="parameter">length</code> characters after the starting
-       position.
+       <code class="parameter">length</code> に非負の値を指定した場合は、
+       <code class="parameter">subject</code> の開始位置から
+       <code class="parameter">length</code> 文字ぶんだけ調べます。
       </p>
       <p class="para">
-       If <code class="parameter">length</code> is given and is negative,
-       then <code class="parameter">subject</code> will be examined from the
-       starting position up to <code class="parameter">length</code>
-       characters from the end of <code class="parameter">subject</code>.
+       <code class="parameter">length</code> に負の値を指定した場合は、
+       <code class="parameter">subject</code> の開始位置から調べ始めて、
+       <code class="parameter">subject</code> の末尾から
+       <code class="parameter">length</code> 文字目のところまで調べます。
       </p>
      </dd>
 
@@ -133,14 +130,14 @@
  <div class="refsect1 returnvalues" id="refsect1-function.strcspn-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the length of the initial segment of <code class="parameter">subject</code>
-   which consists entirely of characters <em class="emphasis">not</em> in <code class="parameter">mask</code>.
+   <code class="parameter">subject</code> の中で、
+   <code class="parameter">mask</code> の文字をまったく<em class="emphasis">含まない</em>
+   最初のセグメントの長さを返します。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    When a <code class="parameter">start</code> parameter is set, the returned length
-    is counted starting from this position, not from the beginning of
-    <code class="parameter">subject</code>.
+    <code class="parameter">start</code> を指定した場合は、その位置から長さを数え始めます。
+    <code class="parameter">subject</code> の先頭から数えるわけではありません。
    </p>
   </p></blockquote>
  </div>

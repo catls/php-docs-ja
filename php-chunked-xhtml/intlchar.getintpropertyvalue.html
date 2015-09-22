@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>説明</title>
+  <title>Get the value for a Unicode property for a code point</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,8 @@
 </div><hr /><div id="intlchar.getintpropertyvalue" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">IntlChar::getIntPropertyValue</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">IntlChar::getIntPropertyValue</span> &mdash; <span class="dc-title">
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">IntlChar::getIntPropertyValue</span> &mdash; <span class="dc-title">Get the value for a Unicode property for a code point</span></p>
+
  </div>
 
  <div class="refsect1 description" id="refsect1-intlchar.getintpropertyvalue-description">
@@ -25,13 +26,9 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   Gets the property value for an enumerated or integer Unicode property for a code point.
+   Also returns binary and mask property values.
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -45,9 +42,7 @@
 
     <dd>
 
-     <p class="para">
-      
-     </p>
+     <p class="para">コードポイントを表す <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> 型の値 (例: <em class="emphasis">U+2603 SNOWMAN</em> を表す <em>0x2603</em>)、あるいは UTF-8 文字列としてエンコードされた文字 (例: <em>&quot;\u{2603}&quot;</em>)。</p>
     </dd>
 
    
@@ -57,9 +52,7 @@
 
     <dd>
 
-     <p class="para">
-      
-     </p>
+     <p class="para">調べたい Unicode プロパティ (定数 <em>IntlChar::PROPERTY_*</em> を参照ください)。</p>
     </dd>
 
    
@@ -71,10 +64,56 @@
  <div class="refsect1 returnvalues" id="refsect1-intlchar.getintpropertyvalue-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   
+   Returns the numeric value that is directly the property value or, for enumerated properties, corresponds to the
+   numeric value of the enumerated constant of the respective property value enumeration type.
+  </p>
+  <p class="para">
+   Returns <em>0</em> or <em>1</em> (for <strong><code>FALSE</code></strong>/<strong><code>TRUE</code></strong>) for binary Unicode properties.
+  </p>
+  <p class="para">
+   Returns a bit-mask for mask properties.
+  </p>
+  <p class="para">
+   Returns <em>0</em> if <code class="parameter">property</code> is out of bounds or if the Unicode version does not
+   have data for the property at all, or not for this code point.
   </p>
  </div>
 
+
+ <div class="refsect1 examples" id="refsect1-intlchar.getintpropertyvalue-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-2924">
+   <p><strong>例1 さまざまなプロパティの例</strong></p>
+   <div class="example-contents">
+    <div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getIntPropertyValue</span><span style="color: #007700">(</span><span style="color: #DD0000">"A"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">PROPERTY_ALPHABETIC</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getIntPropertyValue</span><span style="color: #007700">(</span><span style="color: #DD0000">"["</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">PROPERTY_BIDI_MIRRORED</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getIntPropertyValue</span><span style="color: #007700">(</span><span style="color: #DD0000">"Φ"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">PROPERTY_BLOCK</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">BLOCK_CODE_GREEK</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+   <div class="example-contents screen">
+    <div class="cdata"><pre>
+bool(true)
+bool(true)
+bool(true)
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-intlchar.getintpropertyvalue-seealso">
+  <h3 class="title">参考</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="intlchar.hasbinaryproperty.html" class="function" rel="rdfs-seeAlso">IntlChar::hasBinaryProperty()</a> - Check a binary Unicode property for a code point</span></li>
+    <li class="member"><span class="function"><a href="intlchar.getintpropertyminvalue.html" class="function" rel="rdfs-seeAlso">IntlChar::getIntPropertyMinValue()</a> - Get the min value for a Unicode property</span></li>
+    <li class="member"><span class="function"><a href="intlchar.getintpropertymaxvalue.html" class="function" rel="rdfs-seeAlso">IntlChar::getIntPropertyMaxValue()</a> - Get the max value for a Unicode property</span></li>
+    <li class="member"><span class="function"><a href="intlchar.getunicodeversion.html" class="function" rel="rdfs-seeAlso">IntlChar::getUnicodeVersion()</a> - Get the Unicode version</span></li>
+   </ul>
+  </p>
+ </div>
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

@@ -588,6 +588,55 @@ Stack trace:
    以前のバージョンでは、このときの振る舞いはアーキテクチャに依存していました。
   </p>
  </div>
+
+ <div class="sect3" id="migration70.incompatible.integers.div-by-zero">
+  <h4 class="title">ゼロ除算の挙動の変更</h4>
+
+  <p class="para">
+   以前のバージョンでは、除算演算子 (/) や剰余演算子 (%) の除数に
+   0 を使うと、E_WARNING が発生して結果は
+   <strong><code>false</code></strong> となっていました。
+   PHP 7 では、除算演算子の返す結果は float で、
+   +INF、-INF あるいは NAN のいずれかとなります。
+   剰余演算子については E_WARNING が発生しなくなり、
+   <a href="class.divisionbyzeroerror.html" class="classname">DivisionByZeroError</a>
+   例外をスローするようになりました。
+  </p>
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">3</span><span style="color: #007700">/</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">/</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">0</span><span style="color: #007700">%</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">上の例の PHP 5 での出力は、このようになります。</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Warning: Division by zero in %s on line %d
+bool(false)
+
+Warning: Division by zero in %s on line %d
+bool(false)
+
+Warning: Division by zero in %s on line %d
+bool(false)
+</pre></div>
+   </div>
+   <p class="para">上の例の PHP 7 での出力は、このようになります。</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Warning: Division by zero in %s on line %d
+float(INF)
+
+Warning: Division by zero in %s on line %d
+float(NAN)
+
+PHP Fatal error:  Uncaught DivisionByZeroError: Modulo by zero in %s line %d
+</pre></div>
+   </div>
+  </div>
+ </div>
 </div>
 
 
@@ -1053,6 +1102,26 @@ NULL
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$unused</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$unused</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+ <div class="sect3" id="migration70.incompatible.other.multiple-default">
+  <h4 class="title">Switch 文に複数の default ブロックを書けない</h4>
+
+  <p class="para">
+   ひとつの switch 文の中に、複数の default ブロックを定義することができなくなりました。
+   たとえば次のように書くと
+   <strong><code>E_COMPILE_ERROR</code></strong> になります。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">switch&nbsp;(</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;default:<br />&nbsp;&nbsp;&nbsp;&nbsp;break;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>

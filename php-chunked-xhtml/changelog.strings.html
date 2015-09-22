@@ -40,9 +40,7 @@
         thousands_sep に複数バイトを指定できるようになりました。
         それまでは、複数のバイトを指定しても先頭の 1 バイトしか使われませんでした。</td></tr></tbody><tbody class="gen-changelog v5-4-0"><tr><td>5.3.7</td><td><a href='function.crypt.html'>crypt</a></td><td>Blowfish のモード $2x$ および $2y$
         が追加され、高ビット攻撃に対応できるようになりました。</td></tr></tbody><tbody class="gen-changelog v5-3-7"><tr><td>5.3.4</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>encoding パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strip-tags.html'>strip_tags</a></td><td>strip_tags は、
-        自己終了型の XHTML タグを除去しなくなりました。
-        ただし、その自己終了型 XHTML タグが
-        allowable_tags に渡されている場合を除きます。</td></tr></tbody><tbody class="gen-changelog v5-3-4"><tr><td>5.3.3</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>デフォルトのエンコーディングが ISO-8859-1 から UTF-8 に変わりました。</td></tr></tbody><tbody class="gen-changelog v5-3-3"><tr><td>5.3.2</td><td><a href='function.crypt.html'>crypt</a></td><td>Blowfish で無効な rounds を指定したときに、DES に切り替えるのではなく
+        allowable_tags 内の自己終了型 XHTML タグを無視するようになりました。</td></tr></tbody><tbody class="gen-changelog v5-3-4"><tr><td>5.3.3</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>デフォルトのエンコーディングが ISO-8859-1 から UTF-8 に変わりました。</td></tr></tbody><tbody class="gen-changelog v5-3-3"><tr><td>5.3.2</td><td><a href='function.crypt.html'>crypt</a></td><td>Blowfish で無効な rounds を指定したときに、DES に切り替えるのではなく
         &quot;failure&quot; 文字列 (&quot;*0&quot; あるいは &quot;*1&quot;) を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>SHA-256 および SHA-512 による暗号化が追加されました。Ulrich Drepper の
         実装
         を使っています。</td></tr></tbody><tbody class="gen-changelog v5-3-2"><tr><td>5.3.0</td><td><a href='function.crypt.html'>crypt</a></td><td>PHP に MD5 crypt, Standard DES, Extended DES および Blowfish

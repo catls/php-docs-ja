@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>説明</title>
+  <title>Get the property constant value for a given property name</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,8 @@
 </div><hr /><div id="intlchar.getpropertyenum" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">IntlChar::getPropertyEnum</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">IntlChar::getPropertyEnum</span> &mdash; <span class="dc-title">
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">IntlChar::getPropertyEnum</span> &mdash; <span class="dc-title">Get the property constant value for a given property name</span></p>
+
  </div>
 
  <div class="refsect1 description" id="refsect1-intlchar.getpropertyenum-description">
@@ -24,13 +25,16 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   Returns the property constant value for a given property name, as specified in the Unicode database file PropertyAliases.txt.
+   Short, long, and any other variants are recognized.
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
+  <p class="para">
+   In addition, this function maps the synthetic names &quot;gcm&quot; / &quot;General_Category_Mask&quot; to the property
+   <strong><code>IntlChar::PROPERTY_GENERAL_CATEGORY_MASK</code></strong>. These names are not in PropertyAliases.txt.
+  </p>
+  <p class="para">
+   This function compliments <span class="function"><a href="intlchar.getpropertyname.html" class="function">IntlChar::getPropertyName()</a></span>.
+  </p>
  </div>
 
 
@@ -45,7 +49,7 @@
     <dd>
 
      <p class="para">
-      
+      The property name to be matched. The name is compared using &quot;loose matching&quot; as described in PropertyAliases.txt.
      </p>
     </dd>
 
@@ -58,10 +62,44 @@
  <div class="refsect1 returnvalues" id="refsect1-intlchar.getpropertyenum-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   
+   Returns an <em>IntlChar::PROPERTY_</em> constant value,
+   or <strong><code>IntlChar::PROPERTY_INVALID_CODE</code></strong> if the given name does not match any property.
   </p>
  </div>
 
+
+ <div class="refsect1 examples" id="refsect1-intlchar.getpropertyenum-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-2926">
+   <p><strong>例1 さまざまなプロパティの例</strong></p>
+   <div class="example-contents">
+    <div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getPropertyEnum</span><span style="color: #007700">(</span><span style="color: #DD0000">'Bidi_Class'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">PROPERTY_BIDI_CLASS</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getPropertyEnum</span><span style="color: #007700">(</span><span style="color: #DD0000">'script'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">PROPERTY_SCRIPT</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getPropertyEnum</span><span style="color: #007700">(</span><span style="color: #DD0000">'IDEOGRAPHIC'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">PROPERTY_IDEOGRAPHIC</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">getPropertyEnum</span><span style="color: #007700">(</span><span style="color: #DD0000">'Some&nbsp;made-up&nbsp;string'</span><span style="color: #007700">)&nbsp;===&nbsp;</span><span style="color: #0000BB">IntlChar</span><span style="color: #007700">::</span><span style="color: #0000BB">PROPERTY_INVALID_CODE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+   <div class="example-contents screen">
+    <div class="cdata"><pre>
+bool(true)
+bool(true)
+bool(true)
+bool(true)
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-intlchar.getpropertyenum-seealso">
+  <h3 class="title">参考</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="intlchar.getpropertyname.html" class="function" rel="rdfs-seeAlso">IntlChar::getPropertyName()</a> - Get the Unicode name for a property</span></li>
+   </ul>
+  </p>
+ </div>
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

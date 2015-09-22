@@ -25,34 +25,47 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Generates an arbitrary length string of cryptographic random bytes that are suitable for use in cryptography when
-   generating salts, keys and initialization vectors.
+   Generates an arbitrary length string of cryptographic random bytes that are
+   suitable for cryptographic use, such as when generating salts, keys or
+   initialization vectors.
   </p>
-  <p class="para">
-   The sources of random are as follows:
-  </p>
-  <ul class="itemizedlist">
-   <li class="listitem">
-    <span class="simpara">
-     On Windows <span class="function"><strong>CryptGenRandom()</strong></span> is used exclusively
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <span class="function"><strong>arc4random_buf()</strong></span> is used if it is available (generally BSD specific)
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <var class="filename">/dev/arandom</var> is used where available
-    </span>
-   </li>
-   <li class="listitem">
-    <span class="simpara">
-     <var class="filename">/dev/urandom</var> is used where none of the above is available
-    </span>
-   </li>
-  </ul>
+  
+<p class="para">
+ この関数が使う不規則性のソースはつぎのとおりです。
+</p>
+<ul class="itemizedlist">
+ <li class="listitem">
+  <span class="simpara">
+   
+   Windows では、常に <span class="function"><strong>CryptGenRandom()</strong></span> を使います。
+  </span>
+ </li>
+ <li class="listitem">
+  <span class="simpara">
+   その他のプラットフォームでは、<span class="function"><strong>arc4random_buf()</strong></span> が使える場合はこれを使います。
+   一般的に、これが使えるのは BSD 系のプラットフォームか libbsd を使うシステムだけです。
+  </span>
+ </li>
+ <li class="listitem">
+  <span class="simpara">
+   <span class="function"><strong>arc4random_buf()</strong></span> が使えない場合は、<var class="filename">/dev/arandom</var>
+   があればそれを使います。
+  </span>
+ </li>
+ <li class="listitem">
+  <span class="simpara">
+   <var class="filename">/dev/arandom</var> も使えない場合は、最後の代替手段として
+   <var class="filename">/dev/urandom</var> を使います。
+  </span>
+ </li>
+ <li class="listitem">
+  <span class="simpara">
+   これらがいずれも使えない場合は、
+   <a href="class.error.html" class="classname">Error</a> をスローします。
+  </span>
+ </li>
+</ul>
+
  </div>
 
 
@@ -80,7 +93,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.random-bytes-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns a string containing the crypto-secure random bytes in binary format.
+   Returns a string containing the requested number of cryptographically
+   secure random bytes.
   </p>
  </div>
 
@@ -88,7 +102,8 @@
  <div class="refsect1 errors" id="refsect1-function.random-bytes-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   Issues an <strong><code>E_WARNING</code></strong> and returns <strong><code>FALSE</code></strong> when a sufficient source of randomness is unavailable.
+   If an appropriate source of randomness cannot be found or an invalid number
+   of bytes is given, an <a href="class.error.html" class="classname">Error</a> will be thrown.
   </p>
  </div>
 
@@ -96,7 +111,7 @@
  <div class="refsect1 examples" id="refsect1-function.random-bytes-examples">
   <h3 class="title">例</h3>
   <div class="example" id="random-bytes.example.basic">
-   <p><strong>例1 <span class="function"><strong>random-bytes()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>random_bytes()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$bytes&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">random_bytes</span><span style="color: #007700">(</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">bin2hex</span><span style="color: #007700">(</span><span style="color: #0000BB">$bytes</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>

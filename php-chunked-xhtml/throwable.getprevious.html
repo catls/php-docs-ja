@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns the previous Throwable</title>
+  <title>ひとつ前の Throwable を返す</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="throwable.getprevious" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Throwable::getPrevious</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">Throwable::getPrevious</span> &mdash; <span class="dc-title">Returns the previous Throwable</span></p>
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">Throwable::getPrevious</span> &mdash; <span class="dc-title">ひとつ前の Throwable を返す</span></p>
 
  </div>
 
@@ -25,8 +25,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Returns any previous Throwable (for example, one provided as the third
-   parameter to <span class="methodname"><a href="exception.construct.html" class="methodname">Exception::__construct()</a></span>).
+   ひとつ前の Throwable (たとえば <span class="methodname"><a href="exception.construct.html" class="methodname">Exception::__construct()</a></span> の第三パラメータで指定したもの) を返します。
   </p>
  </div>
 
@@ -40,8 +39,8 @@
  <div class="refsect1 returnvalues" id="refsect1-throwable.getprevious-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the previous <a href="class.throwable.html" class="classname">Throwable</a> if available, or
-   <strong><code>NULL</code></strong> otherwise.
+   ひとつ前の <a href="class.throwable.html" class="classname">Throwable</a> が存在すればそれを返します。
+   存在しない場合は <strong><code>NULL</code></strong> を返します。
   </p>
  </div>
 
