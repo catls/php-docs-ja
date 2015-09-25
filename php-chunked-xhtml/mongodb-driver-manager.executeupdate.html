@@ -166,7 +166,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongodb-driver-manager.executeupdate-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1642">
+  <div class="example" id="example-1644">
    <p><strong>例1 <span class="function"><strong>MongoDB\Driver\Manager::executeUpdate()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -185,7 +185,7 @@ Upserted documents: 0
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-1643">
+  <div class="example" id="example-1645">
    <p><strong>例2 <span class="function"><strong>MongoDB\Driver\Manager::executeUpdate()</strong></span> with upsert</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -201,7 +201,7 @@ Upserted documents: 0
 Updated 0 document(s)
 Matched 0 document(s)
 Upserted documents: 1
-upsertedId[0]: object(BSON\ObjectID)#3 (1) {
+upsertedId[0]: object(MongoDB\BSON\ObjectID)#3 (1) {
   [&quot;oid&quot;]=&gt;
   string(24) &quot;54d2c0d14c245fbe70d32ccf&quot;
 }
@@ -229,7 +229,7 @@ upsertedId[0]: object(BSON\ObjectID)#3 (1) {
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
     <span class="methodname"><a href="mongodb-driver-writeresult.getupsertedids.html" class="methodname">MongoDB\Driver\WriteResult::getUpsertedIds()</a></span> の配列内には
-    <a href="class.bson-objectid.html" class="classname">BSON\ObjectID</a> がひとつだけしか含まれません。
+    <strong class="classname">BSON\ObjectID</strong> がひとつだけしか含まれません。
     また、インデックスは常に 0 (バッチ内におけるこの操作のインデックス) となります。
    </p>
   </p></blockquote>
