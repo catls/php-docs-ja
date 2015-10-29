@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.random-bytes.html">random_bytes</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="refs.database.html">データベース関連</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="book.hash.html">Hash</a></div>
  <div class="up"><a href="ref.csprng.html">CSPRNG 関数</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="function.random-int" class="refentry">
@@ -37,8 +37,8 @@
 <ul class="itemizedlist">
  <li class="listitem">
   <span class="simpara">
-   
-   Windows では、常に <span class="function"><strong>CryptGenRandom()</strong></span> を使います。
+   Windows では、常に <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa379942(v=vs.85).aspx" class="link external">&raquo;&nbsp;
+   <span class="function"><strong>CryptGenRandom()</strong></span></a> を使います。
   </span>
  </li>
  <li class="listitem">
@@ -49,20 +49,21 @@
  </li>
  <li class="listitem">
   <span class="simpara">
-   <span class="function"><strong>arc4random_buf()</strong></span> が使えない場合は、<var class="filename">/dev/arandom</var>
+   <span class="function"><strong>arc4random_buf()</strong></span> が使えない場合は、Linux のシステムコール
+   <a href="http://man7.org/linux/man-pages/man2/getrandom.2.html" class="link external">&raquo;&nbsp;getrandom(2)</a>
    があればそれを使います。
   </span>
  </li>
  <li class="listitem">
   <span class="simpara">
-   <var class="filename">/dev/arandom</var> も使えない場合は、最後の代替手段として
+   それも使えない場合は、最後の代替手段として
    <var class="filename">/dev/urandom</var> を使います。
   </span>
  </li>
  <li class="listitem">
   <span class="simpara">
    これらがいずれも使えない場合は、
-   <a href="class.error.html" class="classname">Error</a> をスローします。
+   <a href="class.exception.html" class="classname">Exception</a> をスローします。
   </span>
  </li>
 </ul>
@@ -116,11 +117,28 @@
 
  <div class="refsect1 errors" id="refsect1-function.random-int-errors">
   <h3 class="title">エラー / 例外</h3>
-  <p class="para">
-   If an appropriate source of randomness cannot be found, invalid parameters
-   are given, or <code class="parameter">max</code> is less than
-   <code class="parameter">min</code>, an <a href="class.error.html" class="classname">Error</a> will be thrown.
-  </p>
+  <ul class="itemizedlist">
+   
+ <li class="listitem">
+  <span class="simpara">
+   適切な不規則性のソースが見つからない場合は
+   <a href="class.exception.html" class="classname">Exception</a> をスローします。
+  </span>
+ </li>
+ <li class="listitem">
+  <span class="simpara">
+    無効なパラメータが指定された場合は <a href="class.typeerror.html" class="classname">TypeError</a>
+    をスローします。
+  </span>
+ </li>
+
+   <li class="listitem">
+    <span class="simpara">
+     If <code class="parameter">max</code> is less than <code class="parameter">min</code>, an
+     <a href="class.error.html" class="classname">Error</a> will be thrown.
+    </span>
+   </li>
+  </ul>
  </div>
 
 
@@ -157,7 +175,7 @@ int(-898)
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.random-bytes.html">random_bytes</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="refs.database.html">データベース関連</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="book.hash.html">Hash</a></div>
  <div class="up"><a href="ref.csprng.html">CSPRNG 関数</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

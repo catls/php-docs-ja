@@ -1340,7 +1340,7 @@
 <li><a href="function.ereg-replace.html" class="index">ereg_replace</a> - 正規表現による置換を行う</li>
 <li><a href="errorexception.getseverity.html" class="index">ErrorException::getSeverity</a> - 例外の深刻度を取得する</li>
 <li><a href="errorexception.construct.html" class="index">ErrorException::__construct</a> - 例外を作成する</li>
-<li><a href="function.error-clear-last.html" class="index">error_clear_last</a> - Clear the most recent error</li>
+<li><a href="function.error-clear-last.html" class="index">error_clear_last</a> - 最も最近のエラーをクリア</li>
 <li><a href="function.error-get-last.html" class="index">error_get_last</a> - 最後に発生したエラーを取得する</li>
 <li><a href="function.error-log.html" class="index">error_log</a> - 定義されたエラー処理ルーチンにエラーメッセージを送信する</li>
 <li><a href="function.error-reporting.html" class="index">error_reporting</a> - 出力する PHP エラーの種類を設定する</li>
@@ -2041,7 +2041,7 @@
 <li><a href="function.gc-disable.html" class="index">gc_disable</a> - 循環参照コレクタを無効にする</li>
 <li><a href="function.gc-enable.html" class="index">gc_enable</a> - 循環参照コレクタを有効にする</li>
 <li><a href="function.gc-enabled.html" class="index">gc_enabled</a> - 循環参照コレクタの状態を返す</li>
-<li><a href="function.gc-mem-caches.html" class="index">gc_mem_caches</a> - Reclaims memory used by the Zend Engine memory manager</li>
+<li><a href="function.gc-mem-caches.html" class="index">gc_mem_caches</a> - Zend Engine のメモリーマネージャによって使用されたメモリーを再利用する</li>
 <li><a href="function.gd-info.html" class="index">gd_info</a> - 現在インストールされているGDライブラリに関する情報を取得する</li>
 <li><a href="gearmanclient.addoptions.html" class="index">GearmanClient::addOptions</a> - Add client options</li>
 <li><a href="gearmanclient.addserver.html" class="index">GearmanClient::addServer</a> - Add a job server to the client</li>
@@ -2232,7 +2232,7 @@
 <li><a href="function.get-object-vars.html" class="index">get_object_vars</a> - 指定したオブジェクトのプロパティを取得する</li>
 <li><a href="function.get-parent-class.html" class="index">get_parent_class</a> - オブジェクトの親クラスの名前を取得する</li>
 <li><a href="function.get-required-files.html" class="index">get_required_files</a> - get_included_files のエイリアス</li>
-<li><a href="function.get-resources.html" class="index">get_resources</a> - Returns active resources</li>
+<li><a href="function.get-resources.html" class="index">get_resources</a> - アクティブなリソースを返す</li>
 <li><a href="function.get-resource-type.html" class="index">get_resource_type</a> - リソース型を返す</li>
 <li><a href="function.glob.html" class="index">glob</a> - パターンにマッチするパス名を探す</li>
 <li><a href="wrappers.glob.html" class="index">glob://</a> - パターンにマッチするパス名の検索</li>
@@ -7300,7 +7300,7 @@
 <li><a href="sessionhandlerinterface.open.html" class="index">SessionHandlerInterface::open</a> - セッションを開始する</li>
 <li><a href="sessionhandlerinterface.read.html" class="index">SessionHandlerInterface::read</a> - セッションのデータを読み込む</li>
 <li><a href="sessionhandlerinterface.write.html" class="index">SessionHandlerInterface::write</a> - セッションのデータを書き込む</li>
-<li><a href="function.session-abort.html" class="index">session_abort</a> - Discard session array changes and finish session</li>
+<li><a href="function.session-abort.html" class="index">session_abort</a> - session 配列の変更を破棄してセッションを終了します</li>
 <li><a href="function.session-cache-expire.html" class="index">session_cache_expire</a> - 現在のキャッシュの有効期限を返す</li>
 <li><a href="function.session-cache-limiter.html" class="index">session_cache_limiter</a> - 現在のキャッシュリミッタを取得または設定する</li>
 <li><a href="function.session-commit.html" class="index">session_commit</a> - session_write_close のエイリアス</li>
@@ -7321,7 +7321,7 @@
 <li><a href="function.session-regenerate-id.html" class="index">session_regenerate_id</a> - 現在のセッションIDを新しく生成したものと置き換える</li>
 <li><a href="function.session-register.html" class="index">session_register</a> - 現在のセッションに1つ以上の変数を登録する</li>
 <li><a href="function.session-register-shutdown.html" class="index">session_register_shutdown</a> - セッションのシャットダウン関数</li>
-<li><a href="function.session-reset.html" class="index">session_reset</a> - Re-initialize session array with original values</li>
+<li><a href="function.session-reset.html" class="index">session_reset</a> - session 配列を元の値で再初期化します</li>
 <li><a href="function.session-save-path.html" class="index">session_save_path</a> - 現在のセッションデータ保存パスを取得または設定する</li>
 <li><a href="function.session-set-cookie-params.html" class="index">session_set_cookie_params</a> - セッションクッキーパラメータを設定する</li>
 <li><a href="function.session-set-save-handler.html" class="index">session_set_save_handler</a> - ユーザー定義のセッション保存関数を設定する</li>
@@ -7497,6 +7497,8 @@
 <li><a href="solrclient.deletebyids.html" class="index">SolrClient::deleteByIds</a> - Deletes by Ids</li>
 <li><a href="solrclient.deletebyqueries.html" class="index">SolrClient::deleteByQueries</a> - Removes all documents matching any of the queries</li>
 <li><a href="solrclient.deletebyquery.html" class="index">SolrClient::deleteByQuery</a> - Deletes all documents matching the given query</li>
+<li><a href="solrclient.getbyid.html" class="index">SolrClient::getById</a> - Get Document By Id. Utilizes Solr Realtime Get (RTG).</li>
+<li><a href="solrclient.getbyids.html" class="index">SolrClient::getByIds</a> - Get Documents by their Ids. Utilizes Solr Realtime Get (RTG).</li>
 <li><a href="solrclient.getdebug.html" class="index">SolrClient::getDebug</a> - Returns the debug data for the last connection attempt</li>
 <li><a href="solrclient.getoptions.html" class="index">SolrClient::getOptions</a> - Returns the client options set internally</li>
 <li><a href="solrclient.optimize.html" class="index">SolrClient::optimize</a> - Defragments the index</li>
@@ -7511,6 +7513,20 @@
 <li><a href="solrclient.construct.html" class="index">SolrClient::__construct</a> - Constructor for the SolrClient object</li>
 <li><a href="solrclient.destruct.html" class="index">SolrClient::__destruct</a> - SolrClient に対するデストラクタ</li>
 <li><a href="solrclientexception.getinternalinfo.html" class="index">SolrClientException::getInternalInfo</a> - 例外がスローされた際の内部情報を返す</li>
+<li><a href="solrcollapsefunction.getfield.html" class="index">SolrCollapseFunction::getField</a> - Returns the field that is being collapsed on.</li>
+<li><a href="solrcollapsefunction.gethint.html" class="index">SolrCollapseFunction::getHint</a> - Returns collapse hint</li>
+<li><a href="solrcollapsefunction.getmax.html" class="index">SolrCollapseFunction::getMax</a> - Returns max parameter</li>
+<li><a href="solrcollapsefunction.getmin.html" class="index">SolrCollapseFunction::getMin</a> - Returns min parameter</li>
+<li><a href="solrcollapsefunction.getnullpolicy.html" class="index">SolrCollapseFunction::getNullPolicy</a> - Returns null policy</li>
+<li><a href="solrcollapsefunction.getsize.html" class="index">SolrCollapseFunction::getSize</a> - Returns size parameter</li>
+<li><a href="solrcollapsefunction.setfield.html" class="index">SolrCollapseFunction::setField</a> - Sets the field to collapse on</li>
+<li><a href="solrcollapsefunction.sethint.html" class="index">SolrCollapseFunction::setHint</a> - Sets collapse hint</li>
+<li><a href="solrcollapsefunction.setmax.html" class="index">SolrCollapseFunction::setMax</a> - Selects the group heads by the max value of a numeric field or function query.</li>
+<li><a href="solrcollapsefunction.setmin.html" class="index">SolrCollapseFunction::setMin</a> - Sets the initial size of the collapse data structures when collapsing on a numeric field only</li>
+<li><a href="solrcollapsefunction.setnullpolicy.html" class="index">SolrCollapseFunction::setNullPolicy</a> - Sets the NULL Policy</li>
+<li><a href="solrcollapsefunction.setsize.html" class="index">SolrCollapseFunction::setSize</a> - Sets the initial size of the collapse data structures when collapsing on a numeric field only.</li>
+<li><a href="solrcollapsefunction.construct.html" class="index">SolrCollapseFunction::__construct</a> - Constructor</li>
+<li><a href="solrcollapsefunction.tostring.html" class="index">SolrCollapseFunction::__toString</a> - Returns a string representing the constructed collapse function</li>
 <li><a href="solrdismaxquery.addbigramphrasefield.html" class="index">SolrDisMaxQuery::addBigramPhraseField</a> - Adds a Phrase Bigram Field (pf2 parameter)</li>
 <li><a href="solrdismaxquery.addboostquery.html" class="index">SolrDisMaxQuery::addBoostQuery</a> - Adds a boost query field with value and optional boost (bq parameter)</li>
 <li><a href="solrdismaxquery.addphrasefield.html" class="index">SolrDisMaxQuery::addPhraseField</a> - Adds a Phrase Field (pf parameter)</li>
@@ -7617,18 +7633,30 @@
 <li><a href="solrpingresponse.getresponse.html" class="index">SolrPingResponse::getResponse</a> - サーバーからのレスポンスを返す</li>
 <li><a href="solrpingresponse.construct.html" class="index">SolrPingResponse::__construct</a> - コンストラクタ</li>
 <li><a href="solrpingresponse.destruct.html" class="index">SolrPingResponse::__destruct</a> - デストラクタ</li>
+<li><a href="solrquery.addexpandfilterquery.html" class="index">SolrQuery::addExpandFilterQuery</a> - Overrides main filter query, determines which documents to include in the main group.</li>
+<li><a href="solrquery.addexpandsortfield.html" class="index">SolrQuery::addExpandSortField</a> - Orders the documents within the expanded groups (expand.sort parameter).</li>
 <li><a href="solrquery.addfacetdatefield.html" class="index">SolrQuery::addFacetDateField</a> - Maps to facet.date</li>
 <li><a href="solrquery.addfacetdateother.html" class="index">SolrQuery::addFacetDateOther</a> - Adds another facet.date.other parameter</li>
 <li><a href="solrquery.addfacetfield.html" class="index">SolrQuery::addFacetField</a> - Adds another field to the facet</li>
 <li><a href="solrquery.addfacetquery.html" class="index">SolrQuery::addFacetQuery</a> - Adds a facet query</li>
 <li><a href="solrquery.addfield.html" class="index">SolrQuery::addField</a> - Specifies which fields to return in the result</li>
 <li><a href="solrquery.addfilterquery.html" class="index">SolrQuery::addFilterQuery</a> - Specifies a filter query</li>
+<li><a href="solrquery.addgroupfield.html" class="index">SolrQuery::addGroupField</a> - Add a field to be used to group results.</li>
+<li><a href="solrquery.addgroupfunction.html" class="index">SolrQuery::addGroupFunction</a> - Allows grouping results based on the unique values of a function query (group.func parameter).</li>
+<li><a href="solrquery.addgroupquery.html" class="index">SolrQuery::addGroupQuery</a> - Allows grouping of documents that match the given query.</li>
+<li><a href="solrquery.addgroupsortfield.html" class="index">SolrQuery::addGroupSortField</a> - Add a group sort field (group.sort parameter).</li>
 <li><a href="solrquery.addhighlightfield.html" class="index">SolrQuery::addHighlightField</a> - Maps to hl.fl</li>
 <li><a href="solrquery.addmltfield.html" class="index">SolrQuery::addMltField</a> - Sets a field to use for similarity</li>
 <li><a href="solrquery.addmltqueryfield.html" class="index">SolrQuery::addMltQueryField</a> - Maps to mlt.qf</li>
 <li><a href="solrquery.addsortfield.html" class="index">SolrQuery::addSortField</a> - Used to control how the results should be sorted</li>
 <li><a href="solrquery.addstatsfacet.html" class="index">SolrQuery::addStatsFacet</a> - Requests a return of sub results for values within the given facet</li>
 <li><a href="solrquery.addstatsfield.html" class="index">SolrQuery::addStatsField</a> - Maps to stats.field parameter</li>
+<li><a href="solrquery.collapse.html" class="index">SolrQuery::collapse</a> - Collapses the result set to a single document per group</li>
+<li><a href="solrquery.getexpand.html" class="index">SolrQuery::getExpand</a> - Returns true if group expanding is enabled</li>
+<li><a href="solrquery.getexpandfilterqueries.html" class="index">SolrQuery::getExpandFilterQueries</a> - Returns the expand filter queries</li>
+<li><a href="solrquery.getexpandquery.html" class="index">SolrQuery::getExpandQuery</a> - Returns the expand query expand.q parameter</li>
+<li><a href="solrquery.getexpandrows.html" class="index">SolrQuery::getExpandRows</a> - Returns The number of rows to display in each group (expand.rows)</li>
+<li><a href="solrquery.getexpandsortfields.html" class="index">SolrQuery::getExpandSortFields</a> - Returns an array of fields</li>
 <li><a href="solrquery.getfacet.html" class="index">SolrQuery::getFacet</a> - Returns the value of the facet parameter</li>
 <li><a href="solrquery.getfacetdateend.html" class="index">SolrQuery::getFacetDateEnd</a> - Returns the value for the facet.date.end parameter</li>
 <li><a href="solrquery.getfacetdatefields.html" class="index">SolrQuery::getFacetDateFields</a> - Returns all the facet.date fields</li>
@@ -7647,6 +7675,19 @@
 <li><a href="solrquery.getfacetsort.html" class="index">SolrQuery::getFacetSort</a> - Returns the facet sort type</li>
 <li><a href="solrquery.getfields.html" class="index">SolrQuery::getFields</a> - Returns the list of fields that will be returned in the response</li>
 <li><a href="solrquery.getfilterqueries.html" class="index">SolrQuery::getFilterQueries</a> - Returns an array of filter queries</li>
+<li><a href="solrquery.getgroup.html" class="index">SolrQuery::getGroup</a> - Returns true if grouping is enabled</li>
+<li><a href="solrquery.getgroupcachepercent.html" class="index">SolrQuery::getGroupCachePercent</a> - Returns group cache percent value</li>
+<li><a href="solrquery.getgroupfacet.html" class="index">SolrQuery::getGroupFacet</a> - Returns the group.facet parameter value</li>
+<li><a href="solrquery.getgroupfields.html" class="index">SolrQuery::getGroupFields</a> - Returns group fields (group.field parameter values)</li>
+<li><a href="solrquery.getgroupformat.html" class="index">SolrQuery::getGroupFormat</a> - Returns the group.format value</li>
+<li><a href="solrquery.getgroupfunctions.html" class="index">SolrQuery::getGroupFunctions</a> - Returns group functions (group.func parameter values)</li>
+<li><a href="solrquery.getgrouplimit.html" class="index">SolrQuery::getGroupLimit</a> - Returns the group.limit value</li>
+<li><a href="solrquery.getgroupmain.html" class="index">SolrQuery::getGroupMain</a> - Returns the group.main value</li>
+<li><a href="solrquery.getgroupngroups.html" class="index">SolrQuery::getGroupNGroups</a> - Returns the group.ngroups value</li>
+<li><a href="solrquery.getgroupoffset.html" class="index">SolrQuery::getGroupOffset</a> - Returns the group.offset value</li>
+<li><a href="solrquery.getgroupqueries.html" class="index">SolrQuery::getGroupQueries</a> - Returns all the group.query parameter values</li>
+<li><a href="solrquery.getgroupsortfields.html" class="index">SolrQuery::getGroupSortFields</a> - Returns the group.sort value</li>
+<li><a href="solrquery.getgrouptruncate.html" class="index">SolrQuery::getGroupTruncate</a> - Returns the group.truncate value</li>
 <li><a href="solrquery.gethighlight.html" class="index">SolrQuery::getHighlight</a> - Returns the state of the hl parameter</li>
 <li><a href="solrquery.gethighlightalternatefield.html" class="index">SolrQuery::getHighlightAlternateField</a> - Returns the highlight field to use as backup or default</li>
 <li><a href="solrquery.gethighlightfields.html" class="index">SolrQuery::getHighlightFields</a> - Returns all the fields that Solr should generate highlighted snippets for</li>
@@ -7696,6 +7737,8 @@
 <li><a href="solrquery.gettermssort.html" class="index">SolrQuery::getTermsSort</a> - Returns an integer indicating how terms are sorted</li>
 <li><a href="solrquery.gettermsupperbound.html" class="index">SolrQuery::getTermsUpperBound</a> - Returns the term to stop at</li>
 <li><a href="solrquery.gettimeallowed.html" class="index">SolrQuery::getTimeAllowed</a> - Returns the time in milliseconds allowed for the query to finish</li>
+<li><a href="solrquery.removeexpandfilterquery.html" class="index">SolrQuery::removeExpandFilterQuery</a> - Removes an expand filter query</li>
+<li><a href="solrquery.removeexpandsortfield.html" class="index">SolrQuery::removeExpandSortField</a> - Removes an expand sort field from the expand.sort parameter.</li>
 <li><a href="solrquery.removefacetdatefield.html" class="index">SolrQuery::removeFacetDateField</a> - Removes one of the facet date fields</li>
 <li><a href="solrquery.removefacetdateother.html" class="index">SolrQuery::removeFacetDateOther</a> - Removes one of the facet.date.other parameters</li>
 <li><a href="solrquery.removefacetfield.html" class="index">SolrQuery::removeFacetField</a> - Removes one of the facet.date parameters</li>
@@ -7710,6 +7753,9 @@
 <li><a href="solrquery.removestatsfield.html" class="index">SolrQuery::removeStatsField</a> - Removes one of the stats.field parameters</li>
 <li><a href="solrquery.setechohandler.html" class="index">SolrQuery::setEchoHandler</a> - Toggles the echoHandler parameter</li>
 <li><a href="solrquery.setechoparams.html" class="index">SolrQuery::setEchoParams</a> - Determines what kind of parameters to include in the response</li>
+<li><a href="solrquery.setexpand.html" class="index">SolrQuery::setExpand</a> - Enables/Disables the Expand Component</li>
+<li><a href="solrquery.setexpandquery.html" class="index">SolrQuery::setExpandQuery</a> - Sets the expand.q parameter</li>
+<li><a href="solrquery.setexpandrows.html" class="index">SolrQuery::setExpandRows</a> - Sets the number of rows to display in each group (expand.rows). Server Default 5</li>
 <li><a href="solrquery.setexplainother.html" class="index">SolrQuery::setExplainOther</a> - Sets the explainOther common query parameter</li>
 <li><a href="solrquery.setfacet.html" class="index">SolrQuery::setFacet</a> - Maps to the facet parameter. Enables or disables facetting</li>
 <li><a href="solrquery.setfacetdateend.html" class="index">SolrQuery::setFacetDateEnd</a> - Maps to facet.date.end</li>
@@ -7724,6 +7770,15 @@
 <li><a href="solrquery.setfacetoffset.html" class="index">SolrQuery::setFacetOffset</a> - Sets the offset into the list of constraints to allow for pagination</li>
 <li><a href="solrquery.setfacetprefix.html" class="index">SolrQuery::setFacetPrefix</a> - Specifies a string prefix with which to limits the terms on which to facet</li>
 <li><a href="solrquery.setfacetsort.html" class="index">SolrQuery::setFacetSort</a> - Determines the ordering of the facet field constraints</li>
+<li><a href="solrquery.setgroup.html" class="index">SolrQuery::setGroup</a> - Enable/Disable result grouping (group parameter)</li>
+<li><a href="solrquery.setgroupcachepercent.html" class="index">SolrQuery::setGroupCachePercent</a> - Enables caching for result grouping</li>
+<li><a href="solrquery.setgroupfacet.html" class="index">SolrQuery::setGroupFacet</a> - Sets group.facet parameter</li>
+<li><a href="solrquery.setgroupformat.html" class="index">SolrQuery::setGroupFormat</a> - Sets the group format, result structure (group.format parameter).</li>
+<li><a href="solrquery.setgrouplimit.html" class="index">SolrQuery::setGroupLimit</a> - Specifies the number of results to return for each group. The server default value is 1.</li>
+<li><a href="solrquery.setgroupmain.html" class="index">SolrQuery::setGroupMain</a> - If true, the result of the first field grouping command is used as the main result list in the response, using group.format=simple.</li>
+<li><a href="solrquery.setgroupngroups.html" class="index">SolrQuery::setGroupNGroups</a> - If true, Solr includes the number of groups that have matched the query in the results.</li>
+<li><a href="solrquery.setgroupoffset.html" class="index">SolrQuery::setGroupOffset</a> - Sets the group.offset parameter.</li>
+<li><a href="solrquery.setgrouptruncate.html" class="index">SolrQuery::setGroupTruncate</a> - If true, facet counts are based on the most relevant document of each group matching the query.</li>
 <li><a href="solrquery.sethighlight.html" class="index">SolrQuery::setHighlight</a> - Enables or disables highlighting</li>
 <li><a href="solrquery.sethighlightalternatefield.html" class="index">SolrQuery::setHighlightAlternateField</a> - Specifies the backup field to use</li>
 <li><a href="solrquery.sethighlightformatter.html" class="index">SolrQuery::setHighlightFormatter</a> - Specify a formatter for the highlight output</li>

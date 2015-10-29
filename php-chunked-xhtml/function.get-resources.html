@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Returns active resources</title>
+  <title>アクティブなリソースを返す</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.get-resources" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">get_resources</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">get_resources</span> &mdash; <span class="dc-title">Returns active resources</span></p>
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">get_resources</span> &mdash; <span class="dc-title">アクティブなリソースを返す</span></p>
 
  </div>
  
@@ -25,8 +25,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   Returns an array of all currently active <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span>s, optionally
-   filtered by resource type.
+   現在アクティブなすべての<span class="type"><span class="type リソース">リソース</span></span>の配列を返します。 
+   オプションでリソース型によってフィルタリングされます。
   </p>
  </div>
 
@@ -43,17 +43,15 @@
      <dd>
 
       <p class="para">
-       If defined, this will cause <span class="function"><strong>get_resources()</strong></span> to only
-       return resources of the given type.
-       <a href="resource.html" class="link">A list of resource types is available.</a>
+       定義された場合、<span class="function"><strong>get_resources()</strong></span> は、指定された型のリソースのみを返すようになります。
+       <a href="resource.html" class="link">リソース型の一覧が使用できます。</a>
       </p>
       <p class="para">
-       If the <span class="type"><a href="language.types.string.html" class="type string">string</a></span> <em>Unknown</em> is provided as
-       the type, then only resources that are of an unknown type will be
-       returned.
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span> <em>Unknown</em> が型として指定された場合、
+       不明な型のリソースのみが返されます。
       </p>
       <p class="para">
-       If omitted, all resources will be returned.
+       省略した場合、すべてのリソースが返されます。
       </p>
      </dd>
 
@@ -67,8 +65,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.get-resources-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> of currently active resources, indexed by
-   resource number.
+   現在アクティブなリソースの <span class="type"><a href="language.types.array.html" class="type array">array</a></span> を返します。
+   リソース番号でインデックス付けされます。
   </p>
  </div>
 
@@ -77,7 +75,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-532">
-    <p><strong>例1 Unfiltered <span class="function"><strong>get_resources()</strong></span></strong></p>
+    <p><strong>例1 フィルタリングされていない <span class="function"><strong>get_resources()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">tmpfile</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_resources</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -97,7 +95,7 @@ array(1) {
     </div>
    </div>
    <div class="example" id="example-533">
-    <p><strong>例2 Filtered <span class="function"><strong>get_resources()</strong></span></strong></p>
+    <p><strong>例2 フィルタリングされた <span class="function"><strong>get_resources()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">tmpfile</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_resources</span><span style="color: #007700">(</span><span style="color: #DD0000">'stream'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_resources</span><span style="color: #007700">(</span><span style="color: #DD0000">'curl'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>

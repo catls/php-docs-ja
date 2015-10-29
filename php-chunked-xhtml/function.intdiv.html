@@ -20,12 +20,12 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
     <span class="type">int</span> <span class="methodname"><strong>intdiv</strong></span>
-     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$numerator</code></span>
+     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$dividend</code></span>
     , <span class="methodparam"><span class="type">int</span> <code class="parameter">$divisor</code></span>
     )</div>
 
   <p class="para rdfs-comment">
-   Returns the integer division of <code class="parameter">numerator</code> by <code class="parameter">divisor</code>.
+   Returns the integer quotient of the division of <code class="parameter">dividend</code> by <code class="parameter">divisor</code>.
   </p>
  </div>
 
@@ -35,7 +35,7 @@
 
    
     <dt>
-<code class="parameter">numerator</code></dt>
+<code class="parameter">dividend</code></dt>
 
     <dd>
 
@@ -52,7 +52,7 @@
     <dd>
 
      <p class="para">
-      Number which divides the <code class="parameter">numerator</code>.
+      Number which divides the <code class="parameter">dividend</code>.
      </p>
     </dd>
 
@@ -64,7 +64,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.intdiv-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   The integer division of <code class="parameter">numerator</code> by <code class="parameter">divisor</code>.
+   The integer quotient of the division of <code class="parameter">dividend</code> by <code class="parameter">divisor</code>.
   </p>
  </div>
 
@@ -72,7 +72,7 @@
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
     If <code class="parameter">divisor</code> is <em>0</em>, a <a href="class.divisionbyzeroerror.html" class="classname">DivisionByZeroError</a>
-    exception is thrown. If the <code class="parameter">numerator</code> is <strong><code>PHP_INT_MIN</code></strong>
+    exception is thrown. If the <code class="parameter">dividend</code> is <strong><code>PHP_INT_MIN</code></strong>
     and the <code class="parameter">divisor</code> is <em>-1</em>, then an
     <a href="class.arithmeticerror.html" class="classname">ArithmeticError</a> exception is thrown.
   </p>
@@ -81,7 +81,7 @@
  <div class="refsect1 examples" id="refsect1-function.intdiv-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3960">
+   <div class="example" id="example-3959">
     <p><strong>例1 <span class="function"><strong>intdiv()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

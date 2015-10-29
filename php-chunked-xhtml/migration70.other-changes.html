@@ -42,6 +42,18 @@
    (<em>ClassName::class</em>) と衝突してしまうからです。
   </p>
  </div>
+
+ <div class="sect2" id="migration70.other-changes.remove-date-timezone-warning">
+  <h3 class="title">date.timezone に関する警告の削除</h3>
+
+  <p class="para">
+   これまでのバージョンでは、INI 項目
+   <code class="systemitem systemitem">date.timezone</code>
+   を設定せずに日付・時刻関連の関数を使おうとすると、警告が発生していました。
+   PHP 7 では、この警告は発生しなくなりました
+   (<code class="systemitem systemitem">date.timezone</code> のデフォルトは、これまでどおり UTC です)。
+  </p>
+ </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration70.removed-exts-sapis.html">削除された拡張モジュールおよび SAPI</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="migration56.html">PHP 5.5.x から PHP 5.6.x への移行</a></div>

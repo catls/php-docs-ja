@@ -24,7 +24,12 @@
   fatal error や recoverable fatal error の多くが、PHP 7 では例外に変換されるようになりました。
   これらの例外は <a href="class.error.html" class="classname">Error</a> クラスを継承したもので、
   このクラスは <a href="class.throwable.html" class="classname">Throwable</a> インターフェイスを実装しています。
-  つまり、すべての例外がこのインターフェイスを実装していることになります。
+  この新しいインターフェイスを、すべての例外が実装しています。
+ </p>
+
+ <p class="para">
+  エラーではなく例外がスローされるようになるということは、自作のエラーハンドラは呼び出されなくなるということです
+  (<a href="class.error.html" class="classname">Error</a> 例外をキャッチしなかった場合は、fatal エラーが発生します)。
  </p>
 
  <p class="para">
