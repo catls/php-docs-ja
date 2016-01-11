@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Set system resource limits</title>
+  <title>システムリソース制限を設定</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.posix-setrlimit" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">posix_setrlimit</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">posix_setrlimit</span> &mdash; <span class="dc-title">Set system resource limits</span></p>
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">posix_setrlimit</span> &mdash; <span class="dc-title">システムリソース制限を設定</span></p>
 
  </div>
  
@@ -27,8 +27,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>posix_setrlimit()</strong></span> sets the soft and hard limits for a
-   given system resource.
+   <span class="function"><strong>posix_setrlimit()</strong></span> は、
+   指定されたシステムリソースに対してソフトリミットおよびハードリミットを設定します。
   </p>
   
 <p class="para">
@@ -54,9 +54,7 @@
      <dd>
 
       <p class="para">
-       The
-       <a href="posix.constants.setrlimit.html" class="link">resource limit constant</a>
-       corresponding to the limit that is being set.
+       設定されるリミットに対応する<a href="posix.constants.setrlimit.html" class="link">リソースリミット定数</a>です。
       </p>
      </dd>
 
@@ -68,8 +66,8 @@
      <dd>
 
       <p class="para">
-       The soft limit, in whatever unit the resource limit requires, or
-       <strong><code>POSIX_RLIMIT_INFINITY</code></strong>.
+       ソフトリミット、単位は、リソース制限が必要とする任意の単位です。または、
+       <strong><code>POSIX_RLIMIT_INFINITY</code></strong> です。
       </p>
      </dd>
 
@@ -81,8 +79,8 @@
      <dd>
 
       <p class="para">
-       The hard limit, in whatever unit the resource limit requires, or
-       <strong><code>POSIX_RLIMIT_INFINITY</code></strong>.
+       ハードリミット、単位は、リソース制限が必要とする任意の単位です。または、
+       <strong><code>POSIX_RLIMIT_INFINITY</code></strong> です。
       </p>
      </dd>
 
@@ -105,7 +103,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member">man page SETRLIMIT(2)</li>
+    <li class="member">man ページ SETRLIMIT(2)</li>
     <li class="member"><span class="function"><a href="function.posix-getrlimit.html" class="function" rel="rdfs-seeAlso">posix_getrlimit()</a> - システムリソース制限に関する情報を返す</span></li>
    </ul>
   </p>

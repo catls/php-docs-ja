@@ -13,7 +13,7 @@
 </div><hr /><div id="function.setcookie" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">setcookie</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">setcookie</span> &mdash; <span class="dc-title">クッキーを送信する</span></p>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">setcookie</span> &mdash; <span class="dc-title">クッキーを送信する</span></p>
 
  </div>
  
@@ -137,13 +137,13 @@
      <dd>
 
       <p class="para">
-       クッキーが有効なドメイン。ドメインを
-       <em>&#039;www.example.com&#039;</em> に設定すると、
-       <em>www</em> サブドメインおよびその上位のサブドメインでクッキーが使えるようになります。
-       より低レベルのドメイン、たとえば
-       <em>&#039;example.com&#039;</em> でクッキーを有効にすると、その上位にある
-       <em>&#039;www.example.com&#039;</em> などのサブドメインでもクッキーが有効になります。
-       
+       クッキーが有効な (サブ) ドメイン。これを
+       <em>&#039;www.example.com&#039;</em> などのサブドメインに設定すると、
+       <em>www</em> サブドメインおよびそれ自身のすべてのサブドメイン (w2.www.example.com など) でクッキーが使えるようになります。
+       サブドメインを含むドメイン全体でクッキーを有効にしたければ、そのドメイン自体
+       (この場合は <em>&#039;example.com&#039;</em>) を設定します。
+      </p>
+      <p class="para">
        古いブラウザの中には、非推奨になった
        <a href="http://www.faqs.org/rfcs/rfc2109" class="link external">&raquo;&nbsp;RFC 2109</a> を実装しているものが未だに残っているかもしれません。
        そのようなブラウザでは、すべてのサブドメインにマッチさせるためには先頭に
@@ -207,7 +207,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    以下はクッキーを送信する例です。
-   <div class="example" id="example-5007">
+   <div class="example" id="example-5026">
     <p><strong>例1 <span class="function"><strong>setcookie()</strong></span> での送信の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -239,7 +239,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5008">
+   <div class="example" id="example-5027">
     <p><strong>例2 <span class="function"><strong>setcookie()</strong></span> による削除の例</strong></p>
     <div class="example-contents"><p>
      クッキーを削除する場合には、ブラウザの削除機構を起動するために
@@ -256,7 +256,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5009">
+   <div class="example" id="example-5028">
     <p><strong>例3 <span class="function"><strong>setcookie()</strong></span> と配列</strong></p>
     <div class="example-contents"><p>
      クッキー名で配列を記述することにより、クッキーの配列を設定することも可能です。

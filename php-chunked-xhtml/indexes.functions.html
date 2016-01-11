@@ -72,6 +72,27 @@
 <li><a href="apciterator.rewind.html" class="index">APCIterator::rewind</a> - イテレータを巻き戻す</li>
 <li><a href="apciterator.valid.html" class="index">APCIterator::valid</a> - 現在位置が有効かどうかを調べる</li>
 <li><a href="apciterator.construct.html" class="index">APCIterator::__construct</a> - APCIterator イテレータオブジェクトを作成する</li>
+<li><a href="apcuiterator.current.html" class="index">APCUIterator::current</a> - Get current item</li>
+<li><a href="apcuiterator.gettotalcount.html" class="index">APCUIterator::getTotalCount</a> - Get total count</li>
+<li><a href="apcuiterator.gettotalhits.html" class="index">APCUIterator::getTotalHits</a> - Get total cache hits</li>
+<li><a href="apcuiterator.gettotalsize.html" class="index">APCUIterator::getTotalSize</a> - Get total cache size</li>
+<li><a href="apcuiterator.key.html" class="index">APCUIterator::key</a> - Get iterator key</li>
+<li><a href="apcuiterator.next.html" class="index">APCUIterator::next</a> - Move pointer to next item</li>
+<li><a href="apcuiterator.rewind.html" class="index">APCUIterator::rewind</a> - Rewinds iterator</li>
+<li><a href="apcuiterator.valid.html" class="index">APCUIterator::valid</a> - Checks if current position is valid</li>
+<li><a href="apcuiterator.construct.html" class="index">APCUIterator::__construct</a> - Constructs an APCUIterator iterator object</li>
+<li><a href="function.apcu-add.html" class="index">apcu_add</a> - Cache a new variable in the data store</li>
+<li><a href="function.apcu-cache-info.html" class="index">apcu_cache_info</a> - Retrieves cached information from APCu's data store</li>
+<li><a href="function.apcu-cas.html" class="index">apcu_cas</a> - Updates an old value with a new value</li>
+<li><a href="function.apcu-clear-cache.html" class="index">apcu_clear_cache</a> - Clears the APCu cache</li>
+<li><a href="function.apcu-dec.html" class="index">apcu_dec</a> - Decrease a stored number</li>
+<li><a href="function.apcu-delete.html" class="index">apcu_delete</a> - Removes a stored variable from the cache</li>
+<li><a href="function.apcu-entry.html" class="index">apcu_entry</a> - Atomically fetch or generate a cache entry</li>
+<li><a href="function.apcu-exists.html" class="index">apcu_exists</a> - Checks if entry exists</li>
+<li><a href="function.apcu-fetch.html" class="index">apcu_fetch</a> - Fetch a stored variable from the cache</li>
+<li><a href="function.apcu-inc.html" class="index">apcu_inc</a> - Increase a stored number</li>
+<li><a href="function.apcu-sma-info.html" class="index">apcu_sma_info</a> - Retrieves APCu Shared Memory Allocation information</li>
+<li><a href="function.apcu-store.html" class="index">apcu_store</a> - Cache a variable in the data store</li>
 <li><a href="function.apc-add.html" class="index">apc_add</a> - 新規の変数をデータ領域にキャッシュする</li>
 <li><a href="function.apc-bin-dump.html" class="index">apc_bin_dump</a> - 指定したファイルおよびユーザー変数のバイナリダンプを取得する</li>
 <li><a href="function.apc-bin-dumpfile.html" class="index">apc_bin_dumpfile</a> - キャッシュされたファイルやユーザー変数のバイナリダンプをファイルに出力する</li>
@@ -274,10 +295,6 @@
 <li><a href="function.bind-textdomain-codeset.html" class="index">bind_textdomain_codeset</a> - DOMAIN メッセージカタログから返されるメッセージの文字エンコーディングを指定する</li>
 <li><a href="function.blenc-encrypt.html" class="index">blenc_encrypt</a> - Encrypt a PHP script with BLENC.</li>
 <li><a href="function.boolval.html" class="index">boolval</a> - 変数の boolean としての値を取得する</li>
-<li><a href="function.bson-fromarray.html" class="index">BSON\fromArray</a> - Description</li>
-<li><a href="function.bson-fromjson.html" class="index">BSON\fromJSON</a> - Description</li>
-<li><a href="function.bson-toarray.html" class="index">BSON\toArray</a> - Description</li>
-<li><a href="function.bson-tojson.html" class="index">BSON\toJSON</a> - Description</li>
 <li><a href="function.bson-decode.html" class="index">bson_decode</a> - BSON オブジェクトを PHP の配列に復元する</li>
 <li><a href="function.bson-encode.html" class="index">bson_encode</a> - PHP の変数を BSON 文字列に変換する</li>
 <li><a href="function.bzclose.html" class="index">bzclose</a> - bzip2 ファイルを閉じる</li>
@@ -2154,6 +2171,7 @@
 <li><a href="gender-gender.similarnames.html" class="index">Gender\Gender::similarNames</a> - 似た名前を取得する</li>
 <li><a href="gender-gender.construct.html" class="index">Gender\Gender::__construct</a> - Gender オブジェクトを作る</li>
 <li><a href="generator.current.html" class="index">Generator::current</a> - yield した値を取得する</li>
+<li><a href="generator.getreturn.html" class="index">Generator::getReturn</a> - Get the return value of a generator</li>
 <li><a href="generator.key.html" class="index">Generator::key</a> - yield したキーを取得する</li>
 <li><a href="generator.next.html" class="index">Generator::next</a> - ジェネレータを続行する</li>
 <li><a href="generator.rewind.html" class="index">Generator::rewind</a> - イテレータを巻き戻す</li>
@@ -4817,59 +4835,74 @@
 <li><a href="mongodbref.create.html" class="index">MongoDBRef::create</a> - 新しいデータベース参照を作成する</li>
 <li><a href="mongodbref.get.html" class="index">MongoDBRef::get</a> - 参照が指すオブジェクトを取得する</li>
 <li><a href="mongodbref.isref.html" class="index">MongoDBRef::isRef</a> - 配列がデータベース参照か否かを調べる</li>
-<li><a href="mongodb-bson-binary.getsubtype.html" class="index">MongoDB\BSON\Binary::getSubType</a> - Description</li>
-<li><a href="mongodb-bson-binary.construct.html" class="index">MongoDB\BSON\Binary::__construct</a> - Description</li>
-<li><a href="mongodb-bson-javascript.construct.html" class="index">MongoDB\BSON\Javascript::__construct</a> - Description</li>
-<li><a href="mongodb-bson-objectid.construct.html" class="index">MongoDB\BSON\ObjectID::__construct</a> - Description</li>
-<li><a href="mongodb-bson-objectid.tostring.html" class="index">MongoDB\BSON\ObjectID::__toString</a> - Description</li>
-<li><a href="mongodb-bson-regex.getflags.html" class="index">MongoDB\BSON\Regex::getFlags</a> - Description</li>
-<li><a href="mongodb-bson-regex.getpattern.html" class="index">MongoDB\BSON\Regex::getPattern</a> - Description</li>
-<li><a href="mongodb-bson-regex.construct.html" class="index">MongoDB\BSON\Regex::__construct</a> - Description</li>
-<li><a href="mongodb-bson-regex.tostring.html" class="index">MongoDB\BSON\Regex::__toString</a> - Description</li>
-<li><a href="mongodb-bson-serializable.bsonserialize.html" class="index">MongoDB\BSON\Serializable::bsonSerialize</a> - Description</li>
-<li><a href="mongodb-bson-timestamp.construct.html" class="index">MongoDB\BSON\Timestamp::__construct</a> - Description</li>
-<li><a href="mongodb-bson-timestamp.tostring.html" class="index">MongoDB\BSON\Timestamp::__toString</a> - Description</li>
-<li><a href="mongodb-bson-unserializable.bsonunserialize.html" class="index">MongoDB\BSON\Unserializable::bsonUnserialize</a> - Description</li>
-<li><a href="mongodb-bson-utcdatetime.todatetime.html" class="index">MongoDB\BSON\UTCDatetime::toDateTime</a> - Description</li>
-<li><a href="mongodb-bson-utcdatetime.construct.html" class="index">MongoDB\BSON\UTCDatetime::__construct</a> - Description</li>
-<li><a href="mongodb-bson-utcdatetime.tostring.html" class="index">MongoDB\BSON\UTCDatetime::__toString</a> - Description</li>
-<li><a href="mongodb-driver-writebulk.count.html" class="index">MongoDB\Driver\BulkWrite::count</a> - Count expected roundtrips</li>
-<li><a href="mongodb-driver-writebulk.delete.html" class="index">MongoDB\Driver\BulkWrite::delete</a> - Add a delete operation to the bulk</li>
-<li><a href="mongodb-driver-writebulk.insert.html" class="index">MongoDB\Driver\BulkWrite::insert</a> - Add a insert operation to the bulk</li>
-<li><a href="mongodb-driver-writebulk.update.html" class="index">MongoDB\Driver\BulkWrite::update</a> - Add an update operation to the bulk</li>
-<li><a href="mongodb-driver-writebulk.construct.html" class="index">MongoDB\Driver\BulkWrite::__construct</a> - Create new BulkWrite</li>
-<li><a href="mongodb-driver-command.construct.html" class="index">MongoDB\Driver\Command::__construct</a> - Construct new Command</li>
-<li><a href="mongodb-driver-cursor.getid.html" class="index">MongoDB\Driver\Cursor::getId</a> - Returns the CursorId for this cursor</li>
-<li><a href="mongodb-driver-cursor.getserver.html" class="index">MongoDB\Driver\Cursor::getServer</a> - Returns the Server object to which this cursor is attached</li>
-<li><a href="mongodb-driver-cursor.isdead.html" class="index">MongoDB\Driver\Cursor::isDead</a> - Checks if a cursor is still alive</li>
+<li><a href="mongodb-bson-binary.getdata.html" class="index">MongoDB\BSON\Binary::getData</a> - Returns the Binary's data</li>
+<li><a href="mongodb-bson-binary.gettype.html" class="index">MongoDB\BSON\Binary::getType</a> - Returns the Binary's type</li>
+<li><a href="mongodb-bson-binary.construct.html" class="index">MongoDB\BSON\Binary::__construct</a> - Construct a new Binary</li>
+<li><a href="function.mongodb.bson-fromjson.html" class="index">MongoDB\BSON\fromJSON</a> - Returns the BSON representation of a JSON value</li>
+<li><a href="function.mongodb.bson-fromphp.html" class="index">MongoDB\BSON\fromPHP</a> - Returns the BSON representation of a PHP value</li>
+<li><a href="mongodb-bson-javascript.construct.html" class="index">MongoDB\BSON\Javascript::__construct</a> - Construct a new Javascript</li>
+<li><a href="mongodb-bson-maxkey.construct.html" class="index">MongoDB\BSON\MaxKey::__construct</a> - Construct a new MaxKey</li>
+<li><a href="mongodb-bson-minkey.construct.html" class="index">MongoDB\BSON\MinKey::__construct</a> - Construct a new MinKey</li>
+<li><a href="mongodb-bson-objectid.construct.html" class="index">MongoDB\BSON\ObjectID::__construct</a> - Construct a new ObjectID</li>
+<li><a href="mongodb-bson-objectid.tostring.html" class="index">MongoDB\BSON\ObjectID::__toString</a> - Returns the hexidecimal representation of this ObjectID</li>
+<li><a href="mongodb-bson-regex.getflags.html" class="index">MongoDB\BSON\Regex::getFlags</a> - Returns the Regex's flags</li>
+<li><a href="mongodb-bson-regex.getpattern.html" class="index">MongoDB\BSON\Regex::getPattern</a> - Returns the Regex's pattern</li>
+<li><a href="mongodb-bson-regex.construct.html" class="index">MongoDB\BSON\Regex::__construct</a> - Construct a new Regex</li>
+<li><a href="mongodb-bson-regex.tostring.html" class="index">MongoDB\BSON\Regex::__toString</a> - Returns the string representation of this Regex</li>
+<li><a href="mongodb-bson-serializable.bsonserialize.html" class="index">MongoDB\BSON\Serializable::bsonSerialize</a> - Provides an array or document to serialize as BSON</li>
+<li><a href="mongodb-bson-timestamp.construct.html" class="index">MongoDB\BSON\Timestamp::__construct</a> - Construct a new Timestamp</li>
+<li><a href="mongodb-bson-timestamp.tostring.html" class="index">MongoDB\BSON\Timestamp::__toString</a> - Returns the string representation of this Timestamp</li>
+<li><a href="function.mongodb.bson-tojson.html" class="index">MongoDB\BSON\toJSON</a> - Returns the JSON representation of a BSON value</li>
+<li><a href="function.mongodb.bson-tophp.html" class="index">MongoDB\BSON\toPHP</a> - Returns the PHP representation of a BSON value</li>
+<li><a href="mongodb-bson-unserializable.bsonunserialize.html" class="index">MongoDB\BSON\Unserializable::bsonUnserialize</a> - Constructs the object from a BSON array or document</li>
+<li><a href="mongodb-bson-utcdatetime.todatetime.html" class="index">MongoDB\BSON\UTCDateTime::toDateTime</a> - Returns the DateTime representation of this UTCDateTime</li>
+<li><a href="mongodb-bson-utcdatetime.construct.html" class="index">MongoDB\BSON\UTCDateTime::__construct</a> - Construct a new UTCDateTime</li>
+<li><a href="mongodb-bson-utcdatetime.tostring.html" class="index">MongoDB\BSON\UTCDateTime::__toString</a> - Returns the string representation of this UTCDateTime</li>
+<li><a href="mongodb-driver-bulkwrite.count.html" class="index">MongoDB\Driver\BulkWrite::count</a> - Count expected roundtrips for executing the bulk</li>
+<li><a href="mongodb-driver-bulkwrite.delete.html" class="index">MongoDB\Driver\BulkWrite::delete</a> - Add a delete operation to the bulk</li>
+<li><a href="mongodb-driver-bulkwrite.insert.html" class="index">MongoDB\Driver\BulkWrite::insert</a> - Add an insert operation to the bulk</li>
+<li><a href="mongodb-driver-bulkwrite.update.html" class="index">MongoDB\Driver\BulkWrite::update</a> - Add an update operation to the bulk</li>
+<li><a href="mongodb-driver-bulkwrite.construct.html" class="index">MongoDB\Driver\BulkWrite::__construct</a> - Create a new BulkWrite</li>
+<li><a href="mongodb-driver-command.construct.html" class="index">MongoDB\Driver\Command::__construct</a> - Create a new Command</li>
+<li><a href="mongodb-driver-cursor.getid.html" class="index">MongoDB\Driver\Cursor::getId</a> - Returns the ID for this cursor</li>
+<li><a href="mongodb-driver-cursor.getserver.html" class="index">MongoDB\Driver\Cursor::getServer</a> - Returns the server associated with this cursor</li>
+<li><a href="mongodb-driver-cursor.isdead.html" class="index">MongoDB\Driver\Cursor::isDead</a> - Checks if the cursor is still open on the server</li>
 <li><a href="mongodb-driver-cursor.settypemap.html" class="index">MongoDB\Driver\Cursor::setTypeMap</a> - Sets a type map to use for BSON unserialization</li>
-<li><a href="mongodb-driver-cursor.toarray.html" class="index">MongoDB\Driver\Cursor::toArray</a> - Returns an array of all result documents for this cursor</li>
-<li><a href="mongodb-driver-cursor.construct.html" class="index">MongoDB\Driver\Cursor::__construct</a> - Description</li>
-<li><a href="mongodb-driver-cursorid.construct.html" class="index">MongoDB\Driver\CursorId::__construct</a> - Description</li>
-<li><a href="mongodb-driver-cursorid.tostring.html" class="index">MongoDB\Driver\CursorId::__toString</a> - Description</li>
-<li><a href="mongodb-driver-manager.executewritebulk.html" class="index">MongoDB\Driver\Manager::executeBulkWrite</a> - Execute one or more write operations</li>
-<li><a href="mongodb-driver-manager.executecommand.html" class="index">MongoDB\Driver\Manager::executeCommand</a> - Execute a MongoDB database command</li>
-<li><a href="mongodb-driver-manager.executedelete.html" class="index">MongoDB\Driver\Manager::executeDelete</a> - Convenience method for a single delete operation</li>
-<li><a href="mongodb-driver-manager.executeinsert.html" class="index">MongoDB\Driver\Manager::executeInsert</a> - Convenience method for a single insert operation</li>
-<li><a href="mongodb-driver-manager.executequery.html" class="index">MongoDB\Driver\Manager::executeQuery</a> - Execute a MongoDB query</li>
-<li><a href="mongodb-driver-manager.executeupdate.html" class="index">MongoDB\Driver\Manager::executeUpdate</a> - Convenience method for a single update operation</li>
-<li><a href="mongodb-driver-manager.getservers.html" class="index">MongoDB\Driver\Manager::getServers</a> - Description</li>
-<li><a href="mongodb-driver-manager.selectserver.html" class="index">MongoDB\Driver\Manager::selectServer</a> - Preselect MongoDB node</li>
+<li><a href="mongodb-driver-cursor.toarray.html" class="index">MongoDB\Driver\Cursor::toArray</a> - Returns an array containing all results for this cursor</li>
+<li><a href="mongodb-driver-cursor.construct.html" class="index">MongoDB\Driver\Cursor::__construct</a> - Create a new Cursor (not used)</li>
+<li><a href="mongodb-driver-cursorid.construct.html" class="index">MongoDB\Driver\CursorId::__construct</a> - Create a new CursorId (not used)</li>
+<li><a href="mongodb-driver-cursorid.tostring.html" class="index">MongoDB\Driver\CursorId::__toString</a> - String representation of the cursor ID</li>
+<li><a href="mongodb-driver-writeexception.getwriteresult.html" class="index">MongoDB\Driver\Exception\WriteException::getWriteResult</a> - Returns the WriteResult for the failed write operation</li>
+<li><a href="mongodb-driver-manager.executebulkwrite.html" class="index">MongoDB\Driver\Manager::executeBulkWrite</a> - Execute one or more write operations</li>
+<li><a href="mongodb-driver-manager.executecommand.html" class="index">MongoDB\Driver\Manager::executeCommand</a> - Execute a database command</li>
+<li><a href="mongodb-driver-manager.executequery.html" class="index">MongoDB\Driver\Manager::executeQuery</a> - Execute a database query</li>
+<li><a href="mongodb-driver-manager.getservers.html" class="index">MongoDB\Driver\Manager::getServers</a> - Return the servers to which this manager is connected</li>
+<li><a href="mongodb-driver-manager.selectserver.html" class="index">MongoDB\Driver\Manager::selectServer</a> - Select a server matching a read preference</li>
 <li><a href="mongodb-driver-manager.construct.html" class="index">MongoDB\Driver\Manager::__construct</a> - Create new MongoDB Manager</li>
 <li><a href="mongodb-driver-query.construct.html" class="index">MongoDB\Driver\Query::__construct</a> - Construct new Query</li>
-<li><a href="mongodb-driver-readpreference.construct.html" class="index">MongoDB\Driver\ReadPreference::__construct</a> - Description</li>
-<li><a href="mongodb-driver-server.executebulkwrite.html" class="index">MongoDB\Driver\Server::executeBulkWrite</a> - Description</li>
-<li><a href="mongodb-driver-server.executecommand.html" class="index">MongoDB\Driver\Server::executeCommand</a> - Description</li>
-<li><a href="mongodb-driver-server.executequery.html" class="index">MongoDB\Driver\Server::executeQuery</a> - Description</li>
-<li><a href="mongodb-driver-server.gethost.html" class="index">MongoDB\Driver\Server::getHost</a> - Description</li>
-<li><a href="mongodb-driver-server.getinfo.html" class="index">MongoDB\Driver\Server::getInfo</a> - Description</li>
-<li><a href="mongodb-driver-server.getlatency.html" class="index">MongoDB\Driver\Server::getLatency</a> - Description</li>
-<li><a href="mongodb-driver-server.getport.html" class="index">MongoDB\Driver\Server::getPort</a> - Description</li>
-<li><a href="mongodb-driver-server.getstate.html" class="index">MongoDB\Driver\Server::getState</a> - Description</li>
-<li><a href="mongodb-driver-server.gettype.html" class="index">MongoDB\Driver\Server::getType</a> - Description</li>
-<li><a href="mongodb-driver-server.isdelayed.html" class="index">MongoDB\Driver\Server::isDelayed</a> - Description</li>
-<li><a href="mongodb-driver-server.ispassive.html" class="index">MongoDB\Driver\Server::isPassive</a> - Description</li>
-<li><a href="mongodb-driver-server.construct.html" class="index">MongoDB\Driver\Server::__construct</a> - Description</li>
+<li><a href="mongodb-driver-readconcern.getlevel.html" class="index">MongoDB\Driver\ReadConcern::getLEvel</a> - Returns the ReadConcern's &quot;level&quot; option</li>
+<li><a href="mongodb-driver-readconcern.construct.html" class="index">MongoDB\Driver\ReadConcern::__construct</a> - Construct immutable ReadConcern</li>
+<li><a href="mongodb-driver-readpreference.getmode.html" class="index">MongoDB\Driver\ReadPreference::getMode</a> - Returns the ReadPreference's &quot;mode&quot; option</li>
+<li><a href="mongodb-driver-readpreference.gettagsets.html" class="index">MongoDB\Driver\ReadPreference::getTagSets</a> - Returns the ReadPreference's &quot;tagSets&quot; option</li>
+<li><a href="mongodb-driver-readpreference.construct.html" class="index">MongoDB\Driver\ReadPreference::__construct</a> - Construct immutable ReadPreference</li>
+<li><a href="mongodb-driver-server.executebulkwrite.html" class="index">MongoDB\Driver\Server::executeBulkWrite</a> - Execute one or more write operations on this server</li>
+<li><a href="mongodb-driver-server.executecommand.html" class="index">MongoDB\Driver\Server::executeCommand</a> - Execute a database command on this server</li>
+<li><a href="mongodb-driver-server.executequery.html" class="index">MongoDB\Driver\Server::executeQuery</a> - Execute a database query on this server</li>
+<li><a href="mongodb-driver-server.gethost.html" class="index">MongoDB\Driver\Server::getHost</a> - Returns the hostname of this server</li>
+<li><a href="mongodb-driver-server.getinfo.html" class="index">MongoDB\Driver\Server::getInfo</a> - Returns an array of information about this server</li>
+<li><a href="mongodb-driver-server.getlatency.html" class="index">MongoDB\Driver\Server::getLatency</a> - Returns the latency of this server</li>
+<li><a href="mongodb-driver-server.getport.html" class="index">MongoDB\Driver\Server::getPort</a> - Returns the port on which this server is listening</li>
+<li><a href="mongodb-driver-server.gettags.html" class="index">MongoDB\Driver\Server::getTags</a> - Returns an array of tags describing this server in a replica set</li>
+<li><a href="mongodb-driver-server.gettype.html" class="index">MongoDB\Driver\Server::getType</a> - Returns an integer denoting the type of this server</li>
+<li><a href="mongodb-driver-server.isarbiter.html" class="index">MongoDB\Driver\Server::isArbiter</a> - Checks if this server is an arbiter member of a replica set</li>
+<li><a href="mongodb-driver-server.ishidden.html" class="index">MongoDB\Driver\Server::isHidden</a> - Checks if this server is a hidden member of a replica set</li>
+<li><a href="mongodb-driver-server.ispassive.html" class="index">MongoDB\Driver\Server::isPassive</a> - Checks if this server is a passive member of a replica set</li>
+<li><a href="mongodb-driver-server.isprimary.html" class="index">MongoDB\Driver\Server::isPrimary</a> - Checks if this server is a primary member of a replica set</li>
+<li><a href="mongodb-driver-server.issecondary.html" class="index">MongoDB\Driver\Server::isSecondary</a> - Checks if this server is a secondary member of a replica set</li>
+<li><a href="mongodb-driver-server.construct.html" class="index">MongoDB\Driver\Server::__construct</a> - Create a new Server (not used)</li>
+<li><a href="mongodb-driver-writeconcern.getjournal.html" class="index">MongoDB\Driver\WriteConcern::getJournal</a> - Returns the WriteConcern's &quot;journal&quot; option</li>
+<li><a href="mongodb-driver-writeconcern.getw.html" class="index">MongoDB\Driver\WriteConcern::getW</a> - Returns the WriteConcern's &quot;w&quot; option</li>
+<li><a href="mongodb-driver-writeconcern.getwtimeout.html" class="index">MongoDB\Driver\WriteConcern::getWtimeout</a> - Returns the WriteConcern's &quot;wtimeout&quot; option</li>
 <li><a href="mongodb-driver-writeconcern.construct.html" class="index">MongoDB\Driver\WriteConcern::__construct</a> - Construct immutable WriteConcern</li>
 <li><a href="mongodb-driver-writeconcernerror.getcode.html" class="index">MongoDB\Driver\WriteConcernError::getCode</a> - Description</li>
 <li><a href="mongodb-driver-writeconcernerror.getinfo.html" class="index">MongoDB\Driver\WriteConcernError::getInfo</a> - Description</li>
@@ -4877,7 +4910,6 @@
 <li><a href="mongodb-driver-writeerror.getcode.html" class="index">MongoDB\Driver\WriteError::getCode</a> - Description</li>
 <li><a href="mongodb-driver-writeerror.getindex.html" class="index">MongoDB\Driver\WriteError::getIndex</a> - Description</li>
 <li><a href="mongodb-driver-writeerror.getmessage.html" class="index">MongoDB\Driver\WriteError::getMessage</a> - Description</li>
-<li><a href="mongodb-driver-writeexception.getwriteresult.html" class="index">MongoDB\Driver\WriteException::getWriteResult</a> - Description</li>
 <li><a href="mongodb-driver-writeresult.getdeletedcount.html" class="index">MongoDB\Driver\WriteResult::getDeletedCount</a> - Description</li>
 <li><a href="mongodb-driver-writeresult.getinfo.html" class="index">MongoDB\Driver\WriteResult::getInfo</a> - Description</li>
 <li><a href="mongodb-driver-writeresult.getinsertedcount.html" class="index">MongoDB\Driver\WriteResult::getInsertedCount</a> - Description</li>
@@ -6565,7 +6597,7 @@
 <li><a href="function.posix-seteuid.html" class="index">posix_seteuid</a> - 現在のプロセスの実効 UID を設定する</li>
 <li><a href="function.posix-setgid.html" class="index">posix_setgid</a> - 現在のプロセスの GID を設定する</li>
 <li><a href="function.posix-setpgid.html" class="index">posix_setpgid</a> - ジョブ制御のプロセスグループ ID を設定する</li>
-<li><a href="function.posix-setrlimit.html" class="index">posix_setrlimit</a> - Set system resource limits</li>
+<li><a href="function.posix-setrlimit.html" class="index">posix_setrlimit</a> - システムリソース制限を設定</li>
 <li><a href="function.posix-setsid.html" class="index">posix_setsid</a> - 現在のプロセスをセッションリーダーにする</li>
 <li><a href="function.posix-setuid.html" class="index">posix_setuid</a> - 現在のプロセスの UID を設定する</li>
 <li><a href="function.posix-strerror.html" class="index">posix_strerror</a> - 指定したエラー番号に対応するシステムのエラーメッセージを取得する</li>
@@ -6581,7 +6613,7 @@
 <li><a href="function.preg-quote.html" class="index">preg_quote</a> - 正規表現文字をクオートする</li>
 <li><a href="function.preg-replace.html" class="index">preg_replace</a> - 正規表現検索および置換を行う</li>
 <li><a href="function.preg-replace-callback.html" class="index">preg_replace_callback</a> - 正規表現検索を行い、コールバック関数を使用して置換を行う</li>
-<li><a href="function.preg-replace-callback-array.html" class="index">preg_replace_callback_array</a> - Perform a regular expression search and replace using callbacks</li>
+<li><a href="function.preg-replace-callback-array.html" class="index">preg_replace_callback_array</a> - 正規表現検索を行い、コールバック関数を使用して置換を行う</li>
 <li><a href="function.preg-split.html" class="index">preg_split</a> - 正規表現で文字列を分割する</li>
 <li><a href="function.prev.html" class="index">prev</a> - 内部の配列ポインタをひとつ前に戻す</li>
 <li><a href="function.print.html" class="index">print</a> - 文字列を出力する</li>
@@ -6951,6 +6983,7 @@
 <li><a href="reflectionclass.implementsinterface.html" class="index">ReflectionClass::implementsInterface</a> - インターフェイスの実装を調べる</li>
 <li><a href="reflectionclass.innamespace.html" class="index">ReflectionClass::inNamespace</a> - 名前空間内にあるかどうかを調べる</li>
 <li><a href="reflectionclass.isabstract.html" class="index">ReflectionClass::isAbstract</a> - 抽象クラスであるかどうかを調べる</li>
+<li><a href="reflectionclass.isanonymous.html" class="index">ReflectionClass::isAnonymous</a> - Checks if class is anonymous</li>
 <li><a href="reflectionclass.iscloneable.html" class="index">ReflectionClass::isCloneable</a> - このクラスがクローン可能かどうかを返す</li>
 <li><a href="reflectionclass.isfinal.html" class="index">ReflectionClass::isFinal</a> - final クラスであるかどうかを調べる</li>
 <li><a href="reflectionclass.isinstance.html" class="index">ReflectionClass::isInstance</a> - クラスのインスタンスであるかどうかを調べる</li>
@@ -7067,7 +7100,7 @@
 <li><a href="reflectionparameter.tostring.html" class="index">ReflectionParameter::__toString</a> - 文字列に変換する</li>
 <li><a href="reflectionproperty.export.html" class="index">ReflectionProperty::export</a> - エクスポートする</li>
 <li><a href="reflectionproperty.getdeclaringclass.html" class="index">ReflectionProperty::getDeclaringClass</a> - 宣言しているクラスを取得する</li>
-<li><a href="reflectionproperty.getdoccomment.html" class="index">ReflectionProperty::getDocComment</a> - ドキュメントコメントを取得する</li>
+<li><a href="reflectionproperty.getdoccomment.html" class="index">ReflectionProperty::getDocComment</a> - プロパティのドキュメントコメントを取得する</li>
 <li><a href="reflectionproperty.getmodifiers.html" class="index">ReflectionProperty::getModifiers</a> - 修飾子を取得する</li>
 <li><a href="reflectionproperty.getname.html" class="index">ReflectionProperty::getName</a> - プロパティ名を取得する</li>
 <li><a href="reflectionproperty.getvalue.html" class="index">ReflectionProperty::getValue</a> - 値を取得する</li>
@@ -7288,7 +7321,7 @@
 <li><a href="serializable.unserialize.html" class="index">Serializable::unserialize</a> - オブジェクトを作成する</li>
 <li><a href="function.serialize.html" class="index">serialize</a> - 値の保存可能な表現を生成する</li>
 <li><a href="sessionhandler.close.html" class="index">SessionHandler::close</a> - セッションを閉じる</li>
-<li><a href="sessionhandler.create-sid.html" class="index">SessionHandler::create_sid</a> - Return a new session ID</li>
+<li><a href="sessionhandler.create-sid.html" class="index">SessionHandler::create_sid</a> - 新規セッション ID を返す</li>
 <li><a href="sessionhandler.destroy.html" class="index">SessionHandler::destroy</a> - セッションを破棄する</li>
 <li><a href="sessionhandler.gc.html" class="index">SessionHandler::gc</a> - 古いセッションを削除する</li>
 <li><a href="sessionhandler.open.html" class="index">SessionHandler::open</a> - セッションを開始する</li>
@@ -7467,6 +7500,7 @@
 <li><a href="function.socket-create.html" class="index">socket_create</a> - ソケット（通信時の終端）を作成する</li>
 <li><a href="function.socket-create-listen.html" class="index">socket_create_listen</a> - 接続を受けつけるためにポートにソケットをオープンする</li>
 <li><a href="function.socket-create-pair.html" class="index">socket_create_pair</a> - 区別できないソケットの組を作成し、配列に保存する</li>
+<li><a href="function.socket-getopt.html" class="index">socket_getopt</a> - のエイリアス socket_get_option</li>
 <li><a href="function.socket-getpeername.html" class="index">socket_getpeername</a> - 指定したソケットのリモート側に問い合わせ、その型に応じてホスト/ポート、あるいは Unix ファイルシステムのパスを返す</li>
 <li><a href="function.socket-getsockname.html" class="index">socket_getsockname</a> - 指定したソケットのローカル側に問い合わせ、その型に応じてホスト/ポート、あるいは Unix ファイルシステムのパスを返す</li>
 <li><a href="function.socket-get-option.html" class="index">socket_get_option</a> - ソケットのオプションを取得する</li>
@@ -7482,6 +7516,7 @@
 <li><a href="function.socket-send.html" class="index">socket_send</a> - 接続したソケットにデータを送信する</li>
 <li><a href="function.socket-sendmsg.html" class="index">socket_sendmsg</a> - メッセージを送信する</li>
 <li><a href="function.socket-sendto.html" class="index">socket_sendto</a> - 接続しているかどうかによらずソケットにメッセージを送信する</li>
+<li><a href="function.socket-setopt.html" class="index">socket_setopt</a> - のエイリアス socket_set_option</li>
 <li><a href="function.socket-set-block.html" class="index">socket_set_block</a> - ソケットリソースをブロックモードに設定する</li>
 <li><a href="function.socket-set-blocking.html" class="index">socket_set_blocking</a> - stream_set_blocking のエイリアス</li>
 <li><a href="function.socket-set-nonblock.html" class="index">socket_set_nonblock</a> - ソケットリソースを非ブロックモードに設定する</li>
@@ -9085,19 +9120,19 @@
 <li><a href="function.unserialize.html" class="index">unserialize</a> - 保存用表現から PHP の値を生成する</li>
 <li><a href="function.unset.html" class="index">unset</a> - 指定した変数の割当を解除する</li>
 <li><a href="function.untaint.html" class="index">untaint</a> - 文字列の汚染を除去する</li>
-<li><a href="function.uopz-backup.html" class="index">uopz_backup</a> - Backup a function</li>
-<li><a href="function.uopz-compose.html" class="index">uopz_compose</a> - Compose a class</li>
-<li><a href="function.uopz-copy.html" class="index">uopz_copy</a> - Copy a function</li>
-<li><a href="function.uopz-delete.html" class="index">uopz_delete</a> - Delete a function</li>
-<li><a href="function.uopz-extend.html" class="index">uopz_extend</a> - Extend a class at runtime</li>
-<li><a href="function.uopz-flags.html" class="index">uopz_flags</a> - Get or set flags on function or class</li>
-<li><a href="function.uopz-function.html" class="index">uopz_function</a> - Creates a function at runtime</li>
-<li><a href="function.uopz-implement.html" class="index">uopz_implement</a> - Implements an interface at runtime</li>
-<li><a href="function.uopz-overload.html" class="index">uopz_overload</a> - Overload a VM opcode</li>
-<li><a href="function.uopz-redefine.html" class="index">uopz_redefine</a> - Redefine a constant</li>
-<li><a href="function.uopz-rename.html" class="index">uopz_rename</a> - Rename a function at runtime</li>
-<li><a href="function.uopz-restore.html" class="index">uopz_restore</a> - Restore a previously backed up function</li>
-<li><a href="function.uopz-undefine.html" class="index">uopz_undefine</a> - Undefine a constant</li>
+<li><a href="function.uopz-backup.html" class="index">uopz_backup</a> - 関数をバックアップ</li>
+<li><a href="function.uopz-compose.html" class="index">uopz_compose</a> - クラスを構成</li>
+<li><a href="function.uopz-copy.html" class="index">uopz_copy</a> - 関数をコピー</li>
+<li><a href="function.uopz-delete.html" class="index">uopz_delete</a> - 関数を削除</li>
+<li><a href="function.uopz-extend.html" class="index">uopz_extend</a> - 実行時にクラスを拡張</li>
+<li><a href="function.uopz-flags.html" class="index">uopz_flags</a> - 関数またはクラスのフラグを取得または設定</li>
+<li><a href="function.uopz-function.html" class="index">uopz_function</a> - 実行時に関数を作成</li>
+<li><a href="function.uopz-implement.html" class="index">uopz_implement</a> - 実行時にインターフェイスを実装</li>
+<li><a href="function.uopz-overload.html" class="index">uopz_overload</a> - VM のオペコードをオーバーロード</li>
+<li><a href="function.uopz-redefine.html" class="index">uopz_redefine</a> - 定数を再定義</li>
+<li><a href="function.uopz-rename.html" class="index">uopz_rename</a> - 実行時に関数名を変更</li>
+<li><a href="function.uopz-restore.html" class="index">uopz_restore</a> - 前にバックアップした関数をリストア</li>
+<li><a href="function.uopz-undefine.html" class="index">uopz_undefine</a> - 定数を未定義化</li>
 <li><a href="function.urldecode.html" class="index">urldecode</a> - URL エンコードされた文字列をデコードする</li>
 <li><a href="function.urlencode.html" class="index">urlencode</a> - 文字列を URL エンコードする</li>
 <li><a href="function.user-error.html" class="index">user_error</a> - trigger_error のエイリアス</li>
@@ -9677,6 +9712,7 @@
 <li><a href="yar-client-exception.gettype.html" class="index">Yar_Client_Exception::getType</a> - The getType purpose</li>
 <li><a href="yar-concurrent-client.call.html" class="index">Yar_Concurrent_Client::call</a> - Register a concurrent call</li>
 <li><a href="yar-concurrent-client.loop.html" class="index">Yar_Concurrent_Client::loop</a> - Send all calls</li>
+<li><a href="yar-concurrent-client.reset.html" class="index">Yar_Concurrent_Client::reset</a> - Clean all registered calls</li>
 <li><a href="yar-server.handle.html" class="index">Yar_Server::handle</a> - Start RPC Server</li>
 <li><a href="yar-server.construct.html" class="index">Yar_Server::__construct</a> - Register a server</li>
 <li><a href="yar-server-exception.gettype.html" class="index">Yar_Server_Exception::getType</a> - The getType purpose</li>

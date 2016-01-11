@@ -1155,6 +1155,56 @@ NULL
    が扱うファイルにもあてはまります。
   </p>
  </div>
+
+ <div class="sect3" id="migration70.incompatible.other.json-to-jsond">
+  <h4 class="title">JSON 拡張モジュールが JSOND に置き換わる</h4>
+
+  <p class="para">
+   JSON 拡張モジュールが JSOND に置き換わりました。
+   下位互換性を損ねるちょっとした変更が二点あります。
+   まず、数値の最後を小数点で終えることができなくなりました (つまり、
+   <em>34.</em> とすることはできず、<em>34.0</em> あるいは
+   <em>34</em> としなければいけません)。
+   次に、科学記法を使う際に、指数記号
+   <em>e</em> を小数点の直後に置くことができなくなりました
+   (つまり、<em>3.e3</em> とすることはできず、
+   <em>3.0e3</em> あるいは <em>3e3</em> としなければいけません)。
+  </p>
+ </div>
+
+ <div class="sect3" id="migration70.incompatible.other.internal-function-failure-overflow">
+  <h4 class="title">内部関数がオーバーフローしたときの挙動</h4>
+
+  <p class="para">
+   これまでのバージョンでは、浮動小数点数値が大きすぎて整数として表せない場合に、
+   float から integer に変換した結果を黙って切り詰めていました。
+   PHP 7 では E_WARNING が発生し、<strong><code>NULL</code></strong> を返します。
+  </p>
+ </div>
+
+ <div class="sect3" id="migration70.incompatible.other.fixes-custom-session-handler">
+  <h4 class="title">カスタムセッションハンドラの戻り値の修正</h4>
+
+  <p class="para">
+   カスタムセッションハンドラとして実装した関数が
+   <strong><code>FALSE</code></strong> あるいは <em>-1</em> を返すとき、fatal error が発生します。
+   この関数が boolead 値か <em>-1</em>, あるいは
+   <em>0</em> 以外を返す場合は、その関数は失敗して E_WARNING が発生します。
+  </p>
+ </div>
+
+ <div class="sect3" id="migration70.incompatible.other.func-get-args-change">
+  <h4 class="title">
+   <span class="function"><a href="function.func-get-arg.html" class="function">func_get_arg()</a></span> と <span class="function"><a href="function.func-get-args.html" class="function">func_get_args()</a></span>
+   が現在の引数の値を返すようになる
+  </h4>
+
+  <p class="para">
+   <span class="function"><a href="function.func-get-arg.html" class="function">func_get_arg()</a></span> および <span class="function"><a href="function.func-get-args.html" class="function">func_get_args()</a></span>
+   はこれまで、(たとえ関数内でその値が変更されていたとしても) 当初の引数の値を返していました。
+   PHP 7 以降は、常にその時点の引数の値を返すようになります。
+  </p>
+ </div>
 </div>
 
 

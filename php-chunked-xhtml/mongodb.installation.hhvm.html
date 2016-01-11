@@ -22,16 +22,10 @@
   <p class="para">
    Once downloaded, execute the following steps:
    <div class="example-contents"><div class="cdata"><pre>
-cd libbson
-./autogen.sh
-cd ..
-
-cd libmongoc
-./autogen.sh
-cd ..
-
 hphpize
 cmake .
+
+make configlib
 
 make -j 5
 make install
