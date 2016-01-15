@@ -48,6 +48,7 @@
 
       <p class="para">
        エンコードする文字列。
+       <span class="function"><a href="function.mb-internal-encoding.html" class="function">mb_internal_encoding()</a></span> と同じエンコーディングにしなければいけません。
       </p>
      </dd>
 
@@ -60,9 +61,8 @@
 
       <p class="para">
        <code class="parameter">charset</code> は、<code class="parameter">str</code>
-       の文字セット名です。デフォルトは、現在の NLS 設定
+       の変換後の文字セット名です。デフォルトは、現在の NLS 設定
        (<em>mbstring.language</em>) によって決まります。
-       <span class="function"><a href="function.mb-internal-encoding.html" class="function">mb_internal_encoding()</a></span> を同じエンコーディングに設定しておかなければなりません。
       </p>
      </dd>
 
@@ -129,7 +129,7 @@
  <div class="refsect1 examples" id="refsect1-function.mb-encode-mimeheader-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3000">
+   <div class="example" id="example-3008">
     <p><strong>例1 <span class="function"><strong>mb_encode_mimeheader()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

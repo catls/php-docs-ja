@@ -38,6 +38,37 @@
   この移行ガイドでは、下位互換性のない変更点を列挙するだけにとどめます。
  </p>
 
+ <div class="sect3" id="migration70.incompatible.error-handling.set-exception-handler">
+  <h4 class="title">
+   <span class="function"><a href="function.set-exception-handler.html" class="function">set_exception_handler()</a></span> が常に
+   <a href="class.exception.html" class="classname">Exception</a> オブジェクトを受け取るとは限らない
+  </h4>
+
+  <p class="para">
+   <span class="function"><a href="function.set-exception-handler.html" class="function">set_exception_handler()</a></span>
+   で登録した例外ハンドラの実装で <a href="class.exception.html" class="classname">Exception</a>
+   型を宣言している場合は、
+   <a href="class.error.html" class="classname">Error</a> オブジェクトがスローされると fatal エラーが発生します。
+  </p>
+
+  <p class="para">
+   PHP 5 と PHP 7 の両方で動くハンドラを書く場合は、ハンドラで型宣言をしてはいけません。
+   PHP 5 で動いていたコードを移行する際に、そのコードが PHP 7 でだけ動けばいいのなら、
+   <a href="class.exception.html" class="classname">Exception</a> 型で宣言している部分を単純に
+   <a href="class.throwable.html" class="classname">Throwable</a> 型に置換するだけでかまいません。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5&nbsp;でのこの実装は、そのままでは&nbsp;PHP&nbsp;7&nbsp;では動きません<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">handler</span><span style="color: #007700">(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)&nbsp;{&nbsp;...&nbsp;}<br /></span><span style="color: #0000BB">set_exception_handler</span><span style="color: #007700">(</span><span style="color: #DD0000">'handler'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5&nbsp;と&nbsp;7&nbsp;の両方で動きます<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">handler</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">)&nbsp;{&nbsp;...&nbsp;}<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;7&nbsp;でだけ動きます<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">handler</span><span style="color: #007700">(</span><span style="color: #0000BB">Throwable&nbsp;$e</span><span style="color: #007700">)&nbsp;{&nbsp;...&nbsp;}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
  <div class="sect3" id="migration70.incompatible.error-handling.constructors">
   <h4 class="title">内部のコンストラクタは、失敗したときに常に例外をスローする</h4>
 
