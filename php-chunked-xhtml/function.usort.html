@@ -30,11 +30,11 @@
    この関数を使用するべきです。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    比較結果が等しくなるメンバーが複数存在する場合、
-    ソート後の配列でのそれらのメンバーの並び順は未定義となります。
-   </p>
-  </p></blockquote>
+ <p class="para">
+  比較結果が等しくなる二つの要素があった場合、ソートした配列におけるそれらの並び順は不定となります。
+ </p>
+</p></blockquote>
+
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">この関数は、
 <code class="parameter">array</code> パラメータの要素に対して新しいキーを割り当てます。
 その際、単純にキーを並べ替える代わりに、
@@ -65,7 +65,7 @@
      <dd>
 
       <p class="para">
-       比較関数は、最初の引数と二番目の引数の比較結果を返します。最初の引数のほうが二番目の引数より大きい場合は正の数を、二番目の引数と等しい場合はゼロを、そして二番目の引数より小さい場合は負の数を返す必要があります。
+       比較関数は、最初の引数と二番目の引数の比較結果を返します。最初の引数のほうが二番目の引数より大きい場合は正の数を、二番目の引数と等しい場合はゼロを、そして二番目の引数より小さい場合は負の数を返す必要があります。PHP 7.0.0 より前のバージョンでは、この整数が -2147483648 から 2147483647 までの範囲におさまる必要がありました。
       </p>
       <div class="methodsynopsis dc-description"><span class="type">int</span> <span class="methodname"><span class="replaceable">callback</span></span> ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$a</code></span>, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$b</code></span> )</div>
 
@@ -95,7 +95,7 @@
  <div class="refsect1 examples" id="refsect1-function.usort-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="function.usort.examples.basic">
+   <div class="example" id="example-5630">
     <p><strong>例1 <span class="function"><strong>usort()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -123,7 +123,7 @@
    </p>
   </p></blockquote>
   <p class="para">
-   <div class="example" id="function.usort.examples.multi">
+   <div class="example" id="example-5631">
     <p><strong>例2 多次元配列を使用する <span class="function"><strong>usort()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -147,7 +147,7 @@ $fruits[2]: lemons
    </div>
   </p>
   <p class="para">
-   <div class="example" id="function.usort.examples.object">
+   <div class="example" id="example-5632">
     <p><strong>例3 
      <span class="function"><strong>usort()</strong></span> でオブジェクトのメンバ関数を使用する例
     </strong></p>
@@ -167,7 +167,7 @@ d
 </pre></div>
     </div>
    </div>
-   <div class="example" id="function.usort.examples.closure">
+   <div class="example" id="example-5633">
     <p><strong>例4 
      <span class="function"><strong>usort()</strong></span> で <a href="functions.anonymous.html" class="link">クロージャ</a>
      を使って多次元配列をソートする例

@@ -28,6 +28,10 @@
    Called during unserialization of the object from BSON. The properties of the
    BSON array or document will be passed to the method as an <span class="type"><a href="language.types.array.html" class="type array">array</a></span>.
   </p>
+  <p class="para">
+   Remember to check for an <span class="property">_id</span> property when handling data
+   from a BSON document.
+  </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
     This method acts as the
@@ -71,7 +75,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongodb-bson-unserializable.bsonunserialize-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1737">
+  <div class="example" id="example-1719">
    <p><strong>例1 <span class="function"><strong>MongoDB\BSON\Unserializable::bsonUnserialize()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

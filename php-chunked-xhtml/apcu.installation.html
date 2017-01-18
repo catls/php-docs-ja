@@ -12,24 +12,24 @@
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="apcu.installation" class="section">
   <h2 class="title">インストール手順</h2>
-		<p class="para">
-		 If backward compatibility with the applicable parts of APC is required, 
-			APCu must be configured with the option --enable-apcu-bc.
-		</p>
-		<div class="warning"><strong class="warning">警告</strong>
-			<p class="simpara">
-				PHP 7 has a separate module (<a href="http://pecl.php.net/apcu_bc" class="link external">&raquo;&nbsp;apc.so</a>) for backwards compatibility with APC.
-			</p>
-		</div>
-		<p class="para">
-			In backward compatibility mode, APCu registers the applicable APC functions
-			with backward compatible prototypes.
-		</p>
-		<p class="para">
-			Where an APC function accepted <code class="parameter">cache_type</code>, it is simply 
-			ignored by the backward compatible version, and omitted from the prototype for 
-			the APCu version.
-		</p>
+  <p class="para">
+   If backward compatibility with the applicable parts of APC is required,
+   APCu must be configured with the option --enable-apcu-bc.
+  </p>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="simpara">
+    PHP 7 has a separate module (<a href="http://pecl.php.net/apcu_bc" class="link external">&raquo;&nbsp;apc.so</a>) for backwards compatibility with APC.
+   </p>
+  </div>
+  <p class="para">
+   In backward compatibility mode, APCu registers the applicable APC functions
+   with backward compatible prototypes.
+  </p>
+  <p class="para">
+   Where an APC function accepted <code class="parameter">cache_type</code>, it is simply
+   ignored by the backward compatible version, and omitted from the prototype for
+   the APCu version.
+  </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
     On Windows, APCu needs a temp path to exist, and be
@@ -47,7 +47,7 @@
     </a>.
    </span>
   </p></blockquote>
-		<p class="para">
+  <p class="para">
    APCu sources can be found <a href="https://www.github.com/krakjoe/apcu" class="link external">&raquo;&nbsp;here</a>.
   </p>
  </div><hr /><div class="manualnavbar" style="text-align: center;">

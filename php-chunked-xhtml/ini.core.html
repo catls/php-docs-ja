@@ -176,7 +176,7 @@
        <tr>
         <td><a href="ini.core.html#ini.zend.assertions" class="link">zend.assertions</a></td>
         <td>&quot;1&quot;</td>
-        <td>PHP_INI_ALL</td>
+        <td>PHP_INI_ALL (制限あり)</td>
         <td>PHP 7.0.0 以降で利用可能。</td>
        </tr>
 
@@ -294,6 +294,7 @@
 
         <span class="simpara">
         浮動小数点数に関して表示される最大桁数を指定します。
+        <em>-1</em> は、数値を丸める際に拡張アルゴリズムを用いることを意味します。
         </span>
        </dd>
 
@@ -309,6 +310,7 @@
 
        <span class="simpara">
         浮動小数点数をシリアライズするときに格納する桁数を指定します。
+        <em>-1</em> は、数値を丸める際に拡張アルゴリズムを用いることを意味します。
        </span>
       </dd>
 
@@ -497,6 +499,16 @@
         <em>0</em> にすると、アサーションのコードは生成しますが実行時にはスキップします (実行しません)。
         <em>-1</em> にすると、アサーションのコードを生成せず、アサーションのコストがゼロになります (実運用モード)。
        </span>
+       <blockquote class="note"><p><strong class="note">注意</strong>: 
+        <p class="para">
+         実運用モードで開始したプロセスでは、<a href="ini.core.html#ini.zend.assertions" class="link">zend.assertions</a>
+         を実行時に変更することはできません。アサーションのコードが生成されていないからです。
+        </p>
+        <p class="para">
+         開発モードで開始したプロセスでは、<a href="ini.core.html#ini.zend.assertions" class="link">zend.assertions</a>
+         を実行時に <em>-1</em> に変更することはできません。
+        </p>
+       </p></blockquote>
       </dd>
 
      
@@ -1582,6 +1594,13 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          <td>PHP 5.2.0 以降で利用可能。</td>
         </tr>
 
+       <tr>
+        <td><a href="ini.core.html#ini.cgi.discard-path" class="link">cgi.discard_path</a></td>
+        <td>&quot;0&quot;</td>
+        <td>PHP_INI_SYSTEM</td>
+        <td>PHP 5.3.0 以降で利用可能。</td>
+       </tr>
+
         <tr>
         <td><a href="ini.core.html#ini.cgi.fix-pathinfo" class="link">cgi.fix_pathinfo</a></td>
          <td>&quot;1&quot;</td>
@@ -1595,6 +1614,13 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          <td>PHP_INI_SYSTEM</td>
          <td>PHP 4.2.0 以降で利用可能。PHP 5.2.1 までは PHP_INI_ALL でした。</td>
         </tr>
+
+       <tr>
+        <td><a href="ini.core.html#ini.cgi.nph" class="link">cgi.nph</a></td>
+        <td>&quot;0&quot;</td>
+        <td>PHP_INI_SYSTEM</td>
+        <td>PHP 5.3.0 以降で利用可能。</td>
+       </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.cgi.redirect-status-env" class="link">cgi.redirect_status_env</a></td>
@@ -1665,7 +1691,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-6198">
+         <div class="example" id="example-6432">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1675,7 +1701,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-6199">
+         <div class="example" id="example-6433">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1692,7 +1718,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         </p>
        <blockquote class="note"><p><strong class="note">注意</strong>: 
         <p class="para">
-         <em>ENV</em> 半数は .ini ファイルの中でもアクセスできます。
+         <em>ENV</em> 変数は .ini ファイルの中でもアクセスできます。
          たとえば、ホームディレクトリを参照するときに
          <em>${LOGIN}</em> や <em>${USER}</em> が使えます。
         </p>
@@ -1701,7 +1727,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-6200">
+        <div class="example" id="example-6434">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>
@@ -1955,6 +1981,21 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
       
 
+     
+      <dt id="ini.cgi.discard-path">
+       <code class="parameter">cgi.discard_path</code>
+       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        これを有効にすると、PHP CGI のバイナリを web ルートのツリーの外部に配置できるようになります。
+        これで、.htaccess のセキュリティをくぐり抜けてアクセスされる心配がなくなります。
+       </p>
+      </dd>
+
+     
 
       
        <dt id="ini.cgi.fix-pathinfo">
@@ -2006,7 +2047,23 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
       
 
-      
+     
+      <dt id="ini.cgi.nph">
+       <code class="parameter">cgi.nph</code>
+       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        cgi.nph を有効にすると、すべてのリクエストに対して
+        cgi がステータスコード 200 を返すように強制します。
+        </p>
+      </dd>
+
+     
+
+     
        <dt id="ini.cgi.redirect-status-env">
         <code class="parameter">cgi.redirect_status_env</code>
         <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
@@ -2333,7 +2390,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
       <tbody class="tbody">
        <tr>
-        <td><a href="ini.core.html#ini.windows-show-crt-warning" class="link">windows_show_crt_warning</a></td>
+        <td><a href="ini.core.html#ini.windows-show-crt-warning" class="link">windows.show_crt_warning</a></td>
         <td>&quot;0&quot;</td>
         <td>PHP_INI_ALL</td>
         <td>PHP 5.4.0 以降で利用可能。</td>
@@ -2353,7 +2410,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
      
       <dt id="ini.windows-show-crt-warning">
-       <code class="parameter">windows_show_crt_warning</code>
+       <code class="parameter">windows.show_crt_warning</code>
        <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
       </dt>
 

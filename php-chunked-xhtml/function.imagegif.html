@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagegd.html">imagegd</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="function.imagegetclip.html">imagegetclip</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.imagegrabscreen.html">imagegrabscreen</a></div>
  <div class="up"><a href="ref.image.html">GD および Image 関数</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -21,12 +21,12 @@
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>imagegif</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$to</code></span>
   ] )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>imagegif()</strong></span> は画像 <code class="parameter">image</code>
-   から <acronym title="Graphic Interchange Format">GIF</acronym> ファイル filename を作成します。
+   から <code class="parameter">to</code> に <acronym title="Graphic Interchange Format">GIF</acronym> ファイルを作成します。
    引数 <code class="parameter">image</code> は
    <span class="function"><a href="function.imagecreate.html" class="function">imagecreate()</a></span> あるいは <em>imagecreatefrom*</em>
    関数から返されたものです。
@@ -52,11 +52,11 @@ image</code></dt>
 
     
      <dt>
-<code class="parameter">filename</code></dt>
+<code class="parameter">to</code></dt>
 
      <dd>
 
-      <p class="para">ファイルの保存先のパス。省略したり <strong><code>NULL</code></strong> を設定したりした場合は、画像ストリームを直接出力します。</p>
+      <p class="para">ファイル保存先のパスあるいはオープン中のリソース (この関数が値を戻した後で自動的にクローズされます)。省略したり <strong><code>NULL</code></strong> を設定したりした場合は、画像ストリームを直接出力します。</p>
      </dd>
 
     
@@ -71,6 +71,37 @@ image</code></dt>
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.imagegif-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        ストリームリソースを
+        <code class="parameter">to</code> に渡せるようになりました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
 
  <div class="refsect1 examples" id="refsect1-function.imagegif-examples">
   <h3 class="title">例</h3>
@@ -156,7 +187,7 @@ image</code></dt>
  </div>
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.imagegd.html">imagegd</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="function.imagegetclip.html">imagegetclip</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.imagegrabscreen.html">imagegrabscreen</a></div>
  <div class="up"><a href="ref.image.html">GD および Image 関数</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

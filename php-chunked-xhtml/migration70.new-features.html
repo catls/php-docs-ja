@@ -132,7 +132,7 @@ Array
    宇宙船演算子は、二つの式を比較するために使うものです。
    <var class="varname"><var class="varname">$a</var></var> が <var class="varname"><var class="varname">$b</var></var> より大きい場合は 1、
    <var class="varname"><var class="varname">$a</var></var> と <var class="varname"><var class="varname">$b</var></var> が等しい場合は 0、
-   <var class="varname"><var class="varname">$a</var></var> が <var class="varname"><var class="varname">$b</var></var> より大きい場合は -1 をそれぞれ返します。
+   <var class="varname"><var class="varname">$a</var></var> が <var class="varname"><var class="varname">$b</var></var> より小さい場合は -1 をそれぞれ返します。
    比較の際には、
    <a href="types.comparisons.html" class="link">PHP 型の比較表</a>
    のルールを用います。
@@ -534,6 +534,18 @@ int(3)
    を実装したオブジェクトに対して <span class="function"><a href="function.list.html" class="function">list()</a></span> が正常に機能しないことがありました。
    PHP 7 ではこの問題が修正されました。
   </p>
+ </div>
+ 
+ <div class="sect2" id="migration70.new-features.others">
+  <h3 class="title">その他の機能</h3>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     クローンしたクラスのメンバーにアクセスできるようになりました。
+     <em>(clone $foo)-&gt;bar()</em> のようにできるということです。
+    </span>
+   </li>
+  </ul>
  </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration70.incompatible.html">下位互換性のない変更点</a></div>

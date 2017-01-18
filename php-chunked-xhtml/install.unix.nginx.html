@@ -54,7 +54,7 @@
     Obtain and unpack the PHP source:
    </p>
 
-   <div class="example" id="install.unix.nginx.extract.php">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 tar zxf php-x.x.x
@@ -71,7 +71,7 @@ tar zxf php-x.x.x
     we&#039;ll do a simple configure with PHP-FPM and MySQL support.
    </p>
 
-   <div class="example" id="install.unix.nginx.build.php">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 cd ../php-x.x.x
@@ -88,7 +88,7 @@ sudo make install
     Obtain and move configuration files to their correct locations
    </p>
 
-   <div class="example" id="install.unix.nginx.configure.php">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 cp php.ini-development /usr/local/php/php.ini
@@ -114,7 +114,7 @@ cp sapi/fpm/php-fpm /usr/local/bin
     Load up php.ini:
    </p>
 
-   <div class="example" id="install.unix.nginx.configure.ini">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 vim /usr/local/php/php.ini
@@ -126,7 +126,7 @@ vim /usr/local/php/php.ini
     Locate <em>cgi.fix_pathinfo=</em> and modify it as follows:
    </p>
 
-   <div class="example" id="install.unix.nginx.configure.pathinfo">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 cgi.fix_pathinfo=0
@@ -141,7 +141,7 @@ cgi.fix_pathinfo=0
     www-data and the group www-data before we can start the service:
    </p>
 
-   <div class="example" id="install.unix.nginx.modify.phpfpm">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 vim /usr/local/etc/php-fpm.conf
@@ -153,7 +153,7 @@ vim /usr/local/etc/php-fpm.conf
     Find and modify the following: 
    </p>
 
-   <div class="example" id="install.unix.nginx.modify.phpfpm.usergroup">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 ; Unix user/group of processes
@@ -169,7 +169,7 @@ group = www-data
     The php-fpm service can now be started:
    </p>
 
-   <div class="example" id="install.unix.nginx.start.phpfpm">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 /usr/local/bin/php-fpm
@@ -188,7 +188,7 @@ group = www-data
     Nginx must now be configured to support the processing of PHP applications:
    </p>
 
-   <div class="example" id="install.unix.nginx.configure.nginx">
+   <div class="informalexample">
     <div class="example-contents">
 <div class="cdata"><pre>
 vim /usr/local/nginx/conf/nginx.conf
@@ -202,7 +202,7 @@ vim /usr/local/nginx/conf/nginx.conf
     to serve .php files:
    </p>
 
-   <div class="example" id="install.unix.nginx.configure.nginx.location">
+   <div class="informalexample">
     <div class="example-contents">
 <div class="nginx-confcode"><pre class="nginx-confcode">location / {
     root   html;
@@ -219,7 +219,7 @@ vim /usr/local/nginx/conf/nginx.conf
     enter the following:
    </p>
 
-   <div class="example" id="install.unix.nginx.configure.nginx.php">
+   <div class="informalexample">
     <div class="example-contents">
 <div class="nginx-confcode"><pre class="nginx-confcode">location ~* \.php$ {
     fastcgi_index   index.php;
@@ -237,7 +237,7 @@ vim /usr/local/nginx/conf/nginx.conf
     Restart Nginx.
    </p>
 
-   <div class="example" id="install.unix.nginx.restart.nginx">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 sudo /usr/local/nginx/sbin/nginx -s stop
@@ -252,7 +252,7 @@ sudo /usr/local/nginx/sbin/nginx
     Create a test file
    </p>
 
-   <div class="example" id="install.unix.nginx.test.nginx.php">
+   <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 rm /usr/local/nginx/html/index.html

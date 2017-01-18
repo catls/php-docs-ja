@@ -62,6 +62,27 @@
      関数が、NULL バイト攻撃に対応しました。
     </span>
    </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.shmop-open.html" class="function">shmop_open()</a></span> は int ではなくリソースを返すようになりました。
+     これを、<span class="function"><a href="function.shmop-size.html" class="function">shmop_size()</a></span> や
+     <span class="function"><a href="function.shmop-write.html" class="function">shmop_write()</a></span>、<span class="function"><a href="function.shmop-read.html" class="function">shmop_read()</a></span>、
+     <span class="function"><a href="function.shmop-close.html" class="function">shmop_close()</a></span>、<span class="function"><a href="function.shmop-delete.html" class="function">shmop_delete()</a></span>
+     に渡す必要があります。
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.substr.html" class="function">substr()</a></span> および <span class="function"><a href="function.iconv-substr.html" class="function">iconv_substr()</a></span>は、
+     文字列の長さが開始位置と等しい場合に空文字列を返すようになりました。
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.xml-set-object.html" class="function">xml_set_object()</a></span> は、終了時に $parser の設定を手動で解除しなければいけないようになりました。
+     これはメモリリークを回避するためです。
+    </span>
+   </li>
   </ul>
  </div>
 

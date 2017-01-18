@@ -14,13 +14,13 @@
  <h2 class="title"><em>declare</em></h2>
  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p>
  <p class="para">
-  <em>declare</em> 命令は、あるコードブロックの中に
-  実効命令をセットするために使用されます。<em>declare</em>
+  <em>declare</em> 文は、あるコードブロックの中に
+  実行ディレクティブをセットするために使用されます。<em>declare</em>
   の文法は他の制御構造と似ています。
   <div class="informalexample">
    <div class="example-contents">
 <div class="cdata"><pre>
-declare (命令)
+declare (ディレクティブ)
     文
 </pre></div>
    </div>
@@ -29,14 +29,17 @@ declare (命令)
  </p>
 
  <p class="para">
-    <em>命令</em>の箇所で、セットされた<em>
+    <em>ディレクティブ</em>の箇所で、セットされた<em>
     declare</em>ブロックの挙動を指定することが出来ます。
-    現在のところ、使用できる命令は <em>ticks</em>
+    現在のところ、使用できるディレクティブは <em>ticks</em>
     (<a href="control-structures.declare.html#control-structures.declare.ticks" class="link">
-    ticks</a>に関しては以下を参照してください) と
+    ticks</a>に関しては以下を参照してください)、
     <em>encoding</em>
     (<a href="control-structures.declare.html#control-structures.declare.encoding" class="link">encoding</a>
-    に関しては以下を参照ください) です。
+    に関しては以下を参照ください)、
+    <em>strict_types</em>
+    (<a href="functions.arguments.html#functions.arguments.type-declaration.strict" class="link">strict</a>
+    に関しては関数の引数のページを参照ください) です。
  </p>
  <p class="para">
   <table class="doctable informaltable">
@@ -52,12 +55,12 @@ declare (命令)
         <tbody class="tbody">
          <tr>
           <td>5.3.0</td>
-          <td>encoding ディレクティブが追加されました。</td>
+          <td><em>encoding</em> ディレクティブが追加されました。</td>
          </tr>
 
          <tr>
           <td>7.0.0</td>
-          <td>strict_types ディレクティブが追加されました。</td>
+          <td><em>strict_types</em> ディレクティブが追加されました。</td>
          </tr>
 
         </tbody>
@@ -67,7 +70,7 @@ declare (命令)
  </p>
  <p class="para">
   ディレクティブの処理は、ファイルをコンパイルする際に行われるので、
-  ディテクティブの値として渡せるのは、リテラルだけとなります。
+  ディレクティブの値として渡せるのは、リテラルだけとなります。
   変数や定数は、使えません。以下に例を示します。
   <div class="informalexample">
    <div class="example-contents">
@@ -82,7 +85,7 @@ declare (命令)
  <p class="para">
   <em>declare</em>ブロックの<em>文</em>
   の実行のされ方や実行時にどのような作用が起こるかについては
-  <em>命令</em>に何が指定されたかに依存します。
+  <em>ディレクティブ</em>に何が指定されたかに依存します。
  </p>
  <p class="para">
   <em>declare</em>構造はグローバルスコープしても使用され、
@@ -103,9 +106,9 @@ declare (命令)
  <div class="sect2" id="control-structures.declare.ticks">
   <h3 class="title">Ticks</h3>
   <p class="para">tickとは<em>declare</em>ブロックの実行中にパーサが
-  <var class="varname"><var class="varname">N</var></var>個の低レベル tick 可能命令を実行するごとに
+  <var class="varname"><var class="varname">N</var></var>個の低レベル tick 可能な文を実行するごとに
   発生するイベントのことです。<var class="varname"><var class="varname">N</var></var>の値は
-  <em>declare</em>ブロックの<em>命令</em>の箇所で
+  <em>declare</em>ブロックの<em>ディレクティブ</em>の箇所で
   <em>ticks=N</em>のように
   指定します。
  </p>
@@ -119,7 +122,7 @@ declare (命令)
   複数のイベントが起こり得ることに注意してください。
  </p>
  <p class="para">
-  <div class="example" id="example-151">
+  <div class="example" id="example-112">
    <p><strong>例1 Tick の使用例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -131,7 +134,7 @@ declare (命令)
   </div>
  </p>
  <p class="para">
-  <div class="example" id="example-152">
+  <div class="example" id="example-113">
    <p><strong>例2 Ticks の使用例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -151,8 +154,8 @@ declare (命令)
   <h3 class="title">Encoding</h3>
   <p class="para">
     スクリプトのエンコーディングをスクリプトごとに指定するには
-    encoding ディレクティブを使用します。
-  <div class="example" id="example-153">
+    <em>encoding</em> ディレクティブを使用します。
+  <div class="example" id="example-114">
    <p><strong>例3 スクリプトのエンコーディングの宣言</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

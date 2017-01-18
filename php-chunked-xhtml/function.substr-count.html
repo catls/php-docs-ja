@@ -77,7 +77,8 @@
      <dd>
 
       <p class="para">
-       開始位置のオフセット
+       開始位置のオフセット。
+       負の数を指定すると、文字列の末尾から数えます。
       </p>
      </dd>
 
@@ -92,6 +93,7 @@
        指定したオフセット以降に副文字列で検索する最大長。
        オフセットと長さの総和が <code class="parameter">haystack</code>
        の長さよりも長い場合、警告が発生します。
+       負の数を指定すると、<code class="parameter">haystack</code> の末尾から数えます。
       </p>
      </dd>
 
@@ -124,6 +126,13 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        負の <code class="parameter">offset</code> と <code class="parameter">length</code> をサポートするようになりました。
+       </td>
+      </tr>
+
       <tr>
        <td>5.1.0</td>
        <td>

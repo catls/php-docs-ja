@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>絶対パス名を返す</title>
+  <title>正規化された絶対パス名を返す</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.realpath" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">realpath</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">realpath</span> &mdash; <span class="dc-title">絶対パス名を返す</span></p>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">realpath</span> &mdash; <span class="dc-title">正規化された絶対パス名を返す</span></p>
 
  </div>
  
@@ -27,7 +27,7 @@
   <p class="para rdfs-comment">
    <span class="function"><strong>realpath()</strong></span> は、
    入力 <code class="parameter">path</code> のシンボリックリンクをすべて展開し、
-   「/./」「/../」「/」などの参照をすべて解決することにより、正規化した絶対パスを返します。
+   「/./」「/../」「/」などの参照をすべて解決することにより、正規化された絶対パスを返します。
   </p>
  </div>
 
@@ -64,7 +64,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.realpath-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   成功した場合は正規化した絶対パス名を返します。
+   成功した場合は、正規化された絶対パス名を返します。
    返されるパスはシンボリックリンクや「/./」「/../」要素を含みません。
    パスの末尾の区切り文字 (\ や / など) は削除されます。
   </p>
@@ -138,7 +138,7 @@
  <div class="refsect1 examples" id="refsect1-function.realpath-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2666">
+   <div class="example" id="example-2659">
     <p><strong>例1 <span class="function"><strong>realpath()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -155,7 +155,7 @@
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-2667">
+   <div class="example" id="example-2660">
     <p><strong>例2 Windows 上での <span class="function"><strong>realpath()</strong></span></strong></p>
     <div class="example-contents"><p>
      Windows 上で <span class="function"><strong>realpath()</strong></span>

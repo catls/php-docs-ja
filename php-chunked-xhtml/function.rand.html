@@ -97,7 +97,7 @@
  <div class="refsect1 examples" id="refsect1-function.rand-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3995">
+   <div class="example" id="example-3998">
     <p><strong>例1 <span class="function"><strong>rand()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -118,6 +118,23 @@
    </div>
   </p>
  </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.rand-notes">
+  <h3 class="title">注意</h3>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    <code class="parameter">min</code> から <code class="parameter">max</code>
+    までの幅を <span class="function"><a href="function.mt-getrandmax.html" class="function">mt_getrandmax()</a></span> の範囲内におさめる必要があります。
+    つまり、(<code class="parameter">max</code> -
+    <code class="parameter">min</code>) &lt;= <span class="function"><a href="function.mt-getrandmax.html" class="function">mt_getrandmax()</a></span>
+    でなければいけないということです。この範囲をこえてしまうと、
+    <span class="function"><strong>rand()</strong></span> が返す値のランダム性が、
+    本来あるべき姿よりも低くなってしまいます。
+   </p>
+  </div>
+ </div>
+
 
  <div class="refsect1 seealso" id="refsect1-function.rand-seealso">
   <h3 class="title">参考</h3>

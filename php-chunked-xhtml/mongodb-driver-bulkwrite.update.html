@@ -46,7 +46,8 @@
     <dd>
 
      <p class="para">
-      検索フィルタ。
+      <a href="http://docs.mongodb.org/manual/tutorial/query-documents/" class="link external">&raquo;&nbsp;クエリ述語</a>。
+      空の述語を指定すると、コレクション内のすべてのドキュメントにマッチします。
      </p>
     </dd>
 
@@ -87,6 +88,30 @@
         </thead>
 
         <tbody class="tbody">
+         
+         <tr>
+          <td>collation</td>
+          <td><span class="type"><span class="type array|object">array|object</span></span></td>
+          <td>
+           <p class="para">
+             <a href="https://docs.mongodb.com/master/reference/collation/" class="link external">&raquo;&nbsp;Collation</a>
+             は、文字列比較の際の言語固有のルールを指定するものです。たとえば、大文字小文字やアクセント記号の扱いを指定できます。
+             collation を指定するときには <em>&quot;locale&quot;</em> フィールドが必須となります。それ以外の collation フィールドはすべて任意指定です。
+             各フィールドについての説明は <a href="https://docs.mongodb.com/master/reference/collation/#collation-document" class="link external">&raquo;&nbsp;Collation のドキュメント</a>
+             を参照ください。
+           </p>
+           <p class="para">
+            collation が未指定で collection のデフォルトの collation が設定されている場合は、コレクションが持っている collation を用いて操作を実行します。
+            コレクションや操作にも collation が指定されていない場合は、MongoDB は単純にバイナリ比較を行います。
+            これは、今までのバージョンでの文字列比較と同じ方法です。
+           </p>
+           <p class="para">
+            このオプションは MongoDB 3.4 以降で使用可能です。それより前のバージョンのサーバー上で指定すると、実行時に例外が発生します。
+           </p>
+          </td>
+         </tr>
+
+
          <tr>
           <td>multi</td>
           <td><span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span></td>
@@ -140,10 +165,38 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-mongodb-driver-bulkwrite.update-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>1.2.0</td>
+       <td>
+        Added the <em>&quot;collation&quot;</em> option.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
 
  <div class="refsect1 examples" id="refsect1-mongodb-driver-bulkwrite.update-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1676">
+  <div class="example" id="example-1648">
    <p><strong>例1 <span class="function"><strong>MongoDB\Driver\BulkWrite::update()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

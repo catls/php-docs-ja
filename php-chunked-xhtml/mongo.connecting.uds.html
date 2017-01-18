@@ -22,7 +22,7 @@
    ソケットファイルに接続するには、このパスを MongoDB 接続文字列に指定します。
   </p>
 
-  <div class="example" id="mongo.connecting.uds-example">
+  <div class="example" id="example-1462">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(</span><span style="color: #DD0000">"mongodb:///tmp/mongo-27017.sock"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -39,7 +39,7 @@
    あるいは、コンストラクタのオプションを使うこともできます。
   </p>
 
-   <div class="example" id="mongo.connecting.uds-auth-example">
+   <div class="example" id="mongo.writeconcerns.unacknowledged-example">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoClient</span><span style="color: #007700">(</span><span style="color: #DD0000">"mongodb://username:password@/tmp/mongo-27017.sock:0/foo"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

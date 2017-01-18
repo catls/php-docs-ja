@@ -214,7 +214,7 @@
 <li><a href="function.array-map.html" class="index">array_map</a> - 指定した配列の要素にコールバック関数を適用する</li>
 <li><a href="function.array-merge.html" class="index">array_merge</a> - ひとつまたは複数の配列をマージする</li>
 <li><a href="function.array-merge-recursive.html" class="index">array_merge_recursive</a> - 二つ以上の配列を再帰的にマージする</li>
-<li><a href="function.array-multisort.html" class="index">array_multisort</a> - 複数の多次元の配列をソートする</li>
+<li><a href="function.array-multisort.html" class="index">array_multisort</a> - 複数または多次元の配列をソートする</li>
 <li><a href="function.array-pad.html" class="index">array_pad</a> - 指定長、指定した値で配列を埋める</li>
 <li><a href="function.array-pop.html" class="index">array_pop</a> - 配列の末尾から要素を取り除く</li>
 <li><a href="function.array-product.html" class="index">array_product</a> - 配列の値の積を計算する</li>
@@ -224,7 +224,7 @@
 <li><a href="function.array-replace.html" class="index">array_replace</a> - 渡された配列の要素を置き換える</li>
 <li><a href="function.array-replace-recursive.html" class="index">array_replace_recursive</a> - 渡された配列の要素を再帰的に置き換える</li>
 <li><a href="function.array-reverse.html" class="index">array_reverse</a> - 要素を逆順にした配列を返す</li>
-<li><a href="function.array-search.html" class="index">array_search</a> - 指定した値を配列で検索し、見つかった場合に対応するキーを返す</li>
+<li><a href="function.array-search.html" class="index">array_search</a> - 指定した値を配列で検索し、見つかった場合に対応する最初のキーを返す</li>
 <li><a href="function.array-shift.html" class="index">array_shift</a> - 配列の先頭から要素を一つ取り出す</li>
 <li><a href="function.array-slice.html" class="index">array_slice</a> - 配列の一部を展開する</li>
 <li><a href="function.array-splice.html" class="index">array_splice</a> - 配列の一部を削除し、他の要素で置換する</li>
@@ -624,8 +624,6 @@
 <li><a href="function.cairo-svg-surface-create.html" class="index">cairo_svg_surface_create</a> - Description</li>
 <li><a href="function.cairo-svg-surface-restrict-to-version.html" class="index">cairo_svg_surface_restrict_to_version</a> - Description</li>
 <li><a href="function.cairo-svg-version-to-string.html" class="index">cairo_svg_version_to_string</a> - Description</li>
-<li><a href="function.calculhmac.html" class="index">calculhmac</a> - hmac キーを取得する (2 つの引数が必要)</li>
-<li><a href="function.calcul-hmac.html" class="index">calcul_hmac</a> - hmac を取得する (八つの引数が必要)</li>
 <li><a href="callbackfilteriterator.accept.html" class="index">CallbackFilterIterator::accept</a> - 現在の値、現在のキー、そして内部イテレータを引数としてでコールバックを呼び出す</li>
 <li><a href="callbackfilteriterator.construct.html" class="index">CallbackFilterIterator::__construct</a> - フィルタリングしたイテレータを別のイテレータから作成する</li>
 <li><a href="function.call-user-func.html" class="index">call_user_func</a> - 最初の引数で指定したコールバック関数をコールする</li>
@@ -774,7 +772,7 @@
 <li><a href="function.cubrid-fetch-assoc.html" class="index">cubrid_fetch_assoc</a> - Return the associative array that corresponds to the fetched row</li>
 <li><a href="function.cubrid-fetch-field.html" class="index">cubrid_fetch_field</a> - Get column information from a result and return as an object</li>
 <li><a href="function.cubrid-fetch-lengths.html" class="index">cubrid_fetch_lengths</a> - Return an array with the lengths of the values of each field from the current row</li>
-<li><a href="function.cubrid-fetch-object.html" class="index">cubrid_fetch_object</a> - Fetche the next row and returns it as an object</li>
+<li><a href="function.cubrid-fetch-object.html" class="index">cubrid_fetch_object</a> - Fetch the next row and return it as an object</li>
 <li><a href="function.cubrid-fetch-row.html" class="index">cubrid_fetch_row</a> - Return a numerical array with the values of the current row</li>
 <li><a href="function.cubrid-field-flags.html" class="index">cubrid_field_flags</a> - Return a string with the flags of the given field offset</li>
 <li><a href="function.cubrid-field-len.html" class="index">cubrid_field_len</a> - Get the maximum length of the specified field</li>
@@ -893,9 +891,12 @@
 <li><a href="dateinterval.createfromdatestring.html" class="index">DateInterval::createFromDateString</a> - 相対指定文字列から DateInterval を作成する</li>
 <li><a href="dateinterval.format.html" class="index">DateInterval::format</a> - 間隔をフォーマットする</li>
 <li><a href="dateinterval.construct.html" class="index">DateInterval::__construct</a> - 新しい DateInterval オブジェクトを作成する</li>
+<li><a href="dateperiod.getdateinterval.html" class="index">DatePeriod::getDateInterval</a> - Gets the interval</li>
+<li><a href="dateperiod.getenddate.html" class="index">DatePeriod::getEndDate</a> - Gets the end date</li>
+<li><a href="dateperiod.getstartdate.html" class="index">DatePeriod::getStartDate</a> - Gets the start date</li>
 <li><a href="dateperiod.construct.html" class="index">DatePeriod::__construct</a> - 新しい DatePeriod オブジェクトを作成する</li>
 <li><a href="datetime.add.html" class="index">DateTime::add</a> - 年月日時分秒の値を DateTime オブジェクトに加える</li>
-<li><a href="datetime.createfromformat.html" class="index">DateTime::createFromFormat</a> - 指定した書式でフォーマットした新しい DateTime オブジェクトを返す</li>
+<li><a href="datetime.createfromformat.html" class="index">DateTime::createFromFormat</a> - 指定した書式で時刻文字列をパースする</li>
 <li><a href="datetime.diff.html" class="index">DateTime::diff</a> - ふたつの DateTime オブジェクトの差を返す</li>
 <li><a href="datetime.format.html" class="index">DateTime::format</a> - 指定した書式でフォーマットした日付を返す</li>
 <li><a href="datetime.getlasterrors.html" class="index">DateTime::getLastErrors</a> - 警告およびエラーを返す</li>
@@ -1105,6 +1106,8 @@
 <li><a href="function.define.html" class="index">define</a> - 名前を指定して定数を定義する</li>
 <li><a href="function.defined.html" class="index">defined</a> - 指定した名前の定数が存在するかどうかを調べる</li>
 <li><a href="function.define-syslog-variables.html" class="index">define_syslog_variables</a> - syslog に関係する全ての定数を初期化する</li>
+<li><a href="function.deflate-add.html" class="index">deflate_add</a> - Incrementally deflate data</li>
+<li><a href="function.deflate-init.html" class="index">deflate_init</a> - Initialize an incremental deflate context</li>
 <li><a href="function.deg2rad.html" class="index">deg2rad</a> - 度単位の数値をラジアン単位に変換する</li>
 <li><a href="function.delete.html" class="index">delete</a> - unlink か unset を参照してください</li>
 <li><a href="function.dgettext.html" class="index">dgettext</a> - 現在のドメインを上書きする</li>
@@ -1258,6 +1261,220 @@
 <li><a href="domxpath.construct.html" class="index">DOMXPath::__construct</a> - 新しい DOMXPath オブジェクトを作成する</li>
 <li><a href="function.dom-import-simplexml.html" class="index">dom_import_simplexml</a> - SimpleXMLElement オブジェクトから DOMElement オブジェクトを取得する</li>
 <li><a href="function.doubleval.html" class="index">doubleval</a> - floatval のエイリアス</li>
+<li><a href="ds-collection.clear.html" class="index">Ds\Collection::clear</a> - Removes all values.</li>
+<li><a href="ds-collection.copy.html" class="index">Ds\Collection::copy</a> - Returns a shallow copy of the collection.</li>
+<li><a href="ds-collection.isempty.html" class="index">Ds\Collection::isEmpty</a> - Returns whether the collection is empty</li>
+<li><a href="ds-collection.toarray.html" class="index">Ds\Collection::toArray</a> - Converts the collection to an array.</li>
+<li><a href="ds-deque.allocate.html" class="index">Ds\Deque::allocate</a> - Allocates enough memory for a required capacity.</li>
+<li><a href="ds-deque.apply.html" class="index">Ds\Deque::apply</a> - Updates all values by applying a callback function to each value.</li>
+<li><a href="ds-deque.capacity.html" class="index">Ds\Deque::capacity</a> - Returns the current capacity.</li>
+<li><a href="ds-deque.clear.html" class="index">Ds\Deque::clear</a> - Removes all values from the deque.</li>
+<li><a href="ds-deque.contains.html" class="index">Ds\Deque::contains</a> - Determines if the deque contains given values.</li>
+<li><a href="ds-deque.copy.html" class="index">Ds\Deque::copy</a> - Returns a shallow copy of the deque.</li>
+<li><a href="ds-deque.count.html" class="index">Ds\Deque::count</a> - Returns the number of values in the collection.</li>
+<li><a href="ds-deque.filter.html" class="index">Ds\Deque::filter</a> - Creates a new deque using a callable to
+    determine which values to include.</li>
+<li><a href="ds-deque.find.html" class="index">Ds\Deque::find</a> - Attempts to find a value's index.</li>
+<li><a href="ds-deque.first.html" class="index">Ds\Deque::first</a> - Returns the first value in the deque.</li>
+<li><a href="ds-deque.get.html" class="index">Ds\Deque::get</a> - Returns the value at a given index.</li>
+<li><a href="ds-deque.insert.html" class="index">Ds\Deque::insert</a> - Inserts values at a given index.</li>
+<li><a href="ds-deque.isempty.html" class="index">Ds\Deque::isEmpty</a> - Returns whether the deque is empty</li>
+<li><a href="ds-deque.join.html" class="index">Ds\Deque::join</a> - Joins all values together as a string.</li>
+<li><a href="ds-deque.jsonserialize.html" class="index">Ds\Deque::jsonSerialize</a> - Returns a representation that can be converted to JSON.</li>
+<li><a href="ds-deque.last.html" class="index">Ds\Deque::last</a> - Returns the last value.</li>
+<li><a href="ds-deque.map.html" class="index">Ds\Deque::map</a> - Returns the result of applying a callback to each value.</li>
+<li><a href="ds-deque.merge.html" class="index">Ds\Deque::merge</a> - Returns the result of adding all given values to the deque.</li>
+<li><a href="ds-deque.pop.html" class="index">Ds\Deque::pop</a> - Removes and returns the last value.</li>
+<li><a href="ds-deque.push.html" class="index">Ds\Deque::push</a> - Adds values to the end of the deque.</li>
+<li><a href="ds-deque.reduce.html" class="index">Ds\Deque::reduce</a> - Reduces the deque to a single value using a callback function.</li>
+<li><a href="ds-deque.remove.html" class="index">Ds\Deque::remove</a> - Removes and returns a value by index.</li>
+<li><a href="ds-deque.reverse.html" class="index">Ds\Deque::reverse</a> - Reverses the deque in-place.</li>
+<li><a href="ds-deque.reversed.html" class="index">Ds\Deque::reversed</a> - Returns a reversed copy.</li>
+<li><a href="ds-deque.rotate.html" class="index">Ds\Deque::rotate</a> - Rotates the deque by a given number of rotations.</li>
+<li><a href="ds-deque.set.html" class="index">Ds\Deque::set</a> - Updates a value at a given index.</li>
+<li><a href="ds-deque.shift.html" class="index">Ds\Deque::shift</a> - Removes and returns the first value.</li>
+<li><a href="ds-deque.slice.html" class="index">Ds\Deque::slice</a> - Returns a sub-deque of a given range.</li>
+<li><a href="ds-deque.sort.html" class="index">Ds\Deque::sort</a> - Sorts the deque in-place.</li>
+<li><a href="ds-deque.sorted.html" class="index">Ds\Deque::sorted</a> - Returns a sorted copy.</li>
+<li><a href="ds-deque.sum.html" class="index">Ds\Deque::sum</a> - Returns the sum of all values in the deque.</li>
+<li><a href="ds-deque.toarray.html" class="index">Ds\Deque::toArray</a> - Converts the deque to an array.</li>
+<li><a href="ds-deque.unshift.html" class="index">Ds\Deque::unshift</a> - Adds values to the front of the deque.</li>
+<li><a href="ds-deque.construct.html" class="index">Ds\Deque::__construct</a> - Creates a new instance.</li>
+<li><a href="ds-hashable.equals.html" class="index">Ds\Hashable::equals</a> - Determines whether an object is equal to the current instance.</li>
+<li><a href="ds-hashable.hash.html" class="index">Ds\Hashable::hash</a> - Returns a scalar value to be used as a hash value.</li>
+<li><a href="ds-map.allocate.html" class="index">Ds\Map::allocate</a> - Allocates enough memory for a required capacity.</li>
+<li><a href="ds-map.apply.html" class="index">Ds\Map::apply</a> - Updates all values by applying a callback function to each value.</li>
+<li><a href="ds-map.capacity.html" class="index">Ds\Map::capacity</a> - Returns the current capacity.</li>
+<li><a href="ds-map.clear.html" class="index">Ds\Map::clear</a> - Removes all values.</li>
+<li><a href="ds-map.copy.html" class="index">Ds\Map::copy</a> - Returns a shallow copy of the map.</li>
+<li><a href="ds-map.count.html" class="index">Ds\Map::count</a> - Returns the number of values in the map.</li>
+<li><a href="ds-map.diff.html" class="index">Ds\Map::diff</a> - Creates a new map using keys that aren't in another map.</li>
+<li><a href="ds-map.filter.html" class="index">Ds\Map::filter</a> - Creates a new map using a callable to determine which pairs to include.</li>
+<li><a href="ds-map.first.html" class="index">Ds\Map::first</a> - Returns the first pair in the map.</li>
+<li><a href="ds-map.get.html" class="index">Ds\Map::get</a> - Returns the value for a given key.</li>
+<li><a href="ds-map.haskey.html" class="index">Ds\Map::hasKey</a> - Determines whether the map contains a given key.</li>
+<li><a href="ds-map.hasvalue.html" class="index">Ds\Map::hasValue</a> - Determines whether the map contains a given value.</li>
+<li><a href="ds-map.intersect.html" class="index">Ds\Map::intersect</a> - Creates a new map by intersecting keys with another map.</li>
+<li><a href="ds-map.isempty.html" class="index">Ds\Map::isEmpty</a> - Returns whether the map is empty</li>
+<li><a href="ds-map.jsonserialize.html" class="index">Ds\Map::jsonSerialize</a> - Returns a representation that can be converted to JSON.</li>
+<li><a href="ds-map.keys.html" class="index">Ds\Map::keys</a> - Returns a set of the map's keys.</li>
+<li><a href="ds-map.ksort.html" class="index">Ds\Map::ksort</a> - Sorts the map in-place by key.</li>
+<li><a href="ds-map.ksorted.html" class="index">Ds\Map::ksorted</a> - Returns a copy, sorted by key.</li>
+<li><a href="ds-map.last.html" class="index">Ds\Map::last</a> - Returns the last pair of the map.</li>
+<li><a href="ds-map.map.html" class="index">Ds\Map::map</a> - Returns the result of applying a callback to each value.</li>
+<li><a href="ds-map.merge.html" class="index">Ds\Map::merge</a> - Returns the result of adding all given associations.</li>
+<li><a href="ds-map.pairs.html" class="index">Ds\Map::pairs</a> - Returns a sequence containing all the pairs of the map.</li>
+<li><a href="ds-map.put.html" class="index">Ds\Map::put</a> - Associates a key with a value.</li>
+<li><a href="ds-map.putall.html" class="index">Ds\Map::putAll</a> - Associates all key-value pairs of a traversable object or array.</li>
+<li><a href="ds-map.reduce.html" class="index">Ds\Map::reduce</a> - Reduces the map to a single value using a callback function.</li>
+<li><a href="ds-map.remove.html" class="index">Ds\Map::remove</a> - Removes and returns a value by key.</li>
+<li><a href="ds-map.reverse.html" class="index">Ds\Map::reverse</a> - Reverses the map in-place.</li>
+<li><a href="ds-map.reversed.html" class="index">Ds\Map::reversed</a> - Returns a reversed copy.</li>
+<li><a href="ds-map.skip.html" class="index">Ds\Map::skip</a> - Returns the pair at a given positional index.</li>
+<li><a href="ds-map.slice.html" class="index">Ds\Map::slice</a> - Returns a subset of the map defined by a starting index and length.</li>
+<li><a href="ds-map.sort.html" class="index">Ds\Map::sort</a> - Sorts the map in-place by value.</li>
+<li><a href="ds-map.sorted.html" class="index">Ds\Map::sorted</a> - Returns a copy, sorted by value.</li>
+<li><a href="ds-map.sum.html" class="index">Ds\Map::sum</a> - Returns the sum of all values in the map.</li>
+<li><a href="ds-map.toarray.html" class="index">Ds\Map::toArray</a> - Converts the map to an array.</li>
+<li><a href="ds-map.union.html" class="index">Ds\Map::union</a> - Creates a new map using values from the current instance and another map.</li>
+<li><a href="ds-map.values.html" class="index">Ds\Map::values</a> - Returns a sequence of the map's values.</li>
+<li><a href="ds-map.xor.html" class="index">Ds\Map::xor</a> - Creates a new map using keys of either the current instance or of another map, but not of both.</li>
+<li><a href="ds-map.construct.html" class="index">Ds\Map::__construct</a> - Creates a new instance.</li>
+<li><a href="ds-pair.clear.html" class="index">Ds\Pair::clear</a> - Removes all values.</li>
+<li><a href="ds-pair.copy.html" class="index">Ds\Pair::copy</a> - Returns a shallow copy of the pair.</li>
+<li><a href="ds-pair.isempty.html" class="index">Ds\Pair::isEmpty</a> - Returns whether the pair is empty</li>
+<li><a href="ds-pair.jsonserialize.html" class="index">Ds\Pair::jsonSerialize</a> - Returns a representation that can be converted to JSON.</li>
+<li><a href="ds-pair.toarray.html" class="index">Ds\Pair::toArray</a> - Converts the pair to an array.</li>
+<li><a href="ds-pair.construct.html" class="index">Ds\Pair::__construct</a> - Creates a new instance.</li>
+<li><a href="ds-priorityqueue.allocate.html" class="index">Ds\PriorityQueue::allocate</a> - Allocates enough memory for a required capacity.</li>
+<li><a href="ds-priorityqueue.capacity.html" class="index">Ds\PriorityQueue::capacity</a> - Returns the current capacity.</li>
+<li><a href="ds-priorityqueue.clear.html" class="index">Ds\PriorityQueue::clear</a> - Removes all values.</li>
+<li><a href="ds-priorityqueue.copy.html" class="index">Ds\PriorityQueue::copy</a> - Returns a shallow copy of the queue.</li>
+<li><a href="ds-priorityqueue.count.html" class="index">Ds\PriorityQueue::count</a> - Returns the number of values in the queue.</li>
+<li><a href="ds-priorityqueue.isempty.html" class="index">Ds\PriorityQueue::isEmpty</a> - Returns whether the queue is empty</li>
+<li><a href="ds-priorityqueue.jsonserialize.html" class="index">Ds\PriorityQueue::jsonSerialize</a> - Returns a representation that can be converted to JSON.</li>
+<li><a href="ds-priorityqueue.peek.html" class="index">Ds\PriorityQueue::peek</a> - Returns the value at the front of the queue.</li>
+<li><a href="ds-priorityqueue.pop.html" class="index">Ds\PriorityQueue::pop</a> - Removes and returns the value with the highest priority.</li>
+<li><a href="ds-priorityqueue.push.html" class="index">Ds\PriorityQueue::push</a> - Pushes values into the queue.</li>
+<li><a href="ds-priorityqueue.toarray.html" class="index">Ds\PriorityQueue::toArray</a> - Converts the queue to an array.</li>
+<li><a href="ds-priorityqueue.construct.html" class="index">Ds\PriorityQueue::__construct</a> - Creates a new instance.</li>
+<li><a href="ds-queue.allocate.html" class="index">Ds\Queue::allocate</a> - Allocates enough memory for a required capacity.</li>
+<li><a href="ds-queue.capacity.html" class="index">Ds\Queue::capacity</a> - Returns the current capacity.</li>
+<li><a href="ds-queue.clear.html" class="index">Ds\Queue::clear</a> - Removes all values.</li>
+<li><a href="ds-queue.copy.html" class="index">Ds\Queue::copy</a> - Returns a shallow copy of the queue.</li>
+<li><a href="ds-queue.count.html" class="index">Ds\Queue::count</a> - Returns the number of values in the queue.</li>
+<li><a href="ds-queue.isempty.html" class="index">Ds\Queue::isEmpty</a> - Returns whether the queue is empty</li>
+<li><a href="ds-queue.jsonserialize.html" class="index">Ds\Queue::jsonSerialize</a> - Returns a representation that can be converted to JSON.</li>
+<li><a href="ds-queue.peek.html" class="index">Ds\Queue::peek</a> - Returns the value at the front of the queue.</li>
+<li><a href="ds-queue.pop.html" class="index">Ds\Queue::pop</a> - Removes and returns the value at the front of the queue.</li>
+<li><a href="ds-queue.push.html" class="index">Ds\Queue::push</a> - Pushes values into the queue.</li>
+<li><a href="ds-queue.toarray.html" class="index">Ds\Queue::toArray</a> - Converts the queue to an array.</li>
+<li><a href="ds-queue.construct.html" class="index">Ds\Queue::__construct</a> - Creates a new instance.</li>
+<li><a href="ds-sequence.allocate.html" class="index">Ds\Sequence::allocate</a> - Allocates enough memory for a required capacity.</li>
+<li><a href="ds-sequence.apply.html" class="index">Ds\Sequence::apply</a> - Updates all values by applying a callback function to each value.</li>
+<li><a href="ds-sequence.capacity.html" class="index">Ds\Sequence::capacity</a> - Returns the current capacity.</li>
+<li><a href="ds-sequence.contains.html" class="index">Ds\Sequence::contains</a> - Determines if the sequence contains given values.</li>
+<li><a href="ds-sequence.filter.html" class="index">Ds\Sequence::filter</a> - Creates a new sequence using a callable to
+    determine which values to include.</li>
+<li><a href="ds-sequence.find.html" class="index">Ds\Sequence::find</a> - Attempts to find a value's index.</li>
+<li><a href="ds-sequence.first.html" class="index">Ds\Sequence::first</a> - Returns the first value in the sequence.</li>
+<li><a href="ds-sequence.get.html" class="index">Ds\Sequence::get</a> - Returns the value at a given index.</li>
+<li><a href="ds-sequence.insert.html" class="index">Ds\Sequence::insert</a> - Inserts values at a given index.</li>
+<li><a href="ds-sequence.join.html" class="index">Ds\Sequence::join</a> - Joins all values together as a string.</li>
+<li><a href="ds-sequence.last.html" class="index">Ds\Sequence::last</a> - Returns the last value.</li>
+<li><a href="ds-sequence.map.html" class="index">Ds\Sequence::map</a> - Returns the result of applying a callback to each value.</li>
+<li><a href="ds-sequence.merge.html" class="index">Ds\Sequence::merge</a> - Returns the result of adding all given values to the sequence.</li>
+<li><a href="ds-sequence.pop.html" class="index">Ds\Sequence::pop</a> - Removes and returns the last value.</li>
+<li><a href="ds-sequence.push.html" class="index">Ds\Sequence::push</a> - Adds values to the end of the sequence.</li>
+<li><a href="ds-sequence.reduce.html" class="index">Ds\Sequence::reduce</a> - Reduces the sequence to a single value using a callback function.</li>
+<li><a href="ds-sequence.remove.html" class="index">Ds\Sequence::remove</a> - Removes and returns a value by index.</li>
+<li><a href="ds-sequence.reverse.html" class="index">Ds\Sequence::reverse</a> - Reverses the sequence in-place.</li>
+<li><a href="ds-sequence.reversed.html" class="index">Ds\Sequence::reversed</a> - Returns a reversed copy.</li>
+<li><a href="ds-sequence.rotate.html" class="index">Ds\Sequence::rotate</a> - Rotates the sequence by a given number of rotations.</li>
+<li><a href="ds-sequence.set.html" class="index">Ds\Sequence::set</a> - Updates a value at a given index.</li>
+<li><a href="ds-sequence.shift.html" class="index">Ds\Sequence::shift</a> - Removes and returns the first value.</li>
+<li><a href="ds-sequence.slice.html" class="index">Ds\Sequence::slice</a> - Returns a sub-sequence of a given range.</li>
+<li><a href="ds-sequence.sort.html" class="index">Ds\Sequence::sort</a> - Sorts the sequence in-place.</li>
+<li><a href="ds-sequence.sorted.html" class="index">Ds\Sequence::sorted</a> - Returns a sorted copy.</li>
+<li><a href="ds-sequence.sum.html" class="index">Ds\Sequence::sum</a> - Returns the sum of all values in the sequence.</li>
+<li><a href="ds-sequence.unshift.html" class="index">Ds\Sequence::unshift</a> - Adds values to the front of the sequence.</li>
+<li><a href="ds-set.add.html" class="index">Ds\Set::add</a> - Adds values to the set.</li>
+<li><a href="ds-set.allocate.html" class="index">Ds\Set::allocate</a> - Allocates enough memory for a required capacity.</li>
+<li><a href="ds-set.capacity.html" class="index">Ds\Set::capacity</a> - Returns the current capacity.</li>
+<li><a href="ds-set.clear.html" class="index">Ds\Set::clear</a> - Removes all values.</li>
+<li><a href="ds-set.contains.html" class="index">Ds\Set::contains</a> - Determines if the set contains all values.</li>
+<li><a href="ds-set.copy.html" class="index">Ds\Set::copy</a> - Returns a shallow copy of the set.</li>
+<li><a href="ds-set.count.html" class="index">Ds\Set::count</a> - Returns the number of values in the set.</li>
+<li><a href="ds-set.diff.html" class="index">Ds\Set::diff</a> - Creates a new set using values that aren't in another set.</li>
+<li><a href="ds-set.filter.html" class="index">Ds\Set::filter</a> - Creates a new set using a callable to
+    determine which values to include.</li>
+<li><a href="ds-set.first.html" class="index">Ds\Set::first</a> - Returns the first value in the set.</li>
+<li><a href="ds-set.get.html" class="index">Ds\Set::get</a> - Returns the value at a given index.</li>
+<li><a href="ds-set.intersect.html" class="index">Ds\Set::intersect</a> - Creates a new set by intersecting values with another set.</li>
+<li><a href="ds-set.isempty.html" class="index">Ds\Set::isEmpty</a> - Returns whether the set is empty</li>
+<li><a href="ds-set.join.html" class="index">Ds\Set::join</a> - Joins all values together as a string.</li>
+<li><a href="ds-set.jsonserialize.html" class="index">Ds\Set::jsonSerialize</a> - Returns a representation that can be converted to JSON.</li>
+<li><a href="ds-set.last.html" class="index">Ds\Set::last</a> - Returns the last value in the set.</li>
+<li><a href="ds-set.merge.html" class="index">Ds\Set::merge</a> - Returns the result of adding all given values to the set.</li>
+<li><a href="ds-set.reduce.html" class="index">Ds\Set::reduce</a> - Reduces the set to a single value using a callback function.</li>
+<li><a href="ds-set.remove.html" class="index">Ds\Set::remove</a> - Removes all given values from the set.</li>
+<li><a href="ds-set.reverse.html" class="index">Ds\Set::reverse</a> - Reverses the set in-place.</li>
+<li><a href="ds-set.reversed.html" class="index">Ds\Set::reversed</a> - Returns a reversed copy.</li>
+<li><a href="ds-set.slice.html" class="index">Ds\Set::slice</a> - Returns a sub-set of a given range.</li>
+<li><a href="ds-set.sort.html" class="index">Ds\Set::sort</a> - Sorts the set in-place.</li>
+<li><a href="ds-set.sorted.html" class="index">Ds\Set::sorted</a> - Returns a sorted copy.</li>
+<li><a href="ds-set.sum.html" class="index">Ds\Set::sum</a> - Returns the sum of all values in the set.</li>
+<li><a href="ds-set.toarray.html" class="index">Ds\Set::toArray</a> - Converts the set to an array.</li>
+<li><a href="ds-set.union.html" class="index">Ds\Set::union</a> - Creates a new set using values from the current instance and another set.</li>
+<li><a href="ds-set.xor.html" class="index">Ds\Set::xor</a> - Creates a new set using values in either the current instance or in another set, but not in both.</li>
+<li><a href="ds-set.construct.html" class="index">Ds\Set::__construct</a> - Creates a new instance.</li>
+<li><a href="ds-stack.allocate.html" class="index">Ds\Stack::allocate</a> - Allocates enough memory for a required capacity.</li>
+<li><a href="ds-stack.capacity.html" class="index">Ds\Stack::capacity</a> - Returns the current capacity.</li>
+<li><a href="ds-stack.clear.html" class="index">Ds\Stack::clear</a> - Removes all values.</li>
+<li><a href="ds-stack.copy.html" class="index">Ds\Stack::copy</a> - Returns a shallow copy of the stack.</li>
+<li><a href="ds-stack.count.html" class="index">Ds\Stack::count</a> - Returns the number of values in the stack.</li>
+<li><a href="ds-stack.isempty.html" class="index">Ds\Stack::isEmpty</a> - Returns whether the stack is empty</li>
+<li><a href="ds-stack.jsonserialize.html" class="index">Ds\Stack::jsonSerialize</a> - Returns a representation that can be converted to JSON.</li>
+<li><a href="ds-stack.peek.html" class="index">Ds\Stack::peek</a> - Returns the value at the top of the stack.</li>
+<li><a href="ds-stack.pop.html" class="index">Ds\Stack::pop</a> - Removes and returns the value at the top of the stack.</li>
+<li><a href="ds-stack.push.html" class="index">Ds\Stack::push</a> - Pushes values onto the stack.</li>
+<li><a href="ds-stack.toarray.html" class="index">Ds\Stack::toArray</a> - Converts the stack to an array.</li>
+<li><a href="ds-stack.construct.html" class="index">Ds\Stack::__construct</a> - Creates a new instance.</li>
+<li><a href="ds-vector.allocate.html" class="index">Ds\Vector::allocate</a> - Allocates enough memory for a required capacity.</li>
+<li><a href="ds-vector.apply.html" class="index">Ds\Vector::apply</a> - Updates all values by applying a callback function to each value.</li>
+<li><a href="ds-vector.capacity.html" class="index">Ds\Vector::capacity</a> - Returns the current capacity.</li>
+<li><a href="ds-vector.clear.html" class="index">Ds\Vector::clear</a> - Removes all values.</li>
+<li><a href="ds-vector.contains.html" class="index">Ds\Vector::contains</a> - Determines if the vector contains given values.</li>
+<li><a href="ds-vector.copy.html" class="index">Ds\Vector::copy</a> - Returns a shallow copy of the vector.</li>
+<li><a href="ds-vector.count.html" class="index">Ds\Vector::count</a> - Returns the number of values in the collection.</li>
+<li><a href="ds-vector.filter.html" class="index">Ds\Vector::filter</a> - Creates a new vector using a callable to
+    determine which values to include.</li>
+<li><a href="ds-vector.find.html" class="index">Ds\Vector::find</a> - Attempts to find a value's index.</li>
+<li><a href="ds-vector.first.html" class="index">Ds\Vector::first</a> - Returns the first value in the vector.</li>
+<li><a href="ds-vector.get.html" class="index">Ds\Vector::get</a> - Returns the value at a given index.</li>
+<li><a href="ds-vector.insert.html" class="index">Ds\Vector::insert</a> - Inserts values at a given index.</li>
+<li><a href="ds-vector.isempty.html" class="index">Ds\Vector::isEmpty</a> - Returns whether the vector is empty</li>
+<li><a href="ds-vector.join.html" class="index">Ds\Vector::join</a> - Joins all values together as a string.</li>
+<li><a href="ds-vector.jsonserialize.html" class="index">Ds\Vector::jsonSerialize</a> - Returns a representation that can be converted to JSON.</li>
+<li><a href="ds-vector.last.html" class="index">Ds\Vector::last</a> - Returns the last value.</li>
+<li><a href="ds-vector.map.html" class="index">Ds\Vector::map</a> - Returns the result of applying a callback to each value.</li>
+<li><a href="ds-vector.merge.html" class="index">Ds\Vector::merge</a> - Returns the result of adding all given values to the vector.</li>
+<li><a href="ds-vector.pop.html" class="index">Ds\Vector::pop</a> - Removes and returns the last value.</li>
+<li><a href="ds-vector.push.html" class="index">Ds\Vector::push</a> - Adds values to the end of the vector.</li>
+<li><a href="ds-vector.reduce.html" class="index">Ds\Vector::reduce</a> - Reduces the vector to a single value using a callback function.</li>
+<li><a href="ds-vector.remove.html" class="index">Ds\Vector::remove</a> - Removes and returns a value by index.</li>
+<li><a href="ds-vector.reverse.html" class="index">Ds\Vector::reverse</a> - Reverses the vector in-place.</li>
+<li><a href="ds-vector.reversed.html" class="index">Ds\Vector::reversed</a> - Returns a reversed copy.</li>
+<li><a href="ds-vector.rotate.html" class="index">Ds\Vector::rotate</a> - Rotates the vector by a given number of rotations.</li>
+<li><a href="ds-vector.set.html" class="index">Ds\Vector::set</a> - Updates a value at a given index.</li>
+<li><a href="ds-vector.shift.html" class="index">Ds\Vector::shift</a> - Removes and returns the first value.</li>
+<li><a href="ds-vector.slice.html" class="index">Ds\Vector::slice</a> - Returns a sub-vector of a given range.</li>
+<li><a href="ds-vector.sort.html" class="index">Ds\Vector::sort</a> - Sorts the vector in-place.</li>
+<li><a href="ds-vector.sorted.html" class="index">Ds\Vector::sorted</a> - Returns a sorted copy.</li>
+<li><a href="ds-vector.sum.html" class="index">Ds\Vector::sum</a> - Returns the sum of all values in the vector.</li>
+<li><a href="ds-vector.toarray.html" class="index">Ds\Vector::toArray</a> - Converts the vector to an array.</li>
+<li><a href="ds-vector.unshift.html" class="index">Ds\Vector::unshift</a> - Adds values to the front of the vector.</li>
+<li><a href="ds-vector.construct.html" class="index">Ds\Vector::__construct</a> - Creates a new instance.</li>
 </ul></li>
 <li class='gen-index index-for-e'>e<ul id='refentry-index-for-e'>
 <li><a href="function.each.html" class="index">each</a> - 配列から現在のキーと値のペアを返して、カーソルを進める</li>
@@ -1303,7 +1520,7 @@
 <li><a href="function.eio-readahead.html" class="index">eio_readahead</a> - ファイルを先読みしてページキャッシュに格納する</li>
 <li><a href="function.eio-readdir.html" class="index">eio_readdir</a> - ディレクトリ全体を読み込む</li>
 <li><a href="function.eio-readlink.html" class="index">eio_readlink</a> - シンボリックリンクの値を読む</li>
-<li><a href="function.eio-realpath.html" class="index">eio_realpath</a> - 正規化した絶対パスを取得する</li>
+<li><a href="function.eio-realpath.html" class="index">eio_realpath</a> - 正規化された絶対パスを取得する</li>
 <li><a href="function.eio-rename.html" class="index">eio_rename</a> - ファイル名や場所を変更する</li>
 <li><a href="function.eio-rmdir.html" class="index">eio_rmdir</a> - ディレクトリを削除する</li>
 <li><a href="function.eio-seek.html" class="index">eio_seek</a> - fd で指定したファイル内でのオフセットを、offset と whence に従って移動する</li>
@@ -1535,7 +1752,7 @@
 <li><a href="eventhttprequest.getinputbuffer.html" class="index">EventHttpRequest::getInputBuffer</a> - Returns the input buffer</li>
 <li><a href="eventhttprequest.getinputheaders.html" class="index">EventHttpRequest::getInputHeaders</a> - Returns associative array of the input headers</li>
 <li><a href="eventhttprequest.getoutputbuffer.html" class="index">EventHttpRequest::getOutputBuffer</a> - Returns the output buffer of the request</li>
-<li><a href="eventhttprequest.getoutputheaders.html" class="index">EventHttpRequest::getOutputHeaders</a> - Returns associative array of the input headers</li>
+<li><a href="eventhttprequest.getoutputheaders.html" class="index">EventHttpRequest::getOutputHeaders</a> - Returns associative array of the output headers</li>
 <li><a href="eventhttprequest.getresponsecode.html" class="index">EventHttpRequest::getResponseCode</a> - Returns the response code</li>
 <li><a href="eventhttprequest.geturi.html" class="index">EventHttpRequest::getUri</a> - Returns the request URI</li>
 <li><a href="eventhttprequest.removeheader.html" class="index">EventHttpRequest::removeHeader</a> - Removes an HTTP header from the headers of the request</li>
@@ -1992,9 +2209,9 @@
 <li><a href="function.filter-list.html" class="index">filter_list</a> - サポートされるフィルタの一覧を返す</li>
 <li><a href="function.filter-var.html" class="index">filter_var</a> - 指定したフィルタでデータをフィルタリングする</li>
 <li><a href="function.filter-var-array.html" class="index">filter_var_array</a> - 複数の変数を受け取り、オプションでそれらをフィルタリングする</li>
-<li><a href="finfo.buffer.html" class="index">finfo::buffer</a> - finfo_buffer のエイリアス</li>
-<li><a href="finfo.file.html" class="index">finfo::file</a> - finfo_file のエイリアス</li>
-<li><a href="finfo.set-flags.html" class="index">finfo::set_flags</a> - finfo_set_flags のエイリアス</li>
+<li><a href="finfo.buffer.html" class="index">finfo::buffer</a> - finfo_buffer() のエイリアス</li>
+<li><a href="finfo.file.html" class="index">finfo::file</a> - finfo_file() のエイリアス</li>
+<li><a href="finfo.set-flags.html" class="index">finfo::set_flags</a> - finfo_set_flags() のエイリアス</li>
 <li><a href="finfo.construct.html" class="index">finfo::__construct</a> - finfo_open のエイリアス</li>
 <li><a href="function.finfo-close.html" class="index">finfo_close</a> - fileinfo リソースを閉じる</li>
 <li><a href="function.finfo-open.html" class="index">finfo_open</a> - 新しい fileinfo リソースを作成する</li>
@@ -2404,7 +2621,7 @@
 <li><a href="gmagick.swirlimage.html" class="index">Gmagick::swirlimage</a> - 画像の中心から、ピクセルを渦巻状にする</li>
 <li><a href="gmagick.thumbnailimage.html" class="index">Gmagick::thumbnailimage</a> - 画像のサイズを変更する</li>
 <li><a href="gmagick.trimimage.html" class="index">Gmagick::trimimage</a> - 画像の輪郭を削除する</li>
-<li><a href="gmagick.write.html" class="index">Gmagick::write</a> - 画像を指定したファイル名で書き出す</li>
+<li><a href="gmagick.write.html" class="index">Gmagick::write</a> - Gmagick::writeimage のエイリアス</li>
 <li><a href="gmagick.writeimage.html" class="index">Gmagick::writeimage</a> - 画像を指定したファイル名で書き出す</li>
 <li><a href="gmagick.construct.html" class="index">Gmagick::__construct</a> - Gmagick のコンストラクタ</li>
 <li><a href="gmagickdraw.annotate.html" class="index">GmagickDraw::annotate</a> - 画像の上にテキストを描画する</li>
@@ -2781,213 +2998,23 @@
 <li><a href="function.hexdec.html" class="index">hexdec</a> - 16 進数を 10 進数に変換する</li>
 <li><a href="function.highlight-file.html" class="index">highlight_file</a> - ファイルの構文ハイライト表示</li>
 <li><a href="function.highlight-string.html" class="index">highlight_string</a> - 文字列の構文ハイライト表示</li>
-<li><a href="hrtime-performancecounter.getelapsedticks.html" class="index">HRTime\PerformanceCounter::getElapsedTicks</a> - Get elapsed ticks for all intervals.</li>
 <li><a href="hrtime-performancecounter.getfrequency.html" class="index">HRTime\PerformanceCounter::getFrequency</a> - Timer frequency in ticks per second</li>
-<li><a href="hrtime-performancecounter.getlastelapsedticks.html" class="index">HRTime\PerformanceCounter::getLastElapsedTicks</a> - Get elapsed ticks for the last interval.</li>
-<li><a href="hrtime-performancecounter.isrunning.html" class="index">HRTime\PerformanceCounter::isRunning</a> - Whether the measurement is running.</li>
-<li><a href="hrtime-performancecounter.start.html" class="index">HRTime\PerformanceCounter::start</a> - Start time measurement</li>
-<li><a href="hrtime-performancecounter.stop.html" class="index">HRTime\PerformanceCounter::stop</a> - Stop time measurement</li>
+<li><a href="hrtime-performancecounter.getticks.html" class="index">HRTime\PerformanceCounter::getTicks</a> - Current ticks from the system</li>
+<li><a href="hrtime-performancecounter.gettickssince.html" class="index">HRTime\PerformanceCounter::getTicksSince</a> - Ticks elapsed since the given value</li>
+<li><a href="hrtime-stopwatch.getelapsedticks.html" class="index">HRTime\StopWatch::getElapsedTicks</a> - Get elapsed ticks for all intervals.</li>
 <li><a href="hrtime-stopwatch.getelapsedtime.html" class="index">HRTime\StopWatch::getElapsedTime</a> - Get elapsed time for all intervals.</li>
+<li><a href="hrtime-stopwatch.getlastelapsedticks.html" class="index">HRTime\StopWatch::getLastElapsedTicks</a> - Get elapsed ticks for the last interval.</li>
 <li><a href="hrtime-stopwatch.getlastelapsedtime.html" class="index">HRTime\StopWatch::getLastElapsedTime</a> - Get elapsed time for the last interval.</li>
+<li><a href="hrtime-stopwatch.isrunning.html" class="index">HRTime\StopWatch::isRunning</a> - Whether the measurement is running.</li>
+<li><a href="hrtime-stopwatch.start.html" class="index">HRTime\StopWatch::start</a> - Start time measurement</li>
+<li><a href="hrtime-stopwatch.stop.html" class="index">HRTime\StopWatch::stop</a> - Stop time measurement</li>
 <li><a href="function.htmlentities.html" class="index">htmlentities</a> - 適用可能な文字を全て HTML エンティティに変換する</li>
 <li><a href="function.htmlspecialchars.html" class="index">htmlspecialchars</a> - 特殊文字を HTML エンティティに変換する</li>
 <li><a href="function.htmlspecialchars-decode.html" class="index">htmlspecialchars_decode</a> - 特殊な HTML エンティティを文字に戻す</li>
 <li><a href="function.html-entity-decode.html" class="index">html_entity_decode</a> - HTML エンティティを適切な文字に変換する</li>
 <li><a href="wrappers.http.html" class="index">http://</a> - HTTP(s) URL へのアクセス</li>
-<li><a href="httpdeflatestream.factory.html" class="index">HttpDeflateStream::factory</a> - HttpDeflateStream クラスのファクトリ</li>
-<li><a href="httpdeflatestream.finish.html" class="index">HttpDeflateStream::finish</a> - 圧縮ストリームを終了する</li>
-<li><a href="httpdeflatestream.flush.html" class="index">HttpDeflateStream::flush</a> - 圧縮ストリームをフラッシュする</li>
-<li><a href="httpdeflatestream.update.html" class="index">HttpDeflateStream::update</a> - 圧縮ストリームを更新する</li>
-<li><a href="httpdeflatestream.construct.html" class="index">HttpDeflateStream::__construct</a> - HttpDeflateStream クラスのコンストラクタ</li>
-<li><a href="httpinflatestream.factory.html" class="index">HttpInflateStream::factory</a> - HttpInflateStream クラスのファクトリ</li>
-<li><a href="httpinflatestream.finish.html" class="index">HttpInflateStream::finish</a> - 展開ストリームを終了する</li>
-<li><a href="httpinflatestream.flush.html" class="index">HttpInflateStream::flush</a> - 展開ストリームをフラッシュする</li>
-<li><a href="httpinflatestream.update.html" class="index">HttpInflateStream::update</a> - 展開ストリームを更新する</li>
-<li><a href="httpinflatestream.construct.html" class="index">HttpInflateStream::__construct</a> - HttpInflateStream クラスのコンストラクタ</li>
-<li><a href="httpmessage.addheaders.html" class="index">HttpMessage::addHeaders</a> - ヘッダを追加する</li>
-<li><a href="httpmessage.detach.html" class="index">HttpMessage::detach</a> - HttpMessage をデタッチする</li>
-<li><a href="httpmessage.factory.html" class="index">HttpMessage::factory</a> - 文字列から HttpMessage を作成する</li>
-<li><a href="httpmessage.fromenv.html" class="index">HttpMessage::fromEnv</a> - 環境から HttpMessage を作成する</li>
-<li><a href="httpmessage.fromstring.html" class="index">HttpMessage::fromString</a> - 文字列から HttpMessage を作成する</li>
-<li><a href="httpmessage.getbody.html" class="index">HttpMessage::getBody</a> - メッセージの本文を取得する</li>
-<li><a href="httpmessage.getheader.html" class="index">HttpMessage::getHeader</a> - ヘッダを取得する</li>
-<li><a href="httpmessage.getheaders.html" class="index">HttpMessage::getHeaders</a> - メッセージのヘッダを取得する</li>
-<li><a href="httpmessage.gethttpversion.html" class="index">HttpMessage::getHttpVersion</a> - HTTP バージョンを取得する</li>
-<li><a href="httpmessage.getparentmessage.html" class="index">HttpMessage::getParentMessage</a> - 親メッセージを取得する</li>
-<li><a href="httpmessage.getrequestmethod.html" class="index">HttpMessage::getRequestMethod</a> - リクエストメソッドを取得する</li>
-<li><a href="httpmessage.getrequesturl.html" class="index">HttpMessage::getRequestUrl</a> - リクエスト URL を取得する</li>
-<li><a href="httpmessage.getresponsecode.html" class="index">HttpMessage::getResponseCode</a> - レスポンスコードを取得する</li>
-<li><a href="httpmessage.getresponsestatus.html" class="index">HttpMessage::getResponseStatus</a> - レスポンスのステータスを取得する</li>
-<li><a href="httpmessage.gettype.html" class="index">HttpMessage::getType</a> - メッセージの型を取得する</li>
-<li><a href="httpmessage.guesscontenttype.html" class="index">HttpMessage::guessContentType</a> - content type を推測する</li>
-<li><a href="httpmessage.prepend.html" class="index">HttpMessage::prepend</a> - メッセージを先頭に追加する</li>
-<li><a href="httpmessage.reverse.html" class="index">HttpMessage::reverse</a> - メッセージチェインを逆順にする</li>
-<li><a href="httpmessage.send.html" class="index">HttpMessage::send</a> - メッセージを送信する</li>
-<li><a href="httpmessage.setbody.html" class="index">HttpMessage::setBody</a> - メッセージの本文を設定する</li>
-<li><a href="httpmessage.setheaders.html" class="index">HttpMessage::setHeaders</a> - ヘッダを設定する</li>
-<li><a href="httpmessage.sethttpversion.html" class="index">HttpMessage::setHttpVersion</a> - HTTP バージョンを設定する</li>
-<li><a href="httpmessage.setrequestmethod.html" class="index">HttpMessage::setRequestMethod</a> - リクエストメソッドを設定する</li>
-<li><a href="httpmessage.setrequesturl.html" class="index">HttpMessage::setRequestUrl</a> - リクエスト URL を設定する</li>
-<li><a href="httpmessage.setresponsecode.html" class="index">HttpMessage::setResponseCode</a> - レスポンスコードを設定する</li>
-<li><a href="httpmessage.setresponsestatus.html" class="index">HttpMessage::setResponseStatus</a> - レスポンスのステータスを設定する</li>
-<li><a href="httpmessage.settype.html" class="index">HttpMessage::setType</a> - メッセージの型を設定する</li>
-<li><a href="httpmessage.tomessagetypeobject.html" class="index">HttpMessage::toMessageTypeObject</a> - メッセージの型に応じた HTTP オブジェクトを作成する</li>
-<li><a href="httpmessage.tostring.html" class="index">HttpMessage::toString</a> - 文字列表現を取得する</li>
-<li><a href="httpmessage.construct.html" class="index">HttpMessage::__construct</a> - HttpMessage のコンストラクタ</li>
-<li><a href="httpquerystring.get.html" class="index">HttpQueryString::get</a> - クエリ文字列 (あるいはその一部) を取得する</li>
-<li><a href="httpquerystring.mod.html" class="index">HttpQueryString::mod</a> - クエリ文字列の複製を変更する</li>
-<li><a href="httpquerystring.set.html" class="index">HttpQueryString::set</a> - クエリ文字列パラメータを設定する</li>
-<li><a href="httpquerystring.singleton.html" class="index">HttpQueryString::singleton</a> - HttpQueryString のシングルトン</li>
-<li><a href="httpquerystring.toarray.html" class="index">HttpQueryString::toArray</a> - クエリ文字列を配列で取得する</li>
-<li><a href="httpquerystring.tostring.html" class="index">HttpQueryString::toString</a> - クエリ文字列を取得する</li>
-<li><a href="httpquerystring.xlate.html" class="index">HttpQueryString::xlate</a> - クエリ文字列の文字セットを変更する</li>
-<li><a href="httpquerystring.construct.html" class="index">HttpQueryString::__construct</a> - HttpQueryString のコンストラクタ</li>
-<li><a href="httprequest.addcookies.html" class="index">HttpRequest::addCookies</a> - クッキーを追加する</li>
-<li><a href="httprequest.addheaders.html" class="index">HttpRequest::addHeaders</a> - ヘッダを追加する</li>
-<li><a href="httprequest.addpostfields.html" class="index">HttpRequest::addPostFields</a> - POST フィールドを追加する</li>
-<li><a href="httprequest.addpostfile.html" class="index">HttpRequest::addPostFile</a> - POST ファイルを追加する</li>
-<li><a href="httprequest.addputdata.html" class="index">HttpRequest::addPutData</a> - PUT データを追加する</li>
-<li><a href="httprequest.addquerydata.html" class="index">HttpRequest::addQueryData</a> - クエリデータを追加する</li>
-<li><a href="httprequest.addrawpostdata.html" class="index">HttpRequest::addRawPostData</a> - 生の POST データを追加する</li>
-<li><a href="httprequest.addssloptions.html" class="index">HttpRequest::addSslOptions</a> - SSL オプションを追加する</li>
-<li><a href="httprequest.clearhistory.html" class="index">HttpRequest::clearHistory</a> - 履歴を消去する</li>
-<li><a href="httprequest.enablecookies.html" class="index">HttpRequest::enableCookies</a> - クッキーを有効にする</li>
-<li><a href="httprequest.getcontenttype.html" class="index">HttpRequest::getContentType</a> - content type を取得する</li>
-<li><a href="httprequest.getcookies.html" class="index">HttpRequest::getCookies</a> - クッキーを取得する</li>
-<li><a href="httprequest.getheaders.html" class="index">HttpRequest::getHeaders</a> - ヘッダを取得する</li>
-<li><a href="httprequest.gethistory.html" class="index">HttpRequest::getHistory</a> - 履歴を取得する</li>
-<li><a href="httprequest.getmethod.html" class="index">HttpRequest::getMethod</a> - メソッドを取得する</li>
-<li><a href="httprequest.getoptions.html" class="index">HttpRequest::getOptions</a> - オプションを取得する</li>
-<li><a href="httprequest.getpostfields.html" class="index">HttpRequest::getPostFields</a> - POST フィールドを取得する</li>
-<li><a href="httprequest.getpostfiles.html" class="index">HttpRequest::getPostFiles</a> - POST ファイルを取得する</li>
-<li><a href="httprequest.getputdata.html" class="index">HttpRequest::getPutData</a> - PUT データを取得する</li>
-<li><a href="httprequest.getputfile.html" class="index">HttpRequest::getPutFile</a> - PUT ファイルを取得する</li>
-<li><a href="httprequest.getquerydata.html" class="index">HttpRequest::getQueryData</a> - クエリデータを取得する</li>
-<li><a href="httprequest.getrawpostdata.html" class="index">HttpRequest::getRawPostData</a> - 生の POST データを取得する</li>
-<li><a href="httprequest.getrawrequestmessage.html" class="index">HttpRequest::getRawRequestMessage</a> - 名前のリクエストメッセージを取得する</li>
-<li><a href="httprequest.getrawresponsemessage.html" class="index">HttpRequest::getRawResponseMessage</a> - 生のレスポンスメッセージを取得する</li>
-<li><a href="httprequest.getrequestmessage.html" class="index">HttpRequest::getRequestMessage</a> - リクエストメッセージを取得する</li>
-<li><a href="httprequest.getresponsebody.html" class="index">HttpRequest::getResponseBody</a> - レスポンスの本文を取得する</li>
-<li><a href="httprequest.getresponsecode.html" class="index">HttpRequest::getResponseCode</a> - レスポンスコードを取得する</li>
-<li><a href="httprequest.getresponsecookies.html" class="index">HttpRequest::getResponseCookies</a> - レスポンスのクッキーを取得する</li>
-<li><a href="httprequest.getresponsedata.html" class="index">HttpRequest::getResponseData</a> - レスポンスデータを取得する</li>
-<li><a href="httprequest.getresponseheader.html" class="index">HttpRequest::getResponseHeader</a> - レスポンスヘッダを取得する</li>
-<li><a href="httprequest.getresponseinfo.html" class="index">HttpRequest::getResponseInfo</a> - レスポンスの情報を取得する</li>
-<li><a href="httprequest.getresponsemessage.html" class="index">HttpRequest::getResponseMessage</a> - レスポンスメッセージを取得する</li>
-<li><a href="httprequest.getresponsestatus.html" class="index">HttpRequest::getResponseStatus</a> - レスポンスのステータスを取得する</li>
-<li><a href="httprequest.getssloptions.html" class="index">HttpRequest::getSslOptions</a> - ssl オプションを取得する</li>
-<li><a href="httprequest.geturl.html" class="index">HttpRequest::getUrl</a> - url を取得する</li>
-<li><a href="httprequest.resetcookies.html" class="index">HttpRequest::resetCookies</a> - クッキーをリセットする</li>
-<li><a href="httprequest.send.html" class="index">HttpRequest::send</a> - リクエストを送信する</li>
-<li><a href="httprequest.setbody.html" class="index">HttpRequest::setBody</a> - 送信する本文を設定し、既に設定されている本文を上書きする</li>
-<li><a href="httprequest.setcontenttype.html" class="index">HttpRequest::setContentType</a> - content type を設定する</li>
-<li><a href="httprequest.setcookies.html" class="index">HttpRequest::setCookies</a> - クッキーを設定する</li>
-<li><a href="httprequest.setheaders.html" class="index">HttpRequest::setHeaders</a> - ヘッダを設定する</li>
-<li><a href="httprequest.setmethod.html" class="index">HttpRequest::setMethod</a> - メソッドを設定する</li>
-<li><a href="httprequest.setoptions.html" class="index">HttpRequest::setOptions</a> - オプションを設定する</li>
-<li><a href="httprequest.setpostfields.html" class="index">HttpRequest::setPostFields</a> - POST フィールドを設定する</li>
-<li><a href="httprequest.setpostfiles.html" class="index">HttpRequest::setPostFiles</a> - POST ファイルを設定する</li>
-<li><a href="httprequest.setputdata.html" class="index">HttpRequest::setPutData</a> - PUT データを設定する</li>
-<li><a href="httprequest.setputfile.html" class="index">HttpRequest::setPutFile</a> - PUT ファイルを設定する</li>
-<li><a href="httprequest.setquerydata.html" class="index">HttpRequest::setQueryData</a> - クエリデータを設定する</li>
-<li><a href="httprequest.setrawpostdata.html" class="index">HttpRequest::setRawPostData</a> - 生の POST データを設定する</li>
-<li><a href="httprequest.setssloptions.html" class="index">HttpRequest::setSslOptions</a> - SSL オプションを設定する</li>
-<li><a href="httprequest.seturl.html" class="index">HttpRequest::setUrl</a> - URL を設定する</li>
-<li><a href="httprequest.construct.html" class="index">HttpRequest::__construct</a> - HttpRequest のコンストラクタ</li>
-<li><a href="httprequestpool.attach.html" class="index">HttpRequestPool::attach</a> - HttpRequest をアタッチする</li>
-<li><a href="httprequestpool.detach.html" class="index">HttpRequestPool::detach</a> - HttpRequest をデタッチする</li>
-<li><a href="httprequestpool.getattachedrequests.html" class="index">HttpRequestPool::getAttachedRequests</a> - アタッチされているリクエストを取得する</li>
-<li><a href="httprequestpool.getfinishedrequests.html" class="index">HttpRequestPool::getFinishedRequests</a> - 終了したリクエストを取得する</li>
-<li><a href="httprequestpool.reset.html" class="index">HttpRequestPool::reset</a> - リクエストプールをリセットする</li>
-<li><a href="httprequestpool.send.html" class="index">HttpRequestPool::send</a> - すべてのリクエストを送信する</li>
-<li><a href="httprequestpool.socketperform.html" class="index">HttpRequestPool::socketPerform</a> - ソケットアクションを実行する</li>
-<li><a href="httprequestpool.socketselect.html" class="index">HttpRequestPool::socketSelect</a> - ソケットの選択を実行する</li>
-<li><a href="httprequestpool.construct.html" class="index">HttpRequestPool::__construct</a> - HttpRequestPool のコンストラクタ</li>
-<li><a href="httprequestpool.destruct.html" class="index">HttpRequestPool::__destruct</a> - HttpRequestPool のデストラクタ</li>
-<li><a href="httpresponse.capture.html" class="index">HttpResponse::capture</a> - スクリプトの出力を取り込む</li>
-<li><a href="httpresponse.getbuffersize.html" class="index">HttpResponse::getBufferSize</a> - バッファサイズを取得する</li>
-<li><a href="httpresponse.getcache.html" class="index">HttpResponse::getCache</a> - キャッシュを取得する</li>
-<li><a href="httpresponse.getcachecontrol.html" class="index">HttpResponse::getCacheControl</a> - cache control を取得する</li>
-<li><a href="httpresponse.getcontentdisposition.html" class="index">HttpResponse::getContentDisposition</a> - content disposition を取得する</li>
-<li><a href="httpresponse.getcontenttype.html" class="index">HttpResponse::getContentType</a> - content type を取得する</li>
-<li><a href="httpresponse.getdata.html" class="index">HttpResponse::getData</a> - データを取得する</li>
-<li><a href="httpresponse.getetag.html" class="index">HttpResponse::getETag</a> - ETag を取得する</li>
-<li><a href="httpresponse.getfile.html" class="index">HttpResponse::getFile</a> - ファイルを取得する</li>
-<li><a href="httpresponse.getgzip.html" class="index">HttpResponse::getGzip</a> - gzip を取得する</li>
-<li><a href="httpresponse.getheader.html" class="index">HttpResponse::getHeader</a> - ヘッダを取得する</li>
-<li><a href="httpresponse.getlastmodified.html" class="index">HttpResponse::getLastModified</a> - 最終更新日時を取得する</li>
-<li><a href="httpresponse.getrequestbody.html" class="index">HttpResponse::getRequestBody</a> - リクエストの本文を取得する</li>
-<li><a href="httpresponse.getrequestbodystream.html" class="index">HttpResponse::getRequestBodyStream</a> - リクエストの本文をストリームとして取得する</li>
-<li><a href="httpresponse.getrequestheaders.html" class="index">HttpResponse::getRequestHeaders</a> - リクエストのヘッダを取得する</li>
-<li><a href="httpresponse.getstream.html" class="index">HttpResponse::getStream</a> - ストリームを取得する</li>
-<li><a href="httpresponse.getthrottledelay.html" class="index">HttpResponse::getThrottleDelay</a> - throttle delay を取得する</li>
-<li><a href="httpresponse.guesscontenttype.html" class="index">HttpResponse::guessContentType</a> - content type を推測する</li>
-<li><a href="httpresponse.redirect.html" class="index">HttpResponse::redirect</a> - リダイレクトする</li>
-<li><a href="httpresponse.send.html" class="index">HttpResponse::send</a> - レスポンスを送信する</li>
-<li><a href="httpresponse.setbuffersize.html" class="index">HttpResponse::setBufferSize</a> - バッファサイズを設定する</li>
-<li><a href="httpresponse.setcache.html" class="index">HttpResponse::setCache</a> - キャッシュを設定する</li>
-<li><a href="httpresponse.setcachecontrol.html" class="index">HttpResponse::setCacheControl</a> - cache control を設定する</li>
-<li><a href="httpresponse.setcontentdisposition.html" class="index">HttpResponse::setContentDisposition</a> - content disposition を設定する</li>
-<li><a href="httpresponse.setcontenttype.html" class="index">HttpResponse::setContentType</a> - content type を設定する</li>
-<li><a href="httpresponse.setdata.html" class="index">HttpResponse::setData</a> - データを設定する</li>
-<li><a href="httpresponse.setetag.html" class="index">HttpResponse::setETag</a> - ETag を設定する</li>
-<li><a href="httpresponse.setfile.html" class="index">HttpResponse::setFile</a> - ファイルを設定する</li>
-<li><a href="httpresponse.setgzip.html" class="index">HttpResponse::setGzip</a> - gzip を設定する</li>
-<li><a href="httpresponse.setheader.html" class="index">HttpResponse::setHeader</a> - ヘッダを設定する</li>
-<li><a href="httpresponse.setlastmodified.html" class="index">HttpResponse::setLastModified</a> - 最終更新日時を設定する</li>
-<li><a href="httpresponse.setstream.html" class="index">HttpResponse::setStream</a> - ストリームを設定する</li>
-<li><a href="httpresponse.setthrottledelay.html" class="index">HttpResponse::setThrottleDelay</a> - throttle delay を設定する</li>
-<li><a href="httpresponse.status.html" class="index">HttpResponse::status</a> - HTTP レスポンスステータスを送信する</li>
-<li><a href="function.http-build-cookie.html" class="index">http_build_cookie</a> - クッキー文字列を作成する</li>
 <li><a href="function.http-build-query.html" class="index">http_build_query</a> - URL エンコードされたクエリ文字列を生成する</li>
-<li><a href="function.http-build-str.html" class="index">http_build_str</a> - クエリ文字列を組み立てる</li>
-<li><a href="function.http-build-url.html" class="index">http_build_url</a> - URL を組み立てる</li>
-<li><a href="function.http-cache-etag.html" class="index">http_cache_etag</a> - ETag でキャッシュする</li>
-<li><a href="function.http-cache-last-modified.html" class="index">http_cache_last_modified</a> - 最終更新日時でキャッシュする</li>
-<li><a href="function.http-chunked-decode.html" class="index">http_chunked_decode</a> - chunked-encoded データをデコードする</li>
-<li><a href="function.http-date.html" class="index">http_date</a> - HTTP の RFC に準拠した日付を作成する</li>
-<li><a href="function.http-deflate.html" class="index">http_deflate</a> - データを圧縮する</li>
-<li><a href="function.http-get.html" class="index">http_get</a> - GET リクエストを実行する</li>
-<li><a href="function.http-get-request-body.html" class="index">http_get_request_body</a> - リクエストの本文を文字列として取得する</li>
-<li><a href="function.http-get-request-body-stream.html" class="index">http_get_request_body_stream</a> - リクエストの本文をストリームとして取得する</li>
-<li><a href="function.http-get-request-headers.html" class="index">http_get_request_headers</a> - リクエストヘッダを配列として取得する</li>
-<li><a href="function.http-head.html" class="index">http_head</a> - HEAD リクエストを実行する</li>
-<li><a href="function.http-inflate.html" class="index">http_inflate</a> - データを展開する</li>
-<li><a href="function.http-match-etag.html" class="index">http_match_etag</a> - ETag を比較する</li>
-<li><a href="function.http-match-modified.html" class="index">http_match_modified</a> - 最終更新日時を比較する</li>
-<li><a href="function.http-match-request-header.html" class="index">http_match_request_header</a> - 任意のヘッダを比較する</li>
-<li><a href="function.http-negotiate-charset.html" class="index">http_negotiate_charset</a> - クライアントが希望している文字セットを選択する</li>
-<li><a href="function.http-negotiate-content-type.html" class="index">http_negotiate_content_type</a> - クライアントが希望している content type を選択する</li>
-<li><a href="function.http-negotiate-language.html" class="index">http_negotiate_language</a> - クライアントが希望している言語を選択する</li>
-<li><a href="function.http-parse-cookie.html" class="index">http_parse_cookie</a> - HTTP クッキーをパースする</li>
-<li><a href="function.http-parse-headers.html" class="index">http_parse_headers</a> - HTTP ヘッダをパースする</li>
-<li><a href="function.http-parse-message.html" class="index">http_parse_message</a> - HTTP メッセージをパースする</li>
-<li><a href="function.http-parse-params.html" class="index">http_parse_params</a> - パラメータリストをパースする</li>
-<li><a href="function.http-persistent-handles-clean.html" class="index">http_persistent_handles_clean</a> - 持続ハンドルを消去する</li>
-<li><a href="function.http-persistent-handles-count.html" class="index">http_persistent_handles_count</a> - 持続ハンドルの状況</li>
-<li><a href="function.http-persistent-handles-ident.html" class="index">http_persistent_handles_ident</a> - 持続ハンドルの ident を取得/設定する</li>
-<li><a href="function.http-post-data.html" class="index">http_post_data</a> - エンコードされたデータを使用して POST リクエストを実行する</li>
-<li><a href="function.http-post-fields.html" class="index">http_post_fields</a> - エンコードされる前のデータを使用して POST リクエストを実行する</li>
-<li><a href="function.http-put-data.html" class="index">http_put_data</a> - データを使用して PUT リクエストを実行する</li>
-<li><a href="function.http-put-file.html" class="index">http_put_file</a> - ファイルを使用して PUT リクエストを実行する</li>
-<li><a href="function.http-put-stream.html" class="index">http_put_stream</a> - ストリームを使用して PUT リクエストを実行する</li>
-<li><a href="function.http-redirect.html" class="index">http_redirect</a> - HTTP リダイレクトを発行する</li>
-<li><a href="function.http-request.html" class="index">http_request</a> - 独自のリクエストを実行する</li>
-<li><a href="function.http-request-body-encode.html" class="index">http_request_body_encode</a> - リクエスト本文をエンコードする</li>
-<li><a href="function.http-request-method-exists.html" class="index">http_request_method_exists</a> - リクエストメソッドが存在するかどうかを調べる</li>
-<li><a href="function.http-request-method-name.html" class="index">http_request_method_name</a> - リクエストメソッド名を取得する</li>
-<li><a href="function.http-request-method-register.html" class="index">http_request_method_register</a> - リクエストメソッドを登録する</li>
-<li><a href="function.http-request-method-unregister.html" class="index">http_request_method_unregister</a> - リクエストメソッドの登録を解除する</li>
 <li><a href="function.http-response-code.html" class="index">http_response_code</a> - HTTP レスポンスコードを取得または設定</li>
-<li><a href="function.http-send-content-disposition.html" class="index">http_send_content_disposition</a> - Content-Disposition を送信する</li>
-<li><a href="function.http-send-content-type.html" class="index">http_send_content_type</a> - Content-Type を送信する</li>
-<li><a href="function.http-send-data.html" class="index">http_send_data</a> - 任意のデータを送信する</li>
-<li><a href="function.http-send-file.html" class="index">http_send_file</a> - ファイルを送信する</li>
-<li><a href="function.http-send-last-modified.html" class="index">http_send_last_modified</a> - Last-Modified を送信する</li>
-<li><a href="function.http-send-status.html" class="index">http_send_status</a> - HTTP レスポンスステータスを送信する</li>
-<li><a href="function.http-send-stream.html" class="index">http_send_stream</a> - ストリームを送信する</li>
-<li><a href="function.http-support.html" class="index">http_support</a> - 組み込みの HTTP サポートを調べる</li>
-<li><a href="function.http-throttle.html" class="index">http_throttle</a> - HTTP 抑止処理</li>
 <li><a href="context.http.html" class="index">HTTP コンテキストオプション</a> - HTTP コンテキストオプションの一覧</li>
 <li><a href="function.hwapi-attribute-new.html" class="index">hwapi_attribute_new</a> - hw_api_attribute クラスのインスタンスを作成する</li>
 <li><a href="function.hwapi-content-new.html" class="index">hwapi_content_new</a> - hw_api_content クラスの新しいインスタンスを作成する</li>
@@ -3172,11 +3199,12 @@
 <li><a href="function.iis-stop-service.html" class="index">iis_stop_service</a> - サービス ID で指定したサービスを停止する</li>
 <li><a href="function.image2wbmp.html" class="index">image2wbmp</a> - 画像をブラウザあるいはファイルに出力する</li>
 <li><a href="function.imageaffine.html" class="index">imageaffine</a> - 元の画像を、オプションのクリッピング領域を使ってアフィン変換した画像を返す</li>
-<li><a href="function.imageaffinematrixconcat.html" class="index">imageaffinematrixconcat</a> - 二つの行列を連結する (複数の操作を一度に行う)</li>
-<li><a href="function.imageaffinematrixget.html" class="index">imageaffinematrixget</a> - 元の画像を、オプションのクリッピング領域を使ってアフィン変換した画像を返す</li>
+<li><a href="function.imageaffinematrixconcat.html" class="index">imageaffinematrixconcat</a> - 二つのアフィン変換行列を連結する</li>
+<li><a href="function.imageaffinematrixget.html" class="index">imageaffinematrixget</a> - アフィン変換行列を取得する</li>
 <li><a href="function.imagealphablending.html" class="index">imagealphablending</a> - イメージのブレンドモードを設定する</li>
 <li><a href="function.imageantialias.html" class="index">imageantialias</a> - アンチエイリアス機能を使用すべきかどうかを判断する</li>
 <li><a href="function.imagearc.html" class="index">imagearc</a> - 部分楕円を描画する</li>
+<li><a href="function.imagebmp.html" class="index">imagebmp</a> - Output a BMP image to browser or file</li>
 <li><a href="function.imagechar.html" class="index">imagechar</a> - 水平に文字を描画する</li>
 <li><a href="function.imagecharup.html" class="index">imagecharup</a> - 垂直に文字を描画する</li>
 <li><a href="function.imagecolorallocate.html" class="index">imagecolorallocate</a> - 画像で使用する色を作成する</li>
@@ -3202,6 +3230,7 @@
 <li><a href="function.imagecopyresampled.html" class="index">imagecopyresampled</a> - 再サンプリングを行いイメージの一部をコピー、伸縮する</li>
 <li><a href="function.imagecopyresized.html" class="index">imagecopyresized</a> - 画像の一部をコピーしサイズを変更する</li>
 <li><a href="function.imagecreate.html" class="index">imagecreate</a> - パレットを使用する新規画像を作成する</li>
+<li><a href="function.imagecreatefrombmp.html" class="index">imagecreatefrombmp</a> - 新しい画像をファイルあるいは URL から作成する</li>
 <li><a href="function.imagecreatefromgd.html" class="index">imagecreatefromgd</a> - GD ファイルまたは URL から新規イメージを生成する</li>
 <li><a href="function.imagecreatefromgd2.html" class="index">imagecreatefromgd2</a> - GD2 ファイルまたは URL から新規イメージを生成する</li>
 <li><a href="function.imagecreatefromgd2part.html" class="index">imagecreatefromgd2part</a> - GD2 ファイルまたは URL の指定した部分から新規イメージを生成する</li>
@@ -3214,7 +3243,7 @@
 <li><a href="function.imagecreatefromxbm.html" class="index">imagecreatefromxbm</a> - 新しい画像をファイルあるいは URL から作成する</li>
 <li><a href="function.imagecreatefromxpm.html" class="index">imagecreatefromxpm</a> - 新しい画像をファイルあるいは URL から作成する</li>
 <li><a href="function.imagecreatetruecolor.html" class="index">imagecreatetruecolor</a> - TrueColor イメージを新規に作成する</li>
-<li><a href="function.imagecrop.html" class="index">imagecrop</a> - 座標とサイズを指定して、画像をクロップする</li>
+<li><a href="function.imagecrop.html" class="index">imagecrop</a> - 指定した矩形に画像をクロップする</li>
 <li><a href="function.imagecropauto.html" class="index">imagecropauto</a> - 利用可能なモードを指定して、画像を自動的にクロップする</li>
 <li><a href="function.imagedashedline.html" class="index">imagedashedline</a> - 破線を描画する</li>
 <li><a href="function.imagedestroy.html" class="index">imagedestroy</a> - 画像を破棄する</li>
@@ -3234,16 +3263,17 @@
 <li><a href="function.imagegammacorrect.html" class="index">imagegammacorrect</a> - GD イメージにガンマ補正を適用する</li>
 <li><a href="function.imagegd.html" class="index">imagegd</a> - GD イメージをブラウザまたはファイルに出力する</li>
 <li><a href="function.imagegd2.html" class="index">imagegd2</a> - GD2 イメージをブラウザまたはファイルに出力する</li>
+<li><a href="function.imagegetclip.html" class="index">imagegetclip</a> - Get the clipping rectangle</li>
 <li><a href="function.imagegif.html" class="index">imagegif</a> - 画像をブラウザあるいはファイルに出力する</li>
 <li><a href="function.imagegrabscreen.html" class="index">imagegrabscreen</a> - 画面全体をキャプチャする</li>
 <li><a href="function.imagegrabwindow.html" class="index">imagegrabwindow</a> - ウィンドウをキャプチャする</li>
 <li><a href="function.imageinterlace.html" class="index">imageinterlace</a> - インターレースを有効もしくは無効にする</li>
 <li><a href="function.imageistruecolor.html" class="index">imageistruecolor</a> - 画像が truecolor かどうか調べる</li>
 <li><a href="function.imagejpeg.html" class="index">imagejpeg</a> - 画像をブラウザあるいはファイルに出力する</li>
-<li><a href="function.imagelayereffect.html" class="index">imagelayereffect</a> - アルファブレンディングフラグを設定し、
-   libgd にバンドルされているレイヤ効果を使用する</li>
+<li><a href="function.imagelayereffect.html" class="index">imagelayereffect</a> - アルファブレンディングフラグを設定し、レイヤ効果を使用する</li>
 <li><a href="function.imageline.html" class="index">imageline</a> - 直線を描画する</li>
 <li><a href="function.imageloadfont.html" class="index">imageloadfont</a> - 新しいフォントを読み込む</li>
+<li><a href="function.imageopenpolygon.html" class="index">imageopenpolygon</a> - Draws an open polygon</li>
 <li><a href="function.imagepalettecopy.html" class="index">imagepalettecopy</a> - あるイメージから他のイメージにパレットをコピーする</li>
 <li><a href="function.imagepalettetotruecolor.html" class="index">imagepalettetotruecolor</a> - パレット形式の画像を true color に変換する</li>
 <li><a href="function.imagepng.html" class="index">imagepng</a> - PNG イメージをブラウザまたはファイルに出力する</li>
@@ -3256,11 +3286,13 @@
 <li><a href="function.imagepsslantfont.html" class="index">imagepsslantfont</a> - フォントを傾ける</li>
 <li><a href="function.imagepstext.html" class="index">imagepstext</a> - PostScript Type1 フォントを用いて画像の上に文字列を描く</li>
 <li><a href="function.imagerectangle.html" class="index">imagerectangle</a> - 矩形を描画する</li>
+<li><a href="function.imageresolution.html" class="index">imageresolution</a> - Get or set the resolution of the image</li>
 <li><a href="function.imagerotate.html" class="index">imagerotate</a> - 指定された角度で画像を回転する</li>
 <li><a href="function.imagesavealpha.html" class="index">imagesavealpha</a> - PNG 画像を保存する際に（単一色の透過設定ではない）完全な
    アルファチャネル情報を保存するフラグを設定する</li>
 <li><a href="function.imagescale.html" class="index">imagescale</a> - 幅と高さを指定して、画像の縮尺を変更する</li>
 <li><a href="function.imagesetbrush.html" class="index">imagesetbrush</a> - 線の描画用にブラシイメージを設定する</li>
+<li><a href="function.imagesetclip.html" class="index">imagesetclip</a> - Set the clipping rectangle</li>
 <li><a href="function.imagesetinterpolation.html" class="index">imagesetinterpolation</a> - 補間方法を設定する</li>
 <li><a href="function.imagesetpixel.html" class="index">imagesetpixel</a> - 点を生成する</li>
 <li><a href="function.imagesetstyle.html" class="index">imagesetstyle</a> - 線描画用のスタイルを設定する</li>
@@ -3881,6 +3913,8 @@
 <li><a href="function.inet-pton.html" class="index">inet_pton</a> - 人間が読める形式の IP アドレスを、パックされた in_addr 形式に変換する</li>
 <li><a href="infiniteiterator.next.html" class="index">InfiniteIterator::next</a> - 内部イテレータを次に移動するか、巻き戻す</li>
 <li><a href="infiniteiterator.construct.html" class="index">InfiniteIterator::__construct</a> - InfiniteIterator を作成する</li>
+<li><a href="function.inflate-add.html" class="index">inflate_add</a> - Incrementally inflate encoded data</li>
+<li><a href="function.inflate-init.html" class="index">inflate_init</a> - Initialize an incremental inflate context</li>
 <li><a href="function.ingres-autocommit.html" class="index">ingres_autocommit</a> - autocommit をオンまたはオフに切替える</li>
 <li><a href="function.ingres-autocommit-state.html" class="index">ingres_autocommit_state</a> - 接続が autocommit を使っているかどうかを調べる</li>
 <li><a href="function.ingres-charset.html" class="index">ingres_charset</a> - 文字セットを返す</li>
@@ -4305,7 +4339,7 @@
 <li><a href="function.ldap-search.html" class="index">ldap_search</a> - LDAP ツリーを探索する</li>
 <li><a href="function.ldap-set-option.html" class="index">ldap_set_option</a> - 指定したオプションの値を設定する</li>
 <li><a href="function.ldap-set-rebind-proc.html" class="index">ldap_set_rebind_proc</a> - 参照先を再バインドするためのコールバック関数を設定する</li>
-<li><a href="function.ldap-sort.html" class="index">ldap_sort</a> - LDAP 結果エントリをソートする</li>
+<li><a href="function.ldap-sort.html" class="index">ldap_sort</a> - LDAP 結果エントリをクライアント側でソートする</li>
 <li><a href="function.ldap-start-tls.html" class="index">ldap_start_tls</a> - TLS を開始する</li>
 <li><a href="function.ldap-t61-to-8859.html" class="index">ldap_t61_to_8859</a> - t61 文字を 8859 文字に変換する</li>
 <li><a href="function.ldap-unbind.html" class="index">ldap_unbind</a> - LDAP ディレクトリへのバインドを解除する</li>
@@ -4685,7 +4719,7 @@
 <li><a href="function.mhash-get-hash-name.html" class="index">mhash_get_hash_name</a> - 指定したハッシュの名前を得る</li>
 <li><a href="function.mhash-keygen-s2k.html" class="index">mhash_keygen_s2k</a> - キーを生成する</li>
 <li><a href="function.microtime.html" class="index">microtime</a> - 現在の Unix タイムスタンプをマイクロ秒まで返す</li>
-<li><a href="function.mime-content-type.html" class="index">mime_content_type</a> - ファイルの MIME Content-type を検出する (非推奨)</li>
+<li><a href="function.mime-content-type.html" class="index">mime_content_type</a> - ファイルの MIME Content-type を検出する</li>
 <li><a href="function.min.html" class="index">min</a> - 最小値を返す</li>
 <li><a href="function.ming-keypress.html" class="index">ming_keypress</a> - keyPress(char) のアクションフラグを返す</li>
 <li><a href="function.ming-setcubicthreshold.html" class="index">ming_setcubicthreshold</a> - 三次元の閾値を設定する</li>
@@ -4848,6 +4882,8 @@
 <li><a href="mongodb-bson-binary.getdata.html" class="index">MongoDB\BSON\Binary::getData</a> - Returns the Binary's data</li>
 <li><a href="mongodb-bson-binary.gettype.html" class="index">MongoDB\BSON\Binary::getType</a> - Returns the Binary's type</li>
 <li><a href="mongodb-bson-binary.construct.html" class="index">MongoDB\BSON\Binary::__construct</a> - Construct a new Binary</li>
+<li><a href="mongodb-bson-decimal128.construct.html" class="index">MongoDB\BSON\Decimal128::__construct</a> - Construct a new Decimal128</li>
+<li><a href="mongodb-bson-decimal128.tostring.html" class="index">MongoDB\BSON\Decimal128::__toString</a> - Returns the string representation of this Decimal128</li>
 <li><a href="function.mongodb.bson-fromjson.html" class="index">MongoDB\BSON\fromJSON</a> - Returns the BSON representation of a JSON value</li>
 <li><a href="function.mongodb.bson-fromphp.html" class="index">MongoDB\BSON\fromPHP</a> - Returns the BSON representation of a PHP value</li>
 <li><a href="mongodb-bson-javascript.construct.html" class="index">MongoDB\BSON\Javascript::__construct</a> - Construct a new Javascript</li>
@@ -4868,7 +4904,7 @@
 <li><a href="mongodb-bson-utcdatetime.todatetime.html" class="index">MongoDB\BSON\UTCDateTime::toDateTime</a> - Returns the DateTime representation of this UTCDateTime</li>
 <li><a href="mongodb-bson-utcdatetime.construct.html" class="index">MongoDB\BSON\UTCDateTime::__construct</a> - Construct a new UTCDateTime</li>
 <li><a href="mongodb-bson-utcdatetime.tostring.html" class="index">MongoDB\BSON\UTCDateTime::__toString</a> - Returns the string representation of this UTCDateTime</li>
-<li><a href="mongodb-driver-bulkwrite.count.html" class="index">MongoDB\Driver\BulkWrite::count</a> - Count expected roundtrips for executing the bulk</li>
+<li><a href="mongodb-driver-bulkwrite.count.html" class="index">MongoDB\Driver\BulkWrite::count</a> - Count number of write operations in the bulk</li>
 <li><a href="mongodb-driver-bulkwrite.delete.html" class="index">MongoDB\Driver\BulkWrite::delete</a> - Add a delete operation to the bulk</li>
 <li><a href="mongodb-driver-bulkwrite.insert.html" class="index">MongoDB\Driver\BulkWrite::insert</a> - Add an insert operation to the bulk</li>
 <li><a href="mongodb-driver-bulkwrite.update.html" class="index">MongoDB\Driver\BulkWrite::update</a> - Add an update operation to the bulk</li>
@@ -4890,8 +4926,10 @@
 <li><a href="mongodb-driver-manager.selectserver.html" class="index">MongoDB\Driver\Manager::selectServer</a> - Select a server matching a read preference</li>
 <li><a href="mongodb-driver-manager.construct.html" class="index">MongoDB\Driver\Manager::__construct</a> - Create new MongoDB Manager</li>
 <li><a href="mongodb-driver-query.construct.html" class="index">MongoDB\Driver\Query::__construct</a> - Construct new Query</li>
-<li><a href="mongodb-driver-readconcern.getlevel.html" class="index">MongoDB\Driver\ReadConcern::getLEvel</a> - Returns the ReadConcern's &quot;level&quot; option</li>
+<li><a href="mongodb-driver-readconcern.bsonserialize.html" class="index">MongoDB\Driver\ReadConcern::bsonSerialize</a> - Returns an object for BSON serialization</li>
+<li><a href="mongodb-driver-readconcern.getlevel.html" class="index">MongoDB\Driver\ReadConcern::getLevel</a> - Returns the ReadConcern's &quot;level&quot; option</li>
 <li><a href="mongodb-driver-readconcern.construct.html" class="index">MongoDB\Driver\ReadConcern::__construct</a> - Construct immutable ReadConcern</li>
+<li><a href="mongodb-driver-readpreference.bsonserialize.html" class="index">MongoDB\Driver\ReadPreference::bsonSerialize</a> - Returns an object for BSON serialization</li>
 <li><a href="mongodb-driver-readpreference.getmode.html" class="index">MongoDB\Driver\ReadPreference::getMode</a> - Returns the ReadPreference's &quot;mode&quot; option</li>
 <li><a href="mongodb-driver-readpreference.gettagsets.html" class="index">MongoDB\Driver\ReadPreference::getTagSets</a> - Returns the ReadPreference's &quot;tagSets&quot; option</li>
 <li><a href="mongodb-driver-readpreference.construct.html" class="index">MongoDB\Driver\ReadPreference::__construct</a> - Construct immutable ReadPreference</li>
@@ -4910,26 +4948,28 @@
 <li><a href="mongodb-driver-server.isprimary.html" class="index">MongoDB\Driver\Server::isPrimary</a> - Checks if this server is a primary member of a replica set</li>
 <li><a href="mongodb-driver-server.issecondary.html" class="index">MongoDB\Driver\Server::isSecondary</a> - Checks if this server is a secondary member of a replica set</li>
 <li><a href="mongodb-driver-server.construct.html" class="index">MongoDB\Driver\Server::__construct</a> - Create a new Server (not used)</li>
+<li><a href="mongodb-driver-writeconcern.bsonserialize.html" class="index">MongoDB\Driver\WriteConcern::bsonSerialize</a> - Returns an object for BSON serialization</li>
 <li><a href="mongodb-driver-writeconcern.getjournal.html" class="index">MongoDB\Driver\WriteConcern::getJournal</a> - Returns the WriteConcern's &quot;journal&quot; option</li>
 <li><a href="mongodb-driver-writeconcern.getw.html" class="index">MongoDB\Driver\WriteConcern::getW</a> - Returns the WriteConcern's &quot;w&quot; option</li>
 <li><a href="mongodb-driver-writeconcern.getwtimeout.html" class="index">MongoDB\Driver\WriteConcern::getWtimeout</a> - Returns the WriteConcern's &quot;wtimeout&quot; option</li>
 <li><a href="mongodb-driver-writeconcern.construct.html" class="index">MongoDB\Driver\WriteConcern::__construct</a> - Construct immutable WriteConcern</li>
-<li><a href="mongodb-driver-writeconcernerror.getcode.html" class="index">MongoDB\Driver\WriteConcernError::getCode</a> - Description</li>
-<li><a href="mongodb-driver-writeconcernerror.getinfo.html" class="index">MongoDB\Driver\WriteConcernError::getInfo</a> - Description</li>
-<li><a href="mongodb-driver-writeconcernerror.getmessage.html" class="index">MongoDB\Driver\WriteConcernError::getMessage</a> - Description</li>
-<li><a href="mongodb-driver-writeerror.getcode.html" class="index">MongoDB\Driver\WriteError::getCode</a> - Description</li>
-<li><a href="mongodb-driver-writeerror.getindex.html" class="index">MongoDB\Driver\WriteError::getIndex</a> - Description</li>
-<li><a href="mongodb-driver-writeerror.getmessage.html" class="index">MongoDB\Driver\WriteError::getMessage</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getdeletedcount.html" class="index">MongoDB\Driver\WriteResult::getDeletedCount</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getinfo.html" class="index">MongoDB\Driver\WriteResult::getInfo</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getinsertedcount.html" class="index">MongoDB\Driver\WriteResult::getInsertedCount</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getmatchedcount.html" class="index">MongoDB\Driver\WriteResult::getMatchedCount</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getmodifiedcount.html" class="index">MongoDB\Driver\WriteResult::getModifiedCount</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getserver.html" class="index">MongoDB\Driver\WriteResult::getServer</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getupsertedcount.html" class="index">MongoDB\Driver\WriteResult::getUpsertedCount</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getupsertedids.html" class="index">MongoDB\Driver\WriteResult::getUpsertedIds</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getwriteconcernerror.html" class="index">MongoDB\Driver\WriteResult::getWriteConcernError</a> - Description</li>
-<li><a href="mongodb-driver-writeresult.getwriteerrors.html" class="index">MongoDB\Driver\WriteResult::getWriteErrors</a> - Description</li>
+<li><a href="mongodb-driver-writeconcernerror.getcode.html" class="index">MongoDB\Driver\WriteConcernError::getCode</a> - Returns the WriteConcernError's error code</li>
+<li><a href="mongodb-driver-writeconcernerror.getinfo.html" class="index">MongoDB\Driver\WriteConcernError::getInfo</a> - Returns additional metadata for the WriteConcernError</li>
+<li><a href="mongodb-driver-writeconcernerror.getmessage.html" class="index">MongoDB\Driver\WriteConcernError::getMessage</a> - Returns the WriteConcernError's error message</li>
+<li><a href="mongodb-driver-writeerror.getcode.html" class="index">MongoDB\Driver\WriteError::getCode</a> - Returns the WriteError's error code</li>
+<li><a href="mongodb-driver-writeerror.getindex.html" class="index">MongoDB\Driver\WriteError::getIndex</a> - Returns the index of the write operation corresponding to this WriteError</li>
+<li><a href="mongodb-driver-writeerror.getinfo.html" class="index">MongoDB\Driver\WriteError::getInfo</a> - Returns additional metadata for the WriteError</li>
+<li><a href="mongodb-driver-writeerror.getmessage.html" class="index">MongoDB\Driver\WriteError::getMessage</a> - Returns the WriteError's error message</li>
+<li><a href="mongodb-driver-writeresult.getdeletedcount.html" class="index">MongoDB\Driver\WriteResult::getDeletedCount</a> - Returns the number of documents deleted</li>
+<li><a href="mongodb-driver-writeresult.getinsertedcount.html" class="index">MongoDB\Driver\WriteResult::getInsertedCount</a> - Returns the number of documents inserted (excluding upserts)</li>
+<li><a href="mongodb-driver-writeresult.getmatchedcount.html" class="index">MongoDB\Driver\WriteResult::getMatchedCount</a> - Returns the number of documents selected for update</li>
+<li><a href="mongodb-driver-writeresult.getmodifiedcount.html" class="index">MongoDB\Driver\WriteResult::getModifiedCount</a> - Returns the number of existing documents updated</li>
+<li><a href="mongodb-driver-writeresult.getserver.html" class="index">MongoDB\Driver\WriteResult::getServer</a> - Returns the server associated with this write result</li>
+<li><a href="mongodb-driver-writeresult.getupsertedcount.html" class="index">MongoDB\Driver\WriteResult::getUpsertedCount</a> - Returns the number of documents inserted by an upsert</li>
+<li><a href="mongodb-driver-writeresult.getupsertedids.html" class="index">MongoDB\Driver\WriteResult::getUpsertedIds</a> - Returns an array of identifiers for upserted documents</li>
+<li><a href="mongodb-driver-writeresult.getwriteconcernerror.html" class="index">MongoDB\Driver\WriteResult::getWriteConcernError</a> - Returns any write concern error that occurred</li>
+<li><a href="mongodb-driver-writeresult.getwriteerrors.html" class="index">MongoDB\Driver\WriteResult::getWriteErrors</a> - Returns any write errors that occurred</li>
+<li><a href="mongodb-driver-writeresult.isacknowledged.html" class="index">MongoDB\Driver\WriteResult::isAcknowledged</a> - Returns whether the write was acknowledged</li>
 <li><a href="context.mongodb.html" class="index">MongoDB コンテキストオプション</a> - MongoDB コンテキストオプション一覧</li>
 <li><a href="mongodeletebatch.construct.html" class="index">MongoDeleteBatch::__construct</a> - Description</li>
 <li><a href="mongogridfs.delete.html" class="index">MongoGridFS::delete</a> - ファイルとそのチャンクをデータベースから削除する</li>
@@ -5723,7 +5763,6 @@
 <li><a href="function.nsapi-request-headers.html" class="index">nsapi_request_headers</a> - HTTP リクエストヘッダを全て取得する</li>
 <li><a href="function.nsapi-response-headers.html" class="index">nsapi_response_headers</a> - すべての HTTP レスポンスヘッダを取得する</li>
 <li><a href="function.nsapi-virtual.html" class="index">nsapi_virtual</a> - NSAPI サブリクエストを発行する</li>
-<li><a href="function.nthmac.html" class="index">nthmac</a> - nthmac キーを取得する (2 つの引数が必要)</li>
 <li><a href="numberformatter.create.html" class="index">NumberFormatter::create</a> - 数値フォーマッタを作成する</li>
 <li><a href="numberformatter.format.html" class="index">NumberFormatter::format</a> - 数値をフォーマットする</li>
 <li><a href="numberformatter.formatcurrency.html" class="index">NumberFormatter::formatCurrency</a> - 通貨の値をフォーマットする</li>
@@ -5788,10 +5827,8 @@
 <li><a href="function.oauth-get-sbs.html" class="index">oauth_get_sbs</a> - SBSを生成する</li>
 <li><a href="function.oauth-urlencode.html" class="index">oauth_urlencode</a> - URI を RFC 3686 形式でエンコードする</li>
 <li><a href="function.ob-clean.html" class="index">ob_clean</a> - 出力バッファをクリア(消去)する</li>
-<li><a href="function.ob-deflatehandler.html" class="index">ob_deflatehandler</a> - 圧縮出力ハンドラ</li>
 <li><a href="function.ob-end-clean.html" class="index">ob_end_clean</a> - 出力用バッファをクリア(消去)し、出力のバッファリングをオフにする</li>
 <li><a href="function.ob-end-flush.html" class="index">ob_end_flush</a> - 出力用バッファをフラッシュ(送信)し、出力のバッファリングをオフにする</li>
-<li><a href="function.ob-etaghandler.html" class="index">ob_etaghandler</a> - ETag 出力ハンドラ</li>
 <li><a href="function.ob-flush.html" class="index">ob_flush</a> - 出力バッファをフラッシュ(送信)する</li>
 <li><a href="function.ob-get-clean.html" class="index">ob_get_clean</a> - 現在のバッファの内容を取得し、出力バッファを削除する</li>
 <li><a href="function.ob-get-contents.html" class="index">ob_get_contents</a> - 出力用バッファの内容を返す</li>
@@ -5802,7 +5839,6 @@
 <li><a href="function.ob-gzhandler.html" class="index">ob_gzhandler</a> - 出力バッファを gzip 圧縮するための ob_start コールバック関数</li>
 <li><a href="function.ob-iconv-handler.html" class="index">ob_iconv_handler</a> - 出力バッファハンドラとして文字エンコーディングを変換する</li>
 <li><a href="function.ob-implicit-flush.html" class="index">ob_implicit_flush</a> - 自動フラッシュをオンまたはオフにする</li>
-<li><a href="function.ob-inflatehandler.html" class="index">ob_inflatehandler</a> - 展開出力ハンドラ</li>
 <li><a href="function.ob-list-handlers.html" class="index">ob_list_handlers</a> - 使用中の出力ハンドラの一覧を取得する</li>
 <li><a href="function.ob-start.html" class="index">ob_start</a> - 出力のバッファリングを有効にする</li>
 <li><a href="function.ob-tidyhandler.html" class="index">ob_tidyhandler</a> - バッファを修正するための ob_start コールバック関数</li>
@@ -6571,9 +6607,9 @@
 <li><a href="function.png2wbmp.html" class="index">png2wbmp</a> - PNG イメージファイルから WBMP イメージファイルに変換する</li>
 <li><a href="pool.collect.html" class="index">Pool::collect</a> - Collect references to completed tasks</li>
 <li><a href="pool.resize.html" class="index">Pool::resize</a> - Resize the Pool</li>
-<li><a href="pool.shutdown.html" class="index">Pool::shutdown</a> - Shutdown all Workers</li>
+<li><a href="pool.shutdown.html" class="index">Pool::shutdown</a> - Shutdown all workers</li>
 <li><a href="pool.submit.html" class="index">Pool::submit</a> - Submits an object for execution</li>
-<li><a href="pool.submitTo.html" class="index">Pool::submitTo</a> - Submits an object for execution</li>
+<li><a href="pool.submitTo.html" class="index">Pool::submitTo</a> - Submits a task to a specific worker for execution</li>
 <li><a href="pool.construct.html" class="index">Pool::__construct</a> - Creates a new Pool of Workers</li>
 <li><a href="function.popen.html" class="index">popen</a> - プロセスへのファイルポインタをオープンする</li>
 <li><a href="function.pos.html" class="index">pos</a> - current のエイリアス</li>
@@ -6893,7 +6929,7 @@
 <li><a href="function.readline-write-history.html" class="index">readline_write_history</a> - ヒストリを書きこむ</li>
 <li><a href="function.readlink.html" class="index">readlink</a> - シンボリックリンク先を返す</li>
 <li><a href="function.read-exif-data.html" class="index">read_exif_data</a> - exif_read_data のエイリアス</li>
-<li><a href="function.realpath.html" class="index">realpath</a> - 絶対パス名を返す</li>
+<li><a href="function.realpath.html" class="index">realpath</a> - 正規化された絶対パス名を返す</li>
 <li><a href="function.realpath-cache-get.html" class="index">realpath_cache_get</a> - realpath キャッシュ・エントリーを取得</li>
 <li><a href="function.realpath-cache-size.html" class="index">realpath_cache_size</a> - realpath キャッシュサイズを取得</li>
 <li><a href="function.recode.html" class="index">recode</a> - recode_string のエイリアス</li>
@@ -7347,9 +7383,11 @@
 <li><a href="function.session-cache-expire.html" class="index">session_cache_expire</a> - 現在のキャッシュの有効期限を返す</li>
 <li><a href="function.session-cache-limiter.html" class="index">session_cache_limiter</a> - 現在のキャッシュリミッタを取得または設定する</li>
 <li><a href="function.session-commit.html" class="index">session_commit</a> - session_write_close のエイリアス</li>
+<li><a href="function.session-create-id.html" class="index">session_create_id</a> - Create new session id</li>
 <li><a href="function.session-decode.html" class="index">session_decode</a> - セッションエンコードされた文字列からセッションデータをデコードする</li>
 <li><a href="function.session-destroy.html" class="index">session_destroy</a> - セッションに登録されたデータを全て破棄する</li>
 <li><a href="function.session-encode.html" class="index">session_encode</a> - 現在のセッションデータを、セッションエンコードされた文字列に変換する</li>
+<li><a href="function.session-gc.html" class="index">session_gc</a> - Perform session data garbage collection</li>
 <li><a href="function.session-get-cookie-params.html" class="index">session_get_cookie_params</a> - セッションクッキーのパラメータを得る</li>
 <li><a href="function.session-id.html" class="index">session_id</a> - 現在のセッション ID を取得または設定する</li>
 <li><a href="function.session-is-registered.html" class="index">session_is_registered</a> - 変数がセッションに登録されているかどうかを調べる</li>
@@ -7404,7 +7442,6 @@
 <li><a href="function.shm-remove-var.html" class="index">shm_remove_var</a> - 共有メモリから変数を削除する</li>
 <li><a href="function.show-source.html" class="index">show_source</a> - highlight_file のエイリアス</li>
 <li><a href="function.shuffle.html" class="index">shuffle</a> - 配列をシャッフルする</li>
-<li><a href="function.signeurlpaiement.html" class="index">signeurlpaiement</a> - 決済 url を取得する (2 つの引数が必要)</li>
 <li><a href="function.similar-text.html" class="index">similar_text</a> - 二つの文字列の間の類似性を計算する</li>
 <li><a href="simplexmlelement.addattribute.html" class="index">SimpleXMLElement::addAttribute</a> - SimpleXML 要素に属性を追加する</li>
 <li><a href="simplexmlelement.addchild.html" class="index">SimpleXMLElement::addChild</a> - XML ノードに子要素を追加する</li>
@@ -7605,10 +7642,13 @@
 <li><a href="solrdocument.current.html" class="index">SolrDocument::current</a> - 現行のフィールドを取得</li>
 <li><a href="solrdocument.deletefield.html" class="index">SolrDocument::deleteField</a> - 文書からフィールドを除去</li>
 <li><a href="solrdocument.fieldexists.html" class="index">SolrDocument::fieldExists</a> - Checks if a field exists in the document</li>
+<li><a href="solrdocument.getchilddocuments.html" class="index">SolrDocument::getChildDocuments</a> - Returns an array of child documents (SolrDocument)</li>
+<li><a href="solrdocument.getchilddocumentscount.html" class="index">SolrDocument::getChildDocumentsCount</a> - Returns the number of child documents</li>
 <li><a href="solrdocument.getfield.html" class="index">SolrDocument::getField</a> - 名前でフィールドを取得</li>
 <li><a href="solrdocument.getfieldcount.html" class="index">SolrDocument::getFieldCount</a> - この文書内のフィールド数を返す</li>
 <li><a href="solrdocument.getfieldnames.html" class="index">SolrDocument::getFieldNames</a> - 文書内のフィールド名の配列を返す</li>
 <li><a href="solrdocument.getinputdocument.html" class="index">SolrDocument::getInputDocument</a> - Returns a SolrInputDocument equivalent of the object</li>
+<li><a href="solrdocument.haschilddocuments.html" class="index">SolrDocument::hasChildDocuments</a> - Checks whether the document has any child documents</li>
 <li><a href="solrdocument.key.html" class="index">SolrDocument::key</a> - 現行のキーを返す</li>
 <li><a href="solrdocument.merge.html" class="index">SolrDocument::merge</a> - Merges source to the current SolrDocument</li>
 <li><a href="solrdocument.next.html" class="index">SolrDocument::next</a> - 内部ポインタを次のフィールドに移動</li>
@@ -7637,15 +7677,20 @@
 <li><a href="solrgenericresponse.destruct.html" class="index">SolrGenericResponse::__destruct</a> - デストラクタ</li>
 <li><a href="solrillegalargumentexception.getinternalinfo.html" class="index">SolrIllegalArgumentException::getInternalInfo</a> - 例外がスローされた際の内部情報を返す</li>
 <li><a href="solrillegaloperationexception.getinternalinfo.html" class="index">SolrIllegalOperationException::getInternalInfo</a> - 例外がスローされた際の内部情報を返す</li>
+<li><a href="solrinputdocument.addchilddocument.html" class="index">SolrInputDocument::addChildDocument</a> - Adds a child document for block indexing</li>
+<li><a href="solrinputdocument.addchilddocuments.html" class="index">SolrInputDocument::addChildDocuments</a> - Adds an array of child documents</li>
 <li><a href="solrinputdocument.addfield.html" class="index">SolrInputDocument::addField</a> - 文書にフィールドを追加</li>
 <li><a href="solrinputdocument.clear.html" class="index">SolrInputDocument::clear</a> - 入力した文書をリセット</li>
 <li><a href="solrinputdocument.deletefield.html" class="index">SolrInputDocument::deleteField</a> - 文書からフィールドを除去</li>
 <li><a href="solrinputdocument.fieldexists.html" class="index">SolrInputDocument::fieldExists</a> - フィールドが存在するかチェック</li>
 <li><a href="solrinputdocument.getboost.html" class="index">SolrInputDocument::getBoost</a> - 文書に対する現行の boost 値を取得</li>
+<li><a href="solrinputdocument.getchilddocuments.html" class="index">SolrInputDocument::getChildDocuments</a> - Returns an array of child documents (SolrInputDocument)</li>
+<li><a href="solrinputdocument.getchilddocumentscount.html" class="index">SolrInputDocument::getChildDocumentsCount</a> - Returns the number of child documents</li>
 <li><a href="solrinputdocument.getfield.html" class="index">SolrInputDocument::getField</a> - 名前でフィールドを取得</li>
 <li><a href="solrinputdocument.getfieldboost.html" class="index">SolrInputDocument::getFieldBoost</a> - 特定のフィールドに対する boost 値を取得</li>
 <li><a href="solrinputdocument.getfieldcount.html" class="index">SolrInputDocument::getFieldCount</a> - 文書内のフィールド数を返す</li>
 <li><a href="solrinputdocument.getfieldnames.html" class="index">SolrInputDocument::getFieldNames</a> - 文書内のフィールドを全て含む配列を返す</li>
+<li><a href="solrinputdocument.haschilddocuments.html" class="index">SolrInputDocument::hasChildDocuments</a> - Returns true if the document has any child documents</li>
 <li><a href="solrinputdocument.merge.html" class="index">SolrInputDocument::merge</a> - Merges one input document into another</li>
 <li><a href="solrinputdocument.reset.html" class="index">SolrInputDocument::reset</a> - これは、SolrInputDocument::clear のエイリアスです</li>
 <li><a href="solrinputdocument.setboost.html" class="index">SolrInputDocument::setBoost</a> - この文書に対する boost 値を設定</li>
@@ -8002,7 +8047,7 @@
 <li><a href="splfileobject.ftruncate.html" class="index">SplFileObject::ftruncate</a> - ファイルを指定した長さに丸める</li>
 <li><a href="splfileobject.fwrite.html" class="index">SplFileObject::fwrite</a> - ファイルに書き込む</li>
 <li><a href="splfileobject.getchildren.html" class="index">SplFileObject::getChildren</a> - 用途はなし</li>
-<li><a href="splfileobject.getcsvcontrol.html" class="index">SplFileObject::getCsvControl</a> - CSV の区切りと囲み文字を取得する</li>
+<li><a href="splfileobject.getcsvcontrol.html" class="index">SplFileObject::getCsvControl</a> - CSV の区切り、囲み文字、エスケープ文字を取得する</li>
 <li><a href="splfileobject.getcurrentline.html" class="index">SplFileObject::getCurrentLine</a> - SplFileObject::fgets のエイリアス</li>
 <li><a href="splfileobject.getflags.html" class="index">SplFileObject::getFlags</a> - SplFileObject のフラグを取得する</li>
 <li><a href="splfileobject.getmaxlinelen.html" class="index">SplFileObject::getMaxLineLen</a> - 行の最大バイト数を取得する</li>
@@ -8011,7 +8056,7 @@
 <li><a href="splfileobject.next.html" class="index">SplFileObject::next</a> - 次の行を読み出す</li>
 <li><a href="splfileobject.rewind.html" class="index">SplFileObject::rewind</a> - ファイルポインタを先頭に巻き戻す</li>
 <li><a href="splfileobject.seek.html" class="index">SplFileObject::seek</a> - ファイルポインタを指定行に移動させる</li>
-<li><a href="splfileobject.setcsvcontrol.html" class="index">SplFileObject::setCsvControl</a> - CSV の区切り文字と囲み文字をセットする</li>
+<li><a href="splfileobject.setcsvcontrol.html" class="index">SplFileObject::setCsvControl</a> - CSV の区切り文字、囲み文字、エスケープ文字をセットする</li>
 <li><a href="splfileobject.setflags.html" class="index">SplFileObject::setFlags</a> - SplFileObject のフラグをセットする</li>
 <li><a href="splfileobject.setmaxlinelen.html" class="index">SplFileObject::setMaxLineLen</a> - 読み込む行の最大バイト数をセットする</li>
 <li><a href="splfileobject.valid.html" class="index">SplFileObject::valid</a> - ファイル終端でないかチェックする</li>
@@ -8117,6 +8162,7 @@
 <li><a href="sqlite3.createaggregate.html" class="index">SQLite3::createAggregate</a> - SQL の集約関数として使用する PHP 関数を登録する</li>
 <li><a href="sqlite3.createcollation.html" class="index">SQLite3::createCollation</a> - Registers a PHP function for use as an SQL collating function</li>
 <li><a href="sqlite3.createfunction.html" class="index">SQLite3::createFunction</a> - SQL のスカラー関数として使用する PHP 関数を登録する</li>
+<li><a href="sqlite3.enableexceptions.html" class="index">SQLite3::enableExceptions</a> - Enable throwing exceptions</li>
 <li><a href="sqlite3.escapestring.html" class="index">SQLite3::escapeString</a> - 適切にエスケープされた文字列を返す</li>
 <li><a href="sqlite3.exec.html" class="index">SQLite3::exec</a> - 指定したデータベースに、結果を返さないクエリを実行する</li>
 <li><a href="sqlite3.lasterrorcode.html" class="index">SQLite3::lastErrorCode</a> - 直近で失敗した SQLite リクエストの結果コードを数値で返す</li>
@@ -8124,6 +8170,7 @@
 <li><a href="sqlite3.lastinsertrowid.html" class="index">SQLite3::lastInsertRowID</a> - 直近の INSERT 文でデータベースに追加された行の ID を返す</li>
 <li><a href="sqlite3.loadextension.html" class="index">SQLite3::loadExtension</a> - SQLite 拡張ライブラリを読み込む</li>
 <li><a href="sqlite3.open.html" class="index">SQLite3::open</a> - SQLite データベースをオープンする</li>
+<li><a href="sqlite3.openblob.html" class="index">SQLite3::openBlob</a> - Opens a stream resource to read a BLOB</li>
 <li><a href="sqlite3.prepare.html" class="index">SQLite3::prepare</a> - 実行する SQL 文を準備する</li>
 <li><a href="sqlite3.query.html" class="index">SQLite3::query</a> - SQL クエリを実行する</li>
 <li><a href="sqlite3.querysingle.html" class="index">SQLite3::querySingle</a> - クエリを実行し、単一の結果を返す</li>
@@ -8141,6 +8188,7 @@
 <li><a href="sqlite3stmt.close.html" class="index">SQLite3Stmt::close</a> - プリペアドステートメントを閉じる</li>
 <li><a href="sqlite3stmt.execute.html" class="index">SQLite3Stmt::execute</a> - プリペアドステートメントを実行し、結果セットオブジェクトを返す</li>
 <li><a href="sqlite3stmt.paramcount.html" class="index">SQLite3Stmt::paramCount</a> - プリペアドステートメント内のパラメータの数を返す</li>
+<li><a href="sqlite3stmt.readonly.html" class="index">SQLite3Stmt::readOnly()</a> - Returns whether a statement is definitely read only</li>
 <li><a href="sqlite3stmt.reset.html" class="index">SQLite3Stmt::reset</a> - プリペアドステートメントをリセットする</li>
 <li><a href="function.sqlite-array-query.html" class="index">sqlite_array_query</a> - 指定したデータベースに対してクエリを実行し、配列を返す</li>
 <li><a href="function.sqlite-busy-timeout.html" class="index">sqlite_busy_timeout</a> - ビジータイムアウト時間を設定またはビジーハンドラを無効にする</li>
@@ -8371,7 +8419,7 @@
 <li><a href="streamwrapper.stream-eof.html" class="index">streamWrapper::stream_eof</a> - ファイルポインタが終端にあるかどうかを調べる</li>
 <li><a href="streamwrapper.stream-flush.html" class="index">streamWrapper::stream_flush</a> - 出力をフラッシュする</li>
 <li><a href="streamwrapper.stream-lock.html" class="index">streamWrapper::stream_lock</a> - ファイルのアドバイザリ・ロック</li>
-<li><a href="streamwrapper.stream-metadata.html" class="index">streamWrapper::stream_metadata</a> - ストリームオプションを変更する</li>
+<li><a href="streamwrapper.stream-metadata.html" class="index">streamWrapper::stream_metadata</a> - ストリームメタデータを変更する</li>
 <li><a href="streamwrapper.stream-open.html" class="index">streamWrapper::stream_open</a> - ファイルあるいは URL をオープンする</li>
 <li><a href="streamwrapper.stream-read.html" class="index">streamWrapper::stream_read</a> - ストリームから読み込む</li>
 <li><a href="streamwrapper.stream-seek.html" class="index">streamWrapper::stream_seek</a> - ストリーム内の特定の場所に移動する</li>
@@ -8471,15 +8519,15 @@
 <li><a href="function.substr-count.html" class="index">substr_count</a> - 副文字列の出現回数を数える</li>
 <li><a href="function.substr-replace.html" class="index">substr_replace</a> - 文字列の一部を置換する</li>
 <li><a href="svm.crossvalidate.html" class="index">SVM::crossvalidate</a> - Test training params on subsets of the training data.</li>
-<li><a href="svm.getoptions.html" class="index">SVM::getOptions</a> - Return the current training parameters</li>
-<li><a href="svm.setoptions.html" class="index">SVM::setOptions</a> - Set training parameters</li>
+<li><a href="svm.getoptions.html" class="index">SVM::getOptions</a> - 現在の訓練パラメータを返す</li>
+<li><a href="svm.setoptions.html" class="index">SVM::setOptions</a> - 訓練パラメータを設定</li>
 <li><a href="svm.train.html" class="index">SVM::train</a> - Create a SVMModel based on training data</li>
 <li><a href="svm.construct.html" class="index">SVM::__construct</a> - SVM オブジェクトを新規構築</li>
-<li><a href="svmmodel.checkprobabilitymodel.html" class="index">SVMModel::checkProbabilityModel</a> - Returns true if the model has probability information</li>
-<li><a href="svmmodel.getlabels.html" class="index">SVMModel::getLabels</a> - Get the labels the model was trained on</li>
-<li><a href="svmmodel.getnrclass.html" class="index">SVMModel::getNrClass</a> - Returns the number of classes the model was trained with</li>
-<li><a href="svmmodel.getsvmtype.html" class="index">SVMModel::getSvmType</a> - Get the SVM type the model was trained with</li>
-<li><a href="svmmodel.getsvrprobability.html" class="index">SVMModel::getSvrProbability</a> - Get the sigma value for regression types</li>
+<li><a href="svmmodel.checkprobabilitymodel.html" class="index">SVMModel::checkProbabilityModel</a> - モデルが確率情報を持つ場合 TRUE を返す</li>
+<li><a href="svmmodel.getlabels.html" class="index">SVMModel::getLabels</a> - モデルが訓練されたラベルを取得</li>
+<li><a href="svmmodel.getnrclass.html" class="index">SVMModel::getNrClass</a> - モデルが訓練されたクラスの個数を返す</li>
+<li><a href="svmmodel.getsvmtype.html" class="index">SVMModel::getSvmType</a> - モデルが訓練された SVM の種類を取得</li>
+<li><a href="svmmodel.getsvrprobability.html" class="index">SVMModel::getSvrProbability</a> - 回帰モデルに対する&sigma;（シグマ）値を取得</li>
 <li><a href="svmmodel.load.html" class="index">SVMModel::load</a> - 保管された SVM モデルを読み込み</li>
 <li><a href="svmmodel.predict.html" class="index">SVMModel::predict</a> - Predict a value for previously unseen data</li>
 <li><a href="svmmodel.predict-probability.html" class="index">SVMModel::predict_probability</a> - Return class probabilities for previous unseen data</li>
@@ -8743,6 +8791,11 @@
 <li><a href="syncsemaphore.lock.html" class="index">SyncSemaphore::lock</a> - Decreases the count of the semaphore or waits</li>
 <li><a href="syncsemaphore.unlock.html" class="index">SyncSemaphore::unlock</a> - Increases the count of the semaphore</li>
 <li><a href="syncsemaphore.construct.html" class="index">SyncSemaphore::__construct</a> - Constructs a new SyncSemaphore object</li>
+<li><a href="syncsharedmemory.first.html" class="index">SyncSharedMemory::first</a> - Check to see if the object is the first instance system-wide of named shared memory</li>
+<li><a href="syncsharedmemory.read.html" class="index">SyncSharedMemory::read</a> - Copy data from named shared memory</li>
+<li><a href="syncsharedmemory.size.html" class="index">SyncSharedMemory::size</a> - Returns the size of the named shared memory</li>
+<li><a href="syncsharedmemory.write.html" class="index">SyncSharedMemory::write</a> - Copy data to named shared memory</li>
+<li><a href="syncsharedmemory.construct.html" class="index">SyncSharedMemory::__construct</a> - Constructs a new SyncSharedMemory object</li>
 <li><a href="function.syslog.html" class="index">syslog</a> - システムログのメッセージを生成する</li>
 <li><a href="function.system.html" class="index">system</a> - 外部プログラムを実行し、出力を表示する</li>
 <li><a href="function.sys-getloadavg.html" class="index">sys_getloadavg</a> - システムの平均負荷を取得する</li>
@@ -9120,6 +9173,206 @@
 <li><a href="function.udm-hash32.html" class="index">udm_hash32</a> - 指定した文字列の Hash32 チェックサムを返す</li>
 <li><a href="function.udm-load-ispell-data.html" class="index">udm_load_ispell_data</a> - ispell データを読み込む</li>
 <li><a href="function.udm-set-agent-param.html" class="index">udm_set_agent_param</a> - mnoGoSearch エージェントのセッションパラメータを設定する</li>
+<li><a href="ui-area.ondraw.html" class="index">UI\Area::onDraw</a> - Draw Callback</li>
+<li><a href="ui-area.onkey.html" class="index">UI\Area::onKey</a> - Key Callback</li>
+<li><a href="ui-area.onmouse.html" class="index">UI\Area::onMouse</a> - Mouse Callback</li>
+<li><a href="ui-area.redraw.html" class="index">UI\Area::redraw</a> - Redraw Area</li>
+<li><a href="ui-area.scrollto.html" class="index">UI\Area::scrollTo</a> - Area Scroll</li>
+<li><a href="ui-area.setsize.html" class="index">UI\Area::setSize</a> - Set Size</li>
+<li><a href="ui-control.destroy.html" class="index">UI\Control::destroy</a> - Destroy Control</li>
+<li><a href="ui-control.disable.html" class="index">UI\Control::disable</a> - Disable Control</li>
+<li><a href="ui-control.enable.html" class="index">UI\Control::enable</a> - Enable Control</li>
+<li><a href="ui-control.getparent.html" class="index">UI\Control::getParent</a> - Get Parent Control</li>
+<li><a href="ui-control.gettoplevel.html" class="index">UI\Control::getTopLevel</a> - Get Top Level</li>
+<li><a href="ui-control.hide.html" class="index">UI\Control::hide</a> - Hide Control</li>
+<li><a href="ui-control.isenabled.html" class="index">UI\Control::isEnabled</a> - Determine if Control is enabled</li>
+<li><a href="ui-control.isvisible.html" class="index">UI\Control::isVisible</a> - Determine if Control is visible</li>
+<li><a href="ui-control.setparent.html" class="index">UI\Control::setParent</a> - Set Parent Control</li>
+<li><a href="ui-control.show.html" class="index">UI\Control::show</a> - Control Show</li>
+<li><a href="ui-controls-box.append.html" class="index">UI\Controls\Box::append</a> - Append Control</li>
+<li><a href="ui-controls-box.delete.html" class="index">UI\Controls\Box::delete</a> - Delete Control</li>
+<li><a href="ui-controls-box.getorientation.html" class="index">UI\Controls\Box::getOrientation</a> - Get Orientation</li>
+<li><a href="ui-controls-box.ispadded.html" class="index">UI\Controls\Box::isPadded</a> - Padding Detection</li>
+<li><a href="ui-controls-box.setpadded.html" class="index">UI\Controls\Box::setPadded</a> - Set Padding</li>
+<li><a href="ui-controls-box.construct.html" class="index">UI\Controls\Box::__construct</a> - Construct a new Box</li>
+<li><a href="ui-controls-button.gettext.html" class="index">UI\Controls\Button::getText</a> - Get Text</li>
+<li><a href="ui-controls-button.onclick.html" class="index">UI\Controls\Button::onClick</a> - Click Handler</li>
+<li><a href="ui-controls-button.settext.html" class="index">UI\Controls\Button::setText</a> - Set Text</li>
+<li><a href="ui-controls-button.construct.html" class="index">UI\Controls\Button::__construct</a> - Construct a new Button</li>
+<li><a href="ui-controls-check.gettext.html" class="index">UI\Controls\Check::getText</a> - Get Text</li>
+<li><a href="ui-controls-check.ischecked.html" class="index">UI\Controls\Check::isChecked</a> - Checked Detection</li>
+<li><a href="ui-controls-check.ontoggle.html" class="index">UI\Controls\Check::onToggle</a> - Toggle Callback</li>
+<li><a href="ui-controls-check.setchecked.html" class="index">UI\Controls\Check::setChecked</a> - Set Checked</li>
+<li><a href="ui-controls-check.settext.html" class="index">UI\Controls\Check::setText</a> - Set Text</li>
+<li><a href="ui-controls-check.construct.html" class="index">UI\Controls\Check::__construct</a> - Construct a new Check</li>
+<li><a href="ui-controls-colorbutton.getcolor.html" class="index">UI\Controls\ColorButton::getColor</a> - Get Color</li>
+<li><a href="ui-controls-colorbutton.onchange.html" class="index">UI\Controls\ColorButton::onChange</a> - Change Handler</li>
+<li><a href="ui-controls-colorbutton.setcolor.html" class="index">UI\Controls\ColorButton::setColor</a> - Set Color</li>
+<li><a href="ui-controls-combo.append.html" class="index">UI\Controls\Combo::append</a> - Append Option</li>
+<li><a href="ui-controls-combo.getselected.html" class="index">UI\Controls\Combo::getSelected</a> - Get Selected Option</li>
+<li><a href="ui-controls-combo.onselected.html" class="index">UI\Controls\Combo::onSelected</a> - Selected Handler</li>
+<li><a href="ui-controls-combo.setselected.html" class="index">UI\Controls\Combo::setSelected</a> - Set Selected Option</li>
+<li><a href="ui-controls-editablecombo.append.html" class="index">UI\Controls\EditableCombo::append</a> - Append Option</li>
+<li><a href="ui-controls-editablecombo.gettext.html" class="index">UI\Controls\EditableCombo::getText</a> - Get Text</li>
+<li><a href="ui-controls-editablecombo.onchange.html" class="index">UI\Controls\EditableCombo::onChange</a> - Change Handler</li>
+<li><a href="ui-controls-editablecombo.settext.html" class="index">UI\Controls\EditableCombo::setText</a> - Set Text</li>
+<li><a href="ui-controls-entry.gettext.html" class="index">UI\Controls\Entry::getText</a> - Get Text</li>
+<li><a href="ui-controls-entry.isreadonly.html" class="index">UI\Controls\Entry::isReadOnly</a> - Detect Read Only</li>
+<li><a href="ui-controls-entry.onchange.html" class="index">UI\Controls\Entry::onChange</a> - Change Handler</li>
+<li><a href="ui-controls-entry.setreadonly.html" class="index">UI\Controls\Entry::setReadOnly</a> - Set Read Only</li>
+<li><a href="ui-controls-entry.settext.html" class="index">UI\Controls\Entry::setText</a> - Set Text</li>
+<li><a href="ui-controls-entry.construct.html" class="index">UI\Controls\Entry::__construct</a> - Construct a new Entry</li>
+<li><a href="ui-controls-form.append.html" class="index">UI\Controls\Form::append</a> - Append Control</li>
+<li><a href="ui-controls-form.delete.html" class="index">UI\Controls\Form::delete</a> - Delete Control</li>
+<li><a href="ui-controls-form.ispadded.html" class="index">UI\Controls\Form::isPadded</a> - Padding Detection</li>
+<li><a href="ui-controls-form.setpadded.html" class="index">UI\Controls\Form::setPadded</a> - Set Padding</li>
+<li><a href="ui-controls-grid.append.html" class="index">UI\Controls\Grid::append</a> - Append Control</li>
+<li><a href="ui-controls-grid.ispadded.html" class="index">UI\Controls\Grid::isPadded</a> - Padding Detection</li>
+<li><a href="ui-controls-grid.setpadded.html" class="index">UI\Controls\Grid::setPadded</a> - Set Padding</li>
+<li><a href="ui-controls-group.append.html" class="index">UI\Controls\Group::append</a> - Append Control</li>
+<li><a href="ui-controls-group.gettitle.html" class="index">UI\Controls\Group::getTitle</a> - Get Title</li>
+<li><a href="ui-controls-group.hasmargin.html" class="index">UI\Controls\Group::hasMargin</a> - Margin Detection</li>
+<li><a href="ui-controls-group.setmargin.html" class="index">UI\Controls\Group::setMargin</a> - Set Margin</li>
+<li><a href="ui-controls-group.settitle.html" class="index">UI\Controls\Group::setTitle</a> - Set Title</li>
+<li><a href="ui-controls-group.construct.html" class="index">UI\Controls\Group::__construct</a> - Construct a new Group</li>
+<li><a href="ui-controls-label.gettext.html" class="index">UI\Controls\Label::getText</a> - Get Text</li>
+<li><a href="ui-controls-label.settext.html" class="index">UI\Controls\Label::setText</a> - Set Text</li>
+<li><a href="ui-controls-label.construct.html" class="index">UI\Controls\Label::__construct</a> - Construct a new Label</li>
+<li><a href="ui-controls-multilineentry.append.html" class="index">UI\Controls\MultilineEntry::append</a> - Append Text</li>
+<li><a href="ui-controls-multilineentry.gettext.html" class="index">UI\Controls\MultilineEntry::getText</a> - Get Text</li>
+<li><a href="ui-controls-multilineentry.isreadonly.html" class="index">UI\Controls\MultilineEntry::isReadOnly</a> - Read Only Detection</li>
+<li><a href="ui-controls-multilineentry.onchange.html" class="index">UI\Controls\MultilineEntry::onChange</a> - Change Handler</li>
+<li><a href="ui-controls-multilineentry.setreadonly.html" class="index">UI\Controls\MultilineEntry::setReadOnly</a> - Set Read Only</li>
+<li><a href="ui-controls-multilineentry.settext.html" class="index">UI\Controls\MultilineEntry::setText</a> - Set Text</li>
+<li><a href="ui-controls-multilineentry.construct.html" class="index">UI\Controls\MultilineEntry::__construct</a> - Construct a new Multiline Entry</li>
+<li><a href="ui-controls-picker.construct.html" class="index">UI\Controls\Picker::__construct</a> - Construct a new Picker</li>
+<li><a href="ui-controls-progress.getvalue.html" class="index">UI\Controls\Progress::getValue</a> - Get Value</li>
+<li><a href="ui-controls-progress.setvalue.html" class="index">UI\Controls\Progress::setValue</a> - Set Value</li>
+<li><a href="ui-controls-radio.append.html" class="index">UI\Controls\Radio::append</a> - Append Option</li>
+<li><a href="ui-controls-radio.getselected.html" class="index">UI\Controls\Radio::getSelected</a> - Get Selected Option</li>
+<li><a href="ui-controls-radio.onselected.html" class="index">UI\Controls\Radio::onSelected</a> - Selected Handler</li>
+<li><a href="ui-controls-radio.setselected.html" class="index">UI\Controls\Radio::setSelected</a> - Set Selected Option</li>
+<li><a href="ui-controls-separator.construct.html" class="index">UI\Controls\Separator::__construct</a> - Construct a new Separator</li>
+<li><a href="ui-controls-slider.getvalue.html" class="index">UI\Controls\Slider::getValue</a> - Get Value</li>
+<li><a href="ui-controls-slider.onchange.html" class="index">UI\Controls\Slider::onChange</a> - Change Handler</li>
+<li><a href="ui-controls-slider.setvalue.html" class="index">UI\Controls\Slider::setValue</a> - Set Value</li>
+<li><a href="ui-controls-slider.construct.html" class="index">UI\Controls\Slider::__construct</a> - Construct a new Slider</li>
+<li><a href="ui-controls-spin.getvalue.html" class="index">UI\Controls\Spin::getValue</a> - Get Value</li>
+<li><a href="ui-controls-spin.onchange.html" class="index">UI\Controls\Spin::onChange</a> - Change Handler</li>
+<li><a href="ui-controls-spin.setvalue.html" class="index">UI\Controls\Spin::setValue</a> - Set Value</li>
+<li><a href="ui-controls-spin.construct.html" class="index">UI\Controls\Spin::__construct</a> - Construct a new Spin</li>
+<li><a href="ui-controls-tab.append.html" class="index">UI\Controls\Tab::append</a> - Append Page</li>
+<li><a href="ui-controls-tab.delete.html" class="index">UI\Controls\Tab::delete</a> - Delete Page</li>
+<li><a href="ui-controls-tab.hasmargin.html" class="index">UI\Controls\Tab::hasMargin</a> - Margin Detection</li>
+<li><a href="ui-controls-tab.insertat.html" class="index">UI\Controls\Tab::insertAt</a> - Insert Page</li>
+<li><a href="ui-controls-tab.pages.html" class="index">UI\Controls\Tab::pages</a> - Page Count</li>
+<li><a href="ui-controls-tab.setmargin.html" class="index">UI\Controls\Tab::setMargin</a> - Set Margin</li>
+<li><a href="ui-draw-brush.getcolor.html" class="index">UI\Draw\Brush::getColor</a> - Get Color</li>
+<li><a href="ui-draw-brush.setcolor.html" class="index">UI\Draw\Brush::setColor</a> - Set Color</li>
+<li><a href="ui-draw-brush.construct.html" class="index">UI\Draw\Brush::__construct</a> - Construct a new Brush</li>
+<li><a href="ui-draw-brush-gradient.addstop.html" class="index">UI\Draw\Brush\Gradient::addStop</a> - Stop Manipulation</li>
+<li><a href="ui-draw-brush-gradient.delstop.html" class="index">UI\Draw\Brush\Gradient::delStop</a> - Stop Manipulation</li>
+<li><a href="ui-draw-brush-gradient.setstop.html" class="index">UI\Draw\Brush\Gradient::setStop</a> - Stop Manipulation</li>
+<li><a href="ui-draw-brush-lineargradient.construct.html" class="index">UI\Draw\Brush\LinearGradient::__construct</a> - Construct a Linear Gradient</li>
+<li><a href="ui-draw-brush-radialgradient.construct.html" class="index">UI\Draw\Brush\RadialGradient::__construct</a> - Construct a new Radial Gradient</li>
+<li><a href="ui-draw-color.getchannel.html" class="index">UI\Draw\Color::getChannel</a> - Color Manipulation</li>
+<li><a href="ui-draw-color.setchannel.html" class="index">UI\Draw\Color::setChannel</a> - Color Manipulation</li>
+<li><a href="ui-draw-color.construct.html" class="index">UI\Draw\Color::__construct</a> - Construct new Color</li>
+<li><a href="ui-draw-matrix.invert.html" class="index">UI\Draw\Matrix::invert</a> - Invert Matrix</li>
+<li><a href="ui-draw-matrix.isinvertible.html" class="index">UI\Draw\Matrix::isInvertible</a> - Invertible Detection</li>
+<li><a href="ui-draw-matrix.multiply.html" class="index">UI\Draw\Matrix::multiply</a> - Multiply Matrix</li>
+<li><a href="ui-draw-matrix.rotate.html" class="index">UI\Draw\Matrix::rotate</a> - Rotate Matrix</li>
+<li><a href="ui-draw-matrix.scale.html" class="index">UI\Draw\Matrix::scale</a> - Scale Matrix</li>
+<li><a href="ui-draw-matrix.skew.html" class="index">UI\Draw\Matrix::skew</a> - Skew Matrix</li>
+<li><a href="ui-draw-matrix.translate.html" class="index">UI\Draw\Matrix::translate</a> - Translate Matrix</li>
+<li><a href="ui-draw-path.addrectangle.html" class="index">UI\Draw\Path::addRectangle</a> - Draw a Rectangle</li>
+<li><a href="ui-draw-path.arcto.html" class="index">UI\Draw\Path::arcTo</a> - Draw an Arc</li>
+<li><a href="ui-draw-path.bezierto.html" class="index">UI\Draw\Path::bezierTo</a> - Draw Bezier Curve</li>
+<li><a href="ui-draw-path.closefigure.html" class="index">UI\Draw\Path::closeFigure</a> - Close Figure</li>
+<li><a href="ui-draw-path.end.html" class="index">UI\Draw\Path::end</a> - Finalize Path</li>
+<li><a href="ui-draw-path.lineto.html" class="index">UI\Draw\Path::lineTo</a> - Draw a Line</li>
+<li><a href="ui-draw-path.newfigure.html" class="index">UI\Draw\Path::newFigure</a> - Draw Figure</li>
+<li><a href="ui-draw-path.newfigurewitharc.html" class="index">UI\Draw\Path::newFigureWithArc</a> - Draw Figure with Arc</li>
+<li><a href="ui-draw-path.construct.html" class="index">UI\Draw\Path::__construct</a> - Construct a new Path</li>
+<li><a href="ui-draw-pen.clip.html" class="index">UI\Draw\Pen::clip</a> - Clip a Path</li>
+<li><a href="ui-draw-pen.fill.html" class="index">UI\Draw\Pen::fill</a> - Fill a Path</li>
+<li><a href="ui-draw-pen.restore.html" class="index">UI\Draw\Pen::restore</a> - Restore</li>
+<li><a href="ui-draw-pen.save.html" class="index">UI\Draw\Pen::save</a> - Save</li>
+<li><a href="ui-draw-pen.stroke.html" class="index">UI\Draw\Pen::stroke</a> - Stroke a Path</li>
+<li><a href="ui-draw-pen.transform.html" class="index">UI\Draw\Pen::transform</a> - Matrix Transform</li>
+<li><a href="ui-draw-pen.write.html" class="index">UI\Draw\Pen::write</a> - Draw Text at Point</li>
+<li><a href="ui-draw-stroke.getcap.html" class="index">UI\Draw\Stroke::getCap</a> - Get Line Cap</li>
+<li><a href="ui-draw-stroke.getjoin.html" class="index">UI\Draw\Stroke::getJoin</a> - Get Line Join</li>
+<li><a href="ui-draw-stroke.getmiterlimit.html" class="index">UI\Draw\Stroke::getMiterLimit</a> - Get Miter Limit</li>
+<li><a href="ui-draw-stroke.getthickness.html" class="index">UI\Draw\Stroke::getThickness</a> - Get Thickness</li>
+<li><a href="ui-draw-stroke.setcap.html" class="index">UI\Draw\Stroke::setCap</a> - Set Line Cap</li>
+<li><a href="ui-draw-stroke.setjoin.html" class="index">UI\Draw\Stroke::setJoin</a> - Set Line Join</li>
+<li><a href="ui-draw-stroke.setmiterlimit.html" class="index">UI\Draw\Stroke::setMiterLimit</a> - Set Miter Limit</li>
+<li><a href="ui-draw-stroke.setthickness.html" class="index">UI\Draw\Stroke::setThickness</a> - Set Thickness</li>
+<li><a href="ui-draw-stroke.construct.html" class="index">UI\Draw\Stroke::__construct</a> - Construct a new Stroke</li>
+<li><a href="ui-draw-text-font.getascent.html" class="index">UI\Draw\Text\Font::getAscent</a> - Font Metrics</li>
+<li><a href="ui-draw-text-font.getdescent.html" class="index">UI\Draw\Text\Font::getDescent</a> - Font Metrics</li>
+<li><a href="ui-draw-text-font.getleading.html" class="index">UI\Draw\Text\Font::getLeading</a> - Font Metrics</li>
+<li><a href="ui-draw-text-font.getunderlineposition.html" class="index">UI\Draw\Text\Font::getUnderlinePosition</a> - Font Metrics</li>
+<li><a href="ui-draw-text-font.getunderlinethickness.html" class="index">UI\Draw\Text\Font::getUnderlineThickness</a> - Font Metrics</li>
+<li><a href="ui-draw-text-font.construct.html" class="index">UI\Draw\Text\Font::__construct</a> - Construct a new Font</li>
+<li><a href="ui-draw-text-font-descriptor.getfamily.html" class="index">UI\Draw\Text\Font\Descriptor::getFamily</a> - Get Font Family</li>
+<li><a href="ui-draw-text-font-descriptor.getitalic.html" class="index">UI\Draw\Text\Font\Descriptor::getItalic</a> - Style Detection</li>
+<li><a href="ui-draw-text-font-descriptor.getsize.html" class="index">UI\Draw\Text\Font\Descriptor::getSize</a> - Size Detection</li>
+<li><a href="ui-draw-text-font-descriptor.getstretch.html" class="index">UI\Draw\Text\Font\Descriptor::getStretch</a> - Style Detection</li>
+<li><a href="ui-draw-text-font-descriptor.getweight.html" class="index">UI\Draw\Text\Font\Descriptor::getWeight</a> - Weight Detection</li>
+<li><a href="ui-draw-text-font-descriptor.construct.html" class="index">UI\Draw\Text\Font\Descriptor::__construct</a> - Construct a new Font Descriptor</li>
+<li><a href="function.ui-draw-text-font-fontfamilies.html" class="index">UI\Draw\Text\Font\fontFamilies</a> - Retrieve Font Families</li>
+<li><a href="ui-draw-text-layout.setcolor.html" class="index">UI\Draw\Text\Layout::setColor</a> - Set Color</li>
+<li><a href="ui-draw-text-layout.setwidth.html" class="index">UI\Draw\Text\Layout::setWidth</a> - Set Width</li>
+<li><a href="ui-draw-text-layout.construct.html" class="index">UI\Draw\Text\Layout::__construct</a> - Construct a new Text Layout</li>
+<li><a href="ui-executor.kill.html" class="index">UI\Executor::kill</a> - Stop Executor</li>
+<li><a href="ui-executor.onexecute.html" class="index">UI\Executor::onExecute</a> - Execution Callback</li>
+<li><a href="ui-executor.setinterval.html" class="index">UI\Executor::setInterval</a> - Interval Manipulation</li>
+<li><a href="ui-executor.construct.html" class="index">UI\Executor::__construct</a> - Construct a new Executor</li>
+<li><a href="ui-menu.append.html" class="index">UI\Menu::append</a> - Append Menu Item</li>
+<li><a href="ui-menu.appendabout.html" class="index">UI\Menu::appendAbout</a> - Append About Menu Item</li>
+<li><a href="ui-menu.appendcheck.html" class="index">UI\Menu::appendCheck</a> - Append Checkable Menu Item</li>
+<li><a href="ui-menu.appendpreferences.html" class="index">UI\Menu::appendPreferences</a> - Append Preferences Menu Item</li>
+<li><a href="ui-menu.appendquit.html" class="index">UI\Menu::appendQuit</a> - Append Quit Menu Item</li>
+<li><a href="ui-menu.appendseparator.html" class="index">UI\Menu::appendSeparator</a> - Append Menu Item Separator</li>
+<li><a href="ui-menu.construct.html" class="index">UI\Menu::__construct</a> - Construct a new Menu</li>
+<li><a href="ui-menuitem.disable.html" class="index">UI\MenuItem::disable</a> - Disable Menu Item</li>
+<li><a href="ui-menuitem.enable.html" class="index">UI\MenuItem::enable</a> - Enable Menu Item</li>
+<li><a href="ui-menuitem.ischecked.html" class="index">UI\MenuItem::isChecked</a> - Detect Checked</li>
+<li><a href="ui-menuitem.onclick.html" class="index">UI\MenuItem::onClick</a> - On Click Callback</li>
+<li><a href="ui-menuitem.setchecked.html" class="index">UI\MenuItem::setChecked</a> - Set Checked</li>
+<li><a href="ui-point.at.html" class="index">UI\Point::at</a> - Size Coercion</li>
+<li><a href="ui-point.getx.html" class="index">UI\Point::getX</a> - Retrieves X</li>
+<li><a href="ui-point.gety.html" class="index">UI\Point::getY</a> - Retrieves Y</li>
+<li><a href="ui-point.setx.html" class="index">UI\Point::setX</a> - Set X</li>
+<li><a href="ui-point.sety.html" class="index">UI\Point::setY</a> - Set Y</li>
+<li><a href="ui-point.construct.html" class="index">UI\Point::__construct</a> - Construct a new Point</li>
+<li><a href="function.ui-quit.html" class="index">UI\quit</a> - Quit UI Loop</li>
+<li><a href="function.ui-run.html" class="index">UI\run</a> - Enter UI Loop</li>
+<li><a href="ui-size.getheight.html" class="index">UI\Size::getHeight</a> - Retrieves Height</li>
+<li><a href="ui-size.getwidth.html" class="index">UI\Size::getWidth</a> - Retrives Width</li>
+<li><a href="ui-size.of.html" class="index">UI\Size::of</a> - Point Coercion</li>
+<li><a href="ui-size.setheight.html" class="index">UI\Size::setHeight</a> - Set Height</li>
+<li><a href="ui-size.setwidth.html" class="index">UI\Size::setWidth</a> - Set Width</li>
+<li><a href="ui-size.construct.html" class="index">UI\Size::__construct</a> - Construct a new Size</li>
+<li><a href="ui-window.add.html" class="index">UI\Window::add</a> - Add a Control</li>
+<li><a href="ui-window.error.html" class="index">UI\Window::error</a> - Show Error Box</li>
+<li><a href="ui-window.getsize.html" class="index">UI\Window::getSize</a> - Get Window Size</li>
+<li><a href="ui-window.gettitle.html" class="index">UI\Window::getTitle</a> - Get Title</li>
+<li><a href="ui-window.hasborders.html" class="index">UI\Window::hasBorders</a> - Border Detection</li>
+<li><a href="ui-window.hasmargin.html" class="index">UI\Window::hasMargin</a> - Margin Detection</li>
+<li><a href="ui-window.isfullscreen.html" class="index">UI\Window::isFullScreen</a> - Full Screen Detection</li>
+<li><a href="ui-window.msg.html" class="index">UI\Window::msg</a> - Show Message Box</li>
+<li><a href="ui-window.onclosing.html" class="index">UI\Window::onClosing</a> - Closing Callback</li>
+<li><a href="ui-window.open.html" class="index">UI\Window::open</a> - Open Dialog</li>
+<li><a href="ui-window.save.html" class="index">UI\Window::save</a> - Save Dialog</li>
+<li><a href="ui-window.setborders.html" class="index">UI\Window::setBorders</a> - Border Use</li>
+<li><a href="ui-window.setfullscreen.html" class="index">UI\Window::setFullScreen</a> - Full Screen Use</li>
+<li><a href="ui-window.setmargin.html" class="index">UI\Window::setMargin</a> - Margin Use</li>
+<li><a href="ui-window.setsize.html" class="index">UI\Window::setSize</a> - Set Size</li>
+<li><a href="ui-window.settitle.html" class="index">UI\Window::setTitle</a> - Window Title</li>
+<li><a href="ui-window.construct.html" class="index">UI\Window::__construct</a> - Construct a new Window</li>
 <li><a href="function.uksort.html" class="index">uksort</a> - ユーザー定義の比較関数を用いて、キーで配列をソートする</li>
 <li><a href="function.umask.html" class="index">umask</a> - 現在の umask を変更する</li>
 <li><a href="function.uniqid.html" class="index">uniqid</a> - 一意な ID を生成する</li>
@@ -9297,6 +9550,7 @@
 <li><a href="function.wincache-ucache-set.html" class="index">wincache_ucache_set</a> - 変数をユーザーキャッシュに追加し、変数が既にキャッシュに存在する場合はそれを上書きする</li>
 <li><a href="function.wincache-unlock.html" class="index">wincache_unlock</a> - 指定したキーの排他ロックを解放する</li>
 <li><a href="function.wordwrap.html" class="index">wordwrap</a> - 指定した文字数で文字列を分割する</li>
+<li><a href="worker.collect.html" class="index">Worker::collect</a> - Collect references to completed tasks</li>
 <li><a href="worker.getstacked.html" class="index">Worker::getStacked</a> - スタックの状態を調べる</li>
 <li><a href="worker.isshutdown.html" class="index">Worker::isShutdown</a> - 状態を検出する</li>
 <li><a href="worker.isworking.html" class="index">Worker::isWorking</a> - 状態を検出する</li>
@@ -9852,6 +10106,24 @@
 <li><a href="zmqsocket.setsockopt.html" class="index">ZMQSocket::setSockOpt</a> - Set a socket option</li>
 <li><a href="zmqsocket.unbind.html" class="index">ZMQSocket::unbind</a> - Unbind the socket</li>
 <li><a href="zmqsocket.construct.html" class="index">ZMQSocket::__construct</a> - Construct a new ZMQSocket</li>
+<li><a href="zookeeper.addauth.html" class="index">Zookeeper::addAuth</a> - Specify application credentials.</li>
+<li><a href="zookeeper.connect.html" class="index">Zookeeper::connect</a> - Create a handle to used communicate with zookeeper.</li>
+<li><a href="zookeeper.create.html" class="index">Zookeeper::create</a> - Create a node synchronously.</li>
+<li><a href="zookeeper.delete.html" class="index">Zookeeper::delete</a> - Delete a node in zookeeper synchronously.</li>
+<li><a href="zookeeper.exists.html" class="index">Zookeeper::exists</a> - Checks the existence of a node in zookeeper synchronously.</li>
+<li><a href="zookeeper.get.html" class="index">Zookeeper::get</a> - Gets the data associated with a node synchronously.</li>
+<li><a href="zookeeper.getacl.html" class="index">Zookeeper::getAcl</a> - Gets the acl associated with a node synchronously.</li>
+<li><a href="zookeeper.getclientid.html" class="index">Zookeeper::getClientId</a> - return the client session id, only valid if the connections is currently connected (ie. last watcher state is ZOO_CONNECTED_STATE)</li>
+<li><a href="zookeeper.getrecvtimeout.html" class="index">Zookeeper::getRecvTimeout</a> - Return the timeout for this session, only valid if the connections is currently connected (ie. last watcher state is ZOO_CONNECTED_STATE). This value may change after a server re-connect.</li>
+<li><a href="zookeeper.getstate.html" class="index">Zookeeper::getState</a> - Get the state of the zookeeper connection.</li>
+<li><a href="zookeeper.isrecoverable.html" class="index">Zookeeper::isRecoverable</a> - Checks if the current zookeeper connection state can be recovered.</li>
+<li><a href="zookeeper.set.html" class="index">Zookeeper::set</a> - Sets the data associated with a node.</li>
+<li><a href="zookeeper.setacl.html" class="index">Zookeeper::setAcl</a> - Sets the acl associated with a node synchronously.</li>
+<li><a href="zookeeper.setdebuglevel.html" class="index">Zookeeper::setDebugLevel</a> - Sets the debugging level for the library.</li>
+<li><a href="zookeeper.setdeterministicconnorder.html" class="index">Zookeeper::setDeterministicConnOrder</a> - Enable/disable quorum endpoint order randomization.</li>
+<li><a href="zookeeper.setlogstream.html" class="index">Zookeeper::setLogStream</a> - Sets the stream to be used by the library for logging.</li>
+<li><a href="zookeeper.setwatcher.html" class="index">Zookeeper::setWatcher</a> - Set a watcher function.</li>
+<li><a href="zookeeper.construct.html" class="index">Zookeeper::__construct</a> - Create a handle to used communicate with zookeeper.</li>
 </ul></li>
 <li class='gen-index index-for-_'>_<ul id='refentry-index-for-_'>
 <li><a href="function.autoload.html" class="index">__autoload</a> - 未定義のクラスのロードを試みる</li>

@@ -28,7 +28,7 @@
    Determines if the specified code point is a whitespace character according to ICU.
   </p>
   <p class="para">
-   A character is considered to be a Java whitespace character if and only if it satisfies one of the following criteria:
+   A character is considered to be a ICU whitespace character if and only if it satisfies one of the following criteria:
    <ul class="simplelist">
     <li class="member">It is a Unicode Separator character (categories &quot;Z&quot; = &quot;Zs&quot; or &quot;Zl&quot; or &quot;Zp&quot;), but is not also a non-breaking space (U+00A0 NBSP or U+2007 Figure Space or U+202F Narrow NBSP).</li>
     <li class="member">It is U+0009 HORIZONTAL TABULATION.</li>
@@ -75,7 +75,7 @@
 
  <div class="refsect1 examples" id="refsect1-intlchar.iswhitespace-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-2982">
+  <div class="example" id="example-2975">
    <p><strong>例1 さまざまなコードポイントの例</strong></p>
    <div class="example-contents">
     <div class="phpcode"><code><span style="color: #000000">
