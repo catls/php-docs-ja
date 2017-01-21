@@ -21,10 +21,10 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname"><strong>MongoDB\Driver\Manager::__construct</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$uri</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$driverOptions</code></span>
-  ]] )</div>
+    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$uri</code><span class="initializer"> = &quot;mongodb://127.0.0.1/</span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = []</span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$driverOptions</code><span class="initializer"> = []</span></span>
+  ]]] )</div>
 
   <p class="para rdfs-comment">
    Constructs a new <a href="class.mongodb-driver-manager.html" class="classname">MongoDB\Driver\Manager</a> object with the specified options.
@@ -258,6 +258,11 @@
        <td>1.2.0</td>
        <td>
         <p class="para">
+         The <code class="parameter">uri</code> argument defaults to
+         <em>&quot;mongodb://127.0.0.1/&quot;</em>. The default port remains
+         <em>27017</em>.
+        </p>
+        <p class="para">
          Added the <em>&quot;allow_invalid_hostname&quot;</em>,
          <em>&quot;ca_file&quot;</em>, <em>&quot;ca_dir&quot;</em>,
          <em>&quot;clr_file&quot;</em>, <em>&quot;pem_file&quot;</em>,
@@ -269,6 +274,16 @@
          <a href="context.ssl.html" class="link">SSL context options</a> via the
          <em>&quot;context&quot;</em> driver option, since the PHP Streams API
          is no longer used for socket communication.
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>1.1.0</td>
+       <td>
+        <p class="para">
+         The <code class="parameter">uri</code> argument is optional and defaults to
+         <em>&quot;mongodb://localhost:27017/&quot;</em>.
         </p>
        </td>
       </tr>

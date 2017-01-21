@@ -75,7 +75,8 @@ object(stdClass)#2 (1) {
 { &quot;mode&quot; : &quot;primary&quot; }
 </pre></div>
    </div>
-  </div><div class="example" id="example-1656">
+  </div>
+  <div class="example" id="example-1656">
    <p><strong>例2 <span class="function"><strong>MongoDB\Driver\ReadPreference::bsonSerialize()</strong></span> with secondary read preference and tag sets</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -112,6 +113,30 @@ object(stdClass)#2 (2) {
 }
 
 { &quot;mode&quot; : &quot;secondary&quot;, &quot;tags&quot; : [ { &quot;dc&quot; : &quot;ny&quot; }, { &quot;dc&quot; : &quot;sf&quot;, &quot;use&quot; : &quot;reporting&quot; }, {  } ] }
+</pre></div>
+   </div>
+  </div>
+  <div class="example" id="example-1657">
+   <p><strong>例3 <span class="function"><strong>MongoDB\Driver\ReadPreference::bsonSerialize()</strong></span> with secondary read preference and max staleness</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$rp&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">ReadPreference</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">ReadPreference</span><span style="color: #007700">::</span><span style="color: #0000BB">RP_SECONDARY</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #DD0000">'maxStalenessSeconds'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">120</span><span style="color: #007700">]<br />);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$rp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bsonSerialize</span><span style="color: #007700">());<br /><br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">BSON</span><span style="color: #007700">\</span><span style="color: #0000BB">toJSON</span><span style="color: #007700">(</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">BSON</span><span style="color: #007700">\</span><span style="color: #0000BB">fromPHP</span><span style="color: #007700">(</span><span style="color: #0000BB">$rp</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+object(stdClass)#2 (2) {
+  [&quot;mode&quot;]=&gt;
+  string(9) &quot;secondary&quot;
+  [&quot;maxStalenessSeconds&quot;]=&gt;
+  int(120)
+}
+
+{ &quot;mode&quot; : &quot;secondary&quot;, &quot;maxStalenessSeconds&quot; : 120 }
 </pre></div>
    </div>
   </div>

@@ -81,7 +81,21 @@
      <span class="initializer"> = 10</span>
     ;</div>
 
-    
+    <div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.mongodb-driver-readpreference.html#mongodb-driver-readpreference.constants.no-max-staleness"><var class="varname">NO_MAX_STALENESS</var></a></var>
+     <span class="initializer"> = -1</span>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.mongodb-driver-readpreference.html#mongodb-driver-readpreference.constants.smallest-max-staleness-seconds"><var class="varname">SMALLEST_MAX_STALENESS_SECONDS</var></a></var>
+     <span class="initializer"> = 90</span>
+    ;</div>
+
+
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">object</span> <span class="methodname"><a href="mongodb-driver-readpreference.bsonserialize.html" class="methodname">bsonSerialize</a></span>
@@ -90,8 +104,13 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname"><a href="mongodb-driver-readpreference.construct.html" class="methodname">__construct</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$tagSets</code></span>
-  ] )</div>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$tagSets</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = []</span></span>
+  ]] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">integer</span> <span class="methodname"><a href="mongodb-driver-readpreference.getmaxstalenessseconds.html" class="methodname">getMaxStalenessSeconds</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">integer</span> <span class="methodname"><a href="mongodb-driver-readpreference.getmode.html" class="methodname">getMode</a></span>
     ( <span class="methodparam">void</span>
@@ -176,11 +195,74 @@
 
     
 
+    
+     <dt id="mongodb-driver-readpreference.constants.no-max-staleness"><strong><code>MongoDB\Driver\ReadPreference::NO_MAX_STALENESS</code></strong></dt>
+
+     <dd>
+
+      <p class="para">
+       The default value for the <em>&quot;maxStalenessSeconds&quot;</em>
+       option is to specify no limit on maximum staleness, which means that the
+       driver will not consider a secondary&#039;s lag when choosing where to
+       direct a read operation.
+      </p>
+     </dd>
+
+    
+
+    
+     <dt id="mongodb-driver-readpreference.constants.smallest-max-staleness-seconds"><strong><code>MongoDB\Driver\ReadPreference::SMALLEST_MAX_STALENESS_SECONDS</code></strong></dt>
+
+     <dd>
+
+      <p class="para">
+       The minimum value for the <em>&quot;maxStalenessSeconds&quot;</em> option
+       is 90 seconds. The driver estimates secondaries&#039; staleness by
+       periodically checking the latest write date of each replica set member.
+       Since these checks are infrequent, the staleness estimate is coarse.
+       Thus, the driver cannot enforce a max staleness value of less than 90
+       seconds.
+      </p>
+     </dd>
+
+    
+
    </dl>
 
   </div>
 
 
+  <div class="section">
+   <h2 class="title">変更履歴</h2>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>1.2.0</td>
+        <td>
+         Added the
+         <strong><code>MongoDB\Driver\ReadPreference::NO_MAX_STALENESS</code></strong>
+         and
+         <strong><code>MongoDB\Driver\ReadPreference::SMALLEST_MAX_STALENESS_SECONDS</code></strong>
+         constants.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+  </div>
 
  </div>
 
@@ -214,7 +296,14 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-driver-readpreference.bsonserialize.html">MongoDB\Driver\ReadPreference::bsonSerialize</a> — Returns an object for BSON serialization</li><li><a href="mongodb-driver-readpreference.construct.html">MongoDB\Driver\ReadPreference::__construct</a> — Construct immutable ReadPreference</li><li><a href="mongodb-driver-readpreference.getmode.html">MongoDB\Driver\ReadPreference::getMode</a> — Returns the ReadPreference's &quot;mode&quot; option</li><li><a href="mongodb-driver-readpreference.gettagsets.html">MongoDB\Driver\ReadPreference::getTagSets</a> — Returns the ReadPreference's &quot;tagSets&quot; option</li></ul>
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-driver-readpreference.bsonserialize.html">MongoDB\Driver\ReadPreference::bsonSerialize</a> — Returns an object for BSON serialization</li><li><a href="mongodb-driver-readpreference.construct.html">MongoDB\Driver\ReadPreference::__construct</a> — Construct immutable ReadPreference</li><li><a href="mongodb-driver-readpreference.getmaxstalenessseconds.html">MongoDB\Driver\ReadPreference::getMaxStalenessSeconds</a> — Returns the ReadPreference's &quot;maxStalenessSeconds&quot; option</li><li><a href="mongodb-driver-readpreference.getmode.html">MongoDB\Driver\ReadPreference::getMode</a> — Returns the ReadPreference's &quot;mode&quot; option</li><li><a href="mongodb-driver-readpreference.gettagsets.html">MongoDB\Driver\ReadPreference::getTagSets</a> — Returns the ReadPreference's &quot;tagSets&quot; option</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongodb-driver-writeconcern.getwtimeout.html">MongoDB\Driver\WriteConcern::getWtimeout</a></div>

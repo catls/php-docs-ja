@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-binary.gettype.html">MongoDB\BSON\Binary::getType</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-binary.unserialize.html">MongoDB\BSON\Binary::unserialize</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mongodb-bson-decimal128.construct.html">MongoDB\BSON\Decimal128::__construct</a></div>
  <div class="up"><a href="book.bson.html">MongoDB\BSON</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -61,6 +61,10 @@
      <span class="oointerface">implements 
       <span class="interfacename"><a href="class.mongodb-bson-type.html" class="interfacename">MongoDB\BSON\Type</a></span>
      </span>
+
+     <span class="oointerface">, 
+      <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>
+     </span>
      {</div>
 
 
@@ -70,13 +74,49 @@
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$value</code></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-decimal128.serialize.html" class="methodname">serialize</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-decimal128.tostring.html" class="methodname">__toString</a></span>
     ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-bson-decimal128.unserialize.html" class="methodname">unserialize</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$serialized</code></span>
    )</div>
 
    }</div>
 
 
+  </div>
+
+  <div class="section">
+   <h2 class="title">変更履歴</h2>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>1.2.0</td>
+        <td>
+         Implements <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
   </div>
 
  </div>
@@ -96,11 +136,25 @@
 
 
 
+ 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-decimal128.construct.html">MongoDB\BSON\Decimal128::__construct</a> — Construct a new Decimal128</li><li><a href="mongodb-bson-decimal128.tostring.html">MongoDB\BSON\Decimal128::__toString</a> — Returns the string representation of this Decimal128</li></ul>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-decimal128.construct.html">MongoDB\BSON\Decimal128::__construct</a> — Construct a new Decimal128</li><li><a href="mongodb-bson-decimal128.serialize.html">MongoDB\BSON\Decimal128::serialize</a> — Serialize a Decimal128</li><li><a href="mongodb-bson-decimal128.tostring.html">MongoDB\BSON\Decimal128::__toString</a> — Returns the string representation of this Decimal128</li><li><a href="mongodb-bson-decimal128.unserialize.html">MongoDB\BSON\Decimal128::unserialize</a> — Unserialize a Decimal128</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-binary.gettype.html">MongoDB\BSON\Binary::getType</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-binary.unserialize.html">MongoDB\BSON\Binary::unserialize</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mongodb-bson-decimal128.construct.html">MongoDB\BSON\Decimal128::__construct</a></div>
  <div class="up"><a href="book.bson.html">MongoDB\BSON</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

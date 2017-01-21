@@ -42,6 +42,10 @@
      <span class="oointerface">implements 
       <span class="interfacename"><a href="class.mongodb-bson-type.html" class="interfacename">MongoDB\BSON\Type</a></span>
      </span>
+
+     <span class="oointerface">, 
+      <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>
+     </span>
      {</div>
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* Constants */</div>
@@ -109,6 +113,18 @@
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">integer</span> <span class="methodname"><a href="mongodb-bson-binary.gettype.html" class="methodname">getType</a></span>
     ( <span class="methodparam">void</span>
    )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-binary.serialize.html" class="methodname">serialize</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-binary.tostring.html" class="methodname">__toString</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-bson-binary.unserialize.html" class="methodname">unserialize</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$serialized</code></span>
+   )</div>
 
    }</div>
 
@@ -126,7 +142,7 @@
 
      <dd>
 
-      <p class="para"/>
+      <p class="para">Generic binary data.</p>
      </dd>
 
     
@@ -136,7 +152,7 @@
 
      <dd>
 
-      <p class="para"/>
+      <p class="para">Function.</p>
      </dd>
 
     
@@ -146,7 +162,7 @@
 
      <dd>
 
-      <p class="para"/>
+      <p class="para">Generic binary data (deprecated in favor of <strong><code>MongoDB\BSON\Binary::TYPE_GENERIC</code></strong>).</p>
      </dd>
 
     
@@ -156,7 +172,8 @@
 
      <dd>
 
-      <p class="para"/>
+      <p class="para">Universally unique identifier (deprecated in favor of <strong><code>MongoDB\BSON\Binary::TYPE_UUID</code></strong>). When using this type, the Binary&#039;s data should be 16 bytes in length.</p>
+      <p class="para">Historically, other drivers encoded values with this type based on their language conventions (e.g. varying endianness), which makes it non-portable. The PHP driver applies no special handling for encoding or decoding data with this type.</p>
      </dd>
 
     
@@ -166,7 +183,7 @@
 
      <dd>
 
-      <p class="para"/>
+      <p class="para">Universally unique identifier. When using this type, the Binary&#039;s data should be 16 bytes in length and encoded according to <a href="http://www.faqs.org/rfcs/rfc4122" class="link external">&raquo;&nbsp;RFC 4122</a>.</p>
      </dd>
 
     
@@ -176,7 +193,7 @@
 
      <dd>
 
-      <p class="para"/>
+      <p class="para">MD5 hash. When using this type, the Binary&#039;s data should be 16 bytes in length.</p>
      </dd>
 
     
@@ -186,7 +203,7 @@
 
      <dd>
 
-      <p class="para"/>
+      <p class="para">User-defined type. While types between 0 and 127 are predefined or reserved, types between 128 and 255 are user-defined and may be used for anything.</p>
      </dd>
 
     
@@ -196,6 +213,33 @@
   </div>
 
 
+  <div class="section">
+   <h2 class="title">変更履歴</h2>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>1.2.0</td>
+        <td>
+         Implements <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+  </div>
 
  </div>
 
@@ -221,8 +265,29 @@
 
 
 
+ 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-binary.construct.html">MongoDB\BSON\Binary::__construct</a> — Construct a new Binary</li><li><a href="mongodb-bson-binary.getdata.html">MongoDB\BSON\Binary::getData</a> — Returns the Binary's data</li><li><a href="mongodb-bson-binary.gettype.html">MongoDB\BSON\Binary::getType</a> — Returns the Binary's type</li></ul>
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-binary.construct.html">MongoDB\BSON\Binary::__construct</a> — Construct a new Binary</li><li><a href="mongodb-bson-binary.getdata.html">MongoDB\BSON\Binary::getData</a> — Returns the Binary's data</li><li><a href="mongodb-bson-binary.gettype.html">MongoDB\BSON\Binary::getType</a> — Returns the Binary's type</li><li><a href="mongodb-bson-binary.serialize.html">MongoDB\BSON\Binary::serialize</a> — Serialize a Binary</li><li><a href="mongodb-bson-binary.tostring.html">MongoDB\BSON\Binary::__toString</a> — Returns the Binary's data</li><li><a href="mongodb-bson-binary.unserialize.html">MongoDB\BSON\Binary::unserialize</a> — Unserialize a Binary</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.mongodb.bson-tophp.html">MongoDB\BSON\toPHP</a></div>

@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-objectid.tostring.html">MongoDB\BSON\ObjectID::__toString</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-objectid.unserialize.html">MongoDB\BSON\ObjectID::unserialize</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mongodb-bson-regex.construct.html">MongoDB\BSON\Regex::__construct</a></div>
  <div class="up"><a href="book.bson.html">MongoDB\BSON</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -42,6 +42,10 @@
      <span class="oointerface">implements 
       <span class="interfacename"><a href="class.mongodb-bson-type.html" class="interfacename">MongoDB\BSON\Type</a></span>
      </span>
+
+     <span class="oointerface">, 
+      <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>
+     </span>
      {</div>
 
     
@@ -49,10 +53,10 @@
     <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname"><a href="mongodb-bson-regex.construct.html" class="methodname">__construct</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$flags</code></span>
-   )</div>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$flags</code><span class="initializer"> = &quot;&quot;</span></span>
+  ] )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">ReturnType</span> <span class="methodname"><a href="mongodb-bson-regex.getflags.html" class="methodname">getFlags</a></span>
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-regex.getflags.html" class="methodname">getFlags</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
@@ -60,13 +64,49 @@
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-regex.serialize.html" class="methodname">serialize</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-regex.tostring.html" class="methodname">__toString</a></span>
     ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-bson-regex.unserialize.html" class="methodname">unserialize</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$serialized</code></span>
    )</div>
 
    }</div>
 
 
+  </div>
+
+  <div class="section">
+   <h2 class="title">変更履歴</h2>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>1.2.0</td>
+        <td>
+         Implements <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
   </div>
 
  </div>
@@ -100,11 +140,25 @@
 
 
 
+ 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-regex.construct.html">MongoDB\BSON\Regex::__construct</a> — Construct a new Regex</li><li><a href="mongodb-bson-regex.getflags.html">MongoDB\BSON\Regex::getFlags</a> — Returns the Regex's flags</li><li><a href="mongodb-bson-regex.getpattern.html">MongoDB\BSON\Regex::getPattern</a> — Returns the Regex's pattern</li><li><a href="mongodb-bson-regex.tostring.html">MongoDB\BSON\Regex::__toString</a> — Returns the string representation of this Regex</li></ul>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-regex.construct.html">MongoDB\BSON\Regex::__construct</a> — Construct a new Regex</li><li><a href="mongodb-bson-regex.getflags.html">MongoDB\BSON\Regex::getFlags</a> — Returns the Regex's flags</li><li><a href="mongodb-bson-regex.getpattern.html">MongoDB\BSON\Regex::getPattern</a> — Returns the Regex's pattern</li><li><a href="mongodb-bson-regex.serialize.html">MongoDB\BSON\Regex::serialize</a> — Serialize a Regex</li><li><a href="mongodb-bson-regex.tostring.html">MongoDB\BSON\Regex::__toString</a> — Returns the string representation of this Regex</li><li><a href="mongodb-bson-regex.unserialize.html">MongoDB\BSON\Regex::unserialize</a> — Unserialize a Regex</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-objectid.tostring.html">MongoDB\BSON\ObjectID::__toString</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-objectid.unserialize.html">MongoDB\BSON\ObjectID::unserialize</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mongodb-bson-regex.construct.html">MongoDB\BSON\Regex::__construct</a></div>
  <div class="up"><a href="book.bson.html">MongoDB\BSON</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
