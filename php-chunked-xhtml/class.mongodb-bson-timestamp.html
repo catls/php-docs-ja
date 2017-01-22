@@ -48,6 +48,10 @@
      <span class="oointerface">, 
       <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>
      </span>
+
+     <span class="oointerface">, 
+      <span class="interfacename"><a href="class.jsonserializable.html" class="interfacename">JsonSerializable</a></span>
+     </span>
      {</div>
 
     
@@ -56,6 +60,10 @@
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname"><a href="mongodb-bson-timestamp.construct.html" class="methodname">__construct</a></span>
     ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$increment</code></span>
    , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$timestamp</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongodb-bson-timestamp.jsonserialize.html" class="methodname">jsonSerialize</a></span>
+    ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongodb-bson-timestamp.serialize.html" class="methodname">serialize</a></span>
@@ -92,7 +100,8 @@
        <tr>
         <td>1.2.0</td>
         <td>
-         Implements <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>.
+         Implements <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span> and
+         <span class="interfacename"><a href="class.jsonserializable.html" class="interfacename">JsonSerializable</a></span>.
         </td>
        </tr>
 
@@ -134,8 +143,15 @@
 
 
 
+ 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-timestamp.construct.html">MongoDB\BSON\Timestamp::__construct</a> — Construct a new Timestamp</li><li><a href="mongodb-bson-timestamp.serialize.html">MongoDB\BSON\Timestamp::serialize</a> — Serialize a Timestamp</li><li><a href="mongodb-bson-timestamp.tostring.html">MongoDB\BSON\Timestamp::__toString</a> — Returns the string representation of this Timestamp</li><li><a href="mongodb-bson-timestamp.unserialize.html">MongoDB\BSON\Timestamp::unserialize</a> — Unserialize a Timestamp</li></ul>
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-timestamp.construct.html">MongoDB\BSON\Timestamp::__construct</a> — Construct a new Timestamp</li><li><a href="mongodb-bson-timestamp.jsonserialize.html">MongoDB\BSON\Timestamp::jsonSerialize</a> — Returns a representation that can be converted to JSON</li><li><a href="mongodb-bson-timestamp.serialize.html">MongoDB\BSON\Timestamp::serialize</a> — Serialize a Timestamp</li><li><a href="mongodb-bson-timestamp.tostring.html">MongoDB\BSON\Timestamp::__toString</a> — Returns the string representation of this Timestamp</li><li><a href="mongodb-bson-timestamp.unserialize.html">MongoDB\BSON\Timestamp::unserialize</a> — Unserialize a Timestamp</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-regex.unserialize.html">MongoDB\BSON\Regex::unserialize</a></div>

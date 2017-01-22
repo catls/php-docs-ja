@@ -46,6 +46,10 @@
      <span class="oointerface">, 
       <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>
      </span>
+
+     <span class="oointerface">, 
+      <span class="interfacename"><a href="class.jsonserializable.html" class="interfacename">JsonSerializable</a></span>
+     </span>
      {</div>
 
     
@@ -56,6 +60,10 @@
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">integer</span> <span class="methodname"><a href="mongodb-bson-objectid.gettimestamp.html" class="methodname">getTimestamp</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="mongodb-bson-objectid.jsonserialize.html" class="methodname">jsonSerialize</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
@@ -93,7 +101,8 @@
        <tr>
         <td>1.2.0</td>
         <td>
-         Implements <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>.
+         Implements <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span> and
+         <span class="interfacename"><a href="class.jsonserializable.html" class="interfacename">JsonSerializable</a></span>.
         </td>
        </tr>
 
@@ -142,8 +151,15 @@
 
 
 
+ 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-objectid.construct.html">MongoDB\BSON\ObjectID::__construct</a> — Construct a new ObjectID</li><li><a href="mongodb-bson-objectid.gettimestamp.html">MongoDB\BSON\ObjectID::getTimestamp</a> — Returns the timestamp component of this ObjectID</li><li><a href="mongodb-bson-objectid.serialize.html">MongoDB\BSON\ObjectID::serialize</a> — Serialize an ObjectID</li><li><a href="mongodb-bson-objectid.tostring.html">MongoDB\BSON\ObjectID::__toString</a> — Returns the hexidecimal representation of this ObjectID</li><li><a href="mongodb-bson-objectid.unserialize.html">MongoDB\BSON\ObjectID::unserialize</a> — Unserialize an ObjectID</li></ul>
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-bson-objectid.construct.html">MongoDB\BSON\ObjectID::__construct</a> — Construct a new ObjectID</li><li><a href="mongodb-bson-objectid.gettimestamp.html">MongoDB\BSON\ObjectID::getTimestamp</a> — Returns the timestamp component of this ObjectID</li><li><a href="mongodb-bson-objectid.jsonserialize.html">MongoDB\BSON\ObjectID::jsonSerialize</a> — Returns a representation that can be converted to JSON</li><li><a href="mongodb-bson-objectid.serialize.html">MongoDB\BSON\ObjectID::serialize</a> — Serialize an ObjectID</li><li><a href="mongodb-bson-objectid.tostring.html">MongoDB\BSON\ObjectID::__toString</a> — Returns the hexidecimal representation of this ObjectID</li><li><a href="mongodb-bson-objectid.unserialize.html">MongoDB\BSON\ObjectID::unserialize</a> — Unserialize an ObjectID</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongodb-bson-minkey.unserialize.html">MongoDB\BSON\MinKey::unserialize</a></div>
