@@ -31,7 +31,7 @@
 
    <p class="para">
     All versions of the driver since 1.2.0 persist the
-    <a href="http://github.com/mongodb/libbson" class="link external">&raquo;&nbsp;libmongoc</a> client object in
+    <a href="https://github.com/mongodb/mongo-c-driver" class="link external">&raquo;&nbsp;libmongoc</a> client object in
     the PHP worker process, which allows it to re-use database connections,
     authentication states, <em class="emphasis">and</em> topology information across
     multiple requests.
@@ -41,7 +41,7 @@
     When <span class="methodname"><a href="mongodb-driver-manager.construct.html" class="methodname">MongoDB\Driver\Manager::__construct()</a></span> is
     invoked, a hash is created from its arguments (i.e. URI string and array
     options). The driver will attempt to find a previously persisted
-    <a href="http://github.com/mongodb/libbson" class="link external">&raquo;&nbsp;libmongoc</a> client object for
+    <a href="https://github.com/mongodb/mongo-c-driver" class="link external">&raquo;&nbsp;libmongoc</a> client object for
     that hash. If an existing client cannot be found for the hash, a new client
     will be created (and persisted for future use).
    </p>
@@ -69,7 +69,7 @@
 
    <p class="para">
     The first two Manager objects will share the same
-    <a href="http://github.com/mongodb/libbson" class="link external">&raquo;&nbsp;libmongoc</a> client since
+    <a href="https://github.com/mongodb/mongo-c-driver" class="link external">&raquo;&nbsp;libmongoc</a> client since
     their constructor arguments are identical. The third and fourth objects will
     each use their own client. In total, three clients will be created and the
     PHP worker executing this script will open two connections to
@@ -95,7 +95,7 @@
    <p class="para">
     Versions of the PHP driver before 1.2.0 utilize PHP&#039;s Streams API for
     database connections, using an API within
-    <a href="http://github.com/mongodb/libbson" class="link external">&raquo;&nbsp;libmongoc</a> to designate
+    <a href="https://github.com/mongodb/mongo-c-driver" class="link external">&raquo;&nbsp;libmongoc</a> to designate
     custom handlers for socket communication; however, a new libmongoc client is
     created for each <a href="class.mongodb-driver-manager.html" class="classname">MongoDB\Driver\Manager</a>. As a result,
     the driver persists individual database connections but not authentication
@@ -115,7 +115,7 @@
     <span class="simpara">
      Versions of the driver &gt;= 1.1.8 and &lt; 1.2.0 do not persist sockets
      for SSL connections. See
-     <a href="http://jira.mongodb.org/browse/PHPC-720" class="link external">&raquo;&nbsp;PHPC-720</a> for
+     <a href="https://jira.mongodb.org/browse/PHPC-720" class="link external">&raquo;&nbsp;PHPC-720</a> for
      additional information.
     </span>
    </p></blockquote>
@@ -134,7 +134,7 @@
    <p class="para">
     Versions of the HHVM driver before 1.2.0 do not persist sockets,
     authentication state, or topology information. Socket communication uses
-    <a href="http://github.com/mongodb/libbson" class="link external">&raquo;&nbsp;libmongoc</a> entirely.
+    <a href="https://github.com/mongodb/mongo-c-driver" class="link external">&raquo;&nbsp;libmongoc</a> entirely.
    </p>
   </div>
  </div>

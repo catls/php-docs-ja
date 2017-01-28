@@ -35,7 +35,7 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
     This method will use the
-    <a href="http://docs.mongodb.org/manual/reference/command/createIndexes/" class="link external">&raquo;&nbsp;createIndexes</a>
+    <a href="https://docs.mongodb.com/manual/reference/command/createIndexes" class="link external">&raquo;&nbsp;createIndexes</a>
     database command when communicating with MongoDB 2.6+. For previous database
     versions, the method will perform an insert operation on the
     special <em>system.indexes</em> collection.
@@ -60,7 +60,7 @@
       <p class="para">
        An array specifying the index&#039;s fields as its keys. For each field, the
        value is either the index direction or
-       <a href="http://docs.mongodb.org/manual/core/index-types/" class="link external">&raquo;&nbsp;index type</a>.
+       <a href="https://docs.mongodb.com/manual/core/index-types/" class="link external">&raquo;&nbsp;index type</a>.
        If specifying direction, specify <em>1</em> for ascending or
        <em>-1</em> for descending.
       </p>
@@ -82,9 +82,9 @@
        <ul class="itemizedlist">
         <li class="listitem"><p class="para"><em>&quot;unique&quot;</em></p><p class="para"><strong><code>TRUE</code></strong> を指定すると、一意なインデックスを作ります。デフォルト値は <strong><code>FALSE</code></strong> です。このオプションを使えるのは、昇順もしくは降順のインデックスだけです。</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">MongoDB がフィールドをインデックスするとき、もしそのフィールドに値を含まないドキュメントがあれば、<strong><code>NULL</code></strong> 値をインデックスします。このフィールドを含まないドキュメントが複数あった場合、一意なインデックスは、最初に出現したドキュメント以外を受け付けません。これを防ぐには <em>&quot;sparse&quot;</em> オプションを使います。このオプションを指定すれば、インデックス対象のフィールドが存在しないドキュメントはインデックスしなくなります。</p></p></blockquote></li>
         <li class="listitem"><p class="para"><em>&quot;sparse&quot;</em></p><p class="para"><strong><code>TRUE</code></strong> を指定すると、疎なインデックスを作ります。これは、指定したフィールドを含むドキュメントだけをインデックスします。デフォルト値は <strong><code>FALSE</code></strong> です。</p></li>
-        <li class="listitem"><p class="para"><em>&quot;expireAfterSeconds&quot;</em></p><p class="para">このオプションの値に指定するのは、ドキュメントを有効期限切れとみなしてコレクションから自動削除するまでの秒数です。このオプションが使えるのは、単一フィールドインデックスで、フィールドに <a href="class.mongodate.html" class="classname">MongoDate</a> の値を含む場合のみです。</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">この機能が使えるのは、MongoDB 2.2 以降です。詳細は <a href="http://docs.mongodb.org/manual/tutorial/expire-data/" class="link external">&raquo;&nbsp;Expire Data from Collections by Setting TTL</a> を参照ください。</p></p></blockquote></li>
-        <li class="listitem"><p class="para"><em>&quot;name&quot;</em></p><p class="para">オプションの、インデックスを一意に特定するための名前。</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">ドライバーがデフォルトで生成するインデックス名は、インデックスのフィールドと、並び順あるいは型に基づくものです。たとえば、複合インデックス <em>array(&quot;x&quot; =&gt; 1, &quot;y&quot; =&gt; -1)</em> の名前は <em>&quot;x_1_y_-1&quot;</em> であり、地理空間インデックス <em>array(&quot;loc&quot; =&gt; &quot;2dsphere&quot;)</em> の名前は <em>&quot;loc_2dsphere&quot;</em> となります。多数のフィールドからなるインデックスの場合、自動生成される名前が MongoDB の <a href="http://docs.mongodb.org/manual/reference/limits/#Index-Name-Length" class="link external">&raquo;&nbsp;インデックス名の制限</a> を超えてしまう可能性があります。<em>&quot;name&quot;</em> オプションは、そんな場合に短い名前を用意するときなどに使えます。</p></p></blockquote></li>
-        <li class="listitem"><p class="para"><em>&quot;background&quot;</em></p><p class="para">Builds the index in the background so that building an index does <em class="emphasis">not</em> block other database activities. Specify <strong><code>TRUE</code></strong> to build in the background. The default value is <strong><code>FALSE</code></strong>.</p><div class="warning"><strong class="warning">警告</strong><p class="para">Prior to MongoDB 2.6.0, index builds on secondaries were executed as foreground operations, irrespective of this option. See <a href="http://docs.mongodb.org/manual/tutorial/build-indexes-on-replica-sets/" class="link external">&raquo;&nbsp;Building Indexes with Replica Sets</a> for more information.</p></div></li>
+        <li class="listitem"><p class="para"><em>&quot;expireAfterSeconds&quot;</em></p><p class="para">このオプションの値に指定するのは、ドキュメントを有効期限切れとみなしてコレクションから自動削除するまでの秒数です。このオプションが使えるのは、単一フィールドインデックスで、フィールドに <a href="class.mongodate.html" class="classname">MongoDate</a> の値を含む場合のみです。</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">この機能が使えるのは、MongoDB 2.2 以降です。詳細は <a href="https://docs.mongodb.com/manual/tutorial/expire-data/" class="link external">&raquo;&nbsp;Expire Data from Collections by Setting TTL</a> を参照ください。</p></p></blockquote></li>
+        <li class="listitem"><p class="para"><em>&quot;name&quot;</em></p><p class="para">オプションの、インデックスを一意に特定するための名前。</p><blockquote class="note"><p><strong class="note">注意</strong>: <p class="para">ドライバーがデフォルトで生成するインデックス名は、インデックスのフィールドと、並び順あるいは型に基づくものです。たとえば、複合インデックス <em>array(&quot;x&quot; =&gt; 1, &quot;y&quot; =&gt; -1)</em> の名前は <em>&quot;x_1_y_-1&quot;</em> であり、地理空間インデックス <em>array(&quot;loc&quot; =&gt; &quot;2dsphere&quot;)</em> の名前は <em>&quot;loc_2dsphere&quot;</em> となります。多数のフィールドからなるインデックスの場合、自動生成される名前が MongoDB の <a href="https://docs.mongodb.com/manual/reference/limits/#Index-Name-Length" class="link external">&raquo;&nbsp;インデックス名の制限</a> を超えてしまう可能性があります。<em>&quot;name&quot;</em> オプションは、そんな場合に短い名前を用意するときなどに使えます。</p></p></blockquote></li>
+        <li class="listitem"><p class="para"><em>&quot;background&quot;</em></p><p class="para">Builds the index in the background so that building an index does <em class="emphasis">not</em> block other database activities. Specify <strong><code>TRUE</code></strong> to build in the background. The default value is <strong><code>FALSE</code></strong>.</p><div class="warning"><strong class="warning">警告</strong><p class="para">Prior to MongoDB 2.6.0, index builds on secondaries were executed as foreground operations, irrespective of this option. See <a href="https://docs.mongodb.com/manual/tutorial/build-indexes-on-replica-sets/" class="link external">&raquo;&nbsp;Building Indexes with Replica Sets</a> for more information.</p></div></li>
         <li class="listitem"><p class="para"><em>&quot;socketTimeoutMS&quot;</em></p><p class="para">このオプションは、ソケット通信の制限時間を、ミリ秒単位で指定します。この時間内にサーバーからの反応がなければ、<a href="class.mongocursortimeoutexception.html" class="classname">MongoCursorTimeoutException</a> をスローします。この場合、サーバー側で書き込み処理が行われたのかどうかを判断できなくなります。<em>-1</em> を指定すると、永遠にブロックします。<a href="class.mongoclient.html" class="classname">MongoClient</a> のデフォルト値は <em>30000</em> (30 秒) です。</p></li>
        </ul>
       </p>
@@ -217,8 +217,8 @@
    <li class="member"><span class="methodname"><a href="mongocollection.deleteindexes.html" class="methodname" rel="rdfs-seeAlso">MongoCollection::deleteIndexes()</a> - コレクションのすべてのインデックスを削除する</span></li>
    <li class="member">
     The MongoDB
-    <a href="http://docs.mongodb.org/manual/indexes/" class="link external">&raquo;&nbsp;index</a> and
-    <a href="http://docs.mongodb.org/manual/core/index-types/" class="link external">&raquo;&nbsp;index type</a>
+    <a href="https://docs.mongodb.com/manual/indexes/" class="link external">&raquo;&nbsp;index</a> and
+    <a href="https://docs.mongodb.com/manual/core/index-types/" class="link external">&raquo;&nbsp;index type</a>
     documentation.
    </li>
   </ul>

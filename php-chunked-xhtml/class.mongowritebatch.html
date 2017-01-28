@@ -141,9 +141,11 @@
   <div class="section" id="mongowritebatch.description">
    <h2 class="title">説明</h2>
    <p class="para">
-    When executing a batch, by calling <span class="methodname"><a href="mongowritebatch.execute.html" class="methodname">MongoWriteBatch::execute()</a></span>, MongoWriteBatch will send over
-    <a href="url.mongodb.dochub.maxWriteBatchSize" class="link external">&raquo;&nbsp;maxWriteBatchSize</a> (defaults to 1000) documents or 
-    up to <a href="url.mongodb.dochub.maxBsonObjectSize" class="link external">&raquo;&nbsp;maxBsonObjectSize</a> (defaults to 16777216 bytes), whichever comes first. 
+    When executing a batch by calling
+    <span class="methodname"><a href="mongowritebatch.execute.html" class="methodname">MongoWriteBatch::execute()</a></span>, MongoWriteBatch will send
+    up to <em>maxWriteBatchSize</em> (defaults to 1000) documents or
+    <em>maxBsonObjectSize</em> (defaults to 16777216 bytes), whichever
+    comes first.
    </p>
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
