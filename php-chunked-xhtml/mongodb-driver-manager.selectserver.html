@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongodb-driver-manager.getservers.html">MongoDB\Driver\Manager::getServers</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongodb-driver-manager.getwriteconcern.html">MongoDB\Driver\Manager::getWriteConcern</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="class.mongodb-driver-command.html">MongoDB\Driver\Command</a></div>
  <div class="up"><a href="class.mongodb-driver-manager.html">MongoDB\Driver\Manager</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -29,6 +29,15 @@
    <code class="parameter">readPreference</code>. This may be used to preselect a server
    in order to perform version checking before executing an operation.
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    Unlike <span class="function"><a href="mongodb-driver-manager.getservers.html" class="function">MongoDB\Driver\Manager::getServers()</a></span>, this method
+    will initialize database connections and perform server discovery if
+    necessary. See the
+    <a href="https://github.com/mongodb/specifications/blob/master/source/server-selection/server-selection.rst#single-threaded-server-selection" class="link external">&raquo;&nbsp;Server Selection Specification</a>
+    for additional information.
+   </p>
+  </p></blockquote>
  </div>
 
 
@@ -84,7 +93,7 @@
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="mongodb-driver-manager.getservers.html">MongoDB\Driver\Manager::getServers</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="mongodb-driver-manager.getwriteconcern.html">MongoDB\Driver\Manager::getWriteConcern</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="class.mongodb-driver-command.html">MongoDB\Driver\Command</a></div>
  <div class="up"><a href="class.mongodb-driver-manager.html">MongoDB\Driver\Manager</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>

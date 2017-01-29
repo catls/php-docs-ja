@@ -22,13 +22,20 @@
   <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname"><strong>MongoDB\Driver\Manager::__construct</strong></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$uri</code><span class="initializer"> = &quot;mongodb://127.0.0.1/</span></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = []</span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$uriOptions</code><span class="initializer"> = []</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$driverOptions</code><span class="initializer"> = []</span></span>
   ]]] )</div>
 
   <p class="para rdfs-comment">
    Constructs a new <a href="class.mongodb-driver-manager.html" class="classname">MongoDB\Driver\Manager</a> object with the specified options.
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    Per the <a href="https://github.com/mongodb/specifications/blob/master/source/server-discovery-and-monitoring/server-discovery-and-monitoring.rst#single-threaded-client-construction" class="link external">&raquo;&nbsp;Server Discovery and Monitoring Specification</a>,
+    this constructor performs no I/O. Connections will be initialized on demand,
+    when the first operation is executed.
+   </span>
+  </p></blockquote>
   
    <div class="tip"><strong class="tip">ヒント</strong>
     <p class="simpara">
@@ -60,6 +67,13 @@
 
      </p>
      <p class="para">
+      For details on supported options, see
+      <a href="https://docs.mongodb.com/manual/reference/connection-string/#connections-connection-options" class="link external">&raquo;&nbsp;Connection String Options</a>
+      in the MongoDB manual.
+      <a href="https://docs.mongodb.com/manual/reference/connection-string/#connection-pool-options" class="link external">&raquo;&nbsp;Connection pool options</a>
+      are not supported, as the PHP driver does not implement connection pools.
+     </p>
+     <p class="para">
       The <code class="parameter">uri</code> is a URL, hence any special characters in
       its components need to be URL encoded according to
       <a href="http://www.faqs.org/rfcs/rfc3986" class="link external">&raquo;&nbsp;RFC 3986</a>. This is particularly
@@ -74,20 +88,274 @@
 
    
    
-    <dt id="mongodb-driver-manager.construct-options"><code class="parameter">options</code></dt>
+    <dt id="mongodb-driver-manager.construct-options"><code class="parameter">uriOptions</code></dt>
 
     <dd>
 
      <p class="para">
-      <a href="https://docs.mongodb.com/manual/reference/connection-string/#connections-connection-options" class="link external">&raquo;&nbsp;Connection string options</a>.
+      Additional
+      <a href="https://docs.mongodb.com/manual/reference/connection-string/#connections-connection-options" class="link external">&raquo;&nbsp;connection string options</a>,
+      which will overwrite any options with the same name in the
+      <code class="parameter">uri</code> parameter.
      </p>
-     <blockquote class="note"><p><strong class="note">注意</strong>: 
-      <p class="para">
-       Specifying options via the <code class="parameter">options</code> argument will
-       overwrite any options with the same name in the
-       <code class="parameter">uri</code> argument.
-      </p>
-     </p></blockquote>
+     <p class="para">
+      <table class="doctable table">
+       <caption><strong>uriOptions</strong></caption>
+       
+        <thead>
+         <tr>
+          <th>Option</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         <tr>
+          <td>authMechanism</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           <p class="para">
+            The authentication mechanism that MongoDB will use to authenticate
+            the connection. For details, see
+            <a href="https://docs.mongodb.com/manual/reference/connection-string/#urioption.authMechanism" class="link external">&raquo;&nbsp;Authentication Options</a>
+            in the MongoDB manual.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>authSource</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           <p class="para">
+            The database name associated with the user&#039;s credentials. Defaults
+            to the database component of the connection URI.
+           </p>
+           <p class="para">
+            For authentication mechanisms that delegate credential storage to
+            other services (e.g. GSSAPI), this should be
+            <em>&quot;$external&quot;</em>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>connectTimeoutMS</td>
+          <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
+          <td>
+           <p class="para">
+            The time in milliseconds to attempt a connection before timing out.
+            Defaults to 10 seconds.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>gssapiServiceName</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           <p class="para">
+            Set the Kerberos service name when connecting to Kerberized MongoDB
+            instances. This value must match the service name set on MongoDB
+            instances (i.e.
+            <a href="https://docs.mongodb.com/manual/reference/parameters/#param.saslServiceName" class="link external">&raquo;&nbsp;saslServiceName</a>
+            server parameter). Defaults to <em>&quot;mongodb&quot;</em>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>journal</td>
+          <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
+          <td>
+           <p class="para">
+            Corresponds to the write concern&#039;s <code class="parameter">journal</code>
+            parameter. If <strong><code>TRUE</code></strong>, writes will require acknowledgement from
+            MongoDB that the operation has been written to the journal. For
+            details, see <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>maxStalenessSeconds</td>
+          <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
+          <td>
+           Corresponds to the read preference&#039;s
+           <em>&quot;maxStalenessSeconds&quot;</em>. Specifies, in seconds, how
+           stale a secondary can be before the client stops using it for read
+           operations. By default, there is no maximum staleness and clients
+           will not consider a secondary’s lag when choosing where to direct a
+           read operation. For details, see
+           <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a>.
+          </td>
+         </tr>
+
+         <tr>
+          <td>password</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           The password for the user being authenticated. This option is useful
+           if the password contains special characters, which would otherwise
+           need to be URL encoded for the connection URI.
+          </td>
+         </tr>
+
+         <tr>
+          <td>readConcernLevel</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           Corresponds to the read concern&#039;s <code class="parameter">level</code>
+           parameter. Specifies the level of read isolation. For details, see
+           <a href="class.mongodb-driver-readconcern.html" class="classname">MongoDB\Driver\ReadConcern</a>.
+          </td>
+         </tr>
+
+         <tr>
+          <td>readPreference</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           <p class="para">
+            Corresponds to the read preferences&#039;s <code class="parameter">mode</code>
+            parameter. Defaults to <em>&quot;primary&quot;</em>. For
+            details, see <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a>.
+           </p>
+           <blockquote class="note"><p><strong class="note">注意</strong>: 
+            <span class="simpara">
+             This accepts a string value (e.g. <em>&quot;primary&quot;</em>,
+             <em>&quot;secondaryPreferred&quot;</em>), unlike
+             <span class="function"><a href="mongodb-driver-readpreference.construct.html" class="function">MongoDB\Driver\ReadPreference::__construct()</a></span>,
+             which takes an integer.
+            </span>
+           </p></blockquote>
+          </td>
+         </tr>
+
+         <tr>
+          <td>readPreferenceTags</td>
+          <td><span class="type"><a href="language.types.array.html" class="type array">array</a></span></td>
+          <td>
+           <p class="para">
+            Corresponds to the read preferences&#039;s <code class="parameter">tagSets</code>
+            parameter. Tag sets allow you to target read operations to specific
+            members of a replica set. For details, see
+            <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a>.
+           </p>
+           <blockquote class="note"><p><strong class="note">注意</strong>: 
+            <span class="simpara">
+             When not specified in the URI string, this option is expressed as
+             an array consistent with the format expected by
+             <span class="function"><a href="mongodb-driver-readpreference.construct.html" class="function">MongoDB\Driver\ReadPreference::__construct()</a></span>.
+            </span>
+           </p></blockquote>
+          </td>
+         </tr>
+
+         <tr>
+          <td>replicaSet</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           <p class="para">
+            Specifies the name of the replica set.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>safe</td>
+          <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
+          <td>
+           <p class="para">
+            Specifies <em>1</em> for the write concern if <strong><code>TRUE</code></strong>, or
+            <em>0</em> if <strong><code>FALSE</code></strong> For details, see
+            <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
+           </p>
+           <p class="para">
+            This option is deprecated and should not be used.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>slaveOk</td>
+          <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
+          <td>
+           <p class="para">
+            Specifies <em>&quot;secondaryPreferred&quot;</em> for the read
+            preference mode if <strong><code>TRUE</code></strong>. For details, see
+            <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a>.
+           </p>
+           <p class="para">
+            This option is deprecated and should not be used.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>socketTimeoutMS</td>
+          <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
+          <td>
+           <p class="para">
+            The time in milliseconds to attempt a send or receive on a socket
+            before the attempt times out. Defaults to 300 seconds (i.e. five
+            minutes).
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>ssl</td>
+          <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
+          <td>
+           <p class="para">
+            Initiates the connection with TLS/SSL if <strong><code>TRUE</code></strong>. Defaults to
+            <strong><code>FALSE</code></strong>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>username</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           The username for the user being authenticated. This option is useful
+           if the username contains special characters, which would otherwise
+           need to be URL encoded for the connection URI.
+          </td>
+         </tr>
+
+         <tr>
+          <td>w</td>
+          <td><span class="type"><span class="type integer|string">integer|string</span></span></td>
+          <td>
+           <p class="para">
+            Corresponds to the write concern&#039;s <code class="parameter">w</code>
+            parameter. For details, see
+            <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>wTimeoutMS</td>
+          <td><span class="type"><span class="type integer|string">integer|string</span></span></td>
+          <td>
+           <p class="para">
+            Corresponds to the write concern&#039;s <code class="parameter">wtimeout</code>
+            parameter. Specifies a time limit, in milliseconds, for the write
+            concern. For details, see
+            <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
+           </p>
+          </td>
+         </tr>
+
+        </tbody>
+       
+      </table>
+
+     </p>
     </dd>
 
    
@@ -377,6 +645,7 @@
  <div class="refsect1 seealso" id="refsect1-mongodb-driver-manager.construct-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
+   <li class="member"><a href="mongodb.connection-handling.html" class="link">Connection handling and persistence</a></li>
    <li class="member"><a href="https://docs.mongodb.com/manual/reference/connection-string/" class="link external">&raquo;&nbsp;MongoDB Connection String Format</a></li>
   </ul>
  </div>
