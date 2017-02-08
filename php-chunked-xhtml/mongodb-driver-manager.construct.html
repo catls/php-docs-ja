@@ -113,6 +113,24 @@
 
         <tbody class="tbody">
          <tr>
+          <td>appname</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           <p class="para">
+            MongoDB 3.4+ has the ability to annotate connections with metadata
+            provided by the connecting client. This metadata is included in the
+            server&#039;s logs upon establishing a connection and also recorded in
+            slow query logs when database profiling is enabled.
+           </p>
+           <p class="para">
+            This option may be used to specify an application name, which will
+            be included in the metadata. The value cannot exceed 128 characters
+            in length.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
           <td>authMechanism</td>
           <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
           <td>
@@ -137,6 +155,20 @@
             For authentication mechanisms that delegate credential storage to
             other services (e.g. GSSAPI), this should be
             <em>&quot;$external&quot;</em>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>canonicalizeHostname</td>
+          <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
+          <td>
+           <p class="para">
+            If <strong><code>TRUE</code></strong>, the driver will resolve the real hostname for the server
+            IP address before authenticating via SASL. Some underlying GSSAPI
+            layers already do this, but the functionality may be disabled in
+            their config (e.g. <em>krb.conf</em>). Defaults to
+            <strong><code>FALSE</code></strong>.
            </p>
           </td>
          </tr>
@@ -167,6 +199,18 @@
          </tr>
 
          <tr>
+          <td>heartbeatFrequencyMS</td>
+          <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
+          <td>
+           <p class="para">
+            Specifies the interval in milliseconds between the driver&#039;s checks
+            of the MongoDB topology, counted from the end of the previous check 
+            ntil the beginning of the next one. Defaults to 60,000 milliseconds.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
           <td>journal</td>
           <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
           <td>
@@ -175,6 +219,18 @@
             parameter. If <strong><code>TRUE</code></strong>, writes will require acknowledgement from
             MongoDB that the operation has been written to the journal. For
             details, see <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>localThresholdMS</td>
+          <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
+          <td>
+           <p class="para">
+            The size in milliseconds of the latency window for selecting among
+            multiple suitable MongoDB instances while resolving a read
+            preference. Defaults to 15 milliseconds.
            </p>
           </td>
          </tr>
@@ -279,6 +335,32 @@
          </tr>
 
          <tr>
+          <td>serverSelectionTimeoutMS</td>
+          <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
+          <td>
+           <p class="para">
+            Specifies how long in milliseconds to block for server selection
+            before throwing an exception. Defaults to 30,000 milliseconds.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
+          <td>serverSelectionTryOnce</td>
+          <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
+          <td>
+           <p class="para">
+            When <strong><code>TRUE</code></strong>, instructs the driver to scan the MongoDB deployment
+            exactly once after server selection fails and then either select a
+            server or raise an error. When <strong><code>FALSE</code></strong>, the driver blocks and
+            searches for a server up to the
+            <em>&quot;serverSelectionTimeoutMS&quot;</em> value. Defaults to
+            <strong><code>TRUE</code></strong>.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
           <td>slaveOk</td>
           <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
           <td>
@@ -294,12 +376,24 @@
          </tr>
 
          <tr>
+          <td>socketCheckIntervalMS</td>
+          <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
+          <td>
+           <p class="para">
+            If a socket has not been used recently, the driver must check it via
+            an <em>isMaster</em> command before using it for any
+            operation. Defaults to 5,000 milliseconds.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
           <td>socketTimeoutMS</td>
           <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
           <td>
            <p class="para">
             The time in milliseconds to attempt a send or receive on a socket
-            before the attempt times out. Defaults to 300 seconds (i.e. five
+            before timing out. Defaults to 300,000 milliseconds (i.e. five
             minutes).
            </p>
           </td>
@@ -531,6 +625,9 @@
          <em>27017</em>.
         </p>
         <p class="para">
+         Added the <em>&quot;appname&quot;</em> URI option.
+        </p>
+        <p class="para">
          Added the <em>&quot;allow_invalid_hostname&quot;</em>,
          <em>&quot;ca_file&quot;</em>, <em>&quot;ca_dir&quot;</em>,
          <em>&quot;clr_file&quot;</em>, <em>&quot;pem_file&quot;</em>,
@@ -538,10 +635,13 @@
          <em>&quot;weak_cert_validation&quot;</em> driver options.
         </p>
         <p class="para">
-         The driver no longer supports all
+         The PHP Streams API is no longer used for socket communication. The
+         <em>&quot;connectTimeoutMS&quot;</em> URI option now defaults to 10
+         seconds instead of
+         <a href="filesystem.configuration.html#ini.default-socket-timeout" class="link">default_socket_timeout</a>
+         in previous versions. Additionally, the driver no longer supports all
          <a href="context.ssl.html" class="link">SSL context options</a> via the
-         <em>&quot;context&quot;</em> driver option, since the PHP Streams API
-         is no longer used for socket communication.
+         <em>&quot;context&quot;</em> driver option.
         </p>
        </td>
       </tr>
