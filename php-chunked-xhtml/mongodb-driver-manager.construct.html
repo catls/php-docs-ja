@@ -98,6 +98,17 @@
       which will overwrite any options with the same name in the
       <code class="parameter">uri</code> parameter.
      </p>
+     <blockquote class="note"><p><strong class="note">注意</strong>: 
+      <span class="simpara">
+       The <em>&quot;authMechanism&quot;</em> and
+       <em>&quot;authMechanismProperties&quot;</em> options are not supported in
+       <code class="parameter">uriOptions</code> and must be specified in the
+       <code class="parameter">uri</code> parameter. For additional details, see
+       <a href="https://docs.mongodb.com/manual/reference/connection-string/#urioption.authMechanism" class="link external">&raquo;&nbsp;Authentication Options</a>
+       in the MongoDB manual and the
+       <a href="https://github.com/mongodb/specifications/blob/master/source/auth/auth.rst#auth-related-options" class="link external">&raquo;&nbsp;Driver Authentication Specification</a>.
+      </span>
+     </p></blockquote>
      <p class="para">
       <table class="doctable table">
        <caption><strong>uriOptions</strong></caption>
@@ -126,19 +137,6 @@
             This option may be used to specify an application name, which will
             be included in the metadata. The value cannot exceed 128 characters
             in length.
-           </p>
-          </td>
-         </tr>
-
-         <tr>
-          <td>authMechanism</td>
-          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
-          <td>
-           <p class="para">
-            The authentication mechanism that MongoDB will use to authenticate
-            the connection. For details, see
-            <a href="https://docs.mongodb.com/manual/reference/connection-string/#urioption.authMechanism" class="link external">&raquo;&nbsp;Authentication Options</a>
-            in the MongoDB manual.
            </p>
           </td>
          </tr>
