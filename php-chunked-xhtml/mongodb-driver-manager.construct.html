@@ -177,7 +177,7 @@
           <td>
            <p class="para">
             The time in milliseconds to attempt a connection before timing out.
-            Defaults to 10 seconds.
+            Defaults to 10,000 milliseconds.
            </p>
           </td>
          </tr>
@@ -203,7 +203,13 @@
            <p class="para">
             Specifies the interval in milliseconds between the driver&#039;s checks
             of the MongoDB topology, counted from the end of the previous check 
-            ntil the beginning of the next one. Defaults to 60,000 milliseconds.
+            until the beginning of the next one. Defaults to 60,000
+            milliseconds.
+           </p>
+           <p class="para">
+            Per the
+            <a href="https://github.com/mongodb/specifications/blob/master/source/server-discovery-and-monitoring/server-discovery-and-monitoring.rst#heartbeatfrequencyms" class="link external">&raquo;&nbsp;Server Discovery and Monitoring Specification</a>,
+            this value cannot be less than 500 milliseconds.
            </p>
           </td>
          </tr>
@@ -237,13 +243,21 @@
           <td>maxStalenessSeconds</td>
           <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
           <td>
-           Corresponds to the read preference&#039;s
-           <em>&quot;maxStalenessSeconds&quot;</em>. Specifies, in seconds, how
-           stale a secondary can be before the client stops using it for read
-           operations. By default, there is no maximum staleness and clients
-           will not consider a secondary’s lag when choosing where to direct a
-           read operation. For details, see
-           <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a>.
+           <p class="para">
+            Corresponds to the read preference&#039;s
+            <em>&quot;maxStalenessSeconds&quot;</em>. Specifies, in seconds, how
+            stale a secondary can be before the client stops using it for read
+            operations. By default, there is no maximum staleness and clients
+            will not consider a secondary’s lag when choosing where to direct a
+            read operation. For details, see
+            <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a>.
+           </p>
+           <p class="para">
+            If specified, the max staleness must be a signed 32-bit integer
+            greater than or equal to
+            <strong><code>MongoDB\Driver\ReadPreference::SMALLEST_MAX_STALENESS_SECONDS</code></strong>
+            (i.e. 90 seconds).
+           </p>
           </td>
          </tr>
 
