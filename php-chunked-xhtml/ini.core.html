@@ -25,38 +25,6 @@
     運用時と開発時では <var class="filename">php.ini</var> の値が変わることもあるでしょう。
    </p>
   </p></blockquote>
-   <div class="section" id="ini.sect.httpd-options">
-    <h2 class="title">httpd オプション</h2>
-    <p class="para">
-     <table class="doctable table">
-      <caption><strong>httpd オプション</strong></caption>
-      
-       <thead>
-        <tr>
-        <th>名前</th>
-        <th>デフォルト</th>
-        <th>変更可能</th>
-        <th>変更履歴</th>
-        </tr>
-
-       </thead>
-
-       <tbody class="tbody">
-        <tr>
-         <td>async_send</td>
-         <td>&quot;0&quot;</td>
-         <td>PHP_INI_ALL</td>
-         <td>PHP 4.2.0 以降で利用可能。PHP 4.3.0 で削除。</td>
-        </tr>
-
-       </tbody>
-      
-     </table>
-
-    </p>
-    <p class="para">
-    </p>
-   </div>
 
   <div class="section" id="ini.sect.language-options">
    <h2 class="title">言語オプション</h2>
@@ -79,14 +47,14 @@
         <td><a href="ini.core.html#ini.short-open-tag" class="link">short_open_tag</a></td>
          <td>&quot;1&quot;</td>
         <td>PHP_INI_PERDIR</td>
-        <td>PHP 4.0.0 で PHP_INI_ALL、PHP &gt;= 4.0.1 で PHP_INI_PERDIR</td>
+        <td class="empty">&nbsp;</td>
         </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.asp-tags" class="link">asp_tags</a></td>
          <td>&quot;0&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP 4.0.0 で PHP_INI_ALL、PHP 7.0.0 で削除</td>
+         <td>PHP 7.0.0 で削除</td>
         </tr>
 
         <tr>
@@ -100,35 +68,35 @@
         <td><a href="ini.core.html#ini.serialize-precision" class="link">serialize_precision</a></td>
         <td>&quot;17&quot;</td>
         <td>PHP_INI_ALL</td>
-        <td>PHP 4.3.2 以降で利用可能。PHP 5.3.5 までは、デフォルト値は 100 でした。</td>
+        <td>PHP 5.3.5 までは、デフォルト値は 100 でした。</td>
        </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.y2k-compliance" class="link">y2k_compliance</a></td>
          <td>&quot;1&quot;</td>
          <td>PHP_INI_ALL</td>
-         <td>PHP 5.4.0 で削除されました。</td>
+         <td>PHP 5.4.0 で削除。</td>
         </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.allow-call-time-pass-reference" class="link">allow_call_time_pass_reference</a></td>
          <td>&quot;1&quot;</td>
          <td>PHP_INI_SYSTEM|PHP_INI_PERDIR</td>
-         <td>PHP 4.0.0 で PHP_INI_ALL。PHP 5.4.0 で削除されました。</td>
+         <td>PHP 5.4.0 で削除。</td>
         </tr>
 
        <tr>
         <td><a href="ini.core.html#ini.disable-functions" class="link">disable_functions</a></td>
         <td>&quot;&quot;</td>
         <td>PHP_INI_SYSTEM のみ</td>
-        <td>PHP 4.0.1 以降で利用可能。</td>
+        <td class="empty">&nbsp;</td>
        </tr>
 
        <tr>
         <td><a href="ini.core.html#ini.disable-classes" class="link">disable_classes</a></td>
         <td>&quot;&quot;</td>
         <td><var class="filename">php.ini</var> のみ</td>
-        <td>PHP 4.3.2 以降で利用可能。</td>
+        <td class="empty">&nbsp;</td>
        </tr>
 
        <tr>
@@ -184,7 +152,7 @@
         <td><a href="ini.core.html#ini.zend.ze1-compatibility-mode" class="link">zend.ze1_compatibility_mode</a></td>
         <td>&quot;0&quot;</td>
         <td>PHP_INI_ALL</td>
-        <td>PHP 5.0.0 以降で利用可能。PHP 5.3.0 で削除。</td>
+        <td>PHP 5.3.0 で削除。</td>
        </tr>
 
        <tr>
@@ -835,14 +803,14 @@
         <td><a href="ini.core.html#ini.arg-separator.output" class="link">arg_separator.output</a></td>
          <td>&quot;&amp;&quot;</td>
          <td>PHP_INI_ALL</td>
-         <td>PHP 4.0.5 以降で利用可能</td>
+         <td class="empty">&nbsp;</td>
         </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.arg-separator.input" class="link">arg_separator.input</a></td>
          <td>&quot;&amp;&quot;</td>
          <td>PHP_INI_SYSTEM|PHP_INI_PERDIR</td>
-        <td>PHP 4.0.5 以降で利用可能</td>
+        <td class="empty">&nbsp;</td>
         </tr>
 
         <tr>
@@ -870,21 +838,21 @@
         <td><a href="ini.core.html#ini.register-globals" class="link">register_globals</a></td>
          <td>&quot;0&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP &lt;= 4.2.3 では PHP_INI_ALL。PHP 5.4.0 で削除されました。</td>
+         <td>PHP 5.4.0 で削除。</td>
         </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.register-argc-argv" class="link">register_argc_argv</a></td>
          <td>&quot;1&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP &lt;= 4.2.3 では PHP_INI_ALL</td>
+         <td class="empty">&nbsp;</td>
        </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.register-long-arrays" class="link">register_long_arrays</a></td>
          <td>&quot;1&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP 5.0.0 以降で利用可能。PHP 5.3.0 で非推奨。PHP 5.4.0 で削除。</td>
+         <td>PHP 5.3.0 で非推奨。PHP 5.4.0 で削除。</td>
         </tr>
 
        <tr>
@@ -898,21 +866,21 @@
         <td><a href="ini.core.html#ini.post-max-size" class="link">post_max_size</a></td>
          <td>&quot;8M&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP &lt;= 4.2.3 では PHP_INI_SYS。PHP 4.0.3 以降で利用可能</td>
+         <td class="empty">&nbsp;</td>
        </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.auto-prepend-file" class="link">auto_prepend_file</a></td>
          <td>&quot;&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP &lt;= 4.2.3 では PHP_INI_ALL</td>
+         <td class="empty">&nbsp;</td>
         </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.auto-append-file" class="link">auto_append_file</a></td>
          <td>&quot;&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP &lt;= 4.2.3 では PHP_INI_ALL</td>
+         <td class="empty">&nbsp;</td>
         </tr>
 
         <tr>
@@ -933,7 +901,7 @@
         <td><a href="ini.core.html#ini.always-populate-raw-post-data" class="link">always_populate_raw_post_data</a></td>
          <td>&quot;0&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP &lt;= 4.2.3 では PHP_INI_ALL。PHP 4.1.0 以降で利用可能。PHP 7.0.0 で削除。</td>
+         <td>PHP 7.0.0 で削除。</td>
         </tr>
 
        </tbody>
@@ -1605,14 +1573,14 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <td><a href="ini.core.html#ini.cgi.fix-pathinfo" class="link">cgi.fix_pathinfo</a></td>
          <td>&quot;1&quot;</td>
          <td>PHP_INI_SYSTEM</td>
-         <td>PHP 4.3.0 以降で利用可能。PHP 5.2.1 までは PHP_INI_ALL でした。</td>
+         <td>PHP 5.2.1 までは PHP_INI_ALL でした。</td>
         </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.cgi.force-redirect" class="link">cgi.force_redirect</a></td>
          <td>&quot;1&quot;</td>
          <td>PHP_INI_SYSTEM</td>
-         <td>PHP 4.2.0 以降で利用可能。PHP 5.2.1 までは PHP_INI_ALL でした。</td>
+         <td>PHP 5.2.1 までは PHP_INI_ALL でした。</td>
         </tr>
 
        <tr>
@@ -1626,28 +1594,28 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <td><a href="ini.core.html#ini.cgi.redirect-status-env" class="link">cgi.redirect_status_env</a></td>
          <td>NULL</td>
          <td>PHP_INI_SYSTEM</td>
-         <td>PHP 4.2.0 以降で利用可能。PHP 5.2.1 までは PHP_INI_ALL でした。</td>
+         <td>PHP 5.2.1 までは PHP_INI_ALL でした。</td>
         </tr>
 
        <tr>
         <td><a href="ini.core.html#ini.cgi.rfc2616-headers" class="link">cgi.rfc2616_headers</a></td>
         <td>&quot;0&quot;</td>
         <td>PHP_INI_ALL</td>
-        <td>PHP 4.3.0 以降で利用可能。</td>
+        <td class="empty">&nbsp;</td>
        </tr>
 
         <tr>
         <td><a href="ini.core.html#ini.fastcgi.impersonate" class="link">fastcgi.impersonate</a></td>
          <td>&quot;0&quot;</td>
          <td>PHP_INI_SYSTEM</td>
-         <td>PHP 4.3.0 以降で利用可能。PHP 5.2.1 までは PHP_INI_ALL でした。</td>
+         <td>PHP 5.2.1 までは PHP_INI_ALL でした。</td>
         </tr>
 
        <tr>
         <td><a href="ini.core.html#ini.fastcgi.logging" class="link">fastcgi.logging</a></td>
         <td>&quot;1&quot;</td>
         <td>PHP_INI_SYSTEM</td>
-        <td>PHP 4.3.0 以降で利用可能。PHP 5.2.1 までは PHP_INI_ALL でした。</td>
+        <td>PHP 5.2.1 までは PHP_INI_ALL でした。</td>
        </tr>
 
        </tbody>
@@ -1691,7 +1659,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-6442">
+         <div class="example" id="example-6443">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1701,7 +1669,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-6443">
+         <div class="example" id="example-6444">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1727,7 +1695,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-6444">
+        <div class="example" id="example-6445">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>
@@ -2179,7 +2147,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <td><a href="ini.core.html#ini.file-uploads" class="link">file_uploads</a></td>
          <td>&quot;1&quot;</td>
          <td>PHP_INI_SYSTEM</td>
-         <td>PHP &lt;= 4.2.3 では PHP_INI_ALL、PHP 4.0.3 以降で利用可能</td>
+         <td class="empty">&nbsp;</td>
         </tr>
 
         <tr>
@@ -2207,7 +2175,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <td><a href="ini.core.html#ini.upload-max-filesize" class="link">upload_max_filesize</a></td>
          <td>&quot;2M&quot;</td>
          <td>PHP_INI_PERDIR</td>
-         <td>PHP &lt;= 4.2.3 では PHP_INI_ALL</td>
+         <td class="empty">&nbsp;</td>
         </tr>
 
        <tr>
