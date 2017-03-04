@@ -33,13 +33,12 @@
    は、その変数名のグローバル変数を現在のセッションに登録します。
   </p>
   <p class="para">
-   配列 <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> または
-   <var class="varname"><var class="varname">$HTTP_SESSION_VARS</var></var> (PHP &lt; 4.1.0)
+   配列 <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var>
    の適当なメンバに設定をするだけでもセッション変数を作成することが可能です。
    <div class="informalexample">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;session_register()&nbsp;の使用は推奨されません。<br /></span><span style="color: #0000BB">$barney&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"A&nbsp;big&nbsp;purple&nbsp;dinosaur."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">session_register</span><span style="color: #007700">(</span><span style="color: #DD0000">"barney"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;4.1.0以降では$_SESSIONの使用が推奨されます。<br /></span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">"zim"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"An&nbsp;invader&nbsp;from&nbsp;another&nbsp;planet."</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;古い手法としては&nbsp;$HTTP_SESSION_VARS&nbsp;があります。<br /></span><span style="color: #0000BB">$HTTP_SESSION_VARS</span><span style="color: #007700">[</span><span style="color: #DD0000">"spongebob"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"He's&nbsp;got&nbsp;square&nbsp;pants."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;session_register()&nbsp;の使用は推奨されません。<br /></span><span style="color: #0000BB">$barney&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"A&nbsp;big&nbsp;purple&nbsp;dinosaur."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">session_register</span><span style="color: #007700">(</span><span style="color: #DD0000">"barney"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;$_SESSIONの使用が推奨されます。<br /></span><span style="color: #0000BB">$_SESSION</span><span style="color: #007700">[</span><span style="color: #DD0000">"zim"</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">"An&nbsp;invader&nbsp;from&nbsp;another&nbsp;planet."</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -136,8 +135,7 @@ PHP コミュニティは、ユーザーがこのディレクティブの設定�
   </div>
   <div class="caution"><strong class="caution">警告</strong>
    <p class="para">
-    <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var>
-    (あるいは <var class="varname"><var class="varname">$HTTP_SESSION_VARS</var></var>) を使用する場合は
+    <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> を使用する場合は
     <span class="function"><strong>session_register()</strong></span>、
     <span class="function"><a href="function.session-is-registered.html" class="function">session_is_registered()</a></span> および
     <span class="function"><a href="function.session-unregister.html" class="function">session_unregister()</a></span> を使用しないでください。
@@ -154,8 +152,7 @@ PHP コミュニティは、ユーザーがこのディレクティブの設定�
     <a href="resource.html" class="link">リソース型の一覧</a> で見ることができます。
    </p>
    <p class="para">
-    <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> (あるいは PHP 4.0.6 以前なら
-    <var class="varname"><var class="varname">$HTTP_SESSION_VARS</var></var>) を使用する場合は、値を
+    <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> を使用する場合は、値を
     <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> に代入します。
     たとえば $_SESSION[&#039;var&#039;] = &#039;ABC&#039;; などのようにします。
    </p>
