@@ -198,9 +198,68 @@ Array
 
           <p class="para">
            このフラグを設定した場合、各マッチに対応する文字列のオフセットも返されます。
-           これにより、返り値は配列となり、配列の要素 <em>0</em> はマッチした文字列、 
-           要素 <em>1</em> は <code class="parameter">subject</code> における
-           マッチした文字列のオフセット値となることに注意してください。 
+           これは、<code class="parameter">matches</code> の値を配列の配列に変更することに注意してください。
+           その配列のすべての要素は、
+           オフセット <em>0</em> で一致した文字列
+           およびその文字列のオフセット <em>1</em> での
+           <code class="parameter">subject</code> へのオフセットからなります。
+           <div class="informalexample">
+            <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />preg_match_all</span><span style="color: #007700">(</span><span style="color: #DD0000">'/(foo)(bar)(baz)/'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'foobarbaz'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$matches</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PREG_OFFSET_CAPTURE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$matches</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+            </div>
+
+            <p class="para">上の例の出力は以下となります。</p>
+            <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; Array
+        (
+            [0] =&gt; Array
+                (
+                    [0] =&gt; foobarbaz
+                    [1] =&gt; 0
+                )
+
+        )
+
+    [1] =&gt; Array
+        (
+            [0] =&gt; Array
+                (
+                    [0] =&gt; foo
+                    [1] =&gt; 0
+                )
+
+        )
+
+    [2] =&gt; Array
+        (
+            [0] =&gt; Array
+                (
+                    [0] =&gt; bar
+                    [1] =&gt; 3
+                )
+
+        )
+
+    [3] =&gt; Array
+        (
+            [0] =&gt; Array
+                (
+                    [0] =&gt; baz
+                    [1] =&gt; 6
+                )
+
+        )
+
+)
+</pre></div>
+            </div>
+           </div>
           </p>
          </dd>
 

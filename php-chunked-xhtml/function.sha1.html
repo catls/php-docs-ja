@@ -16,7 +16,20 @@
   <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">sha1</span> &mdash; <span class="dc-title">文字列の sha1 ハッシュを計算する</span></p>
 
  </div>
- 
+
+ <div id="function.sha1-refsynopsisdiv">
+  
+<div class="warning"><strong class="warning">警告</strong>
+ <p class="para">
+  It is not recommended to use this function to secure passwords,
+  due to the fast nature of this hashing algorithm. See the
+  <a href="faq.passwords.html#faq.passwords.fasthash" class="link">Password Hashing FAQ</a>
+  for details and best practices.
+ </p>
+</div>
+
+ </div>
+
  <div class="refsect1 description" id="refsect1-function.sha1-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
@@ -91,20 +104,6 @@
 
    </div>
   </p>
- </div>
-
- 
- <div class="refsect1 notes" id="refsect1-function.sha1-notes">
-  <h3 class="title">注意</h3>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
- <strong>安全なパスワードハッシュ</strong><br />
- <p class="para">
-  パスワードを守るためにこの関数を使うことはおすすめしません。
-  ハッシュアルゴリズムの高速性がその理由です。
-  詳細は<a href="faq.passwords.html#faq.passwords.fasthash" class="link">ここ</a>を参照ください。
- </p>
-</p></blockquote>
-
  </div>
 
 
