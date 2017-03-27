@@ -19,7 +19,7 @@
   <p class="para">
    パラメータや返り値の型宣言で nullable 指定ができるようになりました。
    型の前にクエスチョンマークをつけると、nullable であることを指定できます。
-   nullable 指定をすると、指定した型だけでなく <span class="type"><a href="language.types.null.html" class="type null">null</a></span> も渡せるようになります。
+   nullable 指定をすると、指定した型だけでなく <strong><code>NULL</code></strong> も渡せるようになります。
   </p>
 
   <div class="informalexample">
@@ -49,7 +49,7 @@ Uncaught Error: Too few arguments to function test(), 0 passed in...
   <p class="para">
    返り値の型として <span class="type"><span class="type void">void</span></span> が導入されました。返り値の型を void
    と宣言した関数は、関数内での return 文を省略するか、あるいは空の return を使う必要があります。
-   void 関数から <span class="type"><a href="language.types.null.html" class="type null">null</a></span> を返すことはできません。
+   void 関数から <strong><code>NULL</code></strong> を返すことはできません。
   </p>
 
   <div class="informalexample">
@@ -71,7 +71,7 @@ int(1)
   </div>
 
   <p class="para">
-   void 関数の返り値を使おうとした場合はその値は <span class="type"><a href="language.types.null.html" class="type null">null</a></span> と評価されます。
+   void 関数の返り値を使おうとした場合はその値は <strong><code>NULL</code></strong> と評価されます。
    警告は発生しません。警告を発生させると、一般的な高階関数の利用にも影響するからです。
   </p>
  </div>

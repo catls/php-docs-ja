@@ -85,7 +85,7 @@
      <td>PHP_INI_SYSTEM</td>
      <td>
      PHP 4.3 から  PHP 5.2.6 では PHP_INI_PERDIR、それ以外のバージョンでは PHP_INI_SYSTEM。
-     PHP 4.2.0 から利用可能です。</td>
+     PHP 4.2.0 から利用可能です。PHP 7.2.0 で非推奨になりました。</td>
     </tr>
 
     <tr>
@@ -250,6 +250,8 @@
 
     <dd>
 
+     <div class="warning"><strong class="warning">警告</strong><p class="simpara">この機能は PHP 7.2.0 で
+<em class="emphasis">非推奨</em>になります。この機能に頼らないことを強く推奨します。</p></div>
      <p class="para">
       シングルバイト対応の関数を mbstring 関数の対応する関数でオーバーロード
       (置換)します。詳細は、

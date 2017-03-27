@@ -73,8 +73,10 @@
      <dd>
 
       <p class="para">
-       オプションの3番目のパラメータ <code class="parameter">strict</code> に <strong><code>TRUE</code></strong> が指定された場合、<span class="function"><strong>array_search()</strong></span> は <em class="emphasis">identical</em> 要素を <code class="parameter">haystack</code> から探します。
-  つまり、 <code class="parameter">haystack</code> の中で <code class="parameter">needle</code> の型に一致するかどうか、そしてオブジェクトが同一のインスタンスであるかどうかも確認します。
+       オプションの3番目のパラメータ <code class="parameter">strict</code> に <strong><code>TRUE</code></strong> が指定された場合、
+       <span class="function"><strong>array_search()</strong></span> は <em class="emphasis">identical</em> 要素を <code class="parameter">haystack</code> から探します。
+       つまり、<code class="parameter">haystack</code> の中で <code class="parameter">needle</code> の<a href="language.types.html" class="link">厳密な型比較</a>を実行します。
+        およびオブジェクトが同一のインスタンスであるかどうかも確認します。
       </p>
      </dd>
 
@@ -121,11 +123,6 @@
        <td>5.3.0</td>
       <td>
         他のすべての内部関数と同様、無効なパラメータが渡されたときに <span class="function"><strong>array_search()</strong></span> は <strong><code>NULL</code></strong> を返すようになりました。
-       </td>
-       <td>4.2.0</td>
-       <td>
-        PHP 4.2.0 以前では、<span class="function"><strong>array_search()</strong></span> は、
-        失敗した場合に <strong><code>FALSE</code></strong> ではなく <strong><code>NULL</code></strong> を返します。
        </td>
       </tr>
 

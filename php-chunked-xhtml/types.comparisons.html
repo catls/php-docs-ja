@@ -49,8 +49,8 @@
  <blockquote class="note"><p><strong class="note">注意</strong>: 
   <p class="para">
    数値演算の結果が、定数 <strong><code>NAN</code></strong> で表される値になることがあります。
-   この値を、自分自身を含む他の値と比較すると、緩い比較であっても厳しい比較であっても結果は
-   <strong><code>FALSE</code></strong> となります
+   この値を他の値と比較すると、緩やかな比較および厳密な比較のいずれでも結果は <strong><code>FALSE</code></strong> になります。
+   自分自身と比較した場合も含みますが、<strong><code>TRUE</code></strong> と比較した場合は除きます。
    (つまり <em>NAN != NAN</em> であり <em>NAN !== NAN</em> であるということです)。
    結果が <strong><code>NAN</code></strong> になる演算の例には
    <em>sqrt(-1)</em> や <em>asin(2)</em> そして
