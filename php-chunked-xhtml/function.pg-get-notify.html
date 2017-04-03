@@ -81,8 +81,11 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    <em>NOTIFY</em> メッセージ名とバックエンドの PID を含む
-   配列を返します。もし待ち受ける <em>NOTIFY</em> が存在しない
-   場合は then <strong><code>FALSE</code></strong> を返します。
+   配列を返します。
+   PHP 5.4.0 以降、サーバでサポートされている場合は、
+   配列にはサーバーのバージョンおよびペイロードも含まれます。
+   もし待ち受ける <em>NOTIFY</em> が存在しない場合は、
+   <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
