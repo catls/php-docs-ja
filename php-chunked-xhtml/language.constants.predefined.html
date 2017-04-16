@@ -22,9 +22,12 @@
    </p>
 
    <p class="para">
-    使われ方によって変化する自動的に定義される定数（マジカル定数）が 8 つあります。
+    使われ方によって変化する自動的に定義される定数（マジカル定数）が 9 つあります。
     例えば、<strong><code>__LINE__</code></strong>はスクリプト上において
-    呼び出された行番号です。特別定数は大文字小文字を区別しません。
+    呼び出された行番号です。
+    All these &quot;magical&quot; constants are resolved
+    at compile time, unlike regular constants thats resolved at runtime.
+    特別定数は大文字小文字を区別しません。
     内容は以下のとおりです:
    </p>
    <p class="para">
@@ -106,11 +109,20 @@
         </td>
        </tr>
 
+       <tr id="constant.coloncolonclass">
+        <td><strong><code>ClassName::class</code></strong></td>
+        <td>
+         The fully qualified class name. See also 
+         <a href="language.oop5.basic.html#language.oop5.basic.class.class" class="link">::class</a>.
+        </td>
+       </tr>
+
       </tbody>
      
     </table>
 
    </p>
+   
    <p class="para">
     <span class="function"><a href="function.get-class.html" class="function">get_class()</a></span>,
     <span class="function"><a href="function.get-object-vars.html" class="function">get_object_vars()</a></span>,
@@ -133,6 +145,13 @@
        </thead>
 
        <tbody class="tbody">
+        <tr>
+         <td>5.5.0</td>
+         <td>
+          <strong><code>::class</code></strong> が追加されました。
+         </td>
+        </tr>
+
         <tr>
          <td>5.4.0</td>
          <td>
