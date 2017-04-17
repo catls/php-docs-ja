@@ -27,6 +27,16 @@
   <p class="para rdfs-comment">
    プリペアドステートメントを実行し、結果セットオブジェクトを返します。
   </p>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    Result set objects retrieved by calling this method on the same statement
+    object are not independent, but rather share the same underlying structure.
+    Therefore it is recommended to call
+    <span class="methodname"><a href="sqlite3result.finalize.html" class="methodname">SQLite3Result::finalize()</a></span>, before calling
+    <span class="methodname"><strong>SQLite3Stmt::execute()</strong></span> on the same statement object
+    again.
+   </p>
+  </div>
  </div>
 
 

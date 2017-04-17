@@ -141,6 +141,85 @@ string(1) &quot;@&quot;
    </li>
   </ul>
  </div>
+
+ <div class="sect2" id="migration71.other-changes.ini-file-handling">
+  <h3 class="title">INI ファイルの扱いに関する変更</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">precision</code></dt>
+
+    <dd>
+
+     <p class="para">
+       If the value is set to -1, then the dtoa mode 0 is used. The default
+       value is still 14.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">serialize_precision</code></dt>
+
+    <dd>
+
+     <p class="para">
+       If the value is set to -1, then the dtoa mode 0 is used. The value -1 is
+       now used by default.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">gd.jpeg_ignore_warning</code></dt>
+
+    <dd>
+
+     <p class="para">
+       The default of this <var class="filename">php.ini</var> setting has been changed to 1, so by
+       default libjpeg warnings are ignored.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">opcache.enable_cli</code></dt>
+
+    <dd>
+
+     <p class="para">
+       The default of this <var class="filename">php.ini</var> setting has been changed to 1
+       (enabled) in PHP 7.1.2.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+ <div class="sect2" id="migration71.other-changes.session-id-csprng-gen">
+  <h3 class="title">Session ID generation with a CSPRNG only</h3>
+
+  <p class="para">
+   Session IDs will now only be generated with a CSPRNG.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration71.other-changes.typeerror-error-messages">
+  <h3 class="title">More informative <a href="class.typeerror.html" class="classname">TypeError</a> messages when <strong><code>NULL</code></strong> is allowed</h3>
+  <p class="para">
+   <a href="class.typeerror.html" class="classname">TypeError</a> exceptions for arg_info type checks will
+   now provide more informative error messages. If the parameter type or return
+   type accepts <strong><code>NULL</code></strong> (by either having a default value of <strong><code>NULL</code></strong> or being a
+   nullable type), then the error message will now mention this with a message
+   of &quot;must be ... or null&quot; or &quot;must ... or be null.&quot;
+  </p>
+ </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration71.changed-functions.html">変更された関数</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="migration71.windows-support.html">Windows Support</a></div>

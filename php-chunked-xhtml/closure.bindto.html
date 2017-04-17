@@ -94,6 +94,7 @@
       オブジェクトを渡した場合は、そのオブジェクトの型をその代わりに使います。
       これは、バインドしたオブジェクトの protected メソッドや private
       メソッドの可視性を決めます。
+      It is not allowed to pass (an object of) an internal class as this parameter.
      </p>
     </dd>
 
@@ -112,9 +113,39 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-closure.bindto-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        <code class="parameter">newscope</code> can not be (an object of) an internal
+        class anymore, what was possible prior to this version.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-closure.bindto-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-320">
+  <div class="example" id="example-325">
    <p><strong>例1 <span class="function"><strong>Closure::bindTo()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

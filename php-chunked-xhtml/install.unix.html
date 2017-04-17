@@ -144,6 +144,17 @@
    </p>
 
    <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <p class="para">
+     Some Unix systems (such as OpenBSD and SELinux) may disallow mapping pages
+     both writable and executable for security reasons, what is called PaX
+     MPROTECT or W^X violation protection. This kind of memory mapping is,
+     however, necessary for PCRE&#039;s JIT support, so either PHP has to be built
+     <a href="pcre.installation.html" class="link">without PCRE&#039;s JIT support</a>, or the
+     binary has to be whitelisted by any means provided by the system.
+    </p>
+   </p></blockquote>
+
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
     <span class="simpara">
      Android ツール群を使った ARM 向けのクロスコンパイルには、今のところ対応していません。
     </span>

@@ -29,6 +29,16 @@
    マイクロ秒単位の現在時刻にもとづいた、接頭辞つきの一意な ID を取得します。
   </p>
   <div class="caution"><strong class="caution">警告</strong><p class="para">この関数が生成する値は、暗号学的に安全ではありません。そのため、これを暗号として使ってはいけません。暗号学的に安全な値が必要な場合は、<span class="function"><a href="function.random-int.html" class="function">random_int()</a></span> か <span class="function"><a href="function.random-bytes.html" class="function">random_bytes()</a></span> あるいは <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function">openssl_random_pseudo_bytes()</a></span> を使いましょう。</p></div>
+  <div class="warning"><strong class="warning">警告</strong>
+    <p class="para">
+     This function does not guarantee uniqueness of return
+     value. Since most systems adjust system clock by NTP or like,
+     system time is changed constantly. Therefore, it is possible that
+     this function does not return unique ID for the
+     process/thread. Use <code class="parameter">more_entropy</code> to
+     increase likelihood of uniqueness.
+    </p>
+  </div>
  </div>
 
 
@@ -80,15 +90,21 @@
  <div class="refsect1 returnvalues" id="refsect1-function.uniqid-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   一意な識別子を文字列で返します。
+   タイムスタンプにもとづいた一意な識別子を文字列で返します。
   </p>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+     This function tries to create 一意な識別子, but it does not
+     guarantee 100% uniqueness of return value.
+   </p>
+  </div>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-function.uniqid-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4360">
+   <div class="example" id="example-4369">
     <p><strong>例1 <span class="function"><strong>uniqid()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -33,6 +33,7 @@
   </p>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
+    <em>allowed_classes</em> の <code class="parameter">options</code> の値にかかわらず、
     ユーザーからの入力をそのまま <span class="function"><strong>unserialize()</strong></span> に渡してはいけません。
     アンシリアライズの時には、オブジェクトのインスタンス生成やオートローディングなどで
     コードが実行されることがあり、悪意のあるユーザーがこれを悪用するかもしれないからです。
@@ -173,6 +174,17 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.1.0</td>
+       <td>
+        The <em>allowed_classes</em> element of
+        <code class="parameter">options</code>) is now strictly typed, i.e. if anything
+        other than an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> or a <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> is given,
+        <span class="function"><strong>unserialize()</strong></span> returns <strong><code>FALSE</code></strong> and issues an
+        <strong><code>E_WARNING</code></strong>.
+       </td>
+      </tr>
+
+      <tr>
        <td>7.0.0</td>
        <td>
         <code class="parameter">options</code> パラメータが追加されました。
@@ -199,7 +211,7 @@
  <div class="refsect1 examples" id="refsect1-function.unserialize-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6135">
+   <div class="example" id="example-6146">
     <p><strong>例1 <span class="function"><strong>unserialize()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -211,11 +223,11 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-6136">
+   <div class="example" id="example-6147">
     <p><strong>例2 unserialize_callback_func の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$serialized_object</span><span style="color: #007700">=</span><span style="color: #DD0000">'O:1:"a":1:{s:5:"value";s:3:"100";}'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;unserialize_callback_func&nbsp;ディレクティブは&nbsp;PHP&nbsp;4.2.0&nbsp;以降で利用可能<br /></span><span style="color: #0000BB">ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'unserialize_callback_func'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mycallback'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;独自のコールバック関数を設定する<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">mycallback</span><span style="color: #007700">(</span><span style="color: #0000BB">$classname</span><span style="color: #007700">)&nbsp;<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;クラスが定義されているファイルをインクルードするだけです。<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;どのクラス定義が必要になるのかを&nbsp;$classname&nbsp;で判断します。<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$serialized_object</span><span style="color: #007700">=</span><span style="color: #DD0000">'O:1:"a":1:{s:5:"value";s:3:"100";}'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">ini_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'unserialize_callback_func'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'mycallback'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;独自のコールバック関数を設定する<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">mycallback</span><span style="color: #007700">(</span><span style="color: #0000BB">$classname</span><span style="color: #007700">)&nbsp;<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;クラスが定義されているファイルをインクルードするだけです。<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;どのクラス定義が必要になるのかを&nbsp;$classname&nbsp;で判断します。<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

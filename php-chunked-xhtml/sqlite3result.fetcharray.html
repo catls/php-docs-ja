@@ -88,6 +88,14 @@
    結果の行を、連想配列あるいは数値添字配列あるいはその両方で取得します。
    行がない場合は <strong><code>FALSE</code></strong> を返します。
   </p>
+  <p class="para">
+   The types of the values of the returned array are mapped from SQLite3 types
+   as follows: integers are mapped to <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> if they fit into the
+   range <strong><code>PHP_INT_MIN</code></strong>..<strong><code>PHP_INT_MAX</code></strong>, and
+   to <span class="type"><a href="language.types.string.html" class="type string">string</a></span> otherwise. Floats are mapped to <span class="type"><a href="language.types.float.html" class="type float">float</a></span>,
+   <em>NULL</em> values are mapped to <span class="type"><a href="language.types.null.html" class="type null">null</a></span>, and strings
+   and blobs are mapped to <span class="type"><a href="language.types.string.html" class="type string">string</a></span>.
+  </p>
  </div>
 
 

@@ -48,6 +48,9 @@
 
       <p class="para">
        SQLite データベースへのパス。インメモリデータベースを使う場合は <em>:memory:</em> を指定します。
+       If <code class="parameter">filename</code> is an empty string, then a private, temporary on-disk
+       database will be created. This private database will be automatically
+       deleted as soon as the database connection is closed.
       </p>
      </dd>
 
@@ -122,10 +125,38 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-sqlite3.construct-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.0.10</td>
+      <td>
+       The <code class="parameter">filename</code> can now be empty to use a private,
+       temporary on-disk database.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-sqlite3.construct-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2389">
+   <div class="example" id="example-2396">
     <p><strong>例1 <span class="function"><strong>SQLite3::__construct()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

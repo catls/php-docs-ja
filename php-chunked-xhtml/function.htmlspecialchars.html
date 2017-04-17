@@ -515,7 +515,7 @@
  <div class="refsect1 examples" id="refsect1-function.htmlspecialchars-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5440">
+   <div class="example" id="example-5450">
     <p><strong>例1 <span class="function"><strong>htmlspecialchars()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -536,6 +536,50 @@
     この関数は上記のあげたもの以外に関しては一切の変換を行わないことに注意してください。
     すべての変換を行うには
     <span class="function"><a href="function.htmlentities.html" class="function">htmlentities()</a></span> を参照してください。
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    In case of an ambiguous <code class="parameter">flags</code> value, the following rules apply:
+   </p>
+   <p class="para">
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       When neither of <strong><code>ENT_COMPAT</code></strong>, <strong><code>ENT_QUOTES</code></strong>,
+       <strong><code>ENT_NOQUOTES</code></strong> is present, the default is <strong><code>ENT_COMPAT</code></strong>.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       When more than one of <strong><code>ENT_COMPAT</code></strong>, <strong><code>ENT_QUOTES</code></strong>,
+       <strong><code>ENT_NOQUOTES</code></strong> is present, <strong><code>ENT_QUOTES</code></strong> takes the
+       highest precedence, followed by <strong><code>ENT_COMPAT</code></strong>.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       When neither of <strong><code>ENT_HTML401</code></strong>, <strong><code>ENT_HTML5</code></strong>,
+       <strong><code>ENT_XHTML</code></strong>, <strong><code>ENT_XML1</code></strong> is present, the default is
+       <strong><code>ENT_HTML401</code></strong>.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       When more than one of <strong><code>ENT_HTML401</code></strong>, <strong><code>ENT_HTML5</code></strong>,
+       <strong><code>ENT_XHTML</code></strong>, <strong><code>ENT_XML1</code></strong> is present,
+       <strong><code>ENT_HTML5</code></strong> takes the highest precedence,
+       followed by <strong><code>ENT_XHTML</code></strong>, <strong><code>ENT_HTML401</code></strong>.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       When more than one of <strong><code>ENT_DISALLOWED</code></strong>, <strong><code>ENT_IGNORE</code></strong>,
+       <strong><code>ENT_SUBSTITUTE</code></strong> are present, <strong><code>ENT_IGNORE</code></strong> takes the
+       highest precedence, followed by <strong><code>ENT_SUBSTITUTE</code></strong>.
+      </span>
+     </li>
+    </ul>
    </p>
   </p></blockquote>
  </div>

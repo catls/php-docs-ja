@@ -524,6 +524,24 @@
 
      
      
+      <dt id="pm.process-idle-timeout">
+       <code class="parameter">pm.process_idle_timeout</code>
+       <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        
+        秒数 after which an idle process will be killed. 
+        Used only when <em>pm</em> is set to <em>ondemand</em>.
+        使用可能な単位: s(秒)(デフォルト)、m(分)、h(時間)、または d(日)。
+        デフォルト値: 10 秒
+       </p>
+      </dd>
+
+     
+     
       <dt id="pm.max-requests">
        <code class="parameter">pm.max_requests</code>
        <span class="type"><a href="language.types.integer.html" class="type int">int</a></span>
@@ -585,6 +603,36 @@
         このレスポンスは text/plain 形式となり、レスポンスコード 200 で返されます。
         デフォルト値: pong
        </p> 
+      </dd>
+
+     
+     
+      <dt id="worker-process-priority">
+       <code class="parameter">process.priority</code>
+       <span class="type"><a href="language.types.integer.html" class="type int">int</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        Specify the nice(2) priority to apply to the worker process (only if set).
+        The value can vary from -19 (highest priority) to 20 (lower priority).
+        デフォルト値: 未設定
+       </p>
+      </dd>
+
+     
+     
+      <dt id="prefix">
+       <code class="parameter">prefix</code>
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        Specify prefix for path evaluation
+       </p>
       </dd>
 
      
@@ -747,8 +795,38 @@
         サーバー側の設定ミスによる被害を抑えることができます。
         FPM には拡張子 .php だけをパースさせるようにしておけば、
         悪意のあるユーザーがその他の拡張子で php のコードを実行させようとする試みを防ぐことができます。
-        デフォルト値: .php
+        デフォルト値: .php .phar
        </p> 
+      </dd>
+
+     
+     
+      <dt id="access-log">
+       <code class="parameter">access.log</code>
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        アクセス・ログ・ファイル。
+        デフォルト値: 未設定
+       </p>
+      </dd>
+
+     
+     
+      <dt id="access-format">
+       <code class="parameter">access.format</code>
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        アクセス・ログ形式。
+        デフォルト値: &quot;%R - %u %t \&quot;%m %r\&quot; %s&quot;
+       </p>
       </dd>
 
      

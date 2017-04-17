@@ -39,9 +39,9 @@
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.enable-cli" class="link">opcache.enable_cli</a></td>
-      <td>&quot;0&quot;</td>
+      <td>&quot;1&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 7.1.2 以降デフォルトで有効</td>
      </tr>
 
      <tr>
@@ -247,6 +247,20 @@
       <td>PHP 7.0.0 以降で利用可能</td>
      </tr>
 
+     <tr>
+      <td><a href="opcache.configuration.html#ini.opcache.validate-permission" class="link">opcache.validate_permission</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td>PHP 7.0.14 以降で利用可能</td>
+     </tr>
+
+     <tr>
+      <td><a href="opcache.configuration.html#ini.opcache.validate-root" class="link">opcache.validate_root</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td>PHP 7.0.14 以降で利用可能</td>
+     </tr>
+
     </tbody>
    
   </table>
@@ -289,7 +303,6 @@
 
      <p class="para">
       PHP の CLI 版に対してオペコード・キャッシュを有効にします。
-      主にテストとデバッギングに役立ちます。
      </p>
     </dd>
 
@@ -780,6 +793,35 @@
       共有メモリへの再アタッチに失敗するプロセスについて、
       opcache.file_cache_only=1 であるものとみなします (Windows のみ)。
       ファイルキャッシュを明示的に有効にする必要があります。
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.opcache.validate-permission">
+     <code class="parameter">opcache.validate_permission</code>
+     <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Validates the cached file permissions against the current user.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.opcache.validate-root">
+     <code class="parameter">opcache.validate_root</code>
+     <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      Prevents name collisions in chroot&#039;ed environments. This should be enabled in
+      all chroot&#039;ed environments to prevent access to files outside the chroot.
      </p>
     </dd>
 

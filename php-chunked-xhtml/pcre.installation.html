@@ -21,6 +21,12 @@
   このとき <em>DIR</em> には、PCRE のインクルードファイルやライブラリファイルがある場所を指定します。
   PHP 5.6 や PHP 7.0 では、PCRE 8.10 以降を使うことを推奨します。
  </p>
+ <p class="para">
+  As of PHP 7.0.0 PCRE&#039;s just-in-time compilation is supported by default, which
+  can be disabled with the <strong class="option configure">--without-pcre-jit</strong>
+
+  configuration option as of PHP 7.0.12.
+ </p>
  <p class="simpara">Windows 版の <em>PHP</em> には
 この拡張モジュールのサポートが組み込まれています。これらの関数を使用
 するために拡張モジュールを追加でロードする必要はありません。</p>
