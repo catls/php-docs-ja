@@ -22,9 +22,8 @@
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>pcntl_signal</strong></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$signo</code></span>
-   , <span class="methodparam"><span class="type"><span class="type callable|int">callable|int</span></span> <code class="parameter">$handler</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$restart_syscalls</code><span class="initializer"> = true</span></span>
-  ] )</div>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$signinfo</code></span>
+   )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>pcntl_signal()</strong></span> 関数は、<code class="parameter">signo</code>
@@ -80,6 +79,19 @@
 
           <span class="simpara">
            処理するシグナル。
+          </span>
+         </dd>
+
+        
+        
+         <dt>
+<code class="parameter">siginfo</code></dt>
+
+         <dd>
+
+          <span class="simpara">
+           If operating systems supports siginfo_t structures, this will be an array of signal information dependent on the signal.
+           
           </span>
          </dd>
 
@@ -147,6 +159,16 @@
         <a href="control-structures.declare.html" class="link">declare()</a> を使用して
         プログラム中でコールバックの発生を許可する場所を指定し、シグナルハンドラが
         正しく動作するようにする必要があります。
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        As of PHP 7.1.0 the handler callback is given a second argument
+        containing the signinfo of the specific signal.  This data is only
+        supplied if the operating system has the signinfo_t structure.
+        If the OS does not implement siginfo_t NULL is supplied.
        </td>
       </tr>
 
