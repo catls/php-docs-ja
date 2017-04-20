@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Spoofchecker クラス</title>
+  <title>The Spoofchecker class</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -12,7 +12,7 @@
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="class.spoofchecker" class="reference">
 
- <h1 class="title">Spoofchecker クラス</h1>
+ <h1 class="title">The Spoofchecker class</h1>
  
 
  <div class="partintro"><p class="verinfo">(PHP &gt;= 5.4.0, PECL intl &gt;= 2.0.0)</p>
@@ -21,7 +21,15 @@
   <div class="section" id="spoofchecker.intro">
    <h2 class="title">導入</h2>
    <p class="para">
-
+    This class is provided because Unicode contains large number of characters
+    and incorporates the varied writing systems of the world and their incorrect
+    usage can expose programs or systems to possible security attacks using
+    characters similarity.
+   </p>
+   <p class="para">
+    Provided methods alllow to check whether an individual string is likely an attempt
+    at confusing the reader (<em>spoof detection</em>), such as  &quot;pаypаl&quot;
+    spelled with Cyrillic &#039;а&#039; characters.
    </p>
   </div>
 
@@ -40,7 +48,7 @@
      </span>
      {</div>
 
-    <div class="classsynopsisinfo classsynopsisinfo_comment">/* 定数 */</div>
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Constants */</div>
     <div class="fieldsynopsis">
      <span class="modifier">const</span>
      <span class="type">integer</span>

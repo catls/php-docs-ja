@@ -22,6 +22,9 @@
 
  <blockquote class="note"><p><strong class="note">注意</strong>: 
   <span class="simpara">
+   As of PHP 7.0.0, there are no particular restrictions regarding the length of
+   a <span class="type"><a href="language.types.string.html" class="type string">string</a></span> on 64-bit builds. On 32-bit builds and in earlier
+   versions,
    文字列の最大長は 2GB (2147483647 バイト) です。
   </span>
  </p></blockquote>
@@ -242,14 +245,21 @@
      スクリプトの最終行でパースエラーが発生します。
     </p>
 
-    <p class="para">
-     ヒアドキュメント構文を、クラスのプロパティの初期化に用いることはできません。
-     PHP 5.3 以降では、変数を含まないヒアドキュメントではこの制約はなくなりました。
-    </p>
-
     <div class="example" id="example-44">
      <p><strong>例1 間違った例</strong></p>
      <div class="example-contents">
+      
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;EOT<br /></span><span style="color: #DD0000">bar<br />&nbsp;&nbsp;&nbsp;&nbsp;EOT;<br />}<br />//&nbsp;識別子はインデントしてはいけません<br />?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    <div class="example" id="example-45">
+     <p><strong>例2 有効な例</strong></p>
+     <div class="example-contents">
+      
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;EOT<br /></span><span style="color: #DD0000">bar<br /></span><span style="color: #007700">EOT;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
@@ -257,6 +267,12 @@
      </div>
 
     </div>
+
+    <p class="para">
+     ヒアドキュメント構文を、クラスのプロパティの初期化に用いることはできません。
+     PHP 5.3 以降では、変数を含まないヒアドキュメントではこの制約はなくなりました。
+    </p>
+
    </div>
 
    <p class="para">
@@ -267,8 +283,8 @@
     ヒアドキュメントの内部で複雑な変数を表わす場合には注意が必要です。
    </p>
 
-   <div class="example" id="example-45"> 
-    <p><strong>例2 ヒアドキュメントで文字列を括る例</strong></p>
+   <div class="example" id="example-46"> 
+    <p><strong>例3 ヒアドキュメントで文字列を括る例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;EOD<br /></span><span style="color: #DD0000">Example&nbsp;of&nbsp;string<br />spanning&nbsp;multiple&nbsp;lines<br />using&nbsp;heredoc&nbsp;syntax.<br /></span><span style="color: #007700">EOD;<br /><br /></span><span style="color: #FF8000">/*&nbsp;変数を使用するより複雑な例&nbsp;*/<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Foo'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'Bar1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Bar2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Bar3'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'MyName'</span><span style="color: #007700">;<br /><br />echo&nbsp;&lt;&lt;&lt;EOT<br /></span><span style="color: #DD0000">My&nbsp;name&nbsp;is&nbsp;"</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">".&nbsp;I&nbsp;am&nbsp;printing&nbsp;some&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">foo</span><span style="color: #DD0000">.<br />Now,&nbsp;I&nbsp;am&nbsp;printing&nbsp;some&nbsp;</span><span style="color: #007700">{</span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]}</span><span style="color: #DD0000">.<br />This&nbsp;should&nbsp;print&nbsp;a&nbsp;capital&nbsp;'A':&nbsp;\x41<br /></span><span style="color: #007700">EOT;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -290,8 +306,8 @@ This should print a capital &#039;A&#039;: A</pre></div>
     関数の引数にデータを渡すこともできます。
    </p>
 
-   <div class="example" id="example-46"> 
-    <p><strong>例3 ヒアドキュメントを引数に使用する例</strong></p>
+   <div class="example" id="example-47"> 
+    <p><strong>例4 ヒアドキュメントを引数に使用する例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(array(&lt;&lt;&lt;EOD<br /></span><span style="color: #DD0000">foobar!<br /></span><span style="color: #007700">EOD<br />));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -306,8 +322,8 @@ This should print a capital &#039;A&#039;: A</pre></div>
     ヒアドキュメント構文で初期化できるようになりました。
    </p>
 
-   <div class="example" id="example-47"> 
-    <p><strong>例4 ヒアドキュメントを用いた静的な値の初期化</strong></p>
+   <div class="example" id="example-48"> 
+    <p><strong>例5 ヒアドキュメントを用いた静的な値の初期化</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;静的変数<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;LABEL<br /></span><span style="color: #DD0000">Nothing&nbsp;in&nbsp;here...<br /></span><span style="color: #007700">LABEL;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;クラスのプロパティ/定数<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;</span><span style="color: #0000BB">BAR&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;FOOBAR<br /></span><span style="color: #DD0000">Constant&nbsp;example<br /></span><span style="color: #007700">FOOBAR;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$baz&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;FOOBAR<br /></span><span style="color: #DD0000">Property&nbsp;example<br /></span><span style="color: #007700">FOOBAR;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -321,8 +337,8 @@ This should print a capital &#039;A&#039;: A</pre></div>
     PHP 5.3.0 以降では、ヒアドキュメントの宣言をダブルクォートで囲めるようにもなりました。
    </p>
 
-   <div class="example" id="example-48"> 
-    <p><strong>例5 ヒアドキュメントでのダブルクォート</strong></p>
+   <div class="example" id="example-49"> 
+    <p><strong>例6 ヒアドキュメントでのダブルクォート</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;&lt;&lt;&lt;"FOOBAR"<br /></span><span style="color: #DD0000">Hello&nbsp;World!<br /></span><span style="color: #007700">FOOBAR;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -359,8 +375,8 @@ This should print a capital &#039;A&#039;: A</pre></div>
     の識別子にも当てはまります。特に終了識別子の書き方に関する決まりに注意しましょう。
    </p>
    
-   <div class="example" id="example-49">
-    <p><strong>例6 Nowdoc による文字列のクォートの例</strong></p>
+   <div class="example" id="example-50">
+    <p><strong>例7 Nowdoc による文字列のクォートの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;'EOD'<br /></span><span style="color: #DD0000">Example&nbsp;of&nbsp;string<br />spanning&nbsp;multiple&nbsp;lines<br />using&nbsp;nowdoc&nbsp;syntax.<br /></span><span style="color: #007700">EOD;<br /><br /></span><span style="color: #FF8000">/*&nbsp;変数を使った、より複雑な例&nbsp;*/<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$foo</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Foo'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'Bar1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Bar2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Bar3'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'MyName'</span><span style="color: #007700">;<br /><br />echo&nbsp;&lt;&lt;&lt;'EOT'<br /></span><span style="color: #DD0000">My&nbsp;name&nbsp;is&nbsp;"$name".&nbsp;I&nbsp;am&nbsp;printing&nbsp;some&nbsp;$foo-&gt;foo.<br />Now,&nbsp;I&nbsp;am&nbsp;printing&nbsp;some&nbsp;{$foo-&gt;bar[1]}.<br />This&nbsp;should&nbsp;not&nbsp;print&nbsp;a&nbsp;capital&nbsp;'A':&nbsp;\x41<br /></span><span style="color: #007700">EOT;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -377,8 +393,8 @@ This should not print a capital &#039;A&#039;: \x41</pre></div>
     </div>
    </div>
    
-   <div class="example" id="example-50">
-    <p><strong>例7 静的データの例</strong></p>
+   <div class="example" id="example-51">
+    <p><strong>例8 静的データの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;'EOT'<br /></span><span style="color: #DD0000">bar<br /></span><span style="color: #007700">EOT;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -447,7 +463,7 @@ He drank some juice made of apples.
      シンプルな変数の場合と同じ規則が、オブジェクトのプロパティに対しても適用されます。
     </p>
 
-    <div class="example" id="example-51"><p><strong>例8 簡単な構文の例</strong></p>
+    <div class="example" id="example-52"><p><strong>例9 簡単な構文の例</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$juices&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"orange"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"koolaid1"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"purple"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"He&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">koolaid1</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">people&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$john&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"John&nbsp;Smith"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$jane&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Jane&nbsp;Smith"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$robert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Robert&nbsp;Paulsen"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$smith&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Smith"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$people&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">people</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">&nbsp;drank&nbsp;some&nbsp;</span><span style="color: #0000BB">$juices</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]</span><span style="color: #DD0000">&nbsp;juice."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">&nbsp;then&nbsp;said&nbsp;hello&nbsp;to&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">jane</span><span style="color: #DD0000">."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">john</span><span style="color: #DD0000">'s&nbsp;wife&nbsp;greeted&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">robert</span><span style="color: #DD0000">."</span><span style="color: #007700">.</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">robert</span><span style="color: #DD0000">&nbsp;greeted&nbsp;the&nbsp;two&nbsp;</span><span style="color: #0000BB">$people</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">smiths</span><span style="color: #DD0000">."</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;動作しません<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -465,6 +481,27 @@ John Smith drank some apple juice.
 John Smith then said hello to Jane Smith.
 John Smith&#039;s wife greeted Robert Paulsen.
 Robert Paulsen greeted the two .
+</pre></div>
+     </div>
+    </div>
+
+    <p class="simpara">
+     As of PHP 7.1.0 also <em class="emphasis">negative</em> numeric indices are
+     supported.
+    </p>
+
+    <div class="example" id="example-53"><p><strong>例10 Negative numeric indices</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$array&nbsp;</span><span style="color: #007700">=&nbsp;[-</span><span style="color: #0000BB">3&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">];<br />echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;element&nbsp;at&nbsp;index&nbsp;-3&nbsp;is&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">[-</span><span style="color: #0000BB">3</span><span style="color: #007700">]</span><span style="color: #DD0000">."</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+The element at index -3 is foo.
 </pre></div>
      </div>
     </div>
@@ -606,8 +643,8 @@ I am bar.
     </span>
    </p></blockquote>
 
-   <div class="example" id="example-52">
-    <p><strong>例9 文字列の例</strong></p>
+   <div class="example" id="example-54">
+    <p><strong>例11 文字列の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;文字列の最初の文字を取得します<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;a&nbsp;test.'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$first&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;文字列の&nbsp;3&nbsp;番目の文字を取得します<br /></span><span style="color: #0000BB">$third&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;文字列の最後の文字を取得します<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;still&nbsp;a&nbsp;test.'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$last&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">)-</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;<br /><br /></span><span style="color: #FF8000">//&nbsp;文字列の最後の文字を変更します<br /></span><span style="color: #0000BB">$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Look&nbsp;at&nbsp;the&nbsp;sea'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">)-</span><span style="color: #0000BB">1</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'e'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;{}&nbsp;を使用した、もうひとつの方法&nbsp;(PHP&nbsp;6&nbsp;で廃止予定)&nbsp;です<br /></span><span style="color: #0000BB">$third&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$str</span><span style="color: #007700">{</span><span style="color: #0000BB">2</span><span style="color: #007700">};<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -623,8 +660,8 @@ I am bar.
     <em>&quot;foo&quot;</em> のようなオフセットを指定しても単に <em>0</em> にキャストされるだけでした。
    </p>
 
-   <div class="example" id="example-53">
-    <p><strong>例10 PHP 5.3 と PHP 5.4 の違い</strong></p>
+   <div class="example" id="example-55">
+    <p><strong>例12 PHP 5.3 と PHP 5.4 の違い</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'abc'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #DD0000">'1'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(isset(</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #DD0000">'1'</span><span style="color: #007700">]));<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #DD0000">'1.0'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(isset(</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #DD0000">'1.0'</span><span style="color: #007700">]));<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #DD0000">'x'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(isset(</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #DD0000">'x'</span><span style="color: #007700">]));<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #DD0000">'1x'</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(isset(</span><span style="color: #0000BB">$str</span><span style="color: #007700">[</span><span style="color: #DD0000">'1x'</span><span style="color: #007700">]));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -761,11 +798,8 @@ bool(false)
   </p>
 
   <p class="para">
-   PHP 4 のオブジェクトは、常に <em>&quot;Object&quot;</em> という文字列に変換されます。
-   デバッグ等のために <span class="type"><a href="language.types.object.html" class="type object">object</a></span> の内部の変数を出力するような場合には、
-   以下をご覧ください。オブジェクトがなんという名前のクラスの
-   インスタンスなのかを知るには <span class="function"><a href="function.get-class.html" class="function">get_class()</a></span> をご覧ください。
-   PHP 5 以降では、もし存在すれば __toString() メソッドを使用します。
+   <span class="type"><a href="language.types.object.html" class="type object">object</a></span> を <span class="type"><a href="language.types.string.html" class="type string">string</a></span> へ変換するには、
+  マジック・メソッド <a href="language.oop5.magic.html" class="link">__toString</a> を使用してください。
   </p>
 
   <p class="para">
@@ -885,7 +919,7 @@ bool(false)
   <p class="para">
    PHP が文字列に対して特定のエンコーディングを強制しないのなら、
    いったいどのようにして文字列リテラルをエンコードしているのでしょう?
-   たとえば、文字列 <em>&quot;á&quot;</em> と同等なのは <em>&quot;\xE1&quot;</em> (ISO-8859-1)、
+   たとえば、文字列 <em>&quot;a&quot;</em> と同等なのは <em>&quot;\xE1&quot;</em> (ISO-8859-1)、
    <em>&quot;\xC3\xA1&quot;</em> (UTF-8, C form)、
    <em>&quot;\x61\xCC\x81&quot;</em> (UTF-8, D form) のどれでしょう?
    あるいはそれ以外の何かなのでしょうか?
@@ -938,8 +972,8 @@ bool(false)
      <span class="function"><a href="function.strtoupper.html" class="function">strtoupper()</a></span> そして <span class="function"><a href="function.ucfirst.html" class="function">ucfirst()</a></span> です。
      つまり、これらの関数はシングルバイトエンコーディングでしか使えず、
      さらにエンコーディングとロケールがマッチしていなければならないということです。
-     たとえば、<em>strtoupper(&quot;á&quot;)</em> が正しく <em>&quot;Á&quot;</em>
-     を返すには、ロケールを正しく設定したうえで <em>á</em>
+     たとえば、<em>strtoupper(&quot;a&quot;)</em> が正しく <em>&quot;A&quot;</em>
+     を返すには、ロケールを正しく設定したうえで <em>a</em>
      をシングルバイトで符号化しておかなければなりません。仮に UTF-8 を使っていたとすると、
      正しい結果は返されないでしょう。さらに、現在のロケール設定によっては
      返される文字列が壊れてしまう可能性もあります。

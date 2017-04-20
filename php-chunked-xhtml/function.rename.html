@@ -29,7 +29,9 @@
   <p class="para rdfs-comment">
    <code class="parameter">oldname</code> を
    <code class="parameter">newname</code> にリネームし、必要ならディレクトリを移動しようと試みます。
-   <code class="parameter">newname</code> が存在する場合は、上書きします。
+   ファイル名の変更かつ <code class="parameter">newname</code> が存在する場合、上書きされます。
+   ディレクトリ名の変更かつ <code class="parameter">newname</code> が存在する場合、
+   この関数は警告を発します。
   </p>
  </div>
 
@@ -152,7 +154,7 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
  <div class="refsect1 examples" id="refsect1-function.rename-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2681">
+   <div class="example" id="example-2683">
     <p><strong>例1 <span class="function"><strong>rename()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
