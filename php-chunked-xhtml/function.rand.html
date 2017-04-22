@@ -49,6 +49,16 @@
     <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> をかわりに使用してみてください。
    </span>
   </p></blockquote>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    
+    PHP 7.1.0 以降、<span class="function"><strong>rand()</strong></span> uses the same
+    random number generator as <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span>. To preserve
+    backwards compatibility <span class="function"><strong>rand()</strong></span> allows
+    <code class="parameter">min</code> to be smaller than <code class="parameter">max</code>
+    as opposed to returning <strong><code>FALSE</code></strong> as <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span>.
+   </span>
+  </p></blockquote>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.rand-parameters">
@@ -94,10 +104,39 @@
   </p>
  </div>
 
+ <div class="refsect1 changelog" id="refsect1-function.rand-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        
+        <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link"><span class="function"><strong>rand()</strong></span> has been made an alias of <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span>.</a>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
  <div class="refsect1 examples" id="refsect1-function.rand-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4021">
+   <div class="example" id="example-4023">
     <p><strong>例1 <span class="function"><strong>rand()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -130,7 +169,7 @@
     <code class="parameter">min</code>) &lt;= <span class="function"><a href="function.mt-getrandmax.html" class="function">mt_getrandmax()</a></span>
     でなければいけないということです。この範囲をこえてしまうと、
     <span class="function"><strong>rand()</strong></span> が返す値のランダム性が、
-    本来あるべき姿よりも低くなってしまいます。
+    低品質になってしまいます。
    </p>
   </div>
  </div>

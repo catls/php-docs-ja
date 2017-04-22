@@ -34,6 +34,13 @@
 によりランダム数生成器にシードを与える必要はありません。
 これは、この処理が自動的に行われるためです。</span></p></blockquote>
 
+  
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    PHP 7.1.0 以降、<span class="function"><strong>srand()</strong></span> has been made
+    an alias of <span class="function"><a href="function.mt-srand.html" class="function">mt_srand()</a></span>.
+   </span>
+  </p></blockquote>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.srand-parameters">
@@ -67,10 +74,40 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-function.srand-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        
+        <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link"><span class="function"><strong>srand()</strong></span> has been made an alias of <span class="function"><a href="function.mt-srand.html" class="function">mt_srand()</a></span>.</a>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-function.srand-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4027">
+   <div class="example" id="example-4029">
     <p><strong>例1 <span class="function"><strong>srand()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

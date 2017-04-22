@@ -28,7 +28,8 @@
    <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> 
    <span class="methodname"><strong>ResourceBundle::get</strong></span>
     ( <span class="methodparam"><span class="type"><span class="type string|int">string|int</span></span> <code class="parameter">$index</code></span>
-   )</div>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$fallback</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
+  ] )</div>
 
   <p class="para rdfs-comment">
    手続き型
@@ -71,6 +72,19 @@
 
       <p class="para">
        データのインデックス。文字列あるいは整数値となります。
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">fallback</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Whether locale should match exactly or fallback to parent locale is allowed.
+       
       </p>
      </dd>
 

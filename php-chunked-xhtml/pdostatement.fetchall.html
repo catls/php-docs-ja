@@ -158,13 +158,21 @@ Array
 (
     [0] =&gt; Array
         (
+            [name] =&gt; apple
+            [0] =&gt; apple
+            [colour] =&gt; red
+            [1] =&gt; red
+        )
+
+    [1] =&gt; Array
+        (
             [name] =&gt; pear
             [0] =&gt; pear
             [colour] =&gt; green
             [1] =&gt; green
         )
 
-    [1] =&gt; Array
+    [2] =&gt; Array
         (
             [name] =&gt; watermelon
             [0] =&gt; watermelon
@@ -245,7 +253,7 @@ array(3) {
   [&quot;watermelon&quot;]=&gt;
   array(1) {
     [0]=&gt;
-    string(5) &quot;green&quot;
+    string(5) &quot;pink&quot;
   }
 }
 
@@ -290,6 +298,20 @@ array(3) {
     [&quot;colour&quot;]=&gt;
     string(4) &quot;pink&quot;
   }
+  [3]=&gt;
+  object(fruit)#4 (2) {
+    [&quot;name&quot;]=&gt;
+    string(5) &quot;apple&quot;
+    [&quot;colour&quot;]=&gt;
+    string(3) &quot;red&quot;
+  }
+  [4]=&gt;
+  object(fruit)#5 (2) {
+    [&quot;name&quot;]=&gt;
+    string(4) &quot;pear&quot;
+    [&quot;colour&quot;]=&gt;
+    string(5) &quot;green&quot;
+  }
 }
 </pre></div>
     </div>
@@ -317,6 +339,10 @@ array(3) {
   string(12) &quot;pear: yellow&quot;
   [2]=&gt;
   string(16) &quot;watermelon: pink&quot;
+  [3]=&gt;
+  string(10) &quot;apple: red&quot;
+  [4]=&gt;
+  string(11) &quot;pear: green&quot;
 }
 </pre></div>
     </div>
