@@ -30,6 +30,12 @@
    これがコールされるのは、各名前空間宣言において、
    名前空間が宣言された要素の終了タグのハンドラがコールされた後のことです。
   </p>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    このイベントは libXML ではサポートされていません。
+    そのため、登録されたハンドラは呼ばれません。
+   </p>
+  </div>
  </div>
 
 
@@ -124,16 +130,6 @@
   <p class="para">
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.xml-set-end-namespace-decl-handler-notes">
-  <h3 class="title">注意</h3>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    このイベントは LibXML ではサポートされていません。
-   </p>
-  </p></blockquote>
  </div>
 
 

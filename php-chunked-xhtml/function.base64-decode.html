@@ -56,7 +56,10 @@
      <dd>
 
       <p class="para">
-       入力に base64 アルファベットの範囲外の文字が含まれる場合に <strong><code>FALSE</code></strong> を返す。
+       If the <code class="parameter">strict</code> parameter is set to <strong><code>TRUE</code></strong> then
+       <span class="function"><strong>base64_decode()</strong></span> 関数は、
+       入力に base64 アルファベットの範囲外の文字が含まれる場合に <strong><code>FALSE</code></strong> を返します。
+       Otherwise invalid characters will be silently discarded.
       </p>
      </dd>
 
