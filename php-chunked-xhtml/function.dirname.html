@@ -29,6 +29,20 @@
    ファイルあるいはディレクトリへのパスを含む文字列を受け取って、
    カレントディレクトリから <code class="parameter">levels</code> レベルさかのぼった親ディレクトリのパスを返します。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    <span class="function"><strong>dirname()</strong></span> は、入力文字列を単純にそのまま処理します。
+    実際のファイルシステムを確認したり
+    &quot;<em>..</em>&quot; のようなパスを気にしたりすることはありません。
+   </p>
+  </p></blockquote>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    <span class="function"><strong>dirname()</strong></span> はロケールに依存します。
+    マルチバイト文字を含むパスで正しい結果を得るには、それと一致するロケールを
+    <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> で設定しておかなければなりません。
+   </p>
+  </div>
  </div>
 
 
@@ -131,7 +145,7 @@
     <p><strong>例1 <span class="function"><strong>dirname()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/passwd"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"."</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"/usr/local/lib"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/passwd"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"/etc/"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"."</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"C:\\"</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">"/usr/local/lib"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -143,47 +157,10 @@
 /etc
 / (Windows の場合は \)
 .
+C:\
 /usr
 </pre></div>
     </div>
-   </div>
-  </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.dirname-notes">
-  <h3 class="title">注意</h3>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    <span class="function"><strong>dirname()</strong></span> は、入力文字列を単純にそのまま処理します。
-    実際のファイルシステムを確認したり
-    &quot;<em>..</em>&quot; のようなパスを気にしたりすることはありません。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    <span class="function"><strong>dirname()</strong></span> はロケールに依存します。
-    マルチバイト文字を含むパスで正しい結果を得るには、それと一致するロケールを
-    <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> で設定しておかなければなりません。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    PHP 4.3.0 以降では、これまでは
-    <span class="function"><strong>dirname()</strong></span> が空文字列を返していたような状況で
-    スラッシュやドットを返すことが多くなりました。
-   </p>
-  </p></blockquote>
-  <p class="para">
-   以下の例で変更点をご確認ください。
-   <div class="informalexample">
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;4.3.0&nbsp;より前のバージョン<br /></span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">'c:/'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;'.'&nbsp;を返します<br /><br />//&nbsp;PHP&nbsp;4.3.0&nbsp;以降のバージョン<br /></span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">'c:/x'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;'c:\'&nbsp;を返します<br /></span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">'c:/Temp/x'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;'c:/Temp'&nbsp;を返します<br /></span><span style="color: #0000BB">dirname</span><span style="color: #007700">(</span><span style="color: #DD0000">'/x'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;'\'&nbsp;を返します<br /><br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
    </div>
   </p>
  </div>

@@ -29,6 +29,20 @@
    ファイルあるいはディレクトリへのパスを含む文字列を受け取って、
    最後にある名前の部分を返します。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    <span class="function"><strong>basename()</strong></span> は、入力文字列を単純にそのまま処理します。
+    実際のファイルシステムを確認したり
+    &quot;<em>..</em>&quot; のようなパスを気にしたりすることはありません。
+   </p>
+  </p></blockquote>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    <span class="function"><strong>basename()</strong></span> はロケールに依存します。
+    マルチバイト文字を含むパスで正しい結果を得るには、それと一致するロケールを
+    <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> で設定しておかなければなりません。
+   </p>
+  </div>
  </div>
 
 
@@ -107,25 +121,6 @@
     </div>
    </div>
   </p>
- </div>
-
- 
- <div class="refsect1 notes" id="refsect1-function.basename-notes">
-  <h3 class="title">注意</h3>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    <span class="function"><strong>basename()</strong></span> は、入力文字列を単純にそのまま処理します。
-    実際のファイルシステムを確認したり
-    &quot;<em>..</em>&quot; のようなパスを気にしたりすることはありません。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    <span class="function"><strong>basename()</strong></span> はロケールに依存します。
-    マルチバイト文字を含むパスで正しい結果を得るには、それと一致するロケールを
-    <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> で設定しておかなければなりません。
-   </p>
-  </p></blockquote>
  </div>
 
 

@@ -1046,7 +1046,7 @@
        <dd>
 
         <p class="para">
-         有効にした場合、SERVER および ENV 変数はスクリプトの開始時ではなく、
+         有効にした場合、SERVER、REQUEST および ENV 変数はスクリプトの開始時ではなく、
          最初に使用された時 (Just In Time) に作成されるようになります。
          これらの変数がスクリプトの中で使用されない場合、
          このディレクティブを使用することで性能が向上します。
@@ -1062,7 +1062,7 @@
         </p>
        <div class="warning"><strong class="warning">警告</strong>
         <p class="para">
-         SERVER および ENV 変数の利用チェックはコンパイル時に行われます。
+         SERVER、REQUEST および ENV 変数の利用チェックはコンパイル時に行われます。
          したがって、たとえば <a href="language.variables.variable.html" class="link">可変変数</a>
          で使用した場合は初期化を行いません。
         </p>
@@ -1659,7 +1659,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-6463">
+         <div class="example" id="example-6464">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1669,7 +1669,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-6464">
+         <div class="example" id="example-6465">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1695,7 +1695,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-6465">
+        <div class="example" id="example-6466">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>

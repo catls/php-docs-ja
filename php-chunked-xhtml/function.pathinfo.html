@@ -30,6 +30,20 @@
    に関する情報を返します。<code class="parameter">options</code>
    によって連想配列あるいは文字列のどちらかとなります。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    カレントのパスに関する情報を取得するには、
+    <a href="language.variables.predefined.html" class="link">定義済みの変数</a>
+    のセクションをご覧ください。
+   </p>
+  </p></blockquote>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    <span class="function"><strong>pathinfo()</strong></span> はロケールを考慮して処理を行います。
+    マルチバイト文字を含むパスを正しく処理するには、正しいロケールを
+    <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> 関数で設定しておかなければなりません。
+   </p>
+  </div>
  </div>
 
 
@@ -212,25 +226,6 @@ Array
     </div>
    </div>
   </p>
- </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.pathinfo-notes">
-  <h3 class="title">注意</h3>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    カレントのパスに関する情報を取得するには、
-    <a href="language.variables.predefined.html" class="link">定義済みの変数</a>
-    のセクションをご覧ください。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    <span class="function"><strong>pathinfo()</strong></span> はロケールを考慮して処理を行います。
-    マルチバイト文字を含むパスを正しく処理するには、正しいロケールを
-    <span class="function"><a href="function.setlocale.html" class="function">setlocale()</a></span> 関数で設定しておかなければなりません。
-   </p>
-  </p></blockquote>
  </div>
 
 

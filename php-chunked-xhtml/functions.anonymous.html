@@ -57,6 +57,9 @@
    <p class="simpara">
     クロージャは、変数を親のスコープから引き継ぐことができます。
     引き継ぐ変数は、<em>use</em> で渡さなければなりません。
+    
+    From PHP 7.1, these variables must not include <a href="language.variables.predefined.html" class="link">superglobals</a>,
+    <var class="varname"><var class="varname">$this</var></var>, or variables with the same name as a parameter.
    </p>
 
    <div class="example" id="example-165">
@@ -147,7 +150,7 @@ NULL</pre></div>
       <p><strong>例6 静的無名関数内での <em>$this</em> の使用例</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">new&nbsp;class&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(static&nbsp;function()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />};<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;static&nbsp;function()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$func</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />};<br />new&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
       </div>
@@ -167,7 +170,7 @@ NULL
       <p><strong>例7 静的無名関数へのオブジェクトのバインド</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">(static&nbsp;function()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;関数の本体<br /></span><span style="color: #007700">})-&gt;</span><span style="color: #0000BB">call</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">StdClass</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$func&nbsp;</span><span style="color: #007700">=&nbsp;static&nbsp;function()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;関数の本体<br /></span><span style="color: #007700">};<br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$func</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindTo</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">StdClass</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
       </div>
@@ -175,7 +178,7 @@ NULL
       <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
       <div class="example-contents screen">
 <div class="cdata"><pre>
-Warning: Cannot bind an instance to a static closure in /in/sLLS9 on line 5
+Warning: Cannot bind an instance to a static closure in %s on line %d
 </pre></div>
       </div>
      </div>
@@ -196,6 +199,16 @@ Warning: Cannot bind an instance to a static closure in /in/sLLS9 on line 5
        </thead>
 
        <tbody class="tbody">
+        <tr>
+         <td>7.1.0</td>
+         <td>
+          
+          Anonymous functions may not close over <a href="language.variables.predefined.html" class="link">superglobals</a>,
+          <var class="varname"><var class="varname">$this</var></var>, or any variable with the same name as a
+          parameter.
+         </td>
+        </tr>
+
         <tr>
          <td>5.4.0</td>
          <td>
