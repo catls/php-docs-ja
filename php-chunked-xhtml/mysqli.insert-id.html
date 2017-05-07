@@ -31,8 +31,8 @@
 
   <p class="para rdfs-comment">
    <span class="function"><strong>mysqli_insert_id()</strong></span> 関数は、AUTO_INCREMENT 属性を
-   持つカラムがあるテーブル上でのクエリにより生成された ID を返します。
-   直近のクエリが INSERT あるいは UPDATE ではなかった場合、あるいは
+   持つカラムがあるテーブル上でのクエリ (通常は INSERT) により生成された ID を返します。
+   この接続を介して INSERT 文または UPDATE 文が送信されなかった場合、あるいは
    変更されたテーブルに AUTO_INCREMENT 属性を持つカラムがなかった場合は
    この関数はゼロを返します。
   </p>
