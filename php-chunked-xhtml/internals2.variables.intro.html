@@ -2,69 +2,76 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Introduction to Variables</title>
+  <title>変数入門</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="internals2.variables.html">変数の作成</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="internals2.variables.arrays.html">Working with Arrays</a></div>
- <div class="up"><a href="internals2.variables.html">変数の作成</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="internals2.variables.html">変数の処理</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="internals2.variables.arrays.html">配列の扱い</a></div>
+ <div class="up"><a href="internals2.variables.html">変数の処理</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="internals2.variables.intro" class="section">
-  <h2 class="title">Introduction to Variables</h2>
+  <h2 class="title">変数入門</h2>
   <p class="para">
-   A good understanding of how variables are stored and manipulated is essential to becoming a <code class="code">Hacker</code>.
-   The engine attempts to cover up the complexity of the concept of a variable that can be any type by 
-   providing a uniform and intuitive set of macros for accessing the structures various fields. As the <code class="code">Hacker</code> works
-   through this chapter, they should become comfortable with the terminology and concepts involved with Variables in PHP.
+   変数がどのように格納され処理されているのかについてきちんと理解することは、
+   <code class="code">ハッカー</code>になるための第一歩です。エンジンは、構造体のさまざまな
+   フィールドにアクセスするための統一された直感的なマクロを提供することで、
+   それがどのような型の変数であっても、その概念の複雑さを隠蔽しようとします。
+   この章の中身に沿って学習していけば、<code class="code">ハッカー</code>はPHPの変数に関する
+   専門用語やその概念についての理解を深めることができるはずです。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">PHP is a dynamic, loosely typed language, that uses copy-on-write and reference counting.</p>
+   <p class="para">PHPはコピーオンライトや参照カウント法を使う、動的で型の制約がゆるい言語です。
+   </p>
   </p></blockquote>
   <p class="para">
-   To clarify what exactly is meant by the statement above: PHP is a high level language, weak typing is implicit of the engines preference to
-   convert, or coerce variables into the required type at execution time. Reference counting is the means by which the engine can deduce when a
-   variable no longer has any references in the users code, and so is able to free the structures associated with the variable.
+  前述の内容もう少し正確に言うと、PHPは高水準言語であり、緩い型付けにより変数は
+  エンジニアの好みに応じて暗黙に解釈され、実行時に必要な型に強制的に変換されます。
+  参照カウント法は、ある変数がユーザーのコードの中でもはや参照されなくなったことを
+  エンジンが推測し、その変数に関連付けられた構造体を開放するという仕組みです。
   </p>
   <p class="para">
-   All variables in PHP are represented by one structure, the <code class="code">zval</code>:
+   PHP内部の変数は、すべて<code class="code">zval</code>と呼ばれるひとつの構造体で表現されています。
   </p>
   <div class="example-contents screen">
 <div class="cdata"><pre>
 typedef struct _zval_struct {
-    zvalue_value value;        /* variable value */
-    zend_uint refcount__gc;    /* reference counter */
-    zend_uchar type;           /* value type */
-    zend_uchar is_ref__gc;     /* reference flag */
+    zvalue_value value;        /* 変数の値 */
+    zend_uint refcount__gc;    /* 参照回数 */
+    zend_uchar type;           /* 変数の型 */
+    zend_uchar is_ref__gc;     /* 参照フラグ */
 } zval;</pre></div>
   </div>
   <p class="para">
-   The <code class="code">zval_value</code> is a union which can represent all types a variable may hold:
+   <code class="code">zval_value</code>は、ひとつの変数が持ちうるすべての型を表現可能な共用体です。
   </p>
   <div class="example-contents screen">
 <div class="cdata"><pre>
 typedef union _zvalue_value {
-    long lval;                 /* long value */
-    double dval;               /* double value */
+    long lval;                 /* long 値 */
+    double dval;               /* double 値 */
     struct {                   
         char *val;
-        int len;               /* this will always be set for strings */
-    } str;                     /* string (always has length) */
-    HashTable *ht;             /* an array */
-    zend_object_value obj;     /* stores an object store handle, and handlers */
+        int len;               /* 常に文字列用として設定されます */
+    } str;                     /* 文字列(常に長さを持ちます) */
+    HashTable *ht;             /* 配列 */
+    zend_object_value obj;     /* オジュジェクト格納用ハンドルやハンドラを保持します */
 } zvalue_value;
 </pre></div>
   </div>
   <p class="para">
-   It should be clear from the structures above that a variable can be of one type, the variable data is represented by the appropriate field in the <code class="code">zval_value</code> union. The <code class="code">zval</code> itself holds the type, reference count and a flag to indicate if a variable is a reference.
+   この構造体により、ある変数はいずれかひとつの型を持つことができ、そのデータは
+   <code class="code">zval_value</code>共用体の中の適切なフィールドによって表現されている
+   ことがわかります。<code class="code">zval</code>自体に型や参照回数と、その変数がまだ参照
+   されているかどうかを示すフラグを持っています。
   </p>
   <table id="internals2.variables.types.api" class="doctable table">
-   <caption><strong>Native Type Constants</strong></caption>
+   <caption><strong>ネイティブ型定数</strong></caption>
    
     <thead>
      <tr>
-      <th>Constant</th>
-      <th>Mapping</th>
+      <th>定数</th>
+      <th>マッピング</th>
      </tr>
 
     </thead>
@@ -72,7 +79,7 @@ typedef union _zvalue_value {
     <tbody class="tbody">
      <tr>
       <td><code class="code">IS_NULL</code></td>
-      <td>no value is set in this case</td>
+      <td>値がセットされていない</td>
      </tr>
 
      
@@ -124,21 +131,22 @@ typedef union _zvalue_value {
 
   
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">There are additional constants that help to identify internal types such as constant arrays and callable objects, their usage is outside the scope of this part of the documentation.</p>
+   <p class="para">上記の他にも、定数の配列や callable オブジェクトといった内部的な型を
+   あらわす定数があるのですが、それらの利用法についてはこのドキュメントでは扱いません。</p>
   </p></blockquote>
   
-  <p class="para">
-   The following table defines the macros exposed by the engine for working with <code class="code">zval</code> values:
+  <p class="para">エンジンが公開しているマクロのうち、<code class="code">zval</code>値で扱えるものを
+  以下の表に示します。
   </p>
   
   <table id="internals2.variables.zvals.api" class="doctable table">
-   <caption><strong>Accessor Macros</strong></caption>
+   <caption><strong>アクセサ・マクロ</strong></caption>
    
     <thead>
      <tr>
-      <th>Prototype</th>
-      <th>Accesses</th>
-      <th>Description</th>
+      <th>プロトタイプ</th>
+      <th>アクセス</th>
+      <th>説明</th>
      </tr>
 
     </thead>
@@ -147,7 +155,7 @@ typedef union _zvalue_value {
      <tr>
       <td><code class="code">zend_uchar Z_TYPE(zval zv)</code></td>
       <td>type</td>
-      <td>returns the type of the <code class="code">value</code></td>
+      <td><code class="code">value</code>の型を返す</td>
      </tr>
 
      
@@ -161,7 +169,7 @@ typedef union _zvalue_value {
      <tr>
       <td><code class="code">zend_bool Z_BVAL(zval zv)</code></td>
       <td>value.lval</td>
-      <td>cast long <code class="code">value</code> to zend_bool</td>
+      <td>long の<code class="code">value</code>を zend_bool にキャスト</td>
      </tr>
 
      
@@ -175,77 +183,78 @@ typedef union _zvalue_value {
      <tr>
       <td><code class="code">long Z_RESVAL(zval zv)</code></td>
       <td>value.lval</td>
-      <td>returns the resource list identifier for <code class="code">value</code></td>
+      <td>リソース一覧における<code class="code">value</code>の識別子を返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">char* Z_STRVAL(zval zv)</code></td>
       <td>value.str.val</td>
-      <td>return the string <code class="code">value</code></td>
+      <td>文字列の<code class="code">value</code>を返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">int Z_STRLEN(zval zv)</code></td>
       <td>value.str.len</td>
-      <td>return the length of the string <code class="code">value</code></td>
+      <td>文字列<code class="code">value</code>の文字数を返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">HashTable* Z_ARRVAL(zval zv)</code></td>
       <td>value.ht</td>
-      <td>return the HashTable (array) <code class="code">value</code></td>
+      <td>ハッシュテーブル（配列）の<code class="code">value</code>を返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">zend_object_value Z_OBJVAL(zval zv)</code></td>
       <td>value.obj</td>
-      <td>returns object <code class="code">value</code></td>
+      <td>オブジェクトの<code class="code">value</code>を返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">uint Z_OBJ_HANDLE(zval zv)</code></td>
       <td>value.obj.handle</td>
-      <td>returns the object handle for object <code class="code">value</code></td>
+      <td>オブジェクト<code class="code">value</code>のオブジェクトハンドルを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">zend_object_handlers* Z_OBJ_HT_P(zval zv)</code></td>
       <td>value.obj.handlers</td>
-      <td>returns the handler table for object <code class="code">value</code></td>
+      <td>オブジェクト<code class="code">value</code>のハンドラテーブルを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">zend_class_entry* Z_OBJCE(zval zv)</code></td>
       <td>value.obj</td>
-      <td>returns the class entry for object <code class="code">value</code></td>
+      <td>オブジェクト<code class="code">value</code>のクラスエントリを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">HashTable* Z_OBJPROP(zval zv)</code></td>
       <td>value.obj</td>
-      <td>returns the properties of object <code class="code">value</code></td>
+      <td>オブジェクト<code class="code">value</code>のプロパティを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">HashTable* Z_OBJPROP(zval zv)</code></td>
       <td>value.obj</td>
-      <td>returns the properties of object <code class="code">value</code></td>
+      <td>オブジェクト<code class="code">value</code>のプロパティを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">HashTable* Z_OBJDEBUG(zval zv)</code></td>
       <td>value.obj</td>
-      <td>if an object has the get_debug_info handler set, it is called, else Z_OBJPROP is called</td>
+      <td>オブジェクトに get_debug_info ハンドラがセットされている
+      場合はそれが呼ばれ、そうでなければ Z_OBJPROP が呼ばれる</td>
      </tr>
 
      
@@ -255,15 +264,16 @@ typedef union _zvalue_value {
 
   
   
-  <p class="para">Please check the <a href="features.gc.refcounting-basics.html" class="xref">参照カウント法の原理</a> chapter for details how reference counting and references work in detail.</p>
+  <p class="para"><a href="features.gc.refcounting-basics.html" class="xref">参照カウント法の原理</a>の章をチェックして、
+  参照カウント法や参照がどのような仕組みで動いているのかを調べてみてください。</p>
   
   <table id="internals2.variables.refcounts.api" class="doctable table">
-   <caption><strong>Reference Count Manipulation</strong></caption>
+   <caption><strong>参照カウントの操作</strong></caption>
    
     <thead>
      <tr>
-      <th>Prototype</th>
-      <th>Description</th>
+      <th>プロトタイプ</th>
+      <th>説明</th>
      </tr>
 
     </thead>
@@ -272,49 +282,49 @@ typedef union _zvalue_value {
     <tbody class="tbody">
      <tr>
       <td><code class="code">zend_uint Z_REFCOUNT(zval zv)</code></td>
-      <td>returns the reference count of the <code class="code">value</code></td>
+      <td><code class="code">value</code>の参照カウントを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">zend_uint Z_SET_REFCOUNT(zval zv)</code></td>
-      <td>sets the reference count of the <code class="code">value</code>, returning it</td>
+      <td><code class="code">value</code>の参照カウントをセットしてそれを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">zend_uint Z_ADDREF(zval zv)</code></td>
-      <td>pre-increments the reference count of <code class="code">value</code>, returning it</td>
+      <td><code class="code">value</code>の参照カウントを事前インクリメントしてそれを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">zend_uint Z_DELREF(zval zv)</code></td>
-      <td>pre-decrements the reference count of <code class="code">value</code>, returning it</td>
+      <td><code class="code">value</code>の参照カウントを事前デクリメントしてそれを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">zend_bool Z_ISREF(zval zv)</code></td>
-      <td>tells if the zval is a reference</td>
+      <td>zval が参照かどうかを返す</td>
      </tr>
 
      
      <tr>
       <td><code class="code">void Z_UNSET_ISREF(zval zv)</code></td>
-      <td>set is_ref__gc to 0</td>
+      <td>is_ref__gc を 0 にする</td>
      </tr>
 
      
      <tr>
       <td><code class="code">void Z_SET_ISREF(zval zv)</code></td>
-      <td>set is_ref__gc to 1</td>
+      <td>is_ref__gc を 1 にする</td>
      </tr>
 
      
      <tr>
       <td><code class="code">void Z_SET_ISREF_TO(zval zv, zend_uchar to)</code></td>
-      <td>set is_ref__gc to <code class="code">to</code></td>
+      <td>is_ref__gc を<code class="code">to</code>にする</td>
      </tr>
 
      
@@ -324,16 +334,21 @@ typedef union _zvalue_value {
 
   
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">The Z_* macros above all take a zval, they are all defined again suffixed with _P to take a pointer to a zval, for example <code class="code">zend_uchar Z_TYPE_P(zval* pzv)</code>, and again suffixed with _PP to take a pointer to a pointer to a zval, for example <code class="code">zend_uchar Z_TYPE_PP(zval** ppzv)</code></p>
+   <p class="para">
+   前述の Z_* マクロはどれも１個の zval を受け取りますが、これらに _P サフィックス
+   がついた、たとえば<code class="code">zend_uchar Z_TYPE_P(zval* pzv)</code>のようなマクロも
+   定義されていて、これらはすべて zval へのポインタを受け取ります。さらに、たとえば
+   <code class="code">zend_uchar Z_TYPE_PP(zval** ppzv)</code>のように _PP サフィックスがついた
+   ものもあり、これらは zval へのポインタのポインタを受け取ります。</p>
   </p></blockquote>
   
   <table id="internals2.variables.general.api" class="doctable table">
-   <caption><strong>Creation, Destruction, Separation and Copying</strong></caption>
+   <caption><strong>生成、破壊、分割、コピー</strong></caption>
    
     <thead>
      <tr>
-      <th>Prototype</th>
-      <th>Description</th>
+      <th>プロトタイプ</th>
+      <th>説明</th>
      </tr>
 
     </thead>
@@ -342,79 +357,91 @@ typedef union _zvalue_value {
     <tbody class="tbody">
      <tr>
       <td><code class="code">ALLOC_ZVAL(zval* pzval)</code></td>
-      <td>emallocs <code class="code">pzval</code></td>
+      <td><code class="code">pzval</code>を emalloc する</td>
      </tr>
 
      
      <tr>
       <td><code class="code">ALLOC_INIT_ZVAL(zval* pzval)</code></td>
-      <td>emallocs <code class="code">pzval</code>, and points <code class="code">pzval</code> at a null typed zval for sanity</td>
+      <td><code class="code">pzval</code>を emalloc し、<code class="code">pzval</code>は初期化のために
+      NULL として型付けられた zval を指すようにする</td>
      </tr>
 
      
      <tr>
       <td><code class="code">MAKE_STD_ZVAL(zval* pzval)</code></td>
-      <td>emallocs <code class="code">pzval</code>, setting the refcount to <code class="code">1</code></td>
+      <td><code class="code">pzval</code>を emalloc し、参照カウントを
+      <code class="code">1</code>にする</td>
      </tr>
 
      
      <tr>
       <td><code class="code">ZVAL_COPY_VALUE(zval* dst, zval* src)</code></td>
-      <td>sets the value and type of <code class="code">dst</code> from the value and type of <code class="code">src</code></td>
+      <td><code class="code">src</code>の値と型を<code class="code">dst</code>の値と型としてセットする
+      </td>
      </tr>
 
      
      <tr>
       <td><code class="code">INIT_PZVAL_COPY(zval* dst, zval*dst) </code></td>
-      <td>performs ZVAL_COPY_VALUE, setting refcount of <code class="code">dst</code> to 1, and setting is_ref__gc to <code class="code">0</code></td>
+      <td>ZVAL_COPY_VALUE を実行し、<code class="code">dst</code>の参照カウントを 1 にし、
+      is_ref__gc を<code class="code">0</code>にする</td>
      </tr>
 
      
      <tr>
       <td><code class="code">SEPARATE_ZVAL(zval** ppzval)</code></td>
-      <td>if the refcount of <code class="code">ppzval</code> is &gt;1, redirects <code class="code">*ppzval</code> to a newly emalloc&#039;d, copied, and constructed zval of the same type and value</td>
+      <td><code class="code">ppzval</code>の参照カウントが 1 より大きい場合、新たに emalloc 
+      して zval の中身をコピーし、zval と同じ型で同じ値にした場所を
+      <code class="code">*ppzval</code>が指すようにする</td>
      </tr>
 
      
      <tr>
       <td><code class="code">SEPARATE_ZVAL_IF_NOT_REF(zval** ppzval)</code></td>
-      <td>if <code class="code">*ppzval</code> is not a reference, will perform SEPARATE_ZVAL on <code class="code">ppzval</code></td>
+      <td><code class="code">*ppzval</code>が参照ではない場合、<code class="code">ppzval</code>に対して
+      SEPARATE_ZVAL を行う</td>
      </tr>
 
      
      <tr>
       <td><code class="code">SEPARATE_ZVAL_TO_MAKE_IS_REF(zval** ppzval)</code></td>
-      <td>if <code class="code">*ppzval</code> is not a reference, performs SEPARATE_ZVAL then Z_SET_ISREF_PP on <code class="code">ppzval</code></td>
+      <td><code class="code">*ppzval</code>が参照ではない場合、<code class="code">ppzval</code>に対して
+      SEPARATE_ZVAL と Z_SET_ISREF_PP を行う</td>
      </tr>
 
      
      <tr>
       <td><code class="code">COPY_PZVAL_TO_ZVAL(zval dst, zval** src)</code></td>
-      <td>results in <code class="code">dst</code> being a copy of <code class="code">src</code> without affecting the refcount of <code class="code">src</code></td>
+      <td><code class="code">src</code>の参照カウントを変更せずに、<code class="code">dst</code>を
+      <code class="code">src</code>のコピーにする</td>
      </tr>
 
      
      <tr>
       <td><code class="code">MAKE_COPY_ZVAL(zval** src, zval* dst)</code></td>
-      <td>performs INIT_PZVAL_COPY, then zval_copy_ctor on the new zval</td>
+      <td>INIT_PZVAL_COPY を行い、新しい zval に対して zval_copy_ctor する
+      </td>
      </tr>
 
      
      <tr>
       <td><code class="code">void zval_copy_ctor(zval** pzval)</code></td>
-      <td>performs maintenance of reference counts, used widely throughout the engine</td>
+      <td>参照カウントをメンテナンスする。エンジン全体を通して広く使われる。
+      </td>
      </tr>
 
      
      <tr>
       <td><code class="code">void zval_ptr_dtor(zval* pzval)</code></td>
-      <td>decrements the refcount for the variable, if no refcounts remain the variable is destroyed</td>
+      <td>変数の参照カウントをデクリメントする。
+      参照カウントが 0 になったら変数は破壊される。</td>
      </tr>
 
      
      <tr>
       <td><code class="code">FREE_ZVAL(zval* pzval)</code></td>
-      <td>efrees <code class="code">pzval</code></td>
+      <td><code class="code">pzval</code>を efree する</td>
      </tr>
 
      
@@ -424,19 +451,29 @@ typedef union _zvalue_value {
 
   
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">Objects and Resources have a reference count as part of their respective structures, when zval_ptr_dtor is called on either, their appropriate del_ref method is executed. See Working with Objects and Working with Resources for more information.</p>
+   <p class="para">オブジェクトとリソースは、それぞれの構造体の一部として参照カウントを
+   持っています。これらについて zval_ptr_dtor が呼ばれると、それぞれにあった del_ref
+   が実行されます。詳細はオブジェクトの扱いとリソースの扱いを参照してください。
+   </p>
   </p></blockquote>
   
-  <p class="para">If the <code class="code">Hacker</code> only has room to remember two more functions, they should be <code class="code">zval_copy_ctor</code> and <code class="code">zval_ptr_dtor</code>, these are at the basis of the engines reference counting mechanisms and it is important to note that <code class="code">zval_copy_ctor</code> does not actually result in any copying occuring under normal circumstances, it simply increases the reference count. By the same token, <code class="code">zval_ptr_dtor</code> only really destroys a variable when there are no references remaining to it and the refcount is at 0.</p>
+  <p class="para">さらに<code class="code">ハッカー</code>が知っておくべき機能をふたつだけ挙げるとすれば、
+  それは<code class="code">zval_copy_ctor</code>と<code class="code">zval_ptr_dtor</code>でしょう。これらは
+  エンジンにおける参照カウントメカニズムの基本です。重要なことは、通常の環境で
+  <code class="code">zval_copy_ctor</code>が呼ばれても、実際には何も起こらないことです。
+  これは単に参照カウントを増やしているだけです。同様に、<code class="code">zval_ptr_dtor</code>
+  が本当に変数を破壊するのは、それを参照するものがなくなって、参照カウントが 0 
+  になった時だけです。</p>
   
-  <p class="para">PHP is weakly typed, as such the engine provides API functions for converting variables from one type to another.</p>
+  <p class="para">PHP 自体は弱い型付けしか行いませんが、エンジンが変数の型を別の型にするための
+  API 関数を提供しています。</p>
   
   <table id="internals2.variables.conversion.api" class="doctable table">
-   <caption><strong>Type Conversion</strong></caption>
+   <caption><strong>型の変換</strong></caption>
    
     <thead>
      <tr>
-      <th>Prototype</th>
+      <th>プロトタイプ</th>
      </tr>
 
     </thead>
@@ -489,14 +526,17 @@ typedef union _zvalue_value {
 
   
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para"><code class="code">convert_func_t</code> functions should have the prototype <code class="code">(void) (zval* pzval)</code></p>
+   <p class="para"><code class="code">convert_func_t</code> 関数には<code class="code">(void) (zval* pzval)</code>
+   というプロトタイプが必要です。</p>
   </p></blockquote>
   
-  <p class="para">By now you should have a good understanding of: the types that are native to the engine, how to detect types and read zval values, how to manipulate refcounts, and other zval flags</p>
+  <p class="para">ここまで読んでもらえたので、あなたはネイティブからエンジンまでの型、
+  型の検出とzval 値の読み取り方法、参照カウントや zval のフラグの操作等についての
+  理解が進んだはずです。</p>
   
  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="internals2.variables.html">変数の作成</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="internals2.variables.arrays.html">Working with Arrays</a></div>
- <div class="up"><a href="internals2.variables.html">変数の作成</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="internals2.variables.html">変数の処理</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="internals2.variables.arrays.html">配列の扱い</a></div>
+ <div class="up"><a href="internals2.variables.html">変数の処理</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

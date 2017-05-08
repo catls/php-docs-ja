@@ -28,8 +28,7 @@
    昔ながらの継承に機能を加えて、振る舞いを水平方向で構成できるようになります。
    つまり、継承しなくてもクラスのメンバーに追加できるようになります。
   </p>
-  
-  <div class="example" id="example-209">
+  <div class="example" id="example-210">
     <p><strong>例1 トレイトの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -47,7 +46,7 @@
     優先順位は現在のクラスのメンバーが最高で、その次がトレイトのメソッド、
     そしてその次にくるのが継承したメソッドとなります。
    </p>
-   <div class="example" id="example-210">
+   <div class="example" id="example-211">
     <p><strong>例2 優先順位の例</strong></p>
     <div class="example-contents"><p>
      基底クラスから継承したメソッドは、MyHelloWorld に SayWorld トレイトから追加されたメソッドで上書きされます。
@@ -69,7 +68,7 @@ Hello World!
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-211">
+   <div class="example" id="example-212">
     <p><strong>例3 もうひとつの優先順位の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -128,7 +127,7 @@ Hello World!
     <em>as</em> 演算子はメソッドをリネームするわけではないので、
     その他のメソッドにも何も影響を及ぼさないことに注意しましょう。
    </p>
-   <div class="example" id="example-213">
+   <div class="example" id="example-214">
     <p><strong>例5 衝突の解決</strong></p>
     <div class="example-contents"><p>
       この例では、Talker がトレイト A と B を使います。
@@ -149,6 +148,14 @@ Hello World!
     </div>
 
    </div>
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <p class="para">
+     
+     Prior to PHP 7.0, defining a property in a class with the same name as in a trait
+     would throw an <strong><code>E_STRICT</code></strong> if the class definition was compatible 
+     (same visibility and initial value).
+    </p>
+   </p></blockquote>
   </div>
   
   <div class="sect2" id="language.oop5.traits.visibility">
@@ -157,7 +164,7 @@ Hello World!
     <em>as</em> 構文を使うと、
     クラス内でのメソッドの可視性も変更することができます。
    </p>
-   <div class="example" id="example-214">
+   <div class="example" id="example-215">
     <p><strong>例6 メソッドの可視性の変更</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -176,7 +183,7 @@ Hello World!
     トレイトの定義の中でトレイトを使うと、
     定義したトレイトのメンバーの全体あるいは一部を組み合わせることができます。
    </p>
-   <div class="example" id="example-215">
+   <div class="example" id="example-216">
     <p><strong>例7 トレイトを組み合わせたトレイト</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -199,7 +206,7 @@ Hello World!
    <p class="para">
     トレイトでは、抽象メソッドを使ってクラスの要件を指定できます。
    </p>
-   <div class="example" id="example-216">
+   <div class="example" id="example-217">
     <p><strong>例8 抽象メソッドによる、要件の明示</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -216,7 +223,7 @@ Hello World!
    <p class="para">
     トレイトでは、静的なメンバーやメソッドを定義できます。
    </p>
-   <div class="example" id="example-217">
+   <div class="example" id="example-218">
     <p><strong>例9 静的な変数</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -226,7 +233,7 @@ Hello World!
     </div>
 
    </div>
-   <div class="example" id="example-218">
+   <div class="example" id="example-219">
     <p><strong>例10 静的なメソッド</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -243,7 +250,7 @@ Hello World!
    <p class="para">
     トレイトにはプロパティも定義できます。
    </p>
-   <div class="example" id="example-219">
+   <div class="example" id="example-220">
     <p><strong>例11 プロパティの定義</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -255,15 +262,17 @@ Hello World!
    </div>
    <p class="para">
     トレイトでプロパティを定義したときは、クラスでは同じ名前のプロパティを定義できません。
-    定義しようとすると、エラーが発生します。クラス側での定義がトレイトでの定義と互換性がある
-    (可視性も初期値も同じ) 場合は <strong><code>E_STRICT</code></strong>、
-    それ以外の場合は fatal error となります。
+    
+    unless it is compatible (same visibility and initial value),
+    otherwise a fatal error is issued.
+    Before PHP 7.0.0, defining a property in the class with the same visibility
+    and initial value as in the trait, raised an E_STRICT notice.
    </p>
    <div class="example" id="language.oop5.interfaces.examples.ex1">
     <p><strong>例12 衝突の解決</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">trait&nbsp;</span><span style="color: #0000BB">PropertiesTrait&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$same&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$different&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">PropertiesExample&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;</span><span style="color: #0000BB">PropertiesTrait</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$same&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Strict&nbsp;Standards<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$different&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;error<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">trait&nbsp;</span><span style="color: #0000BB">PropertiesTrait&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$same&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$different&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">PropertiesExample&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;</span><span style="color: #0000BB">PropertiesTrait</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$same&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Allowed&nbsp;as&nbsp;of&nbsp;PHP&nbsp;7.0.0;&nbsp;E_STRICT&nbsp;notice&nbsp;formerly<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$different&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Fatal&nbsp;error<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

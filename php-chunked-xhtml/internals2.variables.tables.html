@@ -2,42 +2,55 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Working with HashTable</title>
+  <title>HashTable の扱い</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="internals2.variables.arrays.html">Working with Arrays</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="internals2.variables.objects.html">Working with Objects</a></div>
- <div class="up"><a href="internals2.variables.html">変数の作成</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="internals2.variables.arrays.html">配列の扱い</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="internals2.variables.objects.html">オブジェクトの扱い</a></div>
+ <div class="up"><a href="internals2.variables.html">変数の処理</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="internals2.variables.tables" class="section">
-  <h2 class="title">Working with HashTable</h2>
+  <h2 class="title">HashTable の扱い</h2>
   
-  <p class="para">The <code class="code">HashTable</code> structure serves many purposes in PHP and can be found everywhere, a good understanding of it&#039;s functionality is a preqrequisite of being a good <code class="code">Hacker</code>.</p>
+  <p class="para">PHP の内部で多くの役割を提供する<code class="code">HashTable</code>構造体は至る所で
+  使われており、この機能を理解することはよい<code class="code">ハッカー</code>になるための
+  必要条件です。</p>
   
-  <p class="para">The <code class="code">HashTable</code> implemented by the engine is a standard <code class="code">HashTable</code>, that is to say, a key =&gt; value based store, where the keys are always strings, whose hashes are calculated with a built in hashing algorythim <code class="code">zend_inline_hash_func(const char* key, uint length)</code>, which results in good distribution, and reasonable usage.</p>
+  <p class="para">エンジンにおける<code class="code">HashTable</code>の実装は標準の<code class="code">HashTable</code>です。
+  つまりキー =&gt; 値をベースにした格納方式であり、キーは常に文字列で、そのハッシュ値は
+  ビルトインのハッシュアルゴリズム
+  <code class="code">zend_inline_hash_func(const char* key, uint length)</code>により計算されます。
+  これは広く流通しており、妥当な利用法と言えます。</p>
   
-  <p class="para">The internal structure and exact operation of <code class="code">HashTable</code> is out of the scope of this document, this document serves to inform you of the API&#039;s available and how best to use them. For a more detailed picture of the HashTable see <code class="code">Zend/zend_hash.h</code>.</p>
+  <p class="para"><code class="code">HashTable</code>の内部構造や厳密な操作についてはこの文書の範疇を超えます。
+  この文書では API の入手や最適な利用法などについてご紹介しています。HashTable
+  に関する詳細な考え方等は<code class="code">Zend/zend_hash.h</code>を参照してください。</p>
   
-  <p class="para">Unless otherwise stated, these functions all return <code class="code">FAILURE</code> if the requested operation fails for any reason, otherwise <code class="code">SUCCESS</code> is returned.</p>
+  <p class="para">特に記載のない限り、これらの関数は何らかの原因で要求した操作ができない場合
+  <code class="code">FAILURE</code>を返し、そうでなければ<code class="code">SUCCESS</code>を返します。</p>
   
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">It is important to remember that ordinarily <code class="code">HashTable</code> API functions expect key lengths to be the length of the null terminated string, including the null termination, in other words they expect <code class="code">strlen(key) + 1</code></p>
+   <p class="para"><code class="code">HashTable</code> API 関数は通常、キーの長さは NULL で終端された文字列の
+   長さに等しいことを期待していることに気をつけてください。これには NULL 終端の分も
+   含みます。つまり、<code class="code">strlen(key) + 1</code>を期待しているということです。</p>
   </p></blockquote>
   
-  <p class="para">Below are some typedefs you should know when interacting with <code class="code">HashTable</code>. They are mostly self explanitory and will allow the <code class="code">Hacker</code> to fully understand the prototypes below properly.</p>
+  <p class="para"><code class="code">HashTable</code>を使う際に知っておくべき typedef 定義を以下に記載します。
+  これらのほとんどは定義そのものが説明のようになっているので、<code class="code">ハッカー</code>
+  はこれらのプロトタイプを深く理解できるはずです。</p>
   
   <div class="example-contents screen">
 <div class="cdata"><pre>
-typedef ulong (*hash_func_t)(const char *arKey, uint nKeyLength); /* mostly redundant */
-typedef int  (*compare_func_t)(const void *, const void * TSRMLS_DC); /* comparison function */
-typedef void (*sort_func_t)(void *, size_t, register size_t, compare_func_t TSRMLS_DC); /* sorting function */
-typedef void (*dtor_func_t)(void *pDest); /* destructor function */
-typedef void (*copy_ctor_func_t)(void *pElement); /* copy constructor */
-typedef void (*copy_ctor_param_func_t)(void *pElement, void *pParam); /* copy with argument constructor */
-typedef int (*apply_func_t)(void *pDest TSRMLS_DC); /* apply function */
-typedef int (*apply_func_arg_t)(void *pDest, void *argument TSRMLS_DC); /* apply with argument function */
-typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key); /* apply with multiple arguments function */
+typedef ulong (*hash_func_t)(const char *arKey, uint nKeyLength); /* ほとんど冗長 */
+typedef int  (*compare_func_t)(const void *, const void * TSRMLS_DC); /* 比較関数 */
+typedef void (*sort_func_t)(void *, size_t, register size_t, compare_func_t TSRMLS_DC); /* ソート関数 */
+typedef void (*dtor_func_t)(void *pDest); /* デストラクタ関数 */
+typedef void (*copy_ctor_func_t)(void *pElement); /* コピーコンストラクタ */
+typedef void (*copy_ctor_param_func_t)(void *pElement, void *pParam); /* 引数付きのコピーコンストラクタ */
+typedef int (*apply_func_t)(void *pDest TSRMLS_DC); /* 適用関数 */
+typedef int (*apply_func_arg_t)(void *pDest, void *argument TSRMLS_DC); /* 関数引数付きの適用関数 */
+typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key); /* 複数の関数引数を伴う適用関数 */
 </pre></div>
   </div>
   
@@ -51,7 +64,10 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>Initializes the hash table to hold at least <code class="code">size</code> elements, <code class="code">hash</code> exists for historical reasons and is always ignored, <code class="code">zend_inline_hash_func</code> is always used as the hashing function. <code class="code">destructor</code> may be <code class="code">NULL</code>.</td>
+      <td>ハッシュテーブルを初期化して、少なくとも<code class="code">size</code>個の要素を
+      保持する。<code class="code">hash</code>は歴史的な経緯により存在するだけで常に無視される。
+      <code class="code">zend_inline_hash_func</code>が常にハッシュ関数として使われる。
+      <code class="code">destructor</code>は<code class="code">NULL</code>でもよい。</td>
      </tr>
 
      
@@ -61,7 +77,9 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>adds <code class="code">data</code> to the table using the specified <code class="code">key</code>, where the key  is <code class="code">length</code> bytes long (and will be copied from <code class="code">key</code> to the table). If the key is set FAILURE will be returned.</td>
+      <td>指定された<code class="code">key</code>を使ってテーブルに<code class="code">data</code>を追加する。
+      キーは<code class="code">length</code>バイトの長さを持つ（そして<code class="code">key</code>からテーブル
+      にコピーされる）。キーが存在すると FAILURE が返される。</td>
      </tr>
 
      
@@ -71,7 +89,10 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>adds <code class="code">data</code> to the table using the specified <code class="code">key</code>, where the key  is <code class="code">length</code> bytes long (and will be copied from <code class="code">key</code> to the table). If the key has been set previously the old data has <code class="code">dtor_func_t</code> called on it and the existing data is replaced with <code class="code">data</code></td>
+      <td>指定された<code class="code">key</code>を使ってテーブルに<code class="code">data</code>を追加する。
+      キーは<code class="code">length</code>バイトの長さを持つ（そして<code class="code">key</code>からテーブル
+      にコピーされる）。キーが存在した場合、古いデータに対して<code class="code">dtor_func_t</code>
+      が呼ばれ、既存のデータは<code class="code">data</code>で上書きされる。</td>
      </tr>
 
      
@@ -81,7 +102,8 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>searches the table for <code class="code">key</code>, setting <code class="code">*data</code> and returning SUCCESS if it is found.</td>
+      <td>テーブルを<code class="code">key</code>で検索し、見つかったら<code class="code">*data</code>
+      をセットして SUCCESS を返す。</td>
      </tr>
 
      
@@ -91,7 +113,7 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>returns positively if <code class="code">key</code> is found in <code class="code">ht</code></td>
+      <td><code class="code">ht</code>に<code class="code">key</code>があれば正の値を返す。</td>
      </tr>
 
      
@@ -101,7 +123,7 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>removes the entry identified by <code class="code">key</code> from the table if found</td>
+      <td>テーブル内に<code class="code">key</code>で特定されるエントリがあれば削除する。</td>
      </tr>
 
      
@@ -111,7 +133,8 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>updates the entry at <code class="code">index</code> in <code class="code">ht</code>, with the data at <code class="code">data</code></td>
+      <td><code class="code">ht</code>の中の<code class="code">index</code>で指定されたエントリのデータを
+      <code class="code">data</code>で更新する。</td>
      </tr>
 
      
@@ -121,7 +144,8 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>deletes the entry at <code class="code">index</code> from <code class="code">ht</code></td>
+      <td><code class="code">ht</code>から<code class="code">index</code>で指定されたエントリを削除する。
+      </td>
      </tr>
 
      
@@ -131,7 +155,8 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>redirects <code class="code">*data</code> to the data identified by <code class="code">index</code> in <code class="code">ht</code></td>
+      <td><code class="code">ht</code>の中で<code class="code">index</code>で指定されたデータを
+      <code class="code">*data</code>にリダイレクトする。</td>
      </tr>
 
      
@@ -141,7 +166,7 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>returns positively if <code class="code">index</code> is found in <code class="code">ht</code></td>
+      <td><code class="code">ht</code>に<code class="code">index</code>があれば正の値を返す。</td>
      </tr>
 
      
@@ -151,7 +176,7 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
      
      <tr>
-      <td>returns the index of the next free element in <code class="code">ht</code></td>
+      <td><code class="code">ht</code>の中で次に利用可能な要素のインデックスを返す。</td>
      </tr>
 
      
@@ -161,13 +186,19 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
 
   
   <div class="caution"><strong class="caution">警告</strong>
-   <p class="para">zend_hash_* functions that accept <code class="code">void* data</code> should normally cast it to <code class="code">(void**)</code> (ie, <code class="code">(void**) &amp;data</code>)</p>
+   <p class="para">zend_hash_* 関数のうち<code class="code">void* data</code>を受け付けるものは、
+   通常それを<code class="code">(void**)</code> (すなわち<code class="code">(void**) &amp;data</code>)に
+   キャストしなければいけません。</p>
   </div>
   
-  <p class="para">Traversing the HashTable is often necessary, to do this you provide a pointer to a <code class="code">HashTable</code>, with an optional <code class="code">HashPosition</code> - a structure internal to the HashTable API that allows traversal not to affect the internal position of HashTable. The following traversal functions are provided, and an example usage found below.</p>
+  <p class="para">HashTable の中を行き来しなければならない場合も少なくありません。
+  これを行うには、<code class="code">HashTable</code>へのポインタに加えて<code class="code">HashPosition</code>
+  オプションを指定します。これは HashTable API への内部構造であり、HashTable の
+  内部位置に影響を与えずに内部を移動できるようになります。以下の移動用関数が提供
+  されており、以下にその利用例を示します。</p>
   
   <table id="internals2.variables.trarrays.api" class="doctable table">
-   <caption><strong>HashTable Traversal API</strong></caption>
+   <caption><strong>HashTable 内の移動 API</strong></caption>
    
     <tbody class="tbody">
      <tr>
@@ -175,7 +206,7 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
      </tr>
 
      <tr>
-      <td>resets the internal pointer of <code class="code">ht</code> to the start</td>
+      <td><code class="code">ht</code>の内部ポインタを開始位置にリセットする。</td>
      </tr>
 
      <tr>
@@ -183,7 +214,7 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
      </tr>
 
      <tr>
-      <td>sets <code class="code">position</code> the the start of <code class="code">ht</code></td>
+      <td><code class="code">position</code>を<code class="code">ht</code>の開始位置にセットする。</td>
      </tr>
 
      <tr>
@@ -191,7 +222,9 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
      </tr>
 
      <tr>
-      <td>gets the data at the current position in <code class="code">ht</code>, <code class="code">data</code> should be cast to <code class="code">void**</code>, ie: <code class="code">(void**) &amp;data</code></td>
+      <td><code class="code">ht</code>の現在位置にあるデータを取得する。<code class="code">data</code>
+      は<code class="code">void**</code>にキャストしなければならない
+      （すなわち<code class="code">(void**) &amp;data</code>）。</td>
      </tr>
 
      <tr>
@@ -199,7 +232,8 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
      </tr>
 
      <tr>
-      <td>sets <code class="code">data</code> to the data at <code class="code">position</code> in <code class="code">ht</code></td>
+      <td><code class="code">ht</code>の中で<code class="code">data</code>を<code class="code">position</code>
+      の位置にセットする。</td>
      </tr>
 
      <tr>
@@ -207,7 +241,10 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
      </tr>
 
      <tr>
-      <td>sets <code class="code">key</code>, <code class="code">klen</code>, and <code class="code">index</code> from the key information at the current position. The possible return values HASH_KEY_IS_STRING and HASH_KEY_IS_LONG are indicative of the kind of key found at the current posision.</td>
+      <td>現在位置のキーの情報から <code class="code">key</code>, <code class="code">klen</code>, 
+       <code class="code">index</code> を取得する。戻り値として HASH_KEY_IS_STRING や
+       HASH_KEY_IS_LONG が返される場合があるが、これは現在位置にその種類のキーが
+       あったことを表している。</td>
      </tr>
 
      <tr>
@@ -215,7 +252,10 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
      </tr>
 
      <tr>
-      <td>sets <code class="code">key</code>, <code class="code">klen</code>, and <code class="code">index</code> from the key information at <code class="code">position</code>. The possible return values <code class="code">HASH_KEY_IS_STRING</code> and <code class="code">HASH_KEY_IS_LONG</code> are indicative of the kind of key found at <code class="code">position</code>.</td>
+      <td><code class="code">position</code>位置のキーの情報から <code class="code">key</code>, 
+       <code class="code">klen</code>, <code class="code">index</code> を取得する。戻り値として
+       HASH_KEY_IS_STRING や HASH_KEY_IS_LONG が返される場合があるが、
+       これは現在位置にその種類のキーがあったことを表している。</td>
      </tr>
 
      <tr>
@@ -223,7 +263,8 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
      </tr>
 
      <tr>
-      <td>moves the internal pointer of <code class="code">ht</code> to the next entry in <code class="code">ht</code></td>
+      <td><code class="code">ht</code>の内部ポインタを<code class="code">ht</code>内の次のエントリに動かす。
+      </td>
      </tr>
 
      <tr>
@@ -231,7 +272,7 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
      </tr>
 
      <tr>
-      <td>moves <code class="code">position</code> to the next entry in <code class="code">ht</code> </td>
+      <td><code class="code">position</code>を<code class="code">ht</code>内の次のエントリに動かす。</td>
      </tr>
 
     </tbody>
@@ -239,7 +280,8 @@ typedef int (*apply_func_args_t)(void *pDest TSRMLS_DC, int num_args, va_list ar
   </table>
 
   
-  <p class="para">The functions above allow traversal over a <code class="code">HashTable</code> to be much like a normal loop, which will look something like:</p>
+  <p class="para">前述の関数は、<code class="code">HashTable</code>内部を通常のループのように移動できます。
+  たとえば以下のように使います。</p>
   
   <div class="example-contents screen">
 <div class="cdata"><pre>
@@ -250,33 +292,42 @@ for (zend_hash_internal_pointer_reset_ex(ht, &amp;position);
      zend_hash_get_current_data_ex(ht, (void**) &amp;data, &amp;position) == SUCCESS;
      zend_hash_move_forward_ex(ht, &amp;position)) {
      
-     /* by now we have data set and can use Z_ macros for accessing type and variable data */
+     /* ここではすでにデータがセットされているので、
+         Z_ マクロを使って型や変数データにアクセスできます。 */
 
      char *key = NULL;
      uint  klen;
      ulong index;
 
      if (zend_hash_get_current_key_ex(ht, &amp;key, &amp;klen, &amp;index, 0, &amp;position) == HASH_KEY_IS_STRING) {
-         /* the key is a string, key and klen will be set */
+         /* キーは文字列で、key と klen がセットされます */
      } else {
-         /* we assume the key to be long, index will be set */
+         /* キーを long 値とみなし、index がセットされます */
      }
 }
 </pre></div>
   </div>
   
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">If a <code class="code">HashTable</code> has been passed into the engine, it is a good idea to use the zend_hash_*_ex API to avoid unexpected behaviour in userland.</p>
+   <p class="para"><code class="code">HashTable</code>をエンジンに渡した場合、意図しない事態にならないように、
+   ユーザーランドでは zend_hash_*_ex API を使うとよいでしょう。</p>
   </p></blockquote>
   
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">If a <code class="code">duplicate</code> of the key is requested and <code class="code">HAS_KEY_IS_STRING</code> is returned the caller must <code class="code">efree</code> the duplicated key</p>
+   <p class="para">キーの<code class="code">duplicate</code>を要求して<code class="code">HAS_KEY_IS_STRING</code>
+   が返された場合、呼び出し元は重複キーを<code class="code">efree</code>しなければなりません。
+   </p>
   </p></blockquote>
   
-  <p class="para">In addition to traversal, the engine provides API functions for merging, copying, and comparing HashTables. These are all concepts that the <code class="code">Hacker</code> should be familiar with. A concept possibly not in the repertoire of the <code class="code">Hacker</code> is <code class="code">applying</code>, which is lamens terms is functionality of the <code class="code">HashTable</code> API allowing the <code class="code">Hacker</code> to pass a callback function to be executed on every entry in a <code class="code">HashTable</code>.</p>
+  <p class="para">内部移動以外にも、エンジンではハッシュテーブルのマージ、コピー、比較といった
+  API を提供しています。<code class="code">ハッカー</code>はこれらのどの概念にも精通して
+  いなければなりません。
+  関数の適用 (<code class="code">apply</code>) という概念にはなじみがない人もいるかもしれません。
+  要するにこれは、<code class="code">HashTable</code> API の機能を使ってコールバック関数を渡して、
+  <code class="code">HashTable</code>中のすべてのエントリでそれを実行させる仕組みのことです。</p>
   
   <table id="internals2.variables.coparrays.api" class="doctable table">
-   <caption><strong>Copying, Merging and Sorting</strong></caption>
+   <caption><strong>コピー、マージ、ソート</strong></caption>
    
     <tbody class="tbody">
      <tr>
@@ -285,7 +336,9 @@ for (zend_hash_internal_pointer_reset_ex(ht, &amp;position);
 
      
      <tr>
-      <td>Copies the contents of <code class="code">source</code> to <code class="code">target</code>. <code class="code">tmp</code> should be an unallocated temporary pointer of the appropriate type, used during copying. <code class="code">size</code> is the size of each element.</td>
+      <td><code class="code">source</code>の中身を<code class="code">target</code>にコピーする。
+      <code class="code">tmp</code>にはコピーの中で使われる領域確保されていない適切な型の
+      ポインタを、<code class="code">size</code>には各要素の個数を指定する。</td>
      </tr>
 
      
@@ -295,7 +348,8 @@ for (zend_hash_internal_pointer_reset_ex(ht, &amp;position);
 
      
      <tr>
-      <td>Merges the contents of <code class="code">source</code> into <code class="code">destination</code>, replacing existing entries only where <code class="code">overwrite</code> is true.</td>
+      <td><code class="code">source</code>の中身を<code class="code">destination</code>にマージする。
+      <code class="code">overwrite</code>が真の場合、既存のエントリを置き換える。</td>
      </tr>
 
      
@@ -305,7 +359,8 @@ for (zend_hash_internal_pointer_reset_ex(ht, &amp;position);
 
      
      <tr>
-      <td><code class="code">renumber</code> controls if indexes should be preserved, see the typedefs at the start of this section for more information</td>
+      <td><code class="code">renumber</code>はインデックスを保持するかどうかを制御する。
+      詳細はこの章の最初に出てきた typedef を参照のこと。</td>
      </tr>
 
      
@@ -315,13 +370,16 @@ for (zend_hash_internal_pointer_reset_ex(ht, &amp;position);
 
   
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">When a function accepts a <code class="code">copy_ctor_func_t pCopyConstructor</code>, the function passed with be executed upon creation of every new entry in the <code class="code">HashTable</code>. The most common copy constructor used within the engine is a wrapper around <code class="code">zval_copy_ctor</code>, the macro <code class="code">ZVAL_COPY_CTOR</code>.
+   <p class="para">ある関数が<code class="code">copy_ctor_func_t pCopyConstructor</code>を受け付ける場合、
+   一緒に渡された関数は<code class="code">HashTable</code>内で新しいエントリが生成されるたびに
+   実行されます。エンジン内で使われる通常のコピーコンストラクタのほとんどは、
+   <code class="code">ZVAL_COPY_CTOR</code>マクロの<code class="code">zval_copy_ctor</code>のラッパーです。
    </p>
   </p></blockquote>
   
  </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="internals2.variables.arrays.html">Working with Arrays</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="internals2.variables.objects.html">Working with Objects</a></div>
- <div class="up"><a href="internals2.variables.html">変数の作成</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="internals2.variables.arrays.html">配列の扱い</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="internals2.variables.objects.html">オブジェクトの扱い</a></div>
+ <div class="up"><a href="internals2.variables.html">変数の処理</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

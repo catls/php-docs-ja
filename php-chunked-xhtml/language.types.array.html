@@ -506,9 +506,8 @@ Array
    
    <p class="para">
     これは間違っていますが、動作します。では、なぜ間違っているのでしょう?
-    その理由は、このコードには文字列 (&#039;bar&#039; - 引用符で括られている)
-    ではなく未定義の定数 (bar) が使用されており、PHP
-    が同じ名前の定数を不幸にして同じコードの中に定義する可能性があるためです。
+    それは、このコードには文字列 (<em>&#039;bar&#039;</em> - 引用符で括られている)
+    ではなく未定義の定数 (<em>bar</em>) が使用されているためです。
     下位互換性の維持のため、未定義の定数は同じ名前の文字列に自動的に変換されます。
     そのため、このコードは動作します。
     例えば、<strong><code>bar</code></strong> という名前の定義されていない定数があるとすると、
@@ -771,15 +770,14 @@ Do you like yellow?
   </div>
   
   <p class="para">
-   PHP 5 以降では、配列を参照渡しすることでその値を直接変更できるようになりました。
-   それ以前のバージョンでは、以下のような回避策が必要です。
+   配列を参照渡しすることでその値を直接変更できます。
   </p>
 
   <div class="example" id="example-65">
    <p><strong>例10 ループ内での要素の変更</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$colors&nbsp;</span><span style="color: #007700">as&nbsp;&amp;</span><span style="color: #0000BB">$color</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$color</span><span style="color: #007700">);<br />}<br />unset(</span><span style="color: #0000BB">$color</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">/*&nbsp;これ以降の&nbsp;$color&nbsp;への書き込みが<br />配列の要素を書き換えてしまわないことを保証する&nbsp;*/<br /><br />//&nbsp;旧バージョンでの回避策<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$colors&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$color</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$colors</span><span style="color: #007700">[</span><span style="color: #0000BB">$key</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$color</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$colors</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">foreach&nbsp;(</span><span style="color: #0000BB">$colors&nbsp;</span><span style="color: #007700">as&nbsp;&amp;</span><span style="color: #0000BB">$color</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$color</span><span style="color: #007700">);<br />}<br />unset(</span><span style="color: #0000BB">$color</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">/*&nbsp;これ以降の&nbsp;$color&nbsp;への書き込みが<br />配列の要素を書き換えてしまわないことを保証する&nbsp;*/<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$colors</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
