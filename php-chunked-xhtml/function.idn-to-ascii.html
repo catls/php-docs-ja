@@ -45,7 +45,7 @@
      <dd>
 
       <p class="para">
-       変換するドメイン名 PHP5 では、UTF-8にエンコードされている必要があります。
+       変換するドメイン名。UTF-8 にエンコードされている必要があります。
       </p>
      </dd>
 
@@ -126,6 +126,14 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.2.0</td>
+       <td>
+        <strong><code>INTL_IDNA_VARIANT_2003</code></strong> は非推奨です。代わりに
+        <strong><code>INTL_IDNA_VARIANT_UTS46</code></strong> を使用してください。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.4.0/PECL 2.0.0b1</td>
        <td>
         パラメータ <code class="parameter">variant</code> と
@@ -147,7 +155,7 @@
    <p><strong>例1 <span class="function"><strong>idn_to_ascii()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">idn_to_ascii</span><span style="color: #007700">(</span><span style="color: #DD0000">'täst.de'</span><span style="color: #007700">);&nbsp;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">idn_to_ascii</span><span style="color: #007700">(</span><span style="color: #DD0000">'tast.de'</span><span style="color: #007700">);&nbsp;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -166,7 +174,7 @@ xn--tst-qla.de
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><strong>idn_to_unicode()</strong></span></li>
+    <li class="member"><span class="function"><a href="function.idn-to-utf8.html" class="function" rel="rdfs-seeAlso">idn_to_utf8()</a> - IDNAのASCII方式でエンコードされたドメイン名をUnicodeに変換する</span></li>
    </ul>
   </p>
  </div>

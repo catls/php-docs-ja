@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>よりよい乱数値を生成する</title>
+  <title>メルセンヌ・ツイスター乱数生成器を介して乱数値を生成する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.mt-rand" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">mt_rand</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">mt_rand</span> &mdash; <span class="dc-title">よりよい乱数値を生成する</span></p>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">mt_rand</span> &mdash; <span class="dc-title">メルセンヌ・ツイスター乱数生成器を介して乱数値を生成する</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.mt-rand-description">
@@ -29,13 +29,13 @@
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$max</code></span>
    )</div>
 
+  <div class="caution"><strong class="caution">警告</strong><p class="para">この関数が生成する値は、暗号学的に安全ではありません。そのため、これを暗号として使ってはいけません。暗号学的に安全な値が必要な場合は、<span class="function"><a href="function.random-int.html" class="function">random_int()</a></span> か <span class="function"><a href="function.random-bytes.html" class="function">random_bytes()</a></span> あるいは <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function">openssl_random_pseudo_bytes()</a></span> を使いましょう。</p></div>
   <p class="simpara">
    古い libc の多くの乱数発生器は、怪しげであるか特性が不明であったりし、
-   また低速でした。デフォルトでは、PHP は
-   <span class="function"><a href="function.rand.html" class="function">rand()</a></span> において libc の乱数発生器を使用します。
-   <span class="function"><strong>mt_rand()</strong></span> 関数は、その代替品となるものです。
+   また低速でした。
+   <span class="function"><strong>mt_rand()</strong></span> 関数は、古い <span class="function"><a href="function.rand.html" class="function">rand()</a></span> の代替品となるものです。
    この関数は、その特性が既知の乱数生成器 <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html" class="link external">&raquo;&nbsp;
-   Mersenne Twister</a> を使用し、
+   メルセンヌ・ツイスター</a> を使用し、
    平均的な libc の rand()よりも 4 倍以上高速に乱数を生成します。
   </p>
   <p class="simpara">
@@ -46,7 +46,6 @@
    例えば、5 から 15 まで(端点を含む)の間の乱数値を得たい場合には
    <em>mt_rand(5, 15)</em> としてください。
   </p>
-  <div class="caution"><strong class="caution">警告</strong><p class="para">この関数が生成する値は、暗号学的に安全ではありません。そのため、これを暗号として使ってはいけません。暗号学的に安全な値が必要な場合は、<span class="function"><a href="function.random-int.html" class="function">random_int()</a></span> か <span class="function"><a href="function.random-bytes.html" class="function">random_bytes()</a></span> あるいは <span class="function"><a href="function.openssl-random-pseudo-bytes.html" class="function">openssl_random_pseudo_bytes()</a></span> を使いましょう。</p></div>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.mt-rand-parameters">
@@ -109,6 +108,22 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.1.0</td>
+       <td>
+        <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link"><span class="function"><a href="function.rand.html" class="function">rand()</a></span> は、<span class="function"><strong>mt_rand()</strong></span> のエイリアスになりました。</a>
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        
+        <a href="migration71.incompatible.html#migration71.incompatible.fixes-to-mt_rand-algorithm" class="link"><span class="function"><strong>mt_rand()</strong></span>has been updated to use the fixed, correct, version of
+         the メルセンヌ・ツイスター algorithm. To fall back to the old behaviour, use <span class="function"><a href="function.mt-srand.html" class="function">mt_srand()</a></span> with <strong><code>MT_RAND_PHP</code></strong> as the second paramter.</a>
+       </td>
+      </tr>
+
+      <tr>
        <td>5.3.4</td>
        <td>
         <code class="parameter">max</code> &lt; <code class="parameter">min</code> の場合に
@@ -167,7 +182,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.mt-srand.html" class="function" rel="rdfs-seeAlso">mt_srand()</a> - 改良型乱数生成器にシードを指定する</span></li>
+    <li class="member"><span class="function"><a href="function.mt-srand.html" class="function" rel="rdfs-seeAlso">mt_srand()</a> - メルセンヌ・ツイスター乱数生成器にシードを指定する</span></li>
     <li class="member"><span class="function"><a href="function.mt-getrandmax.html" class="function" rel="rdfs-seeAlso">mt_getrandmax()</a> - 乱数値の最大値を表示する</span></li>
     <li class="member"><span class="function"><a href="function.random-int.html" class="function" rel="rdfs-seeAlso">random_int()</a> - Generates cryptographically secure pseudo-random integers</span></li>
     <li class="member"><span class="function"><a href="function.random-bytes.html" class="function" rel="rdfs-seeAlso">random_bytes()</a> - Generates cryptographically secure pseudo-random bytes</span></li>

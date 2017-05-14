@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>乱数ジェネレータを初期化する</title>
+  <title>乱数生成器を初期化する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.srand" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">srand</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">srand</span> &mdash; <span class="dc-title">乱数ジェネレータを初期化する</span></p>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">srand</span> &mdash; <span class="dc-title">乱数生成器を初期化する</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.srand-description">
@@ -24,7 +24,7 @@
    ] )</div>
 
   <p class="para rdfs-comment">
-   シード <code class="parameter">seed</code> で乱数ジェネレータを初期化します。
+   シード <code class="parameter">seed</code> で乱数生成器を初期化します。
    <code class="parameter">seed</code> を省略した場合はランダムな値が設定されます。
   </p>
 
@@ -34,11 +34,9 @@
 によりランダム数生成器にシードを与える必要はありません。
 これは、この処理が自動的に行われるためです。</span></p></blockquote>
 
-  
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-    PHP 7.1.0 以降、<span class="function"><strong>srand()</strong></span> has been made
-    an alias of <span class="function"><a href="function.mt-srand.html" class="function">mt_srand()</a></span>.
+    PHP 7.1.0 以降、<span class="function"><strong>srand()</strong></span> は、<span class="function"><a href="function.mt-srand.html" class="function">mt_srand()</a></span> のエイリアスになりました。
    </span>
   </p></blockquote>
  </div>
@@ -91,8 +89,7 @@
       <tr>
        <td>7.1.0</td>
        <td>
-        
-        <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link"><span class="function"><strong>srand()</strong></span> has been made an alias of <span class="function"><a href="function.mt-srand.html" class="function">mt_srand()</a></span>.</a>
+        <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link"><span class="function"><strong>srand()</strong></span> は、<span class="function"><a href="function.mt-srand.html" class="function">mt_srand()</a></span> のエイリアスになりました。</a>
        </td>
       </tr>
 
@@ -126,7 +123,7 @@
    <ul class="simplelist">
     <li class="member"><span class="function"><a href="function.rand.html" class="function" rel="rdfs-seeAlso">rand()</a> - 乱数を生成する</span></li>
     <li class="member"><span class="function"><a href="function.getrandmax.html" class="function" rel="rdfs-seeAlso">getrandmax()</a> - 乱数の最大値を取得する</span></li>
-    <li class="member"><span class="function"><a href="function.mt-srand.html" class="function" rel="rdfs-seeAlso">mt_srand()</a> - 改良型乱数生成器にシードを指定する</span></li>
+    <li class="member"><span class="function"><a href="function.mt-srand.html" class="function" rel="rdfs-seeAlso">mt_srand()</a> - メルセンヌ・ツイスター乱数生成器にシードを指定する</span></li>
    </ul>
   </p>
  </div>

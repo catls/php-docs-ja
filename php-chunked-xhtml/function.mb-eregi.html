@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>マルチバイト文字列に大文字小文字を区別しない正規表現マッチを行う</title>
+  <title>Regular expression match ignoring case with multibyte support</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.mb-eregi" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">mb_eregi</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">mb_eregi</span> &mdash; <span class="dc-title">マルチバイト文字列に大文字小文字を区別しない正規表現マッチを行う</span></p>
+  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">mb_eregi</span> &mdash; <span class="dc-title">Regular expression match ignoring case with multibyte support</span></p>
 
  </div>
    
@@ -27,7 +27,7 @@
   ] )</div>
 
   <p class="simpara">
-   マルチバイト対応の大文字小文字を区別しない正規表現マッチングを行います。
+   Executes the case insensitive regular expression match with multibyte support.
   </p>
  </div>
 
@@ -44,7 +44,7 @@
      <dd>
 
       <p class="para">
-       正規表現パターン。
+       The regular expression pattern.
       </p>
      </dd>
 
@@ -56,7 +56,7 @@
      <dd>
 
       <p class="para">
-       検索対象の文字列。
+       The <span class="type"><a href="language.types.string.html" class="type string">string</a></span> being searched.
       </p>
      </dd>
 
@@ -68,7 +68,19 @@
      <dd>
 
       <p class="para">
-       マッチした <span class="type"><a href="language.types.string.html" class="type string">string</a></span> の部分文字列を格納します。
+       If matches are found for parenthesized substrings of
+       <code class="parameter">pattern</code> and the function is called with the
+       third argument <code class="parameter">regs</code>, the matches will be stored
+       in the elements of the array <code class="parameter">regs</code>.
+       If no matches are found, <code class="parameter">regs</code> is set to an empty
+       array.
+      </p>
+      <p class="para">
+       <var class="varname"><var class="varname">$regs[1]</var></var> will contain the substring which starts at
+       the first left parenthesis; <var class="varname"><var class="varname">$regs[2]</var></var> will contain
+       the substring starting at the second, and so on.
+       <var class="varname"><var class="varname">$regs[0]</var></var> will contain a copy of the complete string
+       matched.
       </p>
      </dd>
 
@@ -81,14 +93,44 @@
  
  <div class="refsect1 returnvalues" id="refsect1-function.mb-eregi-returnvalues">
   <h3 class="title">返り値</h3>
-  <p class="simpara">
-   マルチバイト対応の大文字小文字を
-   区別しない正規表現マッチを行い、一致した場合は <em>1</em> を返します。
-   オプションの 3 番目の引数を指定した場合は、一致した部分のバイト数を返し、
-   一致した部分文字列が配列 <code class="parameter">regs</code> に格納されます。
-   空文字に一致した場合は <em>1</em> が返されます。
-   正規表現に一致しないか、エラーを発生した場合に <strong><code>FALSE</code></strong> を返します。
+  <p class="para">
+   Returns the byte length of the matched string if a match for
+   <code class="parameter">pattern</code> was found in <code class="parameter">string</code>,
+   or <strong><code>FALSE</code></strong> if no matches were found or an error occurred.
   </p>
+  <p class="para">
+   If the optional parameter <code class="parameter">regs</code> was not passed or
+   the length of the matched string is <em>0</em>, this function returns <em>1</em>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.mb-eregi-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.1.0</td>
+      <td>
+       <span class="function"><strong>mb_eregi()</strong></span> will now set <code class="parameter">regs</code> to
+       an empty <span class="type"><a href="language.types.array.html" class="type array">array</a></span>, if nothing matched. Formerly,
+       <code class="parameter">regs</code> was not modified in that case.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 
@@ -106,7 +148,7 @@
   <p class="para">
    <ul class="simplelist">
     <li class="member"><span class="function"><a href="function.mb-regex-encoding.html" class="function" rel="rdfs-seeAlso">mb_regex_encoding()</a> - 現在のマルチバイト正規表現用のエンコーディングを取得または設定する</span></li>
-    <li class="member"><span class="function"><a href="function.mb-ereg.html" class="function" rel="rdfs-seeAlso">mb_ereg()</a> - マルチバイト文字列に正規表現マッチを行う</span></li>
+    <li class="member"><span class="function"><a href="function.mb-ereg.html" class="function" rel="rdfs-seeAlso">mb_ereg()</a> - Regular expression match with multibyte support</span></li>
    </ul>
   </p>
  </div>
