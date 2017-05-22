@@ -27,7 +27,13 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <code class="parameter">value</code> を JSON 形式にした文字列を返します。
+   与えられた <code class="parameter">value</code> を JSON 形式にした文字列を返します。
+  </p>
+  
+  <p class="para">
+   The encoding is affected by the supplied <code class="parameter">options</code>
+   and additionally the encoding of float values depends on the value of
+   <a href="ini.core.html#ini.serialize-precision" class="link">serialize_precision</a>.
   </p>
  </div>
 
@@ -152,6 +158,22 @@
       </tr>
 
       <tr>
+       <td>5.5.0</td>
+       <td>
+        <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong> オプションが追加されました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.5.0</td>
+       <td>
+        
+        The return value on failure was changed from <em>null</em>
+        string to <strong><code>FALSE</code></strong>.
+       </td>
+      </tr>
+
+      <tr>
        <td>5.4.0</td>
        <td>
         <code class="parameter">option</code> に
@@ -221,8 +243,8 @@ Tags: [&quot;\u003Cfoo\u003E&quot;,&quot;&#039;bar&#039;&quot;,&quot;\&quot;baz\
 Apos: [&quot;&lt;foo&gt;&quot;,&quot;\u0027bar\u0027&quot;,&quot;\&quot;baz\&quot;&quot;,&quot;&amp;blong&amp;&quot;,&quot;\u00e9&quot;]
 Quot: [&quot;&lt;foo&gt;&quot;,&quot;&#039;bar&#039;&quot;,&quot;\u0022baz\u0022&quot;,&quot;&amp;blong&amp;&quot;,&quot;\u00e9&quot;]
 Amp: [&quot;&lt;foo&gt;&quot;,&quot;&#039;bar&#039;&quot;,&quot;\&quot;baz\&quot;&quot;,&quot;\u0026blong\u0026&quot;,&quot;\u00e9&quot;]
-Unicode: [&quot;&lt;foo&gt;&quot;,&quot;&#039;bar&#039;&quot;,&quot;\&quot;baz\&quot;&quot;,&quot;&amp;blong&amp;&quot;,&quot;é&quot;]
-All: [&quot;\u003Cfoo\u003E&quot;,&quot;\u0027bar\u0027&quot;,&quot;\u0022baz\u0022&quot;,&quot;\u0026blong\u0026&quot;,&quot;é&quot;]
+Unicode: [&quot;&lt;foo&gt;&quot;,&quot;&#039;bar&#039;&quot;,&quot;\&quot;baz\&quot;&quot;,&quot;&amp;blong&amp;&quot;,&quot;e&quot;]
+All: [&quot;\u003Cfoo\u003E&quot;,&quot;\u0027bar\u0027&quot;,&quot;\u0022baz\u0022&quot;,&quot;\u0026blong\u0026&quot;,&quot;e&quot;]
 
 Empty array output as array: []
 Empty array output as object: {}

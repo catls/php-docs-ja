@@ -43,14 +43,10 @@
    <p class="para">
     <code class="parameter">assertion</code> が文字列として指定された場合、
     <span class="function"><strong>assert()</strong></span>によりPHPコードとして評価されます。
-    文字列 <code class="parameter">assertion</code>が優れているところは、
-    assertion のチェックがオフになった場合のオーバーヘッドがより少な
-    いことであり、assertionが失敗した場合のメッセージを式
-    <code class="parameter">assertion</code>に有しています。
-    つまり、もし論理型の条件を <code class="parameter">assertion</code> 
-    として渡した場合、この条件が <span class="function"><a href="function.assert-options.html" class="function">assert_options()</a></span>
-    関数で指定したハンドラ関数への引数とはならないということです。
-    条件はハンドラ関数をコールする前に文字列に変換され、論理型の
+    もし論理型の条件を <code class="parameter">assertion</code> として渡した場合、
+    <span class="function"><a href="function.assert-options.html" class="function">assert_options()</a></span> 関数で定義したであろう
+    アサーション関数への引数として表示されません。
+    その条件はハンドラ関数をコールする前に文字列に変換され、論理型の
     <strong><code>FALSE</code></strong> は空文字列に変換されます。
    </p>
    <p class="para">
@@ -193,6 +189,14 @@
        PHP 7 ではそれ以外にも、値を返すあらゆる式を指定できます。
        この式を実行した結果を用いて、アサーションに成功したか否かを判断します。
       </p>
+
+      <div class="warning"><strong class="warning">警告</strong>
+       
+       <p class="para">
+        Using <span class="type"><a href="language.types.string.html" class="type string">string</a></span> as the <code class="parameter">assertion</code> is
+        <em class="emphasis">DEPRECATED</em> as of PHP 7.2.
+       </p>
+      </div>
      </dd>
 
     
@@ -253,11 +257,23 @@
      </thead>
 
      <tbody class="tbody">
+       <tr>
+       <td>7.2.0</td>
+       <td>
+        
+        Usage of a <span class="type"><a href="language.types.string.html" class="type string">string</a></span> as the <code class="parameter">assertion</code>
+        became deprecated. It now emits an <strong><code>E_DEPRECATED</code></strong>
+        notice when both <a href="info.configuration.html#ini.assert.active" class="link">assert.active</a>
+        and <a href="ini.core.html#ini.zend.assertions" class="link">zend.assertions</a> are set
+        to <em>1</em>.
+       </td>
+      </tr>
+
       <tr>
        <td>7.0.0</td>
        <td>
         <span class="function"><strong>assert()</strong></span> が言語構造となり、関数ではなくなりました。
-        <span class="function"><strong>assertion()</strong></span> に式を指定できるようになりました。
+        <code class="parameter">assertion</code> に式を指定できるようになりました。
         第二パラメータは、
         <code class="parameter">exception</code> (<a href="class.throwable.html" class="classname">Throwable</a> オブジェクトを渡した場合)
         あるいは

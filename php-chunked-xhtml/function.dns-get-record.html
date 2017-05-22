@@ -25,7 +25,7 @@
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code><span class="initializer"> = DNS_ANY</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$authns</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$addtl</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter reference">&$raw</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$raw</code><span class="initializer"> = false</span></span>
   ]]]] )</div>
 
   <p class="para rdfs-comment">
@@ -77,12 +77,13 @@
        <code class="parameter">type</code> パラメータを指定してください。
        <code class="parameter">type</code> は以下のうちのいずれかです。
        <strong><code>DNS_A</code></strong>, <strong><code>DNS_CNAME</code></strong>,
-       <strong><code>DNS_HINFO</code></strong>, <strong><code>DNS_MX</code></strong>,
-       <strong><code>DNS_NS</code></strong>, <strong><code>DNS_PTR</code></strong>,
-       <strong><code>DNS_SOA</code></strong>, <strong><code>DNS_TXT</code></strong>,
-       <strong><code>DNS_AAAA</code></strong>, <strong><code>DNS_SRV</code></strong>,
-       <strong><code>DNS_NAPTR</code></strong>, <strong><code>DNS_A6</code></strong>,
-       <strong><code>DNS_ALL</code></strong> or <strong><code>DNS_ANY</code></strong>。
+       <strong><code>DNS_HINFO</code></strong>, <strong><code>DNS_CAA</code></strong>,
+       <strong><code>DNS_MX</code></strong>, <strong><code>DNS_NS</code></strong>,
+       <strong><code>DNS_PTR</code></strong>, <strong><code>DNS_SOA</code></strong>,
+       <strong><code>DNS_TXT</code></strong>, <strong><code>DNS_AAAA</code></strong>,
+       <strong><code>DNS_SRV</code></strong>, <strong><code>DNS_NAPTR</code></strong>,
+       <strong><code>DNS_A6</code></strong>, <strong><code>DNS_ALL</code></strong>
+       または <strong><code>DNS_ANY</code></strong>。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
@@ -269,6 +270,18 @@
       </tr>
 
       <tr>
+       <td><em>CAA</em></td>
+       <td>
+        
+        <em>flags</em>: A one-byte bitfield; currently only bit 0 is defined,
+        meaning &#039;critical&#039;; other bits are reserved and should be ignored.
+        <em>tag</em>: CAA タグの名前 (alphanumeric ASCII string).
+        <em>value</em>: CAA タグの値 (binary string, may use subformats).
+        詳細は、<a href="http://www.faqs.org/rfcs/rfc6844" class="link external">&raquo;&nbsp;RFC 6844</a> を参照ください。
+       </td>
+      </tr>
+
+      <tr>
        <td><em>SOA</em></td>
        <td>
         <em>mname</em>: リソースレコードの元となるマシンの FQDN 。
@@ -351,6 +364,13 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.0.16</td>
+       <td>
+        CAA レコード型のサポートが追加されました。
+       </td>
+      </tr>
+
       <tr>
        <td>5.4.0</td>
        <td>

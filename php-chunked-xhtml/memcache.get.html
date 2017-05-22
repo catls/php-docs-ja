@@ -33,9 +33,8 @@
 
   
   <p class="para rdfs-comment">
-   <span class="function"><strong>Memcache::get()</strong></span> は、その時点でサーバー上に
-   <code class="parameter">key</code> というキーのデータが存在する場合に、
-   格納されているデータを返します。
+   その時点でサーバー上の <code class="parameter">key</code> にそのようなキーが存在する場合、
+   <span class="function"><strong>Memcache::get()</strong></span> は、前に格納されていたデータを返します。
   </p>
 
   <p class="para">
@@ -89,7 +88,7 @@
  <div class="refsect1 returnvalues" id="refsect1-memcache.get-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <code class="parameter">key</code> に関連付けられた文字列を返します。
+   <code class="parameter">key</code> に関連付けられた値を返します。
    <code class="parameter">key</code> が配列の場合は、
    見つかったキー・値のペアを配列で返します。
    取得に失敗したり <code class="parameter">key</code> が見つからなかったり、

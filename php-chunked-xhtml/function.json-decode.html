@@ -93,9 +93,14 @@
      <dd>
 
       <p class="para">
-       JSON デコードオプションのビットマスクです。現在サポートされるオプションは
-       <strong><code>JSON_BIGINT_AS_STRING</code></strong> のみです
-       (デフォルトでは、大きな整数値を float に変換します)。
+       JSON デコードオプションのビットマスクです。
+       
+       Currently there are two supported
+       options. The first is <strong><code>JSON_BIGINT_AS_STRING</code></strong> that
+       allows casting big integers to string instead of floats which is the
+       default. The second option is <strong><code>JSON_OBJECT_AS_ARRAY</code></strong>
+       that has the same effect as setting <code class="parameter">assoc</code> to
+       <strong><code>TRUE</code></strong>.
       </p>
      </dd>
 
@@ -272,6 +277,32 @@ object(stdClass)#1 (1) {
      </thead>
 
      <tbody class="tbody">
+      
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        An empty JSON key (&quot;&quot;) can be encoded to the empty object property
+        instead of using a key with value <em>_empty_</em>.
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        Rejected RFC 7159 incompatible number formats - top level
+        (07, 0xff, .1, -.1) and all levels ([1.], [1.e1])
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        An empty PHP string or value that after casting to string is an empty
+        string (<em>NULL</em>, <em>FALSE</em>) results
+        in JSON syntax error.
+       </td>
+      </tr>
+
       <tr>
        <td>5.6.0</td>
        <td>

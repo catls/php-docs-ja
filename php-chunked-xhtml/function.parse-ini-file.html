@@ -336,8 +336,13 @@ Array
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
     ini ファイル上でキーとして使ってはいけない単語があります。
-    null, yes, no, true, false, on, off, none などです。
-    null, off, no および false は &quot;&quot; となり、on, yes および true は &quot;1&quot; となります。
+    <em>null</em>, <em>yes</em>, <em>no</em>,
+    <em>true</em>, <em>false</em>,
+    <em>on</em>, <em>off</em>, <em>none</em> などです。
+    <em>null</em>, <em>off</em>, <em>no</em>
+    および <em>false</em> は <em>&quot;&quot;</em> となり、
+    <em>on</em>, <em>yes</em> および <em>true</em>
+    は <em>&quot;1&quot;</em> となります。
     ただし、<strong><code>INI_SCANNER_TYPED</code></strong> モードを使っている場合 (PHP 5.6.1 以降) は別です。
     次の文字 <em>?{}|&amp;~!()^&quot;</em> は、キーで使ってはいけません。
     また、値の中で特別な意味を持ちます。
