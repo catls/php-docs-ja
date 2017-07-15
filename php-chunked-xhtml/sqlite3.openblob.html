@@ -25,7 +25,7 @@
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$column</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$rowid</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$dbname</code><span class="initializer"> = &quot;main&quot;</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = SQLITE_OPEN_READONLY</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = SQLITE3_OPEN_READONLY</span></span>
   ]] )</div>
 
   <p class="para rdfs-comment">
@@ -104,7 +104,8 @@
      <dd>
 
       <p class="para">
-       Either SQLITE_OPEN_READONLY or SQLITE_OPEN_READWRITE to open the stream
+       Either <strong><code>SQLITE3_OPEN_READONLY</code></strong> or 
+       <strong><code>SQLITE3_OPEN_READWRITE</code></strong> to open the stream
        for reading only, or for reading and writing, respectively.
       </p>
      </dd>
