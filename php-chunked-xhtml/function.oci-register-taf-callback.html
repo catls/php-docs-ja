@@ -13,7 +13,7 @@
 </div><hr /><div id="function.oci-register-taf-callback" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">oci_register_taf_callback</h1>
-  <p class="verinfo">(PHP &gt;= 7.0.21, PHP &gt;= 7.1.7, PHP 7.2, PECL OCI8 &gt;= 2.1.5)</p><p class="refpurpose"><span class="refname">oci_register_taf_callback</span> &mdash; <span class="dc-title">Register a user-defined callback function for Oracle Database TAF</span></p>
+  <p class="verinfo">(PHP &gt;= 7.0.21, PHP &gt;= 7.1.7, PHP 7.2, PECL OCI8 &gt;= 2.1.7)</p><p class="refpurpose"><span class="refname">oci_register_taf_callback</span> &mdash; <span class="dc-title">Register a user-defined callback function for Oracle Database TAF</span></p>
 
  </div>
  
@@ -22,7 +22,7 @@
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>oci_register_taf_callback</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
-   , <span class="methodparam"><span class="type"><span class="type mix">mix</span></span> <code class="parameter">$callbackFn</code></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$callbackFn</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -30,15 +30,18 @@
    If <code class="parameter">connection</code> fails due to instance or network failure,
    the registered callback function will be invoked for several times during
    failover. See <a href="oci8.taf.html" class="link">OCI8 Transparent Application Failover
-   (TAF) Support</a> for information about OCI8 TAF support.
+   (TAF) Support</a> for information.
   </p>
   <p class="para">
    When <span class="function"><strong>oci_register_taf_callback()</strong></span> is called multiple times,
    each registration overwrites the previous one.
   </p>
   <p class="para">
-   Use <span class="function"><a href="function.oci-disable-taf-callback.html" class="function">oci_disable_taf_callback()</a></span> to explicitly disable a
-   user-defined callback. TAF callback registration will NOT be saved across
+   Use <span class="function"><strong>oci_unregister_taf_callback()</strong></span> to explicitly unregister a
+   user-defined callback.
+  </p>
+  <p class="para">
+   TAF callback registration will NOT be saved across
    persistent connections, therefore the callback needs to be re-registered for
    a new persistent connection. 
   </p>
@@ -64,7 +67,7 @@
     
     
      <dt>
-<code class="parameter">calllbackFn</code></dt>
+<code class="parameter">callbackFn</code></dt>
 
      <dd>
 
@@ -99,6 +102,16 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.oci-register-taf-callback-seealso">
+  <h3 class="title">参考</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><strong>oci_unregister_taf_callback()</strong></span></li>
+   </ul>
   </p>
  </div>
 

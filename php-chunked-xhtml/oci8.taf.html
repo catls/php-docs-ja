@@ -32,19 +32,23 @@
    OCI TAF.
   </p>
   <p class="para">
-   An application callback can be registered. During failover, normal
-   application processing stops and the registered callback is invoked.
-   The callback notifies the application of the failover events. If the failover
-   succeeds, normal processing will be resumed. If the failover
-   aborts, any following database operations in the application will fail
-   due to no connection being available. See more details about TAF
-   callbacks in Using TAF Callbacks in OCI8 section.  
+   An application callback can be registered
+   with <span class="function"><a href="function.oci-register-taf-callback.html" class="function">oci_register_taf_callback()</a></span>. During
+   failover, normal application processing stops and the registered
+   callback is invoked.  The callback notifies the application of the
+   failover events. If the failover succeeds, normal processing will
+   be resumed. If the failover aborts, any following database
+   operations in the application will fail due to no connection being
+   available.
   </p>
   <p class="para">
    When a connection fails over to another database, the callback can
    reset any necessary connection state, for example replaying any
    necessary ALTER SESSION commands if the database service did not have
    -failover_restore enabled.
+  </p>
+  <p class="para">
+   An application callback can be removed by calling <span class="function"><strong>oci_unregister_taf_callback()</strong></span>.
   </p>
  </div>
  <div class="section">
@@ -272,11 +276,17 @@
    </div>
 
   </div>
-  <p class="para">
-   Also see the usage of <span class="function"><a href="function.oci-register-taf-callback.html" class="function">oci_register_taf_callback()</a></span>
-   and <span class="function"><a href="function.oci-disable-taf-callback.html" class="function">oci_disable_taf_callback()</a></span>.
-  </p>
  </div>
+
+ <div class="section">
+ <h2 class="title">See Also</h2>
+ <ul class="simplelist">
+  <li class="member"><span class="function"><a href="function.oci-register-taf-callback.html" class="function">oci_register_taf_callback()</a></span></li>
+  <li class="member"><span class="function"><strong>oci_unregister_taf_callback()</strong></span></li>
+ </ul>
+</div>
+
+
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="oci8.fan.html">OCI8 高速アプリケーション通知 (FAN) サポート</a></div>
