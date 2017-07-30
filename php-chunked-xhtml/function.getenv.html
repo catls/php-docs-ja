@@ -60,6 +60,7 @@
 
      <dd>
 
+      
       <p class="para">
        Set to true to only return local environment variables (set by the operating system or putenv).
       </p>
@@ -81,6 +82,34 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-function.getenv-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>5.5.38, 5.6.24, 7.0.9</td>
+      <td>
+       <code class="parameter">local_only</code> パラメーターが追加されました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </div>
+
+
+ 
  <div class="refsect1 notes" id="refsect1-function.getenv-notes">
   <h3 class="title">注意</h3>
   <div class="warning"><strong class="warning">警告</strong>
@@ -98,7 +127,7 @@
  <div class="refsect1 examples" id="refsect1-function.getenv-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-538">
+   <div class="example" id="example-539">
     <p><strong>例1 <span class="function"><strong>getenv()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
