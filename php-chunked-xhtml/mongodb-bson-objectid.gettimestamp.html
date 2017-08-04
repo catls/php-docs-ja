@@ -25,10 +25,18 @@
    )</div>
 
   <p class="para rdfs-comment">
-   The timestamp component of an ObjectID is its first four bytes, which denote
-   the number of seconds since the Unix epoch. This value is read as an unsigned
-   32-bit integer with big-endian byte order.
+   The timestamp component of an ObjectID is its most significant 32 bits, which
+   denotes the number of seconds since the Unix epoch. This value is read as an
+   unsigned 32-bit integer with big-endian byte order.
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+ <p class="para">
+  Because PHP&#039;s integer type is signed, some values returned by this method
+  may appear as negative integers on 32-bit platforms. The &quot;%u&quot; formatter of
+  <span class="function"><a href="function.sprintf.html" class="function">sprintf()</a></span> may be used to obtain a string representation of
+  the unsigned decimal value.
+ </p>
+</p></blockquote>
  </div>
 
 
@@ -57,7 +65,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongodb-bson-objectid.gettimestamp-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1729">
+  <div class="example" id="example-1732">
    <p><strong>例1 <span class="function"><strong>MongoDB\BSON\ObjectID::getTimestamp()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

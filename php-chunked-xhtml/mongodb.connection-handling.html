@@ -27,7 +27,7 @@
 
 
   <div class="section">
-   <h2 class="title">Connection and topology persistence (PHP and HHVM versions since 1.2.0)</h2>
+   <h2 class="title">Connection and topology persistence (PHP version since 1.2.0)</h2>
 
    <p class="para">
     All versions of the driver since 1.2.0 persist the
@@ -125,16 +125,6 @@
     information, this version of the driver supports all
     <a href="context.ssl.html" class="link">SSL context options</a> since it uses
     PHP&#039;s Streams API.
-   </p>
-  </div>
-
-  <div class="section">
-   <h2 class="title">No persistence (HHVM versions before 1.2.0)</h2>
-
-   <p class="para">
-    Versions of the HHVM driver before 1.2.0 do not persist sockets,
-    authentication state, or topology information. Socket communication uses
-    <a href="https://github.com/mongodb/mongo-c-driver" class="link external">&raquo;&nbsp;libmongoc</a> entirely.
    </p>
   </div>
  </div>

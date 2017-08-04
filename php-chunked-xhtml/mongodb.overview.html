@@ -17,7 +17,7 @@
 
   <p class="para">
    This section explains how all the different parts of the driver fit
-   together. From the different language runtimes, through the extensions and
+   together. From the different language runtimes, through the extension and
    to the PHP libraries on top. This new architecture has replaced the old
    <a href="book.mongo.html" class="link">mongo</a> extension. We refer to the new one
    as the <em class="emphasis">mongodb</em> extension.
@@ -44,10 +44,10 @@
    MongoDB (and hopefully some community drivers, too).
   </p>
   <p class="para">
-   Sitting below that library we have the lower level drivers—one per platform.
-   These extensions will effectively form the glue between PHP and HHVM and our
+   Sitting below that library we have the lower level driver.
+   This extension will effectively form the glue between PHP and our
    system libraries (<a href="https://github.com/mongodb/mongo-c-driver" class="link external">&raquo;&nbsp;libmongoc</a> and
-   <a href="https://github.com/mongodb/libbson" class="link external">&raquo;&nbsp;libbson</a>). These extensions
+   <a href="https://github.com/mongodb/libbson" class="link external">&raquo;&nbsp;libbson</a>). This extension
    will expose an identical public API for the most essential and
    performance-sensitive functionality:
 
@@ -61,13 +61,13 @@
   </p>
 
   <p class="para">
-   By decoupling the driver internals and a high-level API into extensions and
+   By decoupling the driver internals and a high-level API into an extension and
    PHP libraries, respectively, we hope to reduce our maintainence burden and
    allow for faster iteration on new features. As a welcome side effect, this
    also makes it easier for anyone to contribute to the driver. Additionally,
-   an identical public API for these extensions will make it that much easier
-   to port an application across PHP runtimes, whether the application uses
-   the low-level driver directly or a higher-level PHP library.
+   an identical public API will make it that much easier to port an
+   application across PHP runtimes, whether the application uses the low-level
+   driver directly or a higher-level PHP library.
   </p>
   <p class="para">
    <a href="https://docs.mongodb.com/manual/core/gridfs/" class="link external">&raquo;&nbsp;GridFS</a> is a great example
@@ -122,12 +122,6 @@
        <td>PHP 5 and PHP 7 Driver (phongo)</td>
        <td><a href="https://github.com/mongodb/mongo-php-driver" class="link external">&raquo;&nbsp;mongodb/mongo-php-driver</a></td>
        <td><a href="https://jira.mongodb.org/browse/PHPC" class="link external">&raquo;&nbsp;PHPC</a></td>
-      </tr>
-
-      <tr>
-       <td>HHVM Driver (hippo)</td>
-       <td><a href="https://github.com/mongodb/mongo-hhvm-driver" class="link external">&raquo;&nbsp;mongodb/mongo-hhvm-driver</a></td>
-       <td><a href="https://jira.mongodb.org/browse/HHVM" class="link external">&raquo;&nbsp;HHVM</a></td>
       </tr>
 
      </tbody>
