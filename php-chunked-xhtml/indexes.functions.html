@@ -4932,10 +4932,12 @@
 <li><a href="mongodb-bson-timestamp.unserialize.html" class="index">MongoDB\BSON\Timestamp::unserialize</a> - Unserialize a Timestamp</li>
 <li><a href="mongodb-bson-timestamp.construct.html" class="index">MongoDB\BSON\Timestamp::__construct</a> - Construct a new Timestamp</li>
 <li><a href="mongodb-bson-timestamp.tostring.html" class="index">MongoDB\BSON\Timestamp::__toString</a> - Returns the string representation of this Timestamp</li>
-<li><a href="function.mongodb.bson-tocanonicaljson.html" class="index">MongoDB\BSON\toCanonicalJSON</a> - Returns the Canonical Extended JSON representation of a BSON value</li>
+<li><a href="function.mongodb.bson-tocanonicalextendedjson.html" class="index">MongoDB\BSON\toCanonicalExtendedJSON</a> - Returns the Canonical Extended JSON representation of a BSON value</li>
 <li><a href="function.mongodb.bson-tojson.html" class="index">MongoDB\BSON\toJSON</a> - Returns the Legacy Extended JSON representation of a BSON value</li>
 <li><a href="function.mongodb.bson-tophp.html" class="index">MongoDB\BSON\toPHP</a> - Returns the PHP representation of a BSON value</li>
-<li><a href="function.mongodb.bson-torelaxedjson.html" class="index">MongoDB\BSON\toRelaxedJSON</a> - Returns the Relaxed Extended JSON representation of a BSON value</li>
+<li><a href="function.mongodb.bson-torelaxedextendedjson.html" class="index">MongoDB\BSON\toRelaxedExtendedJSON</a> - Returns the Relaxed Extended JSON representation of a BSON value</li>
+<li><a href="mongodb-bson-typewrapper.createfrombsontype.html" class="index">MongoDB\BSON\TypeWrapper::createFromBSONType</a> - Converts the BSON type to a PHP value</li>
+<li><a href="mongodb-bson-typewrapper.tobsontype.html" class="index">MongoDB\BSON\TypeWrapper::toBSONType</a> - Converts the BSON type to a PHP value</li>
 <li><a href="mongodb-bson-unserializable.bsonunserialize.html" class="index">MongoDB\BSON\Unserializable::bsonUnserialize</a> - Constructs the object from a BSON array or document</li>
 <li><a href="mongodb-bson-utcdatetime.jsonserialize.html" class="index">MongoDB\BSON\UTCDateTime::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
 <li><a href="mongodb-bson-utcdatetime.serialize.html" class="index">MongoDB\BSON\UTCDateTime::serialize</a> - Serialize a UTCDateTime</li>
@@ -8376,15 +8378,14 @@
 <li><a href="function.stats-dens-gamma.html" class="index">stats_dens_gamma</a> - 未ドキュメント化</li>
 <li><a href="function.stats-dens-laplace.html" class="index">stats_dens_laplace</a> - 未ドキュメント化</li>
 <li><a href="function.stats-dens-logistic.html" class="index">stats_dens_logistic</a> - 未ドキュメント化</li>
-<li><a href="function.stats-dens-negative-binomial.html" class="index">stats_dens_negative_binomial</a> - 未ドキュメント化</li>
 <li><a href="function.stats-dens-normal.html" class="index">stats_dens_normal</a> - 未ドキュメント化</li>
 <li><a href="function.stats-dens-pmf-binomial.html" class="index">stats_dens_pmf_binomial</a> - 未ドキュメント化</li>
 <li><a href="function.stats-dens-pmf-hypergeometric.html" class="index">stats_dens_pmf_hypergeometric</a> - 説明</li>
+<li><a href="function.stats-dens-pmf-negative-binomial.html" class="index">stats_dens_pmf_negative_binomial</a> - Probability density function of the negative binomial distribution</li>
 <li><a href="function.stats-dens-pmf-poisson.html" class="index">stats_dens_pmf_poisson</a> - 未ドキュメント化</li>
 <li><a href="function.stats-dens-t.html" class="index">stats_dens_t</a> - 未ドキュメント化</li>
 <li><a href="function.stats-dens-uniform.html" class="index">stats_dens_uniform</a> - Probability density function of the uniform distribution</li>
 <li><a href="function.stats-dens-weibull.html" class="index">stats_dens_weibull</a> - 未ドキュメント化</li>
-<li><a href="function.stats-den-uniform.html" class="index">stats_den_uniform</a> - 未ドキュメント化</li>
 <li><a href="function.stats-harmonic-mean.html" class="index">stats_harmonic_mean</a> - 値の配列の調和平均を返す</li>
 <li><a href="function.stats-kurtosis.html" class="index">stats_kurtosis</a> - 配列内のデータの尖度を計算する</li>
 <li><a href="function.stats-rand-gen-beta.html" class="index">stats_rand_gen_beta</a> - 無作為な値を生成する</li>
@@ -8406,6 +8407,7 @@
    の間の一様分布から整数値を生成する</li>
 <li><a href="function.stats-rand-gen-noncenral-chisquare.html" class="index">stats_rand_gen_noncenral_chisquare</a> - 自由度 &quot;df&quot;、非心母数 &quot;xnonc&quot; の非心カイ二乗分布から無作為な値を生成する。
    d は &gt;= 1.0、xnonc は &gt;= 0.0 でなければならない</li>
+<li><a href="function.stats-rand-gen-noncentral-chisquare.html" class="index">stats_rand_gen_noncentral_chisquare</a> - Generates a random deviate from the non-central chi-square distribution</li>
 <li><a href="function.stats-rand-gen-noncentral-f.html" class="index">stats_rand_gen_noncentral_f</a> - 分子の自由度が &quot;dfn&quot;、分母の自由度が &quot;dfd&quot;、非心母数が &quot;xnonc&quot;
    の非心 F (分散比) 分布から、無作為な値を返す。
    非心カイ二乗変量の分子とカイ二乗変量の分母の比を直接生成する</li>
@@ -8424,10 +8426,9 @@
 <li><a href="function.stats-standard-deviation.html" class="index">stats_standard_deviation</a> - 標準偏差を返す</li>
 <li><a href="function.stats-stat-binomial-coef.html" class="index">stats_stat_binomial_coef</a> - 未ドキュメント化</li>
 <li><a href="function.stats-stat-correlation.html" class="index">stats_stat_correlation</a> - 未ドキュメント化</li>
-<li><a href="function.stats-stat-gennch.html" class="index">stats_stat_gennch</a> - 未ドキュメント化</li>
+<li><a href="function.stats-stat-factorial.html" class="index">stats_stat_factorial</a> - Returns the factorial of an integer</li>
 <li><a href="function.stats-stat-independent-t.html" class="index">stats_stat_independent_t</a> - 未ドキュメント化</li>
 <li><a href="function.stats-stat-innerproduct.html" class="index">stats_stat_innerproduct</a> - 説明</li>
-<li><a href="function.stats-stat-noncentral-t.html" class="index">stats_stat_noncentral_t</a> - 非心 t 分布のパラメータのいずれかを、その他のパラメータの値から計算する</li>
 <li><a href="function.stats-stat-paired-t.html" class="index">stats_stat_paired_t</a> - 未ドキュメント化</li>
 <li><a href="function.stats-stat-percentile.html" class="index">stats_stat_percentile</a> - 未ドキュメント化</li>
 <li><a href="function.stats-stat-powersum.html" class="index">stats_stat_powersum</a> - 未ドキュメント化</li>

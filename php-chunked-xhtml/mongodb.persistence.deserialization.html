@@ -103,8 +103,8 @@ array</dt>
           </p>
           <p class="para">
            If the named class implements the
-           <a href="class.mongodb-bson-persistable.html" class="classname">MongoDB\BSON\Persistable</a> interface, then the
-           properties of the BSON document, including the
+           <span class="interfacename"><a href="class.mongodb-bson-persistable.html" class="interfacename">MongoDB\BSON\Persistable</a></span> interface,
+           then the properties of the BSON document, including the
            <span class="property">__pclass</span> property, are sent as an associative
            array to the
            <span class="methodname"><a href="mongodb-bson-unserializable.bsonunserialize.html" class="methodname">MongoDB\BSON\Unserializable::bsonUnserialize()</a></span>
@@ -112,7 +112,7 @@ array</dt>
           </p>
           <p class="para">
            If the named class does not exist or does not implement the
-           <a href="class.mongodb-bson-persistable.html" class="classname">MongoDB\BSON\Persistable</a> interface,
+           <span class="interfacename"><a href="class.mongodb-bson-persistable.html" class="interfacename">MongoDB\BSON\Persistable</a></span> interface,
            <strong class="classname">stdClass</strong> will be used and each BSON document
            key (including <span class="property">__pclass</span>) will be set as a
            public <strong class="classname">stdClass</strong> property.
@@ -173,7 +173,7 @@ any other string</dt>
        <p class="para">
         If the named class does not exist, is not concrete (i.e. it is
         abstract or an interface), or does not implement
-        <a href="class.mongodb-bson-unserializable.html" class="classname">MongoDB\BSON\Unserializable</a> then an
+        <span class="interfacename"><a href="class.mongodb-bson-unserializable.html" class="interfacename">MongoDB\BSON\Unserializable</a></span> then an
         <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a>
         exception is thrown.
        </p>
@@ -181,8 +181,8 @@ any other string</dt>
        <p class="para">
         If the BSON object has a <span class="property">__pclass</span> property and
         that class exists and implements
-        <a href="class.mongodb-bson-persistable.html" class="classname">MongoDB\BSON\Persistable</a> it will supersede the
-        class provided in the type map.
+        <span class="interfacename"><a href="class.mongodb-bson-persistable.html" class="interfacename">MongoDB\BSON\Persistable</a></span> it will
+        supersede the class provided in the type map.
        </p>
 
        <p class="para">
@@ -247,7 +247,8 @@ YourClass</dt>
         <dd>
 
          <p class="para">
-          which implements <a href="class.mongodb-bson-unserializable.html" class="classname">MongoDB\BSON\Unserializable</a>
+          which implements
+          <span class="interfacename"><a href="class.mongodb-bson-unserializable.html" class="interfacename">MongoDB\BSON\Unserializable</a></span>
          </p>
         </dd>
 
@@ -259,7 +260,8 @@ OurClass</dt>
         <dd>
 
          <p class="para">
-          which implements <a href="class.mongodb-bson-persistable.html" class="classname">MongoDB\BSON\Persistable</a>
+          which implements
+          <span class="interfacename"><a href="class.mongodb-bson-persistable.html" class="interfacename">MongoDB\BSON\Persistable</a></span>
          </p>
         </dd>
 

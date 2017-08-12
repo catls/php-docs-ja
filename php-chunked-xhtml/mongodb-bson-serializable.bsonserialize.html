@@ -29,9 +29,10 @@
    <span class="type"><a href="language.types.array.html" class="type array">array</a></span> or <strong class="classname">stdClass</strong>.
   </p>
   <p class="para">
-   Root documents (e.g. a <a href="class.mongodb-bson-serializable.html" class="classname">MongoDB\BSON\Serializable</a>
-   passed to <span class="function"><a href="function.mongodb.bson-fromphp.html" class="function">MongoDB\BSON\fromPHP()</a></span>) will always be
-   serialized as a BSON document. For field values, associative arrays and
+   Root documents (e.g. a
+   <span class="interfacename"><a href="class.mongodb-bson-serializable.html" class="interfacename">MongoDB\BSON\Serializable</a></span> passed to
+   <span class="function"><a href="function.mongodb.bson-fromphp.html" class="function">MongoDB\BSON\fromPHP()</a></span>) will always be serialized as a
+   BSON document. For field values, associative arrays and
    <strong class="classname">stdClass</strong> instances will be serialized as a BSON
    document and sequential arrays (i.e. sequential, numeric indexes starting at
    <em>0</em>) will be serialized as a BSON array.
@@ -65,7 +66,7 @@
 
  <div class="refsect1 examples" id="refsect1-mongodb-bson-serializable.bsonserialize-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-1743">
+  <div class="example" id="example-1745">
    <p><strong>例1 <span class="function"><strong>MongoDB\BSON\Serializable::bsonSerialize()</strong></span> returning an associative array for root document</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -83,7 +84,7 @@
    </div>
   </div>
 
-  <div class="example" id="example-1744">
+  <div class="example" id="example-1746">
    <p><strong>例2 <span class="function"><strong>MongoDB\BSON\Serializable::bsonSerialize()</strong></span> returning a sequential array for root document</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -100,7 +101,7 @@
    </div>
   </div>
 
-  <div class="example" id="example-1745">
+  <div class="example" id="example-1747">
    <p><strong>例3 <span class="function"><strong>MongoDB\BSON\Serializable::bsonSerialize()</strong></span> returning an associative array for document field</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -117,7 +118,7 @@
    </div>
   </div>
 
-  <div class="example" id="example-1746">
+  <div class="example" id="example-1748">
    <p><strong>例4 <span class="function"><strong>MongoDB\BSON\Serializable::bsonSerialize()</strong></span> returning a sequential array for document field</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -141,7 +142,7 @@
   <h3 class="title">参考</h3>
   <ul class="simplelist">
    <li class="member"><span class="function"><a href="mongodb-bson-unserializable.bsonunserialize.html" class="function" rel="rdfs-seeAlso">MongoDB\BSON\Unserializable::bsonUnserialize()</a> - Constructs the object from a BSON array or document</span></li>
-   <li class="member"><a href="class.mongodb-bson-persistable.html" class="classname">MongoDB\BSON\Persistable</a></li>
+   <li class="member"><span class="interfacename"><a href="class.mongodb-bson-persistable.html" class="interfacename">MongoDB\BSON\Persistable</a></span></li>
    <li class="member"><a href="mongodb.persistence.html" class="xref">Persisting Data</a></li>
   </ul>
  </div>

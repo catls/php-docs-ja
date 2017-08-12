@@ -77,18 +77,18 @@
 
      <p class="para">
       If an object is a supported class that implements
-      <a href="class.mongodb-bson-type.html" class="classname">MongoDB\BSON\Type</a>, then use the BSON
+      <span class="interfacename"><a href="class.mongodb-bson-type.html" class="interfacename">MongoDB\BSON\Type</a></span>, then use the BSON
       serialization logic for that specific type.
-      <a href="class.mongodb-bson-type.html" class="classname">MongoDB\BSON\Type</a> instances (excluding
-      <a href="class.mongodb-bson-serializable.html" class="classname">MongoDB\BSON\Serializable</a> may only be serialized
-      as a document field value. Attempting to serialize such an object as a
-      root document will throw a
+      <span class="interfacename"><a href="class.mongodb-bson-type.html" class="interfacename">MongoDB\BSON\Type</a></span> instances (excluding
+      <span class="interfacename"><a href="class.mongodb-bson-serializable.html" class="interfacename">MongoDB\BSON\Serializable</a></span> may only be
+      serialized as a document field value. Attempting to serialize such an
+      object as a root document will throw a
       <a href="class.mongodb-driver-exception-unexpectedvalueexception.html" class="classname">MongoDB\Driver\Exception\UnexpectedValueException</a>
      </p>
 
      <p class="para">
       If an object is of an unknown class implementing the
-      <a href="class.mongodb-bson-type.html" class="classname">MongoDB\BSON\Type</a> interface, then throw a
+      <span class="interfacename"><a href="class.mongodb-bson-type.html" class="interfacename">MongoDB\BSON\Type</a></span> interface, then throw a
       <a href="class.mongodb-driver-exception-unexpectedvalueexception.html" class="classname">MongoDB\Driver\Exception\UnexpectedValueException</a>
      </p>
 
@@ -102,7 +102,7 @@
 
      <p class="para">
       If an object is of a class that implements the
-      <a href="class.mongodb-bson-serializable.html" class="classname">MongoDB\BSON\Serializable</a> interface, call
+      <span class="interfacename"><a href="class.mongodb-bson-serializable.html" class="interfacename">MongoDB\BSON\Serializable</a></span> interface, call
       <span class="methodname"><a href="mongodb-bson-serializable.bsonserialize.html" class="methodname">MongoDB\BSON\Serializable::bsonSerialize()</a></span> and use
       the returned array or <strong class="classname">stdClass</strong> to serialize as a
       BSON document or array. The BSON type will be determined by the following:
@@ -116,8 +116,9 @@
         </p>
        </li>
        <li class="listitem">
-        <p class="para"><a href="class.mongodb-bson-persistable.html" class="classname">MongoDB\BSON\Persistable</a> objects must be
-        serialized as a BSON document.
+        <p class="para">
+         <span class="interfacename"><a href="class.mongodb-bson-persistable.html" class="interfacename">MongoDB\BSON\Persistable</a></span> objects must be
+         serialized as a BSON document.
         </p>
        </li>
        <li class="listitem">
@@ -146,9 +147,9 @@
 
      <p class="para">
       If an object is of a class that implements the
-      <a href="class.mongodb-bson-persistable.html" class="classname">MongoDB\BSON\Persistable</a> interface (which implies
-      <a href="class.mongodb-bson-serializable.html" class="classname">MongoDB\BSON\Serializable</a> obtain the properties
-      in a similar way as in the previous paragraphs, but
+      <span class="interfacename"><a href="class.mongodb-bson-persistable.html" class="interfacename">MongoDB\BSON\Persistable</a></span> interface (which
+      implies <span class="interfacename"><a href="class.mongodb-bson-serializable.html" class="interfacename">MongoDB\BSON\Serializable</a></span>), obtain
+      the properties in a similar way as in the previous paragraphs, but
       <em class="emphasis">also</em> add an additional property
       <span class="property">__pclass</span> as a Binary value, with subtype
       <em>0x80</em> and data bearing the fully qualified class name
@@ -163,9 +164,9 @@
       the <span class="methodname"><a href="mongodb-bson-serializable.bsonserialize.html" class="methodname">MongoDB\BSON\Serializable::bsonSerialize()</a></span>
       return value. If you want to avoid this behaviour and set your own
       <span class="property">__pclass</span> value, you must <em class="emphasis">not</em>
-      implement <a href="class.mongodb-bson-persistable.html" class="classname">MongoDB\BSON\Persistable</a> and should
-      instead implement <a href="class.mongodb-bson-serializable.html" class="classname">MongoDB\BSON\Serializable</a>
-      directly.
+      implement <span class="interfacename"><a href="class.mongodb-bson-persistable.html" class="interfacename">MongoDB\BSON\Persistable</a></span> and
+      should instead implement
+      <span class="interfacename"><a href="class.mongodb-bson-serializable.html" class="interfacename">MongoDB\BSON\Serializable</a></span> directly.
      </p>
 
      <div class="section">

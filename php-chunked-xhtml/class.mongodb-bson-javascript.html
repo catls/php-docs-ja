@@ -21,8 +21,17 @@
   <div class="section" id="mongodb-bson-javascript.intro">
    <h2 class="title">導入</h2>
    <p class="para">
-
+    BSON type for Javascript code. An optional scope document may be specified
+    that maps identifiers to values and defines the scope in which the code
+    should be evaluated by the server.
    </p>
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <p class="para">
+     This BSON type is mainly used when executing database commands that take a
+     Javascript function as a parameter, such as
+     <a href="https://docs.mongodb.com/manual/reference/command/mapReduce/" class="link external">&raquo;&nbsp;mapReduce</a>.
+    </p>
+   </p></blockquote>
   </div>
 
 

@@ -23,8 +23,16 @@
    <p class="para">
     Represents a
     <a href="https://docs.mongodb.com/manual/reference/bson-types/#timestamps" class="link external">&raquo;&nbsp;BSON timestamp</a>,
-    which is an internal MongoDB type not intended for general date storage.
+    The value consists of a 4-byte timestamp (i.e. seconds since the epoch) and
+    a 4-byte increment.
    </p>
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <p class="para">
+     This is an internal MongoDB type used for replication and sharding. It is
+     not intended for general date storage
+     (<a href="class.mongodb-bson-utcdatetime.html" class="classname">MongoDB\BSON\UTCDateTime</a> should be used instead).
+    </p>
+   </p></blockquote>
   </div>
 
 

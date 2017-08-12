@@ -21,8 +21,31 @@
   <div class="section" id="mongodb-bson-objectid.intro">
    <h2 class="title">導入</h2>
    <p class="para">
-
+    BSON type for an
+    <a href="https://docs.mongodb.com/manual/reference/bson-types/#objectid" class="link external">&raquo;&nbsp;ObjectID</a>. The
+    value consists of 12 bytes, where the first four bytes are a timestamp
+    that reflect the ObjectID&#039;s creation. Specifically, the value consists of:
    </p>
+   <ul class="itemizedlist">
+    <li class="listitem"><span class="simpara">a 4-byte value representing the seconds since the Unix epoch,</span></li>
+    <li class="listitem"><span class="simpara">a 3-byte machine identifier,</span></li>
+    <li class="listitem"><span class="simpara">a 2-byte process ID, and</span></li>
+    <li class="listitem"><span class="simpara">a 3-byte counter, starting with a random value.</span></li>
+   </ul>
+   <p class="para">
+    In MongoDB, each document stored in a collection requires a unique
+    <em>_id</em> field that acts as a primary key. If an inserted
+    document omits the <em>_id</em> field, the driver automatically
+    generates an ObjectID for the <em>_id</em> field.
+   </p>
+   <p class="para">
+    Using ObjectIDs for the <em>_id</em> field provides the following
+    additional benefits:
+   </p>
+   <ul class="itemizedlist">
+    <li class="listitem"><span class="simpara">The creation time of the ObjectID may be accessed using the <span class="methodname"><a href="mongodb-bson-objectid.gettimestamp.html" class="methodname">MongoDB\BSON\ObjectID::getTimestamp()</a></span> method.</span></li>
+    <li class="listitem"><span class="simpara">Sorting on an <em>_id</em> field that stores ObjectID values is roughly equivalent to sorting by creation time.</span></li>
+   </ul>
   </div>
 
 
