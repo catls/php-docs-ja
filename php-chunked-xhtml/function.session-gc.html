@@ -30,14 +30,14 @@
   </p>
   <p class="para">
    Probability based GC works somewhat but it has few problems. 1) Low
-   traffic site&#039;s session data may not be deleted within preferred
-   duration. 2) High traffic site&#039;s may have too frequent GC. 3) GC is
-   performed on the user&#039;s request and the user will experience GC
+   traffic sites&#039; session data may not be deleted within the preferred
+   duration. 2) High traffic sites&#039; GC may be too frequent GC. 3) GC is
+   performed on the user&#039;s request and the user will experience a GC
    delay.
   </p>
   <p class="para">
    Therefore, it is recommended to execute GC periodically for
-   production systems. e.g. Use &quot;cron&quot; for UNIX like systems.
+   production systems using, e.g., &quot;cron&quot; for UNIX-like systems.
    Make sure to disable probability based GC by setting 
    <a href="session.configuration.html#ini.session.gc-probability" class="link">session.gc_probability</a> 
    to 0.
