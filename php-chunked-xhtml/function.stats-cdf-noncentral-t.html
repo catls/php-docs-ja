@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Calculates any one parameter of the non-central t-distribution give values for the others.</title>
+  <title>非心 t 分布のパラメータのいずれかを、その他のパラメータの値から計算する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.stats-cdf-noncentral-t" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_cdf_noncentral_t</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_cdf_noncentral_t</span> &mdash; <span class="dc-title">Calculates any one parameter of the non-central t-distribution give values for the others.</span></p>
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_cdf_noncentral_t</span> &mdash; <span class="dc-title">非心 t 分布のパラメータのいずれかを、その他のパラメータの値から計算する</span></p>
 
  </div>
 
@@ -28,23 +28,20 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Returns the cumulative distribution function, its inverse, or one of its parameters,
-   of the non-central t-distribution. The kind of the return value and parameters
-   (<code class="parameter">par1</code>, <code class="parameter">par2</code>, and <code class="parameter">par3</code>)
-   are determined by <code class="parameter">which</code>.
+   非心 t 分布の累積分布関数、その逆関数、またはパラメータのいずれかを戻します。
+   戻り値の種類とパラメータ (<code class="parameter">par1</code>, <code class="parameter">par2</code>, <code class="parameter">par3</code>) は
+   <code class="parameter">which</code> によって決められます。
   </p>
   <p class="para">
-   The following table lists the return value and parameters by <code class="parameter">which</code>.
-   CDF, x, nu, and mu denotes cumurative distribution function, the value of the random
-   variable, the degrees of freedom and the non-centrality parameter of the distribution,
-   respectively.
+   次の表は、<code class="parameter">which</code> ごとの戻り値とパラメータを示したものです。
+   CDF, x, nu, mu は、この順に、非心 t 分布の累積分布関数、確率変数、自由度、非心度を表します。
    <table class="doctable table">
-    <caption><strong>Return value and parameters</strong></caption>
+    <caption><strong>戻り値とパラメータ</strong></caption>
     
      <thead>
       <tr>
        <th><code class="parameter">which</code></th>
-       <th>Return value</th>
+       <th>戻り値</th>
        <th><code class="parameter">par1</code></th>
        <th><code class="parameter">par2</code></th>
        <th><code class="parameter">par3</code></th>
@@ -105,7 +102,7 @@
      <dd>
 
       <p class="para">
-       The first parameter
+       第一引数
       </p>
      </dd>
 
@@ -117,7 +114,7 @@
      <dd>
 
       <p class="para">
-       The second parameter
+       第二引数
       </p>
      </dd>
 
@@ -129,7 +126,7 @@
      <dd>
 
       <p class="para">
-       The third parameter
+       第三引数
       </p>
      </dd>
 
@@ -141,7 +138,7 @@
      <dd>
 
       <p class="para">
-       The flag to determine what to be calculated
+       計算される値を決めるフラグ
       </p>
      </dd>
 
@@ -155,7 +152,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-cdf-noncentral-t-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns CDF, x, nu, or mu, determined by <code class="parameter">which</code>.
+   <code class="parameter">which</code> によって決まる、CDF, x, nu, mu のいずれかの値を戻します。
   </p>
  </div>
 

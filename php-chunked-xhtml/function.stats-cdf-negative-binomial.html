@@ -13,9 +13,7 @@
 </div><hr /><div id="function.stats-cdf-negative-binomial" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_cdf_negative_binomial</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_cdf_negative_binomial</span> &mdash; <span class="dc-title">
-   負の二項分布のパラメータのいずれかを、その他のパラメータの値から計算する
-  </span></p>
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_cdf_negative_binomial</span> &mdash; <span class="dc-title">負の二項分布のパラメータのいずれかを、その他のパラメータの値から計算する</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.stats-cdf-negative-binomial-description">
@@ -28,11 +26,66 @@
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$which</code></span>
    )</div>
 
+  <p class="para rdfs-comment">
+   負の二項分布の累積分布関数、その逆関数、またはパラメータのいずれかを戻します。
+   戻り値の種類とパラメータ (<code class="parameter">par1</code>, <code class="parameter">par2</code>, <code class="parameter">par3</code>) は
+   <code class="parameter">which</code> によって決められます。
+  </p>
+  <p class="para">
+   次の表は、<code class="parameter">which</code> ごとの戻り値とパラメータを示したものです。
+   CDF, x, k, lambda は、この順に、負の二項分布の累積分布関数、成功回数、試行回数、各試行での成功確率を表します。
+   <table class="doctable table">
+    <caption><strong>戻り値とパラメータ</strong></caption>
+    
+     <thead>
+      <tr>
+       <th><code class="parameter">which</code></th>
+       <th>戻り値</th>
+       <th><code class="parameter">par1</code></th>
+       <th><code class="parameter">par2</code></th>
+       <th><code class="parameter">par3</code></th>
+      </tr>
 
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
+     </thead>
 
+     <tbody class="tbody">
+      <tr>
+       <td>1</td>
+       <td>CDF</td>
+       <td>x</td>
+       <td>r</td>
+       <td>p</td>
+      </tr>
+
+      <tr>
+       <td>2</td>
+       <td>x</td>
+       <td>CDF</td>
+       <td>r</td>
+       <td>p</td>
+      </tr>
+
+      <tr>
+       <td>3</td>
+       <td>r</td>
+       <td>x</td>
+       <td>CDF</td>
+       <td>p</td>
+      </tr>
+
+      <tr>
+       <td>4</td>
+       <td>p</td>
+       <td>x</td>
+       <td>CDF</td>
+       <td>r</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.stats-cdf-negative-binomial-parameters">
@@ -47,6 +100,7 @@
      <dd>
 
       <p class="para">
+       第一引数
       </p>
      </dd>
 
@@ -58,6 +112,7 @@
      <dd>
 
       <p class="para">
+       第二引数
       </p>
      </dd>
 
@@ -69,6 +124,7 @@
      <dd>
 
       <p class="para">
+       第三引数
       </p>
      </dd>
 
@@ -80,6 +136,7 @@
      <dd>
 
       <p class="para">
+       計算される値を決めるフラグ
       </p>
      </dd>
 
@@ -93,6 +150,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-cdf-negative-binomial-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   <code class="parameter">which</code> によって決まる、CDF, x, r, p のいずれかの値を戻します。
   </p>
  </div>
 

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>未ドキュメント化</title>
+  <title>一様分布のパラメータのいずれかを、その他のパラメータの値から計算する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.stats-cdf-uniform" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_cdf_uniform</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_cdf_uniform</span> &mdash; <span class="dc-title">未ドキュメント化</span></p>
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_cdf_uniform</span> &mdash; <span class="dc-title">一様分布のパラメータのいずれかを、その他のパラメータの値から計算する</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.stats-cdf-uniform-description">
@@ -26,11 +26,66 @@
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$which</code></span>
    )</div>
 
+  <p class="para rdfs-comment">
+   一様分布の累積分布関数、その逆関数、またはパラメータのいずれかを戻します。
+   戻り値の種類とパラメータ (<code class="parameter">par1</code>, <code class="parameter">par2</code>, <code class="parameter">par3</code>) は
+   <code class="parameter">which</code> によって決められます。
+  </p>
+  <p class="para">
+   次の表は、<code class="parameter">which</code> ごとの戻り値とパラメータを示したものです。
+   CDF, x, a, b は、この順に、一様分布の累積分布関数、確率変数、下限、上限を表します。
+   <table class="doctable table">
+    <caption><strong>戻り値とパラメータ</strong></caption>
+    
+     <thead>
+      <tr>
+       <th><code class="parameter">which</code></th>
+       <th>戻り値</th>
+       <th><code class="parameter">par1</code></th>
+       <th><code class="parameter">par2</code></th>
+       <th><code class="parameter">par3</code></th>
+      </tr>
 
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
+     </thead>
 
+     <tbody class="tbody">
+      <tr>
+       <td>1</td>
+       <td>CDF</td>
+       <td>x</td>
+       <td>a</td>
+       <td>b</td>
+      </tr>
+
+      <tr>
+       <td>2</td>
+       <td>x</td>
+       <td>CDF</td>
+       <td>a</td>
+       <td>b</td>
+      </tr>
+
+      <tr>
+       <td>3</td>
+       <td>a</td>
+       <td>x</td>
+       <td>CDF</td>
+       <td>b</td>
+      </tr>
+
+      <tr>
+       <td>4</td>
+       <td>b</td>
+       <td>x</td>
+       <td>CDF</td>
+       <td>a</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.stats-cdf-uniform-parameters">
@@ -45,6 +100,7 @@
      <dd>
 
       <p class="para">
+       第一引数
       </p>
      </dd>
 
@@ -56,6 +112,7 @@
      <dd>
 
       <p class="para">
+       第二引数
       </p>
      </dd>
 
@@ -67,6 +124,7 @@
      <dd>
 
       <p class="para">
+       第三引数
       </p>
      </dd>
 
@@ -78,6 +136,7 @@
      <dd>
 
       <p class="para">
+       計算される値を決めるフラグ
       </p>
      </dd>
 
@@ -91,6 +150,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-cdf-uniform-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   <code class="parameter">which</code> によって決まる、CDF, x, a, b のいずれかの値を戻します。
   </p>
  </div>
 
