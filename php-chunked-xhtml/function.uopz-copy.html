@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>関数をコピー</title>
+  <title>Copy a function</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,8 +13,13 @@
 </div><hr /><div id="function.uopz-copy" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">uopz_copy</h1>
-  <p class="verinfo">(PECL uopz 1 &gt;= 1.0.4, PECL uopz 2)</p><p class="refpurpose"><span class="refname">uopz_copy</span> &mdash; <span class="dc-title">関数をコピー</span></p>
+  <p class="verinfo">(PECL uopz 1 &gt;= 1.0.4, PECL uopz 2)</p><p class="refpurpose"><span class="refname">uopz_copy</span> &mdash; <span class="dc-title">Copy a function</span></p>
 
+ </div>
+
+ <div id="function.uopz-copy-refsynopsisdiv">
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">This function has been
+<em class="emphasis">REMOVED</em> in PECL uopz 5.0.0.</p></div>
  </div>
 
  <div class="refsect1 description" id="refsect1-function.uopz-copy-description">
@@ -31,7 +36,7 @@
    )</div>
 
   <p class="para rdfs-comment">
- 名前で関数をコピー
+ Copy a function by name
   </p>
 
  </div>
@@ -48,7 +53,7 @@
     <dd>
 
      <p class="para">
- コピーする関数を含むクラスの名前
+ The name of the class containing the function to copy
      </p>
     </dd>
 
@@ -60,7 +65,7 @@
     <dd>
 
      <p class="para">
- 関数名
+ The name of the function
      </p>
     </dd>
 
@@ -73,7 +78,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.uopz-copy-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   指定された関数に対するクロージャ
+   A Closure for the specified function
   </p>
  </div>
 
@@ -81,10 +86,10 @@
  <div class="refsect1 examples" id="refsect1-function.uopz-copy-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-597">
-   <p><strong>例1 <span class="function"><strong>uopz_copy()</strong></span> の例</strong></p>
+   <p><strong>例1 <span class="function"><strong>uopz_copy()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$strtotime&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">uopz_copy</span><span style="color: #007700">(</span><span style="color: #DD0000">'strtotime'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">uopz_function</span><span style="color: #007700">(</span><span style="color: #DD0000">"strtotime"</span><span style="color: #007700">,&nbsp;function(</span><span style="color: #0000BB">$arg1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arg2</span><span style="color: #007700">)&nbsp;use(</span><span style="color: #0000BB">$strtotime</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;ここから元の&nbsp;strtotime&nbsp;を呼び出すことができます&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg1</span><span style="color: #007700">);<br />});<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #DD0000">'dummy'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$strtotime&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">uopz_copy</span><span style="color: #007700">(</span><span style="color: #DD0000">'strtotime'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">uopz_function</span><span style="color: #007700">(</span><span style="color: #DD0000">"strtotime"</span><span style="color: #007700">,&nbsp;function(</span><span style="color: #0000BB">$arg1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arg2</span><span style="color: #007700">)&nbsp;use(</span><span style="color: #0000BB">$strtotime</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;can&nbsp;call&nbsp;original&nbsp;strtotime&nbsp;from&nbsp;here&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg1</span><span style="color: #007700">);<br />});<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #DD0000">'dummy'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>

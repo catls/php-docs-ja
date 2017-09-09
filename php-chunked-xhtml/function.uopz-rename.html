@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>実行時に関数名を変更</title>
+  <title>Rename a function at runtime</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,8 +13,13 @@
 </div><hr /><div id="function.uopz-rename" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">uopz_rename</h1>
-  <p class="verinfo">(PECL uopz 1, PECL uopz 2)</p><p class="refpurpose"><span class="refname">uopz_rename</span> &mdash; <span class="dc-title">実行時に関数名を変更</span></p>
+  <p class="verinfo">(PECL uopz 1, PECL uopz 2)</p><p class="refpurpose"><span class="refname">uopz_rename</span> &mdash; <span class="dc-title">Rename a function at runtime</span></p>
 
+ </div>
+
+ <div id="function.uopz-rename-refsynopsisdiv">
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">This function has been
+<em class="emphasis">REMOVED</em> in PECL uopz 5.0.0.</p></div>
  </div>
 
  <div class="refsect1 description" id="refsect1-function.uopz-rename-description">
@@ -33,11 +38,11 @@
    )</div>
 
   <p class="para rdfs-comment">
- <code class="parameter">function</code> の名前を <code class="parameter">rename</code> に変更します。
+ Renames <code class="parameter">function</code> to <code class="parameter">rename</code>
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
- 両方の関数が存在する場合は、それらの名前を効果的に入れ替えます。
+ If both functions exist, this effectively swaps their names
    </p>
   </p></blockquote>
  </div>
@@ -54,7 +59,7 @@
     <dd>
 
      <p class="para">
- 関数を含むクラスの名前
+ The name of the class containing the function
      </p>
     </dd>
 
@@ -66,7 +71,7 @@
     <dd>
 
      <p class="para">
- 既存の関数名
+ The name of an existing function
      </p>
     </dd>
 
@@ -78,7 +83,7 @@
     <dd>
 
      <p class="para">
- 関数の新しい名前
+ The new name for the function
      </p>
     </dd>
 
@@ -99,7 +104,7 @@
  <div class="refsect1 examples" id="refsect1-function.uopz-rename-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-609">
-   <p><strong>例1 <span class="function"><strong>uopz_rename()</strong></span> の例</strong></p>
+   <p><strong>例1 <span class="function"><strong>uopz_rename()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />uopz_rename</span><span style="color: #007700">(</span><span style="color: #DD0000">"strlen"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"original_strlen"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">original_strlen</span><span style="color: #007700">(</span><span style="color: #DD0000">"Hello&nbsp;World"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -116,7 +121,7 @@
    </div>
   </div>
   <div class="example" id="example-610">
-   <p><strong>例2 <span class="function"><strong>uopz_rename()</strong></span> クラスの例</strong></p>
+   <p><strong>例2 <span class="function"><strong>uopz_rename()</strong></span> class example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">My&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">uopz_rename</span><span style="color: #007700">(</span><span style="color: #0000BB">My</span><span style="color: #007700">::class,&nbsp;</span><span style="color: #DD0000">"strlen"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"original_strlen"</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">::</span><span style="color: #0000BB">original_strlen</span><span style="color: #007700">(</span><span style="color: #DD0000">"Hello&nbsp;World"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

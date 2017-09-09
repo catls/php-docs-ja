@@ -39,9 +39,9 @@
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.enable-cli" class="link">opcache.enable_cli</a></td>
-      <td>&quot;1&quot;</td>
+      <td>&quot;0&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td>PHP 7.1.2 以降デフォルトで有効</td>
+      <td class="empty">&nbsp;</td>
      </tr>
 
      <tr>
@@ -806,7 +806,7 @@
     <dd>
 
      <p class="para">
-      Validates the cached file permissions against the current user.
+      キャッシュされたファイルのアクセス権限を現在のユーザーに対して検証します。
      </p>
     </dd>
 
@@ -820,8 +820,9 @@
     <dd>
 
      <p class="para">
-      Prevents name collisions in chroot&#039;ed environments. This should be enabled in
-      all chroot&#039;ed environments to prevent access to files outside the chroot.
+      chroot された環境での名前の衝突を防止します。
+      これは、chroot 以外でのファイルへのアクセスを防止するために、
+      chroot されたすべての環境で有効にする必要があります。
      </p>
     </dd>
 

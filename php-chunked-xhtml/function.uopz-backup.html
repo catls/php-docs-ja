@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>関数をバックアップ</title>
+  <title>Backup a function</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,8 +13,13 @@
 </div><hr /><div id="function.uopz-backup" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">uopz_backup</h1>
-  <p class="verinfo">(PECL uopz 1 &gt;= 1.0.3, PECL uopz 2)</p><p class="refpurpose"><span class="refname">uopz_backup</span> &mdash; <span class="dc-title">関数をバックアップ</span></p>
+  <p class="verinfo">(PECL uopz 1 &gt;= 1.0.3, PECL uopz 2)</p><p class="refpurpose"><span class="refname">uopz_backup</span> &mdash; <span class="dc-title">Backup a function</span></p>
 
+ </div>
+
+ <div id="function.uopz-backup-refsynopsisdiv">
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">This function has been
+<em class="emphasis">REMOVED</em> in PECL uopz 5.0.0.</p></div>
  </div>
 
  <div class="refsect1 description" id="refsect1-function.uopz-backup-description">
@@ -31,7 +36,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   実行時に関数をバックアップし、シャットダウン時にリストアします。
+ Backup a function at runtime, to be restored on shutdown
   </p>
 
  </div>
@@ -48,7 +53,7 @@
     <dd>
 
      <p class="para">
-      バックアップする関数を含むクラスの名前
+ The name of the class containing the function to backup
      </p>
     </dd>
 
@@ -60,7 +65,7 @@
     <dd>
 
      <p class="para">
- 関数名
+ The name of the function
      </p>
     </dd>
 
@@ -81,7 +86,7 @@
  <div class="refsect1 examples" id="refsect1-function.uopz-backup-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-595">
-   <p><strong>例1 <span class="function"><strong>uopz_backup()</strong></span> の例</strong></p>
+   <p><strong>例1 <span class="function"><strong>uopz_backup()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />uopz_backup</span><span style="color: #007700">(</span><span style="color: #DD0000">"fgets"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">uopz_function</span><span style="color: #007700">(</span><span style="color: #DD0000">"fgets"</span><span style="color: #007700">,&nbsp;function(){<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br />});<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">fgets</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
