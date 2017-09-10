@@ -515,6 +515,14 @@ array(2) {
   </p>
  </div>
 
+ <div class="sect2" id="migration71.incompatible.long2ip">
+  <h3 class="title">long2ip() parameter type change</h3>
+  <p class="para">
+   <span class="function"><strong>long2ip()()</strong></span> now expects an <span class="type"><a href="language.types.integer.html" class="type int">int</a></span> instead of a
+   <span class="type"><a href="language.types.string.html" class="type string">string</a></span>.
+  </p>
+ </div>
+
  <div class="sect2" id="migration71.incompatible.json">
   <h3 class="title">JSON encoding and decoding</h3>
   <p class="para">
@@ -560,7 +568,7 @@ object(stdClass)#1 (1) {
   <p class="para">
    The third paramter to the <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> and
    <span class="function"><a href="function.mb-eregi.html" class="function">mb_eregi()</a></span> functions (<code class="parameter">regs</code>) will now be
-   set to an empty array if nothing was matched. Formely, the parameter would
+   set to an empty array if nothing was matched. Formerly, the parameter would
    not have been modified.
   </p>
  </div>

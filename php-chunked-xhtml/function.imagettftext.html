@@ -118,46 +118,50 @@ image</code></dt>
 
     
     
+    
      <dt>
 <code class="parameter">fontfile</code></dt>
 
      <dd>
 
       <p class="para">
-       使用する TrueType フォントのパス。
+       The path to the TrueType font you wish to use.
       </p>
       <p class="para">
-       PHP が使用している GD ライブラリのバージョンに依存しており、<em class="emphasis">
-       <code class="parameter">fontfile</code> が <em>/</em>
-       で始まらない場合、ファイル名に <em>.ttf</em> が追加され、
-       </em>
-       ライブラリはライブラリが定義したフォントパスから
-       ファイル名を検索しようとします。
+       Depending on which version of the GD library PHP is using, <em class="emphasis">when
+       <code class="parameter">fontfile</code> does not begin with a leading
+       <em>/</em> then <em>.ttf</em> will be appended</em>
+       to the filename and the library will attempt to search for that
+       filename along a library-defined font path.
       </p>
       <p class="para">
-       2.0.18 以前のバージョンの GD ライブラリを使用している場合、
-       異なるフォントファイルに対する &#039;パスの区切り文字&#039; として
-       セミコロンよりも <em>space</em> 文字が使用されます。
-       この特徴が意図せずに使用されることで
-       <em>Warning: Could not find/open font</em>
-       という結果になります。
-       これらの影響があるバージョンに対する唯一の解決方法は、
-       スペースを含まないパスにフォントを移動させることです。
+       When using versions of the GD library lower than 2.0.18, a <em>space</em> character,
+       rather than a semicolon, was used as the &#039;path separator&#039; for different font files.
+       Unintentional use of this feature will result in the warning message:
+       <em>Warning: Could not find/open font</em>. For these affected versions, the
+       only solution is moving the font to a path which does not contain spaces.
       </p>
       <p class="para">
-       フォントがスクリプトと同一ディレクトリに存在している場合のほとんどで、
-       以下のトリックが問題の軽減に繋がります。
+       In many cases where a font resides in the same directory as the script using it
+       the following trick will alleviate any include problems.
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;GD&nbsp;の環境変数を設定します<br /></span><span style="color: #0000BB">putenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'GDFONTPATH='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'.'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;使用するフォント名を指定します&nbsp;(拡張子&nbsp;.ttf&nbsp;がないことに注意)<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SomeFont'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Set&nbsp;the&nbsp;enviroment&nbsp;variable&nbsp;for&nbsp;GD<br /></span><span style="color: #0000BB">putenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'GDFONTPATH='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'.'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;Name&nbsp;the&nbsp;font&nbsp;to&nbsp;be&nbsp;used&nbsp;(note&nbsp;the&nbsp;lack&nbsp;of&nbsp;the&nbsp;.ttf&nbsp;extension)<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SomeFont'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
        </div>
 
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        Note that <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> does
+        <em class="emphasis">not</em> apply to <code class="parameter">fontfile</code>.
+       </p>
+      </p></blockquote>
      </dd>
 
     
+
     
      <dt>
 <code class="parameter">text</code></dt>

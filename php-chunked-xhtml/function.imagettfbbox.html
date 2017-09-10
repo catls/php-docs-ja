@@ -67,20 +67,50 @@
 
     
     
+    
      <dt>
 <code class="parameter">fontfile</code></dt>
 
      <dd>
 
       <p class="para">
-       TrueType フォントファイルのファイル名 (URL)。PHP が使用している
-       GD ライブラリのバージョンによっては、&#039;/&#039; から始まり &#039;.ttf&#039; で終わるような
-       ファイル名で探し、またライブラリによって定義されているフォントパスで
-       探そうと試みます。
+       The path to the TrueType font you wish to use.
       </p>
+      <p class="para">
+       Depending on which version of the GD library PHP is using, <em class="emphasis">when
+       <code class="parameter">fontfile</code> does not begin with a leading
+       <em>/</em> then <em>.ttf</em> will be appended</em>
+       to the filename and the library will attempt to search for that
+       filename along a library-defined font path.
+      </p>
+      <p class="para">
+       When using versions of the GD library lower than 2.0.18, a <em>space</em> character,
+       rather than a semicolon, was used as the &#039;path separator&#039; for different font files.
+       Unintentional use of this feature will result in the warning message:
+       <em>Warning: Could not find/open font</em>. For these affected versions, the
+       only solution is moving the font to a path which does not contain spaces.
+      </p>
+      <p class="para">
+       In many cases where a font resides in the same directory as the script using it
+       the following trick will alleviate any include problems.
+       <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Set&nbsp;the&nbsp;enviroment&nbsp;variable&nbsp;for&nbsp;GD<br /></span><span style="color: #0000BB">putenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'GDFONTPATH='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'.'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;Name&nbsp;the&nbsp;font&nbsp;to&nbsp;be&nbsp;used&nbsp;(note&nbsp;the&nbsp;lack&nbsp;of&nbsp;the&nbsp;.ttf&nbsp;extension)<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SomeFont'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+       </div>
+
+      </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        Note that <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> does
+        <em class="emphasis">not</em> apply to <code class="parameter">fontfile</code>.
+       </p>
+      </p></blockquote>
      </dd>
 
     
+
     
      <dt>
 <code class="parameter">text</code></dt>
