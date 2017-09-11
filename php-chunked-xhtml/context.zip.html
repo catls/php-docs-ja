@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Zip context option listing</title>
+  <title>Zip コンテキストオプション一覧</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -12,15 +12,15 @@
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="context.zip" class="refentry">
  <div class="refnamediv">
-  <h1 class="refname">Zip context options</h1>
-  <p class="refpurpose"><span class="refname">Zip context options</span> &mdash; <span class="dc-title">Zip context option listing</span></p>
+  <h1 class="refname">Zip コンテキストオプション</h1>
+  <p class="refpurpose"><span class="refname">Zip コンテキストオプション</span> &mdash; <span class="dc-title">Zip コンテキストオプション一覧</span></p>
 
  </div>
  
  <div class="refsect1 description" id="refsect1-context.zip-description">
   <h3 class="title">説明</h3>
   <p class="para">
-   Zip context options are available for <em>zip</em> wrappers.
+   Zip コンテキストオプションは <em>zip</em> ラッパーで使用可能です。
   </p>
  </div>
 
@@ -36,7 +36,7 @@
      <dd>
 
       <p class="para">
-       Used to specify password used for encrypted archive.
+       アーカイブの暗号化に使われたパスワードを指定します。
       </p>
      </dd>
 
@@ -64,7 +64,7 @@
       <tr>
        <td>PHP 7.2.0, PECL zip 1.14.0</td>
        <td>
-        Added <code class="parameter">password</code>.
+        <code class="parameter">password</code> が追加されました。
        </td>
       </tr>
 
@@ -80,10 +80,10 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="iteratoraggregate.example.basic">
-    <p><strong>例1 Basic <code class="parameter">password</code> usage example</strong></p>
+    <p><strong>例1 <code class="parameter">password</code> の基本的な使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Read&nbsp;encrypted&nbsp;archie<br /></span><span style="color: #0000BB">$opts&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'zip'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'password'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'secret'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;),<br />);<br /></span><span style="color: #FF8000">//&nbsp;create&nbsp;the&nbsp;context...<br /></span><span style="color: #0000BB">$context&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">(</span><span style="color: #0000BB">$opts</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;...and&nbsp;use&nbsp;it&nbsp;to&nbsp;fetch&nbsp;the&nbsp;data<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'zip://test.zip#test.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ctx</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;暗号化されたアーカイブを参照する<br /></span><span style="color: #0000BB">$opts&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'zip'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'password'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'secret'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;),<br />);<br /></span><span style="color: #FF8000">//&nbsp;コンテキストを作成して<br /></span><span style="color: #0000BB">$context&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">stream_context_create</span><span style="color: #007700">(</span><span style="color: #0000BB">$opts</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;データを取得する<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">'zip://test.zip#test.txt'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$context</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
