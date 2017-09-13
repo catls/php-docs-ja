@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Timing attack safe string comparison</title>
+  <title>タイミング攻撃に対して安全な文字列比較</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.hash-equals" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">hash_equals</h1>
-  <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">hash_equals</span> &mdash; <span class="dc-title">Timing attack safe string comparison</span></p>
+  <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">hash_equals</span> &mdash; <span class="dc-title">タイミング攻撃に対して安全な文字列比較</span></p>
 
  </div>
 
@@ -26,11 +26,11 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Compares two strings using the same time whether they&#039;re equal or not.
+   2つの文字列が等しいかどうか、同じ長さの時間で比較します。
   </p>
   <p class="para">
-   This function should be used to mitigate timing attacks; for instance,
-   when testing <span class="function"><a href="function.crypt.html" class="function">crypt()</a></span> password hashes.
+   この関数は、タイミング攻撃を緩和するために使われるべきです。
+   たとえば <span class="function"><a href="function.crypt.html" class="function">crypt()</a></span> によるパスワードのハッシュを検証する場合などです。
   </p>
  </div>
 
@@ -46,7 +46,7 @@
     <dd>
 
      <p class="para">
-       The <span class="type"><a href="language.types.string.html" class="type string">string</a></span> of known length to compare against
+       比較対象とする既知の長さの<span class="type"><span class="type 文字列">文字列</span></span>
      </p>
     </dd>
 
@@ -58,7 +58,7 @@
     <dd>
 
      <p class="para">
-      The user-supplied string
+      ユーザー指定の文字列
      </p>
     </dd>
 
@@ -71,7 +71,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.hash-equals-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    Returns <strong><code>TRUE</code></strong> when the two strings are equal, <strong><code>FALSE</code></strong> otherwise.
+    2つの文字列が等しい場合は <strong><code>TRUE</code></strong> を返し、そうでない場合は <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
@@ -79,8 +79,8 @@
  <div class="refsect1 errors" id="refsect1-function.hash-equals-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   Emits an <strong><code>E_WARNING</code></strong> message when either of the
-   supplied parameters is not a string.
+   指定されたパラメータのいずれかが文字列でない場合、
+   <strong><code>E_WARNING</code></strong> メッセージを出力します。
   </p>
  </div>
 
@@ -89,7 +89,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-912">
-    <p><strong>例1 <span class="function"><strong>hash_equals()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>hash_equals()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$expected&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #DD0000">'12345'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'$2a$07$usesomesillystringforsalt$'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$correct&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #DD0000">'12345'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'$2a$07$usesomesillystringforsalt$'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$incorrect&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">crypt</span><span style="color: #007700">(</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'$2a$07$usesomesillystringforsalt$'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">hash_equals</span><span style="color: #007700">(</span><span style="color: #0000BB">$expected</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$correct</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">hash_equals</span><span style="color: #007700">(</span><span style="color: #0000BB">$expected</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$incorrect</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -113,15 +113,14 @@ bool(false)
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    Both arguments must be of the same length to be compared successfully.
-    When arguments of differing length are supplied, <strong><code>FALSE</code></strong> is returned immediately and
-    the length of the known string may be leaked in case of a timing attack.
+    正しく比較するには、両方の引数が同じ長さでなければなりません。
+    異なる長さの引数を与えた場合、 <strong><code>FALSE</code></strong> が直ちに返され、
+    タイミング攻撃を加えられていると、既知の文字列の長さが漏れる可能性があります。
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    It is important to provide the user-supplied string as the second
-    parameter, rather than the first.
+    ユーザー指定の文字列を、最初ではなく2番目のパラメーターとして指定することが重要です。
    </p>
   </p></blockquote>
  </div>

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Add a lexer rule</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="class.parle-rlexer.html">Parle\RLexer</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="parle-rlexer.pushstate.html">Parle\RLexer::pushState</a></div>
+ <div class="up"><a href="class.parle-rlexer.html">Parle\RLexer</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="parle-rlexer.push" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Parle\RLexer::push</h1>
+  <p class="verinfo">(PECL parle &gt;= 0.5.1)</p><p class="refpurpose"><span class="refname">Parle\RLexer::push</span> &mdash; <span class="dc-title">Add a lexer rule</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-parle-rlexer.push-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
+   , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$id</code></span>
+   
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$regexStart</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regexEnd</code></span>
+   , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$id</code></span>
+   
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
+   , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$id</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newState</code></span>
+   
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regexStart</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regexEnd</code></span>
+   , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$id</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newState</code></span>
+   
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newState</code></span>
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regexStart</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regexEnd</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newState</code></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-parle-rlexer.push-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">regex</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Regular expression used for token matching.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">regexStart</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Regular expression used to match the token start.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">regexEnd</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Regular expression used to match the token end.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">id</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Auto assigned token id.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">state</code></dt>
+
+    <dd>
+
+     <p class="para">
+      State name.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">newState</code></dt>
+
+    <dd>
+
+     <p class="para">
+      New state name, after the rule was applied.
+     </p>
+    </dd>
+
+   
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-parle-rlexer.push-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   値を返しません。 
+  </p>
+ </div>
+
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="class.parle-rlexer.html">Parle\RLexer</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="parle-rlexer.pushstate.html">Parle\RLexer::pushState</a></div>
+ <div class="up"><a href="class.parle-rlexer.html">Parle\RLexer</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>
