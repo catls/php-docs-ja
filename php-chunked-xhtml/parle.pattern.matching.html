@@ -15,7 +15,12 @@
 <h2>目次</h2><ul class="chunklist chunklist_chapter"><li><a href="parle.regex.chars.html">Character representations</a></li><li><a href="parle.regex.charclass.html">Character Classes</a></li><li><a href="parle.regex.alternation.html">Alternation and repetition</a></li><li><a href="parle.regex.anchors.html">Anchors</a></li><li><a href="parle.regex.grouping.html">Grouping</a></li></ul>
 
  
- <p class="para">Parle supports regex matching similar to flex. Also supported are the following POSIX character sets: <em>[:alnum:]</em>, <em>[:alpha:]</em>, <em>[:blank:]</em>, <em>[:cntrl:]</em>, <em>[:digit:]</em>, <em>[:graph:]</em>, <em>[:lower:]</em>, <em>[:print:]</em>, <em>[:punct:]</em>, <em>[:space:]</em>, <em>[:upper:]</em> and <em>[:xdigit:]</em>.</p>
+ <p class="para">
+  Parle supports regex matching similar to flex. Also supported are the following POSIX character sets: <em>[:alnum:]</em>, <em>[:alpha:]</em>, <em>[:blank:]</em>, <em>[:cntrl:]</em>, <em>[:digit:]</em>, <em>[:graph:]</em>, <em>[:lower:]</em>, <em>[:print:]</em>, <em>[:punct:]</em>, <em>[:space:]</em>, <em>[:upper:]</em> and <em>[:xdigit:]</em>.
+ </p>
+ <p class="para">
+	 The Unicode character classes are currently not supported. The underlying library supports it through UTF-32, at the moment it is not implemented. A particular encoding however is supported when the correctly constructed regex. For example, to match the EURO symbol encoded in UTF-8, the regular expression <em>[\xE2][\x82][\xAC]</em> can be used. Or in general, the regex matching a UTF-8 encoded string could be <em>[ -\x7f]{+}[\x80-\xbf]{+}[\xc2-\xdf]{+}[\xe0-\xef]{+}[\xf0-\xff]{-}[\&quot;\\\]|\\\([\&quot;\\\/bfnrt]|u[0-9a-fA-F]{4})</em>.
+ </p>
  
  
  
