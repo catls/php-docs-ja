@@ -68,14 +68,14 @@ tar zxf php-x.x.x
     Configure and build PHP.  This is where you customize PHP
     with various options, like which extensions will be enabled. Run
     ./configure --help for a list of available options.  In our example
-    we&#039;ll do a simple configure with PHP-FPM and MySQL support.
+    we&#039;ll do a simple configure with PHP-FPM and MySQLi support.
    </p>
 
    <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
 cd ../php-x.x.x
-./configure --enable-fpm --with-mysql
+./configure --enable-fpm --with-mysqli
 make
 sudo make install
 </pre></div>
@@ -269,7 +269,7 @@ echo &quot;&lt;?php phpinfo(); ?&gt;&quot; &gt;&gt; /usr/local/nginx/html/index.
 
  <p class="para">
   Following the steps above you will have a running Nginx web server with
-  support for PHP as a <em>SAPI</em> module.  Of course there are
+  support for PHP as an <em>FPM</em> <em>SAPI</em> module.  Of course there are
   many more configuration options available for Nginx and PHP.  For more
   information type <strong class="command">./configure --help</strong> in the corresponding
   source tree.

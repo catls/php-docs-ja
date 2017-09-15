@@ -19,7 +19,7 @@
   Parle supports regex matching similar to flex. Also supported are the following POSIX character sets: <em>[:alnum:]</em>, <em>[:alpha:]</em>, <em>[:blank:]</em>, <em>[:cntrl:]</em>, <em>[:digit:]</em>, <em>[:graph:]</em>, <em>[:lower:]</em>, <em>[:print:]</em>, <em>[:punct:]</em>, <em>[:space:]</em>, <em>[:upper:]</em> and <em>[:xdigit:]</em>.
  </p>
  <p class="para">
-	 The Unicode character classes are currently not supported. The underlying library supports it through UTF-32, at the moment it is not implemented. A particular encoding however is supported when the correctly constructed regex. For example, to match the EURO symbol encoded in UTF-8, the regular expression <em>[\xE2][\x82][\xAC]</em> can be used. Or in general, the regex matching a UTF-8 encoded string could be <em>[ -\x7f]{+}[\x80-\xbf]{+}[\xc2-\xdf]{+}[\xe0-\xef]{+}[\xf0-\xff]{-}[\&quot;\\\]|\\\([\&quot;\\\/bfnrt]|u[0-9a-fA-F]{4})</em>.
+	 The Unicode character classes are currently not supported. A particular encoding can be mapped with a correctly constructed regex. For example, to match the EURO symbol encoded in UTF-8, the regular expression <em>[\xe2][\x82][\xac]</em> can be used. The pattern for an UTF-8 encoded string could be <em>[ -\x7f]{+}[\x80-\xbf]{+}[\xc2-\xdf]{+}[\xe0-\xef]{+}[\xf0-\xff]{-}[\&quot;\\\]|\\\([\&quot;\\\/bfnrt]|u[0-9a-fA-F]{4})</em>.
  </p>
  
  
