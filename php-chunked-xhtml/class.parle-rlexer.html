@@ -49,39 +49,62 @@
     <div class="fieldsynopsis">
      <span class="modifier">const</span>
      <span class="type">integer</span>
-      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-icase"><var class="varname">FLAG_REGEX_ICASE</var></a></var>
+      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-icase"><var class="varname">ICASE</var></a></var>
      <span class="initializer"> = 1</span>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">const</span>
      <span class="type">integer</span>
-      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-dot-not-lf"><var class="varname">FLAG_REGEX_DOT_NOT_LF</var></a></var>
+      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-dot-not-lf"><var class="varname">DOT_NOT_LF</var></a></var>
      <span class="initializer"> = 2</span>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">const</span>
      <span class="type">integer</span>
-      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-dot-not-cr-lf"><var class="varname">FLAG_REGEX_DOT_NOT_CR_LF</var></a></var>
+      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-dot-not-cr-lf"><var class="varname">DOT_NOT_CRLF</var></a></var>
      <span class="initializer"> = 4</span>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">const</span>
      <span class="type">integer</span>
-      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-skip-ws"><var class="varname">FLAG_REGEX_SKIP_WS</var></a></var>
+      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-skip-ws"><var class="varname">SKIP_WS</var></a></var>
      <span class="initializer"> = 8</span>
     ;</div>
 
     <div class="fieldsynopsis">
      <span class="modifier">const</span>
      <span class="type">integer</span>
-      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-match-zero-len"><var class="varname">FLAG_REGEX_MATCH_ZERO_LEN</var></a></var>
+      <var class="fieldsynopsis_varname"><a href="class.parle-rlexer.html#parle-rlexer.constants.flag-regex-match-zero-len"><var class="varname">MATCH_ZERO_LEN</var></a></var>
      <span class="initializer"> = 16</span>
     ;</div>
 
     
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* プロパティ */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">boolean</span>
+      <var class="varname"><a href="class.parle-rlexer.html#parle-rlexer.props.bol">$<var class="varname">bol</var></a></var>
+     <span class="initializer"> = false</span>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">integer</span>
+      <var class="varname"><a href="class.parle-rlexer.html#parle-rlexer.props.flags">$<var class="varname">flags</var></a></var>
+     <span class="initializer"> = 0</span>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">integer</span>
+      <var class="varname"><a href="class.parle-rlexer.html#parle-rlexer.props.state">$<var class="varname">state</var></a></var>
+     <span class="initializer"> = 0</span>
+    ;</div>
+
+
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
@@ -107,61 +130,32 @@
    <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="parle-rlexer.pushstate.html" class="methodname">pushState</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
    )</div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="parle-rlexer.state.html" class="methodname">state</a></span>
-    ( <span class="methodparam">void</span>
-   )</div>
 
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したメソッド */</div>
     <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.advance.html" class="methodname">Parle\Lexer::advance</a></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="parle-lexer.bol.html" class="methodname">Parle\Lexer::bol</a></span>
-    ([ <span class="methodparam"><span class="type">boolean</span> <code class="parameter">$bol</code></span>
-  ] )</div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.build.html" class="methodname">Parle\Lexer::build</a></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.consume.html" class="methodname">Parle\Lexer::consume</a></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   )</div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.dump.html" class="methodname">Parle\Lexer::dump</a></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="parle-lexer.flags.html" class="methodname">Parle\Lexer::flags</a></span>
-    ([ <span class="methodparam"><span class="type">integer</span> <code class="parameter">$state</code></span>
-  ] )</div>
-<div class="methodsynopsis dc-description">
-	  <span class="modifier">public</span> <span class="type">Parle\Token</span> <span class="methodname"><a href="parle-lexer.gettoken.html" class="methodname">Parle\Lexer::getToken</a></span>
-    ( <span class="methodparam">void</span>
-   )</div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.insertmacro.html" class="methodname">Parle\Lexer::insertMacro</a></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
-   )</div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.insertmacro.html" class="methodname">Parle\Lexer::insertMacro</a></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regexStart</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regexEnd</code></span>
-   )</div>
-<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
    , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$id</code></span>
    
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.restart.html" class="methodname">Parle\Lexer::restart</a></span>
-    ( <span class="methodparam"><span class="type">integer</span> <code class="parameter">$pos</code></span>
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
+   , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$id</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newState</code></span>
+   
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="parle-lexer.push.html" class="methodname">Parle\Lexer::push</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newState</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="parle-rlexer.pushstate.html" class="methodname">pushState</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
    )</div>
 
 
@@ -177,7 +171,7 @@
 
 
     
-     <dt id="parle-rlexer.constants.flag-regex-icase"><strong><code>Parle\RLexer::FLAG_REGEX_ICASE</code></strong></dt>
+     <dt id="parle-rlexer.constants.flag-regex-icase"><strong><code>Parle\RLexer::ICASE</code></strong></dt>
 
      <dd>
 
@@ -187,7 +181,7 @@
     
 
     
-     <dt id="parle-rlexer.constants.flag-regex-dot-not-lf"><strong><code>Parle\RLexer::FLAG_REGEX_DOT_NOT_LF</code></strong></dt>
+     <dt id="parle-rlexer.constants.flag-regex-dot-not-lf"><strong><code>Parle\RLexer::DOT_NOT_LF</code></strong></dt>
 
      <dd>
 
@@ -197,7 +191,7 @@
     
 
     
-     <dt id="parle-rlexer.constants.flag-regex-dot-not-cr-lf"><strong><code>Parle\RLexer::FLAG_REGEX_DOT_NOT_CR_LF</code></strong></dt>
+     <dt id="parle-rlexer.constants.flag-regex-dot-not-cr-lf"><strong><code>Parle\RLexer::DOT_NOT_CRLF</code></strong></dt>
 
      <dd>
 
@@ -207,7 +201,7 @@
     
 
     
-     <dt id="parle-rlexer.constants.flag-regex-skip-ws"><strong><code>Parle\RLexer::FLAG_REGEX_SKIP_WS</code></strong></dt>
+     <dt id="parle-rlexer.constants.flag-regex-skip-ws"><strong><code>Parle\RLexer::SKIP_WS</code></strong></dt>
 
      <dd>
 
@@ -217,7 +211,7 @@
     
 
     
-     <dt id="parle-rlexer.constants.flag-regex-match-zero-len"><strong><code>Parle\RLexer::FLAG_REGEX_MATCH_ZERO_LEN</code></strong></dt>
+     <dt id="parle-rlexer.constants.flag-regex-match-zero-len"><strong><code>Parle\RLexer::MATCH_ZERO_LEN</code></strong></dt>
 
      <dd>
 
@@ -230,6 +224,42 @@
 
   </div>
 
+
+
+  <div class="section" id="parle-rlexer.props">
+   <h2 class="title">プロパティ</h2>
+   <dl>
+
+    
+     <dt id="parle-rlexer.props.bol"><var class="varname"><var class="varname">bol</var></var></dt>
+
+     <dd>
+
+      <p class="para">Start of input flag.</p>
+     </dd>
+
+    
+    
+     <dt id="parle-rlexer.props.flags"><var class="varname"><var class="varname">flags</var></var></dt>
+
+     <dd>
+
+      <p class="para">Lexer flags.</p>
+     </dd>
+
+    
+    
+     <dt id="parle-rlexer.props.state"><var class="varname"><var class="varname">state</var></var></dt>
+
+     <dd>
+
+      <p class="para">Current lexer state, readonly.</p>
+     </dd>
+
+    
+   </dl>
+
+  </div>
 
 
  </div>
@@ -251,14 +281,7 @@
 
 
 
-
-
-
-
-
-
-
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="parle-rlexer.push.html">Parle\RLexer::push</a> — Add a lexer rule</li><li><a href="parle-rlexer.pushstate.html">Parle\RLexer::pushState</a> — Push a new start state</li><li><a href="parle-rlexer.state.html">Parle\RLexer::state</a> — Get current lexer state</li></ul>
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="parle-rlexer.push.html">Parle\RLexer::push</a> — Add a lexer rule</li><li><a href="parle-rlexer.pushstate.html">Parle\RLexer::pushState</a> — Push a new start state</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="parle-lexer.restart.html">Parle\Lexer::restart</a></div>
