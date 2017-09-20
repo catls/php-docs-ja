@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Regular expression match with multibyte support</title>
+  <title>マルチバイト対応の正規表現マッチ</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.mb-ereg" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">mb_ereg</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">mb_ereg</span> &mdash; <span class="dc-title">Regular expression match with multibyte support</span></p>
+  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">mb_ereg</span> &mdash; <span class="dc-title">マルチバイト対応の正規表現マッチ</span></p>
 
  </div>
    
@@ -27,7 +27,7 @@
   ] )</div>
 
   <p class="simpara">
-   Executes the regular expression match with multibyte support.
+   マルチバイト対応の正規表現マッチを行います。
   </p>
  </div>
 
@@ -44,7 +44,7 @@
      <dd>
 
       <p class="para">
-       The search pattern.
+       検索パターン。
       </p>
      </dd>
 
@@ -56,7 +56,7 @@
      <dd>
 
       <p class="para">
-       The search <span class="type"><a href="language.types.string.html" class="type string">string</a></span>.
+       検索<span class="type"><span class="type 文字列">文字列</span></span>。
       </p>
      </dd>
 
@@ -68,19 +68,16 @@
      <dd>
 
       <p class="para">
-       If matches are found for parenthesized substrings of
-       <code class="parameter">pattern</code> and the function is called with the
-       third argument <code class="parameter">regs</code>, the matches will be stored
-       in the elements of the array <code class="parameter">regs</code>.
-       If no matches are found, <code class="parameter">regs</code> is set to an empty
-       array.
+       <code class="parameter">pattern</code> 内のカッコで囲まれた部分文字列にマッチするものが
+       あった場合、第3引数 <code class="parameter">regs</code> が指定されていると、
+       配列 <code class="parameter">regs</code> の要素としてマッチ結果が格納されます。
+       マッチするものがなかった場合、<code class="parameter">regs</code> は空の配列となります。
       </p>
       <p class="para">
-       <var class="varname"><var class="varname">$regs[1]</var></var> will contain the substring which starts at
-       the first left parenthesis; <var class="varname"><var class="varname">$regs[2]</var></var> will contain
-       the substring starting at the second, and so on.
-       <var class="varname"><var class="varname">$regs[0]</var></var> will contain a copy of the complete string
-       matched.
+       <var class="varname"><var class="varname">$regs[1]</var></var> には最初の左括弧で指定された部分文字列が入ります。
+       <var class="varname"><var class="varname">$regs[2]</var></var> には2番目の左括弧で指定された部分文字列が入ります。
+       以下同様です。
+       <var class="varname"><var class="varname">$regs[0]</var></var> にはマッチした文字列全体のコピーが入ります。
       </p>
      </dd>
 
@@ -94,13 +91,14 @@
  <div class="refsect1 returnvalues" id="refsect1-function.mb-ereg-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the byte length of the matched string if a match for
-   <code class="parameter">pattern</code> was found in <code class="parameter">string</code>,
-   or <strong><code>FALSE</code></strong> if no matches were found or an error occurred.
+   <code class="parameter">string</code> 内に <code class="parameter">pattern</code>
+   にマッチする文字列があったらマッチした文字列のバイト長を返し、
+   マッチしなかった場合やエラーが起こった場合は <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-   If the optional parameter <code class="parameter">regs</code> was not passed or
-   the length of the matched string is <em>0</em>, this function returns <em>1</em>.
+   オプションのパラメータ <code class="parameter">regs</code> が渡されなかった場合、
+   あるいはマッチした文字列の長さが <em>0</em> だった場合、
+   この関数は <em>1</em> を返します。
   </p>
  </div>
 
@@ -121,9 +119,9 @@
      <tr>
       <td>7.1.0</td>
       <td>
-       <span class="function"><strong>mb_ereg()</strong></span> will now set <code class="parameter">regs</code> to
-       an empty <span class="type"><a href="language.types.array.html" class="type array">array</a></span>, if nothing matched. Formerly,
-       <code class="parameter">regs</code> was not modified in that case.
+       マッチしなかった場合、<span class="function"><strong>mb_ereg()</strong></span> は
+       <code class="parameter">regs</code> を空の<span class="type"><span class="type 配列">配列</span></span>とするようになりました。
+       以前は <code class="parameter">regs</code> を変更しませんでした。
       </td>
      </tr>
 

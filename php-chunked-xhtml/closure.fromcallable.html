@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Converts a callable into a closure.</title>
+  <title>callable をクロージャに変換します。</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="closure.fromcallable" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Closure::fromCallable</h1>
-  <p class="verinfo">(PHP 7 &gt;= 7.1.0)</p><p class="refpurpose"><span class="refname">Closure::fromCallable</span> &mdash; <span class="dc-title">Converts a callable into a closure.</span></p>
+  <p class="verinfo">(PHP 7 &gt;= 7.1.0)</p><p class="refpurpose"><span class="refname">Closure::fromCallable</span> &mdash; <span class="dc-title">callable をクロージャに変換します。</span></p>
 
  </div>
 
@@ -25,11 +25,11 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Create and return a new <a href="functions.anonymous.html" class="link">anonymous
-   function</a> from given <code class="parameter">callable</code> using the
-   current scope. This method checks if the <code class="parameter">callable</code> is
-   callable in the current scope and throws a <a href="class.typeerror.html" class="classname">TypeError</a>
-   if it is not.
+   現在のスコープを用いて、指定された <code class="parameter">callable</code> から新しい
+   <a href="functions.anonymous.html" class="link">無名関数</a> を作って返します。
+   このメソッドは、現在のスコープで <code class="parameter">callable</code>
+   が呼び出し可能かどうかをチェックし、可能でなければ <strong class="classname">TypeError
+   </strong> をスローします。
   </p>
  </div>
 
@@ -45,7 +45,7 @@
     <dd>
 
      <p class="para">
-      The callable to convert.
+      変換する callable。
      </p>
     </dd>
 
@@ -58,9 +58,9 @@
  <div class="refsect1 returnvalues" id="refsect1-closure.fromcallable-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the newly created <a href="class.closure.html" class="classname">Closure</a> or throws a
-   <a href="class.typeerror.html" class="classname">TypeError</a> if the <code class="parameter">callable</code> is
-   not callable in the current scope.
+   新しく作られた <a href="class.closure.html" class="classname">Closure</a> を返します。
+   <code class="parameter">callable</code> が現在のスコープで呼び出し可能でなければ、
+   <a href="class.typeerror.html" class="classname">TypeError</a> をスローします。
   </p>
  </div>
 
