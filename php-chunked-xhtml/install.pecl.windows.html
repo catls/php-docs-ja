@@ -130,6 +130,11 @@ drive:\\path\to\php\executable\php.exe -i
     <var class="filename">php.ini</var> に書き込むことです。多くの拡張モジュールはすでに
     <var class="filename">php.ini</var> 上に存在し、
     あとはセミコロンを取り除くだけで有効にできるようになっています。
+   </p>
+   
+   <p class="para">
+    Note that, on PHP version 7.2.0 and up, the extension name may be used instead of the extension&#039;s file name. As this is OS-independent and easier, especially for newcomers, it becomes the recommended way of specifying extensions to load. File names remain supported for compatibility with prior versions.
+   </p>
     <div class="example-contents screen">
 <div class="cdata"><pre>
 ;extension=php_extname.dll
@@ -140,12 +145,19 @@ drive:\\path\to\php\executable\php.exe -i
 extension=php_extname.dll
 </pre></div>
     </div>
-   </p>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+; PHP バージョン 7.2 以降では、下記が良いでしょう。
+extension=extname
+zend_extension=another_extension
+</pre></div>
+    </div>
    <p class="para">
     しかし、ウェブサーバーによっては少し迷うことがあるかもしれません。
     というのも、<var class="filename">php.ini</var> が PHP 実行ファイルとは別の場所にあることもあるからです。
     実際に使われている <var class="filename">php.ini</var> の場所を見つけるには、
     <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span> で次のような行を探します。
+   </p>
     <div class="example-contents screen">
 <div class="cdata"><pre>
 Configuration File (php.ini) Path  C:\WINDOWS
@@ -156,7 +168,6 @@ Configuration File (php.ini) Path  C:\WINDOWS
 Loaded Configuration File   C:\Program Files\PHP\5.2\php.ini
 </pre></div>
     </div>
-   </p>
    <p class="para">
     拡張モジュールを有効にしたら、<var class="filename">php.ini</var>
     を保存してウェブサーバーを再起動し、もういちど

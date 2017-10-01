@@ -115,7 +115,7 @@ if ($_POST) {
     &lt;select multiple name=&quot;beer[]&quot;&gt;
         &lt;option value=&quot;warthog&quot;&gt;Warthog&lt;/option&gt;
         &lt;option value=&quot;guinness&quot;&gt;Guinness&lt;/option&gt;
-        &lt;option value=&quot;stuttgarter&quot;&gt;Stuttgarter Schwabenbräu&lt;/option&gt;
+        &lt;option value=&quot;stuttgarter&quot;&gt;Stuttgarter Schwabenbrau&lt;/option&gt;
     &lt;/select&gt;&lt;br /&gt;
     &lt;input type=&quot;submit&quot; value=&quot;submit me!&quot; /&gt;
 &lt;/form&gt;
@@ -254,6 +254,22 @@ if ($_POST) {
      <span class="function"><a href="function.is-object.html" class="function">is_object()</a></span>,
      <span class="function"><a href="function.is-string.html" class="function">is_string()</a></span> です。
      <a href="language.types.html" class="link">型</a>の章も参照ください。
+    </p>
+
+    
+    <p class="para">
+     HTTP being a text protocol, most, if not all, content that comes in
+     <a href="language.variables.superglobals.html" class="link">Superglobal arrays</a>, 
+     like <var class="varname"><var class="varname"><a href="reserved.variables.post.html" class="classname">$_POST</a></var></var> and <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET</a></var></var> will remain
+     as strings. PHP will not try to convert values to a specific type.
+     In the example below, <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET["var1"]</a></var></var> will contain the
+     string &quot;null&quot; and <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET["var2"]</a></var></var>, the string &quot;123&quot;.
+     <div class="example-contents">
+<div class="cdata"><pre>
+/index.php?var1=null&amp;var2=123
+</pre></div>
+     </div>
+
     </p>
    </div>
 

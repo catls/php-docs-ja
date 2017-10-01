@@ -1306,6 +1306,18 @@ NULL
   </p></blockquote>
  </div>
 
+ 
+ <div class="sect3" id="migration70.incompatible.other.mhash">
+  <h4 class="title">Mhash is not an extension anymore</h4>
+  <p class="para">
+   The Mhash extension has been fully integrated into the <a href="book.hash.html" class="link">Hash</a> extension. Therefore, it is no longer
+   possible to detect Mhash support with <span class="function"><a href="function.extension-loaded.html" class="function">extension_loaded()</a></span>;
+   use <span class="function"><a href="function.function-exists.html" class="function">function_exists()</a></span> instead. Furthermore, Mhash is no
+   longer reported by <span class="function"><a href="function.get-loaded-extensions.html" class="function">get_loaded_extensions()</a></span> and related
+   features.
+  </p>
+ </div>
+
 </div>
 
 
