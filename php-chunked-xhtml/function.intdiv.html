@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Integer division</title>
+  <title>整数値の除算</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.intdiv" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">intdiv</h1>
-  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">intdiv</span> &mdash; <span class="dc-title">Integer division</span></p>
+  <p class="verinfo">(PHP 7)</p><p class="refpurpose"><span class="refname">intdiv</span> &mdash; <span class="dc-title">整数値の除算</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.intdiv-description">
@@ -25,7 +25,7 @@
     )</div>
 
   <p class="para rdfs-comment">
-   Returns the integer quotient of the division of <code class="parameter">dividend</code> by <code class="parameter">divisor</code>.
+   <code class="parameter">dividend</code> を <code class="parameter">divisor</code> で割った整数商を返します。
   </p>
  </div>
 
@@ -40,7 +40,7 @@
     <dd>
 
      <p class="para">
-      Number to be divided.
+      割られる数。
      </p>
     </dd>
 
@@ -52,7 +52,7 @@
     <dd>
 
      <p class="para">
-      Number which divides the <code class="parameter">dividend</code>.
+      <code class="parameter">dividend</code> を割る数。
      </p>
     </dd>
 
@@ -64,17 +64,17 @@
  <div class="refsect1 returnvalues" id="refsect1-function.intdiv-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   The integer quotient of the division of <code class="parameter">dividend</code> by <code class="parameter">divisor</code>.
+   <code class="parameter">dividend</code> を <code class="parameter">divisor</code> で割った整数商。
   </p>
  </div>
 
  <div class="refsect1 errors" id="refsect1-function.intdiv-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-    If <code class="parameter">divisor</code> is <em>0</em>, a <a href="class.divisionbyzeroerror.html" class="classname">DivisionByZeroError</a>
-    exception is thrown. If the <code class="parameter">dividend</code> is <strong><code>PHP_INT_MIN</code></strong>
-    and the <code class="parameter">divisor</code> is <em>-1</em>, then an
-    <a href="class.arithmeticerror.html" class="classname">ArithmeticError</a> exception is thrown.
+    <code class="parameter">divisor</code> が <em>0</em> の場合、<a href="class.divisionbyzeroerror.html" class="classname">DivisionByZeroError</a>
+    例外がスローされます。<code class="parameter">dividend</code> が <strong><code>PHP_INT_MIN</code></strong>
+    で <code class="parameter">divisor</code> が <em>-1</em> の場合、
+    <a href="class.arithmeticerror.html" class="classname">ArithmeticError</a> 例外がスローされます。
   </p>
  </div>
 
@@ -82,7 +82,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-4032">
-    <p><strong>例1 <span class="function"><strong>intdiv()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>intdiv()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">intdiv</span><span style="color: #007700">(</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">intdiv</span><span style="color: #007700">(-</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">intdiv</span><span style="color: #007700">(</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">intdiv</span><span style="color: #007700">(-</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">intdiv</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_INT_MAX</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_INT_MAX</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">intdiv</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_INT_MIN</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_INT_MIN</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">intdiv</span><span style="color: #007700">(</span><span style="color: #0000BB">PHP_INT_MIN</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">intdiv</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -111,9 +111,9 @@ Fatal error: Uncaught DivisionByZeroError: Division by zero in %s on line 9
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><a href="language.operators.arithmetic.html" class="link"><em>/</em></a> - Floating-point division</li>
-    <li class="member"><a href="language.operators.arithmetic.html" class="link"><em>%</em></a> - Integer modulus</li>
-    <li class="member"><span class="function"><a href="function.fmod.html" class="function">fmod()</a></span> - Floating-point modulo</li>
+    <li class="member"><a href="language.operators.arithmetic.html" class="link"><em>/</em></a> - 浮動小数点数値の除算</li>
+    <li class="member"><a href="language.operators.arithmetic.html" class="link"><em>%</em></a> - 整数値の剰余</li>
+    <li class="member"><span class="function"><a href="function.fmod.html" class="function">fmod()</a></span> - 浮動小数点数値の剰余</li>
    </ul>
   </p>
  </div>
