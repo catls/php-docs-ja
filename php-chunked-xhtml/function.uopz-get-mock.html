@@ -53,7 +53,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.uopz-get-mock-returnvalues">
     <h3 class="title">返り値</h3>
       <p class="para">
-         Either a string containing the name of the mock, or an anonymous object.
+         Either a string containing the name of the mock, or an object,
+         or <strong><code>NULL</code></strong> if no mock has been set.
       </p>
  </div>
 
@@ -79,6 +80,14 @@ mockA
   </div>
  </div>
 
+
+ <div class="refsect1 seealso" id="refsect1-function.uopz-get-mock-seealso">
+  <h3 class="title">参考</h3>
+  <ul class="simplelist">
+   <li class="member"><span class="function"><a href="function.uopz-set-mock.html" class="function" rel="rdfs-seeAlso">uopz_set_mock()</a> - Use mock instead of class for new objects</span></li>
+   <li class="member"><span class="function"><a href="function.uopz-unset-mock.html" class="function" rel="rdfs-seeAlso">uopz_unset_mock()</a> - Unset previously set mock</span></li>
+  </ul>
+ </div>
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
