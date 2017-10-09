@@ -26,6 +26,22 @@
    
    )</div>
 
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>Parle\RLexer::push</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
+   , <span class="methodparam"><span class="type">integer</span> <code class="parameter">$id</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newState</code></span>
+   
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>Parle\RLexer::push</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$state</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$regex</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$newState</code></span>
+   )</div>
+
   <p class="para rdfs-comment">
    Push a pattern for lexeme recognition.
   </p>
@@ -58,6 +74,30 @@
       Token id. If the lexer instance is meant to be used standalone, this can be an arbitrary number. If the lexer instance is going to be passed to the parser, it has to be an id returned by <span class="methodname"><a href="parle-parser.tokenid.html" class="methodname">Parle\Parser::tokenid()</a></span>.
      </p>
     </dd>
+
+   
+   
+    <dt>
+<code class="parameter">state</code></dt>
+
+    <dd>
+
+     <p class="para">
+      State name.
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">newState</code></dt>
+
+     <dd>
+
+      <p class="para">
+       New state name, after the rule was applied.
+      </p>
+     </dd>
 
    
    
