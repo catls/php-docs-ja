@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>未ドキュメント化</title>
+  <title>パーセンタイル値を返す</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,22 +13,20 @@
 </div><hr /><div id="function.stats-stat-percentile" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_stat_percentile</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_stat_percentile</span> &mdash; <span class="dc-title">未ドキュメント化</span></p>
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_stat_percentile</span> &mdash; <span class="dc-title">パーセンタイル値を返す</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.stats-stat-percentile-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="type">float</span> <span class="methodname"><strong>stats_stat_percentile</strong></span>
-    ( <span class="methodparam"><span class="type">float</span> <code class="parameter">$df</code></span>
-   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$xnonc</code></span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$arr</code></span>
+   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$perc</code></span>
    )</div>
 
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
+  <p class="para rdfs-comment">
+   配列 <code class="parameter">arr</code> に含まれる値の <code class="parameter">perc</code> パーセンタイル値を返します。
+  </p>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.stats-stat-percentile-parameters">
@@ -38,22 +36,24 @@
 
     
      <dt>
-<code class="parameter">df</code></dt>
+<code class="parameter">arr</code></dt>
 
      <dd>
 
       <p class="para">
+       入力配列
       </p>
      </dd>
 
     
     
      <dt>
-<code class="parameter">xnonc</code></dt>
+<code class="parameter">perc</code></dt>
 
      <dd>
 
       <p class="para">
+       パーセンタイル
       </p>
      </dd>
 
@@ -67,6 +67,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-stat-percentile-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   入力配列のパーセンタイル値を返します。
   </p>
  </div>
 

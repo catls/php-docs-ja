@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Probability density function of the uniform distribution</title>
+  <title>一様分布の確率密度関数</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.stats-dens-uniform" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_dens_uniform</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_dens_uniform</span> &mdash; <span class="dc-title">Probability density function of the uniform distribution</span></p>
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_dens_uniform</span> &mdash; <span class="dc-title">一様分布の確率密度関数</span></p>
 
  </div>
 
@@ -27,55 +27,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Returns the probability density at <code class="parameter">x</code>, where the
-   random variable follows the uniform distribution of which the lower bound is
-   <code class="parameter">a</code> and the upper bound is <code class="parameter">b</code>.
-  </p>
- </div>
-
- <div class="refsect1 parameters" id="refsect1-function.stats-dens-uniform-parameters">
-  <h3 class="title">パラメータ</h3>
-  <p class="para">
-   <dl>
-
-    
-     <dt>
-<code class="parameter">x</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The value at which the probability density is calculated
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">a</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The lower bound of the distribution
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">b</code></dt>
-
-     <dd>
-
-      <p class="para">
-       The upper bound of the distribution
-      </p>
-     </dd>
-
-    
-   </dl>
-
+   下限 <code class="parameter">a</code>, 上限 <code class="parameter">b</code> の一様分布にしたがう確率変数の <code class="parameter">x</code> における確率密度を返します。
   </p>
  </div>
 
@@ -92,7 +44,7 @@
      <dd>
 
       <p class="para">
-       The value at which the probability density is calculated
+       確率変数の値
       </p>
      </dd>
 
@@ -104,7 +56,7 @@
      <dd>
 
       <p class="para">
-       The lower bound of the distribution
+       下限
       </p>
      </dd>
 
@@ -116,7 +68,7 @@
      <dd>
 
       <p class="para">
-       The upper bound of the distribution
+       上限
       </p>
      </dd>
 
@@ -130,7 +82,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-dens-uniform-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   The probability density at <code class="parameter">x</code> or <strong><code>FALSE</code></strong> for failure.
+   <code class="parameter">x</code> における確率密度。失敗時は <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 

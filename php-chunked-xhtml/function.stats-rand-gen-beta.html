@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>無作為な値を生成する</title>
+  <title>ベータ分布から無作為な値を生成する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.stats-rand-gen-beta" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_rand_gen_beta</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_rand_gen_beta</span> &mdash; <span class="dc-title">無作為な値を生成する</span></p>
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_rand_gen_beta</span> &mdash; <span class="dc-title">ベータ分布から無作為な値を生成する</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.stats-rand-gen-beta-description">
@@ -26,8 +26,8 @@
 
   <p class="para rdfs-comment">
    パラメータ A および B で表されるベータ分布から、無作為な値を返します。
-   ベータ密度は、&lt; x &lt; に対して x^(a-1) * (1-x)^(b-1) / B(a,b)
-   となります。これは R. C. H. Cheng の手法です。
+   ベータ分布の確率密度は、0 &lt; x &lt; 1 に対して x^(a-1) * (1-x)^(b-1) / B(a,b)
+   となります。R. C. H. Cheng の手法を用います。
   </p>
  </div>
 
@@ -44,6 +44,7 @@
      <dd>
 
       <p class="para">
+       形状母数
       </p>
      </dd>
 
@@ -55,6 +56,7 @@
      <dd>
 
       <p class="para">
+       形状母数
       </p>
      </dd>
 
@@ -68,6 +70,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-rand-gen-beta-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   無作為な値
   </p>
  </div>
 

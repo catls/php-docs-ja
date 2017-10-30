@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>未ドキュメント化</title>
+  <title>乱数生成器のシードを設定する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.stats-rand-setall" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_rand_setall</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_rand_setall</span> &mdash; <span class="dc-title">未ドキュメント化</span></p>
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_rand_setall</span> &mdash; <span class="dc-title">乱数生成器のシードを設定する</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.stats-rand-setall-description">
@@ -24,11 +24,9 @@
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$iseed2</code></span>
    )</div>
 
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
+  <p class="para rdfs-comment">
+   <code class="parameter">iseed1</code> と <code class="parameter">iseed2</code> を統計関数で使われる乱数生成器のシードとして設定します。
+  </p>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.stats-rand-setall-parameters">
@@ -43,6 +41,7 @@
      <dd>
 
       <p class="para">
+       乱数のシードとして使われる値
       </p>
      </dd>
 
@@ -54,6 +53,7 @@
      <dd>
 
       <p class="para">
+       乱数のシードとして使われる値
       </p>
      </dd>
 
@@ -67,6 +67,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-rand-setall-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   戻り値はありません。
   </p>
  </div>
 

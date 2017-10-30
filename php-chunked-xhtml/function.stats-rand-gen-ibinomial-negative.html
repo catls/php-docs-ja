@@ -2,9 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>負の二項分布から無作為な値を生成する。引数:
-   n - 無作為な値を生成するために行う負の二項分布の試行回数
-   (n &gt; 0)、p - 事象の発生する確率 (0 &lt; p &lt; 1))</title>
+  <title>負の二項分布から無作為な値を生成する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -16,9 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">stats_rand_gen_ibinomial_negative</h1>
   <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_rand_gen_ibinomial_negative</span> &mdash; <span class="dc-title">
-   負の二項分布から無作為な値を生成する。引数:
-   n - 無作為な値を生成するために行う負の二項分布の試行回数
-   (n &gt; 0)、p - 事象の発生する確率 (0 &lt; p &lt; 1))
+   負の二項分布から無作為な値を生成する
   </span></p>
 
  </div>
@@ -30,11 +26,9 @@
    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$p</code></span>
    )</div>
 
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
+  <p class="para rdfs-comment">
+   成功回数 <code class="parameter">n</code>, 成功確率 <code class="parameter">p</code> の負の二項分布からの無作為な値を返します。
+  </p>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.stats-rand-gen-ibinomial-negative-parameters">
@@ -49,6 +43,7 @@
      <dd>
 
       <p class="para">
+       成功回数
       </p>
      </dd>
 
@@ -60,6 +55,7 @@
      <dd>
 
       <p class="para">
+       成功確率
       </p>
      </dd>
 
@@ -73,6 +69,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-rand-gen-ibinomial-negative-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   無作為な値。失敗回数を表します。
   </p>
  </div>
 

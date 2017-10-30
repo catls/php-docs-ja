@@ -2,10 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>mean、av および標準偏差 sd (sd &gt;= 0)
-   によって表される正規分布から無作為な値を生成する。
-   Method : Renames SNORM from TOMS as slightly modified by BWB to use RANF 
-   instead of SUNIF.</title>
+  <title>正規分布から無作為な値を生成する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -17,10 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">stats_rand_gen_normal</h1>
   <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_rand_gen_normal</span> &mdash; <span class="dc-title">
-   mean、av および標準偏差 sd (sd &gt;= 0)
-   によって表される正規分布から無作為な値を生成する。
-   Method : Renames SNORM from TOMS as slightly modified by BWB to use RANF 
-   instead of SUNIF.
+   正規分布から無作為な値を生成する
   </span></p>
 
  </div>
@@ -32,11 +26,9 @@
    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$sd</code></span>
    )</div>
 
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
+  <p class="para rdfs-comment">
+   平均 <code class="parameter">av</code>, 標準偏差 <code class="parameter">sd</code> の正規分布からの無作為な値を返します。
+  </p>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.stats-rand-gen-normal-parameters">
@@ -51,6 +43,7 @@
      <dd>
 
       <p class="para">
+       平均
       </p>
      </dd>
 
@@ -62,6 +55,7 @@
      <dd>
 
       <p class="para">
+       標準偏差
       </p>
      </dd>
 
@@ -75,6 +69,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-rand-gen-normal-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   無作為な値
   </p>
  </div>
 

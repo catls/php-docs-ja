@@ -2,9 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>分子の自由度が &quot;dfn&quot;、分母の自由度が &quot;dfd&quot;、非心母数が &quot;xnonc&quot;
-   の非心 F (分散比) 分布から、無作為な値を返す。
-   非心カイ二乗変量の分子とカイ二乗変量の分母の比を直接生成する</title>
+  <title>非心 F 分布から無作為な値を生成する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -16,9 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">stats_rand_gen_noncentral_f</h1>
   <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_rand_gen_noncentral_f</span> &mdash; <span class="dc-title">
-   分子の自由度が &quot;dfn&quot;、分母の自由度が &quot;dfd&quot;、非心母数が &quot;xnonc&quot;
-   の非心 F (分散比) 分布から、無作為な値を返す。
-   非心カイ二乗変量の分子とカイ二乗変量の分母の比を直接生成する
+   非心 F 分布から無作為な値を生成する
   </span></p>
 
  </div>
@@ -31,11 +27,9 @@
    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$xnonc</code></span>
    )</div>
 
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
+  <p class="para rdfs-comment">
+   分子の自由度が <code class="parameter">dfn</code>, 分母の自由度が <code class="parameter">dfd</code>, 非心度 <code class="parameter">xnonc</code> の非心 F 分布からの無作為な値を返します。
+  </p>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.stats-rand-gen-noncentral-f-parameters">
@@ -50,6 +44,7 @@
      <dd>
 
       <p class="para">
+       分子の自由度
       </p>
      </dd>
 
@@ -61,6 +56,7 @@
      <dd>
 
       <p class="para">
+       分母の自由度
       </p>
      </dd>
 
@@ -72,6 +68,7 @@
      <dd>
 
       <p class="para">
+       非心度
       </p>
      </dd>
 
@@ -85,6 +82,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-rand-gen-noncentral-f-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   無作為な値
   </p>
  </div>
 

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>説明</title>
+  <title>ふたつのベクトルの内積を返す</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,8 @@
 </div><hr /><div id="function.stats-stat-innerproduct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_stat_innerproduct</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_stat_innerproduct</span> &mdash; <span class="dc-title">
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_stat_innerproduct</span> &mdash; <span class="dc-title">ふたつのベクトルの内積を返す</span></p>
+
  </div>
  <div class="refsect1 description" id="refsect1-function.stats-stat-innerproduct-description">
   <h3 class="title">説明</h3>
@@ -23,11 +24,9 @@
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$arr2</code></span>
    )</div>
 
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
+  <p class="para rdfs-comment">
+   <code class="parameter">arr1</code> と <code class="parameter">arr2</code> の内積を返します。
+  </p>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.stats-stat-innerproduct-parameters">
@@ -42,6 +41,7 @@
      <dd>
 
       <p class="para">
+       ひとつめの配列
       </p>
      </dd>
 
@@ -53,6 +53,7 @@
      <dd>
 
       <p class="para">
+       ふたつめの配列
       </p>
      </dd>
 
@@ -66,6 +67,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-stat-innerproduct-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
+   <code class="parameter">arr1</code> と <code class="parameter">arr2</code> の内積。
+   失敗時は <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 

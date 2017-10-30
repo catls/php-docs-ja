@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Probability density function of the negative binomial distribution</title>
+  <title>負の二項分布の確率密度関数</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.stats-dens-pmf-negative-binomial" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">stats_dens_pmf_negative_binomial</h1>
-  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_dens_pmf_negative_binomial</span> &mdash; <span class="dc-title">Probability density function of the negative binomial distribution</span></p>
+  <p class="verinfo">(PECL stats &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">stats_dens_pmf_negative_binomial</span> &mdash; <span class="dc-title">負の二項分布の確率密度関数</span></p>
 
  </div>
 
@@ -27,9 +27,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Returns the probability density at <code class="parameter">x</code>, where the
-   random variable follows the negative binomial distribution of which the number of the success
-   is <code class="parameter">n</code> and the success rate is <code class="parameter">pi</code>.
+   成功回数 <code class="parameter">n</code>, 成功確率 <code class="parameter">pi</code> の負の二項分布にしたがう確率変数の <code class="parameter">x</code> における確率密度を返します。
   </p>
  </div>
 
@@ -46,7 +44,7 @@
      <dd>
 
       <p class="para">
-       The value at which the probability density is calculated
+       確率変数の値
       </p>
      </dd>
 
@@ -58,7 +56,7 @@
      <dd>
 
       <p class="para">
-       The number of the success of the distribution
+       成功回数
       </p>
      </dd>
 
@@ -70,7 +68,7 @@
      <dd>
 
       <p class="para">
-       The success rate of the distribution
+       成功確率
       </p>
      </dd>
 
@@ -84,7 +82,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.stats-dens-pmf-negative-binomial-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   The probability density at <code class="parameter">x</code> or <strong><code>FALSE</code></strong> for failure.
+   <code class="parameter">x</code> における確率密度。失敗時は <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
