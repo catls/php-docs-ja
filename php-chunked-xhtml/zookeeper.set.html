@@ -8,7 +8,7 @@
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="zookeeper.isrecoverable.html">Zookeeper::isRecoverable</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="zookeeper.setacl.html">Zookeeper::setAcl</a></div>
- <div class="up"><a href="class.zookeeper.html">ZooKeeper</a></div>
+ <div class="up"><a href="class.zookeeper.html">Zookeeper</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="zookeeper.set" class="refentry">
  <div class="refnamediv">
@@ -101,12 +101,17 @@
   <p class="para">
    This method emits PHP error/warning when parameters count or types are wrong or fail to save value to node.
   </p>
+  <div class="caution"><strong class="caution">警告</strong>
+    <p class="para">
+      Since version 0.3.0, this method emits <strong class="classname">ZookeeperException</strong> and it&#039;s derivatives.
+    </p>
+  </div>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-zookeeper.set-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-5284">
+  <div class="example" id="example-5285">
    <p><strong>例1 <span class="methodname"><strong>Zookeeper::set()</strong></span> example</strong></p>
    <div class="example-contents"><p>
      Save value to node.
@@ -133,6 +138,7 @@ SUCCESS
   <ul class="simplelist">
    <li class="member"><span class="methodname"><a href="zookeeper.create.html" class="methodname" rel="rdfs-seeAlso">Zookeeper::create()</a> - Create a node synchronously.</span></li>
    <li class="member"><span class="methodname"><a href="zookeeper.get.html" class="methodname" rel="rdfs-seeAlso">Zookeeper::get()</a> - Gets the data associated with a node synchronously.</span></li>
+   <li class="member"><strong class="classname">ZookeeperException</strong></li>
   </ul>
  </div>
 
@@ -140,6 +146,6 @@ SUCCESS
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="zookeeper.isrecoverable.html">Zookeeper::isRecoverable</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="zookeeper.setacl.html">Zookeeper::setAcl</a></div>
- <div class="up"><a href="class.zookeeper.html">ZooKeeper</a></div>
+ <div class="up"><a href="class.zookeeper.html">Zookeeper</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

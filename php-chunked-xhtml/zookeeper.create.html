@@ -8,7 +8,7 @@
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="zookeeper.construct.html">Zookeeper::__construct</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="zookeeper.delete.html">Zookeeper::delete</a></div>
- <div class="up"><a href="class.zookeeper.html">ZooKeeper</a></div>
+ <div class="up"><a href="class.zookeeper.html">Zookeeper</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="zookeeper.create" class="refentry">
  <div class="refnamediv">
@@ -104,6 +104,11 @@
   <p class="para">
    This method emits PHP error/warning when parameters count or types are wrong or fail to create node.
   </p>
+  <div class="caution"><strong class="caution">警告</strong>
+    <p class="para">
+      Since version 0.3.0, this method emits <strong class="classname">ZookeeperException</strong> and it&#039;s derivatives.
+    </p>
+  </div>
  </div>
 
 
@@ -135,7 +140,9 @@
   <h3 class="title">参考</h3>
   <ul class="simplelist">
    <li class="member"><span class="methodname"><a href="zookeeper.delete.html" class="methodname" rel="rdfs-seeAlso">Zookeeper::delete()</a> - Delete a node in zookeeper synchronously.</span></li>
+   <li class="member"><span class="methodname"><a href="zookeeper.getchildren.html" class="methodname" rel="rdfs-seeAlso">Zookeeper::getChildren()</a> - Lists the children of a node synchronously.</span></li>
    <li class="member"><a href="class.zookeeper.html#zookeeper.class.constants.perms" class="link">ZooKeeper Permissions</a></li>
+   <li class="member"><strong class="classname">ZookeeperException</strong></li>
   </ul>
  </div>
 
@@ -143,6 +150,6 @@
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="zookeeper.construct.html">Zookeeper::__construct</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="zookeeper.delete.html">Zookeeper::delete</a></div>
- <div class="up"><a href="class.zookeeper.html">ZooKeeper</a></div>
+ <div class="up"><a href="class.zookeeper.html">Zookeeper</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>
