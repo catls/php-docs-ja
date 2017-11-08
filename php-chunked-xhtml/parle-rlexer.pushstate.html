@@ -25,7 +25,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   This lexer type can have more than one state machine. This allows you to lex different tokens depending on context, thus allowing simple parsing to take place. To allow this, a &#039;start state&#039; must be specified additionally at the beginning of the <span class="methodname"><a href="parle-rlexer.push.html" class="methodname">Parle\RLexer::push()</a></span> call and an &#039;exit state&#039; at the end. If &#039;*&#039; is used as start state, then the rule is applied to all lexer states. If &#039;.&#039; is specified as the exit state, then the lexer state is unchanged when that rule matches.
+	  This lexer type can have more than one state machine. This allows you to lex different tokens depending on context, thus allowing simple parsing to take place. Once a state pushed, it can be used with a suitable <span class="methodname"><a href="parle-rlexer.push.html" class="methodname">Parle\RLexer::push()</a></span> signature variant. 
   </p>
  </div>
 

@@ -45,6 +45,8 @@
   <p class="para rdfs-comment">
    Push a pattern for lexeme recognition.
   </p>
+  <p class="para">A &#039;start state&#039; and &#039;exit state&#039; can be specified by using a suitable signature. 
+  </p>
  </div>
 
 
@@ -83,7 +85,7 @@
     <dd>
 
      <p class="para">
-      State name.
+      State name. If &#039;*&#039; is used as start state, then the rule is applied to all lexer states.
      </p>
     </dd>
 
@@ -96,6 +98,12 @@
 
       <p class="para">
        New state name, after the rule was applied.
+      </p>
+      <p class="para">
+       If &#039;.&#039; is specified as the exit state, then the lexer state is unchanged when that rule matches. An exit state with &#039;&gt;&#039; before the name means push. Use the signature without id for either continuation or to start matching, when a continuation or recursion is required.
+      </p>
+      <p class="para">
+       If &#039;&lt;&#039; is specified as exit state, it means pop. In that case, the signature containing the id can be used to identify the match. Note that even in the case an id is specified, the rule will finish first when all the previous pushes popped.
       </p>
      </dd>
 
