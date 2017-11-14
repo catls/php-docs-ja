@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="parle.installation.html">インストール手順</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="parle.constants.html">定義済み定数</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="parle.regex.chars.html">Character representations</a></div>
  <div class="up"><a href="book.parle.html">Parle</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -19,7 +19,7 @@
   Parle supports regex matching similar to flex. Also supported are the following POSIX character sets: <em>[:alnum:]</em>, <em>[:alpha:]</em>, <em>[:blank:]</em>, <em>[:cntrl:]</em>, <em>[:digit:]</em>, <em>[:graph:]</em>, <em>[:lower:]</em>, <em>[:print:]</em>, <em>[:punct:]</em>, <em>[:space:]</em>, <em>[:upper:]</em> and <em>[:xdigit:]</em>.
  </p>
  <p class="para">
-	 The Unicode character classes are currently not supported. A particular encoding can be mapped with a correctly constructed regex. For example, to match the EURO symbol encoded in UTF-8, the regular expression <em>[\xe2][\x82][\xac]</em> can be used. The pattern for an UTF-8 encoded string could be <em>[ -\x7f]{+}[\x80-\xbf]{+}[\xc2-\xdf]{+}[\xe0-\xef]{+}[\xf0-\xff]+</em>.
+	 The Unicode character classes are currently not enabled by default, pass --enable-parle-utf32 to make them available. A particular encoding can be mapped with a correctly constructed regex. For example, to match the EURO symbol encoded in UTF-8, the regular expression <em>[\xe2][\x82][\xac]</em> can be used. The pattern for an UTF-8 encoded string could be <em>[ -\x7f]{+}[\x80-\xbf]{+}[\xc2-\xdf]{+}[\xe0-\xef]{+}[\xf0-\xff]+</em>.
  </p>
  
  
@@ -29,7 +29,7 @@
  
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="parle.installation.html">インストール手順</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="parle.constants.html">定義済み定数</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="parle.regex.chars.html">Character representations</a></div>
  <div class="up"><a href="book.parle.html">Parle</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
