@@ -22,9 +22,9 @@
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>imagebmp</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$to</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$to</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$compressed</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
-  ] )</div>
+  ]] )</div>
 
   <p class="para rdfs-comment">
    Outputs or saves a BMP version of the given <code class="parameter">image</code>.
@@ -51,6 +51,12 @@ image</code></dt>
      <dd>
 
       <p class="para">ファイル保存先のパスあるいはオープン中のリソース (この関数が値を戻した後で自動的にクローズされます)。省略したり <strong><code>NULL</code></strong> を設定したりした場合は、画像ストリームを直接出力します。</p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        <strong><code>NULL</code></strong> is invalid if the <code class="parameter">compressed</code> arguments is
+        not used.
+       </p>
+      </p></blockquote>
      </dd>
 
     
