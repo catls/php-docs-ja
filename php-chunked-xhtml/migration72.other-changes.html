@@ -21,6 +21,32 @@
    PHP (as ext/sodium).
   </p>
  </div>
+
+ <div class="sect2" id="migration72.other-changes.utf8_-functions-to-ext-standard">
+  <h3 class="title">Moving of <span class="function"><a href="function.utf8-encode.html" class="function">utf8_encode()</a></span> and <span class="function"><a href="function.utf8-decode.html" class="function">utf8_decode()</a></span></h3>
+
+  <p class="para">
+   The <span class="function"><a href="function.utf8-encode.html" class="function">utf8_encode()</a></span> and <span class="function"><a href="function.utf8-decode.html" class="function">utf8_decode()</a></span>
+   functions have now been moved to the standard extension as string functions.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.other-changes.sqlsafe_mode-ini-setting">
+  <h3 class="title">Removal of <code class="parameter">sql.safe_mode</code> ini setting</h3>
+
+  <p class="para">
+   The <code class="parameter">sql.safe_mode</code> ini setting has now been removed.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.other-changes.realpath_cache_size-ini-setting">
+  <h3 class="title">Default value of <code class="parameter">realpath_cache_size</code> ini setting changed</h3>
+
+  <p class="para">
+   The default value of the <code class="parameter">realpath_cache_size</code> ini
+   setting has changed from 16 kilobytes to 4 megabytes.
+  </p>
+ </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration72.deprecated.html">Deprecated features in PHP 7.2.x</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="migration71.html">PHP 7.0.x から PHP 7.1.x への移行</a></div>

@@ -97,7 +97,7 @@ int(1)
  </div>
 
  <div class="sect2" id="migration72.incompatible.no-null-to-get_class">
-  <h3 class="title">Disallow Passing <strong><code>NULL</code></strong> to <span class="function"><a href="function.get-class.html" class="function">get_class()</a></span></h3>
+  <h3 class="title">Disallow passing <strong><code>NULL</code></strong> to <span class="function"><a href="function.get-class.html" class="function">get_class()</a></span></h3>
 
   <p class="para">
    Previously, passing <strong><code>NULL</code></strong> to the <span class="function"><a href="function.get-class.html" class="function">get_class()</a></span> function
@@ -155,7 +155,7 @@ int(2)
  </div>
 
  <div class="sect2" id="migration72.incompatible.ssl-tls-defaults">
-  <h3 class="title">Improve SSL/TLS Defaults</h3>
+  <h3 class="title">Improve SSL/TLS defaults</h3>
 
   <p class="para">
    The following changes to the defaults have been made:
@@ -179,6 +179,118 @@ int(2)
     </span>
    </li>
   </ul>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.gettype-on-closed-resource">
+  <h3 class="title"><span class="function"><a href="function.gettype.html" class="function">gettype()</a></span> return value on closed resources</h3>
+
+  <p class="para">
+   Previously, using <span class="function"><a href="function.gettype.html" class="function">gettype()</a></span> on a closed resource would
+   return a string of <em>&quot;unknown type&quot;</em>. Now, a string of
+   <em>&quot;resource (closed)&quot;</em> will be returned.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.is_object-on-incomplete_class">
+  <h3 class="title"><span class="function"><a href="function.is-object.html" class="function">is_object()</a></span> and <strong class="classname">__PHP_Incomplete_Class</strong></h3>
+
+  <p class="para">
+   Previously, using <span class="function"><a href="function.is-object.html" class="function">is_object()</a></span> on the
+   <strong class="classname">__PHP_Incomplete_Class</strong> class would return <strong><code>FALSE</code></strong>.
+   Now, <strong><code>TRUE</code></strong> will be returned.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.undefined-constants">
+  <h3 class="title">Promote the error level of undefined constants</h3>
+
+  <p class="para">
+   Unqualified references to undefined constants will now generate an
+   <strong><code>E_WARNING</code></strong> (instead of an <strong><code>E_NOTICE</code></strong>).
+   In the next major version of PHP, they will generate
+   <a href="class.error.html" class="classname">Error</a> exceptions.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.windows-support">
+  <h3 class="title">Windows support</h3>
+
+  <p class="para">
+   The officially supported, minimum Windows versions are now Windows 7/Server
+   2008 R2.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.trait-properties">
+  <h3 class="title">Checks on default property values of traits</h3>
+
+  <p class="para">
+   Compatibilitiy checks upon default trait property values will no longer
+   perform casting.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.object-reserved-word">
+  <h3 class="title"><em>object</em> for class names</h3>
+
+  <p class="para">
+   The <em>object</em> name was previously soft-reserved in PHP 7.0.
+   This is now hard-reserved, prohibiting it from being used as a class, trait,
+   or interface name.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.netware-support">
+  <h3 class="title">Netware support</h3>
+
+  <p class="para">
+   Support for Netware has now been removed.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.bcmod-and-floats">
+  <h3 class="title"><span class="function"><a href="function.bcmod.html" class="function">bcmod()</a></span> changes with floats</h3>
+
+  <p class="para">
+   The <span class="function"><a href="function.bcmod.html" class="function">bcmod()</a></span> function no longer truncates fractional
+   numbers to integers. As such, its behavior now follows
+   <span class="function"><a href="function.fmod.html" class="function">fmod()</a></span>, rather than the <em>%</em> operator.
+   For example <em>bcmod(&#039;4&#039;, &#039;3.5&#039;)</em> now returns
+   <em>0.5</em> instead of <em>1</em>.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.hash-functions">
+  <h3 class="title">Hashing functions and non-cryptographic hashes</h3>
+
+  <p class="para">
+   The <span class="function"><a href="function.hash-hmac.html" class="function">hash_hmac()</a></span>, <span class="function"><a href="function.hash-hmac-file.html" class="function">hash_hmac_file()</a></span>,
+   <span class="function"><a href="function.hash-pbkdf2.html" class="function">hash_pbkdf2()</a></span>, and <span class="function"><a href="function.hash-init.html" class="function">hash_init()</a></span> (with
+   <strong><code>HASH_HMAC</code></strong>) functions no longer accept non-cryptographic
+   hashes.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.json_decode-changes">
+  <h3 class="title"><span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> function options</h3>
+
+  <p class="para">
+   The <span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> function option,
+   <strong><code>JSON_OBJECT_AS_ARRAY</code></strong>, is now used if the second
+   parameter (assoc) is <strong><code>NULL</code></strong>. Previously,
+   <strong><code>JSON_OBJECT_AS_ARRAY</code></strong> was always ignored.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.incompatible.rand-mt_rand-output">
+  <h3 class="title"><span class="function"><a href="function.rand.html" class="function">rand()</a></span> and <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> output</h3>
+
+  <p class="para">
+   Sequences generated by <span class="function"><a href="function.rand.html" class="function">rand()</a></span> and
+   <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> for a specific seed may differ from PHP 7.1 on
+   64-bit machines (due to the fixing of a modulo bias bug in the
+   implementation).
+  </p>
  </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration72.constants.html">New global constants</a></div>
