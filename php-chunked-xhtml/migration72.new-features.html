@@ -295,6 +295,80 @@
    support float and double in both little and big endian.
   </p>
  </div>
+
+ <div class="sect2" id="migration72.new-features.exif-features">
+  <h3 class="title">Enhancements to the EXIF extension</h3>
+
+  <p class="para">
+   The EXIF extension has been updated to support a much larger range of formats. This 
+   means that their format specific tags are now properly translated when parsing images 
+   with the <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> function. The following new formats are 
+   now supported:
+  </p>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     Samsung
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     DJI
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Panasonic
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Sony
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Pentax
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Minolta
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Sigma/Foveon
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     AGFA
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Kyocera
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Ricoh
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     Epson
+    </span>
+   </li>
+  </ul>
+
+  <p class="para">
+   The EXIF functions <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> and <span class="function"><a href="function.exif-thumbnail.html" class="function">exif_thumbnail()</a></span> 
+   now supports passing streams as their first argument.
+  </p>
+ </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="migration72.new-functions.html">New functions</a></div>
