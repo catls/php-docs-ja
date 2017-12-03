@@ -41,7 +41,6 @@
    </dd>
 
   
-
   
    <dt id="pdo.constants.param-null">
     <strong><code>PDO::PARAM_NULL</code></strong>
@@ -80,6 +79,40 @@
 
     <span class="simpara">
      SQL CHAR, VARCHAR, または他の文字列データ型を表します。
+    </span>
+   </dd>
+
+  
+  
+   <dt id="pdo.constants.param-str-natl">
+    <strong><code>PDO::PARAM_STR_NATL</code></strong>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Flag to denote a string uses the national character set.
+    </span>
+    <span class="simpara"> 
+     Available since PHP 7.2.0
+    </span>
+   </dd>
+
+  
+  
+   <dt id="pdo.constants.param-str-char">
+    <strong><code>PDO::PARAM_STR_CHAR</code></strong>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Flag to denote a string uses the regular character set.
+    </span>
+    <span class="simpara"> 
+     Available since PHP 7.2.0
     </span>
    </dd>
 
@@ -584,7 +617,6 @@
    </dd>
 
   
-
   
    <dt id="pdo.constants.attr-oracle-nulls">
     <strong><code>PDO::ATTR_ORACLE_NULLS</code></strong>
@@ -622,7 +654,7 @@
    <dd>
 
     <span class="simpara"> 
-
+     Sets the class name of which statements are returned as.
     </span>
    </dd>
 
@@ -666,7 +698,7 @@
    <dd>
 
     <span class="simpara"> 
-
+     Forces all values fetched to be treated as strings.
     </span>
    </dd>
 
@@ -680,7 +712,7 @@
    <dd>
 
     <span class="simpara"> 
-
+     Sets the maximum column name length.
     </span>
    </dd>
 
@@ -709,6 +741,24 @@
 
     <span class="simpara">
      PHP 5.1.3 以降で使用可能です。
+    </span>
+   </dd>
+
+  
+  
+   <dt id="pdo.constants.attr-default-str-param">
+    <strong><code>PDO::ATTR_DEFAULT_STR_PARAM</code></strong>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     Sets the default string parameter type, this can be one of <strong><code>PDO::PARAM_STR_NATL</code></strong> 
+     and <strong><code>PDO::PARAM_STR_CHAR</code></strong>.
+    </span>
+    <span class="simpara">
+     Available since PHP 7.2.0.
     </span>
    </dd>
 

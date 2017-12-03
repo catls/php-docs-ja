@@ -2,23 +2,23 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>New features</title>
+  <title>新機能</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration72.new-functions.html">New functions</a></div>
- <div class="up"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration72.new-functions.html">新しい関数</a></div>
+ <div class="up"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="migration72.new-features" class="sect1">
- <h2 class="title">New features</h2>
+ <h2 class="title">新機能</h2>
 
  <div class="sect2" id="migration72.new-features.object-type">
-  <h3 class="title">New object type</h3>
+  <h3 class="title">object 型</h3>
 
   <p class="para">
-   A new type, <span class="type"><a href="language.types.object.html" class="type object">object</a></span>, has been introduced that can be used for
-   (contravariant) parameter typing and (covariant) return typing of any
+   <span class="type"><a href="language.types.object.html" class="type object">object</a></span> 型が新たに導入されました。
+   任意のオブジェクトに対する (反変) パラメータの型付けや (共変) 返り値の型付けで使えます。
    objects.
   </p>
 
@@ -34,28 +34,28 @@
  </div>
 
  <div class="sect2" id="migration72.new-features.ext-loading-by-name">
-  <h3 class="title">Extension loading by name</h3>
+  <h3 class="title">名前指定による拡張モジュールのロード</h3>
 
   <p class="para">
-   Shared extensions no longer require their file extension
-   (<em>.so</em> for Unix or <em>.dll</em> for Windows) to
-   be specified. This is enabled in the php.ini file, as well as in the
-   <span class="function"><a href="function.dl.html" class="function">dl()</a></span> function.
+   読み込む共有モジュールを指定する際に、拡張子
+   (Unix なら <em>.so</em>、Windows なら <em>.dll</em> など)
+   を指定する必要がなくなりました。php.ini ファイルでの指定だけでなく
+   <span class="function"><a href="function.dl.html" class="function">dl()</a></span> 関数による指定でも同様です。
   </p>
  </div>
 
  <div class="sect2" id="migration72.new-features.abstract-method-overriding">
-  <h3 class="title">Allow abstract method overriding</h3>
+  <h3 class="title">抽象メソッドのオーバーライド</h3>
 
   <p class="para">
-   Abstract methods can now be overridden when an abstract class extends
-   another abstract class.
+   ある抽象クラスが別の抽象クラスを継承しているときに、
+   継承元クラスの抽象メソッドをオーバーライドできるようになりました。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">abstract&nbsp;class&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;abstract&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">(</span><span style="color: #0000BB">string&nbsp;$s</span><span style="color: #007700">);<br />}<br />abstract&nbsp;class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;overridden&nbsp;-&nbsp;still&nbsp;maintaining&nbsp;contravariance&nbsp;for&nbsp;parameters&nbsp;and&nbsp;covariance&nbsp;for&nbsp;return<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">abstract&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">(</span><span style="color: #0000BB">$s</span><span style="color: #007700">)&nbsp;:&nbsp;</span><span style="color: #0000BB">int</span><span style="color: #007700">;<br />}</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">abstract&nbsp;class&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;abstract&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">(</span><span style="color: #0000BB">string&nbsp;$s</span><span style="color: #007700">);<br />}<br />abstract&nbsp;class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;オーバーライドしましたが、パラメータの反変性や戻り値の共変性は維持しています。<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">abstract&nbsp;function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">(</span><span style="color: #0000BB">$s</span><span style="color: #007700">)&nbsp;:&nbsp;</span><span style="color: #0000BB">int</span><span style="color: #007700">;<br />}</span>
 </span>
 </code></div>
    </div>
@@ -63,13 +63,23 @@
   </div>
  </div>
 
- <div class="sect2" id="migration72.new-features.pws-hashing-with-argon2">
-  <h3 class="title">Password hashing with Argon2</h3>
+ <div class="sect2" id="migration72.new-features.sodium">
+  <h3 class="title"><a href="book.sodium.html" class="link">Sodium</a> がコアモジュールに</h3>
 
   <p class="para">
-   Argon2 has been added to the password hashing API (the
-   <em>password_</em> functions), where the following constants have
-   been exposed:
+   モダンな暗号ライブラリである Sodium が PHP コアモジュールに含まれるようになりました。
+  </p>
+  <p class="para">
+   関数のリファレンスは <a href="book.sodium.html" class="link">Sodium</a> を参照ください。
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.new-features.pws-hashing-with-argon2">
+  <h3 class="title">Argon2 によるパスワードハッシュ</h3>
+
+  <p class="para">
+   <a href="book.password.html" class="link">パスワードハッシュ API</a>
+   に Argon2 が追加されました。次の定数が公開されています。
   </p>
 
   <ul class="itemizedlist">
@@ -97,11 +107,12 @@
  </div>
 
  <div class="sect2" id="migration72.new-features.pdo-extended-str-types">
-  <h3 class="title">Extended string types for ext/PDO</h3>
+  <h3 class="title"><a href="book.pdo.html" class="link">PDO</a> の拡張文字列型</h3>
 
   <p class="para">
-   PDO&#039;s string type has been extended to support the national character type
-   when emulating prepares. This has been done with the following constants:
+   PDO の文字列型が拡張され、
+   プリペアをエミュレートする際に NCHAR 型をサポートするようになりました。
+   以下の定数が追加されています。
   </p>
 
   <ul class="itemizedlist">
@@ -123,8 +134,9 @@
   </ul>
 
   <p class="para">
-   These constants are utilised by bitwise <em>OR</em>&#039;ing them with
-   <strong><code>PDO::PARAM_STR</code></strong>:
+   これらの定数を使うには、
+   <strong><code>PDO::PARAM_STR</code></strong> とビット <em>OR</em>
+   で連結します。
   </p>
 
   <div class="informalexample">
@@ -139,23 +151,23 @@
  </div>
 
  <div class="sect2" id="migration72.new-features.additional-emulated-prepares-debugging-info">
-  <h3 class="title">Additional emulated prepares debugging information for ext/PDO</h3>
+  <h3 class="title"><a href="book.pdo.html" class="link">PDO</a> のデバッグ情報にプリペアのエミュレートの内容を追加</h3>
 
   <p class="para">
-   The <span class="function"><a href="pdostatement.debugdumpparams.html" class="function">PDOStatement::debugDumpParams()</a></span> method has been
-   updated to include the SQL being sent to the DB, where the full, raw query
-   (including the replaced placeholders with their bounded values) will be
-   shown. This has been added to aid with debugging emulated prepares (and so
-   it will only be available when emulated prepares are turned on).
+   <span class="function"><a href="pdostatement.debugdumpparams.html" class="function">PDOStatement::debugDumpParams()</a></span> メソッドが改良されて、
+   データベースに送信される SQL を表示できるようになりました。
+   これは、プレースホルダの内容をバインド変数の値で置き換えた後の生のクエリです。
+   この機能は、プリペア機能のエミュレートをデバッグしやすくするために用意されました
+   (そのため、プリペア機能のエミュレートが有効になっているときしか使えません)。
   </p>
  </div>
 
  <div class="sect2" id="migration72.new-features.extended-ops-in-ldap">
-  <h3 class="title">Support for extended operations in ext/LDAP</h3>
+  <h3 class="title"><a href="book.ldap.html" class="link">LDAP</a> における拡張オペレーションのサポート</h3>
 
   <p class="para">
-   Support for EXOP has been added to the LDAP extension. This has been done by
-   exposing the following functions and constants:
+   LDAP 拡張モジュールが EXOP をサポートするようになりました。
+   以下の関数や定数が追加されています。
   </p>
 
   <ul class="itemizedlist">
@@ -208,12 +220,12 @@
  </div>
 
  <div class="sect2" id="migration72.new-features.addr-info-in-sockets">
-  <h3 class="title">Address Information Additions to ext/sockets</h3>
+  <h3 class="title"><a href="book.sockets.html" class="link">ソケット</a> 拡張モジュールでのアドレス情報の対応</h3>
 
   <p class="para">
-   The sockets extension now has the ability to lookup address information, as
-   well as connect to it, bind to it, and explain it. The following four
-   functions have been added for this:
+   ソケット拡張モジュールが、アドレス情報のルックアップや
+   接続、バインド、explainに対応するようになりました。
+   新しく追加されたのは、以下の四つの関数です。
   </p>
 
   <ul class="itemizedlist">
@@ -241,18 +253,19 @@
  </div>
 
  <div class="sect2" id="migration72.new-features.param-type-widening">
-  <h3 class="title">Parameter type widening</h3>
+  <h3 class="title">パラメータの型の拡大変換</h3>
 
   <p class="para">
-   Parameter types from overridden methods and from interface implementations
-   may now be omitted. This is still in compliance with LSP, since parameters
-   types are contravariant.
+   メソッドをオーバーライドしたりインターフェイスを実装したりする際に、
+   元のパラメータの型指定を省略できるようになりました。
+   それでもリスコフの置換原則には違反していません。
+   パラメータの型は反変だからです。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">interface&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">(array&nbsp;</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">){}&nbsp;</span><span style="color: #FF8000">//&nbsp;type&nbsp;omitted&nbsp;for&nbsp;$input<br /></span><span style="color: #007700">}</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">interface&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">(array&nbsp;</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">B&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">A<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">){}&nbsp;</span><span style="color: #FF8000">//&nbsp;$input&nbsp;の型指定を省略<br /></span><span style="color: #007700">}</span>
 </span>
 </code></div>
    </div>
@@ -261,11 +274,10 @@
  </div>
 
  <div class="sect2" id="migration72.new-features.trailing-comma-in-grouped-namespaces">
-  <h3 class="title">Allow a trailing comma for grouped namespaces</h3>
+  <h3 class="title">名前空間のグループ指定における最後のカンマの許可</h3>
 
   <p class="para">
-   A trailing comma can now be added to the group-use syntax introduced in
-   PHP 7.0.
+   PHP 7.0 で導入されたグループ指定構文で、最後にカンマを付けられるようになりました。
   </p>
 
   <div class="informalexample">
@@ -280,30 +292,30 @@
  </div>
 
  <div class="sect2" id="migration72.new-features.proc_nice-windows-support">
-  <h3 class="title"><span class="function"><a href="function.proc-nice.html" class="function">proc_nice()</a></span> support on Windows</h3>
+  <h3 class="title">Windows での <span class="function"><a href="function.proc-nice.html" class="function">proc_nice()</a></span> のサポート</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.proc-nice.html" class="function">proc_nice()</a></span> function is now supported on Windows.
+   <span class="function"><a href="function.proc-nice.html" class="function">proc_nice()</a></span> 関数が Windows でも使えるようになりました。
   </p>
  </div>
 
  <div class="sect2" id="migration72.new-features.pack-unpack-endian-support">
-  <h3 class="title"><span class="function"><a href="function.pack.html" class="function">pack()</a></span> and <span class="function"><a href="function.unpack.html" class="function">unpack()</a></span> endian support</h3>
+  <h3 class="title"><span class="function"><a href="function.pack.html" class="function">pack()</a></span> と <span class="function"><a href="function.unpack.html" class="function">unpack()</a></span> でのエンディアンのサポート</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.pack.html" class="function">pack()</a></span> and <span class="function"><a href="function.unpack.html" class="function">unpack()</a></span> functions now
-   support float and double in both little and big endian.
+   <span class="function"><a href="function.pack.html" class="function">pack()</a></span> と <span class="function"><a href="function.unpack.html" class="function">unpack()</a></span> が、
+   リトルエンディアンとビッグエンディアンの両方の float や double に対応するようになりました。
   </p>
  </div>
 
  <div class="sect2" id="migration72.new-features.exif-features">
-  <h3 class="title">Enhancements to the EXIF extension</h3>
+  <h3 class="title"><a href="book.exif.html" class="link">EXIF</a> 拡張モジュールの機能追加</h3>
 
   <p class="para">
-   The EXIF extension has been updated to support a much larger range of formats. This 
-   means that their format specific tags are now properly translated when parsing images 
-   with the <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> function. The following new formats are 
-   now supported:
+   EXIF 拡張モジュールがより多くのフォーマットに対応するようになりました。
+   <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> 関数で画像をパースするときに、
+   今までよりも多くの独自タグが適切に変換されるようになります。
+   新たにサポートするようになったフォーマットは以下のとおりです。
   </p>
 
   <ul class="itemizedlist">
@@ -365,13 +377,66 @@
   </ul>
 
   <p class="para">
-   The EXIF functions <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> and <span class="function"><a href="function.exif-thumbnail.html" class="function">exif_thumbnail()</a></span> 
-   now supports passing streams as their first argument.
+   また、<span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> と <span class="function"><a href="function.exif-thumbnail.html" class="function">exif_thumbnail()</a></span>
+   の第一引数にストリームを渡せるようになりました。
   </p>
  </div>
+
+ <div class="sect2" id="migration72.new-features.pcre">
+  <h3 class="title"><a href="book.pcre.html" class="link">PCRE</a> の新機能</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <em>J</em> 修飾子で PCRE_DUPNAMES を設定できるようになりました。
+    </span>
+   </li>
+  </ul>
+ </div>
+
+ <div class="sect2" id="migration72.new-features.sqlite3">
+  <h3 class="title"><a href="book.sqlite3.html" class="link">SQLite3</a> での BLOB の書き込み</h3>
+
+  <p class="para">
+   <span class="methodname"><a href="sqlite3.openblob.html" class="methodname">SQLite3::openBlob()</a></span> が、BLOB
+   フィールドを書き込みモードでオープンできるようになりました。
+   これまでは読み込みモードにしか対応していませんでした。
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.new-features.oci8">
+  <h3 class="title"><a href="book.oci8.html" class="link">Oracle OCI8</a> Transparent Application Failover コールバック</h3>
+
+  <p class="para">
+   <a href="oci8.taf.html" class="link">Oracle Database Transparent Application Failover (TAF) コールバック</a>
+   のサポートが追加されました。
+   TAF を使うと、データベースとの接続が切れたときに、
+   提議済みのデータベースに自動的に再接続できます。
+   TAF コールバックを使うと、
+   フェイルオーバー時の再接続を PHP アプリケーションから監視したり制御したりできるようになります。
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.new-features.zip">
+  <h3 class="title"><a href="book.oci8.html" class="link">ZIP</a> 拡張モジュールの機能追加</h3>
+
+  <p class="para">
+   暗号化されたアーカイブの読み書きができるようになりました
+   (libzip 1.2.0 以降が必要です)。
+  </p>
+  <p class="para">
+   <a href="class.ziparchive.html" class="classname">ZipArchive</a> クラスが <span class="interfacename"><a href="class.countable.html" class="interfacename">Countable</a></span>
+   インターフェイスを実装するようになりました。
+  </p>
+  <p class="para">
+   <em>zip://</em> ストリームのコンテキストオプションに
+   <em>&#039;password&#039;</em> を使えるようになりました。
+  </p>
+ </div>
+
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration72.new-functions.html">New functions</a></div>
- <div class="up"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration72.new-functions.html">新しい関数</a></div>
+ <div class="up"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

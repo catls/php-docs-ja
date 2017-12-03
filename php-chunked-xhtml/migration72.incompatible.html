@@ -2,31 +2,31 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Backward incompatible changes</title>
+  <title>下位互換性のない変更点</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration72.constants.html">New global constants</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration72.deprecated.html">Deprecated features in PHP 7.2.x</a></div>
- <div class="up"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration72.constants.html">新しいグローバル定数</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration72.deprecated.html">PHP 7.2.x で推奨されなくなる機能</a></div>
+ <div class="up"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="migration72.incompatible" class="sect1">
- <h2 class="title">Backward incompatible changes</h2>
+ <h2 class="title">下位互換性のない変更点</h2>
 
  <div class="sect2" id="migration72.incompatible.number_format-no-neg-zero">
-  <h3 class="title">Prevent <span class="function"><a href="function.number-format.html" class="function">number_format()</a></span> from returning negative zero</h3>
+  <h3 class="title"><span class="function"><a href="function.number-format.html" class="function">number_format()</a></span> は負のゼロを返さない</h3>
 
   <p class="para">
-   Previously, it was possible for the <span class="function"><a href="function.number-format.html" class="function">number_format()</a></span>
-   function to return <em>-0</em>. Whilst this is perfectly valid
-   according to the IEEE 754 floating point specification, this oddity was not
-   desirable for displaying formatted numbers in a human-readable form.
+   以前のバージョンでは、<span class="function"><a href="function.number-format.html" class="function">number_format()</a></span> 関数が
+   <em>-0</em> を返せました。
+   これは IEEE 754 浮動小数点標準規格に沿ったまったく問題のない値ですが、
+   人間が読みやすい形式に数値をフォーマットするという意味では少し不自然でした。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">number_format</span><span style="color: #007700">(-</span><span style="color: #0000BB">0.01</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;now&nbsp;outputs&nbsp;string(1)&nbsp;"0"&nbsp;instead&nbsp;of&nbsp;string(2)&nbsp;"-0"</span>
+<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">number_format</span><span style="color: #007700">(-</span><span style="color: #0000BB">0.01</span><span style="color: #007700">));&nbsp;</span><span style="color: #FF8000">//&nbsp;string(2)&nbsp;"-0"&nbsp;ではなく&nbsp;string(1)&nbsp;"0"&nbsp;となります</span>
 </span>
 </code></div>
    </div>
@@ -35,23 +35,21 @@
  </div>
 
  <div class="sect2" id="migration72.incompatible.object-array-casts">
-  <h3 class="title">Convert numeric keys in object and array casts</h3>
+  <h3 class="title">オブジェクトと配列の型変換における数値キーの扱い</h3>
 
   <p class="para">
-   Numeric keys are now better handled when casting arrays to object and
-   objects to arrays (either from explicit casting or by
-   <span class="function"><a href="function.settype.html" class="function">settype()</a></span>).
+   配列からオブジェクトへのキャストやその逆のキャストにおける、数値キーの扱いが改善されました。
+   明示的なキャストだけではなく <span class="function"><a href="function.settype.html" class="function">settype()</a></span> を使った場合も同様です。
   </p>
 
   <p class="para">
-   This means that integer (or stringy integer) keys from arrays being casted
-   to objects are now accessible:
+   数値キーの配列をオブジェクトにキャストしたときに、その要素にアクセスできるようになったのです。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;array&nbsp;to&nbsp;object<br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;[</span><span style="color: #0000BB">0&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;(object)</span><span style="color: #0000BB">$arr</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;{</span><span style="color: #DD0000">'0'</span><span style="color: #007700">},&nbsp;</span><span style="color: #FF8000">//&nbsp;now&nbsp;accessible<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;{</span><span style="color: #0000BB">0</span><span style="color: #007700">}&nbsp;</span><span style="color: #FF8000">//&nbsp;now&nbsp;accessible<br /></span><span style="color: #007700">);</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;配列からオブジェクトへの変換<br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;[</span><span style="color: #0000BB">0&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;(object)</span><span style="color: #0000BB">$arr</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;{</span><span style="color: #DD0000">'0'</span><span style="color: #007700">},&nbsp;</span><span style="color: #FF8000">//&nbsp;アクセスできるようになりました<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">-&gt;{</span><span style="color: #0000BB">0</span><span style="color: #007700">}&nbsp;</span><span style="color: #FF8000">//&nbsp;アクセスできるようになりました<br /></span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
@@ -60,7 +58,7 @@
    <div class="example-contents screen">
 <div class="cdata"><pre>
 object(stdClass)#1 (1) {
-  [&quot;0&quot;]=&gt;    // string key now, rather than integer key
+  [&quot;0&quot;]=&gt;    // 数値キーではなく、文字列のキーになりました
   int(1)
 }
 int(1)
@@ -70,14 +68,14 @@ int(1)
   </div>
 
   <p class="para">
-   And integer (or stringy integer) keys from objects being casted to arrays
-   are now accessible:
+   また、オブジェクトに数値のキーが含まれる場合に、
+   配列にキャストしてもその要素にアクセスできるようになりました。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;object&nbsp;to&nbsp;array<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;class&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;{</span><span style="color: #0000BB">0</span><span style="color: #007700">}&nbsp;=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />};<br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;(array)</span><span style="color: #0000BB">$obj</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #FF8000">//&nbsp;now&nbsp;accessible<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">'0'</span><span style="color: #007700">]&nbsp;</span><span style="color: #FF8000">//&nbsp;now&nbsp;accessible<br /></span><span style="color: #007700">);</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;オブジェクトから配列への変換<br /></span><span style="color: #0000BB">$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;class&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;{</span><span style="color: #0000BB">0</span><span style="color: #007700">}&nbsp;=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />};<br /></span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">=&nbsp;(array)</span><span style="color: #0000BB">$obj</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">],&nbsp;</span><span style="color: #FF8000">//&nbsp;アクセスできるようになりました<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #DD0000">'0'</span><span style="color: #007700">]&nbsp;</span><span style="color: #FF8000">//&nbsp;アクセスできるようになりました<br /></span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
@@ -86,7 +84,7 @@ int(1)
    <div class="example-contents screen">
 <div class="cdata"><pre>
 array(1) {
-  [0]=&gt;    // integer key now, rather than string key
+  [0]=&gt;    // 文字列のキーではなく、整数のキーになります
   int(1)
 }
 int(1)
@@ -97,30 +95,29 @@ int(1)
  </div>
 
  <div class="sect2" id="migration72.incompatible.no-null-to-get_class">
-  <h3 class="title">Disallow passing <strong><code>NULL</code></strong> to <span class="function"><a href="function.get-class.html" class="function">get_class()</a></span></h3>
+  <h3 class="title"><span class="function"><a href="function.get-class.html" class="function">get_class()</a></span> に <strong><code>NULL</code></strong> を渡せない</h3>
 
   <p class="para">
-   Previously, passing <strong><code>NULL</code></strong> to the <span class="function"><a href="function.get-class.html" class="function">get_class()</a></span> function
-   would output the name of the enclosing class. This behaviour has now been
-   removed, where an <strong><code>E_WARNING</code></strong> will be output instead. To
-   achieve the same behaviour as before, the argument should simply be omitted
-   instead.
+   以前のバージョンでは、<span class="function"><a href="function.get-class.html" class="function">get_class()</a></span> に <strong><code>NULL</code></strong>
+   を渡すと、そのコンテキストの外側のクラスを返していました。
+   この機能は削除され、<strong><code>NULL</code></strong> を渡すと <strong><code>E_WARNING</code></strong> が発生するようになりました。
+   以前と同様の挙動を実現したい場合は、<strong><code>NULL</code></strong> を渡すのではなく単にパラメータを省略するようにしあしょう。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.warn-on-non-countable-types">
-  <h3 class="title">Warn when counting non-countable types</h3>
+  <h3 class="title">countabe ではない型をカウントしたときの警告</h3>
 
   <p class="para">
-   An <strong><code>E_WARNING</code></strong> will now be emitted when attempting to
-   <span class="function"><a href="function.count.html" class="function">count()</a></span> non-countable types (this includes the
-   <span class="function"><a href="function.sizeof.html" class="function">sizeof()</a></span> alias function).
+   countable ではない型に対して <span class="function"><a href="function.count.html" class="function">count()</a></span> (およびそのエイリアスである
+   <span class="function"><a href="function.sizeof.html" class="function">sizeof()</a></span>) を使ったときに
+   <strong><code>E_WARNING</code></strong> が発生するようになりました。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;integers&nbsp;are&nbsp;not&nbsp;countable<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #DD0000">'abc'</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;strings&nbsp;are&nbsp;not&nbsp;countable<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;objects&nbsp;not&nbsp;implementing&nbsp;the&nbsp;Countable&nbsp;interface&nbsp;are&nbsp;not&nbsp;countable<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;</span><span style="color: #FF8000">//&nbsp;arrays&nbsp;are&nbsp;countable<br /></span><span style="color: #007700">);</span>
+<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;integer&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #DD0000">'abc'</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;string&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;Countable&nbsp;インターフェイスを実装していないオブジェクトはカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;</span><span style="color: #FF8000">//&nbsp;array&nbsp;はカウントできません<br /></span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
@@ -143,39 +140,39 @@ int(2)
  </div>
 
  <div class="sect2" id="migration72.incompatible.hash-ext-to-objects">
-  <h3 class="title">Move ext/hash from resources to objects</h3>
+  <h3 class="title">ext/hash がリソースからオブジェクトへ</h3>
 
   <p class="para">
-   As part of the long-term migration away from resources, the Hash extension
-   has been updated to use objects instead of resources. The change should be
-   seamless for PHP developers, except for where
-   <span class="function"><a href="function.is-resource.html" class="function">is_resource()</a></span> checks have been made (which will need
-   updating to <span class="function"><a href="function.is-object.html" class="function">is_object()</a></span> instead).
+   長期にわたるリソースからオブジェクトへの移行作業の一環として、
+   <a href="book.hash.html" class="link">Hash</a> 拡張モジュールがリソースではなくオブジェクトを使うようになりました。
+   開発者側から見て特に変わるところはありませんが、もし
+   <span class="function"><a href="function.is-resource.html" class="function">is_resource()</a></span> を使ったチェックを行っているのなら、
+   それを <span class="function"><a href="function.is-object.html" class="function">is_object()</a></span> に書き換える必要があります。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.ssl-tls-defaults">
-  <h3 class="title">Improve SSL/TLS defaults</h3>
+  <h3 class="title">SSL/TLS のデフォルトの改善</h3>
 
   <p class="para">
-   The following changes to the defaults have been made:
+   デフォルト設定が以下のように変わりました。
   </p>
 
   <ul class="itemizedlist">
    <li class="listitem">
     <span class="simpara">
-     <em>tls://</em> now defaults to TLSv1.0 or TLSv1.1 or TLSv1.2
+     <em>tls://</em> が、TLSv1.0 や TLSv1.1 や TLSv1.2 のデフォルトになりました。
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     <em>ssl://</em> an alias of <em>tls://</em>
+     <em>ssl://</em> は <em>tls://</em> のエイリアスになりました。
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     <em>STREAM_CRYPTO_METHOD_TLS_*</em> constants default to TLSv1.0
-     or TLSv1.1 + TLSv1.2, instead of TLSv1.0 only
+     <em>STREAM_CRYPTO_METHOD_TLS_*</em> 定数のデフォルトが、
+     TLSv1.0 だけではなく TLSv1.0 または TLSv1.1 + TLSv1.2 となりました。
     </span>
    </li>
   </ul>
@@ -241,10 +238,10 @@ int(2)
  </div>
 
  <div class="sect2" id="migration72.incompatible.netware-support">
-  <h3 class="title">Netware support</h3>
+  <h3 class="title">NetWare support</h3>
 
   <p class="para">
-   Support for Netware has now been removed.
+   Support for NetWare has now been removed.
   </p>
  </div>
 
@@ -292,9 +289,17 @@ int(2)
    implementation).
   </p>
  </div>
+
+ <div class="sect2" id="migration72.incompatible.sqlsafe_mode-ini-setting">
+  <h3 class="title">Removal of <a href="ini.core.html#ini.sql.safe-mode" class="link"><code class="parameter">sql.safe_mode</code></a> ini setting</h3>
+
+  <p class="para">
+   The <code class="parameter">sql.safe_mode</code> ini setting has now been removed.
+  </p>
+ </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration72.constants.html">New global constants</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration72.deprecated.html">Deprecated features in PHP 7.2.x</a></div>
- <div class="up"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration72.constants.html">新しいグローバル定数</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration72.deprecated.html">PHP 7.2.x で推奨されなくなる機能</a></div>
+ <div class="up"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

@@ -2,33 +2,31 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Deprecated features in PHP 7.2.x</title>
+  <title>PHP 7.2.x で推奨されなくなる機能</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration72.incompatible.html">Backward incompatible changes</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration72.incompatible.html">下位互換性のない変更点</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="migration72.other-changes.html">Other changes</a></div>
- <div class="up"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
+ <div class="up"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="migration72.deprecated" class="sect1">
- <h2 class="title">Deprecated features in PHP 7.2.x</h2>
+ <h2 class="title">PHP 7.2.x で推奨されなくなる機能</h2>
 
  <div class="sect2" id="migration72.deprecated.unquoted-strings">
-  <h3 class="title">Unquoted strings</h3>
+  <h3 class="title">クオートしない文字列</h3>
 
   <p class="para">
-   Unquoted strings that are non-existent global constants are taken to be
-   strings of themselves. This behaviour used to emit an
-   <strong><code>E_NOTICE</code></strong>, but will now emit an
-   <strong><code>E_WARNING</code></strong>. The manual will be updated to reflect that
-   this behaviour has been deprecated, and in the next major version of PHP, an
-   exception will be thrown instead.
+   クオートしない文字列は、その名前のグローバル定数が定義されていない場合は単なる文字列という扱いになります。
+   このとき、いままでは <strong><code>E_NOTICE</code></strong> が発生していました。
+   PHP 7.2.x 以降は、<strong><code>E_WARNING</code></strong> が発生するようになります。
+   次のメジャーバージョンアップ後は <a href="class.error.html" class="classname">Error</a> 例外が発生するようになります。
   </p>
 
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">NONEXISTENT</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Output:<br />Warning:&nbsp;Use&nbsp;of&nbsp;undefined&nbsp;constant&nbsp;NONEXISTENT&nbsp;-&nbsp;assumed&nbsp;'NONEXISTENT'&nbsp;(this&nbsp;will&nbsp;throw&nbsp;an&nbsp;Error&nbsp;in&nbsp;a&nbsp;future&nbsp;version&nbsp;of&nbsp;PHP)&nbsp;in&nbsp;%s&nbsp;on&nbsp;line&nbsp;%d<br />string(11)&nbsp;"NONEXISTENT"<br />*/</span>
+<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">NONEXISTENT</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;出力:<br />Warning:&nbsp;Use&nbsp;of&nbsp;undefined&nbsp;constant&nbsp;NONEXISTENT&nbsp;-&nbsp;assumed&nbsp;'NONEXISTENT'&nbsp;(this&nbsp;will&nbsp;throw&nbsp;an&nbsp;Error&nbsp;in&nbsp;a&nbsp;future&nbsp;version&nbsp;of&nbsp;PHP)&nbsp;in&nbsp;%s&nbsp;on&nbsp;line&nbsp;%d<br />string(11)&nbsp;"NONEXISTENT"<br />*/</span>
 </span>
 </code></div>
    </div>
@@ -37,12 +35,12 @@
  </div>
 
  <div class="sect2" id="migration72.deprecated.png2wbmp-jpeg2wbmp">
-  <h3 class="title"><span class="function"><a href="function.png2wbmp.html" class="function">png2wbmp()</a></span> and <span class="function"><a href="function.jpeg2wbmp.html" class="function">jpeg2wbmp()</a></span></h3>
+  <h3 class="title"><span class="function"><a href="function.png2wbmp.html" class="function">png2wbmp()</a></span> および <span class="function"><a href="function.jpeg2wbmp.html" class="function">jpeg2wbmp()</a></span></h3>
 
   <p class="para">
    The <span class="function"><a href="function.png2wbmp.html" class="function">png2wbmp()</a></span> and <span class="function"><a href="function.jpeg2wbmp.html" class="function">jpeg2wbmp()</a></span>
    functions from the GD extension have now been deprecated and will be removed
-   in PHP 8.
+   in the next major version of PHP.
   </p>
  </div>
 
@@ -87,8 +85,8 @@
 
   <p class="para">
    Given the security issues of this function (being a thin wrapper around
-   <span class="function"><a href="function.eval.html" class="function">eval()</a></span>), and the preferred way of creating closures by
-   defining an anonymous function, this dated function has now been deprecated.
+   <span class="function"><a href="function.eval.html" class="function">eval()</a></span>), this dated function has now been deprecated.
+   The preferred alternative is to use <a href="functions.anonymous.html" class="link">anonymous functions</a>.
   </p>
  </div>
 
@@ -115,11 +113,11 @@
 
   <p class="para">
    Without the second argument to <span class="function"><a href="function.parse-str.html" class="function">parse_str()</a></span>, the query
-   string parameters would instead populate the local symbol table instead.
+   string parameters would populate the local symbol table.
    Given the security implications of this, using
    <span class="function"><a href="function.parse-str.html" class="function">parse_str()</a></span> without a second argument has now been
-   deprecated. The function should always be used with two arguments (the
-   second argument causes the query string to be parsed into an array).
+   deprecated. The function should always be used with two arguments, as the
+   second argument causes the query string to be parsed into an array.
   </p>
  </div>
 
@@ -128,8 +126,8 @@
 
   <p class="para">
    This function generates a random number based upon a range that is
-   calculated by an unexposed, platform-specific limb size. Given this facet,
-   this function has now been deprecated. The preferred way of generating a
+   calculated by an unexposed, platform-specific limb size. Because of this,
+   the function has now been deprecated. The preferred way of generating a
    random number using the GMP extension is by
    <span class="function"><a href="function.gmp-random-bits.html" class="function">gmp_random_bits()</a></span> and
    <span class="function"><a href="function.gmp-random-range.html" class="function">gmp_random_range()</a></span>.
@@ -163,8 +161,8 @@
   <p class="para">
    The <em>$errcontext</em> argument contains all local variables of
    the error site. Given its rare usage, and the problems it causes with
-   internal optimisations, it has now been deprecated (with a soft deprecation
-   notice in the manual). A proper debugger should be used instead to retrieve
+   internal optimisations, it has now been deprecated.
+   Instead, a debugger should be used to retrieve
    information on local variables at the error site.
   </p>
  </div>
@@ -173,14 +171,14 @@
   <h3 class="title"><span class="function"><a href="function.read-exif-data.html" class="function">read_exif_data()</a></span> function</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.read-exif-data.html" class="function">read_exif_data()</a></span> alias has been deprecated, in favour
-   for the <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> function instead.
+   The <span class="function"><a href="function.read-exif-data.html" class="function">read_exif_data()</a></span> alias has been deprecated.
+   The <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> function should be used instead.
   </p>
  </div>
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration72.incompatible.html">Backward incompatible changes</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="migration72.incompatible.html">下位互換性のない変更点</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="migration72.other-changes.html">Other changes</a></div>
- <div class="up"><a href="migration72.html">Migrating from PHP 7.1.x to PHP 7.2.x</a></div>
+ <div class="up"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

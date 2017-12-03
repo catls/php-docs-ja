@@ -170,6 +170,31 @@
    </dd>
 
   
+  
+   <dt id="constant.fileinfo-extension">
+    <strong><code>FILEINFO_EXTENSION</code></strong>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     ファイルから検出した MIME タイプに対応する適切な拡張子を返します。
+     the file.
+    </span>
+    <span class="simpara">
+     一般的な拡張子が複数存在するもの (たとえば <em>JPEG</em> 画像など)
+     の場合は、複数の拡張子をスラッシュで連結した値
+     (<em>&quot;jpeg/jpg/jpe/jfif&quot;</em> など) を返します。
+     <var class="filename">magic.mime</var> データベースに存在しない MIME タイプの場合は
+     <em>&quot;???&quot;</em> を返します。
+    </span>
+    <span class="simpara">
+     PHP 7.2.0 以降で使用可能です。
+    </span>
+   </dd>
+
+  
  </dl>
 
 </div>
