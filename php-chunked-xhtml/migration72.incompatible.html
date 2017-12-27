@@ -101,7 +101,7 @@ int(1)
    以前のバージョンでは、<span class="function"><a href="function.get-class.html" class="function">get_class()</a></span> に <strong><code>NULL</code></strong>
    を渡すと、そのコンテキストの外側のクラスを返していました。
    この機能は削除され、<strong><code>NULL</code></strong> を渡すと <strong><code>E_WARNING</code></strong> が発生するようになりました。
-   以前と同様の挙動を実現したい場合は、<strong><code>NULL</code></strong> を渡すのではなく単にパラメータを省略するようにしあしょう。
+   以前と同様の挙動を実現したい場合は、<strong><code>NULL</code></strong> を渡すのではなく単にパラメータを省略するようにしましょう。
   </p>
  </div>
 
@@ -117,7 +117,7 @@ int(1)
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;integer&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #DD0000">'abc'</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;string&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;Countable&nbsp;インターフェイスを実装していないオブジェクトはカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;</span><span style="color: #FF8000">//&nbsp;array&nbsp;はカウントできません<br /></span><span style="color: #007700">);</span>
+<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;integer&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #DD0000">'abc'</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;string&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;Countable&nbsp;インターフェイスを実装していないオブジェクトはカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;</span><span style="color: #FF8000">//&nbsp;array&nbsp;はカウントできます<br /></span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
@@ -179,42 +179,39 @@ int(2)
  </div>
 
  <div class="sect2" id="migration72.incompatible.gettype-on-closed-resource">
-  <h3 class="title"><span class="function"><a href="function.gettype.html" class="function">gettype()</a></span> return value on closed resources</h3>
+  <h3 class="title"><span class="function"><a href="function.gettype.html" class="function">gettype()</a></span> にクローズ済みのリソースを渡した際の返り値</h3>
 
   <p class="para">
-   Previously, using <span class="function"><a href="function.gettype.html" class="function">gettype()</a></span> on a closed resource would
-   return a string of <em>&quot;unknown type&quot;</em>. Now, a string of
-   <em>&quot;resource (closed)&quot;</em> will be returned.
+   以前のバージョンでは、 <span class="function"><a href="function.gettype.html" class="function">gettype()</a></span> にクローズ済みのリソースを渡すと、<em>&quot;unknown type&quot;</em> という文字列を返していました。
+   これからは、 <em>&quot;resource (closed)&quot;</em> という文字列が返されます。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.is_object-on-incomplete_class">
-  <h3 class="title"><span class="function"><a href="function.is-object.html" class="function">is_object()</a></span> and <strong class="classname">__PHP_Incomplete_Class</strong></h3>
+  <h3 class="title"><span class="function"><a href="function.is-object.html" class="function">is_object()</a></span> と <strong class="classname">__PHP_Incomplete_Class</strong></h3>
 
   <p class="para">
-   Previously, using <span class="function"><a href="function.is-object.html" class="function">is_object()</a></span> on the
-   <strong class="classname">__PHP_Incomplete_Class</strong> class would return <strong><code>FALSE</code></strong>.
-   Now, <strong><code>TRUE</code></strong> will be returned.
+   以前のバージョンでは、  <strong class="classname">__PHP_Incomplete_Class</strong> クラスに対して、
+   <span class="function"><a href="function.is-object.html" class="function">is_object()</a></span> を使うと <strong><code>FALSE</code></strong> が返されていました。
+   これからは <strong><code>TRUE</code></strong> が返されます。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.undefined-constants">
-  <h3 class="title">Promote the error level of undefined constants</h3>
+  <h3 class="title">定義されていない定数のエラーレベル変更</h3>
 
   <p class="para">
-   Unqualified references to undefined constants will now generate an
-   <strong><code>E_WARNING</code></strong> (instead of an <strong><code>E_NOTICE</code></strong>).
-   In the next major version of PHP, they will generate
-   <a href="class.error.html" class="classname">Error</a> exceptions.
+   定義されていない定数への参照を行った場合、 <strong><code>E_WARNING</code></strong> を生成するようになりました。
+   (今までは <strong><code>E_NOTICE</code></strong>を生成していました。)
+   次のPHPメジャーバージョンでは、<a href="class.error.html" class="classname">Error</a> 例外を生成するように変更される予定です。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.windows-support">
-  <h3 class="title">Windows support</h3>
+  <h3 class="title">Windows サポート</h3>
 
   <p class="para">
-   The officially supported, minimum Windows versions are now Windows 7/Server
-   2008 R2.
+   現在、公式にサポートしている最低バージョンは Windows 7/Server 2008 R2です。
   </p>
  </div>
 
@@ -238,63 +235,59 @@ int(2)
  </div>
 
  <div class="sect2" id="migration72.incompatible.netware-support">
-  <h3 class="title">NetWare support</h3>
+  <h3 class="title">NetWare サポート</h3>
 
   <p class="para">
-   Support for NetWare has now been removed.
+   NetWareのサポートが削除されました。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.bcmod-and-floats">
-  <h3 class="title"><span class="function"><a href="function.bcmod.html" class="function">bcmod()</a></span> changes with floats</h3>
+  <h3 class="title"><span class="function"><a href="function.bcmod.html" class="function">bcmod()</a></span> の小数点に対する挙動変更</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.bcmod.html" class="function">bcmod()</a></span> function no longer truncates fractional
-   numbers to integers. As such, its behavior now follows
-   <span class="function"><a href="function.fmod.html" class="function">fmod()</a></span>, rather than the <em>%</em> operator.
-   For example <em>bcmod(&#039;4&#039;, &#039;3.5&#039;)</em> now returns
-   <em>0.5</em> instead of <em>1</em>.
+   <span class="function"><a href="function.bcmod.html" class="function">bcmod()</a></span> 関数が小数点切り捨てをしないようになりました。
+   これからは、挙動は <em>%</em> 演算子ではなく、 <span class="function"><a href="function.fmod.html" class="function">fmod()</a></span>に準拠します。
+   たとえば、 <em>bcmod(&#039;4&#039;, &#039;3.5&#039;)</em> はいままでの<em>1</em>ではなく、 <em>0.5</em> を返します。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.hash-functions">
-  <h3 class="title">Hashing functions and non-cryptographic hashes</h3>
+  <h3 class="title">ハッシュ関数と非暗号化ハッシュ</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.hash-hmac.html" class="function">hash_hmac()</a></span>, <span class="function"><a href="function.hash-hmac-file.html" class="function">hash_hmac_file()</a></span>,
-   <span class="function"><a href="function.hash-pbkdf2.html" class="function">hash_pbkdf2()</a></span>, and <span class="function"><a href="function.hash-init.html" class="function">hash_init()</a></span> (with
-   <strong><code>HASH_HMAC</code></strong>) functions no longer accept non-cryptographic
-   hashes.
+   <span class="function"><a href="function.hash-hmac.html" class="function">hash_hmac()</a></span>、 <span class="function"><a href="function.hash-hmac-file.html" class="function">hash_hmac_file()</a></span>、
+   <span class="function"><a href="function.hash-pbkdf2.html" class="function">hash_pbkdf2()</a></span>、 および <span class="function"><a href="function.hash-init.html" class="function">hash_init()</a></span> (
+   <strong><code>HASH_HMAC</code></strong>) は非暗号化ハッシュを受け入れないように変更されました。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.json_decode-changes">
-  <h3 class="title"><span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> function options</h3>
+  <h3 class="title"><span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> 関数のオプション</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> function option,
+   <span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> 関数のオプション、
    <strong><code>JSON_OBJECT_AS_ARRAY</code></strong>, is now used if the second
    parameter (assoc) is <strong><code>NULL</code></strong>. Previously,
-   <strong><code>JSON_OBJECT_AS_ARRAY</code></strong> was always ignored.
+   <strong><code>JSON_OBJECT_AS_ARRAY</code></strong> はこれまで無視されていました。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.rand-mt_rand-output">
-  <h3 class="title"><span class="function"><a href="function.rand.html" class="function">rand()</a></span> and <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> output</h3>
+  <h3 class="title"><span class="function"><a href="function.rand.html" class="function">rand()</a></span> と <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> の出力</h3>
 
   <p class="para">
-   Sequences generated by <span class="function"><a href="function.rand.html" class="function">rand()</a></span> and
-   <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> for a specific seed may differ from PHP 7.1 on
-   64-bit machines (due to the fixing of a modulo bias bug in the
-   implementation).
+   特定のシードで <span class="function"><a href="function.rand.html" class="function">rand()</a></span> と
+   <span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> で生成されたシーケンスは、64-bit マシンで動作しているPHP 7.1と値が異なる場合があります。
+   (モジュロバイアスのバグ修正が実装されました。).
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.sqlsafe_mode-ini-setting">
-  <h3 class="title">Removal of <a href="ini.core.html#ini.sql.safe-mode" class="link"><code class="parameter">sql.safe_mode</code></a> ini setting</h3>
+  <h3 class="title"><a href="ini.core.html#ini.sql.safe-mode" class="link"><code class="parameter">sql.safe_mode</code></a> のini設定削除</h3>
 
   <p class="para">
-   The <code class="parameter">sql.safe_mode</code> ini setting has now been removed.
+   <code class="parameter">sql.safe_mode</code> のini設定が削除されました。
   </p>
  </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">

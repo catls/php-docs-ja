@@ -97,6 +97,11 @@
     </li>
     <li class="listitem">
      <span class="simpara">
+      &quot;resource (closed)&quot; PHP 7.2.0から実装
+     </span>
+    </li>
+    <li class="listitem">
+     <span class="simpara">
       &quot;<span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span>&quot;
      </span>
     </li>
@@ -138,6 +143,36 @@ string
  </div>
 
 
+  <div class="refsect1 changelog" id="refsect1-function.gettype-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.2.0</td>
+       <td>
+        クローズ済みのリソースを渡すと <em>&#039;resource (closed)&#039;</em>を返すようになりました。
+        以前は <em>&#039;unknown type&#039;</em>を返していました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ 
  <div class="refsect1 seealso" id="refsect1-function.gettype-seealso">
   <h3 class="title">参考</h3>
   <p class="para">
