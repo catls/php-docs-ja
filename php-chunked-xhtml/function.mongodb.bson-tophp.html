@@ -32,10 +32,14 @@
   </p>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="simpara">
-    Fields containing deprecated BSON types (i.e. undefined, symbol, DBPointer)
-    are ignored when converting BSON to PHP. This can result in a loss of data
-    when round-tripping BSON documents through PHP, as any fields containing a
-    deprecated type will be silently dropped.
+    Fields containing deprecated BSON types (i.e. undefined, symbol,
+    DBPointer) are represented only by bare-bones objects of the classes
+    <a href="class.mongodb-bson-undefined.html" class="classname">MongoDB\BSON\Undefined</a>,
+    <a href="class.mongodb-bson-symbol.html" class="classname">MongoDB\BSON\Symbol</a>, and
+    <a href="class.mongodb-bson-dbpointer.html" class="classname">MongoDB\BSON\DBPointer</a>, when converting BSON to
+    PHP. These objects are created from BSON data and used for storing these
+    types back into the database, but can not be instantiated as they have a
+    private constructor.
    </p>
   </div>
  </div>
@@ -93,13 +97,6 @@
     a class in the type map cannot be instantiated or does not implement
     <span class="interfacename"><a href="class.mongodb-bson-unserializable.html" class="interfacename">MongoDB\BSON\Unserializable</a></span>.
    </li>
-   <li class="member">
-    Throws
-    <a href="class.mongodb-driver-exception-unexpectedvalueexception.html" class="classname">MongoDB\Driver\Exception\UnexpectedValueException</a> if
-    the input contains an unsupported, deprecated BSON type. Possible types
-    include <em>0x06</em> (undefined), <em>0x0E</em>
-    (symbol), and <em>0x0C</em> (DBPointer).
-   </li>
    <li class="member">Throws <a href="class.mongodb-driver-exception-unexpectedvalueexception.html" class="classname">MongoDB\Driver\Exception\UnexpectedValueException</a> if the input did not contain exactly one BSON document. Possible reasons include, but are not limited to, invalid BSON, extra data (after reading one BSON document), or an unexpected <a href="https://github.com/mongodb/libbson" class="link external">&raquo;&nbsp;libbson</a> error.</li>
   </ul>
  </div>
@@ -119,6 +116,17 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>1.4.0</td>
+       <td>
+        <p class="para">
+         If the input contains an unsupported, deprecated BSON type, the
+         driver will now no longer log a warning to the debug log, but instead
+         will create an object representing this type.
+        </p>
+       </td>
+      </tr>
+
       <tr>
        <td>1.3.2</td>
        <td>

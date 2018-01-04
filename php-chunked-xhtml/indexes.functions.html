@@ -4903,6 +4903,11 @@
 <li><a href="mongodb-bson-binaryinterface.getdata.html" class="index">MongoDB\BSON\BinaryInterface::getData</a> - Returns the BinaryInterface's data</li>
 <li><a href="mongodb-bson-binaryinterface.gettype.html" class="index">MongoDB\BSON\BinaryInterface::getType</a> - Returns the BinaryInterface's type</li>
 <li><a href="mongodb-bson-binaryinterface.tostring.html" class="index">MongoDB\BSON\BinaryInterface::__toString</a> - Returns the BinaryInterface's data</li>
+<li><a href="mongodb-bson-dbpointer.jsonserialize.html" class="index">MongoDB\BSON\DBPointer::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
+<li><a href="mongodb-bson-dbpointer.serialize.html" class="index">MongoDB\BSON\DBPointer::serialize</a> - Serialize a DBPointer</li>
+<li><a href="mongodb-bson-dbpointer.unserialize.html" class="index">MongoDB\BSON\DBPointer::unserialize</a> - Unserialize a DBPointer</li>
+<li><a href="mongodb-bson-dbpointer.construct.html" class="index">MongoDB\BSON\DBPointer::__construct</a> - Construct a new DBPointer (unused)</li>
+<li><a href="mongodb-bson-dbpointer.tostring.html" class="index">MongoDB\BSON\DBPointer::__toString</a> - Returns an empty string</li>
 <li><a href="mongodb-bson-decimal128.jsonserialize.html" class="index">MongoDB\BSON\Decimal128::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
 <li><a href="mongodb-bson-decimal128.serialize.html" class="index">MongoDB\BSON\Decimal128::serialize</a> - Serialize a Decimal128</li>
 <li><a href="mongodb-bson-decimal128.unserialize.html" class="index">MongoDB\BSON\Decimal128::unserialize</a> - Unserialize a Decimal128</li>
@@ -4948,6 +4953,11 @@
 <li><a href="mongodb-bson-regexinterface.getpattern.html" class="index">MongoDB\BSON\RegexInterface::getPattern</a> - Returns the RegexInterface's pattern</li>
 <li><a href="mongodb-bson-regexinterface.tostring.html" class="index">MongoDB\BSON\RegexInterface::__toString</a> - Returns the string representation of this RegexInterface</li>
 <li><a href="mongodb-bson-serializable.bsonserialize.html" class="index">MongoDB\BSON\Serializable::bsonSerialize</a> - Provides an array or document to serialize as BSON</li>
+<li><a href="mongodb-bson-symbol.jsonserialize.html" class="index">MongoDB\BSON\Symbol::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
+<li><a href="mongodb-bson-symbol.serialize.html" class="index">MongoDB\BSON\Symbol::serialize</a> - Serialize a Symbol</li>
+<li><a href="mongodb-bson-symbol.unserialize.html" class="index">MongoDB\BSON\Symbol::unserialize</a> - Unserialize a Symbol</li>
+<li><a href="mongodb-bson-symbol.construct.html" class="index">MongoDB\BSON\Symbol::__construct</a> - Construct a new Symbol (unused)</li>
+<li><a href="mongodb-bson-symbol.tostring.html" class="index">MongoDB\BSON\Symbol::__toString</a> - Returns the Symbol as a string</li>
 <li><a href="mongodb-bson-timestamp.getincrement.html" class="index">MongoDB\BSON\Timestamp::getIncrement</a> - Returns the increment component of this Timestamp</li>
 <li><a href="mongodb-bson-timestamp.gettimestamp.html" class="index">MongoDB\BSON\Timestamp::getTimestamp</a> - Returns the timestamp component of this Timestamp</li>
 <li><a href="mongodb-bson-timestamp.jsonserialize.html" class="index">MongoDB\BSON\Timestamp::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
@@ -4962,6 +4972,11 @@
 <li><a href="function.mongodb.bson-tojson.html" class="index">MongoDB\BSON\toJSON</a> - Returns the Legacy Extended JSON representation of a BSON value</li>
 <li><a href="function.mongodb.bson-tophp.html" class="index">MongoDB\BSON\toPHP</a> - Returns the PHP representation of a BSON value</li>
 <li><a href="function.mongodb.bson-torelaxedextendedjson.html" class="index">MongoDB\BSON\toRelaxedExtendedJSON</a> - Returns the Relaxed Extended JSON representation of a BSON value</li>
+<li><a href="mongodb-bson-undefined.jsonserialize.html" class="index">MongoDB\BSON\Undefined::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
+<li><a href="mongodb-bson-undefined.serialize.html" class="index">MongoDB\BSON\Undefined::serialize</a> - Serialize a Undefined</li>
+<li><a href="mongodb-bson-undefined.unserialize.html" class="index">MongoDB\BSON\Undefined::unserialize</a> - Unserialize a Undefined</li>
+<li><a href="mongodb-bson-undefined.construct.html" class="index">MongoDB\BSON\Undefined::__construct</a> - Construct a new Undefined (unused)</li>
+<li><a href="mongodb-bson-undefined.tostring.html" class="index">MongoDB\BSON\Undefined::__toString</a> - Returns an empty string</li>
 <li><a href="mongodb-bson-unserializable.bsonunserialize.html" class="index">MongoDB\BSON\Unserializable::bsonUnserialize</a> - Constructs the object from a BSON array or document</li>
 <li><a href="mongodb-bson-utcdatetime.jsonserialize.html" class="index">MongoDB\BSON\UTCDateTime::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
 <li><a href="mongodb-bson-utcdatetime.serialize.html" class="index">MongoDB\BSON\UTCDateTime::serialize</a> - Serialize a UTCDateTime</li>
@@ -8984,7 +8999,30 @@
 <li><a href="swishsearch.setsort.html" class="index">SwishSearch::setSort</a> - 並び順を設定する</li>
 <li><a href="swishsearch.setstructure.html" class="index">SwishSearch::setStructure</a> - 検索オブジェクトの構造フラグを設定する</li>
 <li><a href="function.swoole-async-dns-lookup.html" class="index">swoole_async_dns_lookup</a> - Async and non-blocking hostname to IP lookup.</li>
-<li><a href="function.swoole-cpu-num.html" class="index">swoole_cpu_num</a> - Get the number of CPUs</li>
+<li><a href="function.swoole-async-read.html" class="index">swoole_async_read</a> - Read file stream asynchronously.</li>
+<li><a href="function.swoole-async-readfile.html" class="index">swoole_async_readfile</a> - Read a file asynchronously.</li>
+<li><a href="function.swoole-async-set.html" class="index">swoole_async_set</a> - Update the async I/O options.</li>
+<li><a href="function.swoole-async-write.html" class="index">swoole_async_write</a> - Write data to a file stream asynchronously.</li>
+<li><a href="function.swoole-async-writefile.html" class="index">swoole_async_writefile</a> - Write data to a file asynchronously.</li>
+<li><a href="function.swoole-client-select.html" class="index">swoole_client_select</a> - Get the file description which are ready to read/write or error.</li>
+<li><a href="function.swoole-cpu-num.html" class="index">swoole_cpu_num</a> - Get the number of CPU.</li>
+<li><a href="function.swoole-errno.html" class="index">swoole_errno</a> - Get the error code of the latest system call.</li>
+<li><a href="function.swoole-event-add.html" class="index">swoole_event_add</a> - Add new callback functions of a socket into the EventLoop.</li>
+<li><a href="function.swoole-event-defer.html" class="index">swoole_event_defer</a> - Add callback function to the next event loop.</li>
+<li><a href="function.swoole-event-del.html" class="index">swoole_event_del</a> - Remove all event callback functions of a socket.</li>
+<li><a href="function.swoole-event-exit.html" class="index">swoole_event_exit</a> - Exit the eventloop, only available at the client side.</li>
+<li><a href="function.swoole-event-set.html" class="index">swoole_event_set</a> - Update the event callback functions of a socket.</li>
+<li><a href="function.swoole-event-wait.html" class="index">swoole_event_wait</a> - Start the event loop.</li>
+<li><a href="function.swoole-event-write.html" class="index">swoole_event_write</a> - Write data to a socket.</li>
+<li><a href="function.swoole-get-local-ip.html" class="index">swoole_get_local_ip</a> - Get the IPv4 IP addresses of each NIC on the machine.</li>
+<li><a href="function.swoole-last-error.html" class="index">swoole_last_error</a> - Get the lastest error message.</li>
+<li><a href="function.swoole-load-module.html" class="index">swoole_load_module</a> - Load a swoole extension.</li>
+<li><a href="function.swoole-select.html" class="index">swoole_select</a> - Select the file descriptions which are ready to read/write or error in the eventloop.</li>
+<li><a href="function.swoole-set-process-name.html" class="index">swoole_set_process_name</a> - Set the process name.</li>
+<li><a href="function.swoole-strerror.html" class="index">swoole_strerror</a> - Convert the Errno into error messages.</li>
+<li><a href="function.swoole-timer-after.html" class="index">swoole_timer_after</a> - Trigger a one time callback function in the future.</li>
+<li><a href="function.swoole-timer-exists.html" class="index">swoole_timer_exists</a> - Check if a timer callback function is existed.</li>
+<li><a href="function.swoole-timer-tick.html" class="index">swoole_timer_tick</a> - Trigger a timer tick callback function by time interval.</li>
 <li><a href="function.swoole-version.html" class="index">swoole_version</a> - Get the version of Swoole.</li>
 <li><a href="function.sybase-affected-rows.html" class="index">sybase_affected_rows</a> - 直近のクエリで変更された行の数を得る</li>
 <li><a href="function.sybase-close.html" class="index">sybase_close</a> - Sybase 接続を閉じる</li>
