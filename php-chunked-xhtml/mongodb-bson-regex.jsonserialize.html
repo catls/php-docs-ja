@@ -37,8 +37,14 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    Returns data which can be serialized by <span class="function"><a href="function.json-encode.html" class="function">json_encode()</a></span> to
-   produce the <a href="https://docs.mongodb.com/manual/reference/mongodb-extended-json/" class="link external">&raquo;&nbsp;extended
-   JSON</a> representation of the <a href="class.mongodb-bson-regex.html" class="classname">MongoDB\BSON\Regex</a>.
+   produce an extended JSON representation of the
+   <a href="class.mongodb-bson-regex.html" class="classname">MongoDB\BSON\Regex</a>.
+  </p>
+  <p class="para">
+   The output is consistent with the <span class="function"><a href="function.mongodb.bson-tojson.html" class="function">MongoDB\BSON\toJSON()</a></span>
+   function, which represents the driver specifc legacy extended JSON format,
+   which does not necessarily match the relaxed or <a href="https://docs.mongodb.com/manual/reference/mongodb-extended-json/" class="link external">&raquo;&nbsp;canonical extended JSON</a>
+   representation.
   </p>
  </div>
 
@@ -56,6 +62,8 @@
   <ul class="simplelist">
    <li class="member"><span class="methodname"><a href="jsonserializable.jsonserialize.html" class="methodname" rel="rdfs-seeAlso">JsonSerializable::jsonSerialize()</a> - JSON にシリアライズしたいデータを指定する</span></li>
    <li class="member"><span class="function"><a href="function.json-encode.html" class="function" rel="rdfs-seeAlso">json_encode()</a> - 値を JSON 形式にして返す</span></li>
+   <li class="member"><span class="function"><a href="function.mongodb.bson-tocanonicalextendedjson.html" class="function" rel="rdfs-seeAlso">MongoDB\BSON\toCanonicalExtendedJSON()</a> - Returns the Canonical Extended JSON representation of a BSON value</span></li>
+   <li class="member"><span class="function"><a href="function.mongodb.bson-torelaxedextendedjson.html" class="function" rel="rdfs-seeAlso">MongoDB\BSON\toRelaxedExtendedJSON()</a> - Returns the Relaxed Extended JSON representation of a BSON value</span></li>
    <li class="member"><a href="https://docs.mongodb.com/manual/reference/mongodb-extended-json/" class="link external">&raquo;&nbsp;MongoDB Extended JSON</a></li>
   </ul>
  </div>
