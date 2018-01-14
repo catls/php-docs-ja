@@ -35,17 +35,30 @@
    Yaconf requires PHP 7.0 or greater.
   </p>
   <div class="example" id="example-4807">
-   <p><strong>例1 <span class="function"><strong>INI()</strong></span>example</strong></p>
+   <p><strong>例1 INI example</strong></p>
    <div class="example-contents">
-<div class="inicode"><pre class="inicode">[SectionA]
-;key value pair
+<div class="inicode"><pre class="inicode">;simple key val
 key=val
-;hash[a]=val
+;hash
 hash.a=val
-;arr[0]=val
+;array
 arr.0=val
 ;or
 arr[]=val
+;use PHP constants
+version=PHP_VERION
+;use enviroment
+env=${PATH}</pre>
+</div>
+   </div>
+
+  </div>
+  <div class="example" id="example-4808">
+   <p><strong>例2 INI sections example</strong></p>
+   <div class="example-contents">
+<div class="inicode"><pre class="inicode">[SectionA]
+key=val
+hash.a=val
 
 ;SectionB inherits SectionA
 [SectionB:SectionA]
