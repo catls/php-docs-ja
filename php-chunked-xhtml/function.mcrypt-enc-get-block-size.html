@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>オープンされたアルゴリズムのブロックサイズを返す</title>
+  <title>Returns the blocksize of the opened algorithm</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,12 +13,14 @@
 </div><hr /><div id="function.mcrypt-enc-get-block-size" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">mcrypt_enc_get_block_size</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5, PHP 7 &lt; 7.2.0, PECL mcrypt &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">mcrypt_enc_get_block_size</span> &mdash; <span class="dc-title">オープンされたアルゴリズムのブロックサイズを返す</span></p>
+  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5, PHP 7 &lt; 7.2.0, PECL mcrypt &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">mcrypt_enc_get_block_size</span> &mdash; <span class="dc-title">Returns the blocksize of the opened algorithm</span></p>
 
  </div>
  <div id="function.mcrypt-enc-get-block-size-refsynopsisdiv">
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は PHP 7.1.0 で
-<em class="emphasis">非推奨</em>になります。この関数に頼らないことを強く推奨します。</p></div>
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">This function has been
+<em class="emphasis">DEPRECATED</em> as of PHP 7.1.0 and
+<em class="emphasis">REMOVED</em> as of PHP 7.2.0. Relying on this function
+is highly discouraged.</p></div>
  </div>
  <div class="refsect1 description" id="refsect1-function.mcrypt-enc-get-block-size-description">
   <h3 class="title">説明</h3>
@@ -28,7 +30,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   オープンされたアルゴリズムのブロックサイズを取得します。
+   Gets the blocksize of the opened algorithm.
   </p>
  </div>
 
@@ -44,7 +46,7 @@
      <dd>
 
       <p class="para">
-       暗号化記述子。
+       The encryption descriptor.
       </p>
      </dd>
 
@@ -57,7 +59,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.mcrypt-enc-get-block-size-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   指定したアルゴリズムのブロック長をバイト単位で返します。
+   Returns the block size of the specified algorithm in bytes.
   </p>
  </div>
 

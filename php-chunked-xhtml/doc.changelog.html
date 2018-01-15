@@ -147,12 +147,11 @@
    default_charset の設定値に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-decode.html'>json_decode</a></td><td>true、
         false および null
         は、すべて小文字のものだけを有効な値として受け付けるようになりました。
-        大文字が含まれる場合は警告が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-regex-encoding.html'>mb_regex_encoding</a></td><td>デフォルトのエンコーディングが EUC-JP から UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-create-iv.html'>mcrypt_create_iv</a></td><td>source のデフォルト値が
-        MCRYPT_DEV_URANDOM になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-decrypt.html'>mcrypt_decrypt</a></td><td>無効なサイズの key や iv
-        は、受け付けないようになりました。無効な値を受け取った場合、
-        mcrypt_decrypt は警告を発して FALSE を返します。
-        以前のバージョンでは、キーや IV のサイズが足りない場合は
-        '\0' で埋めて、必要なサイズに合わせていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-encrypt.html'>mcrypt_encrypt</a></td><td>無効なサイズの key や iv
+        大文字が含まれる場合は警告が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-regex-encoding.html'>mb_regex_encoding</a></td><td>デフォルトのエンコーディングが EUC-JP から UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-create-iv.html'>mcrypt_create_iv</a></td><td>MCRYPT_DEV_URANDOM is now the default value of
+        source.</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-decrypt.html'>mcrypt_decrypt</a></td><td>Invalid key and iv sizes
+        are no longer accepted. mcrypt_decrypt will now throw
+        a warning and return FALSE if the inputs are invalid. Previously keys and
+        IVs were padded with '\0' bytes to the next valid size.</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-encrypt.html'>mcrypt_encrypt</a></td><td>無効なサイズの key や iv
         は、受け付けないようになりました。無効な値を受け取った場合、
         mcrypt_encrypt は警告を発して FALSE を返します。
         以前のバージョンでは、キーや IV のサイズが足りない場合は
@@ -396,9 +395,10 @@ NULL から DateTime に変更されました。</td></tr><tr><td>&nbsp;</td><td
         がすべてのプラットフォームで使えるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.hash-algos.html'>hash_algos</a></td><td>md2、ripemd256、ripemd320、salsa10、salsa20、snefru256 および sha224 のサポートを追加しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_IGNORE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_IGNORE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagecolorclosesthwb.html'>imagecolorclosesthwb</a></td><td>この関数は Windows でも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.inet-ntop.html'>inet_ntop</a></td><td>この関数は Windows プラットフォームでも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.inet-pton.html'>inet_pton</a></td><td>この関数は Windows プラットフォームでも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ini-get.html'>ini_get</a></td><td>指定したオプションが存在しない場合に、空文字列ではなく FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ini-get-all.html'>ini_get_all</a></td><td>details が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.is-a.html'>is_a</a></td><td>この関数は非推奨ではなくなりました。そのため
         E_STRICT も発生しなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-decode.html'>json_decode</a></td><td>オプションの depth が追加されました。デフォルトの再帰の深さが 128 から 512 に増えました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.link.html'>link</a></td><td>この関数は、Windows プラットフォーム
         (Vista 以降、あるいは Server 2008 以降) でも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.linkinfo.html'>linkinfo</a></td><td>この関数は、Windows プラットフォーム
-        (Vista 以降、あるいは Server 2008 以降) でも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.log1p.html'>log1p</a></td><td>この関数はすべてのプラットフォームで使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-get-info.html'>mb_get_info</a></td><td>エントリ &quot;http_output_conv_mimetypes&quot; が使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-create-iv.html'>mcrypt_create_iv</a></td><td>MCRYPT_DEV_RANDOM 及び
-        MCRYPT_DEV_URANDOM が Windows プラットフォーム上で利用可能になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-create-iv.html'>mcrypt_create_iv</a></td><td>srand を最初に呼び出す必要はもはやありません。
-        これは現在自動的に行われます。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>mktime は、
+        (Vista 以降、あるいは Server 2008 以降) でも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.log1p.html'>log1p</a></td><td>この関数はすべてのプラットフォームで使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-get-info.html'>mb_get_info</a></td><td>エントリ &quot;http_output_conv_mimetypes&quot; が使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-create-iv.html'>mcrypt_create_iv</a></td><td>MCRYPT_DEV_RANDOM and
+        MCRYPT_DEV_URANDOM became available on Windows
+        platforms.</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-create-iv.html'>mcrypt_create_iv</a></td><td>It is no longer required to call srand first. This
+        is now done automatically.</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>mktime は、
         is_dst パラメータを使用した場合に
         E_DEPRECATED をスローするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-db-query.html'>mysql_db_query</a></td><td>この関数は E_DEPRECATED をスローするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-escape-string.html'>mysql_escape_string</a></td><td>この関数は E_DEPRECATED をスローするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysqli-get-cache-stats.html'>mysqli_get_cache_stats</a></td><td>mysqli_get_cache_stats がスタブとして追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.nl2br.html'>nl2br</a></td><td>オプションの is_xhtml パラメータが追加されました。
          以前のバージョンでは、杖に '&lt;br /&gt;' が挿入されていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-seal.html'>openssl_seal</a></td><td>method パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.parse-ini-file.html'>parse_ini_file</a></td><td>オプションのパラメータ scanner_mode が追加されました。
