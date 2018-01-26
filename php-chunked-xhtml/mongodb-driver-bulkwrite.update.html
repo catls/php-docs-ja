@@ -93,6 +93,17 @@
         </thead>
 
         <tbody class="tbody">
+         <tr>
+          <td>arrayFilters</td>
+          <td><span class="type"><span class="type array|object">array|object</span></span></td>
+          <td>
+           An array of filter documents that determines which array elements to
+           modify for an update operation on an array field. See
+           <a href="https://docs.mongodb.com/manual/reference/command/update/#update-command-arrayfilters" class="link external">&raquo;&nbsp;Specify arrayFilters for Array Update Operations</a>
+           in the MongoDB manual for more information.
+          </td>
+         </tr>
+
          
          <tr>
           <td>collation</td>
@@ -185,6 +196,13 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>1.4.0</td>
+       <td>
+        Added the <em>&quot;arrayFilters&quot;</em> option.
+       </td>
+      </tr>
+
       <tr>
        <td>1.2.0</td>
        <td>

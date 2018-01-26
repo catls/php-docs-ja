@@ -41,54 +41,9 @@
     <dd>
 
      <p class="para">
-      <table class="doctable table">
-       <caption><strong>Read concern</strong></caption>
-       
-        <thead>
-         <tr>
-          <th>Value</th>
-          <th>Description</th>
-         </tr>
-
-        </thead>
-
-        <tbody class="tbody">
-         <tr>
-          <td><strong><code>MongoDB\Driver\ReadConcern::LINEARIZABLE</code></strong></td>
-          <td>
-           A linearizable read avoids returning reads from a
-           <em class="emphasis">stale</em> primary (one that has already been
-           superseded by a new primary but doesn&#039;t know it yet). It is
-           important to note that this read concern level does not by itself
-           produce linearizable reads; they must be issued in conjunction with
-           <strong><code>MongoDB\Driver\WriteConcern::MAJORITY</code></strong> writes to
-           the same document(s) in order to be linearizable.
-          </td>
-         </tr>
-
-         <tr>
-          <td><strong><code>MongoDB\Driver\ReadConcern::LOCAL</code></strong></td>
-          <td>
-           Queries using this read concern will return the node&#039;s most
-           recent copy of the data. This provides no guarantee that the data has
-           been written to a majority of the nodes (i.e. it may be rolled back).
-           This is the default read concern for MongoDB.
-          </td>
-         </tr>
-
-         <tr>
-          <td><strong><code>MongoDB\Driver\ReadConcern::MAJORITY</code></strong></td>
-          <td>
-           Queries using this read concern will return the node&#039;s most
-           recent copy of the data confirmed as having been written to a
-           majority of the nodes (i.e. the data cannot be rolled back).
-          </td>
-         </tr>
-
-        </tbody>
-       
-      </table>
-
+      The <a href="https://docs.mongodb.com/manual/reference/readConcern/#read-concern-levels" class="link external">&raquo;&nbsp;read concern level</a>.
+      You may use, but are not limited to, one of the
+      <a href="class.mongodb-driver-readconcern.html#mongodb-driver-readconcern.constants" class="link">class constants</a>.
      </p>
     </dd>
 
