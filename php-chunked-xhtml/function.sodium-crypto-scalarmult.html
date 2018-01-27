@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Description</title>
+  <title>Compute a shared secret given a user's secret key and another user's public key</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,16 +13,16 @@
 </div><hr /><div id="function.sodium-crypto-scalarmult" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">sodium_crypto_scalarmult</h1>
-  <p class="verinfo">(PHP 7 &gt;= 7.2.0)</p><p class="refpurpose"><span class="refname">sodium_crypto_scalarmult</span> &mdash; <span class="dc-title">Description</span></p>
+  <p class="verinfo">(PHP 7 &gt;= 7.2.0)</p><p class="refpurpose"><span class="refname">sodium_crypto_scalarmult</span> &mdash; <span class="dc-title">Compute a shared secret given a user&#039;s secret key and another user&#039;s public key</span></p>
 
  </div>
 
  <div class="refsect1 description" id="refsect1-function.sodium-crypto-scalarmult-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type ReturnType">ReturnType</span></span> <span class="methodname"><strong>sodium_crypto_scalarmult</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$string_1</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$string_2</code></span>
+   <span class="type">string</span> <span class="methodname"><strong>sodium_crypto_scalarmult</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$n</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$p</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -42,7 +42,7 @@
 
    
     <dt>
-<code class="parameter">string_1</code></dt>
+<code class="parameter">n</code></dt>
 
     <dd>
 
@@ -54,7 +54,7 @@
    
    
     <dt>
-<code class="parameter">string_2</code></dt>
+<code class="parameter">p</code></dt>
 
     <dd>
 

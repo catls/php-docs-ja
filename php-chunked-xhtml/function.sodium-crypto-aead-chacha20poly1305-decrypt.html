@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Description</title>
+  <title>Verify that the ciphertext includes a valid tag</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,15 +13,15 @@
 </div><hr /><div id="function.sodium-crypto-aead-chacha20poly1305-decrypt" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">sodium_crypto_aead_chacha20poly1305_decrypt</h1>
-  <p class="verinfo">(PHP 7 &gt;= 7.2.0)</p><p class="refpurpose"><span class="refname">sodium_crypto_aead_chacha20poly1305_decrypt</span> &mdash; <span class="dc-title">Description</span></p>
+  <p class="verinfo">(PHP 7 &gt;= 7.2.0)</p><p class="refpurpose"><span class="refname">sodium_crypto_aead_chacha20poly1305_decrypt</span> &mdash; <span class="dc-title">Verify that the ciphertext includes a valid tag</span></p>
 
  </div>
 
  <div class="refsect1 description" id="refsect1-function.sodium-crypto-aead-chacha20poly1305-decrypt-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type ReturnType">ReturnType</span></span> <span class="methodname"><strong>sodium_crypto_aead_chacha20poly1305_decrypt</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$string</code></span>
+   <span class="type">string</span> <span class="methodname"><strong>sodium_crypto_aead_chacha20poly1305_decrypt</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$ciphertext</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$ad</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$nonce</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
@@ -44,7 +44,7 @@
 
    
     <dt>
-<code class="parameter">string</code></dt>
+<code class="parameter">ciphertext</code></dt>
 
     <dd>
 

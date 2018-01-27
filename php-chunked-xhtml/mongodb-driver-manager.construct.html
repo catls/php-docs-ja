@@ -251,10 +251,11 @@
           <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
           <td>
            <p class="para">
-            Corresponds to the write concern&#039;s <code class="parameter">journal</code>
-            parameter. If <strong><code>TRUE</code></strong>, writes will require acknowledgement from
-            MongoDB that the operation has been written to the journal. For
-            details, see <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
+            Corresponds to the default write concern&#039;s
+            <code class="parameter">journal</code> parameter. If <strong><code>TRUE</code></strong>, writes will
+            require acknowledgement from MongoDB that the operation has been
+            written to the journal. For details, see
+            <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
            </p>
           </td>
          </tr>
@@ -356,12 +357,30 @@
          </tr>
 
          <tr>
+          <td>retryWrites</td>
+          <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
+          <td>
+           <p class="para">
+            If <strong><code>TRUE</code></strong>, the driver will automatically retry certain write
+            operations that fail due to transient network errors or replica set
+            elections. Defaults to <strong><code>FALSE</code></strong>.
+           </p>
+           <p class="para">
+            See
+            <a href="https://docs.mongodb.com/manual/core/distributed-queries/#retryable-writes" class="link external">&raquo;&nbsp;Retryable Writes</a>
+            in the MongoDB manual for more information.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
           <td>safe</td>
           <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
           <td>
            <p class="para">
-            Specifies <em>1</em> for the write concern if <strong><code>TRUE</code></strong>, or
-            <em>0</em> if <strong><code>FALSE</code></strong> For details, see
+            If <strong><code>TRUE</code></strong>, specifies <em>1</em> for the default write
+            concern&#039;s <code class="parameter">w</code> parameter. If <strong><code>FALSE</code></strong>,
+            <em>0</em> is specified. For details, see
             <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
            </p>
            <p class="para">
@@ -461,8 +480,8 @@
           <td><span class="type"><span class="type integer|string">integer|string</span></span></td>
           <td>
            <p class="para">
-            Corresponds to the write concern&#039;s <code class="parameter">w</code>
-            parameter. For details, see
+            Corresponds to the default write concern&#039;s
+            <code class="parameter">w</code> parameter. For details, see
             <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
            </p>
           </td>
@@ -473,9 +492,9 @@
           <td><span class="type"><span class="type integer|string">integer|string</span></span></td>
           <td>
            <p class="para">
-            Corresponds to the write concern&#039;s <code class="parameter">wtimeout</code>
-            parameter. Specifies a time limit, in milliseconds, for the write
-            concern. For details, see
+            Corresponds to the default write concern&#039;s
+            <code class="parameter">wtimeout</code> parameter. Specifies a time limit,
+            in milliseconds, for the write concern. For details, see
             <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
            </p>
           </td>
@@ -652,6 +671,15 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>1.4.0</td>
+       <td>
+        <p class="para">
+         Added the <em>&quot;retryWrites&quot;</em> URI option.
+        </p>
+       </td>
+      </tr>
+
       <tr>
        <td>1.3.0</td>
        <td>
