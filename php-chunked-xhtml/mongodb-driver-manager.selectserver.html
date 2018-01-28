@@ -30,13 +30,13 @@
    in order to perform version checking before executing an operation.
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
+   <span class="simpara">
     Unlike <span class="function"><a href="mongodb-driver-manager.getservers.html" class="function">MongoDB\Driver\Manager::getServers()</a></span>, this method
     will initialize database connections and perform server discovery if
     necessary. See the
     <a href="https://github.com/mongodb/specifications/blob/master/source/server-selection/server-selection.rst#single-threaded-server-selection" class="link external">&raquo;&nbsp;Server Selection Specification</a>
     for additional information.
-   </p>
+   </span>
   </p></blockquote>
  </div>
 
@@ -46,19 +46,17 @@
   <dl>
 
    
-   
     <dt>
-<code class="parameter">readPreference</code> (<span class="type"><span class="type MongoDB\Driver\ReadPreference">MongoDB\Driver\ReadPreference</span></span>)</dt>
+<code class="parameter">readPreference</code> (<a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a>)</dt>
 
     <dd>
 
      <p class="para">
-      オプションの <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a> で、この操作の対象となるサーバーを指定します。省略した場合は、<a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection URI</a> で設定したデフォルトの優先読み込みを使います。
+      The read preference to use for selecting a server.
      </p>
     </dd>
 
    
-
   </dl>
 
  </div>

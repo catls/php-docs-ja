@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Construct new Query</title>
+  <title>Create a new Query</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongodb-driver-query.construct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoDB\Driver\Query::__construct</h1>
-  <p class="verinfo">(mongodb &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">MongoDB\Driver\Query::__construct</span> &mdash; <span class="dc-title">Construct new Query</span></p>
+  <p class="verinfo">(mongodb &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">MongoDB\Driver\Query::__construct</span> &mdash; <span class="dc-title">Create a new Query</span></p>
 
  </div>
 
@@ -26,9 +26,11 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-
+   Constructs a new <a href="class.mongodb-driver-query.html" class="classname">MongoDB\Driver\Query</a>, which is an
+   immutable value object that represents a database query. The query may then
+   be executed with
+   <span class="methodname"><a href="mongodb-driver-manager.executequery.html" class="methodname">MongoDB\Driver\Manager::executeQuery()</a></span>.
   </p>
-
  </div>
 
 
@@ -355,6 +357,24 @@
          </tr>
 
          <tr>
+          <td>readConcern</td>
+          <td><a href="class.mongodb-driver-readconcern.html" class="classname">MongoDB\Driver\ReadConcern</a></td>
+          <td>
+           <p class="para">
+            A read concern to apply to the operation. By default, the read
+            concern from the
+            <a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB
+            Connection URI</a> will be used.
+           </p>
+           <p class="para">
+            This option is available in MongoDB 3.2+ and will result in an
+            exception at execution time if specified for an older server
+            version.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
           <td>returnKey</td>
           <td><span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span></td>
           <td>
@@ -392,22 +412,6 @@
           <td>
            Determines whether to close the cursor after the first batch.
            Defaults to <strong><code>FALSE</code></strong>.
-          </td>
-         </tr>
-
-         <tr>
-          <td>readConcern</td>
-          <td><a href="class.mongodb-driver-readconcern.html" class="classname">MongoDB\Driver\ReadConcern</a></td>
-          <td>
-           <p class="para">
-            Specifies the <a href="https://docs.mongodb.com/manual/reference/read-concern/" class="link external">&raquo;&nbsp;read concern</a>.
-            The default level is <em>&quot;local&quot;</em>.
-           </p>
-           <p class="para">
-            To use a read concern level of <em>&quot;majority&quot;</em>, you
-            must use the WiredTiger storage engine with MongoDB 3.2+ and enable
-            the feature in the server configuration.
-           </p>
           </td>
          </tr>
 

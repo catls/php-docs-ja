@@ -23,13 +23,24 @@
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type"><span class="type MongoDB\Driver\Cursor">MongoDB\Driver\Cursor</span></span> <span class="methodname"><strong>MongoDB\Driver\Manager::executeCommand</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$db</code></span>
    , <span class="methodparam"><span class="type"><span class="type MongoDB\Driver\Command">MongoDB\Driver\Command</span></span> <code class="parameter">$command</code></span>
-   [, <span class="methodparam"><span class="type"><span class="type MongoDB\Driver\ReadPreference">MongoDB\Driver\ReadPreference</span></span> <code class="parameter">$readPreference</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = []</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   Executes <code class="parameter">command</code> on a server If
-   <code class="parameter">readPreference</code> is provided, it will be used for server
-   selection; otherwise, the default read preference will be used.
+   Selects a server according to the <em>&quot;readPreference&quot;</em> option
+   and executes the command on that server. By default, the read preference from
+   the <a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection
+   URI</a> will be used.
+  </p>
+  <p class="para">
+   This method applies no special logic to the command. Although this method
+   accepts <em>&quot;readConcern&quot;</em> and
+   <em>&quot;writeConcern&quot;</em> options, which will be incorporated into
+   the command document, those options will not default to corresponding values
+   from the <a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB
+   Connection URI</a> nor will the MongoDB server version be taken into
+   account. Users are therefore encouraged to use specific read and/or write
+   command methods if possible.
   </p>
  </div>
 
@@ -67,19 +78,86 @@
    
 
    
-   
     <dt>
-<code class="parameter">readPreference</code> (<span class="type"><span class="type MongoDB\Driver\ReadPreference">MongoDB\Driver\ReadPreference</span></span>)</dt>
+<code class="parameter">options</code></dt>
 
     <dd>
 
      <p class="para">
-      オプションの <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a> で、この操作の対象となるサーバーを指定します。省略した場合は、<a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB Connection URI</a> で設定したデフォルトの優先読み込みを使います。
+      <table class="doctable table">
+       <caption><strong>options</strong></caption>
+       
+        <thead>
+         <tr>
+          <th>Option</th>
+          <th>Type</th>
+          <th>Description</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         
+         <tr>
+          <td>readConcern</td>
+          <td><a href="class.mongodb-driver-readconcern.html" class="classname">MongoDB\Driver\ReadConcern</a></td>
+          <td>
+           <p class="para">
+            A read concern to apply to the operation.
+           </p>
+           <p class="para">
+            This option is available in MongoDB 3.2+ and will result in an
+            exception at execution time if specified for an older server
+            version.
+           </p>
+          </td>
+         </tr>
+
+
+         
+         <tr>
+          <td>readPreference</td>
+          <td><a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a></td>
+          <td>
+           <p class="para">
+            A read preference to use for selecting a server for the operation.
+           </p>
+          </td>
+         </tr>
+
+
+         
+         <tr>
+          <td>session</td>
+          <td><a href="class.mongodb-driver-session.html" class="classname">MongoDB\Driver\Session</a></td>
+          <td>
+           <p class="para">
+            A session to associate with the operation.
+           </p>
+          </td>
+         </tr>
+
+
+         
+         <tr>
+          <td>writeConcern</td>
+          <td><a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a></td>
+          <td>
+           <p class="para">
+            A write concern to apply to the operation.
+           </p>
+          </td>
+         </tr>
+
+
+        </tbody>
+       
+      </table>
+
      </p>
     </dd>
 
    
-
   </dl>
 
  </div>
@@ -97,6 +175,37 @@
    <li class="member">引数のパースに失敗した場合に <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a> をスローします。</li><li class="member">サーバーへの接続が認証以外の理由で失敗した場合に <a href="class.mongodb-driver-exception-connectionexception.html" class="classname">MongoDB\Driver\Exception\ConnectionException</a> をスローします。</li><li class="member">認証が必要な場面で認証に失敗した場合に <a href="class.mongodb-driver-exception-authenticationexception.html" class="classname">MongoDB\Driver\Exception\AuthenticationException</a> をスローします。</li>
    <li class="member">Throws <a href="class.mongodb-driver-exception-runtimeexception.html" class="classname">MongoDB\Driver\Exception\RuntimeException</a> on other errors (e.g. invalid command, issuing a write command to a secondary).</li>
   </ul>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-mongodb-driver-manager.executecommand-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>1.4.0</td>
+       <td>
+        The third parameter is now an <code class="parameter">options</code> array.
+        For backwards compatibility, this paramater will still accept a
+        <a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a> object.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
  </div>
 
 
@@ -154,20 +263,12 @@ object(stdClass)#7 (2) {
  <div class="refsect1 notes" id="refsect1-mongodb-driver-manager.executecommand-notes">
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    This method does not take a
-    <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a> parameter. For write
-    commands (e.g.
-    <a href="https://docs.mongodb.com/manual/reference/command/findAndModify/" class="link external">&raquo;&nbsp;findAndModify</a>
-    in MongoDB 3.2+), the write concern should be included in the
-    <code class="parameter">command</code> document itself.
-   </p>
-   <p class="para">
+   <span class="simpara">
     If a secondary <code class="parameter">readPreference</code> is used, it is the
     caller&#039;s responsibility to ensure that the
     <code class="parameter">command</code> can be executed on a secondary. No validation
     is done by the driver.
-   </p>
+   </span>
   </p></blockquote>
  </div>
 
@@ -177,7 +278,9 @@ object(stdClass)#7 (2) {
   <ul class="simplelist">
    <li class="member"><a href="class.mongodb-driver-command.html" class="classname">MongoDB\Driver\Command</a></li>
    <li class="member"><a href="class.mongodb-driver-cursor.html" class="classname">MongoDB\Driver\Cursor</a></li>
-   <li class="member"><a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a></li>
+   <li class="member"><span class="function"><a href="mongodb-driver-manager.executereadcommand.html" class="function" rel="rdfs-seeAlso">MongoDB\Driver\Manager::executeReadCommand()</a> - Execute a database command that reads</span></li>
+   <li class="member"><span class="function"><a href="mongodb-driver-manager.executereadwritecommand.html" class="function" rel="rdfs-seeAlso">MongoDB\Driver\Manager::executeReadWriteCommand()</a> - Execute a database command that reads and writes</span></li>
+   <li class="member"><span class="function"><a href="mongodb-driver-manager.executewritecommand.html" class="function" rel="rdfs-seeAlso">MongoDB\Driver\Manager::executeWriteCommand()</a> - Execute a database command that writes</span></li>
    <li class="member"><span class="function"><a href="mongodb-driver-server.executecommand.html" class="function" rel="rdfs-seeAlso">MongoDB\Driver\Server::executeCommand()</a> - Execute a database command on this server</span></li>
   </ul>
  </div>

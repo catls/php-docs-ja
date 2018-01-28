@@ -1253,8 +1253,10 @@
 <li><a href="domnode.normalize.html" class="index">DOMNode::normalize</a> - ノードを正規化する</li>
 <li><a href="domnode.removechild.html" class="index">DOMNode::removeChild</a> - 子要素群から子要素を削除する</li>
 <li><a href="domnode.replacechild.html" class="index">DOMNode::replaceChild</a> - 子を置き換える</li>
+<li><a href="domnodelist.count.html" class="index">DOMNodeList::count</a> - Get number of nodes in the list</li>
 <li><a href="domnodelist.item.html" class="index">DOMNodelist::item</a> - インデックスで指定したノードを取得する</li>
 <li><a href="domprocessinginstruction.construct.html" class="index">DOMProcessingInstruction::__construct</a> - 新しい DOMProcessingInstruction オブジェクトを作成する</li>
+<li><a href="domtext.iselementcontentwhitespace.html" class="index">DOMText::isElementContentWhitespace</a> - Returns whether this text node contains whitespace in element content</li>
 <li><a href="domtext.iswhitespaceinelementcontent.html" class="index">DOMText::isWhitespaceInElementContent</a> - このテキストノードが空白を含むかどうかを示す</li>
 <li><a href="domtext.splittext.html" class="index">DOMText::splitText</a> - 指定したオフセットでノードを 2 つに分割する</li>
 <li><a href="domtext.construct.html" class="index">DOMText::__construct</a> - 新しい DOMText オブジェクトを作成する</li>
@@ -5005,6 +5007,9 @@
 <li><a href="mongodb-driver-manager.executebulkwrite.html" class="index">MongoDB\Driver\Manager::executeBulkWrite</a> - Execute one or more write operations</li>
 <li><a href="mongodb-driver-manager.executecommand.html" class="index">MongoDB\Driver\Manager::executeCommand</a> - Execute a database command</li>
 <li><a href="mongodb-driver-manager.executequery.html" class="index">MongoDB\Driver\Manager::executeQuery</a> - Execute a database query</li>
+<li><a href="mongodb-driver-manager.executereadcommand.html" class="index">MongoDB\Driver\Manager::executeReadCommand</a> - Execute a database command that reads</li>
+<li><a href="mongodb-driver-manager.executereadwritecommand.html" class="index">MongoDB\Driver\Manager::executeReadWriteCommand</a> - Execute a database command that reads and writes</li>
+<li><a href="mongodb-driver-manager.executewritecommand.html" class="index">MongoDB\Driver\Manager::executeWriteCommand</a> - Execute a database command that writes</li>
 <li><a href="mongodb-driver-manager.getreadconcern.html" class="index">MongoDB\Driver\Manager::getReadConcern</a> - Return the ReadConcern for the Manager</li>
 <li><a href="mongodb-driver-manager.getreadpreference.html" class="index">MongoDB\Driver\Manager::getReadPreference</a> - Return the ReadPreference for the Manager</li>
 <li><a href="mongodb-driver-manager.getservers.html" class="index">MongoDB\Driver\Manager::getServers</a> - Return the servers to which this manager is connected</li>
@@ -5035,19 +5040,22 @@
 <li><a href="mongodb-driver-monitoring-commandsucceededevent.getrequestid.html" class="index">MongoDB\Driver\Monitoring\CommandSucceededEvent::getRequestId</a> - Returns the command's request ID</li>
 <li><a href="mongodb-driver-monitoring-commandsucceededevent.getserver.html" class="index">MongoDB\Driver\Monitoring\CommandSucceededEvent::getServer</a> - Returns the Server on which the command was executed</li>
 <li><a href="function.mongodb.driver.monitoring.removesubscriber.html" class="index">MongoDB\Driver\Monitoring\removeSubscriber</a> - Unregisters an existing monitoring event subscriber</li>
-<li><a href="mongodb-driver-query.construct.html" class="index">MongoDB\Driver\Query::__construct</a> - Construct new Query</li>
+<li><a href="mongodb-driver-query.construct.html" class="index">MongoDB\Driver\Query::__construct</a> - Create a new Query</li>
 <li><a href="mongodb-driver-readconcern.bsonserialize.html" class="index">MongoDB\Driver\ReadConcern::bsonSerialize</a> - Returns an object for BSON serialization</li>
 <li><a href="mongodb-driver-readconcern.getlevel.html" class="index">MongoDB\Driver\ReadConcern::getLevel</a> - Returns the ReadConcern's &quot;level&quot; option</li>
 <li><a href="mongodb-driver-readconcern.isdefault.html" class="index">MongoDB\Driver\ReadConcern::isDefault</a> - Checks if this is the default read concern</li>
-<li><a href="mongodb-driver-readconcern.construct.html" class="index">MongoDB\Driver\ReadConcern::__construct</a> - Construct immutable ReadConcern</li>
+<li><a href="mongodb-driver-readconcern.construct.html" class="index">MongoDB\Driver\ReadConcern::__construct</a> - Create a new ReadConcern</li>
 <li><a href="mongodb-driver-readpreference.bsonserialize.html" class="index">MongoDB\Driver\ReadPreference::bsonSerialize</a> - Returns an object for BSON serialization</li>
 <li><a href="mongodb-driver-readpreference.getmaxstalenessseconds.html" class="index">MongoDB\Driver\ReadPreference::getMaxStalenessSeconds</a> - Returns the ReadPreference's &quot;maxStalenessSeconds&quot; option</li>
 <li><a href="mongodb-driver-readpreference.getmode.html" class="index">MongoDB\Driver\ReadPreference::getMode</a> - Returns the ReadPreference's &quot;mode&quot; option</li>
 <li><a href="mongodb-driver-readpreference.gettagsets.html" class="index">MongoDB\Driver\ReadPreference::getTagSets</a> - Returns the ReadPreference's &quot;tagSets&quot; option</li>
-<li><a href="mongodb-driver-readpreference.construct.html" class="index">MongoDB\Driver\ReadPreference::__construct</a> - Construct immutable ReadPreference</li>
+<li><a href="mongodb-driver-readpreference.construct.html" class="index">MongoDB\Driver\ReadPreference::__construct</a> - Create a new ReadPreference</li>
 <li><a href="mongodb-driver-server.executebulkwrite.html" class="index">MongoDB\Driver\Server::executeBulkWrite</a> - Execute one or more write operations on this server</li>
 <li><a href="mongodb-driver-server.executecommand.html" class="index">MongoDB\Driver\Server::executeCommand</a> - Execute a database command on this server</li>
 <li><a href="mongodb-driver-server.executequery.html" class="index">MongoDB\Driver\Server::executeQuery</a> - Execute a database query on this server</li>
+<li><a href="mongodb-driver-server.executereadcommand.html" class="index">MongoDB\Driver\Server::executeReadCommand</a> - Execute a database command that reads on this server</li>
+<li><a href="mongodb-driver-server.executereadwritecommand.html" class="index">MongoDB\Driver\Server::executeReadWriteCommand</a> - Execute a database command that reads and writes on this server</li>
+<li><a href="mongodb-driver-server.executewritecommand.html" class="index">MongoDB\Driver\Server::executeWriteCommand</a> - Execute a database command that writes on this server</li>
 <li><a href="mongodb-driver-server.gethost.html" class="index">MongoDB\Driver\Server::getHost</a> - Returns the hostname of this server</li>
 <li><a href="mongodb-driver-server.getinfo.html" class="index">MongoDB\Driver\Server::getInfo</a> - Returns an array of information about this server</li>
 <li><a href="mongodb-driver-server.getlatency.html" class="index">MongoDB\Driver\Server::getLatency</a> - Returns the latency of this server</li>
@@ -5065,13 +5073,13 @@
 <li><a href="mongodb-driver-session.getclustertime.html" class="index">MongoDB\Driver\Session::getClusterTime</a> - Returns the cluster time for this session</li>
 <li><a href="mongodb-driver-session.getlogicalsessionid.html" class="index">MongoDB\Driver\Session::getLogicalSessionId</a> - Returns the logical session ID for this session</li>
 <li><a href="mongodb-driver-session.getoperationtime.html" class="index">MongoDB\Driver\Session::getOperationTime</a> - Returns the operation time for this session</li>
-<li><a href="mongodb-driver-session.construct.html" class="index">MongoDB\Driver\Session::__construct</a> - Create a new session (not used)</li>
+<li><a href="mongodb-driver-session.construct.html" class="index">MongoDB\Driver\Session::__construct</a> - Create a new Session (not used)</li>
 <li><a href="mongodb-driver-writeconcern.bsonserialize.html" class="index">MongoDB\Driver\WriteConcern::bsonSerialize</a> - Returns an object for BSON serialization</li>
 <li><a href="mongodb-driver-writeconcern.getjournal.html" class="index">MongoDB\Driver\WriteConcern::getJournal</a> - Returns the WriteConcern's &quot;journal&quot; option</li>
 <li><a href="mongodb-driver-writeconcern.getw.html" class="index">MongoDB\Driver\WriteConcern::getW</a> - Returns the WriteConcern's &quot;w&quot; option</li>
 <li><a href="mongodb-driver-writeconcern.getwtimeout.html" class="index">MongoDB\Driver\WriteConcern::getWtimeout</a> - Returns the WriteConcern's &quot;wtimeout&quot; option</li>
 <li><a href="mongodb-driver-writeconcern.isdefault.html" class="index">MongoDB\Driver\WriteConcern::isDefault</a> - Checks if this is the default write concern</li>
-<li><a href="mongodb-driver-writeconcern.construct.html" class="index">MongoDB\Driver\WriteConcern::__construct</a> - Construct immutable WriteConcern</li>
+<li><a href="mongodb-driver-writeconcern.construct.html" class="index">MongoDB\Driver\WriteConcern::__construct</a> - Create a new WriteConcern</li>
 <li><a href="mongodb-driver-writeconcernerror.getcode.html" class="index">MongoDB\Driver\WriteConcernError::getCode</a> - Returns the WriteConcernError's error code</li>
 <li><a href="mongodb-driver-writeconcernerror.getinfo.html" class="index">MongoDB\Driver\WriteConcernError::getInfo</a> - Returns additional metadata for the WriteConcernError</li>
 <li><a href="mongodb-driver-writeconcernerror.getmessage.html" class="index">MongoDB\Driver\WriteConcernError::getMessage</a> - Returns the WriteConcernError's error message</li>
@@ -5278,7 +5286,6 @@
 <li><a href="mutex.trylock.html" class="index">Mutex::trylock</a> - Attempt to Acquire Mutex</li>
 <li><a href="mutex.unlock.html" class="index">Mutex::unlock</a> - Release Mutex</li>
 <li><a href="mysqli.affected-rows.html" class="index">mysqli::$affected_rows</a> - 直前の MySQL の操作で変更された行の数を得る</li>
-<li><a href="mysqli.client-info.html" class="index">mysqli::$client_info</a> - MySQL クライアント情報を取得する</li>
 <li><a href="mysqli.connect-errno.html" class="index">mysqli::$connect_errno</a> - 直近の接続コールに関するエラーコードを返す</li>
 <li><a href="mysqli.connect-error.html" class="index">mysqli::$connect_error</a> - 直近の接続エラーの内容を文字列で返す</li>
 <li><a href="mysqli.errno.html" class="index">mysqli::$errno</a> - 直近の関数コールによるエラーコードを返す</li>
@@ -5353,7 +5360,7 @@
 <li><a href="function.mysqli-execute.html" class="index">mysqli_execute</a> - mysqli_stmt_execute のエイリアス</li>
 <li><a href="function.mysqli-fetch.html" class="index">mysqli_fetch</a> - mysqli_stmt_fetch のエイリアス</li>
 <li><a href="function.mysqli-get-cache-stats.html" class="index">mysqli_get_cache_stats</a> - クライアントの Zval キャッシュの統計情報を返す</li>
-<li><a href="mysqli.get-client-stats.html" class="index">mysqli_get_client_stats</a> - クライアントのプロセス単位の統計情報を返す</li>
+<li><a href="function.mysqli-get-client-stats.html" class="index">mysqli_get_client_stats</a> - Returns client per-process statistics</li>
 <li><a href="mysqli.get-client-version.html" class="index">mysqli_get_client_version</a> - MySQL クライアントのバージョンを整数値で返す</li>
 <li><a href="function.mysqli-get-links-stats.html" class="index">mysqli_get_links_stats</a> - Return information about open and cached links</li>
 <li><a href="function.mysqli-get-metadata.html" class="index">mysqli_get_metadata</a> - mysqli_stmt_result_metadata のエイリアス</li>
@@ -6193,6 +6200,7 @@
 <li><a href="function.openssl-pbkdf2.html" class="index">openssl_pbkdf2</a> - PKCS5 v2 の PBKDF2 文字列を生成する。デフォルトは SHA-1</li>
 <li><a href="function.openssl-pkcs7-decrypt.html" class="index">openssl_pkcs7_decrypt</a> - S/MIME 暗号化されたメッセージを復号する</li>
 <li><a href="function.openssl-pkcs7-encrypt.html" class="index">openssl_pkcs7_encrypt</a> - S/MIME メッセージを暗号化する</li>
+<li><a href="function.openssl-pkcs7-read.html" class="index">openssl_pkcs7_read</a> - Export the PKCS7 file to an array of PEM certificates</li>
 <li><a href="function.openssl-pkcs7-sign.html" class="index">openssl_pkcs7_sign</a> - S/MIME メッセージにサインする</li>
 <li><a href="function.openssl-pkcs7-verify.html" class="index">openssl_pkcs7_verify</a> - S/MIME でサインされたメッセージの署名を検証する</li>
 <li><a href="function.openssl-pkcs12-export.html" class="index">openssl_pkcs12_export</a> - PKCS#12 互換の証明書保存ファイルを変数にエクスポートする</li>
@@ -6689,6 +6697,7 @@
 <li><a href="phar.delete.html" class="index">Phar::delete</a> - phar アーカイブ内のファイルを削除する</li>
 <li><a href="phar.delmetadata.html" class="index">Phar::delMetadata</a> - phar のグローバルメタデータを削除する</li>
 <li><a href="phar.extractto.html" class="index">Phar::extractTo</a> - phar アーカイブの内容をディレクトリに展開する</li>
+<li><a href="phar.getalias.html" class="index">Phar::getAlias</a> - Get the alias for Phar</li>
 <li><a href="phar.getmetadata.html" class="index">Phar::getMetadata</a> - phar アーカイブのメタデータを返す</li>
 <li><a href="phar.getmodified.html" class="index">Phar::getModified</a> - phar が変更されているかどうかを返す</li>
 <li><a href="phar.getsignature.html" class="index">Phar::getSignature</a> - Phar アーカイブの MD5/SHA1/SHA256/SHA512/OpenSSL シグネチャを返す</li>
@@ -6752,6 +6761,7 @@
 <li><a href="pharfileinfo.decompress.html" class="index">PharFileInfo::decompress</a> - phar 内の現在の Phar エントリの圧縮を解除する</li>
 <li><a href="pharfileinfo.delmetadata.html" class="index">PharFileInfo::delMetadata</a> - エントリのメタデータを削除する</li>
 <li><a href="pharfileinfo.getcompressedsize.html" class="index">PharFileInfo::getCompressedSize</a> - Phar アーカイブ内での実際のファイルの大きさ (圧縮された状態) を返す</li>
+<li><a href="pharfileinfo.getcontent.html" class="index">PharFileInfo::getContent</a> - Get the complete file contents of the entry</li>
 <li><a href="pharfileinfo.getcrc32.html" class="index">PharFileInfo::getCRC32</a> - CRC32 コードを返すか、CRC がチェックできない場合に例外をスローする</li>
 <li><a href="pharfileinfo.getmetadata.html" class="index">PharFileInfo::getMetadata</a> - ファイルとともに保存されている、ファイル固有のメタデータを返す</li>
 <li><a href="pharfileinfo.getpharflags.html" class="index">PharFileInfo::getPharFlags</a> - Phar ファイルエントリのフラグを返す</li>
@@ -7182,6 +7192,7 @@
 <li><a href="recursivetreeiterator.next.html" class="index">RecursiveTreeIterator::next</a> - 次の要素に移動する</li>
 <li><a href="recursivetreeiterator.nextelement.html" class="index">RecursiveTreeIterator::nextElement</a> - 次の要素</li>
 <li><a href="recursivetreeiterator.rewind.html" class="index">RecursiveTreeIterator::rewind</a> - イテレータを巻き戻す</li>
+<li><a href="recursivetreeiterator.setpostfix.html" class="index">RecursiveTreeIterator::setPostfix</a> - Set postfix</li>
 <li><a href="recursivetreeiterator.setprefixpart.html" class="index">RecursiveTreeIterator::setPrefixPart</a> - 接頭辞の部分を設定する</li>
 <li><a href="recursivetreeiterator.valid.html" class="index">RecursiveTreeIterator::valid</a> - 有効性を調べる</li>
 <li><a href="recursivetreeiterator.construct.html" class="index">RecursiveTreeIterator::__construct</a> - RecursiveTreeIterator を作成する</li>
@@ -7229,6 +7240,7 @@
 <li><a href="reflectionclass.isinstantiable.html" class="index">ReflectionClass::isInstantiable</a> - クラスのインスタンス化が可能であるかどうかを調べる</li>
 <li><a href="reflectionclass.isinterface.html" class="index">ReflectionClass::isInterface</a> - このクラスがインターフェイスであるかどうかを調べる</li>
 <li><a href="reflectionclass.isinternal.html" class="index">ReflectionClass::isInternal</a> - 拡張モジュールあるいはコアで定義された内部クラスであるかどうかを調べる</li>
+<li><a href="reflectionclass.isiterable.html" class="index">ReflectionClass::isIterable</a> - Check whether this class is iterable</li>
 <li><a href="reflectionclass.isiterateable.html" class="index">ReflectionClass::isIterateable</a> - 反復処理が可能であるかどうかを調べる</li>
 <li><a href="reflectionclass.issubclassof.html" class="index">ReflectionClass::isSubclassOf</a> - サブクラスであるかどうかを調べる</li>
 <li><a href="reflectionclass.istrait.html" class="index">ReflectionClass::isTrait</a> - トレイトであるかどうかを返す</li>
@@ -7243,6 +7255,7 @@
 <li><a href="reflectionclassconstant.getdeclaringclass.html" class="index">ReflectionClassConstant::getDeclaringClass</a> - Gets declaring class</li>
 <li><a href="reflectionclassconstant.getdoccomment.html" class="index">ReflectionClassConstant::getDocComment</a> - Gets doc comments</li>
 <li><a href="reflectionclassconstant.getmodifiers.html" class="index">ReflectionClassConstant::getModifiers</a> - Gets the class constant modifiers</li>
+<li><a href="reflectionclassconstant.getname.html" class="index">ReflectionClassConstant::getName</a> - Get name of the constant</li>
 <li><a href="reflectionclassconstant.getvalue.html" class="index">ReflectionClassConstant::getValue</a> - Gets value</li>
 <li><a href="reflectionclassconstant.isprivate.html" class="index">ReflectionClassConstant::isPrivate</a> - Checks if class constant is private</li>
 <li><a href="reflectionclassconstant.isprotected.html" class="index">ReflectionClassConstant::isProtected</a> - Checks if class constant is protected</li>
@@ -8363,6 +8376,7 @@
 <li><a href="splheap.current.html" class="index">SplHeap::current</a> - イテレータが指す現在のノードを返す</li>
 <li><a href="splheap.extract.html" class="index">SplHeap::extract</a> - ヒープの先頭からノードを取り出す</li>
 <li><a href="splheap.insert.html" class="index">SplHeap::insert</a> - ヒープに要素を挿入する</li>
+<li><a href="splheap.iscorrupted.html" class="index">SplHeap::isCorrupted</a> - Tells if the heap is in a corrupted state</li>
 <li><a href="splheap.isempty.html" class="index">SplHeap::isEmpty</a> - ヒープが空かどうかを調べる</li>
 <li><a href="splheap.key.html" class="index">SplHeap::key</a> - 現在のノードのインデックスを返す</li>
 <li><a href="splheap.next.html" class="index">SplHeap::next</a> - 次のノードに移動する</li>
@@ -8401,7 +8415,9 @@
 <li><a href="splpriorityqueue.count.html" class="index">SplPriorityQueue::count</a> - キュー内の要素数を数える</li>
 <li><a href="splpriorityqueue.current.html" class="index">SplPriorityQueue::current</a> - イテレータが指す現在のノードを返す</li>
 <li><a href="splpriorityqueue.extract.html" class="index">SplPriorityQueue::extract</a> - ヒープの先頭からノードを取り出す</li>
+<li><a href="splpriorityqueue.getextractflags.html" class="index">SplPriorityQueue::getExtractFlags</a> - Get the flags of extraction</li>
 <li><a href="splpriorityqueue.insert.html" class="index">SplPriorityQueue::insert</a> - キューに要素を挿入する</li>
+<li><a href="splpriorityqueue.iscorrupted.html" class="index">SplPriorityQueue::isCorrupted</a> - Tells if the priority queue is in a corrupted state</li>
 <li><a href="splpriorityqueue.isempty.html" class="index">SplPriorityQueue::isEmpty</a> - キューが空かどうかを調べる</li>
 <li><a href="splpriorityqueue.key.html" class="index">SplPriorityQueue::key</a> - 現在のノードのインデックスを返す</li>
 <li><a href="splpriorityqueue.next.html" class="index">SplPriorityQueue::next</a> - 次のノードに移動する</li>
@@ -8469,7 +8485,7 @@
 <li><a href="sqlite3stmt.close.html" class="index">SQLite3Stmt::close</a> - プリペアドステートメントを閉じる</li>
 <li><a href="sqlite3stmt.execute.html" class="index">SQLite3Stmt::execute</a> - プリペアドステートメントを実行し、結果セットオブジェクトを返す</li>
 <li><a href="sqlite3stmt.paramcount.html" class="index">SQLite3Stmt::paramCount</a> - プリペアドステートメント内のパラメータの数を返す</li>
-<li><a href="sqlite3stmt.readonly.html" class="index">SQLite3Stmt::readOnly()</a> - Returns whether a statement is definitely read only</li>
+<li><a href="sqlite3stmt.readonly.html" class="index">SQLite3Stmt::readOnly</a> - Returns whether a statement is definitely read only</li>
 <li><a href="sqlite3stmt.reset.html" class="index">SQLite3Stmt::reset</a> - プリペアドステートメントをリセットする</li>
 <li><a href="function.sqlite-array-query.html" class="index">sqlite_array_query</a> - 指定したデータベースに対してクエリを実行し、配列を返す</li>
 <li><a href="function.sqlite-busy-timeout.html" class="index">sqlite_busy_timeout</a> - ビジータイムアウト時間を設定またはビジーハンドラを無効にする</li>
@@ -8726,6 +8742,7 @@
 <li><a href="function.stream-get-meta-data.html" class="index">stream_get_meta_data</a> - ヘッダーあるいはメタデータをストリームまたはファイルポインタから取得する</li>
 <li><a href="function.stream-get-transports.html" class="index">stream_get_transports</a> - 登録されたソケットのトランスポートの一覧を取得する</li>
 <li><a href="function.stream-get-wrappers.html" class="index">stream_get_wrappers</a> - 登録されているストリームのラッパーのリストを取得する</li>
+<li><a href="function.stream-isatty.html" class="index">stream_isatty</a> - Check if a stream is a TTY</li>
 <li><a href="function.stream-is-local.html" class="index">stream_is_local</a> - ローカルストリームかどうかを調べる</li>
 <li><a href="function.stream-notification-callback.html" class="index">stream_notification_callback</a> - notification コンテキストパラメータ用のコールバック関数</li>
 <li><a href="function.stream-register-wrapper.html" class="index">stream_register_wrapper</a> - stream_wrapper_register のエイリアス</li>
