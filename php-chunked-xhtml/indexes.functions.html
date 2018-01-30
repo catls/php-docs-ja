@@ -2245,6 +2245,7 @@
 <li><a href="function.ftok.html" class="index">ftok</a> - パス名とプロジェクト ID を、System V IPC キーに変換する</li>
 <li><a href="wrappers.ftp.html" class="index">ftp://</a> - FTP(s) URL へのアクセス</li>
 <li><a href="function.ftp-alloc.html" class="index">ftp_alloc</a> - アップロードされるファイルのためのスペースを確保する</li>
+<li><a href="function.ftp-append.html" class="index">ftp_append</a> - Append content of a file a another file on the FTP server</li>
 <li><a href="function.ftp-cdup.html" class="index">ftp_cdup</a> - 親ディレクトリに移動する</li>
 <li><a href="function.ftp-chdir.html" class="index">ftp_chdir</a> - FTP サーバー上でディレクトリを移動する</li>
 <li><a href="function.ftp-chmod.html" class="index">ftp_chmod</a> - FTP 経由でファイルのパーミッションを設定する</li>
@@ -3925,6 +3926,8 @@
 <li><a href="infiniteiterator.next.html" class="index">InfiniteIterator::next</a> - 内部イテレータを次に移動するか、巻き戻す</li>
 <li><a href="infiniteiterator.construct.html" class="index">InfiniteIterator::__construct</a> - InfiniteIterator を作成する</li>
 <li><a href="function.inflate-add.html" class="index">inflate_add</a> - Incrementally inflate encoded data</li>
+<li><a href="function.inflate-get-read-len.html" class="index">inflate_get_read_len</a> - Get number of bytes read so far</li>
+<li><a href="function.inflate-get-status.html" class="index">inflate_get_status</a> - Get decompression status</li>
 <li><a href="function.inflate-init.html" class="index">inflate_init</a> - Initialize an incremental inflate context</li>
 <li><a href="function.ingres-autocommit.html" class="index">ingres_autocommit</a> - autocommit をオンまたはオフに切替える</li>
 <li><a href="function.ingres-autocommit-state.html" class="index">ingres_autocommit_state</a> - 接続が autocommit を使っているかどうかを調べる</li>
@@ -4135,6 +4138,7 @@
 <li><a href="intltimezone.createdefault.html" class="index">IntlTimeZone::createDefault</a> - このホストのデフォルトタイムゾーンの新しいコピーを作る</li>
 <li><a href="intltimezone.createenumeration.html" class="index">IntlTimeZone::createEnumeration</a> - 指定した国あるいはオフセットに関連するタイムゾーン ID の一覧を取得する</li>
 <li><a href="intltimezone.createtimezone.html" class="index">IntlTimeZone::createTimeZone</a> - 指定した ID のタイムゾーンオブジェクトを作る</li>
+<li><a href="intltimezone.createtimezoneidenumeration.html" class="index">IntlTimeZone::createTimeZoneIDEnumeration</a> - Get an enumeration over system time zone IDs with the given filter conditions</li>
 <li><a href="intltimezone.fromdatetimezone.html" class="index">IntlTimeZone::fromDateTimeZone</a> - DateTimeZone からタイムゾーンオブジェクトを作る</li>
 <li><a href="intltimezone.getcanonicalid.html" class="index">IntlTimeZone::getCanonicalID</a> - 指定したタイムゾーン ID の、正式なシステムタイムゾーン ID あるいは正規化したカスタムタイムゾーン ID を取得する</li>
 <li><a href="intltimezone.getdisplayname.html" class="index">IntlTimeZone::getDisplayName</a> - このタイムゾーンの、ユーザー向けに表示する名前を取得する</li>
@@ -4144,9 +4148,13 @@
 <li><a href="intltimezone.geterrormessage.html" class="index">IntlTimeZone::getErrorMessage</a> - 直近のエラーメッセージを取得する</li>
 <li><a href="intltimezone.getgmt.html" class="index">IntlTimeZone::getGMT</a> - GMT (UTC) タイムゾーンを作る</li>
 <li><a href="intltimezone.getid.html" class="index">IntlTimeZone::getID</a> - タイムゾーン ID を取得する</li>
+<li><a href="intltimezone.getidforwindowsid.html" class="index">IntlTimeZone::getIDForWindowsID</a> - Translate a Windows timezone into a system timezone</li>
 <li><a href="intltimezone.getoffset.html" class="index">IntlTimeZone::getOffset</a> - 指定した時刻の、GMT へのオフセットを取得する</li>
 <li><a href="intltimezone.getrawoffset.html" class="index">IntlTimeZone::getRawOffset</a> - (夏時間を考慮せずに) GMT へのオフセットを取得する</li>
+<li><a href="intltimezone.getregion.html" class="index">IntlTimeZone::getRegion</a> - Get the region code associated with the given system time zone ID</li>
 <li><a href="intltimezone.gettzdataversion.html" class="index">IntlTimeZone::getTZDataVersion</a> - ICU が使っているタイムゾーンデータのバージョンを取得する</li>
+<li><a href="intltimezone.getunknown.html" class="index">IntlTimeZone::getUnknown</a> - Get the &quot;unknown&quot; time zone</li>
+<li><a href="intltimezone.getwindowsid.html" class="index">IntlTimeZone::getWindowsID</a> - Translate a system timezone into a Windows timezone</li>
 <li><a href="intltimezone.hassamerules.html" class="index">IntlTimeZone::hasSameRules</a> - このタイムゾーンが別のタイムゾーンと同じルールおよびオフセットを使っているかどうかを調べる</li>
 <li><a href="intltimezone.todatetimezone.html" class="index">IntlTimeZone::toDateTimeZone</a> - DateTimeZone オブジェクトに変換する</li>
 <li><a href="intltimezone.usedaylighttime.html" class="index">IntlTimeZone::useDaylightTime</a> - このタイムゾーンが夏時間を採用しているかどうかを調べる</li>
@@ -4549,6 +4557,7 @@
 <li><a href="function.maxdb-use-result.html" class="index">maxdb_use_result</a> - 結果セットの取得を開始する</li>
 <li><a href="function.maxdb-warning-count.html" class="index">maxdb_warning_count</a> - 指定したリンクの直近のクエリで発生した警告の数を返す</li>
 <li><a href="function.mb-check-encoding.html" class="index">mb_check_encoding</a> - 文字列が、指定したエンコーディングで有効なものかどうかを調べる</li>
+<li><a href="function.mb-chr.html" class="index">mb_chr</a> - Get a specific character</li>
 <li><a href="function.mb-convert-case.html" class="index">mb_convert_case</a> - 文字列に対してケースフォルディングを行う</li>
 <li><a href="function.mb-convert-encoding.html" class="index">mb_convert_encoding</a> - 文字エンコーディングを変換する</li>
 <li><a href="function.mb-convert-kana.html" class="index">mb_convert_kana</a> - カナを(&quot;全角かな&quot;、&quot;半角かな&quot;等に)変換する</li>
@@ -4579,11 +4588,13 @@
 <li><a href="function.mb-internal-encoding.html" class="index">mb_internal_encoding</a> - 内部文字エンコーディングを設定あるいは取得する</li>
 <li><a href="function.mb-language.html" class="index">mb_language</a> - 現在の言語を設定あるいは取得する</li>
 <li><a href="function.mb-list-encodings.html" class="index">mb_list_encodings</a> - サポートするすべてのエンコーディングの配列を返す</li>
+<li><a href="function.mb-ord.html" class="index">mb_ord</a> - Get code point of character</li>
 <li><a href="function.mb-output-handler.html" class="index">mb_output_handler</a> - 出力バッファ内で文字エンコーディングを変換するコールバック関数</li>
 <li><a href="function.mb-parse-str.html" class="index">mb_parse_str</a> - GET/POST/COOKIE データをパースし、グローバル変数を設定する</li>
 <li><a href="function.mb-preferred-mime-name.html" class="index">mb_preferred_mime_name</a> - MIME 文字設定を文字列で得る</li>
 <li><a href="function.mb-regex-encoding.html" class="index">mb_regex_encoding</a> - 現在のマルチバイト正規表現用のエンコーディングを取得または設定する</li>
 <li><a href="function.mb-regex-set-options.html" class="index">mb_regex_set_options</a> - マルチバイト正規表現関数のデフォルトオプションを取得または設定する</li>
+<li><a href="function.mb-scrub.html" class="index">mb_scrub</a> - Description</li>
 <li><a href="function.mb-send-mail.html" class="index">mb_send_mail</a> - エンコード変換を行ってメールを送信する</li>
 <li><a href="function.mb-split.html" class="index">mb_split</a> - マルチバイト文字列を正規表現により分割する</li>
 <li><a href="function.mb-strcut.html" class="index">mb_strcut</a> - 文字列の一部を得る</li>
@@ -6700,6 +6711,7 @@
 <li><a href="phar.getalias.html" class="index">Phar::getAlias</a> - Get the alias for Phar</li>
 <li><a href="phar.getmetadata.html" class="index">Phar::getMetadata</a> - phar アーカイブのメタデータを返す</li>
 <li><a href="phar.getmodified.html" class="index">Phar::getModified</a> - phar が変更されているかどうかを返す</li>
+<li><a href="phar.getpath.html" class="index">Phar::getPath</a> - Get the real path to the Phar archive on disk</li>
 <li><a href="phar.getsignature.html" class="index">Phar::getSignature</a> - Phar アーカイブの MD5/SHA1/SHA256/SHA512/OpenSSL シグネチャを返す</li>
 <li><a href="phar.getstub.html" class="index">Phar::getStub</a> - Phar アーカイブの PHP ローダーあるいは起動スタブを返す</li>
 <li><a href="phar.getsupportedcompression.html" class="index">Phar::getSupportedCompression</a> - サポートする圧縮アルゴリズムの配列を返す</li>
@@ -7729,6 +7741,7 @@
 <li><a href="soapclient.call.html" class="index">SoapClient::__call</a> - SOAP 関数をコールする (非推奨)</li>
 <li><a href="soapclient.construct.html" class="index">SoapClient::__construct</a> - SoapClient のコンストラクタ</li>
 <li><a href="soapclient.dorequest.html" class="index">SoapClient::__doRequest</a> - SOAP リクエストを実行する</li>
+<li><a href="soapclient.getcookies.html" class="index">SoapClient::__getCookies</a> - Get list of cookies</li>
 <li><a href="soapclient.getfunctions.html" class="index">SoapClient::__getFunctions</a> - SOAP 関数の一覧を返す</li>
 <li><a href="soapclient.getlastrequest.html" class="index">SoapClient::__getLastRequest</a> - 直近の SOAP リクエストを返す</li>
 <li><a href="soapclient.getlastrequestheaders.html" class="index">SoapClient::__getLastRequestHeaders</a> - 直近の SOAP リクエストヘッダを返す</li>
@@ -7759,6 +7772,10 @@
 <li><a href="soapvar.soapvar.html" class="index">SoapVar::SoapVar</a> - SoapVar コンストラクタ</li>
 <li><a href="soapvar.construct.html" class="index">SoapVar::__construct</a> - SoapVar コンストラクタ</li>
 <li><a href="function.socket-accept.html" class="index">socket_accept</a> - ソケットへの接続を許可する</li>
+<li><a href="function.socket-addrinfo-bind.html" class="index">socket_addrinfo_bind</a> - Create and bind to a socket from a given addrinfo</li>
+<li><a href="function.socket-addrinfo-connect.html" class="index">socket_addrinfo_connect</a> - Create and connect to a socket from a given addrinfo</li>
+<li><a href="function.socket-addrinfo-explain.html" class="index">socket_addrinfo_explain</a> - Get information about addrinfo</li>
+<li><a href="function.socket-addrinfo-lookup.html" class="index">socket_addrinfo_lookup</a> - Get array with contents of getaddrinfo about the given hostname</li>
 <li><a href="function.socket-bind.html" class="index">socket_bind</a> - ソケットに名前をバインドする</li>
 <li><a href="function.socket-clear-error.html" class="index">socket_clear_error</a> - ソケットのエラーまたは直近のエラーコードをクリアする</li>
 <li><a href="function.socket-close.html" class="index">socket_close</a> - ソケットリソースを閉じる</li>
@@ -7767,6 +7784,7 @@
 <li><a href="function.socket-create.html" class="index">socket_create</a> - ソケット（通信時の終端）を作成する</li>
 <li><a href="function.socket-create-listen.html" class="index">socket_create_listen</a> - 接続を受けつけるためにポートにソケットをオープンする</li>
 <li><a href="function.socket-create-pair.html" class="index">socket_create_pair</a> - 区別できないソケットの組を作成し、配列に保存する</li>
+<li><a href="function.socket-export-stream.html" class="index">socket_export_stream</a> - Export a socket extension resource into a stream that encapsulates a socket</li>
 <li><a href="function.socket-getopt.html" class="index">socket_getopt</a> - のエイリアス socket_get_option</li>
 <li><a href="function.socket-getpeername.html" class="index">socket_getpeername</a> - 指定したソケットのリモート側に問い合わせ、その型に応じてホスト/ポート、あるいは Unix ファイルシステムのパスを返す</li>
 <li><a href="function.socket-getsockname.html" class="index">socket_getsockname</a> - 指定したソケットのローカル側に問い合わせ、その型に応じてホスト/ポート、あるいは Unix ファイルシステムのパスを返す</li>
@@ -7793,6 +7811,8 @@
 <li><a href="function.socket-strerror.html" class="index">socket_strerror</a> - ソケットエラーの内容を文字列として返す</li>
 <li><a href="function.socket-write.html" class="index">socket_write</a> - ソケットに書き込む</li>
 <li><a href="function.sodium-add.html" class="index">sodium_add</a> - Add large numbers</li>
+<li><a href="function.sodium-base642bin.html" class="index">sodium_base642bin</a> - Description</li>
+<li><a href="function.sodium-bin2base64.html" class="index">sodium_bin2base64</a> - Description</li>
 <li><a href="function.sodium-bin2hex.html" class="index">sodium_bin2hex</a> - Encode to hexadecimal</li>
 <li><a href="function.sodium-compare.html" class="index">sodium_compare</a> - Compare large numbers</li>
 <li><a href="function.sodium-crypto-aead-aes256gcm-decrypt.html" class="index">sodium_crypto_aead_aes256gcm_decrypt</a> - Decrypt in combined mode with precalculation</li>
@@ -7805,6 +7825,9 @@
 <li><a href="function.sodium-crypto-aead-chacha20poly1305-ietf-encrypt.html" class="index">sodium_crypto_aead_chacha20poly1305_ietf_encrypt</a> - Encrypt a message</li>
 <li><a href="function.sodium-crypto-aead-chacha20poly1305-ietf-keygen.html" class="index">sodium_crypto_aead_chacha20poly1305_ietf_keygen</a> - Get random bytes for key</li>
 <li><a href="function.sodium-crypto-aead-chacha20poly1305-keygen.html" class="index">sodium_crypto_aead_chacha20poly1305_keygen</a> - Get random bytes for key</li>
+<li><a href="function.sodium-crypto-aead-xchacha20poly1305-ietf-decrypt.html" class="index">sodium_crypto_aead_xchacha20poly1305_ietf_decrypt</a> - Description</li>
+<li><a href="function.sodium-crypto-aead-xchacha20poly1305-ietf-encrypt.html" class="index">sodium_crypto_aead_xchacha20poly1305_ietf_encrypt</a> - Description</li>
+<li><a href="function.sodium-crypto-aead-xchacha20poly1305-ietf-keygen.html" class="index">sodium_crypto_aead_xchacha20poly1305_ietf_keygen</a> - Description</li>
 <li><a href="function.sodium-crypto-auth.html" class="index">sodium_crypto_auth</a> - Compute a tag for the message</li>
 <li><a href="function.sodium-crypto-auth-keygen.html" class="index">sodium_crypto_auth_keygen</a> - Get random bytes for key</li>
 <li><a href="function.sodium-crypto-auth-verify.html" class="index">sodium_crypto_auth_verify</a> - Verifies that the tag is valid for the message</li>
@@ -7836,12 +7859,19 @@
 <li><a href="function.sodium-crypto-pwhash-scryptsalsa208sha256-str.html" class="index">sodium_crypto_pwhash_scryptsalsa208sha256_str</a> - Get an ASCII encoded hash</li>
 <li><a href="function.sodium-crypto-pwhash-scryptsalsa208sha256-str-verify.html" class="index">sodium_crypto_pwhash_scryptsalsa208sha256_str_verify</a> - Verify that the password is a valid password verification string</li>
 <li><a href="function.sodium-crypto-pwhash-str.html" class="index">sodium_crypto_pwhash_str</a> - Get an ASCII encoded hash</li>
+<li><a href="function.sodium-crypto-pwhash-str-needs-rehash.html" class="index">sodium_crypto_pwhash_str_needs_rehash</a> - Description</li>
 <li><a href="function.sodium-crypto-pwhash-str-verify.html" class="index">sodium_crypto_pwhash_str_verify</a> - Verify that hash is a valid password verification string</li>
 <li><a href="function.sodium-crypto-scalarmult.html" class="index">sodium_crypto_scalarmult</a> - Compute a shared secret given a user's secret key and another user's public key</li>
 <li><a href="function.sodium-crypto-scalarmult-base.html" class="index">sodium_crypto_scalarmult_base</a> - のエイリアス sodium_crypto_box_publickey_from_secretkey</li>
 <li><a href="function.sodium-crypto-secretbox.html" class="index">sodium_crypto_secretbox</a> - Encrypt a message</li>
 <li><a href="function.sodium-crypto-secretbox-keygen.html" class="index">sodium_crypto_secretbox_keygen</a> - Get random bytes for key</li>
 <li><a href="function.sodium-crypto-secretbox-open.html" class="index">sodium_crypto_secretbox_open</a> - Verify and decrypt a ciphertext</li>
+<li><a href="function.sodium-crypto-secretstream-xchacha20poly1305-init-pull.html" class="index">sodium_crypto_secretstream_xchacha20poly1305_init_pull</a> - Description</li>
+<li><a href="function.sodium-crypto-secretstream-xchacha20poly1305-init-push.html" class="index">sodium_crypto_secretstream_xchacha20poly1305_init_push</a> - Description</li>
+<li><a href="function.sodium-crypto-secretstream-xchacha20poly1305-keygen.html" class="index">sodium_crypto_secretstream_xchacha20poly1305_keygen</a> - Description</li>
+<li><a href="function.sodium-crypto-secretstream-xchacha20poly1305-pull.html" class="index">sodium_crypto_secretstream_xchacha20poly1305_pull</a> - Description</li>
+<li><a href="function.sodium-crypto-secretstream-xchacha20poly1305-push.html" class="index">sodium_crypto_secretstream_xchacha20poly1305_push</a> - Description</li>
+<li><a href="function.sodium-crypto-secretstream-xchacha20poly1305-rekey.html" class="index">sodium_crypto_secretstream_xchacha20poly1305_rekey</a> - Description</li>
 <li><a href="function.sodium-crypto-shorthash.html" class="index">sodium_crypto_shorthash</a> - Compute a fixed-size fingerprint for the message</li>
 <li><a href="function.sodium-crypto-shorthash-keygen.html" class="index">sodium_crypto_shorthash_keygen</a> - Get random bytes for key</li>
 <li><a href="function.sodium-crypto-sign.html" class="index">sodium_crypto_sign</a> - Sign a message</li>

@@ -74,6 +74,12 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$zoneId</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">IntlIterator</span> <span class="methodname"><a href="intltimezone.createtimezoneidenumeration.html" class="methodname">createTimeZoneIDEnumeration</a></span>
+    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$zoneType</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$region</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$rawOffset</code></span>
+  ]] )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">IntlTimeZone</span> <span class="methodname"><a href="intltimezone.fromdatetimezone.html" class="methodname">fromDateTimeZone</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.datetimezone.html" class="type DateTimeZone">DateTimeZone</a></span> <code class="parameter">$zoneId</code></span>
    )</div>
@@ -114,6 +120,11 @@
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">string</span> <span class="methodname"><a href="intltimezone.getidforwindowsid.html" class="methodname">getIDForWindowsID</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$timezone</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$region</code></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">integer</span> <span class="methodname"><a href="intltimezone.getoffset.html" class="methodname">getOffset</a></span>
     ( <span class="methodparam"><span class="type">float</span> <code class="parameter">$date</code></span>
    , <span class="methodparam"><span class="type">bool</span> <code class="parameter">$local</code></span>
@@ -125,8 +136,20 @@
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">string</span> <span class="methodname"><a href="intltimezone.getregion.html" class="methodname">getRegion</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$zoneId</code></span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">string</span> <span class="methodname"><a href="intltimezone.gettzdataversion.html" class="methodname">getTZDataVersion</a></span>
     ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">IntlTimeZone</span> <span class="methodname"><a href="intltimezone.getunknown.html" class="methodname">getUnknown</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">string</span> <span class="methodname"><a href="intltimezone.getwindowsid.html" class="methodname">getWindowsID</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$timezone</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="intltimezone.hassamerules.html" class="methodname">hasSameRules</a></span>
@@ -334,7 +357,42 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="intltimezone.countequivalentids.html">IntlTimeZone::countEquivalentIDs</a> — 指定した ID を含む等価グループの中にある ID の数を取得する</li><li><a href="intltimezone.createdefault.html">IntlTimeZone::createDefault</a> — このホストのデフォルトタイムゾーンの新しいコピーを作る</li><li><a href="intltimezone.createenumeration.html">IntlTimeZone::createEnumeration</a> — 指定した国あるいはオフセットに関連するタイムゾーン ID の一覧を取得する</li><li><a href="intltimezone.createtimezone.html">IntlTimeZone::createTimeZone</a> — 指定した ID のタイムゾーンオブジェクトを作る</li><li><a href="intltimezone.fromdatetimezone.html">IntlTimeZone::fromDateTimeZone</a> — DateTimeZone からタイムゾーンオブジェクトを作る</li><li><a href="intltimezone.getcanonicalid.html">IntlTimeZone::getCanonicalID</a> — 指定したタイムゾーン ID の、正式なシステムタイムゾーン ID あるいは正規化したカスタムタイムゾーン ID を取得する</li><li><a href="intltimezone.getdisplayname.html">IntlTimeZone::getDisplayName</a> — このタイムゾーンの、ユーザー向けに表示する名前を取得する</li><li><a href="intltimezone.getdstsavings.html">IntlTimeZone::getDSTSavings</a> — ローカルの標準時刻からローカルの実測時刻を得るために加算する時間を取得する</li><li><a href="intltimezone.getequivalentid.html">IntlTimeZone::getEquivalentID</a> — 指定した ID を含む等価グループの ID を取得する</li><li><a href="intltimezone.geterrorcode.html">IntlTimeZone::getErrorCode</a> — 直近のエラーコードを取得する</li><li><a href="intltimezone.geterrormessage.html">IntlTimeZone::getErrorMessage</a> — 直近のエラーメッセージを取得する</li><li><a href="intltimezone.getgmt.html">IntlTimeZone::getGMT</a> — GMT (UTC) タイムゾーンを作る</li><li><a href="intltimezone.getid.html">IntlTimeZone::getID</a> — タイムゾーン ID を取得する</li><li><a href="intltimezone.getoffset.html">IntlTimeZone::getOffset</a> — 指定した時刻の、GMT へのオフセットを取得する</li><li><a href="intltimezone.getrawoffset.html">IntlTimeZone::getRawOffset</a> — (夏時間を考慮せずに) GMT へのオフセットを取得する</li><li><a href="intltimezone.gettzdataversion.html">IntlTimeZone::getTZDataVersion</a> — ICU が使っているタイムゾーンデータのバージョンを取得する</li><li><a href="intltimezone.hassamerules.html">IntlTimeZone::hasSameRules</a> — このタイムゾーンが別のタイムゾーンと同じルールおよびオフセットを使っているかどうかを調べる</li><li><a href="intltimezone.todatetimezone.html">IntlTimeZone::toDateTimeZone</a> — DateTimeZone オブジェクトに変換する</li><li><a href="intltimezone.usedaylighttime.html">IntlTimeZone::useDaylightTime</a> — このタイムゾーンが夏時間を採用しているかどうかを調べる</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="intltimezone.countequivalentids.html">IntlTimeZone::countEquivalentIDs</a> — 指定した ID を含む等価グループの中にある ID の数を取得する</li><li><a href="intltimezone.createdefault.html">IntlTimeZone::createDefault</a> — このホストのデフォルトタイムゾーンの新しいコピーを作る</li><li><a href="intltimezone.createenumeration.html">IntlTimeZone::createEnumeration</a> — 指定した国あるいはオフセットに関連するタイムゾーン ID の一覧を取得する</li><li><a href="intltimezone.createtimezone.html">IntlTimeZone::createTimeZone</a> — 指定した ID のタイムゾーンオブジェクトを作る</li><li><a href="intltimezone.createtimezoneidenumeration.html">IntlTimeZone::createTimeZoneIDEnumeration</a> — Get an enumeration over system time zone IDs with the given filter conditions</li><li><a href="intltimezone.fromdatetimezone.html">IntlTimeZone::fromDateTimeZone</a> — DateTimeZone からタイムゾーンオブジェクトを作る</li><li><a href="intltimezone.getcanonicalid.html">IntlTimeZone::getCanonicalID</a> — 指定したタイムゾーン ID の、正式なシステムタイムゾーン ID あるいは正規化したカスタムタイムゾーン ID を取得する</li><li><a href="intltimezone.getdisplayname.html">IntlTimeZone::getDisplayName</a> — このタイムゾーンの、ユーザー向けに表示する名前を取得する</li><li><a href="intltimezone.getdstsavings.html">IntlTimeZone::getDSTSavings</a> — ローカルの標準時刻からローカルの実測時刻を得るために加算する時間を取得する</li><li><a href="intltimezone.getequivalentid.html">IntlTimeZone::getEquivalentID</a> — 指定した ID を含む等価グループの ID を取得する</li><li><a href="intltimezone.geterrorcode.html">IntlTimeZone::getErrorCode</a> — 直近のエラーコードを取得する</li><li><a href="intltimezone.geterrormessage.html">IntlTimeZone::getErrorMessage</a> — 直近のエラーメッセージを取得する</li><li><a href="intltimezone.getgmt.html">IntlTimeZone::getGMT</a> — GMT (UTC) タイムゾーンを作る</li><li><a href="intltimezone.getid.html">IntlTimeZone::getID</a> — タイムゾーン ID を取得する</li><li><a href="intltimezone.getidforwindowsid.html">IntlTimeZone::getIDForWindowsID</a> — Translate a Windows timezone into a system timezone</li><li><a href="intltimezone.getoffset.html">IntlTimeZone::getOffset</a> — 指定した時刻の、GMT へのオフセットを取得する</li><li><a href="intltimezone.getrawoffset.html">IntlTimeZone::getRawOffset</a> — (夏時間を考慮せずに) GMT へのオフセットを取得する</li><li><a href="intltimezone.getregion.html">IntlTimeZone::getRegion</a> — Get the region code associated with the given system time zone ID</li><li><a href="intltimezone.gettzdataversion.html">IntlTimeZone::getTZDataVersion</a> — ICU が使っているタイムゾーンデータのバージョンを取得する</li><li><a href="intltimezone.getunknown.html">IntlTimeZone::getUnknown</a> — Get the &quot;unknown&quot; time zone</li><li><a href="intltimezone.getwindowsid.html">IntlTimeZone::getWindowsID</a> — Translate a system timezone into a Windows timezone</li><li><a href="intltimezone.hassamerules.html">IntlTimeZone::hasSameRules</a> — このタイムゾーンが別のタイムゾーンと同じルールおよびオフセットを使っているかどうかを調べる</li><li><a href="intltimezone.todatetimezone.html">IntlTimeZone::toDateTimeZone</a> — DateTimeZone オブジェクトに変換する</li><li><a href="intltimezone.usedaylighttime.html">IntlTimeZone::useDaylightTime</a> — このタイムゾーンが夏時間を採用しているかどうかを調べる</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="intlcalendar.todatetime.html">IntlCalendar::toDateTime</a></div>
