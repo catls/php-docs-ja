@@ -20,7 +20,7 @@
  <div class="refsect1 description" id="refsect1-imagickpixel.getcolorquantum-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>ImagickPixel::getColorQuantum</strong></span>
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><strong>ImagickPixel::getColorQuantum</strong></span>
     ( <span class="methodparam">void</span>
    )</div>
 
@@ -45,7 +45,8 @@
  <div class="refsect1 returnvalues" id="refsect1-imagickpixel.getcolorquantum-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   The quantum value of the color element. Float if ImageMagick was compiled with HDRI, otherwise an int.
+   Returns an array with keys <em>&quot;r&quot;</em>, <em>&quot;g&quot;</em>,
+   <em>&quot;b&quot;</em>, <em>&quot;a&quot;</em>.
   </p>
  </div>
 

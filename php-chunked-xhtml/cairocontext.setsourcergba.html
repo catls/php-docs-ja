@@ -23,17 +23,20 @@
   <p class="para">オブジェクト指向型 (method):</p>
    <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>CairoContext::setSourceRGBA</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$red</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$green</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$blue</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$alpha</code></span>
+    ( <span class="methodparam"><span class="type">float</span> <code class="parameter">$red</code></span>
+   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$green</code></span>
+   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$blue</code></span>
+   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$alpha</code></span>
     )</div>
 
   <p class="para rdfs-comment">手続き型:</p>
   <div class="methodsynopsis dc-description">
    <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>cairo_set_source</strong></span>
     ( <span class="methodparam"><span class="type"><a href="class.cairocontext.html" class="type CairoContext">CairoContext</a></span> <code class="parameter">$context</code></span>
-   , <span class="methodparam"><span class="type"><a href="class.cairopattern.html" class="type CairoPattern">CairoPattern</a></span> <code class="parameter">$pattern</code></span>
+   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$red</code></span>
+   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$green</code></span>
+   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$blue</code></span>
+   , <span class="methodparam"><span class="type">float</span> <code class="parameter">$alpha</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -55,18 +58,6 @@
     
      <dt>
 <code class="parameter">context</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Description...
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">pattern</code></dt>
 
      <dd>
 
@@ -141,7 +132,7 @@
  <div class="refsect1 examples" id="refsect1-cairocontext.setsourcergba-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3344">
+   <div class="example" id="example-3341">
     <p><strong>例1 オブジェクト指向型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -160,7 +151,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-3345">
+   <div class="example" id="example-3342">
     <p><strong>例2 手続き型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

@@ -13,8 +13,8 @@
 </div><hr /><div id="cairomatrix.rotate" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">CairoMatrix::rotate</h1>
-  <h1 class="refname">cairo_rotate</h1>
-  <p class="verinfo">(PECL cairo &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">CairoMatrix::rotate</span> -- <span class="refname">cairo_rotate</span> &mdash; <span class="dc-title">The rotate purpose</span></p>
+  <h1 class="refname">cairo_matrix_rotate</h1>
+  <p class="verinfo">(PECL cairo &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">CairoMatrix::rotate</span> -- <span class="refname">cairo_matrix_rotate</span> &mdash; <span class="dc-title">The rotate purpose</span></p>
 
  </div>
 
@@ -23,15 +23,14 @@
   <p class="para">オブジェクト指向型 (method):</p>
    <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>CairoMatrix::rotate</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$sx</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$sy</code></span>
+    ( <span class="methodparam"><span class="type">float</span> <code class="parameter">$radians</code></span>
     )</div>
 
   <p class="para rdfs-comment">手続き型:</p>
   <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>cairo_rotate</strong></span>
+   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>cairo_matrix_rotate</strong></span>
     ( <span class="methodparam"><span class="type"><a href="class.cairocontext.html" class="type CairoContext">CairoContext</a></span> <code class="parameter">$context</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$angle</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$radians</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -64,31 +63,7 @@
     
     
      <dt>
-<code class="parameter">angle</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Description...
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">sx</code></dt>
-
-     <dd>
-
-      <p class="para">
-       Description...
-      </p>
-     </dd>
-
-    
-    
-     <dt>
-<code class="parameter">sy</code></dt>
+<code class="parameter">radians</code></dt>
 
      <dd>
 
@@ -115,7 +90,7 @@
  <div class="refsect1 examples" id="refsect1-cairomatrix.rotate-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3493">
+   <div class="example" id="example-3490">
     <p><strong>例1 オブジェクト指向型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -134,7 +109,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-3494">
+   <div class="example" id="example-3491">
     <p><strong>例2 手続き型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
