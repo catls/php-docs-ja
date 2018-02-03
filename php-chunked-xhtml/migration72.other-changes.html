@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Other changes</title>
+  <title>その他の変更</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -11,85 +11,81 @@
  <div class="up"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="migration72.other-changes" class="sect1">
- <h2 class="title">Other changes</h2>
+ <h2 class="title">その他の変更</h2>
 
  <div class="sect2" id="migration72.other-changes.utf8_-functions-to-ext-standard">
-  <h3 class="title">Moving of <span class="function"><a href="function.utf8-encode.html" class="function">utf8_encode()</a></span> and <span class="function"><a href="function.utf8-decode.html" class="function">utf8_decode()</a></span></h3>
+  <h3 class="title"><span class="function"><a href="function.utf8-encode.html" class="function">utf8_encode()</a></span> および <span class="function"><a href="function.utf8-decode.html" class="function">utf8_decode()</a></span> 関数の移動</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.utf8-encode.html" class="function">utf8_encode()</a></span> and <span class="function"><a href="function.utf8-decode.html" class="function">utf8_decode()</a></span>
-   functions have now been moved to the standard extension as string functions, whereas before 
-   the <a href="book.xml.html" class="link">XML</a> extension was required for them to be available.
+   <span class="function"><a href="function.utf8-encode.html" class="function">utf8_encode()</a></span> および <span class="function"><a href="function.utf8-decode.html" class="function">utf8_decode()</a></span>
+   関数は、文字列関数の標準拡張モジュールに移動しました。以前は、この関数を使うには、
+   <a href="book.xml.html" class="link">XML</a> 拡張モジュールが必須でした。
   </p>
  </div>
 
  <div class="sect2" id="migration72.other-changes.lmdb-support">
-  <h3 class="title">LMDB support</h3>
+  <h3 class="title">LMDB のサポート</h3>
 
   <p class="para">
-   The <a href="book.dba.html" class="link">DBA</a> extension now has support for LMDB.
+   <a href="book.dba.html" class="link">DBA</a> 拡張モジュールは、新たに LMDB をサポートしました。
   </p>
  </div>
 
  <div class="sect2" id="migration72.other-changes.build-system">
-  <h3 class="title">Changes to the PHP build system</h3>
+  <h3 class="title">PHP ビルドシステムへの変更</h3>
 
   <ul class="itemizedlist">
    <li class="listitem">
     <span class="simpara">
-     Unix: Autoconf 2.64 or greater is now required to build PHP.
+     Unix: Autoconf 2.64 以上が PHP をビルドするのに必須になりました。
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     Unix: <em>--with-pdo-oci</em> configure argument no longer needs 
-     the version number of the Oracle Instant Client.
+     Unix: <em>--with-pdo-oci</em> configure 引数に対して、Oracle Instant Client のバージョン指定は不要になりました。
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     Unix: <em>--enable-gd-native-ttf</em> configure argument has been 
-     removed. This was not used since PHP 5.5.0.
+     Unix: <em>--enable-gd-native-ttf</em> configure 引数は削除されました。これは PHP 5.5.0 以降では使われていませんでした。
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     Windows: <em>--with-config-profile</em> configure argument has been 
-     added. This can be used to save specific configures, much like the magical 
-     <var class="filename">config.nice.bat</var> file.
+     Windows: <em>--with-config-profile</em> configure 引数が追加されました。
+     この引数は、 <var class="filename">config.nice.bat</var> ファイルのような形で、特定の configure引数を保存するのに使えます。
     </span>
    </li>
   </ul>
  </div>
 
  <div class="sect2" id="migration72.other-changes.image">
-  <h3 class="title">Changes to <a href="book.image.html" class="link">GD</a></h3>
+  <h3 class="title"><a href="book.image.html" class="link">GD</a> 関数の変更</h3>
 
   <ul class="itemizedlist">
    <li class="listitem">
     <span class="simpara">
-     <span class="function"><a href="function.imageantialias.html" class="function">imageantialias()</a></span> is now also available if compiled with
-     a system libgd.
+     システムの libgd ライブラリを使って PHP がコンパイルされた場合に
+     <span class="function"><a href="function.imageantialias.html" class="function">imageantialias()</a></span> 関数が使えるようになりました。
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     <span class="function"><a href="function.imagegd.html" class="function">imagegd()</a></span> stores truecolor images as real truecolor
-     images. Formerly, they have been converted to palette.
+     <span class="function"><a href="function.imagegd.html" class="function">imagegd()</a></span> 関数は、truecolor 画像を truecolor 画像として保存するようになりました。
+     以前は、パレットに変換していました。
     </span>
    </li>
   </ul>
  </div>
 
  <div class="sect2" id="migration72.other-changes.mcrypt">
-  <h3 class="title">Moving <a href="book.mcrypt.html" class="link">MCrypt</a> to PECL</h3>
+  <h3 class="title"><a href="book.mcrypt.html" class="link">MCrypt</a> 拡張モジュールが PECL に移動</h3>
 
   <p class="para">
-   The <a href="book.mcrypt.html" class="link">MCrypt</a> extension has now been moved
-   out of the core to PECL. Given the mcrypt library has not seen any updates
-   since 2007, its usage is highly discouraged. Instead, either the
-   <a href="book.openssl.html" class="link">OpenSSL</a> or <a href="book.sodium.html" class="link">Sodium</a>
-   extension should be used.
+   <a href="book.mcrypt.html" class="link">MCrypt</a> 拡張モジュールは、PHPコアから PECL に移動しました。
+   mcrypt ライブラリは 2007年から更新されていませんし、それ自体使うことが全く推奨できないからです。
+   代わりに <a href="book.openssl.html" class="link">OpenSSL</a> もしくは <a href="book.sodium.html" class="link">Sodium</a>
+   拡張モジュール を使ってください。
   </p>
  </div>
 

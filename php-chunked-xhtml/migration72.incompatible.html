@@ -216,21 +216,19 @@ int(2)
  </div>
 
  <div class="sect2" id="migration72.incompatible.trait-properties">
-  <h3 class="title">Checks on default property values of traits</h3>
+  <h3 class="title">trait のプロパティの値チェック</h3>
 
   <p class="para">
-   Compatibilitiy checks upon default trait property values will no longer
-   perform casting.
+   trait のプロパティの値に対して互換性があるかどうかをチェックするときは、値のキャストを行わなくなりました。
   </p>
  </div>
 
  <div class="sect2" id="migration72.incompatible.object-reserved-word">
-  <h3 class="title"><em>object</em> for class names</h3>
+  <h3 class="title"><em>object</em> をクラス名に使う</h3>
 
   <p class="para">
-   The <em>object</em> name was previously soft-reserved in PHP 7.0.
-   This is now hard-reserved, prohibiting it from being used as a class, trait,
-   or interface name.
+   <em>object</em> という名前は、PHP 7.0 では緩く予約されていました。
+   PHP 7.2 からは制約が強くなり、クラスや trait、インターフェイスの名前として使うことが禁止されます。
   </p>
  </div>
 
