@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>セキュリティデータベースからユーザーを削除する</title>
+  <title>Delete a user from a security database</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,8 +13,8 @@
 </div><hr /><div id="function.ibase-delete-user" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">ibase_delete_user</h1>
-  <p class="verinfo">(PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">ibase_delete_user</span> &mdash; <span class="dc-title">セキュリティデータベースからユーザーを削除する</span></p>
- 
+  <p class="verinfo">(PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">ibase_delete_user</span> &mdash; <span class="dc-title">Delete a user from a security database</span></p>
+
  </div>
  
  <div class="refsect1 description" id="refsect1-function.ibase-delete-user-description">
@@ -26,13 +26,44 @@
    )</div>
 
 
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
+ <div class="refsect1 parameters" id="refsect1-function.ibase-delete-user-parameters">
+  <h3 class="title">パラメータ</h3>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<code class="parameter">service_handle</code></dt>
+
+     <dd>
+
+      <p class="para">
+       The handle on the database server service.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">user_name</code></dt>
+
+     <dd>
+
+      <p class="para">
+       The login name of the user you want to delete from the database.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ 
  <div class="refsect1 returnvalues" id="refsect1-function.ibase-delete-user-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
@@ -45,8 +76,8 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.ibase-add-user.html" class="function" rel="rdfs-seeAlso">ibase_add_user()</a> - セキュリティデータベースにユーザーを追加する</span></li>
-    <li class="member"><span class="function"><a href="function.ibase-modify-user.html" class="function" rel="rdfs-seeAlso">ibase_modify_user()</a> - セキュリティデータベースのユーザーを変更する</span></li>
+    <li class="member"><span class="function"><a href="function.ibase-add-user.html" class="function" rel="rdfs-seeAlso">ibase_add_user()</a> - Add a user to a security database</span></li>
+    <li class="member"><span class="function"><a href="function.ibase-modify-user.html" class="function" rel="rdfs-seeAlso">ibase_modify_user()</a> - Modify a user to a security database</span></li>
    </ul>
   </p>
  </div>
