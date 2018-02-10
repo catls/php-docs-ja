@@ -199,6 +199,22 @@
          </tr>
 
          <tr>
+          <td>compressors</td>
+          <td><span class="type"><a href="language.types.string.html" class="type string">string</a></span></td>
+          <td>
+           <p class="para">
+            A prioritized, comma-delimited list of compressors that the client
+            wants to use. Messages are only compressed if the client and server
+            share any compressors in common, and the compressor used in each
+            direction will depend on the individual configuration of the server
+            or driver. See the
+            <a href="https://github.com/mongodb/specifications/blob/master/source/compression/OP_COMPRESSED.rst#compressors" class="link external">&raquo;&nbsp;Driver Compression Specification</a>
+            for more information.
+           </p>
+          </td>
+         </tr>
+
+         <tr>
           <td>connectTimeoutMS</td>
           <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
           <td>
@@ -500,6 +516,20 @@
           </td>
          </tr>
 
+         <tr>
+          <td>zlibCompressionLevel</td>
+          <td><span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span></td>
+          <td>
+           <p class="para">
+            Specifies the compression level to use for the zlib compressor. This
+            option has no effect if <em>zlib</em> is not included in
+            the <em>&quot;compressors&quot;</em> URI option. See the
+            <a href="https://github.com/mongodb/specifications/blob/master/source/compression/OP_COMPRESSED.rst#zlibcompressionlevel" class="link external">&raquo;&nbsp;Driver Compression Specification</a>
+            for more information.
+           </p>
+          </td>
+         </tr>
+
         </tbody>
        
       </table>
@@ -675,7 +705,9 @@
        <td>1.4.0</td>
        <td>
         <p class="para">
-         Added the <em>&quot;retryWrites&quot;</em> URI option.
+         Added the <em>&quot;compressors&quot;</em>,
+         <em>&quot;retryWrites&quot;</em>, and
+         <em>&quot;zlibCompressionLevel&quot;</em> URI options.
         </p>
        </td>
       </tr>
