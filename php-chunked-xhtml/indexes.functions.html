@@ -253,6 +253,13 @@
 <li><a href="function.atan.html" class="index">atan</a> - 逆正接（アークタンジェント）</li>
 <li><a href="function.atan2.html" class="index">atan2</a> - 2 変数のアークタンジェント</li>
 <li><a href="function.atanh.html" class="index">atanh</a> - 逆双曲線正接（アークハイパボリックタンジェント）</li>
+<li><a href="pht.atomicinteger.dec.html" class="index">AtomicInteger::dec</a> - Decrements the atomic integer's value by one</li>
+<li><a href="pht.atomicinteger.get.html" class="index">AtomicInteger::get</a> - Gets the atomic integer's value</li>
+<li><a href="pht.atomicinteger.inc.html" class="index">AtomicInteger::inc</a> - Increments the atomic integer's value by one</li>
+<li><a href="pht.atomicinteger.lock.html" class="index">AtomicInteger::lock</a> - Acquires the atomic integer's mutex lock</li>
+<li><a href="pht.atomicinteger.set.html" class="index">AtomicInteger::set</a> - Sets the atomic integer's value</li>
+<li><a href="pht.atomicinteger.unlock.html" class="index">AtomicInteger::unlock</a> - Releases the atomic integer's mutex lock</li>
+<li><a href="pht.atomicinteger.construct.html" class="index">AtomicInteger::__construct</a> - AtomicInteger creation</li>
 </ul></li>
 <li class='gen-index index-for-b'>b<ul id='refentry-index-for-b'>
 <li><a href="function.base64-decode.html" class="index">base64_decode</a> - MIME base64 方式によりエンコードされたデータをデコードする</li>
@@ -2981,6 +2988,9 @@
 <li><a href="harupage.textout.html" class="index">HaruPage::textOut</a> - テキストを指定した位置に表示する</li>
 <li><a href="harupage.textrect.html" class="index">HaruPage::textRect</a> - 指定した領域内にテキストを表示する</li>
 <li><a href="function.hash.html" class="index">hash</a> - ハッシュ値 (メッセージダイジェスト) を生成する</li>
+<li><a href="pht.hashtable.lock.html" class="index">HashTable::lock</a> - Acquires the hash table's mutex lock</li>
+<li><a href="pht.hashtable.size.html" class="index">HashTable::size</a> - Gets the size of the hash table</li>
+<li><a href="pht.hashtable.unlock.html" class="index">HashTable::unlock</a> - Releases the hash table's mutex lock</li>
 <li><a href="function.hash-algos.html" class="index">hash_algos</a> - 登録されているハッシュアルゴリズムの一覧を返す</li>
 <li><a href="function.hash-copy.html" class="index">hash_copy</a> - ハッシュコンテキストをコピーする</li>
 <li><a href="function.hash-equals.html" class="index">hash_equals</a> - タイミング攻撃に対して安全な文字列比較</li>
@@ -4180,7 +4190,7 @@
 <li><a href="function.is-infinite.html" class="index">is_infinite</a> - 値が無限大であるかどうかを判定する</li>
 <li><a href="function.is-int.html" class="index">is_int</a> - 変数が整数型かどうかを検査する</li>
 <li><a href="function.is-integer.html" class="index">is_integer</a> - is_int のエイリアス</li>
-<li><a href="function.is-iterable.html" class="index">is_iterable</a> - Verify that the contents of a variable is an iterable value</li>
+<li><a href="function.is-iterable.html" class="index">is_iterable</a> - 変数の内容が反復可能な値であることを確認する</li>
 <li><a href="function.is-link.html" class="index">is_link</a> - ファイルがシンボリックリンクかどうかを調べる</li>
 <li><a href="function.is-long.html" class="index">is_long</a> - is_int のエイリアス</li>
 <li><a href="function.is-nan.html" class="index">is_nan</a> - 値が数値でないかどうかを判定する</li>
@@ -7010,6 +7020,12 @@
 <li><a href="function.px-update-record.html" class="index">px_update_record</a> - paradox データベースのレコードを更新する</li>
 </ul></li>
 <li class='gen-index index-for-q'>q<ul id='refentry-index-for-q'>
+<li><a href="pht.queue.front.html" class="index">Queue::front</a> - Returns the first value from a queue</li>
+<li><a href="pht.queue.lock.html" class="index">Queue::lock</a> - Acquires the queue's mutex lock</li>
+<li><a href="pht.queue.pop.html" class="index">Queue::pop</a> - Pops a value off of the front of a queue</li>
+<li><a href="pht.queue.push.html" class="index">Queue::push</a> - Pushes a value to the end of a queue</li>
+<li><a href="pht.queue.size.html" class="index">Queue::size</a> - Gets the size of the queue</li>
+<li><a href="pht.queue.unlock.html" class="index">Queue::unlock</a> - Releases the queue's mutex lock</li>
 <li><a href="quickhashinthash.add.html" class="index">QuickHashIntHash::add</a> - 新たなエントリをハッシュに追加する</li>
 <li><a href="quickhashinthash.delete.html" class="index">QuickHashIntHash::delete</a> - エントリをハッシュから削除する</li>
 <li><a href="quickhashinthash.exists.html" class="index">QuickHashIntHash::exists</a> - キーがハッシュに存在するかどうかを調べる</li>
@@ -7484,6 +7500,7 @@
 <li><a href="function.runkit-sandbox-output-handler.html" class="index">runkit_sandbox_output_handler</a> - サンドボックス内での出力を取得・処理するための関数を指定する</li>
 <li><a href="runkit.sandbox-parent.html" class="index">Runkit_Sandbox_Parent</a> - Runkit 反サンドボックス（Anti-Sandbox）クラス</li>
 <li><a href="function.runkit-superglobals.html" class="index">runkit_superglobals</a> - 登録されているスーパーグローバルを、数値添字の配列で返す</li>
+<li><a href="pht.runnable.run.html" class="index">Runnable::run</a> - The entry point of a threaded class</li>
 </ul></li>
 <li class='gen-index index-for-s'>s<ul id='refentry-index-for-s'>
 <li><a href="samconnection.commit.html" class="index">SAMConnection::commit</a> - 現在作業中の内容をコミット (正常に完了) する</li>
@@ -9151,6 +9168,9 @@
 <li><a href="function.tcpwrap-check.html" class="index">tcpwrap_check</a> - tcpwrap のチェックを実行する</li>
 <li><a href="function.tempnam.html" class="index">tempnam</a> - 一意なファイル名を生成する</li>
 <li><a href="function.textdomain.html" class="index">textdomain</a> - デフォルトドメインを設定する</li>
+<li><a href="pht.thread.addClassTask.html" class="index">Thread::addClassTask</a> - Class threading</li>
+<li><a href="pht.thread.addFileTask.html" class="index">Thread::addFileTask</a> - File threading</li>
+<li><a href="pht.thread.addFunctionTask.html" class="index">Thread::addFunctionTask</a> - Function threading</li>
 <li><a href="thread.detach.html" class="index">Thread::detach</a> - Execution</li>
 <li><a href="thread.getcreatorid.html" class="index">Thread::getCreatorId</a> - 識別</li>
 <li><a href="thread.getcurrentthread.html" class="index">Thread::getCurrentThread</a> - Identification</li>
@@ -9159,9 +9179,10 @@
 <li><a href="thread.globally.html" class="index">Thread::globally</a> - Execution</li>
 <li><a href="thread.isjoined.html" class="index">Thread::isJoined</a> - 状態を検出する</li>
 <li><a href="thread.isstarted.html" class="index">Thread::isStarted</a> - 状態を検出する</li>
-<li><a href="thread.join.html" class="index">Thread::join</a> - 同期処理</li>
+<li><a href="pht.thread.join.html" class="index">Thread::join</a> - Joins a thread</li>
 <li><a href="thread.kill.html" class="index">Thread::kill</a> - Execution</li>
-<li><a href="thread.start.html" class="index">Thread::start</a> - 実行する</li>
+<li><a href="pht.thread.start.html" class="index">Thread::start</a> - Starts the new thread</li>
+<li><a href="pht.thread.taskCount.html" class="index">Thread::taskCount</a> - Gets a thread's task count</li>
 <li><a href="threaded.chunk.html" class="index">Threaded::chunk</a> - Manipulation</li>
 <li><a href="threaded.count.html" class="index">Threaded::count</a> - Manipulation</li>
 <li><a href="threaded.extend.html" class="index">Threaded::extend</a> - Runtime Manipulation</li>
@@ -9170,7 +9191,7 @@
 <li><a href="thread.isrunning.html" class="index">Threaded::isRunning</a> - State Detection</li>
 <li><a href="threaded.isterminated.html" class="index">Threaded::isTerminated</a> - State Detection</li>
 <li><a href="threaded.iswaiting.html" class="index">Threaded::isWaiting</a> - State Detection</li>
-<li><a href="threaded.lock.html" class="index">Threaded::lock</a> - Synchronization</li>
+<li><a href="pht.threaded.lock.html" class="index">Threaded::lock</a> - Acquires the mutex lock</li>
 <li><a href="threaded.merge.html" class="index">Threaded::merge</a> - Manipulation</li>
 <li><a href="threaded.notify.html" class="index">Threaded::notify</a> - Synchronization</li>
 <li><a href="threaded.notifyone.html" class="index">Threaded::notifyOne</a> - Synchronization</li>
@@ -9178,7 +9199,7 @@
 <li><a href="threaded.run.html" class="index">Threaded::run</a> - Execution</li>
 <li><a href="threaded.shift.html" class="index">Threaded::shift</a> - Manipulation</li>
 <li><a href="threaded.synchronized.html" class="index">Threaded::synchronized</a> - Synchronization</li>
-<li><a href="threaded.unlock.html" class="index">Threaded::unlock</a> - Synchronization</li>
+<li><a href="pht.threaded.unlock.html" class="index">Threaded::unlock</a> - Unlocks a mutex lock</li>
 <li><a href="threaded.wait.html" class="index">Threaded::wait</a> - Synchronization</li>
 <li><a href="throwable.getcode.html" class="index">Throwable::getCode</a> - 例外コードを取得する</li>
 <li><a href="throwable.getfile.html" class="index">Throwable::getFile</a> - 例外が作られたファイル名を取得する</li>
@@ -9819,6 +9840,18 @@
 <li><a href="varnishstat.construct.html" class="index">VarnishStat::__construct</a> - VarnishStat のコンストラクタ</li>
 <li><a href="function.var-dump.html" class="index">var_dump</a> - 変数に関する情報をダンプする</li>
 <li><a href="function.var-export.html" class="index">var_export</a> - 変数の文字列表現を出力または返す</li>
+<li><a href="pht.vector.deleteAt.html" class="index">Vector::deleteAt</a> - Deletes a value in the vector</li>
+<li><a href="pht.vector.insertAt.html" class="index">Vector::insertAt</a> - Inserts a value into the vector</li>
+<li><a href="pht.vector.lock.html" class="index">Vector::lock</a> - Acquires the vector's mutex lock</li>
+<li><a href="pht.vector.pop.html" class="index">Vector::pop</a> - Pops a value to the vector</li>
+<li><a href="pht.vector.push.html" class="index">Vector::push</a> - Pushes a value to the vector</li>
+<li><a href="pht.vector.resize.html" class="index">Vector::resize</a> - Resizes a vector</li>
+<li><a href="pht.vector.shift.html" class="index">Vector::shift</a> - Shifts a value from the vector</li>
+<li><a href="pht.vector.size.html" class="index">Vector::size</a> - Gets the size of the vector</li>
+<li><a href="pht.vector.unlock.html" class="index">Vector::unlock</a> - Releases the vector's mutex lock</li>
+<li><a href="pht.vector.unshift.html" class="index">Vector::unshift</a> - Unshifts a value to the vector front</li>
+<li><a href="pht.vector.updateAt.html" class="index">Vector::updateAt</a> - Updates a value in the vector</li>
+<li><a href="pht.vector.construct.html" class="index">Vector::__construct</a> - Vector creation</li>
 <li><a href="function.version-compare.html" class="index">version_compare</a> - ふたつの &quot;PHP 標準&quot; バージョン番号文字列を比較する</li>
 <li><a href="function.vfprintf.html" class="index">vfprintf</a> - フォーマットされた文字列をストリームに書き込む</li>
 <li><a href="function.virtual.html" class="index">virtual</a> - Apache サブリクエストを実行する</li>
