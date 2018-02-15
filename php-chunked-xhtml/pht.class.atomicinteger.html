@@ -6,8 +6,8 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="pht.queue.unlock.html">Queue::unlock</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="pht.atomicinteger.construct.html">AtomicInteger::__construct</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="pht.queue.unlock.html">pht\Queue::unlock</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pht.atomicinteger.construct.html">pht\AtomicInteger::__construct</a></div>
  <div class="up"><a href="book.pht.html">pht</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="pht.class.atomicinteger" class="reference">
@@ -21,14 +21,14 @@
   <div class="section" id="pht.atomicinteger.intro">
    <h2 class="title">はじめに</h2>
    <p class="para">
-    The <strong class="classname">AtomicInteger</strong> class is currently the only
+    The <strong class="classname">pht\AtomicInteger</strong> class is currently the only
     supported atomic value. It allows for an integer to be safely passed around
     between, and manipulated, by multiple threads. The methods exposed by this
     class do not need mutex locking, since they will acquire the internal mutex
-    lock implicitly. <span class="methodname"><a href="pht.atomicinteger.lock.html" class="methodname">AtomicInteger::lock()</a></span> and
-    <span class="methodname"><a href="pht.atomicinteger.unlock.html" class="methodname">AtomicInteger::unlock()</a></span> are still exposed, however,
+    lock implicitly. <span class="methodname"><a href="pht.atomicinteger.lock.html" class="methodname">pht\AtomicInteger::lock()</a></span> and
+    <span class="methodname"><a href="pht.atomicinteger.unlock.html" class="methodname">pht\AtomicInteger::unlock()</a></span> are still exposed, however,
     for when multiple operations involving the same
-    <strong class="classname">AtomicInteger</strong> object need to be grouped together.
+    <strong class="classname">pht\AtomicInteger</strong> object need to be grouped together.
    </p>
    <p class="para">
     The mutex locks of the atomic values are reentrant safe.
@@ -46,11 +46,11 @@
 
     <div class="classsynopsisinfo">
      <span class="ooclass">
-      <strong class="classname">AtomicInteger</strong>
+      <strong class="classname">pht\AtomicInteger</strong>
      </span>
 
      <span class="oointerface">implements 
-      <span class="interfacename"><a href="pht.class.threaded.html" class="interfacename">Threaded</a></span>
+      <span class="interfacename"><a href="pht.class.threaded.html" class="interfacename">pht\Threaded</a></span>
      </span>
      {</div>
 
@@ -144,11 +144,11 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="pht.atomicinteger.construct.html">AtomicInteger::__construct</a> — AtomicInteger creation</li><li><a href="pht.atomicinteger.dec.html">AtomicInteger::dec</a> — Decrements the atomic integer's value by one</li><li><a href="pht.atomicinteger.get.html">AtomicInteger::get</a> — Gets the atomic integer's value</li><li><a href="pht.atomicinteger.inc.html">AtomicInteger::inc</a> — Increments the atomic integer's value by one</li><li><a href="pht.atomicinteger.lock.html">AtomicInteger::lock</a> — Acquires the atomic integer's mutex lock</li><li><a href="pht.atomicinteger.set.html">AtomicInteger::set</a> — Sets the atomic integer's value</li><li><a href="pht.atomicinteger.unlock.html">AtomicInteger::unlock</a> — Releases the atomic integer's mutex lock</li></ul>
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="pht.atomicinteger.construct.html">pht\AtomicInteger::__construct</a> — AtomicInteger creation</li><li><a href="pht.atomicinteger.dec.html">pht\AtomicInteger::dec</a> — Decrements the atomic integer's value by one</li><li><a href="pht.atomicinteger.get.html">pht\AtomicInteger::get</a> — Gets the atomic integer's value</li><li><a href="pht.atomicinteger.inc.html">pht\AtomicInteger::inc</a> — Increments the atomic integer's value by one</li><li><a href="pht.atomicinteger.lock.html">pht\AtomicInteger::lock</a> — Acquires the atomic integer's mutex lock</li><li><a href="pht.atomicinteger.set.html">pht\AtomicInteger::set</a> — Sets the atomic integer's value</li><li><a href="pht.atomicinteger.unlock.html">pht\AtomicInteger::unlock</a> — Releases the atomic integer's mutex lock</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="pht.queue.unlock.html">Queue::unlock</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="pht.atomicinteger.construct.html">AtomicInteger::__construct</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="pht.queue.unlock.html">pht\Queue::unlock</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pht.atomicinteger.construct.html">pht\AtomicInteger::__construct</a></div>
  <div class="up"><a href="book.pht.html">pht</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

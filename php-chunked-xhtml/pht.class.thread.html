@@ -7,26 +7,26 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="pht.configuration.html">実行時設定</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="pht.thread.addClassTask.html">Thread::addClassTask</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pht.thread.addClassTask.html">pht\Thread::addClassTask</a></div>
  <div class="up"><a href="book.pht.html">pht</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="pht.class.thread" class="reference">
 
  <h1 class="title">The Thread class</h1>
  
-  
- <div class="partintro"><p class="verinfo">(PECL pthreads &gt;= 2.0.0)</p>
+
+ <div class="partintro"><p class="verinfo">(PECL pht &gt;= 0.0.1)</p>
 
 
   <div class="section" id="pht.thread.intro">
    <h2 class="title">はじめに</h2>
    <p class="para">
-    The <strong class="classname">Thread</strong> class abstracts away a native thread. It
+    The <strong class="classname">pht\Thread</strong> class abstracts away a native thread. It
     has an internal task queue, where the methods
-    <span class="methodname"><a href="pht.thread.addClassTask.html" class="methodname">Thread::addClassTask()</a></span>,
-    <span class="methodname"><a href="pht.thread.addFunctionTask.html" class="methodname">Thread::addFunctionTask()</a></span>, and
-    <span class="methodname"><a href="pht.thread.addFileTask.html" class="methodname">Thread::addFileTask()</a></span> push new tasks onto this
-    queue. Invoking the <span class="methodname"><a href="pht.thread.start.html" class="methodname">Thread::start()</a></span> method will
+    <span class="methodname"><a href="pht.thread.addClassTask.html" class="methodname">pht\Thread::addClassTask()</a></span>,
+    <span class="methodname"><a href="pht.thread.addFunctionTask.html" class="methodname">pht\Thread::addFunctionTask()</a></span>, and
+    <span class="methodname"><a href="pht.thread.addFileTask.html" class="methodname">pht\Thread::addFileTask()</a></span> push new tasks onto this
+    queue. Invoking the <span class="methodname"><a href="pht.thread.start.html" class="methodname">pht\Thread::start()</a></span> method will
     cause the new thread to be spawned, where it will then begin working
     through the task queue. A thread may be reused for any number of tasks.
    </p>
@@ -43,7 +43,7 @@
 
     <div class="classsynopsisinfo">
      <span class="ooclass">
-      <strong class="classname">Thread</strong>
+      <strong class="classname">pht\Thread</strong>
      </span>
      {</div>
 
@@ -128,11 +128,11 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="pht.thread.addClassTask.html">Thread::addClassTask</a> — Class threading</li><li><a href="pht.thread.addFileTask.html">Thread::addFileTask</a> — File threading</li><li><a href="pht.thread.addFunctionTask.html">Thread::addFunctionTask</a> — Function threading</li><li><a href="pht.thread.join.html">Thread::join</a> — Joins a thread</li><li><a href="pht.thread.start.html">Thread::start</a> — Starts the new thread</li><li><a href="pht.thread.taskCount.html">Thread::taskCount</a> — Gets a thread's task count</li></ul>
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="pht.thread.addClassTask.html">pht\Thread::addClassTask</a> — Class threading</li><li><a href="pht.thread.addFileTask.html">pht\Thread::addFileTask</a> — File threading</li><li><a href="pht.thread.addFunctionTask.html">pht\Thread::addFunctionTask</a> — Function threading</li><li><a href="pht.thread.join.html">pht\Thread::join</a> — Joins a thread</li><li><a href="pht.thread.start.html">pht\Thread::start</a> — Starts the new thread</li><li><a href="pht.thread.taskCount.html">pht\Thread::taskCount</a> — Gets a thread's task count</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="pht.configuration.html">実行時設定</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="pht.thread.addClassTask.html">Thread::addClassTask</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pht.thread.addClassTask.html">pht\Thread::addClassTask</a></div>
  <div class="up"><a href="book.pht.html">pht</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>
