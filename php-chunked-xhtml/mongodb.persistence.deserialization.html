@@ -14,6 +14,17 @@
    <h2 class="title">Deserialization from BSON</h2>
 
    <p class="para">
+    The legacy <a href="book.mongo.html" class="link">mongo</a> extension deserialized
+    both BSON documents and arrays as PHP arrays. While PHP arrays are
+    convenient to work with, this behavior was problematic because different
+    BSON types could deserialize to the same PHP value (e.g.
+     <em>{&quot;0&quot;: &quot;foo&quot;}</em> and <em>[&quot;foo&quot;]</em>) and make it
+    impossible to infer the original BSON type. By default, the current driver
+    addresses this concern by ensuring that BSON arrays and documents are
+    converted to PHP arrays and objects, respectively.
+   </p>
+
+   <p class="para">
     For compound types, there are three data types:
    </p>
 
@@ -70,8 +81,7 @@ array</dt>
 
      
       <dt>
-<em class="emphasis">not set</em> or <span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span> (the is the
-      default)</dt>
+<em class="emphasis">not set</em> or <span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span> (default)</dt>
 
       <dd>
 
