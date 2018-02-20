@@ -20,12 +20,12 @@
  <div class="refsect1 description" id="refsect1-function.session-set-cookie-params-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type"><span class="type void">void</span></span> <span class="methodname"><strong>session_set_cookie_params</strong></span>
+   <span class="type">bool</span> <span class="methodname"><strong>session_set_cookie_params</strong></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$lifetime</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$domain</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$secure</code><span class="initializer"> = false</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$httponly</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$secure</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$httponly</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ]]]] )</div>
 
   <p class="para rdfs-comment">
@@ -122,7 +122,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.session-set-cookie-params-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   値を返しません。
+   成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
