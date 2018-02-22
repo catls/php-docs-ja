@@ -22,8 +22,8 @@
    <span class="type">resource</span> <span class="methodname"><strong>dbase_create</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$fields</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code><span class="initializer"> = DBASE_TYPE_DBASE</span></span>
-   )</div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code><span class="initializer"> = DBASE_TYPE_DBASE</span></span>
+  ] )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>dbase_create()</strong></span> creates a dBase database with the given
@@ -86,11 +86,6 @@
        <strong><code>DBASE_TYPE_DBASE</code></strong> or
        <strong><code>DBASE_TYPE_FOXPRO</code></strong>.
       </p>
-      <blockquote class="note"><p><strong class="note">注意</strong>: 
-       <p class="para">
-        The fieldnames are limited in length and must not exceed 10 chars.
-       </p>
-      </p></blockquote>
      </dd>
 
     
@@ -121,6 +116,13 @@
     </thead>
 
     <tbody class="tbody">
+     <tr>
+      <td>dbase 7.0.0</td>
+      <td>
+       The <code class="parameter">type</code> parameter has been added.
+      </td>
+     </tr>
+
      <tr>
       <td>dbase 7.0.0</td>
       <td>
