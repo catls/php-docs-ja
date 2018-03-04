@@ -23,7 +23,7 @@
    <span class="type">resource</span> <span class="methodname"><strong>fopen</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
    [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code></span>
   ]] )</div>
 
@@ -223,8 +223,8 @@
           <tr>
            <td><em>&#039;e&#039;</em></td>
            <td>
-            Set close-on-exec flag on the opened file descriptor. Only
-            available in PHP compiled on POSIX.1-2008 conform systems.
+            オープンされたファイル記述子に close-on-exec フラグを設定します。
+            POSIX.1-2008 準拠のシステムでコンパイルされた PHP でのみ利用可能です。
            </td>
           </tr>
 

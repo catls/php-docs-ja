@@ -25,7 +25,7 @@
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$fields</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$delimiter</code><span class="initializer"> = &quot;,&quot;</span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$enclosure</code><span class="initializer"> = &#039;&quot;&#039;</span></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$escape_char</code><span class="initializer"> = &quot;\&quot;</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$escape_char</code><span class="initializer"> = &quot;\\&quot;</span></span>
   ]]] )</div>
 
   <p class="para rdfs-comment">
@@ -109,6 +109,13 @@
    </dl>
 
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    If an <code class="parameter">enclosure</code> character is contained in a field,
+    it will be escaped by doubling it, unless it is immediately preceded by an
+    <code class="parameter">escape_char</code>.
+   </p>
+  </p></blockquote> 
  </div>
 
 

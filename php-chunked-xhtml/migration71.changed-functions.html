@@ -141,6 +141,19 @@
    </li>
   </ul>
  </div>
+
+ <div class="sect2" id="migration71.changed-functions.session">
+  <h3 class="title">Session</h3>
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> now returns <strong><code>FALSE</code></strong> and no longer
+     initializes <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> when it failed to start the
+     session.
+    </span>
+   </li>
+  </ul>
+ </div>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="migration71.deprecated.html">PHP 7.1.x で推奨されなくなる機能</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="migration71.other-changes.html">その他の変更</a></div>

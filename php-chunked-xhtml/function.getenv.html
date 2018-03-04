@@ -22,8 +22,13 @@
   <div class="methodsynopsis dc-description">
    <span class="type">string</span> <span class="methodname"><strong>getenv</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$varname</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$local_only</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$local_only</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="type">array</span> <span class="methodname"><strong>getenv</strong></span>
+    ( <span class="methodparam">void</span>
+   )</div>
 
   <p class="para rdfs-comment">
    環境変数の値を取得します。
@@ -60,9 +65,9 @@
 
      <dd>
 
-      
       <p class="para">
-       Set to true to only return local environment variables (set by the operating system or putenv).
+       true に設定すると、(OS または putenv により設定された)
+       ローカルの環境変数のみを返します。
       </p>
      </dd>
 
@@ -78,6 +83,8 @@
   <p class="para">
    <code class="parameter">varname</code> が示す環境変数の値を返し、
    環境変数 <code class="parameter">varname</code> が存在しない場合は<strong><code>FALSE</code></strong>を返します。
+   <code class="parameter">varname</code> が省略された場合、
+   すべての環境変数は連想配列として返されます。
   </p>
  </div>
 
@@ -95,6 +102,14 @@
     </thead>
 
     <tbody class="tbody">
+      <tr>
+      <td>7.1.0</td>
+      <td>
+       <code class="parameter">varname</code> は、すべての環境変数の連想配列を取得するために
+       省略することができるようになりました。
+      </td>
+     </tr>
+
      <tr>
       <td>5.5.38, 5.6.24, 7.0.9</td>
       <td>
@@ -109,16 +124,15 @@
  </div>
 
 
- 
  <div class="refsect1 notes" id="refsect1-function.getenv-notes">
   <h3 class="title">注意</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    If PHP is running in a SAPI such as Fast CGI, this function will 
-    always return the value of an environment variable set by the SAPI, 
-    even if <span class="function"><a href="function.putenv.html" class="function">putenv()</a></span> has been used to set a local 
-    environment variable of the same name. Use the <code class="parameter">local_only</code> 
-    parameter to return the value of locally-set environment variables.
+    PHP が Fast CGI のような SAPI で実行中の場合、
+    同じ名前のローカル環境変数を設定するために <span class="function"><a href="function.putenv.html" class="function">putenv()</a></span> が使用されても、
+    この関数は SAPI により設定された環境変数の値を常に返します。
+    ローカル設定された環境変数の値を返すには、
+    <code class="parameter">local_only</code> パラメーターを使用してください。
    </p>
   </div>
  </div>
@@ -131,7 +145,7 @@
     <p><strong>例1 <span class="function"><strong>getenv()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;getenv()&nbsp;の使用例<br /></span><span style="color: #0000BB">$ip&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;または単純にスーパーグローバル（$_SERVER&nbsp;または&nbsp;$_ENV）を使用します<br /></span><span style="color: #0000BB">$ip&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;Safely&nbsp;get&nbsp;the&nbsp;value&nbsp;of&nbsp;an&nbsp;environment&nbsp;variable,&nbsp;ignoring&nbsp;whether&nbsp;<br />//&nbsp;or&nbsp;not&nbsp;it&nbsp;was&nbsp;set&nbsp;by&nbsp;a&nbsp;SAPI&nbsp;or&nbsp;has&nbsp;been&nbsp;changed&nbsp;with&nbsp;putenv<br /></span><span style="color: #0000BB">$ip&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">)&nbsp;?:&nbsp;</span><span style="color: #0000BB">getenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">)<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;getenv()&nbsp;の使用例<br /></span><span style="color: #0000BB">$ip&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;または単純にスーパーグローバル（$_SERVER&nbsp;または&nbsp;$_ENV）を使用します<br /></span><span style="color: #0000BB">$ip&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;SAPI&nbsp;により設定されたか、または&nbsp;putenv&nbsp;により変更されたかどうかを無視して<br />//&nbsp;環境変数の値を安全に取得します。<br /></span><span style="color: #0000BB">$ip&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">getenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">)&nbsp;?:&nbsp;</span><span style="color: #0000BB">getenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'REMOTE_ADDR'</span><span style="color: #007700">)<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

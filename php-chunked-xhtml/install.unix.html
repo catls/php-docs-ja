@@ -69,7 +69,7 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       autoconf: 2.13+ (PHP &lt; 5.4.0), 2.59+ (PHP &gt;= 5.4.0)
+       autoconf: 2.13+ (PHP &lt; 5.4.0), 2.59+ (PHP &gt;= 5.4.0), 2.64+ (PHP &gt;= 7.2.0)
       </span>
      </li>
      <li class="listitem">
@@ -111,12 +111,12 @@
        </li>
        <li class="listitem">
         <span class="simpara">
-         PHP 5.6: 2.4 以降、ただし 3.0 は除く (3.0.1 以降は OK)
+         PHP 5.6: &gt;= 2.4, &lt; 3.0
         </span>
        </li>
        <li class="listitem">
         <span class="simpara">
-         PHP 7.0: 2.4 以降
+         PHP 7.0: 2.4 以降 (Bison 3.x を含む)
         </span>
        </li>
       </ul>
@@ -145,6 +145,7 @@
 
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
+     
      Some Unix systems (such as OpenBSD and SELinux) may disallow mapping pages
      both writable and executable for security reasons, what is called PaX
      MPROTECT or W^X violation protection. This kind of memory mapping is,

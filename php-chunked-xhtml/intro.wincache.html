@@ -35,6 +35,11 @@
      PHP バイトコード (opcode) キャッシュを使うと、コンパイル済みのスクリプトのバイトコードを共有メモリに置きます。
      同じスクリプトが再びリクエストされたときには、PHP エンジンはこのバイトコードを再利用します。
     </p>
+    <p class="para">
+     opcode キャッシングのサポートは、<em>Wincache 2.0.0</em> で削除されました。
+     opcache を所有したいすべてのユーザーは、PHP 5.5.0 以降 PHP に含まれる
+     <a href="book.opcache.html" class="link">OPcache</a> 拡張を使用すべきです。
+    </p>
    </li>
    <li class="listitem">
     <p class="para">
