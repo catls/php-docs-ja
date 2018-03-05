@@ -69,7 +69,7 @@
        </p>
        <p class="para">
         Dynamically setting variables in function&#039;s scope suffers from exactly same problems
-        as <a href="info.configuration.html#ini.magic-quotes-gpc" class="link">register_globals</a>.
+        as <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>.
        </p>
        <p class="para">
         Read section on security of <a href="security.globals.html" class="link">Using Register Globals</a>
@@ -148,7 +148,7 @@
     <p><strong>例2 <span class="function"><strong>parse_str()</strong></span> name mangling</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />parse_str</span><span style="color: #007700">($</span><span style="color: #DD0000">"My&nbsp;Value=Something"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$My_Value</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Something<br /><br /></span><span style="color: #0000BB">parse_str</span><span style="color: #007700">($</span><span style="color: #DD0000">"My&nbsp;Value=Something"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'My_Value'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;Something<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />parse_str</span><span style="color: #007700">(</span><span style="color: #DD0000">"My&nbsp;Value=Something"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$My_Value</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Something<br /><br /></span><span style="color: #0000BB">parse_str</span><span style="color: #007700">(</span><span style="color: #DD0000">"My&nbsp;Value=Something"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'My_Value'</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;Something<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
