@@ -28,7 +28,6 @@
   <p class="para rdfs-comment">
    Shall declare a class constant on the current Definition
   </p>
-
  </div>
 
 
@@ -72,6 +71,30 @@
   </p>
  </div>
 
+
+ <div class="refsect1 exceptions" id="refsect1-componere-definition.addconstant-exceptions">
+  <h3 class="title">Exceptions</h3>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><a href="class.runtimeexception.html" class="type RuntimeException">RuntimeException</a></span> if <span class="type"><span class="type Definition">Definition</span></span> was registered
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><a href="class.runtimeexception.html" class="type RuntimeException">RuntimeException</a></span> if <code class="parameter">name</code> is already declared as a constant
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><a href="class.runtimeexception.html" class="type RuntimeException">RuntimeException</a></span> if <code class="parameter">value</code> is static
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><a href="class.runtimeexception.html" class="type RuntimeException">RuntimeException</a></span> if <code class="parameter">value</code> is undefined
+   </p>
+  </div>
+ </div>
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

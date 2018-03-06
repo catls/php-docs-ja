@@ -21,7 +21,10 @@
   <div class="section" id="componere-patch.intro">
    <h2 class="title">はじめに</h2>
    <p class="para">
-    The Patch class allows the programmer to change the type of an instance at runtime
+    The Patch class allows the programmer to change the type of an instance at runtime without registering a new Definition
+   </p>
+   <p class="para">
+    When a Patch is destroyed it is reverted, so that instances that were patched during the lifetime of the Patch are restored to their formal type.
    </p>
   </div>
 
@@ -71,6 +74,10 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="componere-patch.isapplied.html" class="methodname">isApplied</a></span>
     ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">Patch</span> <span class="methodname"><a href="componere-patch.derive.html" class="methodname">derive</a></span>
+    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$instance</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">\Closure</span> <span class="methodname"><a href="componere-patch.getclosure.html" class="methodname">getClosure</a></span>
@@ -151,8 +158,15 @@
 
 
 
+  
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="componere-patch.construct.html">Componere\Patch::__construct</a> — Patch Construction</li><li><a href="componere-patch.apply.html">Componere\Patch::apply</a> — Application</li><li><a href="componere-patch.revert.html">Componere\Patch::revert</a> — Reversal</li><li><a href="componere-patch.isapplied.html">Componere\Patch::isApplied</a> — State Detection</li><li><a href="componere-patch.getclosure.html">Componere\Patch::getClosure</a> — Get Closure</li><li><a href="componere-patch.getclosures.html">Componere\Patch::getClosures</a> — Get Closures</li></ul>
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="componere-patch.construct.html">Componere\Patch::__construct</a> — Patch Construction</li><li><a href="componere-patch.apply.html">Componere\Patch::apply</a> — Application</li><li><a href="componere-patch.revert.html">Componere\Patch::revert</a> — Reversal</li><li><a href="componere-patch.isapplied.html">Componere\Patch::isApplied</a> — State Detection</li><li><a href="componere-patch.derive.html">Componere\Patch::derive</a> — Patch Derivation</li><li><a href="componere-patch.getclosure.html">Componere\Patch::getClosure</a> — Get Closure</li><li><a href="componere-patch.getclosures.html">Componere\Patch::getClosures</a> — Get Closures</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="componere-definition.getclosures.html">Componere\Definition::getClosures</a></div>
