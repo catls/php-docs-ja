@@ -87,14 +87,15 @@
     <div class="example-contents"><p>
      <span class="methodname"><a href="mongodb-driver-manager.executecommand.html" class="methodname">MongoDB\Driver\Manager::executeCommand()</a></span> and
      <span class="methodname"><a href="mongodb-driver-manager.executequery.html" class="methodname">MongoDB\Driver\Manager::executeQuery()</a></span> both return
-     their results as a <strong class="classname">MongoDB\Driver\Cursor</strong> object.
-     This object can be used to iterator over the result set that the command
-     or cursor returned.
+     their result(s) as a <strong class="classname">MongoDB\Driver\Cursor</strong> object.
+     This object can be used to iterate over the result set of the command or
+     query.
     </p></div>
     <div class="example-contents"><p>
-     Because this class implements the
+     Because <strong class="classname">MongoDB\Driver\Cursor</strong> implements the
      <span class="interfacename"><a href="class.traversable.html" class="interfacename">Traversable</a></span> interface, you can simply
-     iterator over the result set by using <span class="function"><strong>foreach()</strong></span>.
+     iterate over the result set with
+     <a href="control-structures.foreach.html" class="link"><em>foreach</em></a>.
     </p></div>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -134,93 +135,81 @@ stdClass Object
    </div>
 
    <div class="example" id="example-1701">
-    <p><strong>例2 Reading from a tailable cursors</strong></p>
+    <p><strong>例2 Reading a result set for a tailable cursor</strong></p>
     <div class="example-contents"><p>
-     Tailable cursors are special cursors in MongoDB that allow you to read
-     results from a cursor, and then wait until more documents become
-     available in the collection that match the query. This functionality only
-     works with Capped Collections and <a href="https://docs.mongodb.com/manual/changeStreams/" class="link external">&raquo;&nbsp;Change Streams</a>, and
-     requires a different way of iteration.
+     <a href="https://docs.mongodb.com/manual/core/tailable-cursors" class="link external">&raquo;&nbsp;Tailable cursors</a>
+     are a special type of MongoDB cursor that allows the client to read some
+     results and then wait until more documents become available. These cursors
+     are primarily used with
+     <a href="https://docs.mongodb.com/manual/core/capped-collections" class="link external">&raquo;&nbsp;Capped Collections</a>
+     and <a href="https://docs.mongodb.com/manual/changeStreams" class="link external">&raquo;&nbsp;Change Streams</a>.
     </p></div>
     <div class="example-contents"><p>
-     Where normal cursors can be iterated over with
-     <span class="function"><strong>foreach()</strong></span>, the same does not work with tailable
-     cursors as you can not call <span class="function"><strong>foreach()</strong></span> twice. In order
-     to continuously read from a <a href="https://docs.mongodb.com/manual/core/tailable-cursors/" class="link external">&raquo;&nbsp;Tailable
-     Cursor</a>, you will need to wrap the
-     <strong class="classname">MongoDB\Driver\Cursor</strong> object with an
-     <a href="class.iteratoriterator.html" class="classname">IteratorIterator</a>.
+     While normal cursors can be iterated once with <em>foreach</em>,
+     that approach will not work with tailable cursors. When
+     <em>foreach</em> is used with a tailable cursor, the loop will
+     stop upon reaching the end of the initial result set. Attempting to
+     continue iteration on the cursor with a second
+     <em>foreach</em> would throw an exception, since PHP attempts to
+     rewind the cursor. Similar to result objects in other database drivers,
+     cursors in MongoDB only support forward iteration, which means they cannot
+     be rewound.
     </p></div>
     <div class="example-contents"><p>
-     In the example below, we set up a <a href="https://docs.mongodb.com/manual/core/capped-collections/" class="link external">&raquo;&nbsp;Capped
-     Collection</a>, into which we insert a few documents. We then run the
-     query with the special cursor options <em>tailable</em>,
-     <em>awaitData</em> and <em>maxAwaitTimeMS</em>. These
-     options instruct the server to: keep the cursor open after the initial
-     result set has been returned (<em>tailable</em>), and to block
-     the read (<em>awaitData</em>) for at most
-     <em>maxAwaitTimeMS</em> milliseconds. We then wrap the cursor
-     in <a href="class.iteratoriterator.html" class="classname">IteratorIterator</a> and use
-     <span class="methodname"><a href="iteratoriterator.valid.html" class="methodname">IteratorIterator::valid()</a></span> and
-     <span class="methodname"><a href="iteratoriterator.next.html" class="methodname">IteratorIterator::next()</a></span> to iterate over the
-     result set.
+     In order to continuously read from a tailable cursor, the Cursor object
+     must be wrapped with an <a href="class.iteratoriterator.html" class="classname">IteratorIterator</a>. This
+     allows the application to directly control the cursor&#039;s iteration, avoid
+     inadvertently rewinding the cursor, and decide when to wait for new results
+     or stop iteration entirely.
     </p></div>
-   <div class="example-contents">
+    <div class="example-contents"><p>
+     In order to demonstrate a tailable cursor in action, two scripts will be
+     used: a &quot;producer&quot; and a &quot;consumer&quot;. The producer script will create a new
+     capped collection using the
+     <a href="https://docs.mongodb.com/manual/reference/command/create" class="link external">&raquo;&nbsp;create</a> command
+     and proceed to insert a new document into that collection each second.
+    </p></div>
+    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$manager&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Manager</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">/*&nbsp;Create&nbsp;capped&nbsp;collection&nbsp;"asteroids"&nbsp;on&nbsp;"test"&nbsp;database&nbsp;*/<br /></span><span style="color: #0000BB">$manager</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">executeCommand</span><span style="color: #007700">(</span><span style="color: #DD0000">"test"</span><span style="color: #007700">,&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Command</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'create'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"asteroids"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'capped'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'size'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1048576</span><span style="color: #007700">,<br />]));<br /><br /></span><span style="color: #FF8000">/*&nbsp;Insert&nbsp;some&nbsp;documents&nbsp;so&nbsp;that&nbsp;our&nbsp;query&nbsp;returns&nbsp;information&nbsp;*/<br /></span><span style="color: #0000BB">$bulkWrite&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">BulkWrite</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$bulkWrite</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">([</span><span style="color: #DD0000">'name'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Ceres'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'size'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">946</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'distance'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2.766</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">$bulkWrite</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">([</span><span style="color: #DD0000">'name'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Vesta'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'size'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">525</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'distance'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2.362</span><span style="color: #007700">]);<br /></span><span style="color: #0000BB">$manager</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">executeBulkWrite</span><span style="color: #007700">(</span><span style="color: #DD0000">"test.asteroids"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bulkWrite</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Query&nbsp;for&nbsp;all&nbsp;the&nbsp;items&nbsp;in&nbsp;the&nbsp;collection,&nbsp;and&nbsp;make&nbsp;it&nbsp;tailable&nbsp;with&nbsp;a<br />&nbsp;*&nbsp;maximum&nbsp;wait&nbsp;time&nbsp;of&nbsp;10&nbsp;seconds&nbsp;*/<br /></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Query</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;[],<br />&nbsp;&nbsp;&nbsp;&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'tailable'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'awaitData'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'maxAwaitTimeMS'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">10000</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;]<br />);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Query&nbsp;the&nbsp;"asteroids"&nbsp;collection&nbsp;of&nbsp;the&nbsp;"test"&nbsp;database&nbsp;*/<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$manager</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">executeQuery</span><span style="color: #007700">(</span><span style="color: #DD0000">"test.asteroids"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$query</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Wrap&nbsp;cursor&nbsp;and&nbsp;rewind&nbsp;*/<br /></span><span style="color: #0000BB">$iterator&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">IteratorIterator</span><span style="color: #007700">(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$iterator</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rewind</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">/*&nbsp;Loop&nbsp;over&nbsp;the&nbsp;result&nbsp;set&nbsp;with&nbsp;valid()&nbsp;and&nbsp;next()&nbsp;*/<br /></span><span style="color: #007700">while&nbsp;(</span><span style="color: #0000BB">$iterator</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">valid</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$document&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$iterator</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">current</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">ISO8601</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$document</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iterator</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">next</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$manager&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Manager</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$manager</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">executeCommand</span><span style="color: #007700">(</span><span style="color: #DD0000">'test'</span><span style="color: #007700">,&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Command</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'create'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'asteroids'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'capped'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'size'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1048576</span><span style="color: #007700">,<br />]));<br /><br />while&nbsp;(</span><span style="color: #0000BB">true</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bulkWrite&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">BulkWrite</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$bulkWrite</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">([</span><span style="color: #DD0000">'createdAt'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">BSON</span><span style="color: #007700">\</span><span style="color: #0000BB">UTCDateTime</span><span style="color: #007700">]);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$manager</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">executeBulkWrite</span><span style="color: #007700">(</span><span style="color: #DD0000">'test.asteroids'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bulkWrite</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
-   </div>
-
-   <div class="example-contents"><p>
-    During the second &quot;Waiting&quot;, we insert another document into the
-    collection. You can see on the date/time stamps that there are several
-    seconds between the second and third result being returned.
-   </p></div>
-   <div class="example-contents"><p>上の例の出力は、
-たとえば以下のようになります。</p></div>
-   <div class="example-contents screen">
-<div class="cdata"><pre>
-2018-01-03T16:59:21+0000
-stdClass Object
-(
-    [_id] =&gt; MongoDB\BSON\ObjectId Object
-        (
-            [oid] =&gt; 5a4d0be9122d3324914394e2
-        )
-
-    [name] =&gt; Ceres
-    [size] =&gt; 946
-    [distance] =&gt; 2.766
-)
-
-2018-01-03T16:59:21+0000
-stdClass Object
-(
-    [_id] =&gt; MongoDB\BSON\ObjectId Object
-        (
-            [oid] =&gt; 5a4d0be9122d3324914394e3
-        )
-
-    [name] =&gt; Vesta
-    [size] =&gt; 525
-    [distance] =&gt; 2.362
-)
-
-2018-01-03T16:59:24+0000
-stdClass Object
-(
-    [_id] =&gt; MongoDB\BSON\ObjectId Object
-        (
-            [oid] =&gt; 5a4d0becca67a2be8d10550c
-        )
-
-    [name] =&gt; Pallas
-    [size] =&gt; 512
-    [distance] =&gt; 2.773
-)
-</pre></div>
     </div>
+
+    <div class="example-contents"><p>
+     With the producer script still running, a second consumer script may be
+     executed to read the inserted documents using a tailable cursor, indicated
+     by the <em>tailable</em> and <em>awaitData</em> options
+     to <span class="function"><a href="mongodb-driver-query.construct.html" class="function">MongoDB\Driver\Query::__construct()</a></span>.
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$manager&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Manager</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$query&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Query</span><span style="color: #007700">([],&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'tailable'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'awaitData'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,<br />]);<br /><br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$manager</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">executeQuery</span><span style="color: #007700">(</span><span style="color: #DD0000">'test.asteroids'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$query</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$iterator&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">IteratorIterator</span><span style="color: #007700">(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$iterator</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rewind</span><span style="color: #007700">();<br /><br />while&nbsp;(</span><span style="color: #0000BB">true</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$iterator</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">valid</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$document&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$iterator</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">current</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Consumed&nbsp;document&nbsp;created&nbsp;at:&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$document</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createdAt</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$iterator</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">next</span><span style="color: #007700">();<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>
+     The consumer script will start by quickly printing all available documents
+     in the capped collection (as if <em>foreach</em> had been used);
+     however, it will not terminate upon reaching the end of the initial result
+     set. Since the cursor is tailable, calling
+     <span class="function"><a href="iteratoriterator.next.html" class="function">IteratorIterator::next()</a></span> will block and wait for
+     additional results. <span class="function"><a href="iteratoriterator.valid.html" class="function">IteratorIterator::valid()</a></span> is also
+     used to check if there is actually data available to read at each step.
+    </p></div>
+    <blockquote class="note"><p><strong class="note">注意</strong>: 
+     <span class="simpara">
+      This example uses the <em>awaitData</em> query option to
+      instruct the server to block for a short period (e.g. one second) at the
+      end of the result set before returning a response to the driver. This is
+      used to prevent the driver from aggressively polling the server when there
+      are no results available. The <em>maxAwaitTimeMS</em> option may
+      be used in conjunction with <em>tailable</em> and
+      <em>awaitData</em> to specify the amount of time that the server
+      should block when it reaches the end of the result set.
+     </span>
+    </p></blockquote>
    </div>
   </div>
 
