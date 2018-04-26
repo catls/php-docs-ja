@@ -111,14 +111,14 @@
       <td><a href="opcache.configuration.html#ini.opcache.load-comments" class="link">opcache.load_comments</a></td>
       <td>&quot;1&quot;</td>
       <td>PHP_INI_ALL</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 7.0.0 で削除されました</td>
      </tr>
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.fast-shutdown" class="link">opcache.fast_shutdown</a></td>
       <td>&quot;0&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 7.2.0 で削除されました</td>
      </tr>
 
      <tr>
@@ -130,9 +130,9 @@
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.optimization-level" class="link">opcache.optimization_level</a></td>
-      <td>&quot;0xffffffff&quot;</td>
+      <td>&quot;0x7FFFBFFF&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 5.6.18 で 0xFFFFBFFF から変更されました</td>
      </tr>
 
      <tr>
@@ -215,6 +215,34 @@
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.restrict-api" class="link">opcache.restrict_api</a></td>
       <td>&quot;&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="opcache.configuration.html#ini.opcache.file_update_protection" class="link">opcache.file_update_protection</a></td>
+      <td>&quot;2&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="opcache.configuration.html#ini.opcache.huge_code_pages" class="link">opcache.huge_code_pages</a></td>
+      <td>&quot;0&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="opcache.configuration.html#ini.opcache.lockfile_path" class="link">opcache.lockfile_path</a></td>
+      <td>&quot;/tmp&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td><a href="opcache.configuration.html#ini.opcache.opt_debug_level" class="link">opcache.opt_debug_level</a></td>
+      <td>&quot;0&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td class="empty">&nbsp;</td>
      </tr>
@@ -483,6 +511,12 @@
       有効にすると、それぞれに割り当てられたブロックを解放しない、高速シャットダウン・シーケンスが使用されます。
       しかし、リクエスト変数のすべてのセットをひとまとめに割当てを解除することは、Zend Engine のメモリ・マネージャに依存します。
      </p>
+     <p class="para">
+      このディレクティブは、PHP 7.2.0 で削除されました。
+      A variant of the fast
+      shutdown sequence has been integrated into PHP and will be automatically
+      used if possible.
+     </p>
     </dd>
 
    
@@ -732,6 +766,70 @@
      <p class="para">
       OPcache API 関数の呼び出しを、指定した文字列から始まるパス上の PHP スクリプトからだけに制限します。
       デフォルトは &quot;&quot; で、これは、何も制限しないことを意味します。
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.opcache.file_update_protection">
+     <code class="parameter">opcache.file_update_protection</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+     
+      Prevents caching files that are less than this number of seconds old.
+      It protects from caching of incompletely updated files. In case all file
+      updates on your site are atomic, you may increase performance by setting it to &quot;0&quot;.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.opcache.huge_code_pages">
+     <code class="parameter">opcache.huge_code_pages</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+     
+      Enables or disables copying of PHP code (text segment) into HUGE PAGES.
+      This should improve performance, but requires appropriate OS configuration.
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.opcache.lockfile_path">
+     <code class="parameter">opcache.lockfile_path</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      共用ロックファイルを格納する絶対パス (*nix のみ)
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.opcache.opt_debug_level">
+     <code class="parameter">opcache.opt_debug_level</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+     
+      Produces opcode dumps for debugging different stages of optimizations.
+      0x10000 will output opcodes as the compiler produced them before any optimization occurs 
+      while 0x20000 will output optimized codes.
      </p>
     </dd>
 

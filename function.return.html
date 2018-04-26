@@ -47,9 +47,7 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
     <em>return</em> は関数ではなく言語構造であるため、
-    引数を括弧で囲う必要はないことに注意しましょう。
-    括弧で囲わずそのままにしておくのが一般的です。
-    またそのほうが PHP にかかる負荷も低くなります。
+    引数を括弧で囲う必要はなく、括弧の使用は推奨されないことに注意しましょう。
    </span>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
@@ -60,15 +58,6 @@
     パースエラーとなります。
    </span>
   </p></blockquote>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <span class="simpara">
-    変数をリファレンスで返す場合は、<em class="emphasis">決して</em>引数を
-    括弧で囲ってはいけません。そのようにすると正しく動作しません。
-    <em>return ($a);</em> とすると、変数を返すのではなく
-    <em>($a)</em> を評価した結果を返すことになります
-    (この場合は、もちろん <var class="varname"><var class="varname">$a</var></var> の値です)。
-    </span>
-   </p></blockquote>
  </p>
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="control-structures.declare.html">declare</a></div>

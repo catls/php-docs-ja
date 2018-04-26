@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>レプリケーションのマスタを設定する</title>
+  <title>Set the replication master</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="tokyotyrant.setmaster" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">TokyoTyrant::setMaster</h1>
-  <p class="verinfo">(PECL tokyo_tyrant &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">TokyoTyrant::setMaster</span> &mdash; <span class="dc-title">レプリケーションのマスタを設定する</span></p>
+  <p class="verinfo">(PECL tokyo_tyrant &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">TokyoTyrant::setMaster</span> &mdash; <span class="dc-title">Set the replication master</span></p>
 
  </div>
 
@@ -24,15 +24,15 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$host</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$port</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timestamp</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$check_consistency</code><span class="initializer"> = true</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$check_consistency</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   データベースレプリケーションのマスタを設定します。
+   Sets the replication master of the database
   </p>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="simpara">
-    このメソッドは 32 ビットプラットフォームではサポートしていません。
+    This method is not supported on 32bit platforms.
    </p>
   </div>
  </div>
@@ -50,7 +50,7 @@
      <dd>
 
       <p class="para">
-       レプリケーションマスタのホスト名。<strong><code>NULL</code></strong> の場合はレプリケーションが無効となります。
+       Hostname of the replication master. If <strong><code>NULL</code></strong> the replication is disabled.
       </p>
      </dd>
 
@@ -62,7 +62,7 @@
      <dd>
 
       <p class="para">
-       レプリケーションマスタのポート。
+       Port of the replication master
       </p>
      </dd>
 
@@ -74,7 +74,7 @@
      <dd>
 
       <p class="para">
-       開始時刻のタイムスタンプ (マイクロ秒)。
+       Beginning timestamp with microseconds
       </p>
      </dd>
 
@@ -86,7 +86,7 @@
      <dd>
 
       <p class="para">
-       整合性のチェックを行うかどうか。
+       Whether to check consistency.
       </p>
      </dd>
 
@@ -100,7 +100,7 @@
  <div class="refsect1 returnvalues" id="refsect1-tokyotyrant.setmaster-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   現在のオブジェクトを返します。失敗した場合は TokyoTyrantException をスローします。
+   This method returns the current object and throws TokyoTyrantException on failure.
   </p>
  </div>
 
@@ -109,10 +109,10 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-2484">
-    <p><strong>例1 <span class="methodname"><strong>TokyoTyrant::setMaster()</strong></span> の例</strong></p>
+    <p><strong>例1 <span class="methodname"><strong>TokyoTyrant::setMaster()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;データベースに接続します&nbsp;*/<br /></span><span style="color: #0000BB">$tt&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">TokyoTyrant</span><span style="color: #007700">(</span><span style="color: #DD0000">"tokyotyrant.example.com"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;レプリケーションを無効にします&nbsp;*/<br /></span><span style="color: #0000BB">$tt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setMaster</span><span style="color: #007700">(</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Connect&nbsp;to&nbsp;a&nbsp;database&nbsp;*/<br /></span><span style="color: #0000BB">$tt&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">TokyoTyrant</span><span style="color: #007700">(</span><span style="color: #DD0000">"tokyotyrant.example.com"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">/*&nbsp;Disable&nbsp;the&nbsp;replication&nbsp;*/<br /></span><span style="color: #0000BB">$tt</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setMaster</span><span style="color: #007700">(</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

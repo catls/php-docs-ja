@@ -268,6 +268,21 @@
    (表の中央列のように) 書き直す必要があります。
    そうすれば、PHP 7.x との互換性を保ちつつ、PHP 5.x との下位互換性も維持できます。
   </p>
+
+  <p class="para">
+   これは、<a href="language.variables.scope.html#language.variables.scope.global" class="link"><em>global</em></a> キーワードにも影響します。
+   必要であれば、波括弧構文を使えばこれまでのバージョンでの挙動を再現できます。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">f</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5&nbsp;でしか使えません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">global&nbsp;$</span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5&nbsp;と&nbsp;PHP&nbsp;7&nbsp;の両方で使えます<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">global&nbsp;${</span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar</span><span style="color: #007700">};<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
  </div>
 
  <div class="sect3" id="migration70.incompatible.variable-handling.list">
@@ -399,31 +414,6 @@ array(2) {
 </pre></div>
    </div>
   </div>
- </div>
-
- <div class="sect3" id="migration70.incompatible.variable-handling.global">
-  <h4 class="title"><a href="language.variables.scope.html#language.variables.scope.global" class="link"><em>global</em></a> は単純な変数だけを受け付ける</h4>
-
-  <p class="para">
-   <a href="language.variables.variable.html" class="link">可変変数</a>
-   を <a href="language.variables.scope.html#language.variables.scope.global" class="link"><em>global</em></a> キーワードを組み合わせて使うことができなくなりました。
-   必要であれば、波括弧構文を使えばこれまでのバージョンでの挙動を再現できます。
-  </p>
-
-  <div class="informalexample">
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">f</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5&nbsp;でしか使えません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">global&nbsp;$</span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;PHP&nbsp;5&nbsp;と&nbsp;PHP&nbsp;7&nbsp;の両方で使えます<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">global&nbsp;${</span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bar</span><span style="color: #007700">};<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
-
-  <p class="para">
-   一般論として、単純な変数以外を
-   <a href="language.variables.scope.html#language.variables.scope.global" class="link"><em>global</em></a> で使うことは推奨しません。
-  </p>
  </div>
 
  <div class="sect3" id="migration70.incompatible.variable-handling.parentheses">

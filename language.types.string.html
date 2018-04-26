@@ -638,9 +638,9 @@ I am bar.
 
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <span class="simpara">
-     PHP 7.1.0 以降では、文字列に空のインデックス演算子を適用すると
+     PHP 7.1.0 以降では、空の文字列に空のインデックス演算子を適用すると
      fatal エラーが発生するようになりました。
-     これまでのバージョンではエラーにならず、文字列が配列に変換されていました。
+     これまでのバージョンではエラーにならず、空の文字列が配列に変換されていました。
     </span>
    </p></blockquote>
 
@@ -736,16 +736,14 @@ bool(false)
 
   <p class="simpara">
    一般的な関数については、<a href="ref.strings.html" class="link">文字列関数の節</a>
-   を参照ください。高度な検索/置換を行う正規表現関数については
-   <a href="ref.pcre.html" class="link">Perl</a> および
-   <a href="ref.regex.html" class="link">POSIX 拡張</a> の 2 種類がありますが、
-   それぞれの節を参照ください。
+   を参照ください。高度な検索/置換を行う関数については
+   <a href="ref.pcre.html" class="link">Perl 互換の正規表現関数</a> を参照ください。
   </p>
 
   <p class="simpara">
    <a href="ref.url.html" class="link">URL 文字列用関数</a>や文字列の暗号化/
-   復号用の関数 (<a href="ref.mcrypt.html" class="link">mcrypt</a> および
-   <a href="ref.mhash.html" class="link">mhash</a>) もあります。
+   復号用の関数 (<a href="ref.sodium.html" class="link">Sodium</a> および
+   <a href="ref.hash.html" class="link">Hash</a>) もあります。
   </p>
 
   <p class="simpara">

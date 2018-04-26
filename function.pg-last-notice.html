@@ -22,9 +22,10 @@
  <div class="refsect1 description" id="refsect1-function.pg-last-notice-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">string</span> <span class="methodname"><strong>pg_last_notice</strong></span>
+   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>pg_last_notice</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
-   )</div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$option</code><span class="initializer"> = PGSQL_NOTICE_LAST</span></span>
+  ] )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>pg_last_notice()</strong></span> は、<code class="parameter">connection</code>
@@ -67,6 +68,21 @@
      </dd>
 
     
+    
+     <dt>
+<code class="parameter">option</code></dt>
+
+     <dd>
+
+      <p class="para">
+       直近の通知を返す <strong><code>PGSQL_NOTICE_LAST</code></strong>、
+       すべての通知を返す <strong><code>PGSQL_NOTICE_ALL</code></strong>、
+       または通知をクリアする <strong><code>PGSQL_NOTICE_CLEAR</code></strong>
+       のいずれか
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -76,8 +92,11 @@
  <div class="refsect1 returnvalues" id="refsect1-function.pg-last-notice-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   指定された <code class="parameter">connection</code> の直近の通知を文字列で
-   返します。エラー時には <strong><code>FALSE</code></strong> を返します。
+   <strong><code>PGSQL_NOTICE_LAST</code></strong> 使用時は、
+   指定された <code class="parameter">connection</code> の直近の通知を含む <span class="type"><a href="language.types.string.html" class="type string">string</a></span>、
+   <strong><code>PGSQL_NOTICE_ALL</code></strong> 使用時は <span class="type"><a href="language.types.array.html" class="type array">array</a></span>、
+   <strong><code>PGSQL_NOTICE_CLEAR</code></strong> 使用時は <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>、
+   エラー時には <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
@@ -104,7 +123,36 @@ CREATE TABLE will create implicit sequence &quot;test_id_seq&quot; for &quot;ser
   </p>
  </div>
 
- 
+
+ <div class="refsect1 changelog" id="refsect1-function.pg-last-notice-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        <code class="parameter">option</code> パラメータが追加されました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 seealso" id="refsect1-function.pg-last-notice-seealso">
   <h3 class="title">参考</h3>
   <p class="para">

@@ -22,7 +22,8 @@
   <div class="methodsynopsis dc-description">
    <span class="type">array</span> <span class="methodname"><strong>pg_fetch_all</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
-   )</div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$result_type</code><span class="initializer"> = PGSQL_ASSOC</span></span>
+  ] )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>pg_fetch_all()</strong></span>は、結果リソースのすべての行
@@ -105,6 +106,35 @@ Array
 </pre></div>
     </div>
    </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.pg-fetch-all-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        <code class="parameter">result_type</code> パラメータが追加されました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 

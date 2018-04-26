@@ -27,7 +27,8 @@
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$table_name</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$assoc_array</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = PGSQL_DML_EXEC</span></span>
-  ] )</div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$result_type</code><span class="initializer"> = PGSQL_ASSOC</span></span>
+  ]] )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>pg_select()</strong></span> は、<em>field=&gt;value</em>
@@ -152,6 +153,13 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        <code class="parameter">result_type</code> パラメータが追加されました。
+       </td>
+      </tr>
+
       <tr>
        <td>5.6.0</td>
        <td>

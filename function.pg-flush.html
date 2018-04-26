@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Flush outbound query data on the connection</title>
+  <title>アウトバウンドクエリデータを接続へフラッシュする</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.pg-flush" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">pg_flush</h1>
-  <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">pg_flush</span> &mdash; <span class="dc-title">Flush outbound query data on the connection</span></p>
+  <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">pg_flush</span> &mdash; <span class="dc-title">アウトバウンドクエリデータを接続へフラッシュする</span></p>
 
  </div>
 
@@ -25,8 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>pg_flush()</strong></span> flushes any outbound query data waiting to be
-   sent on the connection.
+   <span class="function"><strong>pg_flush()</strong></span> は、接続への送信を待機中のすべての
+   アウトバウンドクエリデータをフラッシュします。
   </p>
  </div>
 
@@ -42,7 +42,7 @@
     <dd>
 
      <p class="para">
-      PostgreSQL database connection resource.
+      PostgreSQL の接続リソース。
      </p>
     </dd>
 
@@ -55,9 +55,9 @@
  <div class="refsect1 returnvalues" id="refsect1-function.pg-flush-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns <strong><code>TRUE</code></strong> if the flush was successful or no data was waiting to be
-   flushed, <em>0</em> if part of the pending data was flushed but
-   more remains失敗した場合に <strong><code>FALSE</code></strong> を返します.
+   フラッシュが成功したか、またはフラッシュを待機中のデータがなかった場合 <strong><code>TRUE</code></strong>、
+   保留中のデータの一部がフラッシュされ残りがある場合、<em>0</em>。
+   失敗した場合に <strong><code>FALSE</code></strong> を返します
   </p>
  </div>
 

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>エラーの数および直近のエラーメッセージを返す</title>
+  <title>Returns number of errors and last error message</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,18 +13,18 @@
 </div><hr /><div id="function.session-pgsql-get-error" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">session_pgsql_get_error</h1>
-  <p class="verinfo">(PECL session_pgsql SVN)</p><p class="refpurpose"><span class="refname">session_pgsql_get_error</span> &mdash; <span class="dc-title">エラーの数および直近のエラーメッセージを返す</span></p>
+  <p class="verinfo">(PECL session_pgsql SVN)</p><p class="refpurpose"><span class="refname">session_pgsql_get_error</span> &mdash; <span class="dc-title">Returns number of errors and last error message</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.session-pgsql-get-error-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="type">array</span> <span class="methodname"><strong>session_pgsql_get_error</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$with_error_message</code><span class="initializer"> = false</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$with_error_message</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   エラーの数を取得し、またオプションでエラーメッセージも取得します。
+   Get the number of errors and optional the error messages.
   </p>
  </div>
 
@@ -40,7 +40,7 @@
      <dd>
 
       <p class="para">
-       <strong><code>TRUE</code></strong> に設定すると、各エラーのエラーメッセージも返されます。
+       Set to <strong><code>TRUE</code></strong> the literal error message for each error is also returned.
       </p>
      </dd>
 
@@ -53,7 +53,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.session-pgsql-get-error-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   エラーの数を配列で返します。
+   The number of errors are returned as <span class="type"><a href="language.types.array.html" class="type array">array</a></span>.
   </p>
  </div>
 

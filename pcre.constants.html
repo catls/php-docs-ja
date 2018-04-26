@@ -92,6 +92,19 @@
      <td>4.3.0</td>
     </tr>
 
+    
+    <tr id="constant.preg-unmatched-as-null">
+     <td><strong><code>PREG_UNMATCHED_AS_NULL</code></strong></td>
+     <td>
+      This flag tells <span class="function"><a href="function.preg-match.html" class="function">preg_match()</a></span> and
+      <span class="function"><a href="function.preg-match-all.html" class="function">preg_match_all()</a></span> to include unmatched subpatterns in
+      <var class="varname"><var class="varname">$matches</var></var> as <strong><code>NULL</code></strong> values. Without this flag, unmatched
+      subpatterns are reported as empty strings, as if they were empty matches.
+      Setting this flag allows to distinguish between these two cases.
+     </td>
+     <td>7.2.0</td>
+    </tr>
+
     <tr id="constant.preg-no-error">
      <td><strong><code>PREG_NO_ERROR</code></strong></td>
      <td>

@@ -6660,9 +6660,8 @@
 <li><a href="function.pg-connection-busy.html" class="index">pg_connection_busy</a> - 接続がビジーかどうか調べる</li>
 <li><a href="function.pg-connection-reset.html" class="index">pg_connection_reset</a> - 接続をリセット(再接続)する</li>
 <li><a href="function.pg-connection-status.html" class="index">pg_connection_status</a> - 接続ステータスを取得する</li>
-<li><a href="function.pg-connect-poll.html" class="index">pg_connect_poll</a> - Poll the status of an in-progress asynchronous PostgreSQL connection
-   attempt</li>
-<li><a href="function.pg-consume-input.html" class="index">pg_consume_input</a> - Reads input on the connection</li>
+<li><a href="function.pg-connect-poll.html" class="index">pg_connect_poll</a> - 進行中の非同期 PostgreSQL 接続試行のステータスをポーリングする</li>
+<li><a href="function.pg-consume-input.html" class="index">pg_consume_input</a> - 接続の入力を読み取る</li>
 <li><a href="function.pg-convert.html" class="index">pg_convert</a> - 連想配列の値を、SQL 文として実行可能な形式に変換する</li>
 <li><a href="function.pg-copy-from.html" class="index">pg_copy_from</a> - 配列からテーブルに挿入する</li>
 <li><a href="function.pg-copy-to.html" class="index">pg_copy_to</a> - 配列にテーブルをコピーする</li>
@@ -6690,7 +6689,7 @@
 <li><a href="function.pg-field-table.html" class="index">pg_field_table</a> - tables フィールドの名前あるいは oid を返す</li>
 <li><a href="function.pg-field-type.html" class="index">pg_field_type</a> - フィールド番号に対応する型名を返す</li>
 <li><a href="function.pg-field-type-oid.html" class="index">pg_field_type_oid</a> - フィールド番号に対応する型 ID（OID）を返す</li>
-<li><a href="function.pg-flush.html" class="index">pg_flush</a> - Flush outbound query data on the connection</li>
+<li><a href="function.pg-flush.html" class="index">pg_flush</a> - アウトバウンドクエリデータを接続へフラッシュする</li>
 <li><a href="function.pg-free-result.html" class="index">pg_free_result</a> - メモリを開放する</li>
 <li><a href="function.pg-get-notify.html" class="index">pg_get_notify</a> - SQL NOTIFY メッセージを取得する</li>
 <li><a href="function.pg-get-pid.html" class="index">pg_get_pid</a> - バックエンドのプロセス ID を得る</li>
@@ -6724,7 +6723,7 @@
    送信し、その完了を待つ</li>
 <li><a href="function.pg-put-line.html" class="index">pg_put_line</a> - NULL で終わる文字列を PostgreSQL バックエンドに送信する</li>
 <li><a href="function.pg-query.html" class="index">pg_query</a> - クエリを実行する</li>
-<li><a href="function.pg-query-params.html" class="index">pg_query_params</a> - SQL コマンドとパラメータを分割してサーバーにを送信し、その結果を待つ</li>
+<li><a href="function.pg-query-params.html" class="index">pg_query_params</a> - SQL コマンドとパラメータを分割してサーバーへ送信し、その結果を待つ</li>
 <li><a href="function.pg-result-error.html" class="index">pg_result_error</a> - 結果に関連するエラーメッセージを取得する</li>
 <li><a href="function.pg-result-error-field.html" class="index">pg_result_error_field</a> - エラー報告の各フィールドを返す</li>
 <li><a href="function.pg-result-seek.html" class="index">pg_result_seek</a> - 結果リソースの内部行オフセットを設定する</li>
@@ -7728,7 +7727,7 @@
 <li><a href="function.session-module-name.html" class="index">session_module_name</a> - 現在のセッションモジュールを取得または設定する</li>
 <li><a href="function.session-name.html" class="index">session_name</a> - 現在のセッション名を取得または設定する</li>
 <li><a href="function.session-pgsql-add-error.html" class="index">session_pgsql_add_error</a> - エラーカウントを加算し、直近のエラーメッセージを設定する</li>
-<li><a href="function.session-pgsql-get-error.html" class="index">session_pgsql_get_error</a> - エラーの数および直近のエラーメッセージを返す</li>
+<li><a href="function.session-pgsql-get-error.html" class="index">session_pgsql_get_error</a> - Returns number of errors and last error message</li>
 <li><a href="function.session-pgsql-get-field.html" class="index">session_pgsql_get_field</a> - カスタムフィールドの値を取得する</li>
 <li><a href="function.session-pgsql-reset.html" class="index">session_pgsql_reset</a> - セッションデータベースサーバーとの接続をリセットする</li>
 <li><a href="function.session-pgsql-set-field.html" class="index">session_pgsql_set_field</a> - カスタムフィールドの値を設定する</li>
@@ -9601,8 +9600,8 @@
 <li><a href="tokyotyrant.putkeep.html" class="index">TokyoTyrant::putKeep</a> - レコードを書き込む</li>
 <li><a href="tokyotyrant.putnr.html" class="index">TokyoTyrant::putNr</a> - 値を格納する</li>
 <li><a href="tokyotyrant.putshl.html" class="index">TokyoTyrant::putShl</a> - レコードを連結する</li>
-<li><a href="tokyotyrant.restore.html" class="index">TokyoTyrant::restore</a> - データベースをリストアする</li>
-<li><a href="tokyotyrant.setmaster.html" class="index">TokyoTyrant::setMaster</a> - レプリケーションのマスタを設定する</li>
+<li><a href="tokyotyrant.restore.html" class="index">TokyoTyrant::restore</a> - Restore the database</li>
+<li><a href="tokyotyrant.setmaster.html" class="index">TokyoTyrant::setMaster</a> - Set the replication master</li>
 <li><a href="tokyotyrant.size.html" class="index">TokyoTyrant::size</a> - 値のサイズを返す</li>
 <li><a href="tokyotyrant.stat.html" class="index">TokyoTyrant::stat</a> - 統計情報を取得する</li>
 <li><a href="tokyotyrant.sync.html" class="index">TokyoTyrant::sync</a> - データベースを同期させる</li>

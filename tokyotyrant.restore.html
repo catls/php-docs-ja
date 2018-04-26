@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>データベースをリストアする</title>
+  <title>Restore the database</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="tokyotyrant.restore" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">TokyoTyrant::restore</h1>
-  <p class="verinfo">(PECL tokyo_tyrant &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">TokyoTyrant::restore</span> &mdash; <span class="dc-title">データベースをリストアする</span></p>
+  <p class="verinfo">(PECL tokyo_tyrant &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">TokyoTyrant::restore</span> &mdash; <span class="dc-title">Restore the database</span></p>
 
  </div>
 
@@ -23,15 +23,15 @@
    <span class="modifier">public</span> <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>TokyoTyrant::restore</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$log_dir</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timestamp</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$check_consistency</code><span class="initializer"> = true</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$check_consistency</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   更新ログからデータベースをリストアします。
+   Restore the database from the update log.
   </p>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="simpara">
-    このメソッドは 32 ビットプラットフォームではサポートしていません。
+    This method is not supported on 32bit platforms.
    </p>
   </div>
  </div>
@@ -49,7 +49,7 @@
      <dd>
 
       <p class="para">
-       ログが存在するディレクトリ。
+       Directory where the log is
       </p>
      </dd>
 
@@ -61,7 +61,7 @@
      <dd>
 
       <p class="para">
-       開始時刻のタイムスタンプ (マイクロ秒)。
+       Beginning timestamp with microseconds
       </p>
      </dd>
 
@@ -73,7 +73,7 @@
      <dd>
 
       <p class="para">
-       整合性のチェックを行うかどうか。デフォルトは <strong><code>TRUE</code></strong> です。
+       Whether to check consistency: Default: <strong><code>TRUE</code></strong>
       </p>
      </dd>
 
@@ -87,7 +87,7 @@
  <div class="refsect1 returnvalues" id="refsect1-tokyotyrant.restore-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   現在のオブジェクトを返します。失敗した場合は TokyoTyrantException をスローします。
+   This method returns the current object and throws TokyoTyrantException on failure.
   </p>
  </div>
 

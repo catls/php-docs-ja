@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Reads input on the connection</title>
+  <title>接続の入力を読み取る</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.pg-consume-input" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">pg_consume_input</h1>
-  <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">pg_consume_input</span> &mdash; <span class="dc-title">Reads input on the connection</span></p>
+  <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">pg_consume_input</span> &mdash; <span class="dc-title">接続の入力を読み取る</span></p>
 
  </div>
 
@@ -25,8 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>pg_consume_input()</strong></span> consumes any input waiting to be read
-   from the database server.
+   <span class="function"><strong>pg_consume_input()</strong></span> は、データベースサーバーからの
+   読み取りを待機中のすべての入力を消費します。
   </p>
  </div>
 
@@ -42,7 +42,7 @@
     <dd>
 
      <p class="para">
-      PostgreSQL database connection resource.
+      PostgreSQL の接続リソース。
      </p>
     </dd>
 
@@ -55,8 +55,9 @@
  <div class="refsect1 returnvalues" id="refsect1-function.pg-consume-input-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <strong><code>TRUE</code></strong> if no error occurred, or <strong><code>FALSE</code></strong> if there was an error. Note that
-   <strong><code>TRUE</code></strong> does not necessarily indicate that input was waiting to be read.
+   エラーが発生しなかった場合 <strong><code>TRUE</code></strong>、
+   またはエラーがあった場合 <strong><code>FALSE</code></strong>。
+   <strong><code>TRUE</code></strong> は、入力が読み取り待機中ということを示すとは限らないことに注意してください。
   </p>
  </div>
 

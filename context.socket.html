@@ -72,6 +72,7 @@
 
     
     
+    
      <dt id="context.socket.ipv6_v6only"><code class="parameter">ipv6_v6only</code></dt>
 
      <dd>
@@ -123,6 +124,18 @@
      </dd>
 
     
+    
+     <dt id="context.socket.tcp_nodelay"><code class="parameter">tcp_nodelay</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Setting this option to <strong><code>TRUE</code></strong> will set <em>SOL_TCP,NO_DELAY=1</em>
+       appropriately, thus disabling the TCP Nagle algorithm.
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -143,7 +156,14 @@
      </thead>
 
      <tbody class="tbody">
-       <tr>
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        <code class="parameter">tcp_nodelay</code> が追加されました。
+       </td>
+      </tr>
+
+      <tr>
        <td>7.0.1</td>
        <td>
         <code class="parameter">ipv6_v6only</code> が追加されました。

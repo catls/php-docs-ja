@@ -95,6 +95,13 @@
      <td>PHP 4.3.0 から利用可能です。</td>
     </tr>
 
+      <tr>
+      <td><a href="mbstring.configuration.html#ini.mbstring.http-output-conv-mimetypes" class="link">mbstring.http_output_conv_mimetypes</a></td>
+      <td>&quot;^(text/|application/xhtml\+xml)&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td>PHP 5.3.0 から利用可能です。</td>
+     </tr>
+
     <tr>
       <td><a href="mbstring.configuration.html#ini.mbstring.strict-detection" class="link">mbstring.strict_detection</a></td>
      <td>&quot;0&quot;</td>
@@ -238,6 +245,7 @@
 
      <p class="para">
       無効な文字を代替する文字を定義します。
+      サポートされる値は、<span class="function"><a href="function.mb-substitute-character.html" class="function">mb_substitute_character()</a></span> を参照してください。
      </p>
     </dd>
 
@@ -260,6 +268,19 @@
      </p>
      <p class="para">
       この設定は、<var class="filename">php.ini</var> でしか変更できません。
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.mbstring.http-output-conv-mimetypes">
+     <code class="parameter">mbstring.http_output_conv_mimetypes</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
      </p>
     </dd>
 

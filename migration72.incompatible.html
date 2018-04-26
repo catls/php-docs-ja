@@ -117,7 +117,7 @@ int(1)
   <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;integer&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #DD0000">'abc'</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;string&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;Countable&nbsp;インターフェイスを実装していないオブジェクトはカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;</span><span style="color: #FF8000">//&nbsp;array&nbsp;はカウントできます<br /></span><span style="color: #007700">);</span>
+<span style="color: #0000BB">&lt;?php<br /><br />var_dump</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">null</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;NULL&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;integer&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #DD0000">'abc'</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;string&nbsp;はカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">stdclass</span><span style="color: #007700">),&nbsp;</span><span style="color: #FF8000">//&nbsp;Countable&nbsp;インターフェイスを実装していないオブジェクトはカウントできません<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">,</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;</span><span style="color: #FF8000">//&nbsp;array&nbsp;はカウントできます<br /></span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
@@ -130,6 +130,9 @@ Warning: count(): Parameter must be an array or an object that implements Counta
 Warning: count(): Parameter must be an array or an object that implements Countable in %s on line %d
 
 Warning: count(): Parameter must be an array or an object that implements Countable in %s on line %d
+
+Warning: count(): Parameter must be an array or an object that implements Countable in %s on line %d
+int(0)
 int(1)
 int(1)
 int(1)
@@ -265,8 +268,8 @@ int(2)
 
   <p class="para">
    <span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> 関数のオプション、
-   <strong><code>JSON_OBJECT_AS_ARRAY</code></strong>, is now used if the second
-   parameter (assoc) is <strong><code>NULL</code></strong>. Previously,
+   <strong><code>JSON_OBJECT_AS_ARRAY</code></strong> は、2番めのパラメータ (assoc) が <strong><code>NULL</code></strong>
+   の場合に使用されるようになりました。
    <strong><code>JSON_OBJECT_AS_ARRAY</code></strong> はこれまで無視されていました。
   </p>
  </div>

@@ -2,8 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Poll the status of an in-progress asynchronous PostgreSQL connection
-   attempt</title>
+  <title>進行中の非同期 PostgreSQL 接続試行のステータスをポーリングする</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -15,8 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">pg_connect_poll</h1>
   <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">pg_connect_poll</span> &mdash; <span class="dc-title">
-   Poll the status of an in-progress asynchronous PostgreSQL connection
-   attempt
+   進行中の非同期 PostgreSQL 接続試行のステータスをポーリングする
   </span></p>
 
  </div>
@@ -29,9 +27,10 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>pg_connect_poll()</strong></span> polls the status of a PostgreSQL
-   connection created by calling <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span> with the
-   <strong><code>PGSQL_CONNECT_ASYNC</code></strong> option.
+   <span class="function"><strong>pg_connect_poll()</strong></span> は、
+   <strong><code>PGSQL_CONNECT_ASYNC</code></strong> オプションを使用して
+   コールされた <span class="function"><a href="function.pg-connect.html" class="function">pg_connect()</a></span> で作成された
+   PostgreSQL 接続のステータスをポーリングします。
   </p>
  </div>
 
@@ -47,7 +46,7 @@
     <dd>
 
      <p class="para">
-      PostgreSQL database connection resource.
+      PostgreSQL の接続リソース。
      </p>
     </dd>
 
@@ -60,11 +59,11 @@
  <div class="refsect1 returnvalues" id="refsect1-function.pg-connect-poll-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns <strong><code>PGSQL_POLLING_FAILED</code></strong>,
-   <strong><code>PGSQL_POLLING_READING</code></strong>,
-   <strong><code>PGSQL_POLLING_WRITING</code></strong>,
-   <strong><code>PGSQL_POLLING_OK</code></strong>, or
-   <strong><code>PGSQL_POLLING_ACTIVE</code></strong>.
+   <strong><code>PGSQL_POLLING_FAILED</code></strong>、
+   <strong><code>PGSQL_POLLING_READING</code></strong>、
+   <strong><code>PGSQL_POLLING_WRITING</code></strong>、
+   <strong><code>PGSQL_POLLING_OK</code></strong>、
+   または <strong><code>PGSQL_POLLING_ACTIVE</code></strong> を返します。
   </p>
  </div>
 
