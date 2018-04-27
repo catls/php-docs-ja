@@ -2,8 +2,8 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>SQL クエリをリレーショナルデータベースに対して実行し、
-   結果を正規化されたデータグラフ形式で返す</title>
+  <title>Executes a given SQL query against a relational database 
+   and returns the results as a normalised data graph</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -15,8 +15,8 @@
  <div class="refnamediv">
   <h1 class="refname">SDO_DAS_Relational::executeQuery</h1>
   <p class="verinfo">(^)</p><p class="refpurpose"><span class="refname">SDO_DAS_Relational::executeQuery</span> &mdash; <span class="dc-title">
-   SQL クエリをリレーショナルデータベースに対して実行し、
-   結果を正規化されたデータグラフ形式で返す
+   Executes a given SQL query against a relational database 
+   and returns the results as a normalised data graph
   </span></p>
 
  </div>
@@ -48,10 +48,11 @@
 この関数は自己責任で使用してください。</p></div>
 
   <p class="para">
-   クエリをリレーショナルデータベースに対して実行します。
-   実行には、渡された PDO データベースハンドルを使用します。
-   メタデータから作成されたモデルを使用し、結果セットを取得します。
-   結果をデータグラフとして返します。
+   Executes a given query against the relational database, 
+   using the supplied PDO database handle.
+   Uses the model that it built from the metadata 
+   to interpret the result set.
+   Returns a data graph.
   </p>
  </div>
 
@@ -68,8 +69,9 @@ PDO_database_handle</dt>
      <dd>
 
       <p class="para">
-       PDO 拡張モジュールを使用して作成します。
-       PDO データベースハンドルを作成する典型的な方法は、このようになります。
+       Constructed using the PDO extension. 
+       A typical line to construct a PDO database handle might look 
+       like this:
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 $dbh&nbsp;=&nbsp;new&nbsp;PDO("mysql:dbname=COMPANYDB;host=localhost",DATABASE_USER,DATABASE_PASSWORD);</span>
@@ -87,7 +89,7 @@ SQL_statement</dt>
      <dd>
 
       <p class="para">
-       データベースに対して実行する SQL 文。
+       The SQL statement to be executed against the database.
       </p>
      </dd>
 
@@ -99,45 +101,52 @@ column_specifier</dt>
      <dd>
 
       <p class="para">
-       リレーショナル DAS では、結果セットの各カラムを調べ、
-       それがどのテーブルのどのカラムからきたものなのかを知る必要があります。
-       データ自身からそれらの情報を取得できる場合もありますが、
-       そうでない場合もあります。取得できない場合にはカラム指定子が必要となります。
-       これは、カラムを識別するための配列です。
-       配列の各項目は、単純な
-       <var class="varname"><var class="varname">テーブル名.カラム名</var></var>
-       形式の文字列となります。
+       The Relational DAS needs to examine the result set and 
+       for every column, know which table and which column of 
+       that table it came from.
+       In some circumstances it can find this information for itself, 
+       but sometimes it cannot.
+       In these cases a column specifier is needed, 
+       which is an array that identifies the columns.
+       Each entry in the array is simply a string in the form
+       <var class="varname"><var class="varname">table-name.column_name</var></var>.
       </p>
           
 
       <p class="para">
-       カラム指定子が必要となるのは、
-       データベースのメタデータ内に同じ名前のカラムが複数ある場合です。
-       例で使用しているデータベースでは、すべてのテーブルに
-       <var class="varname"><var class="varname">id</var></var> および <var class="varname"><var class="varname">name</var></var>
-       のふたつのカラムがあります。
-       リレーショナル DAS が PDO から結果セットを読み込む際には、
-       属性 PDO_FETCH_ASSOC を使用できます。これは、
-       結果セットのカラム名をリレーショナル DAS のカラム名に対応させますが、
-       同じ名前の重複を識別できません。そのため、
-       これは、結果セットでカラム名が重複する可能性がない場合にのみ動作します。
+       The column specifier is needed when there are duplicate 
+       column names in the database metadata.
+       For example, in the database used within the examples, 
+       all the tables have both a
+       <var class="varname"><var class="varname">id</var></var>
+       and a
+       <var class="varname"><var class="varname">name</var></var>
+       column.
+       When the Relational DAS fetches the result set from PDO 
+       it can do so with the PDO_FETCH_ASSOC attribute, 
+       which will cause the columns in the results set 
+       to be labelled with  the column name, but will not distinguish 
+       duplicates.
+       So this will only work when there are no duplicates 
+       possible in the results set.
       </p>
           
       <p class="para">
-       まとめます。そのカラムがどのテーブルのものかが判別できなくなる
-       可能性が少しでもある場合には、カラム指定子の配列を設定します。
-       省略できるのは、データベースのメタデータ内にあるすべてのカラム名が
-       一意な場合のみです。
+       To summarise, specify a column specifier array whenever there 
+       is any uncertainty about which column could be from which table and
+       only omit it when every column name in the database metadata is unique.
       </p>
           
       <p class="para">
-       <a href="sdodasrel.examples.html" class="link">例</a>
-       で示したサンプルでは、すべてカラム指定子を設定しています。
-       インストール先の <var class="filename">Scenarios</var>
-       ディレクトリ内に、カラム指定子を使用しない例がひとつあります。
-       これは employee テーブルだけを使用するものです。
-       ひとつのテーブルしか使用していないので、
-       カラム名が重複することがないわけです。
+       All of the examples in the
+       <a href="sdodasrel.examples.html" class="link">Examples</a>
+       use a column specifier.
+       There is one example in the
+       <var class="filename">Scenarios</var>
+       directory of the installation that does not: 
+       that which works with just the employee table, 
+       and because it works with just one table, 
+       there can not exist duplicate column names.
       </p>
      </dd>
 
@@ -151,17 +160,19 @@ column_specifier</dt>
  <div class="refsect1 returnvalues" id="refsect1-sdo-das-relational.executequery-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   データグラフを返します。具体的には、特別な型のルートオブジェクトを返します。
-   このルートオブジェクトの下に、結果セットからのデータが格納されています。
-   ルートオブジェクトは複数の値を持つプロパティを持っており、
-   そのプロパティは、コンストラクタで指定した
-   アプリケーションのルート型と同じ名前になります。
-   また、そのプロパティの内容は、
-   アプリケーションのルート型のオブジェクトとなります。
+   Returns a data graph. 
+   Specifically, it returns a root object of a special type.
+   Under this root object will be the data from the result set.
+   The root object will have a multi-valued containment property 
+   with the same name as the application root type 
+   specified on the constructor,
+   and that property will contain one or more data objects 
+   of the application root type.
   </p>
   <p class="para">
-   クエリがデータを返さなかった場合にも特別なルート型のオブジェクトが返されますが、
-   その中にあるアプリケーションルート型のプロパティの内容は空となります。
+   In the event that the query returns no data, 
+   the special root object will still be returned but 
+   the containment property for the application root type will be empty.
   </p>
  </div>
 
@@ -170,13 +181,14 @@ column_specifier</dt>
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
    <span class="function"><strong>SDO_DAS_Relational::executeQuery()</strong></span>
-   は、データグラフを正常に作成できなかった場合に
-   <strong class="classname">SDO_DAS_Relational_Exception</strong> をスローします。
-   これが起こる原因は、いろいろ考えられます。例えば、
-   すべてのオブジェクトの結果セットで主キーがなかった場合などです。
-   また、何らかの PDO 例外が発生した場合には、
-   それをキャッチして PDO の診断情報を
-   <strong class="classname">SDO_DAS_Relational_Exception</strong> に格納し、それをスローします。
+   can throw an <strong class="classname">SDO_DAS_Relational_Exception</strong> if it is unable 
+   to construct the data graph correctly.
+   This can occur for a  number of reasons: 
+   for example if it finds that it does not have primary keys 
+   in the result set for all the objects.
+   It also catches any PDO exceptions and obtains PDO 
+   diagnostic information which it includes in an 
+   <strong class="classname">SDO_DAS_Relational_Exception</strong> which it then throws.
   </p>
  </div>
 
@@ -184,10 +196,10 @@ column_specifier</dt>
  <div class="refsect1 examples" id="refsect1-sdo-das-relational.executequery-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   このメソッドをコールする例については、リレーショナル DAS
-   の全般的な情報の中にある
-   <a href="sdodasrel.examples.html" class="link">例</a>
-   の節を参照ください。
+   Please see the
+   <a href="sdodasrel.examples.html" class="link">Examples</a>
+   section in the general information about the 
+   Relational DAS for many examples of calling this method.
   </p>
  </div>
 

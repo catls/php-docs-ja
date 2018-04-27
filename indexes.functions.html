@@ -2804,7 +2804,7 @@
 <li><a href="function.gnupg-setsignmode.html" class="index">gnupg_setsignmode</a> - 署名方式を設定する</li>
 <li><a href="function.gnupg-sign.html" class="index">gnupg_sign</a> - 指定したテキストに署名する</li>
 <li><a href="function.gnupg-verify.html" class="index">gnupg_verify</a> - 署名済みテキストを検証する</li>
-<li><a href="function.gopher-parsedir.html" class="index">gopher_parsedir</a> - gopher フォーマットのディレクトリエントリを連想配列に変換する</li>
+<li><a href="function.gopher-parsedir.html" class="index">gopher_parsedir</a> - Translate a gopher formatted directory entry into an associative array</li>
 <li><a href="function.grapheme-extract.html" class="index">grapheme_extract</a> - デフォルトの書記素クラスタシーケンスをテキストバッファから取り出す関数。
    テキストは UTF-8 でエンコードされている必要があります</li>
 <li><a href="function.grapheme-stripos.html" class="index">grapheme_stripos</a> - 大文字小文字を区別せず、文字列内で最初にあらわれる場所の (書記素単位の) 位置を見つける</li>
@@ -7624,14 +7624,14 @@
 <li><a href="sdo-das-datafactory.addtype.html" class="index">SDO_DAS_DataFactory::addType</a> - モデルに新しい型を追加する</li>
 <li><a href="sdo-das-datafactory.getdatafactory.html" class="index">SDO_DAS_DataFactory::getDataFactory</a> - データファクトリのインスタンスを取得する</li>
 <li><a href="sdo-das-dataobject.getchangesummary.html" class="index">SDO_DAS_DataObject::getChangeSummary</a> - データオブジェクトの変更内容を取得する</li>
-<li><a href="sdo-das-relational.applychanges.html" class="index">SDO_DAS_Relational::applyChanges</a> - データグラフに対する変更を、データベースに書き戻す</li>
-<li><a href="sdo-das-relational.createrootdataobject.html" class="index">SDO_DAS_Relational::createRootDataObject</a> - 別の空のデータグラフ内の、特別なルートオブジェクトを返す。
-   データグラフをスクラッチから作成する際に使用する</li>
-<li><a href="sdo-das-relational.executepreparedquery.html" class="index">SDO_DAS_Relational::executePreparedQuery</a> - プリペアドステートメントとして渡された SQL
-   クエリにプレースホルダ置換用の値を指定して実行し、
-   結果を正規化されたデータグラフ形式で返す</li>
-<li><a href="sdo-das-relational.executequery.html" class="index">SDO_DAS_Relational::executeQuery</a> - SQL クエリをリレーショナルデータベースに対して実行し、
-   結果を正規化されたデータグラフ形式で返す</li>
+<li><a href="sdo-das-relational.applychanges.html" class="index">SDO_DAS_Relational::applyChanges</a> - Applies the changes made to a data graph back to the database</li>
+<li><a href="sdo-das-relational.createrootdataobject.html" class="index">SDO_DAS_Relational::createRootDataObject</a> - Returns the special root object in an otherwise 
+   empty data graph. Used when creating a data graph from scratch</li>
+<li><a href="sdo-das-relational.executepreparedquery.html" class="index">SDO_DAS_Relational::executePreparedQuery</a> - Executes an SQL query passed as a prepared statement, with a 
+   list of values to substitute for placeholders, and return the 
+   results as a normalised data graph</li>
+<li><a href="sdo-das-relational.executequery.html" class="index">SDO_DAS_Relational::executeQuery</a> - Executes a given SQL query against a relational database 
+   and returns the results as a normalised data graph</li>
 <li><a href="sdo-das-relational.construct.html" class="index">SDO_DAS_Relational::__construct</a> - リレーショナルデータアクセスサービスのインスタンスを作成する</li>
 <li><a href="sdo-das-setting.getlistindex.html" class="index">SDO_DAS_Setting::getListIndex</a> - 複数の値を持つプロパティのインデックスを取得する</li>
 <li><a href="sdo-das-setting.getpropertyindex.html" class="index">SDO_DAS_Setting::getPropertyIndex</a> - 変更されたプロパティのプロパティインデックスを取得する</li>
@@ -7641,8 +7641,7 @@
 <li><a href="sdo-das-xml.addtypes.html" class="index">SDO_DAS_XML::addTypes</a> - 2 番目以降のスキーマファイルを SDO_DAS_XML オブジェクトに読み込む</li>
 <li><a href="sdo-das-xml.create.html" class="index">SDO_DAS_XML::create</a> - スキーマファイルを指定して SDO_DAS_XML オブジェクトを作成する</li>
 <li><a href="sdo-das-xml.createdataobject.html" class="index">SDO_DAS_XML::createDataObject</a> - 名前空間 URI および型名を指定して SDO_DataObject を作成する</li>
-<li><a href="sdo-das-xml.createdocument.html" class="index">SDO_DAS_XML::createDocument</a> - ファイルや文字列から読み込まずに、
-   XML ドキュメントオブジェクトをスクラッチから作成する</li>
+<li><a href="sdo-das-xml.createdocument.html" class="index">SDO_DAS_XML::createDocument</a> - Creates an XML Document object from scratch, without the need to load a document from a file or string</li>
 <li><a href="sdo-das-xml.loadfile.html" class="index">SDO_DAS_XML::loadFile</a> - xml インスタンスドキュメントへのパスを指定し、
    SDO_DAS_XML_Document オブジェクトを返す</li>
 <li><a href="sdo-das-xml.loadstring.html" class="index">SDO_DAS_XML::loadString</a> - xml インスタンス文字列を指定し、
@@ -9438,7 +9437,7 @@
 <li><a href="function.swoole-version.html" class="index">swoole_version</a> - Get the version of Swoole</li>
 <li><a href="function.sybase-affected-rows.html" class="index">sybase_affected_rows</a> - 直近のクエリで変更された行の数を得る</li>
 <li><a href="function.sybase-close.html" class="index">sybase_close</a> - Sybase 接続を閉じる</li>
-<li><a href="function.sybase-connect.html" class="index">sybase_connect</a> - Sybase サーバー接続をオープンする</li>
+<li><a href="function.sybase-connect.html" class="index">sybase_connect</a> - Opens a Sybase server connection</li>
 <li><a href="function.sybase-data-seek.html" class="index">sybase_data_seek</a> - 内部行ポインタを移動する</li>
 <li><a href="function.sybase-deadlock-retry-count.html" class="index">sybase_deadlock_retry_count</a> - デッドロックの再試行回数を設定する</li>
 <li><a href="function.sybase-fetch-array.html" class="index">sybase_fetch_array</a> - 行を配列として取り込む</li>

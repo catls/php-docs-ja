@@ -2,8 +2,8 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>別の空のデータグラフ内の、特別なルートオブジェクトを返す。
-   データグラフをスクラッチから作成する際に使用する</title>
+  <title>Returns the special root object in an otherwise 
+   empty data graph. Used when creating a data graph from scratch</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -15,8 +15,8 @@
  <div class="refnamediv">
   <h1 class="refname">SDO_DAS_Relational::createRootDataObject</h1>
   <p class="verinfo">(^)</p><p class="refpurpose"><span class="refname">SDO_DAS_Relational::createRootDataObject</span> &mdash; <span class="dc-title">
-   別の空のデータグラフ内の、特別なルートオブジェクトを返す。
-   データグラフをスクラッチから作成する際に使用する
+   Returns the special root object in an otherwise 
+   empty data graph. Used when creating a data graph from scratch
   </span></p>
 
  </div>
@@ -35,19 +35,23 @@
 のリリースにおいて変更される可能性があります。
 この関数は自己責任で使用してください。</p></div>
   <p class="para">
-   別の空のデータグラフのトップレベルにある、特別なルートオブジェクトを返します。
-   <span class="function"><strong>executeQuery()</strong></span> をコールしてデータグラフを作成するのではなく、
-   アプリケーション内でスクラッチからデータグラフを作成したい場合に使用します。
+   Returns the special root object at the top of an otherwise 
+   empty data graph.
+   This call is used when the application wants to create a 
+   data graph from scratch, without having called
+   <span class="function"><strong>executeQuery()</strong></span>
+   to create a data graph.
   </p>
   <p class="para">
-   この特別なルートオブジェクトには、複数の値をとることのできる包含関係のプロパティが
-   ひとつあります。プロパティの名前は、
-   リレーショナル DAS を作成した際に渡された、アプリケーションのルート型の名前となります。
-   プロパティの値には、このルート型の値しか指定できません。
-   アプリケーションがルート型に対してできることは、
+   The special root object has one multi-valued containment property, 
+   with a name of the application root type that was passed when 
+   the Relational DAS was constructed.
+   The property can take values of only that type.
+   The only thing that the application can usefully do with the root 
+   type is to call
    <span class="function"><strong>createDataObject()</strong></span>
-   をコールしてアプリケーションのルート型を渡し、
-   そのアプリケーション型のデータオブジェクトを作成させることだけです。
+   on it, passing the name of the application root type,
+   in order to create a data object of their own application type.
   </p>
  </div>
 
@@ -55,7 +59,7 @@
  <div class="refsect1 parameters" id="refsect1-sdo-das-relational.createrootdataobject-parameters">
   <h3 class="title">パラメータ</h3>
   <p class="para">
-   なし。
+   None.
   </p>
  </div>
 
@@ -63,7 +67,7 @@
  <div class="refsect1 returnvalues" id="refsect1-sdo-das-relational.createrootdataobject-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   ルートオブジェクトを返します。
+   The root object.
   </p>
  </div>
 
@@ -73,7 +77,7 @@
  <div class="refsect1 errors" id="refsect1-sdo-das-relational.createrootdataobject-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   なし。
+   None.
   </p>
  </div>
 
@@ -83,10 +87,10 @@
  <div class="refsect1 examples" id="refsect1-sdo-das-relational.createrootdataobject-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   このメソッドをコールする多くの例については、
-   リレーショナル DAS についての一般的な情報の、
-   <a href="sdodasrel.examples.html" class="link">例</a>
-   を参照ください。
+   Please see the
+   <a href="sdodasrel.examples.html" class="link">Examples</a>
+   section in the general information about the Relational DAS
+   for many examples of calling this method.
   </p>
  </div>
 

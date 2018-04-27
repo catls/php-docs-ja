@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>gopher フォーマットのディレクトリエントリを連想配列に変換する</title>
+  <title>Translate a gopher formatted directory entry into an associative array</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.gopher-parsedir" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">gopher_parsedir</h1>
-  <p class="verinfo">(PECL net_gopher &gt;= 0.1)</p><p class="refpurpose"><span class="refname">gopher_parsedir</span> &mdash; <span class="dc-title">gopher フォーマットのディレクトリエントリを連想配列に変換する</span></p>
+  <p class="verinfo">(PECL net_gopher &gt;= 0.1)</p><p class="refpurpose"><span class="refname">gopher_parsedir</span> &mdash; <span class="dc-title">Translate a gopher formatted directory entry into an associative array</span></p>
 
  </div>
 
@@ -25,14 +25,14 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>gopher_parsedir()</strong></span> は、gopher
-   フォーマットされたディレクトリエントリを連想配列に変換します。
+   <span class="function"><strong>gopher_parsedir()</strong></span> parses a gopher formatted directory
+   entry into an associative array.
   </p>
   <p class="para">
-   gopher は、リクエストに対して <em>text/plain</em> 形式の
-   ドキュメントを返します。ディレクトリ（例えば / など）へのリクエストには
-   特別にエンコードされた一連の行を返し、その個々の行が 1 つのディレクトリ
-   エントリあるいは情報行を表します。
+   While gopher returns <em>text/plain</em> documents for
+   actual document requests. A request to a directory (such as /) will
+   return specially encoded series of lines with each line being one
+   directory entry or information line.
   </p>
  </div>
 
@@ -49,7 +49,7 @@
      <dd>
 
       <p class="para">
-       ディレクトリエントリ。
+       The directory entry.
       </p>
      </dd>
 
@@ -63,41 +63,41 @@
  <div class="refsect1 returnvalues" id="refsect1-function.gopher-parsedir-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   以下の要素からなる連想配列を返します。
+   Returns an associative array whose components are: 
    <ul class="itemizedlist">
     <li class="listitem">
      <span class="simpara">
-      <em>type</em> -
-      <em>GOPHER_XXX</em> 定数のいずれか。
+      <em>type</em> - One of the 
+      <em>GOPHER_XXX</em> constants.
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      <em>title</em> - リソースの名前。
+      <em>title</em> - The name of the resource.
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      <em>path</em> - リソースのパス。
+      <em>path</em> - The path of the resource.
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      <em>host</em> -
-      このドキュメント (あるいはディレクトリ) を保持するホストのドメイン名。
+      <em>host</em> - The domain name of the host that has
+      this document (or directory).
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      <em>port</em> -
-      <em>host</em> に接続するポート。
+      <em>port</em> - The port at which to connect on
+      <em>host</em>.
      </span>
     </li>
    </ul>
   </p>
   <p class="para">
-   失敗した場合には、さらに <em>data</em>
-   というエントリがこの配列に追加され、そこにパースした行が含まれます。
+   Upon failure, the additional <em>data</em> entry of the
+   returned array will hold the parsed line.
   </p>
  </div>
 
@@ -106,7 +106,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-5215"> 
-    <p><strong>例1 <em>gopher://gopher.example.com/</em> からの出力を以下のように仮定する</strong></p>
+    <p><strong>例1 Hypothetical output from <em>gopher://gopher.example.com/</em></strong></p>
     <div class="example-contents screen">
 <div class="cdata"><pre>
 0All about my gopher site.               /allabout.txt               gopher.example.com    70
@@ -123,21 +123,23 @@ iLong live gopher!                                                   error.host 
    </div>
   </p>
   <p class="para">
-   上の例で、gopher.example.com のルートディレクトリには ID <em>0</em>
-   の<em>ドキュメント</em> が
-   <em>gopher://gopher.example.com:70/allabout.txt</em> にあります。
-   また、2 つのディレクトリ（それぞれ独自のファイル一覧を保持します）が
-   <em>gopher://gopher.exmaple.com:70/stories</em> および
-   <em>gopher://gopher.ejemplo.co.es:70/</em> にあります。
-   その他にバイナリファイル・HTTP URL へのリンク・そして情報の行があります。
+   In the example above, the root directory at gopher.example.com knows about
+   one <em>DOCUMENT</em> identified by <em>0</em> located at
+   <em>gopher://gopher.example.com:70/allabout.txt</em>.  It also knows
+   about two other directory (which have their own listing files) at
+   <em>gopher://gopher.exmaple.com:70/stories</em> and at
+   <em>gopher://gopher.ejemplo.co.es:70/</em>.
+   In addition there is a binary file, a link to an HTTP url, and several
+   informative lines.
   </p>
   <p class="para">
-   ディレクトリ一覧の各行を <span class="function"><strong>gopher_parsedir()</strong></span> に渡すと、
-   そのデータを連想配列形式にフォーマットします。
+   By passing each line of the directory listing into 
+   <span class="function"><strong>gopher_parsedir()</strong></span>, an associative array is formed containing
+   a parsed out version of the data.
   </p>
   <p class="para">
    <div class="example" id="example-5216">
-    <p><strong>例2 <span class="function"><strong>gopher_parsedir()</strong></span> の使用例</strong></p>
+    <p><strong>例2 Using <span class="function"><strong>gopher_parsedir()</strong></span></strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$directory&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">file</span><span style="color: #007700">(</span><span style="color: #DD0000">"gopher://gopher.example.com"</span><span style="color: #007700">);<br /><br />foreach(</span><span style="color: #0000BB">$directory&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$dirent</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">gopher_parsedir</span><span style="color: #007700">(</span><span style="color: #0000BB">$dirent</span><span style="color: #007700">));<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
