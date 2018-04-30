@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>SDO を作成する</title>
+  <title>Create an SDO</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="sca-localproxy.createdataobject" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">SCA_LocalProxy::createDataObject</h1>
-  <p class="verinfo">(PECL SDO &gt;= 0.5.0)</p><p class="refpurpose"><span class="refname">SCA_LocalProxy::createDataObject</span> &mdash; <span class="dc-title">SDO を作成する</span></p>
+  <p class="verinfo">(PECL SDO &gt;= 0.5.0)</p><p class="refpurpose"><span class="refname">SCA_LocalProxy::createDataObject</span> &mdash; <span class="dc-title">Create an SDO</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-sca-localproxy.createdataobject-description">
@@ -38,15 +38,13 @@
 のリリースにおいて変更される可能性があります。
 この関数は自己責任で使用してください。</p></div>
   
-  <p class="para">
-   このメソッドは、通常の PHP スクリプト内で使用するか、
-   SCA コンポーネントがローカルサービスとして使用する SDO を作成するために使用します。
-   パラメータとして、SDO の名前空間 URI と型名を指定します。
-   名前空間と型は、コールされるコンポーネントのインターフェイスで定義されている必要があります。
-   つまり、SCA_LocalProxy がプロキシとして働くコンポーネント内の
-   @types アノテーションで指定されているスキーマファイルのいずれかで
-   名前空間と型が定義されていなければなりません。
-  </p>
+  <p class="para"> This method is used inside either an ordinary PHP script or an SCA
+   component that needs to create an SDO to pass to a local service. The
+   parameters are the desired SDO&#039;s namespace URI and type name. The
+   namespace and type must be defined in the interface of the component
+   that is to be called, so the namespace and type must be defined in one of
+   the schema files which are specified on the @types annotation within
+   the component for which the SCA_LocalProxy object is a proxy. </p>
   
  </div>
 
@@ -63,7 +61,7 @@
 
      <dd>
 
-      <p class="para">型の名前空間。</p>
+      <p class="para"> The namespace of the type. </p>
      </dd>
 
     
@@ -75,7 +73,7 @@
 
      <dd>
 
-      <p class="para">型の名前。</p>
+      <p class="para"> The name of the type. </p>
      </dd>
 
     
@@ -86,7 +84,7 @@
 
  <div class="refsect1 returnvalues" id="refsect1-sca-localproxy.createdataobject-returnvalues">
   <h3 class="title">返り値</h3>
-  <p class="para">新しく作成した SDO_DataObject を返します。</p>
+  <p class="para"> Returns the newly created SDO_DataObject. </p>
  </div>
 
  
@@ -103,12 +101,10 @@
 
      <dd>
 
-      <p class="para">
-       namespaceURI および typeName が、
-       SCA_LocalProxy がプロキシとして働くコンポーネント内の
-       @types アノテーションで指定されているスキーマファイルのいずれかで
-       定義されていない場合にスローされます。
-      </p>
+      <p class="para"> Thrown if the namespaceURI and typeName do not correspond
+       to a type in any of the schema files specified in the @types
+       annotations within the component for which the SCA_LocalProxy
+       object is a proxy.. </p>
      </dd>
 
     

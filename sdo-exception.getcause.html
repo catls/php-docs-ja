@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>例外の原因を取得する</title>
+  <title>Get the cause of the exception</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -14,7 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">SDO_Exception::getCause</h1>
   <p class="verinfo">(^)</p><p class="refpurpose"><span class="refname">SDO_Exception::getCause</span> &mdash; <span class="dc-title">
-   例外の原因を取得する
+   Get the cause of the exception
   </span></p>
 
  </div>
@@ -33,9 +33,9 @@
 この関数は自己責任で使用してください。</p></div>
 
   <p class="para">
-   この例外の原因を返します。原因が存在しない場合や不明な場合には
-   NULL を返します。典型的な原因は SDO_CPPException オブジェクトで、
-   追加の診断情報を取得するために使用されます。
+   Returns the cause of this exception or NULL if the cause is nonexistent or unknown.
+   Typically the cause will be an SDO_CPPException object, which may
+   be used to obtain additional diagnostic information.
   </p>
 
  </div>
@@ -43,15 +43,14 @@
  <div class="refsect1 parameters" id="refsect1-sdo-exception.getcause-parameters">
   <h3 class="title">パラメータ</h3>
   <p class="para">
-   なし。
+   None.
   </p>
  </div>
 
  <div class="refsect1 returnvalues" id="refsect1-sdo-exception.getcause-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   この例外の原因を返します。原因が存在しない場合や不明な場合には
-   NULL を返します。
+   Returns the cause of this exception or NULL if the cause is nonexistent or unknown.
   </p>
  </div>
 

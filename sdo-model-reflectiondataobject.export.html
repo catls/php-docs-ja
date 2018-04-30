@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>SDO_DataObject を表す文字列を取得する</title>
+  <title>Get a string describing the SDO_DataObject</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -14,7 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">SDO_Model_ReflectionDataObject::export</h1>
   <p class="verinfo">(^)</p><p class="refpurpose"><span class="refname">SDO_Model_ReflectionDataObject::export</span> &mdash; <span class="dc-title">
-   SDO_DataObject を表す文字列を取得する
+   Get a string describing the SDO_DataObject
   </span></p>
 
  </div>
@@ -34,9 +34,9 @@
 この関数は自己責任で使用してください。</p></div>
 
   <p class="para">
-   SDO_DataObject を表す文字列を取得します。
-   デフォルトでは標準出力に出力されますが、パラメータ return に
-   <strong><code>TRUE</code></strong> を指定すると、結果を文字列で返します。
+   Get a string describing the SDO_DataObject.
+   The default behaviour is to print the output, but
+   if <strong><code>TRUE</code></strong> is specified for return, it is returned as a string.
   </p>
 
  </div>
@@ -53,7 +53,7 @@
      <dd>
 
       <p class="para">
-       SDO_Model_ReflectionDataObject。
+       An SDO_Model_ReflectionDataObject.
       </p>
      </dd>
 
@@ -65,8 +65,7 @@
      <dd>
 
       <p class="para">
-       <strong><code>TRUE</code></strong> の場合は結果を文字列で返します。
-       それ以外の場合は標準出力に出力します。
+       If <strong><code>TRUE</code></strong>, return the output as a string, otherwise print it.
       </p>
      </dd>
 
@@ -79,8 +78,8 @@
  <div class="refsect1 returnvalues" id="refsect1-sdo-model-reflectiondataobject.export-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   return パラメータに TRUE が設定されている場合は出力内容、
-   それ以外の場合は NULL を返します。
+   Returns the output if TRUE is specified for return, 
+   otherwise NULL.
   </p>
  </div>
 
