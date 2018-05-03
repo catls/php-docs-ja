@@ -258,6 +258,8 @@
 <li><a href="function.base64-decode.html" class="index">base64_decode</a> - MIME base64 方式によりエンコードされたデータをデコードする</li>
 <li><a href="function.base64-encode.html" class="index">base64_encode</a> - MIME base64 方式でデータをエンコードする</li>
 <li><a href="function.basename.html" class="index">basename</a> - パスの最後にある名前の部分を返す</li>
+<li><a href="mysql-xdevapi-baseresult.getwarningcount.html" class="index">BaseResult::getWarningCount</a> - Fetch warning count from last operation</li>
+<li><a href="mysql-xdevapi-baseresult.getwarnings.html" class="index">BaseResult::getWarnings</a> - Fetch warnings from last operation</li>
 <li><a href="function.base-convert.html" class="index">base_convert</a> - 数値の基数を任意に変換する</li>
 <li><a href="function.bbcode-add-element.html" class="index">bbcode_add_element</a> - bbcode 要素を追加する</li>
 <li><a href="function.bbcode-add-smiley.html" class="index">bbcode_add_smiley</a> - 顔文字をパーサに追加する</li>
@@ -684,6 +686,67 @@
 <li><a href="collator.construct.html" class="index">Collator::__construct</a> - collator を作成する</li>
 <li><a href="collectable.isgarbage.html" class="index">Collectable::isGarbage</a> - Determine whether an object has been marked as garbage</li>
 <li><a href="collectable.setgarbage.html" class="index">Collectable::setGarbage</a> - Mark an object as garbage</li>
+<li><a href="mysql-xdevapi-collection.add.html" class="index">Collection::add</a> - Add collection document</li>
+<li><a href="mysql-xdevapi-collection.addorreplaceone.html" class="index">Collection::addOrReplaceOne</a> - Add or replace collection document</li>
+<li><a href="mysql-xdevapi-collection.count.html" class="index">Collection::count</a> - Get document count</li>
+<li><a href="mysql-xdevapi-collection.createindex.html" class="index">Collection::createIndex</a> - Create collection index</li>
+<li><a href="mysql-xdevapi-collection.dropindex.html" class="index">Collection::dropIndex</a> - Drop collection index</li>
+<li><a href="mysql-xdevapi-collection.existsindatabase.html" class="index">Collection::existsInDatabase</a> - Check if collection exists in database</li>
+<li><a href="mysql-xdevapi-collection.find.html" class="index">Collection::find</a> - Search for document</li>
+<li><a href="mysql-xdevapi-collection.getname.html" class="index">Collection::getName</a> - Get collection name</li>
+<li><a href="mysql-xdevapi-collection.getone.html" class="index">Collection::getOne</a> - Get one document</li>
+<li><a href="mysql-xdevapi-collection.getschema.html" class="index">Collection::getSchema</a> - Get schema object</li>
+<li><a href="mysql-xdevapi-collection.getsession.html" class="index">Collection::getSession</a> - Get session object</li>
+<li><a href="mysql-xdevapi-collection.modify.html" class="index">Collection::modify</a> - Modify collection documents</li>
+<li><a href="mysql-xdevapi-collection.remove.html" class="index">Collection::remove</a> - Remove collection documents</li>
+<li><a href="mysql-xdevapi-collection.removeone.html" class="index">Collection::removeOne</a> - Remove one collection document</li>
+<li><a href="mysql-xdevapi-collection.replaceone.html" class="index">Collection::replaceOne</a> - Replace one collection document</li>
+<li><a href="mysql-xdevapi-collection.construct.html" class="index">Collection::__construct</a> - Collection constructor</li>
+<li><a href="mysql-xdevapi-collectionadd.execute.html" class="index">CollectionAdd::execute</a> - Execute the statement</li>
+<li><a href="mysql-xdevapi-collectionadd.construct.html" class="index">CollectionAdd::__construct</a> - CollectionAdd constructor</li>
+<li><a href="mysql-xdevapi-collectionfind.bind.html" class="index">CollectionFind::bind</a> - Bind value to query placeholder</li>
+<li><a href="mysql-xdevapi-collectionfind.execute.html" class="index">CollectionFind::execute</a> - Execute the statement</li>
+<li><a href="mysql-xdevapi-collectionfind.fields.html" class="index">CollectionFind::fields</a> - Set document field filter</li>
+<li><a href="mysql-xdevapi-collectionfind.groupby.html" class="index">CollectionFind::groupBy</a> - Set grouping criteria</li>
+<li><a href="mysql-xdevapi-collectionfind.having.html" class="index">CollectionFind::having</a> - Set condition for aggregate functions</li>
+<li><a href="mysql-xdevapi-collectionfind.limit.html" class="index">CollectionFind::limit</a> - Limit number of returned documents</li>
+<li><a href="mysql-xdevapi-collectionfind.lockexclusive.html" class="index">CollectionFind::lockExclusive</a> - Execute operation with EXCLUSIVE LOCK</li>
+<li><a href="mysql-xdevapi-collectionfind.lockshared.html" class="index">CollectionFind::lockShared</a> - Execute operation with SHARED LOCK</li>
+<li><a href="mysql-xdevapi-collectionfind.skip.html" class="index">CollectionFind::skip</a> - Skip given number of elements to be returned</li>
+<li><a href="mysql-xdevapi-collectionfind.sort.html" class="index">CollectionFind::sort</a> - Set the sorting criteria</li>
+<li><a href="mysql-xdevapi-collectionfind.construct.html" class="index">CollectionFind::__construct</a> - CollectionFind constructor</li>
+<li><a href="mysql-xdevapi-collectionmodify.arrayappend.html" class="index">CollectionModify::arrayAppend</a> - Append element to an array field</li>
+<li><a href="mysql-xdevapi-collectionmodify.arraydelete.html" class="index">CollectionModify::arrayDelete</a> - Delete element</li>
+<li><a href="mysql-xdevapi-collectionmodify.arrayinsert.html" class="index">CollectionModify::arrayInsert</a> - Insert element into an array field</li>
+<li><a href="mysql-xdevapi-collectionmodify.bind.html" class="index">CollectionModify::bind</a> - Bind value to query placeholder</li>
+<li><a href="mysql-xdevapi-collectionmodify.execute.html" class="index">CollectionModify::execute</a> - Execute modify operation</li>
+<li><a href="mysql-xdevapi-collectionmodify.limit.html" class="index">CollectionModify::limit</a> - Limit number of modified documents</li>
+<li><a href="mysql-xdevapi-collectionmodify.merge.html" class="index">CollectionModify::merge</a> - Merge attributes to document</li>
+<li><a href="mysql-xdevapi-collectionmodify.patch.html" class="index">CollectionModify::patch</a> - Patch document</li>
+<li><a href="mysql-xdevapi-collectionmodify.replace.html" class="index">CollectionModify::replace</a> - Replace document field</li>
+<li><a href="mysql-xdevapi-collectionmodify.set.html" class="index">CollectionModify::set</a> - Set document attribute</li>
+<li><a href="mysql-xdevapi-collectionmodify.skip.html" class="index">CollectionModify::skip</a> - Skip elements</li>
+<li><a href="mysql-xdevapi-collectionmodify.sort.html" class="index">CollectionModify::sort</a> - Set the sorting criteria</li>
+<li><a href="mysql-xdevapi-collectionmodify.unset.html" class="index">CollectionModify::unset</a> - Unset the value of document fields</li>
+<li><a href="mysql-xdevapi-collectionmodify.construct.html" class="index">CollectionModify::__construct</a> - CollectionModify constructor</li>
+<li><a href="mysql-xdevapi-collectionremove.bind.html" class="index">CollectionRemove::bind</a> - Bind value to placeholder</li>
+<li><a href="mysql-xdevapi-collectionremove.execute.html" class="index">CollectionRemove::execute</a> - Execute remove operation</li>
+<li><a href="mysql-xdevapi-collectionremove.limit.html" class="index">CollectionRemove::limit</a> - Limit number of documents to remove</li>
+<li><a href="mysql-xdevapi-collectionremove.sort.html" class="index">CollectionRemove::sort</a> - Set the sorting criteria</li>
+<li><a href="mysql-xdevapi-collectionremove.construct.html" class="index">CollectionRemove::__construct</a> - CollectionRemove constructor</li>
+<li><a href="mysql-xdevapi-columnresult.getcharactersetname.html" class="index">ColumnResult::getCharacterSetName</a> - Get character set</li>
+<li><a href="mysql-xdevapi-columnresult.getcollationname.html" class="index">ColumnResult::getCollationName</a> - Get collation name</li>
+<li><a href="mysql-xdevapi-columnresult.getcolumnlabel.html" class="index">ColumnResult::getColumnLabel</a> - Get column label</li>
+<li><a href="mysql-xdevapi-columnresult.getcolumnname.html" class="index">ColumnResult::getColumnName</a> - Get column name</li>
+<li><a href="mysql-xdevapi-columnresult.getfractionaldigits.html" class="index">ColumnResult::getFractionalDigits</a> - Get fractional digit length</li>
+<li><a href="mysql-xdevapi-columnresult.getlength.html" class="index">ColumnResult::getLength</a> - Get column field length</li>
+<li><a href="mysql-xdevapi-columnresult.getschemaname.html" class="index">ColumnResult::getSchemaName</a> - Get schema name</li>
+<li><a href="mysql-xdevapi-columnresult.gettablelabel.html" class="index">ColumnResult::getTableLabel</a> - Get table label</li>
+<li><a href="mysql-xdevapi-columnresult.gettablename.html" class="index">ColumnResult::getTableName</a> - Get table name</li>
+<li><a href="mysql-xdevapi-columnresult.gettype.html" class="index">ColumnResult::getType</a> - Get column type</li>
+<li><a href="mysql-xdevapi-columnresult.isnumbersigned.html" class="index">ColumnResult::isNumberSigned</a> - Check if signed type</li>
+<li><a href="mysql-xdevapi-columnresult.ispadded.html" class="index">ColumnResult::isPadded</a> - Check if padded</li>
+<li><a href="mysql-xdevapi-columnresult.construct.html" class="index">ColumnResult::__construct</a> - ColumnResult constructor</li>
 <li><a href="commonmark-cql.construct.html" class="index">CommonMark\CQL::__construct</a> - CQL Construction</li>
 <li><a href="commonmark-cql.invoke.html" class="index">CommonMark\CQL::__invoke</a> - CQL Execution</li>
 <li><a href="commonmark-interfaces-ivisitable.accept.html" class="index">CommonMark\Interfaces\IVisitable::accept</a> - Visitation</li>
@@ -792,6 +855,10 @@
 <li><a href="function.crack-opendict.html" class="index">crack_opendict</a> - 新規CrackLib辞書をオープンする</li>
 <li><a href="function.crc32.html" class="index">crc32</a> - 文字列の crc32 多項式計算を行う</li>
 <li><a href="function.create-function.html" class="index">create_function</a> - 匿名関数 (ラムダ形式) を作成する</li>
+<li><a href="mysql-xdevapi-crudoperationbindable.bind.html" class="index">CrudOperationBindable::bind</a> - Bind value to placeholder</li>
+<li><a href="mysql-xdevapi-crudoperationlimitable.limit.html" class="index">CrudOperationLimitable::limit</a> - Set result limit</li>
+<li><a href="mysql-xdevapi-crudoperationskippable.skip.html" class="index">CrudOperationSkippable::skip</a> - Number of operations to skip</li>
+<li><a href="mysql-xdevapi-crudoperationsortable.sort.html" class="index">CrudOperationSortable::sort</a> - Sort results</li>
 <li><a href="function.crypt.html" class="index">crypt</a> - 文字列の一方向のハッシュ化を行う</li>
 <li><a href="function.ctype-alnum.html" class="index">ctype_alnum</a> - 英数字かどうかを調べる</li>
 <li><a href="function.ctype-alpha.html" class="index">ctype_alpha</a> - 英字かどうかを調べる</li>
@@ -951,6 +1018,9 @@
 </ul></li>
 <li class='gen-index index-for-d'>d<ul id='refentry-index-for-d'>
 <li><a href="wrappers.data.html" class="index">data://</a> - データ (RFC 2397)</li>
+<li><a href="mysql-xdevapi-databaseobject.existsindatabase.html" class="index">DatabaseObject::existsInDatabase</a> - Check if object exists in database</li>
+<li><a href="mysql-xdevapi-databaseobject.getname.html" class="index">DatabaseObject::getName</a> - Get object name</li>
+<li><a href="mysql-xdevapi-databaseobject.getsession.html" class="index">DatabaseObject::getSession</a> - Get session name</li>
 <li><a href="function.date.html" class="index">date</a> - ローカルの日付/時刻を書式化する</li>
 <li><a href="dateinterval.createfromdatestring.html" class="index">DateInterval::createFromDateString</a> - 相対指定文字列から DateInterval を作成する</li>
 <li><a href="dateinterval.format.html" class="index">DateInterval::format</a> - 間隔をフォーマットする</li>
@@ -1228,6 +1298,11 @@
 <li><a href="function.dns-check-record.html" class="index">dns_check_record</a> - checkdnsrr のエイリアス</li>
 <li><a href="function.dns-get-mx.html" class="index">dns_get_mx</a> - getmxrr のエイリアス</li>
 <li><a href="function.dns-get-record.html" class="index">dns_get_record</a> - ホスト名に関連する DNS リソースレコードを取得する</li>
+<li><a href="mysql-xdevapi-docresult.fetchall.html" class="index">DocResult::fetchAll</a> - Get all rows</li>
+<li><a href="mysql-xdevapi-docresult.fetchone.html" class="index">DocResult::fetchOne</a> - Get one row</li>
+<li><a href="mysql-xdevapi-docresult.getwarningcount.html" class="index">DocResult::getWarningCount</a> - Get warning count from last operation</li>
+<li><a href="mysql-xdevapi-docresult.getwarnings.html" class="index">DocResult::getWarnings</a> - Get warnings from last operation</li>
+<li><a href="mysql-xdevapi-docresult.construct.html" class="index">DocResult::__construct</a> - DocResult constructor</li>
 <li><a href="domattr.isid.html" class="index">DOMAttr::isId</a> - 属性が定義済みの ID かどうかを調べる</li>
 <li><a href="domattr.construct.html" class="index">DOMAttr::__construct</a> - 新しい DOMAttr オブジェクトを作成する</li>
 <li><a href="domcdatasection.construct.html" class="index">DOMCdataSection::__construct</a> - 新しい DOMCdataSection オブジェクトを作成する</li>
@@ -1327,6 +1402,7 @@
 <li><a href="domxpath.construct.html" class="index">DOMXPath::__construct</a> - 新しい DOMXPath オブジェクトを作成する</li>
 <li><a href="function.dom-import-simplexml.html" class="index">dom_import_simplexml</a> - SimpleXMLElement オブジェクトから DOMElement オブジェクトを取得する</li>
 <li><a href="function.doubleval.html" class="index">doubleval</a> - floatval のエイリアス</li>
+<li><a href="mysql-xdevapi-driver.construct.html" class="index">Driver::__construct</a> - Driver constructor</li>
 <li><a href="ds-collection.clear.html" class="index">Ds\Collection::clear</a> - Removes all values</li>
 <li><a href="ds-collection.copy.html" class="index">Ds\Collection::copy</a> - Returns a shallow copy of the collection</li>
 <li><a href="ds-collection.isempty.html" class="index">Ds\Collection::isEmpty</a> - Returns whether the collection is empty</li>
@@ -1954,6 +2030,8 @@
 <li><a href="exception.construct.html" class="index">Exception::__construct</a> - 例外を作成する</li>
 <li><a href="exception.tostring.html" class="index">Exception::__toString</a> - 例外の文字列表現</li>
 <li><a href="function.exec.html" class="index">exec</a> - 外部プログラムを実行する</li>
+<li><a href="mysql-xdevapi-executable.execute.html" class="index">Executable::execute</a> - Execute statement</li>
+<li><a href="mysql-xdevapi-executionstatus.construct.html" class="index">ExecutionStatus::__construct</a> - ExecutionStatus constructor</li>
 <li><a href="function.exif-imagetype.html" class="index">exif_imagetype</a> - イメージの型を定義する</li>
 <li><a href="function.exif-read-data.html" class="index">exif_read_data</a> - JPEG あるいは TIFF から
    EXIF ヘッダを読み込む</li>
@@ -1968,6 +2046,8 @@
   ストリームをオープンする</li>
 <li><a href="function.explode.html" class="index">explode</a> - 文字列を文字列により分割する</li>
 <li><a href="function.expm1.html" class="index">expm1</a> - 値がゼロに近い時にでも精度を保つために exp(number) - 1 を返す</li>
+<li><a href="function.mysql-xdevapi-expression.html" class="index">expression</a> - Description</li>
+<li><a href="mysql-xdevapi-expression.construct.html" class="index">Expression::__construct</a> - Expression constructor</li>
 <li><a href="function.extension-loaded.html" class="index">extension_loaded</a> - ある拡張機能がロードされているかどうかを調べる</li>
 <li><a href="function.extract.html" class="index">extract</a> - 配列からシンボルテーブルに変数をインポートする</li>
 <li><a href="function.ezmlm-hash.html" class="index">ezmlm_hash</a> - EZMLM で必要なハッシュ値を計算する</li>
@@ -2232,6 +2312,7 @@
 <li><a href="function.fgetcsv.html" class="index">fgetcsv</a> - ファイルポインタから行を取得し、CSVフィールドを処理する</li>
 <li><a href="function.fgets.html" class="index">fgets</a> - ファイルポインタから 1 行取得する</li>
 <li><a href="function.fgetss.html" class="index">fgetss</a> - ファイルポインタから 1 行取り出し、HTML タグを取り除く</li>
+<li><a href="mysql-xdevapi-fieldmetadata.construct.html" class="index">FieldMetadata::__construct</a> - FieldMetadata constructor</li>
 <li><a href="function.file.html" class="index">file</a> - ファイル全体を読み込んで配列に格納する</li>
 <li><a href="wrappers.file.html" class="index">file://</a> - ローカルファイルシステムへのアクセス</li>
 <li><a href="function.fileatime.html" class="index">fileatime</a> - ファイルの最終アクセス時刻を取得する</li>
@@ -2516,6 +2597,7 @@
 <li><a href="function.getrusage.html" class="index">getrusage</a> - 現在のリソース使用状況を取得する</li>
 <li><a href="function.getservbyname.html" class="index">getservbyname</a> - インターネットサービスおよびプロトコルが関連するポート番号を取得する</li>
 <li><a href="function.getservbyport.html" class="index">getservbyport</a> - ポートおよびプロトコルに対応するインターネットサービスを得る</li>
+<li><a href="function.mysql-xdevapi-getsession.html" class="index">getSession</a> - Connect to a MySQL server</li>
 <li><a href="function.gettext.html" class="index">gettext</a> - 現在のドメインのメッセージを参照する</li>
 <li><a href="function.gettimeofday.html" class="index">gettimeofday</a> - 現在の時間を得る</li>
 <li><a href="function.gettype.html" class="index">gettype</a> - 変数の型を取得する</li>
@@ -4353,10 +4435,10 @@
 <li><a href="audioproperties.isoriginal.html" class="index">KTaglib_MPEG_AudioProperties::isOriginal</a> - ファイルがオリジナルであるかどうかを返す</li>
 <li><a href="audioproperties.isprotectionenabled.html" class="index">KTaglib_MPEG_AudioProperties::isProtectionEnabled</a> - MPEG ファイルの保護機構が有効かどうかを返す</li>
 <li><a href="mpegfile.getaudioproperties.html" class="index">KTaglib_MPEG_File::getAudioProperties</a> - 音声プロパティへのアクセス機能を持つオブジェクトを返す</li>
-<li><a href="mpegfile.getid3v1tag.html" class="index">KTaglib_MPEG_File::getID3v1Tag</a> - ID3v1 タグを表すオブジェクトを返す</li>
-<li><a href="mpegfile.getid3v2tag.html" class="index">KTaglib_MPEG_File::getID3v2Tag</a> - ID3v2 オブジェクトを返す</li>
+<li><a href="mpegfile.getid3v1tag.html" class="index">KTaglib_MPEG_File::getID3v1Tag</a> - Returns an object representing an ID3v1 tag</li>
+<li><a href="mpegfile.getid3v2tag.html" class="index">KTaglib_MPEG_File::getID3v2Tag</a> - Returns a ID3v2 object</li>
 <li><a href="mpegfile.construct.html" class="index">KTaglib_MPEG_File::__construct</a> - 新しいファイルをオープンする</li>
-<li><a href="tag.getalbum.html" class="index">KTaglib_Tag::getAlbum</a> - ID3 タグからアルバム文字列を返す</li>
+<li><a href="tag.getalbum.html" class="index">KTaglib_Tag::getAlbum</a> - Returns the album string from a ID3 tag</li>
 <li><a href="tag.getartist.html" class="index">KTaglib_Tag::getArtist</a> - ID3 タグからアーティスト文字列を返す</li>
 <li><a href="tag.getcomment.html" class="index">KTaglib_Tag::getComment</a> - ID3 タグからコメントを返す</li>
 <li><a href="tag.getgenre.html" class="index">KTaglib_Tag::getGenre</a> - ID3 タグからジャンルを返す</li>
@@ -7524,10 +7606,24 @@
 <li><a href="function.restore-error-handler.html" class="index">restore_error_handler</a> - 以前のエラーハンドラ関数を回復する</li>
 <li><a href="function.restore-exception-handler.html" class="index">restore_exception_handler</a> - 以前の例外ハンドラ関数を回復する</li>
 <li><a href="function.restore-include-path.html" class="index">restore_include_path</a> - include_path 設定オプションの値を元に戻す</li>
+<li><a href="mysql-xdevapi-result.getaffecteditemscount.html" class="index">Result::getAffectedItemsCount</a> - Get affected row count</li>
+<li><a href="mysql-xdevapi-result.getautoincrementvalue.html" class="index">Result::getAutoIncrementValue</a> - Get autoincremented value</li>
+<li><a href="mysql-xdevapi-result.getgeneratedids.html" class="index">Result::getGeneratedIds</a> - Get generated ids</li>
+<li><a href="mysql-xdevapi-result.getwarningcount.html" class="index">Result::getWarningCount</a> - Get warning count from last operation</li>
+<li><a href="mysql-xdevapi-result.getwarnings.html" class="index">Result::getWarnings</a> - Get warnings from last operation</li>
+<li><a href="mysql-xdevapi-result.construct.html" class="index">Result::__construct</a> - Result constructor</li>
 <li><a href="function.rewind.html" class="index">rewind</a> - ファイルポインタの位置を先頭に戻す</li>
 <li><a href="function.rewinddir.html" class="index">rewinddir</a> - ディレクトリハンドルを元に戻す</li>
 <li><a href="function.rmdir.html" class="index">rmdir</a> - ディレクトリを削除する</li>
 <li><a href="function.round.html" class="index">round</a> - 浮動小数点数を丸める</li>
+<li><a href="mysql-xdevapi-rowresult.fetchall.html" class="index">RowResult::fetchAll</a> - Get all rows from result</li>
+<li><a href="mysql-xdevapi-rowresult.fetchone.html" class="index">RowResult::fetchOne</a> - Get row from result</li>
+<li><a href="mysql-xdevapi-rowresult.getcolumncount.html" class="index">RowResult::getColumnCount</a> - Get column count</li>
+<li><a href="mysql-xdevapi-rowresult.getcolumnnames.html" class="index">RowResult::getColumnNames</a> - Get all column names</li>
+<li><a href="mysql-xdevapi-rowresult.getcolumns.html" class="index">RowResult::getColumns</a> - Get columns</li>
+<li><a href="mysql-xdevapi-rowresult.getwarningcount.html" class="index">RowResult::getWarningCount</a> - Get warning count from last operation</li>
+<li><a href="mysql-xdevapi-rowresult.getwarnings.html" class="index">RowResult::getWarnings</a> - Get warnings from last operation</li>
+<li><a href="mysql-xdevapi-rowresult.construct.html" class="index">RowResult::__construct</a> - RowResult constructor</li>
 <li><a href="function.rpm-close.html" class="index">rpm_close</a> - RPM ファイルを閉じる</li>
 <li><a href="function.rpm-get-tag.html" class="index">rpm_get_tag</a> - RPM ファイルからヘッダタグを取得する</li>
 <li><a href="function.rpm-is-valid.html" class="index">rpm_is_valid</a> - filename が RPM ファイルであるかどうかを確かめる</li>
@@ -7614,6 +7710,18 @@
 <li><a href="function.scandir.html" class="index">scandir</a> - 指定されたパスのファイルとディレクトリのリストを取得する</li>
 <li><a href="sca-localproxy.createdataobject.html" class="index">SCA_LocalProxy::createDataObject</a> - Create an SDO</li>
 <li><a href="sca-soapproxy.createdataobject.html" class="index">SCA_SoapProxy::createDataObject</a> - Create an SDO</li>
+<li><a href="mysql-xdevapi-schema.createcollection.html" class="index">Schema::createCollection</a> - Add collection to schema</li>
+<li><a href="mysql-xdevapi-schema.dropcollection.html" class="index">Schema::dropCollection</a> - Drop collection from schema</li>
+<li><a href="mysql-xdevapi-schema.existsindatabase.html" class="index">Schema::existsInDatabase</a> - Check if schema exists in database</li>
+<li><a href="mysql-xdevapi-schema.getcollection.html" class="index">Schema::getCollection</a> - Get collection from schema</li>
+<li><a href="mysql-xdevapi-schema.getcollectionastable.html" class="index">Schema::getCollectionAsTable</a> - Get collection table object</li>
+<li><a href="mysql-xdevapi-schema.getcollections.html" class="index">Schema::getCollections</a> - Get all schema collections</li>
+<li><a href="mysql-xdevapi-schema.getname.html" class="index">Schema::getName</a> - Get schema name</li>
+<li><a href="mysql-xdevapi-schema.getsession.html" class="index">Schema::getSession</a> - Get schema session</li>
+<li><a href="mysql-xdevapi-schema.gettable.html" class="index">Schema::getTable</a> - Get schema table</li>
+<li><a href="mysql-xdevapi-schema.gettables.html" class="index">Schema::getTables</a> - Get schema tables</li>
+<li><a href="mysql-xdevapi-schema.construct.html" class="index">Schema::__construct</a> - constructor</li>
+<li><a href="mysql-xdevapi-schemaobject.getschema.html" class="index">SchemaObject::getSchema</a> - Get schema object</li>
 <li><a href="sdo-das-changesummary.beginlogging.html" class="index">SDO_DAS_ChangeSummary::beginLogging</a> - 変更内容の記録を開始する</li>
 <li><a href="sdo-das-changesummary.endlogging.html" class="index">SDO_DAS_ChangeSummary::endLogging</a> - 変更内容の記録を終了する</li>
 <li><a href="sdo-das-changesummary.getchangeddataobjects.html" class="index">SDO_DAS_ChangeSummary::getChangedDataObjects</a> - 変更内容から、変更されたデータオブジェクトを取得する</li>
@@ -7696,6 +7804,25 @@
 <li><a href="serializable.serialize.html" class="index">Serializable::serialize</a> - オブジェクトの文字列表現</li>
 <li><a href="serializable.unserialize.html" class="index">Serializable::unserialize</a> - オブジェクトを作成する</li>
 <li><a href="function.serialize.html" class="index">serialize</a> - 値の保存可能な表現を生成する</li>
+<li><a href="mysql-xdevapi-session.close.html" class="index">Session::close</a> - Close session</li>
+<li><a href="mysql-xdevapi-session.createschema.html" class="index">Session::createSchema</a> - Create new schema</li>
+<li><a href="mysql-xdevapi-session.dropschema.html" class="index">Session::dropSchema</a> - Drop a schema</li>
+<li><a href="mysql-xdevapi-session.executesql.html" class="index">Session::executeSql</a> - Execute an SQL statement</li>
+<li><a href="mysql-xdevapi-session.generateuuid.html" class="index">Session::generateUUID</a> - Get new UUID</li>
+<li><a href="mysql-xdevapi-session.getclientid.html" class="index">Session::getClientId</a> - Get client ID</li>
+<li><a href="mysql-xdevapi-session.getschema.html" class="index">Session::getSchema</a> - Get the schema</li>
+<li><a href="mysql-xdevapi-session.getschemas.html" class="index">Session::getSchemas</a> - Get the schemas</li>
+<li><a href="mysql-xdevapi-session.getserverversion.html" class="index">Session::getServerVersion</a> - Get server version</li>
+<li><a href="mysql-xdevapi-session.killclient.html" class="index">Session::killClient</a> - Kill the client</li>
+<li><a href="mysql-xdevapi-session.listclients.html" class="index">Session::listClients</a> - Get client list</li>
+<li><a href="mysql-xdevapi-session.quotename.html" class="index">Session::quoteName</a> - Add quotes</li>
+<li><a href="mysql-xdevapi-session.releasesavepoint.html" class="index">Session::releaseSavepoint</a> - Release set savepoint</li>
+<li><a href="mysql-xdevapi-session.rollback.html" class="index">Session::rollback</a> - Rollback transaction</li>
+<li><a href="mysql-xdevapi-session.rollbackto.html" class="index">Session::rollbackTo</a> - Rollback transaction to savepoint</li>
+<li><a href="mysql-xdevapi-session.setsavepoint.html" class="index">Session::setSavepoint</a> - Create savepoint</li>
+<li><a href="mysql-xdevapi-session.sql.html" class="index">Session::sql</a> - Execute SQL query</li>
+<li><a href="mysql-xdevapi-session.starttransaction.html" class="index">Session::startTransaction</a> - Start transaction</li>
+<li><a href="mysql-xdevapi-session.construct.html" class="index">Session::__construct</a> - Description constructor</li>
 <li><a href="sessionhandler.close.html" class="index">SessionHandler::close</a> - セッションを閉じる</li>
 <li><a href="sessionhandler.create-sid.html" class="index">SessionHandler::create_sid</a> - 新規セッション ID を返す</li>
 <li><a href="sessionhandler.destroy.html" class="index">SessionHandler::destroy</a> - セッションを破棄する</li>
@@ -8690,6 +8817,25 @@
   DELETE query executed</li>
 <li><a href="function.sqlsrv-send-stream-data.html" class="index">sqlsrv_send_stream_data</a> - Sends data from parameter streams to the server</li>
 <li><a href="function.sqlsrv-server-info.html" class="index">sqlsrv_server_info</a> - Returns information about the server</li>
+<li><a href="mysql-xdevapi-sqlstatement.bind.html" class="index">SqlStatement::bind</a> - Bind statement parameters</li>
+<li><a href="mysql-xdevapi-sqlstatement.execute.html" class="index">SqlStatement::execute</a> - Execute the operation</li>
+<li><a href="mysql-xdevapi-sqlstatement.getnextresult.html" class="index">SqlStatement::getNextResult</a> - Get next result</li>
+<li><a href="mysql-xdevapi-sqlstatement.getresult.html" class="index">SqlStatement::getResult</a> - Get result</li>
+<li><a href="mysql-xdevapi-sqlstatement.hasmoreresults.html" class="index">SqlStatement::hasMoreResults</a> - Check for more results</li>
+<li><a href="mysql-xdevapi-sqlstatement.construct.html" class="index">SqlStatement::__construct</a> - Description constructor</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.fetchall.html" class="index">SqlStatementResult::fetchAll</a> - Get all rows</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.fetchone.html" class="index">SqlStatementResult::fetchOne</a> - Get single row</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getaffecteditemscount.html" class="index">SqlStatementResult::getAffectedItemsCount</a> - Get affected row count</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getcolumncount.html" class="index">SqlStatementResult::getColumnCount</a> - Get column count</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getcolumnnames.html" class="index">SqlStatementResult::getColumnNames</a> - Get column names</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getcolumns.html" class="index">SqlStatementResult::getColumns</a> - Get columns</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getgeneratedids.html" class="index">SqlStatementResult::getGeneratedIds</a> - Get generated ids</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getlastinsertid.html" class="index">SqlStatementResult::getLastInsertId</a> - Get last insert id</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getwarningcount.html" class="index">SqlStatementResult::getWarningCount</a> - Get warning count from last operation</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.getwarnings.html" class="index">SqlStatementResult::getWarnings</a> - Get warnings from last operation</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.hasdata.html" class="index">SqlStatementResult::hasData</a> - Check if result has data</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.nextresult.html" class="index">SqlStatementResult::nextResult</a> - Get next result</li>
+<li><a href="mysql-xdevapi-sqlstatementresult.construct.html" class="index">SqlStatementResult::__construct</a> - Description constructor</li>
 <li><a href="function.sql-regcase.html" class="index">sql_regcase</a> - 大文字小文字を区別しないマッチングのための正規表現を作成する</li>
 <li><a href="function.sqrt.html" class="index">sqrt</a> - 平方根</li>
 <li><a href="function.srand.html" class="index">srand</a> - 乱数生成器を初期化する</li>
@@ -8730,6 +8876,10 @@
 <li><a href="function.ssh2-tunnel.html" class="index">ssh2_tunnel</a> - リモートサーバーを経由するトンネルをオープンする</li>
 <li><a href="context.ssl.html" class="index">SSL コンテキストオプション</a> - SSL コンテキストオプションの一覧</li>
 <li><a href="function.stat.html" class="index">stat</a> - ファイルに関する情報を取得する</li>
+<li><a href="mysql-xdevapi-statement.getnextresult.html" class="index">Statement::getNextResult</a> - Get next result</li>
+<li><a href="mysql-xdevapi-statement.getresult.html" class="index">Statement::getResult</a> - Get result</li>
+<li><a href="mysql-xdevapi-statement.hasmoreresults.html" class="index">Statement::hasMoreResults</a> - Check if more results</li>
+<li><a href="mysql-xdevapi-statement.construct.html" class="index">Statement::__construct</a> - Description constructor</li>
 <li><a href="function.stats-absolute-deviation.html" class="index">stats_absolute_deviation</a> - 値の配列の絶対偏差を返す</li>
 <li><a href="function.stats-cdf-beta.html" class="index">stats_cdf_beta</a> - ベータ分布のパラメータのいずれかを、その他のパラメータの値から計算する</li>
 <li><a href="function.stats-cdf-binomial.html" class="index">stats_cdf_binomial</a> - 二項分布のパラメータのいずれかを、その他のパラメータの値から計算する</li>
@@ -9489,6 +9639,45 @@
 <li><a href="function.sys-get-temp-dir.html" class="index">sys_get_temp_dir</a> - 一時ファイル用に使用されるディレクトリのパスを返す</li>
 </ul></li>
 <li class='gen-index index-for-t'>t<ul id='refentry-index-for-t'>
+<li><a href="mysql-xdevapi-table.count.html" class="index">Table::count</a> - Get row count</li>
+<li><a href="mysql-xdevapi-table.delete.html" class="index">Table::delete</a> - Delete rows from table</li>
+<li><a href="mysql-xdevapi-table.existsindatabase.html" class="index">Table::existsInDatabase</a> - Check if table exists in database</li>
+<li><a href="mysql-xdevapi-table.getname.html" class="index">Table::getName</a> - Get table name</li>
+<li><a href="mysql-xdevapi-table.getschema.html" class="index">Table::getSchema</a> - Get table schema</li>
+<li><a href="mysql-xdevapi-table.getsession.html" class="index">Table::getSession</a> - Get table session</li>
+<li><a href="mysql-xdevapi-table.insert.html" class="index">Table::insert</a> - Insert table rows</li>
+<li><a href="mysql-xdevapi-table.isview.html" class="index">Table::isView</a> - Check if table is view</li>
+<li><a href="mysql-xdevapi-table.select.html" class="index">Table::select</a> - Select rows from table</li>
+<li><a href="mysql-xdevapi-table.update.html" class="index">Table::update</a> - Update rows in table</li>
+<li><a href="mysql-xdevapi-table.construct.html" class="index">Table::__construct</a> - Table constructor</li>
+<li><a href="mysql-xdevapi-tabledelete.bind.html" class="index">TableDelete::bind</a> - Bind delete query parameters</li>
+<li><a href="mysql-xdevapi-tabledelete.execute.html" class="index">TableDelete::execute</a> - Execute delete query</li>
+<li><a href="mysql-xdevapi-tabledelete.limit.html" class="index">TableDelete::limit</a> - Limit deleted rows</li>
+<li><a href="mysql-xdevapi-tabledelete.offset.html" class="index">TableDelete::offset</a> - Set delete limit offset</li>
+<li><a href="mysql-xdevapi-tabledelete.orderby.html" class="index">TableDelete::orderby</a> - Set delete sort criteria</li>
+<li><a href="mysql-xdevapi-tabledelete.where.html" class="index">TableDelete::where</a> - Set delete search condition</li>
+<li><a href="mysql-xdevapi-tabledelete.construct.html" class="index">TableDelete::__construct</a> - TableDelete constructor</li>
+<li><a href="mysql-xdevapi-tableinsert.execute.html" class="index">TableInsert::execute</a> - Execute insert query</li>
+<li><a href="mysql-xdevapi-tableinsert.values.html" class="index">TableInsert::values</a> - Add insert row values</li>
+<li><a href="mysql-xdevapi-tableinsert.construct.html" class="index">TableInsert::__construct</a> - TableInsert constructor</li>
+<li><a href="mysql-xdevapi-tableselect.bind.html" class="index">TableSelect::bind</a> - Bind select query parameters</li>
+<li><a href="mysql-xdevapi-tableselect.execute.html" class="index">TableSelect::execute</a> - Execute select statement</li>
+<li><a href="mysql-xdevapi-tableselect.groupby.html" class="index">TableSelect::groupBy</a> - Set select grouping criteria</li>
+<li><a href="mysql-xdevapi-tableselect.having.html" class="index">TableSelect::having</a> - Set select having condition</li>
+<li><a href="mysql-xdevapi-tableselect.limit.html" class="index">TableSelect::limit</a> - Limit selected rows</li>
+<li><a href="mysql-xdevapi-tableselect.lockexclusive.html" class="index">TableSelect::lockExclusive</a> - Execute EXCLUSIVE LOCK</li>
+<li><a href="mysql-xdevapi-tableselect.lockshared.html" class="index">TableSelect::lockShared</a> - Execute SHARED LOCK</li>
+<li><a href="mysql-xdevapi-tableselect.offset.html" class="index">TableSelect::offset</a> - Set limit offset</li>
+<li><a href="mysql-xdevapi-tableselect.orderby.html" class="index">TableSelect::orderby</a> - Set select sort criteria</li>
+<li><a href="mysql-xdevapi-tableselect.where.html" class="index">TableSelect::where</a> - Set select search condition</li>
+<li><a href="mysql-xdevapi-tableselect.construct.html" class="index">TableSelect::__construct</a> - TableSelect constructor</li>
+<li><a href="mysql-xdevapi-tableupdate.bind.html" class="index">TableUpdate::bind</a> - Bind update query parameters</li>
+<li><a href="mysql-xdevapi-tableupdate.execute.html" class="index">TableUpdate::execute</a> - Execute update query</li>
+<li><a href="mysql-xdevapi-tableupdate.limit.html" class="index">TableUpdate::limit</a> - Limit update row count</li>
+<li><a href="mysql-xdevapi-tableupdate.orderby.html" class="index">TableUpdate::orderby</a> - Set sorting criteria</li>
+<li><a href="mysql-xdevapi-tableupdate.set.html" class="index">TableUpdate::set</a> - Add field to be updated</li>
+<li><a href="mysql-xdevapi-tableupdate.where.html" class="index">TableUpdate::where</a> - Set search filter</li>
+<li><a href="mysql-xdevapi-tableupdate.construct.html" class="index">TableUpdate::__construct</a> - TableUpdate constructor</li>
 <li><a href="function.taint.html" class="index">taint</a> - 文字列を汚染させる</li>
 <li><a href="function.tan.html" class="index">tan</a> - 正接（タンジェント）</li>
 <li><a href="function.tanh.html" class="index">tanh</a> - 双曲線正接（ハイパボリックタンジェント）</li>
@@ -10187,6 +10376,7 @@
 <li><a href="function.vsprintf.html" class="index">vsprintf</a> - フォーマットされた文字列を返す</li>
 </ul></li>
 <li class='gen-index index-for-w'>w<ul id='refentry-index-for-w'>
+<li><a href="mysql-xdevapi-warning.construct.html" class="index">Warning::__construct</a> - Warning constructor</li>
 <li><a href="function.wddx-add-vars.html" class="index">wddx_add_vars</a> - 指定した ID の WDDX パケットに変数を追加する</li>
 <li><a href="function.wddx-deserialize.html" class="index">wddx_deserialize</a> - WDDX パケットをデシリアライズする</li>
 <li><a href="function.wddx-packet-end.html" class="index">wddx_packet_end</a> - 指定した ID の WDDX パケットを終了する</li>
@@ -10402,6 +10592,7 @@
 <li><a href="function.xml-set-processing-instruction-handler.html" class="index">xml_set_processing_instruction_handler</a> - 処理命令 (PI) 用ハンドラを設定する</li>
 <li><a href="function.xml-set-start-namespace-decl-handler.html" class="index">xml_set_start_namespace_decl_handler</a> - 名前空間開始ハンドラを設定する</li>
 <li><a href="function.xml-set-unparsed-entity-decl-handler.html" class="index">xml_set_unparsed_entity_decl_handler</a> - 処理されないエンティティ宣言用ハンドラを設定する</li>
+<li><a href="mysql-xdevapi-xsession.construct.html" class="index">XSession::__construct</a> - Description constructor</li>
 <li><a href="xsltprocessor.getparameter.html" class="index">XSLTProcessor::getParameter</a> - パラメータの値を取得する</li>
 <li><a href="xsltprocessor.getsecurityprefs.html" class="index">XsltProcessor::getSecurityPrefs</a> - セキュリティ設定を取得する</li>
 <li><a href="xsltprocessor.hasexsltsupport.html" class="index">XSLTProcessor::hasExsltSupport</a> - PHP が EXSLT をサポートしているかどうかを判定する</li>

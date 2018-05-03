@@ -53,6 +53,13 @@
       <span class="function"><a href="function.getimagesize.html" class="function">getimagesize()</a></span> 関数は、GD 拡張モジュールを必要としません。
     </span>
    </p></blockquote>
+   <div class="caution"><strong class="caution">警告</strong>
+    <p class="simpara">
+     
+     While the bundled version of the GD library uses the Zend memory manager to
+     allocate memory, system versions do not, so that <a href="ini.core.html#ini.memory-limit" class="link">memory_limit</a> does not apply. 
+    </p>
+   </div>
   </p>
 
   <p class="para">

@@ -36,10 +36,11 @@
      <em>mbstring</em> 拡張モジュールを使用するためには、
      <span class="productname">libmbfl</span>ライブラリが必要です。
      <span class="productname">libmbfl</span>は、<em>mbstring</em> 
-     拡張モジュールにバンドルされています。システムにインストールされている
-     <span class="productname">libmbfl</span> を利用する場合、
+     拡張モジュールにバンドルされています。PHP 7.3.0 より前では、
+     <span class="productname">libmbfl</span> がシステムにすでにインストール済みの場合、
      <strong class="option configure">--with-libmbfl[=DIR]</strong>
- を指定します。
+ を指定して
+     インストール済みのライブラリを使用します。
     </p>
    </li>
     <li class="listitem">
@@ -47,6 +48,21 @@
       <strong class="option configure">--disable-mbregex</strong>
  :
       マルチバイト対応の正規表現関数を無効にします。
+     </p>
+     <p class="para">
+      <span class="productname">Oniguruma</span> は、
+      マルチバイト文字をサポートする正規表現関数のために必要です。
+      <span class="productname">Oniguruma</span> は、<em>mbstring</em>
+      にバンドルされています。PHP 5.4.0 以降では、
+      <span class="productname">Oniguruma</span> がシステムにすでにインストール済みの場合、
+      <strong class="option configure">--with-onig[=DIR]</strong>
+ を指定して
+      インストール済みのライブラリを使用します。
+     </p>
+     <p class="para">
+      PHP 5.4.0 以降では、<strong class="option configure">--disable-mbregex-backtrack</strong>
+
+      を指定して、マルチバイト正規表現バックトラックチェックを無効にすることができます。
      </p>
     </li>
    </ul>

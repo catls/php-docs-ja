@@ -114,6 +114,13 @@
         </tr>
 
        <tr>
+        <td><a href="ini.core.html#ini.hard-timeout" class="link">hard_timeout</a></td>
+        <td>&quot;2&quot;</td>
+        <td>PHP_INI_SYSTEM</td>
+        <td>PHP 7.1.0 以降で利用可能。</td>
+       </tr>
+
+       <tr>
         <td><a href="ini.core.html#ini.zend.multibyte" class="link">zend.multibyte</a></td>
         <td>&quot;0&quot;</td>
         <td>PHP_INI_ALL</td>
@@ -512,7 +519,21 @@
       </dd>
 
      
+
      
+      <dt id="ini.hard-timeout">
+       <code class="parameter">hard_timeout</code>
+       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+       </p>
+      </dd>
+
+     
+
      
       <dt id="ini.zend.multibyte">
        <code class="parameter">zend.multibyte</code>
@@ -712,9 +733,12 @@
       <tbody class="tbody">
        <tr>
         <td><a href="ini.core.html#ini.realpath-cache-size" class="link">realpath_cache_size</a></td>
-        <td>&quot;16K&quot;</td>
+        <td>&quot;4M&quot;</td>
         <td>PHP_INI_SYSTEM</td>
-        <td>PHP 5.1.0 以降で使用可能。</td>
+        <td>
+         PHP 5.1.0 以降で使用可能。PHP 7.0.16 および 7.1.2 より前のバージョンでは、
+         デフォルト値は <em>&quot;16K&quot;</em> でした。
+        </td>
        </tr>
 
        <tr>
@@ -1513,6 +1537,20 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          <td class="empty">&nbsp;</td>
         </tr>
 
+       <tr>
+        <td><a href="ini.core.html#ini.user-ini.cache-ttl" class="link">user_ini.cache_ttl</a></td>
+        <td>&quot;300&quot;</td>
+        <td>PHP_INI_SYSTEM</td>
+        <td>PHP 5.3.0 以降で利用可能。</td>
+       </tr>
+
+       <tr>
+        <td><a href="ini.core.html#ini.user-ini.filename" class="link">user_ini.filename</a></td>
+        <td>&quot;.user.ini&quot;</td>
+        <td>PHP_INI_SYSTEM</td>
+        <td>PHP 5.3.0 以降で利用可能。</td>
+       </tr>
+
         <tr>
         <td><a href="ini.core.html#ini.extension-dir" class="link">extension_dir</a></td>
          <td>&quot;/path/to/php&quot;</td>
@@ -1659,7 +1697,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <span class="function"><a href="function.set-include-path.html" class="function">set_include_path()</a></span> を使用します。
        </p>
         <p class="para">
-         <div class="example" id="example-6539">
+         <div class="example" id="example-6727">
           <p><strong>例1 Unix include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.:/php/includes&quot;</pre>
@@ -1669,7 +1707,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          </div>
         </p>
         <p class="para">
-         <div class="example" id="example-6540">
+         <div class="example" id="example-6728">
           <p><strong>例2 Windows include_path</strong></p>
           <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path=&quot;.;c:\php\includes&quot;</pre>
@@ -1695,7 +1733,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         </p>       
        </p></blockquote>
        <p class="para">
-        <div class="example" id="example-6541">
+        <div class="example" id="example-6729">
          <p><strong>例3 Unix include_path で環境変数 ${USER} を使う例</strong></p>
          <div class="example-contents">
 <div class="php.inicode"><pre class="php.inicode">include_path = &quot;.:${USER}/pear/php&quot;</pre>
@@ -1812,6 +1850,34 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
        </dd>
 
       
+
+     
+      <dt id="ini.user-ini.cache-ttl">
+       <code class="parameter">user_ini.cache_ttl</code>
+       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+       </p>
+      </dd>
+
+     
+
+     
+      <dt id="ini.user-ini.filename">
+       <code class="parameter">user_ini.filename</code>
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+       </p>
+      </dd>
+
+     
 
       
        <dt id="ini.user-dir">
@@ -2304,7 +2370,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
         <td><a href="ini.core.html#ini.sql.safe-mode" class="link">sql.safe_mode</a></td>
          <td>&quot;0&quot;</td>
          <td>PHP_INI_SYSTEM</td>
-         <td class="empty">&nbsp;</td>
+         <td>PHP 7.2.0 で削除されました</td>
         </tr>
 
        </tbody>
@@ -2332,6 +2398,11 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          引数で指定された値よりもデフォルト値を優先して使用します。
          デフォルト値の詳細については、関連するデータベースのドキュメントを参照ください。
         </p>
+       <div class="warning"><strong class="warning">警告</strong>
+        <p class="simpara">
+         この機能は PHP 7.2.0 で <em class="emphasis">削除</em> されました。
+        </p>
+       </div>
        </dd>
 
       

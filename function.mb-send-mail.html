@@ -24,7 +24,7 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$to</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$subject</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$message</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$additional_headers</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$additional_headers</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$additional_parameter</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
   ]] )</div>
 
@@ -88,12 +88,16 @@
      <dd>
 
       <p class="para">
-       メールヘッダの最後に挿入される文字列。
+       メールヘッダの最後に挿入される <span class="type"><a href="language.types.string.html" class="type String">String</a></span> または <span class="type"><a href="language.types.array.html" class="type array">array</a></span>
       </p>
       <p class="para">
        通常、これは追加のヘッダ（From、Cc、Bcc）のために用いられます。
        複数のヘッダを追加する場合は CRLF（\r\n）で区切ります。
-       Validate parameter not to be injected unwanted headers by attackers.
+       攻撃者が不要なヘッダーを注入しないようにパラメータを検証してください。
+      </p>
+      <p class="para">
+       <span class="type"><a href="language.types.array.html" class="type array">array</a></span> が渡された場合、キーと値はそれぞれ
+       ヘッダーの名前および値です。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
@@ -166,6 +170,36 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.mb-send-mail-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.2.0</td>
+       <td>
+        <code class="parameter">additional_headers</code> パラメータは、
+        <span class="type"><a href="language.types.array.html" class="type array">array</a></span> も受け付けるようになりました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ID3v1 タグを表すオブジェクトを返す</title>
+  <title>Returns an object representing an ID3v1 tag</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mpegfile.getid3v1tag" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">KTaglib_MPEG_File::getID3v1Tag</h1>
-  <p class="verinfo">(0.0.1)</p><p class="refpurpose"><span class="refname">KTaglib_MPEG_File::getID3v1Tag</span> &mdash; <span class="dc-title">ID3v1 タグを表すオブジェクトを返す</span></p>
+  <p class="verinfo">(0.0.1)</p><p class="refpurpose"><span class="refname">KTaglib_MPEG_File::getID3v1Tag</span> &mdash; <span class="dc-title">Returns an object representing an ID3v1 tag</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-mpegfile.getid3v1tag-description">
@@ -22,12 +22,12 @@
     <span class="modifier">public</span>
     <span class="type"><span class="type KTaglib_ID3v1_Tag">KTaglib_ID3v1_Tag</span></span> 
     <span class="methodname"><strong>KTaglib_MPEG_File::getID3v1Tag</strong></span>
-     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$create</code><span class="initializer"> = false</span></span>
+     ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$create</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-    ID3v1 タグを表すオブジェクトを返します。
-    これを使用して、ID3v1 タグに関する情報を取得します。
+    Returns an object that represents an ID3v1 tag, which can be used
+    to get information about the ID3v1 tag.
   </p>
  </div>
 
@@ -35,7 +35,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mpegfile.getid3v1tag-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    KTaglib_MPEG_ID3v1Tag オブジェクト、あるいは ID3v1 タグが存在しない場合に false を返します。
+    Returns an KTaglib_MPEG_ID3v1Tag object or false if there is no ID3v1 tag.
   </p>
  </div>
 

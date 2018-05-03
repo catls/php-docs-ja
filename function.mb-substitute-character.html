@@ -21,7 +21,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>mb_substitute_character</strong></span>
-    ([ <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$substrchar</code><span class="initializer"> = mb_substitute_character()</span></span>
+    ([ <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$substchar</code><span class="initializer"> = mb_substitute_character()</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
@@ -46,7 +46,7 @@
 
     
      <dt>
-<code class="parameter">substrchar</code></dt>
+<code class="parameter">substchar</code></dt>
 
      <dd>
 
@@ -60,12 +60,14 @@
         </li>
         <li class="listitem">
          <span class="simpara">
-          <em>&quot;long&quot;</em>: 文字コードの値 (例: U+3000, JIS+7E7E) を出力する
+          <em>&quot;long&quot;</em>: 文字コードの値を出力する
+          (例: <em>U+3000</em>、<em>JIS+7E7E</em>)
          </span>
         </li>
         <li class="listitem">
          <span class="simpara">
-          <em>&quot;entity&quot;</em>: 文字エンティティ (例: Ȁ) を出力する
+          <em>&quot;entity&quot;</em>: 文字エンティティを出力する
+          (例: <em>&amp;#x200;</em>)
          </span>
         </li>
        </ul>
@@ -93,7 +95,7 @@
  <div class="refsect1 examples" id="refsect1-function.mb-substitute-character-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3063">
+   <div class="example" id="example-3251">
     <p><strong>例1 <span class="function"><strong>mb_substitute_character()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

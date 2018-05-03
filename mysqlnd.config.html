@@ -55,14 +55,14 @@
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#ini.ini.mysqlnd.log-mask" class="link">mysqlnd.log_mask</a></td>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.log-mask" class="link">mysqlnd.log_mask</a></td>
       <td>0</td>
       <td>PHP_INI_ALL</td>
       <td>PHP 5.3.0 以降で利用可能。</td>
      </tr>
 
      <tr>
-      <td><a href="mysqlnd.config.html#ini.ini.mysqlnd.mempool-default-size" class="link">mysqlnd.mempool_default_size</a></td>
+      <td><a href="mysqlnd.config.html#ini.mysqlnd.mempool-default-size" class="link">mysqlnd.mempool_default_size</a></td>
       <td>16000</td>
       <td>PHP_INI_ALL</td>
       <td>PHP 5.3.3 以降で利用可能。</td>
@@ -95,6 +95,13 @@
       <td>PHP_INI_PERDIR</td>
       <td>PHP 5.5.0 以降で利用可能。</td>
      </tr>
+
+      <tr>
+       <td><a href="mysqlnd.config.html#ini.mysqlnd.trace-alloc" class="link">mysqlnd.trace_alloc</a></td>
+       <td>&quot;&quot;</td>
+       <td>PHP_INI_SYSTEM</td>
+       <td>PHP 5.5.0 以降で利用可能。</td>
+      </tr>
 
      <tr>
       <td><a href="mysqlnd.config.html#ini.mysqlnd.fetch_data_copy" class="link">mysqlnd.fetch_data_copy</a></td>
@@ -279,7 +286,7 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    
    
-    <dt id="ini.ini.mysqlnd.log-mask">
+    <dt id="ini.mysqlnd.log-mask">
      <code class="parameter">mysqlnd.log_mask</code>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
     </dt>
@@ -305,7 +312,7 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    
    
-    <dt id="ini.ini.mysqlnd.mempool-default-size">
+    <dt id="ini.mysqlnd.mempool-default-size">
      <code class="parameter">mysqlnd.mempool_default_size</code>
      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
     </dt>
@@ -362,7 +369,7 @@ d:t:x:O,/tmp/mysqlnd.trace
    
     <dt id="ini.mysqlnd.net-cmd-buffer-size">
      <code class="parameter">mysqlnd.net_cmd_buffer_size</code>
-     <span class="type"><span class="type long">long</span></span>
+     <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
     </dt>
 
     <dd>
@@ -415,7 +422,7 @@ d:t:x:O,/tmp/mysqlnd.trace
    
     <dt id="ini.mysqlnd.net-read-buffer-size">
      <code class="parameter">mysqlnd.net_read_buffer_size</code>
-     <span class="type"><span class="type long">long</span></span>
+     <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
     </dt>
 
     <dd>
@@ -463,9 +470,22 @@ d:t:x:O,/tmp/mysqlnd.trace
 
    
    
+    <dt id="ini.mysqlnd.trace-alloc">
+     <code class="parameter">mysqlnd.trace_alloc</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+     </p>
+    </dd>
+
+   
+   
     <dt id="ini.mysqlnd.fetch_data_copy">
      <code class="parameter">mysqlnd.fetch_data_copy</code>
-     <span class="type"><span class="type long">long</span></span>
+     <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
     </dt>
 
     <dd>
