@@ -25,8 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>imagecreatefrombmp()</strong></span> returns an image identifier
-   representing the image obtained from the given filename.
+   <span class="function"><strong>imagecreatefrombmp()</strong></span> は、指定したファイル名から
+   得られたイメージを表すイメージ ID を返します。
   </p>
   <div class="tip"><strong class="tip">ヒント</strong><p class="simpara"><a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">fopen wrappers</a> が有効の場合、この関数のファイル名として
 URL を使用することができます。ファイル名の指定方法に関する詳細は
@@ -48,7 +48,7 @@ URL を使用することができます。ファイル名の指定方法に関�
      <dd>
 
       <p class="para">
-       Path to the BMP image.
+       BMP 画像へのパス。
       </p>
      </dd>
 
@@ -68,11 +68,11 @@ URL を使用することができます。ファイル名の指定方法に関�
  <div class="refsect1 examples" id="refsect1-function.imagecreatefrombmp-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3737">
-    <p><strong>例1 Convert an BMP image to a PNG image using <span class="function"><strong>imagecreatefrombmp()</strong></span></strong></p>
+   <div class="example" id="example-3739">
+    <p><strong>例1 <span class="function"><strong>imagecreatefrombmp()</strong></span> を使用した BMP 画像から PNG 画像への変換</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Load&nbsp;the&nbsp;BMP&nbsp;file<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefrombmp</span><span style="color: #007700">(</span><span style="color: #DD0000">'./example.bmp'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Convert&nbsp;it&nbsp;to&nbsp;a&nbsp;PNG&nbsp;file&nbsp;with&nbsp;default&nbsp;settings<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'./example.png'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;BMP&nbsp;ファイルを読み込み<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefrombmp</span><span style="color: #007700">(</span><span style="color: #DD0000">'./example.bmp'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;デフォルト設定で&nbsp;PNG&nbsp;ファイルへ変換<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'./example.png'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

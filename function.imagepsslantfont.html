@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>フォントを傾ける</title>
+  <title>Slant a font</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.imagepsslantfont" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">imagepsslantfont</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsslantfont</span> &mdash; <span class="dc-title">フォントを傾ける</span></p>
+  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsslantfont</span> &mdash; <span class="dc-title">Slant a font</span></p>
 
  </div>
  <div id="function.imagepsslantfont-refsynopsisdiv">
@@ -29,7 +29,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
    )</div>
 
   <p class="para rdfs-comment">
-   指定したフォントを傾けます。
+   Slant a given font.
   </p>
  </div>
 
@@ -38,18 +38,13 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
   <p class="para">
    <dl>
 
-    
-     <dt>
-<code class="parameter">font_index</code></dt>
+    <dt>
+<code class="parameter">
+font_index</code></dt>
+<dd>
+<p class="para">A font resource, returned by <span class="function"><a href="function.imagepsloadfont.html" class="function">imagepsloadfont()</a></span>.
+</p></dd>
 
-     <dd>
-
-      <p class="para">
-       <span class="function"><a href="function.imagepsloadfont.html" class="function">imagepsloadfont()</a></span> が返すフォントリソース。
-      </p>
-     </dd>
-
-    
     
      <dt>
 <code class="parameter">slant</code></dt>
@@ -57,7 +52,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
      <dd>
 
       <p class="para">
-       傾けのレベル。
+       Slant level.
       </p>
      </dd>
 
@@ -74,21 +69,6 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
   </p>
  </div>
 
- <div class="refsect1 examples" id="refsect1-function.imagepsslantfont-examples">
-  <h3 class="title">例</h3>
-  <p class="para">
-   <div class="example" id="example-3802">
-    <p><strong>例1 <span class="function"><strong>imagepsslantfont()</strong></span> の例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;.pfb&nbsp;フォントファイルを読み込みます<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">'./px3l.pfb'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;フォントを&nbsp;22.5&nbsp;度傾けます<br /></span><span style="color: #0000BB">imagepsslantfont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">22.5</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ここでフォントに対する操作をします<br /><br />//&nbsp;フォントをメモリから開放します<br /></span><span style="color: #0000BB">imagepsfreefont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
 
  <div class="refsect1 changelog" id="refsect1-function.imagepsslantfont-changelog">
   <h3 class="title">変更履歴</h3>
@@ -105,11 +85,8 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
      <tbody class="tbody">
       <tr>
-       <td>7.0.0</td>
-       <td>
-        PHP が T1Lib をサポートしなくなったので、この関数も削除されました。
-       </td>
-      </tr>
+    <td>7.0.0</td><td>T1Lib support was removed from PHP, thus this function was removed.</td>
+</tr>
 
      </tbody>
     
@@ -117,6 +94,24 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
   </p>
  </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.imagepsslantfont-examples">
+  <h3 class="title">例</h3>
+  <p class="para">
+   <div class="example" id="example-3804">
+    <p><strong>例1 <span class="function"><strong>imagepsslantfont()</strong></span> example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Load&nbsp;a&nbsp;.pfb&nbsp;font&nbsp;file<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">'./px3l.pfb'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Slant&nbsp;the&nbsp;font&nbsp;by&nbsp;22.5<br /></span><span style="color: #0000BB">imagepsslantfont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">22.5</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Do&nbsp;any&nbsp;operations&nbsp;with&nbsp;the&nbsp;font&nbsp;here<br /><br />//&nbsp;Free&nbsp;the&nbsp;font&nbsp;from&nbsp;memory<br /></span><span style="color: #0000BB">imagepsfreefont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
 
  <div class="refsect1 notes" id="refsect1-function.imagepsslantfont-notes">
   <h3 class="title">注意</h3>

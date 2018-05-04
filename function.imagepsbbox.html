@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>PostScript Type1 フォントを用いてテキスト矩形のバウンディングボックスを指定する</title>
+  <title>Give the bounding box of a text rectangle using PostScript Type1 fonts</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,9 +13,7 @@
 </div><hr /><div id="function.imagepsbbox" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">imagepsbbox</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsbbox</span> &mdash; <span class="dc-title">
-   PostScript Type1 フォントを用いてテキスト矩形のバウンディングボックスを指定する
-  </span></p>
+  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsbbox</span> &mdash; <span class="dc-title">Give the bounding box of a text rectangle using PostScript Type1 fonts</span></p>
 
  </div>
  <div id="function.imagepsbbox-refsynopsisdiv">
@@ -42,12 +40,13 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
    )</div>
 
   <p class="para rdfs-comment">
-   PostScript Type1 フォントを用いてテキスト矩形のバウンディングボックスを指定します。
+   Gives the bounding box of a text rectangle using PostScript Type1 fonts.
   </p>
   <p class="para">
-   バウンディングボックスは文字メトリックスから得られる情報を用いて計算されますが、
-   残念なことに実際に描画される文字列の描画結果とはわずかに異なる傾向があります。
-   角度が 0 度の場合、全ての方向に 1 ピクセル分多く必要であると予想することができます。
+   The bounding box is calculated using information available from character
+   metrics, and unfortunately tends to differ slightly from the results 
+   achieved by actually rasterizing the text. If the angle is 0 degrees, you
+   can expect the text to need 1 pixel more to every direction.
   </p>
  </div>
 
@@ -63,23 +62,18 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
      <dd>
 
       <p class="para">
-       書き込みたいテキスト。
+       The text to be written.
       </p>
      </dd>
 
     
-    
-     <dt>
-<code class="parameter">font_index</code></dt>
+    <dt>
+<code class="parameter">
+font_index</code></dt>
+<dd>
+<p class="para">A font resource, returned by <span class="function"><a href="function.imagepsloadfont.html" class="function">imagepsloadfont()</a></span>.
+</p></dd>
 
-     <dd>
-
-      <p class="para">
-       <span class="function"><a href="function.imagepsloadfont.html" class="function">imagepsloadfont()</a></span> が返すフォントリソース。
-      </p>
-     </dd>
-
-    
     
      <dt>
 <code class="parameter">size</code></dt>
@@ -87,7 +81,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
      <dd>
 
       <p class="para">
-       <code class="parameter">size</code> はピクセルで表します。
+       <code class="parameter">size</code> is expressed in pixels.
       </p>
      </dd>
 
@@ -99,9 +93,10 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
      <dd>
 
       <p class="para">
-       フォントが占める空間のデフォルト値を変更することが可能です。
-       この値が元の値に付加されます。また、負の値とすることも可能です。
-       文字間隔の単位で表されます。 1 単位は文字の矩形の 1/1000 です。
+       Allows you to change the default value of a space in a font.  This
+       amount is added to the normal value and can also be negative. 
+       Expressed in character space units, where 1 unit is 1/1000th of an
+       em-square.
       </p>
      </dd>
 
@@ -113,9 +108,11 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
      <dd>
 
       <p class="para">
-       <code class="parameter">tightness</code> により文字間の空白の量を制御できます。
-       この量は元の文字幅に追加され、負の値とすることも可能です。
-       文字間隔の単位で表されます。 1 単位は文字の矩形の 1/1000 です。
+       <code class="parameter">tightness</code> allows you to control the amount
+       of white space between characters. This amount is added to the
+       normal character width and can also be negative.
+       Expressed in character space units, where 1 unit is 1/1000th of an
+       em-square.
       </p>
      </dd>
 
@@ -127,7 +124,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
      <dd>
 
       <p class="para">
-       <code class="parameter">angle</code> は、度で指定します。
+       <code class="parameter">angle</code> is in degrees.
       </p>
      </dd>
 
@@ -140,28 +137,28 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
  <div class="refsect1 returnvalues" id="refsect1-function.imagepsbbox-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   以下の要素を持つ配列を返します。
+   Returns an array containing the following elements:
    <table class="doctable informaltable">
     
      <tbody class="tbody">
       <tr>
        <td>0</td>
-       <td>左側の x 座標</td>
+       <td>left x-coordinate</td>
       </tr>
 
       <tr>
        <td>1</td>
-       <td>上側の y 座標</td>
+       <td>upper y-coordinate</td>
       </tr>
 
       <tr>
        <td>2</td>
-       <td>右側の x 座標</td>
+       <td>right x-coordinate</td>
       </tr>
 
       <tr>
        <td>3</td>
-       <td>下側の y 座標</td>
+       <td>lower y-coordinate</td>
       </tr>
 
      </tbody>
@@ -171,19 +168,6 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
   </p>
  </div>
 
- <div class="refsect1 examples" id="refsect1-function.imagepsbbox-examples">
-  <h3 class="title">例</h3>
-  <div class="example" id="example-3797">
-   <p><strong>例1 <span class="function"><strong>imagepsbbox()</strong></span> の使用</strong></p>
-   <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;画像ハンドルを作成します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">200</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">200</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;色を割り当てます<br /></span><span style="color: #0000BB">$black&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$white&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;PostScript&nbsp;フォントを読み込みます<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">'font.pfm'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;フォント用のバウンディングボックスを作成します<br /></span><span style="color: #0000BB">$bbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsbbox</span><span style="color: #007700">(</span><span style="color: #DD0000">'Sample&nbsp;text&nbsp;is&nbsp;simple'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;X&nbsp;座標と&nbsp;Y&nbsp;座標を定義します<br /></span><span style="color: #0000BB">$x&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$bbox</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$y&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$bbox</span><span style="color: #007700">[</span><span style="color: #0000BB">3</span><span style="color: #007700">]&nbsp;/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;フォントを画像に書き込みます<br /></span><span style="color: #0000BB">imagepstext</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Sample&nbsp;text&nbsp;is&nbsp;simple'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$black</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$white</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$x</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$y</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;出力し、メモリを開放します<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-type:&nbsp;image/png'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-   </div>
-
-  </div>
- </div>
 
  <div class="refsect1 changelog" id="refsect1-function.imagepsbbox-changelog">
   <h3 class="title">変更履歴</h3>
@@ -200,11 +184,8 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
      <tbody class="tbody">
       <tr>
-       <td>7.0.0</td>
-       <td>
-        PHP が T1Lib をサポートしなくなったので、この関数も削除されました。
-       </td>
-      </tr>
+    <td>7.0.0</td><td>T1Lib support was removed from PHP, thus this function was removed.</td>
+</tr>
 
      </tbody>
     
@@ -212,6 +193,22 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
   </p>
  </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.imagepsbbox-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-3799">
+   <p><strong>例1 <span class="function"><strong>imagepsbbox()</strong></span> usage</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Create&nbsp;image&nbsp;handle<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">200</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">200</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Allocate&nbsp;colors<br /></span><span style="color: #0000BB">$black&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$white&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Load&nbsp;the&nbsp;PostScript&nbsp;Font<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">'font.pfm'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Make&nbsp;a&nbsp;bounding&nbsp;box&nbsp;for&nbsp;the&nbsp;font<br /></span><span style="color: #0000BB">$bbox&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsbbox</span><span style="color: #007700">(</span><span style="color: #DD0000">'Sample&nbsp;text&nbsp;is&nbsp;simple'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Define&nbsp;our&nbsp;X&nbsp;and&nbsp;Y&nbsp;cordinates<br /></span><span style="color: #0000BB">$x&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$bbox</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">]&nbsp;/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$y&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">$bbox</span><span style="color: #007700">[</span><span style="color: #0000BB">3</span><span style="color: #007700">]&nbsp;/&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)&nbsp;-&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Write&nbsp;the&nbsp;font&nbsp;to&nbsp;the&nbsp;image<br /></span><span style="color: #0000BB">imagepstext</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Sample&nbsp;text&nbsp;is&nbsp;simple'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$black</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$white</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$x</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$y</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Output&nbsp;and&nbsp;free&nbsp;memory<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-type:&nbsp;image/png'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
 
  <div class="refsect1 notes" id="refsect1-function.imagepsbbox-notes">
   <h3 class="title">注意</h3>
@@ -225,7 +222,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.imagepstext.html" class="function" rel="rdfs-seeAlso">imagepstext()</a> - PostScript Type1 フォントを用いて画像の上に文字列を描く</span></li>
+    <li class="member"><span class="function"><a href="function.imagepstext.html" class="function" rel="rdfs-seeAlso">imagepstext()</a> - Draws a text over an image using PostScript Type1 fonts</span></li>
    </ul>
   </p>
  </div>

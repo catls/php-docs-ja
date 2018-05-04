@@ -82,64 +82,7 @@ image</code></dt>
   <p class="para">
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
- </div>
-
- <div class="refsect1 examples" id="refsect1-function.imagejpeg-examples">
-  <h3 class="title">例</h3>
-  <p class="para">
-   <div class="example" id="example-3787">
-    <p><strong>例1 JPEG 画像のブラウザへの出力</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;空の画像を作成し、テキストを追加します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">120</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$text_color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">233</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">14</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">91</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagestring</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'A&nbsp;Simple&nbsp;Text&nbsp;String'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text_color</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;content&nbsp;type&nbsp;ヘッダを、ここでは&nbsp;image/jpeg&nbsp;と設定します<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;image/jpeg'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;画像を出力します<br /></span><span style="color: #0000BB">imagejpeg</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリを開放します<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-    <div class="example-contents"><p>上の例の出力は、
-たとえば以下のようになります。</p></div>
-    <div class="mediaobject">
-     
-     <div class="imageobject">
-      <img src="images/21009b70229598c6a80eef8b45bf282b-imagejpeg.jpg" alt="出力例 : JPEG 画像の出力" width="120" height="20" />
-     </div>
-    </div>
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-3788">
-    <p><strong>例2 JPEG 画像のファイルへの保存</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;空の画像を作成し、テキストを追加します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">120</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$text_color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">233</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">14</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">91</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagestring</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'A&nbsp;Simple&nbsp;Text&nbsp;String'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text_color</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;画像を&nbsp;'simpletext.jpg'&nbsp;として保存します<br /></span><span style="color: #0000BB">imagejpeg</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'simpletext.jpg'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリを開放します<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
-  <p class="para">
-   <div class="example" id="example-3789">
-    <p><strong>例3 75% 品質でのブラウザへの画像の出力</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;空の画像を作成し、テキストを追加します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">120</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$text_color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">233</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">14</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">91</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagestring</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'A&nbsp;Simple&nbsp;Text&nbsp;String'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text_color</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;content&nbsp;type&nbsp;ヘッダを、ここでは&nbsp;image/jpeg&nbsp;と設定します<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;image/jpeg'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;to&nbsp;パラメータを&nbsp;NULL&nbsp;でスキップし、品質を&nbsp;75%&nbsp;に設定します<br /></span><span style="color: #0000BB">imagejpeg</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">75</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリを開放します<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
- <div class="refsect1 notes" id="refsect1-function.imagejpeg-notes">
-  <h3 class="title">注意</h3>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    プログレッシブ JPEG を出力したい場合には、
-    <span class="function"><a href="function.imageinterlace.html" class="function">imageinterlace()</a></span> でインターレースをセットする必要があります。
-   </p>
-  </p></blockquote>
+  <div class="caution"><strong class="caution">警告</strong><p class="simpara">However, if libgd fails to output the image, this function returns <strong><code>TRUE</code></strong>.</p></div>
  </div>
 
 
@@ -160,15 +103,16 @@ image</code></dt>
       <tr>
        <td>5.4.0</td>
        <td>
-        ストリームリソースを
-        <code class="parameter">to</code> に渡せるようになりました。
+        ストリームリソースを <code class="parameter">to</code>
+        に渡せるようになりました。
        </td>
       </tr>
 
       <tr>
        <td>5.4.0</td>
        <td>
-        <code class="parameter">to</code> に空文字列を渡してこの引数をスキップすることはできなくなりました。
+        空文字列を <code class="parameter">to</code> に渡して
+        この引数をスキップすることはできなくなりました。
        </td>
       </tr>
 
@@ -177,6 +121,65 @@ image</code></dt>
    </table>
 
   </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.imagejpeg-examples">
+  <h3 class="title">例</h3>
+  <p class="para">
+   <div class="example" id="example-3789">
+    <p><strong>例1 JPEG 画像のブラウザへの出力</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;空の画像を作成し、テキストを追加します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">120</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$text_color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">233</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">14</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">91</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagestring</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'A&nbsp;Simple&nbsp;Text&nbsp;String'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text_color</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;content&nbsp;type&nbsp;ヘッダを、ここでは&nbsp;image/jpeg&nbsp;と設定します<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;image/jpeg'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;画像を出力します<br /></span><span style="color: #0000BB">imagejpeg</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリを開放します<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+    <div class="mediaobject">
+     
+     <div class="imageobject">
+      <img src="images/21009b70229598c6a80eef8b45bf282b-imagejpeg.jpg" alt="出力例 : JPEG 画像の出力" width="120" height="20" />
+     </div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-3790">
+    <p><strong>例2 JPEG 画像のファイルへの保存</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;空の画像を作成し、テキストを追加します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">120</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$text_color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">233</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">14</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">91</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagestring</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'A&nbsp;Simple&nbsp;Text&nbsp;String'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text_color</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;画像を&nbsp;'simpletext.jpg'&nbsp;として保存します<br /></span><span style="color: #0000BB">imagejpeg</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'simpletext.jpg'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリを開放します<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-3791">
+    <p><strong>例3 75% 品質でのブラウザへの画像の出力</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;空の画像を作成し、テキストを追加します<br /></span><span style="color: #0000BB">$im&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatetruecolor</span><span style="color: #007700">(</span><span style="color: #0000BB">120</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$text_color&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">233</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">14</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">91</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagestring</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">,&nbsp;&nbsp;</span><span style="color: #DD0000">'A&nbsp;Simple&nbsp;Text&nbsp;String'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$text_color</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;content&nbsp;type&nbsp;ヘッダを、ここでは&nbsp;image/jpeg&nbsp;と設定します<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;image/jpeg'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;to&nbsp;パラメータを&nbsp;NULL&nbsp;でスキップし、品質を&nbsp;75%&nbsp;に設定します<br /></span><span style="color: #0000BB">imagejpeg</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">75</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メモリを開放します<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 notes" id="refsect1-function.imagejpeg-notes">
+  <h3 class="title">注意</h3>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    プログレッシブ JPEG を出力したい場合には、
+    <span class="function"><a href="function.imageinterlace.html" class="function">imageinterlace()</a></span> でインターレースをセットする必要があります。
+   </p>
+  </p></blockquote>
  </div>
 
 

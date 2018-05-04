@@ -27,6 +27,13 @@
    <span class="function"><strong>imagecreatefromgif()</strong></span> は、
    指定したファイル名の画像を表す画像 ID を返します。
   </p>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    GIF ファイルをメモリに取り込む際、最初のフレームだけが
+    画像リソースポインタで返されます。<span class="function"><a href="function.getimagesize.html" class="function">getimagesize()</a></span>
+    で報告される画像サイズは必ずしも必要ではありません。
+   </p>
+  </div>
   <div class="tip"><strong class="tip">ヒント</strong><p class="simpara"><a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">fopen wrappers</a> が有効の場合、この関数のファイル名として
 URL を使用することができます。ファイル名の指定方法に関する詳細は
 <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> を参照ください。
@@ -63,7 +70,7 @@ URL を使用することができます。ファイル名の指定方法に関�
 
  <div class="refsect1 examples" id="refsect1-function.imagecreatefromgif-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-3741">
+  <div class="example" id="example-3743">
    <p><strong>例1 GIF の作成時のエラーを処理する例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -90,12 +97,6 @@ URL を使用することができます。ファイル名の指定方法に関�
     GIF サポートは GD ライブラリのバーション 1.6 以降で削除され、
     バージョン 2.0.28 で復活しました。
     その間のバージョンでは、この関数を使用できません。
-   </p>
-  </p></blockquote>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    アニメーション GIF ファイルをメモリに取り込むときには、
-    画像リソースポインタで返されるのが最初のフレームだけになります。
    </p>
   </p></blockquote>
  </div>

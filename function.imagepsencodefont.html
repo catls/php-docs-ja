@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>フォントの文字エンコードベクトルを変更する</title>
+  <title>Change the character encoding vector of a font</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.imagepsencodefont" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">imagepsencodefont</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsencodefont</span> &mdash; <span class="dc-title">フォントの文字エンコードベクトルを変更する</span></p>
+  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsencodefont</span> &mdash; <span class="dc-title">Change the character encoding vector of a font</span></p>
 
  </div>
  <div id="function.imagepsencodefont-refsynopsisdiv">
@@ -29,17 +29,17 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
    )</div>
 
   <p class="para rdfs-comment">
-   ファイルから文字エンコードベクトルをロードし、変更します。
-   PostScript フォントのデフォルトベクトルは、127以上の位置には文字
-   がほとんどないので、英語以外の言語を使用する場合には
-   恐らくこの部分を変更したいと思うことでしょう。
+   Loads a character encoding vector from a file and changes the fonts 
+   encoding vector to it. As a PostScript fonts default vector lacks most of
+   the character positions above 127, you&#039;ll definitely want to change this
+   if you use a language other than English. 
   </p>
   <p class="para">
-   この関数を頻繁に用いている場合には、ずっと優れた方法として
-   <a href="configuration.file.html" class="link">設定ファイル</a> で
-   ps.default_encoding が正しいエンコードファイルを指すようにして
-   エンコード法を定義する方法があります。この場合、
-   自動的にロードされる全てのフォントは、正しいエンコードとなります。
+   If you find yourself using this function all the time, a much
+   better way to define the encoding is to set ps.default_encoding in
+   the <a href="configuration.file.html" class="link">configuration file</a>
+   to point to the right encoding file and all fonts you load will
+   automatically have the right encoding.
   </p>
  </div>
 
@@ -48,18 +48,13 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
   <p class="para">
    <dl>
 
-    
-     <dt>
-<code class="parameter">font_index</code></dt>
+    <dt>
+<code class="parameter">
+font_index</code></dt>
+<dd>
+<p class="para">A font resource, returned by <span class="function"><a href="function.imagepsloadfont.html" class="function">imagepsloadfont()</a></span>.
+</p></dd>
 
-     <dd>
-
-      <p class="para">
-       <span class="function"><a href="function.imagepsloadfont.html" class="function">imagepsloadfont()</a></span> が返すフォントリソース。
-      </p>
-     </dd>
-
-    
     
      <dt>
 <code class="parameter">encodingfile</code></dt>
@@ -67,10 +62,10 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
      <dd>
 
       <p class="para">
-       このファイルの正しいフォーマットは、T1libs のドキュメントに記述されています。
-       T1libs には、すぐに使用できるファイルとして
-       <var class="filename">IsoLatin1.enc</var> および
-       <var class="filename">IsoLatin2.enc</var> が含まれています。
+       The exact format of this file is described in T1libs documentation. 
+       T1lib comes with two ready-to-use files, 
+       <var class="filename">IsoLatin1.enc</var> and 
+       <var class="filename">IsoLatin2.enc</var>.
       </p>
      </dd>
 
@@ -87,21 +82,6 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
   </p>
  </div>
 
- <div class="refsect1 examples" id="refsect1-function.imagepsencodefont-examples">
-  <h3 class="title">例</h3>
-  <p class="para">
-   <div class="example" id="example-3798">
-    <p><strong>例1 <span class="function"><strong>imagepsencodefont()</strong></span> の例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;.pfb&nbsp;フォントファイルを読み込みます<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">'./px3l.pfb'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;T1lib&nbsp;に、ISO&nbsp;Latin&nbsp;1&nbsp;エンコーディングを使うよう指示します<br /></span><span style="color: #0000BB">imagepsencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'./IsoLatin1.enc'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ここでフォントに対する操作をします<br /><br />//&nbsp;フォントをメモリから開放します<br /></span><span style="color: #0000BB">imagepsfreefont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
 
  <div class="refsect1 changelog" id="refsect1-function.imagepsencodefont-changelog">
   <h3 class="title">変更履歴</h3>
@@ -118,11 +98,8 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
      <tbody class="tbody">
       <tr>
-       <td>7.0.0</td>
-       <td>
-        PHP が T1Lib をサポートしなくなったので、この関数も削除されました。
-       </td>
-      </tr>
+    <td>7.0.0</td><td>T1Lib support was removed from PHP, thus this function was removed.</td>
+</tr>
 
      </tbody>
     
@@ -130,6 +107,24 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
   </p>
  </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.imagepsencodefont-examples">
+  <h3 class="title">例</h3>
+  <p class="para">
+   <div class="example" id="example-3800">
+    <p><strong>例1 <span class="function"><strong>imagepsencodefont()</strong></span> example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Load&nbsp;a&nbsp;.pfb&nbsp;font&nbsp;file<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">'./px3l.pfb'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Tell&nbsp;T1lib&nbsp;to&nbsp;use&nbsp;ISO&nbsp;Latin&nbsp;1&nbsp;encoding<br /></span><span style="color: #0000BB">imagepsencode</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'./IsoLatin1.enc'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Do&nbsp;any&nbsp;operations&nbsp;with&nbsp;the&nbsp;font&nbsp;here<br /><br />//&nbsp;Free&nbsp;the&nbsp;font&nbsp;from&nbsp;memory<br /></span><span style="color: #0000BB">imagepsfreefont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
 
  <div class="refsect1 notes" id="refsect1-function.imagepsencodefont-notes">
   <h3 class="title">注意</h3>

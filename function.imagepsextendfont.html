@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>フォントを展開または圧縮する</title>
+  <title>Extend or condense a font</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.imagepsextendfont" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">imagepsextendfont</h1>
-  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsextendfont</span> &mdash; <span class="dc-title">フォントを展開または圧縮する</span></p>
+  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">imagepsextendfont</span> &mdash; <span class="dc-title">Extend or condense a font</span></p>
 
  </div>
  <div id="function.imagepsextendfont-refsynopsisdiv">
@@ -29,9 +29,9 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
    )</div>
 
   <p class="para rdfs-comment">
-   フォント(<code class="parameter">font_index</code>)を展開または圧縮します。
-   パラメータ<code class="parameter">extend</code>の値が1より小さい場合、
-   フォントの圧縮が行われます。
+   Extend or condense a font (<code class="parameter">font_index</code>), if
+   the value of the <code class="parameter">extend</code> parameter is less
+   than one you will be condensing the font.
   </p>
  </div>
 
@@ -40,18 +40,13 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
   <p class="para">
    <dl>
 
-    
-     <dt>
-<code class="parameter">font_index</code></dt>
+    <dt>
+<code class="parameter">
+font_index</code></dt>
+<dd>
+<p class="para">A font resource, returned by <span class="function"><a href="function.imagepsloadfont.html" class="function">imagepsloadfont()</a></span>.
+</p></dd>
 
-     <dd>
-
-      <p class="para">
-       <span class="function"><a href="function.imagepsloadfont.html" class="function">imagepsloadfont()</a></span> が返すフォントリソース。
-      </p>
-     </dd>
-
-    
     
      <dt>
 <code class="parameter">extend</code></dt>
@@ -59,7 +54,7 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
      <dd>
 
       <p class="para">
-       展開の値。正の値でなければなりません。
+       Extension value, must be greater than 0.
       </p>
      </dd>
 
@@ -76,21 +71,6 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
   </p>
  </div>
 
- <div class="refsect1 examples" id="refsect1-function.imagepsextendfont-examples">
-  <h3 class="title">例</h3>
-  <p class="para">
-   <div class="example" id="example-3799">
-    <p><strong>例1 <span class="function"><strong>imagepsextendfont()</strong></span> の例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;.pfb&nbsp;フォントファイルを読み込みます<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">'./px3l.pfb'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;フォントを展開します<br /></span><span style="color: #0000BB">imagepsextendfont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2.5</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;ここでフォントに対して何らかの操作をします<br /><br />//&nbsp;フォントをメモリから開放します<br /></span><span style="color: #0000BB">imagepsfreefont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
 
  <div class="refsect1 changelog" id="refsect1-function.imagepsextendfont-changelog">
   <h3 class="title">変更履歴</h3>
@@ -107,11 +87,8 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
      <tbody class="tbody">
       <tr>
-       <td>7.0.0</td>
-       <td>
-        PHP が T1Lib をサポートしなくなったので、この関数も削除されました。
-       </td>
-      </tr>
+    <td>7.0.0</td><td>T1Lib support was removed from PHP, thus this function was removed.</td>
+</tr>
 
      </tbody>
     
@@ -119,6 +96,24 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
   </p>
  </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.imagepsextendfont-examples">
+  <h3 class="title">例</h3>
+  <p class="para">
+   <div class="example" id="example-3801">
+    <p><strong>例1 <span class="function"><strong>imagepsextendfont()</strong></span> example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Load&nbsp;a&nbsp;.pfb&nbsp;font&nbsp;file<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagepsloadfont</span><span style="color: #007700">(</span><span style="color: #DD0000">'./px3l.pfb'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Extend&nbsp;the&nbsp;font&nbsp;by&nbsp;2.5<br /></span><span style="color: #0000BB">imagepsextendfont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2.5</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Do&nbsp;any&nbsp;operations&nbsp;with&nbsp;the&nbsp;font&nbsp;here<br /><br />//&nbsp;Free&nbsp;the&nbsp;font&nbsp;from&nbsp;memory<br /></span><span style="color: #0000BB">imagepsfreefont</span><span style="color: #007700">(</span><span style="color: #0000BB">$font</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
 
  <div class="refsect1 notes" id="refsect1-function.imagepsextendfont-notes">
   <h3 class="title">注意</h3>

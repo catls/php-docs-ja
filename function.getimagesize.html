@@ -61,6 +61,15 @@
     アイコンに関する情報は、ビットレートが最大のアイコンから取得します。
    </span>
   </p></blockquote>
+  
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    GIF images consist of one or more frames, where each frame may only occupy
+    part of the image. The size of the image which is reported by
+    <span class="function"><strong>getimagesize()</strong></span> is the overall size (read from the logical
+    screen descriptor).
+   </span>
+  </p></blockquote>
  </div>
 
 
@@ -78,7 +87,7 @@
       <p class="para">
         このパラメータは、情報を取得したいファイルの名前を指定します。
         ローカルファイルへの参照、あるいは (設定で許可されているなら)
-        ストリームを用いたリモートファイルへの参照を指定できます。
+        <a href="wrappers.html" class="link">ストリーム</a>を用いたリモートファイルへの参照を指定できます。
       </p>
      </dd>
 
@@ -100,6 +109,12 @@
        バイナリ形式のマーカーAPP13を読むことができるよう処理するために
        <span class="function"><a href="function.iptcparse.html" class="function">iptcparse()</a></span> 関数を使用することができます。
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        <code class="parameter">imageinfo</code> は、
+        <acronym>JFIF</acronym> ファイルのみをサポートします。
+       </p>
+      </p></blockquote>
      </dd>
 
     
@@ -139,7 +154,7 @@
    <em>mime</em>は画像のMIMEタイプに一致します。この情報は
    画像とともに正しい HTTP <em>Content-type</em>
    ヘッダを転送するために使用できます。
-   <div class="example" id="example-3695">
+   <div class="example" id="example-3697">
     <p><strong>例1 <span class="function"><strong>getimagesize()</strong></span> および MIME 型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -277,7 +292,7 @@
  <div class="refsect1 examples" id="refsect1-function.getimagesize-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3696">
+   <div class="example" id="example-3698">
     <p><strong>例2 <span class="function"><strong>getimagesize()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -287,7 +302,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-3697">
+   <div class="example" id="example-3699">
     <p><strong>例3 getimagesize (URL)</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -297,7 +312,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-3698">
+   <div class="example" id="example-3700">
     <p><strong>例4 IPTC を返す getimagesize()</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -327,6 +342,8 @@
     <li class="member"><span class="function"><a href="function.exif-read-data.html" class="function" rel="rdfs-seeAlso">exif_read_data()</a> - JPEG あるいは TIFF から
    EXIF ヘッダを読み込む</span></li>
     <li class="member"><span class="function"><a href="function.exif-thumbnail.html" class="function" rel="rdfs-seeAlso">exif_thumbnail()</a> - TIFF あるいは JPEG 形式の画像に埋め込まれたサムネイルを取得する</span></li>
+    <li class="member"><span class="function"><a href="function.imagesx.html" class="function" rel="rdfs-seeAlso">imagesx()</a> - 画像の幅を取得する</span></li>
+    <li class="member"><span class="function"><a href="function.imagesy.html" class="function" rel="rdfs-seeAlso">imagesy()</a> - 画像の高さを取得する</span></li>
    </ul>
   </p>
  </div>
