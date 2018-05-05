@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ノンゼロワインディング規則を使用して現在のパスを塗りつぶす</title>
+  <title>Fill current path using nonzero winding number rule, then paint the path</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="harupage.fillstroke" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">HaruPage::fillStroke</h1>
-  <p class="verinfo">(PECL haru &gt;= 0.0.1)</p><p class="refpurpose"><span class="refname">HaruPage::fillStroke</span> &mdash; <span class="dc-title">ノンゼロワインディング規則を使用して現在のパスを塗りつぶす</span></p>
+  <p class="verinfo">(PECL haru &gt;= 0.0.1)</p><p class="refpurpose"><span class="refname">HaruPage::fillStroke</span> &mdash; <span class="dc-title">Fill current path using nonzero winding number rule, then paint the path</span></p>
 
  </div>
 
@@ -21,11 +21,11 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>HaruPage::fillStroke</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$close_path</code><span class="initializer"> = false</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$close_path</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   ノンゼロワインディング規則を使用して現在のパスを塗りつぶします。
+   Fills current path using nonzero winding number rule, then paints the path.
   </p>
  </div>
 
@@ -42,8 +42,8 @@
      <dd>
 
       <p class="para">
-       オプションのパラメータです。<strong><code>TRUE</code></strong> に設定すると、
-       この関数は現在のパスを閉じます。デフォルトは <strong><code>FALSE</code></strong> です。
+       Optional parameter. When set to <strong><code>TRUE</code></strong>, the function closes the current
+       path. Default to <strong><code>FALSE</code></strong>.
       </p>
      </dd>
 
@@ -57,7 +57,7 @@
  <div class="refsect1 returnvalues" id="refsect1-harupage.fillstroke-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   成功した場合に <strong><code>TRUE</code></strong> を返します。
+   Returns <strong><code>TRUE</code></strong> on success.
   </p>
  </div>
 

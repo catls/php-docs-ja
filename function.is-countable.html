@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Verify that the contents of a variable is a countable value</title>
+  <title>引数が、数えられる値かどうかを調べる</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -14,7 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">is_countable</h1>
   <p class="verinfo">(PHP 7 &gt;= 7.3.0)</p><p class="refpurpose"><span class="refname">is_countable</span> &mdash; <span class="dc-title">
-   Verify that the contents of a variable is a countable value
+   引数が、数えられる値かどうかを調べる
   </span></p>
 
  </div>
@@ -27,8 +27,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Verify that the contents of a variable is an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> or
-   an object implementing <a href="class.countable.html" class="classname">Countable</a>
+   引数の内容が、<span class="type"><a href="language.types.array.html" class="type array">array</a></span> または <a href="class.countable.html" class="classname">Countable</a>
+   を実装したオブジェクトかどうかを調べます。
   </p>
  </div>
 
@@ -45,7 +45,7 @@
      <dd>
 
       <p class="para">
-       The value to check
+       チェックする値
       </p>
      </dd>
 
@@ -59,8 +59,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.is-countable-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns <strong><code>TRUE</code></strong> if <code class="parameter">var</code> is countable, <strong><code>FALSE</code></strong> 
-   otherwise.
+   <code class="parameter">var</code> が数えられる場合に <strong><code>TRUE</code></strong>、
+   それ以外の場合に <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
@@ -81,7 +81,7 @@
      <tr>
       <td>7.3.0</td>
       <td>
-       <span class="function"><strong>is_countable()</strong></span> has been added.
+       <span class="function"><strong>is_countable()</strong></span> が追加されました。
       </td>
      </tr>
 
@@ -96,7 +96,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-6397">
-    <p><strong>例1 <span class="function"><strong>is_countable()</strong></span> examples</strong></p>
+    <p><strong>例1 <span class="function"><strong>is_countable()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_countable</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">]));&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_countable</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">ArrayIterator</span><span style="color: #007700">([</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">])));&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_countable</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">ArrayIterator</span><span style="color: #007700">()));&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_countable</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">stdClass</span><span style="color: #007700">()));&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(false)</span>

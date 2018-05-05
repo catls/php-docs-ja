@@ -21,7 +21,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>session_start</strong></span>
-    ([ <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = []</span></span>
+    ([ <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array()</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
@@ -111,6 +111,15 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        セッションを開始できなかった場合、
+        <span class="function"><strong>session_start()</strong></span> は、<strong><code>FALSE</code></strong> を返し、
+        <var class="varname"><var class="varname"><a href="reserved.variables.session.html" class="classname">$_SESSION</a></var></var> を初期化しないようになりました。
+       </td>
+      </tr>
+
       <tr>
        <td>7.0.0</td>
        <td>

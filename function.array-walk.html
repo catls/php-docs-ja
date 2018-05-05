@@ -121,10 +121,13 @@
  <div class="refsect1 errors" id="refsect1-function.array-walk-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   <code class="parameter">callback</code> 関数が、指定された引数より多いパラメータを必要とする
-   場合、<span class="function"><strong>array_walk()</strong></span>が<code class="parameter">callback</code>
+   PHP 7.1.0 以降では、<code class="parameter">callback</code> 関数が 2 つより多いパラメータ
+   （配列メンバーの値およびキー）を必要とする場合、
+   <a href="class.argumentcounterror.html" class="classname">ArgumentCountError</a> がスローされます。
+   前は、<code class="parameter">callback</code> 関数が 2 つより多いパラメータを必要とする場合、
+   <span class="function"><strong>array_walk()</strong></span>が<code class="parameter">callback</code>
    をコールする度にエラーレベル <a href="errorfunc.constants.html" class="link">E_WARNING</a> が
-   発生します。
+   発生していました。
   </p>
  </div>
 

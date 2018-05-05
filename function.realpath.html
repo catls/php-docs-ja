@@ -27,7 +27,8 @@
   <p class="para rdfs-comment">
    <span class="function"><strong>realpath()</strong></span> は、
    入力 <code class="parameter">path</code> のシンボリックリンクをすべて展開し、
-   「/./」「/../」「/」などの参照をすべて解決することにより、正規化された絶対パスを返します。
+   <em>/./</em>、<em>/../</em> および <em>/</em>
+   などの参照をすべて解決することにより、正規化された絶対パスを返します。
   </p>
  </div>
 
@@ -65,8 +66,9 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合は、正規化された絶対パス名を返します。
-   返されるパスはシンボリックリンクや「/./」「/../」要素を含みません。
-   パスの末尾の区切り文字 (\ や / など) は削除されます。
+   返されるパスはシンボリックリンク、<em>/./</em> および <em>/../</em>
+   要素を含みません。
+   パスの末尾の区切り文字 (<em>\</em> や <em>/</em> など) は削除されます。
   </p>
   <p class="para">
    <span class="function"><strong>realpath()</strong></span> は、
@@ -83,6 +85,13 @@
    <p class="para">
     大文字小文字を区別しないファイルシステムの場合は、<span class="function"><strong>realpath()</strong></span>
     が大文字小文字をどちらかにそろえるかもしれないし、そろえないかもしれません。
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    
+    The function <span class="function"><strong>realpath()</strong></span> will not work for a file which
+    is inside a Phar as such path would be a virtual path, not a real one.
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">
@@ -163,7 +172,7 @@
     </p></div>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'/windows/system32'</span><span style="color: #007700">);<br /><br />echo&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'C:\Program&nbsp;Files\\'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'/windows/system32'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'C:\Program&nbsp;Files\\'</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

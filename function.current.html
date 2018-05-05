@@ -20,7 +20,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>current</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$array</code></span>
    )</div>
 
   <p class="para rdfs-comment">
@@ -69,6 +69,38 @@
 使用してください。</p></div>
  </div>
 
+
+ <div class="refsect1 changelog" id="refsect1-function.current-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        <code class="parameter">array</code> は常に値で渡されるようになりました。
+        このバージョンより前は、可能な場合は参照で、それ以外の場合は値で
+        渡されていました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-function.current-examples">
   <h3 class="title">例</h3>
   <p class="para">
@@ -88,11 +120,19 @@
  <div class="refsect1 notes" id="refsect1-function.current-notes">
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
+   
    <span class="simpara">
-    配列中に <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> の要素が含まれていると、
-    それを配列の終わりと区別することができません。<strong><code>FALSE</code></strong>
-    要素を含む配列を順に処理するには、<span class="function"><a href="function.each.html" class="function">each()</a></span>
+    The end of an array and the result of calling 
+    <span class="function"><strong>current()</strong></span> on an empty array 
+    are indistinguishable from a <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> element.
+    <strong><code>FALSE</code></strong> 要素を含む配列を順に処理するには、<span class="function"><strong>foreach()</strong></span>
     関数を参照ください。
+   </span>
+   <span class="simpara">
+    To still use <span class="function"><strong>current()</strong></span> and properly check if the value 
+    is really an element of the array, the <span class="function"><a href="function.key.html" class="function">key()</a></span> 
+    of the <span class="function"><strong>current()</strong></span> element should be checked to be strictly 
+    different from <strong><code>NULL</code></strong>.
    </span>
   </p></blockquote>
  </div>

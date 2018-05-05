@@ -2984,10 +2984,10 @@
 <li><a href="harudoc.getstreamsize.html" class="index">HaruDoc::getStreamSize</a> - 一時ストリームの大きさを取得する</li>
 <li><a href="harudoc.insertpage.html" class="index">HaruDoc::insertPage</a> - 指定したページの直前に新しいページを挿入する</li>
 <li><a href="harudoc.loadjpeg.html" class="index">HaruDoc::loadJPEG</a> - JPEG 画像を読み込む</li>
-<li><a href="harudoc.loadpng.html" class="index">HaruDoc::loadPNG</a> - PNG 画像を読み込み、HaruImage のインスタンスを返す</li>
+<li><a href="harudoc.loadpng.html" class="index">HaruDoc::loadPNG</a> - Load PNG image and return HaruImage instance</li>
 <li><a href="harudoc.loadraw.html" class="index">HaruDoc::loadRaw</a> - RAW 画像を読み込む</li>
-<li><a href="harudoc.loadttc.html" class="index">HaruDoc::loadTTC</a> - TTC ファイルから指定したインデックスのフォントを読み込む</li>
-<li><a href="harudoc.loadttf.html" class="index">HaruDoc::loadTTF</a> - TTF フォントファイルを読み込む</li>
+<li><a href="harudoc.loadttc.html" class="index">HaruDoc::loadTTC</a> - Load the font with the specified index from TTC file</li>
+<li><a href="harudoc.loadttf.html" class="index">HaruDoc::loadTTF</a> - Load TTF font file</li>
 <li><a href="harudoc.loadtype1.html" class="index">HaruDoc::loadType1</a> - Type1 フォントを読み込む</li>
 <li><a href="harudoc.output.html" class="index">HaruDoc::output</a> - ドキュメントデータを出力バッファに書き出す</li>
 <li><a href="harudoc.readfromstream.html" class="index">HaruDoc::readFromStream</a> - データを一時ストリームから読み込む</li>
@@ -3027,7 +3027,7 @@
 <li><a href="harufont.gettextwidth.html" class="index">HaruFont::getTextWidth</a> - テキスト全体の幅、文字数、単語数および空白の数を取得する</li>
 <li><a href="harufont.getunicodewidth.html" class="index">HaruFont::getUnicodeWidth</a> - フォントの文字の幅を取得する</li>
 <li><a href="harufont.getxheight.html" class="index">HaruFont::getXHeight</a> - 小文字のベースラインからの距離を取得する</li>
-<li><a href="harufont.measuretext.html" class="index">HaruFont::measureText</a> - 指定した幅に収めることのできる文字数を計算する</li>
+<li><a href="harufont.measuretext.html" class="index">HaruFont::measureText</a> - Calculate the number of characters which can be included within the specified width</li>
 <li><a href="haruimage.getbitspercomponent.html" class="index">HaruImage::getBitsPerComponent</a> - 画像の各色コンポーネントで使用するビット数を取得する</li>
 <li><a href="haruimage.getcolorspace.html" class="index">HaruImage::getColorSpace</a> - 色空間の名前を取得する</li>
 <li><a href="haruimage.getheight.html" class="index">HaruImage::getHeight</a> - 画像の高さを取得する</li>
@@ -3054,9 +3054,9 @@
 <li><a href="harupage.endpath.html" class="index">HaruPage::endPath</a> - 塗りつぶしや描画を行わずに現在のパスオブジェクトを終了する</li>
 <li><a href="harupage.endtext.html" class="index">HaruPage::endText</a> - 現在のテキストオブジェクトを終了する</li>
 <li><a href="harupage.eofill.html" class="index">HaruPage::eofill</a> - 奇偶規則を使用して現在のパスを塗りつぶす</li>
-<li><a href="harupage.eofillstroke.html" class="index">HaruPage::eoFillStroke</a> - 奇偶規則を使用して現在のパスを塗りつぶす</li>
+<li><a href="harupage.eofillstroke.html" class="index">HaruPage::eoFillStroke</a> - Fill current path using even-odd rule, then paint the path</li>
 <li><a href="harupage.fill.html" class="index">HaruPage::fill</a> - ノンゼロワインディング規則を使用して現在のパスを塗りつぶす</li>
-<li><a href="harupage.fillstroke.html" class="index">HaruPage::fillStroke</a> - ノンゼロワインディング規則を使用して現在のパスを塗りつぶす</li>
+<li><a href="harupage.fillstroke.html" class="index">HaruPage::fillStroke</a> - Fill current path using nonzero winding number rule, then paint the path</li>
 <li><a href="harupage.getcharspace.html" class="index">HaruPage::getCharSpace</a> - 現在の文字間隔を取得する</li>
 <li><a href="harupage.getcmykfill.html" class="index">HaruPage::getCMYKFill</a> - 現在の塗りつぶし色を取得する</li>
 <li><a href="harupage.getcmykstroke.html" class="index">HaruPage::getCMYKStroke</a> - 現在の描画色を取得する</li>
@@ -3088,8 +3088,8 @@
 <li><a href="harupage.getwidth.html" class="index">HaruPage::getWidth</a> - ページの幅を取得する</li>
 <li><a href="harupage.getwordspace.html" class="index">HaruPage::getWordSpace</a> - 現在の単語間隔の値を取得する</li>
 <li><a href="harupage.lineto.html" class="index">HaruPage::lineTo</a> - 現在位置から指定した位置まで直線を描画する</li>
-<li><a href="harupage.measuretext.html" class="index">HaruPage::measureText</a> - 指定した幅の一行中に配置できる文字のバイト長を計算する</li>
-<li><a href="harupage.movetextpos.html" class="index">HaruPage::moveTextPos</a> - テキストの位置を、指定したオフセットに移動する</li>
+<li><a href="harupage.measuretext.html" class="index">HaruPage::measureText</a> - Calculate the byte length of characters which can be included on one line of the specified width</li>
+<li><a href="harupage.movetextpos.html" class="index">HaruPage::moveTextPos</a> - Move text position to the specified offset</li>
 <li><a href="harupage.moveto.html" class="index">HaruPage::moveTo</a> - 新しい描画パスの開始位置を設定する</li>
 <li><a href="harupage.movetonextline.html" class="index">HaruPage::moveToNextLine</a> - テキストの位置を次の行の行頭に移動する</li>
 <li><a href="harupage.rectangle.html" class="index">HaruPage::rectangle</a> - 現在のパスに矩形を追加する</li>
@@ -3120,7 +3120,7 @@
 <li><a href="harupage.setwordspace.html" class="index">HaruPage::setWordSpace</a> - ページの単語間隔を設定する</li>
 <li><a href="harupage.showtext.html" class="index">HaruPage::showText</a> - ページの現在位置にテキストを表示する</li>
 <li><a href="harupage.showtextnextline.html" class="index">HaruPage::showTextNextLine</a> - 現在位置を次の行の行頭に移動してテキストを表示する</li>
-<li><a href="harupage.stroke.html" class="index">HaruPage::stroke</a> - 現在のパスを描画する</li>
+<li><a href="harupage.stroke.html" class="index">HaruPage::stroke</a> - Paint current path</li>
 <li><a href="harupage.textout.html" class="index">HaruPage::textOut</a> - テキストを指定した位置に表示する</li>
 <li><a href="harupage.textrect.html" class="index">HaruPage::textRect</a> - 指定した領域内にテキストを表示する</li>
 <li><a href="function.hash.html" class="index">hash</a> - ハッシュ値 (メッセージダイジェスト) を生成する</li>
@@ -4314,7 +4314,7 @@
 <li><a href="function.is-array.html" class="index">is_array</a> - 変数が配列かどうかを検査する</li>
 <li><a href="function.is-bool.html" class="index">is_bool</a> - 変数が boolean であるかを調べる</li>
 <li><a href="function.is-callable.html" class="index">is_callable</a> - 引数が、関数としてコール可能な構造であるかどうかを調べる</li>
-<li><a href="function.is-countable.html" class="index">is_countable</a> - Verify that the contents of a variable is a countable value</li>
+<li><a href="function.is-countable.html" class="index">is_countable</a> - 引数が、数えられる値かどうかを調べる</li>
 <li><a href="function.is-dir.html" class="index">is_dir</a> - ファイルがディレクトリかどうかを調べる</li>
 <li><a href="function.is-double.html" class="index">is_double</a> - is_float のエイリアス</li>
 <li><a href="function.is-executable.html" class="index">is_executable</a> - ファイルが実行可能かどうかを調べる</li>
@@ -7847,7 +7847,7 @@
 <li><a href="function.session-decode.html" class="index">session_decode</a> - セッションエンコードされた文字列からセッションデータをデコードする</li>
 <li><a href="function.session-destroy.html" class="index">session_destroy</a> - セッションに登録されたデータを全て破棄する</li>
 <li><a href="function.session-encode.html" class="index">session_encode</a> - 現在のセッションデータを、セッションエンコードされた文字列に変換する</li>
-<li><a href="function.session-gc.html" class="index">session_gc</a> - Perform session data garbage collection</li>
+<li><a href="function.session-gc.html" class="index">session_gc</a> - セッションデータのガベージコレクションを実行する</li>
 <li><a href="function.session-get-cookie-params.html" class="index">session_get_cookie_params</a> - セッションクッキーのパラメータを得る</li>
 <li><a href="function.session-id.html" class="index">session_id</a> - 現在のセッション ID を取得または設定する</li>
 <li><a href="function.session-is-registered.html" class="index">session_is_registered</a> - 変数がセッションに登録されているかどうかを調べる</li>

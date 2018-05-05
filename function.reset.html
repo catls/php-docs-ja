@@ -57,6 +57,12 @@
    配列の最初の要素の値を返します。
    配列が空の場合 <strong><code>FALSE</code></strong> を返します。
   </p>
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は論理値
+<strong><code>FALSE</code></strong> を返す可能性がありますが、<strong><code>FALSE</code></strong> として評価される値を返す可能性もあります。
+詳細については <a href="language.types.boolean.html" class="link">論理値</a>の
+セクションを参照してください。この関数の返り値を調べるには
+<a href="language.operators.comparison.html" class="link">===演算子</a> を
+使用してください。</p></div>
  </div>
 
  <div class="refsect1 examples" id="refsect1-function.reset-examples">
@@ -74,6 +80,23 @@
    </div>
   </p>
  </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.reset-notes">
+  <h3 class="title">注意</h3>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   
+   <span class="simpara">
+    The return value for an empty array is indistinguishable from 
+    the return value in case of an array which has a <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> 
+    first element. To properly check the value of the first element of an array
+    which may contain <strong><code>FALSE</code></strong> elements, first check the <span class="function"><a href="function.count.html" class="function">count()</a></span>
+    of the array, or check that <span class="function"><a href="function.key.html" class="function">key()</a></span> is not
+    <strong><code>NULL</code></strong>, after calling <span class="function"><strong>reset()</strong></span>.
+   </span>
+  </p></blockquote>
+ </div>
+
 
  <div class="refsect1 seealso" id="refsect1-function.reset-seealso">
   <h3 class="title">参考</h3>

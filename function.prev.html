@@ -61,6 +61,12 @@
    内部の配列ポインタが指している前の場所の配列値を返します。
    もう要素がない場合は <strong><code>FALSE</code></strong> を返します。
   </p>
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は論理値
+<strong><code>FALSE</code></strong> を返す可能性がありますが、<strong><code>FALSE</code></strong> として評価される値を返す可能性もあります。
+詳細については <a href="language.types.boolean.html" class="link">論理値</a>の
+セクションを参照してください。この関数の返り値を調べるには
+<a href="language.operators.comparison.html" class="link">===演算子</a> を
+使用してください。</p></div>
  </div>
 
  <div class="refsect1 examples" id="refsect1-function.prev-examples">
@@ -81,18 +87,13 @@
 
  <div class="refsect1 notes" id="refsect1-function.prev-notes">
   <h3 class="title">注意</h3>
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は論理値
-<strong><code>FALSE</code></strong> を返す可能性がありますが、<strong><code>FALSE</code></strong> として評価される値を返す可能性もあります。
-詳細については <a href="language.types.boolean.html" class="link">論理値</a>の
-セクションを参照してください。この関数の返り値を調べるには
-<a href="language.operators.comparison.html" class="link">===演算子</a> を
-使用してください。</p></div>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-    配列中に <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> の要素が含まれていると、
-    それを配列の先頭と区別することができません。<strong><code>FALSE</code></strong>
-    要素を含む配列を順に処理するには、<span class="function"><a href="function.each.html" class="function">each()</a></span>
-    関数を参照ください。
+    
+    The beginning of an array is indistinguishable from a
+    <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> element. To make the distinction, check that 
+    the <span class="function"><a href="function.key.html" class="function">key()</a></span> of the <span class="function"><strong>prev()</strong></span> element is not
+    <strong><code>NULL</code></strong>.
    </span>
   </p></blockquote>
  </div>

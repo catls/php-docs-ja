@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>TTF フォントファイルを読み込む</title>
+  <title>Load TTF font file</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="harudoc.loadttf" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">HaruDoc::loadTTF</h1>
-  <p class="verinfo">(PECL haru &gt;= 0.0.1)</p><p class="refpurpose"><span class="refname">HaruDoc::loadTTF</span> &mdash; <span class="dc-title">TTF フォントファイルを読み込む</span></p>
+  <p class="verinfo">(PECL haru &gt;= 0.0.1)</p><p class="refpurpose"><span class="refname">HaruDoc::loadTTF</span> &mdash; <span class="dc-title">Load TTF font file</span></p>
 
  </div>
 
@@ -22,12 +22,11 @@
   <div class="methodsynopsis dc-description">
    <span class="type">string</span> <span class="methodname"><strong>HaruDoc::loadTTF</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$fontfile</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$embed</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$embed</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   指定した TTF ファイルを読み込み、(オプションで)
-   そのデータをドキュメントに埋め込みます。
+   Loads the given TTF file and (optionally) embed its data into the document.
   </p>
  </div>
 
@@ -44,7 +43,7 @@
      <dd>
 
       <p class="para">
-       読み込む TTF ファイル。
+       The TTF file to load.
       </p>
      </dd>
 
@@ -56,8 +55,8 @@
      <dd>
 
       <p class="para">
-       <strong><code>TRUE</code></strong> を指定すると、フォントのグリフデータを
-       PDF ファイルに埋め込みます。それ以外の場合はマトリックスデータのみを含めます。
+       When set to <strong><code>TRUE</code></strong>, the glyph data of the font is embedded into the PDF
+       file, otherwise only the matrix data is included.
       </p>
      </dd>
 
@@ -71,7 +70,7 @@
  <div class="refsect1 returnvalues" id="refsect1-harudoc.loadttf-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   成功時に、読み込んだフォントの名前を返します。
+   Returns the name of the loaded font on success.
   </p>
  </div>
 
@@ -86,7 +85,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="methodname"><a href="harudoc.loadttc.html" class="methodname" rel="rdfs-seeAlso">HaruDoc::loadTTC()</a> - TTC ファイルから指定したインデックスのフォントを読み込む</span></li>
+    <li class="member"><span class="methodname"><a href="harudoc.loadttc.html" class="methodname" rel="rdfs-seeAlso">HaruDoc::loadTTC()</a> - Load the font with the specified index from TTC file</span></li>
     <li class="member"><span class="methodname"><a href="harudoc.loadtype1.html" class="methodname" rel="rdfs-seeAlso">HaruDoc::loadType1()</a> - Type1 フォントを読み込む</span></li>
    </ul>
   </p>

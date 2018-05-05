@@ -36,8 +36,8 @@
   </p>
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>session_set_save_handler</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="class.sessionhandlerinterface.html" class="type SessionHandlerInterface">SessionHandlerInterface</a></span> <code class="parameter">$sessionhandler</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$register_shutdown</code><span class="initializer"> = true</span></span>
+    ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$sessionhandler</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$register_shutdown</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
@@ -63,7 +63,11 @@
      <dd>
 
       <p class="para">
-       <span class="interfacename"><a href="class.sessionhandlerinterface.html" class="interfacename">SessionHandlerInterface</a></span> を実装したクラス、たとえば
+       <span class="interfacename"><a href="class.sessionhandlerinterface.html" class="interfacename">SessionHandlerInterface</a></span>、
+       <span class="interfacename"><a href="class.sessionidinterface.html" class="interfacename">SessionIdInterface</a></span>
+       または
+       <span class="interfacename"><a href="class.sessionupdatetimestamphandlerinterface.html" class="interfacename">SessionUpdateTimestampHandlerInterface</a></span>
+        を実装したクラス、たとえば
        <a href="class.sessionhandler.html" class="classname">SessionHandler</a> のインスタンスで、
        これをセッションハンドラとして登録する。PHP 5.4 以降限定。
       </p>
@@ -350,6 +354,14 @@
     </thead>
 
     <tbody class="tbody">
+     <tr>
+      <td>7.0.0</td>
+      <td>
+       オプションの <code class="parameter">validate_sid</code> および
+       <code class="parameter">update_timestamp</code> パラメータが追加されました。
+      </td>
+     </tr>
+
      <tr>
       <td>5.5.1</td>
       <td>

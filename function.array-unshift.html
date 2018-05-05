@@ -21,7 +21,6 @@
   <div class="methodsynopsis dc-description">
    <span class="type">int</span> <span class="methodname"><strong>array_unshift</strong></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value1</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
   ] )</div>
 
@@ -53,12 +52,12 @@
     
     
      <dt>
-<code class="parameter">value1</code></dt>
+<code class="parameter">...</code></dt>
 
      <dd>
 
       <p class="para">
-       加える最初の値。
+       加える値。
       </p>
      </dd>
 
@@ -74,6 +73,37 @@
    処理後の <code class="parameter">array</code> の要素の数を返します。
   </p>
  </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.array-unshift-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.3.0</td>
+       <td>
+        この関数は、1 つのパラメータでのみ呼び出すことができるようになりました。
+        前は、少なくとも 2 つのパラメータが必要でした。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
 
  <div class="refsect1 examples" id="refsect1-function.array-unshift-examples">
   <h3 class="title">例</h3>

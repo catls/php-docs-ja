@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Perform session data garbage collection</title>
+  <title>セッションデータのガベージコレクションを実行する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.session-gc" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">session_gc</h1>
-  <p class="verinfo">(PHP 7 &gt;= 7.1.0)</p><p class="refpurpose"><span class="refname">session_gc</span> &mdash; <span class="dc-title">Perform session data garbage collection</span></p>
+  <p class="verinfo">(PHP 7 &gt;= 7.1.0)</p><p class="refpurpose"><span class="refname">session_gc</span> &mdash; <span class="dc-title">セッションデータのガベージコレクションを実行する</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.session-gc-description">
@@ -24,23 +24,20 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>session_gc()</strong></span> is used to perform session data
-   GC(garbage collection). PHP does probability based session GC by
-   default.
+   <span class="function"><strong>session_gc()</strong></span> は、セッションデータの GC (ガベージコレクション)
+   を実行するために使用されます。PHPは、デフォルトで確率ベースのセッション GC を行います。
   </p>
   <p class="para">
-   Probability based GC works somewhat but it has few problems. 1) Low
-   traffic sites&#039; session data may not be deleted within the preferred
-   duration. 2) High traffic sites&#039; GC may be too frequent GC. 3) GC is
-   performed on the user&#039;s request and the user will experience a GC
-   delay.
+   確率ベースの GC は多少は機能しますが、いくつかの問題があります。
+   1) トラフィックが少ないサイトのセッションデータは、優先期間内に削除されないことがあります。
+   2) トラフィックの多いサイトでは、GC が頻繁になる可能性があります。
+   3) ユーザーの要求の際に GC が実行され、ユーザーは GC 遅延を感じます。
   </p>
   <p class="para">
-   Therefore, it is recommended to execute GC periodically for
-   production systems using, e.g., &quot;cron&quot; for UNIX-like systems.
-   Make sure to disable probability based GC by setting 
-   <a href="session.configuration.html#ini.session.gc-probability" class="link">session.gc_probability</a> 
-   to 0.
+   そのため、例えば UNIX 系のシステムでは「cron」を使用して、
+   本稼動システムに対して定期的に GC を実行することをお勧めします。
+   <a href="session.configuration.html#ini.session.gc-probability" class="link">session.gc_probability</a> を 0 に設定して、
+   確率ベースのGCを無効にしてください。
   </p>
  </div>
 
@@ -48,13 +45,13 @@
  <div class="refsect1 returnvalues" id="refsect1-function.session-gc-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <span class="function"><strong>session_gc()</strong></span> returns number of deleted session
-   data for success, <strong><code>FALSE</code></strong> for failure.
+   <span class="function"><strong>session_gc()</strong></span> は、
+   成功時には削除されたセッションデータの数、
+   失敗時には <strong><code>FALSE</code></strong> を返します。
   </p>
   <p class="para">
-   Old save handlers do not return number of deleted session data, but 
-   only success/failure flag. If this is the case, number of deleted
-   session data became 1 regardless of actually deleted data.
+   古いセーブハンドラは、削除されたセッションデータの数を返さず、成功/失敗フラグのみを返します。
+   この場合、実際に削除されたデータにかかわらず、削除されたセッションデータの数は 1 になります。
   </p>
  </div>
 
@@ -63,20 +60,20 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-5866">
-    <p><strong>例1 <span class="function"><strong>session_gc()</strong></span> example for task managers like cron</strong></p>
+    <p><strong>例1 cron のようなタスクマネージャでの <span class="function"><strong>session_gc()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Note:&nbsp;This&nbsp;script&nbsp;should&nbsp;be&nbsp;executed&nbsp;by&nbsp;the&nbsp;same&nbsp;user&nbsp;of&nbsp;web&nbsp;server&nbsp;process.<br /><br />//&nbsp;Need&nbsp;active&nbsp;session&nbsp;to&nbsp;initialize&nbsp;session&nbsp;data&nbsp;storage&nbsp;access.<br /></span><span style="color: #0000BB">session_start</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Executes&nbsp;GC&nbsp;immediately<br /></span><span style="color: #0000BB">session_gc</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;Clean&nbsp;up&nbsp;session&nbsp;ID&nbsp;created&nbsp;by&nbsp;session_gc()<br /></span><span style="color: #0000BB">session_destroy</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;注&nbsp;:&nbsp;このスクリプトは、Web&nbsp;サーバープロセスと同じユーザーで実行される必要があります。<br /><br />//&nbsp;セッションデータストレージアクセスを初期化するには、アクティブセッションが必要です。<br /></span><span style="color: #0000BB">session_start</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;直ちに&nbsp;GC&nbsp;を実行します<br /></span><span style="color: #0000BB">session_gc</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;session_gc()&nbsp;によって作成されたセッション&nbsp;ID&nbsp;をクリーンアップします<br /></span><span style="color: #0000BB">session_destroy</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
    </div>
    <div class="example" id="example-5867">
-    <p><strong>例2 <span class="function"><strong>session_gc()</strong></span> example for user accessible script</strong></p>
+    <p><strong>例2 ユーザーがアクセス可能なスクリプトでの <span class="function"><strong>session_gc()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Note:&nbsp;session_gc()&nbsp;is&nbsp;recommended&nbsp;to&nbsp;be&nbsp;used&nbsp;by&nbsp;task&nbsp;manager&nbsp;script,&nbsp;but<br />//&nbsp;it&nbsp;may&nbsp;be&nbsp;used&nbsp;as&nbsp;follows.<br /><br />//&nbsp;Used&nbsp;for&nbsp;last&nbsp;GC&nbsp;time&nbsp;check<br /></span><span style="color: #0000BB">$gc_time&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/tmp/php_session_last_gc'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$gc_period&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1800</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">session_start</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">//&nbsp;Execute&nbsp;GC&nbsp;only&nbsp;when&nbsp;GC&nbsp;period&nbsp;elapsed.&nbsp;<br />//&nbsp;i.e.&nbsp;Calling&nbsp;session_gc()&nbsp;every&nbsp;request&nbsp;is&nbsp;waste&nbsp;of&nbsp;resources.&nbsp;<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">file_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$gc_time</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">filemtime</span><span style="color: #007700">(</span><span style="color: #0000BB">$gc_time</span><span style="color: #007700">)&nbsp;&lt;&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()&nbsp;-&nbsp;</span><span style="color: #0000BB">$gc_period</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">session_gc</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">touch</span><span style="color: #007700">(</span><span style="color: #0000BB">$gc_time</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">touch</span><span style="color: #007700">(</span><span style="color: #0000BB">$gc_time</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;注&nbsp;:&nbsp;session_gc()&nbsp;は、タスクマネージャスクリプトで使用することをお勧めしますが、次のように使用できます。<br /><br />//&nbsp;最後の&nbsp;GC&nbsp;時間チェックに使用<br /></span><span style="color: #0000BB">$gc_time&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/tmp/php_session_last_gc'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$gc_period&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1800</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">session_start</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">//&nbsp;GC&nbsp;期限が経過したときにのみ&nbsp;GC&nbsp;を実行します。&nbsp;<br />//&nbsp;つまり、リクエストのたびに&nbsp;session_gc()&nbsp;をコールすることはリソースの無駄です。<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">file_exists</span><span style="color: #007700">(</span><span style="color: #0000BB">$gc_time</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">filemtime</span><span style="color: #007700">(</span><span style="color: #0000BB">$gc_time</span><span style="color: #007700">)&nbsp;&lt;&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()&nbsp;-&nbsp;</span><span style="color: #0000BB">$gc_period</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">session_gc</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">touch</span><span style="color: #007700">(</span><span style="color: #0000BB">$gc_time</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">touch</span><span style="color: #007700">(</span><span style="color: #0000BB">$gc_time</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

@@ -33,6 +33,13 @@
    <acronym title="Comma Separated Value">CSV</acronym> 形式の文字列入力のフィールドをパースして、
    読み込んだフィールドの内容を配列で返します。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    この関数はロケール設定を考慮します。もし <var class="varname"><var class="varname">LC_CTYPE</var></var>
+    が例えば <em>en_US.UTF-8</em> の場合、
+    1 バイトエンコーディングの文字列は間違って読み込まれるかもしれません。
+   </p>
+  </p></blockquote>
  </div>
 
 
@@ -87,6 +94,19 @@
        エスケープ文字 (1 文字のみ)。デフォルトはバックスラッシュ
        (<em>\</em>)。
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       
+       <span class="simpara">
+        Usually an <code class="parameter">enclosure</code> character is escpaped inside
+        a field by doubling it; however, the <code class="parameter">escape</code>
+        character can be used as an alternative. So for the default parameter
+        values <em>&quot;&quot;</em> and <em>\&quot;</em> have the same
+        meaning. Other than allowing to escape the
+        <code class="parameter">enclosure</code> character the
+        <code class="parameter">escape</code> character has no special meaning; it isn&#039;t
+        even meant to escape itself.
+       </span>
+      </p></blockquote>
      </dd>
 
     

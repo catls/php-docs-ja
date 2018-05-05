@@ -14,7 +14,9 @@
  <h1>変更履歴</h1>
 
  <p class="para">この拡張モジュールのクラス/関数/メソッドには次のような変更がありました。</p>
- <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>7.2.0</td><td><a href='function.parse-str.html'>parse_str</a></td><td>Usage of parse_str without a second parameter
+ <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>7.2.0</td><td><a href='function.number-format.html'>number_format</a></td><td>number_format was changed to not being able to return 
+        -0, previously -0 could be returned 
+        for cases like where number would be -0.01.</td></tr><tr><td>&nbsp;</td><td><a href='function.parse-str.html'>parse_str</a></td><td>Usage of parse_str without a second parameter
         now emits an E_DEPRECATED notice.</td></tr></tbody><tbody class="gen-changelog v7-2-0"><tr><td>7.1.0</td><td><a href='function.str-shuffle.html'>str_shuffle</a></td><td>The internal randomization algorithm has been changed to use the Mersenne Twister Random Number Generator instead of the libc rand function.</td></tr><tr><td>&nbsp;</td><td><a href='function.stripos.html'>stripos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strpos.html'>strpos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.substr-count.html'>substr_count</a></td><td>負の offset と length をサポートするようになりました。</td></tr></tbody><tbody class="gen-changelog v7-1-0"><tr><td>7.0.0</td><td><a href='function.setlocale.html'>setlocale</a></td><td>category パラメータが文字列を受け付けなくなりました。
         このバージョン以降では、定数 LC_* だけしか使えません。</td></tr><tr><td>&nbsp;</td><td><a href='function.substr.html'>substr</a></td><td>string の文字数が
         start と等しい場合に空文字列を返すようになりました。
@@ -29,13 +31,13 @@
         PHP 5.4.0 ではそんな文字列も黙って受け入れていましたが、
         最終バイトは切り捨てられていました。</td></tr></tbody><tbody class="gen-changelog v5-4-4"><tr><td>5.4.0</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>encoding パラメータのデフォルトが UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>定数 ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
-        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
-        ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>encoding パラメータのデフォルトが
-        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
+        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
         ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>encoding パラメータのデフォルトが
-        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars-decode.html'>htmlspecialchars_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
+        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
+        ENT_HTML401、ENT_XML1、
+        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars-decode.html'>htmlspecialchars_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.number-format.html'>number_format</a></td><td>この関数は、
         dec_point や
         thousands_sep に複数バイトを指定できるようになりました。

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>指定した幅の一行中に配置できる文字のバイト長を計算する</title>
+  <title>Calculate the byte length of characters which can be included on one line of the specified width</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="harupage.measuretext" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">HaruPage::measureText</h1>
-  <p class="verinfo">(PECL haru &gt;= 0.0.1)</p><p class="refpurpose"><span class="refname">HaruPage::measureText</span> &mdash; <span class="dc-title">指定した幅の一行中に配置できる文字のバイト長を計算する</span></p>
+  <p class="verinfo">(PECL haru &gt;= 0.0.1)</p><p class="refpurpose"><span class="refname">HaruPage::measureText</span> &mdash; <span class="dc-title">Calculate the byte length of characters which can be included on one line of the specified width</span></p>
 
  </div>
 
@@ -23,11 +23,11 @@
    <span class="type">int</span> <span class="methodname"><strong>HaruPage::measureText</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$text</code></span>
    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$width</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$wordwrap</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$wordwrap</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   指定した幅の一行中に配置できる文字のバイト長を返します。
+   Get the byte length of characters which can be included on one line of the specified width.
   </p>
  </div>
 
@@ -44,7 +44,7 @@
      <dd>
 
       <p class="para">
-       調べたいテキスト。
+       The text to measure. 
       </p>
      </dd>
 
@@ -56,7 +56,7 @@
      <dd>
 
       <p class="para">
-       行の長さ。
+       The width of the line.
       </p>
      </dd>
 
@@ -68,9 +68,9 @@
      <dd>
 
       <p class="para">
-       このパラメータを <strong><code>TRUE</code></strong> に設定すると、ワードラップ処理を
-       &quot;エミュレート&quot; します。行の中に単語全体 (空白文字で区切る)
-       が収まらなくなると、その単語はその行に含めません。
+       When this parameter is set to <strong><code>TRUE</code></strong> the function &quot;emulates&quot; word
+       wrapping by stopping after the last full word (delimited by whitespace)
+       that can fit on the line.
       </p>
      </dd>
 
@@ -84,9 +84,9 @@
  <div class="refsect1 returnvalues" id="refsect1-harupage.measuretext-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   指定した幅の一行中に配置できる文字のバイト長を返します。
-   シングルバイトエンコーディングの場合は、文字数と同じになります。
-   マルチバイトエンコーディングの場合は、必ずしもそうなるとは限りません。
+   Returns the byte length of characters which can be included within the specified width.
+   For single-byte encodings, this is equal to the number of characters. For multi-byte encodings,
+   this is not necessarily the case.
   </p>
  </div>
 
@@ -101,7 +101,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="methodname"><a href="harufont.measuretext.html" class="methodname" rel="rdfs-seeAlso">HaruFont::measureText()</a> - 指定した幅に収めることのできる文字数を計算する</span></li>
+    <li class="member"><span class="methodname"><a href="harufont.measuretext.html" class="methodname" rel="rdfs-seeAlso">HaruFont::measureText()</a> - Calculate the number of characters which can be included within the specified width</span></li>
    </ul>
   </p>
  </div>

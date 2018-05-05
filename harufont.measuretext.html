@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>指定した幅に収めることのできる文字数を計算する</title>
+  <title>Calculate the number of characters which can be included within the specified width</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="harufont.measuretext" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">HaruFont::measureText</h1>
-  <p class="verinfo">(PECL haru &gt;= 0.0.1)</p><p class="refpurpose"><span class="refname">HaruFont::measureText</span> &mdash; <span class="dc-title">指定した幅に収めることのできる文字数を計算する</span></p>
+  <p class="verinfo">(PECL haru &gt;= 0.0.1)</p><p class="refpurpose"><span class="refname">HaruFont::measureText</span> &mdash; <span class="dc-title">Calculate the number of characters which can be included within the specified width</span></p>
 
  </div>
 
@@ -26,11 +26,12 @@
    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$font_size</code></span>
    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$char_space</code></span>
    , <span class="methodparam"><span class="type">float</span> <code class="parameter">$word_space</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$word_wrap</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$word_wrap</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   指定した幅に収めることのできる文字数を計算します。
+   Calculate the number of characters which can be included within the
+   specified width.
   </p>
  </div>
 
@@ -47,7 +48,7 @@
      <dd>
 
       <p class="para">
-       幅にあわせたいテキスト。
+       The text to fit the width.
       </p>
      </dd>
 
@@ -59,7 +60,7 @@
      <dd>
 
       <p class="para">
-       テキストを代入するエリアの幅。
+       The width of the area to put the text to.
       </p>
      </dd>
 
@@ -71,7 +72,7 @@
      <dd>
 
       <p class="para">
-       フォントの大きさ。
+       The size of the font.
       </p>
      </dd>
 
@@ -83,7 +84,7 @@
      <dd>
 
       <p class="para">
-       文字の間隔。
+       The character spacing.
       </p>
      </dd>
 
@@ -95,7 +96,7 @@
      <dd>
 
       <p class="para">
-       単語の間隔。
+       The word spacing.
       </p>
      </dd>
 
@@ -107,9 +108,9 @@
      <dd>
 
       <p class="para">
-       このパラメータを <strong><code>TRUE</code></strong> にすると、この関数はワードラップを
-       &quot;エミュレート&quot; し、現在の単語の途中で範囲の最後に達してしまう場合は
-       その単語を含めません。
+       When this parameter is set to <strong><code>TRUE</code></strong> the function &quot;emulates&quot; word
+       wrapping and doesn&#039;t include the part of the current word if reached
+       the end of the area.
       </p>
      </dd>
 
@@ -123,7 +124,8 @@
  <div class="refsect1 returnvalues" id="refsect1-harufont.measuretext-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   指定した幅に収めることのできる文字数を返します。
+   Returns the number of characters which can be included within the
+   specified width.
   </p>
  </div>
 
