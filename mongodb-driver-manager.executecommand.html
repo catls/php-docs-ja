@@ -267,6 +267,32 @@ object(stdClass)#7 (2) {
 </pre></div>
    </div>
   </div>
+
+  <div class="example" id="mongowritebatch.execute.example.update">
+   <p><strong>例3 Limiting execution time for a command</strong></p>
+   <div class="example-contents"><p>
+    The execution time of a command may be limited by specifying a value for
+    <em>&quot;maxTimeMS&quot;</em> in the
+    <a href="class.mongodb-driver-command.html" class="classname">MongoDB\Driver\Command</a> document. Note that this time
+    limit is enforced on the server side and does not take network latency into
+    account. See
+    <a href="https://docs.mongodb.com/manual/tutorial/terminate-running-operations/#maxtimems" class="link external">&raquo;&nbsp;Terminate Running Operations</a>
+    in the MongoDB manual for more information.
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$manager&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Manager</span><span style="color: #007700">(</span><span style="color: #DD0000">'mongodb://localhost:27017'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$command&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoDB</span><span style="color: #007700">\</span><span style="color: #0000BB">Driver</span><span style="color: #007700">\</span><span style="color: #0000BB">Command</span><span style="color: #007700">([<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'count'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'collection'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'query'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'x'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'$gt'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">]],<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'maxTimeMS'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1000</span><span style="color: #007700">,<br />]);<br /><br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$manager</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">executeCommand</span><span style="color: #007700">(</span><span style="color: #DD0000">'db'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$command</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">toArray</span><span style="color: #007700">()[</span><span style="color: #0000BB">0</span><span style="color: #007700">]);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>
+    If the command fails to complete after one second of execution time on the
+    server, a
+    <a href="class.mongodb-driver-exception-executiontimeoutexception.html" class="classname">MongoDB\Driver\Exception\ExecutionTimeoutException</a>
+    will be thrown.
+   </p></div>
+  </div>
  </div>
 
 
