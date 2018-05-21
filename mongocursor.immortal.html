@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>このカーソルをタイムアウトさせるかどうかを設定する</title>
+  <title>Sets whether this cursor will timeout</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongocursor.immortal" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoCursor::immortal</h1>
-  <p class="verinfo">(PECL mongo &gt;=1.0.1)</p><p class="refpurpose"><span class="refname">MongoCursor::immortal</span> &mdash; <span class="dc-title">このカーソルをタイムアウトさせるかどうかを設定する</span></p>
+  <p class="verinfo">(PECL mongo &gt;=1.0.1)</p><p class="refpurpose"><span class="refname">MongoCursor::immortal</span> &mdash; <span class="dc-title">Sets whether this cursor will timeout</span></p>
 
  </div>
 
@@ -21,25 +21,25 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><a href="class.mongocursor.html" class="type MongoCursor">MongoCursor</a></span> <span class="methodname"><strong>MongoCursor::immortal</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$liveForever</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$liveForever</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   サーバー上で一定の時間何もしない状態が続けば、デフォルトではカーソルは &quot;死にます&quot;。
-   一般的に、これは期待通りの挙動です。
-   すべての結果をクライアントに送信し終えると、データベースはカーソルの後始末をします。
-   しかし、もしクライアントが結果をすべて要求しなければ、
-   カーソルはそこに残り続けてリソースを消費します。
-   したがって、数秒経過するとカーソルは &quot;タイムアウト&quot;
-   し、クライアントは必要な情報をすべて取得し終えたと見なしてリソースの後始末を始めます。
+   After remaining idle on the server for some amount of time, cursors, by
+   default, &quot;die.&quot;  This is generally the behavior one wants. The database
+   cleans up a cursor once all of its results have been sent to the client,
+   but if the client doesn&#039;t request all of the results, the cursor will
+   languish there, taking up resources.  Thus, after a few minutes, the cursor
+   &quot;times out&quot; and the database assumes the client has gotten everything it
+   needs and cleans up its the cursor&#039;s resources.
   </p>
   <p class="para">
-   何らかの理由でカーソルを長時間そのままで置いておきたい場合は、
-   このメソッドを使ってタイムアウトしないように設定します。
-   しかし、もしカーソルを死なないようにするのなら、結果をすべて
-   (あるいは、少なくとも <span class="methodname"><a href="mongocursor.dead.html" class="methodname">MongoCursor::dead()</a></span> が <strong><code>TRUE</code></strong> を返すようになるまで)
-   反復処理しなければなりません。
-   そうしないとカーソルが<em class="emphasis">いつまでも</em>データベース上に残り続け、リソースを浪費してしまいます。
+   If, for some reason, you need a cursor to hang around for a long time, you
+   can prevent the database from cleaning it up by using this method.
+   However, if you make a cursor immortal, you need to iterate through all of
+   its results (or at least until <span class="methodname"><a href="mongocursor.dead.html" class="methodname">MongoCursor::dead()</a></span>
+   returns <strong><code>TRUE</code></strong>) or the cursor will hang around the database
+   <em class="emphasis">forever</em>, taking up resources.
   </p>
  </div>
 
@@ -58,7 +58,7 @@
      <dd>
 
       <p class="para">
-       カーソルを不死にするかどうか。
+       If the cursor should be immortal.
       </p>
      </dd>
 
@@ -72,7 +72,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongocursor.immortal-returnvalues">
   <h3 class="title">返り値</h3>  
   <p class="para">
-   このカーソルを返します。
+   Returns this cursor.
   </p>
  </div>
 
@@ -80,8 +80,7 @@
  <div class="refsect1 errors" id="refsect1-mongocursor.immortal-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   このカーソルの反復処理が始まっている場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a>
-   をスローします。
+   Throws <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> if this cursor has started iterating.
   </p>
  </div>
 

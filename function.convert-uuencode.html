@@ -32,6 +32,13 @@
    ネットワーク上での転送を可能にします。uuencode されたデータは、
    元のデータより約 35% 大きくなります。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    
+    <span class="function"><strong>convert_uuencode()</strong></span> neither produces the <em>begin</em>
+    nor the <em>end</em> line, which are part of uuencoded <em class="emphasis">files</em>.
+   </span>
+  </p></blockquote> 
  </div>
 
 
@@ -78,6 +85,13 @@
 </code></div>
     </div>
 
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+0=&amp;5S=`IT97AT(&#039;1E&gt;&#039;0-&quot;@``
+`
+</pre></div>
+    </div>
    </div>
   </p>
  </div>

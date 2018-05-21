@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>ひとつのバッチで返す要素数を制限する</title>
+  <title>Limits the number of elements returned in one batch</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongocursor.batchsize" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoCursor::batchSize</h1>
-  <p class="verinfo">(PECL mongo &gt;=1.0.11)</p><p class="refpurpose"><span class="refname">MongoCursor::batchSize</span> &mdash; <span class="dc-title">ひとつのバッチで返す要素数を制限する</span></p>
+  <p class="verinfo">(PECL mongo &gt;=1.0.11)</p><p class="refpurpose"><span class="refname">MongoCursor::batchSize</span> &mdash; <span class="dc-title">Limits the number of elements returned in one batch</span></p>
 
  </div>
 
@@ -25,10 +25,11 @@
    )</div>
 
   <p class="para rdfs-comment">
-   カーソルは一般的に、結果オブジェクトをバッチで取得してローカルに格納します。
-   このメソッドはバッチのサイズを決めるもので、
-   一回の欧風でサーバーから取得するドキュメントの数を設定できます。
-   しかし、バッチサイズの最大値 (通常は 4MB) に収まらないドキュメントは返せません。
+   A cursor typically fetches a batch of result objects and store them
+   locally. This method sets the batchSize value to configure the amount of
+   documents retrieved from the server in one round trip. However, it will
+   never return more documents than fit in the max batch size limit (usually
+   4MB).  
   </p>
  </div>
 
@@ -47,50 +48,50 @@
      <dd>
 
       <p class="para">
-       バッチで返す結果の数。バッチごとにサーバーとのやりとりが発生します。
+       The number of results to return per batch. Each batch requires a
+       round-trip to the server. 
       </p>
       <p class="para">
-       <code class="parameter">batchSize</code> が <em class="emphasis">2 以上</em>
-       の場合は、取得するオブジェクトの各バッチのサイズを表します。
-       これをうまく調整すれば、パフォーマンスとデータ転送量を最適化できます。
+       If <code class="parameter">batchSize</code> is <em class="emphasis">2 or
+       more</em>, it represents the size of each batch of objects retrieved.
+       It can be adjusted to optimize performance and limit data transfer.
       </p>
       <p class="para">
-       <code class="parameter">batchSize</code> が <em>1</em> あるいは負の数の場合は、
-       返すドキュメントの最大数を batchSize の絶対値までに抑え、
-       結果を返した後にカーソルを閉じます。
-       たとえば batchSize を <em>-10</em>
-       にすると、サーバーは 4MB に収まる範囲で最大 10 件までのドキュメントを返して
-       カーソルを閉じます。
+       If <code class="parameter">batchSize</code> is <em>1</em> or negative, it
+       will limit of number returned documents to the absolute value of batchSize,
+       and the cursor will be closed. For example if
+       batchSize is <em>-10</em>, then the server will return a maximum
+       of 10 documents and as many as can fit in 4MB, then close the cursor.
       </p>
       <div class="warning"><strong class="warning">警告</strong>
        <p class="para">
-        <code class="parameter">batchSize</code> が <em>1</em>
-        あるいは <em>-1</em> の場合は特別で、
-        このカーソルからは 1 件のドキュメントしか返せなくなります。
+        A <code class="parameter">batchSize</code> of <em>1</em> is special, and
+        means the same as <em>-1</em>, i.e. a value of
+        <em>1</em> makes the cursor only capable of returning
+        <em class="emphasis">one</em> document.
        </p>
       </div>
       <p class="para">
-       この機能が <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> と違うところは、
-       ドキュメントが最大サイズに収まらなければいけないという点と、
-       カーソルを閉じるリクエストをサーバーに送らなくてもよいという点です。
-       カーソルをループしている間にもバッチサイズを変更でき、
-       その次にバッチを取得するときから新しい設定が反映されます。
+       Note that this feature is different from
+       <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> in that documents must fit within a
+       maximum size, and it removes the need to send a request to close the cursor
+       server-side. The batch size can be changed even after a cursor is iterated,
+       in which case the setting will apply on the next batch retrieval. 
       </p>
       <p class="para">
-       これは、MongoDB がクライアントに返すデータ量の制限を上書きすることはできません。
-       つまり、たとえバッチサイズを 1,000,000,000 にしても、
-       MongoDB がバッチあたりで返す結果は 4-16MB にしかならないということです。
+       This cannot override MongoDB&#039;s limit on the amount of data it will return to 
+       the client (i.e., if you set batch size to 1,000,000,000, MongoDB will still 
+       only return 4-16MB of results per batch). 
       </p>
       <p class="para">
-       一貫性を維持するため、
-       <span class="function"><strong>MongoCursor::batchSize()</strong></span> と
-       <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> のルールは多少込み入ったものになっていますが、
-       「期待通りに」動作します。そのルールとは、
-       ハードリミットがソフトリミットを上書きし、
-       <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> のほうが
-       <span class="function"><strong>MongoCursor::batchSize()</strong></span> より優先順位が高くなるということです。
-       その結果、どちらであってももう一方より小さく設定されているほうが優先されます。
-       以下の例を参照ください。
+       To ensure consistent behavior, the rules of
+       <span class="function"><strong>MongoCursor::batchSize()</strong></span> and
+       <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> behave a 
+       little complex but work &quot;as expected&quot;.  The rules are: hard limits override 
+       soft limits with preference given to <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span>
+       over <span class="function"><strong>MongoCursor::batchSize()</strong></span>.  After that, whichever is 
+       set and lower than the other will take precedence. See below.
+       section for some examples.
       </p>
      </dd>
 
@@ -104,7 +105,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongocursor.batchsize-returnvalues">
   <h3 class="title">返り値</h3>  
   <p class="para">
-   このカーソルを返します。
+   Returns this cursor.
   </p>
  </div>
 
@@ -112,11 +113,11 @@
  <div class="refsect1 examples" id="refsect1-mongocursor.batchsize-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-1599">
-   <p><strong>例1 <span class="function"><strong>MongoCursor::batchSize()</strong></span> を
-   <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span> と組み合わせる例</strong></p>
+   <p><strong>例1 <span class="function"><strong>MongoCursor::batchSize()</strong></span> and combinations with
+   <span class="function"><a href="mongocursor.limit.html" class="function">MongoCursor::limit()</a></span></strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;ひとつのバッチで最大&nbsp;10&nbsp;件。-10&nbsp;でサーバーから&nbsp;10&nbsp;件を返し、<br />//&nbsp;カーソルを削除する。<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(-</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;最初のバッチ。最大&nbsp;10&nbsp;件<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;最初のバッチ。最大&nbsp;10&nbsp;件<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;結果を&nbsp;10&nbsp;件ずつのバッチで取得し、最大で&nbsp;20&nbsp;件<br />//&nbsp;(10&nbsp;件のバッチが二つ)&nbsp;を返す<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;結果を&nbsp;7&nbsp;件ずつのバッチで取得し、最大で&nbsp;30&nbsp;件を返す<br />//&nbsp;(ドライバが&nbsp;7&nbsp;件のバッチを&nbsp;4&nbsp;回リクエストし、最後のバッチは&nbsp;2&nbsp;件となる)<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">30</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">7</span><span style="color: #007700">)<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;one&nbsp;batch,&nbsp;at&nbsp;most&nbsp;10&nbsp;items.&nbsp;The&nbsp;-10&nbsp;makes&nbsp;the&nbsp;server&nbsp;to&nbsp;return&nbsp;10&nbsp;items,<br />//&nbsp;and&nbsp;then&nbsp;remove&nbsp;the&nbsp;cursor.<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(-</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;first&nbsp;batch:&nbsp;at&nbsp;most&nbsp;10&nbsp;items<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;first&nbsp;batch:&nbsp;at&nbsp;most&nbsp;10&nbsp;items<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;results&nbsp;are&nbsp;fetched&nbsp;in&nbsp;batches&nbsp;of&nbsp;10&nbsp;each,&nbsp;with&nbsp;a&nbsp;maximum&nbsp;of&nbsp;20&nbsp;items<br />//&nbsp;returned&nbsp;(that&nbsp;means&nbsp;two&nbsp;batches&nbsp;of&nbsp;10).<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;results&nbsp;are&nbsp;fetched&nbsp;in&nbsp;batches&nbsp;of&nbsp;7&nbsp;each,&nbsp;with&nbsp;a&nbsp;maximum&nbsp;of&nbsp;30&nbsp;items<br />//&nbsp;returned&nbsp;(that&nbsp;means&nbsp;that&nbsp;the&nbsp;driver&nbsp;requests&nbsp;4&nbsp;batches&nbsp;of&nbsp;7,&nbsp;and&nbsp;one&nbsp;batch<br />//&nbsp;of&nbsp;2).<br /></span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">30</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">batchSize</span><span style="color: #007700">(</span><span style="color: #0000BB">7</span><span style="color: #007700">)<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -128,7 +129,7 @@
  <div class="refsect1 seealso" id="refsect1-mongocursor.batchsize-seealso">
   <h3 class="title">参考</h3>
   <p class="para">
-   MongoDB コアドキュメントの <a href="https://docs.mongodb.com/manual/reference/method/cursor.batchSize/" class="link external">&raquo;&nbsp;batchSize</a>。
+   MongoDB core docs on <a href="https://docs.mongodb.com/manual/reference/method/cursor.batchSize/" class="link external">&raquo;&nbsp;batchSize</a>.
   </p>
   <p class="para">
    <ul class="simplelist">
@@ -157,8 +158,9 @@
        <td>1.4.5</td>
        <td>
         <p class="para">
-         1.4.5 より前のバージョンでは、このメソッドは、
-         カーソルの反復処理が始まっている場合に <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローしていました。
+         Before 1.4.5, this method would throw an
+         <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> if the cursor had already
+         started iterating.
         </p>
        </td>
       </tr>

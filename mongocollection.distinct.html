@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>コレクション内で、指定したキーに対応する区別できる値の一覧を取得する</title>
+  <title>Retrieve a list of distinct values for the given key across a collection</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongocollection.distinct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoCollection::distinct</h1>
-  <p class="verinfo">(PECL mongo &gt;=1.2.11)</p><p class="refpurpose"><span class="refname">MongoCollection::distinct</span> &mdash; <span class="dc-title">コレクション内で、指定したキーに対応する区別できる値の一覧を取得する</span></p>
+  <p class="verinfo">(PECL mongo &gt;=1.2.11)</p><p class="refpurpose"><span class="refname">MongoCollection::distinct</span> &mdash; <span class="dc-title">Retrieve a list of distinct values for the given key across a collection</span></p>
 
  </div>
 
@@ -26,7 +26,8 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   distinct コマンドは、指定したキーに対応する区別できる値の一覧を返します。
+   The distinct command returns a list of distinct values for the given key
+   across a collection. 
   </p>
  </div>
 
@@ -42,7 +43,7 @@
     <dd>
 
      <p class="para">
-      使うキー。
+      The key to use.
      </p>
     </dd>
 
@@ -54,7 +55,7 @@
     <dd>
 
      <p class="para">
-      オプションのクエリパラメータ。
+      An optional query parameters 
      </p>
     </dd>
 
@@ -67,7 +68,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongocollection.distinct-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   区別できる値の配列を返します。失敗した場合に <strong><code>FALSE</code></strong> を返します
+   Returns an array of distinct values, 失敗した場合に <strong><code>FALSE</code></strong> を返します
   </p>
  </div>
 
@@ -75,7 +76,7 @@
  <div class="refsect1 examples" id="refsect1-mongocollection.distinct-examples">
   <h3 class="title">例</h3>
   <div class="example" id="mongocollection.aggregate.example.basic">
-   <p><strong>例1 <span class="methodname"><strong>MongoCollection::distinct()</strong></span> の例</strong></p>
+   <p><strong>例1 <span class="methodname"><strong>MongoCollection::distinct()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$m&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Mongo</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$db&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$m</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">selectDB</span><span style="color: #007700">(</span><span style="color: #DD0000">"test"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">dropCollection</span><span style="color: #007700">(</span><span style="color: #DD0000">"distinct"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">distinct</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"stuff"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"zip-code"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">10010</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"stuff"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"zip-code"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">10010</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"stuff"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"zip-code"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">99701</span><span style="color: #007700">),&nbsp;array(</span><span style="color: #DD0000">"w"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$retval&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">distinct</span><span style="color: #007700">(</span><span style="color: #DD0000">"zip-code"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$retval</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$retval&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">distinct</span><span style="color: #007700">(</span><span style="color: #DD0000">"zip-code"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"stuff"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$retval</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$retval&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">distinct</span><span style="color: #007700">(</span><span style="color: #DD0000">"zip-code"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"stuff"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$retval</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
@@ -106,7 +107,7 @@ array(2) {
    </div>
   </div>
   <div class="example" id="mongocollection.aggregate.example.zipcode.population">
-   <p><strong>例2 埋め込みドキュメントでの <span class="methodname"><strong>MongoCollection::distinct()</strong></span> の例</strong></p>
+   <p><strong>例2 <span class="methodname"><strong>MongoCollection::distinct()</strong></span> example on a embedded document</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"user"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"points"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">25</span><span style="color: #007700">)));<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"user"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"points"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">31</span><span style="color: #007700">)));<br /></span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">(array(</span><span style="color: #DD0000">"user"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">"points"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">25</span><span style="color: #007700">)));<br /><br /></span><span style="color: #0000BB">$retval&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">distinct</span><span style="color: #007700">(</span><span style="color: #DD0000">"user.points"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$retval</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$retval&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">distinct</span><span style="color: #007700">(</span><span style="color: #DD0000">"user.nonexisting"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$retval</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>

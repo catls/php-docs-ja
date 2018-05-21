@@ -148,7 +148,7 @@
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.awaitdata.html" class="methodname">awaitData</a></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$wait</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$wait</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.batchsize.html" class="methodname">batchSize</a></span>
@@ -203,7 +203,7 @@
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.immortal.html" class="methodname">immortal</a></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$liveForever</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$liveForever</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongocursor.info.html" class="methodname">info</a></span>
@@ -227,7 +227,7 @@
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.partial.html" class="methodname">partial</a></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongocursor.reset.html" class="methodname">reset</a></span>
@@ -240,7 +240,7 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.setflag.html" class="methodname">setFlag</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$flag</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$set</code><span class="initializer"> = true</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$set</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname">setReadPreference</a></span>
@@ -253,7 +253,7 @@
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.slaveokay.html" class="methodname">slaveOkay</a></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.snapshot.html" class="methodname">snapshot</a></span>
@@ -265,7 +265,7 @@
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.tailable.html" class="methodname">tailable</a></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$tail</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$tail</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">MongoCursor</span> <span class="methodname"><a href="mongocursor.timeout.html" class="methodname">timeout</a></span>
@@ -344,87 +344,7 @@
 
 
 
-
  
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
 
 
 
@@ -492,20 +412,6 @@
 
 
 
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
 
 
 
@@ -522,7 +428,6 @@
 
 
  
-
 
 
 
@@ -555,12 +460,98 @@
 
 
 
+ 
+
+
+
+
+
 
  
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongocursor.addoption.html">MongoCursor::addOption</a> — トップレベルの キー/値 のペアをクエリに追加する</li><li><a href="mongocursor.awaitdata.html">MongoCursor::awaitData</a> — 追尾可能なカーソルで、データがないときにしばらく待つかどうかを設定する</li><li><a href="mongocursor.batchsize.html">MongoCursor::batchSize</a> — ひとつのバッチで返す要素数を制限する</li><li><a href="mongocursor.construct.html">MongoCursor::__construct</a> — 新しいカーソルを作成する</li><li><a href="mongocursor.count.html">MongoCursor::count</a> — このクエリの結果の数を数える</li><li><a href="mongocursor.current.html">MongoCursor::current</a> — 現在の要素を返す</li><li><a href="mongocursor.dead.html">MongoCursor::dead</a> — まだデータベースから送信されていないドキュメントがあるかどうかを調べる</li><li><a href="mongocursor.doquery.html">MongoCursor::doQuery</a> — クエリを実行する</li><li><a href="mongocursor.explain.html">MongoCursor::explain</a> — 最適化やデバッグの際に有効な、クエリの explain を返す</li><li><a href="mongocursor.fields.html">MongoCursor::fields</a> — クエリのフィールドを設定する</li><li><a href="mongocursor.getnext.html">MongoCursor::getNext</a> — カーソルを次の結果に進めてその結果を返す</li><li><a href="mongocursor.getreadpreference.html">MongoCursor::getReadPreference</a> — このクエリの優先読み込みを取得する</li><li><a href="mongocursor.hasnext.html">MongoCursor::hasNext</a> — このカーソルにまだ要素があるかどうかを調べる</li><li><a href="mongocursor.hint.html">MongoCursor::hint</a> — クエリについてのヒントをデータベースに与える</li><li><a href="mongocursor.immortal.html">MongoCursor::immortal</a> — このカーソルをタイムアウトさせるかどうかを設定する</li><li><a href="mongocursor.info.html">MongoCursor::info</a> — カーソルの作成と走査に関する情報を取得する</li><li><a href="mongocursor.key.html">MongoCursor::key</a> — 現在の結果の _id、あるいは結果セット内のインデックスを返す</li><li><a href="mongocursor.limit.html">MongoCursor::limit</a> — 返す結果の数を制限する</li><li><a href="mongocursor.maxtimems.html">MongoCursor::maxTimeMS</a> — Sets a server-side timeout for this query</li><li><a href="mongocursor.next.html">MongoCursor::next</a> — カーソルを次の結果に進めてその結果を返す</li><li><a href="mongocursor.partial.html">MongoCursor::partial</a> — シャードがダウンしているときにこのクエリが mongos から部分的な結果を返すようにするかどうか</li><li><a href="mongocursor.reset.html">MongoCursor::reset</a> — カーソルを消去する</li><li><a href="mongocursor.rewind.html">MongoCursor::rewind</a> — カーソルを結果セットの先頭に戻す</li><li><a href="mongocursor.setflag.html">MongoCursor::setFlag</a> — 専用のメソッドが存在しない任意のフラグを設定する</li><li><a href="mongocursor.setreadpreference.html">MongoCursor::setReadPreference</a> — このクエリの優先読み込みを設定する</li><li><a href="mongocursor.skip.html">MongoCursor::skip</a> — 結果をスキップする</li><li><a href="mongocursor.slaveokay.html">MongoCursor::slaveOkay</a> — このクエリをセカンダリ上で完了できるかどうかを設定する [非推奨]</li><li><a href="mongocursor.snapshot.html">MongoCursor::snapshot</a> — このクエリでスナップショットモードを使う</li><li><a href="mongocursor.sort.html">MongoCursor::sort</a> — 指定したフィールドで結果をソートする</li><li><a href="mongocursor.tailable.html">MongoCursor::tailable</a> — このカーソルが、最後の結果を取得した後もオープンしたままにしておくかどうかを設定する</li><li><a href="mongocursor.timeout.html">MongoCursor::timeout</a> — このクエリのクライアント側のタイムアウトを設定する</li><li><a href="mongocursor.valid.html">MongoCursor::valid</a> — カーソルが正しい結果を読んでいるかどうかを調べる</li></ul>
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongocursor.addoption.html">MongoCursor::addOption</a> — トップレベルの キー/値 のペアをクエリに追加する</li><li><a href="mongocursor.awaitdata.html">MongoCursor::awaitData</a> — Sets whether this cursor will wait for a while for a tailable cursor to return more data</li><li><a href="mongocursor.batchsize.html">MongoCursor::batchSize</a> — Limits the number of elements returned in one batch</li><li><a href="mongocursor.construct.html">MongoCursor::__construct</a> — 新しいカーソルを作成する</li><li><a href="mongocursor.count.html">MongoCursor::count</a> — このクエリの結果の数を数える</li><li><a href="mongocursor.current.html">MongoCursor::current</a> — 現在の要素を返す</li><li><a href="mongocursor.dead.html">MongoCursor::dead</a> — まだデータベースから送信されていないドキュメントがあるかどうかを調べる</li><li><a href="mongocursor.doquery.html">MongoCursor::doQuery</a> — Execute the query</li><li><a href="mongocursor.explain.html">MongoCursor::explain</a> — 最適化やデバッグの際に有効な、クエリの explain を返す</li><li><a href="mongocursor.fields.html">MongoCursor::fields</a> — クエリのフィールドを設定する</li><li><a href="mongocursor.getnext.html">MongoCursor::getNext</a> — カーソルを次の結果に進めてその結果を返す</li><li><a href="mongocursor.getreadpreference.html">MongoCursor::getReadPreference</a> — このクエリの優先読み込みを取得する</li><li><a href="mongocursor.hasnext.html">MongoCursor::hasNext</a> — このカーソルにまだ要素があるかどうかを調べる</li><li><a href="mongocursor.hint.html">MongoCursor::hint</a> — クエリについてのヒントをデータベースに与える</li><li><a href="mongocursor.immortal.html">MongoCursor::immortal</a> — Sets whether this cursor will timeout</li><li><a href="mongocursor.info.html">MongoCursor::info</a> — カーソルの作成と走査に関する情報を取得する</li><li><a href="mongocursor.key.html">MongoCursor::key</a> — 現在の結果の _id、あるいは結果セット内のインデックスを返す</li><li><a href="mongocursor.limit.html">MongoCursor::limit</a> — 返す結果の数を制限する</li><li><a href="mongocursor.maxtimems.html">MongoCursor::maxTimeMS</a> — Sets a server-side timeout for this query</li><li><a href="mongocursor.next.html">MongoCursor::next</a> — カーソルを次の結果に進めてその結果を返す</li><li><a href="mongocursor.partial.html">MongoCursor::partial</a> — If this query should fetch partial results from mongos if a shard is down</li><li><a href="mongocursor.reset.html">MongoCursor::reset</a> — カーソルを消去する</li><li><a href="mongocursor.rewind.html">MongoCursor::rewind</a> — カーソルを結果セットの先頭に戻す</li><li><a href="mongocursor.setflag.html">MongoCursor::setFlag</a> — Sets arbitrary flags in case there is no method available the specific flag</li><li><a href="mongocursor.setreadpreference.html">MongoCursor::setReadPreference</a> — このクエリの優先読み込みを設定する</li><li><a href="mongocursor.skip.html">MongoCursor::skip</a> — 結果をスキップする</li><li><a href="mongocursor.slaveokay.html">MongoCursor::slaveOkay</a> — Sets whether this query can be done on a secondary [deprecated]</li><li><a href="mongocursor.snapshot.html">MongoCursor::snapshot</a> — このクエリでスナップショットモードを使う</li><li><a href="mongocursor.sort.html">MongoCursor::sort</a> — 指定したフィールドで結果をソートする</li><li><a href="mongocursor.tailable.html">MongoCursor::tailable</a> — Sets whether this cursor will be left open after fetching the last results</li><li><a href="mongocursor.timeout.html">MongoCursor::timeout</a> — このクエリのクライアント側のタイムアウトを設定する</li><li><a href="mongocursor.valid.html">MongoCursor::valid</a> — Checks if the cursor is reading a valid result</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongocollection.validate.html">MongoCollection::validate</a></div>

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>新しい接続プールのサイズを設定する</title>
+  <title>Set the size for future connection pools</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongopool.setsize" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoPool::setSize</h1>
-  <p class="verinfo">(PECL mongo &gt;= 1.2.3)</p><p class="refpurpose"><span class="refname">MongoPool::setSize</span> &mdash; <span class="dc-title">新しい接続プールのサイズを設定する</span></p>
+  <p class="verinfo">(PECL mongo &gt;= 1.2.3)</p><p class="refpurpose"><span class="refname">MongoPool::setSize</span> &mdash; <span class="dc-title">Set the size for future connection pools</span></p>
 
  </div>
 
@@ -26,7 +26,7 @@
 
 
   <p class="para rdfs-comment">
-   新しい接続プールが作成できる接続の数を設定します。
+   Sets the max number of connections new pools will be able to create.
   </p>
  </div>
 
@@ -45,8 +45,9 @@
      <dd>
 
       <p class="para">
-       新しい接続プールが作成できる接続の最大数。
-       負の値を設定すると、接続を無限に作成できるようになります。
+       The max number of connections future pools will be able to create.
+       Negative numbers mean that the pool will spawn an infinite number of
+       connections.
       </p>
      </dd>
 
@@ -60,7 +61,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongopool.setsize-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   設定する前のプールのサイズを返します。
+   Returns the former value of pool size.
   </p>
  </div>
 
@@ -81,7 +82,7 @@
      <tbody class="tbody">
       <tr>
        <td>1.2.11</td>
-       <td><strong><code>E_DEPRECATED</code></strong> を発行するようになりました。</td>
+       <td>Emits <strong><code>E_DEPRECATED</code></strong> when used.</td>
       </tr>
 
      </tbody>
@@ -97,16 +98,16 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-1654">
-    <p><strong>例1 <span class="function"><a href="mongo.setpoolsize.html" class="function">Mongo::setPoolSize()</a></span> の例</strong></p>
+    <p><strong>例1 <span class="function"><a href="mongo.setpoolsize.html" class="function">Mongo::setPoolSize()</a></span> example</strong></p>
     <div class="example-contents"><p>
-     プールサイズを <em>n</em> に設定してから
-     <em>n</em> 個の接続を作成し、さらに
-     <em>n+1</em> 番目の接続を作ろうとすると
-     <a href="class.mongoconnectionexception.html" class="classname">MongoConnectionException</a> が発生します。
+     If you set the pool size to <em>n</em> and then create
+     <em>n</em> connections, attempting to create an
+     <em>n+1</em>st connection will throw a
+     <a href="class.mongoconnectionexception.html" class="classname">MongoConnectionException</a>.
     </p></div>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;サーバーへの接続はひとつだけしか作れないようにします<br /></span><span style="color: #0000BB">MongoPool</span><span style="color: #007700">::</span><span style="color: #0000BB">setSize</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;localhost:27017&nbsp;への接続を作成ｈします<br /></span><span style="color: #0000BB">$m1&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Mongo</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;localhost:27017&nbsp;への二番目の接続の作成を試みます<br />//&nbsp;ひとつだけしか作れないようにしているので、これは例外となります<br /></span><span style="color: #0000BB">$m2&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Mongo</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;only&nbsp;allow&nbsp;one&nbsp;connection&nbsp;to&nbsp;a&nbsp;server<br /></span><span style="color: #0000BB">MongoPool</span><span style="color: #007700">::</span><span style="color: #0000BB">setSize</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;creates&nbsp;one&nbsp;connection&nbsp;to&nbsp;localhost:27017<br /></span><span style="color: #0000BB">$m1&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Mongo</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;attempt&nbsp;to&nbsp;create&nbsp;a&nbsp;second&nbsp;connection&nbsp;to&nbsp;localhost:27017<br />//&nbsp;only&nbsp;one&nbsp;connection&nbsp;is&nbsp;allowed,&nbsp;so&nbsp;this&nbsp;will&nbsp;throw&nbsp;an&nbsp;exception<br /></span><span style="color: #0000BB">$m2&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Mongo</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -132,9 +133,9 @@ Stack trace:
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><a href="mongopool.getsize.html" class="function" rel="rdfs-seeAlso">MongoPool::getSize()</a> - 接続プールのサイズを取得する</span></li>
-    <li class="member"><span class="function"><a href="mongopool.info.html" class="function" rel="rdfs-seeAlso">MongoPool::info()</a> - すべての接続プールに関する情報を返す</span></li>
-    <li class="member"><a href="mongo.connecting.html" class="link">接続</a>のドキュメント</li>
+    <li class="member"><span class="function"><a href="mongopool.getsize.html" class="function" rel="rdfs-seeAlso">MongoPool::getSize()</a> - Get pool size for connection pools</span></li>
+    <li class="member"><span class="function"><a href="mongopool.info.html" class="function" rel="rdfs-seeAlso">MongoPool::info()</a> - Returns information about all connection pools</span></li>
+    <li class="member">The <a href="mongo.connecting.html" class="link">connection</a> documentation.</li>
    </ul>
   </p>
  </div>

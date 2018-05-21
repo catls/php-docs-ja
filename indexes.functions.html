@@ -3124,6 +3124,7 @@
 <li><a href="harupage.textout.html" class="index">HaruPage::textOut</a> - テキストを指定した位置に表示する</li>
 <li><a href="harupage.textrect.html" class="index">HaruPage::textRect</a> - 指定した領域内にテキストを表示する</li>
 <li><a href="function.hash.html" class="index">hash</a> - ハッシュ値 (メッセージダイジェスト) を生成する</li>
+<li><a href="hashcontext.construct.html" class="index">HashContext::__construct</a> - Private constructor to disallow direct instantiation</li>
 <li><a href="function.hash-algos.html" class="index">hash_algos</a> - 登録されているハッシュアルゴリズムの一覧を返す</li>
 <li><a href="function.hash-copy.html" class="index">hash_copy</a> - ハッシュコンテキストをコピーする</li>
 <li><a href="function.hash-equals.html" class="index">hash_equals</a> - タイミング攻撃に対して安全な文字列比較</li>
@@ -4908,25 +4909,26 @@
 <li><a href="mongo.getpoolsize.html" class="index">Mongo::getPoolSize</a> - 接続プールのサイズを取得する</li>
 <li><a href="mongo.getslave.html" class="index">Mongo::getSlave</a> - slaveOkay の読み込みに使われているアドレスを返す</li>
 <li><a href="mongo.getslaveokay.html" class="index">Mongo::getSlaveOkay</a> - この接続の slaveOkay 設定を取得する</li>
-<li><a href="mongo.listdbs.html" class="index">Mongo::listDBs</a> - すべてのデータベースの一覧を取得する</li>
-<li><a href="mongo.pooldebug.html" class="index">Mongo::poolDebug</a> - すべての接続プールに関する情報を返す</li>
-<li><a href="mongo.setpoolsize.html" class="index">Mongo::setPoolSize</a> - 新しい接続プールのサイズを設定する</li>
-<li><a href="mongo.setslaveokay.html" class="index">Mongo::setSlaveOkay</a> - この接続の slaveOkay の設定を変更する</li>
+<li><a href="mongo.pooldebug.html" class="index">Mongo::poolDebug</a> - Returns information about all connection pools</li>
+<li><a href="mongo.setpoolsize.html" class="index">Mongo::setPoolSize</a> - Set the size for future connection pools</li>
+<li><a href="mongo.setslaveokay.html" class="index">Mongo::setSlaveOkay</a> - Change slaveOkay setting for this connection</li>
 <li><a href="mongo.switchslave.html" class="index">Mongo::switchSlave</a> - slaveOkay 読み込み用の新しいセカンダリを選ぶ</li>
 <li><a href="mongo.construct.html" class="index">Mongo::__construct</a> - コンストラクタ</li>
 <li><a href="mongo.get.html" class="index">Mongo::__get</a> - データベースを取得する</li>
 <li><a href="mongo.tostring.html" class="index">Mongo::__toString</a> - この接続の文字列表現</li>
-<li><a href="mongobindata.construct.html" class="index">MongoBinData::__construct</a> - 新しいバイナリデータオブジェクトを作成する</li>
-<li><a href="mongobindata.tostring.html" class="index">MongoBinData::__toString</a> - このバイナリデータオブジェクトの文字列表現</li>
+<li><a href="mongobindata.construct.html" class="index">MongoBinData::__construct</a> - Creates a new binary data object</li>
+<li><a href="mongobindata.tostring.html" class="index">MongoBinData::__toString</a> - The string representation of this binary data object</li>
 <li><a href="mongoclient.dropdb.html" class="index">MongoClient::dropDB</a> - Drops a database [deprecated]</li>
 <li><a href="mongoclient.getconnections.html" class="index">MongoClient::getConnections</a> - 開いているすべての接続の情報を返す</li>
 <li><a href="mongoclient.getreadpreference.html" class="index">MongoClient::getReadPreference</a> - この接続の優先読み込みを取得する</li>
 <li><a href="mongoclient.getwriteconcern.html" class="index">MongoClient::getWriteConcern</a> - Get the write concern for this connection</li>
 <li><a href="mongoclient.killcursor.html" class="index">MongoClient::killCursor</a> - サーバー上の指定したカーソルを削除する</li>
+<li><a href="mongoclient.listdbs.html" class="index">MongoClient::listDBs</a> - Lists all of the databases available</li>
 <li><a href="mongoclient.selectcollection.html" class="index">MongoClient::selectCollection</a> - Gets a database collection</li>
 <li><a href="mongoclient.selectdb.html" class="index">MongoClient::selectDB</a> - Gets a database</li>
 <li><a href="mongoclient.setreadpreference.html" class="index">MongoClient::setReadPreference</a> - この接続の優先読み込みを設定する</li>
 <li><a href="mongoclient.setwriteconcern.html" class="index">MongoClient::setWriteConcern</a> - Set the write concern for this connection</li>
+<li><a href="mongoclient.construct.html" class="index">MongoClient::__construct</a> - Creates a new database connection object</li>
 <li><a href="mongocode.construct.html" class="index">MongoCode::__construct</a> - 新しいコードオブジェクトを作成する</li>
 <li><a href="mongocode.tostring.html" class="index">MongoCode::__toString</a> - このコードを文字列で返す</li>
 <li><a href="mongocollection.aggregate.html" class="index">MongoCollection::aggregate</a> - aggregation フレームワークを使って集約する</li>
@@ -4937,9 +4939,9 @@
 <li><a href="mongocollection.createindex.html" class="index">MongoCollection::createIndex</a> - Creates an index on the specified field(s) if it does not already exist</li>
 <li><a href="mongocollection.deleteindex.html" class="index">MongoCollection::deleteIndex</a> - コレクションからインデックスを削除する</li>
 <li><a href="mongocollection.deleteindexes.html" class="index">MongoCollection::deleteIndexes</a> - コレクションのすべてのインデックスを削除する</li>
-<li><a href="mongocollection.distinct.html" class="index">MongoCollection::distinct</a> - コレクション内で、指定したキーに対応する区別できる値の一覧を取得する</li>
+<li><a href="mongocollection.distinct.html" class="index">MongoCollection::distinct</a> - Retrieve a list of distinct values for the given key across a collection</li>
 <li><a href="mongocollection.drop.html" class="index">MongoCollection::drop</a> - コレクションを削除する</li>
-<li><a href="mongocollection.ensureindex.html" class="index">MongoCollection::ensureIndex</a> - 指定したフィールドが存在しない場合にインデックスを作成する</li>
+<li><a href="mongocollection.ensureindex.html" class="index">MongoCollection::ensureIndex</a> - Creates an index on the specified field(s) if it does not already exist</li>
 <li><a href="mongocollection.find.html" class="index">MongoCollection::find</a> - コレクションに問い合わせ、結果セットの MongoCursor を返す</li>
 <li><a href="mongocollection.findandmodify.html" class="index">MongoCollection::findAndModify</a> - ドキュメントを更新して返す</li>
 <li><a href="mongocollection.findone.html" class="index">MongoCollection::findOne</a> - コレクションに問い合わせ、単一の要素を返す</li>
@@ -4955,7 +4957,7 @@
 <li><a href="mongocollection.remove.html" class="index">MongoCollection::remove</a> - レコードをコレクションから削除する</li>
 <li><a href="mongocollection.save.html" class="index">MongoCollection::save</a> - ドキュメントをコレクションに保存する</li>
 <li><a href="mongocollection.setreadpreference.html" class="index">MongoCollection::setReadPreference</a> - このコレクションの優先読み込みを設定する</li>
-<li><a href="mongocollection.setslaveokay.html" class="index">MongoCollection::setSlaveOkay</a> - このコレクションの slaveOkay の設定を変更する</li>
+<li><a href="mongocollection.setslaveokay.html" class="index">MongoCollection::setSlaveOkay</a> - Change slaveOkay setting for this collection</li>
 <li><a href="mongocollection.setwriteconcern.html" class="index">MongoCollection::setWriteConcern</a> - Set the write concern for this database</li>
 <li><a href="mongocollection.toindexstring.html" class="index">MongoCollection::toIndexString</a> - インデックスを指定するキーを、インデックスを指す文字列に変換する</li>
 <li><a href="mongocollection.update.html" class="index">MongoCollection::update</a> - 指定した条件にもとづいてレコードを更新する</li>
@@ -4977,36 +4979,36 @@
 <li><a href="mongocommandcursor.valid.html" class="index">MongoCommandCursor::valid</a> - Checks if the cursor is reading a valid result</li>
 <li><a href="mongocommandcursor.construct.html" class="index">MongoCommandCursor::__construct</a> - Create a new command cursor</li>
 <li><a href="mongocursor.addoption.html" class="index">MongoCursor::addOption</a> - トップレベルの キー/値 のペアをクエリに追加する</li>
-<li><a href="mongocursor.awaitdata.html" class="index">MongoCursor::awaitData</a> - 追尾可能なカーソルで、データがないときにしばらく待つかどうかを設定する</li>
-<li><a href="mongocursor.batchsize.html" class="index">MongoCursor::batchSize</a> - ひとつのバッチで返す要素数を制限する</li>
+<li><a href="mongocursor.awaitdata.html" class="index">MongoCursor::awaitData</a> - Sets whether this cursor will wait for a while for a tailable cursor to return more data</li>
+<li><a href="mongocursor.batchsize.html" class="index">MongoCursor::batchSize</a> - Limits the number of elements returned in one batch</li>
 <li><a href="mongocursor.count.html" class="index">MongoCursor::count</a> - このクエリの結果の数を数える</li>
 <li><a href="mongocursor.current.html" class="index">MongoCursor::current</a> - 現在の要素を返す</li>
 <li><a href="mongocursor.dead.html" class="index">MongoCursor::dead</a> - まだデータベースから送信されていないドキュメントがあるかどうかを調べる</li>
-<li><a href="mongocursor.doquery.html" class="index">MongoCursor::doQuery</a> - クエリを実行する</li>
+<li><a href="mongocursor.doquery.html" class="index">MongoCursor::doQuery</a> - Execute the query</li>
 <li><a href="mongocursor.explain.html" class="index">MongoCursor::explain</a> - 最適化やデバッグの際に有効な、クエリの explain を返す</li>
 <li><a href="mongocursor.fields.html" class="index">MongoCursor::fields</a> - クエリのフィールドを設定する</li>
 <li><a href="mongocursor.getnext.html" class="index">MongoCursor::getNext</a> - カーソルを次の結果に進めてその結果を返す</li>
 <li><a href="mongocursor.getreadpreference.html" class="index">MongoCursor::getReadPreference</a> - このクエリの優先読み込みを取得する</li>
 <li><a href="mongocursor.hasnext.html" class="index">MongoCursor::hasNext</a> - このカーソルにまだ要素があるかどうかを調べる</li>
 <li><a href="mongocursor.hint.html" class="index">MongoCursor::hint</a> - クエリについてのヒントをデータベースに与える</li>
-<li><a href="mongocursor.immortal.html" class="index">MongoCursor::immortal</a> - このカーソルをタイムアウトさせるかどうかを設定する</li>
+<li><a href="mongocursor.immortal.html" class="index">MongoCursor::immortal</a> - Sets whether this cursor will timeout</li>
 <li><a href="mongocursor.info.html" class="index">MongoCursor::info</a> - カーソルの作成と走査に関する情報を取得する</li>
 <li><a href="mongocursor.key.html" class="index">MongoCursor::key</a> - 現在の結果の _id、あるいは結果セット内のインデックスを返す</li>
 <li><a href="mongocursor.limit.html" class="index">MongoCursor::limit</a> - 返す結果の数を制限する</li>
 <li><a href="mongocursor.maxtimems.html" class="index">MongoCursor::maxTimeMS</a> - Sets a server-side timeout for this query</li>
 <li><a href="mongocursor.next.html" class="index">MongoCursor::next</a> - カーソルを次の結果に進めてその結果を返す</li>
-<li><a href="mongocursor.partial.html" class="index">MongoCursor::partial</a> - シャードがダウンしているときにこのクエリが mongos から部分的な結果を返すようにするかどうか</li>
+<li><a href="mongocursor.partial.html" class="index">MongoCursor::partial</a> - If this query should fetch partial results from mongos if a shard is down</li>
 <li><a href="mongocursor.reset.html" class="index">MongoCursor::reset</a> - カーソルを消去する</li>
 <li><a href="mongocursor.rewind.html" class="index">MongoCursor::rewind</a> - カーソルを結果セットの先頭に戻す</li>
-<li><a href="mongocursor.setflag.html" class="index">MongoCursor::setFlag</a> - 専用のメソッドが存在しない任意のフラグを設定する</li>
+<li><a href="mongocursor.setflag.html" class="index">MongoCursor::setFlag</a> - Sets arbitrary flags in case there is no method available the specific flag</li>
 <li><a href="mongocursor.setreadpreference.html" class="index">MongoCursor::setReadPreference</a> - このクエリの優先読み込みを設定する</li>
 <li><a href="mongocursor.skip.html" class="index">MongoCursor::skip</a> - 結果をスキップする</li>
-<li><a href="mongocursor.slaveokay.html" class="index">MongoCursor::slaveOkay</a> - このクエリをセカンダリ上で完了できるかどうかを設定する [非推奨]</li>
+<li><a href="mongocursor.slaveokay.html" class="index">MongoCursor::slaveOkay</a> - Sets whether this query can be done on a secondary [deprecated]</li>
 <li><a href="mongocursor.snapshot.html" class="index">MongoCursor::snapshot</a> - このクエリでスナップショットモードを使う</li>
 <li><a href="mongocursor.sort.html" class="index">MongoCursor::sort</a> - 指定したフィールドで結果をソートする</li>
-<li><a href="mongocursor.tailable.html" class="index">MongoCursor::tailable</a> - このカーソルが、最後の結果を取得した後もオープンしたままにしておくかどうかを設定する</li>
+<li><a href="mongocursor.tailable.html" class="index">MongoCursor::tailable</a> - Sets whether this cursor will be left open after fetching the last results</li>
 <li><a href="mongocursor.timeout.html" class="index">MongoCursor::timeout</a> - このクエリのクライアント側のタイムアウトを設定する</li>
-<li><a href="mongocursor.valid.html" class="index">MongoCursor::valid</a> - カーソルが正しい結果を読んでいるかどうかを調べる</li>
+<li><a href="mongocursor.valid.html" class="index">MongoCursor::valid</a> - Checks if the cursor is reading a valid result</li>
 <li><a href="mongocursor.construct.html" class="index">MongoCursor::__construct</a> - 新しいカーソルを作成する</li>
 <li><a href="mongocursorexception.gethost.html" class="index">MongoCursorException::getHost</a> - エラーが発生したサーバーのホスト名を取得する</li>
 <li><a href="mongocursorinterface.batchsize.html" class="index">MongoCursorInterface::batchSize</a> - Limits the number of elements returned in one batch</li>
@@ -5016,8 +5018,8 @@
 <li><a href="mongocursorinterface.setreadpreference.html" class="index">MongoCursorInterface::setReadPreference</a> - Set the read preference for this query</li>
 <li><a href="mongocursorinterface.timeout.html" class="index">MongoCursorInterface::timeout</a> - Sets a client-side timeout for this query</li>
 <li><a href="mongodate.todatetime.html" class="index">MongoDate::toDateTime</a> - Returns a DateTime object representing this date</li>
-<li><a href="mongodate.construct.html" class="index">MongoDate::__construct</a> - 新しい日付を作成する</li>
-<li><a href="mongodate.tostring.html" class="index">MongoDate::__toString</a> - この日付の文字列表現を返す</li>
+<li><a href="mongodate.construct.html" class="index">MongoDate::__construct</a> - Creates a new date</li>
+<li><a href="mongodate.tostring.html" class="index">MongoDate::__toString</a> - Returns a string representation of this date</li>
 <li><a href="mongodb.authenticate.html" class="index">MongoDB::authenticate</a> - このデータベースにログインする</li>
 <li><a href="mongodb.command.html" class="index">MongoDB::command</a> - データベースコマンドを実行する</li>
 <li><a href="mongodb.createcollection.html" class="index">MongoDB::createCollection</a> - コレクションを作成する</li>
@@ -5042,7 +5044,7 @@
 <li><a href="mongodb.selectcollection.html" class="index">MongoDB::selectCollection</a> - コレクションを取得する</li>
 <li><a href="mongodb.setprofilinglevel.html" class="index">MongoDB::setProfilingLevel</a> - このデータベースのプロファイリングレベルを設定する</li>
 <li><a href="mongodb.setreadpreference.html" class="index">MongoDB::setReadPreference</a> - このデータベースの優先読み込みを設定する</li>
-<li><a href="mongodb.setslaveokay.html" class="index">MongoDB::setSlaveOkay</a> - このデータベースの slaveOkay の設定を変更する</li>
+<li><a href="mongodb.setslaveokay.html" class="index">MongoDB::setSlaveOkay</a> - Change slaveOkay setting for this database</li>
 <li><a href="mongodb.setwriteconcern.html" class="index">MongoDB::setWriteConcern</a> - Set the write concern for this database</li>
 <li><a href="mongodb.construct.html" class="index">MongoDB::__construct</a> - 新しいデータベースを作成する</li>
 <li><a href="mongodb.get.html" class="index">MongoDB::__get</a> - コレクションを取得する</li>
@@ -5280,28 +5282,28 @@
 <li><a href="mongoid.getpid.html" class="index">MongoId::getPID</a> - プロセス ID を取得する</li>
 <li><a href="mongoid.gettimestamp.html" class="index">MongoId::getTimestamp</a> - この id が作られたときのエポックからの経過秒数を取得する</li>
 <li><a href="mongoid.isvalid.html" class="index">MongoId::isValid</a> - Check if a value is a valid ObjectId</li>
-<li><a href="mongoid.construct.html" class="index">MongoId::__construct</a> - 新しい ID を作成する</li>
+<li><a href="mongoid.construct.html" class="index">MongoId::__construct</a> - Creates a new id</li>
 <li><a href="mongoid.set-state.html" class="index">MongoId::__set_state</a> - ダミー MongoId を作成する</li>
-<li><a href="mongoid.tostring.html" class="index">MongoId::__toString</a> - この ID の 16 進表現を返す</li>
+<li><a href="mongoid.tostring.html" class="index">MongoId::__toString</a> - Returns a hexidecimal representation of this id</li>
 <li><a href="mongoinsertbatch.construct.html" class="index">MongoInsertBatch::__construct</a> - Description</li>
-<li><a href="mongoint32.construct.html" class="index">MongoInt32::__construct</a> - 新しい 32 ビット整数値を作成する</li>
-<li><a href="mongoint32.tostring.html" class="index">MongoInt32::__toString</a> - この 32 ビット整数値の文字列表現を返す</li>
-<li><a href="mongoint64.construct.html" class="index">MongoInt64::__construct</a> - 新しい 64 ビット整数値を作成する</li>
-<li><a href="mongoint64.tostring.html" class="index">MongoInt64::__toString</a> - この 64 ビット整数値の文字列表現を返す</li>
+<li><a href="mongoint32.construct.html" class="index">MongoInt32::__construct</a> - Creates a new 32-bit integer</li>
+<li><a href="mongoint32.tostring.html" class="index">MongoInt32::__toString</a> - Returns the string representation of this 32-bit integer</li>
+<li><a href="mongoint64.construct.html" class="index">MongoInt64::__construct</a> - Creates a new 64-bit integer</li>
+<li><a href="mongoint64.tostring.html" class="index">MongoInt64::__toString</a> - Returns the string representation of this 64-bit integer</li>
 <li><a href="mongolog.getcallback.html" class="index">MongoLog::getCallback</a> - 以前に設定されたコールバック関数の名前を取得する</li>
 <li><a href="mongolog.getlevel.html" class="index">MongoLog::getLevel</a> - 現在記録されているログレベルを取得する</li>
 <li><a href="mongolog.getmodule.html" class="index">MongoLog::getModule</a> - 現在ログを記録しているモジュールを取得する</li>
 <li><a href="mongolog.setcallback.html" class="index">MongoLog::setCallback</a> - イベントに対応して呼ばれるコールバック関数を設定する</li>
 <li><a href="mongolog.setlevel.html" class="index">MongoLog::setLevel</a> - 記録するログレベルを設定する</li>
 <li><a href="mongolog.setmodule.html" class="index">MongoLog::setModule</a> - ログに記録するモジュールを設定する</li>
-<li><a href="mongopool.getsize.html" class="index">MongoPool::getSize</a> - 接続プールのサイズを取得する</li>
-<li><a href="mongopool.info.html" class="index">MongoPool::info</a> - すべての接続プールに関する情報を返す</li>
-<li><a href="mongopool.setsize.html" class="index">MongoPool::setSize</a> - 新しい接続プールのサイズを設定する</li>
+<li><a href="mongopool.getsize.html" class="index">MongoPool::getSize</a> - Get pool size for connection pools</li>
+<li><a href="mongopool.info.html" class="index">MongoPool::info</a> - Returns information about all connection pools</li>
+<li><a href="mongopool.setsize.html" class="index">MongoPool::setSize</a> - Set the size for future connection pools</li>
 <li><a href="mongoregex.construct.html" class="index">MongoRegex::__construct</a> - 新しい正規表現を作成する</li>
 <li><a href="mongoregex.tostring.html" class="index">MongoRegex::__toString</a> - この正規表現の文字列表現</li>
 <li><a href="mongoresultexception.getdocument.html" class="index">MongoResultException::getDocument</a> - 結果ドキュメントを取得する</li>
-<li><a href="mongotimestamp.construct.html" class="index">MongoTimestamp::__construct</a> - 新しいタイムスタンプを作成する</li>
-<li><a href="mongotimestamp.tostring.html" class="index">MongoTimestamp::__toString</a> - このタイムスタンプを文字列形式で返す</li>
+<li><a href="mongotimestamp.construct.html" class="index">MongoTimestamp::__construct</a> - Creates a new timestamp</li>
+<li><a href="mongotimestamp.tostring.html" class="index">MongoTimestamp::__toString</a> - Returns a string representation of this timestamp</li>
 <li><a href="mongoupdatebatch.construct.html" class="index">MongoUpdateBatch::__construct</a> - Description</li>
 <li><a href="mongowritebatch.add.html" class="index">MongoWriteBatch::add</a> - Adds a write operation to a batch</li>
 <li><a href="mongowritebatch.execute.html" class="index">MongoWriteBatch::execute</a> - Executes a batch of write operations</li>
@@ -5442,6 +5444,7 @@
 <li><a href="mutex.unlock.html" class="index">Mutex::unlock</a> - Release Mutex</li>
 <li><a href="mysqli.affected-rows.html" class="index">mysqli::$affected_rows</a> - 直前の MySQL の操作で変更された行の数を得る</li>
 <li><a href="mysqli.get-client-info.html" class="index">mysqli::$client_info</a> - MySQL クライアント情報を取得する</li>
+<li><a href="mysqli.get-client-version.html" class="index">mysqli::$client_version</a> - MySQL クライアントのバージョンを整数値で返す</li>
 <li><a href="mysqli.connect-errno.html" class="index">mysqli::$connect_errno</a> - 直近の接続コールに関するエラーコードを返す</li>
 <li><a href="mysqli.connect-error.html" class="index">mysqli::$connect_error</a> - 直近の接続エラーの内容を文字列で返す</li>
 <li><a href="mysqli.errno.html" class="index">mysqli::$errno</a> - 直近の関数コールによるエラーコードを返す</li>
@@ -5516,7 +5519,6 @@
 <li><a href="function.mysqli-fetch.html" class="index">mysqli_fetch</a> - mysqli_stmt_fetch のエイリアス</li>
 <li><a href="function.mysqli-get-cache-stats.html" class="index">mysqli_get_cache_stats</a> - クライアントの Zval キャッシュの統計情報を返す</li>
 <li><a href="function.mysqli-get-client-stats.html" class="index">mysqli_get_client_stats</a> - Returns client per-process statistics</li>
-<li><a href="mysqli.get-client-version.html" class="index">mysqli_get_client_version</a> - MySQL クライアントのバージョンを整数値で返す</li>
 <li><a href="function.mysqli-get-links-stats.html" class="index">mysqli_get_links_stats</a> - Return information about open and cached links</li>
 <li><a href="function.mysqli-get-metadata.html" class="index">mysqli_get_metadata</a> - mysqli_stmt_result_metadata のエイリアス</li>
 <li><a href="function.mysqli-master-query.html" class="index">mysqli_master_query</a> - マスタ/スレーブ設定で、マスタ側のクエリを実行する</li>

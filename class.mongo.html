@@ -30,7 +30,7 @@
     過去との互換性のために、コンストラクタの <em>&quot;w&quot;</em> 引数のデフォルトを
     <em>0</em> にしており、書き込み操作のときにサーバー側での確認を必要としません。
     詳細な情報は
-    <span class="function"><strong>MongoClient::__construct()</strong></span> を参照ください。
+    <span class="function"><a href="mongoclient.construct.html" class="function">MongoClient::__construct()</a></span> を参照ください。
    </p>
 
     <div class="warning"><strong class="warning">警告</strong>
@@ -90,7 +90,7 @@
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongo.setslaveokay.html" class="methodname">setSlaveOkay</a></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$ok</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$ok</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="mongo.switchslave.html" class="methodname">switchSlave</a></span>
@@ -137,7 +137,7 @@
    , <span class="methodparam"><span class="type"><span class="type int|MongoInt64">int|MongoInt64</span></span> <code class="parameter">$id</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongo.listdbs.html" class="methodname">listDBs</a></span>
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongoclient.listdbs.html" class="methodname">MongoClient::listDBs</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
@@ -224,9 +224,6 @@
 
 
 
-
-
-
  
 
 
@@ -238,7 +235,7 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongo.connectutil.html">Mongo::connectUtil</a> — データベースサーバーに接続する</li><li><a href="mongo.construct.html">Mongo::__construct</a> — コンストラクタ</li><li><a href="mongo.getpoolsize.html">Mongo::getPoolSize</a> — 接続プールのサイズを取得する</li><li><a href="mongo.getslave.html">Mongo::getSlave</a> — slaveOkay の読み込みに使われているアドレスを返す</li><li><a href="mongo.getslaveokay.html">Mongo::getSlaveOkay</a> — この接続の slaveOkay 設定を取得する</li><li><a href="mongo.pooldebug.html">Mongo::poolDebug</a> — すべての接続プールに関する情報を返す</li><li><a href="mongo.setpoolsize.html">Mongo::setPoolSize</a> — 新しい接続プールのサイズを設定する</li><li><a href="mongo.setslaveokay.html">Mongo::setSlaveOkay</a> — この接続の slaveOkay の設定を変更する</li><li><a href="mongo.switchslave.html">Mongo::switchSlave</a> — slaveOkay 読み込み用の新しいセカンダリを選ぶ</li></ul>
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongo.connectutil.html">Mongo::connectUtil</a> — データベースサーバーに接続する</li><li><a href="mongo.construct.html">Mongo::__construct</a> — コンストラクタ</li><li><a href="mongo.getpoolsize.html">Mongo::getPoolSize</a> — 接続プールのサイズを取得する</li><li><a href="mongo.getslave.html">Mongo::getSlave</a> — slaveOkay の読み込みに使われているアドレスを返す</li><li><a href="mongo.getslaveokay.html">Mongo::getSlaveOkay</a> — この接続の slaveOkay 設定を取得する</li><li><a href="mongo.pooldebug.html">Mongo::poolDebug</a> — Returns information about all connection pools</li><li><a href="mongo.setpoolsize.html">Mongo::setPoolSize</a> — Set the size for future connection pools</li><li><a href="mongo.setslaveokay.html">Mongo::setSlaveOkay</a> — Change slaveOkay setting for this connection</li><li><a href="mongo.switchslave.html">Mongo::switchSlave</a> — slaveOkay 読み込み用の新しいセカンダリを選ぶ</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongopool.setsize.html">MongoPool::setSize</a></div>

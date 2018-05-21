@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>新しいバイナリデータオブジェクトを作成する</title>
+  <title>Creates a new binary data object</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongobindata.construct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoBinData::__construct</h1>
-  <p class="verinfo">(PECL mongo &gt;= 0.8.1)</p><p class="refpurpose"><span class="refname">MongoBinData::__construct</span> &mdash; <span class="dc-title">新しいバイナリデータオブジェクトを作成する</span></p>
+  <p class="verinfo">(PECL mongo &gt;= 0.8.1)</p><p class="refpurpose"><span class="refname">MongoBinData::__construct</span> &mdash; <span class="dc-title">Creates a new binary data object</span></p>
 
  </div>
 
@@ -37,16 +37,16 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   新しいバイナリデータオブジェクトを作成します。
+   Creates a new binary data object.
   </p>
   <p class="para">
-   現在の BSON 仕様には 7 種類のバイナリデータ型があり、それらが
-   <a href="class.mongobindata.html#mongobindata.constants.types" class="link">クラス定数</a>で定義されています。
-   過去のバージョンとの互換性のため、デフォルトは
-   <strong><code>MongoBinData::BYTE_ARRAY</code></strong>
-   となっていますが、将来のバージョンでは
-   <strong><code>MongoBinData::GENERIC</code></strong> に変わるかもしれません。
-   デフォルトに頼るのではなく、自分で型を指定するようにしましょう。
+   There are seven types of binary data currently recognized by the BSON spec,
+   which are defined as
+   <a href="class.mongobindata.html#mongobindata.constants.types" class="link">class constants</a>. For
+   backwards compatibility, the PHP driver uses
+   <strong><code>MongoBinData::BYTE_ARRAY</code></strong> as the default; however, this
+   may change to <strong><code>MongoBinData::GENERIC</code></strong> in the future.
+   Users are encouraged to specify a type instead of relying on the default.
   </p>
  </div>
 
@@ -65,7 +65,7 @@
      <dd>
 
       <p class="para">
-       バイナリデータ。
+       Binary data.
       </p>
      </dd>
 
@@ -79,7 +79,7 @@
      <dd>
 
       <p class="para">
-       データ型。
+       Data type.
       </p>
      </dd>
 
@@ -93,7 +93,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongobindata.construct-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   新しいバイナリデータオブジェクトを返します。
+   Returns a new binary data object.
   </p>
  </div>
 
@@ -115,17 +115,18 @@
       <tr>
        <td>1.5.0</td>
        <td>
-        デフォルトが <em>2</em>
-        (<strong><code>MongoBinData::BYTE_ARRAY</code></strong>) から
-        <em>0</em> (<strong><code>MongoBinData::GENERIC</code></strong>) に変わりました。
+        The default changed from <em>2</em>
+        (<strong><code>MongoBinData::BYTE_ARRAY</code></strong>) to
+        <em>0</em> (<strong><code>MongoBinData::GENERIC</code></strong>).
        </td>
       </tr>
 
       <tr>
        <td>1.2.11</td>
        <td>
-        二番目の引数を省略すると <strong><code>E_DEPRECATED</code></strong> を発行します。
-        <code class="parameter">type</code> のデフォルト値は近い将来変わる見込みです。
+        Emits <strong><code>E_DEPRECATED</code></strong> when the second argument is not
+        used. The default value for <code class="parameter">type</code> may change in
+        the near future.
        </td>
       </tr>
 

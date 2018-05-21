@@ -47,7 +47,7 @@
    </p>
    <p class="para">
     接続の作成に関する詳細な情報は、
-    <span class="function"><strong>MongoClient::__construct()</strong></span> および
+    <span class="function"><a href="mongoclient.construct.html" class="function">MongoClient::__construct()</a></span> および
     <a href="mongo.connecting.html" class="link">接続</a> のセクションを参照ください。
    </p>
   </div>
@@ -157,7 +157,7 @@
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="constructorsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>__construct</strong></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="mongoclient.construct.html" class="methodname">__construct</a></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$server</code><span class="initializer"> = &quot;mongodb://localhost:27017&quot;</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code><span class="initializer"> = array(&quot;connect&quot; =&gt; <strong><code>TRUE</code></strong>)</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$driver_options</code></span>
@@ -201,7 +201,7 @@
    , <span class="methodparam"><span class="type"><span class="type int|MongoInt64">int|MongoInt64</span></span> <code class="parameter">$id</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongo.listdbs.html" class="methodname">Mongo::listDBs</a></span>
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="mongoclient.listdbs.html" class="methodname">listDBs</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
@@ -411,7 +411,7 @@
    <h2 class="title">参考</h2>
    <ul class="simplelist">
     <li class="member"><a href="mongo.readpreferences.html" class="xref">優先読み込み</a></li>
-    <li class="member"><a href="mongo.writeconcerns.html" class="xref">書き込み確認</a></li>
+    <li class="member"><a href="mongo.writeconcerns.html" class="xref">Write Concerns</a></li>
     <li class="member"><a href="mongo.connecting.html" class="xref">接続</a></li>
     <li class="member">MongoDB コアドキュメントの <a href="https://docs.mongodb.com/manual/reference/connection-string/" class="link external">&raquo;&nbsp;connecting</a></li>
    </ul>
@@ -444,7 +444,6 @@
 
 
 
-
  
 
 
@@ -495,7 +494,6 @@
 
 
 
-
  
 
 
@@ -534,7 +532,7 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongo.close.html">Mongo::close</a> — 接続を閉じる</li><li><a href="mongo.connect.html">Mongo::connect</a> — データベースサーバーに接続する</li><li><a href="mongoclient.construct.html">Mongo::__construct</a> — 新しいデータベース接続オブジェクトを作成する</li><li><a href="mongoclient.dropdb.html">MongoClient::dropDB</a> — Drops a database [deprecated]</li><li><a href="mongo.get.html">Mongo::__get</a> — データベースを取得する</li><li><a href="mongoclient.getconnections.html">MongoClient::getConnections</a> — 開いているすべての接続の情報を返す</li><li><a href="mongo.gethosts.html">Mongo::getHosts</a> — 関連づけられたすべてのホストの状態を更新する</li><li><a href="mongoclient.getreadpreference.html">MongoClient::getReadPreference</a> — この接続の優先読み込みを取得する</li><li><a href="mongoclient.getwriteconcern.html">MongoClient::getWriteConcern</a> — Get the write concern for this connection</li><li><a href="mongoclient.killcursor.html">MongoClient::killCursor</a> — サーバー上の指定したカーソルを削除する</li><li><a href="mongo.listdbs.html">Mongo::listDBs</a> — すべてのデータベースの一覧を取得する</li><li><a href="mongoclient.selectcollection.html">MongoClient::selectCollection</a> — Gets a database collection</li><li><a href="mongoclient.selectdb.html">MongoClient::selectDB</a> — Gets a database</li><li><a href="mongoclient.setreadpreference.html">MongoClient::setReadPreference</a> — この接続の優先読み込みを設定する</li><li><a href="mongoclient.setwriteconcern.html">MongoClient::setWriteConcern</a> — Set the write concern for this connection</li><li><a href="mongo.tostring.html">Mongo::__toString</a> — この接続の文字列表現</li></ul>
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongo.close.html">Mongo::close</a> — 接続を閉じる</li><li><a href="mongo.connect.html">Mongo::connect</a> — データベースサーバーに接続する</li><li><a href="mongoclient.construct.html">MongoClient::__construct</a> — Creates a new database connection object</li><li><a href="mongoclient.dropdb.html">MongoClient::dropDB</a> — Drops a database [deprecated]</li><li><a href="mongo.get.html">Mongo::__get</a> — データベースを取得する</li><li><a href="mongoclient.getconnections.html">MongoClient::getConnections</a> — 開いているすべての接続の情報を返す</li><li><a href="mongo.gethosts.html">Mongo::getHosts</a> — 関連づけられたすべてのホストの状態を更新する</li><li><a href="mongoclient.getreadpreference.html">MongoClient::getReadPreference</a> — この接続の優先読み込みを取得する</li><li><a href="mongoclient.getwriteconcern.html">MongoClient::getWriteConcern</a> — Get the write concern for this connection</li><li><a href="mongoclient.killcursor.html">MongoClient::killCursor</a> — サーバー上の指定したカーソルを削除する</li><li><a href="mongoclient.listdbs.html">MongoClient::listDBs</a> — Lists all of the databases available</li><li><a href="mongoclient.selectcollection.html">MongoClient::selectCollection</a> — Gets a database collection</li><li><a href="mongoclient.selectdb.html">MongoClient::selectDB</a> — Gets a database</li><li><a href="mongoclient.setreadpreference.html">MongoClient::setReadPreference</a> — この接続の優先読み込みを設定する</li><li><a href="mongoclient.setwriteconcern.html">MongoClient::setWriteConcern</a> — Set the write concern for this connection</li><li><a href="mongo.tostring.html">Mongo::__toString</a> — この接続の文字列表現</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongo.core.html">コアクラス群</a></div>

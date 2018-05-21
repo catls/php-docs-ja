@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>新しい ID を作成する</title>
+  <title>Creates a new id</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongoid.construct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoId::__construct</h1>
-  <p class="verinfo">(PECL mongo &gt;= 0.8.0)</p><p class="refpurpose"><span class="refname">MongoId::__construct</span> &mdash; <span class="dc-title">新しい ID を作成する</span></p>
+  <p class="verinfo">(PECL mongo &gt;= 0.8.0)</p><p class="refpurpose"><span class="refname">MongoId::__construct</span> &mdash; <span class="dc-title">Creates a new id</span></p>
 
  </div>
 
@@ -23,7 +23,7 @@
 かわりに <a href="set.mongodb.html" class="link">MongoDB</a> 拡張モジュールを使うべきです。
 このメソッドの代替として、以下が使えます。</p>
    <ul class="simplelist">
-    <li class="member"><span class="methodname"><a href="mongodb-bson-objectid.construct.html" class="methodname">MongoDB\BSON\ObjectID::__construct()</a></span></li>
+    <li class="member"><span class="methodname"><a href="mongodb-bson-objectid.construct.html" class="methodname">MongoDB\BSON\ObjectId::__construct()</a></span></li>
    </ul>
   </blockquote>
  </div>
@@ -52,8 +52,8 @@
      <dd>
 
       <p class="para">
-       文字列 (24 桁の十六進数でなければなりません) あるいは
-       <a href="class.mongoid.html" class="classname">MongoId</a> のインスタンス。
+       A string (must be 24 hexadecimal characters) or a
+       <a href="class.mongoid.html" class="classname">MongoId</a> instance.
       </p>
      </dd>
 
@@ -67,7 +67,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongoid.construct-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   新しい ID を返します。
+   Returns a new id.
   </p>
  </div>
 
@@ -88,7 +88,7 @@
      <tr>
       <td>1.4.0</td>
       <td>
-       無効な文字列を渡したときに例外をスローするようになりました。
+       An exception is thrown when passed invalid string
       </td>
      </tr>
 
@@ -104,9 +104,9 @@
   <div class="example" id="example-1621">
    <p><strong>例1 <span class="function"><strong>MongoId::__construct()</strong></span> example</strong></p>
    <div class="example-contents"><p>
-    この例は、新しい ID を作成する方法を示します。
-    これが必要となることはめったにありません。データベースに保存する前に、
-    ドライバが自動的に ID を作成して配列に追加するからです。
+    This example shows how to create a new id. This is seldom necessary, as the 
+    driver adds an id to arrays automatically before storing them in the 
+    database.
    </p></div>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -125,11 +125,11 @@
    </div>
   </div>
   <div class="example" id="example-1622">
-   <p><strong>例2 パラメータの例</strong></p>
-   <div class="example-contents"><p>この例は、文字列パラメータを使用して MongoId を指定した値で初期化する方法を示します。</p></div>
+   <p><strong>例2 Parameter example</strong></p>
+   <div class="example-contents"><p>This example shows how to use a string parameter to initialize a MongoId with a given value.</p></div>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;$id1&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoId</span><span style="color: #007700">();<br /><br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;新しい&nbsp;ID&nbsp;を&nbsp;$id1&nbsp;から作成します<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$id2&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoId</span><span style="color: #007700">(</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$id1</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;$id1&nbsp;と&nbsp;$id2&nbsp;が同一の&nbsp;16&nbsp;進値を持つことを示します<br />&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$id1&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$id2</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;$id1&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoId</span><span style="color: #007700">();<br /><br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;create&nbsp;a&nbsp;new&nbsp;id&nbsp;from&nbsp;$id1<br />&nbsp;&nbsp;</span><span style="color: #0000BB">$id2&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoId</span><span style="color: #007700">(</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$id1</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;show&nbsp;that&nbsp;$id1&nbsp;and&nbsp;$id2&nbsp;have&nbsp;the&nbsp;same&nbsp;hexidecimal&nbsp;value<br />&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$id1&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$id2</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -149,7 +149,7 @@ bool(true)
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="methodname"><a href="mongoid.tostring.html" class="methodname" rel="rdfs-seeAlso">MongoId::__toString()</a> - この ID の 16 進表現を返す</span></li>
+    <li class="member"><span class="methodname"><a href="mongoid.tostring.html" class="methodname" rel="rdfs-seeAlso">MongoId::__toString()</a> - Returns a hexidecimal representation of this id</span></li>
     <li class="member"><span class="methodname"><a href="mongoid.isvalid.html" class="methodname" rel="rdfs-seeAlso">MongoId::isvalid()</a> - Check if a value is a valid ObjectId</span></li>
    </ul>
   </p>

@@ -105,14 +105,14 @@
   </p>
   <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>1.7.0</td><td><a href='mongodb.execute.html'>MongoDB::execute</a></td><td>このメソッドは非推奨になりました。内部で使っている
         eval
-        コマンドが、MongoDB 3.0 以降で非推奨になったためです。</td></tr></tbody><tbody class="gen-changelog v1-7-0"><tr><td>1.6.0</td><td><a href='mongocollection.count.html'>MongoCollection::count</a></td><td>二番目のパラメータが配列 options に変わりました。
+        コマンドが、MongoDB 3.0 以降で非推奨になったためです。</td></tr></tbody><tbody class="gen-changelog v1-7-0"><tr><td>1.6.0</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Added support for &quot;SCRAM-SHA-1&quot; in
+         &quot;authMechanism&quot; option.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.count.html'>MongoCollection::count</a></td><td>二番目のパラメータが配列 options に変わりました。
         limit や skip
         を二番目、三番目のパラメータとして渡す方法は、非推奨になりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.getcollectionnames.html'>MongoDB::getCollectionNames</a></td><td>最初のパラメータがオプションの配列に変わりました。以前のバージョンでは最初のパラメータは boolean で、
        &quot;includeSystemCollections&quot; オプションの値を指定するものでした。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.listcollections.html'>MongoDB::listCollections</a></td><td>最初のパラメータがオプションの配列に変わりました。以前のバージョンでは最初のパラメータは boolean で、
-       &quot;includeSystemCollections&quot; オプションの値を指定するものでした。</td></tr></tbody><tbody class="gen-changelog v1-6-0"><tr><td>1.5.0</td><td><a href='function.log-cmd-delete.html'>log_cmd_delete</a></td><td>Only available when connected to MongoDB 2.6.0+</td></tr><tr><td>&nbsp;</td><td><a href='function.log-cmd-insert.html'>log_cmd_insert</a></td><td>Only available when connected to MongoDB 2.6.0+</td></tr><tr><td>&nbsp;</td><td><a href='function.log-cmd-update.html'>log_cmd_update</a></td><td>Only available when connected to MongoDB 2.6.0+</td></tr><tr><td>&nbsp;</td><td><a href='function.log-write-batch.html'>log_write_batch</a></td><td>Only available when connected to MongoDB 2.6.0+</td></tr><tr><td>&nbsp;</td><td><a href='mongobindata.construct.html'>MongoBinData::__construct</a></td><td>デフォルトが 2
-        (MongoBinData::BYTE_ARRAY) から
-        0 (MongoBinData::GENERIC) に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>&quot;authSource&quot; が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>&quot;authMechanism&quot;、&quot;gssapiServiceName&quot; および &quot;secondaryAcceptableLatencyMS&quot;
-         が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.aggregate.html'>MongoCollection::aggregate</a></td><td>オプションの引数 options が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>&quot;wTimeoutMS&quot; オプションが追加されました。これは
+       &quot;includeSystemCollections&quot; オプションの値を指定するものでした。</td></tr></tbody><tbody class="gen-changelog v1-6-0"><tr><td>1.5.0</td><td><a href='function.log-cmd-delete.html'>log_cmd_delete</a></td><td>Only available when connected to MongoDB 2.6.0+</td></tr><tr><td>&nbsp;</td><td><a href='function.log-cmd-insert.html'>log_cmd_insert</a></td><td>Only available when connected to MongoDB 2.6.0+</td></tr><tr><td>&nbsp;</td><td><a href='function.log-cmd-update.html'>log_cmd_update</a></td><td>Only available when connected to MongoDB 2.6.0+</td></tr><tr><td>&nbsp;</td><td><a href='function.log-write-batch.html'>log_write_batch</a></td><td>Only available when connected to MongoDB 2.6.0+</td></tr><tr><td>&nbsp;</td><td><a href='mongobindata.construct.html'>MongoBinData::__construct</a></td><td>The default changed from 2
+        (MongoBinData::BYTE_ARRAY) to
+        0 (MongoBinData::GENERIC).</td></tr><tr><td>&nbsp;</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Added &quot;authMechanism&quot;, &quot;gssapiServiceName&quot;, and &quot;secondaryAcceptableLatencyMS&quot;.</td></tr><tr><td>&nbsp;</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Added &quot;authSource&quot;.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.aggregate.html'>MongoCollection::aggregate</a></td><td>オプションの引数 options が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>&quot;wTimeoutMS&quot; オプションが追加されました。これは
          &quot;wtimeout&quot; を置き換えるものです。
          &quot;wtimeout&quot; を使うと
          E_DEPRECATED が発生します。
@@ -125,20 +125,20 @@
         
         
          &quot;safe&quot; を使うと
-         E_DEPRECATED が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>&quot;wTimeoutMS&quot; オプションが追加されました。これは
-         &quot;wtimeout&quot; を置き換えるものです。
-         &quot;wtimeout&quot; を使うと
-         E_DEPRECATED が発生します。
+         E_DEPRECATED が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>Renamed the &quot;wtimeout&quot; option to
+         &quot;wTimeoutMS&quot;. Emits
+         E_DEPRECATED when &quot;wtimeout&quot; is
+         used.
         
         
-         &quot;socketTimeoutMS&quot; オプションが追加されました。これは
-         &quot;timeout&quot; を置き換えるものです。
-         &quot;timeout&quot; を使うと
-         E_DEPRECATED が発生します。
+         Renamed the &quot;timeout&quot; option to
+         &quot;socketTimeoutMS&quot;. Emits
+         E_DEPRECATED when &quot;timeout&quot; is
+         used.
         
         
-         &quot;safe&quot; を使うと
-         E_DEPRECATED が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.findone.html'>MongoCollection::findOne</a></td><td>オプションの引数 options が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.group.html'>MongoCollection::group</a></td><td>&quot;maxTimeMS&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;wTimeoutMS&quot; オプションが追加されました。これは
+         Emits E_DEPRECATED when &quot;safe&quot;
+         is used.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.findone.html'>MongoCollection::findOne</a></td><td>オプションの引数 options が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.group.html'>MongoCollection::group</a></td><td>&quot;maxTimeMS&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;wTimeoutMS&quot; オプションが追加されました。これは
          &quot;wtimeout&quot; を置き換えるものです。
          &quot;wtimeout&quot; を使うと
          E_DEPRECATED が発生します。
@@ -187,25 +187,26 @@
         
         
          &quot;safe&quot; を使うと
-         E_DEPRECATED が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.slaveokay.html'>MongoCursor::slaveOkay</a></td><td>このメソッドは非推奨になりました。かわりに
-        MongoCursor::setReadPreference と  を使いましょう。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.command.html'>MongoDB::command</a></td><td>オプション &quot;timeout&quot; の名前が
+         E_DEPRECATED が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.slaveokay.html'>MongoCursor::slaveOkay</a></td><td>This method has been deprecated in favour of
+        MongoCursor::setReadPreference and .</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.command.html'>MongoDB::command</a></td><td>オプション &quot;timeout&quot; の名前が
          &quot;socketTimeoutMS&quot; に変わりました。
          &quot;wtimeout&quot; を使うと、E_DEPRECATED が発生します。
         
         
-         参照渡しの hash パラメータが追加されました。</td></tr></tbody><tbody class="gen-changelog v1-5-0"><tr><td>1.4.5</td><td><a href='mongocursor.batchsize.html'>MongoCursor::batchSize</a></td><td>1.4.5 より前のバージョンでは、このメソッドは、
-         カーソルの反復処理が始まっている場合に MongoCursorException をスローしていました。</td></tr></tbody><tbody class="gen-changelog v1-4-5"><tr><td>1.4.0</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>&quot;ssl&quot; オプションが追加されました。これは
-         SSL 接続 をサポートするものです。
+         参照渡しの hash パラメータが追加されました。</td></tr></tbody><tbody class="gen-changelog v1-5-0"><tr><td>1.4.5</td><td><a href='mongocursor.batchsize.html'>MongoCursor::batchSize</a></td><td>Before 1.4.5, this method would throw an
+         MongoCursorException if the cursor had already
+         started iterating.</td></tr></tbody><tbody class="gen-changelog v1-4-5"><tr><td>1.4.0</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Added &quot;ssl&quot; option and support for
+         connecting over SSL.
         
         
-         &quot;wTimeoutMS&quot; オプションが追加されました。これは
-         &quot;wTimeout&quot; の代替です。
+         Added &quot;wTimeoutMS&quot; option, which replaces
+         &quot;wTimeout&quot;.
         
         
-         &quot;slaveOkay&quot; や &quot;timeout&quot; を使うと
-         E_DEPRECATED が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.hint.html'>MongoCursor::hint</a></td><td>index 引数に、文字列でインデックス名を指定できるよういなりました。
-         これより前のバージョンでは、配列またはオブジェクトしか渡せませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.setflag.html'>MongoCursor::setFlag</a></td><td>フラグ 3 (OPLOG_REPLAY) をサポートするようになりました。
-        以前のバージョンでは、このフラグには対応していないという警告が出ていました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.createcollection.html'>MongoDB::createCollection</a></td><td>1.4.0 より前のバージョンでは、個々のオプションがすべてメソッドの引数になっていました。
+         Emits E_DEPRECATED when
+         &quot;slaveOkay&quot; or &quot;timeout&quot; is used.</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.hint.html'>MongoCursor::hint</a></td><td>index 引数に、文字列でインデックス名を指定できるよういなりました。
+         これより前のバージョンでは、配列またはオブジェクトしか渡せませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.setflag.html'>MongoCursor::setFlag</a></td><td>Support for flag 3 (OPLOG_REPLAY) is added. Versions before 1.4.0
+        would throw a warning saying that the flag is unsupported.</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.createcollection.html'>MongoDB::createCollection</a></td><td>1.4.0 より前のバージョンでは、個々のオプションがすべてメソッドの引数になっていました。
          旧バージョンのシグネチャは、次のとおりです。
         
         
@@ -219,8 +220,8 @@
         
         
          各オプションの意味は、先ほど
-         options 引数のところで説明したとおりです。</td></tr><tr><td>&nbsp;</td><td><a href='mongoid.construct.html'>MongoId::__construct</a></td><td>無効な文字列を渡したときに例外をスローするようになりました。</td></tr></tbody><tbody class="gen-changelog v1-4-0"><tr><td>1.3.4</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>&quot;connectTimeoutMS&quot; および
-         &quot;socketTimeoutMS&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr></tbody><tbody class="gen-changelog v1-3-4"><tr><td>1.3.3</td><td><a href='mongoclient.getreadpreference.html'>MongoClient::getReadPreference</a></td><td>返り値が変わり、
+         options 引数のところで説明したとおりです。</td></tr><tr><td>&nbsp;</td><td><a href='mongoid.construct.html'>MongoId::__construct</a></td><td>An exception is thrown when passed invalid string</td></tr></tbody><tbody class="gen-changelog v1-4-0"><tr><td>1.3.4</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Added &quot;connectTimeoutMS&quot; and
+         &quot;socketTimeoutMS&quot; options.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>Added &quot;wtimeout&quot; option.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;wtimeout&quot; オプションが追加されました。</td></tr></tbody><tbody class="gen-changelog v1-3-4"><tr><td>1.3.3</td><td><a href='mongoclient.getreadpreference.html'>MongoClient::getReadPreference</a></td><td>返り値が変わり、
         MongoClient::setReadPreference
         との整合性があるものになりました。
         type の値は数字から文字列に変わり、
@@ -236,14 +237,13 @@
         type の値は数字から文字列に変わり、
         type_string は削除され、そして
         tagsets はコロン区切りの文字列ではなくキー/値のペアでタグを表すようになりました。</td></tr></tbody><tbody class="gen-changelog v1-3-3"><tr><td>1.3.0</td><td><a href='mongo.close.html'>Mongo::close</a></td><td>connection パラメータが追加されました。
-         それより前のバージョンでは、このメソッドで閉じられるのは書き込み接続だけでした。</td></tr><tr><td>&nbsp;</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>&quot;readPreference&quot;、
-         &quot;readPreferenceTags&quot;、&quot;w&quot; および
-         &quot;wTimeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>&quot;w&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>&quot;w&quot; オプションが追加されました。
+         それより前のバージョンでは、このメソッドで閉じられるのは書き込み接続だけでした。</td></tr><tr><td>&nbsp;</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Added &quot;readPreference&quot;,
+         &quot;readPreferenceTags&quot;, &quot;w&quot;, and
+         &quot;wTimeout&quot; options.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>&quot;w&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>Added &quot;w&quot; option.
         
-         options パラメータで、boolean
-         だけを渡してユニークインデックスを指定することができなくなりました。
-         同じことをするには array('unique' =&gt; true)
-         としなければなりません。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;w&quot; オプションが追加されました。
+         The options parameter no longer accepts a
+         boolean to signify a unique index. Instead, this now has to be done
+         with array('unique' =&gt; true).</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;w&quot; オプションが追加されました。
         
          options パラメータで、boolean
          だけを渡して確認付きの書き込みを指定することができなくなりました。
@@ -260,9 +260,11 @@
          同じことをするには array('upsert'' =&gt; true)
          としなければなりません。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.listcollections.html'>MongoDB::listCollections</a></td><td>includeSystemCollections が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongogridfscursor.key.html'>MongoGridFSCursor::key</a></td><td>ドキュメントの _id を文字列で返すようになりました。
         キーは一意であるはずだからです。
-        これより前のバージョンでは filename を返していました。</td></tr></tbody><tbody class="gen-changelog v1-3-0"><tr><td>1.2.11</td><td><a href='mongo.getpoolsize.html'>Mongo::getPoolSize</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongo.getslave.html'>Mongo::getSlave</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongo.getslaveokay.html'>Mongo::getSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongo.pooldebug.html'>Mongo::poolDebug</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongo.setslaveokay.html'>Mongo::setSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongo.switchslave.html'>Mongo::switchSlave</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongobindata.construct.html'>MongoBinData::__construct</a></td><td>二番目の引数を省略すると E_DEPRECATED を発行します。
-        type のデフォルト値は近い将来変わる見込みです。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>options が scalar のときに E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.getslaveokay.html'>MongoCollection::getSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.group.html'>MongoCollection::group</a></td><td>options が scalar のときに E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>options が scalar のときに E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.setslaveokay.html'>MongoCollection::setSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>options が scalar のときに E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.doquery.html'>MongoCursor::doQuery</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.authenticate.html'>MongoDB::authenticate</a></td><td>E_DEPRECATED を発行するようになりました。
-        認証情報の詳細をコンストラクタに渡しましょう。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.forceerror.html'>MongoDB::forceError</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.getslaveokay.html'>MongoDB::getSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.preverror.html'>MongoDB::prevError</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.reseterror.html'>MongoDB::resetError</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.setslaveokay.html'>MongoDB::setSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongopool.getsize.html'>MongoPool::getSize</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongopool.info.html'>MongoPool::info</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongopool.setsize.html'>MongoPool::setSize</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr></tbody><tbody class="gen-changelog v1-2-11"><tr><td>1.2.10</td><td><a href='mongo.gethosts.html'>Mongo::getHosts</a></td><td>レプリカセットでない場合もサポートするようになりました。
+        これより前のバージョンでは filename を返していました。</td></tr></tbody><tbody class="gen-changelog v1-3-0"><tr><td>1.2.11</td><td><a href='mongo.getpoolsize.html'>Mongo::getPoolSize</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongo.getslave.html'>Mongo::getSlave</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongo.getslaveokay.html'>Mongo::getSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongo.pooldebug.html'>Mongo::poolDebug</a></td><td>Emits E_DEPRECATED when used.</td></tr><tr><td>&nbsp;</td><td><a href='mongo.setslaveokay.html'>Mongo::setSlaveOkay</a></td><td>Emits E_DEPRECATED when used.</td></tr><tr><td>&nbsp;</td><td><a href='mongo.switchslave.html'>Mongo::switchSlave</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongobindata.construct.html'>MongoBinData::__construct</a></td><td>Emits E_DEPRECATED when the second argument is not
+        used. The default value for type may change in
+        the near future.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>Emits E_DEPRECATED when
+        options is scalar.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.getslaveokay.html'>MongoCollection::getSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.group.html'>MongoCollection::group</a></td><td>options が scalar のときに E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>options が scalar のときに E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.setslaveokay.html'>MongoCollection::setSlaveOkay</a></td><td>Emits E_DEPRECATED when used.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>options が scalar のときに E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocursor.doquery.html'>MongoCursor::doQuery</a></td><td>Emits E_DEPRECATED when used.</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.authenticate.html'>MongoDB::authenticate</a></td><td>E_DEPRECATED を発行するようになりました。
+        認証情報の詳細をコンストラクタに渡しましょう。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.forceerror.html'>MongoDB::forceError</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.getslaveokay.html'>MongoDB::getSlaveOkay</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.preverror.html'>MongoDB::prevError</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.reseterror.html'>MongoDB::resetError</a></td><td>E_DEPRECATED を発行するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.setslaveokay.html'>MongoDB::setSlaveOkay</a></td><td>Emits E_DEPRECATED when used.</td></tr><tr><td>&nbsp;</td><td><a href='mongopool.getsize.html'>MongoPool::getSize</a></td><td>Emits E_DEPRECATED when used.</td></tr><tr><td>&nbsp;</td><td><a href='mongopool.info.html'>MongoPool::info</a></td><td>Emits E_DEPRECATED when used.</td></tr><tr><td>&nbsp;</td><td><a href='mongopool.setsize.html'>MongoPool::setSize</a></td><td>Emits E_DEPRECATED when used.</td></tr></tbody><tbody class="gen-changelog v1-2-11"><tr><td>1.2.10</td><td><a href='mongo.gethosts.html'>Mongo::getHosts</a></td><td>レプリカセットでない場合もサポートするようになりました。
         
         
          返される配列の要素に、新たに
@@ -271,12 +273,12 @@
         二番目のパラメータはオプションの文字列で、ファイル名を上書きするものでした。</td></tr></tbody><tbody class="gen-changelog v1-2-5"><tr><td>1.2.0</td><td><a href='mongo.close.html'>Mongo::close</a></td><td>1.2.0 より前のバージョンでは、デフォルトでは持続的接続を使いませんでした。
          そして、MongoDB の接続がスコープから抜ければすぐに閉じられていました。
          バージョン 1.2.0 からはそうではなくなりました。
-         close を呼ばないと、高負荷な接続がサーバーを使い切ってしまう可能性があります。</td></tr><tr><td>&nbsp;</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>&quot;username&quot; および &quot;password&quot;
-         オプションが追加されました。
+         close を呼ばないと、高負荷な接続がサーバーを使い切ってしまう可能性があります。</td></tr><tr><td>&nbsp;</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Added &quot;username&quot; and &quot;password&quot;
+         options.
         
         
-         &quot;persist&quot; オプションが削除されました。すべての接続は持続的な接続となります。
-         今でも使うことはできますが、何の影響も及ぼしません。
+         Removed &quot;persist&quot; option, as all connections are
+         now persistent. It can still be used, but it doesn't affect anything.
         
         
          
@@ -285,31 +287,33 @@
           
           
            
-            持続的な接続を行うかどうか。これを設定すると、接続が持続的なものとなります。
-            文字列の値を接続 ID として使うので、
-            array(&quot;persist&quot; =&gt; &quot;foobar&quot;) で初期化した
-            Mongo のインスタンスがふたつあれば、
-            それは同じデータベース接続をあらわします。一方、
-            array(&quot;persist&quot; =&gt; &quot;barbaz&quot;)
-            で初期化したインスタンスは別のデータベース接続を使います。
+            If the connection should be persistent. If set, the connection will
+            be persistent. The string representation of the value is used as an
+            ID for the connection, so two instances of
+            MongoClient that are initialized with
+            array(&quot;persist&quot; =&gt; &quot;foobar&quot;) will share the same
+            database connection, whereas an instance initialized with
+            array(&quot;persist&quot; =&gt; &quot;barbaz&quot;) will use a different
+            database connection.
            
           
          
         
         
-         &quot;replicaSet&quot; オプションは、boolean ではなく文字列を受け取るようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.command.html'>MongoDB::command</a></td><td>options パラメータと、そのオプション
+         The &quot;replicaSet&quot; option now takes a string, not a
+         boolean.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>Added &quot;timeout&quot; option.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;timeout&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongodb.command.html'>MongoDB::command</a></td><td>options パラメータと、そのオプション
         &quot;timeout&quot; が追加されました。</td></tr></tbody><tbody class="gen-changelog v1-2-0"><tr><td>1.1.0</td><td><a href='mongocursor.info.html'>MongoCursor::info</a></td><td>多くのフィールドが追加されました。id (カーソル ID)、
         at (現在のドキュメントを表すドライバのカウンタ)、
         numReturned (サーバーが現在のバッチで返した件数)、そして
         server (クエリの送信先のサーバー。
          と組み合わせると便利)
-        などです。</td></tr></tbody><tbody class="gen-changelog v1-1-0"><tr><td>1.0.11</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>&quot;safe&quot; は必要に応じてプライマリのフェイルオーバーを行うようになりました。
+        などです。</td></tr></tbody><tbody class="gen-changelog v1-1-0"><tr><td>1.0.11</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>The &quot;safe&quot; option will trigger a primary failover,
+         if necessary.
         
         
-         インデックス名 (自動生成されたものあるいは設定したもののどちらでも)
-         の長さが 128 バイトを超えた場合に
-         MongoException をスローするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;safe&quot; が設定されている場合は、&quot;not master&quot; エラーで接続を切断するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>&quot;safe&quot; が設定されている場合は、&quot;not master&quot; エラーで接続を切断するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>&quot;safe&quot; が設定されている場合は、&quot;not master&quot; エラーで接続を切断するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;safe&quot; が設定されている場合は、&quot;not master&quot; エラーで接続を切断するようになりました。</td></tr></tbody><tbody class="gen-changelog v1-0-11"><tr><td>1.0.10</td><td><a href='mongocursor.info.html'>MongoCursor::info</a></td><td>started_iterating フィールドが追加されました。boolean で、
-        このカーソルがクエリ実行前か実行後かを返します。</td></tr></tbody><tbody class="gen-changelog v1-0-10"><tr><td>1.0.9</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>&quot;replicaSet&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>&quot;safe&quot; オプションに整数値がわたせるようになりました (以前は boolean のみでした)。
+         MongoException will be thrown if the index name
+         (either generated or set) is longer than 128 bytes.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;safe&quot; が設定されている場合は、&quot;not master&quot; エラーで接続を切断するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>&quot;safe&quot; が設定されている場合は、&quot;not master&quot; エラーで接続を切断するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>&quot;safe&quot; が設定されている場合は、&quot;not master&quot; エラーで接続を切断するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;safe&quot; が設定されている場合は、&quot;not master&quot; エラーで接続を切断するようになりました。</td></tr></tbody><tbody class="gen-changelog v1-0-11"><tr><td>1.0.10</td><td><a href='mongocursor.info.html'>MongoCursor::info</a></td><td>started_iterating フィールドが追加されました。boolean で、
+        このカーソルがクエリ実行前か実行後かを返します。</td></tr></tbody><tbody class="gen-changelog v1-0-10"><tr><td>1.0.9</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Added &quot;replicaSet&quot; option.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>&quot;safe&quot; オプションに整数値がわたせるようになりました (以前は boolean のみでした)。
         
         
          &quot;fsync&quot; オプションが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;safe&quot; オプションに整数値がわたせるようになりました (以前は boolean のみでした)。
@@ -337,10 +341,11 @@
          &quot;safe&quot; オプションを使っている場合の返り値の型が配列に変わりました。
          配列にはエラー情報が含まれています。&quot;safe&quot; オプションを使わない場合は、今までどおり
          boolean のままです。</td></tr></tbody><tbody class="gen-changelog v1-0-9"><tr><td>1.0.7</td><td><a href='mongocollection.count.html'>MongoCollection::count</a></td><td>limit および skip が
-        それぞれ二番目、三番目のパラメータとして追加されました。</td></tr></tbody><tbody class="gen-changelog v1-0-7"><tr><td>1.0.5</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>&quot;name&quot; オプションで、インデックス名の作成を上書きできるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>二番目のパラメータがオプションの配列に変わりました。1.0.5
+        それぞれ二番目、三番目のパラメータとして追加されました。</td></tr></tbody><tbody class="gen-changelog v1-0-7"><tr><td>1.0.5</td><td><a href='mongocollection.batchinsert.html'>MongoCollection::batchInsert</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>Added the &quot;name&quot; option to override index name
+        creation.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.remove.html'>MongoCollection::remove</a></td><td>二番目のパラメータがオプションの配列に変わりました。1.0.5
         より前のバージョンでは、二番目のパラメータは &quot;safe&quot;
-        オプションを表す boolean 値でした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;safe&quot; オプションが追加されました。</td></tr></tbody><tbody class="gen-changelog v1-0-5"><tr><td>1.0.2</td><td><a href='mongoclient.construct.html'>Mongo::__construct</a></td><td>コンストラクタがオプションの配列を受け取るようになりました。
-         以前のバージョンでは、コンストラクタは以下のパラメータを受け取っていました。
+        オプションを表す boolean 値でした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.save.html'>MongoCollection::save</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>&quot;safe&quot; オプションが追加されました。</td></tr></tbody><tbody class="gen-changelog v1-0-5"><tr><td>1.0.2</td><td><a href='mongoclient.construct.html'>MongoClient::__construct</a></td><td>Changed constructor to take an array of options. Pre-1.0.2, the
+         constructor took the following parameters:
         
         
          
@@ -349,7 +354,7 @@
           
           
            
-            サーバー名。
+            The server name.
            
           
          
@@ -359,9 +364,8 @@
           
           
            
-            オプションの boolean パラメータで、
-            コンストラクタがデータベースに接続するかどうかを示します。
-            デフォルトは TRUE です。
+            Optional boolean parameter specifying if the constructor should
+            connect to the database before returning.  Defaults to TRUE.
            
           
          
@@ -371,7 +375,7 @@
           
           
            
-            持続的な接続を行うかどうか。
+            If the connection should be persistent.
            
           
          
@@ -381,9 +385,9 @@
           
           
            
-            ペア接続を行うかどうか。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>options パラメータが boolean から配列に変わりました。
-        1.0.2 より前のバージョンでは二番目のパラメータはオプションの boolean
-        値で、一意なインデックスを指定するものでした。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>二番目のパラメータがオプションの配列に変わりました。1.0.2
+            If the connection should be paired.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.ensureindex.html'>MongoCollection::ensureIndex</a></td><td>Changed options parameter from boolean to array.
+        Pre-1.0.2, the second parameter was an optional boolean value specifying
+        a unique index.</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>二番目のパラメータがオプションの配列に変わりました。1.0.2
         より前のバージョンでは、二番目のパラメータは &quot;safe&quot;
         オプションを表す boolean 値でした。</td></tr></tbody><tbody class="gen-changelog v1-0-2"><tr><td>1.0.1</td><td><a href='mongocollection.insert.html'>MongoCollection::insert</a></td><td>&quot;safe&quot; オプションが設定されていて追加に失敗した場合に
         MongoCursorException をスローするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mongocollection.update.html'>MongoCollection::update</a></td><td>options パラメータが boolean から配列に変わりました。

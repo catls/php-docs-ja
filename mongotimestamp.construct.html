@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>新しいタイムスタンプを作成する</title>
+  <title>Creates a new timestamp</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongotimestamp.construct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoTimestamp::__construct</h1>
-  <p class="verinfo">(PECL mongo &gt;= 1.0.1)</p><p class="refpurpose"><span class="refname">MongoTimestamp::__construct</span> &mdash; <span class="dc-title">新しいタイムスタンプを作成する</span></p>
+  <p class="verinfo">(PECL mongo &gt;= 1.0.1)</p><p class="refpurpose"><span class="refname">MongoTimestamp::__construct</span> &mdash; <span class="dc-title">Creates a new timestamp</span></p>
 
  </div>
 
@@ -37,12 +37,10 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   新しいタイムスタンプを作成します。
-   パラメータを指定しなければ、現在時刻を使って増分は自動的に提供します。
-   増分はモジュールが読み込まれたときに 0 に設定され、
-   このコンストラクタがコールされるたびに
-   ($inc パラメータを渡した場合は除く)
-   ひとつずつ増えていきます。
+   Creates a new timestamp.  If no parameters are given, the current time is 
+   used and the increment is automatically provided.  The increment is set to 0
+   when the module is loaded and is incremented every time this constructor is 
+   called (without the $inc parameter passed in).
   </p>
  </div>
 
@@ -61,7 +59,7 @@
      <dd>
 
       <p class="para">
-       エポック (1 Jan 1970 00:00:00.000 UTC) からの経過秒数。
+       Number of seconds since the epoch (i.e. 1 Jan 1970 00:00:00.000 UTC).
       </p>
      </dd>
 
@@ -75,7 +73,7 @@
      <dd>
 
       <p class="para">
-       増分。
+       Increment.
       </p>
      </dd>
 
@@ -89,7 +87,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongotimestamp.construct-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-    新しいタイムスタンプを返します。
+    Returns this new timestamp.
   </p>
  </div>
 
@@ -98,7 +96,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="methodname"><a href="mongotimestamp.tostring.html" class="methodname" rel="rdfs-seeAlso">MongoTimestamp::__toString()</a> - このタイムスタンプを文字列形式で返す</span></li>
+    <li class="member"><span class="methodname"><a href="mongotimestamp.tostring.html" class="methodname" rel="rdfs-seeAlso">MongoTimestamp::__toString()</a> - Returns a string representation of this timestamp</span></li>
    </ul>
   </p>
  </div>

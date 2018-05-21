@@ -27,6 +27,13 @@
   <p class="para rdfs-comment">
    <span class="function"><strong>convert_uudecode()</strong></span> は、uuencode された文字列をデコードします。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    
+    <span class="function"><strong>convert_uudecode()</strong></span> neither accepts the <em>begin</em>
+    nor the <em>end</em> line, which are part of uuencoded <em class="emphasis">files</em>.
+   </span>
+  </p></blockquote>
  </div>
 
 
@@ -68,11 +75,17 @@
     <p><strong>例1 <span class="function"><strong>convert_uudecode()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;何が表示されるか、想像できますか?&nbsp;(^o^)&nbsp;*/<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">convert_uudecode</span><span style="color: #007700">(</span><span style="color: #DD0000">"+22!L;W9E(%!(4\"$`\n`"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">convert_uudecode</span><span style="color: #007700">(</span><span style="color: #DD0000">"+22!L;W9E(%!(4\"$`\n`"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+I love PHP!
+</pre></div>
+    </div>
    </div>
   </p>
  </div>

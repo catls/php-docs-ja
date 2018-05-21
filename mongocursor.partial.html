@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>シャードがダウンしているときにこのクエリが mongos から部分的な結果を返すようにするかどうか</title>
+  <title>If this query should fetch partial results from mongos if a shard is down</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongocursor.partial" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoCursor::partial</h1>
-  <p class="verinfo">(PECL mongo &gt;=1.2.0)</p><p class="refpurpose"><span class="refname">MongoCursor::partial</span> &mdash; <span class="dc-title">シャードがダウンしているときにこのクエリが <em class="emphasis">mongos</em> から部分的な結果を返すようにするかどうか</span></p>
+  <p class="verinfo">(PECL mongo &gt;=1.2.0)</p><p class="refpurpose"><span class="refname">MongoCursor::partial</span> &mdash; <span class="dc-title">If this query should fetch partial results from <em class="emphasis">mongos</em> if a shard is down</span></p>
 
  </div>
 
@@ -21,27 +21,27 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><a href="class.mongocursor.html" class="type MongoCursor">MongoCursor</a></span> <span class="methodname"><strong>MongoCursor::partial</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   このオプションは、シャードに到達できない場合に <em class="emphasis">mongos</em>
-   が部分的なクエリ結果を送信するようにします。シャード化した MongoDB
-   クラスタを実行し、かつ <em class="emphasis">mongos</em>
-   に接続している場合にのみ適用できます。
+   This option allows <em class="emphasis">mongos</em> to send partial query results 
+   if a shard is unreachable.  This is only applicable when running a sharded 
+   MongoDB cluster and connecting to a <em class="emphasis">mongos</em>.
   </p>
   <p class="para">
-   シャードがダウンしているときにそのシャードへの送信を要するクエリを実行すると、
-   <em class="emphasis">mongos</em> は既に接続済みのシャードからの結果 (もしあれば)
-   を返してから「シャードに到達できない」というエラー
-   (PHP の <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a>) を返します。
-   <em class="emphasis">mongos</em> が返せるだけの結果を取得した後は例外のスローが不要、
-   という場合はこのメソッドを使います。ただしこのメソッドを使うと、
-   クエリに対する応答からはシャードがダウンしているかどうかがわからなくなることに注意しましょう。
+   If a shard goes down and a query needs to be sent to that shard, 
+   <em class="emphasis">mongos</em> will return the results (if any) from shards it
+   already contacted, then an error message that it could not reach the shard
+   (a <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> in PHP).  If you would like to
+   get whatever results <em class="emphasis">mongos</em> can provide and no 
+   exception, you can use this method.  Note that this means that you won&#039;t have
+   an indication that a shard is down in your query response.
   </p>
   <p class="para">
-   すべてのシャードに到達可能である場合は、このメソッドはクエリに何の影響も及ぼしません。
-   このフラグは MongoDB バージョン 1.7.5 で実装されました。このバージョン以降でしか使えません。
+   This has no effect on the query if all shards are reachable.  This flag was
+   implemented in MongoDB version 1.7.5, so will only work with that version and
+   higher.
   </p>
  </div>
 
@@ -60,7 +60,7 @@
      <dd>
 
       <p class="para">
-       部分的な結果の受信を許可するかどうか。
+       If receiving partial results is okay.
       </p>
      </dd>
 
@@ -74,7 +74,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongocursor.partial-returnvalues">
   <h3 class="title">返り値</h3>  
   <p class="para">
-   このカーソルを返します。
+   Returns this cursor.
   </p>
  </div>
 
@@ -82,8 +82,7 @@
  <div class="refsect1 errors" id="refsect1-mongocursor.partial-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   このカーソルが反復処理を始めている場合に
-   <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。
+   Throws <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> if this cursor has started iterating.
   </p>
  </div>
 

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>このカーソルが、最後の結果を取得した後もオープンしたままにしておくかどうかを設定する</title>
+  <title>Sets whether this cursor will be left open after fetching the last results</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongocursor.tailable" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoCursor::tailable</h1>
-  <p class="verinfo">(PECL mongo &gt;=0.9.4)</p><p class="refpurpose"><span class="refname">MongoCursor::tailable</span> &mdash; <span class="dc-title">このカーソルが、最後の結果を取得した後もオープンしたままにしておくかどうかを設定する</span></p>
+  <p class="verinfo">(PECL mongo &gt;=0.9.4)</p><p class="refpurpose"><span class="refname">MongoCursor::tailable</span> &mdash; <span class="dc-title">Sets whether this cursor will be left open after fetching the last results</span></p>
 
  </div>
 
@@ -21,24 +21,22 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><a href="class.mongocursor.html" class="type MongoCursor">MongoCursor</a></span> <span class="methodname"><strong>MongoCursor::tailable</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$tail</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$tail</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
-   Mongo には、追尾可能 (tailable) カーソルという機能があります。これは、Unix の
-   &quot;tail -f&quot; コマンドと似ています。
+   Mongo has a feature known as tailable cursors which are similar to the Unix 
+   &quot;tail -f&quot; command.
   </p>
   <p class="para">
-   追尾可能とは、最後のデータを取得した後もカーソルを閉じないということです。
-   カーソルは、最後のオブジェクトの位置を指したままとなります。
-   あとでそのカーソルを使い続けることもできます。もしその後さらにデータを取得したのなら、
-   カーソルが指す位置から処理を再開できます。
+   Tailable means cursor is not closed when the last data is retrieved.  Rather,
+   the cursor marks the final object&#039;s position.  you can resume using the 
+   cursor later, from where it was located, if more data were received.
   </p>
   <p class="para">
-   他の &quot;潜在カーソル (latent cursor)&quot; 同様、カーソルはどこかで無効な状態になります。
-   参照しているオブジェクトがすべて削除された場合などです。
-   したがって、カーソルが <span class="function"><a href="mongocursor.dead.html" class="function">MongoCursor::dead()</a></span>
-   になったら再びクエリを実行できるようにしておかなければなりません。
+   Like any &quot;latent cursor&quot;, the cursor may become invalid at some point -- for 
+   example if that final object it references were deleted.  Thus, you should be
+   prepared to requery if the cursor is <span class="function"><a href="mongocursor.dead.html" class="function">MongoCursor::dead()</a></span>.
   </p>
  </div>
 
@@ -57,7 +55,7 @@
      <dd>
 
       <p class="para">
-       カーソルが追尾可能かどうか。
+       If the cursor should be tailable.
       </p>
      </dd>
 
@@ -71,7 +69,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongocursor.tailable-returnvalues">
   <h3 class="title">返り値</h3>  
   <p class="para">
-   このカーソルを返します。
+   Returns this cursor.
   </p>
  </div>
 
@@ -79,8 +77,7 @@
  <div class="refsect1 errors" id="refsect1-mongocursor.tailable-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   このカーソルが反復処理を始めている場合に
-   <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。
+   Throws <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> if this cursor has started iterating.
   </p>
  </div>
 
@@ -88,10 +85,10 @@
  <div class="refsect1 examples" id="refsect1-mongocursor.tailable-examples">
   <h3 class="title">例</h3>
   <div class="example" id="mongocursor.stages.adding-options">
-   <p><strong>例1 <span class="function"><strong>MongoCursor::tailable()</strong></span> の例</strong></p>
+   <p><strong>例1 <span class="function"><strong>MongoCursor::tailable()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">tailable</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$results&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /><br />while&nbsp;(</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">hasNext</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;すべての結果を読み終えたら終了します<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">dead</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;これまでのすべての結果を読み、さらに待ちます<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$results</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getNext</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">tailable</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$results&nbsp;</span><span style="color: #007700">=&nbsp;array();<br /><br />while&nbsp;(</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">hasNext</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;we've&nbsp;read&nbsp;all&nbsp;the&nbsp;results,&nbsp;exit<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">dead</span><span style="color: #007700">())&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;read&nbsp;all&nbsp;results&nbsp;so&nbsp;far,&nbsp;wait&nbsp;for&nbsp;more<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$results</span><span style="color: #007700">[]&nbsp;=&nbsp;</span><span style="color: #0000BB">$cursor</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getNext</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -103,11 +100,11 @@
  <div class="refsect1 seealso" id="refsect1-mongocursor.tailable-seealso">
   <h3 class="title">参考</h3>
   <p class="para">
-   MongoDB コアドキュメントの <a href="https://docs.mongodb.com/manual/tutorial/create-tailable-cursor/" class="link external">&raquo;&nbsp;tailable cursors</a>。
+   MongoDB core docs on <a href="https://docs.mongodb.com/manual/tutorial/create-tailable-cursor/" class="link external">&raquo;&nbsp;tailable cursors</a>.
   </p>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><a href="mongocursor.awaitdata.html" class="function" rel="rdfs-seeAlso">MongoCursor::awaitData()</a> - 追尾可能なカーソルで、データがないときにしばらく待つかどうかを設定する</span></li>
+    <li class="member"><span class="function"><a href="mongocursor.awaitdata.html" class="function" rel="rdfs-seeAlso">MongoCursor::awaitData()</a> - Sets whether this cursor will wait for a while for a tailable cursor to return more data</span></li>
    </ul>
   </p>
  </div>

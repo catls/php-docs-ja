@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>このクエリをセカンダリ上で完了できるかどうかを設定する [非推奨]</title>
+  <title>Sets whether this query can be done on a secondary [deprecated]</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mongocursor.slaveokay" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">MongoCursor::slaveOkay</h1>
-  <p class="verinfo">(PECL mongo &gt;=0.9.4)</p><p class="refpurpose"><span class="refname">MongoCursor::slaveOkay</span> &mdash; <span class="dc-title">このクエリをセカンダリ上で完了できるかどうかを設定する [非推奨]</span></p>
+  <p class="verinfo">(PECL mongo &gt;=0.9.4)</p><p class="refpurpose"><span class="refname">MongoCursor::slaveOkay</span> &mdash; <span class="dc-title">Sets whether this query can be done on a secondary [deprecated]</span></p>
 
  </div>
 
@@ -21,52 +21,53 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><a href="class.mongocursor.html" class="type MongoCursor">MongoCursor</a></span> <span class="methodname"><strong>MongoCursor::slaveOkay</strong></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$okay</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ] )</div>
 
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    このメソッドは、バージョン 1.5.0 以降で非推奨になりました。かわりに
-    <span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname">MongoCursor::setReadPreference()</a></span> と <a href="mongo.readpreferences.html" class="xref">優先読み込み</a> を使いましょう。
+    This method is deprecated since version 1.5.0. Instead, please use
+    <span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname">MongoCursor::setReadPreference()</a></span> and <a href="mongo.readpreferences.html" class="xref">優先読み込み</a>.
    </p>
   </div>
   <p class="para">
-   このメソッドをコールすると、以下の条件を満たす場合にドライバが読み込みをセカンダリに回すようになります。
+   Calling this will make the driver route reads to secondaries if:
    <ul class="itemizedlist">
     <li class="listitem">
      <span class="simpara">
-      レプリカセットを使っている
+      You are using a replica set, and
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      <a href="class.mongoclient.html" class="classname">MongoClient</a> インスタンスを作るときに、オプション
-      <em>&quot;replicaSet&quot; =&gt; &quot;setName&quot;</em> を指定している
+      You created a <a href="class.mongoclient.html" class="classname">MongoClient</a> instance using the option
+      <em>&quot;replicaSet&quot; =&gt; &quot;setName&quot;</em>, and
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      ドライバからアクセス可能な、正常なセカンダリが存在する
+      There is a healthy secondary that can be reached by the driver.
      </span>
     </li>
    </ul>
-   どのサーバーがこのクエリを処理したのかを調べるには、クエリを実行した後に
-   <span class="function"><a href="mongocursor.info.html" class="function">MongoCursor::info()</a></span> をコールします。
-   <em>server</em> フィールドが、クエリの送信先のサーバーです。
+   You can check which server was used for this query by calling 
+   <span class="function"><a href="mongocursor.info.html" class="function">MongoCursor::info()</a></span> after running the query.  It&#039;s
+   <em>server</em> field will show which server the query was sent to.
   </p>
   <p class="para">
-   セカンダリへの自動ルーティングを使っていない場合でも、この関数を使わなければならないことに注意しましょう。
-   レプリカセットのセカンダリに直接接続したとしても、この関数をコールすべきです。
-   そうすることで、古いデータであることを承知の上で取得しているのだということを
-   データベースに伝えることができます。コールしなければ、クエリを実行すると
-   &quot;not master&quot; エラーが発生します。
+   Note that you should use this function even if you do not use the automatic
+   routing to secondaries. If you connect directly to a secondary in a replica
+   set, you still need to call this function, which basically tells the database
+   that you are aware that you might be getting older data and you&#039;re okay with
+   that. If you do not call this, you&#039;ll get &quot;not master&quot; errors when you try to
+   query.
   </p>
   <p class="para">
-   このメソッドは、静的クラス変数
-   <var class="varname"><var class="varname">MongoCursor::$slaveOkay</var></var> を上書きします。
-   また、<span class="function"><a href="mongo.setslaveokay.html" class="function">Mongo::setSlaveOkay()</a></span> や
-   <span class="function"><a href="mongodb.setslaveokay.html" class="function">MongoDB::setSlaveOkay()</a></span>、
-   <span class="function"><a href="mongocollection.setslaveokay.html" class="function">MongoCollection::setSlaveOkay()</a></span> も上書きします。
+   This method will override the static class variable 
+   <var class="varname"><var class="varname">MongoCursor::$slaveOkay</var></var>.  It will also override 
+   <span class="function"><a href="mongo.setslaveokay.html" class="function">Mongo::setSlaveOkay()</a></span>, 
+   <span class="function"><a href="mongodb.setslaveokay.html" class="function">MongoDB::setSlaveOkay()</a></span> and
+   <span class="function"><a href="mongocollection.setslaveokay.html" class="function">MongoCollection::setSlaveOkay()</a></span>.
   </p>
  </div>
 
@@ -85,7 +86,7 @@
      <dd>
 
       <p class="para">
-       セカンダリに問い合わせることが可能かどうか。
+       If it is okay to query the secondary.
       </p>
      </dd>
 
@@ -99,7 +100,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mongocursor.slaveokay-returnvalues">
   <h3 class="title">返り値</h3>  
   <p class="para">
-   このカーソルを返します。
+   Returns this cursor.
   </p>
  </div>
 
@@ -107,8 +108,7 @@
  <div class="refsect1 errors" id="refsect1-mongocursor.slaveokay-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   このカーソルの反復処理が始まっている場合に
-   <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> をスローします。
+   Throws <a href="class.mongocursorexception.html" class="classname">MongoCursorException</a> if this cursor has started iterating.
   </p>
  </div>
 
@@ -116,10 +116,10 @@
  <div class="refsect1 examples" id="refsect1-mongocursor.slaveokay-examples">
   <h3 class="title">例</h3>
   <div class="example" id="mongocursor.intro-example">
-   <p><strong>例1 <span class="function"><strong>MongoCursor::slaveOkay()</strong></span> の例</strong></p>
+   <p><strong>例1 <span class="function"><strong>MongoCursor::slaveOkay()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br />MongoCursor</span><span style="color: #007700">::</span><span style="color: #0000BB">$slaveOkay&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;セカンダリには問い合わせられません<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;セカンダリに問い合わせることができます<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">slaveOkay</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">MongoCursor</span><span style="color: #007700">::</span><span style="color: #0000BB">$slaveOkay&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;セカンダリに問い合わせることができます<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;セカンダリには問い合わせられません<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">slaveOkay</span><span style="color: #007700">(</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /><br />MongoCursor</span><span style="color: #007700">::</span><span style="color: #0000BB">$slaveOkay&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;cannot&nbsp;query&nbsp;secondary<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;can&nbsp;query&nbsp;secondary<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">slaveOkay</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">MongoCursor</span><span style="color: #007700">::</span><span style="color: #0000BB">$slaveOkay&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;can&nbsp;query&nbsp;secondary<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;cannot&nbsp;query&nbsp;secondary<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">slaveOkay</span><span style="color: #007700">(</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -155,8 +155,8 @@
       <tr>
        <td>1.5.0</td>
        <td>
-        このメソッドは非推奨になりました。かわりに
-        <span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname">MongoCursor::setReadPreference()</a></span> と <a href="mongo.readpreferences.html" class="xref">優先読み込み</a> を使いましょう。
+        This method has been deprecated in favour of
+        <span class="methodname"><a href="mongocursor.setreadpreference.html" class="methodname">MongoCursor::setReadPreference()</a></span> and <a href="mongo.readpreferences.html" class="xref">優先読み込み</a>.
        </td>
       </tr>
 
