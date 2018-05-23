@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Constructs an APCUIterator iterator object</title>
+  <title>APCUIterator イテレータオブジェクトを作成する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="apcuiterator.construct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">APCUIterator::__construct</h1>
-  <p class="verinfo">(PECL apcu &gt;= 5.0.0)</p><p class="refpurpose"><span class="refname">APCUIterator::__construct</span> &mdash; <span class="dc-title">Constructs an APCUIterator iterator object</span></p>
+  <p class="verinfo">(PECL apcu &gt;= 5.0.0)</p><p class="refpurpose"><span class="refname">APCUIterator::__construct</span> &mdash; <span class="dc-title">APCUIterator イテレータオブジェクトを作成する</span></p>
 
  </div>
 
@@ -28,7 +28,7 @@
   ]]]] )</div>
 
   <p class="para rdfs-comment">
-   Constructs an <a href="class.apcuiterator.html" class="classname">APCUIterator</a> <span class="type"><a href="language.types.object.html" class="type object">object</a></span>.
+   <a href="class.apcuiterator.html" class="classname">APCUIterator</a> オブジェクトを作成します。
   </p>
  </div>
 
@@ -44,10 +44,9 @@
     <dd>
 
      <p class="para">
-      A <a href="book.pcre.html" class="link">PCRE</a> regular expression that
-      matches against APCu key names, either as a <span class="type"><a href="language.types.string.html" class="type string">string</a></span> for
-      a single regular expression, or as an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> of regular
-      expressions. Or, optionally pass in <strong><code>NULL</code></strong> to skip the search.
+      APCu のキーの名前にマッチする <a href="book.pcre.html" class="link">PCRE</a> 正規表現。
+      単一の正規表現の場合は文字列で、複数の正規表現の場合は配列で指定します。
+      <strong><code>NULL</code></strong> を渡すと、検索をスキップします。
      </p>
     </dd>
 
@@ -59,8 +58,8 @@
     <dd>
 
      <p class="para">
-      The desired format, as configured with one or more of the
-      <a href="apcu.constants.html" class="link">APC_ITER_*</a> constants.
+      希望する書式。
+      <a href="apcu.constants.html" class="link">APC_ITER_*</a> 定数の組み合わせで指定します。
      </p>
     </dd>
 
@@ -72,8 +71,8 @@
     <dd>
 
      <p class="para">
-      The chunk size. Must be a value greater than 0. The default
-      value is 100.
+      チャンクサイズ。0 より大きい値でなければなりません。
+      デフォルト値は 100 です。
      </p>
     </dd>
 
@@ -85,8 +84,8 @@
     <dd>
 
      <p class="para">
-      The type to list. Either pass in <strong><code>APC_LIST_ACTIVE</code></strong>
-      or <strong><code>APC_LIST_DELETED</code></strong>.
+      一覧にする形式。<strong><code>APC_LIST_ACTIVE</code></strong>
+      あるいは <strong><code>APC_LIST_DELETED</code></strong> を渡します。
      </p>
     </dd>
 
@@ -99,8 +98,8 @@
  <div class="refsect1 returnvalues" id="refsect1-apcuiterator.construct-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   An <a href="class.apcuiterator.html" class="classname">APCUIterator</a> <span class="type"><a href="language.types.object.html" class="type object">object</a></span> on success,
-   or <strong><code>NULL</code></strong> on failure.
+   成功した場合に <a href="class.apcuiterator.html" class="classname">APCUIterator</a> オブジェクト、
+   失敗した場合に <strong><code>NULL</code></strong> を返します。
   </p>
  </div>
 
@@ -109,7 +108,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-458">
-    <p><strong>例1 A <span class="function"><strong>APCUIterator::__construct()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>APCUIterator::__construct()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">foreach&nbsp;(new&nbsp;</span><span style="color: #0000BB">APCUIterator</span><span style="color: #007700">(</span><span style="color: #DD0000">'/^counter\./'</span><span style="color: #007700">)&nbsp;as&nbsp;</span><span style="color: #0000BB">$counter</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$counter</span><span style="color: #007700">[</span><span style="color: #0000BB">key</span><span style="color: #007700">]</span><span style="color: #DD0000">:&nbsp;</span><span style="color: #0000BB">$counter</span><span style="color: #007700">[</span><span style="color: #0000BB">value</span><span style="color: #007700">]</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">apc_dec</span><span style="color: #007700">(</span><span style="color: #0000BB">$counter</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">$counter</span><span style="color: #007700">[</span><span style="color: #DD0000">'value'</span><span style="color: #007700">]);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

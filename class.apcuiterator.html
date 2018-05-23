@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>The APCUIterator class</title>
+  <title>APCUIterator クラス</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -12,7 +12,7 @@
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="class.apcuiterator" class="reference">
 
- <h1 class="title">The APCUIterator class</h1>
+ <h1 class="title">APCUIterator クラス</h1>
  
 
  <div class="partintro"><p class="verinfo">(PECL apcu &gt;= 5.0.0)</p>
@@ -21,12 +21,14 @@
   <div class="section" id="apcuiterator.intro">
    <h2 class="title">はじめに</h2>
    <p class="para">
-    The <strong class="classname">APCUIterator</strong> class makes it easier to iterate
-    over large APCu caches. This is helpful as it allows iterating over large
-    caches in steps, while grabbing a defined number of entries per lock instance,
-    so it frees the cache locks for other activities rather than hold up the
-    entire cache to grab 100 (the default) entries. Also, using regular expression
-    matching is more efficient as it&#039;s been moved to the C level.
+    <strong class="classname">APCUIterator</strong> クラスを使うと、巨大な
+    APCu キャッシュの反復処理を容易に行えます。
+    巨大なキャッシュを順を追って処理し、
+    ロックインスタンス単位で決まった数のエントリを取得することができます。
+    そのため、キャッシュ全体を抱え込んで 100 件 (デフォルト)
+    のエントリを取り込むのではなく、
+    キャッシュのロックを解放して他の操作ができる状態にすることが可能です。
+    また、正規表現によるマッチングは C 言語レベルで行われるのでより効率的です。
    </p>
   </div>
 
@@ -164,7 +166,16 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="apcuiterator.construct.html">APCUIterator::__construct</a> — Constructs an APCUIterator iterator object</li><li><a href="apcuiterator.current.html">APCUIterator::current</a> — Get current item</li><li><a href="apcuiterator.gettotalcount.html">APCUIterator::getTotalCount</a> — Get total count</li><li><a href="apcuiterator.gettotalhits.html">APCUIterator::getTotalHits</a> — Get total cache hits</li><li><a href="apcuiterator.gettotalsize.html">APCUIterator::getTotalSize</a> — Get total cache size</li><li><a href="apcuiterator.key.html">APCUIterator::key</a> — Get iterator key</li><li><a href="apcuiterator.next.html">APCUIterator::next</a> — Move pointer to next item</li><li><a href="apcuiterator.rewind.html">APCUIterator::rewind</a> — Rewinds iterator</li><li><a href="apcuiterator.valid.html">APCUIterator::valid</a> — Checks if current position is valid</li></ul>
+
+
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="apcuiterator.construct.html">APCUIterator::__construct</a> — APCUIterator イテレータオブジェクトを作成する</li><li><a href="apcuiterator.current.html">APCUIterator::current</a> — 現在の項目を取得する</li><li><a href="apcuiterator.gettotalcount.html">APCUIterator::getTotalCount</a> — 総数を取得する</li><li><a href="apcuiterator.gettotalhits.html">APCUIterator::getTotalHits</a> — キャッシュヒットの総数を取得する</li><li><a href="apcuiterator.gettotalsize.html">APCUIterator::getTotalSize</a> — キャッシュのサイズの合計を取得する</li><li><a href="apcuiterator.key.html">APCUIterator::key</a> — イテレータのキーを取得する</li><li><a href="apcuiterator.next.html">APCUIterator::next</a> — ポインタを次の項目に移動させる</li><li><a href="apcuiterator.rewind.html">APCUIterator::rewind</a> — イテレータを巻き戻す</li><li><a href="apcuiterator.valid.html">APCUIterator::valid</a> — 現在位置が有効かどうかを調べる</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.apcu-store.html">apcu_store</a></div>
