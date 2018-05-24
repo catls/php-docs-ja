@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Fetch a stored variable from the cache</title>
+  <title>格納されている変数をキャッシュから取得する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -14,7 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">apcu_fetch</h1>
   <p class="verinfo">(PECL apcu &gt;= 4.0.0)</p><p class="refpurpose"><span class="refname">apcu_fetch</span> &mdash; <span class="dc-title">
-   Fetch a stored variable from the cache
+   格納されている変数をキャッシュから取得する
   </span></p>
 
  </div>
@@ -27,7 +27,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   Fetchs an entry from the cache.
+   エントリをキャッシュから取得します。
   </p>
  </div>
 
@@ -43,9 +43,9 @@
      <dd>
 
       <p class="para">
-       The <code class="parameter">key</code> used to store the value (with
-       <span class="function"><a href="function.apcu-store.html" class="function">apcu_store()</a></span>). If an array is passed then each
-       element is fetched and returned.
+       (<span class="function"><a href="function.apcu-store.html" class="function">apcu_store()</a></span> を用いて)
+       値を格納する際に使用された <code class="parameter">key</code>。
+       配列を渡した場合は、各要素について取得した値を返します。
       </p>
      </dd>
 
@@ -57,7 +57,7 @@
      <dd>
 
       <p class="para">
-       Set to <strong><code>TRUE</code></strong> in success and <strong><code>FALSE</code></strong> in failure.
+       成功したばあいに <strong><code>TRUE</code></strong>、失敗した際に <strong><code>FALSE</code></strong> が設定されます。
       </p>
      </dd>
 
@@ -70,7 +70,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.apcu-fetch-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   The stored variable or array of variables on success; <strong><code>FALSE</code></strong> on failure
+   成功した場合に格納されていた変数 (あるいは配列)、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
@@ -79,7 +79,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-454">
-    <p><strong>例1 A <span class="function"><strong>apcu_fetch()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>apcu_fetch()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'BAR'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">apcu_store</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">apcu_fetch</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -114,7 +114,7 @@ string(3) &quot;BAR&quot;
      <tr>
       <td>3.0.17</td>
       <td>
-       The <code class="parameter">success</code> parameter was added.
+       <code class="parameter">success</code> パラメータが追加されました。
       </td>
      </tr>
 
@@ -129,8 +129,8 @@ string(3) &quot;BAR&quot;
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.apcu-store.html" class="function" rel="rdfs-seeAlso">apcu_store()</a> - Cache a variable in the data store</span></li>
-    <li class="member"><span class="function"><a href="function.apcu-delete.html" class="function" rel="rdfs-seeAlso">apcu_delete()</a> - Removes a stored variable from the cache</span></li>
+    <li class="member"><span class="function"><a href="function.apcu-store.html" class="function" rel="rdfs-seeAlso">apcu_store()</a> - 変数をデータ領域にキャッシュする</span></li>
+    <li class="member"><span class="function"><a href="function.apcu-delete.html" class="function" rel="rdfs-seeAlso">apcu_delete()</a> - 格納されている変数をキャッシュから取り除く</span></li>
     <li class="member"><a href="class.apcuiterator.html" class="classname">APCUIterator</a></li>
    </ul>
   </p>

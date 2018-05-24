@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Cache a new variable in the data store</title>
+  <title>新規の変数をデータ領域にキャッシュする</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -14,7 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">apcu_add</h1>
   <p class="verinfo">(PECL apcu &gt;= 4.0.0)</p><p class="refpurpose"><span class="refname">apcu_add</span> &mdash; <span class="dc-title">
-   Cache a new variable in the data store
+   新規の変数をデータ領域にキャッシュする
   </span></p>
 
  </div>
@@ -35,13 +35,13 @@
   ]] )</div>
 
   <p class="para rdfs-comment">
-   Caches a variable in the data store, only if it&#039;s not already stored.
+   まだ保存されていない場合にのみ、変数をデータ領域にキャッシュします。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-    Unlike many other mechanisms in PHP, variables stored using
-    <span class="function"><strong>apcu_add()</strong></span> will persist between requests (until the
-    value is removed from the cache).
+    PHP の他の多くの仕組みと異なり、<span class="function"><strong>apcu_add()</strong></span> 
+    を用いて格納された変数はリクエストを超えて
+    （その値がキャッシュから取り除かれるまで）持続します。
    </span>
   </p></blockquote>
  </div>
@@ -58,12 +58,12 @@
      <dd>
 
       <p class="para">
-       Store the variable using this name. <code class="parameter">key</code>s are
-       cache-unique, so attempting to use <span class="function"><strong>apcu_add()</strong></span> to
-       store data with a key that already exists will not overwrite the
-       existing data, and will instead return <strong><code>FALSE</code></strong>. (This is the only
-       difference between <span class="function"><strong>apcu_add()</strong></span> and
-       <span class="function"><a href="function.apcu-store.html" class="function">apcu_store()</a></span>.)
+       この名前を用いて変数を格納します。<code class="parameter">key</code> は
+       キャッシュ内で一意です。そのため、<span class="function"><strong>apcu_add()</strong></span>
+       を使用して同一の <code class="parameter">key</code> 
+       で新しい値を格納しようとしても、それは保存されません。
+       かわりに <strong><code>FALSE</code></strong> が返されます (これが、<span class="function"><strong>apcu_add()</strong></span>
+       と <span class="function"><a href="function.apcu-store.html" class="function">apcu_store()</a></span> の唯一の相違点です)。
       </p>
      </dd>
 
@@ -75,7 +75,7 @@
      <dd>
 
       <p class="para">
-       The variable to store
+       格納する変数。
       </p>
      </dd>
 
@@ -87,14 +87,14 @@
      <dd>
 
       <p class="para">
-       Time To Live; store <code class="parameter">var</code> in the cache for
-       <code class="parameter">ttl</code> seconds. After the
-       <code class="parameter">ttl</code> has passed, the stored variable will be
-       expunged from the cache (on the next request). If no <code class="parameter">ttl</code>
-       is supplied (or if the <code class="parameter">ttl</code> is
-       <em>0</em>), the value will persist until it is removed from
-       the cache manually, or otherwise fails to exist in the cache (clear,
-       restart, etc.).
+       有効期間。<code class="parameter">var</code> は、キャッシュに
+       <code class="parameter">ttl</code> 秒間だけ格納されます。
+       <code class="parameter">ttl</code> が経過すると、格納されている変数は
+       （次のリクエスト時に）キャッシュから削除されます。
+       <code class="parameter">ttl</code> が指定されていない（あるいは
+       <code class="parameter">ttl</code> が <em>0</em> の場合）は、
+       キャッシュから手動で削除される・あるいはキャッシュに存在できなくなる
+       （clear, restart など）まで値が持続します。
       </p>
      </dd>
 
@@ -106,7 +106,7 @@
      <dd>
 
       <p class="para">
-       Names in key, variables in value.
+       名前をキー、変数を値に指定します。
       </p>
      </dd>
 
@@ -119,8 +119,8 @@
  <div class="refsect1 returnvalues" id="refsect1-function.apcu-add-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns TRUE if something has effectively been added into the cache, FALSE otherwise.
-   Second syntax returns array with error keys.
+   何かがキャッシュに正しく追加されたときに TRUE、それ以外の場合に FALSE を返します。
+   二番目の構文は、エラーになったキーを含む配列を返します。
   </p>
  </div>
 
@@ -129,7 +129,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-447">
-    <p><strong>例1 A <span class="function"><strong>apcu_add()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>apcu_add()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'BAR'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">apcu_add</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">apcu_fetch</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'NEVER&nbsp;GETS&nbsp;SET'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">apcu_add</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">apcu_fetch</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -153,9 +153,9 @@ string(3) &quot;BAR&quot;
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.apcu-store.html" class="function" rel="rdfs-seeAlso">apcu_store()</a> - Cache a variable in the data store</span></li>
-    <li class="member"><span class="function"><a href="function.apcu-fetch.html" class="function" rel="rdfs-seeAlso">apcu_fetch()</a> - Fetch a stored variable from the cache</span></li>
-    <li class="member"><span class="function"><a href="function.apcu-delete.html" class="function" rel="rdfs-seeAlso">apcu_delete()</a> - Removes a stored variable from the cache</span></li>
+    <li class="member"><span class="function"><a href="function.apcu-store.html" class="function" rel="rdfs-seeAlso">apcu_store()</a> - 変数をデータ領域にキャッシュする</span></li>
+    <li class="member"><span class="function"><a href="function.apcu-fetch.html" class="function" rel="rdfs-seeAlso">apcu_fetch()</a> - 格納されている変数をキャッシュから取得する</span></li>
+    <li class="member"><span class="function"><a href="function.apcu-delete.html" class="function" rel="rdfs-seeAlso">apcu_delete()</a> - 格納されている変数をキャッシュから取り除く</span></li>
    </ul>
   </p>
  </div>

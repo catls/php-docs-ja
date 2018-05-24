@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Retrieves cached information from APCu's data store</title>
+  <title>APCu のデータから、キャッシュされた情報を取得する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -14,7 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">apcu_cache_info</h1>
   <p class="verinfo">(PECL apcu &gt;= 4.0.0)</p><p class="refpurpose"><span class="refname">apcu_cache_info</span> &mdash; <span class="dc-title">
-   Retrieves cached information from APCu&#039;s data store
+   APCu のデータから、キャッシュされた情報を取得する
   </span></p>
 
  </div>
@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   Retrieves cached information and meta-data from APC&#039;s data store.
+   APC のデータから、キャッシュされた情報およびメタデータを取得します。
   </p>
  </div>
 
@@ -43,9 +43,9 @@
      <dd>
 
       <p class="para">
-       If <code class="parameter">limited</code> is <strong><code>TRUE</code></strong>, the
-       return value will exclude the individual list of cache entries.  This
-       is useful when trying to optimize calls for statistics gathering.
+       <code class="parameter">limited</code> が <strong><code>TRUE</code></strong> の場合は、
+       返り値にキャッシュエントリの個々の一覧が含まれません。
+       これは、統計情報の収集時に呼び出しを最適化したい場合などに有用です。
       </p>
      </dd>
 
@@ -59,12 +59,14 @@
  <div class="refsect1 returnvalues" id="refsect1-function.apcu-cache-info-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Array of cached data (and meta-data)失敗した場合に <strong><code>FALSE</code></strong> を返します
+   キャッシュされたデータ（およびメタデータ）の配列を返します。
+   失敗した場合に <strong><code>FALSE</code></strong> を返します
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-    <span class="function"><strong>apcu_cache_info()</strong></span> will raise a warning if it is unable to
-    retrieve APC cache data. This typically occurs when APC is not enabled.
+    もし APC キャッシュのデータを取得できなかった場合、
+    <span class="function"><strong>apcu_cache_info()</strong></span> は警告を発生します。これが起こるのは、
+    一般的には APC が有効になっていない場合などです。
    </span>
   </p></blockquote>
  </div>
@@ -87,15 +89,15 @@
       <tr>
        <td>3.0.11</td>
        <td>
-        The <code class="parameter">limited</code> parameter was introduced.
+        <code class="parameter">limited</code> パラメータが追加されました。
        </td>
       </tr>
 
       <tr>
        <td>3.0.16</td>
        <td>
-        The &quot;<em>filehits</em>&quot; option for the
-        <code class="parameter">cache_type</code> parameter was introduced.
+        &quot;<em>filehits</em>&quot; オプションが
+        <code class="parameter">cache_type</code> パラメータに追加されました。
        </td>
       </tr>
 
@@ -111,7 +113,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-448">
-    <p><strong>例1 A <span class="function"><strong>apcu_cache_info()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>apcu_cache_info()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">apcu_cache_info</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -159,7 +161,7 @@ Array
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><a href="apcu.configuration.html" class="link">APCu configuration directives</a></li>
+    <li class="member"><a href="apcu.configuration.html" class="link">APCu 設定ディレクティブ</a></li>
     <li class="member"><span class="methodname"><a href="apcuiterator.gettotalsize.html" class="methodname" rel="rdfs-seeAlso">APCUIterator::getTotalSize()</a> - キャッシュのサイズの合計を取得する</span></li>
     <li class="member"><span class="methodname"><a href="apcuiterator.gettotalhits.html" class="methodname" rel="rdfs-seeAlso">APCUIterator::getTotalHits()</a> - キャッシュヒットの総数を取得する</span></li>
     <li class="member"><span class="methodname"><a href="apcuiterator.gettotalcount.html" class="methodname" rel="rdfs-seeAlso">APCUIterator::getTotalCount()</a> - 総数を取得する</span></li>

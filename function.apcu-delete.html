@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Removes a stored variable from the cache</title>
+  <title>格納されている変数をキャッシュから取り除く</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -14,7 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">apcu_delete</h1>
   <p class="verinfo">(PECL apcu &gt;= 4.0.0)</p><p class="refpurpose"><span class="refname">apcu_delete</span> &mdash; <span class="dc-title">
-   Removes a stored variable from the cache
+   格納されている変数をキャッシュから取り除く
   </span></p>
 
  </div>
@@ -26,7 +26,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Removes a stored variable from the cache.
+   格納されている変数をキャッシュから取り除きます。
   </p>
  </div>
 
@@ -42,10 +42,9 @@
      <dd>
 
      <p class="para">
-      A <code class="parameter">key</code> used to store the value as a
-      <span class="type"><a href="language.types.string.html" class="type string">string</a></span> for a single key,
-      or as an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> of strings for several keys,
-      or as an <a href="class.apcuiterator.html" class="classname">APCUIterator</a> <span class="type"><a href="language.types.object.html" class="type object">object</a></span>.
+      単一のキーの文字列、複数のキーの文字列の配列、
+      または <a href="class.apcuiterator.html" class="classname">APCUIterator</a> オブジェクトとして
+      値を格納するために使用されるキー。
      </p>
      </dd>
 
@@ -67,10 +66,10 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-451">
-    <p><strong>例1 A <span class="function"><strong>apcu_delete()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>apcu_delete()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'BAR'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">apcu_store</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">apcu_delete</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;this&nbsp;is&nbsp;obviously&nbsp;useless&nbsp;in&nbsp;this&nbsp;form<br /><br />//&nbsp;Alternatively&nbsp;delete&nbsp;multiple&nbsp;keys.<br /></span><span style="color: #0000BB">apcu_delete</span><span style="color: #007700">([</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;Or&nbsp;use&nbsp;an&nbsp;Iterator&nbsp;with&nbsp;a&nbsp;regular&nbsp;expression.<br /></span><span style="color: #0000BB">apcu_delete</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">APCUIterator</span><span style="color: #007700">(</span><span style="color: #DD0000">'#^myprefix_#'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$bar&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'BAR'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">apcu_store</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$bar</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">apcu_delete</span><span style="color: #007700">(</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;もちろん、このような使い方は無意味<br /><br />//&nbsp;複数のキーを削除することもできます。<br /></span><span style="color: #0000BB">apcu_delete</span><span style="color: #007700">([</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'baz'</span><span style="color: #007700">]);<br /><br /></span><span style="color: #FF8000">//&nbsp;または、正規表現とともに&nbsp;Iterator&nbsp;を使用します。<br /></span><span style="color: #0000BB">apcu_delete</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">APCUIterator</span><span style="color: #007700">(</span><span style="color: #DD0000">'#^myprefix_#'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -84,9 +83,9 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="function"><a href="function.apcu-store.html" class="function" rel="rdfs-seeAlso">apcu_store()</a> - Cache a variable in the data store</span></li>
-    <li class="member"><span class="function"><a href="function.apcu-fetch.html" class="function" rel="rdfs-seeAlso">apcu_fetch()</a> - Fetch a stored variable from the cache</span></li>
-    <li class="member"><span class="function"><a href="function.apcu-clear-cache.html" class="function" rel="rdfs-seeAlso">apcu_clear_cache()</a> - Clears the APCu cache</span></li>
+    <li class="member"><span class="function"><a href="function.apcu-store.html" class="function" rel="rdfs-seeAlso">apcu_store()</a> - 変数をデータ領域にキャッシュする</span></li>
+    <li class="member"><span class="function"><a href="function.apcu-fetch.html" class="function" rel="rdfs-seeAlso">apcu_fetch()</a> - 格納されている変数をキャッシュから取得する</span></li>
+    <li class="member"><span class="function"><a href="function.apcu-clear-cache.html" class="function" rel="rdfs-seeAlso">apcu_clear_cache()</a> - APCu キャッシュをクリアする</span></li>
     <li class="member"><a href="class.apcuiterator.html" class="classname">APCUIterator</a></li>
    </ul>
   </p>

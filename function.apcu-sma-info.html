@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Retrieves APCu Shared Memory Allocation information</title>
+  <title>APCu の共有メモリ割り当てに関する情報を取得する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -14,7 +14,7 @@
  <div class="refnamediv">
   <h1 class="refname">apcu_sma_info</h1>
   <p class="verinfo">(PECL apcu &gt;= 4.0.0)</p><p class="refpurpose"><span class="refname">apcu_sma_info</span> &mdash; <span class="dc-title">
-   Retrieves APCu Shared Memory Allocation information
+   APCu の共有メモリ割り当てに関する情報を取得する
   </span></p>
 
  </div>
@@ -26,7 +26,7 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-   Retrieves APCu Shared Memory Allocation information.
+   APCu の共有メモリ割り当てに関する情報を取得します。
   </p>
  </div>
 
@@ -43,8 +43,8 @@
      <dd>
 
       <p class="para">
-       When set to <strong><code>FALSE</code></strong> (default) <span class="function"><strong>apcu_sma_info()</strong></span> will
-       return a detailed information about each segment.
+       <strong><code>FALSE</code></strong> (デフォルト) を設定すると、<span class="function"><strong>apcu_sma_info()</strong></span>
+       は各セグメントの詳細な情報を返します。
       </p>
      </dd>
 
@@ -58,7 +58,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.apcu-sma-info-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Array of Shared Memory Allocation data; <strong><code>FALSE</code></strong> on failure.
+   共有メモリ割り当てデータの配列を返します。失敗した場合は <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 
@@ -67,7 +67,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-456">
-    <p><strong>例1 A <span class="function"><strong>apcu_sma_info()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>apcu_sma_info()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">apcu_sma_info</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -111,7 +111,7 @@ Array
   <p class="para">
    <ul class="simplelist">
     <li class="member">
-     <a href="apcu.configuration.html" class="link">APCu configuration directives</a>
+     <a href="apcu.configuration.html" class="link">APCu 設定ディレクティブ</a>
     </li>
    </ul>
   </p>
