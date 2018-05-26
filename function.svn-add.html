@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>作業ディレクトリ内のアイテムの追加を予約する</title>
+  <title>Schedules the addition of an item in a working directory</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.svn-add" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">svn_add</h1>
-  <p class="verinfo">(PECL svn &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">svn_add</span> &mdash; <span class="dc-title">作業ディレクトリ内のアイテムの追加を予約する</span></p>
+  <p class="verinfo">(PECL svn &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">svn_add</span> &mdash; <span class="dc-title">Schedules the addition of an item in a working directory</span></p>
 
  </div>
 
@@ -22,15 +22,15 @@
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>svn_add</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code><span class="initializer"> = true</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$force</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$force</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ]] )</div>
 
   <p class="para rdfs-comment">
-   <code class="parameter">path</code> が指すファイル、
-   ディレクトリあるいはシンボリックリンクを作業コピーに追加します。
-   その作業コピー上で次に <span class="function"><a href="function.svn-commit.html" class="function">svn_commit()</a></span>
-   をコールしたときに、アイテムがリポジトリに追加されます。
+   Adds the file, directory or symbolic link at <code class="parameter">path</code>
+   to the working directory. The item will be added to the repository
+   the next time you call <span class="function"><a href="function.svn-commit.html" class="function">svn_commit()</a></span> on the working
+   copy.
   </p>
  </div>
 
@@ -47,7 +47,7 @@
      <dd>
 
       <p class="para">
-       追加したいアイテムのパス。
+       Path of item to add.
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">相対パスは、PHP バイナリが存在するディレクトリを基準として解決されます。呼び出しもとのスクリプトの作業ディレクトリを基準とするには、<span class="function"><a href="function.realpath.html" class="function">realpath()</a></span> あるいは dirname(__FILE__) を使用してください。</span></p></blockquote>
      </dd>
@@ -60,8 +60,8 @@
      <dd>
 
       <p class="para">
-       アイテムがディレクトリである場合、その中身を再帰的に追加するかどうかを指定します。
-       デフォルトは <strong><code>TRUE</code></strong> です。
+       If item is directory, whether or not to recursively add
+       all of its contents. Default is <strong><code>TRUE</code></strong>
       </p>
      </dd>
 
@@ -73,9 +73,9 @@
      <dd>
 
       <p class="para">
-       true の場合は、すでにバージョン管理下におかれているディレクトリの中身も調べ、
-       もしバージョン管理されていないファイルがあればそれも追加します。
-       デフォルトは <strong><code>FALSE</code></strong> です。
+       If true, Subversion will recurse into already versioned directories
+       in order to add unversioned files that may be hiding in those
+       directories. Default is <strong><code>FALSE</code></strong>
       </p>
      </dd>
 
@@ -112,17 +112,17 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-5702">
-    <p><strong>例1 <span class="function"><strong>svn_add()</strong></span> の例</strong></p>
+    <p><strong>例1 <span class="function"><strong>svn_add()</strong></span> example</strong></p>
     <div class="example-contents"><p>
-     <strong class="userinput"><code>svn status</code></strong>
-     が次のような結果を返す状態で
+     In a working directory where <strong class="userinput"><code>svn status</code></strong>
+     returns:
     </p></div>
     <div class="example-contents screen">
 <div class="examplescode"><pre class="examplescode">$ svn status
 ?      foobar.txt</pre>
 </div>
     </div>
-    <div class="example-contents"><p>次のコードを実行します。</p></div>
+    <div class="example-contents"><p>...this code:</p></div>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />svn_add</span><span style="color: #007700">(</span><span style="color: #DD0000">'foobar.txt'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -131,8 +131,8 @@
     </div>
 
     <div class="example-contents"><p>
-     すると、<var class="filename">foobar.txt</var>
-     がリポジトリへ追加予約されます。
+     ...will schedule <var class="filename">foobar.txt</var> for addition into
+     the repository.
     </p></div>
    </div>
   </p>
@@ -143,7 +143,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><a href="http://svnbook.red-bean.com/en/1.2/svn.ref.svn.c.add.html" class="link external">&raquo;&nbsp;SVN ドキュメントの svn add</a></li>
+    <li class="member"><a href="http://svnbook.red-bean.com/en/1.2/svn.ref.svn.c.add.html" class="link external">&raquo;&nbsp;SVN documentation on svn add</a></li>
    </ul>
   </p>
  </div>

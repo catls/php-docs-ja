@@ -9106,7 +9106,7 @@
 <li><a href="svmmodel.predict-probability.html" class="index">SVMModel::predict_probability</a> - Return class probabilities for previous unseen data</li>
 <li><a href="svmmodel.save.html" class="index">SVMModel::save</a> - モデルをファイルに保管</li>
 <li><a href="svmmodel.construct.html" class="index">SVMModel::__construct</a> - SVMModel を新規構築</li>
-<li><a href="function.svn-add.html" class="index">svn_add</a> - 作業ディレクトリ内のアイテムの追加を予約する</li>
+<li><a href="function.svn-add.html" class="index">svn_add</a> - Schedules the addition of an item in a working directory</li>
 <li><a href="function.svn-auth-get-parameter.html" class="index">svn_auth_get_parameter</a> - 認証パラメータを取得する</li>
 <li><a href="function.svn-auth-set-parameter.html" class="index">svn_auth_set_parameter</a> - 認証パラメータを設定する</li>
 <li><a href="function.svn-blame.html" class="index">svn_blame</a> - ファイルの SVN blame を取得する</li>
@@ -9114,10 +9114,10 @@
 <li><a href="function.svn-checkout.html" class="index">svn_checkout</a> - リポジトリから作業コピーをチェックアウトする</li>
 <li><a href="function.svn-cleanup.html" class="index">svn_cleanup</a> - 作業コピーディレクトリを再帰的にクリーンアップし、中途半端な操作を解消してロックを削除する</li>
 <li><a href="function.svn-client-version.html" class="index">svn_client_version</a> - SVN クライアントライブラリのバージョンを返す</li>
-<li><a href="function.svn-commit.html" class="index">svn_commit</a> - 変更内容を、ローカルの作業コピーからリポジトリに送信する</li>
-<li><a href="function.svn-delete.html" class="index">svn_delete</a> - 作業コピーあるいはリポジトリからアイテムを削除する</li>
+<li><a href="function.svn-commit.html" class="index">svn_commit</a> - Sends changes from the local working copy to the repository</li>
+<li><a href="function.svn-delete.html" class="index">svn_delete</a> - Delete items from a working copy or repository</li>
 <li><a href="function.svn-diff.html" class="index">svn_diff</a> - ふたつのパスの差分を再帰的に取得する</li>
-<li><a href="function.svn-export.html" class="index">svn_export</a> - SVN ディレクトリの内容をエクスポートする</li>
+<li><a href="function.svn-export.html" class="index">svn_export</a> - Export the contents of a SVN directory</li>
 <li><a href="function.svn-fs-abort-txn.html" class="index">svn_fs_abort_txn</a> - トランザクションを中断し、成功したら true、失敗したら false を返す</li>
 <li><a href="function.svn-fs-apply-text.html" class="index">svn_fs_apply_text</a> - 置換に使用するストリームを作成して返す</li>
 <li><a href="function.svn-fs-begin-txn2.html" class="index">svn_fs_begin_txn2</a> - 新しいトランザクションを作成する</li>
@@ -9142,18 +9142,18 @@
 <li><a href="function.svn-fs-youngest-rev.html" class="index">svn_fs_youngest_rev</a> - ファイルシステム内で一番若いリビジョン番号を返す</li>
 <li><a href="function.svn-import.html" class="index">svn_import</a> - バージョン管理されていないパスをリポジトリにインポートする</li>
 <li><a href="function.svn-log.html" class="index">svn_log</a> - 指定したリポジトリ URL のコミットログメッセージを返す</li>
-<li><a href="function.svn-ls.html" class="index">svn_ls</a> - 指定したリポジトリ URL のディレクトリ内の一覧を返す (オプションでリビジョン番号も指定可能)</li>
+<li><a href="function.svn-ls.html" class="index">svn_ls</a> - Returns list of directory contents in repository URL, optionally at revision number</li>
 <li><a href="function.svn-mkdir.html" class="index">svn_mkdir</a> - 作業コピーあるいはリポジトリ内にディレクトリを作成する</li>
 <li><a href="function.svn-repos-create.html" class="index">svn_repos_create</a> - 新しい subversion リポジトリを指定したパスに作成する</li>
 <li><a href="function.svn-repos-fs.html" class="index">svn_repos_fs</a> - リポジトリ用に、ファイルシステム上のハンドルを取得する</li>
 <li><a href="function.svn-repos-fs-begin-txn-for-commit.html" class="index">svn_repos_fs_begin_txn_for_commit</a> - 新しいトランザクションを作成する</li>
 <li><a href="function.svn-repos-fs-commit-txn.html" class="index">svn_repos_fs_commit_txn</a> - トランザクションをコミットし、新しいリビジョンを返す</li>
 <li><a href="function.svn-repos-hotcopy.html" class="index">svn_repos_hotcopy</a> - repospath にあるリポジトリのホットコピーを作成し、destpath にコピーする</li>
-<li><a href="function.svn-repos-open.html" class="index">svn_repos_open</a> - リポジトリの共有ロックをオープンする</li>
-<li><a href="function.svn-repos-recover.html" class="index">svn_repos_recover</a> - 指定したパスのリポジトリのリカバリ処理を実行する</li>
-<li><a href="function.svn-revert.html" class="index">svn_revert</a> - 作業コピーへの変更を取り消す</li>
-<li><a href="function.svn-status.html" class="index">svn_status</a> - 作業コピー内のファイルやディレクトリの状態を返す</li>
-<li><a href="function.svn-update.html" class="index">svn_update</a> - 作業コピーをアップデートする</li>
+<li><a href="function.svn-repos-open.html" class="index">svn_repos_open</a> - Open a shared lock on a repository</li>
+<li><a href="function.svn-repos-recover.html" class="index">svn_repos_recover</a> - Run recovery procedures on the repository located at path</li>
+<li><a href="function.svn-revert.html" class="index">svn_revert</a> - Revert changes to the working copy</li>
+<li><a href="function.svn-status.html" class="index">svn_status</a> - Returns the status of working copy files and directories</li>
+<li><a href="function.svn-update.html" class="index">svn_update</a> - Update working copy</li>
 <li><a href="swfaction.construct.html" class="index">SWFAction::__construct</a> - 新しい SWFAction を作成する</li>
 <li><a href="swfbitmap.getheight.html" class="index">SWFBitmap::getHeight</a> - ビットマップの高さを返す</li>
 <li><a href="swfbitmap.getwidth.html" class="index">SWFBitmap::getWidth</a> - ビットマップの幅を返す</li>

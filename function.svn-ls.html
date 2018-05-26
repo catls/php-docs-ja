@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>指定したリポジトリ URL のディレクトリ内の一覧を返す (オプションでリビジョン番号も指定可能)</title>
+  <title>Returns list of directory contents in repository URL, optionally at revision number</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.svn-ls" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">svn_ls</h1>
-  <p class="verinfo">(PECL svn &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">svn_ls</span> &mdash; <span class="dc-title">指定したリポジトリ URL のディレクトリ内の一覧を返す (オプションでリビジョン番号も指定可能)</span></p>
+  <p class="verinfo">(PECL svn &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">svn_ls</span> &mdash; <span class="dc-title">Returns list of directory contents in repository URL, optionally at revision number</span></p>
 
  </div>
  <div class="refsect1 description" id="refsect1-function.svn-ls-description">
@@ -22,21 +22,19 @@
    <span class="type">array</span> <span class="methodname"><strong>svn_ls</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$repos_url</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$revision_no</code><span class="initializer"> = SVN_REVISION_HEAD</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recurse</code><span class="initializer"> = false</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$peg</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recurse</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$peg</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ]]] )</div>
 
   <p class="para rdfs-comment">
-   この関数は、指定したリポジトリ URL のファイルやディレクトリの一覧を返します。
-   オプションで、特定のリビジョンを指定することもできます。
-   これは、<strong class="userinput"><code>svn list $repos_url[@$revision_no]</code></strong>
-   と同等です。
+   This function queries the repository URL and returns a list of
+   files and directories, optionally from a specific revision. This
+   is equivalent to <strong class="userinput"><code>svn list $repos_url[@$revision_no]</code></strong>
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    この関数は、作業コピーに対して使用することはできません。
-    <code class="parameter">repos_url</code> には
-    <em class="emphasis">必ず</em> リポジトリの URL を指定しなければなりません。
+    This function does not work with working copies. <code class="parameter">repos_url</code>
+    <em class="emphasis">must</em> be a repository URL.
    </p>
   </p></blockquote>
   
@@ -54,10 +52,9 @@
      <dd>
 
       <p class="para">
-       リポジトリの URL。たとえば <strong class="userinput"><code>http://www.example.com/svnroot</code></strong>
-       のようになります。ローカルの Subversion リポジトリに対してファイルシステム経由でアクセスしたい場合は、
-       file URI スキームを使用して <strong class="userinput"><code>file:///home/user/svn-repos</code></strong>
-       のようにします。
+       URL of the repository, eg. <strong class="userinput"><code>http://www.example.com/svnroot</code></strong>.
+       To access a local Subversion repository via filesystem, use the
+       file URI scheme, eg. <strong class="userinput"><code>file:///home/user/svn-repos</code></strong>
       </p>
      </dd>
 
@@ -69,8 +66,8 @@
      <dd>
 
       <p class="para">
-       一覧を取得したいリビジョン番号。省略した場合は
-       HEAD リビジョンを使用します。
+       Integer revision number to retrieve listing of. When omitted,
+       the HEAD revision is used.
       </p>
      </dd>
 
@@ -82,7 +79,7 @@
      <dd>
 
       <p class="para">
-       再帰処理を有効にします。
+       Enables recursion.
       </p>
      </dd>
 
@@ -95,18 +92,19 @@
  <div class="refsect1 returnvalues" id="refsect1-function.svn-ls-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   成功した場合は、この関数は次のような構造の配列を返します。
+   On success, this function returns an array file listing in the format
+   of:
    <div class="example-contents screen">
 <div class="returnvaluescode"><pre class="returnvaluescode">[0] =&gt; Array
     (
-        [created_rev] =&gt; 最後に変更されたリビジョン番号
-        [last_author] =&gt; 最後に変更した人の名前
-        [size] =&gt; ファイルのバイト数
-        [time] =&gt; 最終更新日時を、その古さによって &#039;M d H:i&#039;
-                  あるいは &#039;M d Y&#039; のいずれかの形式で表したもの
-        [time_t] =&gt; 最終更新日時の unix タイムスタンプ
-        [name] =&gt; ファイル/ディレクトリの名前
-        [type] =&gt; &#039;file&#039; あるいは &#039;dir&#039; のいずれか
+        [created_rev] =&gt; integer revision number of last edit
+        [last_author] =&gt; string author name of last edit
+        [size] =&gt; integer byte file size of file
+        [time] =&gt; string date of last edit in form &#039;M d H:i&#039;
+                  or &#039;M d Y&#039;, depending on how old the file is
+        [time_t] =&gt; integer unix timestamp of last edit
+        [name] =&gt; name of file/directory
+        [type] =&gt; type, can be &#039;file&#039; or &#039;dir&#039;
     )
 [1] =&gt; ...</pre>
 </div>
@@ -129,7 +127,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-5716">
-    <p><strong>例1 <span class="function"><strong>svn_ls()</strong></span> の例</strong></p>
+    <p><strong>例1 <span class="function"><strong>svn_ls()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">svn_ls</span><span style="color: #007700">(</span><span style="color: #DD0000">'http://www.example.com/svnroot/'</span><span style="color: #007700">)&nbsp;);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -176,7 +174,7 @@ Array
   <p class="para">
    <ul class="simplelist">
     <li class="member">
-     <a href="http://svnbook.red-bean.com/en/1.2/svn.ref.svn.c.list.html" class="link external">&raquo;&nbsp;SVN ドキュメントの svn list</a>
+     <a href="http://svnbook.red-bean.com/en/1.2/svn.ref.svn.c.list.html" class="link external">&raquo;&nbsp;SVN documentation on svn list</a>
     </li>
    </ul>
   </p>

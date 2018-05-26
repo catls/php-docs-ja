@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>SVN ディレクトリの内容をエクスポートする</title>
+  <title>Export the contents of a SVN directory</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.svn-export" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">svn_export</h1>
-  <p class="verinfo">(PECL svn &gt;= 0.3.0)</p><p class="refpurpose"><span class="refname">svn_export</span> &mdash; <span class="dc-title">SVN ディレクトリの内容をエクスポートする</span></p>
+  <p class="verinfo">(PECL svn &gt;= 0.3.0)</p><p class="refpurpose"><span class="refname">svn_export</span> &mdash; <span class="dc-title">Export the contents of a SVN directory</span></p>
 
  </div>
 
@@ -23,12 +23,13 @@
    <span class="type">bool</span> <span class="methodname"><strong>svn_export</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$frompath</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$topath</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$working_copy</code><span class="initializer"> = true</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$working_copy</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$revision_no</code><span class="initializer"> = -1</span></span>
   ]] )</div>
 
   <p class="para rdfs-comment">
-   作業コピーあるいはリポジトリの内容を、「クリーンな」ディレクトリにエクスポートします。
+   Export the contents of either a working copy or repository into a
+   &#039;clean&#039; directory. 
   </p>
  </div>
 
@@ -45,7 +46,7 @@
      <dd>
 
       <p class="para">
-       現在のリポジトリへのパス。
+       The path to the current repository.
       </p>
      </dd>
 
@@ -57,7 +58,7 @@
      <dd>
 
       <p class="para">
-       新しいリポジトリへのパス。
+       The path to the new repository.
       </p>
      </dd>
 
@@ -69,7 +70,7 @@
      <dd>
 
       <p class="para">
-       <strong><code>TRUE</code></strong> の場合は、コミットしていないファイルを作業コピーからエクスポートします。
+       If <strong><code>TRUE</code></strong>, it will export uncommitted files from the working copy.
       </p>
      </dd>
 
@@ -93,7 +94,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-5713">
-    <p><strong>例1 <span class="function"><strong>svn_export()</strong></span> の例</strong></p>
+    <p><strong>例1 <span class="function"><strong>svn_export()</strong></span> example</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$working_dir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'../'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$new_working_dir&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'/home/user/devel/foo/trunk'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">svn_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$working_dir</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$new_working_dir</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
