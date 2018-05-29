@@ -23,9 +23,8 @@
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><strong>Memcached::getMultiByKey</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$server_key</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$keys</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$cas_tokens</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
-  ]] )</div>
+  ] )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>Memcached::getMultiByKey()</strong></span> は機能的に
@@ -69,18 +68,6 @@
     
     
      <dt>
-<code class="parameter">cas_tokens</code></dt>
-
-     <dd>
-
-      <p class="para">
-       見つかったアイテムの CAS トークンを格納する変数。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
 <code class="parameter">flags</code></dt>
 
      <dd>
@@ -103,6 +90,35 @@
    見つかったアイテムの配列、失敗した場合に <strong><code>FALSE</code></strong> を返します。
    必要に応じて <span class="methodname"><a href="memcached.getresultcode.html" class="methodname">Memcached::getResultCode()</a></span> を使用しましょう。
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-memcached.getmultibykey-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>3.0.0</td>
+      <td>
+       <code class="parameter reference">&cas_tokens</code> パラメータは削除されました。
+       
+       The <strong><code>Memcached::GET_EXTENDED</code></strong> was added and when passed as a flag it ensures the CAS tokens to be fetched.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 

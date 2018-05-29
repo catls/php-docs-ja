@@ -24,7 +24,7 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$server_key</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$cache_cb</code></span>
-   [, <span class="methodparam"><span class="type">float</span> <code class="parameter reference">&$cas_token</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
   ]] )</div>
 
   <p class="para rdfs-comment">
@@ -81,12 +81,14 @@
     
     
      <dt>
-<code class="parameter">cas_token</code></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
-       CAS トークンを格納する変数。
+       
+       Flags to control the returned result. When value of <strong><code>Memcached::GET_EXTENDED</code></strong>
+       is given will return the CAS token.
       </p>
      </dd>
 
@@ -105,6 +107,35 @@
    <span class="methodname"><a href="memcached.getresultcode.html" class="methodname">Memcached::getResultCode()</a></span> は
    <strong><code>Memcached::RES_NOTFOUND</code></strong> を返します。
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-memcached.getbykey-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>3.0.0</td>
+      <td>
+       <code class="parameter reference">&cas_token</code> パラメータは削除されました。
+       
+       Instead <code class="parameter">flags</code> was added and when it is given the value of <strong><code>Memcached::GET_EXTENDED</code></strong> it will ensure the CAS token to be fetched.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 

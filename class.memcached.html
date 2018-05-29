@@ -159,7 +159,7 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$server_key</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$cache_cb</code></span>
-   [, <span class="methodparam"><span class="type">float</span> <code class="parameter reference">&$cas_token</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
   ]] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="memcached.getdelayed.html" class="methodname">getDelayed</a></span>
@@ -184,9 +184,8 @@
    <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><a href="memcached.getmultibykey.html" class="methodname">getMultiByKey</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$server_key</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$keys</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$cas_tokens</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span>
-  ]] )</div>
+  ] )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="memcached.getoption.html" class="methodname">getOption</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$option</code></span>

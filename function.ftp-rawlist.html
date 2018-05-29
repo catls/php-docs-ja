@@ -19,10 +19,10 @@
  <div class="refsect1 description" id="refsect1-function.ftp-rawlist-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>ftp_rawlist</strong></span>
+   <span class="type">array</span> <span class="methodname"><strong>ftp_rawlist</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$ftp_stream</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$directory</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
@@ -127,6 +127,7 @@ array(3) {
   <p class="para">
    <ul class="simplelist">
     <li class="member"><span class="function"><a href="function.ftp-nlist.html" class="function" rel="rdfs-seeAlso">ftp_nlist()</a> - 指定したディレクトリのファイルの一覧を返す</span></li>
+    <li class="member"><span class="function"><a href="function.ftp-mlsd.html" class="function" rel="rdfs-seeAlso">ftp_mlsd()</a> - Returns a list of files in the given directory</span></li>
    </ul>
   </p>
  </div>
