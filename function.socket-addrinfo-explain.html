@@ -25,12 +25,9 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   <span class="function"><strong>socket_addrinfo_explain()()</strong></span> exposed the underlying
+   <em>addrinfo</em> structure.
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
 
  </div>
 
@@ -46,7 +43,7 @@
     <dd>
 
      <p class="para">
-      
+      Resource created from <span class="function"><strong>socket_addrinfo_lookup()()</strong></span>
      </p>
     </dd>
 
@@ -59,7 +56,19 @@
  <div class="refsect1 returnvalues" id="refsect1-function.socket-addrinfo-explain-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   
+   Returns an array containing the fields in the <em>addrinfo</em> structure.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 seealso" id="refsect1-function.socket-addrinfo-explain-seealso">
+  <h3 class="title">参考</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.socket-addrinfo-bind.html" class="function" rel="rdfs-seeAlso">socket_addrinfo_bind()</a> - Create and bind to a socket from a given addrinfo</span></li>
+    <li class="member"><span class="function"><a href="function.socket-addrinfo-connect.html" class="function" rel="rdfs-seeAlso">socket_addrinfo_connect()</a> - Create and connect to a socket from a given addrinfo</span></li>
+    <li class="member"><span class="function"><a href="function.socket-addrinfo-lookup.html" class="function" rel="rdfs-seeAlso">socket_addrinfo_lookup()</a> - Get array with contents of getaddrinfo about the given hostname</span></li>
+   </ul>
   </p>
  </div>
 
