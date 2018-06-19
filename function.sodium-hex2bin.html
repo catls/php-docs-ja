@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Decode from hexadecimal</title>
+  <title>Decodes a hexadecimally encoded binary string</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.sodium-hex2bin" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">sodium_hex2bin</h1>
-  <p class="verinfo">(PHP 7 &gt;= 7.2.0)</p><p class="refpurpose"><span class="refname">sodium_hex2bin</span> &mdash; <span class="dc-title">Decode from hexadecimal</span></p>
+  <p class="verinfo">(PHP 7 &gt;= 7.2.0)</p><p class="refpurpose"><span class="refname">sodium_hex2bin</span> &mdash; <span class="dc-title">Decodes a hexadecimally encoded binary string</span></p>
 
  </div>
 
@@ -26,12 +26,12 @@
   ] )</div>
 
   <p class="para rdfs-comment">
-
+   Decodes a hexadecimally encoded binary string.
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
+  <p class="para">
+   Like <span class="function"><a href="function.sodium-bin2hex.html" class="function">sodium_bin2hex()</a></span>, <span class="function"><strong>sodium_hex2bin()</strong></span>
+   is resistant to side-channel attacks while <span class="function"><a href="function.hex2bin.html" class="function">hex2bin()</a></span> is not.
+  </p> 
 
  </div>
 
@@ -47,7 +47,7 @@
     <dd>
 
      <p class="para">
-      
+      Hexadecimal representation of data.
      </p>
     </dd>
 
@@ -59,7 +59,7 @@
     <dd>
 
      <p class="para">
-      
+      Optional string argument for characters to ignore.
      </p>
     </dd>
 
@@ -72,10 +72,9 @@
  <div class="refsect1 returnvalues" id="refsect1-function.sodium-hex2bin-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   
+   Returns the binary representation of the given <code class="parameter">hex</code> data.
   </p>
  </div>
-
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
