@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Gets the error message</title>
+  <title>エラーメッセージを取得する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="error.getmessage" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Error::getMessage</h1>
-  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Error::getMessage</span> &mdash; <span class="dc-title">Gets the error message</span></p>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Error::getMessage</span> &mdash; <span class="dc-title">エラーメッセージを取得する</span></p>
 
  </div>
  
@@ -25,7 +25,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Returns the error message.
+   エラーメッセージを返す。
   </p>
  </div>
 
@@ -39,7 +39,7 @@
  <div class="refsect1 returnvalues" id="refsect1-error.getmessage-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the error message as a string.
+   エラーメッセージを文字列で返す。
   </p>
  </div>
 
@@ -48,7 +48,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="variable.cookie.basic">
-    <p><strong>例1 <span class="function"><strong>Error::getMessage()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>Error::getMessage()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Error</span><span style="color: #007700">(</span><span style="color: #DD0000">"Some&nbsp;error&nbsp;message"</span><span style="color: #007700">);<br />}&nbsp;catch(</span><span style="color: #0000BB">Error&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
