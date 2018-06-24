@@ -5076,6 +5076,11 @@
 <li><a href="mongodb-bson-decimal128interface.tostring.html" class="index">MongoDB\BSON\Decimal128Interface::__toString</a> - Returns the string representation of this Decimal128Interface</li>
 <li><a href="function.mongodb.bson-fromjson.html" class="index">MongoDB\BSON\fromJSON</a> - Returns the BSON representation of a JSON value</li>
 <li><a href="function.mongodb.bson-fromphp.html" class="index">MongoDB\BSON\fromPHP</a> - Returns the BSON representation of a PHP value</li>
+<li><a href="mongodb-bson-int64.jsonserialize.html" class="index">MongoDB\BSON\Int64::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
+<li><a href="mongodb-bson-int64.serialize.html" class="index">MongoDB\BSON\Int64::serialize</a> - Serialize an Int64</li>
+<li><a href="mongodb-bson-int64.unserialize.html" class="index">MongoDB\BSON\Int64::unserialize</a> - Unserialize an Int64</li>
+<li><a href="mongodb-bson-int64.construct.html" class="index">MongoDB\BSON\Int64::__construct</a> - Construct a new Int64 (unused)</li>
+<li><a href="mongodb-bson-int64.tostring.html" class="index">MongoDB\BSON\Int64::__toString</a> - Returns the string representation of this Int64</li>
 <li><a href="mongodb-bson-javascript.getcode.html" class="index">MongoDB\BSON\Javascript::getCode</a> - Returns the Javascript's code</li>
 <li><a href="mongodb-bson-javascript.getscope.html" class="index">MongoDB\BSON\Javascript::getScope</a> - Returns the Javascript's scope document</li>
 <li><a href="mongodb-bson-javascript.jsonserialize.html" class="index">MongoDB\BSON\Javascript::jsonSerialize</a> - Returns a representation that can be converted to JSON</li>
@@ -5227,11 +5232,15 @@
 <li><a href="mongodb-driver-server.isprimary.html" class="index">MongoDB\Driver\Server::isPrimary</a> - Checks if this server is a primary member of a replica set</li>
 <li><a href="mongodb-driver-server.issecondary.html" class="index">MongoDB\Driver\Server::isSecondary</a> - Checks if this server is a secondary member of a replica set</li>
 <li><a href="mongodb-driver-server.construct.html" class="index">MongoDB\Driver\Server::__construct</a> - Create a new Server (not used)</li>
+<li><a href="mongodb-driver-session.aborttransaction.html" class="index">MongoDB\Driver\Session::abortTransaction</a> - Aborts a transaction</li>
 <li><a href="mongodb-driver-session.advanceclustertime.html" class="index">MongoDB\Driver\Session::advanceClusterTime</a> - Advances the cluster time for this session</li>
 <li><a href="mongodb-driver-session.advanceoperationtime.html" class="index">MongoDB\Driver\Session::advanceOperationTime</a> - Advances the operation time for this session</li>
+<li><a href="mongodb-driver-session.committransaction.html" class="index">MongoDB\Driver\Session::commitTransaction</a> - Commits a transaction</li>
+<li><a href="mongodb-driver-session.endsession.html" class="index">MongoDB\Driver\Session::endSession</a> - Terminates a session</li>
 <li><a href="mongodb-driver-session.getclustertime.html" class="index">MongoDB\Driver\Session::getClusterTime</a> - Returns the cluster time for this session</li>
 <li><a href="mongodb-driver-session.getlogicalsessionid.html" class="index">MongoDB\Driver\Session::getLogicalSessionId</a> - Returns the logical session ID for this session</li>
 <li><a href="mongodb-driver-session.getoperationtime.html" class="index">MongoDB\Driver\Session::getOperationTime</a> - Returns the operation time for this session</li>
+<li><a href="mongodb-driver-session.starttransaction.html" class="index">MongoDB\Driver\Session::startTransaction</a> - Starts a transaction</li>
 <li><a href="mongodb-driver-session.construct.html" class="index">MongoDB\Driver\Session::__construct</a> - Create a new Session (not used)</li>
 <li><a href="mongodb-driver-writeconcern.bsonserialize.html" class="index">MongoDB\Driver\WriteConcern::bsonSerialize</a> - Returns an object for BSON serialization</li>
 <li><a href="mongodb-driver-writeconcern.getjournal.html" class="index">MongoDB\Driver\WriteConcern::getJournal</a> - Returns the WriteConcern's &quot;journal&quot; option</li>
@@ -6952,6 +6961,17 @@
 <li><a href="phdfs.destruct.html" class="index">phdfs::__destruct</a> - Description</li>
 <li><a href="wrappers.php.html" class="index">php://</a> - さまざまな入出力ストリームへのアクセス</li>
 <li><a href="function.phpcredits.html" class="index">phpcredits</a> - PHP に関するクレジットを出力する</li>
+<li><a href="function.phpdbg-break-file.html" class="index">phpdbg_break_file</a> - 説明</li>
+<li><a href="function.phpdbg-break-function.html" class="index">phpdbg_break_function</a> - 説明</li>
+<li><a href="function.phpdbg-break-method.html" class="index">phpdbg_break_method</a> - 説明</li>
+<li><a href="function.phpdbg-break-next.html" class="index">phpdbg_break_next</a> - Inserts a breakpoint at the next opcode</li>
+<li><a href="function.phpdbg-clear.html" class="index">phpdbg_clear</a> - Clears all breakpoints</li>
+<li><a href="function.phpdbg-color.html" class="index">phpdbg_color</a> - 説明</li>
+<li><a href="function.phpdbg-end-oplog.html" class="index">phpdbg_end_oplog</a> - 説明</li>
+<li><a href="function.phpdbg-exec.html" class="index">phpdbg_exec</a> - Attempts to set the execution context</li>
+<li><a href="function.phpdbg-get-executable.html" class="index">phpdbg_get_executable</a> - 説明</li>
+<li><a href="function.phpdbg-prompt.html" class="index">phpdbg_prompt</a> - 説明</li>
+<li><a href="function.phpdbg-start-oplog.html" class="index">phpdbg_start_oplog</a> - 説明</li>
 <li><a href="function.phpinfo.html" class="index">phpinfo</a> - PHP の設定情報を出力する</li>
 <li><a href="function.phpversion.html" class="index">phpversion</a> - 現在の PHP バージョンを取得する</li>
 <li><a href="function.php-check-syntax.html" class="index">php_check_syntax</a> - 指定したファイルの文法チェック（と実行）を行う</li>

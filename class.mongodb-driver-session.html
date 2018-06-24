@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongodb-driver-bulkwrite.update.html">MongoDB\Driver\BulkWrite::update</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-session.advanceclustertime.html">MongoDB\Driver\Session::advanceClusterTime</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-session.aborttransaction.html">MongoDB\Driver\Session::abortTransaction</a></div>
  <div class="up"><a href="book.mongodb.html">MongoDB\Driver</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="class.mongodb-driver-session" class="reference">
@@ -47,6 +47,10 @@
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-driver-session.aborttransaction.html" class="methodname">abortTransaction</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-driver-session.advanceclustertime.html" class="methodname">advanceClusterTime</a></span>
     ( <span class="methodparam"><span class="type"><span class="type array|object">array|object</span></span> <code class="parameter">$clusterTime</code></span>
    )</div>
@@ -55,7 +59,15 @@
     ( <span class="methodparam"><span class="type"><span class="type MongoDB\BSON\TimestampInterface">MongoDB\BSON\TimestampInterface</span></span> <code class="parameter">$operationTime</code></span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-driver-session.committransaction.html" class="methodname">commitTransaction</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">private</span> <span class="methodname"><a href="mongodb-driver-session.construct.html" class="methodname">__construct</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-driver-session.endsession.html" class="methodname">endSession</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
@@ -69,6 +81,10 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">MongoDB\BSON\Timestamp|null</span> <span class="methodname"><a href="mongodb-driver-session.getoperationtime.html" class="methodname">getOperationTime</a></span>
     ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">void</span> <span class="methodname"><a href="mongodb-driver-session.starttransaction.html" class="methodname">startTransaction</a></span>
+    ( <span class="methodparam"><span class="type"><span class="type array|object">array|object</span></span> <code class="parameter">$options</code></span>
    )</div>
 
    }</div>
@@ -120,12 +136,40 @@
 
 
 
+ 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-driver-session.advanceclustertime.html">MongoDB\Driver\Session::advanceClusterTime</a> — Advances the cluster time for this session</li><li><a href="mongodb-driver-session.advanceoperationtime.html">MongoDB\Driver\Session::advanceOperationTime</a> — Advances the operation time for this session</li><li><a href="mongodb-driver-session.construct.html">MongoDB\Driver\Session::__construct</a> — Create a new Session (not used)</li><li><a href="mongodb-driver-session.getclustertime.html">MongoDB\Driver\Session::getClusterTime</a> — Returns the cluster time for this session</li><li><a href="mongodb-driver-session.getlogicalsessionid.html">MongoDB\Driver\Session::getLogicalSessionId</a> — Returns the logical session ID for this session</li><li><a href="mongodb-driver-session.getoperationtime.html">MongoDB\Driver\Session::getOperationTime</a> — Returns the operation time for this session</li></ul>
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-driver-session.aborttransaction.html">MongoDB\Driver\Session::abortTransaction</a> — Aborts a transaction</li><li><a href="mongodb-driver-session.advanceclustertime.html">MongoDB\Driver\Session::advanceClusterTime</a> — Advances the cluster time for this session</li><li><a href="mongodb-driver-session.advanceoperationtime.html">MongoDB\Driver\Session::advanceOperationTime</a> — Advances the operation time for this session</li><li><a href="mongodb-driver-session.committransaction.html">MongoDB\Driver\Session::commitTransaction</a> — Commits a transaction</li><li><a href="mongodb-driver-session.construct.html">MongoDB\Driver\Session::__construct</a> — Create a new Session (not used)</li><li><a href="mongodb-driver-session.endsession.html">MongoDB\Driver\Session::endSession</a> — Terminates a session</li><li><a href="mongodb-driver-session.getclustertime.html">MongoDB\Driver\Session::getClusterTime</a> — Returns the cluster time for this session</li><li><a href="mongodb-driver-session.getlogicalsessionid.html">MongoDB\Driver\Session::getLogicalSessionId</a> — Returns the logical session ID for this session</li><li><a href="mongodb-driver-session.getoperationtime.html">MongoDB\Driver\Session::getOperationTime</a> — Returns the operation time for this session</li><li><a href="mongodb-driver-session.starttransaction.html">MongoDB\Driver\Session::startTransaction</a> — Starts a transaction</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mongodb-driver-bulkwrite.update.html">MongoDB\Driver\BulkWrite::update</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-session.advanceclustertime.html">MongoDB\Driver\Session::advanceClusterTime</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-session.aborttransaction.html">MongoDB\Driver\Session::abortTransaction</a></div>
  <div class="up"><a href="book.mongodb.html">MongoDB\Driver</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

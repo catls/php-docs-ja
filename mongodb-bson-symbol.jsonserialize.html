@@ -40,12 +40,20 @@
    produce an extended JSON representation of the
    <a href="class.mongodb-bson-symbol.html" class="classname">MongoDB\BSON\Symbol</a>.
   </p>
-  <p class="para">
-   The output is consistent with the <span class="function"><a href="function.mongodb.bson-tojson.html" class="function">MongoDB\BSON\toJSON()</a></span>
-   function, which represents the driver specifc legacy extended JSON format,
-   which does not necessarily match the relaxed or <a href="https://docs.mongodb.com/manual/reference/mongodb-extended-json/" class="link external">&raquo;&nbsp;canonical extended JSON</a>
-   representation.
-  </p>
+  
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    The output is consistent with the <span class="function"><a href="function.mongodb.bson-tojson.html" class="function">MongoDB\BSON\toJSON()</a></span>
+    function, which uses the driver-specific legacy extended JSON format. This
+    does not necessarily match the
+    <a href="https://github.com/mongodb/specifications/blob/master/source/extended-json.rst#relaxed-extended-json-example" class="link external">&raquo;&nbsp;relaxed</a>
+    or <a href="https://github.com/mongodb/specifications/blob/master/source/extended-json.rst#canonical-extended-json-example" class="link external">&raquo;&nbsp;canonical</a>
+    extended JSON representations used by
+    <span class="function"><a href="function.mongodb.bson-torelaxedextendedjson.html" class="function">MongoDB\BSON\toRelaxedExtendedJSON()</a></span> and
+    <span class="function"><a href="function.mongodb.bson-tocanonicalextendedjson.html" class="function">MongoDB\BSON\toCanonicalExtendedJSON()</a></span>, respectively.
+   </span>
+  </p></blockquote>
+
  </div>
 
 

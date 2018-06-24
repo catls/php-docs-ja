@@ -81,6 +81,82 @@
           <td><strong><code>TRUE</code></strong></td>
          </tr>
 
+         <tr>
+          <td>defaultTransactionOptions</td>
+          <td><span class="type"><a href="language.types.array.html" class="type array">array</a></span></td>
+          <td>
+           <p class="para">
+            Default options to apply to newly created transactions. These
+            options are used unless they are overridden when a transaction is
+            started with different value for each option.
+           </p>
+           <p class="para">
+            <table class="doctable table">
+             <caption><strong>options</strong></caption>
+             
+              <thead>
+               <tr>
+                <th>Option</th>
+                <th>Type</th>
+                <th>Description</th>
+               </tr>
+
+              </thead>
+
+              <tbody class="tbody">
+               
+         <tr>
+          <td>readConcern</td>
+          <td><a href="class.mongodb-driver-readconcern.html" class="classname">MongoDB\Driver\ReadConcern</a></td>
+          <td>
+           <p class="para">
+            A read concern to apply to the operation.
+           </p>
+           <p class="para">
+            This option is available in MongoDB 3.2+ and will result in an
+            exception at execution time if specified for an older server
+            version.
+           </p>
+          </td>
+         </tr>
+
+
+               
+         <tr>
+          <td>readPreference</td>
+          <td><a href="class.mongodb-driver-readpreference.html" class="classname">MongoDB\Driver\ReadPreference</a></td>
+          <td>
+           <p class="para">
+            A read preference to use for selecting a server for the operation.
+           </p>
+          </td>
+         </tr>
+
+
+               
+         <tr>
+          <td>writeConcern</td>
+          <td><a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a></td>
+          <td>
+           <p class="para">
+            A write concern to apply to the operation.
+           </p>
+          </td>
+         </tr>
+
+
+              </tbody>
+             
+            </table>
+
+           </p>
+           <p class="para">
+            This option is available in MongoDB 4.0+.
+           </p>
+          </td>
+          <td class="empty">&nbsp;</td>
+         </tr>
+
         </tbody>
        
       </table>
@@ -110,6 +186,36 @@
   </ul>
  </div>
 
+
+ <div class="refsect1 changelog" id="refsect1-mongodb-driver-manager.startsession-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>1.5.0</td>
+       <td>
+        <p class="para">
+         The <em>&quot;defaultTransactionOptions&quot;</em> option was added.
+        </p>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
 
 
  <div class="refsect1 seealso" id="refsect1-mongodb-driver-manager.startsession-seealso">
