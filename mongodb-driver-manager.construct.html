@@ -513,6 +513,10 @@
             in milliseconds, for the write concern. For details, see
             <a href="class.mongodb-driver-writeconcern.html" class="classname">MongoDB\Driver\WriteConcern</a>.
            </p>
+           <p class="para">
+            If specified, <em>wTimeoutMS</em> must be a signed 32-bit
+            integer greater than or equal to zero.
+           </p>
           </td>
          </tr>
 
@@ -701,6 +705,18 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>1.5.0</td>
+       <td>
+        <p class="para">
+         <em>&quot;wtimeoutMS&quot;</em> is now always validated and applied to
+         the write concern. Previously, the option was ignored if
+         <em>&quot;w&quot;</em> was &lt;= 1, since the timeout only applies to
+         replication.
+        </p>
+       </td>
+      </tr>
+
       <tr>
        <td>1.4.0</td>
        <td>

@@ -97,10 +97,17 @@
           <td>arrayFilters</td>
           <td><span class="type"><span class="type array|object">array|object</span></span></td>
           <td>
-           An array of filter documents that determines which array elements to
-           modify for an update operation on an array field. See
-           <a href="https://docs.mongodb.com/manual/reference/command/update/#update-command-arrayfilters" class="link external">&raquo;&nbsp;Specify arrayFilters for Array Update Operations</a>
-           in the MongoDB manual for more information.
+           <p class="para">
+            An array of filter documents that determines which array elements to
+            modify for an update operation on an array field. See
+            <a href="https://docs.mongodb.com/manual/reference/command/update/#update-command-arrayfilters" class="link external">&raquo;&nbsp;Specify arrayFilters for Array Update Operations</a>
+            in the MongoDB manual for more information.
+           </p>
+           <p class="para">
+            This option is available in MongoDB 3.6+ and will result in an
+            exception at execution time if specified for an older server
+            version.
+           </p>
           </td>
          </tr>
 
@@ -196,6 +203,15 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>1.5.0</td>
+       <td>
+        Using the <em>&quot;arrayFilters&quot;</em> option will result in an
+        exception at execution time if unsupported by the server. Previously,
+        no exception would be thrown and the option may have been ignored.
+       </td>
+      </tr>
+
       <tr>
        <td>1.4.0</td>
        <td>

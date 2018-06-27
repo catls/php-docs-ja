@@ -133,6 +133,10 @@
       <em>wtimeout</em> time limit.
      </p>
      <p class="para">
+      If specified, <em>wtimeout</em> must be a signed 32-bit integer
+      greater than or equal to zero.
+     </p>
+     <p class="para">
       <table class="doctable table">
        <caption><strong>Write concern timeout</strong></caption>
        
@@ -186,7 +190,7 @@
   <h3 class="title">エラー / 例外</h3>
   <ul class="simplelist">
    <li class="member">引数のパースに失敗した場合に <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a> をスローします。</li>
-   <li class="member">Throws <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a> if <code class="parameter">w</code> is invalid or <code class="parameter">wtimeout</code> is negative.</li>
+   <li class="member">Throws <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a> if <code class="parameter">w</code> is invalid or <code class="parameter">wtimeout</code> is either negative or greater than the bounds of a signed 32-bit integer.</li>
   </ul>
  </div>
 

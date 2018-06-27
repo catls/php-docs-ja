@@ -48,7 +48,257 @@
      <span class="simpara">Easy Operation - See Help :)</span>
     </li>
    </ul>
-  </p> 
+  </p>
+
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong>Command line options</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Option</th>
+       <th>Example Argument</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>-c</td>
+       <td>-c/my/php.ini</td>
+       <td>
+        <p class="para">
+         Set php.ini file to load
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-d</td>
+       <td>-dmemory_limit=4G</td>
+       <td>
+        <p class="para">
+         Set a php.ini directive
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-n</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Disable default php.ini
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-q</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Suppress welcome banner
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-v</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Enable oplog output
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-b</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Disable color
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-i</td>
+       <td>-imy.init</td>
+       <td>
+        <p class="para">
+         Set .phpdbginit file
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-I</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Ignore default .phpdbginit
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-O</td>
+       <td>-Omy.oplog</td>
+       <td>
+        <p class="para">
+         Set oplog output file
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-r</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Run execution context
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>rr</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Run execution context and quit after execution (not respecting breakpoints)
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-e</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Generate extended information for debugger/profiler
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-E</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Enable step through eval, careful!
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-s</td>
+       <td>-s=, -s=foo</td>
+       <td>
+        <p class="para">
+         Read code to execute from stdin with an optional delimiter
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-S</td>
+       <td>-Scli</td>
+       <td>
+        <p class="para">
+        </p>
+         Override SAPI name, careful!
+       </td>
+      </tr>
+
+      <tr>
+       <td class="empty">&nbsp;</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-l</td>
+       <td>-l4000</td>
+       <td>
+        <p class="para">
+         Setup remote console ports
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-a</td>
+       <td>-a192.168.0.3</td>
+       <td>
+        <p class="para">
+         Setup remote console bind address
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-x</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Enable xml output (instead of normal text output)
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-p</td>
+       <td>-p, -p=func, -p*</td>
+       <td>
+        <p class="para">
+         Output opcodes and quit
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-h</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Print the help overview
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>-V</td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        <p class="para">
+         Print version number
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td>--</td>
+       <td>-- arg1 arg2</td>
+       <td>
+        <p class="para">
+         Use to delimit phpdbg arguments and php $argv; append any $argv argument after it
+        </p>
+       </td>
+      </tr>
+
+     </tbody>
+     
+   </table>
+ 
+  </p>
+
  </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="book.phpdbg.html">phpdbg</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="phpdbg.setup.html">インストール/設定</a></div>
