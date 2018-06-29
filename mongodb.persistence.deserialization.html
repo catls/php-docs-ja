@@ -72,8 +72,30 @@ array</dt>
    </p>
 
    <p class="para">
-    Each of those three data types can be mapped against different PHP types.
-    The possible mapping values are:
+    Besides the three collective types, it is also possible to configure
+    specific fields in your document to map to the data types mentioned below.
+    As an example, the following type map allows you to
+    map each embedded document within an <em>&quot;addresses&quot;</em> array to
+    an <strong class="classname">Address</strong> class <em class="emphasis">and</em> each
+    <em>&quot;city&quot;</em> field within those embedded address documents to
+    a <strong class="classname">City</strong> class:
+
+    <div class="example-contents">
+<div class="textcode"><pre class="textcode">[
+    &#039;fieldPaths&#039; =&gt; [
+        &#039;addresses.$&#039; =&gt; &#039;MyProject\Address&#039;,
+        &#039;addresses.$.city&#039; =&gt; &#039;MyProject\City&#039;,
+    ],
+]</pre>
+</div>
+    </div>
+
+   </p>
+
+   <p class="para">
+    Each of those three data types, as well as the field specific mappings,
+    can be mapped against different PHP types. The possible mapping values
+    are:
    </p>
 
    <p class="para">
@@ -218,8 +240,9 @@ any other string</dt>
       <a href="class.mongodb-driver-cursor.html" class="classname">MongoDB\Driver\Cursor</a> object, or the
       <em>$typeMap</em> argument of
       <span class="function"><a href="function.mongodb.bson-tophp.html" class="function">MongoDB\BSON\toPHP()</a></span>. Each of the three
-      classes (<em class="emphasis">root</em>, <em class="emphasis">document</em> and
-      <em class="emphasis">array</em>) can be individually set.
+      classes (<em class="emphasis">root</em>, <em class="emphasis">document</em>, and
+      <em class="emphasis">array</em>) can be individually set, in addition to the
+      field specific types.
      </p>
 
      <p class="para">
