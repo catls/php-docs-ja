@@ -352,12 +352,23 @@
           </td>
          </tr>
 
-         <tr>
+         <tr id="mongodb-driver-query.construct-projection">
           <td>projection</td>
           <td><span class="type"><span class="type array|object">array|object</span></span></td>
           <td>
-           The <a href="https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/" class="link external">&raquo;&nbsp;projection specification</a>
-           to determine which fields to include in the returned documents.
+           <p class="para">
+            The <a href="https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/" class="link external">&raquo;&nbsp;projection specification</a>
+            to determine which fields to include in the returned documents.
+           </p>
+           <p class="para">
+            If you are using the <a href="mongodb.persistence.deserialization.html" class="link">ODM
+            functionality</a> to deserialise documents as their original
+            PHP class, make sure that you include the
+            <span class="property">__pclass</span> field in the projection. This is
+            required for the deserialization to work and without it, the
+            driver will return (by default) a <strong class="classname">stdClass</strong>
+            object instead.
+           </p>
           </td>
          </tr>
 

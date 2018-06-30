@@ -149,6 +149,14 @@ array</dt>
            key (including <span class="property">__pclass</span>) will be set as a
            public <strong class="classname">stdClass</strong> property.
           </p>
+          <p class="para">
+           The <span class="property">__pclass</span> functionality relies on the
+           property being part of a retrieved MongoDB document. If you use a
+           projection
+           when querying for documents, you need to include the
+           <span class="property">__pclass</span> field in the projection for this
+           functionality to work.
+          </p>
          </li>
         </ul>
        </p>
