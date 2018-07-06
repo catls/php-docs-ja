@@ -41,7 +41,7 @@
    <p class="para">
     たとえば画像をドキュメントに埋め込むには、このようにします。
    </p>
-   <div class="example" id="example-1634">
+   <div class="example" id="example-1636">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$profile&nbsp;</span><span style="color: #007700">=&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"username"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"foobity"</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">"pic"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;new&nbsp;</span><span style="color: #0000BB">MongoBinData</span><span style="color: #007700">(</span><span style="color: #0000BB">file_get_contents</span><span style="color: #007700">(</span><span style="color: #DD0000">"gravatar.jpg"</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">MongoBinData</span><span style="color: #007700">::</span><span style="color: #0000BB">GENERIC</span><span style="color: #007700">),<br />);<br /><br /></span><span style="color: #0000BB">$users</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">save</span><span style="color: #007700">(</span><span style="color: #0000BB">$profile</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>

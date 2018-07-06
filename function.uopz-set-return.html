@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.uopz-set-mock.html">uopz_set_mock</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.uopz-undefine.html">uopz_undefine</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.uopz-set-static.html">uopz_set_static</a></div>
  <div class="up"><a href="ref.uopz.html">Uopz 関数</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="function.uopz-set-return" class="refentry">
@@ -106,7 +106,7 @@
 
  <div class="refsect1 examples" id="refsect1-function.uopz-set-return-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-616">
+  <div class="example" id="example-617">
    <p><strong>例1 <span class="function"><strong>uopz_set_return()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -115,15 +115,14 @@
 </code></div>
    </div>
 
-   <div class="example-contents"><p>上の例の出力は、
-たとえば以下のようになります。</p></div>
+   <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
    <div class="example-contents screen">
 <div class="cdata"><pre>
 42
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-617">
+  <div class="example" id="example-618">
    <p><strong>例2 <span class="function"><strong>uopz_set_return()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -132,24 +131,23 @@
 </code></div>
    </div>
 
-   <div class="example-contents"><p>上の例の出力は、
-たとえば以下のようになります。</p></div>
+   <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
    <div class="example-contents screen">
 <div class="cdata"><pre>
 12
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-618">
+  <div class="example" id="example-619">
    <p><strong>例3 <span class="function"><strong>uopz_set_return()</strong></span> class example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-class&nbsp;My&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;strlen($arg)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;strlen($arg);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br />uopz_set_return(My::class,&nbsp;"strlen",&nbsp;function($str)&nbsp;{&nbsp;return&nbsp;strlen($str)&nbsp;*&nbsp;2;&nbsp;},&nbsp;true&nbsp;);<br />echo&nbsp;My::strlen("Banana");</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">My&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">uopz_set_return</span><span style="color: #007700">(</span><span style="color: #0000BB">My</span><span style="color: #007700">::class,&nbsp;</span><span style="color: #DD0000">"strlen"</span><span style="color: #007700">,&nbsp;function(</span><span style="color: #0000BB">$str</span><span style="color: #007700">)&nbsp;{&nbsp;return&nbsp;</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">)&nbsp;*&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;&nbsp;},&nbsp;</span><span style="color: #0000BB">true&nbsp;</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">My</span><span style="color: #007700">::</span><span style="color: #0000BB">strlen</span><span style="color: #007700">(</span><span style="color: #DD0000">"Banana"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
 </code></div>
    </div>
 
-   <div class="example-contents"><p>上の例の出力は、
-たとえば以下のようになります。</p></div>
+   <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
    <div class="example-contents screen">
 <div class="cdata"><pre>
 12
@@ -162,7 +160,7 @@ class&nbsp;My&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;functi
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="function.uopz-set-mock.html">uopz_set_mock</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.uopz-undefine.html">uopz_undefine</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.uopz-set-static.html">uopz_set_static</a></div>
  <div class="up"><a href="ref.uopz.html">Uopz 関数</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>
