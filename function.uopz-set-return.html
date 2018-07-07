@@ -6,7 +6,7 @@
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.uopz-set-mock.html">uopz_set_mock</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="function.uopz-set-property.html">uopz_set_property</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.uopz-set-static.html">uopz_set_static</a></div>
  <div class="up"><a href="ref.uopz.html">Uopz 関数</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
@@ -21,8 +21,15 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="type">bool</span> <span class="methodname"><strong>uopz_set_return</strong></span>
-    ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$class</code></span>
-   ], <span class="methodparam"><span class="type">string</span> <code class="parameter">$function</code></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$function</code></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$execute</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
+  ] )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><strong>uopz_set_return</strong></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$class</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$function</code></span>
    , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$value</code></span>
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$execute</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] )</div>
@@ -106,7 +113,7 @@
 
  <div class="refsect1 examples" id="refsect1-function.uopz-set-return-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-617">
+  <div class="example" id="uopz-get-hook.example.basic">
    <p><strong>例1 <span class="function"><strong>uopz_set_return()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -122,7 +129,7 @@
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-618">
+  <div class="example" id="example-624">
    <p><strong>例2 <span class="function"><strong>uopz_set_return()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -138,7 +145,7 @@
 </pre></div>
    </div>
   </div>
-  <div class="example" id="example-619">
+  <div class="example" id="uopz-get-property.example.basic">
    <p><strong>例3 <span class="function"><strong>uopz_set_return()</strong></span> class example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -159,7 +166,7 @@
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.uopz-set-mock.html">uopz_set_mock</a></div>
+ <div class="prev" style="text-align: left; float: left;"><a href="function.uopz-set-property.html">uopz_set_property</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="function.uopz-set-static.html">uopz_set_static</a></div>
  <div class="up"><a href="ref.uopz.html">Uopz 関数</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
