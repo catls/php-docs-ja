@@ -7,7 +7,7 @@
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="class.mongodb-driver-exception-logicexception.html">MongoDB\Driver\Exception\LogicException</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="class.mongodb-driver-exception-serverexception.html">MongoDB\Driver\Exception\ServerException</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-runtimeexception.haserrorlabel.html">MongoDB\Driver\Exception\RuntimeException::hasErrorLabel</a></div>
  <div class="up"><a href="mongodb.exceptions.html">MongoDB\Driver\Exception</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="class.mongodb-driver-exception-runtimeexception" class="reference">
@@ -50,7 +50,16 @@
      </span>
      {</div>
 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* プロパティ */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">bool</span>
+      <var class="varname"><a href="class.mongodb-driver-exception-runtimeexception.html#mongodb-driver-exception-runtimeexception.props.errorlabels">$<var class="varname">errorLabels</var></a></var>
+    ;</div>
+
+
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したプロパティ */</div>
+    
     <div class="fieldsynopsis">
      <span class="modifier">protected</span>
      <span class="type">string</span>
@@ -73,7 +82,15 @@
     ;</div>
 
 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="mongodb-driver-runtimeexception.haserrorlabel.html" class="methodname">hasErrorLabel</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$errorLabel</code></span>
+   )</div>
+
+
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したメソッド */</div>
+    
     <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="exception.getmessage.html" class="methodname">Exception::getMessage</a></span>
     ( <span class="methodparam">void</span>
@@ -117,12 +134,84 @@
 
   </div>
 
+
+  <div class="section" id="mongodb-driver-exception-runtimeexception.props">
+   <h2 class="title">プロパティ</h2>
+   <dl>
+
+    
+     <dt id="mongodb-driver-exception-runtimeexception.props.errorlabels"><var class="varname"><var class="varname">errorLabels</var></var></dt>
+
+     <dd>
+
+      <p class="para">
+       Contains an array of error labels to go with an exception. For example,
+       error labels can be used to detect whether a transaction can be retried
+       safely if the <em>TransientTransactionError</em> label is
+       present. The existence of a specific error label should be tested for
+       with the
+       <span class="methodname"><a href="mongodb-driver-runtimeexception.haserrorlabel.html" class="methodname">MongoDB\Driver\Exception\RuntimeException::hasErrorLabel()</a></span>,
+       instead of interpreting this <em>errorLabels</em> property
+       manually.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </div>
+
+
+  <div class="section">
+   <h2 class="title">変更履歴</h2>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>1.6.0</td>
+        <td>
+         <p class="para">
+          The
+          <span class="methodname"><a href="mongodb-driver-runtimeexception.haserrorlabel.html" class="methodname">MongoDB\Driver\Exception\RuntimeException::hasErrorLabel()</a></span>
+          method and
+          <a href="class.mongodb-driver-exception-runtimeexception.html#mongodb-driver-exception-runtimeexception.props.errorlabels" class="link">MongoDB\Driver\Exception\RuntimeException::errorLabels</a>
+          property have been added.
+         </p>
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+  </div>
+
  </div>
 
+ 
+
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="mongodb-driver-runtimeexception.haserrorlabel.html">MongoDB\Driver\Exception\RuntimeException::hasErrorLabel</a> — Returns whether an error label is associated with an exception</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="class.mongodb-driver-exception-logicexception.html">MongoDB\Driver\Exception\LogicException</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="class.mongodb-driver-exception-serverexception.html">MongoDB\Driver\Exception\ServerException</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongodb-driver-runtimeexception.haserrorlabel.html">MongoDB\Driver\Exception\RuntimeException::hasErrorLabel</a></div>
  <div class="up"><a href="mongodb.exceptions.html">MongoDB\Driver\Exception</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div></body></html>

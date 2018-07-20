@@ -55,9 +55,16 @@
    issues). In case the exception&#039;s
    <span class="methodname"><a href="mongodb-driver-commandexception.getresultdocument.html" class="methodname">MongoDB\Driver\Exception\CommandException::getResultDocument()</a></span>
    has a <em>&quot;errorLabels&quot;</em> element, and this array contains a
-   <em>&quot;TransientTransactionError&quot;</em> value, it is safe to re-try
-   the <em class="emphasis">whole</em> transaction.</li>
-   <li class="member">Throws <a href="class.mongodb-driver-exception-runtimeexception.html" class="classname">MongoDB\Driver\Exception\RuntimeException</a> if the transaction could not be commited (e.g. a transaction was not started).</li>
+   <em>&quot;TransientTransactionError&quot;</em> or
+   <em>&quot;UnUnknownTransactionCommitResult&quot;</em> value, it is safe to re-try
+   the <em class="emphasis">whole</em> transaction. In newer versions of the
+   driver,
+   <span class="methodname"><a href="mongodb-driver-runtimeexception.haserrorlabel.html" class="methodname">MongoDB\Driver\Exception\RuntimeException::hasErrorLabel()</a></span>
+   should be used to test for this situation instead.</li>
+   <li class="member">Throws
+   <a href="class.mongodb-driver-exception-runtimeexception.html" class="classname">MongoDB\Driver\Exception\RuntimeException</a> if the
+   transaction could not be commited (e.g. a transaction was not
+   started).</li>
   </ul>
  </div>
 
@@ -66,8 +73,9 @@
   <h3 class="title">参考</h3>
   <ul class="simplelist">
    <li class="member"><span class="methodname"><a href="mongodb-driver-manager.startsession.html" class="methodname" rel="rdfs-seeAlso">MongoDB\Driver\Manager::startSession()</a> - Start a new client session for use with this client</span></li>
-   <li class="member"><span class="methodname"><strong>MongoDB\Driver\Session::commitTransaction()</strong></span></li>
+   <li class="member"><span class="methodname"><a href="mongodb-driver-session.aborttransaction.html" class="methodname" rel="rdfs-seeAlso">MongoDB\Driver\Session::abortTransaction()</a> - Aborts a transaction</span></li>
    <li class="member"><span class="methodname"><a href="mongodb-driver-session.starttransaction.html" class="methodname" rel="rdfs-seeAlso">MongoDB\Driver\Session::startTransaction()</a> - Starts a transaction</span></li>
+   <li class="member"><span class="methodname"><a href="mongodb-driver-runtimeexception.haserrorlabel.html" class="methodname" rel="rdfs-seeAlso">MongoDB\Driver\Exception\RuntimeException::hasErrorLabel()</a> - Returns whether an error label is associated with an exception</span></li>
   </ul>
  </div>
 
