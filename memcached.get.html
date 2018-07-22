@@ -23,14 +23,15 @@
    <span class="modifier">public</span> <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>Memcached::get</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$cache_cb</code></span>
-   [, <span class="methodparam"><span class="type">float</span> <code class="parameter reference">&$cas_token</code></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$$flags</code></span>
   ]] )</div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>Memcached::get()</strong></span> は、キー
    <code class="parameter">key</code> に格納されたアイテムを返します。
-   アイテムが存在して <code class="parameter">cas_token</code> が指定されていた場合には、
-   そのアイテムの CAS トークンの値がそこに格納されます。CAS トークンの使用法は
+   アイテムが存在して <code class="parameter">flags</code> に
+   <strong><code>Memcached::GET_EXTENDED</code></strong> が指定されていた場合には、
+   そのアイテムの CAS トークンの値も返します。CAS トークンの使用法は
    <span class="methodname"><a href="memcached.cas.html" class="methodname">Memcached::cas()</a></span> を参照ください。<a href="memcached.callbacks.html" class="link">Read-through キャッシュコールバック</a>
    は <code class="parameter">cache_cb</code> パラメータで指定します。
   </p>
@@ -70,12 +71,13 @@
     
     
      <dt>
-<code class="parameter">cas_token</code></dt>
+<code class="parameter">flags</code></dt>
 
      <dd>
 
       <p class="para">
-       CAS トークンを格納する変数。
+       返される結果を制御するフラグ。<strong><code>Memcached::GET_EXTENDED</code></strong>
+       を指定すると、CAS トークンも返すようになります。
       </p>
      </dd>
 
@@ -90,6 +92,8 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    キャッシュに格納された値、あるいは <strong><code>FALSE</code></strong> を返します。
+   <code class="parameter">flags</code> に <strong><code>Memcached::GET_EXTENDED</code></strong>
+   が設定されている場合は、キャッシュに格納された値と CAS トークンを含む配列を返します。
    キーが存在しない場合、
    <span class="methodname"><a href="memcached.getresultcode.html" class="methodname">Memcached::getResultCode()</a></span> は
    <strong><code>Memcached::RES_NOTFOUND</code></strong> を返します。
@@ -127,6 +131,35 @@ int(100)
 
    </div>
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-memcached.get-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>3.0.0</td>
+      <td>
+       <code class="parameter reference">&cas_token</code> パラメータが削除されました。
+       その代わりに新たに <code class="parameter">flags</code> パラメータが追加され、ここに
+       <strong><code>Memcached::GET_EXTENDED</code></strong> を指定すると、CAS トークンも含めて取得するようになります。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 
