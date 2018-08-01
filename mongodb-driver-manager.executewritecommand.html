@@ -121,6 +121,19 @@
       </table>
 
      </p>
+     
+     <div class="warning"><strong class="warning">警告</strong>
+      <p class="para">
+       If you are using a <em>&quot;session&quot;</em> which has a transaction
+       in progress, you cannot specify a <em>&quot;readConcern&quot;</em> or
+       <em>&quot;writeConcern&quot;</em> option. This will result in an
+       <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a>
+       being thrown. Instead, you should set these two options when you create
+       the transaction with
+       <span class="methodname"><a href="mongodb-driver-session.starttransaction.html" class="methodname">MongoDB\Driver\Session::startTransaction()</a></span>.
+      </p>
+     </div>
+
     </dd>
 
    
@@ -138,6 +151,7 @@
  <div class="refsect1 errors" id="refsect1-mongodb-driver-manager.executewritecommand-errors">
   <h3 class="title">エラー / 例外</h3>
   <ul class="simplelist">
+   <li class="member">Throws <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a> if the <em>&quot;session&quot;</em> option is used with an associated transaction in combination with a <em>&quot;readConcern&quot;</em> or <em>&quot;writeConcern&quot;</em> option.</li>
    <li class="member">Throws <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a> if the <em>&quot;session&quot;</em> option is used in combination with an unacknowledged write concern.</li>
    <li class="member">引数のパースに失敗した場合に <a href="class.mongodb-driver-exception-invalidargumentexception.html" class="classname">MongoDB\Driver\Exception\InvalidArgumentException</a> をスローします。</li><li class="member">サーバーへの接続が認証以外の理由で失敗した場合に <a href="class.mongodb-driver-exception-connectionexception.html" class="classname">MongoDB\Driver\Exception\ConnectionException</a> をスローします。</li><li class="member">認証が必要な場面で認証に失敗した場合に <a href="class.mongodb-driver-exception-authenticationexception.html" class="classname">MongoDB\Driver\Exception\AuthenticationException</a> をスローします。</li>
    <li class="member">Throws <a href="class.mongodb-driver-exception-runtimeexception.html" class="classname">MongoDB\Driver\Exception\RuntimeException</a> on other errors (e.g. invalid command).</li>
