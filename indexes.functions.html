@@ -260,8 +260,8 @@
 <li><a href="function.base64-decode.html" class="index">base64_decode</a> - MIME base64 方式によりエンコードされたデータをデコードする</li>
 <li><a href="function.base64-encode.html" class="index">base64_encode</a> - MIME base64 方式でデータをエンコードする</li>
 <li><a href="function.basename.html" class="index">basename</a> - パスの最後にある名前の部分を返す</li>
-<li><a href="mysql-xdevapi-baseresult.getwarningcount.html" class="index">BaseResult::getWarningCount</a> - Fetch warning count from last operation</li>
 <li><a href="mysql-xdevapi-baseresult.getwarnings.html" class="index">BaseResult::getWarnings</a> - Fetch warnings from last operation</li>
+<li><a href="mysql-xdevapi-baseresult.getwarningscount.html" class="index">BaseResult::getWarningsCount</a> - Fetch warning count from last operation</li>
 <li><a href="function.base-convert.html" class="index">base_convert</a> - 数値の基数を任意に変換する</li>
 <li><a href="function.bbcode-add-element.html" class="index">bbcode_add_element</a> - bbcode 要素を追加する</li>
 <li><a href="function.bbcode-add-smiley.html" class="index">bbcode_add_smiley</a> - 顔文字をパーサに追加する</li>
@@ -714,16 +714,14 @@
 <li><a href="mysql-xdevapi-collectionfind.limit.html" class="index">CollectionFind::limit</a> - Limit number of returned documents</li>
 <li><a href="mysql-xdevapi-collectionfind.lockexclusive.html" class="index">CollectionFind::lockExclusive</a> - Execute operation with EXCLUSIVE LOCK</li>
 <li><a href="mysql-xdevapi-collectionfind.lockshared.html" class="index">CollectionFind::lockShared</a> - Execute operation with SHARED LOCK</li>
-<li><a href="mysql-xdevapi-collectionfind.skip.html" class="index">CollectionFind::skip</a> - Skip given number of elements to be returned</li>
+<li><a href="mysql-xdevapi-collectionfind.offset.html" class="index">CollectionFind::offset</a> - Skip given number of elements to be returned</li>
 <li><a href="mysql-xdevapi-collectionfind.sort.html" class="index">CollectionFind::sort</a> - Set the sorting criteria</li>
 <li><a href="mysql-xdevapi-collectionfind.construct.html" class="index">CollectionFind::__construct</a> - CollectionFind constructor</li>
 <li><a href="mysql-xdevapi-collectionmodify.arrayappend.html" class="index">CollectionModify::arrayAppend</a> - Append element to an array field</li>
-<li><a href="mysql-xdevapi-collectionmodify.arraydelete.html" class="index">CollectionModify::arrayDelete</a> - Delete element</li>
 <li><a href="mysql-xdevapi-collectionmodify.arrayinsert.html" class="index">CollectionModify::arrayInsert</a> - Insert element into an array field</li>
 <li><a href="mysql-xdevapi-collectionmodify.bind.html" class="index">CollectionModify::bind</a> - Bind value to query placeholder</li>
 <li><a href="mysql-xdevapi-collectionmodify.execute.html" class="index">CollectionModify::execute</a> - Execute modify operation</li>
 <li><a href="mysql-xdevapi-collectionmodify.limit.html" class="index">CollectionModify::limit</a> - Limit number of modified documents</li>
-<li><a href="mysql-xdevapi-collectionmodify.merge.html" class="index">CollectionModify::merge</a> - Merge attributes to document</li>
 <li><a href="mysql-xdevapi-collectionmodify.patch.html" class="index">CollectionModify::patch</a> - Patch document</li>
 <li><a href="mysql-xdevapi-collectionmodify.replace.html" class="index">CollectionModify::replace</a> - Replace document field</li>
 <li><a href="mysql-xdevapi-collectionmodify.set.html" class="index">CollectionModify::set</a> - Set document attribute</li>
@@ -1302,8 +1300,8 @@
 <li><a href="function.dns-get-record.html" class="index">dns_get_record</a> - ホスト名に関連する DNS リソースレコードを取得する</li>
 <li><a href="mysql-xdevapi-docresult.fetchall.html" class="index">DocResult::fetchAll</a> - Get all rows</li>
 <li><a href="mysql-xdevapi-docresult.fetchone.html" class="index">DocResult::fetchOne</a> - Get one row</li>
-<li><a href="mysql-xdevapi-docresult.getwarningcount.html" class="index">DocResult::getWarningCount</a> - Get warning count from last operation</li>
 <li><a href="mysql-xdevapi-docresult.getwarnings.html" class="index">DocResult::getWarnings</a> - Get warnings from last operation</li>
+<li><a href="mysql-xdevapi-docresult.getwarningscount.html" class="index">DocResult::getWarningsCount</a> - Get warning count from last operation</li>
 <li><a href="mysql-xdevapi-docresult.construct.html" class="index">DocResult::__construct</a> - DocResult constructor</li>
 <li><a href="domattr.isid.html" class="index">DOMAttr::isId</a> - 属性が定義済みの ID かどうかを調べる</li>
 <li><a href="domattr.construct.html" class="index">DOMAttr::__construct</a> - 新しい DOMAttr オブジェクトを作成する</li>
@@ -7633,11 +7631,10 @@
 <li><a href="function.restore-error-handler.html" class="index">restore_error_handler</a> - 以前のエラーハンドラ関数を回復する</li>
 <li><a href="function.restore-exception-handler.html" class="index">restore_exception_handler</a> - 以前の例外ハンドラ関数を回復する</li>
 <li><a href="function.restore-include-path.html" class="index">restore_include_path</a> - include_path 設定オプションの値を元に戻す</li>
-<li><a href="mysql-xdevapi-result.getaffecteditemscount.html" class="index">Result::getAffectedItemsCount</a> - Get affected row count</li>
 <li><a href="mysql-xdevapi-result.getautoincrementvalue.html" class="index">Result::getAutoIncrementValue</a> - Get autoincremented value</li>
 <li><a href="mysql-xdevapi-result.getgeneratedids.html" class="index">Result::getGeneratedIds</a> - Get generated ids</li>
-<li><a href="mysql-xdevapi-result.getwarningcount.html" class="index">Result::getWarningCount</a> - Get warning count from last operation</li>
 <li><a href="mysql-xdevapi-result.getwarnings.html" class="index">Result::getWarnings</a> - Get warnings from last operation</li>
+<li><a href="mysql-xdevapi-result.getwarningscount.html" class="index">Result::getWarningsCount</a> - Get warning count from last operation</li>
 <li><a href="mysql-xdevapi-result.construct.html" class="index">Result::__construct</a> - Result constructor</li>
 <li><a href="function.rewind.html" class="index">rewind</a> - ファイルポインタの位置を先頭に戻す</li>
 <li><a href="function.rewinddir.html" class="index">rewinddir</a> - ディレクトリハンドルを元に戻す</li>
@@ -7648,8 +7645,8 @@
 <li><a href="mysql-xdevapi-rowresult.getcolumncount.html" class="index">RowResult::getColumnCount</a> - Get column count</li>
 <li><a href="mysql-xdevapi-rowresult.getcolumnnames.html" class="index">RowResult::getColumnNames</a> - Get all column names</li>
 <li><a href="mysql-xdevapi-rowresult.getcolumns.html" class="index">RowResult::getColumns</a> - Get columns</li>
-<li><a href="mysql-xdevapi-rowresult.getwarningcount.html" class="index">RowResult::getWarningCount</a> - Get warning count from last operation</li>
 <li><a href="mysql-xdevapi-rowresult.getwarnings.html" class="index">RowResult::getWarnings</a> - Get warnings from last operation</li>
+<li><a href="mysql-xdevapi-rowresult.getwarningscount.html" class="index">RowResult::getWarningsCount</a> - Get warning count from last operation</li>
 <li><a href="mysql-xdevapi-rowresult.construct.html" class="index">RowResult::__construct</a> - RowResult constructor</li>
 <li><a href="function.rpm-close.html" class="index">rpm_close</a> - RPM ファイルを閉じる</li>
 <li><a href="function.rpm-get-tag.html" class="index">rpm_get_tag</a> - RPM ファイルからヘッダタグを取得する</li>
