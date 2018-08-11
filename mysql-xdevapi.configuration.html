@@ -11,9 +11,168 @@
  <div class="up"><a href="mysql-xdevapi.setup.html">インストール/設定</a></div>
  <div class="home"><a href="index.html">PHP Manual</a></div>
 </div><hr /><div id="mysql-xdevapi.configuration" class="section">
-  <h2 class="title">実行時設定</h2>
-  <p class="para">設定ディレクティブは定義されていません。</p>
- </div><hr /><div class="manualnavbar" style="text-align: center;">
+ <h2 class="title">実行時設定</h2>
+ <p class="simpara">
+<var class="filename">php.ini</var> の設定により動作が変化します。
+</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Mysql_xdevapi 設定オプション</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>名前</th>
+      <th>デフォルト</th>
+      <th>変更可能</th>
+      <th>変更履歴</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td><a href="mysql-xdevapi.configuration.html#ini.xmysqlnd.collect-memory-statistics" class="link">xmysqlnd.collect_memory_statistics</a></td>
+      <td>0</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql-xdevapi.configuration.html#ini.xmysqlnd.collect-statistics" class="link">xmysqlnd.collect_statistics</a></td>
+      <td>1</td>
+      <td>PHP_INI_ALL</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql-xdevapi.configuration.html#ini.xmysqlnd.debug" class="link">xmysqlnd.debug</a></td>
+      <td class="empty">&nbsp;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql-xdevapi.configuration.html#ini.xmysqlnd.mempool-default-size" class="link">xmysqlnd.mempool_default_size</a></td>
+      <td>16000</td>
+      <td>PHP_INI_ALL</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql-xdevapi.configuration.html#ini.xmysqlnd.net-read-timeout" class="link">xmysqlnd.net_read_timeout</a></td>
+      <td>31536000</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td></td>
+     </tr>
+
+     <tr>
+      <td><a href="mysql-xdevapi.configuration.html#ini.xmysqlnd.trace-alloc" class="link">xmysqlnd.trace_alloc</a></td>
+      <td class="empty">&nbsp;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td></td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </p>
+
+ <p class="para">以下に設定ディレクティブに関する
+簡単な説明を示します。</p>
+
+ <p class="para">
+  <dl>
+
+   
+     <dt id="ini.xmysqlnd.collect-memory-statistics">
+      <code class="parameter">xmysqlnd.collect_memory_statistics</code>
+      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.xmysqlnd.collect-statistics">
+      <code class="parameter">xmysqlnd.collect_statistics</code>
+      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.xmysqlnd.debug">
+      <code class="parameter">xmysqlnd.debug</code>
+      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.xmysqlnd.mempool-default-size">
+      <code class="parameter">xmysqlnd.mempool_default_size</code>
+      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.xmysqlnd.net-read-timeout">
+      <code class="parameter">xmysqlnd.net_read_timeout</code>
+      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.xmysqlnd.trace-alloc">
+      <code class="parameter">xmysqlnd.trace_alloc</code>
+      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       
+      </p>
+     </dd>
+
+    
+
+  </dl>
+
+ </p>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="mysql-xdevapi.installation.html">インストール手順</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi.constants.html">定義済み定数</a></div>
  <div class="up"><a href="mysql-xdevapi.setup.html">インストール/設定</a></div>

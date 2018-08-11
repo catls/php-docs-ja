@@ -25,7 +25,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   Retrieve column names for columns present in the result set.
   </p>
 
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -44,25 +44,36 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-rowresult.getcolumnnames-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   An array with the columns names.
+   A numerical array of table columns names,
+   or <strong><code>FALSE</code></strong> if the result set is empty.
   </p>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-rowresult.getcolumnnames-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-2048">
+  <div class="example" id="example-2049">
    <p><strong>例1 <span class="function"><strong>mysql_xdevapi\RowResult::getColumnNames()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"DROP&nbsp;DATABASE&nbsp;addressbook"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;DATABASE&nbsp;foo"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;TABLE&nbsp;foo.test_table(x&nbsp;int)"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;addressbook.names&nbsp;values&nbsp;('John',&nbsp;42),&nbsp;('Sam',&nbsp;33)"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;from&nbsp;addressbook.names"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$colnames&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$sql</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getColumnNames</span><span style="color: #007700">();<br />&nbsp;&nbsp;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$colnames</span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
 
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; name
+    [1] =&gt; age
+)
+</pre></div>
+   </div>
   </div>
  </div>
-
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
