@@ -25,13 +25,10 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   A quoting function to escape SQL names and identifiers. It escapes the identifier 
+   given in accordance to the settings of the current connection. This escape 
+   function should not be used to escape values.
   </p>
-  
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -46,7 +43,7 @@
     <dd>
 
      <p class="para">
-      
+      The string to quote.
      </p>
     </dd>
 
@@ -59,7 +56,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-session.quotename-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   
+   The quoted string.
   </p>
  </div>
 
@@ -70,14 +67,24 @@
    <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Session::quoteName()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$first&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"MySQL's&nbsp;test"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$first</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">quoteName</span><span style="color: #007700">(</span><span style="color: #0000BB">$first</span><span style="color: #007700">));<br /><br /></span><span style="color: #0000BB">$second&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Another&nbsp;`test`&nbsp;"like"&nbsp;`this`'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$second</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">quoteName</span><span style="color: #007700">(</span><span style="color: #0000BB">$second</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
 
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+string(12) &quot;MySQL&#039;s test&quot;
+string(14) &quot;`MySQL&#039;s test`&quot;
+
+string(28) &quot;Another `test` &quot;like&quot; `this`&quot;
+string(34) &quot;`Another ``test`` &quot;like&quot; ``this```&quot;
+</pre></div>
+   </div>
   </div>
  </div>
-
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

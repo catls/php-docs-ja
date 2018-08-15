@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get the schema</title>
+  <title>Get a new schema object</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="mysql-xdevapi-session.getschema" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Session::getSchema</h1>
-  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Session::getSchema</span> &mdash; <span class="dc-title">Get the schema</span></p>
+  <p class="verinfo">(バージョン情報なし。おそらく SVN 版にしか存在しないでしょう)</p><p class="refpurpose"><span class="refname">Session::getSchema</span> &mdash; <span class="dc-title">Get a new schema object</span></p>
 
  </div>
 
@@ -21,17 +21,12 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type"><span class="type mysql_xdevapi\Schema">mysql_xdevapi\Schema</span></span> <span class="methodname"><strong>mysql_xdevapi\Session::getSchema</strong></span>
-    ( <span class="methodparam">void</span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$schema_name</code></span>
    )</div>
 
   <p class="para rdfs-comment">
-
+   A new Schema object for the provided schema name.
   </p>
-  
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -49,20 +44,29 @@
  </div>
 
 
- <div class="refsect1 examples" id="refsect1-mysql-xdevapi-session.getschema-examples">
+<div class="refsect1 examples" id="refsect1-mysql-xdevapi-session.getschema-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2073">
    <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Session::getSchema()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$schema&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchema</span><span style="color: #007700">(</span><span style="color: #DD0000">"addressbook"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$schema</span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
 
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+mysql_xdevapi\Schema Object
+(
+    [name] =&gt; addressbook
+)
+</pre></div>
+   </div>
   </div>
  </div>
-
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">

@@ -46,7 +46,8 @@
     <dd>
 
      <p class="para">
-      
+      The name of the savepoint. The name is auto-generated if the optional <em>name</em> 
+      parameter is not defined as &#039;SAVEPOINT1&#039;, &#039;SAVEPOINT2&#039;, and so on.
      </p>
     </dd>
 
@@ -59,7 +60,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-session.setsavepoint-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   
+   The name of the save point.
   </p>
  </div>
 
@@ -70,7 +71,7 @@
    <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Session::setSavepoint()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$collection&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchema</span><span style="color: #007700">(</span><span style="color: #DD0000">"addressbook"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">getCollection</span><span style="color: #007700">(</span><span style="color: #DD0000">"names"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">startTransaction</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'{"test1":1,&nbsp;"test2":2}'&nbsp;</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$savepoint&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setSavepoint</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(&nbsp;</span><span style="color: #DD0000">'{"test3":3,&nbsp;"test4":4}'&nbsp;</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">releaseSavepoint</span><span style="color: #007700">(</span><span style="color: #0000BB">$savepoint</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rollback</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>

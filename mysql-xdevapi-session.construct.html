@@ -25,13 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   A Session object, as initiated by getSession().
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -41,23 +36,19 @@
  </div>
 
 
- 
-
-
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-session.construct-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2067">
    <p><strong>例1 <span class="function"><strong>mysql_xdevapi\Session::__construct()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">close</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
 
   </div>
  </div>
-
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
