@@ -46,6 +46,42 @@
  </div>
 
 
+ <div class="refsect1 examples" id="refsect1-mysql-xdevapi-baseresult.getwarnings-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-1967">
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\RowResult::getWarnings()</strong></span> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;DATABASE&nbsp;foo"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;TABLE&nbsp;foo.test_table(x&nbsp;int)"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$schema&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchema</span><span style="color: #007700">(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$table&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$schema</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getTable</span><span style="color: #007700">(</span><span style="color: #DD0000">"test_table"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$table</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">([</span><span style="color: #DD0000">'x'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">values</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">values</span><span style="color: #007700">([</span><span style="color: #0000BB">2</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$table</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">select</span><span style="color: #007700">([</span><span style="color: #DD0000">'x/0&nbsp;as&nbsp;bad_x'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$warnings&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getWarnings</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$warnings</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; mysql_xdevapi\Warning Object
+        (
+            [message] =&gt; Division by 0
+            [level] =&gt; 2
+            [code] =&gt; 1365
+        )
+    [1] =&gt; mysql_xdevapi\Warning Object
+        (
+            [message] =&gt; Division by 0
+            [level] =&gt; 2
+            [code] =&gt; 1365
+        )
+)
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+
 </div><hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="class.mysql-xdevapi-baseresult.html">mysql_xdevapi\BaseResult</a></div>
  <div class="next" style="text-align: right; float: right;"><a href="mysql-xdevapi-baseresult.getwarningscount.html">BaseResult::getWarningsCount</a></div>
