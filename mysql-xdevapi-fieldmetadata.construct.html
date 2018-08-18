@@ -25,13 +25,10 @@
    )</div>
 
   <p class="para rdfs-comment">
-
+   Provides metadata about a table. A FieldMetadata object is provided
+   by other methods, such as RowResult::getColumns() as demonstrated
+   in the example that follows.
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -41,23 +38,60 @@
  </div>
 
 
- 
-
-
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-fieldmetadata.construct-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2041">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\FieldMetadata::__construct()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\RowResult::getColumns()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"DROP&nbsp;DATABASE&nbsp;IF&nbsp;EXISTS&nbsp;addressbook"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;DATABASE&nbsp;foo"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;TABLE&nbsp;foo.test_table(x&nbsp;int)"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"INSERT&nbsp;INTO&nbsp;addressbook.names&nbsp;values&nbsp;('John',&nbsp;42),&nbsp;('Sam',&nbsp;33)"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$sql&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT&nbsp;*&nbsp;from&nbsp;addressbook.names"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$cols&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$sql</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getColumns</span><span style="color: #007700">();<br />&nbsp;&nbsp;<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$cols</span><span style="color: #007700">);</span>
 </span>
 </code></div>
    </div>
 
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; mysql_xdevapi\FieldMetadata Object
+        (
+            [type] =&gt; 7
+            [type_name] =&gt; BYTES
+            [name] =&gt; name
+            [original_name] =&gt; name
+            [table] =&gt; names
+            [original_table] =&gt; names
+            [schema] =&gt; addressbook
+            [catalog] =&gt; def
+            [collation] =&gt; 255
+            [fractional_digits] =&gt; 0
+            [length] =&gt; 65535
+            [flags] =&gt; 0
+            [content_type] =&gt; 0
+        )
+    [1] =&gt; mysql_xdevapi\FieldMetadata Object
+        (
+            [type] =&gt; 1
+            [type_name] =&gt; SINT
+            [name] =&gt; age
+            [original_name] =&gt; age
+            [table] =&gt; names
+            [original_table] =&gt; names
+            [schema] =&gt; addressbook
+            [catalog] =&gt; def
+            [collation] =&gt; 0
+            [fractional_digits] =&gt; 0
+            [length] =&gt; 11
+            [flags] =&gt; 0
+            [content_type] =&gt; 0
+        )
+)
+</pre></div>
+   </div>
   </div>
  </div>
-
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
