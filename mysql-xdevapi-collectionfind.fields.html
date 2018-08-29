@@ -25,7 +25,8 @@
    )</div>
 
   <p class="para rdfs-comment">
-   This is the equivalent of the SQL projection, which allows to select which columns the query shall return.
+   Defined the columns for the query to return. If not defined then
+   all columns are used.
   </p>
 
  </div>
@@ -56,7 +57,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionfind.fields-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   A CollectionFind object that can be used for further processing
+   A CollectionFind object that can be used for further processing.
   </p>
  </div>
 
@@ -67,14 +68,26 @@
    <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionFind::fields()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//Assuming&nbsp;$coll&nbsp;is&nbsp;a&nbsp;valid&nbsp;collection&nbsp;object<br /><br />/*<br />&nbsp;&nbsp;&nbsp;The&nbsp;following&nbsp;find&nbsp;call&nbsp;will&nbsp;search&nbsp;for&nbsp;all&nbsp;the&nbsp;documents<br />&nbsp;&nbsp;&nbsp;with&nbsp;a&nbsp;'job'&nbsp;like&nbsp;'tassinaro'&nbsp;and&nbsp;will&nbsp;return&nbsp;only&nbsp;the&nbsp;column<br />&nbsp;&nbsp;&nbsp;'age'&nbsp;from&nbsp;each&nbsp;document<br />*/<br /></span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">'job&nbsp;like&nbsp;\'tassinaro\''</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">fields</span><span style="color: #007700">(</span><span style="color: #DD0000">'age'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//Example&nbsp;which&nbsp;make&nbsp;use&nbsp;of&nbsp;the&nbsp;COUNT&nbsp;function<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">fields</span><span style="color: #007700">([</span><span style="color: #DD0000">'COUNT(name)&nbsp;as&nbsp;cn'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'MAX(age)&nbsp;as&nbsp;ma'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'job&nbsp;as&nbsp;j'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"DROP&nbsp;DATABASE&nbsp;IF&nbsp;EXISTS&nbsp;addressbook"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;DATABASE&nbsp;addressbook"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$schema&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchema</span><span style="color: #007700">(</span><span style="color: #DD0000">"addressbook"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$create&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$schema</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createCollection</span><span style="color: #007700">(</span><span style="color: #DD0000">"people"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$create<br />&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Alfred",&nbsp;"age":&nbsp;18,&nbsp;"job":&nbsp;"Butler"}'</span><span style="color: #007700">)<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">//&nbsp;...<br /><br /></span><span style="color: #0000BB">$collection&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$schema</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getCollection</span><span style="color: #007700">(</span><span style="color: #DD0000">"people"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection<br />&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">'job&nbsp;like&nbsp;:job&nbsp;and&nbsp;age&nbsp;&gt;&nbsp;:age'</span><span style="color: #007700">)<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'job'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Butler'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'age'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">16</span><span style="color: #007700">])<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">fields</span><span style="color: #007700">(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">)<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetchAll</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
 
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+array(1) {
+  [0]=&gt;
+  array(1) {
+    [&quot;name&quot;]=&gt;
+    string(6) &quot;Alfred&quot;
+  }
+}
+</pre></div>
+   </div>
   </div>
  </div>
-
 
 
 </div><hr /><div class="manualnavbar" style="text-align: center;">
