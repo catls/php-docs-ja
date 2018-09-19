@@ -72,29 +72,44 @@
       </li>
       <li class="listitem">
         <p class="para">
-          <em>?attribute=value</em>: this element is optional and specifies a data dictionary that contains options, 
-          e.g. for encrypted connections or &#039;auth&#039;. For additional information, see
-          <a href="https://dev.mysql.com/doc/refman/8.0/en/encrypted-connection-options.html" class="link external">&raquo;&nbsp;Command Options for Encrypted Connections</a>.
-        </p>
-        <p class="para">
-          
-        </p>
-        <p class="para">
-          The following values for &#039;auth&#039; attribute are supported (authentication mechanism):
+          <em>?attribute=value</em>: this element is optional and specifies a data dictionary 
+          that contains different options, including:
         </p>
         <ul class="itemizedlist">
-          <li class="listitem"><p class="para">plain</p></li>
-          <li class="listitem"><p class="para">mysql41</p></li>
-          <li class="listitem"><p class="para">external</p></li>
-          <li class="listitem"><p class="para">sha256_mem</p></li>
-         </ul>
+          <li class="listitem">
+          <p class="para">
+            The <em>auth</em> (authentication mechanism) attribute as it relates to encrypted connections.
+            For additional information, see <a href="https://dev.mysql.com/doc/refman/8.0/en/encrypted-connection-options.html" class="link external">&raquo;&nbsp;Command
+            Options for Encrypted Connections</a>.
+            The following &#039;auth&#039; values are supported: <em>plain</em>,
+            <em>mysql41</em>, <em>external</em>, and <em>sha256_mem</em>.
+          </p>
+          </li>
+          <li class="listitem">
+          <p class="para">
+           The <em>connect-timeout</em> attribute affects the connection
+           and not subsequent operations. It is set per connection whether on
+           a single or multiple hosts.
+          </p>
+          <p class="para">
+           Pass in a positive integer to define the connection timeout in seconds,
+           or pass in 0 (zero) to disable the timeout (infinite). Not defining
+           connect-timeout uses the default value of 10.
+          </p>
+          <p class="para">
+            Related, the MYSQLX_CONNECTION_TIMEOUT (timeout in seconds) and MYSQLX_TEST_CONNECTION_TIMEOUT (used while running tests)
+            environment variables can be set and used instead of connect-timeout in the URI. The
+            connect-timeout URI option has precedence over these environment variables.
+          </p>
+          </li>
+        </ul>
        </li>
       </ul>
 
   <div class="example" id="example-1965">
   <p><strong>例1 URI examples</strong></p>
   <div class="example-contents"><div class="phpcode"><code><span style="color: #000000">
-mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br />mysqlx://foo:bar@localhost:33060<br />mysqlx://foo:bar@localhost:33160?ssl-mode=disabled<br />mysqlx://foo:bar@localhost:33260?ssl-mode=required<br />mysqlx://foo:bar@localhost:33360?ssl-mode=required&amp;auth=mysql41<br />mysqlx://foo:bar@(/path/to/socket)<br />mysqlx://foo:bar@(/path/to/socket)?auth=sha256_mem<br />mysqlx://foo:bar@[localhost:33060,&nbsp;127.0.0.1:33061]<br />mysqlx://foobar?ssl-ca=(/path/to/ca.pem)&amp;ssl-crl=(/path/to/crl.pem)<br />mysqlx://foo:bar@[localhost:33060,&nbsp;127.0.0.1:33061]?ssl-mode=disabled</span>
+mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br />mysqlx://foo:bar@localhost:33060<br />mysqlx://foo:bar@localhost:33160?ssl-mode=disabled<br />mysqlx://foo:bar@localhost:33260?ssl-mode=required<br />mysqlx://foo:bar@localhost:33360?ssl-mode=required&amp;auth=mysql41<br />mysqlx://foo:bar@(/path/to/socket)<br />mysqlx://foo:bar@(/path/to/socket)?auth=sha256_mem<br />mysqlx://foo:bar@[localhost:33060,&nbsp;127.0.0.1:33061]<br />mysqlx://foobar?ssl-ca=(/path/to/ca.pem)&amp;ssl-crl=(/path/to/crl.pem)<br />mysqlx://foo:bar@[localhost:33060,&nbsp;127.0.0.1:33061]?ssl-mode=disabled<br />mysqlx://foo:bar@localhost:33160/?connect-timeout=0<br />mysqlx://foo:bar@localhost:33160/?connect-timeout=10</span>
 </code></div></div>
 
 </div>
@@ -115,7 +130,15 @@ mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br /
  <div class="refsect1 returnvalues" id="refsect1-function.mysql-xdevapi-getsession-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   A <strong class="classname">mysql_xdevap\Session</strong> object.
+   A <strong class="classname">Session</strong> object.
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.mysql-xdevapi-getsession-errors">
+  <h3 class="title">エラー / 例外</h3>
+  <p class="para">
+   A connection failure throws an <a href="class.exception.html" class="classname">Exception</a>.
   </p>
  </div>
 
@@ -126,7 +149,7 @@ mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br /
    <p><strong>例2 <span class="function"><strong>mysql_xdevapi\getSession()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@host"</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$session&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Connection&nbsp;could&nbsp;not&nbsp;be&nbsp;established"</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">$schemas&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchemas</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$schemas</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$mysql_version&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getServerVersion</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$mysql_version</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">"name&nbsp;=&nbsp;'Alfred'"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">fetchOne</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@host"</span><span style="color: #007700">);<br />}&nbsp;catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Connection&nbsp;could&nbsp;not&nbsp;be&nbsp;established:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">());<br />}<br /><br /></span><span style="color: #0000BB">$schemas&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchemas</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$schemas</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$mysql_version&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getServerVersion</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$mysql_version</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">"name&nbsp;=&nbsp;'Alfred'"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">fetchOne</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
