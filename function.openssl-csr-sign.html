@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>他の CERT（あるいは自分自身）で証明書をサインする</title>
+  <title>CSRに他の証明書（あるいは自分自身）で署名して証明書を作成する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.openssl-csr-sign" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">openssl_csr_sign</h1>
-  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">openssl_csr_sign</span> &mdash; <span class="dc-title">他の CERT（あるいは自分自身）で証明書をサインする</span></p>
+  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">openssl_csr_sign</span> &mdash; <span class="dc-title">CSRに他の証明書（あるいは自分自身）で署名して証明書を作成する</span></p>
 
  </div>
  
@@ -56,10 +56,9 @@
      <dd>
 
       <p class="para">
-       <span class="function"><a href="function.openssl-csr-new.html" class="function">openssl_csr_new()</a></span> で作成した CSR。
-       <var class="filename">file://path/to/csr</var> 、あるいは
-       <span class="function"><a href="function.openssl-csr-export.html" class="function">openssl_csr_export()</a></span> で生成した文字列で指定した場合は
-       PEM エンコードされた CSR も使用可能です。
+       事前に <span class="function"><a href="function.openssl-csr-new.html" class="function">openssl_csr_new()</a></span> で作成した CSR。
+       <var class="filename">file://path/to/csr</var> のように指定された PEM エンコードされた CSR へのパス、
+       あるいは <span class="function"><a href="function.openssl-csr-export.html" class="function">openssl_csr_export()</a></span> で生成した文字列も使用可能です。
       </p>
      </dd>
 
@@ -151,7 +150,7 @@
      CSR に署名する（あなた自身の CA を作成する）</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;このスクリプトでは、前のページのテキストエリアから受け取った<br />//&nbsp;CSR&nbsp;を利用すると仮定します。<br /></span><span style="color: #0000BB">$csrdata&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">"CSR"</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;これから、私たち自身&nbsp;"certificate&nbsp;authority"&nbsp;証明書を使用して<br />//&nbsp;署名を行います。どんな証明書でも署名は可能ですが、署名された<br />//&nbsp;証明書がソフトウェアやユーザーに信頼されない限り、その手続きは<br />//&nbsp;無意味です。<br /><br />//&nbsp;CA&nbsp;cert&nbsp;および秘密鍵が必要です。<br /></span><span style="color: #0000BB">$cacert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"file://path/to/ca.crt"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$privkey&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"file://path/to/ca.key"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"your_ca_key_passphrase"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$usercert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_csr_sign</span><span style="color: #007700">(</span><span style="color: #0000BB">$csrdata</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$cacert</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">365</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;作成された証明書を表示します。これをコピーして、<br />//&nbsp;ローカル設定（たとえば&nbsp;SSL&nbsp;サーバーへの接続設定ファイルなど）<br />//&nbsp;に貼り付けます。<br /></span><span style="color: #0000BB">openssl_x509_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$usercert</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$certout</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$certout</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;発生したエラーをすべて表示します。<br /></span><span style="color: #007700">while&nbsp;((</span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_error_string</span><span style="color: #007700">())&nbsp;!==&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;このスクリプトでは、前のページのテキストエリアから受け取った<br />//&nbsp;CSR&nbsp;を利用すると仮定します。<br /></span><span style="color: #0000BB">$csrdata&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">"CSR"</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;ここでは自己認証局の証明書を用いて署名要求に署名します。<br />//&nbsp;どんな証明書でも署名は可能ですが、署名に用いる証明書が<br />//&nbsp;新たに署名される証明書を取り扱うであろうソフトウェアや<br />//&nbsp;ユーザーらに信頼されていない限り、その手続きは無意味です。<br /><br />//&nbsp;自己認証局証明書とその秘密鍵が必要です。<br /></span><span style="color: #0000BB">$cacert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"file://path/to/ca.crt"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$privkey&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"file://path/to/ca.key"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"your_ca_key_passphrase"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$usercert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_csr_sign</span><span style="color: #007700">(</span><span style="color: #0000BB">$csrdata</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$cacert</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$privkey</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">365</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">'digest_alg'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'sha256'</span><span style="color: #007700">)&nbsp;);<br /><br /></span><span style="color: #FF8000">//&nbsp;ユーザーがローカル設定（SSL&nbsp;サーバー用の証明書<br />//&nbsp;ファイルなど）にコピー＆ペーストできるように<br />//&nbsp;作成された証明書をそのまま表示します。<br /></span><span style="color: #0000BB">openssl_x509_export</span><span style="color: #007700">(</span><span style="color: #0000BB">$usercert</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$certout</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$certout</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;発生したエラーをすべて表示します。<br /></span><span style="color: #007700">while&nbsp;((</span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_error_string</span><span style="color: #007700">())&nbsp;!==&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Retrieve the available certificate locations</title>
+  <title>有効な証明書の格納場所を検索する</title>
 
  </head>
  <body><div class="manualnavbar" style="text-align: center;">
@@ -13,7 +13,7 @@
 </div><hr /><div id="function.openssl-get-cert-locations" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">openssl_get_cert_locations</h1>
-  <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">openssl_get_cert_locations</span> &mdash; <span class="dc-title">Retrieve the available certificate locations</span></p>
+  <p class="verinfo">(PHP 5 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">openssl_get_cert_locations</span> &mdash; <span class="dc-title">有効な証明書の格納場所を検索する</span></p>
 
  </div>
 
@@ -25,9 +25,9 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <span class="function"><strong>openssl_get_cert_locations()</strong></span> returns an array with
-   information about the available certificate locations that will be searched
-   for SSL certificates.
+   <span class="function"><strong>openssl_get_cert_locations()</strong></span> は
+   SSL 証明書の検出された有効な証明書の格納場所についての
+   情報の配列を返します。
   </p>
  </div>
 
@@ -41,7 +41,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.openssl-get-cert-locations-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns an array with the available certificate locations.
+   有効な証明書の格納場所の配列を返します。
   </p>
  </div>
 
@@ -50,7 +50,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-959">
-    <p><strong>例1 <span class="function"><strong>openssl_get_cert_locations()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>openssl_get_cert_locations()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">openssl_get_cert_locations</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>

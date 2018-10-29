@@ -6354,14 +6354,14 @@
 <li><a href="function.openssl-csr-get-public-key.html" class="index">openssl_csr_get_public_key</a> - CERT の公開鍵を返す</li>
 <li><a href="function.openssl-csr-get-subject.html" class="index">openssl_csr_get_subject</a> - CERT の subject を返す</li>
 <li><a href="function.openssl-csr-new.html" class="index">openssl_csr_new</a> - CSR を作成する</li>
-<li><a href="function.openssl-csr-sign.html" class="index">openssl_csr_sign</a> - 他の CERT（あるいは自分自身）で証明書をサインする</li>
+<li><a href="function.openssl-csr-sign.html" class="index">openssl_csr_sign</a> - CSRに他の証明書（あるいは自分自身）で署名して証明書を作成する</li>
 <li><a href="function.openssl-decrypt.html" class="index">openssl_decrypt</a> - データを復号</li>
 <li><a href="function.openssl-dh-compute-key.html" class="index">openssl_dh_compute_key</a> - リモート DH キー及びローカル DH キーの公開値に関して、共有される秘密を計算</li>
 <li><a href="function.openssl-digest.html" class="index">openssl_digest</a> - ダイジェストを計算</li>
 <li><a href="function.openssl-encrypt.html" class="index">openssl_encrypt</a> - データを暗号化</li>
 <li><a href="function.openssl-error-string.html" class="index">openssl_error_string</a> - OpenSSL エラーメッセージを返す</li>
 <li><a href="function.openssl-free-key.html" class="index">openssl_free_key</a> - キーリソースを開放する</li>
-<li><a href="function.openssl-get-cert-locations.html" class="index">openssl_get_cert_locations</a> - Retrieve the available certificate locations</li>
+<li><a href="function.openssl-get-cert-locations.html" class="index">openssl_get_cert_locations</a> - 有効な証明書の格納場所を検索する</li>
 <li><a href="function.openssl-get-cipher-methods.html" class="index">openssl_get_cipher_methods</a> - 利用可能な暗号メソッドを取得</li>
 <li><a href="function.openssl-get-curve-names.html" class="index">openssl_get_curve_names</a> - Gets list of available curve names for ECC</li>
 <li><a href="function.openssl-get-md-methods.html" class="index">openssl_get_md_methods</a> - 利用可能なダイジェスト・メソッドを取得</li>
@@ -6372,8 +6372,8 @@
 <li><a href="function.openssl-pkcs7-decrypt.html" class="index">openssl_pkcs7_decrypt</a> - S/MIME 暗号化されたメッセージを復号する</li>
 <li><a href="function.openssl-pkcs7-encrypt.html" class="index">openssl_pkcs7_encrypt</a> - S/MIME メッセージを暗号化する</li>
 <li><a href="function.openssl-pkcs7-read.html" class="index">openssl_pkcs7_read</a> - Export the PKCS7 file to an array of PEM certificates</li>
-<li><a href="function.openssl-pkcs7-sign.html" class="index">openssl_pkcs7_sign</a> - S/MIME メッセージにサインする</li>
-<li><a href="function.openssl-pkcs7-verify.html" class="index">openssl_pkcs7_verify</a> - S/MIME でサインされたメッセージの署名を検証する</li>
+<li><a href="function.openssl-pkcs7-sign.html" class="index">openssl_pkcs7_sign</a> - S/MIME メッセージに署名する</li>
+<li><a href="function.openssl-pkcs7-verify.html" class="index">openssl_pkcs7_verify</a> - S/MIME で署名されたメッセージの署名を検証する</li>
 <li><a href="function.openssl-pkcs12-export.html" class="index">openssl_pkcs12_export</a> - PKCS#12 互換の証明書保存ファイルを変数にエクスポートする</li>
 <li><a href="function.openssl-pkcs12-export-to-file.html" class="index">openssl_pkcs12_export_to_file</a> - PKCS#12 互換の証明書保存ファイルをエクスポートする</li>
 <li><a href="function.openssl-pkcs12-read.html" class="index">openssl_pkcs12_read</a> - PKCS#12 認証ストアをパースして配列形式にする</li>
@@ -6393,14 +6393,14 @@
 <li><a href="function.openssl-sign.html" class="index">openssl_sign</a> - 署名を生成する</li>
 <li><a href="function.openssl-spki-export.html" class="index">openssl_spki_export</a> - Exports a valid PEM formatted public key signed public key and challenge</li>
 <li><a href="function.openssl-spki-export-challenge.html" class="index">openssl_spki_export_challenge</a> - Exports the challenge assoicated with a signed public key and challenge</li>
-<li><a href="function.openssl-spki-new.html" class="index">openssl_spki_new</a> - Generate a new signed public key and challenge</li>
+<li><a href="function.openssl-spki-new.html" class="index">openssl_spki_new</a> - 署名された公開鍵とチャレンジを新規に作成する</li>
 <li><a href="function.openssl-spki-verify.html" class="index">openssl_spki_verify</a> - Verifies a signed public key and challenge</li>
 <li><a href="function.openssl-verify.html" class="index">openssl_verify</a> - 署名を検証する</li>
 <li><a href="function.openssl-x509-checkpurpose.html" class="index">openssl_x509_checkpurpose</a> - 証明書が特定の目的に使用可能かどうか確認する</li>
 <li><a href="function.openssl-x509-check-private-key.html" class="index">openssl_x509_check_private_key</a> - 秘密鍵が証明書に対応するかを確認する</li>
 <li><a href="function.openssl-x509-export.html" class="index">openssl_x509_export</a> - 証明書を文字列としてエクスポートする</li>
 <li><a href="function.openssl-x509-export-to-file.html" class="index">openssl_x509_export_to_file</a> - 証明書をファイルにエクスポートする</li>
-<li><a href="function.openssl-x509-fingerprint.html" class="index">openssl_x509_fingerprint</a> - Calculates the fingerprint, or digest, of a given X.509 certificate</li>
+<li><a href="function.openssl-x509-fingerprint.html" class="index">openssl_x509_fingerprint</a> - 与えられた X.509 証明書のフィンガープリントあるいはダイジェストを計算する</li>
 <li><a href="function.openssl-x509-free.html" class="index">openssl_x509_free</a> - 証明書リソースを開放する</li>
 <li><a href="function.openssl-x509-parse.html" class="index">openssl_x509_parse</a> - X509 証明書をパースし、配列として情報を返す</li>
 <li><a href="function.openssl-x509-read.html" class="index">openssl_x509_read</a> - X.509 証明書をパースし、リソース ID を返す</li>
