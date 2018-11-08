@@ -338,7 +338,7 @@
    <span class="modifier">final</span>
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">double</span> 
+   <span class="type">float</span> 
    <span class="methodname"><a href="ev.now.html" class="methodname">now</a></span>
     ( <span class="methodparam">void</span>
    )</div>
@@ -384,7 +384,7 @@
    <span class="type">void</span> 
    <span class="methodname"><a href="ev.sleep.html" class="methodname">sleep</a></span>
     ( <span class="methodparam">
-    <span class="type">double</span>
+    <span class="type">float</span>
      <code class="parameter">$seconds</code>
    </span>
    )</div>
@@ -419,7 +419,7 @@
    <span class="modifier">final</span>
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">double</span> 
+   <span class="type">float</span> 
    <span class="methodname"><a href="ev.time.html" class="methodname">time</a></span>
     ( <span class="methodparam">void</span>
    )</div>
@@ -1189,8 +1189,7 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="ev.backend.html">Ev::backend</a> — libev が使うバックエンドを表す整数値を返す</li><li><a href="ev.depth.html">Ev::depth</a> — 再帰の深さを返す</li><li><a href="ev.embeddablebackends.html">Ev::embeddableBackends</a> — 他のイベントループに埋め込めるバックエンド群を返す</li><li><a href="ev.feedsignal.html">Ev::feedSignal</a> — シグナルイベントを Ev に送る</li><li><a href="ev.feedsignalevent.html">Ev::feedSignalEvent</a> — シグナルイベントの情報をデフォルトループに送る</li><li><a href="ev.iteration.html">Ev::iteration</a> — デフォルトのイベントループが新しいイベントをポーリングした回数を返す</li><li><a href="ev.now.html">Ev::now</a> — デフォルトのイベントループで直近の処理が始まった時刻を返す</li><li><a href="ev.nowupdate.html">Ev::nowUpdate</a> — カーネルに問い合わせて現在時刻を確認し、処理中の Ev::now が返す時刻を更新する</li><li><a href="ev.recommendedbackends.html">Ev::recommendedBackends</a> — Returns a bit mask of recommended backends for current
-  platform.</li><li><a href="ev.resume.html">Ev::resume</a> — 一時停止していたデフォルトのイベントループを再開させる</li><li><a href="ev.run.html">Ev::run</a> — イベントのチェックとデフォルトループのコールバックの呼び出しを開始する</li><li><a href="ev.sleep.html">Ev::sleep</a> — 指定した秒数だけプロセスをブロックする</li><li><a href="ev.stop.html">Ev::stop</a> — デフォルトのイベントループを止める</li><li><a href="ev.supportedbackends.html">Ev::supportedBackends</a> — 現在の libev の構成でサポートするバックエンド群を返す</li><li><a href="ev.suspend.html">Ev::suspend</a> — デフォルトのイベントループを一時停止する</li><li><a href="ev.time.html">Ev::time</a> — epoch から現在時刻までの秒数を返す</li><li><a href="ev.verify.html">Ev::verify</a> — 内部の整合性をチェックする (デバッグ用)</li></ul>
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="ev.backend.html">Ev::backend</a> — libev が使うバックエンドを表す整数値を返す</li><li><a href="ev.depth.html">Ev::depth</a> — 再帰の深さを返す</li><li><a href="ev.embeddablebackends.html">Ev::embeddableBackends</a> — 他のイベントループに埋め込めるバックエンド群を返す</li><li><a href="ev.feedsignal.html">Ev::feedSignal</a> — シグナルイベントを Ev に送る</li><li><a href="ev.feedsignalevent.html">Ev::feedSignalEvent</a> — シグナルイベントの情報をデフォルトループに送る</li><li><a href="ev.iteration.html">Ev::iteration</a> — デフォルトのイベントループが新しいイベントをポーリングした回数を返す</li><li><a href="ev.now.html">Ev::now</a> — デフォルトのイベントループで直近の処理が始まった時刻を返す</li><li><a href="ev.nowupdate.html">Ev::nowUpdate</a> — カーネルに問い合わせて現在時刻を確認し、処理中の Ev::now が返す時刻を更新する</li><li><a href="ev.recommendedbackends.html">Ev::recommendedBackends</a> — 現在のプラットフォーム上でおすすめのバックエンドのビットマスクを返す</li><li><a href="ev.resume.html">Ev::resume</a> — 一時停止していたデフォルトのイベントループを再開させる</li><li><a href="ev.run.html">Ev::run</a> — イベントのチェックとデフォルトループのコールバックの呼び出しを開始する</li><li><a href="ev.sleep.html">Ev::sleep</a> — 指定した秒数だけプロセスをブロックする</li><li><a href="ev.stop.html">Ev::stop</a> — デフォルトのイベントループを止める</li><li><a href="ev.supportedbackends.html">Ev::supportedBackends</a> — 現在の libev の構成でサポートするバックエンド群を返す</li><li><a href="ev.suspend.html">Ev::suspend</a> — デフォルトのイベントループを一時停止する</li><li><a href="ev.time.html">Ev::time</a> — epoch から現在時刻までの秒数を返す</li><li><a href="ev.verify.html">Ev::verify</a> — 内部の整合性をチェックする (デバッグ用)</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="ev.periodic-modes.html">Periodic ウォッチャーの操作モード</a></div>
