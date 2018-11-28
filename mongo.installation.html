@@ -61,8 +61,8 @@
    Go to Github and click the &quot;download&quot; button.  Then run:
 
    <div class="example-contents">
-<div class="shellcode"><pre class="shellcode">$ tar zxvf mongodb-mongodb-php-driver-&lt;commit_id&gt;.tar.gz
-$ cd mongodb-mongodb-php-driver-&lt;commit_id&gt;
+<div class="shellcode"><pre class="shellcode">$ tar zxvf mongo-php-driver-legacy-&lt;commit_id&gt;.tar.gz
+$ cd mongo-php-driver-legacy-&lt;commit_id&gt;
 $ phpize
 $ ./configure
 $ make all
@@ -73,7 +73,7 @@ $ sudo make install</pre>
   </p>
 
   <p class="para">
-   Make the following changes to php.ini:
+   Make the following changes to <var class="filename">php.ini</var>:
   </p>
   <ul class="itemizedlist">
    <li class="listitem">
@@ -97,7 +97,7 @@ $ sudo make install</pre>
      </div>
 
 
-     If it&#039;s not, change the <em class="emphasis">extension_dir</em> in php.ini or 
+     If it&#039;s not, change the <em class="emphasis">extension_dir</em> in <var class="filename">php.ini</var> or 
      move <em class="emphasis">mongo.so</em>.
     </p>
    </li>
@@ -129,7 +129,7 @@ $ sudo make install</pre>
   </p>
 
   <p class="para">
-   Add the following line to your php.ini file:
+   Add the following line to your <var class="filename">php.ini</var> file:
    <div class="example-contents">
 <div class="inicode"><pre class="inicode">extension=mongo.so</pre>
 </div>
@@ -139,7 +139,7 @@ $ sudo make install</pre>
 
   <p class="para">
    If pecl runs out of memory while installing, make sure memory_limit in 
-   php.ini is set to at least 128MB.
+   <var class="filename">php.ini</var> is set to at least 128MB.
   </p>
  </div>
 
@@ -155,7 +155,7 @@ $ sudo make install</pre>
   </p>
 
   <p class="para">
-   Add the following line to your php.ini file:
+   Add the following line to your <var class="filename">php.ini</var> file:
    <div class="example-contents">
 <div class="inicode"><pre class="inicode">extension=php_mongo.dll</pre>
 </div>
@@ -193,26 +193,11 @@ DLL ファイルを PHP のフォルダから Windows のシステムディレ�
 
   </p>
 
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <span class="simpara">
-    <a href="https://brew.sh/2018/01/19/homebrew-1.5.0/" class="link external">&raquo;&nbsp;Homebrew 1.5.0</a>
-    deprecated the <a href="https://github.com/Homebrew/homebrew-php" class="link external">&raquo;&nbsp;Homebrew/php tap</a>
-    and removed formulae for PHP extensions. Going forward, macOS users should
-    install the driver with PECL. Community forks of the
-    <a href="https://github.com/Homebrew/homebrew-php" class="link external">&raquo;&nbsp;Homebrew/php tap</a> may still
-    contain formale for installing the driver on various PHP versions.
-   </span>
-  </p></blockquote>
-
   <p class="para">
-   If you are using <a href="https://www.apachefriends.org/" class="link external">&raquo;&nbsp;XAMPP</a>, note that it
-   has its own pecl binary and php.ini configuration. You should be able to
-   install the driver with the following command:
-   <div class="example-contents">
-<div class="shellcode"><pre class="shellcode">$ sudo /Applications/XAMPP/xamppfiles/bin/pecl install mongo</pre>
-</div>
-   </div>
-
+   If your system has multiple version of PHP installed (e.g. macOS default,
+   Homebrew, <a href="https://www.apachefriends.org/" class="link external">&raquo;&nbsp;XAMPP</a>), note that that each
+   version of PHP has its own <a href="install.pecl.html" class="link">pecl</a>
+   command and <var class="filename">php.ini</var> file.
   </p>
 
   <blockquote class="note"><p><strong class="note">注意</strong>: 
