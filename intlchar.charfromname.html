@@ -29,7 +29,7 @@
    Finds a Unicode character by its name and returns its code point value.
   </p>
   <p class="para">
-   The name is matched exactly and completely. If the name does not correspond to a code point, <strong><code>FALSE</code></strong> is returned.
+   The name is matched exactly and completely. If the name does not correspond to a code point, <strong><code>NULL</code></strong> is returned.
   </p>
   <p class="para">
    A Unicode 1.0 name is matched only if it differs from the modern name. Unicode names are all uppercase.
@@ -81,7 +81,7 @@
  <div class="refsect1 returnvalues" id="refsect1-intlchar.charfromname-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   The Unicode value of the code point with the given name (as an <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>), or <strong><code>FALSE</code></strong> if there is no such code point.
+   The Unicode value of the code point with the given name (as an <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>), or <strong><code>NULL</code></strong> if there is no such code point.
   </p>
  </div>
 
