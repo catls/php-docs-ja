@@ -16,7 +16,7 @@
   <p class="verinfo">(PHP 5.4 &gt;= 5.4.26, PHP 5.5 &gt;= 5.5.10, PHP 5.6 &gt;= 5.6.0, PHP 7)</p><p class="refpurpose"><span class="refname">ldap_modify_batch</span> &mdash; <span class="dc-title">Batch and execute modifications on an LDAP entry</span></p>
 
  </div>
- 
+
  <div class="refsect1 description" id="refsect1-function.ldap-modify-batch-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
@@ -24,7 +24,7 @@
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$dn</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$entry</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$serverctrls</code></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$serverctrls</code><span class="initializer"> = array()</span></span>
   ] )</div>
 
   <p class="para rdfs-comment">
@@ -160,6 +160,35 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.ldap-modify-batch-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.3</td>
+       <td>
+        Support for <code class="parameter">serverctrls</code> added
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 
