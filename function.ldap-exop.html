@@ -23,8 +23,8 @@
    <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><strong>ldap_exop</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$reqoid</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$reqdata</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$servercontrols</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$reqdata</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$serverctrls</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$retdata</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$retoid</code></span>
   ]]]] )</div>
@@ -79,12 +79,12 @@
    
    
     <dt>
-<code class="parameter">servercontrols</code></dt>
+<code class="parameter">serverctrls</code></dt>
 
     <dd>
 
      <p class="para">
-       Unused as of PHP 7.2.
+      Array of <a href="ldap.controls.html" class="link">LDAP Controls</a> to send with the request.
      </p>
     </dd>
 
@@ -129,10 +129,39 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-function.ldap-exop-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.3</td>
+       <td>
+        Support for <code class="parameter">serverctrls</code> added
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-function.ldap-exop-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5502">
+   <div class="example" id="example-5505">
     <p><strong>例1 Whoami extended operation</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

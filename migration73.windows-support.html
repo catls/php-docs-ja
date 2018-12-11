@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Windows Support</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="migration73.other-changes.html">Other Changes</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
+ <div class="up"><a href="migration73.html">Migrating from PHP 7.2.x to PHP 7.3.x</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="migration73.windows-support" class="sect1">
+ <h2 class="title">Windows Support</h2>
+
+ <div class="sect2" id="migration73.windows-support.core">
+  <h3 class="title">PHP Core</h3>
+
+  <div class="sect3" id="migration73.windows-support.core.file-descriptors">
+   <h4 class="title">More POSIX Conforming File Deletion</h4>
+
+   <p class="para">
+    File descriptors are opened in shared read/write/delete mode by default.
+    This effectively maps the <abbr class="abbrev">POSIX</abbr> semantics and allows to
+    delete files with handles in use. It is not 100% same, some platform
+    differences still persist. After the deletion, the filename entry is
+    blocked, until all the opened handles to it are closed.
+   </p>
+  </div>
+
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="migration73.other-changes.html">Other Changes</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration72.html">PHP 7.1.x から PHP 7.2.x への移行</a></div>
+ <div class="up"><a href="migration73.html">Migrating from PHP 7.2.x to PHP 7.3.x</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

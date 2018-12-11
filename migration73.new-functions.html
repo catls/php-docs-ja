@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>New Functions</title>
+
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="migration73.new-features.html">New Features</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration73.constants.html">New Global Constants</a></div>
+ <div class="up"><a href="migration73.html">Migrating from PHP 7.2.x to PHP 7.3.x</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="migration73.new-functions" class="sect1">
+ <h2 class="title">New Functions</h2>
+
+ <div class="sect2" id="migration73.new-functions.core">
+  <h3 class="title">PHP Core</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.array-key-first.html" class="function">array_key_first()</a></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.array-key-last.html" class="function">array_key_last()</a></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.hrtime.html" class="function">hrtime()</a></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.is-countable.html" class="function">is_countable()</a></span>
+    </span>
+   </li>
+  </ul>
+ </div>
+
+ <div class="sect2" id="migration73.new-functions.fpm">
+  <h3 class="title">FastCGI Process Manager</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><strong>fpm_get_status()</strong></span>
+    </span>
+   </li>
+  </ul>
+ </div>
+
+ <div class="sect2" id="migration73.new-functions.datetime">
+  <h3 class="title">Date and Time</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="methodname"><strong>DateTime::createFromImmutable()</strong></span>
+    </span>
+   </li>
+  </ul>
+ </div>
+
+ <div class="sect2" id="migration73.new-functions.gmp">
+  <h3 class="title">GNU Multiple Precision</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="function.gmp-binomial.html" class="function">gmp_binomial()</a></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><strong>gmp_kronecker()</strong></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><strong>gmp_lcm()</strong></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><strong>gmp_perfect_power()</strong></span>
+    </span>
+   </li>
+  </ul>
+ </div>
+
+ <div class="sect2" id="migration73.new-functions.intl">
+  <h3 class="title">Internationalization Functions</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="methodname"><a href="normalizer.getrawdecomposition.html" class="methodname">Normalizer::getRawDecomposition()</a></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><a href="normalizer.getrawdecomposition.html" class="function">normalizer_get_raw_decomposition()</a></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="methodname"><strong>Spoofchecker::setRestrictionLevel()</strong></span>
+    </span>
+   </li>
+  </ul>
+ </div>
+
+ <div class="sect2" id="migration73.new-functions.ldap">
+  <h3 class="title">Lightweight Directory Access Protocol</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara"><span class="function"><a href="function.ldap-add-ext.html" class="function">ldap_add_ext()</a></span></span>
+   </li>
+   <li class="listitem">
+    <span class="simpara"><span class="function"><a href="function.ldap-bind-ext.html" class="function">ldap_bind_ext()</a></span></span>
+   </li>
+   <li class="listitem">
+    <span class="simpara"><span class="function"><a href="function.ldap-delete-ext.html" class="function">ldap_delete_ext()</a></span></span>
+   </li>
+   <li class="listitem">
+    <span class="simpara"><span class="function"><a href="function.ldap-mod_add-ext.html" class="function">ldap_mod_add_ext()</a></span></span>
+   </li>
+   <li class="listitem">
+    <span class="simpara"><span class="function"><a href="function.ldap-mod_replace-ext.html" class="function">ldap_mod_replace_ext()</a></span></span>
+   </li>
+   <li class="listitem">
+    <span class="simpara"><span class="function"><a href="function.ldap-mod_del-ext.html" class="function">ldap_mod_del_ext()</a></span></span>
+   </li>
+   <li class="listitem">
+    <span class="simpara"><span class="function"><a href="function.ldap-rename-ext.html" class="function">ldap_rename_ext()</a></span></span>
+   </li>
+  </ul>
+ </div>
+
+ <div class="sect2" id="migration73.new-functions.openssl">
+  <h3 class="title">OpenSSL</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><strong>openssl_pkey_derive()</strong></span>
+    </span>
+   </li>
+  </ul>
+ </div>
+
+ <div class="sect2" id="migration73.new-functions.sockets">
+  <h3 class="title">Sockets</h3>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><strong>socket_wsaprotocol_info_export()</strong></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><strong>socket_wsaprotocol_info_import()</strong></span>
+    </span>
+   </li>
+   <li class="listitem">
+    <span class="simpara">
+     <span class="function"><strong>socket_wsaprotocol_info_release()</strong></span>
+    </span>
+   </li>
+  </ul>
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="migration73.new-features.html">New Features</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="migration73.constants.html">New Global Constants</a></div>
+ <div class="up"><a href="migration73.html">Migrating from PHP 7.2.x to PHP 7.3.x</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>
