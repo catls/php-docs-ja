@@ -88,6 +88,15 @@
    </p>
   </div>
 
+  <div class="sect3" id="migration73.other-changes.core.gc">
+   <h4 class="title">Garbage Collection</h4>
+
+   <p class="para">
+    The <a href="features.gc.collecting-cycles.html" class="link">cyclic GC</a> has been
+    enhanced, which may result in considerable performance improvements.
+   </p>
+  </div>
+
   <div class="sect3" id="migration73.other-changes.core.misc">
    <h4 class="title">Miscellaneous</h4>
 
@@ -248,6 +257,34 @@
   </p>
  </div>
 
+ <div class="sect2" id="migration73.other-changes.pdo-dblib">
+  <h3 class="title">Microsoft SQL Server and Sybase Functions (PDO_DBLIB)</h3>
+
+  <p class="para">
+   The attribute <strong><code>PDO::DBLIB_ATTR_SKIP_EMPTY_ROWSETS</code></strong> to enable automatic
+   skipping of empty rowsets has been added.
+  </p>
+
+  <p class="para">
+   The <strong><code>PDO::DBLIB_ATTR_TDS_VERSION</code></strong> attribute which exposes
+   the TDS version has been added.
+  </p>
+
+  <p class="para">
+    DATETIME2 columns are now treated like DATETIME columns.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration73.other-changes.pdo-sqlite">
+  <h3 class="title">SQLite Functions (PDO_SQLITE)</h3>
+
+  <p class="para">
+   SQLite3 databases can now be opened in read-only mode by setting the
+   new <strong><code>PDO::SQLITE_ATTR_OPEN_FLAGS</code></strong> attribute to
+   <strong><code>PDO::SQLITE_READONLY</code></strong>.
+  </p>
+ </div>
+
  <div class="sect2" id="migration73.other-changes.session">
   <h3 class="title">Session Handling</h3>
 
@@ -301,6 +338,15 @@
    Building against the bundled libzip is discouraged, but still possible by
    adding <strong class="option configure">--without-libzip</strong>
  to the configuration.
+  </p>
+ </div>
+
+ <div class="sect2" id="migration73.other-changes.zlib">
+  <h3 class="title">Zlib Compression</h3>
+
+  <p class="para">
+   The zlib/level context option for the <a href="wrappers.compression.html" class="link">compress.zlib wrapper</a> to facilitate
+   setting the desired compression level has been added.
   </p>
  </div>
 
