@@ -66,6 +66,10 @@
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="sqlite3stmt.getsql.html" class="methodname">getSQL</a></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$expanded</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="sqlite3stmt.paramcount.html" class="methodname">paramCount</a></span>
     ( <span class="methodparam">void</span>
    )</div>
@@ -150,7 +154,14 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="sqlite3stmt.bindparam.html">SQLite3Stmt::bindParam</a> — パラメータを変数にバインドする</li><li><a href="sqlite3stmt.bindvalue.html">SQLite3Stmt::bindValue</a> — パラメータの値を変数にバインドする</li><li><a href="sqlite3stmt.clear.html">SQLite3Stmt::clear</a> — 現在バインドされているすべてのパラメータをクリアする</li><li><a href="sqlite3stmt.close.html">SQLite3Stmt::close</a> — プリペアドステートメントを閉じる</li><li><a href="sqlite3stmt.execute.html">SQLite3Stmt::execute</a> — プリペアドステートメントを実行し、結果セットオブジェクトを返す</li><li><a href="sqlite3stmt.paramcount.html">SQLite3Stmt::paramCount</a> — プリペアドステートメント内のパラメータの数を返す</li><li><a href="sqlite3stmt.readonly.html">SQLite3Stmt::readOnly</a> — Returns whether a statement is definitely read only</li><li><a href="sqlite3stmt.reset.html">SQLite3Stmt::reset</a> — プリペアドステートメントをリセットする</li></ul>
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="sqlite3stmt.bindparam.html">SQLite3Stmt::bindParam</a> — パラメータを変数にバインドする</li><li><a href="sqlite3stmt.bindvalue.html">SQLite3Stmt::bindValue</a> — パラメータの値を変数にバインドする</li><li><a href="sqlite3stmt.clear.html">SQLite3Stmt::clear</a> — 現在バインドされているすべてのパラメータをクリアする</li><li><a href="sqlite3stmt.close.html">SQLite3Stmt::close</a> — プリペアドステートメントを閉じる</li><li><a href="sqlite3stmt.execute.html">SQLite3Stmt::execute</a> — プリペアドステートメントを実行し、結果セットオブジェクトを返す</li><li><a href="sqlite3stmt.getsql.html">SQLite3Stmt::getSQL</a> — Get the SQL of the statement</li><li><a href="sqlite3stmt.paramcount.html">SQLite3Stmt::paramCount</a> — プリペアドステートメント内のパラメータの数を返す</li><li><a href="sqlite3stmt.readonly.html">SQLite3Stmt::readOnly</a> — Returns whether a statement is definitely read only</li><li><a href="sqlite3stmt.reset.html">SQLite3Stmt::reset</a> — プリペアドステートメントをリセットする</li></ul>
 </div>
 <hr /><div class="manualnavbar" style="text-align: center;">
  <div class="prev" style="text-align: left; float: left;"><a href="sqlite3.version.html">SQLite3::version</a></div>
