@@ -149,6 +149,27 @@
      <td class="empty">&nbsp;</td>
     </tr>
 
+    <tr>
+     <td><a href="errorfunc.configuration.html#ini.syslog.facility" class="link">syslog.facility</a></td>
+     <td>&quot;LOG_USER&quot;</td>
+     <td>PHP_INI_SYSTEM</td>
+     <td>PHP 7.3.0 以降で有効です。</td>
+    </tr>
+
+    <tr>
+     <td><a href="errorfunc.configuration.html#ini.syslog.filter" class="link">syslog.filter</a></td>
+     <td>&quot;no-ctrl&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>PHP 7.3.0 以降で有効です。</td>
+    </tr>
+
+    <tr>
+     <td><a href="errorfunc.configuration.html#ini.syslog.ident" class="link">syslog.ident</a></td>
+     <td>&quot;php&quot;</td>
+     <td>PHP_INI_SYSTEM</td>
+     <td>PHP 7.3.0 以降で有効です。</td>
+    </tr>
+
     </tbody>
    
   </table>
@@ -549,13 +570,74 @@
       ファイルはウェブサーバーユーザーで書き込めなければなりません。
       <em>syslog</em> が指定されると、エラーはファイルではなく
       システムロガーに送られます。これは Unix では syslog(3) であり
-      Windows NT ではイベントログのことです。システムロガーは
-      Windows 95 ではサポートされていません。
+      Windows ではイベントログのことです。
       <span class="function"><a href="function.syslog.html" class="function">syslog()</a></span> も参照してください。
       このディレクティブが設定されていない場合、エラーは SAPI
       エラーロガーに送信されます。これは、例えば Apache のエラーログ、
       あるいは CLI なら <em>stderr</em> になります。
       <span class="function"><a href="function.error-log.html" class="function">error_log()</a></span> も参照ください。
+     </p>
+    </dd>
+
+   
+
+   
+    <dt id="ini.syslog.facility">
+     <code class="parameter">syslog.facility</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      どの種類のプログラムがメッセージを記録するのかを指定します。
+      <a href="errorfunc.configuration.html#ini.error-log" class="link">error_log</a> が &quot;syslog&quot; の場合にだけ有効です。
+     </p>
+    </dd>
+
+   
+
+   
+    <dt id="ini.syslog.filter">
+     <code class="parameter">syslog.filter</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      記録されたメッセージをフィルタリングするフィルターの種類を指定します。
+      フィルターで許可された文字はそのまま記録されますが、許可されていない文字は
+      <em>\x</em> で始まる十六進表記に変換して記録されます。
+      サポートするフィルターは次の三種類です。
+      <ul class="itemizedlist">
+       <li class="listitem">
+        <span class="simpara"><em>all</em> – すべての文字を許可する</span>
+       </li>
+       <li class="listitem">
+        <span class="simpara"><em>no-ctrl</em> – 制御文字以外のすべての文字を許可する</span>
+       </li>
+       <li class="listitem">
+        <span class="simpara"><em>ascii</em> – 印刷可能な ASCII 文字および <em>NL</em> だけを許可する</span>
+       </li>
+      </ul>
+      <a href="errorfunc.configuration.html#ini.error-log" class="link">error_log</a> が &quot;syslog&quot; の場合にだけ有効です。
+     </p>
+    </dd>
+
+   
+
+   
+    <dt id="ini.syslog.ident">
+     <code class="parameter">syslog.ident</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      すべての文字列の先頭に追加する識別用文字列を指定します。
+      <a href="errorfunc.configuration.html#ini.error-log" class="link">error_log</a> が &quot;syslog&quot; の場合にだけ有効です。
      </p>
     </dd>
 

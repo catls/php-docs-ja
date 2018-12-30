@@ -122,6 +122,13 @@
     </tr>
 
     <tr>
+     <td><a href="session.configuration.html#ini.session.cookie-samesite" class="link">session.cookie_samesite</a></td>
+     <td>&quot;&quot;</td>
+     <td>PHP_INI_ALL</td>
+     <td>PHP 7.3.0 から利用可能</td>
+    </tr>
+
+    <tr>
      <td><a href="session.configuration.html#ini.session.use-strict-mode" class="link">session.use_strict_mode</a></td>
      <td>&quot;0&quot;</td>
      <td>PHP_INI_ALL</td>
@@ -793,6 +800,29 @@
      つまり、JavaScript のようなスクリプト言語からはアクセスできなくなるということです。
      この設定を使用すると、XSS 攻撃によって ID を盗まれる危険性を減らせます
      (が、すべてのブラウザがこの設定をサポートしているというわけではありません)。
+    </span>
+   </dd>
+
+  
+
+  
+   <dt id="ini.session.cookie-samesite">
+    <code class="parameter">session.cookie_samesite</code>
+    <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+   </dt>
+
+   <dd>
+
+    <span class="simpara">
+     クロスサイトリクエストで、サーバーにクッキーを送信しないよう指示できるようにします。
+     これを用いると、ユーザーエージェントによる生成元とは異なる場所への情報漏洩のリスクを軽減できます。
+     また、CSRF攻撃に対する防御策のひとつにもなります。
+     この仕組みはすべてのブラウザがサポートしているわけではないことに注意しましょう。
+     この項目に空の値を設定した場合は、クッキーのSameSite属性は送信されません。
+     <em>Lax</em> や <em>Strict</em> を設定した場合は、
+     サイトをまたがる POST リクエストではクッキーを送信しません。GET リクエストの場合は、
+     <em>Lax</em> はサイトをまたがるリクエストでもクッキーを送信しますが、
+     <em>Strict</em> は送信しません。
     </span>
    </dd>
 

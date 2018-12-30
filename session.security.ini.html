@@ -123,6 +123,30 @@
      <p class="para">
       HSTS should be considered for HTTPS only web site.
      </p>
+     <p class="para">
+      Allows access to session ID cookie only when protocol is HTTPS. If
+      your web site is HTTPS only web site, you must enable this
+      setting.
+     </p>
+    </li>
+   
+   
+    <li class="listitem">
+     <p class="para">
+      <a href="session.configuration.html#ini.session.cookie-samesite" class="link">samesite</a>=&quot;Lax&quot; or
+      <a href="session.configuration.html#ini.session.cookie-samesite" class="link">samesite</a>=&quot;Strict&quot;
+     </p>
+     <p class="para">
+      As of PHP 7.3 you can set the <em>&quot;samesite&quot;</em> cookie flag for
+      the session ID cookie. This flag is a way to mitigate CSRF (Cross Site Request Forgery)
+      attacks.
+     </p>
+     <p class="para">
+      The difference between Lax and Strict is the accessibility of the cookie in requests 
+      originating from another registrable domain using the HTTP GET method.
+      Cookies using Lax will be accessible in a GET request originated from another registrable domain,
+      whereas cookies using Strict will not be accessible in a GET request originated from another registrable domain.
+     </p>
     </li>
 
     <li class="listitem">
