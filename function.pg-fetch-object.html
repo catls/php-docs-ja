@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>行をオブジェクトとして得る</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-fetch-assoc.html">pg_fetch_assoc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-fetch-result.html">pg_fetch_result</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL 関数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.pg-fetch-object" class="refentry">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.pg-fetch-assoc.html">« pg_fetch_assoc</a></li>
+      <li style="float: right;"><a href="function.pg-fetch-result.html">pg_fetch_result »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="ref.pgsql.html">PostgreSQL 関数</a></li>
+    <li>行をオブジェクトとして得る</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pg-fetch-object" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">pg_fetch_object</h1>
   <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">pg_fetch_object</span> &mdash; <span class="dc-title">行をオブジェクトとして得る</span></p>
@@ -20,19 +32,19 @@
  <div class="refsect1 description" id="refsect1-function.pg-fetch-object-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">object</span> <span class="methodname"><strong>pg_fetch_object</strong></span>
+   <span class="methodname"><strong>pg_fetch_object</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$row</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$result_type</code><span class="initializer"> = PGSQL_ASSOC</span></span>
-  ]] )</div>
+  ]] ) : <span class="type">object</span></div>
 
   <div class="methodsynopsis dc-description">
-   <span class="type">object</span> <span class="methodname"><strong>pg_fetch_object</strong></span>
+   <span class="methodname"><strong>pg_fetch_object</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$row</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$class_name</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$params</code></span>
-  ]]] )</div>
+  ]]] ) : <span class="type">object</span></div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>pg_fetch_object()</strong></span> は、取得した行のフィールド名に
@@ -169,9 +181,4 @@ NULL フィールドに PHPの <strong><code>NULL</code></strong> 値を設定�
   </p>
  </div>
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.pg-fetch-assoc.html">pg_fetch_assoc</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.pg-fetch-result.html">pg_fetch_result</a></div>
- <div class="up"><a href="ref.pgsql.html">PostgreSQL 関数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></div></body></html>

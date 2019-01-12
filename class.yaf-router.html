@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Yaf_Router クラス</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="yaf-route-rewrite.route.html">Yaf_Route_Rewrite::route</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="yaf-router.addconfig.html">Yaf_Router::addConfig</a></div>
- <div class="up"><a href="book.yaf.html">Yaf</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="class.yaf-router" class="reference">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="yaf-route-rewrite.route.html">« Yaf_Route_Rewrite::route</a></li>
+      <li style="float: right;"><a href="yaf-router.addconfig.html">Yaf_Router::addConfig »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="book.yaf.html">Yaf</a></li>
+    <li>Yaf_Router クラス</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="class.yaf-router" class="reference">
 
  <h1 class="title">Yaf_Router クラス</h1>
  
@@ -190,34 +202,34 @@ http://example/blog/archive/list/sort/alpha/date/desc
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="yaf-router.addconfig.html" class="methodname">addConfig</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="yaf-router.addconfig.html" class="methodname">addConfig</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-config-abstract.html" class="type Yaf_Config_Abstract">Yaf_Config_Abstract</a></span> <code class="parameter">$config</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="yaf-router.addroute.html" class="methodname">addRoute</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="yaf-router.addroute.html" class="methodname">addRoute</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
    , <span class="methodparam"><span class="type"><span class="type Yaf_Route_Abstract">Yaf_Route_Abstract</span></span> <code class="parameter">$route</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="yaf-router.construct.html" class="methodname">__construct</a></span>
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="yaf-router.getcurrentroute.html" class="methodname">getCurrentRoute</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="yaf-router.getcurrentroute.html" class="methodname">getCurrentRoute</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type">string</span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">Yaf_Route_Interface</span> <span class="methodname"><a href="yaf-router.getroute.html" class="methodname">getRoute</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="yaf-router.getroute.html" class="methodname">getRoute</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code></span>
-   )</div>
+   ) : <span class="type"><a href="class.yaf-route-interface.html" class="type Yaf_Route_Interface">Yaf_Route_Interface</a></span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="yaf-router.getroutes.html" class="methodname">getRoutes</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="yaf-router.getroutes.html" class="methodname">getRoutes</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="yaf-router.route.html" class="methodname">route</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="yaf-router.route.html" class="methodname">route</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.yaf-request-abstract.html" class="type Yaf_Request_Abstract">Yaf_Request_Abstract</a></span> <code class="parameter">$request</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 
    }</div>
 
@@ -324,9 +336,4 @@ http://example/blog/archive/list/sort/alpha/date/desc
 
 <h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="yaf-router.addconfig.html">Yaf_Router::addConfig</a> — 設定で定義したルートをルーターに追加する</li><li><a href="yaf-router.addroute.html">Yaf_Router::addRoute</a> — 新しいルートをルーターに追加する</li><li><a href="yaf-router.construct.html">Yaf_Router::__construct</a> — Yaf_Router のコンストラクタ</li><li><a href="yaf-router.getcurrentroute.html">Yaf_Router::getCurrentRoute</a> — 使われているルート名を取得する</li><li><a href="yaf-router.getroute.html">Yaf_Router::getRoute</a> — 名前を指定してルートを取得する</li><li><a href="yaf-router.getroutes.html">Yaf_Router::getRoutes</a> — 登録済みのルートを取得する</li><li><a href="yaf-router.route.html">Yaf_Router::route</a> — The route purpose</li></ul>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="yaf-route-rewrite.route.html">Yaf_Route_Rewrite::route</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="yaf-router.addconfig.html">Yaf_Router::addConfig</a></div>
- <div class="up"><a href="book.yaf.html">Yaf</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></body></html>

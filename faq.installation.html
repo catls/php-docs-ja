@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>インストール</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="faq.databases.html">データベースに関する問題</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="faq.build.html">構築時の問題</a></div>
- <div class="up"><a href="faq.html">FAQ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="faq.installation" class="chapter">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="faq.databases.html">« データベースに関する問題</a></li>
+      <li style="float: right;"><a href="faq.build.html">構築時の問題 »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li>インストール</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="faq.installation" class="chapter">
   <h1>インストール</h1>
 
   
@@ -500,7 +512,7 @@ cgi error:
       読み込まれているか否かを示しています。ディレクトリパスだけが
       表示されている場合は、読み込まれていないということなので、
       そのディレクトリに <var class="filename">php.ini</var> を置いてください。
-      <var class="filename">php.ini</var> が <span class="envar">PATH</span> にある場合それが読み込まれます。
+      <var class="filename">php.ini</var> が <var class="envar">PATH</var> にある場合それが読み込まれます。
      </p>
      <p class="para">
       <var class="filename">php.ini</var> が読み込まれていてかつ PHP をモジュールとして実行
@@ -516,7 +528,7 @@ cgi error:
    <dl class="qandaentry" id="faq.installation.addtopath">
     <dt><strong>
      
-      Windows で PHP のディレクトリを <span class="envar">PATH</span>
+      Windows で PHP のディレクトリを <var class="envar">PATH</var>
       に追加するにはどうすればいいのですか?
      
     </strong></dt>
@@ -573,14 +585,14 @@ cgi error:
      <blockquote class="note"><p><strong class="note">注意</strong>: 
       <span class="simpara">
        上の作業を行った後は、必ずコンピュータを再起動し、
-       <span class="envar">PATH</span> の変更が適用されていることを確認しましょう。
+       <var class="envar">PATH</var> の変更が適用されていることを確認しましょう。
       </span>
      </p></blockquote>
      <p class="para">
       PHP マニュアルでは、これまでファイルを Windows のシステムディレクトリに
       コピーするよう推奨してきました。なぜなら、このディレクトリ
       （<var class="filename">C:\Windows</var>、<var class="filename">C:\WINNT</var>、など）
-      にはデフォルトでシステムの <span class="envar">PATH</span> が通っていたからです。ファイルを
+      にはデフォルトでシステムの <var class="envar">PATH</var> が通っていたからです。ファイルを
       Windows のシステムディレクトリにコピーすることはずいぶん昔に非推奨と
       なっており、これはさまざまな問題のもととなりえます。
      </p>
@@ -703,9 +715,4 @@ Deny from all
    </dl>
   
  </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="faq.databases.html">データベースに関する問題</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="faq.build.html">構築時の問題</a></div>
- <div class="up"><a href="faq.html">FAQ</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></body></html>

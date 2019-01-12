@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>ユーザー定義の比較関数を用いて、キーで配列をソートする</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.uasort.html">uasort</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.usort.html">usort</a></div>
- <div class="up"><a href="ref.array.html">配列 関数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.uksort" class="refentry">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.uasort.html">« uasort</a></li>
+      <li style="float: right;"><a href="function.usort.html">usort »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="ref.array.html">配列 関数</a></li>
+    <li>ユーザー定義の比較関数を用いて、キーで配列をソートする</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.uksort" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">uksort</h1>
   <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">uksort</span> &mdash; <span class="dc-title">ユーザー定義の比較関数を用いて、キーで配列をソートする</span></p>
@@ -19,10 +31,10 @@
  <div class="refsect1 description" id="refsect1-function.uksort-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">bool</span> <span class="methodname"><strong>uksort</strong></span>
+   <span class="methodname"><strong>uksort</strong></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>
    , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$key_compare_func</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>uksort()</strong></span> は、
@@ -64,7 +76,7 @@
       <p class="para">
        比較関数は、最初の引数と二番目の引数の比較結果を返します。最初の引数のほうが二番目の引数より大きい場合は正の数を、二番目の引数と等しい場合はゼロを、そして二番目の引数より小さい場合は負の数を返す必要があります。PHP 7.0.0 より前のバージョンでは、この整数が -2147483648 から 2147483647 までの範囲におさまる必要がありました。
       </p>
-      <div class="methodsynopsis dc-description"><span class="type">int</span> <span class="methodname"><span class="replaceable">callback</span></span> ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$a</code></span>, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$b</code></span> )</div>
+      <div class="methodsynopsis dc-description"><span class="methodname"><span class="replaceable">callback</span></span> ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$a</code></span>, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$b</code></span> ) : <span class="type">int</span></div>
 
      </dd>
 
@@ -116,9 +128,4 @@ John: 1
   </p>
  </div>
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.uasort.html">uasort</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.usort.html">usort</a></div>
- <div class="up"><a href="ref.array.html">配列 関数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></div></body></html>

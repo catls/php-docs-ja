@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>新機能</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration71.html">PHP 7.0.x から PHP 7.1.x への移行</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration71.new-functions.html">新しい関数</a></div>
- <div class="up"><a href="migration71.html">PHP 7.0.x から PHP 7.1.x への移行</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="migration71.new-features" class="sect1">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="migration71.html">« PHP 7.0.x から PHP 7.1.x への移行</a></li>
+      <li style="float: right;"><a href="migration71.new-functions.html">新しい関数 »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="migration71.html">PHP 7.0.x から PHP 7.1.x への移行</a></li>
+    <li>新機能</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="migration71.new-features" class="sect1">
  <h2 class="title">新機能</h2>
 
  <div class="sect2" id="migration71.new-features.nullable-types">
@@ -116,18 +128,18 @@ int(1)
  </div>
 
  <div class="sect2" id="migration71.new-features.iterable-pseudo-type">
-  <h3 class="title"><span class="type"><span class="type iterable">iterable</span></span> 擬似型</h3>
+  <h3 class="title"><span class="type"><a href="language.types.iterable.html" class="type iterable">iterable</a></span> 擬似型</h3>
 
   <p class="para">
    新しい擬似型 (<span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> と同じような型) である
-   <span class="type"><span class="type iterable">iterable</span></span> が導入されました。
+   <span class="type"><a href="language.types.iterable.html" class="type iterable">iterable</a></span> が導入されました。
    パラメータおよび返り値の型指定で使うことができます。
    配列か、あるいは <a href="class.traversable.html" class="classname">Traversable</a>
    インターフェイスを実装したオブジェクトを受け付けるようになります。
    派生型に貸しては、子クラスのパラメータの型が、
    親クラスの <span class="type"><a href="language.types.array.html" class="type array">array</a></span> や <a href="class.traversable.html" class="classname">Traversable</a>
-   を拡張して <span class="type"><span class="type iterable">iterable</span></span> に広げることができます。
-   返り値の型に関しては、親クラスの <span class="type"><span class="type iterable">iterable</span></span> 型指定を子クラスで
+   を拡張して <span class="type"><a href="language.types.iterable.html" class="type iterable">iterable</a></span> に広げることができます。
+   返り値の型に関しては、親クラスの <span class="type"><a href="language.types.iterable.html" class="type iterable">iterable</a></span> 型指定を子クラスで
    配列あるいはオブジェクト (<a href="class.traversable.html" class="classname">Traversable</a> を実装したもの)
    に絞り込むことができます。
   </p>
@@ -320,9 +332,4 @@ SIGHUP
   </p>
  </div>
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="migration71.html">PHP 7.0.x から PHP 7.1.x への移行</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="migration71.new-functions.html">新しい関数</a></div>
- <div class="up"><a href="migration71.html">PHP 7.0.x から PHP 7.1.x への移行</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></div></body></html>

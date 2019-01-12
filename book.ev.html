@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Ev</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.eio-write.html">eio_write</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="intro.ev.html">はじめに</a></div>
- <div class="up"><a href="refs.fileprocess.process.html">プロセス制御</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="book.ev" class="book">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.eio-write.html">« eio_write</a></li>
+      <li style="float: right;"><a href="intro.ev.html">はじめに »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="refs.fileprocess.process.html">プロセス制御</a></li>
+    <li>Ev</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="book.ev" class="book">
  <h1 class="title">Ev</h1>
  
  
@@ -141,9 +153,4 @@
   loop instance</li><li><a href="evloop.stop.html">EvLoop::stop</a> — Stops the event loop</li><li><a href="evloop.suspend.html">EvLoop::suspend</a> — Suspend the loop</li><li><a href="evloop.timer.html">EvLoop::timer</a> — Creates EvTimer watcher object associated with the current event
   loop instance</li><li><a href="evloop.verify.html">EvLoop::verify</a> — Performs internal consistency checks(for debugging)</li></ul></li><li><a href="class.evperiodic.html">EvPeriodic</a> — The EvPeriodic class<ul class="chunklist chunklist_book chunklist_children"><li><a href="evperiodic.again.html">EvPeriodic::again</a> — Simply stops and restarts the periodic watcher again</li><li><a href="evperiodic.at.html">EvPeriodic::at</a> — Returns the absolute time that this
   watcher is supposed to trigger next</li><li><a href="evperiodic.construct.html">EvPeriodic::__construct</a> — Constructs EvPeriodic watcher object</li><li><a href="evperiodic.createstopped.html">EvPeriodic::createStopped</a> — Create a stopped EvPeriodic watcher</li><li><a href="evperiodic.set.html">EvPeriodic::set</a> — Configures the watcher</li></ul></li><li><a href="class.evprepare.html">EvPrepare</a> — EvPrepare クラス<ul class="chunklist chunklist_book chunklist_children"><li><a href="evprepare.construct.html">EvPrepare::__construct</a> — EvPrepare ウォッチャーオブジェクトを作る</li><li><a href="evprepare.createstopped.html">EvPrepare::createStopped</a> — 停止した EvPrepare ウォッチャーのインスタンスを作る</li></ul></li><li><a href="class.evsignal.html">EvSignal</a> — The EvSignal class<ul class="chunklist chunklist_book chunklist_children"><li><a href="evsignal.construct.html">EvSignal::__construct</a> — Constructs EvSignal watcher object</li><li><a href="evsignal.createstopped.html">EvSignal::createStopped</a> — Create stopped EvSignal watcher object</li><li><a href="evsignal.set.html">EvSignal::set</a> — Configures the watcher</li></ul></li><li><a href="class.evstat.html">EvStat</a> — The EvStat class<ul class="chunklist chunklist_book chunklist_children"><li><a href="evstat.attr.html">EvStat::attr</a> — Returns the values most recently detected by Ev</li><li><a href="evstat.construct.html">EvStat::__construct</a> — Constructs EvStat watcher object</li><li><a href="evstat.createstopped.html">EvStat::createStopped</a> — Create a stopped EvStat watcher object</li><li><a href="evstat.prev.html">EvStat::prev</a> — Returns the previous set of values returned by EvStat::attr</li><li><a href="evstat.set.html">EvStat::set</a> — Configures the watcher</li><li><a href="evstat.stat.html">EvStat::stat</a> — Initiates the stat call</li></ul></li><li><a href="class.evtimer.html">EvTimer</a> — The EvTimer class<ul class="chunklist chunklist_book chunklist_children"><li><a href="evtimer.again.html">EvTimer::again</a> — Restarts the timer watcher</li><li><a href="evtimer.construct.html">EvTimer::__construct</a> — Constructs an EvTimer watcher object</li><li><a href="evtimer.createstopped.html">EvTimer::createStopped</a> — Creates EvTimer stopped watcher object</li><li><a href="evtimer.set.html">EvTimer::set</a> — Configures the watcher</li></ul></li><li><a href="class.evwatcher.html">EvWatcher</a> — The EvWatcher class<ul class="chunklist chunklist_book chunklist_children"><li><a href="evwatcher.clear.html">EvWatcher::clear</a> — Clear watcher pending status</li><li><a href="evwatcher.construct.html">EvWatcher::__construct</a> — Abstract constructor of a watcher object</li><li><a href="evwatcher.feed.html">EvWatcher::feed</a> — Feeds the given revents set into the event loop</li><li><a href="evwatcher.getloop.html">EvWatcher::getLoop</a> — Returns the loop responsible for the watcher</li><li><a href="evwatcher.invoke.html">EvWatcher::invoke</a> — Invokes the watcher callback with the given received events bit
-  mask</li><li><a href="evwatcher.keepalive.html">EvWatcher::keepalive</a> — Configures whether to keep the loop from returning</li><li><a href="evwatcher.setcallback.html">EvWatcher::setCallback</a> — Sets new callback for the watcher</li><li><a href="evwatcher.start.html">EvWatcher::start</a> — Starts the watcher</li><li><a href="evwatcher.stop.html">EvWatcher::stop</a> — Stops the watcher</li></ul></li></ul></div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.eio-write.html">eio_write</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="intro.ev.html">はじめに</a></div>
- <div class="up"><a href="refs.fileprocess.process.html">プロセス制御</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+  mask</li><li><a href="evwatcher.keepalive.html">EvWatcher::keepalive</a> — Configures whether to keep the loop from returning</li><li><a href="evwatcher.setcallback.html">EvWatcher::setCallback</a> — Sets new callback for the watcher</li><li><a href="evwatcher.start.html">EvWatcher::start</a> — Starts the watcher</li><li><a href="evwatcher.stop.html">EvWatcher::stop</a> — Stops the watcher</li></ul></li></ul></div></div></div></body></html>

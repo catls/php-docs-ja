@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>EvEmbed クラス</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="evchild.set.html">EvChild::set</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="evembed.construct.html">EvEmbed::__construct</a></div>
- <div class="up"><a href="book.ev.html">Ev</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="class.evembed" class="reference">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="evchild.set.html">« EvChild::set</a></li>
+      <li style="float: right;"><a href="evembed.construct.html">EvEmbed::__construct »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="book.ev.html">Ev</a></li>
+    <li>EvEmbed クラス</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="class.evembed" class="reference">
  <h1 class="title">EvEmbed クラス</h1>
  
  <div class="partintro"><p class="verinfo">(PECL ev &gt;= 0.2.0)</p>
@@ -72,7 +84,7 @@
    <span class="modifier">final</span>
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="evembed.createstopped.html" class="methodname">createStopped</a></span>
     ( <span class="methodparam">
     <span class="type">object</span>
@@ -90,30 +102,30 @@
     <span class="type">int</span>
      <code class="parameter">$priority</code>
    </span>
-  ]]] )</div>
+  ]]] ) : <span class="type"><span class="type void">void</span></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="evembed.set.html" class="methodname">set</a></span>
     ( <span class="methodparam">
     <span class="type">object</span>
      <code class="parameter">$other</code>
    </span>
-   )</div>
+   ) : <span class="type"><span class="type void">void</span></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="evembed.sweep.html" class="methodname">sweep</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type"><span class="type void">void</span></span></div>
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したメソッド */</div>
     <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">int</span> 
+   
    <span class="methodname"><a href="evwatcher.clear.html" class="methodname">EvWatcher::clear</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">abstract</span>
    <span class="modifier">public</span>
@@ -122,58 +134,58 @@
    )</div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="evwatcher.feed.html" class="methodname">EvWatcher::feed</a></span>
     ( <span class="methodparam">
     <span class="type">int</span>
      <code class="parameter">$revents</code>
    </span>
-   )</div>
+   ) : <span class="type"><span class="type void">void</span></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">EvLoop</span> 
+   
    <span class="methodname"><a href="evwatcher.getloop.html" class="methodname">EvWatcher::getLoop</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type"><a href="class.evloop.html" class="type EvLoop">EvLoop</a></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="evwatcher.invoke.html" class="methodname">EvWatcher::invoke</a></span>
     ( <span class="methodparam">
     <span class="type">int</span>
      <code class="parameter">$revents</code>
    </span>
-   )</div>
+   ) : <span class="type"><span class="type void">void</span></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">bool</span> 
+   
    <span class="methodname"><a href="evwatcher.keepalive.html" class="methodname">EvWatcher::keepalive</a></span>
     ([ <span class="methodparam">
     <span class="type">bool</span>
      <code class="parameter">$value</code>
    </span>
-  ] )</div>
+  ] ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="evwatcher.setcallback.html" class="methodname">EvWatcher::setCallback</a></span>
     ( <span class="methodparam">
     <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span>
      <code class="parameter">$callback</code>
    </span>
-   )</div>
+   ) : <span class="type"><span class="type void">void</span></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="evwatcher.start.html" class="methodname">EvWatcher::start</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type"><span class="type void">void</span></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="evwatcher.stop.html" class="methodname">EvWatcher::stop</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type"><span class="type void">void</span></span></div>
 
    }</div>
 
@@ -272,9 +284,4 @@
 
 <h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="evembed.construct.html">EvEmbed::__construct</a> — EvEmbed オブジェクトを作る</li><li><a href="evembed.createstopped.html">EvEmbed::createStopped</a> — 停止した EvEmbed ウォッチャーのインスタンスを作る</li><li><a href="evembed.set.html">EvEmbed::set</a> — ウォッチャーを設定する</li><li><a href="evembed.sweep.html">EvEmbed::sweep</a> — 埋め込んだループに対して単一の非ブロックスイープを行う</li></ul>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="evchild.set.html">EvChild::set</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="evembed.construct.html">EvEmbed::__construct</a></div>
- <div class="up"><a href="book.ev.html">Ev</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></body></html>

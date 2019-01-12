@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>The EventUtil class</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="eventsslcontext.construct.html">EventSslContext::__construct</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="eventutil.construct.html">EventUtil::__construct</a></div>
- <div class="up"><a href="book.event.html">Event</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="class.eventutil" class="reference">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="eventsslcontext.construct.html">« EventSslContext::__construct</a></li>
+      <li style="float: right;"><a href="eventutil.construct.html">EventUtil::__construct »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="book.event.html">Event</a></li>
+    <li>The EventUtil class</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="class.eventutil" class="reference">
  <h1 class="title">The EventUtil class</h1>
  
  <div class="partintro"><p class="verinfo">(PECL event &gt;= 1.5.0)</p>
@@ -218,38 +230,38 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">int</span> 
+   
    <span class="methodname"><a href="eventutil.getlastsocketerrno.html" class="methodname">getLastSocketErrno</a></span>
     ([ <span class="methodparam">
     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
      <code class="parameter">$socket</code>
     <span class="initializer"> = <strong><code>NULL</code></strong></span>
    </span>
-  ] )</div>
+  ] ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">string</span> 
+   
    <span class="methodname"><a href="eventutil.getlastsocketerror.html" class="methodname">getLastSocketError</a></span>
     ([ <span class="methodparam">
     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
      <code class="parameter">$socket</code>
    </span>
-  ] )</div>
+  ] ) : <span class="type">string</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">int</span> 
+   
    <span class="methodname"><a href="eventutil.getsocketfd.html" class="methodname">getSocketFd</a></span>
     ( <span class="methodparam">
     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
      <code class="parameter">$socket</code>
    </span>
-   )</div>
+   ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">bool</span> 
+   
    <span class="methodname"><a href="eventutil.getsocketname.html" class="methodname">getSocketName</a></span>
     ( <span class="methodparam">
     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
@@ -263,11 +275,11 @@
     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
      <code class="parameter reference">&$port</code>
    </span>
-  ] )</div>
+  ] ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">bool</span> 
+   
    <span class="methodname"><a href="eventutil.setsocketoption.html" class="methodname">setSocketOption</a></span>
     ( <span class="methodparam">
     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
@@ -285,14 +297,14 @@
     <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
      <code class="parameter">$optval</code>
    </span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">void</span> 
+   
    <span class="methodname"><a href="eventutil.sslrandpoll.html" class="methodname">sslRandPoll</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type"><span class="type void">void</span></span></div>
 
    }</div>
 
@@ -716,9 +728,4 @@
 <h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="eventutil.construct.html">EventUtil::__construct</a> — The abstract constructor</li><li><a href="eventutil.getlastsocketerrno.html">EventUtil::getLastSocketErrno</a> — Returns the most recent socket error number</li><li><a href="eventutil.getlastsocketerror.html">EventUtil::getLastSocketError</a> — Returns the most recent socket error</li><li><a href="eventutil.getsocketfd.html">EventUtil::getSocketFd</a> — Returns numeric file descriptor of a socket, or stream</li><li><a href="eventutil.getsocketname.html">EventUtil::getSocketName</a> — Retreives the current address to which the
   socket is bound</li><li><a href="eventutil.setsocketoption.html">EventUtil::setSocketOption</a> — Sets socket options</li><li><a href="eventutil.sslrandpoll.html">EventUtil::sslRandPoll</a> — Generates entropy by means of OpenSSL's RAND_poll()</li></ul>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="eventsslcontext.construct.html">EventSslContext::__construct</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="eventutil.construct.html">EventUtil::__construct</a></div>
- <div class="up"><a href="book.event.html">Event</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></body></html>

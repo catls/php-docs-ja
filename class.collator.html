@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Collator クラス</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="intl.examples.basic.html">基本的な使用法</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="collator.asort.html">Collator::asort</a></div>
- <div class="up"><a href="book.intl.html">intl</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="class.collator" class="reference">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="intl.examples.basic.html">« 基本的な使用法</a></li>
+      <li style="float: right;"><a href="collator.asort.html">Collator::asort »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="book.intl.html">intl</a></li>
+    <li>Collator クラス</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="class.collator" class="reference">
  <h1 class="title">Collator クラス</h1>
  
 
@@ -52,87 +64,87 @@
 
     <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">bool</span> 
+   
    <span class="methodname"><a href="collator.asort.html" class="methodname">asort</a></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$arr</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$sort_flag</code></span>
-  ] )</div>
+  ] ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">int</span> 
+   
    <span class="methodname"><a href="collator.compare.html" class="methodname">compare</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>
-   )</div>
+   ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
    <span class="modifier">static</span>
-   <span class="type">Collator</span> 
+   
    <span class="methodname"><a href="collator.create.html" class="methodname">create</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$locale</code></span>
-   )</div>
+   ) : <span class="type"><a href="class.collator.html" class="type Collator">Collator</a></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">int</span> 
+   
    <span class="methodname"><a href="collator.getattribute.html" class="methodname">getAttribute</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$attr</code></span>
-   )</div>
+   ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">int</span> 
+   
    <span class="methodname"><a href="collator.geterrorcode.html" class="methodname">getErrorCode</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">string</span> 
+   
    <span class="methodname"><a href="collator.geterrormessage.html" class="methodname">getErrorMessage</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type">string</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">string</span> 
+   
    <span class="methodname"><a href="collator.getlocale.html" class="methodname">getLocale</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code></span>
-   )</div>
+   ) : <span class="type">string</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">string</span> 
+   
    <span class="methodname"><a href="collator.getsortkey.html" class="methodname">getSortKey</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>
-   )</div>
+   ) : <span class="type">string</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">int</span> 
+   
    <span class="methodname"><a href="collator.getstrength.html" class="methodname">getStrength</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">bool</span> 
+   
    <span class="methodname"><a href="collator.setattribute.html" class="methodname">setAttribute</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$attr</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$val</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">bool</span> 
+   
    <span class="methodname"><a href="collator.setstrength.html" class="methodname">setStrength</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$strength</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">bool</span> 
+   
    <span class="methodname"><a href="collator.sortwithsortkeys.html" class="methodname">sortWithSortKeys</a></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$arr</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span>
-   <span class="type">bool</span> 
+   
    <span class="methodname"><a href="collator.sort.html" class="methodname">sort</a></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$arr</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$sort_flag</code></span>
-  ] )</div>
+  ] ) : <span class="type">bool</span></div>
 
    }</div>
    
@@ -758,9 +770,4 @@
 
 <h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="collator.asort.html">Collator::asort</a> — インデックスの情報を保持しつつ配列を並べ替える</li><li><a href="collator.compare.html">Collator::compare</a> — ふたつの Unicode 文字列を比較する</li><li><a href="collator.construct.html">Collator::__construct</a> — collator を作成する</li><li><a href="collator.create.html">Collator::create</a> — collator を作成する</li><li><a href="collator.getattribute.html">Collator::getAttribute</a> — 照合用の属性の値を取得する</li><li><a href="collator.geterrorcode.html">Collator::getErrorCode</a> — collator の直近のエラーコードを取得する</li><li><a href="collator.geterrormessage.html">Collator::getErrorMessage</a> — collator の直近のエラーコードのテキストを取得する</li><li><a href="collator.getlocale.html">Collator::getLocale</a> — collator のロケール名を取得する</li><li><a href="collator.getsortkey.html">Collator::getSortKey</a> — 文字列のソート用のキーを取得する</li><li><a href="collator.getstrength.html">Collator::getStrength</a> — 現在の照合強度を取得する</li><li><a href="collator.setattribute.html">Collator::setAttribute</a> — 照合用の属性を設定する</li><li><a href="collator.setstrength.html">Collator::setStrength</a> — 照合強度を設定する</li><li><a href="collator.sortwithsortkeys.html">Collator::sortWithSortKeys</a> — 指定した collator とキーで配列を並べ替える</li><li><a href="collator.sort.html">Collator::sort</a> — 指定した collator で配列を並べ替える</li></ul>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="intl.examples.basic.html">基本的な使用法</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="collator.asort.html">Collator::asort</a></div>
- <div class="up"><a href="book.intl.html">intl</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></body></html>

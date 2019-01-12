@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Closure クラス</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="serializable.unserialize.html">Serializable::unserialize</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="closure.construct.html">Closure::__construct</a></div>
- <div class="up"><a href="reserved.interfaces.html">定義済みのインターフェイスとクラス</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="class.closure" class="reference">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="serializable.unserialize.html">« Serializable::unserialize</a></li>
+      <li style="float: right;"><a href="closure.construct.html">Closure::__construct »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="reserved.interfaces.html">定義済みのインターフェイスとクラス</a></li>
+    <li>Closure クラス</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="class.closure" class="reference">
 
  <h1 class="title">Closure クラス</h1>
  
@@ -64,27 +76,27 @@
     ( <span class="methodparam">void</span>
    )</div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">Closure</span> <span class="methodname"><a href="closure.bind.html" class="methodname">bind</a></span>
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="methodname"><a href="closure.bind.html" class="methodname">bind</a></span>
     ( <span class="methodparam"><span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> <code class="parameter">$closure</code></span>
    , <span class="methodparam"><span class="type">object</span> <code class="parameter">$newthis</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$newscope</code>
    <span class="initializer"> = &quot;static&quot;</span></span>
-  ] )</div>
+  ] ) : <span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">Closure</span> <span class="methodname"><a href="closure.bindto.html" class="methodname">bindTo</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="closure.bindto.html" class="methodname">bindTo</a></span>
     ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$newthis</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$newscope</code>
    <span class="initializer"> = &quot;static&quot;</span></span>
-  ] )</div>
+  ] ) : <span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="type">mixed</span> <span class="methodname"><a href="closure.call.html" class="methodname">call</a></span>
+   <span class="modifier">public</span> <span class="methodname"><a href="closure.call.html" class="methodname">call</a></span>
     ( <span class="methodparam"><span class="type">object</span> <code class="parameter">$newthis</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
-  ] )</div>
+  ] ) : <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="modifier">static</span> <span class="type">Closure</span> <span class="methodname"><a href="closure.fromcallable.html" class="methodname">fromCallable</a></span>
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="methodname"><a href="closure.fromcallable.html" class="methodname">fromCallable</a></span>
     ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$callable</code></span>
-   )</div>
+   ) : <span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span></div>
 
    }</div>
 
@@ -138,9 +150,4 @@
 
 <h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="closure.construct.html">Closure::__construct</a> — インスタンス作成を無効化したコンストラクタ</li><li><a href="closure.bind.html">Closure::bind</a> — バインドされたオブジェクトとクラスのスコープでクロージャを複製する</li><li><a href="closure.bindto.html">Closure::bindTo</a> — 新しくバインドしたオブジェクトとクラスのスコープで、クロージャを複製する</li><li><a href="closure.call.html">Closure::call</a> — クロージャを束縛して呼び出す</li><li><a href="closure.fromcallable.html">Closure::fromCallable</a> — callable をクロージャに変換する</li></ul>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="serializable.unserialize.html">Serializable::unserialize</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="closure.construct.html">Closure::__construct</a></div>
- <div class="up"><a href="reserved.interfaces.html">定義済みのインターフェイスとクラス</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></body></html>

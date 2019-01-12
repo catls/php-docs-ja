@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Informix サーバーへの接続をオープンする</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ifx-close.html">ifx_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ifx-copy-blob.html">ifx_copy_blob</a></div>
- <div class="up"><a href="ref.ifx.html">Informix 関数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="function.ifx-connect" class="refentry">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.ifx-close.html">« ifx_close</a></li>
+      <li style="float: right;"><a href="function.ifx-copy-blob.html">ifx_copy_blob »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="ref.ifx.html">Informix 関数</a></li>
+    <li>Informix サーバーへの接続をオープンする</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.ifx-connect" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">ifx_connect</h1>
   <p class="verinfo">(PHP 4, PHP 5 &lt; 5.2.1)</p><p class="refpurpose"><span class="refname">ifx_connect</span> &mdash; <span class="dc-title">Informix サーバーへの接続をオープンする</span></p>
@@ -20,11 +32,11 @@
  <div class="refsect1 description" id="refsect1-function.ifx-connect-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="type">resource</span> <span class="methodname"><strong>ifx_connect</strong></span>
+   <span class="methodname"><strong>ifx_connect</strong></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$database</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$userid</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$password</code></span>
-  ]]] )</div>
+  ]]] ) : <span class="type">resource</span></div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>ifx_connect()</strong></span> は、Informix サーバーへの接続を確立します。
@@ -49,7 +61,7 @@
    <a href="configuration.file.html" class="link">設定ファイル</a>にて指定された値
    がデフォルト値として設定されます。
    (ホストに関して ifx.default_host (定義されていない場合、Informix 
-   ライブラリは、環境変数<span class="envar">INFORMIXSERVER</span>を参照します)
+   ライブラリは、環境変数<var class="envar">INFORMIXSERVER</var>を参照します)
    , ユーザーに関して ifx.default_user, 
    パスワードに関して ifx.default_password (定義されていない場合は無し)
    となります。
@@ -135,9 +147,4 @@
  </div>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="function.ifx-close.html">ifx_close</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="function.ifx-copy-blob.html">ifx_copy_blob</a></div>
- <div class="up"><a href="ref.ifx.html">Informix 関数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></div></body></html>

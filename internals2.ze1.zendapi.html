@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Zend API: PHP のコアをハックする</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="internals2.ze1.streams.html">PHP 拡張モジュールの作者用のストリーム API</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="internals2.ze1.tsrm.html">TSRM API</a></div>
- <div class="up"><a href="internals2.ze1.html">Zend Engine 1</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="internals2.ze1.zendapi" class="sect1"> 
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="internals2.ze1.streams.html">« PHP 拡張モジュールの作者用のストリーム API</a></li>
+      <li style="float: right;"><a href="internals2.ze1.tsrm.html">TSRM API »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="internals2.ze1.html">Zend Engine 1</a></li>
+    <li>Zend API: PHP のコアをハックする</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="internals2.ze1.zendapi" class="sect1"> 
   <h2 class="title">Zend API: PHP のコアをハックする</h2>
   
 
@@ -1233,14 +1245,14 @@ ZEND_FUNCTION(first_module)
     その内部で Zend API をコールしています。
     おすすめのやりかたは、まずできる限り Zend API を使用することです。
     というのは古い API は互換性のためだけに残されているものだからです。
-    例えば、<span class="envar">zval</span> 型と <span class="envar">pval</span> 型はまったく同じものです。
-    <span class="envar">zval</span> は Zend での定義で、<span class="envar">pval</span>
-    は PHP での定義です (実際のところ、現在 <span class="envar">pval</span>
-    は <span class="envar">zval</span> のエイリアスとなっています)。
+    例えば、<var class="envar">zval</var> 型と <var class="envar">pval</var> 型はまったく同じものです。
+    <var class="envar">zval</var> は Zend での定義で、<var class="envar">pval</var>
+    は PHP での定義です (実際のところ、現在 <var class="envar">pval</var>
+    は <var class="envar">zval</var> のエイリアスとなっています)。
     <em>INTERNAL_FUNCTION_PARAMETERS</em> は Zend のマクロなので、
-    上の宣言には <span class="envar">zval</span> が用いられています。
+    上の宣言には <var class="envar">zval</var> が用いられています。
     コードを書く際には、新しい Zend API のために常に
-    <span class="envar">zval</span> を使うようにしましょう。
+    <var class="envar">zval</var> を使うようにしましょう。
    </p>
    <p class="para">
     この宣言のパラメータリストは非常に重要です。これらは常に頭に入れておくようにしましょう。
@@ -1257,7 +1269,7 @@ ZEND_FUNCTION(first_module)
         </tr>
  
         <tr> 
-         <td><span class="envar">ht</span></td> 
+         <td><var class="envar">ht</var></td> 
          <td>
           Zend の関数に渡す引数の数。これを直接操作してはいけません。値を取得する際には
           ZEND_NUM_ARGS() を使用してください。
@@ -1266,7 +1278,7 @@ ZEND_FUNCTION(first_module)
  
         <tr> 
          <td>
-          <span class="envar">return_value</span></td> 
+          <var class="envar">return_value</var></td> 
          <td>
           この変数は、あなたの関数から PHP に返す値を渡すために使用します。
           この変数にアクセスするには、定義済みマクロを使用するのがベストです。
@@ -1275,7 +1287,7 @@ ZEND_FUNCTION(first_module)
         </tr>
  
         <tr> 
-         <td><span class="envar">this_ptr</span></td> 
+         <td><var class="envar">this_ptr</var></td> 
          <td>
           この変数を使用すると、関数がオブジェクト内で使用されている場合に
           そのオブジェクトにアクセスすることができます。このポインタを取得するには
@@ -1284,7 +1296,7 @@ ZEND_FUNCTION(first_module)
         </tr>
  
         <tr> 
-         <td><span class="envar">return_value_used</span></td> 
+         <td><var class="envar">return_value_used</var></td> 
          <td>
           このフラグは、この関数の返す値が実際に呼び出し元のスクリプトで使われるのかどうかを指定します。
           <em>0</em> は、返り値が使われないことを表します。
@@ -1296,7 +1308,7 @@ ZEND_FUNCTION(first_module)
         </tr>
  
         <tr> 
-         <td><span class="envar">executor_globals</span></td> 
+         <td><var class="envar">executor_globals</var></td> 
          <td>
           この変数は、Zend エンジンのグローバル設定へのポインタです。
           これが便利なのは、例えば新しい変数を作成するときです (詳細はあとで説明します)。
@@ -1317,16 +1329,16 @@ ZEND_FUNCTION(first_module)
    <p class="para">
     エクスポートする関数の宣言が完了しました。こんどはさらにそれを
     Zend に登録しなければなりません。関数のリストを登録するには、
-    <span class="envar">zend_function_entry</span> の配列を使用します。
+    <var class="envar">zend_function_entry</var> の配列を使用します。
     この配列には、外部に公開するすべての関数について
     PHP で使用する場合の名前と C ソース内で定義されている名前が含まれています。
-    内部的には、<span class="envar">zend_function_entry</span> は
+    内部的には、<var class="envar">zend_function_entry</var> は
     <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.example.zend-function-entry" class="xref">内部での zend_function_entry の宣言</a>
     のように定義されています。
    </p>
    <p class="para">
     <div class="example" id="internals2.structure.globals.intro.wrong-way">
-     <p><strong>例4 内部での <span class="envar">zend_function_entry</span> の宣言</strong></p> 
+     <p><strong>例4 内部での <var class="envar">zend_function_entry</var> の宣言</strong></p> 
      <div class="example-contents">
 <div class="ccode"><pre class="ccode">typedef struct _zend_function_entry {
     char *fname;
@@ -1347,7 +1359,7 @@ ZEND_FUNCTION(first_module)
         </tr>
  
         <tr> 
-         <td><span class="envar">fname</span></td> 
+         <td><var class="envar">fname</var></td> 
          <td>
           PHP で使用する場合の名前を表します (例えば
           <em>fopen</em> や <em>mysql_connect</em> など。
@@ -1356,7 +1368,7 @@ ZEND_FUNCTION(first_module)
         </tr>
  
         <tr> 
-         <td><span class="envar">handler</span></td> 
+         <td><var class="envar">handler</var></td> 
          <td>
           この関数コールを処理する C 関数へのポインタ。
           例えば、先ほど説明した標準マクロ
@@ -1366,7 +1378,7 @@ ZEND_FUNCTION(first_module)
         </tr>
  
         <tr> 
-         <td><span class="envar">func_arg_types</span></td> 
+         <td><var class="envar">func_arg_types</var></td> 
          <td>
           パラメータに対して、参照渡しを強制させるようにできます。
           通常は NULL を設定しておくべきです。
@@ -1396,7 +1408,7 @@ ZEND_FUNCTION(first_module)
    <p class="para">
     マクロ <em>ZEND_FE</em> (&#039;Zend Function
     Entry&#039; を省略したものです) は、構造体のエントリを単純に
-    <span class="envar">zend_function_entry</span> に展開します。
+    <var class="envar">zend_function_entry</var> に展開します。
     これらのマクロは特別な命名規約を持っていることに注意しましょう。
     あなたが作成する C 関数の名前には、前に <em>zif_</em>
     をつけることになります。つまり、<em>ZEND_FE(first_module)</em>
@@ -1426,9 +1438,9 @@ ZEND_FUNCTION(first_module)
        <tr> 
         <td><em>ZEND_FE(name, arg_types)</em></td> 
         <td>
-         <span class="envar">zend_function_entry</span> に <span class="envar">name</span>
+         <var class="envar">zend_function_entry</var> に <var class="envar">name</var>
          という名前の関数エントリを定義します。対応する C の関数が必要です。
-         <span class="envar">arg_types</span> は <em>NULL</em> に設定しなければなりません。
+         <var class="envar">arg_types</var> は <em>NULL</em> に設定しなければなりません。
          この関数は、自動的に C の関数名を生成します。その名前は
          PHP の関数名の先頭に <em>zif_</em> をつけたものになります。
          例えば <em>ZEND_FE(&quot;first_module&quot;, NULL)</em> とすると
@@ -1443,9 +1455,9 @@ ZEND_FUNCTION(first_module)
          <em>ZEND_NAMED_FE(php_name, name, arg_types)</em>
         </td> 
         <td>
-         <span class="envar">php_name</span> という名前で PHP の関数を定義し、
-         それを対応する C の関数 <span class="envar">name</span> に関連付けます。
-         <span class="envar">arg_types</span> は <em>NULL</em>
+         <var class="envar">php_name</var> という名前で PHP の関数を定義し、
+         それを対応する C の関数 <var class="envar">name</var> に関連付けます。
+         <var class="envar">arg_types</var> は <em>NULL</em>
          に設定しなければなりません。<em>ZEND_FE</em>
          のように自動的に名前を決められたくない場合にこの関数を使用します。
          <em>ZEND_NAMED_FUNCTION</em> と組み合わせて使用します。
@@ -1457,9 +1469,9 @@ ZEND_FUNCTION(first_module)
          <em>ZEND_FALIAS(name, alias, arg_types)</em>
         </td> 
         <td>
-         <span class="envar">alias</span> という名前で、
-         <span class="envar">name</span> のエイリアスを定義します。
-         <span class="envar">arg_types</span> は <em>NULL</em>
+         <var class="envar">alias</var> という名前で、
+         <var class="envar">name</var> のエイリアスを定義します。
+         <var class="envar">arg_types</var> は <em>NULL</em>
          に設定しなければなりません。対応する C の関数は不要です。
          その代わりに、エイリアスの対象を参照します。
         </td> 
@@ -1502,14 +1514,14 @@ ZEND_FUNCTION(first_module)
   <div class="sect3" id="internals2.ze1.zendapi.structure.module-block"> 
    <h4 class="title">Zend モジュールブロックの宣言</h4> 
    <p class="para">
-    このブロックは構造体 <span class="envar">zend_module_entry</span>
+    このブロックは構造体 <var class="envar">zend_module_entry</var>
     に保存され、モジュールの内容について Zend に示すために必要な
     すべての情報が含まれます。このモジュールの内部定義は
     <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.example.zend-module-entry" class="xref">内部での zend_module_entry の宣言</a>
     で確認できます。
    </p>
    <div class="example" id="internals2.structure.globals.declaring.doth">
-    <p><strong>例5 内部での <span class="envar">zend_module_entry</span> の宣言</strong></p> 
+    <p><strong>例5 内部での <var class="envar">zend_module_entry</var> の宣言</strong></p> 
     <div class="example-contents">
 <div class="ccode"><pre class="ccode">typedef struct _zend_module_entry zend_module_entry;
      
@@ -1548,8 +1560,8 @@ ZEND_FUNCTION(first_module)
     <tbody class="tbody"> 
        <tr> 
         <td>
-         <span class="envar">size</span>, <span class="envar">zend_api</span>,
-         <span class="envar">zend_debug</span> および <span class="envar">zts</span>
+         <var class="envar">size</var>, <var class="envar">zend_api</var>,
+         <var class="envar">zend_debug</var> および <var class="envar">zts</var>
         </td> 
         <td>
          通常は
@@ -1563,7 +1575,7 @@ ZEND_FUNCTION(first_module)
        </tr>
  
        <tr> 
-        <td><span class="envar">name</span></td> 
+        <td><var class="envar">name</var></td> 
         <td>
          モジュール名を指定します (例えば <em>&quot;File
           functions&quot;</em>、<em>&quot;Socket functions&quot;</em>、
@@ -1574,14 +1586,14 @@ ZEND_FUNCTION(first_module)
        </tr>
  
        <tr> 
-        <td><span class="envar">functions</span></td> 
+        <td><var class="envar">functions</var></td> 
         <td>
          先ほど説明した Zend 関数ブロックへのポインタ。
         </td> 
        </tr>
  
        <tr> 
-        <td><span class="envar">module_startup_func</span></td> 
+        <td><var class="envar">module_startup_func</var></td> 
         <td>
          この関数はモジュールの初期化時にコールされ、
          最初の一度だけ行う初期化処理 (例えばメモリの確保など)
@@ -1594,7 +1606,7 @@ ZEND_FUNCTION(first_module)
        </tr>
  
      <tr> 
-        <td><span class="envar">module_shutdown_func</span></td> 
+        <td><var class="envar">module_shutdown_func</var></td> 
         <td>
          この関数はモジュールのシャットダウン時にコールされ、
          最後に一度だけ行う後処理 (例えばメモリの開放など) で使用します。
@@ -1608,7 +1620,7 @@ ZEND_FUNCTION(first_module)
        </tr>
  
        <tr> 
-        <td><span class="envar">request_startup_func</span></td> 
+        <td><var class="envar">request_startup_func</var></td> 
         <td>
          この関数はページがリクエストされるたびにコールされ、
          リクエストを処理する際の前処理で使用します。
@@ -1626,7 +1638,7 @@ ZEND_FUNCTION(first_module)
      </tr>
  
        <tr> 
-        <td><span class="envar">request_shutdown_func</span></td> 
+        <td><var class="envar">request_shutdown_func</var></td> 
         <td>
          この関数はページのリクエストが終了するたびにコールされます。
          ちょうど <span class="function"><strong>request_startup_func()</strong></span> に対応するものです。
@@ -1644,7 +1656,7 @@ ZEND_FUNCTION(first_module)
        </tr>
  
        <tr> 
-        <td><span class="envar">info_func</span></td> 
+        <td><var class="envar">info_func</var></td> 
         <td>
          スクリプト内で <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span> がコールされると、
          Zend は現在読み込まれているすべてのモジュールについてこの関数をコールします。
@@ -1658,7 +1670,7 @@ ZEND_FUNCTION(first_module)
        </tr>
  
        <tr> 
-        <td><span class="envar">version</span></td> 
+        <td><var class="envar">version</var></td> 
         <td>
          モジュールのバージョン。バージョン番号をまだつけたくない場合は
          <em>NO_VERSION_YET</em> が使用できます。しかし、
@@ -1908,10 +1920,10 @@ ZEND_FUNCTION(first_module)
     そのような場合には <em>ZEND_NUM_ARGS</em> マクロを使用します。
     以前のバージョンの PHP では、コール時の引数の数を取得するために
     このマクロは関数のハッシュテーブルのエントリ
-    <span class="envar">ht</span> を使用していました。このエントリは
+    <var class="envar">ht</var> を使用していました。このエントリは
     <em>INTERNAL_FUNCTION_PARAMETERS</em>
     のリストから渡されました。
-    関数に渡された引数の数は今では <span class="envar">ht</span>
+    関数に渡された引数の数は今では <var class="envar">ht</var>
     自体に含まれているので、<em>ZEND_NUM_ARGS</em>
     はダミーのマクロとなっています (実際の定義は
     <var class="filename">zend_API.h</var> を参照ください)。
@@ -2206,21 +2218,21 @@ if(zend_get_parameters_ex(1, &amp;parameter) != SUCCESS)
 </div>
     </div>
 
-    すべての引数は <span class="envar">zval</span> コンテナに格納され、
+    すべての引数は <var class="envar">zval</var> コンテナに格納され、
     <em class="emphasis">二重に</em>ポイントされる必要があります。
     上のコードは、引数を取得してそれをポインタ
-    <span class="envar">parameter</span> でアクセスできるようにしています。
+    <var class="envar">parameter</var> でアクセスできるようにしています。
    </p> 
    <p class="para">
     <span class="function"><strong>zend_get_parameters_ex()</strong></span> は、少なくとも 2 つの引数を受け付けます。
     最初の引数は、取得する引数の数です (これは、
     関数がコールされた際の引数の数と同じでなければなりません。
     そのため、呼び出し構文をきちんとチェックすることが大切になります)。
-    2 番目 (およびそれ以降) の引数は、<span class="envar">zval</span>
+    2 番目 (およびそれ以降) の引数は、<var class="envar">zval</var>
     へのポインタへのポインタへのポインタ (なんてややこしいことでしょう!) です。
     これが必要になるのは、私たちが作成した関数内のローカル
-    <span class="envar">**zval</span> を管理するために Zend は内部で
-    <span class="envar">**zval</span> を使用しており、
+    <var class="envar">**zval</var> を管理するために Zend は内部で
+    <var class="envar">**zval</var> を使用しており、
     <span class="function"><strong>zend_get_parameters_ex()</strong></span> はそれに対するポインタを必要とするからです。
    </p> 
    <p class="para">
@@ -2288,7 +2300,7 @@ if(zend_get_parameters_array_ex(argument_count, parameter_array) != SUCCESS)
     まず、引数の数を調べてそれが予期する範囲内にあることを確かめます。
     それから
     <span class="function"><strong>zend_get_parameters_array_ex()</strong></span> を使用し、
-    引数の値へのポインタを <span class="envar">parameter_array</span>
+    引数の値へのポインタを <var class="envar">parameter_array</var>
     に格納します。
    </p> 
    <p class="para">
@@ -2387,7 +2399,7 @@ key = emalloc(Z_STRLEN_P(args[0]) + 10);</pre>
    </p>
    <p class="para">
     <em class="emphasis">注意:</em> すべての変換関数のパラメータは
-    <span class="envar">**zval</span> です。
+    <var class="envar">**zval</var> です。
    </p> 
    <table id="internals2.ze1.zendapi.tab.arg-conv" class="doctable table">
     <caption><strong>引数の変換関数</strong></caption> 
@@ -2521,13 +2533,13 @@ RETURN_LONG(Z_LVAL_P(parameter));</pre>
 
     パラメータへのポインタを取得した後に、パラメータの値が long 型
     (整数値) に変換されます。そしてそれがこの関数の返り値となります。
-    この値の中身にアクセスするには、<span class="envar">zval</span>
+    この値の中身にアクセスするには、<var class="envar">zval</var>
     型についての知識が必要です。その定義を
     <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.example.zval-typedef" class="xref">PHP/Zend zval 型定義</a> に示します。
    </p> 
    
    <div class="example" id="internals2.structure.globals.using.accessor"> 
-    <p><strong>例7 PHP/Zend <span class="envar">zval</span> 型定義</strong></p> 
+    <p><strong>例7 PHP/Zend <var class="envar">zval</var> 型定義</strong></p> 
     <div class="example-contents">
 <div class="ccode"><pre class="ccode">typedef pval zval;
      
@@ -2559,13 +2571,13 @@ struct _zval_struct {
  
    </div> 
    <p class="para">
-    実際のところは <span class="envar">pval</span> (<var class="filename">php.h</var> で定義)
-    は単なる <span class="envar">zval</span> (<var class="filename">zend.h</var> で定義)
-    のエイリアスであり、これは <span class="envar">_zval_struct</span> をさしています。
+    実際のところは <var class="envar">pval</var> (<var class="filename">php.h</var> で定義)
+    は単なる <var class="envar">zval</var> (<var class="filename">zend.h</var> で定義)
+    のエイリアスであり、これは <var class="envar">_zval_struct</var> をさしています。
     そこで、この構造体に注目してみましょう。
-    <span class="envar">_zval_struct</span> は「マスタ」構造体であり、
+    <var class="envar">_zval_struct</var> は「マスタ」構造体であり、
     その中には値情報、型情報、参照情報が含まれています。
-    中に含まれている <span class="envar">zvalue_value</span> は共用体であり、
+    中に含まれている <var class="envar">zvalue_value</var> は共用体であり、
     変数の値がそこに含まれます。変数の型に応じて、共用体の中の適切なメンバーにアクセスする必要があります。
     それぞれの構造体については
     <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.tab.struct-zval" class="xref">Zend zval 構造体</a>、
@@ -2573,7 +2585,7 @@ struct _zval_struct {
     <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.tab.ztype-constants" class="xref">Zend 変数の型を表す定数</a> を参照ください。
    </p> 
    <table id="internals2.ze1.zendapi.tab.struct-zval" class="doctable table"> 
-    <caption><strong>Zend <span class="envar">zval</span> 構造体</strong></caption> 
+    <caption><strong>Zend <var class="envar">zval</var> 構造体</strong></caption> 
      
       <col style="width: 1.00*;" />
       <col style="width: 1.66*;" /> 
@@ -2584,7 +2596,7 @@ struct _zval_struct {
        </tr>
  
        <tr> 
-        <td><span class="envar">value</span></td> 
+        <td><var class="envar">value</var></td> 
         <td>
          この変数の内容を含む共用体。詳細は
          <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.tab.struct-zvalue-value" class="xref">Zend zvalue_value 構造体</a>
@@ -2593,7 +2605,7 @@ struct _zval_struct {
        </tr>
  
        <tr> 
-        <td><span class="envar">type</span></td> 
+        <td><var class="envar">type</var></td> 
         <td>
          変数の型を含みます。使用可能な型については
          <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.tab.ztype-constants" class="xref">Zend 変数の型を表す定数</a>
@@ -2602,7 +2614,7 @@ struct _zval_struct {
        </tr>
  
        <tr> 
-        <td><span class="envar">is_ref</span></td> 
+        <td><var class="envar">is_ref</var></td> 
         <td>
          この変数が参照ではない場合に 0、
          他の変数への参照である場合に 1 となります。
@@ -2610,7 +2622,7 @@ struct _zval_struct {
        </tr>
  
        <tr> 
-        <td><span class="envar">refcount</span></td> 
+        <td><var class="envar">refcount</var></td> 
         <td>
          この変数に対する参照の数。この変数に格納されている値への新しい参照が作成されるたびに、
          カウンタが 1 増加します。参照が解除されるたびに、カウンタが 1 減少します。
@@ -2624,7 +2636,7 @@ struct _zval_struct {
    </table>
  
    <table id="internals2.ze1.zendapi.tab.struct-zvalue-value" class="doctable table">
-    <caption><strong>Zend <span class="envar">zvalue_value</span> 構造体</strong></caption> 
+    <caption><strong>Zend <var class="envar">zvalue_value</var> 構造体</strong></caption> 
      
       <col style="width: 1.00*;" />
       <col style="width: 1.66*;" /> 
@@ -2635,7 +2647,7 @@ struct _zval_struct {
        </tr>
  
        <tr> 
-        <td><span class="envar">lval</span></td> 
+        <td><var class="envar">lval</var></td> 
         <td>
          変数の型が <em>IS_LONG</em>、
          <em>IS_BOOLEAN</em> あるいは <em>IS_RESOURCE</em>
@@ -2644,7 +2656,7 @@ struct _zval_struct {
        </tr>
  
        <tr> 
-        <td><span class="envar">dval</span></td> 
+        <td><var class="envar">dval</var></td> 
         <td>
          変数の型が <em>IS_DOUBLE</em>
          である場合にこのプロパティを使用します。
@@ -2652,24 +2664,24 @@ struct _zval_struct {
        </tr>
  
        <tr> 
-        <td><span class="envar">str</span></td> 
+        <td><var class="envar">str</var></td> 
         <td>
          型が <em>IS_STRING</em> の変数にアクセスする際に、この構造体を使用します。
-         <span class="envar">len</span> には文字列の長さが含まれ、
-         <span class="envar">val</span> が文字列へのポインタとなります。Zend は C の文字列を使用しているので、
+         <var class="envar">len</var> には文字列の長さが含まれ、
+         <var class="envar">val</var> が文字列へのポインタとなります。Zend は C の文字列を使用しているので、
          文字列の長さには、最後の <em>0x00</em> のぶんも含まれます。
         </td> 
        </tr>
  
        <tr> 
-        <td><span class="envar">ht</span></td> 
+        <td><var class="envar">ht</var></td> 
         <td>
          変数が配列である場合に、この項目は配列のハッシュテーブルエントリへのポインタとなります。
         </td> 
        </tr>
  
        <tr> 
-        <td><span class="envar">obj</span></td> 
+        <td><var class="envar">obj</var></td> 
         <td>
          変数の型が <em>IS_OBJECT</em>
          である場合にこのプロパティを使用します。
@@ -2745,8 +2757,8 @@ struct _zval_struct {
    </table>
  
    <p class="para">
-    long 値にアクセスするには <span class="envar">zval.value.lval</span>、
-    double 値にアクセスするには <span class="envar">zval.value.dval</span>、といったように使用します。
+    long 値にアクセスするには <var class="envar">zval.value.lval</var>、
+    double 値にアクセスするには <var class="envar">zval.value.dval</var>、といったように使用します。
     すべての値は共用体に保存されるので、不適切なメンバーにアクセスすると、
     無意味な結果を得ることになります。
    </p> 
@@ -2763,10 +2775,10 @@ struct _zval_struct {
    </p> 
    <p class="para">
     敢えて説明しませんでしたが、ここで示している状況では、
-    関数のパラメータとして受け取った <span class="envar">zval</span>
+    関数のパラメータとして受け取った <var class="envar">zval</var>
     に対する書き込み権限はありません。
-    もちろん関数内で独自に作成した <span class="envar">zval</span> を変更することは可能ですが、
-    Zend の内部データを参照している <span class="envar">zval</span> は、
+    もちろん関数内で独自に作成した <var class="envar">zval</var> を変更することは可能ですが、
+    Zend の内部データを参照している <var class="envar">zval</var> は、
     決して変更してはいけません。
    </p> 
    <p class="para">
@@ -2783,20 +2795,20 @@ struct _zval_struct {
    <p class="para">
     Zend は内部的には参照を使用しているので、
     さまざまな変数が同じ値を参照することもありえます。
-    <span class="envar">zval</span> コンテナへの書き込みアクセスをするためには、
+    <var class="envar">zval</var> コンテナへの書き込みアクセスをするためには、
     このコンテナが保持する値が他と完全に分離していること、
     つまり他のコンテナから参照されていないことが必要です。
-    <span class="envar">zval</span> コンテナが他のコンテナから参照されている場合に
-    その <span class="envar">zval</span> を変更すると、この <span class="envar">zval</span>
+    <var class="envar">zval</var> コンテナが他のコンテナから参照されている場合に
+    その <var class="envar">zval</var> を変更すると、この <var class="envar">zval</var>
     を参照しているその他のコンテナの内容も変わってしまいます
     (それらも変更後の値を指すようになるからです)。
    </p> 
    <p class="para">
-    <span class="function"><strong>zend_get_parameters_ex()</strong></span> は、単に <span class="envar">zval</span>
+    <span class="function"><strong>zend_get_parameters_ex()</strong></span> は、単に <var class="envar">zval</var>
     コンテナへのポインタを返します。そこに参照が含まれているかどうかは考慮しません。
     一方、これに対応する伝統的な API である
     <span class="function"><strong>zend_get_parameters()</strong></span> は、参照をチェックします。
-    参照が見つかった場合には、独立した <span class="envar">zval</span>
+    参照が見つかった場合には、独立した <var class="envar">zval</var>
     コンテナを新しく作成し、参照先のデータをそこにコピーし、
     その新しく作成した (他とは分離している) コンテナへのポインタを返します。
    </p> 
@@ -2810,7 +2822,7 @@ struct _zval_struct {
     とは言うものの、パラメータを変更するには書き込みアクセスをしなければなりません。
     このような場合のために、Zend には特別な方法が用意されています。
     関数のパラメータが参照渡しされた場合は、自動的に zval の分離が行われるのです。
-    つまり、PHP で下のように関数をコールすると、<span class="envar">$parameter</span>
+    つまり、PHP で下のように関数をコールすると、<var class="envar">$parameter</var>
     が独立した値として渡されることを Zend が自動的に保証してくれるのです。
     これにより、書き込みが可能となります。
     <div class="example-contents">
@@ -2868,7 +2880,7 @@ ZVAL_LONG(parameter, 10);</pre>
     参照渡しではないものについても値を変更したくなる場合があるかもしれません。
     そんなときには、マクロ <em>SEPARATE_ZVAL</em> を使用します。
     これは、指定したコンテナについて zval の分離を行います。
-    新しく作成された <span class="envar">zval</span> は内部のデータとは分離されており、
+    新しく作成された <var class="envar">zval</var> は内部のデータとは分離されており、
     ローカルスコープでしか使用できません。つまり、
     スクリプト全体のコンテキストに影響を与えることなく
     データを変更したり破壊したりできるようになるのです。
@@ -2890,7 +2902,7 @@ SEPARATE_ZVAL(parameter);
     </div>
 
     <em>SEPARATE_ZVAL</em> は、<span class="function"><strong>emalloc()</strong></span>
-    を使用して新しい <span class="envar">zval</span> コンテナを確保します。
+    を使用して新しい <var class="envar">zval</var> コンテナを確保します。
     つまり、このメモリの開放を忘れてしまったとしても、
     スクリプトの終了時に自動的に破棄されるということです。
     しかし、コンテナを開放せずにこのマクロをコールし続けると、
@@ -2920,7 +2932,7 @@ SEPARATE_ZVAL(parameter);
    <h4 class="title">概要</h4> 
    <p class="para">
     実行中のスクリプトによって「外部から」見える変数を新しく作成するには、
-    まず新しい <span class="envar">zval</span> コンテナを確保してそこに値を格納し、
+    まず新しい <var class="envar">zval</var> コンテナを確保してそこに値を格納し、
     それを Zend の内部シンボルテーブルに登録しなければなりません。
     これは、変数を作成する際のお決まりの手順です。
    </p>
@@ -2941,16 +2953,16 @@ ZEND_SET_SYMBOL(EG(active_symbol_table), &quot;new_variable_name&quot;, new_vari
 
    <p class="para">
     マクロ <em>MAKE_STD_ZVAL</em> は、<em>ALLOC_ZVAL</em>
-    を使用して新しい <span class="envar">zval</span> コンテナを確保し、
+    を使用して新しい <var class="envar">zval</var> コンテナを確保し、
     <em>INIT_ZVAL</em> でそれを初期化します。
     これを書いている時点の Zend の実装では、<em class="emphasis">初期化</em>
     というのは参照カウンタを <em>1</em> にして
-    <span class="envar">is_ref</span> フラグをクリアすることを指します。
+    <var class="envar">is_ref</var> フラグをクリアすることを指します。
     しかし、これは今後拡張される可能性があります。そのため、
     <em>ALLOC_ZVAL</em> を直接使用するのではなく
     <em>MAKE_STD_ZVAL</em> を用いるようにしておくことが大切です。
     実行速度を最適化したい場合 (そして、ここで明示的に
-    <span class="envar">zval</span> コンテナを初期化する必要がない場合)
+    <var class="envar">zval</var> コンテナを初期化する必要がない場合)
     は <em>ALLOC_ZVAL</em> を使用することも可能です。
     しかし、データの整合性を保証できなくなるため、
     この方法は推奨されません。
@@ -2960,7 +2972,7 @@ ZEND_SET_SYMBOL(EG(active_symbol_table), &quot;new_variable_name&quot;, new_vari
     Zend のシンボルテーブルに登録することです。このマクロは、
     その値が既にシンボルテーブルに存在するかどうかを調べ、
     もし存在すれば新しいシンボルを参照に変換します
-    (古い <span class="envar">zval</span> コンテナが使用していたメモリは、
+    (古い <var class="envar">zval</var> コンテナが使用していたメモリは、
     自動的に開放されます)。速度を気にする必要がない場合には
     この方法がお勧めです。メモリの使用量を抑えることができます。
    </p> 
@@ -3024,8 +3036,8 @@ ZEND_SET_SYMBOL(&amp;EG(symbol_table), &quot;new_variable_name&quot;, new_variab
     <em>ZEND_SET_SYMBOL</em> マクロがコールされています。
    </p>
    <p class="para">
-    <em class="emphasis">注意:</em> 変数 <span class="envar">active_symbol_table</span>
-    はポインタですが、<span class="envar">symbol_table</span> はそうではありません。
+    <em class="emphasis">注意:</em> 変数 <var class="envar">active_symbol_table</var>
+    はポインタですが、<var class="envar">symbol_table</var> はそうではありません。
     これは、
     <em>EG(active_symbol_table)</em> および
     <em>&amp;EG(symbol_table)</em> を
@@ -3058,8 +3070,8 @@ zend_hash_update(
     </div>
 
     <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.example.variable-scopes" class="xref">スコープが異なる変数の作成</a> は、ふたつの変数を作成する例です。
-    <span class="envar">local_variable</span> はローカルスコープ、そして
-    <span class="envar">global_variable</span> はグローバルスコープとなります (図 9.7
+    <var class="envar">local_variable</var> はローカルスコープ、そして
+    <var class="envar">global_variable</var> はグローバルスコープとなります (図 9.7
     を参照ください)。完全な例は CD-ROM にあります。
    </p>
    <p class="para">
@@ -3103,10 +3115,10 @@ zend_hash_update(
    <p class="para">
     さあ、それではデータを変数に代入していきましょう。まずは long
     型からです。long は PHP の整数型で、非常にシンプルな形式で保存されます。
-    この章の最初のほうで説明した <span class="envar">zval.value</span> コンテナの
+    この章の最初のほうで説明した <var class="envar">zval.value</var> コンテナの
     構造を見てみましょう。long 型のデータは、共用体の
-    <span class="envar">lval</span> フィールドに直接格納されることがおわかりでしょう。
-    long 型に対応する <span class="envar">type</span> の値は
+    <var class="envar">lval</var> フィールドに直接格納されることがおわかりでしょう。
+    long 型に対応する <var class="envar">type</var> の値は
     <em>IS_LONG</em> です
     (<a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.example.create-long" class="xref">long の作成</a> を参照ください)。
     <div class="example" id="internals2.pdo.implementing.driver.error.ex-macros"> 
@@ -3139,8 +3151,8 @@ ZVAL_LONG(new_long, 10);</pre>
    <p class="para">
     double 型は PHP の浮動小数点型で、long 型と同様に簡単に代入できます。
     この値もまた共用体に直接格納されるからです。
-    <span class="envar">zval.value</span> コンテナで対応するメンバは
-    <span class="envar">dval</span> です。また、対応する type は
+    <var class="envar">zval.value</var> コンテナで対応するメンバは
+    <var class="envar">dval</var> です。また、対応する type は
     <em>IS_DOUBLE</em> となります。
     <div class="example-contents">
 <div class="ccode"><pre class="ccode">zval *new_double;
@@ -3171,8 +3183,8 @@ ZVAL_DOUBLE(new_double, 3.45);</pre>
     先に説明したように、Zend の内部データ構造に関連付けられる
     すべての文字列は、Zend 自身のメモリ管理関数を使用して管理しなければなりません。
     静的な文字列を参照したり、標準関数を使用して割り当てた文字列を使用することはできません。
-    文字列を代入するには、<span class="envar">zval.value</span> コンテナの構造体
-    <span class="envar">str</span> にアクセスしなければなりません。
+    文字列を代入するには、<var class="envar">zval.value</var> コンテナの構造体
+    <var class="envar">str</var> にアクセスしなければなりません。
     対応する type は <em>IS_STRING</em> です。
     <div class="example-contents">
 <div class="ccode"><pre class="ccode">zval *new_string;
@@ -3241,7 +3253,7 @@ ZVAL_EMPTY_STRING(new_string);</pre>
    <p class="para">
     論理型の作り方は long 型と同じです。ただ、type は
     <em>IS_BOOL</em> となります。
-    <span class="envar">lval</span> に指定できる値は
+    <var class="envar">lval</var> に指定できる値は
     <em>0</em> および <em>1</em> です。
     <div class="example-contents">
 <div class="ccode"><pre class="ccode">zval *new_bool;
@@ -3267,8 +3279,8 @@ new_bool-&amp;gt;value.lval = 1;</pre>
     配列は、Zend の内部ハッシュテーブルに格納されます。
     このハッシュテーブルにアクセスするには <span class="function"><strong>zend_hash_*()</strong></span>
     API を使用します。配列を作成するたびに、新しいハッシュテーブルの
-    ハンドルが必要となります。これは、<span class="envar">zval.value</span>
-    コンテナのメンバ <span class="envar">ht</span> に格納されます。
+    ハンドルが必要となります。これは、<var class="envar">zval.value</var>
+    コンテナのメンバ <var class="envar">ht</var> に格納されます。
    </p> 
    <p class="para">
     単に配列を作成するためだけの API があります。これは非常に便利です。
@@ -3347,7 +3359,7 @@ array_init(new_array);</pre>
          <span class="function"><strong>add_assoc_string(zval *array, char *key, char *str, int duplicate);()</strong></span>
         </td> 
         <td>
-         文字列を配列に追加します。フラグ <span class="envar">duplicate</span> は、
+         文字列を配列に追加します。フラグ <var class="envar">duplicate</var> は、
          文字列の内容を Zend の内部メモリにコピーする必要があるかどうかを指定します。
         </td> 
        </tr>
@@ -3359,7 +3371,7 @@ array_init(new_array);</pre>
          ()</strong></span>
         </td> 
         <td>
-         長さ <span class="envar">length</span> の文字列を配列に追加します。
+         長さ <var class="envar">length</var> の文字列を配列に追加します。
          それ以外は <span class="function"><strong>add_assoc_string()</strong></span> と同じです。
         </td> 
        </tr>
@@ -3419,7 +3431,7 @@ array_init(new_array);</pre>
         <td><span class="function"><strong>add_index_string(zval *array, uint idx, char
           *str, int duplicate);()</strong></span></td> 
         <td>
-         文字列を配列に追加します。フラグ <span class="envar">duplicate</span> は、
+         文字列を配列に追加します。フラグ <var class="envar">duplicate</var> は、
          文字列の内容を Zend の内部メモリにコピーする必要があるかどうかを指定します。
         </td> 
        </tr>
@@ -3428,7 +3440,7 @@ array_init(new_array);</pre>
         <td><span class="function"><strong>add_index_stringl(zval *array, uint idx, char
           *str, uint length, int duplicate);()</strong></span></td> 
         <td>
-         長さ <span class="envar">length</span> の文字列を配列に追加します。
+         長さ <var class="envar">length</var> の文字列を配列に追加します。
          この関数は高速でバイナリセーフです。
          それ以外は <span class="function"><strong>add_index_string()</strong></span> と同じです。
         </td> 
@@ -3489,7 +3501,7 @@ array_init(new_array);</pre>
         <td><span class="function"><strong>add_next_index_string(zval *array, char *str,
           int duplicate);()</strong></span></td> 
         <td>
-         文字列を配列に追加します。フラグ <span class="envar">duplicate</span> は、
+         文字列を配列に追加します。フラグ <var class="envar">duplicate</var> は、
          文字列の内容を Zend の内部メモリにコピーする必要があるかどうかを指定します。
         </td> 
        </tr>
@@ -3498,7 +3510,7 @@ array_init(new_array);</pre>
         <td><span class="function"><strong>add_next_index_stringl(zval *array, char *str,
           uint length, int duplicate);()</strong></span></td> 
         <td>
-         長さ <span class="envar">length</span> の文字列を配列に追加します。
+         長さ <var class="envar">length</var> の文字列を配列に追加します。
          この関数は高速でバイナリセーフです。
          それ以外は <span class="function"><strong>add_index_string()</strong></span> と同じです。
         </td> 
@@ -3516,7 +3528,7 @@ array_init(new_array);</pre>
    <p class="para">
     これらの関数はすべて、Zend 内部のハッシュ API を抽象化して使用しやすくしたものです。
     もちろん、ハッシュ関数を直接使用することも可能です。例えば、すでに割り当て済みの
-    <span class="envar">zval</span> コンテナを配列に挿入する場合などが考えられます。
+    <var class="envar">zval</var> コンテナを配列に挿入する場合などが考えられます。
     これを行うには、連想配列の場合は <span class="function"><strong>zend_hash_update()</strong></span>
     (<a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.example.array-add-assoc" class="xref">連想配列への要素の追加</a> を参照ください)、
     数値添字配列の場合は <span class="function"><strong>zend_hash_index_update()</strong></span>
@@ -3577,7 +3589,7 @@ if(zend_hash_index_update(new_array-&amp;gt;value.ht, key, (void *)&amp;new_elem
    <p class="para">
     <em class="emphasis">注意:</em> 関数から配列を返すには、まず
     <span class="function"><strong>array_init()</strong></span> を使用し、それ以降の操作は定義済み変数
-    <span class="envar">return_value</span> で行います
+    <var class="envar">return_value</var> で行います
     (エクスポートする関数への引数として渡します。
     呼び出しインターフェイスについての先ほどの議論を参照ください)。
     ここで <em>MAKE_STD_ZVAL</em> を使用してはいけません。
@@ -3997,7 +4009,7 @@ if(object_init(new_object) != SUCCESS)
     さて、利用者がリソースを取得したあとで、
     それをまたあなたの作成した関数に渡してきたとしましょう。
     <em>zval *</em> コンテナ内の
-    <span class="envar">value.lval</span> にはあなたのリソースのキーが含まれているので、
+    <var class="envar">value.lval</var> にはあなたのリソースのキーが含まれているので、
     それを使用して次のマクロでリソースを取得することができます。
     <em>ZEND_FETCH_RESOURCE</em>:
     <div class="example-contents">
@@ -4056,7 +4068,7 @@ if(object_init(new_object) != SUCCESS)
         <td><em>resource_type</em></td>
         <td>
          リソース破壊ハンドラを登録した際に返すリソース型です。
-         今回の例では、これは <span class="envar">le_myresource</span> でした。
+         今回の例では、これは <var class="envar">le_myresource</var> でした。
         </td>
        </tr>
 
@@ -4093,7 +4105,7 @@ if(object_init(new_object) != SUCCESS)
     あまり行儀のよいやり方ではありませんが、
     <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.tab.macros-global-vars" class="xref">グローバル変数の作成のためのマクロ</a>
     で説明するマクロはまさにこの作業を行うためのものです。
-    これらは <span class="envar">zval</span> を確保する必要がありません。
+    これらは <var class="envar">zval</var> を確保する必要がありません。
     単純に、変数名と値を渡すだけでいいのです。
    </p> 
    <table id="internals2.ze1.zendapi.tab.macros-global-vars" class="doctable table">
@@ -4228,7 +4240,7 @@ if(object_init(new_object) != SUCCESS)
         </td> 
         <td>
          文字列型の新しい定数を登録します。文字列の長さを、
-         明示的に <span class="envar">length</span> と指定します。
+         明示的に <var class="envar">length</var> と指定します。
          指定した文字列は、Zend の内部メモリ上に存在しなければなりません。
         </td> 
        </tr>
@@ -4247,13 +4259,13 @@ if(object_init(new_object) != SUCCESS)
  <div class="sect2" id="internals2.ze1.zendapi.copy-constructor"> 
   <h3 class="title">変数の内容の複製: コピーコンストラクタ</h3> 
   <p class="para">
-   遅かれ早かれ、<span class="envar">zval</span> コンテナの内容を別のコンテナに
+   遅かれ早かれ、<var class="envar">zval</var> コンテナの内容を別のコンテナに
    代入したい場面が訪れるでしょう。これは口で言うほど簡単ではありません。
-   というのも <span class="envar">zval</span> コンテナには、
+   というのも <var class="envar">zval</var> コンテナには、
    型情報だけではなく Zend の内部データへの参照も含まれているからです。
    例えば、配列やオブジェクトの場合は、その大きさに応じて
    多くのハッシュテーブルエントリが入れ子構造になっています。
-   ある <span class="envar">zval</span> を別のコンテナに代入すると、
+   ある <var class="envar">zval</var> を別のコンテナに代入すると、
    ハッシュテーブルのエントリを複製するのではなく
    (単に) その参照が複製されるだけになります。
   </p> 
@@ -4278,7 +4290,7 @@ if(object_init(new_object) != SUCCESS)
    (通常は、コピーを拡張した動作になるでしょう)。
   </p> 
   <p class="para">
-   PHP の <span class="envar">zval</span> コンテナについても、この
+   PHP の <var class="envar">zval</var> コンテナについても、この
    「コピーを拡張した動作」が必要になります。
    配列の場合は、この拡張コピー動作によって
    配列に関連するすべてのハッシュテーブルの内容を新しく作成するようにします。
@@ -4313,8 +4325,8 @@ zval_copy_ctor(return_value);</pre>
   <p class="para">
    この関数の最初の部分は、単に引数を取得しているだけのごく普通の処理です。
    しかし、(省略している部分で) 変更を加えた後が面白いところです。
-   <span class="envar">parameter</span> のコンテナが、
-   (事前に定義済みの) <span class="envar">return_value</span> コンテナに代入されます。
+   <var class="envar">parameter</var> のコンテナが、
+   (事前に定義済みの) <var class="envar">return_value</var> コンテナに代入されます。
    ここで、コンテナの中身をうまく複製するためにコピーコンストラクタがコールされます。
    コピーコンストラクタは、与えられた引数に対して直接動作します。
    標準的な返り値は、
@@ -4323,11 +4335,11 @@ zval_copy_ctor(return_value);</pre>
   </p> 
   <p class="para">
    この例でコピーコンストラクタのコールを省略した場合、
-   <span class="envar">parameter</span> と <span class="envar">return_value</span>
-   の両方が同じ内部データを指すことになり、<span class="envar">return_value</span>
+   <var class="envar">parameter</var> と <var class="envar">return_value</var>
+   の両方が同じ内部データを指すことになり、<var class="envar">return_value</var>
    は同じデータ構造への無効な参照ということになってしまいます。
-   <span class="envar">parameter</span> が指すデータに変更を加えると、それが
-   <span class="envar">return_value</span> にも影響を及ぼしてしまいます。
+   <var class="envar">parameter</var> が指すデータに変更を加えると、それが
+   <var class="envar">return_value</var> にも影響を及ぼしてしまいます。
    つまり、別の複製を作るためにはコピーコンストラクタの使用が必須であるということです。
   </p>
   <p class="para">
@@ -4344,16 +4356,16 @@ zval_copy_ctor(return_value);</pre>
   <h3 class="title">値を返す</h3> 
   <p class="para">
    あなたの関数から PHP に値を返す方法については、既に簡単に説明しました。
-   ここではより詳細に説明します。返り値は <span class="envar">return_value</span>
+   ここではより詳細に説明します。返り値は <var class="envar">return_value</var>
    変数を用いて渡されます。この変数は関数の引数として渡されたものです。
-   <span class="envar">return_value</span> 引数は <span class="envar">zval</span> コンテナで構成されており
+   <var class="envar">return_value</var> 引数は <var class="envar">zval</var> コンテナで構成されており
    (前の章の呼び出しインターフェイスのところを参照ください)、
    自由に変更することができます。コンテナ自身はすでに割り当て済みなので、
    改めて <em>MAKE_STD_ZVAL</em> を実行する必要はありません。
    その内容に直接アクセスすることが可能です。
   </p> 
   <p class="para">
-   関数から返す値を作成しやすくするため、そして <span class="envar">zval</span>
+   関数から返す値を作成しやすくするため、そして <var class="envar">zval</var>
    コンテナの内部構造にアクセスしやすくするために、
    いくつかのマクロが定義されています。
    <a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.tab.return" class="xref">関数から値を返すための、定義済みマクロ</a>
@@ -4409,7 +4421,7 @@ zval_copy_ctor(return_value);</pre>
         <em>RETURN_STRING(string, duplicate)</em>
        </td> 
        <td>
-        文字列を返します。<span class="envar">duplicate</span> フラグでは、
+        文字列を返します。<var class="envar">duplicate</var> フラグでは、
         <span class="function"><strong>estrdup()</strong></span> を使用して文字列を複製するかどうかを指定します。
        </td> 
       </tr>
@@ -4501,7 +4513,7 @@ zval_copy_ctor(return_value);</pre>
        </td> 
        <td>
         指定した文字列を返り値に指定し、その長さが
-        <span class="envar">length</span> となるようにします
+        <var class="envar">length</var> となるようにします
         (<em>RETVAL_STRING</em> も参照ください)。
         このマクロは高速でバイナリセーフです。
         文字列の長さがわかっている場合は常にこのマクロを使用すべきです。
@@ -4539,7 +4551,7 @@ zval_copy_ctor(return_value);</pre>
    配列やオブジェクトのような複雑な型を返すには
    <span class="function"><strong>array_init()</strong></span> および
    <span class="function"><strong>object_init()</strong></span> を使用し、対応するハッシュ関数を
-   <span class="envar">return_value</span> に使用します。
+   <var class="envar">return_value</var> に使用します。
    これらの型は簡単に作成することはできないので、定義済みのマクロは存在しません。
   </p> 
  </div>
@@ -4818,15 +4830,15 @@ int no_separation);</pre>
   </div>
 
   <p class="para">
-   <span class="envar">function_table</span> および <span class="envar">object</span>
+   <var class="envar">function_table</var> および <var class="envar">object</var>
    は、両方とも指定する必要はなく、どちらか一方だけでよいことに注意しましょう。
    メソッドをコールしたい場合は、そのメソッドを含むオブジェクトを
    指定しなければなりません。このときに、
    <span class="function"><strong>call_user_function()</strong></span>
    は自動的にこのオブジェクトの関数テーブルを設定します。
    メソッドをコールするのではない場合は、
-   <span class="envar">function_table</span> だけを設定して
-   <span class="envar">object</span> は <em>NULL</em> とします。
+   <var class="envar">function_table</var> だけを設定して
+   <var class="envar">object</var> は <em>NULL</em> とします。
   </p> 
   <p class="para">
    通常は、デフォルトの関数テーブルは &quot;root&quot; であり、
@@ -4837,13 +4849,13 @@ int no_separation);</pre>
    <em>TSRMLS_FETCH</em> マクロを一度コールします。
   </p>
   <p class="para">
-   関数名は <span class="envar">zval</span> コンテナで指定します。
+   関数名は <var class="envar">zval</var> コンテナで指定します。
    最初は少し戸惑うかもしれませんが、これはきわめて論理的なことです。
    なぜなら、スクリプト内からコールされる関数でパラメータとして受け取った
-   関数名は、たいていの場合は再び <span class="envar">zval</span>
+   関数名は、たいていの場合は再び <var class="envar">zval</var>
    コンテナに保存されることになるからです。
    そのため、この関数に引数を渡すだけでよくなります。ここで使用する
-   <span class="envar">zval</span> は <em>IS_STRING</em>
+   <var class="envar">zval</var> は <em>IS_STRING</em>
    型でなければなりません。
   </p>
   <p class="para">
@@ -4994,7 +5006,7 @@ PHP_INI_MH(OnChangeSecond)
 </div>
    </div>
 
-   変更ハンドラの変数 <span class="envar">new_value</span> に、
+   変更ハンドラの変数 <var class="envar">new_value</var> に、
    新しい値がに文字列として渡されます。
    <em>PHP_INI_MH</em> の定義を見ると、
    それ以外にもいくつかのパラメータがあることがわかるでしょう。
@@ -5068,8 +5080,8 @@ PHP_INI_MH(OnChangeSecond)
        <td><em>INI_BOOL(name)</em></td> 
        <td>
         エントリ <em>name</em> の現在の値を
-        Boolean (<span class="envar">zend_bool</span> で定義されるもので、
-        その実体は、現在は <span class="envar">unsigned char</span>) で返します。
+        Boolean (<var class="envar">zend_bool</var> で定義されるもので、
+        その実体は、現在は <var class="envar">unsigned char</var>) で返します。
        </td> 
       </tr>
  
@@ -5103,8 +5115,8 @@ PHP_INI_MH(OnChangeSecond)
        <td><em>INI_ORIG_BOOL(name)</em></td> 
        <td>
         エントリ <em>name</em> の元の値を
-        Boolean (<span class="envar">zend_bool</span> で定義されるもので、
-        その実体は、現在は <span class="envar">unsigned char</span>) で返します。
+        Boolean (<var class="envar">zend_bool</var> で定義されるもので、
+        その実体は、現在は <var class="envar">unsigned char</var>) で返します。
        </td> 
       </tr>
  
@@ -5208,7 +5220,7 @@ ZEND_MSHUTDOWN_FUNCTION(mymodule)
         <td><em>AC_MSG_RESULT(value)</em></td> 
         <td>
          <em>AC_MSG_CHECKING</em> の結果を指定します。
-         <span class="envar">value</span> には、
+         <var class="envar">value</var> には、
          <em>yes</em> あるいは <em>no</em>
          のいずれかを指定しなければなりません。
         </td>
@@ -5218,7 +5230,7 @@ ZEND_MSHUTDOWN_FUNCTION(mymodule)
         <td><em>AC_MSG_ERROR(message)</em></td> 
         <td>
          <var class="filename">configure</var> 時に
-         エラーメッセージ <span class="envar">message</span> を表示し、
+         エラーメッセージ <var class="envar">message</var> を表示し、
          スクリプトを終了させます。
         </td> 
        </tr>
@@ -5227,8 +5239,8 @@ ZEND_MSHUTDOWN_FUNCTION(mymodule)
         <td><em>AC_DEFINE(name,value,description)</em></td> 
         <td>
          <var class="filename">php_config.h</var> に <em>#define</em>
-         を追加し、値を <span class="envar">value</span> に設定して
-         <span class="envar">description</span> をコメントに加えます
+         を追加し、値を <var class="envar">value</var> に設定して
+         <var class="envar">description</var> をコメントに加えます
          (モジュールで条件付きコンパイルを行う場合に有用です)。
         </td> 
        </tr>
@@ -5252,14 +5264,14 @@ ZEND_MSHUTDOWN_FUNCTION(mymodule)
         <td><em>AC_ARG_WITH(modulename,description,unconditionaltest,conditionaltest)</em></td>
         <td>
          非常に強力なマクロであり、<var class="filename">configure --help</var>
-         の出力内容に <span class="envar">description</span>
+         の出力内容に <var class="envar">description</var>
          という説明とともにモジュールを追加します。
          <var class="filename">configure</var> スクリプトにオプション
          <em>--with-&lt;modulename&gt;</em>
          が指定されているかどうかを PHP がチェックし、もし指定されていれば
          スクリプト <em>unconditionaltest</em>
          を実行します (例えば <em>--with-myext=yes</em>)。
-         このとき、オプションの値は変数 <span class="envar">$withval</span>
+         このとき、オプションの値は変数 <var class="envar">$withval</var>
          に格納されます。オプションが指定されなかった場合は、
          <em>conditionaltest</em> を実行します。
         </td> 
@@ -5293,13 +5305,13 @@ ZEND_MSHUTDOWN_FUNCTION(mymodule)
  <div class="sect2" id="internals2.ze1.zendapi.api-macros">
   <h3 class="title">API マクロ</h3>
   <p class="para">
-   Zend API では、<span class="envar">zval</span> コンテナへのアクセスを単純化する
+   Zend API では、<var class="envar">zval</var> コンテナへのアクセスを単純化する
    マクロ群が定義されています (<a href="internals2.ze1.zendapi.html#internals2.ze1.zendapi.tab.api-macros" class="xref">zval コンテナへのアクセスのための API マクロ</a>
    を参照ください)。
   </p>
   
   <table id="internals2.ze1.zendapi.tab.api-macros" class="doctable table">
-   <caption><strong><span class="envar">zval</span> コンテナへのアクセスのための API マクロ</strong></caption>
+   <caption><strong><var class="envar">zval</var> コンテナへのアクセスのための API マクロ</strong></caption>
     
      <col style="width: *;" />
      <col style="width: *;" />
@@ -5311,77 +5323,77 @@ ZEND_MSHUTDOWN_FUNCTION(mymodule)
 
       <tr>
        <td><em>Z_LVAL(zval)</em></td>
-       <td><span class="envar">(zval).value.lval</span></td>
+       <td><var class="envar">(zval).value.lval</var></td>
       </tr>
 
       <tr>
        <td><em>Z_DVAL(zval)</em></td>
-       <td><span class="envar">(zval).value.dval</span></td>
+       <td><var class="envar">(zval).value.dval</var></td>
       </tr>
 
       <tr>
        <td><em>Z_STRVAL(zval)</em></td>
-       <td><span class="envar">(zval).value.str.val</span></td>
+       <td><var class="envar">(zval).value.str.val</var></td>
       </tr>
 
       <tr>
        <td><em>Z_STRLEN(zval)</em></td>
-       <td><span class="envar">(zval).value.str.len</span></td>
+       <td><var class="envar">(zval).value.str.len</var></td>
       </tr>
 
       <tr>
        <td><em>Z_ARRVAL(zval)</em></td>
-       <td><span class="envar">(zval).value.ht</span></td>
+       <td><var class="envar">(zval).value.ht</var></td>
       </tr>
 
       <tr>
        <td><em>Z_LVAL_P(zval)</em></td>
-       <td><span class="envar">(*zval).value.lval</span></td>
+       <td><var class="envar">(*zval).value.lval</var></td>
       </tr>
 
       <tr>
        <td><em>Z_DVAL_P(zval)</em></td>
-       <td><span class="envar">(*zval).value.dval</span></td>
+       <td><var class="envar">(*zval).value.dval</var></td>
       </tr>
 
       <tr>
        <td><em>Z_STRVAL_P(zval_p)</em></td>
-       <td><span class="envar">(*zval).value.str.val</span></td>
+       <td><var class="envar">(*zval).value.str.val</var></td>
       </tr>
 
       <tr>
        <td><em>Z_STRLEN_P(zval_p)</em></td>
-       <td><span class="envar">(*zval).value.str.len</span></td>
+       <td><var class="envar">(*zval).value.str.len</var></td>
       </tr>
 
       <tr>
        <td><em>Z_ARRVAL_P(zval_p)</em></td>
-       <td><span class="envar">(*zval).value.ht</span></td>
+       <td><var class="envar">(*zval).value.ht</var></td>
       </tr>
 
       <tr>
        <td><em>Z_LVAL_PP(zval_pp)</em></td>
-       <td><span class="envar">(**zval).value.lval</span></td>
+       <td><var class="envar">(**zval).value.lval</var></td>
       </tr>
 
       <tr>
        <td><em>Z_DVAL_PP(zval_pp)</em></td>
-       <td><span class="envar">(**zval).value.dval</span></td>
+       <td><var class="envar">(**zval).value.dval</var></td>
       </tr>
 
       <tr>
        <td><em>Z_STRVAL_PP(zval_pp)</em></td>
-       <td><span class="envar">(**zval).value.str.val</span></td>
+       <td><var class="envar">(**zval).value.str.val</var></td>
       </tr>
 
       <tr>
        <td><em>Z_STRLEN_PP(zval_pp)</em></td>
-       <td><span class="envar">(**zval).value.str.len</span></td>
+       <td><var class="envar">(**zval).value.str.len</var></td>
       </tr>
 
       <tr>
        <td><em>Z_ARRVAL_PP(zval_pp)</em></td>
-       <td><span class="envar">(**zval).value.ht</span></td>
+       <td><var class="envar">(**zval).value.ht</var></td>
       </tr>
 
      </tbody>
@@ -5392,9 +5404,4 @@ ZEND_MSHUTDOWN_FUNCTION(mymodule)
 
 
 
- </div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="internals2.ze1.streams.html">PHP 拡張モジュールの作者用のストリーム API</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="internals2.ze1.tsrm.html">TSRM API</a></div>
- <div class="up"><a href="internals2.ze1.html">Zend Engine 1</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+ </div></div></div></body></html>

@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>SessionHandlerInterface クラス</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="sessionhandler.write.html">SessionHandler::write</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="sessionhandlerinterface.close.html">SessionHandlerInterface::close</a></div>
- <div class="up"><a href="book.session.html">Sessions</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="class.sessionhandlerinterface" class="reference">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="sessionhandler.write.html">« SessionHandler::write</a></li>
+      <li style="float: right;"><a href="sessionhandlerinterface.close.html">SessionHandlerInterface::close »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="book.session.html">Sessions</a></li>
+    <li>SessionHandlerInterface クラス</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="class.sessionhandlerinterface" class="reference">
 
  <h1 class="title">SessionHandlerInterface クラス</h1>
  
@@ -52,31 +64,31 @@
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="methodsynopsis dc-description">
-   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="sessionhandlerinterface.close.html" class="methodname">close</a></span>
+   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="methodname"><a href="sessionhandlerinterface.close.html" class="methodname">close</a></span>
     ( <span class="methodparam">void</span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="sessionhandlerinterface.destroy.html" class="methodname">destroy</a></span>
+   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="methodname"><a href="sessionhandlerinterface.destroy.html" class="methodname">destroy</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$session_id</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="type">int</span> <span class="methodname"><a href="sessionhandlerinterface.gc.html" class="methodname">gc</a></span>
+   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="methodname"><a href="sessionhandlerinterface.gc.html" class="methodname">gc</a></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$maxlifetime</code></span>
-   )</div>
+   ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="sessionhandlerinterface.open.html" class="methodname">open</a></span>
+   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="methodname"><a href="sessionhandlerinterface.open.html" class="methodname">open</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$save_path</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$session_name</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><a href="sessionhandlerinterface.read.html" class="methodname">read</a></span>
+   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="methodname"><a href="sessionhandlerinterface.read.html" class="methodname">read</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$session_id</code></span>
-   )</div>
+   ) : <span class="type">string</span></div>
 <div class="methodsynopsis dc-description">
-   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><a href="sessionhandlerinterface.write.html" class="methodname">write</a></span>
+   <span class="modifier">abstract</span> <span class="modifier">public</span> <span class="methodname"><a href="sessionhandlerinterface.write.html" class="methodname">write</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$session_id</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$session_data</code></span>
-   )</div>
+   ) : <span class="type">bool</span></div>
 
    }</div>
 
@@ -173,9 +185,4 @@
 
 <h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="sessionhandlerinterface.close.html">SessionHandlerInterface::close</a> — セッションを閉じる</li><li><a href="sessionhandlerinterface.destroy.html">SessionHandlerInterface::destroy</a> — セッションを破棄する</li><li><a href="sessionhandlerinterface.gc.html">SessionHandlerInterface::gc</a> — 古いセッションを削除する</li><li><a href="sessionhandlerinterface.open.html">SessionHandlerInterface::open</a> — セッションを開始する</li><li><a href="sessionhandlerinterface.read.html">SessionHandlerInterface::read</a> — セッションのデータを読み込む</li><li><a href="sessionhandlerinterface.write.html">SessionHandlerInterface::write</a> — セッションのデータを書き込む</li></ul>
 </div>
-<hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="sessionhandler.write.html">SessionHandler::write</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="sessionhandlerinterface.close.html">SessionHandlerInterface::close</a></div>
- <div class="up"><a href="book.session.html">Sessions</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></body></html>

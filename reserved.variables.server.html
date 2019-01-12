@@ -3,14 +3,26 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>サーバー情報および実行時の環境情報</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
- <body><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="reserved.variables.globals.html">$GLOBALS</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="reserved.variables.get.html">$_GET</a></div>
- <div class="up"><a href="reserved.variables.html">定義済の変数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div><hr /><div id="reserved.variables.server" class="refentry">
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="reserved.variables.globals.html">« $GLOBALS</a></li>
+      <li style="float: right;"><a href="reserved.variables.get.html">$_GET »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="reserved.variables.html">定義済の変数</a></li>
+    <li>サーバー情報および実行時の環境情報</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="reserved.variables.server" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">$_SERVER</h1>
   <h1 class="refname">$HTTP_SERVER_VARS [削除]</h1>
@@ -569,17 +581,17 @@
       </span>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <span class="simpara">
-        PHP 4.3.2 以降、<span class="envar">PATH_TRANSLATED</span> は、
+        PHP 4.3.2 以降、<var class="envar">PATH_TRANSLATED</var> は、
         Apache 2 <acronym title="Server Application Programming Interface">SAPI</acronym> において暗黙のうちに設定されなく
         なりました。一方、Apache 1 では、この値が Apache により設定されない場合、
-        <span class="envar">SCRIPT_FILENAME</span> と同じ値に設定されます。
-        この変更は、<span class="envar">PATH_TRANSLATED</span> は
-        <span class="envar">PATH_INFO</span> が定義されている場合のみ
+        <var class="envar">SCRIPT_FILENAME</var> と同じ値に設定されます。
+        この変更は、<var class="envar">PATH_TRANSLATED</var> は
+        <var class="envar">PATH_INFO</var> が定義されている場合のみ
         存在するべきであるという <acronym title="Common Gateway Interface">CGI</acronym> の規約を満たすために
         行われました。
        </span>
        <span class="simpara">
-        Apache 2 ユーザーは、<span class="envar">PATH_INFO</span> を定義するために
+        Apache 2 ユーザーは、<var class="envar">PATH_INFO</var> を定義するために
         <var class="filename">httpd.conf</var> の中で
         <em>AcceptPathInfo = On</em> 
         を使用することが可能です。
@@ -804,9 +816,4 @@ www.example.com
  </div>
 
 
-</div><hr /><div class="manualnavbar" style="text-align: center;">
- <div class="prev" style="text-align: left; float: left;"><a href="reserved.variables.globals.html">$GLOBALS</a></div>
- <div class="next" style="text-align: right; float: right;"><a href="reserved.variables.get.html">$_GET</a></div>
- <div class="up"><a href="reserved.variables.html">定義済の変数</a></div>
- <div class="home"><a href="index.html">PHP Manual</a></div>
-</div></body></html>
+</div></div></div></body></html>
