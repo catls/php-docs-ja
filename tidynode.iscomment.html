@@ -32,7 +32,7 @@
  <div class="refsect1 description" id="refsect1-tidynode.iscomment-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="methodname"><strong>tidyNode::isComment</strong></span>
+   <span class="modifier">public</span> <span class="methodname"><strong>tidyNode::isComment</strong></span>
     ( <span class="methodparam">void</span>
    ) : <span class="type">bool</span></div>
 
@@ -65,11 +65,8 @@
     <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
     <div class="example-contents screen">
 <div class="cdata"><pre>
-# jste node #1
-&lt;# 
-  /* JSTE code */
-  alert(&#039;Hello World&#039;); 
-#&gt;
+# comment node #1
+&lt;!-- Comments --&gt;
 </pre></div>
     </div>
    </div>
