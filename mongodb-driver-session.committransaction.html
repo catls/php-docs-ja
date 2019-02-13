@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Commits a transaction</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -38,8 +37,9 @@
    ) : <span class="type"><span class="type void">void</span></span></div>
 
   <p class="para rdfs-comment">
-   This method commits an existing transaction and all the associated
-   operations are persisted in the database.
+   Saves the changes made by the operations in the multi-document transaction
+   and ends the transaction. Until the commit, none of the data changes made
+   from within the transaction are visible outside the transaction.
   </p>
  </div>
 

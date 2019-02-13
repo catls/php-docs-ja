@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Terminates a session</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -39,9 +38,15 @@
 
   <p class="para rdfs-comment">
    This method closes an existing session. If a transaction was associated
-   with this session, this transaction is also aborted, and all its
-   operations are rolled back.
+   with this session, the transaction will be aborted. After calling this
+   method, applications should not invoke other methods on the session.
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    Sessions are also closed during garbage collection. It should not be
+    necessary to call this method under normal circumstances.
+   </span>
+  </p></blockquote>
  </div>
 
 

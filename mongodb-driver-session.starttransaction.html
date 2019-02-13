@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Starts a transaction</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -38,19 +37,21 @@
    ) : <span class="type"><span class="type void">void</span></span></div>
 
   <p class="para rdfs-comment">
-   This method starts a new transaction within this session. When the session
-   is attached to operations through the <em>&quot;session&quot;</em>
-   argument, these operations become of the started transaction.
+   Starts a multi-document transaction associated with the session. At any given
+   time, you can have at most one open transaction for a session. After starting
+   a transaction, the session object must be passed to each operation via
+   the <em>&quot;session&quot;</em> option (e.g.
+   <span class="methodname"><a href="mongodb-driver-manager.executebulkwrite.html" class="methodname">MongoDB\Driver\Manager::executeBulkWrite()</a></span>) in order
+   to associate that operation with the transaction.
   </p>
   <p class="para">
    Transactions can be committed through
    <span class="methodname"><a href="mongodb-driver-session.committransaction.html" class="methodname">MongoDB\Driver\Session::commitTransaction()</a></span>, and
    aborted with
    <span class="methodname"><a href="mongodb-driver-session.aborttransaction.html" class="methodname">MongoDB\Driver\Session::abortTransaction()</a></span>.
-  </p>
-  <p class="para">
-   Transactions are also automatically aborted when the session is terminated
-   through <span class="methodname"><a href="mongodb-driver-session.endsession.html" class="methodname">MongoDB\Driver\Session::endSession()</a></span>.
+   Transactions are also automatically aborted when the session is closed from
+   garbage collection or by explicitly calling
+   <span class="methodname"><a href="mongodb-driver-session.endsession.html" class="methodname">MongoDB\Driver\Session::endSession()</a></span>.
   </p>
  </div>
 

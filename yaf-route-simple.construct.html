@@ -2,8 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Yaf_Route_Simple のコンストラクタ</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+  <title>Yaf_Route_Simple constructor</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -19,14 +18,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.yaf-route-simple.html">Yaf_Route_Simple</a></li>
-    <li>Yaf_Route_Simple のコンストラクタ</li>
+    <li>Yaf_Route_Simple constructor</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="yaf-route-simple.construct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Yaf_Route_Simple::__construct</h1>
-  <p class="verinfo">(Yaf &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">Yaf_Route_Simple::__construct</span> &mdash; <span class="dc-title">Yaf_Route_Simple のコンストラクタ</span></p>
+  <p class="verinfo">(Yaf &gt;=1.0.0)</p><p class="refpurpose"><span class="refname">Yaf_Route_Simple::__construct</span> &mdash; <span class="dc-title">Yaf_Route_Simple constructor</span></p>
 
  </div>
 
@@ -40,8 +39,9 @@
    )</div>
 
   <p class="para rdfs-comment">
-   <a href="class.yaf-route-simple.html" class="classname">Yaf_Route_Simple</a> は、ルート情報をクエリ文字列から取得します。
-   コンストラクタのパラメータを使って、$_GET からルート情報を探します。
+   <a href="class.yaf-route-simple.html" class="classname">Yaf_Route_Simple</a> will get route info from query
+   string. and the parameters of this constructor will used as keys while searching for the
+   route info in $_GET.
   </p>
 
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -62,7 +62,7 @@
     <dd>
 
      <p class="para">
-       モジュールの情報を取得するキー。
+       The key name of the module info. 
      </p>
     </dd>
 
@@ -74,7 +74,7 @@
     <dd>
 
      <p class="para">
-      コントローラの情報を取得するキー。
+      the key name of the controller info.
      </p>
     </dd>
 
@@ -86,7 +86,7 @@
     <dd>
 
      <p class="para">
-      アクションの情報を取得するキー。
+      the key name of the action info.
      </p>
     </dd>
 
@@ -99,7 +99,7 @@
  <div class="refsect1 returnvalues" id="refsect1-yaf-route-simple.construct-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   常に <strong><code>TRUE</code></strong> を返します。
+   Always return <strong><code>TRUE</code></strong>.
   </p>
  </div>
 
@@ -107,7 +107,7 @@
  <div class="refsect1 examples" id="refsect1-yaf-route-simple.construct-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-5102">
-   <p><strong>例1 <span class="function"><a href="yaf-route-simple.route.html" class="function">Yaf_Route_Simple::route()</a></span> の例</strong></p>
+   <p><strong>例1 <span class="function"><a href="yaf-route-simple.route.html" class="function">Yaf_Route_Simple::route()</a></span>example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;$route&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Yaf_Route_Simple</span><span style="color: #007700">(</span><span style="color: #DD0000">"m"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"controller"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"act"</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">Yaf_Router</span><span style="color: #007700">::</span><span style="color: #0000BB">getInstance</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">addRoute</span><span style="color: #007700">(</span><span style="color: #DD0000">"simple"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$route</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -117,7 +117,7 @@
 
   </div>
   <div class="example" id="example-5103">
-   <p><strong>例2 <span class="function"><a href="yaf-route-simple.route.html" class="function">Yaf_Route_Simple::route()</a></span> の例</strong></p>
+   <p><strong>例2 <span class="function"><a href="yaf-route-simple.route.html" class="function">Yaf_Route_Simple::route()</a></span>example</strong></p>
    <div class="example-contents">
 <div class="bashcode"><pre class="bashcode">Request: http://yourdomain.com/path/?controller=a&amp;act=b
 =&gt; module = default(index), controller = a, action = b

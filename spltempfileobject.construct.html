@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>新しい一時ファイルオブジェクトを作成する</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -32,7 +31,7 @@
 
  <div class="refsect1 description" id="refsect1-spltempfileobject.construct-description">
   <h3 class="title">説明</h3>
-  <div class="methodsynopsis dc-description">
+  <div class="constructorsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>SplTempFileObject::__construct</strong></span>
     ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$max_memory</code></span>
   ] )</div>
@@ -94,7 +93,7 @@
     <div class="example-contents"><p>この例では読み書きできるメモリで一時ファイルが書き込まれます。</p></div>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$temp&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SplTempFileObject</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$temp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #DD0000">"これは最初の行で\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$temp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #DD0000">"そしてこれは&nbsp;2&nbsp;番目の行です。\n"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"一時ファイルに&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$temp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ftell</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;バイトが書き込まれました。\n\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Rewind&nbsp;and&nbsp;read&nbsp;what&nbsp;was&nbsp;written<br /></span><span style="color: #0000BB">$temp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rewind</span><span style="color: #007700">();<br />foreach&nbsp;(</span><span style="color: #0000BB">$temp&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$line</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$line</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$temp&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">SplTempFileObject</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$temp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #DD0000">"これは最初の行で\n"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$temp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #DD0000">"そしてこれは&nbsp;2&nbsp;番目の行です。\n"</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"一時ファイルに&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$temp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">ftell</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"&nbsp;バイトが書き込まれました。\n\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;先頭に巻き戻し、書かれた内容を読み取る<br /></span><span style="color: #0000BB">$temp</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">rewind</span><span style="color: #007700">();<br />foreach&nbsp;(</span><span style="color: #0000BB">$temp&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$line</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$line</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -120,8 +119,8 @@
    <ul class="simplelist">
     <li class="member"><a href="class.splfileobject.html" class="classname">SplFileObject</a></li>
     <li class="member">
-     <a href="wrappers.php.html" class="link">PHP input/output streams</a> 
-     (for <em>php://temp</em> and <em>php://memory</em>)
+     <a href="wrappers.php.html" class="link">PHP 入出力ストリーム</a> 
+     (<em>php://temp</em> および <em>php://memory</em> について)
     </li>
    </ul>
   </p>

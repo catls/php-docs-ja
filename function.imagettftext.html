@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>TrueType フォントを使用してテキストを画像に書き込む</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -167,7 +166,7 @@ image</code></dt>
        the following trick will alleviate any include problems.
        <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;GD&nbsp;の環境変数を設定<br /></span><span style="color: #0000BB">putenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'GDFONTPATH='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'.'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;Name&nbsp;the&nbsp;font&nbsp;to&nbsp;be&nbsp;used&nbsp;(note&nbsp;the&nbsp;lack&nbsp;of&nbsp;the&nbsp;.ttf&nbsp;extension)<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SomeFont'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;GD&nbsp;の環境変数を設定<br /></span><span style="color: #0000BB">putenv</span><span style="color: #007700">(</span><span style="color: #DD0000">'GDFONTPATH='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">realpath</span><span style="color: #007700">(</span><span style="color: #DD0000">'.'</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;使用されるフォント名&nbsp;(&nbsp;.ttf&nbsp;拡張子の欠落に注意)<br /></span><span style="color: #0000BB">$font&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'SomeFont'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
        </div>

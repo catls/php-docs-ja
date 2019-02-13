@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>関数・メソッド</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -4285,6 +4284,10 @@
 <li><a href="intldateformatter.setpattern.html" class="index">IntlDateFormatter::setPattern</a> - IntlDateFormatter が使用するパターンを設定する</li>
 <li><a href="intldateformatter.settimezone.html" class="index">IntlDateFormatter::setTimeZone</a> - タイムゾーンを設定する</li>
 <li><a href="intldateformatter.settimezoneid.html" class="index">IntlDateFormatter::setTimeZoneId</a> - 使用するタイムゾーンを設定する</li>
+<li><a href="intlgregoriancalendar.getgregorianchange.html" class="index">IntlGregorianCalendar::getGregorianChange</a> - Get the Gregorian Calendar change date</li>
+<li><a href="intlgregoriancalendar.isleapyear.html" class="index">IntlGregorianCalendar::isLeapYear</a> - Determine if the given year is a leap year</li>
+<li><a href="intlgregoriancalendar.setgregorianchange.html" class="index">IntlGregorianCalendar::setGregorianChange</a> - Set the Gregorian Calendar the change date</li>
+<li><a href="intlgregoriancalendar.construct.html" class="index">IntlGregorianCalendar::__construct</a> - Create the Gregorian Calendar class</li>
 <li><a href="intliterator.current.html" class="index">IntlIterator::current</a> - Get the current element</li>
 <li><a href="intliterator.key.html" class="index">IntlIterator::key</a> - Get the current key</li>
 <li><a href="intliterator.next.html" class="index">IntlIterator::next</a> - Move forward to the next element</li>
@@ -7581,6 +7584,7 @@
 <li><a href="reflectionmethod.setaccessible.html" class="index">ReflectionMethod::setAccessible</a> - メソッドのアクセス範囲を設定する</li>
 <li><a href="reflectionmethod.construct.html" class="index">ReflectionMethod::__construct</a> - ReflectionMethod を作成する</li>
 <li><a href="reflectionmethod.tostring.html" class="index">ReflectionMethod::__toString</a> - ReflectionMethod オブジェクトの文字列表現を返す</li>
+<li><a href="reflectionnamedtype.getname.html" class="index">ReflectionNamedType::getName</a> - Get the text of the type hint</li>
 <li><a href="reflectionobject.export.html" class="index">ReflectionObject::export</a> - エクスポートする</li>
 <li><a href="reflectionobject.construct.html" class="index">ReflectionObject::__construct</a> - ReflectionObject を作成する</li>
 <li><a href="reflectionparameter.allowsnull.html" class="index">ReflectionParameter::allowsNull</a> - null を許可するかどうかを調べる</li>
@@ -8048,7 +8052,7 @@
 <li><a href="function.snmp-set-valueretrieval.html" class="index">snmp_set_valueretrieval</a> - SNMP の値が返される方法を設定する</li>
 <li><a href="soapclient.soapclient.html" class="index">SoapClient::SoapClient</a> - SoapClient コンストラクタ</li>
 <li><a href="soapclient.call.html" class="index">SoapClient::__call</a> - SOAP 関数をコールする (非推奨)</li>
-<li><a href="soapclient.construct.html" class="index">SoapClient::__construct</a> - SoapClient のコンストラクタ</li>
+<li><a href="soapclient.construct.html" class="index">SoapClient::__construct</a> - SoapClient constructor</li>
 <li><a href="soapclient.dorequest.html" class="index">SoapClient::__doRequest</a> - SOAP リクエストを実行する</li>
 <li><a href="soapclient.getcookies.html" class="index">SoapClient::__getCookies</a> - Get list of cookies</li>
 <li><a href="soapclient.getfunctions.html" class="index">SoapClient::__getFunctions</a> - SOAP 関数の一覧を返す</li>
@@ -10743,20 +10747,20 @@
 <li><a href="yaf-config-abstract.set.html" class="index">Yaf_Config_Abstract::set</a> - セッター</li>
 <li><a href="yaf-config-abstract.toarray.html" class="index">Yaf_Config_Abstract::toArray</a> - 配列に変換する</li>
 <li><a href="yaf-config-ini.count.html" class="index">Yaf_Config_Ini::count</a> - The count purpose</li>
-<li><a href="yaf-config-ini.current.html" class="index">Yaf_Config_Ini::current</a> - The current purpose</li>
-<li><a href="yaf-config-ini.key.html" class="index">Yaf_Config_Ini::key</a> - The key purpose</li>
-<li><a href="yaf-config-ini.next.html" class="index">Yaf_Config_Ini::next</a> - The next purpose</li>
+<li><a href="yaf-config-ini.current.html" class="index">Yaf_Config_Ini::current</a> - Retrieve the current value</li>
+<li><a href="yaf-config-ini.key.html" class="index">Yaf_Config_Ini::key</a> - Fetch current element's key</li>
+<li><a href="yaf-config-ini.next.html" class="index">Yaf_Config_Ini::next</a> - Advance the internal pointer</li>
 <li><a href="yaf-config-ini.offsetexists.html" class="index">Yaf_Config_Ini::offsetExists</a> - The offsetExists purpose</li>
 <li><a href="yaf-config-ini.offsetget.html" class="index">Yaf_Config_Ini::offsetGet</a> - The offsetGet purpose</li>
 <li><a href="yaf-config-ini.offsetset.html" class="index">Yaf_Config_Ini::offsetSet</a> - The offsetSet purpose</li>
 <li><a href="yaf-config-ini.offsetunset.html" class="index">Yaf_Config_Ini::offsetUnset</a> - The offsetUnset purpose</li>
 <li><a href="yaf-config-ini.readonly.html" class="index">Yaf_Config_Ini::readonly</a> - The readonly purpose</li>
 <li><a href="yaf-config-ini.rewind.html" class="index">Yaf_Config_Ini::rewind</a> - The rewind purpose</li>
-<li><a href="yaf-config-ini.toarray.html" class="index">Yaf_Config_Ini::toArray</a> - PHP の配列を返す</li>
+<li><a href="yaf-config-ini.toarray.html" class="index">Yaf_Config_Ini::toArray</a> - PHP の配列として構成を返す</li>
 <li><a href="yaf-config-ini.valid.html" class="index">Yaf_Config_Ini::valid</a> - The valid purpose</li>
 <li><a href="yaf-config-ini.construct.html" class="index">Yaf_Config_Ini::__construct</a> - Yaf_Config_Ini のコンストラクタ</li>
-<li><a href="yaf-config-ini.get.html" class="index">Yaf_Config_Ini::__get</a> - The __get purpose</li>
-<li><a href="yaf-config-ini.isset.html" class="index">Yaf_Config_Ini::__isset</a> - The __isset purpose</li>
+<li><a href="yaf-config-ini.get.html" class="index">Yaf_Config_Ini::__get</a> - Retrieve a element</li>
+<li><a href="yaf-config-ini.isset.html" class="index">Yaf_Config_Ini::__isset</a> - Determine if a key is exists</li>
 <li><a href="yaf-config-ini.set.html" class="index">Yaf_Config_Ini::__set</a> - The __set purpose</li>
 <li><a href="yaf-config-simple.count.html" class="index">Yaf_Config_Simple::count</a> - The count purpose</li>
 <li><a href="yaf-config-simple.current.html" class="index">Yaf_Config_Simple::current</a> - The current purpose</li>
@@ -10830,7 +10834,7 @@
 <li><a href="yaf-loader.sleep.html" class="index">Yaf_Loader::__sleep</a> - The __sleep purpose</li>
 <li><a href="yaf-loader.wakeup.html" class="index">Yaf_Loader::__wakeup</a> - The __wakeup purpose</li>
 <li><a href="yaf-plugin-abstract.dispatchloopshutdown.html" class="index">Yaf_Plugin_Abstract::dispatchLoopShutdown</a> - The dispatchLoopShutdown purpose</li>
-<li><a href="yaf-plugin-abstract.dispatchloopstartup.html" class="index">Yaf_Plugin_Abstract::dispatchLoopStartup</a> - The dispatchLoopStartup purpose</li>
+<li><a href="yaf-plugin-abstract.dispatchloopstartup.html" class="index">Yaf_Plugin_Abstract::dispatchLoopStartup</a> - Hook before dispatch loop</li>
 <li><a href="yaf-plugin-abstract.postdispatch.html" class="index">Yaf_Plugin_Abstract::postDispatch</a> - The postDispatch purpose</li>
 <li><a href="yaf-plugin-abstract.predispatch.html" class="index">Yaf_Plugin_Abstract::preDispatch</a> - The preDispatch purpose</li>
 <li><a href="yaf-plugin-abstract.preresponse.html" class="index">Yaf_Plugin_Abstract::preResponse</a> - The preResponse purpose</li>
@@ -10847,28 +10851,28 @@
 <li><a href="yaf-request-abstract.getcontrollername.html" class="index">Yaf_Request_Abstract::getControllerName</a> - The getControllerName purpose</li>
 <li><a href="yaf-request-abstract.getenv.html" class="index">Yaf_Request_Abstract::getEnv</a> - ENV 変数を取得する</li>
 <li><a href="yaf-request-abstract.getexception.html" class="index">Yaf_Request_Abstract::getException</a> - The getException purpose</li>
-<li><a href="yaf-request-abstract.getlanguage.html" class="index">Yaf_Request_Abstract::getLanguage</a> - The getLanguage purpose</li>
-<li><a href="yaf-request-abstract.getmethod.html" class="index">Yaf_Request_Abstract::getMethod</a> - The getMethod purpose</li>
+<li><a href="yaf-request-abstract.getlanguage.html" class="index">Yaf_Request_Abstract::getLanguage</a> - Retrieve client's prefered language</li>
+<li><a href="yaf-request-abstract.getmethod.html" class="index">Yaf_Request_Abstract::getMethod</a> - Retrieve the request method</li>
 <li><a href="yaf-request-abstract.getmodulename.html" class="index">Yaf_Request_Abstract::getModuleName</a> - The getModuleName purpose</li>
-<li><a href="yaf-request-abstract.getparam.html" class="index">Yaf_Request_Abstract::getParam</a> - The getParam purpose</li>
-<li><a href="yaf-request-abstract.getparams.html" class="index">Yaf_Request_Abstract::getParams</a> - The getParams purpose</li>
+<li><a href="yaf-request-abstract.getparam.html" class="index">Yaf_Request_Abstract::getParam</a> - Retrieve calling parameter</li>
+<li><a href="yaf-request-abstract.getparams.html" class="index">Yaf_Request_Abstract::getParams</a> - Retrieve all calling parameters</li>
 <li><a href="yaf-request-abstract.getrequesturi.html" class="index">Yaf_Request_Abstract::getRequestUri</a> - The getRequestUri purpose</li>
 <li><a href="yaf-request-abstract.getserver.html" class="index">Yaf_Request_Abstract::getServer</a> - SERVER 変数を取得する</li>
-<li><a href="yaf-request-abstract.iscli.html" class="index">Yaf_Request_Abstract::isCli</a> - The isCli purpose</li>
-<li><a href="yaf-request-abstract.isdispatched.html" class="index">Yaf_Request_Abstract::isDispatched</a> - The isDispatched purpose</li>
-<li><a href="yaf-request-abstract.isget.html" class="index">Yaf_Request_Abstract::isGet</a> - The isGet purpose</li>
-<li><a href="yaf-request-abstract.ishead.html" class="index">Yaf_Request_Abstract::isHead</a> - The isHead purpose</li>
-<li><a href="yaf-request-abstract.isoptions.html" class="index">Yaf_Request_Abstract::isOptions</a> - The isOptions purpose</li>
-<li><a href="yaf-request-abstract.ispost.html" class="index">Yaf_Request_Abstract::isPost</a> - The isPost purpose</li>
-<li><a href="yaf-request-abstract.isput.html" class="index">Yaf_Request_Abstract::isPut</a> - The isPut purpose</li>
-<li><a href="yaf-request-abstract.isrouted.html" class="index">Yaf_Request_Abstract::isRouted</a> - The isRouted purpose</li>
-<li><a href="yaf-request-abstract.isxmlhttprequest.html" class="index">Yaf_Request_Abstract::isXmlHttpRequest</a> - The isXmlHttpRequest purpose</li>
+<li><a href="yaf-request-abstract.iscli.html" class="index">Yaf_Request_Abstract::isCli</a> - Determine if request is CLI request</li>
+<li><a href="yaf-request-abstract.isdispatched.html" class="index">Yaf_Request_Abstract::isDispatched</a> - Determin if the request is dispatched</li>
+<li><a href="yaf-request-abstract.isget.html" class="index">Yaf_Request_Abstract::isGet</a> - Determine if request is GET request</li>
+<li><a href="yaf-request-abstract.ishead.html" class="index">Yaf_Request_Abstract::isHead</a> - Determine if request is HEAD request</li>
+<li><a href="yaf-request-abstract.isoptions.html" class="index">Yaf_Request_Abstract::isOptions</a> - Determine if request is OPTIONS request</li>
+<li><a href="yaf-request-abstract.ispost.html" class="index">Yaf_Request_Abstract::isPost</a> - Determine if request is POST request</li>
+<li><a href="yaf-request-abstract.isput.html" class="index">Yaf_Request_Abstract::isPut</a> - Determine if request is PUT request</li>
+<li><a href="yaf-request-abstract.isrouted.html" class="index">Yaf_Request_Abstract::isRouted</a> - Determin if request has been routed</li>
+<li><a href="yaf-request-abstract.isxmlhttprequest.html" class="index">Yaf_Request_Abstract::isXmlHttpRequest</a> - Determine if request is AJAX request</li>
 <li><a href="yaf-request-abstract.setactionname.html" class="index">Yaf_Request_Abstract::setActionName</a> - The setActionName purpose</li>
 <li><a href="yaf-request-abstract.setbaseuri.html" class="index">Yaf_Request_Abstract::setBaseUri</a> - ベース URI を設定する</li>
 <li><a href="yaf-request-abstract.setcontrollername.html" class="index">Yaf_Request_Abstract::setControllerName</a> - The setControllerName purpose</li>
 <li><a href="yaf-request-abstract.setdispatched.html" class="index">Yaf_Request_Abstract::setDispatched</a> - The setDispatched purpose</li>
 <li><a href="yaf-request-abstract.setmodulename.html" class="index">Yaf_Request_Abstract::setModuleName</a> - The setModuleName purpose</li>
-<li><a href="yaf-request-abstract.setparam.html" class="index">Yaf_Request_Abstract::setParam</a> - The setParam purpose</li>
+<li><a href="yaf-request-abstract.setparam.html" class="index">Yaf_Request_Abstract::setParam</a> - Set a calling parameter to a request</li>
 <li><a href="yaf-request-abstract.setrequesturi.html" class="index">Yaf_Request_Abstract::setRequestUri</a> - The setRequestUri purpose</li>
 <li><a href="yaf-request-abstract.setrouted.html" class="index">Yaf_Request_Abstract::setRouted</a> - The setRouted purpose</li>
 <li><a href="yaf-request-http.get.html" class="index">Yaf_Request_Http::get</a> - クライアントからの変数を取得する</li>
@@ -10878,8 +10882,8 @@
 <li><a href="yaf-request-http.getquery.html" class="index">Yaf_Request_Http::getQuery</a> - クエリパラメータを取得する</li>
 <li><a href="yaf-request-http.getraw.html" class="index">Yaf_Request_Http::getRaw</a> - Retrieve Raw request body</li>
 <li><a href="yaf-request-http.getrequest.html" class="index">Yaf_Request_Http::getRequest</a> - The getRequest purpose</li>
-<li><a href="yaf-request-http.isxmlhttprequest.html" class="index">Yaf_Request_Http::isXmlHttpRequest</a> - Ajax リクエストかどうかを調べる</li>
-<li><a href="yaf-request-http.clone.html" class="index">Yaf_Request_Http::__clone</a> - The __clone purpose</li>
+<li><a href="yaf-request-http.isxmlhttprequest.html" class="index">Yaf_Request_Http::isXmlHttpRequest</a> - リクエストが Ajax リクエストかどうかを判断する</li>
+<li><a href="yaf-request-http.clone.html" class="index">Yaf_Request_Http::__clone</a> - Yaf_Request_Http can not be cloned</li>
 <li><a href="yaf-request-http.construct.html" class="index">Yaf_Request_Http::__construct</a> - Yaf_Request_Http のコンストラクタ</li>
 <li><a href="yaf-request-simple.get.html" class="index">Yaf_Request_Simple::get</a> - The get purpose</li>
 <li><a href="yaf-request-simple.getcookie.html" class="index">Yaf_Request_Simple::getCookie</a> - The getCookie purpose</li>
@@ -10887,24 +10891,24 @@
 <li><a href="yaf-request-simple.getpost.html" class="index">Yaf_Request_Simple::getPost</a> - The getPost purpose</li>
 <li><a href="yaf-request-simple.getquery.html" class="index">Yaf_Request_Simple::getQuery</a> - The getQuery purpose</li>
 <li><a href="yaf-request-simple.getrequest.html" class="index">Yaf_Request_Simple::getRequest</a> - The getRequest purpose</li>
-<li><a href="yaf-request-simple.isxmlhttprequest.html" class="index">Yaf_Request_Simple::isXmlHttpRequest</a> - The isXmlHttpRequest purpose</li>
+<li><a href="yaf-request-simple.isxmlhttprequest.html" class="index">Yaf_Request_Simple::isXmlHttpRequest</a> - Determin if request is AJAX request</li>
 <li><a href="yaf-request-simple.clone.html" class="index">Yaf_Request_Simple::__clone</a> - The __clone purpose</li>
-<li><a href="yaf-request-simple.construct.html" class="index">Yaf_Request_Simple::__construct</a> - Yaf_Request_Simple のコンストラクタ</li>
-<li><a href="yaf-response-abstract.appendbody.html" class="index">Yaf_Response_Abstract::appendBody</a> - 本文に追記する</li>
-<li><a href="yaf-response-abstract.clearbody.html" class="index">Yaf_Response_Abstract::clearBody</a> - The clearBody purpose</li>
-<li><a href="yaf-response-abstract.clearheaders.html" class="index">Yaf_Response_Abstract::clearHeaders</a> - The clearHeaders purpose</li>
+<li><a href="yaf-request-simple.construct.html" class="index">Yaf_Request_Simple::__construct</a> - Constructor of Yaf_Request_Simple</li>
+<li><a href="yaf-response-abstract.appendbody.html" class="index">Yaf_Response_Abstract::appendBody</a> - レスポンス本文に追記する</li>
+<li><a href="yaf-response-abstract.clearbody.html" class="index">Yaf_Response_Abstract::clearBody</a> - 既存のすべてのレスポンス本文を破棄します</li>
+<li><a href="yaf-response-abstract.clearheaders.html" class="index">Yaf_Response_Abstract::clearHeaders</a> - Discard all set headers</li>
 <li><a href="yaf-response-abstract.getbody.html" class="index">Yaf_Response_Abstract::getBody</a> - コンテンツを取得する</li>
 <li><a href="yaf-response-abstract.getheader.html" class="index">Yaf_Response_Abstract::getHeader</a> - The getHeader purpose</li>
 <li><a href="yaf-response-abstract.prependbody.html" class="index">Yaf_Response_Abstract::prependBody</a> - The prependBody purpose</li>
 <li><a href="yaf-response-abstract.response.html" class="index">Yaf_Response_Abstract::response</a> - レスポンスを送信する</li>
 <li><a href="yaf-response-abstract.setallheaders.html" class="index">Yaf_Response_Abstract::setAllHeaders</a> - The setAllHeaders purpose</li>
 <li><a href="yaf-response-abstract.setbody.html" class="index">Yaf_Response_Abstract::setBody</a> - コンテンツをレスポンスに設定する</li>
-<li><a href="yaf-response-abstract.setheader.html" class="index">Yaf_Response_Abstract::setHeader</a> - The setHeader purpose</li>
+<li><a href="yaf-response-abstract.setheader.html" class="index">Yaf_Response_Abstract::setHeader</a> - Set reponse header</li>
 <li><a href="yaf-response-abstract.setredirect.html" class="index">Yaf_Response_Abstract::setRedirect</a> - The setRedirect purpose</li>
 <li><a href="yaf-response-abstract.clone.html" class="index">Yaf_Response_Abstract::__clone</a> - The __clone purpose</li>
 <li><a href="yaf-response-abstract.construct.html" class="index">Yaf_Response_Abstract::__construct</a> - The __construct purpose</li>
 <li><a href="yaf-response-abstract.destruct.html" class="index">Yaf_Response_Abstract::__destruct</a> - The __destruct purpose</li>
-<li><a href="yaf-response-abstract.tostring.html" class="index">Yaf_Response_Abstract::__toString</a> - The __toString purpose</li>
+<li><a href="yaf-response-abstract.tostring.html" class="index">Yaf_Response_Abstract::__toString</a> - Retrieve all bodys as string</li>
 <li><a href="yaf-router.addconfig.html" class="index">Yaf_Router::addConfig</a> - 設定で定義したルートをルーターに追加する</li>
 <li><a href="yaf-router.addroute.html" class="index">Yaf_Router::addRoute</a> - 新しいルートをルーターに追加する</li>
 <li><a href="yaf-router.getcurrentroute.html" class="index">Yaf_Router::getCurrentRoute</a> - 使われているルート名を取得する</li>
@@ -10925,7 +10929,7 @@
 <li><a href="yaf-route-rewrite.construct.html" class="index">Yaf_Route_Rewrite::__construct</a> - Yaf_Route_Rewrite のコンストラクタ</li>
 <li><a href="yaf-route-simple.assemble.html" class="index">Yaf_Route_Simple::assemble</a> - Assemble a url</li>
 <li><a href="yaf-route-simple.route.html" class="index">Yaf_Route_Simple::route</a> - リクエストをルーティングする</li>
-<li><a href="yaf-route-simple.construct.html" class="index">Yaf_Route_Simple::__construct</a> - Yaf_Route_Simple のコンストラクタ</li>
+<li><a href="yaf-route-simple.construct.html" class="index">Yaf_Route_Simple::__construct</a> - Yaf_Route_Simple constructor</li>
 <li><a href="yaf-route-static.assemble.html" class="index">Yaf_Route_Static::assemble</a> - Assemble a url</li>
 <li><a href="yaf-route-static.match.html" class="index">Yaf_Route_Static::match</a> - The match purpose</li>
 <li><a href="yaf-route-static.route.html" class="index">Yaf_Route_Static::route</a> - リクエストをルーティングする</li>

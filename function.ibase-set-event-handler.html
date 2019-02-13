@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>イベントが発生した際にコールされるコールバック関数を登録する</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -36,18 +35,16 @@
    <span class="methodname"><strong>ibase_set_event_handler</strong></span>
     ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$event_handler</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$event_name1</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$event_name2</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$...</code></span>
-  ]] ) : <span class="type">resource</span></div>
+  ] ) : <span class="type">resource</span></div>
 
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>ibase_set_event_handler</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>
    , <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$event_handler</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$event_name1</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$event_name2</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$...</code></span>
-  ]] ) : <span class="type">resource</span></div>
+  ] ) : <span class="type">resource</span></div>
 
   <p class="para rdfs-comment">
    この関数は、指定したイベントのハンドラとして PHP ユーザー関数を登録します。
@@ -93,7 +90,7 @@
     
     
      <dt>
-<code class="parameter">event_name2</code></dt>
+<code class="parameter">...</code></dt>
 
      <dd>
 

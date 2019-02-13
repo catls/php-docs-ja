@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>ファイルの MIME Content-type を検出する</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -73,7 +72,16 @@
    Content type を MIME 形式で返します。
    たとえば <em>text/plain</em> 
    あるいは <em>application/octet-stream</em> のような形式です。
+   失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.mime-content-type-errors">
+  <h3 class="title">エラー / 例外</h3>
+  <p class="para">
+失敗したときは <strong><code>E_WARNING</code></strong> が発生します。
+</p>
  </div>
 
 
