@@ -37,7 +37,7 @@
   ] ) : <span class="type">bool</span></div>
 
   <p class="para rdfs-comment">
-   If <code class="parameter">enable</code> is omitted, the function return <strong><code>TRUE</code></strong> if the stream <code class="parameter">stream</code> has VT100 control codes enabled, <strong><code>FALSE</code></strong> otherwise.
+   If <code class="parameter">enable</code> is omitted, the function returns <strong><code>TRUE</code></strong> if the stream <code class="parameter">stream</code> has VT100 control codes enabled, <strong><code>FALSE</code></strong> otherwise.
   </p>
   <p class="para">
    If <code class="parameter">enable</code> is specified, the function will try to enable or disable the VT100 features of the stream <code class="parameter">stream</code>.
@@ -46,9 +46,13 @@
   <p class="para">
    At startup, PHP tries to enable the VT100 feature of the <strong><code>STDOUT</code></strong>/<strong><code>STDERR</code></strong> streams. By the way, if those streams are redirected to a file, the VT100 features may not be enabled.
   </p>
+  <p class="para">
+   If VT100 support is enabled, it is possible to use control sequences as they are known from the VT100 terminal. 
+   They allow the modification of the terminal&#039;s output. On Windows these sequences are called Console Virtual Terminal Sequences.
+  </p>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="simpara">
-    The function uses the <strong><code>ENABLE_VIRTUAL_TERMINAL_PROCESSING</code></strong> flag implemented in the Windows 10 API, so the VT100 feature may not be available on older Windows versions.
+    This function uses the <strong><code>ENABLE_VIRTUAL_TERMINAL_PROCESSING</code></strong> flag implemented in the Windows 10 API, so the VT100 feature may not be available on older Windows versions.
    </p>
   </div>
  </div>
@@ -110,8 +114,10 @@
 
    <div class="example-contents"><p>上の例の出力は、
 たとえば以下のようになります。</p></div>
-   <div class="example-contents screen"><br />
-    true true<br />
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+true true
+</pre></div>
    </div>
    <div class="example-contents"><p>
     By the way, if a stream is redirected, the VT100 feature will not be enabled:
@@ -135,8 +141,26 @@
 
    <div class="example-contents"><p>上の例の出力は、
 たとえば以下のようになります。</p></div>
-   <div class="example-contents screen"><br />
-    true false<br />
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+true false
+</pre></div>
+   </div>
+  </div>
+  <div class="example" id="example-4660">
+   <p><strong>例3 Example usage of VT100 support enabled</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$out&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'php://stdout'</span><span style="color: #007700">,</span><span style="color: #DD0000">'w'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$out</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Just&nbsp;forgot&nbsp;a&nbsp;lettr.'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Moves&nbsp;the&nbsp;cursor&nbsp;two&nbsp;characters&nbsp;backwards<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$out</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\033[2D"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Inserts&nbsp;one&nbsp;blank,&nbsp;shifting&nbsp;existing&nbsp;text&nbsp;to&nbsp;the&nbsp;right&nbsp;-&gt;&nbsp;Just&nbsp;forgot&nbsp;a&nbsp;lett&nbsp;r.<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$out</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"\033[1@"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fwrite</span><span style="color: #007700">(</span><span style="color: #0000BB">$out</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'e'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Just forgot a letter.
+</pre></div>
    </div>
   </div>
  </div>
