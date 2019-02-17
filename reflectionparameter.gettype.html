@@ -3,6 +3,8 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Gets a parameter's type</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -33,7 +35,7 @@
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>ReflectionParameter::getType</strong></span>
     ( <span class="methodparam">void</span>
-   ) : <span class="type"><a href="class.reflectionnamedtype.html" class="type ReflectionNamedType">ReflectionNamedType</a></span></div>
+   ) : <span class="type"><a href="class.reflectiontype.html" class="type ReflectionType">ReflectionType</a></span></div>
 
   <p class="para rdfs-comment">
    Gets the associated type of a parameter.
@@ -50,38 +52,9 @@
  <div class="refsect1 returnvalues" id="refsect1-reflectionparameter.gettype-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns a <a href="class.reflectionnamedtype.html" class="classname">ReflectionNamedType</a> object if a parameter type is
+   Returns a <a href="class.reflectiontype.html" class="classname">ReflectionType</a> object if a parameter type is
    specified, <strong><code>NULL</code></strong> otherwise.
   </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-reflectionparameter.gettype-changelog">
-  <h3 class="title">変更履歴</h3>
-  <table class="doctable informaltable">
-   
-    <thead>
-     <tr>
-      <th>バージョン</th>
-      <th>説明</th>
-     </tr>
-
-    </thead>
-
-    <tbody class="tbody">
-     <tr>
-      <td>7.1.0</td>
-      <td>
-       <span class="methodname"><strong>ReflectionParameter::getType()</strong></span> returns a instance of
-       <a href="class.reflectionnamedtype.html" class="classname">ReflectionNamedType</a> now. Formerly, it returned an
-       instance of <a href="class.reflectiontype.html" class="classname">ReflectionType</a>.
-      </td>
-     </tr>
-
-    </tbody>
-   
-  </table>
-
  </div>
 
 
@@ -89,20 +62,44 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="example-6451">
-    <p><strong>例1 <span class="methodname"><strong>ReflectionParameter::getType()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="methodname"><strong>ReflectionParameter::getType()</strong></span> Usage as of PHP 7.1.0</strong></p>
+    <div class="example-contents"><p>
+     As of PHP 7.1.0, <span class="methodname"><a href="reflectiontype.tostring.html" class="methodname">ReflectionType::__toString()</a></span> is deprecated, and
+     <span class="methodname"><strong>ReflectionParamater::getType()</strong></span> <em class="emphasis">may</em> return an
+     instance of <a href="class.reflectionnamedtype.html" class="classname">ReflectionNamedType</a>. To get the name of the parameter type,
+     <span class="methodname"><strong>ReflectionNamedType()</strong></span> is available in this case.
+    </p></div>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">someFunction</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$param</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$param2</span><span style="color: #007700">)&nbsp;{}<br /><br /></span><span style="color: #0000BB">$reflectionFunc&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ReflectionFunction</span><span style="color: #007700">(</span><span style="color: #DD0000">'someFunction'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$reflectionParams&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionFunc</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getParameters</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$reflectionType1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionParams</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">getType</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$reflectionType2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionParams</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">getType</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #0000BB">$reflectionType1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$reflectionType2</span><span style="color: #007700">);</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">someFunction</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$param</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$param2</span><span style="color: #007700">)&nbsp;{}<br /><br /></span><span style="color: #0000BB">$reflectionFunc&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ReflectionFunction</span><span style="color: #007700">(</span><span style="color: #DD0000">'someFunction'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$reflectionParams&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionFunc</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getParameters</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$reflectionType1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionParams</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">getType</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$reflectionType2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionParams</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">getType</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">assert</span><span style="color: #007700">(</span><span style="color: #0000BB">$reflectionType1&nbsp;</span><span style="color: #007700">instanceof&nbsp;</span><span style="color: #0000BB">ReflectionNamedType</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$reflectionType1</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getName</span><span style="color: #007700">(),&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$reflectionType2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
-    <div class="example-contents"><p>上の例の出力は、
-たとえば以下のようになります。</p></div>
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
     <div class="example-contents screen">
 <div class="cdata"><pre>
 int
-null
+NULL
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-6452">
+    <p><strong>例2 <span class="methodname"><strong>ReflectionParameter::getType()</strong></span> Usage before PHP 7.1.0</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">someFunction</span><span style="color: #007700">(</span><span style="color: #0000BB">int&nbsp;$param</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$param2</span><span style="color: #007700">)&nbsp;{}<br /><br /></span><span style="color: #0000BB">$reflectionFunc&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">ReflectionFunction</span><span style="color: #007700">(</span><span style="color: #DD0000">'someFunction'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$reflectionParams&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionFunc</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getParameters</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$reflectionType1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionParams</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">getType</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$reflectionType2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$reflectionParams</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]-&gt;</span><span style="color: #0000BB">getType</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #0000BB">$reflectionType1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$reflectionType2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の PHP 7.0 での出力は、このようになります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+int
+NULL
 </pre></div>
     </div>
    </div>
@@ -115,7 +112,7 @@ null
   <p class="para">
    <ul class="simplelist">
     <li class="member"><span class="methodname"><a href="reflectionparameter.hastype.html" class="methodname" rel="rdfs-seeAlso">ReflectionParameter::hasType()</a> - Checks if parameter has a type</span></li>
-    <li class="member"><span class="methodname"><a href="reflectionnamedtype.getname.html" class="methodname" rel="rdfs-seeAlso">ReflectionNamedType::getName()</a> - Get the text of the type hint</span></li>
+    <li class="member"><span class="methodname"><a href="reflectiontype.tostring.html" class="methodname" rel="rdfs-seeAlso">ReflectionType::__toString()</a> - To string</span></li>
    </ul>
   </p>
  </div>
