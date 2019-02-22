@@ -4,6 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>COM クラス</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -175,7 +176,7 @@ codepage</dt>
       <span class="simpara">
        文字列と Unicode 文字列との相互変換に使用するコードページを指定します。
        PHP の文字列と COM オブジェクトのメソッドとの受け渡しの際には、いつも
-       変換が行われます。PHP 5 では、コードページの扱いは面倒です。というのは、
+       変換が行われます。コードページの扱いは面倒です。というのは、
        オブジェクトだけではなくオブジェクトから返される variant にもそれが
        影響するからです。
       </span>
@@ -208,100 +209,13 @@ codepage</dt>
    その代わりに、プロパティやメソッドへのアクセスは COM を通じて行います。
   </p>
   <p class="para">
-   PHP 5 以降では、参照渡しのパラメータを受け付けるメソッドを PHP が
+   参照渡しのパラメータを受け付けるメソッドを PHP が
    自動検出するようになりました。それらのメソッドについては、PHP が自動的に
    変数を参照渡し形式に変換します。つまり、メソッドのコールをより自然に
    行えるということです。コードの中で特別な処理をする必要はありません。
   </p>
  </div>
 
- <div class="section" id="class.com.falsemethods">
-  <h2 class="title">疑似メソッド</h2>
-  <p class="para">
-   PHP 5 より前のバージョンでは、以下のようなメソッド名を COM に渡すことが
-   できず、直接 PHP で扱うことができないというあまりうれしくない出来事が
-   ありました。PHP 5 ではこれらを解決します。スクリプトの修正方法に
-   ついては以下の詳細を参照ください。これらのマジックメソッドの名前は
-   大文字小文字を区別しません。
-  </p>
-  <div class="methodsynopsis dc-description" id="com.addref">
-   <span class="methodname"><strong>COM::AddRef</strong></span>
-    ( <span class="methodparam">void</span>
-   ) : <span class="type"><span class="type void">void</span></span></div>
-
-  <p class="simpara">
-   COM オブジェクトの参照カウントを作為的に追加します。
-  </p>
-  <div class="warning"><strong class="warning">警告</strong>
-   <p class="simpara">
-    このメソッドを使用することはまずないはずです。
-    これは、以下で説明する Release() メソッドを論理的に補完するものとして
-    存在するものです。
-   </p>
-  </div>
-  <div class="methodsynopsis dc-description" id="com.release">
-   <span class="methodname"><strong>COM::Release</strong></span>
-    ( <span class="methodparam">void</span>
-   ) : <span class="type"><span class="type void">void</span></span></div>
-
-  <p class="simpara">
-   COM オブジェクトの参照カウントを作為的に削除します。
-  </p>
-  <div class="warning"><strong class="warning">警告</strong>
-   <p class="simpara">
-    このメソッドを使用することはまずないはずです。
-    これは、COM オブジェクトが必要以上に動作を続けてしまうというバグに
-    対応する方法として PHP に存在するものです。
-   </p>
-  </div>
- </div>
- <div class="section" id="class.com.iteratormethods">
-  <h2 class="title">反復処理のための疑似メソッド</h2>
-  <p class="para">
-   以下の疑似メソッドは、 <span class="function"><strong>com_isenum()</strong></span> が <strong><code>TRUE</code></strong>
-   を返す場合のみ利用可能で、この場合、これらのメソッドは、
-   通常は COM オブジェクトにより提供される同じ名前を有する全ての
-   メソッドを隠蔽します。これらのメソッドは PHP 5 では完全に廃止されています。
-   代わりに <a href="com.examples.foreach.html" class="xref">For Each</a> を使用してください。
-  </p>
-  <div class="methodsynopsis dc-description" id="com.all">
-   <span class="methodname"><strong>COM::All</strong></span>
-    ( <span class="methodparam">void</span>
-   ) : <span class="type"><a href="class.variant.html" class="type variant">variant</a></span></div>
-
-  <p class="simpara">
-   10 の要素を保持する SafeArray を表す variant を返します。
-   個々の要素は empty/null の variant となります。この関数は
-   イテレータからの全ての要素を含む配列を返すことを想定していますが、
-   決して完了しません。使用しないでください。
-  </p>
-  <div class="methodsynopsis dc-description" id="com.next">
-   <span class="methodname"><strong>COM::Next</strong></span>
-    ( <span class="methodparam">void</span>
-   ) : <span class="type"><a href="class.variant.html" class="type variant">variant</a></span></div>
-
-  <p class="simpara">
-   イテレータの次の要素を表す variant を返します。要素が
-   もうない場合には <strong><code>FALSE</code></strong> を返します。
-  </p>
-  <div class="methodsynopsis dc-description" id="com.prev">
-   <span class="methodname"><strong>COM::Prev</strong></span>
-    ( <span class="methodparam">void</span>
-   ) : <span class="type"><a href="class.variant.html" class="type variant">variant</a></span></div>
-
-  <p class="simpara">
-   イテレータの前の要素を現す variant を返します。要素が
-   もうない場合には <strong><code>FALSE</code></strong> を返します。
-  </p>
-  <div class="methodsynopsis dc-description" id="com.reset">
-   <span class="methodname"><strong>COM::Reset</strong></span>
-    ( <span class="methodparam">void</span>
-   ) : <span class="type"><span class="type void">void</span></span></div>
-
-  <p class="simpara">
-   イテレータを最初の場所まで巻き戻します。
-  </p>
- </div>
  <div class="section" id="class.com.examples">
   <h2 class="title">COM の例</h2>
   <p class="para">
