@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Caching queries</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -100,7 +99,7 @@
    the very beginning of the statement string to enable caching.
   </p>
   <p class="para">
-   <div class="example" id="example-2318">
+   <div class="example" id="example-2320">
     <p><strong>例1 Using the <em>MYSQLND_QC_ENABLE_SWITCH</em> SQL hint</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_qc.enable_qc=1</pre>
@@ -159,7 +158,7 @@ Total time cached query: 0.000098s
    instead of using the string value.
   </p>
   <p class="para">
-   <div class="example" id="example-2319">
+   <div class="example" id="example-2321">
     <p><strong>例2 Using the <em>MYSQLND_QC_DISABLE_SWITCH</em> SQL hint</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_qc.enable_qc=1
@@ -198,7 +197,7 @@ NULL
    aims to prevent pitfalls if caching by default is used.
   </p>
   <p class="para">
-   <div class="example" id="example-2320">
+   <div class="example" id="example-2322">
     <p><strong>例3 Example showing which type of statements are not cached</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_qc.enable_qc=1
@@ -251,7 +250,7 @@ Total time: 0.000549s
    measured times for the above and below examples.
   </p>
   <p class="para">
-   <div class="example" id="example-2321">
+   <div class="example" id="example-2323">
     <p><strong>例4 Enabling caching for all statements using the <em>mysqlnd_qc.cache_no_table</em> ini setting</strong></p>
     <div class="example-contents">
 <div class="inicode"><pre class="inicode">mysqlnd_qc.enable_qc=1

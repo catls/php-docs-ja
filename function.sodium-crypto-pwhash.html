@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Derive a key from a password</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -43,13 +42,8 @@
   ] ) : <span class="type">string</span></div>
 
   <p class="para rdfs-comment">
-
+   This function provides low-level access to libsodium&#039;s crypto_pwhash key derivation function. Unless you have specific reason to use this function, you should use <span class="function"><a href="function.sodium-crypto-pwhash-str.html" class="function">sodium_crypto_pwhash_str()</a></span> or <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span> functions instead.
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -112,7 +106,7 @@
     <dd>
 
      <p class="para">
-      The maximum amount of RAM that the function will use, in bytes. There are constants to help you choose an appropriate value, in order of size: <strong><code>SODIUM_CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE</code></strong>, <strong><code>SODIUM_CRYPTO_PWHASH_MEMLIMIT_MODERATE</code></strong>, and <strong><code>SODIUM_CRYPTO_PWHASH_MEMLIMIT_SENSITIVE</code></strong>. Typically these should be paired with the matching opslimit values.
+      The maximum amount of RAM that the function will use, in bytes. There are constants to help you choose an appropriate value, in order of size: <strong><code>SODIUM_CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE</code></strong>, <strong><code>SODIUM_CRYPTO_PWHASH_MEMLIMIT_MODERATE</code></strong>, and <strong><code>SODIUM_CRYPTO_PWHASH_MEMLIMIT_SENSITIVE</code></strong>. Typically these should be paired with the matching <code class="parameter">opslimit</code> values.
      </p>
     </dd>
 
@@ -124,7 +118,7 @@
     <dd>
 
      <p class="para">
-      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> A number indicating the hash algorithm to use. By default <strong><code>SODIUM_CRYPTO_PWHASH_ALG_DEFAULT</code></strong> (the currently recommended algorithm, which can change from one version of libsodium to another), or explicitly using <strong><code>SODIUM_CRYPTO_PWHASH_ALG_ARGON2I13</code></strong>, representing the Argon2id algorithm version 1.3.
+      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> A number indicating the hash algorithm to use. By default <strong><code>SODIUM_CRYPTO_PWHASH_ALG_DEFAULT</code></strong> (the currently recommended algorithm, which can change from one version of libsodium to another), or explicitly using <strong><code>SODIUM_CRYPTO_PWHASH_ALG_ARGON2ID13</code></strong>, representing the Argon2id algorithm version 1.3.
      </p>
     </dd>
 
@@ -137,31 +131,32 @@
  <div class="refsect1 returnvalues" id="refsect1-function.sodium-crypto-pwhash-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the hashed password, 失敗した場合に <strong><code>FALSE</code></strong> を返します.
+   Returns the derived key, 失敗した場合に <strong><code>FALSE</code></strong> を返します. The return value is a binary string of the hash, not an ASCII-encoded representation, and does not contain additional information about the parameters used to create the hash, so you will need to keep that information if you are ever going to verify the password in future. Use <span class="function"><a href="function.sodium-crypto-pwhash-str.html" class="function">sodium_crypto_pwhash_str()</a></span> to avoid needing to do all that.
   </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.sodium-crypto-pwhash-examples">
+  <h3 class="title">例</h3>
   <p class="para">
-   The used algorithm, opslimit, memlimit and salt are embedded within the hash, so
-   all information needed to verify the hash is included. This allows
-   the <span class="function"><a href="function.password-verify.html" class="function">password_verify()</a></span> function to verify the hash without
-   needing separate storage for the salt or algorithm information.
-  </p>
+   <div class="example" id="openssl_spki_export.example.basic">
+    <p><strong>例1 <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span> example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//Need&nbsp;to&nbsp;keep&nbsp;the&nbsp;salt&nbsp;if&nbsp;we're&nbsp;ever&nbsp;going&nbsp;to&nbsp;be&nbsp;able&nbsp;to&nbsp;check&nbsp;this&nbsp;password<br /></span><span style="color: #0000BB">$salt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">random_bytes</span><span style="color: #007700">(</span><span style="color: #0000BB">SODIUM_CRYPTO_PWHASH_SALTBYTES</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//Using&nbsp;bin2hex&nbsp;to&nbsp;keep&nbsp;output&nbsp;readable<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">bin2hex</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">sodium_crypto_pwhash</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">16</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">//&nbsp;==&nbsp;128&nbsp;bits<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'password'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$salt</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">SODIUM_CRYPTO_PWHASH_OPSLIMIT_INTERACTIVE</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">SODIUM_CRYPTO_PWHASH_MEMLIMIT_INTERACTIVE</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">SODIUM_CRYPTO_PWHASH_ALG_ARGON2ID13<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">)<br />);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+a18f346ba57992eb7e4ae6abf3fd30ee
+</pre></div>
+    </div>
+   </div>
+  </p> 
  </div>
-
-
- <div class="refsect1 notes" id="refsect1-function.sodium-crypto-pwhash-notes">
-  <h3 class="title">注意</h3>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    It is recommended that you test this function on your servers, and adjust the <code class="parameter">opslimit</code> and <code class="parameter">memlimit</code> parameters 
-    so that execution of the function takes less than 100 milliseconds on interactive systems, and also verify that it fits with your PHP memory_limit setting. 
-    The constants will help you choose good limits for your hardware.
-   </p>
-   <p class="para">
-    In order to produce the same password hash from the same password, the same algorithm, the same salt, and the same values for <code class="parameter">opslimit</code> and <code class="parameter">memlimit</code> must to be used. Therefore, these parameters must be stored for each user, or be used consistently for your whole application.
-   </p>
-  </p></blockquote>
- </div>
-
 
 
 </div></div></div></body></html>
