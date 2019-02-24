@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Resolution</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="parallel-future.done.html">« parallel\Future::done</a></li>
+      <li style="float: right;"><a href="parallel-future.value.html">parallel\Future::value »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="class.parallel-future.html">parallel\Future</a></li>
+    <li>Resolution</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="parallel-future.select" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">parallel\Future::select</h1>
+  <p class="verinfo">(0.8.0)</p><p class="refpurpose"><span class="refname">parallel\Future::select</span> &mdash; <span class="dc-title">Resolution</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-parallel-future.select-description">
+  <h3 class="title">説明</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="methodname"><strong>parallel\Future::select</strong></span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$resolving</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$resolved</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$errored</code></span>
+   ) : <span class="type">int</span></div>
+
+  <p class="para rdfs-comment">
+   Shall wait until the first future value becomes available, removing the resolved value from <code class="parameter">resolving</code>
+  </p>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="modifier">static</span> <span class="methodname"><strong>parallel\Future::select</strong></span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$resolving</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$resolved</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$errored</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$timedout</code></span>
+   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timeout</code></span>
+   ) : <span class="type">int</span></div>
+
+  <p class="para rdfs-comment">
+   Shall wait until the first future value becomes available or until <code class="parameter">timeout</code> is reached, 
+   removing the resolved value from <code class="parameter">resolving</code>
+  </p>
+
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    If a value resolved it shall be placed in <code class="parameter">resolved</code>, Futures that would throw \parallel\Exception shall be placed in
+    <code class="parameter">errored</code>, and Futures that have timed out shall be placed in <code class="parameter">timedout</code>.
+   </p>
+  </p></blockquote>
+
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-parallel-future.select-parameters">
+  <h3 class="title">パラメータ</h3>
+  <dl>
+
+   
+    <dt>
+<code class="parameter">resolving</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Should contain Futures to be selected
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">resolved</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Shall contain resolved Futures
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">errored</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Shall contain errored Futures
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">timedout</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Shall contain timedout Futures
+     </p>
+    </dd>
+
+   
+   
+    <dt>
+<code class="parameter">timeout</code></dt>
+
+    <dd>
+
+     <p class="para">
+      Timeout, in microseconds
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-parallel-future.select-returnvalues">
+  <h3 class="title">返り値</h3>
+  <p class="para">
+   Shall return the number of resolved, errored, and where used timedout futures.
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 exceptions" id="refsect1-parallel-future.select-exceptions">
+  <h3 class="title">Exceptions</h3>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if arguments are invalid.
+   </p>
+  </div>
+ </div>
+
+
+
+</div></div></div></body></html>
