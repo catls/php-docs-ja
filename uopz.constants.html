@@ -32,7 +32,7 @@
 実行時に動的にロードされている場合のみ使用可能です。
 </p>
  <p class="para">
- The following opcodes are defined as constants by uopz:
+ The following opcodes are defined as constants by uopz before 5.0.0:
  </p>
  <p class="para">
   <dl>
@@ -140,6 +140,7 @@
  </p>
  <p class="para">
  The following constants control the VM&#039;s behaviour after a user handler is invoked, be extremely careful!
+ These constants are removed as of uopz 5.0.0.
  </p>
  <p class="para">
   <dl>
@@ -330,7 +331,8 @@
     <dd>
 
      <span class="simpara">
- Dummy registered for consistency, the default kind of class entry
+ Dummy registered for consistency, the default kind of class entry.
+      Removed as of uopz 5.0.0.
      </span>
     </dd>
 
@@ -344,7 +346,8 @@
     <dd>
 
      <span class="simpara">  
- Mark class as interface
+ Mark class as interface.
+      Removed as of uopz 5.0.0.
      </span>
     </dd>
  
@@ -358,7 +361,8 @@
     <dd>
 
      <span class="simpara">  
- Mark class as trait 
+ Mark class as trait.
+      Removed as of uopz 5.0.0.
      </span>
     </dd>
  
@@ -372,7 +376,8 @@
     <dd>
 
      <span class="simpara">
- Used for getting flags only
+ Used for getting flags only.
+      Removed as of uopz 5.0.0.
      </span>
     </dd>
 
