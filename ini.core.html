@@ -4,6 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>コア php.ini ディレクティブに関する説明</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -78,9 +79,12 @@
 
        <tr>
         <td><a href="ini.core.html#ini.serialize-precision" class="link">serialize_precision</a></td>
-        <td>&quot;17&quot;</td>
+        <td>&quot;-1&quot;</td>
         <td>PHP_INI_ALL</td>
-        <td>PHP 5.3.5 までは、デフォルト値は 100 でした。</td>
+        <td>
+		　PHP 5.3.6 より前は、デフォルト値は 100 でした。
+		　PHP 7.1.0 より前は、デフォルト値は 17 でした。
+		</td>
        </tr>
 
         <tr>
@@ -764,6 +768,12 @@
      
     </table>
 
+    <blockquote class="note"><p><strong class="note">注意</strong>: 
+     <p class="para">
+      <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a> を使用すると、
+      realpath キャッシュが <em class="emphasis">disable</em> にされます。
+     </p>
+    </p></blockquote>
    </p>
    <p class="para">以下に設定ディレクティブに関する
 簡単な説明を示します。</p>
@@ -1835,6 +1845,12 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          <em>/www/tmp/</em> のようにできるということです。
          複数のディレクトリを指定するときには、定数 <strong><code>PATH_SEPARATOR</code></strong>
          を使えば OS に依存しない記述ができます。
+        </p>
+       </p></blockquote>
+       <blockquote class="note"><p><strong class="note">注意</strong>: 
+        <p class="para">
+         open_basedir を使用すると、<a href="ini.core.html#ini.realpath-cache-size" class="link">realpath_cache_size</a>　は
+         <em>0</em> へ設定され、結果として realpath キャッシュは <em class="emphasis">disable</em> にされます。
         </p>
        </p></blockquote>
       </dd>
