@@ -11,14 +11,14 @@
   <div class="navbar-inner clearfix">
     <ul class="nav" style="width: 100%">
       <li style="float: left;"><a href="install.macosx.packages.html">« パッケージの使用</a></li>
-      <li style="float: right;"><a href="install.macosx.compile.html">Mac OS X 上での PHP のコンパイル »</a></li>
+      <li style="float: right;"><a href="install.macosx.compile.html">macOS 上での PHP のコンパイル »</a></li>
     </ul>
   </div>
 </div>
 <div id="breadcrumbs" class="clearfix">
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
-    <li><a href="install.macosx.html">Mac OS X へのインストール</a></li>
+    <li><a href="install.macosx.html">macOS へのインストール</a></li>
     <li>バンドルされている PHP の使用法</li>
   </ul>
 </div>
@@ -26,7 +26,7 @@
   <div id="layout-content"><div id="install.macosx.bundled" class="sect1">
  <h2 class="title">バンドルされている PHP の使用法</h2>
  <p class="simpara">
-  PHP は、OS X バージョン 10.0.0 以降の Mac に標準添付されています。
+  PHP は、Mac OS X バージョン 10.0.0 以降の Mac に標準添付されています。
   デフォルトのウェブサーバーで PHP を有効にするには、Apache 設定ファイル
   <var class="filename">httpd.conf</var> で数行のコメントを解除する必要があります。
   一方、<acronym title="Common Gateway Interface">CGI</acronym> や <acronym title="Command Line Interpreter/Interface">CLI</acronym>
@@ -39,13 +39,13 @@
   <em class="emphasis">強く推奨</em>します。
   多くのソフトウェアでは、新しいバージョンでは多くのバグが修正されています。
   また機能追加もされています。PHP も同様です。
-  詳細は、適切な MAC OS X インストールドキュメントを参照ください。
+  詳細は、適切な macOS インストールドキュメントを参照ください。
   以下の手順は初心者を対象としたもので、
   まずデフォルトの設定で動作させるための手順を示しています。
   すべてのユーザーが、新しいパッケージ版をコンパイルしてインストールすることを推奨します。
  </p>
  <p class="simpara">
-  標準的なインストール方法は mod_php を使用するものです。Mac OS X 上の
+  標準的なインストール方法は mod_php を使用するものです。macOS 上の
   Apache web server (デフォルトのウェブサーバーで、System Preferences
   からアクセスできます) 上に、mod_php を組み込むには次のようにします。
  </p>
@@ -129,7 +129,7 @@
     </p>
     <blockquote class="note"><p><strong class="note">注意</strong>: 
      <p class="para">
-      OS X 10.5 (Leopard) より前のバージョンには PHP 5 ではなく PHP 4
+      Mac OS X 10.5 (Leopard) より前のバージョンには PHP 5 ではなく PHP 4
       がバンドルされています。その場合は、ここまでの説明にある 5
       という部分を 4 に読み替えてください。
      </p>
@@ -152,7 +152,7 @@
      <var class="filename">php.ini</var> の場所を設定するか、デフォルトを使用します。
     </span>
     <span class="simpara">
-     Mac OS X におけるデフォルトの場所は
+     macOS におけるデフォルトの場所は
      <var class="filename">/usr/local/php/php.ini</var> で、
      <span class="function"><a href="function.phpinfo.html" class="function">phpinfo()</a></span> をコールするとこの情報を表示します。
      <var class="filename">php.ini</var> を使用しない場合は、PHP はすべてデフォルト値を使用します。
@@ -196,7 +196,7 @@
     </span>
     <p class="para">
      再起動するには、シェルで <em>sudo apachectl graceful</em>
-     を実行するか、あるいは OS X System Preferences で
+     を実行するか、あるいは macOS System Preferences で
      &quot;Personal Web Server&quot; オプションを使用して停止/起動します。
      デフォルトでは、ローカルファイルをブラウザで読み込むには
      <var class="filename">http://localhost/info.php</var> のような

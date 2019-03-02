@@ -29,7 +29,12 @@
   <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">fgetss</span> &mdash; <span class="dc-title">ファイルポインタから 1 行取り出し、HTML タグを取り除く</span></p>
 
  </div>
- 
+
+ <div id="function.fgetss-refsynopsisdiv">
+   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は PHP 7.3.0 で
+<em class="emphasis">非推奨</em>になります。この関数に頼らないことを強く推奨します。</p></div>
+ </div>
+
  <div class="refsect1 description" id="refsect1-function.fgetss-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
@@ -86,8 +91,7 @@
       <p class="para">
        オプションの 3 番目の引数を使用して、
        取り除く必要がないタグを指定することができます。
-       See <span class="function"><a href="function.strip-tags.html" class="function">strip_tags()</a></span> for details regarding
-       <code class="parameter">allowable_tags</code>.
+       <code class="parameter">allowable_tags</code> について詳しくは <span class="function"><a href="function.strip-tags.html" class="function">strip_tags()</a></span> を参照ください。
       </p>
      </dd>
 

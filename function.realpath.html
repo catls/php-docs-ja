@@ -62,7 +62,7 @@
       </p>
        <blockquote class="note"><p><strong class="note">注意</strong>: 
         <p class="para">
-         path の指定は必須ですが、空白や <strong><code>NULL</code></strong> を指定することもできます。
+         path の指定は必須ですが、空の文字列を指定することもできます。
          その場合はカレントディレクトリを指定したものとみなします。
         </p>
        </p></blockquote>
@@ -102,9 +102,8 @@
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    
-    The function <span class="function"><strong>realpath()</strong></span> will not work for a file which
-    is inside a Phar as such path would be a virtual path, not a real one.
+	<span class="function"><strong>realpath()</strong></span> 関数は、Phar の内部にあるファイルに対しては機能しません。
+	そのようなパスは、実際のパスではなく仮想パスになるからです。
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">

@@ -38,8 +38,8 @@
     PHP 7 では、すべてのユーザー例外の基底クラスとなります。
    </p>
    <p class="para">
-    PHP 7 では、<strong class="classname">Exception</strong> は
-    <a href="class.throwable.html" class="classname">Throwable</a> インターフェイスを実装しています。
+    PHP 7 より前は、<strong class="classname">Exception</strong> は
+    <a href="class.throwable.html" class="classname">Throwable</a> インターフェイスを実装しませんでした。
    </p>
   </div>
 
@@ -55,6 +55,11 @@
     <div class="classsynopsisinfo">
      <span class="ooclass">
       <strong class="classname">Exception</strong>
+     </span>
+
+     <span class="ooclass">
+      <span class="modifier">implements</span>
+      <a href="class.throwable.html" class="classname">Throwable</a>
      </span>
      {</div>
 
