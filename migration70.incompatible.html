@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>下位互換性のない変更点</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -1309,15 +1308,23 @@ NULL
   </p></blockquote>
  </div>
 
- 
- <div class="sect3" id="migration70.incompatible.other.mhash">
-  <h4 class="title">Mhash is not an extension anymore</h4>
+ <div class="sect3" id="migration70.incompatible.other.break-continue">
+  <h4 class="title">break 文と switch 文の位置の間違い</h4>
   <p class="para">
-   The Mhash extension has been fully integrated into the <a href="book.hash.html" class="link">Hash</a> extension. Therefore, it is no longer
-   possible to detect Mhash support with <span class="function"><a href="function.extension-loaded.html" class="function">extension_loaded()</a></span>;
-   use <span class="function"><a href="function.function-exists.html" class="function">function_exists()</a></span> instead. Furthermore, Mhash is no
-   longer reported by <span class="function"><a href="function.get-loaded-extensions.html" class="function">get_loaded_extensions()</a></span> and related
-   features.
+   ループまたは <em>switch</em> 制御構造の外の
+   <em>break</em> および <em>continue</em> 文は、 
+   以前のように実行時ではなくコンパイル時に検出され、
+   <strong><code>E_COMPILE_ERROR</code></strong> を起こします。
+  </p>
+ </div>
+
+ <div class="sect3" id="migration70.incompatible.other.mhash">
+  <h4 class="title">Mhash はもう拡張機能ではありません</h4>
+  <p class="para">
+   Mhash 拡張は <a href="book.hash.html" class="link">Hash</a> 拡張に完全に統合されました。
+   したがって、<span class="function"><a href="function.extension-loaded.html" class="function">extension_loaded()</a></span> で Mhash サポートを検出できなくなりました。
+   代わりに <span class="function"><a href="function.function-exists.html" class="function">function_exists()</a></span> を使用してください。
+   さらに、Mhash は <span class="function"><a href="function.get-loaded-extensions.html" class="function">get_loaded_extensions()</a></span> および関連機能により報告されなくなりました。
   </p>
  </div>
 

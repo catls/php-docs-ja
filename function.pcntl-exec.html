@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>現在のプロセス空間で指定したプログラムを実行する</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -37,7 +36,7 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$args</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$envs</code></span>
-  ]] ) : <span class="type">bool</span></div>
+  ]] ) : <span class="type"><span class="type void">void</span></span></div>
 
   <p class="para rdfs-comment">
    指定した引数でプログラムを実行します。
@@ -101,7 +100,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.pcntl-exec-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   エラー時に <strong><code>FALSE</code></strong> を返し、成功時には何も返しません。
+   成功した場合に <strong><code>NULL</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します.
   </p>
  </div>
 

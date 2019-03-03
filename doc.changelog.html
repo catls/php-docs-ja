@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>変更履歴</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -76,10 +75,9 @@
         PHP 7.1.0 以降では、専用の出力バッファを用いるようになり、
         output_reset_rewrite_vars は
         output_add_rewrite_var.
-        で定義したリライト変数だけを削除するようになります。</td></tr><tr><td>&nbsp;</td><td><a href='function.pcntl-signal.html'>pcntl_signal</a></td><td>As of PHP 7.1.0 the handler callback is given a second argument
-        containing the signinfo of the specific signal.  This data is only
-        supplied if the operating system has the signinfo_t structure.
-        If the OS does not implement siginfo_t NULL is supplied.</td></tr><tr><td>&nbsp;</td><td><a href='function.pcntl-signal-get-handler.html'>pcntl_signal_get_handler</a></td><td>pcntl_signal_get_handler has been added.</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-fetch-all.html'>pg_fetch_all</a></td><td>result_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-last-notice.html'>pg_last_notice</a></td><td>option パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-select.html'>pg_select</a></td><td>result_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.rand.html'>rand</a></td><td>rand は、mt_rand のエイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.session-start.html'>session_start</a></td><td>セッションを開始できなかった場合、
+        で定義したリライト変数だけを削除するようになります。</td></tr><tr><td>&nbsp;</td><td><a href='function.pcntl-signal.html'>pcntl_signal</a></td><td>PHP 7.1.0以降、ハンドラコールバックは特定のシグナルの signinfo を含む 2 番目の引数を与えられます。
+        このデータは、OS が signinfo_t 構造体を持つ場合のみ提供されます。
+        OS が siginfo_t を実装していない場合は NULL が提供されます。</td></tr><tr><td>&nbsp;</td><td><a href='function.pcntl-signal-get-handler.html'>pcntl_signal_get_handler</a></td><td>pcntl_signal_get_handler has been added.</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-fetch-all.html'>pg_fetch_all</a></td><td>result_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-last-notice.html'>pg_last_notice</a></td><td>option パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-select.html'>pg_select</a></td><td>result_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.rand.html'>rand</a></td><td>rand は、mt_rand のエイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.session-start.html'>session_start</a></td><td>セッションを開始できなかった場合、
         session_start は、FALSE を返し、
         $_SESSION を初期化しないようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.shuffle.html'>shuffle</a></td><td>The internal randomization algorithm has been changed to use the Mersenne Twister Random Number Generator instead of the libc rand function.</td></tr><tr><td>&nbsp;</td><td><a href='function.srand.html'>srand</a></td><td>srand は、mt_srand のエイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.str-shuffle.html'>str_shuffle</a></td><td>The internal randomization algorithm has been changed to use the Mersenne Twister Random Number Generator instead of the libc rand function.</td></tr><tr><td>&nbsp;</td><td><a href='function.stripos.html'>stripos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strpos.html'>strpos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.substr-count.html'>substr_count</a></td><td>負の offset と length をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.unserialize.html'>unserialize</a></td><td>The allowed_classes element of
         options) is now strictly typed, i.e. if anything

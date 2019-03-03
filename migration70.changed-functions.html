@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>変更された関数</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -92,8 +91,9 @@
    </li>
    <li class="listitem">
     <span class="simpara">
-     <span class="function"><a href="function.xml-set-object.html" class="function">xml_set_object()</a></span> は、終了時に $parser の設定を手動で解除しなければいけないようになりました。
-     これはメモリリークを回避するためです。
+	 パーサーリソースがオブジェクトを参照し、このオブジェクトがそのパーサーリソースを参照する場合、
+     <span class="function"><a href="function.xml-parser-free.html" class="function">xml_parser_free()</a></span> は、パーサーリソースを解放するのに十分ではなくなりました。
+	 この場合、さらに $parser を unset する必要があります。
     </span>
    </li>
   </ul>

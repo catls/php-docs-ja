@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>シグナルハンドラを設定する</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -35,8 +34,9 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>pcntl_signal</strong></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$signo</code></span>
-   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$signinfo</code></span>
-   ) : <span class="type">bool</span></div>
+   , <span class="methodparam"><span class="type"><span class="type callable|int">callable|int</span></span> <code class="parameter">$handler</code></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$restart_syscalls</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
+  ] ) : <span class="type">bool</span></div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>pcntl_signal()</strong></span> 関数は、<code class="parameter">signo</code>
@@ -103,8 +103,8 @@
          <dd>
 
           <span class="simpara">
-           If operating systems supports siginfo_t structures, this will be an array of signal information dependent on the signal.
-           
+           OS が siginfo_t 構造体をサポートしている場合、
+           これはシグナルに依存するシグナル情報の配列になります。
           </span>
          </dd>
 
@@ -178,10 +178,9 @@
       <tr>
        <td>7.1.0</td>
        <td>
-        As of PHP 7.1.0 the handler callback is given a second argument
-        containing the signinfo of the specific signal.  This data is only
-        supplied if the operating system has the signinfo_t structure.
-        If the OS does not implement siginfo_t NULL is supplied.
+        PHP 7.1.0以降、ハンドラコールバックは特定のシグナルの signinfo を含む 2 番目の引数を与えられます。
+        このデータは、OS が signinfo_t 構造体を持つ場合のみ提供されます。
+        OS が siginfo_t を実装していない場合は NULL が提供されます。
        </td>
       </tr>
 

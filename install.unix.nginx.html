@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Nginx 1.4.x on Unix systems</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -105,7 +104,7 @@ sudo make install
     <div class="example-contents screen">
 <div class="cdata"><pre>
 cp php.ini-development /usr/local/php/php.ini
-cp /usr/local/etc/php-fpm.conf.default /usr/local/etc/php-fpm.conf
+cp /usr/local/etc/php-fpm.d/www.conf.default /usr/local/etc/php-fpm.d/www.conf
 cp sapi/fpm/php-fpm /usr/local/bin
 </pre></div>
     </div>
@@ -157,7 +156,7 @@ cgi.fix_pathinfo=0
    <div class="informalexample">
     <div class="example-contents screen">
 <div class="cdata"><pre>
-vim /usr/local/etc/php-fpm.conf
+vim /usr/local/etc/php-fpm.d/www.conf
 </pre></div>
     </div>
    </div>

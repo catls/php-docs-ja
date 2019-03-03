@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>デフォルトの外部エンティティローダーを変更する</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -35,7 +34,7 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>libxml_set_external_entity_loader</strong></span>
     ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$resolver_function</code></span>
-   ) : <span class="type"><span class="type void">void</span></span></div>
+   ) : <span class="type">bool</span></div>
 
   <p class="para rdfs-comment">
    デフォルトの外部エンティティローダーを変更します。
@@ -70,7 +69,7 @@
  <div class="refsect1 returnvalues" id="refsect1-function.libxml-set-external-entity-loader-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   値を返しません。
+   成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
 

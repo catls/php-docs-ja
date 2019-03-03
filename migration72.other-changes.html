@@ -3,7 +3,6 @@
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>その他の変更</title>
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
@@ -109,6 +108,16 @@
    mcrypt ライブラリは 2007年から更新されていませんし、それ自体使うことが全く推奨できないからです。
    代わりに <a href="book.openssl.html" class="link">OpenSSL</a> もしくは <a href="book.sodium.html" class="link">Sodium</a>
    拡張モジュール を使ってください。
+  </p>
+ </div>
+
+ <div class="sect2" id="migration72.other-changes.session-module-name">
+  <h3 class="title"><span class="function"><a href="function.session-module-name.html" class="function">session_module_name()</a></span></h3>
+
+  <p class="para">
+   <span class="function"><a href="function.session-module-name.html" class="function">session_module_name()</a></span> に <em>&quot;user&quot;</em> を渡すと、
+   レベル <strong><code>E_RECOVERABLE_ERROR</code></strong> のエラーが発生します。
+   以前は、通知せずに無視されていました。
   </p>
  </div>
 
