@@ -4,7 +4,6 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>PBKDF2 を使ってパスワードからキーを生成する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -39,7 +38,7 @@
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$salt</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$iterations</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$raw_output</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$raw_output</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ]] ) : <span class="type">string</span></div>
 
  </div>
@@ -184,7 +183,7 @@
     <p><strong>例1 <span class="function"><strong>hash_pbkdf2()</strong></span> の基本的な使い方の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$password&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$iterations&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1000</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;ランダムな&nbsp;IV&nbsp;を、mcrypt_create_iv()&nbsp;や<br />//&nbsp;openssl_random_pseudo_bytes()&nbsp;などの適切なソースを使って生成します。<br /></span><span style="color: #0000BB">$salt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mcrypt_create_iv</span><span style="color: #007700">(</span><span style="color: #0000BB">16</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">MCRYPT_DEV_URANDOM</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$hash&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">hash_pbkdf2</span><span style="color: #007700">(</span><span style="color: #DD0000">"sha256"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$salt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iterations</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$hash</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$password&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"password"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$iterations&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1000</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;ランダムな&nbsp;IV&nbsp;を、openssl_random_pseudo_bytes()&nbsp;や<br />//&nbsp;random_bytes()&nbsp;などの適切なソースを使って生成します。<br /></span><span style="color: #0000BB">$salt&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_random_pseudo_bytes</span><span style="color: #007700">(</span><span style="color: #0000BB">16</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$hash&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">hash_pbkdf2</span><span style="color: #007700">(</span><span style="color: #DD0000">"sha256"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$password</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$salt</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$iterations</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$hash</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -224,6 +223,7 @@
     <li class="member"><span class="function"><a href="function.hash-init.html" class="function" rel="rdfs-seeAlso">hash_init()</a> - 段階的なハッシュコンテキストを初期化する</span></li>
     <li class="member"><span class="function"><a href="function.hash-hmac.html" class="function" rel="rdfs-seeAlso">hash_hmac()</a> - HMAC 方式を使用してハッシュ値を生成する</span></li>
     <li class="member"><span class="function"><a href="function.hash-hmac-file.html" class="function" rel="rdfs-seeAlso">hash_hmac_file()</a> - HMAC 方式を使用して、指定されたファイルの内容からハッシュ値を生成する</span></li>
+    <li class="member"><span class="function"><a href="function.openssl-pbkdf2.html" class="function" rel="rdfs-seeAlso">openssl_pbkdf2()</a> - PKCS5 v2 の PBKDF2 文字列を生成する。デフォルトは SHA-1</span></li>
    </ul>
   </p>
  </div>

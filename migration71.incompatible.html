@@ -4,7 +4,6 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>下位互換性のない変更点</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -249,6 +248,41 @@ Warning: Cannot call func_num_args() dynamically in %s on line %d
    文字列に空のインデックス演算子を適用する (例: <em>$str[] = $x</em>)
    と、fatal エラーが発生します。これまでのバージョンではエラーにならず、
    ただ配列に変換されるだけでした。
+  </p>
+ </div>
+
+ <div class="sect2" id="migration71.incompatible.empty-string-modifcation-by-character">
+  <h3 class="title">Assignment via string index access on an empty string</h3>
+  <p class="para">
+   String modification by character on an empty string now works like for non-empty
+   strings, i.e. writing to an out of range offset pads the string with spaces,
+   where non-integer types are converted to integer, and only the first character of
+   the assigned string is used. Formerly, empty strings where silently treated like
+   an empty array.
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a</span><span style="color: #007700">[</span><span style="color: #0000BB">10</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <p class="para">上の例の PHP 7.0 での出力は、このようになります。</p>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(1) {
+  [10]=&gt;
+  string(3) &quot;foo&quot;
+}
+</pre></div>
+    </div>
+    <p class="para">上の例の PHP 7.1 での出力は、このようになります。</p>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+string(11) &quot;          f&quot;
+</pre></div>
+    </div>
+   </div>
   </p>
  </div>
 
@@ -579,7 +613,7 @@ object(stdClass)#1 (1) {
    parameter semantics
   </h3>
   <p class="para">
-   The third paramter to the <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> and
+   The third parameter to the <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> and
    <span class="function"><a href="function.mb-eregi.html" class="function">mb_eregi()</a></span> functions (<code class="parameter">regs</code>) will now be
    set to an empty array if nothing was matched. Formerly, the parameter would
    not have been modified.

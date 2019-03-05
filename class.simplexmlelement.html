@@ -4,7 +4,6 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>SimpleXMLElement クラス</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -62,9 +61,9 @@
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname"><a href="simplexmlelement.construct.html" class="methodname">__construct</a></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$data_is_url</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$data_is_url</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code><span class="initializer"> = &quot;&quot;</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ]]]] )</div>
 
     <div class="methodsynopsis dc-description">
@@ -86,12 +85,12 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="simplexmlelement.attributes.html" class="methodname">attributes</a></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ]] ) : <span class="type"><a href="class.simplexmlelement.html" class="type SimpleXMLElement">SimpleXMLElement</a></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="simplexmlelement.children.html" class="methodname">children</a></span>
     ([ <span class="methodparam"><span class="type">string</span> <code class="parameter">$ns</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_prefix</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ]] ) : <span class="type"><a href="class.simplexmlelement.html" class="type SimpleXMLElement">SimpleXMLElement</a></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="simplexmlelement.count.html" class="methodname">count</a></span>
@@ -99,8 +98,8 @@
    ) : <span class="type">int</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="simplexmlelement.getdocnamespaces.html" class="methodname">getDocNamespaces</a></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code><span class="initializer"> = false</span></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$from_root</code><span class="initializer"> = true</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$from_root</code><span class="initializer"> = <strong><code>TRUE</code></strong></span></span>
   ]] ) : <span class="type">array</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="simplexmlelement.getname.html" class="methodname">getName</a></span>
@@ -108,7 +107,7 @@
    ) : <span class="type">string</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="simplexmlelement.getnamespaces.html" class="methodname">getNamespaces</a></span>
-    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code><span class="initializer"> = false</span></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <code class="parameter">$recursive</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] ) : <span class="type">array</span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="simplexmlelement.registerxpathnamespace.html" class="methodname">registerXPathNamespace</a></span>

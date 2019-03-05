@@ -4,7 +4,6 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>実行時設定</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -52,9 +51,9 @@
 
           <tr>
             <td><a href="yaml.configuration.html#ini.yaml.decode-php" class="link">yaml.decode_php</a></td>
-            <td>1</td>
+            <td>0</td>
             <td>PHP_INI_ALL</td>
-            <td></td>
+            <td>1.2.0 で追加されました。2.0.0 より前のデフォルトは 1 でした</td>
           </tr>
 
           <tr>
@@ -122,8 +121,9 @@
         <dd>
 
           <p class="para">
-            デフォルトではオンです。オフにすると、
-            シリアライズされた php オブジェクトのうち &quot;!php/object&quot; というタグが明示されているものはデシリアライズしなくなります。
+            デフォルトではオフです。
+            
+            but can be set to on to cause serialized php objects which have the explicit tag &quot;!php/object&quot; to be unserialized.
           </p>
         </dd>
 

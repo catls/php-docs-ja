@@ -4,7 +4,6 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>オブジェクト定数</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -76,11 +75,12 @@
    </p>
  </p></blockquote>
  <p class="para">
-  The special <strong><code>::class</code></strong> constant are available as of PHP 5.5.0, and allows 
-  for fully qualified class name resolution at compile, this is useful for namespaced classes:
+  PHP 5.5.0 以降では、特別な <strong><code>::class</code></strong> 定数が使用可能です。
+  この定数により、コンパイル時の完全修飾クラス名が解決できます。
+  これは名前空間クラスに役立ちます。
  </p>
  <div class="example" id="example-184">
-  <p><strong>例3 Namespaced ::class example</strong></p>
+  <p><strong>例3 名前空間の ::class の例</strong></p>
   <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;</span><span style="color: #0000BB">bar&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">::class;&nbsp;</span><span style="color: #FF8000">//&nbsp;foo\bar<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>

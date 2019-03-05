@@ -4,7 +4,6 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>クラスのオートローディング</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
-<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
  </head>
  <body class="docs"><div class="navbar navbar-fixed-top">
@@ -44,8 +43,8 @@
     <span class="function"><a href="function.spl-autoload-register.html" class="function">spl_autoload_register()</a></span> 関数を使うことをおすすめします。
     こちらのほうが、より柔軟に使えるからです
     (任意の数のオートローダーを登録して、サードパーティのライブラリなどに対応することもできます)。
-    <span class="function"><a href="function.autoload.html" class="function">__autoload()</a></span> を使うことはおすすめできません。
-    将来のバージョンではこの機能が非推奨となり、削除されるかもしれません。
+    このため、<span class="function"><a href="function.autoload.html" class="function">__autoload()</a></span> の使用は
+    PHP 7.2.0 以降、非推奨となり、削除されます。
    </p>
   </div>
  <blockquote class="note"><p><strong class="note">注意</strong>: 
