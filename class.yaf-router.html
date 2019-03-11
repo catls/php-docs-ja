@@ -48,7 +48,7 @@
    Ruby on Rails のルーティング方式を参考にしており、
    ウェブサーバーの URL リライト機能に関する事前知識は不要です。
    Apache の場合は、次のような mod_rewrite ルールを書けば使えます。
-   <div class="example" id="example-5094">
+   <div class="example" id="example-5096">
     <p><strong>例1 Apache 用のリライトルール</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">RewriteEngine on
@@ -58,7 +58,7 @@ RewriteRule !\.(js|ico|gif|jpg|png|css|html)$ index.php</pre>
 
    </div>
    あるいは、次のようにもできます (こちらのほうを推奨します)。
-   <div class="example" id="example-5095">
+   <div class="example" id="example-5097">
     <p><strong>例2 Apache 用のリライトルール</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">RewriteEngine On
@@ -72,7 +72,7 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
   </div>
    Lighttpd の場合は、次のようなリライトルールを指定します。
-   <div class="example" id="example-5096">
+   <div class="example" id="example-5098">
     <p><strong>例3 Lighttpd 用のリライトルール</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">url.rewrite-once = (
@@ -85,7 +85,7 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
   </div>
    Nginx の場合は、次のようなリライトルールを指定します。
-   <div class="example" id="example-5097">
+   <div class="example" id="example-5099">
     <p><strong>例4 Nginx 用のリライトルール</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">server {
@@ -127,7 +127,7 @@ RewriteRule ^.*$ index.php [NC,L]</pre>
 
    <p class="para">
    ルートのマッチングの例を示します。
-   <div class="example" id="example-5098">
+   <div class="example" id="example-5100">
     <p><strong>例5 <a href="class.yaf-route-static.html" class="classname">Yaf_Route_Static</a> のデフォルトルート</strong></p>
    <div class="example-contents">
 <div class="confcode"><pre class="confcode">// このように設定しているものとします
