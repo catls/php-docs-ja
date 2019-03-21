@@ -59,23 +59,23 @@
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.memory-consumption" class="link">opcache.memory_consumption</a></td>
-      <td>&quot;64&quot;</td>
+      <td>&quot;128&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 7.0.0 より前のデフォルト値は &quot;64&quot; でした。</td>
      </tr>
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.interned-strings-buffer" class="link">opcache.interned_strings_buffer</a></td>
-      <td>&quot;4&quot;</td>
+      <td>&quot;8&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 7.0.0 より前のデフォルト値は &quot;4&quot; でした。</td>
      </tr>
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.max-accelerated-files" class="link">opcache.max_accelerated_files</a></td>
-      <td>&quot;2000&quot;</td>
+      <td>&quot;10000&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 7.0.0 より前のデフォルト値は &quot;2000&quot; でした。</td>
      </tr>
 
      <tr>
@@ -145,14 +145,14 @@
       <td><a href="opcache.configuration.html#ini.opcache.optimization-level" class="link">opcache.optimization_level</a></td>
       <td>&quot;0x7FFFBFFF&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td>PHP 5.6.18 で 0xFFFFBFFF から変更されました</td>
+      <td>PHP 5.6.18 で 0xFFFFFFFF から変更されました</td>
      </tr>
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.inherited-hack" class="link">opcache.inherited_hack</a></td>
       <td>&quot;1&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 7.3.0 で削除されました</td>
      </tr>
 
      <tr>
@@ -300,6 +300,13 @@
       <td>&quot;0&quot;</td>
       <td>PHP_INI_SYSTEM</td>
       <td>PHP 7.0.14 以降で利用可能</td>
+     </tr>
+
+     <tr>
+      <td><a href="opcache.configuration.html#ini.opcache.preload" class="link">opcache.preload</a></td>
+      <td>&quot;&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td>PHP 7.4.0 以降で利用可能</td>
      </tr>
 
     </tbody>
@@ -934,6 +941,25 @@
       chroot された環境での名前の衝突を防止します。
       これは、chroot 以外でのファイルへのアクセスを防止するために、
       chroot されたすべての環境で有効にする必要があります。
+     </p>
+    </dd>
+
+   
+   
+    <dt id="ini.opcache.preload">
+     <code class="parameter">opcache.preload</code>
+     <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    </dt>
+
+    <dd>
+
+     <p class="para">
+      
+      Specifies a PHP script that is going to be compiled and executed at server start-up,
+      and which may preload other files, either by <span class="function"><a href="function.include.html" class="function">include</a></span>ing them or by
+      using the <span class="function"><a href="function.opcache-compile-file.html" class="function">opcache_compile_file()</a></span> function. All the entities (e.g.
+      functions and classes) defined in these files will be available to requests out of 
+      the box, until the server is shut down.
      </p>
     </dd>
 

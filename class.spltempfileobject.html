@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>SplTempFileObject クラス</title>
+  <title>The SplTempFileObject class</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,13 +19,13 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="spl.files.html">ファイル操作</a></li>
-    <li>SplTempFileObject クラス</li>
+    <li>The SplTempFileObject class</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="class.spltempfileobject" class="reference">
 
- <h1 class="title">SplTempFileObject クラス</h1>
+ <h1 class="title">The SplTempFileObject class</h1>
  
 
  <div class="partintro"><p class="verinfo">(PHP 5 &gt;= 5.1.2, PHP 7)</p>
@@ -34,7 +34,7 @@
   <div class="section" id="spltempfileobject.intro">
    <h2 class="title">はじめに</h2>
    <p class="para">
-    SplTempFileObject クラスは一時ファイルのためのオブジェクト指向インターフェイスを提供します。
+    The SplTempFileObject class offers an object oriented interface for a temporary file.
    </p>
   </div>
 
@@ -66,8 +66,40 @@
      </span>
      {</div>
 
-    
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承した定数 */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.splfileobject.html#splfileobject.constants.drop-new-line"><var class="varname">SplFileObject::DROP_NEW_LINE</var></a></var>
+     <span class="initializer"> = 1</span>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.splfileobject.html#splfileobject.constants.read-ahead"><var class="varname">SplFileObject::READ_AHEAD</var></a></var>
+     <span class="initializer"> = 2</span>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.splfileobject.html#splfileobject.constants.skip-empty"><var class="varname">SplFileObject::SKIP_EMPTY</var></a></var>
+     <span class="initializer"> = 4</span>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.splfileobject.html#splfileobject.constants.read-csv"><var class="varname">SplFileObject::READ_CSV</var></a></var>
+     <span class="initializer"> = 8</span>
+    ;</div>
+
+
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
+    <div class="constructorsynopsis dc-description">
+   <span class="modifier">public</span> <span class="methodname"><a href="spltempfileobject.construct.html" class="methodname">__construct</a></span>
+    ([ <span class="methodparam"><span class="type">int</span> <code class="parameter">$max_memory</code></span>
+  ] )</div>
+
     
     
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したメソッド */</div>

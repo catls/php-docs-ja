@@ -68,7 +68,45 @@
      <span class="initializer"> = 1</span>
     ;</div>
 
-    
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* プロパティ */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">integer</span>
+      <var class="varname"><a href="class.dateperiod.html#dateperiod.props.recurrences">$<var class="varname">recurrences</var></a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">boolean</span>
+      <var class="varname"><a href="class.dateperiod.html#dateperiod.props.include_start_date">$<var class="varname">include_start_date</var></a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type"><a href="class.datetimeinterface.html" class="type DateTimeInterface">DateTimeInterface</a></span>
+      <var class="varname"><a href="class.dateperiod.html#dateperiod.props.start">$<var class="varname">start</var></a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type"><a href="class.datetimeinterface.html" class="type DateTimeInterface">DateTimeInterface</a></span>
+      <var class="varname"><a href="class.dateperiod.html#dateperiod.props.current">$<var class="varname">current</var></a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type"><a href="class.datetimeinterface.html" class="type DateTimeInterface">DateTimeInterface</a></span>
+      <var class="varname"><a href="class.dateperiod.html#dateperiod.props.end">$<var class="varname">end</var></a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type"><a href="class.dateinterval.html" class="type DateInterval">DateInterval</a></span>
+      <var class="varname"><a href="class.dateperiod.html#dateperiod.props.interval">$<var class="varname">interval</var></a></var>
+    ;</div>
+
+
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
     <div class="constructorsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="dateperiod.construct.html" class="methodname">__construct</a></span>
@@ -100,6 +138,10 @@
     ( <span class="methodparam">void</span>
    ) : <span class="type"><a href="class.datetimeinterface.html" class="type DateTimeInterface">DateTimeInterface</a></span></div>
 <div class="methodsynopsis dc-description">
+   <span class="methodname"><a href="dateperiod.getrecurrences.html" class="methodname">getRecurrences</a></span>
+    ( <span class="methodparam">void</span>
+   ) : <span class="type">int</span></div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="dateperiod.getstartdate.html" class="methodname">getStartDate</a></span>
     ( <span class="methodparam">void</span>
    ) : <span class="type"><a href="class.datetimeinterface.html" class="type DateTimeInterface">DateTimeInterface</a></span></div>
@@ -130,6 +172,112 @@
   </div>
 
 
+  <div class="section" id="dateperiod.props">
+   <h2 class="title">プロパティ</h2>
+   <dl>
+
+    
+     <dt id="dateperiod.props.recurrences"><var class="varname"><var class="varname">recurrences</var></var></dt>
+
+     <dd>
+
+      <p class="para">
+       <strong class="classname">DatePeriod</strong> インスタンスが
+       <em>$recurrences</em> を明示的に渡すことによって作成された場合の反復回数
+       <span class="methodname"><a href="dateperiod.getrecurrences.html" class="methodname">DatePeriod::getRecurrences()</a></span> もご覧ください。
+      </p>
+     </dd>
+
+    
+    
+     <dt id="dateperiod.props.include_start_date"><var class="varname"><var class="varname">include_start_date</var></var></dt>
+
+     <dd>
+
+      <p class="para">
+       開始日を反復日のセットに含めるかどうか。
+      </p>
+     </dd>
+
+    
+    
+     <dt id="dateperiod.props.start"><var class="varname"><var class="varname">start</var></var></dt>
+
+     <dd>
+
+      <p class="para">
+       期間の開始日。
+      </p>
+     </dd>
+
+    
+    
+     <dt id="dateperiod.props.current"><var class="varname"><var class="varname">current</var></var></dt>
+
+     <dd>
+
+      <p class="para">
+       反復中に期間内の現在の日付が含まれます。
+      </p>
+     </dd>
+
+    
+    
+    <dt id="dateperiod.props.end"><var class="varname"><var class="varname">end</var></var></dt>
+
+     <dd>
+
+      <p class="para">
+       期間の終了日。
+      </p>
+     </dd>
+
+    
+    
+     <dt id="dateperiod.props.interval"><var class="varname"><var class="varname">interval</var></var></dt>
+
+     <dd>
+
+      <p class="para">
+       ISO 8601 の繰り返し間隔の指定。
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </div>
+
+  <div class="section" id="dateperiod.changelog">
+   <h2 class="title">変更履歴</h2>
+   <p class="para">
+    <table class="doctable informaltable">
+     
+      <thead>
+       <tr>
+        <th>バージョン</th>
+        <th>説明</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr>
+        <td>5.3.27, 5.4.17</td>
+        <td>
+         public プロパティー <var class="varname"><var class="varname">recurrences</var></var>、
+         <var class="varname"><var class="varname">include_start_date</var></var>、<var class="varname"><var class="varname">start</var></var>、
+         <var class="varname"><var class="varname">current</var></var>、<var class="varname"><var class="varname">end</var></var> および
+         <var class="varname"><var class="varname">interval</var></var> が公開されました。
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+  </div>
 
  </div>
 
@@ -170,6 +318,13 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="dateperiod.construct.html">DatePeriod::__construct</a> — 新しい DatePeriod オブジェクトを作成する</li><li><a href="dateperiod.getdateinterval.html">DatePeriod::getDateInterval</a> — 間隔を取得する</li><li><a href="dateperiod.getenddate.html">DatePeriod::getEndDate</a> — 終了日を取得する</li><li><a href="dateperiod.getstartdate.html">DatePeriod::getStartDate</a> — 開始日を取得する</li></ul>
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="dateperiod.construct.html">DatePeriod::__construct</a> — 新しい DatePeriod オブジェクトを作成する</li><li><a href="dateperiod.getdateinterval.html">DatePeriod::getDateInterval</a> — 間隔を取得する</li><li><a href="dateperiod.getenddate.html">DatePeriod::getEndDate</a> — 終了日を取得する</li><li><a href="dateperiod.getrecurrences.html">DatePeriod::getRecurrences</a> — Gets the number of recurrences</li><li><a href="dateperiod.getstartdate.html">DatePeriod::getStartDate</a> — 開始日を取得する</li></ul>
 </div>
 </div></div></body></html>

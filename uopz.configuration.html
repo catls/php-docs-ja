@@ -25,8 +25,84 @@
 <div id="layout">
   <div id="layout-content"><div id="uopz.configuration" class="section">
   <h2 class="title">実行時設定</h2>
+  <p class="simpara">
+<var class="filename">php.ini</var> の設定により動作が変化します。
+</p>
   <p class="para">
-   uopz 5.0.0 以降、この拡張は <a href="ini.core.html#ini.extension" class="link">extension</a> としてロードされる必要があります。
-   このバージョンより前は、<a href="ini.core.html#ini.zend-extension" class="link">zend_extension</a> としてロードされる必要があります。
+   <table class="doctable table">
+    <caption><strong>uopz 設定オプション</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>名前</th>
+       <th>デフォルト</th>
+       <th>変更可能</th>
+       <th>変更履歴</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><a href="uopz.configuration.html#ini.uopz.disable" class="link">uopz.disable</a></td>
+       <td>&quot;0&quot;</td>
+       <td>PHP_INI_SYSTEM</td>
+       <td>uopz 5.0.2 以降で利用可能</td>
+      </tr>
+
+      <tr>
+       <td><a href="uopz.configuration.html#ini.uopz.exit" class="link">uopz.exit</a></td>
+       <td>&quot;0&quot;</td>
+       <td>PHP_INI_SYSTEM</td>
+       <td>uopz 6.0.1 以降で利用可能</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+   PHP_INI_* モードの詳細および定義については
+<a href="configuration.changes.modes.html" class="xref">どこで設定を行うのか</a> を参照してください。
+  </p>
+
+  <p class="para">以下に設定ディレクティブに関する
+簡単な説明を示します。</p>
+
+  <p class="para">
+   <dl>
+
+    
+     <dt id="ini.uopz.disable">
+      <code class="parameter">uopz.disable</code>
+      <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       
+       If enabled, uopz should stop having any effect on the engine.
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.uopz.exit">
+      <code class="parameter">uopz.exit</code>
+      <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       
+       Whether to allow the execution of exit opcodes or not.
+       This setting can be overridden during runtime by calling <span class="function"><a href="function.uopz-allow-exit.html" class="function">uopz_allow_exit()</a></span>.
+      </p>
+     </dd>
+
+    
+   </dl>
+
   </p>
  </div></div></div></body></html>
