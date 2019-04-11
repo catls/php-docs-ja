@@ -25,15 +25,15 @@
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-sqlstatementresult.getcolumncount" class="refentry">
  <div class="refnamediv">
-  <h1 class="refname">SqlStatementResult::getColumnCount</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">SqlStatementResult::getColumnCount</span> &mdash; <span class="dc-title">Get column count</span></p>
+  <h1 class="refname">SqlStatementResult::getColumnsCount</h1>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">SqlStatementResult::getColumnsCount</span> &mdash; <span class="dc-title">Get column count</span></p>
 
  </div>
 
  <div class="refsect1 description" id="refsect1-mysql-xdevapi-sqlstatementresult.getcolumncount-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>mysql_xdevapi\SqlStatementResult::getColumnCount</strong></span>
+   <span class="modifier">public</span> <span class="methodname"><strong>mysql_xdevapi\SqlStatementResult::getColumnsCount</strong></span>
     ( <span class="methodparam">void</span>
    ) : <span class="type">integer</span></div>
 
@@ -62,10 +62,37 @@
  </div>
 
 
+<div class="refsect1 changelog" id="refsect1-mysql-xdevapi-sqlstatementresult.getcolumncount-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>8.0.14</td>
+      <td>
+       Method renamed from getColumnCount() to getColumnsCount().
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-sqlstatementresult.getcolumncount-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2106">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\SqlStatementResult::getColumnCount()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\SqlStatementResult::getColumnsCount()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;...&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
