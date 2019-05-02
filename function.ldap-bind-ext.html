@@ -37,7 +37,8 @@
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$bind_rdn</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$bind_password</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-  ]] ) : <span class="type">resource</span></div>
+   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$serverctrls</code><span class="initializer"> = array()</span></span>
+  ]]] ) : <span class="type">resource</span></div>
 
   <p class="para rdfs-comment">
    Does the same thing as <span class="function"><a href="function.ldap-bind.html" class="function">ldap_bind()</a></span> but returns the LDAP result resource to be parsed with <span class="function"><a href="function.ldap-parse-result.html" class="function">ldap_parse_result()</a></span>.

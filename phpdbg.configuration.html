@@ -47,7 +47,7 @@
       <td><a href="phpdbg.configuration.html#ini.phpdbg.eol" class="link">phpdbg.eol</a></td>
       <td>2</td>
       <td>PHP_INI_ALL</td>
-      <td>Available as of PHP 5.6.3</td>
+      <td>Available as of PHP 7.0.0</td>
      </tr>
 
      <tr>
@@ -72,13 +72,53 @@
    
      <dt id="ini.phpdbg.eol">
       <code class="parameter">phpdbg.eol</code>
-      <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+      <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span>
      </dt>
 
      <dd>
 
       <p class="para">
-       
+       The kind of line ending to use for output. For setting the value, one of 
+       the string aliases must be used.
+       <table class="doctable informaltable">
+        
+         <thead>
+          <tr>
+           <th><span class="type"><a href="language.types.integer.html" class="type int">int</a></span> Value</th>
+           <th><span class="type"><a href="language.types.string.html" class="type string">string</a></span> Alias</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td><em>0</em></td>
+           <td>
+            <em>CRLF</em>, <em>crlf</em>,
+            <em>DOS</em>, <em>dos</em>
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>1</em></td>
+           <td>
+            <em>LF</em>, <em>lf</em>,
+            <em>UNIX</em>, <em>unix</em>
+           </td>
+          </tr>
+
+          <tr>
+           <td><em>2</em></td>
+           <td>
+            <em>CR</em>, <em>cr</em>,
+            <em>MAC</em>, <em>mac</em>
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
       </p>
      </dd>
 
