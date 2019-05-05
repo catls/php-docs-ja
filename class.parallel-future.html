@@ -11,7 +11,7 @@
   <div class="navbar-inner clearfix">
     <ul class="nav" style="width: 100%">
       <li style="float: left;"><a href="parallel-runtime.run.html">« parallel\Runtime::run</a></li>
-      <li style="float: right;"><a href="parallel-future.done.html">parallel\Future::done »</a></li>
+      <li style="float: right;"><a href="parallel-future.cancel.html">parallel\Future::cancel »</a></li>
     </ul>
   </div>
 </div>
@@ -51,32 +51,22 @@
    <span class="modifier">public</span> <span class="methodname"><a href="parallel-future.value.html" class="methodname">value</a></span>
     ( <span class="methodparam">void</span>
    ) : <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span></div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><a href="parallel-future.value.html" class="methodname">value</a></span>
-    ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$timeout</code></span>
-   ) : <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span></div>
 
-   
-    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Selection */</div>
-    <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="modifier">static</span> <span class="methodname"><a href="parallel-future.select.html" class="methodname">select</a></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$resolving</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$resolved</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$errored</code></span>
-   ) : <span class="type">int</span></div>
-<div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="modifier">static</span> <span class="methodname"><a href="parallel-future.select.html" class="methodname">select</a></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$resolving</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$resolved</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$errored</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$timedout</code></span>
-   , <span class="methodparam"><span class="type">int</span> <code class="parameter">$timeout</code></span>
-   ) : <span class="type">int</span></div>
 
-    
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* State */</div>
     <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="methodname"><a href="parallel-future.cancelled.html" class="methodname">cancelled</a></span>
+    ( <span class="methodparam">void</span>
+   ) : <span class="type">bool</span></div>
+<div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="parallel-future.done.html" class="methodname">done</a></span>
+    ( <span class="methodparam">void</span>
+   ) : <span class="type">bool</span></div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Cancellation */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="methodname"><a href="parallel-future.cancel.html" class="methodname">cancel</a></span>
     ( <span class="methodparam">void</span>
    ) : <span class="type">bool</span></div>
 
@@ -111,6 +101,13 @@
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="parallel-future.done.html">parallel\Future::done</a> — State Detection</li><li><a href="parallel-future.select.html">parallel\Future::select</a> — Resolution</li><li><a href="parallel-future.value.html">parallel\Future::value</a> — Resolution</li></ul>
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="parallel-future.cancel.html">parallel\Future::cancel</a> — Cancellation</li><li><a href="parallel-future.cancelled.html">parallel\Future::cancelled</a> — State Detection</li><li><a href="parallel-future.done.html">parallel\Future::done</a> — State Detection</li><li><a href="parallel-future.value.html">parallel\Future::value</a> — Resolution</li></ul>
 </div>
 </div></div></body></html>

@@ -38,7 +38,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Shall construct a new runtime without bootstrapping or configuration.
+   Shall construct a new runtime without bootstrapping.
   </p>
   <div class="constructorsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>parallel\Runtime::__construct</strong></span>
@@ -46,27 +46,7 @@
    )</div>
 
   <p class="para rdfs-comment">
-   Shall construct a bootstrapped runtime, it is recommended to use a bootstrap, and it should generally
-   be an autoloader.
-  </p>
-  <div class="constructorsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>parallel\Runtime::__construct</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$configuration</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Shall construct a new runtime without bootstraping and configure it using the given configuration.
-   It may be sensible to pass the result of a call to <span class="function"><strong>\ini_get_all()</strong></span> as configuration.
-  </p>
-  <div class="constructorsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>parallel\Runtime::__construct</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$bootstrap</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$configuration</code></span>
-   )</div>
-
-  <p class="para rdfs-comment">
-   Shall construct a new bootstrapped runtime and configure it using the given configuration. 
-   It may be sensible to pass the result of a call to <span class="function"><strong>\ini_get_all()</strong></span> as configuration.
+   Shall construct a bootstrapped runtime.
   </p>
 
  </div>
@@ -83,19 +63,7 @@
     <dd>
 
      <p class="para">
-      The location of a bootstrap file, generally the location of an autoloader.
-     </p>
-    </dd>
-
-   
-   
-    <dt>
-<code class="parameter">configuration</code></dt>
-
-    <dd>
-
-     <p class="para">
-      INI configuration options
+      The location of a bootstrap file, generally an autoloader.
      </p>
     </dd>
 
@@ -109,17 +77,12 @@
   <h3 class="title">Exceptions</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if arguments are invalid
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Error">\parallel\Runtime\Error</span></span> if thread could not be created
    </p>
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if bootstrapping failed
-   </p>
-  </div>
-  <div class="warning"><strong class="warning">警告</strong>
-   <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if the thread could not be created
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Bootstrap">\parallel\Runtime\Bootstrap</span></span> if bootstrapping failed
    </p>
   </div>
  </div>

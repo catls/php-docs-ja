@@ -34,20 +34,20 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>parallel\Runtime::run</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> <code class="parameter">$closure</code></span>
+    ( <span class="methodparam"><span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> <code class="parameter">$task</code></span>
    ) : <span class="type"><span class="type ?Future">?Future</span></span></div>
 
   <p class="para rdfs-comment">
-   Shall schedule <code class="parameter">closure</code> for execution in parallel.
+   Shall schedule <code class="parameter">task</code> for execution in parallel.
   </p>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>parallel\Runtime::run</strong></span>
-    ( <span class="methodparam"><span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> <code class="parameter">$closure</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$args</code></span>
+    ( <span class="methodparam"><span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> <code class="parameter">$task</code></span>
+   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$argv</code></span>
    ) : <span class="type"><span class="type ?Future">?Future</span></span></div>
 
   <p class="para rdfs-comment">
-   Shall schedule <code class="parameter">closure</code> for execution in parallel, passing <code class="parameter">args</code> at execution time.
+   Shall schedule <code class="parameter">task</code> for execution in parallel, passing <code class="parameter">argv</code> at execution time.
   </p>
 
  </div>
@@ -59,24 +59,24 @@
 
    
     <dt>
-<code class="parameter">closure</code></dt>
+<code class="parameter">task</code></dt>
 
     <dd>
 
      <p class="para">
-      A <span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> with specific characteristics.
+      A <a href="class.closure.html" class="classname">Closure</a> with specific characteristics.
      </p>
     </dd>
 
    
    
     <dt>
-<code class="parameter">args</code></dt>
+<code class="parameter">argv</code></dt>
 
     <dd>
 
      <p class="para">
-      An <span class="type"><a href="language.types.array.html" class="type array">array</a></span> of arguments with specific characteristics to be passed to <code class="parameter">closure</code> at execution time.
+      An <span class="type"><a href="language.types.array.html" class="type array">array</a></span> of arguments with specific characteristics to be passed to <code class="parameter">task</code> at execution time.
      </p>
     </dd>
 
@@ -87,7 +87,7 @@
 
  
  <div class="refsect1 closure-characteristics" id="refsect1-parallel-runtime.run-closure-characteristics">
- <h3 class="title">Closure Characteristics</h3>
+ <h3 class="title">Task Characteristics</h3>
  <p class="para">
   Closures scheduled for parallel execution must not:
   <ul class="simplelist">
@@ -97,23 +97,22 @@
   </ul>
  </p>
  <p class="para">
-  Instructions prohibited in Closures scheduled for parallel execution are:
+  Instructions prohibited in Closures intended for parallel execution are:
   <ul class="simplelist">
-   <li class="member">declare (anonymous) function</li>
    <li class="member">declare (anonymous) class</li>
-   <li class="member">lexical scope access</li>
+   <li class="member">use (by-reference)</li>
    <li class="member">yield</li>
   </ul>
  </p>
  <blockquote class="note"><p><strong class="note">注意</strong>: 
   <p class="para">
-   No instructions are prohibited in the files which the <span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> may include.
+   Only declare class instructions are prohibited in closures or functions that are nested in tasks, no instructions are prohibited in the files which the task may include.
   </p>
  </p></blockquote>
  </div>
 
  
- <div class="refsect1 args-characteristics" id="refsect1-parallel-runtime.run-args-characteristics">
+ <div class="refsect1 argv-characteristics" id="refsect1-parallel-runtime.run-argv-characteristics">
  <h3 class="title">Arguments Characteristics</h3>
  <p class="para">
   Arguments must not:
@@ -135,7 +134,7 @@
   <h3 class="title">返り値</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    A <span class="type"><span class="type \parallel\Future">\parallel\Future</span></span> shall only be returned if <code class="parameter">closure</code> contains a return statement.
+    The return <span class="type"><span class="type \parallel\Future">\parallel\Future</span></span> must not be ignored when the task contains a return or throw statement.
    </p>
   </div>
  </div>
@@ -145,22 +144,27 @@
   <h3 class="title">Exceptions</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if <span class="type"><span class="type \parallel\Runtime">\parallel\Runtime</span></span> was closed.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Closed">\parallel\Runtime\Closed</span></span> if <span class="type"><span class="type \parallel\Runtime">\parallel\Runtime</span></span> was closed.
    </p>
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if <code class="parameter">closure</code> does not have the required characteristics.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\IllegalFunction">\parallel\Runtime\IllegalFunction</span></span> if <code class="parameter">task</code> is a closure created from an internal function.
    </p>
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if <code class="parameter">args</code> does not have the required characteristics.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\IllegalInstruction">\parallel\Runtime\IllegalInstruction</span></span> if <code class="parameter">task</code> contains illegal instructions.
    </p>
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if <span class="type"><span class="type \parallel\Future">\parallel\Future</span></span> is ignored by caller.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\IllegalParameter">\parallel\Runtime\IllegalParameter</span></span> if <code class="parameter">task</code> accepts or <code class="parameter">argv</code> contains illegal variables.
+   </p>
+  </div>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Shall throw <span class="type"><span class="type \parallel\Runtime\IllegalReturn">\parallel\Runtime\IllegalReturn</span></span> if <code class="parameter">task</code> returns illegally.
    </p>
   </div>
  </div>

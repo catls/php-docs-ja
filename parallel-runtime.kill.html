@@ -42,7 +42,7 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    Any <span class="type"><span class="type \Closure">\Closure</span></span> scheduled for execution will not be executed, the currently running <span class="type"><span class="type \Closure">\Closure</span></span> shall be interrupted.
+    Tasks scheduled for execution will not be executed, the currently running task shall be interrupted.
    </p>
   </p></blockquote>
   <div class="warning"><strong class="warning">警告</strong>
@@ -57,7 +57,7 @@
   <h3 class="title">Exceptions</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Exception">\parallel\Exception</span></span> if <span class="type"><span class="type Runtime">Runtime</span></span> was already closed.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Closed">\parallel\Runtime\Closed</span></span> if <span class="type"><span class="type Runtime">Runtime</span></span> was closed.
    </p>
   </div>
  </div>
