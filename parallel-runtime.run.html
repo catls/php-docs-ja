@@ -144,27 +144,27 @@
   <h3 class="title">Exceptions</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Runtime\Closed">\parallel\Runtime\Closed</span></span> if <span class="type"><span class="type \parallel\Runtime">\parallel\Runtime</span></span> was closed.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Error\Closed">\parallel\Runtime\Error\Closed</span></span> if <span class="type"><span class="type \parallel\Runtime">\parallel\Runtime</span></span> was closed.
    </p>
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Runtime\IllegalFunction">\parallel\Runtime\IllegalFunction</span></span> if <code class="parameter">task</code> is a closure created from an internal function.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Error\IllegalFunction">\parallel\Runtime\Error\IllegalFunction</span></span> if <code class="parameter">task</code> is a closure created from an internal function.
    </p>
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Runtime\IllegalInstruction">\parallel\Runtime\IllegalInstruction</span></span> if <code class="parameter">task</code> contains illegal instructions.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Error\IllegalInstruction">\parallel\Runtime\Error\IllegalInstruction</span></span> if <code class="parameter">task</code> contains illegal instructions.
    </p>
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Runtime\IllegalParameter">\parallel\Runtime\IllegalParameter</span></span> if <code class="parameter">task</code> accepts or <code class="parameter">argv</code> contains illegal variables.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Error\IllegalParameter">\parallel\Runtime\Error\IllegalParameter</span></span> if <code class="parameter">task</code> accepts or <code class="parameter">argv</code> contains illegal variables.
    </p>
   </div>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Shall throw <span class="type"><span class="type \parallel\Runtime\IllegalReturn">\parallel\Runtime\IllegalReturn</span></span> if <code class="parameter">task</code> returns illegally.
+    Shall throw <span class="type"><span class="type \parallel\Runtime\Error\IllegalReturn">\parallel\Runtime\Error\IllegalReturn</span></span> if <code class="parameter">task</code> returns illegally.
    </p>
   </div>
  </div>
