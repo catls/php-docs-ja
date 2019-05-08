@@ -49,6 +49,21 @@
     </p>
   </div>
 
+  <div class="section">
+    <h2 class="title">Closures over Channels</h2>
+    <p class="para">
+     A powerful feature of parallel channels is that they allow the exchange of closures between tasks (and runtimes).
+    </p>
+    <p class="para">
+     When a closure is sent over a channel the closure is buffered, it doesn&#039;t change the buffering of the channel transmitting the closure, 
+     but it does effect the static scope inside the closure: The same closure sent to different runtimes, or the same runtime, 
+     will not share their static scope.
+    </p>
+    <p class="para">
+     This means that whenever a closure is executed that was transmitted by a channel, static state will be as it was when the closure was buffered.
+    </p>
+  </div>
+
   <div class="section" id="parallel-channel.synopsis">
    <h2 class="title">クラス概要</h2>
 

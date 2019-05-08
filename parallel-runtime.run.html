@@ -99,14 +99,16 @@
  <p class="para">
   Instructions prohibited in Closures intended for parallel execution are:
   <ul class="simplelist">
-   <li class="member">declare (anonymous) class</li>
+   <li class="member">declare named function</li>
+   <li class="member">declare named class</li>
+   <li class="member">declare anonymous class</li>
    <li class="member">use (by-reference)</li>
    <li class="member">yield</li>
   </ul>
  </p>
  <blockquote class="note"><p><strong class="note">注意</strong>: 
   <p class="para">
-   Only declare class instructions are prohibited in closures or functions that are nested in tasks, no instructions are prohibited in the files which the task may include.
+   No instructions are prohibited in the files which the task may include.
   </p>
  </p></blockquote>
  </div>
@@ -118,7 +120,7 @@
   Arguments must not:
   <ul class="simplelist">
    <li class="member">contain references</li>
-   <li class="member">contain objects</li>
+   <li class="member">contain objects (that are not closures)</li>
    <li class="member">contain resources</li>
   </ul>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
