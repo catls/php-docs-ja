@@ -92,20 +92,24 @@
   Closures scheduled for parallel execution must not:
   <ul class="simplelist">
    <li class="member">accept or return by reference</li>
-   <li class="member">accept or return objects</li>
+   <li class="member">accept or return objects (that are not closures)</li>
    <li class="member">execute a limited set of instructions</li>
   </ul>
  </p>
  <p class="para">
   Instructions prohibited in Closures intended for parallel execution are:
   <ul class="simplelist">
-   <li class="member">declare named function</li>
-   <li class="member">declare named class</li>
-   <li class="member">declare anonymous class</li>
-   <li class="member">use (by-reference)</li>
    <li class="member">yield</li>
+   <li class="member">use by-reference</li>
+   <li class="member">declare class</li>
+   <li class="member">declare named function</li>
   </ul>
  </p>
+ <blockquote class="note"><p><strong class="note">注意</strong>: 
+  <p class="para">
+   Nested closures may yield or use by-reference, but must not contain class or named function declarations.
+  </p>
+ </p></blockquote>
  <blockquote class="note"><p><strong class="note">注意</strong>: 
   <p class="para">
    No instructions are prohibited in the files which the task may include.
