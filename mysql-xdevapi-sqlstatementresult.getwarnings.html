@@ -57,14 +57,16 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-sqlstatementresult.getwarnings-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   All warnings raised by the last CRUD operation, as an array.
+   An array of Warning objects from the last operation. Each object
+   defines an error &#039;message&#039;, error &#039;level&#039;, and error &#039;code&#039;. An empty
+   array is returned if no errors are present.
   </p>
  </div>
 
 
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-sqlstatementresult.getwarnings-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-2113">
+  <div class="example" id="example-2112">
    <p><strong>例1 <span class="function"><strong>mysql_xdevapi\SqlStatementResult::getWarnings()</strong></span> example</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

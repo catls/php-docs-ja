@@ -77,7 +77,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-key-first-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6168">
+   <div class="example" id="example-6166">
     <p><strong>例1 Basic <span class="function"><strong>array_key_first()</strong></span> Usage</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -94,6 +94,29 @@ string(1) &quot;a&quot;
     </div>
    </div>
   </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.array-key-first-notes">
+  <h3 class="title">注意</h3>
+  <div class="tip"><strong class="tip">ヒント</strong>
+    <p class="simpara">
+     There are several ways to provide this functionality for versions prior to PHP 7.3.0.
+     It is possible to use <span class="function"><a href="function.array-keys.html" class="function">array_keys()</a></span>, but that may be rather
+     inefficient. It is also possible to use <span class="function"><a href="function.reset.html" class="function">reset()</a></span> and <span class="function"><a href="function.key.html" class="function">key()</a></span>,
+     but that may change the internal array pointer. An efficient solution, which does
+     not change the internal array pointer, written as polyfill:
+    </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(!</span><span style="color: #0000BB">function_exists</span><span style="color: #007700">(</span><span style="color: #DD0000">'array_key_first'</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">array_key_first</span><span style="color: #007700">(array&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach(</span><span style="color: #0000BB">$arr&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$unused</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$key</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </div>
  </div>
 
 
