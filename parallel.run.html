@@ -10,30 +10,30 @@
  <body class="docs"><div class="navbar navbar-fixed-top">
   <div class="navbar-inner clearfix">
     <ul class="nav" style="width: 100%">
-      <li style="float: left;"><a href="parallel-runtime.kill.html">« parallel\Runtime::kill</a></li>
-      <li style="float: right;"><a href="class.parallel-future.html">parallel\Future »</a></li>
+      <li style="float: left;"><a href="parallel.bootstrap.html">« parallel\bootstrap</a></li>
+      <li style="float: right;"><a href="class.parallel-runtime.html">parallel\Runtime »</a></li>
     </ul>
   </div>
 </div>
 <div id="breadcrumbs" class="clearfix">
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
-    <li><a href="class.parallel-runtime.html">parallel\Runtime</a></li>
+    <li><a href="functional.parallel.html">Functional API</a></li>
     <li>Execution</li>
   </ul>
 </div>
 <div id="layout">
-  <div id="layout-content"><div id="parallel-runtime.run" class="refentry">
+  <div id="layout-content"><div id="parallel.run" class="refentry">
  <div class="refnamediv">
-  <h1 class="refname">parallel\Runtime::run</h1>
-  <p class="verinfo">(0.8.0)</p><p class="refpurpose"><span class="refname">parallel\Runtime::run</span> &mdash; <span class="dc-title">Execution</span></p>
+  <h1 class="refname">parallel\run</h1>
+  <p class="verinfo">(1.0.0)</p><p class="refpurpose"><span class="refname">parallel\run</span> &mdash; <span class="dc-title">Execution</span></p>
 
  </div>
 
- <div class="refsect1 description" id="refsect1-parallel-runtime.run-description">
+ <div class="refsect1 description" id="refsect1-parallel.run-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>parallel\Runtime::run</strong></span>
+   <span class="methodname"><strong>parallel\run</strong></span>
     ( <span class="methodparam"><span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> <code class="parameter">$task</code></span>
    ) : <span class="type"><span class="type ?Future">?Future</span></span></div>
 
@@ -41,7 +41,7 @@
    Shall schedule <code class="parameter">task</code> for execution in parallel.
   </p>
   <div class="methodsynopsis dc-description">
-   <span class="modifier">public</span> <span class="methodname"><strong>parallel\Runtime::run</strong></span>
+   <span class="methodname"><strong>parallel\run</strong></span>
     ( <span class="methodparam"><span class="type"><a href="class.closure.html" class="type Closure">Closure</a></span> <code class="parameter">$task</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$argv</code></span>
    ) : <span class="type"><span class="type ?Future">?Future</span></span></div>
@@ -49,11 +49,25 @@
   <p class="para rdfs-comment">
    Shall schedule <code class="parameter">task</code> for execution in parallel, passing <code class="parameter">argv</code> at execution time.
   </p>
-
  </div>
 
 
- <div class="refsect1 parameters" id="refsect1-parallel-runtime.run-parameters">
+ <div class="refsect1 scheduling-characteristics" id="refsect1-parallel.run-scheduling-characteristics">
+  <h3 class="title">Automatic Scheduling</h3>
+  <p class="para">
+   If a <strong class="classname">\parallel\Runtime</strong> internally created and cached by a previous call to <span class="function"><strong>parallel\run()</strong></span> is idle, 
+   it will be used to execute the task. If no <strong class="classname">\parallel\Runtime</strong> is idle parallel will create and cache a 
+   <strong class="classname">\parallel\Runtime</strong>.
+  </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    <strong class="classname">\parallel\Runtime</strong> objects created by the programmer are not used for automatic scheduling.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-parallel.run-parameters">
   <h3 class="title">パラメータ</h3>
   <dl>
 
@@ -85,8 +99,7 @@
 
  </div>
 
- 
- <div class="refsect1 closure-characteristics" id="refsect1-parallel-runtime.run-closure-characteristics">
+ <div class="refsect1 closure-characteristics" id="refsect1-parallel.run-closure-characteristics">
  <h3 class="title">Task Characteristics</h3>
  <p class="para">
   Closures scheduled for parallel execution must not:
@@ -117,8 +130,7 @@
  </p></blockquote>
  </div>
 
- 
- <div class="refsect1 argv-characteristics" id="refsect1-parallel-runtime.run-argv-characteristics">
+ <div class="refsect1 argv-characteristics" id="refsect1-parallel.run-argv-characteristics">
  <h3 class="title">Arguments Characteristics</h3>
  <p class="para">
   Arguments must not:
@@ -135,8 +147,7 @@
  </p>
  </div>
 
-
- <div class="refsect1 object-characteristics" id="refsect1-parallel-runtime.run-object-characteristics">
+ <div class="refsect1 object-characteristics" id="refsect1-parallel.run-object-characteristics">
   <h3 class="title">Internal Objects Notes</h3>
   <p class="para">
    Internal objects generally use a custom structure which cannot be copied by value safely, PHP currently lacks the mechanics to do this (without serialization) 
@@ -159,8 +170,7 @@
   </div>
  </div>
 
-
- <div class="refsect1 returnvalues" id="refsect1-parallel-runtime.run-returnvalues">
+ <div class="refsect1 returnvalues" id="refsect1-parallel.run-returnvalues">
   <h3 class="title">返り値</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
@@ -169,8 +179,7 @@
   </div>
  </div>
 
-
- <div class="refsect1 exceptions" id="refsect1-parallel-runtime.run-exceptions">
+ <div class="refsect1 exceptions" id="refsect1-parallel.run-exceptions">
   <h3 class="title">Exceptions</h3>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
@@ -198,6 +207,14 @@
    </p>
   </div>
  </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-parallel.run-seealso">
+   <h3 class="title">参考</h3>
+   <ul class="simplelist">
+    <li class="member"><a href="parallel-runtime.run.html" class="xref">parallel\Runtime::run</a></li>
+   </ul>
+  </div>
 
 
 </div></div></div></body></html>

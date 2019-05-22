@@ -10,15 +10,15 @@
  <body class="docs"><div class="navbar navbar-fixed-top">
   <div class="navbar-inner clearfix">
     <ul class="nav" style="width: 100%">
-      <li style="float: left;"><a href="book.parallel.html">« Parallel</a></li>
-      <li style="float: right;"><a href="parallel.setup.html">インストール/設定 »</a></li>
+      <li style="float: left;"><a href="book.parallel.html">« parallel</a></li>
+      <li style="float: right;"><a href="parallel.setup.html">Installation »</a></li>
     </ul>
   </div>
 </div>
 <div id="breadcrumbs" class="clearfix">
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
-    <li><a href="book.parallel.html">Parallel</a></li>
+    <li><a href="book.parallel.html">parallel</a></li>
     <li>はじめに</li>
   </ul>
 </div>
@@ -41,6 +41,13 @@
     After construction the <a href="class.parallel-runtime.html" class="classname">parallel\Runtime</a> remains available until it is closed, killed, or destroyed by the normal scoping rules of PHP objects. 
     <span class="methodname"><a href="parallel-runtime.run.html" class="methodname">parallel\Runtime::run()</a></span> allows the programmer to schedule tasks for execution in parallel. 
     A <a href="class.parallel-runtime.html" class="classname">parallel\Runtime</a> has a FIFO schedule, tasks will be executed in the order that they are scheduled.
+   </p>
+  </div>
+  <div class="simplesect">
+   <h3 class="title">Functional API</h3>
+   <p class="para">
+    parallel implements a functional, higher level API on top of <a href="class.parallel-runtime.html" class="classname">parallel\Runtime</a> that provides a single function entry point to executing parallel code 
+    with automatic scheduling: <span class="function"><a href="parallel.run.html" class="function">parallel\run()</a></span>.
    </p>
   </div>
   <div class="simplesect">
@@ -97,5 +104,11 @@
     and enters into a foreach: parallel will read from and write to objects as they become available yielding <a href="class.parallel-events-event.html" class="classname">parallel\Events\Event</a> objects 
     describing the operations that have occured.
    </p>
+  </div>
+   <div class="simplesect">
+   <h3 class="title">参考</h3>
+   <ul class="simplelist">
+    <li class="member"><a href="philosophy.parallel.html" class="xref">Philosophy</a></li>
+   </ul>
   </div>
  </div></div></div></body></html>
