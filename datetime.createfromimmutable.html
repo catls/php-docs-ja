@@ -52,10 +52,10 @@
      <dd>
 
       <p class="para">
-       The immutable <a href="class.datetimeimmutable.html" class="classname">DateTimeImmutable</a> object that you want to
-       convert to a mutable version. This object is not modified, but
+       The immutable <a href="class.datetimeimmutable.html" class="classname">DateTimeImmutable</a> object that needs
+       to be converted to a mutable version. This object is not modified, but
        instead a new <a href="class.datetime.html" class="classname">DateTime</a> object is
-       created containing the same date time and timezone information.
+       created containing the same date, time, and timezone information.
       </p>
      </dd>
 
@@ -73,7 +73,7 @@
     <p><strong>例1 Creating a mutable date time object</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$date&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTimeImmutable</span><span style="color: #007700">(</span><span style="color: #DD0000">"2014-06-20&nbsp;11:45&nbsp;Europe/London"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$immutable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromImmutable</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$date&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTimeImmutable</span><span style="color: #007700">(</span><span style="color: #DD0000">"2014-06-20&nbsp;11:45&nbsp;Europe/London"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$mutable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">::</span><span style="color: #0000BB">createFromImmutable</span><span style="color: #007700">(&nbsp;</span><span style="color: #0000BB">$date&nbsp;</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>

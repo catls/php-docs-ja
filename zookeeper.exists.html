@@ -37,7 +37,7 @@
    <span class="methodname"><strong>Zookeeper::exists</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
    [, <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$watcher_cb</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
-  ] ) : <span class="type">bool</span></div>
+  ] ) : <span class="type">array</span></div>
 
  </div>
 
@@ -78,7 +78,7 @@
  <div class="refsect1 returnvalues" id="refsect1-zookeeper.exists-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns true/false on success, and false on failure.
+   Returns the value of stat for the path if the given node exists, otherwise false.
   </p>
  </div>
 
