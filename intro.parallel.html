@@ -92,7 +92,7 @@
    <p class="para">
     A task may be scheduled with arguments, use lexical scope variables (by-value), and return a value (via a <a href="class.parallel-future.html" class="classname">parallel\Future</a>), but these only allow uni-directional communication:
     They allow the programmer to send data into and retrieve data from a task, but do not allow bi-directional communication between tasks.
-    The <a href="class.parallel-channel.html" class="classname">parallel\Channel</a> API allows bi-directional communication between tasks, a <a href="class.parallel-channel.html" class="classname">parallel\Channel</a> is a socket-like link between tasks that the programmer can use to send and recieve data.
+    The <a href="class.parallel-channel.html" class="classname">parallel\Channel</a> API allows bi-directional communication between tasks, a <a href="class.parallel-channel.html" class="classname">parallel\Channel</a> is a socket-like link between tasks that the programmer can use to send and receive data.
    </p>
   </div>
   <div class="simplesect">
@@ -102,7 +102,7 @@
     It allows the programmer to work with sets of channels and or futures.
     The programmer simply adds channels and futures to the event loop, optionally setting the input for writes with <span class="methodname"><a href="parallel-events.setinput.html" class="methodname">parallel\Events::setInput()</a></span>, 
     and enters into a foreach: parallel will read from and write to objects as they become available yielding <a href="class.parallel-events-event.html" class="classname">parallel\Events\Event</a> objects 
-    describing the operations that have occured.
+    describing the operations that have occurred.
    </p>
   </div>
    <div class="simplesect">
