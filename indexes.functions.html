@@ -234,7 +234,7 @@
 <li><a href="function.array-pop.html" class="index">array_pop</a> - 配列の末尾から要素を取り除く</li>
 <li><a href="function.array-product.html" class="index">array_product</a> - 配列の値の積を計算する</li>
 <li><a href="function.array-push.html" class="index">array_push</a> - 一つ以上の要素を配列の最後に追加する</li>
-<li><a href="function.array-rand.html" class="index">array_rand</a> - 配列から一つ以上の要素をランダムに取得する</li>
+<li><a href="function.array-rand.html" class="index">array_rand</a> - 配列から一つ以上のキーをランダムに取得する</li>
 <li><a href="function.array-reduce.html" class="index">array_reduce</a> - コールバック関数を用いて配列を普通の値に変更することにより、配列を再帰的に減らす</li>
 <li><a href="function.array-replace.html" class="index">array_replace</a> - 渡された配列の要素を置き換える</li>
 <li><a href="function.array-replace-recursive.html" class="index">array_replace_recursive</a> - 渡された配列の要素を再帰的に置き換える</li>
@@ -5277,6 +5277,11 @@
 <li><a href="mongodb-driver-cursor.construct.html" class="index">MongoDB\Driver\Cursor::__construct</a> - Create a new Cursor (not used)</li>
 <li><a href="mongodb-driver-cursorid.construct.html" class="index">MongoDB\Driver\CursorId::__construct</a> - Create a new CursorId (not used)</li>
 <li><a href="mongodb-driver-cursorid.tostring.html" class="index">MongoDB\Driver\CursorId::__toString</a> - String representation of the cursor ID</li>
+<li><a href="mongodb-driver-cursorinterface.getid.html" class="index">MongoDB\Driver\CursorInterface::getId</a> - Returns the ID for this cursor</li>
+<li><a href="mongodb-driver-cursorinterface.getserver.html" class="index">MongoDB\Driver\CursorInterface::getServer</a> - Returns the server associated with this cursor</li>
+<li><a href="mongodb-driver-cursorinterface.isdead.html" class="index">MongoDB\Driver\CursorInterface::isDead</a> - Checks if the cursor may have additional results</li>
+<li><a href="mongodb-driver-cursorinterface.settypemap.html" class="index">MongoDB\Driver\CursorInterface::setTypeMap</a> - Sets a type map to use for BSON unserialization</li>
+<li><a href="mongodb-driver-cursorinterface.toarray.html" class="index">MongoDB\Driver\CursorInterface::toArray</a> - Returns an array containing all results for this cursor</li>
 <li><a href="mongodb-driver-commandexception.getresultdocument.html" class="index">MongoDB\Driver\Exception\CommandException::getResultDocument</a> - Returns the result document for the failed command</li>
 <li><a href="mongodb-driver-runtimeexception.haserrorlabel.html" class="index">MongoDB\Driver\Exception\RuntimeException::hasErrorLabel</a> - Returns whether an error label is associated with an exception</li>
 <li><a href="mongodb-driver-writeexception.getwriteresult.html" class="index">MongoDB\Driver\Exception\WriteException::getWriteResult</a> - Returns the WriteResult for the failed write operation</li>
@@ -5353,6 +5358,8 @@
 <li><a href="mongodb-driver-session.getclustertime.html" class="index">MongoDB\Driver\Session::getClusterTime</a> - Returns the cluster time for this session</li>
 <li><a href="mongodb-driver-session.getlogicalsessionid.html" class="index">MongoDB\Driver\Session::getLogicalSessionId</a> - Returns the logical session ID for this session</li>
 <li><a href="mongodb-driver-session.getoperationtime.html" class="index">MongoDB\Driver\Session::getOperationTime</a> - Returns the operation time for this session</li>
+<li><a href="mongodb-driver-session.getserver.html" class="index">MongoDB\Driver\Session::getServer</a> - Returns the server to which this session is pinned</li>
+<li><a href="mongodb-driver-session.isintransaction.html" class="index">MongoDB\Driver\Session::isInTransaction</a> - Returns whether a multi-document transaction is in progress</li>
 <li><a href="mongodb-driver-session.starttransaction.html" class="index">MongoDB\Driver\Session::startTransaction</a> - Starts a transaction</li>
 <li><a href="mongodb-driver-session.construct.html" class="index">MongoDB\Driver\Session::__construct</a> - Create a new Session (not used)</li>
 <li><a href="mongodb-driver-writeconcern.bsonserialize.html" class="index">MongoDB\Driver\WriteConcern::bsonSerialize</a> - Returns an object for BSON serialization</li>

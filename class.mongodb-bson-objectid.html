@@ -41,8 +41,7 @@
    </p>
    <ul class="itemizedlist">
     <li class="listitem"><span class="simpara">a 4-byte value representing the seconds since the Unix epoch,</span></li>
-    <li class="listitem"><span class="simpara">a 3-byte machine identifier,</span></li>
-    <li class="listitem"><span class="simpara">a 2-byte process ID, and</span></li>
+    <li class="listitem"><span class="simpara">a 5-byte random number unique to a machine and process, and</span></li>
     <li class="listitem"><span class="simpara">a 3-byte counter, starting with a random value.</span></li>
    </ul>
    <p class="para">
@@ -145,6 +144,9 @@
          <p class="para">
           Renamed from <em>MongoDB\BSON\ObjectID</em> to
           <em>MongoDB\BSON\ObjectId</em>.
+         </p>
+         <p class="para">
+          Implements <span class="interfacename"><a href="class.mongodb-bson-objectidinterface.html" class="interfacename">MongoDB\BSON\ObjectIdInterface</a></span>.
          </p>
         </td>
        </tr>

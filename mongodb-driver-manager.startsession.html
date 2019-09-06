@@ -119,6 +119,23 @@
               <tbody class="tbody">
                
          <tr>
+          <td>maxCommitTimeMS</td>
+          <td>integer</td>
+          <td>
+           <p class="para">
+            The maximum amount of time in milliseconds to allow a single
+            <em>commitTransaction</em> command to run.
+           </p>
+           <p class="para">
+            If specified, <em>maxCommitTimeMS</em> must be a signed
+            32-bit integer greater than or equal to zero.
+           </p>
+          </td>
+         </tr>
+
+
+               
+         <tr>
           <td>readConcern</td>
           <td><a href="class.mongodb-driver-readconcern.html" class="classname">MongoDB\Driver\ReadConcern</a></td>
           <td>
@@ -214,6 +231,16 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>1.6.0</td>
+       <td>
+        <p class="para">
+         The <em>&quot;maxCommitTimeMS&quot;</em> option was added to
+         <em>&quot;defaultTransactionOptions&quot;</em>.
+        </p>
+       </td>
+      </tr>
+
       <tr>
        <td>1.5.0</td>
        <td>

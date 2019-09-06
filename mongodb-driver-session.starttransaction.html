@@ -10,7 +10,7 @@
  <body class="docs"><div class="navbar navbar-fixed-top">
   <div class="navbar-inner clearfix">
     <ul class="nav" style="width: 100%">
-      <li style="float: left;"><a href="mongodb-driver-session.getoperationtime.html">« MongoDB\Driver\Session::getOperationTime</a></li>
+      <li style="float: left;"><a href="mongodb-driver-session.isintransaction.html">« MongoDB\Driver\Session::isInTransaction</a></li>
       <li style="float: right;"><a href="class.mongodb-driver-writeconcern.html">MongoDB\Driver\WriteConcern »</a></li>
     </ul>
   </div>
@@ -90,6 +90,23 @@
         <tbody class="tbody">
          
          <tr>
+          <td>maxCommitTimeMS</td>
+          <td>integer</td>
+          <td>
+           <p class="para">
+            The maximum amount of time in milliseconds to allow a single
+            <em>commitTransaction</em> command to run.
+           </p>
+           <p class="para">
+            If specified, <em>maxCommitTimeMS</em> must be a signed
+            32-bit integer greater than or equal to zero.
+           </p>
+          </td>
+         </tr>
+
+
+         
+         <tr>
           <td>readConcern</td>
           <td><a href="class.mongodb-driver-readconcern.html" class="classname">MongoDB\Driver\ReadConcern</a></td>
           <td>
@@ -157,6 +174,37 @@
    <li class="member">Throws <a href="class.mongodb-driver-exception-commandexception.html" class="classname">MongoDB\Driver\Exception\CommandException</a> if the transaction could not be started because of a server-side problem (e.g. a lock could not be obtained).</li>
    <li class="member">Throws <a href="class.mongodb-driver-exception-runtimeexception.html" class="classname">MongoDB\Driver\Exception\RuntimeException</a> if the transaction could not be started (e.g. a transaction was already started).</li>
   </ul>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-mongodb-driver-session.starttransaction-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>1.6.0</td>
+       <td>
+        <p class="para">
+         The <em>&quot;maxCommitTimeMS&quot;</em> option was added.
+        </p>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
  </div>
 
 

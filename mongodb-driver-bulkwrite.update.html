@@ -79,8 +79,9 @@
 
      <p class="para">
       A document containing either update operators (e.g.
-      <em>$set</em>) or a replacement document (i.e.
-      <em class="emphasis">only</em> <em>field:value</em> expressions).
+      <em>$set</em>), a replacement document (i.e.
+      <em class="emphasis">only</em> <em>field:value</em> expressions), or
+      an <a href="https://docs.mongodb.com/manual/reference/command/update/#update-with-an-aggregation-pipeline" class="link external">&raquo;&nbsp;aggregation pipeline</a>.
      </p>
     </dd>
 
@@ -216,6 +217,15 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>1.6.0</td>
+       <td>
+        The <code class="parameter">newObj</code> parameter now accepts an aggregation
+        pipeline. This feature requires MongoDB 4.2+ and will result in an
+        exception at execution time if specified for an older server version.
+       </td>
+      </tr>
+
       <tr>
        <td>1.5.0</td>
        <td>

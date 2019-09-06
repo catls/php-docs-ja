@@ -111,14 +111,6 @@
    ひとつ例外があり、<code class="parameter">array_or_countable</code> が <strong><code>NULL</code></strong> の場合、
    <em>0</em> が返されます。
   </p>
-  <div class="caution"><strong class="caution">警告</strong>
-   <p class="para">
-    <span class="function"><strong>count()</strong></span> は、セットされていない変数に関して 0
-    を返しますが、変数が空の配列として初期化されている場合にも 0 を返します。
-    ある変数がセットされているかどうかを調べるには、
-    <span class="function"><a href="function.isset.html" class="function">isset()</a></span> を使用してください。
-   </p>
-  </div>
  </div>
 
  <div class="refsect1 examples" id="refsect1-function.count-examples">
@@ -200,6 +192,7 @@ int(1)
     <li class="member"><span class="function"><a href="function.isset.html" class="function" rel="rdfs-seeAlso">isset()</a> - 変数がセットされていること、そして NULL でないことを検査する</span></li>
     <li class="member"><span class="function"><a href="function.empty.html" class="function" rel="rdfs-seeAlso">empty()</a> - 変数が空であるかどうかを検査する</span></li>
     <li class="member"><span class="function"><a href="function.strlen.html" class="function" rel="rdfs-seeAlso">strlen()</a> - 文字列の長さを得る</span></li>
+    <li class="member"><span class="function"><a href="function.is-countable.html" class="function" rel="rdfs-seeAlso">is_countable()</a> - 引数が、数えられる値かどうかを調べる</span></li>
    </ul>
   </p>
  </div>
