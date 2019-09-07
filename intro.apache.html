@@ -28,21 +28,4 @@
   <p class="para">
    これらの関数は、Apacheモジュール版のPHPを実行している場合のみ利用可能です。
   </p>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <span class="simpara">
-    PHP 4.3.2以降、<var class="envar">PATH_TRANSLATED</var> は、
-    Apache 2 <acronym title="Server Application Programming Interface">SAPI</acronym>では暗黙のうちに設定されなく
-    なりました。これは、Apacheにより設定されない場合に
-    サーバー変数<var class="envar">SCRIPT_FILENAME</var>と同じ値に設定される
-    Apache 1とは異なります。この変更は、
-    <var class="envar">PATH_TRANSLATED</var>は
-    <var class="envar">PATH_INFO</var>が定義されている場合のみ存在するべきであるという
-    <acronym title="Common Gateway Interface">CGI</acronym>の規定を満たすために行われました。
-   </span>
-   <span class="simpara">
-    Apache 2のユーザーは、<var class="envar">PATH_INFO</var>を定義するために
-    <var class="filename">httpd.conf</var>の中で
-    <em>AcceptPathInfo = On</em>を使用してください。
-   </span>
-  </p></blockquote>
  </div></div></div></body></html>

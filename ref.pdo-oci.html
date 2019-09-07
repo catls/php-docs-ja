@@ -63,6 +63,99 @@ $ ./configure --with-pdo-oci=instantclient,/usr,10.2.0.3
 
 
 
+   
+
+<div class="section" id="pdo-oci.constants">
+ <h2 class="title">定義済み定数</h2>
+ <p class="simpara">このドライバでは以下の定数が定義されて
+います。これは拡張モジュールが PHP に組み込まれているか、実行時に動的にロード
+されている場合のみ使用可能です。さらに、これらのドライバ固有の定数は
+そのドライバを使用している場合にのみ使用されます。
+あるドライバ固有の属性を別のドライバで使うと、予期せぬ結果を引き起こします。
+もし複数のドライバを使用しているコードを実行している場合、
+<span class="function"><a href="pdo.getattribute.html" class="function">PDO::getAttribute()</a></span> で <strong><code>PDO::ATTR_DRIVER_NAME</code></strong>
+属性を使用することで、使用中のドライバ名を調べることが可能です。</p>
+ <dl>
+
+  
+  
+   <dt id="pdo.constants.oci-attr-action">
+    <strong><code>PDO::OCI_ATTR_ACTION</code></strong>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Provides a way to specify the action on the database session.
+    </p>
+    <p class="para">
+     これが使えるようになった PHP のバージョンは  7.2.16 and 7.3.3
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="pdo.constants.oci-attr-client-info">
+    <strong><code>PDO::OCI_ATTR_CLIENT_INFO</code></strong>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Provides a way to specify the client info on the database session.
+    </p>
+    <p class="para">
+     これが使えるようになった PHP のバージョンは  7.2.16 and 7.3.3
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="pdo.constants.oci-attr-client-identifier">
+    <strong><code>PDO::OCI_ATTR_CLIENT_IDENTIFIER</code></strong>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Provides a way to specify the client identifier on the database session.
+    </p>
+    <p class="para">
+     これが使えるようになった PHP のバージョンは  7.2.16 and 7.3.3
+    </p>
+   </dd>
+
+  
+  
+  
+   <dt id="pdo.constants.oci-attr-module">
+    <strong><code>PDO::OCI_ATTR_MODULE</code></strong>
+     (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Provides a way to specify the module on the database session.
+    </p>
+    <p class="para">
+     これが使えるようになった PHP のバージョンは  7.2.16 and 7.3.3
+    </p>
+   </dd>
+
+  
+
+ </dl>
+
+</div>
+
+
+
 
   </div>
 

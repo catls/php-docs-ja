@@ -49,13 +49,6 @@
    有効にして PHP をコンパイルすると、pcntl の使用の有無にかかわらず
    常にこのオーバーヘッドの被害を被っていたのです。
   </p>
-  <p class="para">
-   PHP 4.3.0 より前のバージョンで pcntl を使用していたすべてのスクリプトに
-   ついて、1 点だけ修正する必要があります。それは、コールバックを許可
-   したい場所に <span class="function"><strong>declare()</strong></span> を使用するか、あるいは
-   <span class="function"><strong>declare()</strong></span> の新しいグローバル書式を使用して
-   スクリプト全体で ticks を有効にすることです。
-  </p>
 
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">この拡張モジュールは Windows
 環境では利用できません。</span></p></blockquote>
