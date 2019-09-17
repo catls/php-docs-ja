@@ -139,12 +139,12 @@ $query&nbsp;=&nbsp;"UPDATE&nbsp;usertable&nbsp;SET&nbsp;pwd='$pwd'&nbsp;WHERE&nb
       </div>
 
      </div>
-     しかし、悪意のあるユーザーは、管理者のパスワードを変更するために
+     しかし、もし悪意のあるユーザーが管理者のパスワードを変更するために
      値 <em>&#039; or uid like&#039;%admin%</em> を
      <var class="varname"><var class="varname">$uid</var></var> に代入するか、または、より多くの権限を得
      るために、単純に<var class="varname"><var class="varname">$pwd</var></var> に
-     <em>hehehe&#039;, trusted=100, admin=&#039;yes</em>と設定する可能性があります。この場合、このクエリは以下のように改謬されてし
-     まいます。
+     <em>hehehe&#039;, trusted=100, admin=&#039;yes</em>と設定すると、
+     このクエリは以下のように改謬されてしまいます。
      <div class="informalexample">
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

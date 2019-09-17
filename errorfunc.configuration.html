@@ -75,28 +75,28 @@
      <td><a href="errorfunc.configuration.html#ini.log-errors-max-len" class="link">log_errors_max_len</a></td>
      <td>&quot;1024&quot;</td>
      <td>PHP_INI_ALL</td>
-     <td>PHP 4.3.0 以降で有効です。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
      <td><a href="errorfunc.configuration.html#ini.ignore-repeated-errors" class="link">ignore_repeated_errors</a></td>
      <td>&quot;0&quot;</td>
      <td>PHP_INI_ALL</td>
-     <td>PHP 4.3.0 以降で有効です。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
      <td><a href="errorfunc.configuration.html#ini.ignore-repeated-source" class="link">ignore_repeated_source</a></td>
      <td>&quot;0&quot;</td>
      <td>PHP_INI_ALL</td>
-     <td>PHP 4.3.0 以降で有効です。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
      <td><a href="errorfunc.configuration.html#ini.report-memleaks" class="link">report_memleaks</a></td>
      <td>&quot;1&quot;</td>
      <td>PHP_INI_ALL</td>
-     <td>PHP 4.3.0 以降で有効です。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
@@ -110,35 +110,35 @@
      <td><a href="errorfunc.configuration.html#ini.html-errors" class="link">html_errors</a></td>
      <td>&quot;1&quot;</td>
      <td>PHP_INI_ALL</td>
-     <td>PHP &lt;= 4.2.3 では PHP_INI_SYSTEM 。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
      <td><a href="errorfunc.configuration.html#ini.xmlrpc-errors" class="link">xmlrpc_errors</a></td>
      <td>&quot;0&quot;</td>
      <td>PHP_INI_SYSTEM</td>
-     <td>PHP 4.1.0 以降で有効です。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
      <td><a href="errorfunc.configuration.html#ini.xmlrpc-error-number" class="link">xmlrpc_error_number</a></td>
      <td>&quot;0&quot;</td>
      <td>PHP_INI_ALL</td>
-     <td>PHP 4.1.0 以降で有効です。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
      <td><a href="errorfunc.configuration.html#ini.docref-root" class="link">docref_root</a></td>
      <td>&quot;&quot;</td>
      <td>PHP_INI_ALL</td>
-     <td>PHP 4.3.0 以降で有効です。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
      <td><a href="errorfunc.configuration.html#ini.docref-ext" class="link">docref_ext</a></td>
      <td>&quot;&quot;</td>
      <td>PHP_INI_ALL</td>
-     <td>PHP 4.3.2 以降で有効です。</td>
+     <td class="empty">&nbsp;</td>
     </tr>
 
     <tr>
@@ -215,7 +215,7 @@
       PHP 5.3 以降のデフォルトは <strong><code>E_ALL</code></strong> &amp; ~<strong><code>E_NOTICE</code></strong> &amp;
       ~<strong><code>E_STRICT</code></strong> &amp; ~<strong><code>E_DEPRECATED</code></strong> です。
       この設定では <strong><code>E_NOTICE</code></strong> や <strong><code>E_STRICT</code></strong>、そして <strong><code>E_DEPRECATED</code></strong> レベルのエラーは出力されません。開発時にはこのエラーを表示させたい場合もあるかもしれません。
-      PHP 5.3.0 以前では、<strong><code>E_ALL</code></strong> &amp; ~<strong><code>E_NOTICE</code></strong> &amp; ~<strong><code>E_STRICT</code></strong> がデフォルトです。また PHP 4 では、<strong><code>E_ALL</code></strong> &amp; ~<strong><code>E_NOTICE</code></strong> がデフォルトです。
+      PHP 5.3.0 以前では、<strong><code>E_ALL</code></strong> &amp; ~<strong><code>E_NOTICE</code></strong> &amp; ~<strong><code>E_STRICT</code></strong> がデフォルトです。
      </p>
      <blockquote class="note"><p><strong class="note">注意</strong>: 
       <p class="para">
@@ -232,7 +232,6 @@
      </p></blockquote>
      <blockquote class="note"><p><strong class="note">注意</strong>: 
       <p class="para">
-       PHP 5では新しいエラーレベル<strong><code>E_STRICT</code></strong>を使用できます。
        PHP 5.4.0 より前のバージョンの場合は <strong><code>E_ALL</code></strong>
        に <strong><code>E_STRICT</code></strong> が含まれないため、
        PHP &lt; 5.4.0 では明示的にこのエラーレベルを設定する必要があります。
