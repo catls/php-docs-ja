@@ -87,57 +87,22 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合にディレクトリハンドルの <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> 、
-   失敗した場合に <strong><code>FALSE</code></strong> を返します。
+   失敗した場合に <strong><code>FALSE</code></strong> を返します
   </p> 
-  <p class="para">
-   <code class="parameter">path</code> が有効なディレクトリでないかまたは権限が
-   制限されているかファイルシステムのエラーによりディレクトリが
-   オープンできない場合、<span class="function"><strong>opendir()</strong></span> は <strong><code>FALSE</code></strong> を返し、
-   <a href="errorfunc.constants.html" class="link">E_WARNING</a> エラーが発行されます。
-   <span class="function"><strong>opendir()</strong></span> のこのエラー出力は、
-   関数名の前に &#039;<a href="language.operators.errorcontrol.html" class="link">@</a>&#039;
-   を付けることにより抑制できます。
-  </p>
  </div>
 
 
- <div class="refsect1 changelog" id="refsect1-function.opendir-changelog">
-  <h3 class="title">変更履歴</h3>
+ <div class="refsect1 errors" id="refsect1-function.opendir-errors">
+  <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        <code class="parameter">path</code> が <em>ftp://</em> 
-        URL ラッパーをサポートします。
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        <code class="parameter">path</code> に、ディレクトリの一覧表示をサポートする
-        URL を指定することが可能です。しかし、PHP 4 では <em>file://</em>
-        URL ラッパーのみをサポートしています。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
+失敗したときは <strong><code>E_WARNING</code></strong> が発生します。
+</p>
+  <p class="para">
+   <code class="parameter">path</code> が有効なディレクトリでない場合、
+   権限の制限によりディレクトリがオープンできない場合、
+   またはファイルシステムのエラー時に起こりえます。
+   </p>
+  </div>
 
 
  <div class="refsect1 examples" id="refsect1-function.opendir-examples">
