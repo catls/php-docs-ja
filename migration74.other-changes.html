@@ -70,10 +70,13 @@
   <p class="para">
    A number of extensions have been migrated to exclusively use pkg-config for the
    detection of library dependencies. Generally, this means that instead of using
-   <em>--with-foo-dir=DIR</em> or similar only <em>--with-foo</em>
-   is used. Custom library paths can be specified either by adding additional
-   directories to <em>PKG_CONFIG_PATH</em> or by explicitly specifying
-   compilation options through <em>FOO_CFLAGS</em> and <em>FOO_LIBS</em>.
+   <strong class="option configure">--with-foo-dir=DIR</strong>
+ or similar only
+   <strong class="option configure">--with-foo</strong>
+ is used. Custom library paths can be
+   specified either by adding additional directories to <em>PKG_CONFIG_PATH</em>
+   or by explicitly specifying compilation options through <em>FOO_CFLAGS</em>
+   and <em>FOO_LIBS</em>.
   </p>
   <p class="para">
    The following extensions and SAPIs are affected:
@@ -85,7 +88,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-curl no longer accepts a directory.
+       <strong class="option configure">--with-curl</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -96,7 +100,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-enchant no longer accepts a directory.
+       <strong class="option configure">--with-enchant</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -107,8 +112,9 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-fpm-systemd now uses only pkg-config for libsystem checks.
-       The libsystemd minimum required version is 209.
+       <strong class="option configure">--with-fpm-systemd</strong>
+ now uses only pkg-config
+       for libsystem checks. The libsystemd minimum required version is 209.
       </span>
      </li>
     </ul>
@@ -119,40 +125,58 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-gd becomes --enable-gd
+       <strong class="option configure">--with-gd</strong>
+ becomes
+       <strong class="option configure">--enable-gd</strong>
+
        (whether to enable the extension at all) and
-       --with-external-gd (to opt into using an external libgd,
-       rather than the bundled one).
+       <strong class="option configure">--with-external-gd</strong>
+
+       (to opt into using an external libgd, rather than the bundled one).
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --with-png-dir has been removed. libpng is required.
+       <strong class="option configure">--with-png-dir</strong>
+ has been removed. libpng is required.
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --with-zlib-dir has been removed. zlib is required.
+       <strong class="option configure">--with-zlib-dir</strong>
+ has been removed. zlib is required.
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --with-freetype-dir becomes --with-freetype
+       <strong class="option configure">--with-freetype-dir</strong>
+
+       becomes <strong class="option configure">--with-freetype</strong>
+
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --with-jpeg-dir becomes --with-jpeg
+       <strong class="option configure">--with-jpeg-dir</strong>
+ becomes
+       <strong class="option configure">--with-jpeg</strong>
+
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --with-webp-dir becomes --with-webp
+       <strong class="option configure">--with-webp-dir</strong>
+ becomes
+       <strong class="option configure">--with-webp</strong>
+
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --with-xpm-dir becomes --with-xpm
+       <strong class="option configure">--with-xpm-dir</strong>
+ becomes
+       <strong class="option configure">--with-xpm</strong>
+
       </span>
      </li>
     </ul>
@@ -163,7 +187,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-kerberos-systemd no longer accepts a directory.
+       <strong class="option configure">--with-kerberos-systemd</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -174,7 +199,10 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-icu-dir has been removed. If --enable-intl is passed,
+       <strong class="option configure">--with-icu-dir</strong>
+ has been removed.
+       If <strong class="option configure">--enable-intl</strong>
+ is passed,
        then libicu is always required.
       </span>
      </li>
@@ -186,7 +214,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-ldap-sasl no longer accepts a directory.
+       <strong class="option configure">--with-ldap-sasl</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -197,18 +226,24 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-libxml-dir has been removed.
+       <strong class="option configure">--with-libxml-dir</strong>
+ has been removed.
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --enable-libxml becomes --with-libxml.
+       <strong class="option configure">--enable-libxml</strong>
+ becomes
+       <strong class="option configure">--with-libxml</strong>
+.
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --with-libexpat-dir has been renamed to --with-expat and
-       no longer accepts a directory.
+       <strong class="option configure">--with-libexpat-dir</strong>
+ has been renamed to
+       <strong class="option configure">--with-expat</strong>
+ and no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -219,7 +254,10 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-litespeed becomes --enable-litespeed.
+       <strong class="option configure">--with-litespeed</strong>
+ becomes
+       <strong class="option configure">--enable-litespeed</strong>
+.
       </span>
      </li>
     </ul>
@@ -230,7 +268,10 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-onig has been removed. Unless --disable-mbregex
+       <strong class="option configure">--with-onig</strong>
+ has been removed.
+       Unless <strong class="option configure">--disable-mbregex</strong>
+
        has been passed, libonig is required.
       </span>
      </li>
@@ -242,13 +283,15 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-iodbc no longer accepts a directory.
+       <strong class="option configure">--with-iodbc</strong>
+ no longer accepts a directory.
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --with-unixODBC without a directory now uses pkg-config (preferred).
-       Directory is still accepted for old versions without libodbc.pc.
+       <strong class="option configure">--with-unixODBC</strong>
+ without a directory now uses
+       pkg-config (preferred). Directory is still accepted for old versions without libodbc.pc.
       </span>
      </li>
     </ul>
@@ -259,7 +302,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-openssl no longer accepts a directory.
+       <strong class="option configure">--with-openssl</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -270,7 +314,10 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-pcre-regex has been removed. Instead --with-external-pcre
+       <strong class="option configure">--with-pcre-regex</strong>
+ has been removed.
+       Instead <strong class="option configure">--with-external-pcre</strong>
+
        is provided to opt into using an external PCRE library, rather
        than the bundled one.
       </span>
@@ -283,7 +330,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-pdo-sqlite no longer accepts a directory.
+       <strong class="option configure">--with-pdo-sqlite</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -294,7 +342,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-libedit no longer accepts a directory.
+       <strong class="option configure">--with-libedit</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -305,7 +354,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-sodium no longer accepts a directory.
+       <strong class="option configure">--with-sodium</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -316,7 +366,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-sqlite3 no longer accepts a directory.
+       <strong class="option configure">--with-sqlite3</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -327,7 +378,8 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-xsl no longer accepts a directory.
+       <strong class="option configure">--with-xsl</strong>
+ no longer accepts a directory.
       </span>
      </li>
     </ul>
@@ -338,12 +390,16 @@
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       --with-libzip has been removed.
+       <strong class="option configure">--with-libzip</strong>
+ has been removed.
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       --enable-zip becomes --with-zip.
+       <strong class="option configure">--enable-zip</strong>
+ becomes
+       <strong class="option configure">--with-zip</strong>
+.
       </span>
      </li>
     </ul>
@@ -378,7 +434,8 @@
   <h3 class="title">Data Filtering</h3>
   <p class="para">
    The <a href="book.filter.html" class="link">filter</a> extension no longer exposes
-   <em>--with-pcre-dir</em> for Unix builds and can now reliably
+   <strong class="option configure">--with-pcre-dir</strong>
+ for Unix builds and can now reliably
    be built as shared when using <em>./configure</em>
   </p>
  </div>
@@ -454,18 +511,22 @@
   <h3 class="title">Multibyte String</h3>
   <p class="para">
    The oniguruma library is no longer bundled with PHP, instead libonig needs
-   to be available on the system. Alternatively <em>--disable-mbregex</em>
-   can be used to disable the mbregex component.
+   to be available on the system. Alternatively
+   <strong class="option configure">--disable-mbregex</strong>
+ can be used to disable
+   the mbregex component.
   </p>
  </div>
 
  <div class="sect2" id="migration74.other-changes.opcache">
   <h3 class="title">OPcache</h3>
   <p class="para">
-   The <em>--disable-opcache-file</em> and
-   <em>--enable-opcache-file</em> configure options have been removed
-   in favor of the <a href="opcache.configuration.html#ini.opcache.file-cache" class="link">opcache.file_cache</a>
-   INI directive.
+   The <strong class="option configure">--disable-opcache-file</strong>
+ and
+   <strong class="option configure">--enable-opcache-file</strong>
+ configure options
+   have been removed in favor of the
+   <a href="opcache.configuration.html#ini.opcache.file-cache" class="link">opcache.file_cache</a> INI directive.
   </p>
  </div>
 
@@ -481,7 +542,8 @@
   <h3 class="title">PEAR</h3>
   <p class="para">
    Installation of PEAR (including PECL) is no longer enabled by default. It
-   can be explicitly enabled using <em>--with-pear</em>.
+   can be explicitly enabled using <strong class="option configure">--with-pear</strong>
+.
    This option is deprecated and may be removed in the future.
   </p>
  </div>
