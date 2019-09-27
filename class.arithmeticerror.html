@@ -36,7 +36,7 @@
     <span class="ooclass"><strong class="classname">ArithmeticError</strong></span>
     は、数学的な操作でエラーが発生した場合にスローされます。
     PHP 7.0 では、たとえばマイナスのビットシフトを行おうとした場合などに発生します。
-    また、結果が <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> の範囲をこえてしまうのうな
+    また、結果が <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> の範囲をこえてしまうような
     <span class="function"><a href="function.intdiv.html" class="function">intdiv()</a></span> の呼び出しの際にも発生します。
    </p>
   </div>
@@ -62,6 +62,29 @@
      {</div>
 
 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したプロパティ */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.error.html#error.props.message">$<var class="varname">message</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.error.html#error.props.code">$<var class="varname">code</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.error.html#error.props.file">$<var class="varname">file</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.error.html#error.props.line">$<var class="varname">line</var></a></var>
+    ;</div>
+
+    
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したメソッド */</div>
     <div class="methodsynopsis dc-description">
    <span class="modifier">final</span> <span class="modifier">public</span> <span class="methodname"><a href="error.getmessage.html" class="methodname">Error::getMessage</a></span>

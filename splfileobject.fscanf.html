@@ -42,7 +42,7 @@
    ファイルから 1 行読み込み、<span class="function"><a href="function.sprintf.html" class="function">sprintf()</a></span> のドキュメントで説明される規定の <code class="parameter">format</code> に従って解釈されます。
   </p>
   <p class="para">
-   <code class="parameter">format</code> 文字列のホワイトスペースはファイルからの行のホワイトスペースとマッチします。このことが意味するのは付ぉマット文字列のタブ (<em>\t</em>) でさえも入力ストリームの 1 つのスペース文字とマッチしてしまうということです。
+   <code class="parameter">format</code> 文字列のホワイトスペースはファイルからの行のホワイトスペースとマッチします。このことが意味するのはフォーマット文字列のタブ (<em>\t</em>) でさえも入力ストリームの 1 つのスペース文字とマッチしてしまうということです。
   </p>
  </div>
 
@@ -53,17 +53,352 @@
    <dl>
 
     
-     <dt>
+
+ <dt>
 <code class="parameter">format</code></dt>
 
-     <dd>
+ <dd>
 
-      <p class="para">
-       規定のフォーマットは <span class="function"><a href="function.sprintf.html" class="function">sprintf()</a></span> のドキュメントで説明されています。
-      </p>
-     </dd>
+  <p class="para">
+   The format string is composed of zero or more directives:
+   ordinary characters (excluding <em>%</em>) that are
+   copied directly to the result and <em class="emphasis">conversion
+   specifications</em>, each of which results in fetching its
+   own parameter.
+  </p>
 
+  <p class="para">
+   A conversion specification follows this prototype:
+   <em>%[flags][width][.precision]specifier</em>.
+  </p>
+
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong>Flags</strong></caption>
     
+     <thead>
+      <tr>
+       <th>Flag</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><em>-</em></td>
+       <td>
+        Left-justify within the given field width;
+        Right justification is the default
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>+</em></td>
+       <td>
+        Prefix positive numbers with a plus sign
+        <em>+</em>; Default only negative
+        are prefixed with a negative sign.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em> </em>(space)</td>
+       <td>
+        Pads the result with spaces.
+        This is the default.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>0</em></td>
+       <td>
+        Only left-pads numbers with zeros.
+        With <em>s</em> specifiers this can
+        also right-pad with zeros.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>&#039;</em>(char)</td>
+       <td>
+        Pads the result with the character (char).
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+
+  <p class="formalpara">
+   <h5 class="title">Width</h5>
+   <p class="para">
+    An integer that says how many characters (minimum)
+    this conversion should result in.
+   </p>
+  </p>
+
+  <p class="formalpara">
+   <h5 class="title">Precision</h5>
+   <p class="para">
+    A period <em>.</em> followed by an integer
+    who&#039;s meaning depends on the specifier:
+    <ul class="itemizedlist">
+     <li class="listitem">
+      <span class="simpara">
+       For <em>e</em>, <em>E</em>,
+       <em>f</em> and <em>F</em>
+       specifiers: this is the number of digits to be printed
+       after the decimal point (by default, this is 6).
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       For <em>g</em> and <em>G</em>
+       specifiers: this is the maximum number of significant
+       digits to be printed.
+      </span>
+     </li>
+     <li class="listitem">
+      <span class="simpara">
+       For <em>s</em> specifier: it acts as a cutoff point,
+       setting a maximum character limit to the string.
+      </span>
+     </li>
+    </ul>
+    <blockquote class="note"><p><strong class="note">注意</strong>: 
+     <span class="simpara">
+      If the period is specified without an explicit value for precision,
+      0 is assumed.
+     </span>
+    </p></blockquote>
+   </p>
+  </p>
+
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    Attempting to use a position specifier greater than
+    <strong><code>PHP_INT_MAX</code></strong> will generate warnings.
+   </span>
+  </p></blockquote>
+
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong>Specifiers</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Specifier</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><em>%</em></td>
+       <td>
+        A literal percent character. No argument is required.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>b</em></td>
+       <td>
+        The argument is treated as an integer and presented
+        as a binary number.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>c</em></td>
+       <td>
+        The argument is treated as an integer and presented
+        as the character with that ASCII.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>d</em></td>
+       <td>
+        The argument is treated as an integer and presented
+        as a (signed) decimal number.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>e</em></td>
+       <td>
+        The argument is treated as scientific notation (e.g. 1.2e+2).
+        The precision specifier stands for the number of digits after the
+        decimal point since PHP 5.2.1. In earlier versions, it was taken as
+        number of significant digits (one less).
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>E</em></td>
+       <td>
+        Like the <em>e</em> specifier but uses
+        uppercase letter (e.g. 1.2E+2).
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>f</em></td>
+       <td>
+        The argument is treated as a float and presented
+        as a floating-point number (locale aware).
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>F</em></td>
+       <td>
+        The argument is treated as a float and presented
+        as a floating-point number (non-locale aware).
+        Available as of PHP 5.0.3.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>g</em></td>
+       <td>
+        <p class="para">
+         General format.
+        </p>
+        <p class="para">
+         Let P equal the precision if nonzero, 6 if the precision is omitted,
+         or 1 if the precision is zero.
+         Then, if a conversion with style E would have an exponent of X:
+        </p>
+        <p class="para">
+         If P &gt; X ≥ −4, the conversion is with style f and precision P − (X + 1).
+         Otherwise, the conversion is with style e and precision P − 1.
+        </p>
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>G</em></td>
+       <td>
+        Like the <em>g</em> specifier but uses
+        <em>E</em> and <em>F</em>.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>o</em></td>
+       <td>
+        The argument is treated as an integer and presented
+        as an octal number.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>s</em></td>
+       <td>
+        The argument is treated and presented as a string.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>u</em></td>
+       <td>
+        The argument is treated as an integer and presented
+        as an unsigned decimal number.
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>x</em></td>
+       <td>
+        The argument is treated as an integer and presented
+        as a hexadecimal number (with lowercase letters).
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>X</em></td>
+       <td>
+        The argument is treated as an integer and presented
+        as a hexadecimal number (with uppercase letters).
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    The <em>c</em> type specifier ignores padding and width
+   </p>
+  </div>
+
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    Attempting to use a combination of the string and width specifiers with character sets that require more than one byte per character may result in unexpected results
+   </p>
+  </div>
+
+  <p class="para">
+   Variables will be co-erced to a suitable type for the specifier:
+   <table class="doctable table">
+    <caption><strong>Type Handling</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Type</th>
+       <th>Specifiers</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><em>string</em></td>
+       <td><em>s</em></td>
+      </tr>
+
+      <tr>
+       <td><em>integer</em></td>
+       <td>
+        <em>d</em>,
+        <em>u</em>,
+        <em>c</em>,
+        <em>o</em>,
+        <em>x</em>,
+        <em>X</em>,
+        <em>b</em>
+       </td>
+      </tr>
+
+      <tr>
+       <td><em>double</em></td>
+       <td>
+        <em>g</em>,
+        <em>G</em>,
+        <em>e</em>,
+        <em>E</em>,
+        <em>f</em>,
+        <em>F</em>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </dd>
+
+
+
     
      <dt>
 <code class="parameter">...</code></dt>
@@ -121,6 +456,9 @@ luigi    florist     it</pre>
   <p class="para">
    <ul class="simplelist">
     <li class="member"><span class="function"><a href="function.fscanf.html" class="function" rel="rdfs-seeAlso">fscanf()</a> - フォーマットに基づきファイルからの入力を処理する</span></li>
+    <li class="member"><span class="function"><a href="function.sscanf.html" class="function" rel="rdfs-seeAlso">sscanf()</a> - フォーマット文字列に基づき入力を処理する</span></li>
+    <li class="member"><span class="function"><a href="function.printf.html" class="function" rel="rdfs-seeAlso">printf()</a> - フォーマット済みの文字列を出力する</span></li>
+    <li class="member"><span class="function"><a href="function.sprintf.html" class="function" rel="rdfs-seeAlso">sprintf()</a> - フォーマットされた文字列を返す</span></li>
    </ul>
   </p>
  </div>

@@ -30,6 +30,11 @@
 
  </div>
 
+ <div id="function.crypt-refsynopsisdiv">
+  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は
+(まだ)バイナリデータ対応ではありません!</p></div>
+ </div>
+
  <div class="refsect1 description" id="refsect1-function.crypt-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
@@ -50,7 +55,7 @@
    十分に強いソルトを指定して、セキュリティを確保しましょう。
   </p>
   <p class="para">
-   <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span> は、強力なハッシュを使い、協力なソルトを生成して、それを複数回自動的に適用します。
+   <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span> は、強力なハッシュを使い、強力なソルトを生成して、それを複数回自動的に適用します。
    <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span> は <span class="function"><strong>crypt()</strong></span> のシンプルなラッパーであり、既存のパスワードハッシュと互換性があります。
    <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span> を使うことを推奨します。
   </p>
