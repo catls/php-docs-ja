@@ -36,7 +36,8 @@
    <span class="methodname"><strong>unpack</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$format</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   ) : <span class="type">array</span></div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$offset</code><span class="initializer"> = 0</span></span>
+  ] ) : <span class="type">array</span></div>
 
   <p class="para rdfs-comment">
    <code class="parameter">format</code> に基づき、バイナリ文字列から配列に分解します。
@@ -80,6 +81,18 @@
      </dd>
 
     
+    
+     <dt>
+<code class="parameter">offset</code></dt>
+
+     <dd>
+
+      <p class="para">
+       データ切り出しを開始するオフセット。
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -108,6 +121,21 @@
      </thead>
 
      <tbody class="tbody">
+       <tr>
+       <td>7.2.0</td>
+       <td>
+        <span class="type"><a href="language.types.float.html" class="type float">float</a></span> および <span class="type"><a href="language.types.float.html" class="type double">double</a></span> 型は、
+        ビッグエンディアンとリトルエンディアンの両方をサポートします。
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        オプションの <code class="parameter">offset</code> が追加されました。
+       </td>
+      </tr>
+
       <tr>
        <td>5.5.0</td>
        <td>
@@ -123,7 +151,6 @@
         </p>
         <p class="para">
          NULL 埋め文字列用に &quot;Z&quot; が追加されました。これは最後の NULL バイトを取り除きます。
-         NULL bytes.
         </p>
        </td>
       </tr>

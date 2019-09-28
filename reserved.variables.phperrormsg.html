@@ -33,6 +33,9 @@
  <div id="reserved.variables.phperrormsg-refsynopsisdiv">
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この機能は PHP 7.2.0 で
 <em class="emphasis">非推奨</em>になります。この機能に頼らないことを強く推奨します。</p></div>
+  <p class="simpara">
+   代わりに <span class="function"><a href="function.error-get-last.html" class="function">error_get_last()</a></span> を使用してください。
+  </p>
  </div>
 
  <div class="refsect1 description" id="refsect1-reserved.variables.phperrormsg-description">
@@ -56,7 +59,7 @@
  <div class="refsect1 examples" id="refsect1-reserved.variables.phperrormsg-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-301">
+   <div class="example" id="example-300">
     <p><strong>例1 <var class="varname"><var class="varname">$php_errormsg</var></var> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -76,5 +79,15 @@ Wrong parameter count for strpos()
   </p>
  </div>
 
- 
+
+ <div class="refsect1 seealso" id="refsect1-reserved.variables.phperrormsg-seealso">
+  <h3 class="title">参考</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.error-get-last.html" class="function" rel="rdfs-seeAlso">error_get_last()</a> - 最後に発生したエラーを取得する</span></li>
+   </ul>
+  </p>
+ </div>
+
+
 </div></div></div></body></html>

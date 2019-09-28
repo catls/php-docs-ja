@@ -84,14 +84,23 @@
   </p>
  </div>
 
+
  <div class="refsect1 returnvalues" id="refsect1-function.readgzfile-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   ファイルから読み込んだ (解凍された) データのバイト数を返します。
-   エラーが発生した場合、<strong><code>FALSE</code></strong> が返され、<em>@readgzfile</em>
-   としてコールされている場合を除き、エラーメッセージが出力されます。
+   成功時は、ファイルから読み込んだ (解凍された) データのバイト数を返します。
+   失敗した場合に <strong><code>FALSE</code></strong> を返します
   </p>
  </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.readgzfile-errors">
+  <h3 class="title">エラー / 例外</h3>
+  <p class="para">
+失敗したときは <strong><code>E_WARNING</code></strong> が発生します。
+</p>
+ </div>
+
 
  <div class="refsect1 seealso" id="refsect1-function.readgzfile-seealso">
   <h3 class="title">参考</h3>

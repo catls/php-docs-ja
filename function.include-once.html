@@ -43,26 +43,4 @@
   この関数の動作についての情報は
   <span class="function"><a href="function.include.html" class="function">include</a></span> のドキュメントを参照ください。
  </p>
- <p class="para">
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-  <p class="para">
-   PHP 4 では、大文字小文字を区別しない OS (Windows など)
-   では <em>_once</em> の動作が多少異なります。次に例を示します。
-   <div class="example" id="example-128">
-    <p><strong>例1 PHP 4 における、大文字小文字を区別しない OS 上での <em>include_once</em></strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">include_once&nbsp;</span><span style="color: #DD0000">"a.php"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;a.phpを読み込みます<br /></span><span style="color: #007700">include_once&nbsp;</span><span style="color: #DD0000">"A.php"</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;これもa.phpを読み込みます!&nbsp;(PHP&nbsp;4&nbsp;のみ)<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-     </div>
-
-    </div>
-    この挙動は PHP 5 で変更されました。たとえば Windows ではまず最初にパスが正規化され、
-    <var class="filename">C:\PROGRA~1\A.php</var> は
-    <var class="filename">C:\Program Files\a.php</var> と同じ扱いとなります。
-    ファイルは一度だけ読み込まれるようになります。
-   </p>
-  </p></blockquote>
- </p>
 </div></div></div></body></html>
