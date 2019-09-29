@@ -44,7 +44,8 @@
     </a></li><li><a href="#faq.html.form-image">
      
       &lt;input type=&quot;image&quot;&gt; タグを使おうとしているのですが、変数
-      $foo.x と $foo.y が使えません。どうすればよいのですか?
+      $foo.x と $foo.y が使えません。
+      $_GET[&#039;foo.x&#039;] も存在していません。どうすればよいのですか?
      
     </a></li><li><a href="#faq.html.arrays">
      HTML フォームで配列を使用するにはどうすればよいですか？
@@ -175,7 +176,8 @@
     <dt><strong>
      
       &lt;input type=&quot;image&quot;&gt; タグを使おうとしているのですが、変数
-      $foo.x と $foo.y が使えません。どうすればよいのですか?
+      <var class="varname"><var class="varname">$foo.x</var></var> と <var class="varname"><var class="varname">$foo.y</var></var> が使えません。
+      <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET['foo.x']</a></var></var> も存在していません。どうすればよいのですか?
      
     </strong></dt>
     <dd class="answer">
@@ -187,12 +189,12 @@
 </div>
       </div>
 
-      ユーザーが画像のどこかをクリックすると、そのフォームの内容に foo.x
-      と foo.y という 2 つの変数が追加され、サーバーに送信されます。
+      ユーザーが画像のどこかをクリックすると、そのフォームの内容に <var class="varname"><var class="varname">foo.x</var></var>
+      と <var class="varname"><var class="varname">foo.y</var></var> という 2 つの変数が追加され、サーバーに送信されます。
      </p>
      <p class="para">
-      PHP では $foo.x と $foo.y という名前は変数名として正しくないので、
-      自動的に $foo_x と $foo_y という名前に変換されます。要は、ピリオドが
+      PHP では <var class="varname"><var class="varname">foo.x</var></var> と <var class="varname"><var class="varname">foo.y</var></var> という名前は変数名として正しくないので、
+      自動的に <var class="varname"><var class="varname">foo_x</var></var> と <var class="varname"><var class="varname">foo_y</var></var> という名前に変換されます。要は、ピリオドが
       アンダースコアに置き換えられる、と言うことです。そのため、これらの
       変数にアクセスする際には
       <a href="language.variables.external.html" class="link">外部から来る変数

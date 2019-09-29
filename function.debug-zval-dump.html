@@ -132,7 +132,7 @@ string(11) &quot;Hello World&quot; refcount(1)
    <p class="para">
     この関数は、<em>refcount</em> が <em>1</em>
     の変数が渡される (コピーもしくは値渡し) とき、<em class="emphasis">より</em>
-    混乱させます。
+    まぎらわしくなります。
    </p>
    <p class="para">
     <div class="example" id="example-6496">
@@ -158,18 +158,17 @@ string(11) &quot;Hello World&quot; refcount(2)
     では、何が起こっているのでしょうか ?
    </p>
    <p class="para">
-    変数が単一の参照 (<span class="function"><strong>debug_zval_dump()</strong></span>
-    の引数として使用される前の <em>$var1</em>) を持つ場合、PHP
-    のエンジンは関数に渡される様式を最適化します。内部的に PHP は参照
-    (<em>refcount</em> がこの関数のスコープのために増加されます)
-    のように <em>$var1</em> を扱い、参照渡しされた変数に
-    書き込みが発生するかどうかの警告を伴ってコピーが作成されます。
-    ただし、書き込みの瞬間だけです。これは &quot;copy on write&quot; として知られます。
+    <span class="function"><strong>debug_zval_dump()</strong></span> の引数として使用される前の <em>$var1</em> のように、
+    変数に単一の参照がある場合、PHP のエンジンは関数に渡される方法を最適化します。
+    内部的に、PHP は <em>$var1</em> を参照のように扱います
+    （この関数のスコープによって <em>refcount</em> が増加されます）。
+    ただし、渡された参照がたまたま書き込まれる場合は注意が必要です。
+    書き込みの時点でのみコピーが作成されます。これは &quot;copy on write&quot; として知られます。
    </p>
    <p class="para">
-    そのため、もし <span class="function"><strong>debug_zval_dump()</strong></span> がただ一つのパラメータ
-    (もしくはない) に書き込みが発生した場合、コピーが作成されます。
-    その時までパラメータは参照を保持し、関数呼び出しのスコープに対して
+    そのため、もし <span class="function"><strong>debug_zval_dump()</strong></span> がたまたま
+    その単一の（および、そうではない）パラメータに書き込みをおこなった場合、コピーが作成されます。
+    その時までパラメータは参照のままであるため、関数呼び出しのスコープによって
     <em>refcount</em> が <em>2</em>
     にインクリメントされる原因になります。
    </p>
