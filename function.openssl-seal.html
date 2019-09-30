@@ -39,7 +39,8 @@
    , <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$env_keys</code></span>
    , <span class="methodparam"><span class="type">array</span> <code class="parameter">$pub_key_ids</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$method</code><span class="initializer"> = &quot;RC4&quot;</span></span>
-  ] ) : <span class="type">int</span></div>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$iv</code></span>
+  ]] ) : <span class="type">int</span></div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>openssl_seal()</strong></span> は、ランダムに生成された秘密鍵
@@ -113,7 +114,19 @@
      <dd>
 
       <p class="para">
-       暗号化の手法。
+       暗号方式。
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">iv</code></dt>
+
+     <dd>
+
+      <p class="para">
+       初期化ベクター。
       </p>
      </dd>
 
@@ -135,23 +148,6 @@
  </div>
 
 
- <div class="refsect1 examples" id="refsect1-function.openssl-seal-examples">
-  <h3 class="title">例</h3>
-  <p class="para">
-   <div class="example" id="example-979">
-    <p><strong>例1 <span class="function"><strong>openssl_seal()</strong></span> の例</strong></p>
-    <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$data&nbsp;には、暗号化されるデータが含まれていると仮定<br /><br />//&nbsp;受信者の公開鍵を取得し、使用可能にする<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/src/openssl-0.9.6/demos/maurice/cert.pem"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pk1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_get_publickey</span><span style="color: #007700">(</span><span style="color: #0000BB">$cert</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;2&nbsp;番目の受信者についても同様<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/src/openssl-0.9.6/demos/sign/cert.pem"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pk2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_get_publickey</span><span style="color: #007700">(</span><span style="color: #0000BB">$cert</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メッセージを暗号化。$pk1&nbsp;および&nbsp;$pk2&nbsp;の所有者のみが、$sealed&nbsp;を<br />//&nbsp;データをそれぞれ&nbsp;$ekeys[0]&nbsp;および&nbsp;$ekeys[1]&nbsp;で復号化することが<br />//&nbsp;可能<br /></span><span style="color: #0000BB">openssl_seal</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sealed</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ekeys</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">$pk1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pk2</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;キーをメモリから開放する<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pk1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pk2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
-</span>
-</code></div>
-    </div>
-
-   </div>
-  </p>
- </div>
-
-
  <div class="refsect1 changelog" id="refsect1-function.openssl-seal-changelog">
   <h3 class="title">変更履歴</h3>
   <table class="doctable informaltable">
@@ -166,9 +162,16 @@
 
     <tbody class="tbody">
      <tr>
+      <td>7.0.0</td>
+      <td>
+       <code class="parameter">iv</code> が追加されました。
+      </td>
+     </tr>
+
+     <tr>
       <td>5.3.0</td>
       <td>
-       <code class="parameter">method</code> パラメータが追加されました。
+       <code class="parameter">method</code> が追加されました。
       </td>
      </tr>
 
@@ -176,6 +179,23 @@
    
   </table>
 
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.openssl-seal-examples">
+  <h3 class="title">例</h3>
+  <p class="para">
+   <div class="example" id="example-979">
+    <p><strong>例1 <span class="function"><strong>openssl_seal()</strong></span> の例</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;$data&nbsp;には、暗号化されるデータが含まれていると仮定<br /><br />//&nbsp;受信者の公開鍵を取得し、使用可能にする<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/src/openssl-0.9.6/demos/maurice/cert.pem"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pk1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_get_publickey</span><span style="color: #007700">(</span><span style="color: #0000BB">$cert</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;2&nbsp;番目の受信者についても同様<br /></span><span style="color: #0000BB">$fp&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/src/openssl-0.9.6/demos/sign/cert.pem"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$cert&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">8192</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$pk2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">openssl_get_publickey</span><span style="color: #007700">(</span><span style="color: #0000BB">$cert</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;メッセージを暗号化。$pk1&nbsp;および&nbsp;$pk2&nbsp;の所有者のみが、$sealed&nbsp;を<br />//&nbsp;データをそれぞれ&nbsp;$ekeys[0]&nbsp;および&nbsp;$ekeys[1]&nbsp;で復号化することが<br />//&nbsp;可能<br /></span><span style="color: #0000BB">openssl_seal</span><span style="color: #007700">(</span><span style="color: #0000BB">$data</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$sealed</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$ekeys</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #0000BB">$pk1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$pk2</span><span style="color: #007700">));<br /><br /></span><span style="color: #FF8000">//&nbsp;キーをメモリから開放する<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pk1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">openssl_free_key</span><span style="color: #007700">(</span><span style="color: #0000BB">$pk2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
  </div>
 
 

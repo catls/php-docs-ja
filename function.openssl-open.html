@@ -38,8 +38,9 @@
    , <span class="methodparam"><span class="type">string</span> <code class="parameter reference">&$open_data</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$env_key</code></span>
    , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$priv_key_id</code></span>
-   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$method</code></span>
-  ] ) : <span class="type">bool</span></div>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$method</code><span class="initializer"> = &quot;RC4&quot;</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$iv</code></span>
+  ]] ) : <span class="type">bool</span></div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>openssl_open()</strong></span> は、キー ID
@@ -103,6 +104,30 @@
      </dd>
 
     
+    
+     <dt>
+<code class="parameter">method</code></dt>
+
+     <dd>
+
+      <p class="para">
+       暗号方式。
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">iv</code></dt>
+
+     <dd>
+
+      <p class="para">
+       初期化ベクター。
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -114,6 +139,40 @@
   <p class="para">
    成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.openssl-open-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.0.0</td>
+      <td>
+       <code class="parameter">iv</code> が追加されました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.3.0</td>
+      <td>
+       <code class="parameter">method</code> が追加されました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 

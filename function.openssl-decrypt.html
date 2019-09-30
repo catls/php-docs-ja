@@ -48,10 +48,6 @@
    与えられたメソッドとキーを使って文字列を復号します。
   </p>
 
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -67,7 +63,7 @@
      <dd>
 
       <p class="para">
-       データ
+       復号化する暗号化メッセージ。
       </p>
      </dd>
 
@@ -79,7 +75,8 @@
      <dd>
 
       <p class="para">
-       暗号メソッド
+       暗号方式。利用可能な暗号方式のリストについては、
+       <span class="function"><a href="function.openssl-get-cipher-methods.html" class="function">openssl_get_cipher_methods()</a></span> を使用してください。
       </p>
      </dd>
 
@@ -128,7 +125,8 @@
      <dd>
 
       <p class="para">
-       The authentication tag in AEAD cipher mode. If it is incorrect, the authentication fails and the function returns <strong><code>FALSE</code></strong>.
+       AEAD 暗号モードの認証タグ。
+       正しくない場合、認証は失敗し、関数は <strong><code>FALSE</code></strong> を返します。
       </p>
      </dd>
 
@@ -140,7 +138,7 @@
      <dd>
 
       <p class="para">
-       Additional authentication data.
+       追加の認証データ。
       </p>
      </dd>
 
@@ -186,10 +184,8 @@
 
     <tbody class="tbody">
      <tr>
-      <td>5.3.3</td>
-      <td>
-       <code class="parameter">iv</code> パラメータが追加されました。
-      </td>
+      <td>7.1.0</td>
+      <td><code class="parameter">tag</code> および <code class="parameter">aad</code> パラメータが追加されました。</td>
      </tr>
 
      <tr>
@@ -200,8 +196,10 @@
      </tr>
 
      <tr>
-      <td>7.1.0</td>
-      <td><code class="parameter">tag</code> および <code class="parameter">aad</code> パラメータが追加されました。</td>
+      <td>5.3.3</td>
+      <td>
+       <code class="parameter">iv</code> パラメータが追加されました。
+      </td>
      </tr>
 
     </tbody>
