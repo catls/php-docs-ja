@@ -50,6 +50,13 @@
        <td class="empty">&nbsp;</td>
       </tr>
 
+      <tr>
+       <td><a href="ffi.configuration.html#ini.ffi.preload" class="link">ffi.preload</a></td>
+       <td>&quot;&quot;</td>
+       <td>PHP_INI_SYSTEM</td>
+       <td class="empty">&nbsp;</td>
+      </tr>
+
      </tbody>
     
    </table>
@@ -82,6 +89,23 @@
        but not overloaded functions of <a href="class.ffi-cdata.html" class="classname">FFI\CData</a> objects.
        This means that it is possible to create some <a href="class.ffi-cdata.html" class="classname">FFI\CData</a>
        objects in preloaded files, and then to use these directly in PHP scripts.
+      </p>
+     </dd>
+
+    
+    
+     <dt id="ini.ffi.preload">
+      <code class="parameter">ffi.preload</code>
+      <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       Allows preloading of FFI bindings during startup, which is not possible with <span class="methodname"><a href="ffi.load.html" class="methodname">FFI::load()</a></span>
+       if <a href="opcache.configuration.html#ini.opcache.preload-user" class="link">opcache.preload_user</a> is set.
+       This directive accepts a <strong><code>DIRECTORY_SEPARATOR</code></strong> delimited list of filenames.
+       The preloaded bindings can be accessed by calling <span class="methodname"><a href="ffi.scope.html" class="methodname">FFI::scope()</a></span>.
       </p>
      </dd>
 
