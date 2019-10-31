@@ -50,6 +50,17 @@
    value from the <a href="mongodb-driver-manager.construct.html#mongodb-driver-manager.construct-uri" class="link">MongoDB
    Connection URI</a>.
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    This method is not intended to be used to execute
+    <a href="https://docs.mongodb.com/manual/reference/command/insert/" class="link external">&raquo;&nbsp;insert</a>,
+    <a href="https://docs.mongodb.com/manual/reference/command/update/" class="link external">&raquo;&nbsp;update</a>,
+    or <a href="https://docs.mongodb.com/manual/reference/command/delete/" class="link external">&raquo;&nbsp;delete</a>
+    commands. Users are encouraged to use
+    <span class="function"><a href="mongodb-driver-server.executebulkwrite.html" class="function">MongoDB\Driver\Server::executeBulkWrite()</a></span> for those
+    commands.
+   </span>
+  </p></blockquote>
  </div>
 
 
