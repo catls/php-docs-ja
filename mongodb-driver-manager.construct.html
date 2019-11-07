@@ -678,6 +678,13 @@
       </table>
 
      </p>
+     <blockquote class="note"><p><strong class="note">注意</strong>: 
+      <span class="simpara">
+       When specifying any SSL or TLS option via the connection string or the
+       options array, the driver will implicitly enable TLS. To avoid this,
+       either explicitly disable the tls option or don&#039;t pass any TLS options.
+      </span>
+     </p></blockquote>
     </dd>
 
    
@@ -904,6 +911,11 @@
         </p>
         <p class="para">
          The <em>&quot;retryWrites&quot;</em> URI option defaults to <strong><code>TRUE</code></strong>.
+        </p>
+        <p class="para">
+         Specifying an SSL or TLS option via the connection string or options
+         array now implicitly enables TLS. Driver options do not implicitly
+         enable TLS, as in previous versions.
         </p>
        </td>
       </tr>
