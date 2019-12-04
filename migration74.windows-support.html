@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Windows Support</title>
+  <title>Windows のサポート</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -18,65 +18,65 @@
 <div id="breadcrumbs" class="clearfix">
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
-    <li><a href="migration74.html">Migrating from PHP 7.3.x to PHP 7.4.x</a></li>
-    <li>Windows Support</li>
+    <li><a href="migration74.html">PHP 7.3.x から PHP 7.4.x への移行</a></li>
+    <li>Windows のサポート</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="migration74.windows-support" class="sect1">
- <h2 class="title">Windows Support</h2>
+ <h2 class="title">Windows のサポート</h2>
 
  <div class="sect2" id="migration74.windows-support.configure">
-  <h3 class="title"><strong class="command">configure</strong> flags</h3>
+  <h3 class="title"><strong class="command">configure</strong> フラグ</h3>
   <p class="para">
-   <strong class="command">configure</strong> now regards additional <em>CFLAGS</em> and <em>LDFLAGS</em> set as environment
-   variables.
+   <strong class="command">configure</strong> コマンドは、<em>CFLAGS</em> や
+   <em>LDFLAGS</em> を環境変数と見なすようになりました。
   </p>
  </div>
 
  <div class="sect2" id="migration74.windows-support.other">
-  <h3 class="title">CTRL handling</h3>
+  <h3 class="title">CTRLキーの扱い</h3>
   <p class="para">
-   CTRL+C and CTRL+BREAK on console can be caught by setting a handler function
-   with <span class="function"><strong>sapi_windows_set_ctrl_handler()</strong></span>.
+   <span class="function"><strong>sapi_windows_set_ctrl_handler()</strong></span>
+   関数でハンドラを設定することで、コンソールにおける CTRL+C や CTRL+BREAK
+   をキャッチできるようになりました。
   </p>
   <p class="para">
-   <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> on Windows can be passed a
-   &quot;create_process_group&quot; option. It is required if the child
-   process is supposed to handle CTRL events.
+   Windows における <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span>
+   関数は、&quot;create_process_group&quot;
+   オプションを新たに渡せるようになりました。これは、子プロセスが
+   CTRLイベントをハンドルする場合に必須です。
   </p>
  </div>
 
  <div class="sect2" id="migration74.windows-support.opcache">
   <h3 class="title">OPcache</h3>
   <p class="para">
-   OPcache now supports an arbitrary number of separate caches per user via the
-   the INI directive <em>opcache.cache_id</em>.
-   All processes with the same cache ID and user share an OPcache instance.
+   OPcache は、<em>opcache.cache_id</em>
+   INIディレクティブを設定することで、ユーザー単位で別々のキャッシュを、任意の数だけ持つことをサポートしました。同一のキャッシュIDとユーザーを持つ全てのプロセスは、同一のOPcacheインスタンスを共有します。
   </p>
  </div>
 
  <div class="sect2" id="migration74.windows-support.stat">
   <h3 class="title">stat</h3>
   <p class="para">
-   The stat implementation has been refactored.
+   stat 関数の実装がリファクタリングされました。
   </p>
   <ul class="itemizedlist">
    <li class="listitem">
     <span class="simpara">
-     An inode number is delivered and is based on the NTFS file index.
+     inode番号 が取得可能になりました。この値は NTFS
+     のファイルインデックス をベースにしています。
     </span>
    </li>
    <li class="listitem">
     <span class="simpara">
-     The device number is now based on the volume serial number.
+    デバイス番号は、ボリュームのシリアル番号をベースにするようになりました。
     </span>
    </li>
   </ul>
   <p class="para">
-   Note that both values are derived from the system and provided as-is on 64-bit
-   systems. On 32-bit systems, these values might overflow the 32-bit integer in
-   PHP, so they&#039;re fake.
+   これらの値は、両方システムから取得され、64bitシステムで与えられるそのままの値であることに注意して下さい。32bitのシステムでは、これらの値はオーバーフローする可能性があるため、値は偽物です。
   </p>
  </div>
 

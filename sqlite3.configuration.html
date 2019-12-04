@@ -45,9 +45,16 @@
     <tbody class="tbody">
      <tr>
       <td><a href="sqlite3.configuration.html#ini.sqlite3.extension-dir" class="link">sqlite3.extension_dir</a></td>
-      <td>NULL</td>
+      <td>&quot;&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td class="empty">&nbsp;</td>
+      <td>PHP 5.3.11 以降で利用可能。</td>
+     </tr>
+
+     <tr>
+      <td><a href="sqlite3.configuration.html#ini.sqlite3.defensive" class="link">sqlite3.defensive</a></td>
+      <td>1</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td>PHP 7.2.17 ,7.3.4 以降、かつ libsqlite ≥ 3.26.0 でビルドした場合に利用可能</td>
      </tr>
 
     </tbody>
@@ -72,6 +79,21 @@
 
       <p class="para">
        SQLite 用のロードモジュールが存在するディレクトリへのパス。
+      </p>
+     </dd>
+
+    
+   
+     <dt id="ini.sqlite3.defensive">
+      <code class="parameter">sqlite3.defensive</code>
+      <span class="type"><a href="language.types.boolean.html" class="type bool">bool</a></span>
+     </dt>
+
+     <dd>
+
+      <p class="para">
+       defensive フラグを有効にした場合、データベースファイルを意図的に破壊することができる通常のSQLの機能が無効になります。これにより、スキーマ や シャドウテーブル (e.g FTS データテーブル) や sqlite_dbpage 仮想テーブルに直接に直接書き込むことを禁止します。
+       この <var class="filename">php.ini</var> 設定は、libsqlite ≥ 3.26.0 以降でビルドした場合だけ有効です。
       </p>
      </dd>
 

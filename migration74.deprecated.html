@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Deprecated Features</title>
+  <title>PHP 7.4.x で推奨されなくなる機能</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -11,32 +11,29 @@
   <div class="navbar-inner clearfix">
     <ul class="nav" style="width: 100%">
       <li style="float: left;"><a href="migration74.incompatible.html">« Backward Incompatible Changes</a></li>
-      <li style="float: right;"><a href="migration74.removed-extensions.html">Removed Extensions »</a></li>
+      <li style="float: right;"><a href="migration74.removed-extensions.html">削除された拡張モジュール »</a></li>
     </ul>
   </div>
 </div>
 <div id="breadcrumbs" class="clearfix">
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
-    <li><a href="migration74.html">Migrating from PHP 7.3.x to PHP 7.4.x</a></li>
-    <li>Deprecated Features</li>
+    <li><a href="migration74.html">PHP 7.3.x から PHP 7.4.x への移行</a></li>
+    <li>PHP 7.4.x で推奨されなくなる機能</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="migration74.deprecated" class="sect1">
- <h2 class="title">Deprecated Features</h2>
+ <h2 class="title">PHP 7.4.x で推奨されなくなる機能</h2>
 
  <div class="sect2" id="migration74.deprecated.core">
-  <h3 class="title">PHP Core</h3>
+  <h3 class="title">PHPコア</h3>
 
   <div class="sect3" id="migration74.deprecated.core.nested-ternary">
-   <h4 class="title">Nested ternary operators without explicit parentheses</h4>
+   <h4 class="title">明示的に括弧で囲わずに三項演算子をネストする</h4>
 
    <p class="para">
-    Nested ternary operations must explicitly use parentheses
-    to dictate the order of the operations.  Previously, when used
-    without parentheses, the left-associativity would not result
-    in the expected behaviour in most cases.
+    三項演算子をネストする場合、演算の順番を示すために明示的に括弧で囲わなければならなくなりました。以前は、括弧を使わなかった場合、左結合の演算がほとんどの場合期待した動作になりませんでした。
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -50,143 +47,143 @@
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.array-string-access-curly-brace">
-   <h4 class="title">Array and string offset access using curly braces</h4>
+   <h4 class="title">波括弧を使った、配列や文字列のオフセットへのアクセス</h4>
 
    <p class="para">
-    The array and string offset access syntax using curly braces is
-    deprecated. Use <em>$var[$idx]</em> instead of
-    <em>$var{$idx}</em>.
+    波括弧を使って配列や文字列のオフセットにアクセスする文法は推奨されません。<em>$var{$idx}</em> でなはく <em>$var[$idx]</em> を使って下さい。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.real">
-   <h4 class="title">(real) cast and <span class="function"><a href="function.is-real.html" class="function">is_real()</a></span> function</h4>
+   <h4 class="title">(real) によるキャストと <span class="function"><a href="function.is-real.html" class="function">is_real()</a></span> 関数</h4>
 
    <p class="para">
-    The <em>(real)</em> cast is deprecated,
-    use <em>(float)</em> instead.
+    <em>(real)</em> によるキャストは推奨されません。
+    <em>(float)</em> を代わりに使って下さい。
    </p>
    <p class="para">
-    The <span class="function"><a href="function.is-real.html" class="function">is_real()</a></span> function is also deprecated,
-    use <span class="function"><a href="function.is-float.html" class="function">is_float()</a></span> instead.
+    <span class="function"><a href="function.is-real.html" class="function">is_real()</a></span> 関数も同様に推奨されません。
+    <span class="function"><a href="function.is-float.html" class="function">is_float()</a></span> 関数を使って下さい。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.unbind-this">
-   <h4 class="title">Unbinding <em>$this</em> when <em>$this</em> is used</h4>
+   <h4 class="title"><em>$this</em>
+   が使われている場合に、<em>$this</em> のバインドを解除する</h4>
 
    <p class="para">
-    Unbinding <em>$this</em> of a non-static closure
-    that uses <em>$this</em> is deprecated.
+    <em>$this</em> を使っている static でないクロージャの
+    <em>$this</em> のバインドを解除することは推奨されません。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.parent">
-   <h4 class="title"><em>parent</em> keyword without parent class</h4>
+   <h4 class="title">親クラスがない場合における <em>parent</em> キーワードの利用</h4>
 
    <p class="para">
-    Using <em>parent</em> inside a class without a parent
-    is deprecated, and will throw a compile-time error in the future.
-    Currently an error will only be generated if/when the parent is
-    accessed at run-time.
+    親クラスがないクラス内で <em>parent</em>
+    を使うのは推奨されませんし、将来的にはコンパイル時にエラーが発生することになるでしょう。
+    現状では、この推奨されないエラーは、実行時に親クラスに対してアクセスされた場合に生成されます。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.allow-url-include">
-   <h4 class="title">allow_url_include INI option</h4>
+   <h4 class="title">php.ini における allow_url_include オプション</h4>
 
    <p class="para">
-    The <a href="filesystem.configuration.html#ini.allow-url-include" class="link">allow_url_include</a>
-    ini directive is deprecated. Enabling it will generate
-    a deprecation notice at startup.
+    <a href="filesystem.configuration.html#ini.allow-url-include" class="link">allow_url_include</a>
+    iniディレクティブは推奨されません。これを有効にすると、起動時に推奨されない警告が生成されます。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.invalid-base-characters">
-   <h4 class="title">Invalid characters in base conversion functions</h4>
+   <h4 class="title">基数を変更する関数における不正な文字</h4>
 
    <p class="para">
-    Passing invalid characters to <span class="function"><a href="function.base-convert.html" class="function">base_convert()</a></span>,
-    <span class="function"><a href="function.bindec.html" class="function">bindec()</a></span>, <span class="function"><a href="function.octdec.html" class="function">octdec()</a></span> and
-    <span class="function"><a href="function.hexdec.html" class="function">hexdec()</a></span> will now generate a deprecation notice.
-    The result will still be computed as if the invalid characters did not exist.
-    Leading and trailing whitespace, as well as prefixes of type 0x (depending on base)
-    continue to be allowed.
+    <span class="function"><a href="function.base-convert.html" class="function">base_convert()</a></span>,
+    <span class="function"><a href="function.bindec.html" class="function">bindec()</a></span>, <span class="function"><a href="function.octdec.html" class="function">octdec()</a></span> および
+    <span class="function"><a href="function.hexdec.html" class="function">hexdec()</a></span>
+    関数に不正な文字を渡すと、推奨されない警告が生成されるようになりました。
+    あたかも不正な文字が存在しないかのように結果は計算されます。空白文字が前後にあったり、(基数によっては)
+    0x をプレフィックスとして指定することも可能です。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.array-key-exists-objects">
-   <h4 class="title">Using <span class="function"><a href="function.array-key-exists.html" class="function">array_key_exists()</a></span> on objects</h4>
+   <h4 class="title">オブジェクトに対する <span class="function"><a href="function.array-key-exists.html" class="function">array_key_exists()</a></span> 関数の使用</h4>
 
    <p class="para">
-    Using <span class="function"><a href="function.array-key-exists.html" class="function">array_key_exists()</a></span> on objects is deprecated.
-    Instead either <span class="function"><a href="function.isset.html" class="function">isset()</a></span> or <span class="function"><a href="function.property-exists.html" class="function">property_exists()</a></span>
-    should be used.
+    オブジェクトに対する <span class="function"><a href="function.array-key-exists.html" class="function">array_key_exists()</a></span>
+    関数の使用は、推奨されません。代わりに、<span class="function"><a href="function.isset.html" class="function">isset()</a></span> または
+    <span class="function"><a href="function.property-exists.html" class="function">property_exists()</a></span> を使って下さい。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.magic-quotes-functions">
-   <h4 class="title">Magic quotes functions</h4>
+   <h4 class="title">マジッククォート関数</h4>
 
    <p class="para">
-    The <span class="function"><a href="function.get-magic-quotes-gpc.html" class="function">get_magic_quotes_gpc()</a></span> and <span class="function"><a href="function.get-magic-quotes-runtime.html" class="function">get_magic_quotes_runtime()</a></span>
-    functions are deprecated. They always return <strong><code>FALSE</code></strong>.
+    <span class="function"><a href="function.get-magic-quotes-gpc.html" class="function">get_magic_quotes_gpc()</a></span> や
+    <span class="function"><a href="function.get-magic-quotes-runtime.html" class="function">get_magic_quotes_runtime()</a></span>
+    関数は推奨されません。これらの関数は常に <strong><code>FALSE</code></strong> を返します。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.hebrevc">
-   <h4 class="title"><span class="function"><a href="function.hebrevc.html" class="function">hebrevc()</a></span> function</h4>
+   <h4 class="title"><span class="function"><a href="function.hebrevc.html" class="function">hebrevc()</a></span> 関数</h4>
 
    <p class="para">
-    The <span class="function"><a href="function.hebrevc.html" class="function">hebrevc()</a></span> function is deprecated.
-    It can be replaced with <em>nl2br(hebrev($str))</em> or,
-    preferably, the use of Unicode RTL support.
+    <span class="function"><a href="function.hebrevc.html" class="function">hebrevc()</a></span> 関数は推奨されません。
+    <em>nl2br(hebrev($str))</em> で置き換えられますが、Unicode RTL
+    のサポートを使う方が好ましいです。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.convert-cyr-string">
-   <h4 class="title"><span class="function"><a href="function.convert-cyr-string.html" class="function">convert_cyr_string()</a></span> function</h4>
+   <h4 class="title"><span class="function"><a href="function.convert-cyr-string.html" class="function">convert_cyr_string()</a></span> 関数</h4>
 
    <p class="para">
-    The <span class="function"><a href="function.convert-cyr-string.html" class="function">convert_cyr_string()</a></span> function is deprecated.
-    It can be replaced by one of <span class="function"><strong>mb_convert_string()</strong></span>,
-    <span class="function"><a href="function.iconv.html" class="function">iconv()</a></span> or <a href="class.uconverter.html" class="classname">UConverter</a>.
+    <span class="function"><a href="function.convert-cyr-string.html" class="function">convert_cyr_string()</a></span> 関数は推奨されません。
+    <span class="function"><strong>mb_convert_string()</strong></span>,
+    <span class="function"><a href="function.iconv.html" class="function">iconv()</a></span> または <a href="class.uconverter.html" class="classname">UConverter</a>
+    のいずれかで置き換えることができます。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.money-format">
-   <h4 class="title"><span class="function"><a href="function.money-format.html" class="function">money_format()</a></span> function</h4>
+   <h4 class="title"><span class="function"><a href="function.money-format.html" class="function">money_format()</a></span> 関数</h4>
 
    <p class="para">
-    The <span class="function"><a href="function.money-format.html" class="function">money_format()</a></span> function is deprecated.
-    It can be replaced by the intl <a href="class.numberformatter.html" class="classname">NumberFormatter</a> functionality.
+    <span class="function"><a href="function.money-format.html" class="function">money_format()</a></span> 関数は推奨されません。
+    intl の <a href="class.numberformatter.html" class="classname">NumberFormatter</a> 機能に置き換えられました。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.ezmlm-hash">
-   <h4 class="title"><span class="function"><a href="function.ezmlm-hash.html" class="function">ezmlm_hash()</a></span> function</h4>
+   <h4 class="title"><span class="function"><a href="function.ezmlm-hash.html" class="function">ezmlm_hash()</a></span> 関数</h4>
 
    <p class="para">
-    The <span class="function"><a href="function.ezmlm-hash.html" class="function">ezmlm_hash()</a></span> function is deprecated.
+    <span class="function"><a href="function.ezmlm-hash.html" class="function">ezmlm_hash()</a></span> 関数の使用は推奨されません。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.restore-include-path">
-   <h4 class="title"><span class="function"><a href="function.restore-include-path.html" class="function">restore_include_path()</a></span> function</h4>
+   <h4 class="title"><span class="function"><a href="function.restore-include-path.html" class="function">restore_include_path()</a></span> 関数</h4>
 
    <p class="para">
-    The <span class="function"><a href="function.restore-include-path.html" class="function">restore_include_path()</a></span> function is deprecated.
-    It can be replaced by <em>ini_restore(&#039;include_path&#039;)</em>.
+    <span class="function"><a href="function.restore-include-path.html" class="function">restore_include_path()</a></span> 関数の使用は推奨されません。
+    <em>ini_restore(&#039;include_path&#039;)</em> に置き換えることができます。
    </p>
   </div>
 
   <div class="sect3" id="migration74.deprecated.core.implode-reverse-parameters">
-   <h4 class="title">Implode with historical parameter order</h4>
+   <h4 class="title">Implode 関数の、歴史的なパラメータ順序</h4>
 
    <p class="para">
-    Passing parameters to <span class="function"><a href="function.implode.html" class="function">implode()</a></span> in reverse order
-    is deprecated, use <em>implode($glue, $parts)</em>
-    instead of <em>implode($parts, $glue)</em>.
+    <span class="function"><a href="function.implode.html" class="function">implode()</a></span>
+    関数に逆の順番でパラメータを渡すのは推奨されなくなりました。<em>implode($parts,
+    $glue)</em> ではなく、 <em>implode($glue, $parts)</em>
+    を使ってください。
    </p>
   </div>
 
@@ -196,8 +193,7 @@
   <h3 class="title">COM</h3>
 
   <p class="para">
-   Importing type libraries with case-insensitive constant
-   registering has been deprecated.
+   大文字小文字を区別せず、定数を登録することで型のライブラリをインポートすることは推奨されません。
   </p>
  </div>
 
@@ -205,34 +201,35 @@
   <h3 class="title">Filter</h3>
 
   <p class="para">
-   <strong><code>FILTER_SANITIZE_MAGIC_QUOTES</code></strong> is deprecated,
-   use <strong><code>FILTER_SANITIZE_ADD_SLASHES</code></strong> instead.
+   <strong><code>FILTER_SANITIZE_MAGIC_QUOTES</code></strong> は推奨されません。
+   <strong><code>FILTER_SANITIZE_ADD_SLASHES</code></strong> を代わりに使って下さい。
   </p>
  </div>
 
  <div class="sect2" id="migration74.deprecated.mbstring">
-  <h3 class="title">Multibyte String</h3>
+  <h3 class="title">マルチバイト文字列</h3>
 
   <p class="para">
-   Passing a non-string pattern to <span class="function"><a href="function.mb-ereg-replace.html" class="function">mb_ereg_replace()</a></span>
-   is deprecated. Currently, non-string patterns are interpreted as
-   ASCII codepoints. In PHP 8, the pattern will be interpreted as a
-   string instead.
+   <span class="function"><a href="function.mb-ereg-replace.html" class="function">mb_ereg_replace()</a></span>
+   に文字列でないパターンを渡すことは推奨されません。現状は、文字列でないパターンは
+   ASCII コードポイントと解釈されます。PHP 8
+   では、パターンは文字列として解釈されるようになります。
   </p>
   <p class="para">
-   Passing the encoding as 3rd parameter to <span class="function"><a href="function.mb-strrpos.html" class="function">mb_strrpos()</a></span>
-   is deprecated. Instead pass a 0 offset, and encoding as 4th parameter.
+   <span class="function"><a href="function.mb-strrpos.html" class="function">mb_strrpos()</a></span>
+   関数に、3番目のパラメーターとしてエンコーディングを渡すのは推奨されません。代わりに
+   0から始まるオフセットを渡すか、4番目のパラメーターとしてエンコーディングを渡すようにします。
   </p>
  </div>
 
  <div class="sect2" id="migration74.deprecated.ldap">
-  <h3 class="title">Lightweight Directory Access Protocol</h3>
+  <h3 class="title">LDAP</h3>
 
   <p class="para">
-   <span class="function"><a href="function.ldap-control-paged-result-response.html" class="function">ldap_control_paged_result_response()</a></span> and
-   <span class="function"><a href="function.ldap-control-paged-result.html" class="function">ldap_control_paged_result()</a></span> are deprecated.
-   Pagination controls can be sent along with
-   <span class="function"><a href="function.ldap-search.html" class="function">ldap_search()</a></span> instead.
+   <span class="function"><a href="function.ldap-control-paged-result-response.html" class="function">ldap_control_paged_result_response()</a></span> と
+   <span class="function"><a href="function.ldap-control-paged-result.html" class="function">ldap_control_paged_result()</a></span> 関数は推奨されません。
+   ページングの制御は、<span class="function"><a href="function.ldap-search.html" class="function">ldap_search()</a></span>
+   を代わりに使うことで行なえます。
   </p>
  </div>
 
@@ -240,15 +237,17 @@
   <h3 class="title">Reflection</h3>
 
   <p class="para">
-   Calls to <span class="methodname"><a href="reflectiontype.tostring.html" class="methodname">ReflectionType::__toString()</a></span> now generate
-   a deprecation notice. This method has been deprecated in favor of
-   <span class="methodname"><a href="reflectionnamedtype.getname.html" class="methodname">ReflectionNamedType::getName()</a></span> in the documentation
-   since PHP 7.1, but did not throw a deprecation notice for technical reasons.
+   <span class="methodname"><a href="reflectiontype.tostring.html" class="methodname">ReflectionType::__toString()</a></span>
+   を呼び出すと、推奨されない警告が生成されるようになりました。このメソッドは
+   <span class="methodname"><a href="reflectionnamedtype.getname.html" class="methodname">ReflectionNamedType::getName()</a></span>
+   を使うことが好ましいために、PHP 7.1
+   から推奨されていませんでしたが、技術的な理由によって、推奨されない警告をこれまで発生させてきませんでした。
   </p>
   <p class="para">
-   The <em>export()</em> methods on all <a href="class.reflection.html" class="classname">Reflection</a>
-   classes are deprecated. Construct a <a href="class.reflection.html" class="classname">Reflection</a> object and
-   convert it to string instead:
+   <a href="class.reflection.html" class="classname">Reflection</a> クラスの全ての
+   <em>export()</em>
+   メソッドは推奨されなくなりました。次のようにして、<a href="class.reflection.html" class="classname">Reflection</a>
+   オブジェクトを生成し、string に変換するようにして下さい:
    <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -265,10 +264,10 @@
   <h3 class="title">Socket</h3>
 
   <p class="para">
-   The <strong><code>AI_IDN_ALLOW_UNASSIGNED</code></strong> and
-   <strong><code>AI_IDN_USE_STD3_ASCII_RULES</code></strong> flags for
-   <span class="function"><a href="function.socket-addrinfo-lookup.html" class="function">socket_addrinfo_lookup()</a></span> are deprecated,
-   due to an upstream deprecation in glibc.
+   glibc で推奨されなくなったため、<span class="function"><a href="function.socket-addrinfo-lookup.html" class="function">socket_addrinfo_lookup()</a></span>
+   関数の <strong><code>AI_IDN_ALLOW_UNASSIGNED</code></strong> と
+   <strong><code>AI_IDN_USE_STD3_ASCII_RULES</code></strong>
+   フラグの使用は推奨されません。
   </p>
  </div>
 
