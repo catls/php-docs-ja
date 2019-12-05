@@ -37,7 +37,7 @@
    <a href="control-structures.switch.html" class="link">switch</a>
    文がループ構造とみなされます。
    <em>continue</em> に引数を渡さなかった場合の動きは
-   <em>break</em> と同じです。
+   <em>break</em> と同じですが、間違いの元なので警告が生成されます。
    <em>switch</em> がループ内にある場合、
    <em>continue 2</em> とすると、外側のループの次回の処理から続行します。
   </span>
@@ -119,6 +119,15 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.3.0</td>
+       <td>
+        <em>switch</em> 内部で <em>break</em>
+        文のように振る舞おうとする <em>continue</em>
+        については、<strong><code>E_WARNING</code></strong> をトリガーします。
+       </td>
+      </tr>
+
       <tr>
        <td>7.0.0</td>
        <td>

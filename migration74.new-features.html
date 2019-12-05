@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>New Features</title>
+  <title>新機能</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,21 +19,21 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="migration74.html">PHP 7.3.x から PHP 7.4.x への移行</a></li>
-    <li>New Features</li>
+    <li>新機能</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="migration74.new-features" class="sect1">
- <h2 class="title">New Features</h2>
+ <h2 class="title">新機能</h2>
 
  <div class="sect2" id="migration74.new-features.core">
-  <h3 class="title">PHP Core</h3>
+  <h3 class="title">PHP コア</h3>
 
   <div class="sect3" id="migration74.new-features.core.typed-properties">
-   <h4 class="title">Typed properties</h4>
+   <h4 class="title">型付きプロパティ</h4>
 
    <p class="para">
-    Class properties now support type declarations.
+    クラスのプロパティは、新たに型宣言をサポートするようになりました
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -43,18 +43,15 @@
      </div>
 
     </div>
-    The above example will enforce that <em>$user-&gt;id</em> can only be
-    assigned <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> values and <em>$user-&gt;name</em> can
-    only be assigned <span class="type"><a href="language.types.string.html" class="type string">string</a></span> values.
+    上の例は、 <em>$user-&gt;id</em> には <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> の 値だけを、そして <em>$user-&gt;name</em> には <span class="type"><a href="language.types.string.html" class="type string">string</a></span> の値だけを代入できるように強制します。
    </p>
   </div>
 
   <div class="sect3" id="migration74.new-features.core.arrow-functions">
-   <h4 class="title">Arrow functions</h4>
+   <h4 class="title">アロー関数</h4>
 
    <p class="para">
-    Arrow functions provide a shorthand syntax for defining functions
-    with implicit by-value scope binding.
+    アロー関数は、暗黙的な値スコープを持った関数を定義する簡便な文法を提供します。
 
     <div class="informalexample">
      <div class="example-contents">
@@ -69,10 +66,10 @@
   </div>
 
   <div class="sect3" id="migration74.new-features.core.type-variance">
-   <h4 class="title">Limited return type covariance and argument type contravariance</h4>
+   <h4 class="title">返り値の型を狭めたり、引数の型を広げたりする</h4>
 
    <p class="para">
-    The following code will now work:
+    次のようなコードが動作するようになります:
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -82,20 +79,18 @@
      </div>
 
     </div>
-    Full variance support is only available if autoloading is used. Inside a
-    single file only non-cyclic type references are possible, because all
-    classes need to be available before they are referenced.
+    完全な型の変位指定は、オートローディングが使われている場合のみ有効です。単一ファイル内では、型の参照が循環参照していない場合のみ可能です。なぜなら、全てのクラスは参照する前に利用可能でなければならないからです。
    </p>
   </div>
 
   <div class="sect3" id="migration74.new-features.core.null-coalescing-assignment-operator">
-   <h4 class="title">Null coalescing assignment operator</h4>
+   <h4 class="title">Null の場合の代入演算子</h4>
 
    <p class="para">
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">]&nbsp;??=&nbsp;</span><span style="color: #0000BB">computeDefault</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">//&nbsp;is&nbsp;roughly&nbsp;equivalent&nbsp;to<br /></span><span style="color: #007700">if&nbsp;(!isset(</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">computeDefault</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">]&nbsp;??=&nbsp;</span><span style="color: #0000BB">computeDefault</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">//&nbsp;は、以下にほぼ等しい<br /></span><span style="color: #007700">if&nbsp;(!isset(</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$array</span><span style="color: #007700">[</span><span style="color: #DD0000">'key'</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #0000BB">computeDefault</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
      </div>
@@ -105,7 +100,7 @@
   </div>
 
   <div class="sect3" id="migration74.new-features.core.unpack-inside-array">
-   <h4 class="title">Unpacking inside arrays</h4>
+   <h4 class="title">配列内での値のアンパック</h4>
 
    <p class="para">
     <div class="informalexample">
@@ -121,10 +116,10 @@
   </div>
 
   <div class="sect3" id="migration74.new-features.core.numeric-literal-separator">
-   <h4 class="title">Numeric literal separator</h4>
+   <h4 class="title">数値リテラルのセパレータ</h4>
 
    <p class="para">
-    Numeric literals can contain underscores between digits.
+    数値リテラルは、桁と桁の間にアンダースコアを挿入できるようになりました。
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -138,22 +133,20 @@
   </div>
  
   <div class="sect3" id="migration74.new-features.core.weakreference">
-   <h4 class="title">Weak references</h4>
+   <h4 class="title">弱参照</h4>
 
    <p class="para">
-    Weak references allow the programmer to retain a reference to an object
-    that does not prevent the object from being destroyed.
+    弱い参照により、オブジェクトが破棄されるのを防がないオブジェクトへの参照を保持することが可能です。
    </p>
   </div>
 
   <div class="sect3" id="migration74.new-features.core.tostring-exceptions">
-   <h4 class="title">Allow exceptions from __toString()</h4>
+   <h4 class="title">__toString() から例外をスロー可能に</h4>
 
    <p class="para">
-    Throwing exceptions from <a href="language.oop5.magic.html#object.tostring" class="link">__toString()</a>
-    is now permitted. Previously this resulted in a fatal error. Existing
-    recoverable fatal errors in string conversions have been converted to
-    <a href="class.error.html" class="classname">Error</a> exceptions.
+    <a href="language.oop5.magic.html#object.tostring" class="link">__toString()</a>
+    から例外をスローできるようになりました。以前は、この場合には致命的なエラーが発生していました。この関数内に既に存在する、回復可能な致命的なエラーは
+    <a href="class.error.html" class="classname">Error</a> 例外クラスに変換されます。
    </p>
   </div>
 
@@ -163,8 +156,7 @@
   <h3 class="title">CURL</h3>
   
   <p class="para">
-   <a href="class.curlfile.html" class="classname">CURLFile</a> now supports stream wrappers in addition
-   to plain file names, if the extension has been built against libcurl &gt;= 7.56.0.
+   <a href="class.curlfile.html" class="classname">CURLFile</a> は、CURL拡張機能が libcurl 7.56.0 より新しいものでビルドされた場合は、通常のファイル名に加えて、ストリームラッパーをサポートするようになります。
   </p>
  </div>
 
@@ -172,9 +164,10 @@
   <h3 class="title">Filter</h3>
   
   <p class="para">
-   The <strong><code>FILTER_VALIDATE_FLOAT</code></strong> filter now supports the
-   <em>min_range</em> and <em>max_range</em>
-   options, with the same semantics as <strong><code>FILTER_VALIDATE_INT</code></strong>.
+   <strong><code>FILTER_VALIDATE_FLOAT</code></strong> フィルタは
+   <em>min_range</em> と <em>max_range</em>
+   オプションをサポートするようになりました。
+   これは、<strong><code>FILTER_VALIDATE_INT</code></strong> と同じセマンティクスです。
   </p>
  </div>
 
@@ -182,9 +175,7 @@
   <h3 class="title">FFI</h3>
 
   <p class="para">
-   FFI is a new extension, which provides a simple way to call
-   native functions, access native variables, and create/access
-   data structures defined in C libraries.
+   FFI は、ネイティブ関数を呼び出したり、ネイティブな値にアクセスしたり、Cライブラリで定義されたデータ構造を生成/アクセスする簡単な方法を提供する新しい拡張機能です。
   </p>
  </div>
 
@@ -192,8 +183,8 @@
   <h3 class="title">GD</h3>
 
   <p class="para">
-   Added the <strong><code>IMG_FILTER_SCATTER</code></strong> image filter
-   to apply a scatter filter to images.
+   画像に scatter フィルタを適用するための
+   <strong><code>IMG_FILTER_SCATTER</code></strong> が追加されました。
   </p>
  </div>
 
@@ -201,19 +192,18 @@
   <h3 class="title">Hash</h3>
 
   <p class="para">
-   Added <em>crc32c</em> hash using Castagnoli&#039;s polynomial.
-   This CRC32 variant is used by storage systems, such as
-   iSCSI, SCTP, Btrfs and ext4.
+   Castagnoli 多項式を使った <em>crc32c</em>
+   ハッシュが追加されました。
+   CRC32 バリアントは、 iSCSI, SCTP, Btrfs, ext4
+   のようなストレージシステムで使われています。
   </p>
  </div>
 
  <div class="sect2" id="migration74.new-features.mbstring">
-  <h3 class="title">Multibyte String</h3>
+  <h3 class="title">マルチバイト文字列</h3>
 
   <p class="para">
-   Added the <span class="function"><strong>mb_str_split()</strong></span> function, which provides
-   the same functionality as <span class="function"><a href="function.str-split.html" class="function">str_split()</a></span>, but operating
-   on code points rather than bytes.
+   <span class="function"><a href="function.str-split.html" class="function">str_split()</a></span> と同等の機能を提供するものの、バイトではなく、コードポイント単位で動作する <span class="function"><strong>mb_str_split()</strong></span> 関数が追加されました。
   </p>
  </div>
 
@@ -221,18 +211,17 @@
   <h3 class="title">OPcache</h3>
 
   <p class="para">
-   Support for preloading code has been added.
+   コードを事前ロードする機能がサポートされました。
   </p>
  </div>
 
  <div class="sect2" id="migration74.new-features.pcre">
-  <h3 class="title">Regular Expressions (Perl-Compatible)</h3>
+  <h3 class="title">正規表現 (Perl互換)</h3>
 
   <p class="para">
-   The <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> and <span class="function"><a href="function.preg-replace-callback-array.html" class="function">preg_replace_callback_array()</a></span>
-   functions now accept an additional <code class="parameter">flags</code> argument, with support for the
-   <strong><code>PREG_OFFSET_CAPTURE</code></strong> and <strong><code>PREG_UNMATCHED_AS_NULL</code></strong> flags.
-   This influences the format of the matches array passed to to the callback function.
+   <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> および <span class="function"><a href="function.preg-replace-callback-array.html" class="function">preg_replace_callback_array()</a></span>
+   関数は、追加のフラグを受け入れるようになりました。
+   <strong><code>PREG_OFFSET_CAPTURE</code></strong> と <strong><code>PREG_UNMATCHED_AS_NULL</code></strong> です。これは、コールバック関数に渡される matches配列のフォーマットに影響します。
   </p>
  </div>
 
@@ -240,16 +229,10 @@
   <h3 class="title">PDO</h3>
 
   <p class="para">
-   The username and password can now be specified as part of the PDO DSN for
-   the mysql, mssql, sybase, dblib, firebird and oci drivers. Previously this
-   was only supported by the pgsql driver. If a username/password is specified
-   both in the constructor and the DSN, the constructor takes precedence.
+   ユーザー名とパスワードが、PDO DSN の一部として指定できるようになりました。対象となるのは、mysql, mssql, sybase, dblib, firebird, oci ドライバです。以前は、この機能は pgsql ドライバでのみサポートされていました。ユーザー名/パスワードがコンストラクタとDSNの両方で指定された場合は、コンストラクタの指定が優先します。
   </p>
   <p class="para">
-   It is now possible to escape question marks in SQL queries to avoid them
-   being interpreted as parameter placeholders. Writing <em>??</em>
-   allows sending a single question mark to the database and e.g. use the
-   PostgreSQL JSON key exists (<em>?</em>) operator.
+      SQLクエリのクエスチョンマークが、パラメータのプレースホルダーとして解釈されるのを防ぐためにエスケープできるようになりました。<em>??</em> を書くことで、単一のクエスチョンマークをデータベースに送信できるようになります。PostgreSQL のJSONのキーが存在するかを確認する演算子 (<em>?</em>) として使って下さい。
   </p>
  </div>
 
@@ -257,7 +240,7 @@
   <h3 class="title">PDO_OCI</h3>
 
   <p class="para">
-   <span class="methodname"><a href="pdostatement.getcolumnmeta.html" class="methodname">PDOStatement::getColumnMeta()</a></span> is now available.
+   <span class="methodname"><a href="pdostatement.getcolumnmeta.html" class="methodname">PDOStatement::getColumnMeta()</a></span> が利用できるようになりました。
   </p>
  </div>
 
@@ -266,13 +249,13 @@
 
   <p class="para">
    <em>PDOStatement::getAttribute(PDO::SQLITE_ATTR_READONLY_STATEMENT)</em>
-   allows checking whether the statement is read-only, i.e. if it doesn&#039;t modify
-   the database.
+   は、ステートメントが読み取り専用かどうか、つまりそれがデータベースを変更しないかをチェックできるようになりました。
   </p>
   <p class="para">
-   <em>PDO::setAttribute(PDO::SQLITE_ATTR_EXTENDED_RESULT_CODES, true)</em>
-   enables the use of SQLite3 extended result codes in <span class="function"><a href="pdo.errorinfo.html" class="function">PDO::errorInfo()</a></span>
-   and <span class="function"><a href="pdostatement.errorinfo.html" class="function">PDOStatement::errorInfo()</a></span>.
+   <em>PDO::setAttribute(PDO::SQLITE_ATTR_EXTENDED_RESULT_CODES,
+   true)</em> 関数によって、<span class="function"><a href="pdo.errorinfo.html" class="function">PDO::errorInfo()</a></span> と
+   <span class="function"><a href="pdostatement.errorinfo.html" class="function">PDOStatement::errorInfo()</a></span> 経由で SQLite3
+   の拡張結果コードを使えるようになりました。
   </p>
  </div>
 
@@ -280,13 +263,13 @@
   <h3 class="title">SQLite3</h3>
 
   <p class="para">
-   Added <span class="methodname"><strong>SQLite3::lastExtendedErrorCode()</strong></span>
-   to fetch the last extended result code.
+   最新の拡張結果コードを取得するために、 <span class="methodname"><strong>SQLite3::lastExtendedErrorCode()</strong></span> が追加されました。 
   </p>
   <p class="para">
-   Added <em>SQLite3::enableExtendedResultCodes($enable = true)</em>,
-   which will make <span class="methodname"><a href="sqlite3.lasterrorcode.html" class="methodname">SQLite3::lastErrorCode()</a></span>
-   return extended result codes.
+   <em>SQLite3::enableExtendedResultCodes($enable = true)</em>
+   が追加されました。これによって、
+   <span class="methodname"><a href="sqlite3.lasterrorcode.html" class="methodname">SQLite3::lastErrorCode()</a></span>
+   が拡張結果コードを返すようになります。
   </p>
  </div>
 
@@ -294,51 +277,52 @@
   <h3 class="title">Standard</h3>
 
   <div class="sect3" id="migration74.new-features.standard.strip-tags">
-   <h4 class="title">strip_tags() with array of tag names</h4>
+   <h4 class="title">strip_tags() をタグ名の配列とともに使う</h4>
    <p class="para">
-    <span class="function"><a href="function.strip-tags.html" class="function">strip_tags()</a></span> now also accepts an array of allowed tags:
-    instead of <em>strip_tags($str, &#039;&lt;a&gt;&lt;p&gt;&#039;)</em>
-    you can now write <em>strip_tags($str, [&#039;a&#039;, &#039;p&#039;])</em>.
+    <span class="function"><a href="function.strip-tags.html" class="function">strip_tags()</a></span>
+    関数は、許可するタグの配列も受け入れるようになりました。つまり、<em>strip_tags($str,
+    &#039;&lt;a&gt;&lt;p&gt;&#039;)</em> の代わりに、 <em>strip_tags($str,
+    [&#039;a&#039;, &#039;p&#039;])</em> と書けるようになったということです。
    </p>
   </div>
 
   <div class="sect3" id="migration74.new-features.standard.magic-serialize">
-   <h4 class="title">Custom object serialization</h4>
+   <h4 class="title">カスタムオブジェクトのシリアル化</h4>
    <p class="para">
-    A new mechanism for custom object serialization has been added, which
-    uses two new magic methods: <em>__serialize</em>
-    and <em>__unserialize</em>.
+    新しいカスタムオブジェクトのシリアル化の機構が追加されました。これは、新しいふたつのマジックメソッド
+    <em>__serialize</em> と <em>__unserialize</em>
+    を使います。
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Returns&nbsp;array&nbsp;containing&nbsp;all&nbsp;the&nbsp;necessary&nbsp;state&nbsp;of&nbsp;the&nbsp;object.<br /></span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">__serialize</span><span style="color: #007700">():&nbsp;array;<br /><br /></span><span style="color: #FF8000">//&nbsp;Restores&nbsp;the&nbsp;object&nbsp;state&nbsp;from&nbsp;the&nbsp;given&nbsp;data&nbsp;array.<br /></span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">__unserialize</span><span style="color: #007700">(array&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">void</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;オブジェクトに必要な状態を全て保持した配列を返す<br /></span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">__serialize</span><span style="color: #007700">():&nbsp;array;<br /><br /></span><span style="color: #FF8000">//&nbsp;与えられた&nbsp;data&nbsp;配列から、オブジェクトの状態を復元する<br /></span><span style="color: #007700">public&nbsp;function&nbsp;</span><span style="color: #0000BB">__unserialize</span><span style="color: #007700">(array&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">void</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
      </div>
 
     </div>
-    The new serialization mechanism supersedes the
-    <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span> interface,
-    which will be deprecated in the future.
+    新しいシリアル化の機構は、 <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>
+    インターフェイス を置き換えるものです。
+    <span class="interfacename"><a href="class.serializable.html" class="interfacename">Serializable</a></span>
+    インターフェイスは将来非推奨になるでしょう。
    </p>
   </div>
 
   <div class="sect3" id="migration74.new-features.standard.array-merge-no-args">
-   <h4 class="title">Array merge functions without arguments</h4>
+   <h4 class="title">引数を渡さずに array_merge 系の関数を使用する</h4>
    <p class="para">
-    <span class="function"><a href="function.array-merge.html" class="function">array_merge()</a></span> and <span class="function"><a href="function.array-merge-recursive.html" class="function">array_merge_recursive()</a></span>
-    may now be called without any arguments, in which case they will return an empty array.
-    This is useful in conjunction with the spread operator, e.g. <em>array_merge(...$arrays)</em>.
+    <span class="function"><a href="function.array-merge.html" class="function">array_merge()</a></span> および
+    <span class="function"><a href="function.array-merge-recursive.html" class="function">array_merge_recursive()</a></span>
+    関数は、引数なしでも呼び出せるようになりました。この場合、空の配列が返されます。これは、<em>array_merge(...$arrays)</em>
+    のように、... 演算子と組み合わせて使う時に便利です。
    </p>
   </div>
 
   <div class="sect3" id="migration74.new-features.standard.proc-open">
-   <h4 class="title"><span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> function</h4>
+   <h4 class="title"><span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> 関数</h4>
    <p class="para">
-    <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> now accepts an array instead of a
-    string for the command. In this case the process will be opened
-    directly (without going through a shell) and PHP will take care of
-    any necessary argument escaping.
+    <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span>
+    関数は、コマンドの文字列ではなく、配列を受け入れるようになりました。この場合、プロセスは(shellを通さず) 直接オープンされ、PHP が必要な引数のエスケープをすべて行います。
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -350,12 +334,12 @@
     </div>
    </p>
    <p class="para">
-    <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> now supports
-    <em>redirect</em> and <em>null</em> descriptors.
+    <span class="function"><a href="function.proc-open.html" class="function">proc_open()</a></span> が、
+    <em>redirect</em> と <em>null</em> ディスクリプタをサポートしました。
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Like&nbsp;2&gt;&amp;1&nbsp;on&nbsp;the&nbsp;shell<br /></span><span style="color: #0000BB">proc_open</span><span style="color: #007700">(</span><span style="color: #0000BB">$cmd</span><span style="color: #007700">,&nbsp;[</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'pipe'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'redirect'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">]],&nbsp;</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;Like&nbsp;2&gt;/dev/null&nbsp;or&nbsp;2&gt;nul&nbsp;on&nbsp;the&nbsp;shell<br /></span><span style="color: #0000BB">proc_open</span><span style="color: #007700">(</span><span style="color: #0000BB">$cmd</span><span style="color: #007700">,&nbsp;[</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'pipe'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'null'</span><span style="color: #007700">]],&nbsp;</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;シェルにおける&nbsp;2&gt;&amp;1&nbsp;のような操作<br /></span><span style="color: #0000BB">proc_open</span><span style="color: #007700">(</span><span style="color: #0000BB">$cmd</span><span style="color: #007700">,&nbsp;[</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'pipe'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'redirect'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">]],&nbsp;</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;シェルにおける&nbsp;2&gt;/dev/null&nbsp;や&nbsp;2&gt;null&nbsp;のような操作<br /></span><span style="color: #0000BB">proc_open</span><span style="color: #007700">(</span><span style="color: #0000BB">$cmd</span><span style="color: #007700">,&nbsp;[</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'pipe'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'w'</span><span style="color: #007700">],&nbsp;</span><span style="color: #0000BB">2&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'null'</span><span style="color: #007700">]],&nbsp;</span><span style="color: #0000BB">$pipes</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
      </div>
@@ -365,10 +349,11 @@
   </div>
 
   <div class="sect3" id="migration74.new-features.standard.sodium-argon-hash">
-   <h4 class="title">argon2i(d) without libargon</h4>
+   <h4 class="title">libargon なしでの argon2i(d)</h4>
    <p class="para">
-    <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span> now has the argon2i and argin2id implementations
-    from the sodium extension when PHP is built without libargon.
+    PHP が libargon
+    を使ってビルドされた場合、<span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span> 関数は sodium
+    拡張機能の argon2i と argin2id を使った実装を使うようになります。
    </p>
   </div>
 
