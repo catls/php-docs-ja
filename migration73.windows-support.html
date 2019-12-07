@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Windows Support</title>
+  <title>Windows のサポート</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -18,26 +18,27 @@
 <div id="breadcrumbs" class="clearfix">
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
-    <li><a href="migration73.html">Migrating from PHP 7.2.x to PHP 7.3.x</a></li>
-    <li>Windows Support</li>
+    <li><a href="migration73.html">PHP 7.2.x から PHP 7.3.x への移行</a></li>
+    <li>Windows のサポート</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="migration73.windows-support" class="sect1">
- <h2 class="title">Windows Support</h2>
+ <h2 class="title">Windows のサポート</h2>
 
  <div class="sect2" id="migration73.windows-support.core">
-  <h3 class="title">PHP Core</h3>
+  <h3 class="title">PHP コア</h3>
 
   <div class="sect3" id="migration73.windows-support.core.file-descriptors">
-   <h4 class="title">More POSIX Conforming File Deletion</h4>
+   <h4 class="title">POSIX にさらに準拠したファイルの削除</h4>
 
    <p class="para">
-    File descriptors are opened in shared read/write/delete mode by default.
-    This effectively maps the <abbr class="abbrev">POSIX</abbr> semantics and allows to
-    delete files with handles in use. It is not 100% same, some platform
-    differences still persist. After the deletion, the filename entry is
-    blocked, until all the opened handles to it are closed.
+    ファイルディスクリプタは、共有 read/write/delete
+    モードでオープンされるのがデフォルトになりました。
+    これにより、<abbr class="abbrev">POSIX</abbr>
+    のセマンティクスに効率的に対応しつつ、使用中のファイルハンドルを削除することが可能になります。これは
+    <abbr class="abbrev">POSIX</abbr> に 100%
+    準拠したものではありませんが、プラットフォームごとの違いはまだ存在します。ファイルハンドルを削除した後は、オープン済みの全てのファイルハンドルが閉じられるまで、ファイル名のエントリはブロックされます。
    </p>
   </div>
 
