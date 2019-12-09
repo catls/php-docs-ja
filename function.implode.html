@@ -51,7 +51,7 @@
     <span class="function"><strong>implode()</strong></span>は、歴史的な理由により、引数をどちら
     の順番でも受けつけることが可能です。しかし、
     <span class="function"><a href="function.explode.html" class="function">explode()</a></span> との統一性の観点からは、
-    ドキュメントに記述された引数の順番を使用する方が混乱が少なくなるでしょう。
+    ドキュメントに記述された引数の順番を使用しないことは<em class="emphasis">推奨されません</em>。
    </p>
   </p></blockquote>
  </div>
@@ -98,6 +98,36 @@
    すべての配列要素の順序を変えずに、各要素間に
    <code class="parameter">glue</code> 文字列をはさんで 1 つの文字列にして返します。
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.implode-changelog">
+   <h3 class="title">変更履歴</h3>
+   <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.4.0</td>
+      <td>
+       <code class="parameter">pieces</code> の後に <code class="parameter">glue</code>
+       を渡すこと
+       (つまり、ドキュメントに記されたパラメータの順番を使用しないこと)
+       は、推奨されなくなりました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 
