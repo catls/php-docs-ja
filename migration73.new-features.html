@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>New Features</title>
+  <title>新機能</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,91 +19,94 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="migration73.html">PHP 7.2.x から PHP 7.3.x への移行</a></li>
-    <li>New Features</li>
+    <li>新機能</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="migration73.new-features" class="sect1">
- <h2 class="title">New Features</h2>
+ <h2 class="title">新機能</h2>
 
  <div class="sect2" id="migration73.new-features.core">
-  <h3 class="title">PHP Core</h3>
+  <h3 class="title">PHP コア</h3>
 
   <div class="sect3" id="migration73.new-features.core.heredoc">
-   <h4 class="title">More Flexible Heredoc and Nowdoc Syntax</h4>
+   <h4 class="title">ヒアドキュメントと nowdoc構文 がより柔軟に</h4>
 
    <p class="para">
-    The closing marker for doc strings is no longer required to be followed by a
-    semicolon or newline. Additionally the closing marker may be indented, in
-    which case the indentation will be stripped from all lines in the doc string.
+    文字列を閉じるマーカーの後に、セミコロンや改行文字を続ける必要はなくなりました。
+    それに加えて、文字列を閉じるマーカーはインデントされていても構いません。
+    この場合、インデントは文字列の全ての行から取り除かれます。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.core.destruct-reference">
-   <h4 class="title">Array Destructuring supports Reference Assignments</h4>
+   <h4 class="title">配列へ分割して代入する操作が、リファレンスへの代入をサポート</h4>
 
    <p class="para">
-    Array destructuring now supports reference assignments using the syntax
-    <em>[&amp;$a, [$b, &amp;$c]] = $d</em>. The same is also supported
-    for <span class="function"><a href="function.list.html" class="function">list()</a></span>.
+    配列の要素に分割して代入する操作が、<em>[&amp;$a, [$b, &amp;$c]] =
+    $d</em>
+    という文法を用いて、リファレンスへの代入をサポートしました。
+    同じ操作は、<span class="function"><a href="function.list.html" class="function">list()</a></span> 関数でもサポートされています。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.core.instanceof-literals">
-   <h4 class="title">Instanceof Operator accepts Literals</h4>
+   <h4 class="title">instanceof 演算子が、リテラルを受け入れるように</h4>
 
    <p class="para">
-    <em>instanceof</em> now allows literals as the first operand, in
-    which case the result is always <strong><code>FALSE</code></strong>.
+    <em>instanceof</em>
+    演算子が、最初のオペランドにリテラルを受け入れるようになりました。この場合、結果は常に
+    <strong><code>FALSE</code></strong> を返します。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.core.compileerror">
-   <h4 class="title">CompileError Exception instead of some Compilation Errors</h4>
+   <h4 class="title">いくつかのコンパイルエラーが、CompileError 例外に</h4>
 
    <p class="para">
-    A new <a href="class.compileerror.html" class="classname">CompileError</a> exception has been added, from
-    which <a href="class.parseerror.html" class="classname">ParseError</a> inherits. A small number of
-    compilation errors will now throw a <a href="class.compileerror.html" class="classname">CompileError</a>
-    instead of generating a fatal error. Currently this only affects compilation
-    errors that may be thrown by <span class="function"><a href="function.token-get-all.html" class="function">token_get_all()</a></span> in
-    <strong><code>TOKEN_PARSE</code></strong> mode, but more errors may be converted in
-    the future.
+    <a href="class.compileerror.html" class="classname">CompileError</a> 例外が新たに追加されました。これは
+    <a href="class.parseerror.html" class="classname">ParseError</a> クラスを継承しています。
+    少ない数ですが、いくつかのコンパイルエラーが致命的なエラーを生成せず、<a href="class.compileerror.html" class="classname">CompileError</a>
+    例外を投げるようになります。
+    現状は、この変更は <strong><code>TOKEN_PARSE</code></strong> モードで
+    <span class="function"><a href="function.token-get-all.html" class="function">token_get_all()</a></span>
+    が実行された場合に投げられる可能性があるコンパイルエラーだけに影響しますが、将来より多くのエラーがこの例外に変換される可能性があります。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.core.trailing-commas">
-   <h4 class="title">Trailing Commas are allowed in Calls</h4>
+   <h4 class="title">関数やメソッド呼び出しの後に、カンマを付けられるように</h4>
 
    <p class="para">
-    Trailing commas in function and method calls are now allowed.
+    関数やメソッド呼び出しの後に、カンマを付けられるようになりました。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.core.argon2id">
-   <h4 class="title">Argon2id Support</h4>
+   <h4 class="title">Argon2id のサポート</h4>
 
    <p class="para">
-    The <strong class="option configure">--with-password-argon2[=dir]</strong>
- configure
-    argument now provides support for both Argon2i and Argon2id hashes in the
-    <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span>, <span class="function"><a href="function.password-verify.html" class="function">password_verify()</a></span>,
-    <span class="function"><a href="function.password-get-info.html" class="function">password_get_info()</a></span>, and
-    <span class="function"><a href="function.password-needs-rehash.html" class="function">password_needs_rehash()</a></span> functions. Passwords may be hashed
-    and verified using the <strong><code>PASSWORD_ARGON2ID</code></strong> constant.
-    Support for both Argon2i and Argon2id in the <span class="function"><strong>password_*()</strong></span>
-    functions now requires PHP be linked against libargon2 reference library ≥
-    20161029.
+    configure コマンドに <strong class="option configure">--with-password-argon2[=dir]</strong>
+
+    オプションを与えることで、Argon2i と Argon2id ハッシュが <span class="function"><a href="function.password-hash.html" class="function">password_hash()</a></span>, <span class="function"><a href="function.password-verify.html" class="function">password_verify()</a></span>,
+    <span class="function"><a href="function.password-get-info.html" class="function">password_get_info()</a></span>, および
+    <span class="function"><a href="function.password-needs-rehash.html" class="function">password_needs_rehash()</a></span>
+    でサポートされるようになります。
+    <strong><code>PASSWORD_ARGON2ID</code></strong>
+    を使うことで、パスワードはハッシュ化され、検証されます。
+    <span class="function"><strong>password_*()</strong></span> 関数で Argon2i と Argon2id
+    のサポートを使うには、PHP を libargon2 ≥
+    20161029 とリンクする必要があります。
    </p>
   </div>
 
  </div>
 
  <div class="sect2" id="migration73.new-features.fpm">
-  <h3 class="title">FastCGI Process Manager</h3>
+  <h3 class="title">php-fpm</h3>
 
   <p class="para">
-   New options have been added to customize the FPM logging:
+   FRM のロギングをカスタマイズするために、新しいオプションが追加されました。
    <dl>
 
     
@@ -113,9 +116,7 @@
      <dd>
 
       <span class="simpara">
-       This global option can be used for setting the log limit for the logged
-       line which allows to log messages longer than 1024 characters without
-       wrapping. It also fixes various wrapping issues.
+      このグローバルオプションは、1024文字以上のログを改行なしにロギングするために、ログの長さの限界を設定するために使います。これにより、様々な改行の問題も修正されます。
       </span>
      </dd>
 
@@ -127,7 +128,7 @@
      <dd>
 
       <span class="simpara">
-       This global option allows an experimental logging without extra buffering.
+       このグローバルオプションによって、追加のバッファリングなしに、実験的なロギングを行うことができます。
       </span>
      </dd>
 
@@ -139,8 +140,8 @@
      <dd>
 
       <span class="simpara">
-       This pool option allows to disable the output decoration for workers
-       output when <em>catch_workers_output</em> is enabled.
+       このプールオプションを使うことで、 <em>catch_workers_output</em>
+       が有効になった場合に、ワーカーの出力をデコレートする機能を無効にできます。
       </span>
      </dd>
 
@@ -151,45 +152,47 @@
  </div>
 
  <div class="sect2" id="migration73.new-features.bc">
-  <h3 class="title">BC Math Functions</h3>
+  <h3 class="title">BC Math 関数</h3>
 
   <p class="para">
-   <span class="function"><a href="function.bcscale.html" class="function">bcscale()</a></span> can now also be used as getter to retrieve the
-   current scale in use.
+   <span class="function"><a href="function.bcscale.html" class="function">bcscale()</a></span> 関数は、現在使われている基数を取得する getter
+   としても使えるようになりました。
   </p>
  </div>
 
  <div class="sect2" id="migration73.new-features.ldap">
-  <h3 class="title">Lightweight Directory Access Protocol</h3>
+  <h3 class="title">LDAP</h3>
 
   <p class="para">
-   Full support for LDAP Controls has been added to the <a href="book.ldap.html" class="link">LDAP</a> querying functions and
-   <span class="function"><a href="function.ldap-parse-result.html" class="function">ldap_parse_result()</a></span>:
+   LDAPコントロールの完全なサポートが <a href="book.ldap.html" class="link">LDAP</a> クエリ関数と
+   <span class="function"><a href="function.ldap-parse-result.html" class="function">ldap_parse_result()</a></span> 関数に追加されました:
    <ul class="itemizedlist">
     <li class="listitem">
      <span class="simpara">
-      A <em>$serverctrls</em> parameter to send controls to the
-      server in <span class="function"><a href="function.ldap-add.html" class="function">ldap_add()</a></span>,
+      コントロールをサーバに送信するために <em>$serverctrls</em>
+      パラメータが <span class="function"><a href="function.ldap-add.html" class="function">ldap_add()</a></span>,
       <span class="function"><a href="function.ldap-mod-replace.html" class="function">ldap_mod_replace()</a></span>, <span class="function"><a href="function.ldap-mod-add.html" class="function">ldap_mod_add()</a></span>,
       <span class="function"><a href="function.ldap-mod-del.html" class="function">ldap_mod_del()</a></span>, <span class="function"><a href="function.ldap-rename.html" class="function">ldap_rename()</a></span>,
       <span class="function"><a href="function.ldap-compare.html" class="function">ldap_compare()</a></span>, <span class="function"><a href="function.ldap-delete.html" class="function">ldap_delete()</a></span>,
       <span class="function"><a href="function.ldap-modify-batch.html" class="function">ldap_modify_batch()</a></span>,
-      <span class="function"><a href="function.ldap-search.html" class="function">ldap_search()</a></span>, <span class="function"><a href="function.ldap-list.html" class="function">ldap_list()</a></span> and
-      <span class="function"><a href="function.ldap-read.html" class="function">ldap_read()</a></span> has been added.
+      <span class="function"><a href="function.ldap-search.html" class="function">ldap_search()</a></span>, <span class="function"><a href="function.ldap-list.html" class="function">ldap_list()</a></span> および
+      <span class="function"><a href="function.ldap-read.html" class="function">ldap_read()</a></span> 関数に追加されました。
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      The out parameter <em>$serverctrls</em> to get controls from the server in
-      <span class="function"><a href="function.ldap-parse-result.html" class="function">ldap_parse_result()</a></span> has been added.
+      サーバからコントロールを取得するために、出力パラメータ
+      <em>$serverctrls</em> が
+      <span class="function"><a href="function.ldap-parse-result.html" class="function">ldap_parse_result()</a></span> 関数に追加されました。
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      Support for <strong><code>LDAP_OPT_SERVER_CONTROLS</code></strong> and
-      <strong><code>LDAP_OPT_CLIENT_CONTROLS</code></strong> in
-      <span class="function"><a href="function.ldap-get-option.html" class="function">ldap_get_option()</a></span> and
-      <span class="function"><a href="function.ldap-set-option.html" class="function">ldap_set_option()</a></span> has been fixed.
+      <span class="function"><a href="function.ldap-get-option.html" class="function">ldap_get_option()</a></span> と
+      <span class="function"><a href="function.ldap-set-option.html" class="function">ldap_set_option()</a></span> 関数の
+      <strong><code>LDAP_OPT_SERVER_CONTROLS</code></strong> と
+      <strong><code>LDAP_OPT_CLIENT_CONTROLS</code></strong>
+      のサポートが修正されました。
      </span>
     </li>
    </ul>
@@ -197,15 +200,15 @@
  </div>
 
  <div class="sect2" id="migration73.new-features.mbstring">
-  <h3 class="title">Multibyte String Functions</h3>
+  <h3 class="title">マルチバイト文字列関数</h3>
 
   <div class="sect3" id="migration73.new-features.mbstring.case-mapping-folding">
-   <h4 class="title">Full Case-Mapping and Case-Folding Support</h4>
+   <h4 class="title">完全な Case-Mapping と Case-Folding のサポート</h4>
 
    <p class="para">
-    Support for full case-mapping and case-folding has been added. Unlike simple
-    case-mapping, full case-mapping may change the length of the string. For
-    example:
+    完全な Case-Mapping と Case-Folding のサポートが追加されました。
+    シンプルな大文字小文字のマッピングと異なり、完全な Case-Mapping
+    では、文字列の長さが変わる場合があります。たとえば、以下のようになります:
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -215,17 +218,20 @@
      </div>
 
     </div>
-    The different casing mapping and folding modes are available through
-    <span class="function"><a href="function.mb-convert-case.html" class="function">mb_convert_case()</a></span>:
+    異なる Case-Mapping や Case-Folding
+    のモードは、<span class="function"><a href="function.mb-convert-case.html" class="function">mb_convert_case()</a></span>
+    関数で利用できます:
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       <strong><code>MB_CASE_LOWER</code></strong> (used by <span class="function"><a href="function.mb-strtolower.html" class="function">mb_strtolower()</a></span>)
+       <strong><code>MB_CASE_LOWER</code></strong> (<span class="function"><a href="function.mb-strtolower.html" class="function">mb_strtolower()</a></span>
+       で使われています)
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       <strong><code>MB_CASE_UPPER</code></strong> (used by <span class="function"><a href="function.mb-strtoupper.html" class="function">mb_strtoupper()</a></span>)
+       <strong><code>MB_CASE_UPPER</code></strong> (<span class="function"><a href="function.mb-strtoupper.html" class="function">mb_strtoupper()</a></span>
+       で使われています)
       </span>
      </li> 
      <li class="listitem">
@@ -259,66 +265,67 @@
       </span>
      </li> 
     </ul>
-    Only unconditional, language agnostic full case-mapping is performed.
+    無条件に、言語に中立かつ完全な Case-Mapping のみが行われます。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.mbstring.case-insensitive-ops">
-   <h4 class="title">Case-Insensitive String Operations use Case-Folding</h4>
+   <h4 class="title">大文字小文字を区別しない文字列操作は、Case-Folding を使う</h4>
 
    <p class="para">
-    Case-insensitive string operations now use case-folding instead of case-
-    mapping during comparisons. This means that more characters will be
-    considered (case insensitively) equal now.
+    大文字小文字を区別しない文字列操作は、比較の際に Case-Mapping ではなく、Case-Folding
+    を使うようになりました。
+    これは、より多くの文字が (大文字小文字を区別しないという意味で) 等価と見做されるようになったことを意味します。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.mbstring.mb-case-title">
-   <h4 class="title">MB_CASE_TITLE performs Title-Case Conversion</h4>
+   <h4 class="title">MB_CASE_TITLE による Title-Case 変換</h4>
 
    <p class="para">
-    <span class="function"><a href="function.mb-convert-case.html" class="function">mb_convert_case()</a></span> with <strong><code>MB_CASE_TITLE</code></strong>
-    now performs title-case conversion based on the Cased and CaseIgnorable
-    derived Unicode properties. In particular this also improves handling of
-    quotes and apostrophes.
+    <span class="function"><a href="function.mb-convert-case.html" class="function">mb_convert_case()</a></span> 関数を
+    <strong><code>MB_CASE_TITLE</code></strong>
+    と使うと、Unicodeプロパティ由来の大文字小文字の区別の有無に基づいて、Title-case
+    変換を行うようになりました。この変更は特に、クォートやアポストロフィーのハンドリングも改善します。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.mbstring.ucd11">
-   <h4 class="title">Unicode 11 Support</h4>
+   <h4 class="title">Unicode 11 のサポート</h4>
 
    <p class="para">
-    The <a href="book.mbstring.html" class="link">Multibyte String</a> data tables have
-    been updated for Unicode 11.
+    <a href="book.mbstring.html" class="link">マルチバイト文字列</a>
+    のデータテーブルは、Unicode 11 をサポートするように更新されました。
    </p> 
   </div>
 
   <div class="sect3" id="migration73.new-features.mbstring.long-strings">
-   <h4 class="title">Long String Support</h4>
+   <h4 class="title">長い文字列のサポート</h4>
 
    <p class="para">
-    The <a href="ref.mbstring.html" class="link">Multibyte String Functions</a> now
-    correctly support strings larger than 2GB.
+    <a href="ref.mbstring.html" class="link">マルチバイト文字列関数</a> は 
+    2GB 以上の文字列を正しくサポートするようになりました。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.mbstring.performance">
-   <h4 class="title">Performance Improvements</h4>
+   <h4 class="title">パフォーマンスの向上</h4>
 
    <p class="para">
-    Performance of the <a href="book.mbstring.html" class="link">Multibyte String</a>
-    extension has been significantly improved across the board. The largest
-    improvements are in case conversion functions.
+    <a href="book.mbstring.html" class="link">マルチバイト文字列</a>
+    拡張機能のパフォーマンスが全体的に大きく向上しました。大文字小文字のケースの変換関数で、一番大きな改善が見られます。
    </p>
   </div>
 
   <div class="sect3" id="migration73.new-features.mbstring.named-captures">
-   <h4 class="title">Named Captures Support</h4>
+   <h4 class="title">名前付きキャプチャのサポート</h4>
 
    <p class="para">
-    The <em>mb_ereg_*</em> functions now support named captures.
-    Matching functions like <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> will now return named
-    captures both using their group number and their name, similar to PCRE:
+    <em>mb_ereg_*</em>
+    関数は、名前付きキャプチャをサポートしました。
+    <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> のようなマッチング関数は
+    グループ番号と名前の両方を使って名前付きキャプチャを返します。これは PCRE
+    に似た動作です:
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -328,9 +335,9 @@
      </div>
 
     </div>
-    Additionally, <span class="function"><a href="function.mb-ereg-replace.html" class="function">mb_ereg_replace()</a></span> now supports the
-    <code class="code">\k&lt;&gt;</code> and <code class="code">\k&#039;&#039;</code> notations to reference named
-    captures in the replacement string:
+    これに加えて、 <span class="function"><a href="function.mb-ereg-replace.html" class="function">mb_ereg_replace()</a></span> 関数は
+    置換文字列で名前付きキャプチャを参照するために
+    <code class="code">\k&lt;&gt;</code> と <code class="code">\k&#039;&#039;</code> 記法をサポートしました:
     <div class="informalexample">
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -340,8 +347,8 @@
      </div>
 
     </div>
-    <code class="code">\k&lt;&gt;</code> and <code class="code">\k&#039;&#039;</code> can also be used for numbered
-    references, which also works with group numbers greater than 9.
+    <code class="code">\k&lt;&gt;</code> and <code class="code">\k&#039;&#039;</code>
+    記法は、数値参照にも使えます。これは、9以上のグループ番号でも動作します。
    </p>
   </div>
 
@@ -351,10 +358,11 @@
   <h3 class="title">Readline</h3>
 
   <p class="para">
-   Support for the <em>completion_append_character</em> and
-   <em>completion_suppress_append</em> options has been added to
-   <span class="function"><a href="function.readline-info.html" class="function">readline_info()</a></span>. These options are only available if PHP
-   is linked against libreadline (rather than libedit).
+   <em>completion_append_character</em> と
+   <em>completion_suppress_append</em> オプションのサポートが 
+   <span class="function"><a href="function.readline-info.html" class="function">readline_info()</a></span> 関数に追加されました。
+   これらのオプションは PHP が (libedit ではなく) libreadline
+   とリンクされた場合のみ利用できます。
   </p>
  </div>
 
