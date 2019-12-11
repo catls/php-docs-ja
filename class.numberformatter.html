@@ -221,6 +221,7 @@
   
 
 
+
 <div class="section" id="intl.numberformatter-constants">
  <h2 class="title">定義済み定数</h2>
 
@@ -343,6 +344,24 @@
      <dd>
 
       <span class="simpara">パターンで定義するルールベースの形式</span>
+     </dd>
+
+    
+
+    
+     <dt id="numberformatter.constants.currency-accounting">
+      <strong><code>NumberFormatter::CURRENCY_ACCOUNTING</code></strong>
+      (<span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>)
+     </dt>
+
+     <dd>
+
+      <span class="simpara">
+       会計処理のための通貨フォーマット。例:
+       負の通貨量の場合、<em>-$3.00</em>
+       ではなく、<em>($3.00)</em> になります。
+       PHP 7.4.1 と ICU 53 から利用可能です。
+      </span>
      </dd>
 
     
