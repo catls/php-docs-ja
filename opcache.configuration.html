@@ -143,9 +143,10 @@
 
      <tr>
       <td><a href="opcache.configuration.html#ini.opcache.optimization-level" class="link">opcache.optimization_level</a></td>
-      <td>&quot;0x7FFFBFFF&quot;</td>
+      <td>&quot;0x7FFEBFFF&quot;</td>
       <td>PHP_INI_SYSTEM</td>
-      <td>PHP 5.6.18 で 0xFFFFFFFF から変更されました</td>
+      <td> PHP 7.3.0 で 0x7FFFBFFF から変更されました。
+      PHP 5.6.18 で 0xFFFFFFFF から変更されました。</td>
      </tr>
 
      <tr>
@@ -540,9 +541,7 @@
      </p>
      <p class="para">
       このディレクティブは、PHP 7.2.0 で削除されました。
-      A variant of the fast
-      shutdown sequence has been integrated into PHP and will be automatically
-      used if possible.
+      高速なシャットダウンシーケンスの類の設定は、PHP本体に統合され、可能であれば自動的に使用されます。
      </p>
     </dd>
 
@@ -806,10 +805,11 @@
     <dd>
 
      <p class="para">
-     
-      Prevents caching files that are less than this number of seconds old.
-      It protects from caching of incompletely updated files. In case all file
-      updates on your site are atomic, you may increase performance by setting it to &quot;0&quot;.
+      ここで指定された秒数の間は、キャッシュすることを防ぎます。
+      これにより、不完全に更新されたファイルがキャッシュされることを防止します。
+      あなたのサイトの全てのファイルの更新がアトミックに行われる場合、
+      この設定を &quot;0&quot;
+      に設定することで、パフォーマンスを向上させられる可能性があります。
      </p>
     </dd>
 
@@ -823,9 +823,9 @@
     <dd>
 
      <p class="para">
-     
-      Enables or disables copying of PHP code (text segment) into HUGE PAGES.
-      This should improve performance, but requires appropriate OS configuration.
+      PHPコード(textセグメント)を HUGE PAGE
+      にコピーする機能を有効にしたり、無効にしたりできます。
+      これにより、パフォーマンスは向上するはずですが、適切なOSの設定が必要です。
      </p>
     </dd>
 
@@ -853,10 +853,10 @@
     <dd>
 
      <p class="para">
-     
-      Produces opcode dumps for debugging different stages of optimizations.
-      0x10000 will output opcodes as the compiler produced them before any optimization occurs 
-      while 0x20000 will output optimized codes.
+      異なった段階の最適化をデバッグするために、オペコードのダンプを生成します。
+      0x10000
+      を指定すると、新湯最適化の前にコンパイラが提供するオペコードを出力します。
+      0x20000 を指定すると、最適化されたコードを出力します。
      </p>
     </dd>
 
@@ -967,12 +967,12 @@
     <dd>
 
      <p class="para">
-      
-      Specifies a PHP script that is going to be compiled and executed at server start-up,
-      and which may preload other files, either by <span class="function"><a href="function.include.html" class="function">include</a></span>ing them or by
-      using the <span class="function"><a href="function.opcache-compile-file.html" class="function">opcache_compile_file()</a></span> function. All the entities (e.g.
-      functions and classes) defined in these files will be available to requests out of 
-      the box, until the server is shut down.
+      サーバが起動した際にコンパイルされ、実行されるPHPスクリプトを指定します。
+      ここで指定したファイルは <span class="function"><a href="function.include.html" class="function">include</a></span>
+      されたり、<span class="function"><a href="function.opcache-compile-file.html" class="function">opcache_compile_file()</a></span>
+      関数で指定されることで他のファイルもロードするかもしれません。
+      それらのファイルに指定された全てのエンティティ(e.g 関数やクラス)
+      は、サーバがシャットダウンされるまで、外部からのリクエストに対して利用できるようになります。
      </p>
     </dd>
 
@@ -986,8 +986,9 @@
     <dd>
 
      <p class="para">
-      Preloading code as root is not allowed for security reasons. This directive
-      facilitates to let the preloading to be run as another user.
+      root
+      ユーザでコードをあらかじめロードすることは、セキュリティ上の理由から禁止されています。
+      このディレクティブは、コードを別のユーザでロードする手助けをします。
      </p>
     </dd>
 

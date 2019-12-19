@@ -931,7 +931,7 @@ bool(false)
   <p class="para">
    PHP が文字列に対して特定のエンコーディングを強制しないのなら、
    いったいどのようにして文字列リテラルをエンコードしているのでしょう?
-   たとえば、文字列 <em>&quot;a&quot;</em> と同等なのは <em>&quot;\xE1&quot;</em> (ISO-8859-1)、
+   たとえば、文字列 <em>&quot;á&quot;</em> と同等なのは <em>&quot;\xE1&quot;</em> (ISO-8859-1)、
    <em>&quot;\xC3\xA1&quot;</em> (UTF-8, C form)、
    <em>&quot;\x61\xCC\x81&quot;</em> (UTF-8, D form) のどれでしょう?
    あるいはそれ以外の何かなのでしょうか?
@@ -984,8 +984,8 @@ bool(false)
      <span class="function"><a href="function.strtoupper.html" class="function">strtoupper()</a></span> そして <span class="function"><a href="function.ucfirst.html" class="function">ucfirst()</a></span> です。
      つまり、これらの関数はシングルバイトエンコーディングでしか使えず、
      さらにエンコーディングとロケールがマッチしていなければならないということです。
-     たとえば、<em>strtoupper(&quot;a&quot;)</em> が正しく <em>&quot;A&quot;</em>
-     を返すには、ロケールを正しく設定したうえで <em>a</em>
+     たとえば、<em>strtoupper(&quot;á&quot;)</em> が正しく <em>&quot;Á&quot;</em>
+     を返すには、ロケールを正しく設定したうえで <em>á</em>
      をシングルバイトで符号化しておかなければなりません。仮に UTF-8 を使っていたとすると、
      正しい結果は返されないでしょう。さらに、現在のロケール設定によっては
      返される文字列が壊れてしまう可能性もあります。

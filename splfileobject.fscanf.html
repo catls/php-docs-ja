@@ -69,9 +69,17 @@
 
   <p class="para">
    A conversion specification follows this prototype:
-   <em>%[flags][width][.precision]specifier</em>.
+   <em>%[argnum$][flags][width][.precision]specifier</em>.
   </p>
 
+  <p class="formalpara">
+   <h5 class="title">Argnum</h5>
+   <p class="para">
+    An integer followed by a dollar sign <em>$</em>,
+    to specify which number argument to treat in the conversion.
+   </p>
+  </p>
+  
   <p class="para">
    <table class="doctable table">
     <caption><strong>Flags</strong></caption>

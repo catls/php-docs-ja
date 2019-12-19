@@ -37,6 +37,21 @@
   Windows 版 PHP に含まれています。
  </p>
  <blockquote class="note"><p><strong class="note">注意</strong>: 
+  <strong>PHP 7.4.0 以降の、Windows における追加セットアップ</strong><br />
+   <p class="para">
+   この拡張モジュールを動作させるには、
+Windows システムの <var class="envar">PATH</var> が通った場所に
+<acronym title="Dynamic Link Library">DLL</acronym> ファイルが存在する必要があります。
+<acronym title="Frequently Asked Questions">FAQ</acronym> の &quot;<a href="faq.installation.html#faq.installation.addtopath" class="link">Windows で PHP のディレクトリを
+PATH に追加するにはどうすればいいのですか?</a>&quot; で、その方法を説明しています。
+DLL ファイルを PHP のフォルダから Windows のシステムディレクトリにコピーしても動作します
+(システムディレクトリは、デフォルトで <var class="envar">PATH</var>
+に含まれるからです) が、これは推奨しません。
+<em class="emphasis">この拡張モジュールを使用するには、以下のファイルが
+<var class="envar">PATH</var> の通った場所にある必要があります。</em>  <var class="filename">libsqlite3.dll</var>.
+  </p>
+ </p></blockquote>
+ <blockquote class="note"><p><strong class="note">注意</strong>: 
   <p class="para">
    この拡張モジュールは一時 <acronym title="PHP Extension and Application Repository">PECL</acronym>
    拡張モジュールとして存在していましたが、
