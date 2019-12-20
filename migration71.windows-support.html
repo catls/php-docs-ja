@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Windows Support</title>
+  <title>Windows のサポート</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,20 +19,21 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="migration71.html">PHP 7.0.x から PHP 7.1.x への移行</a></li>
-    <li>Windows Support</li>
+    <li>Windows のサポート</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="migration71.windows-support" class="sect1">
- <h2 class="title">Windows Support</h2>
+ <h2 class="title">Windows のサポート</h2>
 
  <div class="sect2" id="migration71.windows-support.long-and-utf8-path">
-  <h3 class="title">Support for long and UTF-8 path</h3>
+  <h3 class="title">長いpath と UTF-8のpath のサポート</h3>
   <p class="para">
-    If a web application is UTF-8 conform, no further action is required. For
-    applications depending on paths in non UTF-8 encodings for I/O, an explicit
-    INI directive has to be set. The encoding INI settings check relies on the
-    order in the core:
+    Webアプリケーションが UTF-8
+    に対応しているなら、追加の処理は必要ありません。
+    UTF-8 でないpathへの I/O に依存したアプリケーションについては、
+    明示的に INIディレクティブを設定する必要があります。
+    エンコーディングのINI設定のチェックは、コアの順番に依存します:
   </p>
   <ul class="itemizedlist">
    <li class="listitem">
@@ -52,17 +53,17 @@
    </li>
   </ul>
   <p class="para">
-    Several functions for codepage handling were introduced:
+    コードページを扱う関数がいくつか追加されました:
   </p>
       <ul class="itemizedlist">
        <li class="listitem">
         <span class="simpara">
-         sapi_windows_cp_set() to set the default codepage
+         sapi_windows_cp_set() は、デフォルトのコードページを設定します
         </span>
        </li>
        <li class="listitem">
         <span class="simpara">
-         sapi_windows_cp_get() to retrieve the current codepage
+         sapi_windows_cp_get() は、現在のコードページを取得します
         </span>
        </li>
        <li class="listitem">
@@ -72,12 +73,12 @@
        </li>
        <li class="listitem">
         <span class="simpara">
-         sapi_windows_cp_conv() to convert between codepages, using iconv() compatible signature
+         sapi_windows_cp_conv() は、iconv() 互換のシグナチャで、コードページ間の変換を行います。
         </span>
        </li>
       </ul>
   <p class="para">
-   These functions are thread safe.
+   これらの関数はスレッドセーフです。
   </p>
   <p class="para">
     The console output codepage is adjusted depending on the encoding used in
@@ -141,26 +142,28 @@
   <h3 class="title">readline</h3>
 
   <p class="para">
-   The <a href="book.readline.html" class="link">readline extension</a> is supported
-   through the <a href="http://mingweditline.sourceforge.net/" class="link external">&raquo;&nbsp;WinEditLine
-   library</a>. Thereby, the interactive <acronym title="Command Line Interpreter/Interface">CLI</acronym> shell is
-   supported as well (<em>php.exe -a</em>).
+   <a href="book.readline.html" class="link">readline 拡張機能</a>
+   が <a href="http://mingweditline.sourceforge.net/" class="link external">&raquo;&nbsp;WinEditLine ライブラリ</a>
+   を通じてサポートされました。
+   これにより、インタラクティブな <acronym title="Command Line Interpreter/Interface">CLI</acronym>
+   シェルもサポートされました (<em>php.exe -a</em>)。
   </p>
  </div>
 
  <div class="sect2" id="migration71.windows-support.php-fcgi-children">
   <h3 class="title">PHP_FCGI_CHILDREN</h3>
   <p class="para">
-  <var class="varname"><var class="varname">PHP_FCGI_CHILDREN</var></var> is now respected. If this environment variable is 
-  defined, the first <var class="filename">php-cgi.exe</var> process will exec the specified number 
-  of children. These will share the same TCP socket.
+  環境変数 <var class="varname"><var class="varname">PHP_FCGI_CHILDREN</var></var> が尊重されるようになりました。
+  この環境変数が定義されていた場合、最初の <var class="filename">php-cgi.exe</var> 
+  プロセスが指定された数の子プロセスを実行します。
+  これらは同じTCPソケットを共有します。
   </p>
  </div>
 
  <div class="sect2" id="migration71.windows-support.ftok">
   <h3 class="title">ftok()</h3>
   <p class="para">
-   Added support for <span class="function"><a href="function.ftok.html" class="function">ftok()</a></span>
+   <span class="function"><a href="function.ftok.html" class="function">ftok()</a></span> 関数のサポートが追加されました。
   </p>
  </div>
 

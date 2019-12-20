@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Gets the error code</title>
+  <title>エラーコードを取得する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.error.html">Error</a></li>
-    <li>Gets the error code</li>
+    <li>エラーコードを取得する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="error.getcode" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Error::getCode</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">Error::getCode</span> &mdash; <span class="dc-title">Gets the error code</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">Error::getCode</span> &mdash; <span class="dc-title">エラーコードを取得する</span></p>
 
  </div>
  
@@ -38,7 +38,7 @@
    ) : <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span></div>
 
   <p class="para rdfs-comment">
-   Returns the error code.
+   エラーコードを返します
   </p>
  </div>
 
@@ -52,7 +52,7 @@
  <div class="refsect1 returnvalues" id="refsect1-error.getcode-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the error code as <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+   エラーコードを <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> 型として返します
   </p>
  </div>
 
@@ -61,7 +61,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="variable.httpresponseheader.basic">
-    <p><strong>例1 <span class="function"><strong>Error::getCode()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>Error::getCode()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Error</span><span style="color: #007700">(</span><span style="color: #DD0000">"Some&nbsp;error&nbsp;message"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">30</span><span style="color: #007700">);<br />}&nbsp;catch(</span><span style="color: #0000BB">Error&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;Error&nbsp;code&nbsp;is:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getCode</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

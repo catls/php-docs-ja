@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Constructor that disallows instantiation</title>
+  <title>コンストラクタを使ってインスタンス化はできません</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.weakreference.html">WeakReference</a></li>
-    <li>Constructor that disallows instantiation</li>
+    <li>コンストラクタを使ってインスタンス化はできません</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="weakreference.construct" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">WeakReference::__construct</h1>
-  <p class="verinfo">(PHP 7 &gt;= 7.4.0)</p><p class="refpurpose"><span class="refname">WeakReference::__construct</span> &mdash; <span class="dc-title">Constructor that disallows instantiation</span></p>
+  <p class="verinfo">(PHP 7 &gt;= 7.4.0)</p><p class="refpurpose"><span class="refname">WeakReference::__construct</span> &mdash; <span class="dc-title">コンストラクタを使ってインスタンス化はできません</span></p>
 
  </div>
 
@@ -38,8 +38,11 @@
    )</div>
 
   <p class="para rdfs-comment">
-   This method exists only to disallow instantiation of the <a href="class.weakreference.html" class="classname">WeakReference</a> class.
-   Weak references are to be instantiated with the factory method <span class="methodname"><a href="weakreference.create.html" class="methodname">WeakReference::create()</a></span>.
+   このメソッドは、<a href="class.weakreference.html" class="classname">WeakReference</a> クラスの
+   インスタンス化を禁止するためだけに存在しています。
+   <a href="class.weakreference.html" class="classname">WeakReference</a> は、
+   ファクトリメソッド <span class="methodname"><a href="weakreference.create.html" class="methodname">WeakReference::create()</a></span> 
+   を使ってインスタンス化されることになっています。
   </p>
  </div>
 
@@ -55,7 +58,7 @@
  <div class="refsect1 seealso" id="refsect1-weakreference.construct-seealso">
   <h3 class="title">参考</h3>
   <ul class="simplelist">
-   <li class="member"><span class="methodname"><a href="weakreference.create.html" class="methodname" rel="rdfs-seeAlso">WeakReference::create()</a> - Create a new weak reference</span></li>
+   <li class="member"><span class="methodname"><a href="weakreference.create.html" class="methodname" rel="rdfs-seeAlso">WeakReference::create()</a> - 弱い参照を生成する</span></li>
   </ul>
  </div>
 

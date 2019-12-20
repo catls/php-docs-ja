@@ -51,11 +51,12 @@
    をクッキー名に加えてください。
   </p>
 
-  <p class="para">
-   <a href="ini.core.html#ini.register-globals" class="link">register_globals</a> の設定に
-   よっては、クッキーから通常の PHP 変数を作成することも可能です。
-   しかし、この設定に依存することは推奨されません。なぜなら、セキュリティの
-   観点からこの機能はオフにされていることが多いからです。
+  <p class="para">   
+   古いシステム (PHP 5.3 以前) では、
+   <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>
+   が有効になっているかもしれませんが、
+   これは望ましくないセキュリティ上問題のある操作を引き起こす可能性があります。
+   仮に有効になっている場合、クッキーはグローバル変数として登録されます。
   </p>
 
   <p class="para">

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Gets the stack trace</title>
+  <title>スタックトレースを取得する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.error.html">Error</a></li>
-    <li>Gets the stack trace</li>
+    <li>スタックトレースを取得する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="error.gettrace" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Error::getTrace</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">Error::getTrace</span> &mdash; <span class="dc-title">Gets the stack trace</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">Error::getTrace</span> &mdash; <span class="dc-title">スタックトレースを取得する</span></p>
 
  </div>
 
@@ -38,7 +38,7 @@
    ) : <span class="type">array</span></div>
 
   <p class="para rdfs-comment">
-   Returns the stack trace.
+   スタックトレースを返します
   </p>
  </div>
 
@@ -52,7 +52,7 @@
  <div class="refsect1 returnvalues" id="refsect1-error.gettrace-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the stack trace as an <span class="type"><a href="language.types.array.html" class="type array">array</a></span>.
+   スタックトレースを <span class="type"><a href="language.types.array.html" class="type array">array</a></span> として返します
   </p>
  </div>
 
@@ -60,8 +60,8 @@
  <div class="refsect1 examples" id="refsect1-error.gettrace-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-319">
-    <p><strong>例1 <span class="function"><strong>Error::getTrace()</strong></span> example</strong></p>
+   <div class="example" id="example-320">
+    <p><strong>例1 <span class="function"><strong>Error::getTrace()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">()&nbsp;{<br />&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Error</span><span style="color: #007700">;<br />}<br /><br />try&nbsp;{<br />&nbsp;</span><span style="color: #0000BB">test</span><span style="color: #007700">();<br />}&nbsp;catch(</span><span style="color: #0000BB">Error&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getTrace</span><span style="color: #007700">());<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

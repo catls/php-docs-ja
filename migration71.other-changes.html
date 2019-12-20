@@ -11,7 +11,7 @@
   <div class="navbar-inner clearfix">
     <ul class="nav" style="width: 100%">
       <li style="float: left;"><a href="migration71.changed-functions.html">« 変更された関数</a></li>
-      <li style="float: right;"><a href="migration71.windows-support.html">Windows Support »</a></li>
+      <li style="float: right;"><a href="migration71.windows-support.html">Windows のサポート »</a></li>
     </ul>
   </div>
 </div>
@@ -166,8 +166,8 @@ string(1) &quot;@&quot;
     <dd>
 
      <p class="para">
-       If the value is set to -1, then the dtoa mode 0 is used. The default
-       value is still 14.
+      この値を -1 に設定すると、dtoa モードの 0 が使われます。
+      デフォルト値は 14 のままです。
      </p>
     </dd>
 
@@ -179,8 +179,8 @@ string(1) &quot;@&quot;
     <dd>
 
      <p class="para">
-       If the value is set to -1, then the dtoa mode 0 is used. The value -1 is
-       now used by default.
+      この値を -1 に設定すると、dtoa モードの 0 が使われます。
+      デフォルト値は -1 になりました。
      </p>
     </dd>
 
@@ -192,8 +192,8 @@ string(1) &quot;@&quot;
     <dd>
 
      <p class="para">
-       The default of this <var class="filename">php.ini</var> setting has been changed to 1, so by
-       default libjpeg warnings are ignored.
+      この <var class="filename">php.ini</var> 設定のデフォルト値は 1 になりました。
+      よって、デフォルトでは libjpeg の警告は無視されます。
      </p>
     </dd>
 
@@ -205,8 +205,8 @@ string(1) &quot;@&quot;
     <dd>
 
      <p class="para">
-       The default of this <var class="filename">php.ini</var> setting has been changed to 1
-       (enabled) in PHP 7.1.2.
+      この <var class="filename">php.ini</var> 設定のデフォルト値は、PHP 7.1.2 で 1 (有効) に変更され、
+      PHP 7.1.7 で 0 (無効) に戻されました。
      </p>
     </dd>
 
@@ -216,21 +216,24 @@ string(1) &quot;@&quot;
  </div>
 
  <div class="sect2" id="migration71.other-changes.session-id-csprng-gen">
-  <h3 class="title">Session ID generation with a CSPRNG only</h3>
+  <h3 class="title">セッションIDの生成は、CSPRNGのみから行われる</h3>
 
   <p class="para">
-   Session IDs will now only be generated with a CSPRNG.
+   セッションID は、CSPRNG のみから生成されるようになりました。
   </p>
  </div>
 
  <div class="sect2" id="migration71.other-changes.typeerror-error-messages">
-  <h3 class="title">More informative <a href="class.typeerror.html" class="classname">TypeError</a> messages when <strong><code>NULL</code></strong> is allowed</h3>
+  <h3 class="title"><strong><code>NULL</code></strong> が許可されていた場合の <a href="class.typeerror.html" class="classname">TypeError</a>
+  メッセージがよりわかりやすく</h3>
   <p class="para">
-   <a href="class.typeerror.html" class="classname">TypeError</a> exceptions for arg_info type checks will
-   now provide more informative error messages. If the parameter type or return
-   type accepts <strong><code>NULL</code></strong> (by either having a default value of <strong><code>NULL</code></strong> or being a
-   nullable type), then the error message will now mention this with a message
-   of &quot;must be ... or null&quot; or &quot;must ... or be null.&quot;
+   arg_info 型をチェックする際の <a href="class.typeerror.html" class="classname">TypeError</a> 例外
+   が、よりわかりやすいエラーメッセージを出力するようになりました。
+   引数の型や戻り値の型が <strong><code>NULL</code></strong> を許可していた場合
+   (デフォルト値が <strong><code>NULL</code></strong> だった場合や、nullable 型だった場合)、
+   エラーメッセージはそのことを
+   &quot;must be ... or null&quot; や &quot;must ... or be null.&quot;
+   といった形で示すようになりました。
   </p>
  </div>
 </div></div></div></body></html>

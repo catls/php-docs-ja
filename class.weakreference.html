@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>The WeakReference class</title>
+  <title>WeakReference クラス</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,13 +19,13 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="reserved.interfaces.html">定義済みのインターフェイスとクラス</a></li>
-    <li>The WeakReference class</li>
+    <li>WeakReference クラス</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="class.weakreference" class="reference">
 
- <h1 class="title">The WeakReference class</h1>
+ <h1 class="title">WeakReference クラス</h1>
  
 
  <div class="partintro"><p class="verinfo">(PHP 7 &gt;= 7.4.0)</p>
@@ -34,17 +34,18 @@
   <div class="section" id="weakreference.intro">
    <h2 class="title">はじめに</h2>
    <p class="para">
-    Weak references allow the programmer to retain a reference to an object which does not prevent
-    the object from being destroyed. They are useful for implementing cache like structures.
+    弱い参照により、オブジェクトが破棄されるのを防がないオブジェクトへの参照を保持することが可能です。
+    この機能は、キャッシュのようなデータ構造を実装するのに役立ちます。
    </p>
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
-     The class <strong class="classname">WeakReference</strong> is not to be confused with the class
-     <a href="class.weakref.html" class="classname">WeakRef</a> of the <a href="class.weakref.html" class="link">Weakref</a> extension.
+     <strong class="classname">WeakReference</strong> クラスは、
+     <a href="class.weakref.html" class="link">Weakref</a> 拡張機能の
+     <a href="class.weakref.html" class="classname">WeakRef</a> クラスと混乱させる意図はありません。
     </p>
    </p></blockquote>
    <p class="para">
-    <strong class="classname">WeakReference</strong>s cannot be serialized.
+    <strong class="classname">WeakReference</strong> クラスはシリアライズ化できません。
    </p>
   </div>
 
@@ -85,10 +86,10 @@
   </div>
 
   <div class="section" id="weakreference.examples">
-   <h2 class="title">WeakReference Examples</h2>
+   <h2 class="title">WeakReference の例</h2>
    <p class="para">
-    <div class="example" id="example-334">
-     <p><strong>例1 Basic WeakReference Usage</strong></p>
+    <div class="example" id="example-335">
+     <p><strong>例1 基本的な WeakReference クラスの使い方</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$obj&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">stdClass</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$weakref&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">WeakReference</span><span style="color: #007700">::</span><span style="color: #0000BB">create</span><span style="color: #007700">(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$weakref</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">());<br />unset(</span><span style="color: #0000BB">$obj</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$weakref</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -118,12 +119,6 @@ NULL
 
 
 
- 
-
-
-
-
-
 
  
 
@@ -133,6 +128,15 @@ NULL
 
 
 
-<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="weakreference.construct.html">WeakReference::__construct</a> — Constructor that disallows instantiation</li><li><a href="weakreference.create.html">WeakReference::create</a> — Create a new weak reference</li><li><a href="weakreference.get.html">WeakReference::get</a> — Get a weakly referenced Object</li></ul>
+ 
+
+
+
+
+
+
+
+
+<h2>目次</h2><ul class="chunklist chunklist_reference"><li><a href="weakreference.construct.html">WeakReference::__construct</a> — コンストラクタを使ってインスタンス化はできません</li><li><a href="weakreference.create.html">WeakReference::create</a> — 弱い参照を生成する</li><li><a href="weakreference.get.html">WeakReference::get</a> — 弱く参照されたオブジェクトを取得する</li></ul>
 </div>
 </div></div></body></html>

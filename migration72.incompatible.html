@@ -256,6 +256,19 @@ int(2)
   </p>
  </div>
 
+ <div class="sect2" id="migration72.incompatible.array-unique">
+  <h3 class="title"><span class="function"><a href="function.array-unique.html" class="function">array_unique()</a></span> 関数を
+  <strong><code>SORT_STRING</code></strong> と使う場合</h3>
+
+  <p class="para">
+   <span class="function"><a href="function.array-unique.html" class="function">array_unique()</a></span> 関数を <strong><code>SORT_STRING</code></strong>
+   と使う場合、以前は配列をコピーし、重複した要素を削除
+   (配列を後にパックせずに) していましたが、このバージョンからは
+   新しい配列作られ、ユニークな要素を追加するようになりました。
+   これにより、以前のバージョンとは異なった数値のインデックスが生成されます。
+  </p>
+ </div>
+
  <div class="sect2" id="migration72.incompatible.bcmod-and-floats">
   <h3 class="title"><span class="function"><a href="function.bcmod.html" class="function">bcmod()</a></span> の小数点に対する挙動変更</h3>
 
@@ -304,4 +317,19 @@ int(2)
    <code class="parameter">sql.safe_mode</code> のini設定が削除されました。
   </p>
  </div>
+
+ <div class="sect2" id="migration72.incompatible.date_parse_from_format">
+  <h3 class="title"><span class="function"><a href="function.date-parse.html" class="function">date_parse()</a></span> と
+  <span class="function"><a href="function.date-parse-from-format.html" class="function">date_parse_from_format()</a></span> 関数への変更</h3>
+
+  <p class="para">
+   <span class="function"><a href="function.date-parse.html" class="function">date_parse()</a></span> 関数 と
+   <span class="function"><a href="function.date-parse-from-format.html" class="function">date_parse_from_format()</a></span> 関数
+   が返す <em>zone</em> 要素は、
+   分ではなくて秒を表現するようになり、符号も逆になりました。
+   たとえば <em>-120</em> 分は
+   <em>7200</em> 秒を意味するようになりました。
+  </p>
+ </div>
+
 </div></div></div></body></html>

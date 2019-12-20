@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Gets the line in which the error occurred</title>
+  <title>エラーが起きた行番号を取得する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.error.html">Error</a></li>
-    <li>Gets the line in which the error occurred</li>
+    <li>エラーが起きた行番号を取得する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="error.getline" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Error::getLine</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">Error::getLine</span> &mdash; <span class="dc-title">Gets the line in which the error occurred</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">Error::getLine</span> &mdash; <span class="dc-title">エラーが起きた行番号を取得する</span></p>
 
  </div>
  
@@ -38,7 +38,7 @@
    ) : <span class="type">int</span></div>
 
   <p class="para rdfs-comment">
-   Get line number where the error occurred.
+   エラーが起きた行番号を取得します
   </p>
  </div>
 
@@ -52,7 +52,7 @@
  <div class="refsect1 returnvalues" id="refsect1-error.getline-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the line number where the error occurred.
+   エラーが起きた行番号を返します
   </p>
  </div>
 
@@ -61,7 +61,7 @@
   <h3 class="title">例</h3>
   <p class="para">
    <div class="example" id="variable.argv.basic">
-    <p><strong>例1 <span class="function"><strong>Error::getLine()</strong></span> example</strong></p>
+    <p><strong>例1 <span class="function"><strong>Error::getLine()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">Error</span><span style="color: #007700">(</span><span style="color: #DD0000">"Some&nbsp;error&nbsp;message"</span><span style="color: #007700">);<br />}&nbsp;catch(</span><span style="color: #0000BB">Error&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;error&nbsp;was&nbsp;created&nbsp;on&nbsp;line:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getLine</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">?&gt;</span>

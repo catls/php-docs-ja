@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Get a weakly referenced Object</title>
+  <title>弱く参照されたオブジェクトを取得する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.weakreference.html">WeakReference</a></li>
-    <li>Get a weakly referenced Object</li>
+    <li>弱く参照されたオブジェクトを取得する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="weakreference.get" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">WeakReference::get</h1>
-  <p class="verinfo">(PHP 7 &gt;= 7.4.0)</p><p class="refpurpose"><span class="refname">WeakReference::get</span> &mdash; <span class="dc-title">Get a weakly referenced Object</span></p>
+  <p class="verinfo">(PHP 7 &gt;= 7.4.0)</p><p class="refpurpose"><span class="refname">WeakReference::get</span> &mdash; <span class="dc-title">弱く参照されたオブジェクトを取得する</span></p>
 
  </div>
 
@@ -38,8 +38,8 @@
    ) : <span class="type"><span class="type ?object">?object</span></span></div>
 
   <p class="para rdfs-comment">
-   Gets a weakly referenced object.
-   If the object has already been destroyed, <strong><code>NULL</code></strong> is returned.
+   弱く参照されたオブジェクトを取得します。
+   既にオブジェクトが破棄されていた場合、<strong><code>NULL</code></strong> が返されます。
   </p>
  </div>
 
@@ -53,7 +53,8 @@
  <div class="refsect1 returnvalues" id="refsect1-weakreference.get-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   Returns the referenced <span class="type"><a href="language.types.object.html" class="type object">object</a></span>, or <strong><code>NULL</code></strong> if the object has been destroyed.
+   参照されている <span class="type"><a href="language.types.object.html" class="type object">object</a></span> を返します。
+   オブジェクトが破棄されている場合は、<strong><code>NULL</code></strong> を返します。
   </p>
  </div>
 

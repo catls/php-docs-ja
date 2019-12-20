@@ -95,20 +95,39 @@
     <p class="para">
      PHP 5 以降では、<a href="language.oop5.basic.html#language.oop5.basic.new" class="link">new</a>
      演算子が自動的に参照を返すようになりました。そのため、
-     <a href="language.oop5.basic.html#language.oop5.basic.new" class="link">new</a> の結果を参照で代入しようとすると
-     PHP 5.3 以降では <strong><code>E_DEPRECATED</code></strong>、それより前のバージョンでは 
-     <strong><code>E_STRICT</code></strong> が発生します。
+     <a href="language.oop5.basic.html#language.oop5.basic.new" class="link">new</a> の結果を参照で代入することは
+     PHP 7.0.0 から許されなくなりました。
+     それより前のバージョンでは、PHP 5.3 以降では <strong><code>E_DEPRECATED</code></strong>、それより前のバージョンでは 
+     <strong><code>E_STRICT</code></strong> が発生していました。
     </p>
     <p class="para">
-     たとえば、このコードは警告が発生します。
+     たとえば、このコードはエラーが出るか、警告が発生します。
      <div class="informalexample">
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{}<br /><br /></span><span style="color: #FF8000">/*&nbsp;次の行を実行すると、このようなエラーメッセージが出ます<br />&nbsp;*&nbsp;Deprecated:&nbsp;Assigning&nbsp;the&nbsp;return&nbsp;value&nbsp;of&nbsp;new&nbsp;by&nbsp;reference&nbsp;is&nbsp;deprecated&nbsp;in...<br />&nbsp;*/<br /></span><span style="color: #0000BB">$o&nbsp;</span><span style="color: #007700">=&nbsp;&amp;new&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{}<br /><br /></span><span style="color: #0000BB">$o&nbsp;</span><span style="color: #007700">=&nbsp;&amp;new&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
       </div>
 
+      <p class="para">上の例の PHP 7 での出力は、このようになります。</p>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+Parse error: syntax error, unexpected &#039;new&#039; (T_NEW) in …
+</pre></div>
+      </div>
+      <p class="para">上の例の PHP 5.3 での出力は、このようになります。</p>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+Deprecated: Assigning the return value of new by reference is deprecated in …
+</pre></div>
+      </div>
+      <p class="para">上の例の PHP 5 での出力は、このようになります。</p>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+Strict Standards: Assigning the return value of new by reference is deprecated in …
+</pre></div>
+      </div>
      </div>
     </p>
     <p class="para">

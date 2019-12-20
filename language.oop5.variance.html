@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>共変性と反変性</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="language.oop5.serialization.html">« オブジェクトのシリアライズ</a></li>
+      <li style="float: right;"><a href="language.oop5.changelog.html">変更履歴 »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="index.html">PHP Manual</a></li>
+    <li><a href="language.oop5.html">クラスとオブジェクト</a></li>
+    <li>共変性と反変性</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="language.oop5.variance" class="sect1">
+
+ <h2 class="title">共変性と反変性</h2>
+
+ <p class="para">
+  PHP 7.4.0 より前のバージョンでは、クラスのメソッドは 不変 
+  な引数の型と、不変 な戻り値の型をサポートしていました。
+  これは、<var class="varname"><var class="varname">T</var></var>
+  という型を引数と戻り値に持つメソッドが親クラスにあった場合、
+  対応する子クラスのメソッドの引数や戻り値の型 <em class="emphasis">もまた</em>
+  <var class="varname"><var class="varname">T</var></var> <em class="emphasis">でなければならない</em>
+  ということです。
+ </p>
+
+ <p class="para">
+  PHP 7.4.0 以降では、共変性 と 反変性 の概念がサポートされています。
+  一方でこれらはややこしく <em class="emphasis">聞こえる</em>
+  かもしれませんが、実際はかなり単純、かつオブジェクト指向プログラミングに非常に役立つものです。
+ </p>
+
+ <div class="sect2" id="language.oop5.variance.covariance">
+  <h3 class="title">共変性</h3>
+
+  <p class="para">
+   共変性
+   とは、子クラスのメソッドが、親クラスの返り値よりも、より特定の、狭い型を返すことを許すことです。
+   これは、例で示したほうが良いでしょう。
+  </p>
+
+  <p class="para">
+   単純な抽象クラスの親である<var class="varname"><var class="varname">Animal</var></var> から始めましょう。  
+   このクラスは子クラス <var class="varname"><var class="varname">Cat</var></var> と <var class="varname"><var class="varname">Dog</var></var>
+   に継承されています。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">abstract&nbsp;class&nbsp;</span><span style="color: #0000BB">Animal<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">string&nbsp;$name</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">(</span><span style="color: #0000BB">string&nbsp;$name</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;abstract&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">speak</span><span style="color: #007700">();<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">Dog&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Animal<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">speak</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;barks"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">Cat&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Animal&nbsp;<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">speak</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;meows"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <p class="para">
+   この例では、どのメソッドも値を返さないことに注意して下さい。
+   以下ではこれらのクラスを使い、
+   <var class="varname"><var class="varname">Animal</var></var>, <var class="varname"><var class="varname">Cat</var></var> または
+   <var class="varname"><var class="varname">Dog</var></var>
+   クラスの新しいオブジェクトを返すファクトリをいくつか作ってみることにします。
+   以下では、共変性の実際の例が出てきます。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">interface&nbsp;</span><span style="color: #0000BB">AnimalShelter<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">adopt</span><span style="color: #007700">(</span><span style="color: #0000BB">string&nbsp;$name</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">Animal</span><span style="color: #007700">;<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">CatShelter&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">AnimalShelter<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">adopt</span><span style="color: #007700">(</span><span style="color: #0000BB">string&nbsp;$name</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">Cat&nbsp;</span><span style="color: #FF8000">//&nbsp;Animal&nbsp;型を返す代わりに、Cat型を返すことができる<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;</span><span style="color: #0000BB">Cat</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />class&nbsp;</span><span style="color: #0000BB">DogShelter&nbsp;</span><span style="color: #007700">implements&nbsp;</span><span style="color: #0000BB">AnimalShelter<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">adopt</span><span style="color: #007700">(</span><span style="color: #0000BB">string&nbsp;$name</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">Dog&nbsp;</span><span style="color: #FF8000">//&nbsp;Animal&nbsp;型を返す代わりに、Dog型を返すことができる<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;</span><span style="color: #0000BB">Dog</span><span style="color: #007700">(</span><span style="color: #0000BB">$name</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$kitty&nbsp;</span><span style="color: #007700">=&nbsp;(new&nbsp;</span><span style="color: #0000BB">CatShelter</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">adopt</span><span style="color: #007700">(</span><span style="color: #DD0000">"Ricky"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$kitty</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">speak</span><span style="color: #007700">();<br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$doggy&nbsp;</span><span style="color: #007700">=&nbsp;(new&nbsp;</span><span style="color: #0000BB">DogShelter</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">adopt</span><span style="color: #007700">(</span><span style="color: #DD0000">"Mavrick"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$doggy</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">speak</span><span style="color: #007700">();</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">上の例の出力は以下となります。</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Ricky meows
+Mavrick barks
+</pre></div>
+   </div>
+  </div>
+ </div>
+
+ <div class="sect2" id="language.oop5.variance.contravariance">
+  <h3 class="title">反変性</h3>
+
+  <p class="para">
+   一方で 反変性 は、子クラスのメソッドで、
+   親クラスのものよりも、より抽象的な、広い型を引数に指定することを許すものです。
+   既に示した <var class="varname"><var class="varname">Animal</var></var>, <var class="varname"><var class="varname">Cat</var></var> および
+   <var class="varname"><var class="varname">Dog</var></var> クラスの例を引き続き使い、
+   <var class="varname"><var class="varname">Food</var></var> と <var class="varname"><var class="varname">AnimalFood</var></var> クラスを追加し、
+   <var class="varname"><var class="varname">Animal</var></var> 抽象クラスに
+   <var class="varname"><var class="varname">eat(AnimalFood $food)</var></var> メソッドを追加してみましょう。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Food&nbsp;</span><span style="color: #007700">{}<br /><br />class&nbsp;</span><span style="color: #0000BB">AnimalFood&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Food&nbsp;</span><span style="color: #007700">{}<br /><br />abstract&nbsp;class&nbsp;</span><span style="color: #0000BB">Animal<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;</span><span style="color: #0000BB">string&nbsp;$name</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">(</span><span style="color: #0000BB">string&nbsp;$name</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">eat</span><span style="color: #007700">(</span><span style="color: #0000BB">AnimalFood&nbsp;$food</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;nom&nbsp;noms&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$food</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <p class="para">
+   反変性 の振る舞いを見るため、<var class="varname"><var class="varname">Dog</var></var> クラスの
+   <var class="varname"><var class="varname">eat</var></var> メソッドをオーバーライドし、あらゆる
+   <var class="varname"><var class="varname">Food</var></var> 型のオブジェクトを受け入れることにします。
+   <var class="varname"><var class="varname">Cat</var></var> クラスは変更していません。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Dog&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Animal<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">eat</span><span style="color: #007700">(</span><span style="color: #0000BB">Food&nbsp;$food</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&nbsp;nom&nbsp;noms&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$food</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <p class="para">
+   さて、反変性がどのように動くかが以下でわかるでしょう。
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$kitty&nbsp;</span><span style="color: #007700">=&nbsp;(new&nbsp;</span><span style="color: #0000BB">CatShelter</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">adopt</span><span style="color: #007700">(</span><span style="color: #DD0000">"Ricky"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$catFood&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">AnimalFood</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$kitty</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">eat</span><span style="color: #007700">(</span><span style="color: #0000BB">$catFood</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$doggy&nbsp;</span><span style="color: #007700">=&nbsp;(new&nbsp;</span><span style="color: #0000BB">DogShelter</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">adopt</span><span style="color: #007700">(</span><span style="color: #DD0000">"Mavrick"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$banana&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Food</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$doggy</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">eat</span><span style="color: #007700">(</span><span style="color: #0000BB">$banana</span><span style="color: #007700">);</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">上の例の出力は以下となります。</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Ricky nom noms AnimalFood
+Mavrick nom noms Food
+</pre></div>
+   </div>
+
+   <p class="para">
+    しかし、<var class="varname"><var class="varname">$kitty</var></var> の <var class="varname"><var class="varname">eat</var></var> メソッドに
+    <var class="varname"><var class="varname">$banana</var></var> を渡すとどうなるでしょう？
+   </p>
+
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+$kitty-&gt;eat($banana);</span>
+</code></div>
+   </div>
+
+   <p class="para">上の例の出力は以下となります。</p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Fatal error: Uncaught TypeError: Argument 1 passed to Animal::eat() must be an instance of AnimalFood, instance of Food given
+</pre></div>
+   </div>
+  </div>
+ </div>
+</div></div></div></body></html>

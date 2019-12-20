@@ -48,7 +48,7 @@
     <p class="para">
     <div class="example-contents screen">
 <div class="cdata"><pre>
- strlen
+strlen ( string $string ) : int
  
 (PHP 4, PHP 5)
  strlen -- 文字列の長さを得る
@@ -93,22 +93,22 @@ int strlen ( string $string )
 
        <tr>
         <td>
-         int
-        </td>
-        <td>
-         関数が戻す値の型。ここでは<span class="type"><span class="type 整数">整数</span></span>
-         (文字列の長さが数字で数えら得ている)
-        </td>
-       </tr>
-
-       <tr>
-        <td>
           ( string $string )
         </td>
         <td>
          strlen() 関数の最初の（この場合は唯一の）引数が
          <code class="parameter">string</code>という名前であり
          それは<span class="type"><span class="type 文字列">文字列</span></span>である
+        </td>
+       </tr>
+
+       <tr>
+        <td>
+         int
+        </td>
+        <td>
+         関数が戻す値の型。ここでは<span class="type"><span class="type 整数">整数</span></span>
+         (文字列の長さが数字で数えら得ている)
         </td>
        </tr>
 
@@ -123,7 +123,7 @@ int strlen ( string $string )
    <p class="para">
     <div class="example-contents screen">
 <div class="cdata"><pre>
-     returned type    function name    ( parameter type   parameter name )
+     function name    ( parameter type   parameter name ) : returned type
 </pre></div>
     </div>
    </p>
@@ -134,7 +134,7 @@ int strlen ( string $string )
    <p class="para">
     <div class="example-contents screen">    
 <div class="cdata"><pre>
-      bool in_array ( mixed $needle, array $haystack [, bool $strict = FALSE ] )
+      in_array ( mixed $needle, array $haystack [, bool $strict = FALSE ] ) : bool
 </pre></div>
     </div>
    </p>
@@ -166,8 +166,8 @@ int strlen ( string $string )
     <p class="para">
      <div class="example-contents screen"> 
 <div class="cdata"><pre>
-       int preg_match ( string $pattern , string $subject [, array &amp;$matches 
-      [, int $flags = 0 [, int $offset = 0 ]]] )
+       preg_match ( string $pattern , string $subject [, array &amp;$matches
+      [, int $flags = 0 [, int $offset = 0 ]]] ) : int
 </pre></div>
      </div>
     </p>
