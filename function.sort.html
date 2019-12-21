@@ -80,8 +80,9 @@
        ソート型のフラグ:
        <ul class="itemizedlist">
         <li class="listitem">
-         <span class="simpara"><strong><code>SORT_REGULAR</code></strong> - 通常通りに項目を比較
-         (型は変更しません)</span>
+         <span class="simpara"><strong><code>SORT_REGULAR</code></strong> - 通常通りに項目を比較;
+         比較の詳細は <a href="language.operators.comparison.html" class="link">比較演算子</a>
+         で説明されています。</span>
         </li>
         <li class="listitem">
          <span class="simpara"><strong><code>SORT_NUMERIC</code></strong> - 数値的に項目を比較</span>
@@ -164,7 +165,7 @@
  <div class="refsect1 examples" id="refsect1-function.sort-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6261">
+   <div class="example" id="example-6262">
     <p><strong>例1 <span class="function"><strong>sort()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -188,7 +189,7 @@ fruits[3] = orange
    fruits はアルファベットの昇順にソートされました。
   </p>
   <p class="para">
-   <div class="example" id="example-6262">
+   <div class="example" id="example-6263">
     <p><strong>例2 <span class="function"><strong>sort()</strong></span> で、大文字小文字を区別せずに自然順での並べ替えを行う例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -230,8 +231,10 @@ fruits[3] = orange20
   </p></blockquote>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="simpara">
+    <code class="parameter">sort_flags</code> が
+    <strong><code>SORT_REGULAR</code></strong>の場合に
     複数の型が混在する配列をソートする場合には、注意してください。
-    <span class="function"><strong>sort()</strong></span> が予測不可能な結果を出力することがあります。
+    <span class="function"><strong>sort()</strong></span> が期待しない結果を出力することがあります。
    </p>
   </div>
  </div>

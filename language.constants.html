@@ -39,12 +39,20 @@
    定数の名前は、PHP のラベルと同じ規則に従います。有効な定数の名前は、
    文字またはアンダースコアで始まり、任意の数の文字、数字、
    アンダースコアが後に続きます。正規表現で示すと次のようになります。
-   <em>[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*</em>
+   <code class="code">^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$</code>
   </p>
+  <p class="para">
+   <span class="function"><a href="function.define.html" class="function">define()</a></span> 関数を使うと、予約されていたり、
+   正しくない名前の定数を定義することが可能ですが、
+   これらの値は <span class="function"><a href="function.constant.html" class="function">constant()</a></span> 関数によって (のみ)
+   取得できます。
+   しかし、こんなことは推奨しません。
+  </p>
+
   <div class="tip"><strong class="tip">ヒント</strong><p class="simpara">
 <a href="userlandnaming.html" class="xref">ユーザーレベルでの命名の手引き</a> も参照ください。</p></div>
   <p class="para">
-   <div class="example" id="example-91">
+   <div class="example" id="example-92">
     <p><strong>例1 有効/無効な定数名の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -57,8 +65,8 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-    本節の目的においては、文字は a-z, A-Z, および127から255まで
-    (0x7f-0xff)のASCII文字を指します。
+    本節の目的においては、文字は a-z, A-Z, および128から255まで
+    (0x80-0xff)のASCII文字を指します。
    </span>
   </p></blockquote>
   <p class="simpara">

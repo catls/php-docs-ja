@@ -26,7 +26,7 @@
   <div id="layout-content"><div id="language.oop5.changelog" class="sect1">
  <h2 class="title">変更履歴</h2>
  <p class="para">
-  PHP 5 の OOP モデルの変更履歴をここに記録します。
+  PHP の OOP モデルの変更履歴をここに記録します。
   個々の機能の説明や注意点については、クラスとオブジェクトに関するドキュメントを参照ください。
  </p>
  <p class="para">
@@ -41,10 +41,182 @@
     </thead>
 
     <tbody class="tbody">
-      <tr>
+     <tr>
+      <td>7.4.0</td>
+      <td>
+       変更: <span class="function"><strong>__toString()</strong></span>
+       から、例外をスローすることができるようになりました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.4.0</td>
+      <td>
+       追加: 戻り値の型を制限する 共変性
+       と、引数の型の 反変性 がサポートされました。
+       完全な型の変位指定は、オートローディングが使われている場合のみ有効です。
+       単一ファイル内では、型の参照が循環参照していない場合のみ可能です。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.4.0</td>
+      <td>
+       追加: クラスのプロパティは、型を宣言できるようになりました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.3.0</td>
+      <td>
+       互換性のない変更:
+       <a href="class.traversable.html" class="classname">Traversable</a> への引数のアンパックを <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+       でないキーで行うことはサポートされなくなりました。
+       このような動作は意図されていなかったので、削除されました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.3.0</td>
+      <td>
+       互換性のない変更:
+       7.3.0 より前のバージョンでは、参照を代入することによって、
+       static なプロパティが異なる値になる可能性がありました。
+       この振る舞いは削除されました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.3.0</td>
+      <td>
+       変更:
+       <a href="language.operators.type.html" class="link">instanceof</a> 演算子が、
+       最初のオペランドにリテラルを受け入れるようになりました。
+       この場合、結果は常に FALSE を返します。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.2.0</td>
+      <td>
+       推奨されない変更:
+       <span class="function"><a href="function.autoload.html" class="function">__autoload()</a></span> メソッドは非推奨になりました。
+       <span class="function"><a href="function.spl-autoload-register.html" class="function">spl_autoload_register()</a></span> を使うのが望ましいためです。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.2.0</td>
+      <td>
+       変更: 次の名前は、クラスや trait、
+       インターフェイスの名前として使うことが禁止されます:
+       <em>object</em>
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.2.0</td>
+      <td>
+       変更:
+       名前空間のグループ指定における最後のカンマが許可されるようになりました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.2.0</td>
+      <td>
+       変更:
+       パラメータの型の拡大変換が可能になりました。
+       オーバーライドされたメソッドや、インターフェイスの実装の
+       引数の型を省略できるようになりました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.2.0</td>
+      <td>
+       変更:
+       ある抽象クラスが別の抽象クラスを継承しているときに、 
+       継承元クラスの抽象メソッドをオーバーライドできるようになりました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.1.0</td>
+      <td>
+       変更:
+       以下のキーワードが、
+       クラスやインターフェイスやトレイトの名前として使えなくなりました:
+       <em>void</em> と <em>iterable</em>
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.1.0</td>
+      <td>
+       追加:
+       <a href="language.oop5.visibility.html#language.oop5.visiblity-constants" class="link">クラス定数のアクセス範囲</a>
+       を指定できるようになりました。
+      </td>
+     </tr>
+
+     <tr>
       <td>7.0.0</td>
       <td>
-       Defining (compatible) properties in two used traits no longer triggers an error.
+       推奨されない変更:
+       static 宣言されていないメソッドに対する
+       <a href="language.oop5.static.html" class="link">static</a> 呼び出しが非推奨となりました。 
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.0.0</td>
+      <td>
+       推奨されない変更:
+       PHP 4 形式の
+       <a href="language.oop5.decon.html" class="link">コンストラクタ</a>
+       は非推奨になりました。
+       つまり、クラスと同じ名前のメソッドがクラスに定義されていた場合です。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.0.0</td>
+      <td>
+       追加:
+       <em class="emphasis">use</em> 宣言のグループ化:
+       複数のクラスや関数そして定数を同じ namespace からインポートする際に、
+       単一の use 文にまとめられるようになりました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.0.0</td>
+      <td>
+       追加:
+       <em>new class</em> 経由での
+       <a href="language.oop5.anonymous.html" class="link">無名クラス</a>
+       のサポートが追加されました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.0.0</td>
+      <td>
+       互換性のない変更:
+       <a href="class.traversable.html" class="classname">Traversable</a>
+       ではない <span class="type"><a href="language.types.object.html" class="type object">object</a></span> の反復処理の挙動が、
+       <span class="type"><a href="language.types.array.html" class="type array">array</a></span> を参照渡しで反復処理したときと同じようになりました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.0.0</td>
+      <td>
+       変更:
+       (互換性のある) プロパティを2つの
+       <a href="language.oop5.traits.html" class="link">traits</a> で使っても
+       エラーにならなくなりました。
       </td>
      </tr>
 
@@ -79,7 +251,8 @@
      <tr>
       <td>5.4.0</td>
       <td>
-       変更: <a href="language.oop5.abstract.html" class="link">抽象</a>クラスでコンストラクタのシグネチャを定義している場合は、
+       変更: <a href="language.oop5.abstract.html" class="link">抽象</a>クラスで<a href="language.oop5.decon.html" class="link">
+コンストラクタ</a>のシグネチャを定義している場合は、
        そのシグネチャに従うことが必須となりました。
       </td>
      </tr>
@@ -174,12 +347,13 @@
        変更: <a href="language.oop5.magic.html#object.tostring" class="link">__toString()</a>
        メソッドがコールされるのは
        <span class="function"><a href="function.echo.html" class="function">echo</a></span> や <span class="function"><a href="function.print.html" class="function">print</a></span>
-       と直接組み合わせて使った場合のみでした。このバージョンからは、任意の文字列コンテキスト
+       と直接組み合わせて使った場合のみでした。このバージョンからは、任意の
+       <span class="type"><a href="language.types.string.html" class="type string">string</a></span> コンテキスト
        (<span class="function"><a href="function.printf.html" class="function">printf()</a></span> で <em>%s</em> 修飾子を使った場合など)
        でコールされるようになりました。ただし、他の型のコンテキスト
        (<em>%d</em> 修飾子を使った場合など) は除きます。
-       PHP 5.2.0 以降は、<em>__toString</em>
-       メソッドを持たないオブジェクトを文字列に変換しようとすると
+       PHP 5.2.0 以降は、<a href="language.oop5.magic.html#object.tostring" class="link">__toString</a>
+       メソッドを持たない <span class="type"><a href="language.types.object.html" class="type object">object</a></span> を <span class="type"><a href="language.types.string.html" class="type string">string</a></span> に変換しようとすると
        <strong><code>E_RECOVERABLE_ERROR</code></strong> レベルのエラーが発生します。
       </td>
      </tr>

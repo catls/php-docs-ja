@@ -60,33 +60,33 @@
  <dd>
 
   <p class="para">
-   The format string is composed of zero or more directives:
-   ordinary characters (excluding <em>%</em>) that are
-   copied directly to the result and <em class="emphasis">conversion
-   specifications</em>, each of which results in fetching its
-   own parameter.
+   0個以上のディレクティブで構成されるフォーマット文字列:
+
+   変換結果に直接コピーされる通常文字列 (<em>%</em> は除きます)
+   と、<em class="emphasis">変換仕様</em>。
+   これらのいずれも、自分が持つパラメータを取得します。
   </p>
 
   <p class="para">
-   A conversion specification follows this prototype:
+   変換の仕様は、以下のプロトタイプに従います:
    <em>%[argnum$][flags][width][.precision]specifier</em>.
   </p>
 
   <p class="formalpara">
    <h5 class="title">Argnum</h5>
    <p class="para">
-    An integer followed by a dollar sign <em>$</em>,
-    to specify which number argument to treat in the conversion.
+    何個の引数を変換の対象にするかを指定するために、
+    数値の後にドル記号 <em>$</em> を続けます。
    </p>
   </p>
   
   <p class="para">
    <table class="doctable table">
-    <caption><strong>Flags</strong></caption>
+    <caption><strong>フラグ一覧</strong></caption>
     
      <thead>
       <tr>
-       <th>Flag</th>
+       <th>フラグ</th>
        <th>説明</th>
       </tr>
 
@@ -96,41 +96,40 @@
       <tr>
        <td><em>-</em></td>
        <td>
-        Left-justify within the given field width;
-        Right justification is the default
+        与えられたフィールドの幅を左寄せにします。
+        右寄せがデフォルトです。
        </td>
       </tr>
 
       <tr>
        <td><em>+</em></td>
        <td>
-        Prefix positive numbers with a plus sign
-        <em>+</em>; Default only negative
-        are prefixed with a negative sign.
+        正の数値の前に付ける <em>+</em> 符号です;
+        デフォルトは、負の数にだけマイナスの符号が数値の前に付きます。
        </td>
       </tr>
 
       <tr>
        <td><em> </em>(space)</td>
        <td>
-        Pads the result with spaces.
-        This is the default.
+        スペースに変換される詰め物です。
+        これがデフォルトです。
        </td>
       </tr>
 
       <tr>
        <td><em>0</em></td>
        <td>
-        Only left-pads numbers with zeros.
-        With <em>s</em> specifiers this can
-        also right-pad with zeros.
+        数値の左側を0埋めします。
+        <em>s</em> 指定子を使うと、
+        右側にも0埋めできます。
        </td>
       </tr>
 
       <tr>
        <td><em>&#039;</em>(char)</td>
        <td>
-        Pads the result with the character (char).
+        指定された (char) で埋めます。
        </td>
       </tr>
 
@@ -143,43 +142,40 @@
   <p class="formalpara">
    <h5 class="title">Width</h5>
    <p class="para">
-    An integer that says how many characters (minimum)
-    this conversion should result in.
+    (最小で)何文字がこの変換結果に含まれるかを数値で指定します。
    </p>
   </p>
 
   <p class="formalpara">
    <h5 class="title">Precision</h5>
    <p class="para">
-    A period <em>.</em> followed by an integer
-    who&#039;s meaning depends on the specifier:
+    ピリオド <em>.</em> の後に数値を続けますが、
+    その意味は指定子に依存します:
     <ul class="itemizedlist">
      <li class="listitem">
       <span class="simpara">
-       For <em>e</em>, <em>E</em>,
-       <em>f</em> and <em>F</em>
-       specifiers: this is the number of digits to be printed
-       after the decimal point (by default, this is 6).
+       <em>e</em>, <em>E</em>,
+       <em>f</em> と <em>F</em>
+       指定子の場合:
+       小数点の後に表示する桁数 (デフォルトでは、この値は6です)
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       For <em>g</em> and <em>G</em>
-       specifiers: this is the maximum number of significant
-       digits to be printed.
+       <em>g</em> と <em>G</em> 指定子の場合:
+       表示する最大の有効桁数
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       For <em>s</em> specifier: it acts as a cutoff point,
-       setting a maximum character limit to the string.
+       <em>s</em> 指定子の場合:
+       文字列を切り捨てる時点、つまり、文字列の最大の長さを設定します。
       </span>
      </li>
     </ul>
     <blockquote class="note"><p><strong class="note">注意</strong>: 
      <span class="simpara">
-      If the period is specified without an explicit value for precision,
-      0 is assumed.
+      明示的に精度を指定せず、ピリオドを指定した場合、精度は0として扱われます。
      </span>
     </p></blockquote>
    </p>
@@ -187,18 +183,18 @@
 
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-    Attempting to use a position specifier greater than
-    <strong><code>PHP_INT_MAX</code></strong> will generate warnings.
+    位置を示す指定子に、<strong><code>PHP_INT_MAX</code></strong>
+    を超える値を指定すると、警告が発生します。
    </span>
   </p></blockquote>
 
   <p class="para">
    <table class="doctable table">
-    <caption><strong>Specifiers</strong></caption>
+    <caption><strong>指定子の一覧</strong></caption>
     
      <thead>
       <tr>
-       <th>Specifier</th>
+       <th>指定子</th>
        <th>説明</th>
       </tr>
 
@@ -208,66 +204,62 @@
       <tr>
        <td><em>%</em></td>
        <td>
-        A literal percent character. No argument is required.
+        文字通り、パーセント文字です。
+        引数は不要です。
        </td>
       </tr>
 
       <tr>
        <td><em>b</em></td>
        <td>
-        The argument is treated as an integer and presented
-        as a binary number.
+        引数は数値として扱われ、バイナリ値として表現されます。
        </td>
       </tr>
 
       <tr>
        <td><em>c</em></td>
        <td>
-        The argument is treated as an integer and presented
-        as the character with that ASCII.
+        引数は数値として扱われ、ASCII文字として表現されます。
        </td>
       </tr>
 
       <tr>
        <td><em>d</em></td>
        <td>
-        The argument is treated as an integer and presented
-        as a (signed) decimal number.
+        引数は数値として扱われ、(符号付き)小数値として表現されます。
        </td>
       </tr>
 
       <tr>
        <td><em>e</em></td>
        <td>
-        The argument is treated as scientific notation (e.g. 1.2e+2).
-        The precision specifier stands for the number of digits after the
-        decimal point since PHP 5.2.1. In earlier versions, it was taken as
-        number of significant digits (one less).
+        引数は科学的記法で表現された値(e.g. 1.2e+2)として扱われます。
+        PHP 5.2.1 以降では、precision 指定子が小数点以降の桁数を表します。
+        それより前のバージョンでは、(ひと桁少ない)
+        有効桁数として解釈されていました。
        </td>
       </tr>
 
       <tr>
        <td><em>E</em></td>
        <td>
-        Like the <em>e</em> specifier but uses
-        uppercase letter (e.g. 1.2E+2).
+        <em>e</em> 指定子に似ていますが、
+        大文字を使います(e.g. 1.2E+2)
        </td>
       </tr>
 
       <tr>
        <td><em>f</em></td>
        <td>
-        The argument is treated as a float and presented
-        as a floating-point number (locale aware).
+        引数は小数として扱われ、浮動小数値として表現されます(ロケールを考慮します)。
        </td>
       </tr>
 
       <tr>
        <td><em>F</em></td>
        <td>
-        The argument is treated as a float and presented
-        as a floating-point number (non-locale aware).
-        Available as of PHP 5.0.3.
+        引数は小数として扱われ、浮動小数値として表現されます(ロケールを考慮しません)。
+        PHP 5.0.3 以降で利用可能です
        </td>
       </tr>
 
@@ -275,16 +267,20 @@
        <td><em>g</em></td>
        <td>
         <p class="para">
-         General format.
+         汎用フォーマット
         </p>
         <p class="para">
-         Let P equal the precision if nonzero, 6 if the precision is omitted,
-         or 1 if the precision is zero.
-         Then, if a conversion with style E would have an exponent of X:
+         P を精度を表す、ゼロでない値とします。
+         精度が省略された場合、Pの値は6です。
+         精度に0を指定した場合、Pの値は1になります。
+         この場合、 <em>E</em> 指定子の変換結果は、
+         X乗になります。
         </p>
         <p class="para">
-         If P &gt; X ≥ −4, the conversion is with style f and precision P − (X + 1).
-         Otherwise, the conversion is with style e and precision P − 1.
+         P &gt; X ≥ −4 の場合、<em>E</em>
+         指定子の変換結果となり、精度は、P − (X + 1) になります。
+         そうでない場合、<em>e</em> 指定子の変換結果となり、
+         精度は、P - 1 になります。
         </p>
        </td>
       </tr>
@@ -292,47 +288,43 @@
       <tr>
        <td><em>G</em></td>
        <td>
-        Like the <em>g</em> specifier but uses
-        <em>E</em> and <em>F</em>.
+        <em>g</em> 指定子に似ていますが、
+        <em>E</em> と <em>F</em> を使います。
        </td>
       </tr>
 
       <tr>
        <td><em>o</em></td>
        <td>
-        The argument is treated as an integer and presented
-        as an octal number.
+        引数は数値として扱われ、8進数値として表現されます。
        </td>
       </tr>
 
       <tr>
        <td><em>s</em></td>
        <td>
-        The argument is treated and presented as a string.
+        引数は文字列として扱われ、文字列として表現されます。
        </td>
       </tr>
 
       <tr>
        <td><em>u</em></td>
        <td>
-        The argument is treated as an integer and presented
-        as an unsigned decimal number.
+        引数は数値として扱われ、符号なし小数値として表現されます。
        </td>
       </tr>
 
       <tr>
        <td><em>x</em></td>
        <td>
-        The argument is treated as an integer and presented
-        as a hexadecimal number (with lowercase letters).
+        引数は数値として扱われ、16進数値(小文字)として表現されます。
        </td>
       </tr>
 
       <tr>
        <td><em>X</em></td>
        <td>
-        The argument is treated as an integer and presented
-        as a hexadecimal number (with uppercase letters).
+        引数は数値として扱われ、16進数値(大文字)として表現されます。
        </td>
       </tr>
 
@@ -344,25 +336,27 @@
 
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    The <em>c</em> type specifier ignores padding and width
+    <em>c</em> 指定子はパディングと幅を無視します
    </p>
   </div>
 
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Attempting to use a combination of the string and width specifiers with character sets that require more than one byte per character may result in unexpected results
+    文字列と width
+    指定子を、1文字の表現に1バイト以上必要な文字セットと一緒に使おうとすると、
+    期待しない結果になるかもしれません。
    </p>
   </div>
 
   <p class="para">
-   Variables will be co-erced to a suitable type for the specifier:
+   値は、指定子の型に合うように強制されます:
    <table class="doctable table">
-    <caption><strong>Type Handling</strong></caption>
+    <caption><strong>型のハンドリング</strong></caption>
     
      <thead>
       <tr>
-       <th>Type</th>
-       <th>Specifiers</th>
+       <th>型</th>
+       <th>指定子</th>
       </tr>
 
      </thead>
@@ -436,7 +430,7 @@
  <div class="refsect1 examples" id="refsect1-splfileobject.fscanf-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4896">
+   <div class="example" id="example-4897">
     <p><strong>例1 <span class="methodname"><strong>SplFileObject::fscanf()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

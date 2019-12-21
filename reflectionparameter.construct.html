@@ -34,17 +34,14 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>ReflectionParameter::__construct</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$function</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$parameter</code></span>
+    ( <span class="methodparam"><span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> <code class="parameter">$function</code></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$parameter</code></span>
    )</div>
 
   <p class="para rdfs-comment">
-   <a href="class.reflectionparameter.html" class="classname">ReflectionParameter</a> クラスのコンストラクタです。
+   <a href="class.reflectionparameter.html" class="classname">ReflectionParameter</a>
+   クラスのインスタンスを構築します。
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
 
  </div>
 
@@ -73,7 +70,8 @@
      <dd>
 
       <p class="para">
-       パラメータ。
+       パラメータの位置を指定する <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span> (0から始まります)、
+       もしくはパラメータの名前を <span class="type"><a href="language.types.string.html" class="type string">string</a></span> で指定します。
       </p>
      </dd>
 
@@ -95,7 +93,7 @@
  <div class="refsect1 examples" id="refsect1-reflectionparameter.construct-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6471">
+   <div class="example" id="example-6472">
     <p><strong>例1 <a href="class.reflectionparameter.html" class="classname">ReflectionParameter</a> クラスの使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -146,6 +144,7 @@ Function [ &lt;user&gt; function foo ] {
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
+    <li class="member"><span class="methodname"><a href="reflectionfunctionabstract.getparameters.html" class="methodname" rel="rdfs-seeAlso">ReflectionFunctionAbstract::getParameters()</a> - パラメータを取得する</span></li>
     <li class="member"><span class="methodname"><a href="reflectionfunction.construct.html" class="methodname" rel="rdfs-seeAlso">ReflectionFunction::__construct()</a> - ReflectionFunction オブジェクトを作成する</span></li>
     <li class="member"><span class="methodname"><a href="reflectionmethod.construct.html" class="methodname" rel="rdfs-seeAlso">ReflectionMethod::__construct()</a> - ReflectionMethod を作成する</span></li>
     <li class="member"><a href="language.oop5.decon.html#language.oop5.decon.constructor" class="link">コンストラクタ</a></li>

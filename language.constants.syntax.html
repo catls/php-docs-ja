@@ -63,9 +63,11 @@
     未定義の定数を使用した場合、ちょうど<span class="type"><a href="language.types.string.html" class="type string">string</a></span>として
     コールしたかのように(CONSTANT vs &quot;CONSTANT&quot;)、
     PHPはその定数自体の名前を使用したと仮定します。
-    この際、<a href="ref.errorfunc.html" class="link">E_NOTICE</a> が発生します。
-    ある定数が設定されているかどうかを知るには、
-    <span class="function"><a href="function.defined.html" class="function">defined()</a></span> 関数を使用してください。
+    このような振る舞いは、PHP 7.2.0
+    以降では非推奨となり、<strong><code>E_WARNING</code></strong>
+    が発生するようになりました。
+    (それより前のバージョンでは、
+    <a href="ref.errorfunc.html" class="link">E_NOTICE</a> が発生していました)
     なぜ
     <a href="language.types.array.html#language.types.array.foo-bar" class="link">$foo[bar]</a>が間違っている
     （まず<em>bar</em>を定数として<span class="function"><a href="function.define.html" class="function">define()</a></span>しなければ）
@@ -114,7 +116,7 @@
    </p>
     
    <p class="para">
-    <div class="example" id="example-92">
+    <div class="example" id="example-93">
      <p><strong>例1 定数の定義</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -127,7 +129,7 @@
    </p>
 
    <p class="para">
-    <div class="example" id="example-93">
+    <div class="example" id="example-94">
      <p><strong>例2 <em>const</em> キーワードによる定数の定義</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -149,12 +151,12 @@
     </p>
    </p></blockquote>
 
-   
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
-     Constants defined using the <em>const</em> keyword are always
-     case-sensitive, while constants defined using <span class="function"><a href="function.define.html" class="function">define()</a></span>
-     may be case-insensitive.
+     キーワード <em>const</em> を使って定義された定数は、
+     常に大文字小文字を区別します。
+     しかし、<span class="function"><a href="function.define.html" class="function">define()</a></span> 関数を使って定義された定数は、
+     大文字小文字を区別しません。
     </p>
    </p></blockquote>
 

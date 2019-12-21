@@ -76,7 +76,7 @@
    <p><strong>例1 整数リテラル</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1234</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;10進整数<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;-</span><span style="color: #0000BB">123</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;負の数<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0123</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;8進数&nbsp;(10進数の83と等価)<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0x1A</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;16進数&nbsp;(10進数の26と等価)<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0b11111111</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;2進数&nbsp;(10進数の255と等価)<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1234</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;10進整数<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0123</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;8進数&nbsp;(10進数の83と等価)<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0x1A</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;16進数&nbsp;(10進数の26と等価)<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0b11111111</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;2進数&nbsp;(10進数の255と等価)<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
    </div>
@@ -99,10 +99,10 @@ octal       : 0[0-7]+
 
 binary      : 0[bB][01]+
 
-integer     : [+-]?decimal
-            | [+-]?hexadecimal
-            | [+-]?octal
-            | [+-]?binary
+integer     : decimal
+            | hexadecimal
+            | octal
+            | binary
 </pre></div>
    </div>
 
@@ -170,6 +170,12 @@ integer     : [+-]?decimal
    0 に近い方向の整数値に値を丸めるためにキャストを使用することができ、
    また、<span class="function"><a href="function.round.html" class="function">round()</a></span> 関数を使用することもできます。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    PHP 7.0.0 以降では、整数の割り算に <span class="function"><a href="function.intdiv.html" class="function">intdiv()</a></span>
+    関数を使うことができます。
+   </span>
+  </p></blockquote>
 
   <div class="informalexample">
    <div class="example-contents">
@@ -269,6 +275,14 @@ integer     : [+-]?decimal
    </p>
   </div>
    
+  <div class="sect3" id="language.types.integer.casting-from-null">
+   <h4 class="title"><span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span> から</h4>
+
+   <p class="simpara">
+    <strong><code>NULL</code></strong> は、常に0に変換されます。
+   </p>
+  </div>
+
   <div class="sect3" id="language.types.integer.casting.from-other">
    <h4 class="title">他の型から</h4>
 

@@ -36,6 +36,14 @@
     <span class="ooclass"><strong class="classname">ParseError</strong></span>
     は、<span class="function"><a href="function.eval.html" class="function">eval()</a></span> を呼んだときなどの PHP コードのパースに失敗した場合にスローされます。
    </p>
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <span class="simpara">
+     PHP 7.3.0 以降は、<strong class="classname">ParseError</strong> クラスは
+     <a href="class.compileerror.html" class="classname">CompileError</a> クラスを継承するようになりました。
+     以前のバージョンでは、<a href="class.error.html" class="classname">Error</a> を継承していました。
+    </span>
+   </p></blockquote> 
+
   </div>
 
  
@@ -54,9 +62,32 @@
 
      <span class="ooclass">
       <span class="modifier">extends</span>
-      <a href="class.error.html" class="classname">Error</a>
+      <a href="class.compileerror.html" class="classname">CompileError</a>
      </span>
      {</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したプロパティ */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.error.html#error.props.message">$<var class="varname">message</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.error.html#error.props.code">$<var class="varname">code</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.error.html#error.props.file">$<var class="varname">file</var></a></var>
+    ;</div>
+<div class="fieldsynopsis">
+     <span class="modifier">protected</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.error.html#error.props.line">$<var class="varname">line</var></a></var>
+    ;</div>
 
 
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* 継承したメソッド */</div>

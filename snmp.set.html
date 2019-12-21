@@ -90,13 +90,14 @@
     <dd>
 
      <p class="para">
- The <acronym>MIB</acronym> defines the type of each object id. It has to be specified as a single character from the below list.
+ <acronym>MIB</acronym> は、オブジェクトIDごとのタイプを定義します。
+ これは、以下の一覧から指定される一文字でなければなりません。
 </p>
 <table class="doctable table">
  <caption><strong>types</strong></caption>
  
   <tbody class="tbody">
-   <tr><td>=</td><td>The type is taken from the MIB</td></tr>
+   <tr><td>=</td><td>MIBから取得するタイプ</td></tr>
 
    <tr><td>i</td><td>INTEGER</td> </tr>
 
@@ -123,7 +124,9 @@
 </table>
 
 <p class="para">
- If <strong><code>OPAQUE_SPECIAL_TYPES</code></strong> was defined while compiling the <acronym title="Simple Network Management Protocol">SNMP</acronym> library, the following are also valid:
+ <acronym title="Simple Network Management Protocol">SNMP</acronym> ライブラリをコンパイルする際、
+ <strong><code>OPAQUE_SPECIAL_TYPES</code></strong> が定義されていた場合、
+ 以下も正しい値になります:
 </p>
 <table class="doctable table">
  <caption><strong>types</strong></caption>
@@ -218,7 +221,7 @@
 
  <div class="refsect1 examples" id="refsect1-snmp.set-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-5729">
+  <div class="example" id="example-5730">
    <p><strong>例1 単一の <acronym title="Simple Network Management Protocol">SNMP</acronym> オブジェクト ID の設定</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -228,7 +231,7 @@
    </div>
 
   </div>
-  <div class="example" id="example-5730">
+  <div class="example" id="example-5731">
    <p><strong>例2 単一の <span class="methodname"><strong>SNMP::set()</strong></span> コールによる複数の値の設定</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -238,7 +241,7 @@
    </div>
 
   </div>
-   <div class="example" id="example-5731">
+   <div class="example" id="example-5732">
     <p><strong>例3 BITS <acronym title="Simple Network Management Protocol">SNMP</acronym> オブジェクト ID の設定による <span class="methodname"><strong>SNMP::set()</strong></span> の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

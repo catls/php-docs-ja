@@ -41,7 +41,7 @@
    昔ながらの継承に機能を加えて、振る舞いを水平方向で構成できるようになります。
    つまり、継承しなくてもクラスのメンバーに追加できるようになります。
   </p>
-  <div class="example" id="example-210">
+  <div class="example" id="example-211">
     <p><strong>例1 トレイトの例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -59,7 +59,7 @@
     優先順位は現在のクラスのメンバーが最高で、その次がトレイトのメソッド、
     そしてその次にくるのが継承したメソッドとなります。
    </p>
-   <div class="example" id="example-211">
+   <div class="example" id="example-212">
     <p><strong>例2 優先順位の例</strong></p>
     <div class="example-contents"><p>
      基底クラスから継承したメソッドは、MyHelloWorld に SayWorld トレイトから追加されたメソッドで上書きされます。
@@ -81,7 +81,7 @@ Hello World!
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-212">
+   <div class="example" id="example-213">
     <p><strong>例3 もうひとつの優先順位の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -140,7 +140,7 @@ Hello World!
     <em>as</em> 演算子はメソッドをリネームするわけではないので、
     その他のメソッドにも何も影響を及ぼさないことに注意しましょう。
    </p>
-   <div class="example" id="example-214">
+   <div class="example" id="example-215">
     <p><strong>例5 衝突の解決</strong></p>
     <div class="example-contents"><p>
       この例では、Talker がトレイト A と B を使います。
@@ -163,10 +163,10 @@ Hello World!
    </div>
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
-     
-     Prior to PHP 7.0, defining a property in a class with the same name as in a trait
-     would throw an <strong><code>E_STRICT</code></strong> if the class definition was compatible 
-     (same visibility and initial value).
+     PHP 7.0 より前のバージョンでは、
+     トレイトに存在する名前と同じ名前をクラスのプロパティに定義すると、
+     クラス定義に互換性(公開範囲と初期値が同じ)があっても、
+     <strong><code>E_STRICT</code></strong> レベルの警告が発生していました。
     </p>
    </p></blockquote>
   </div>
@@ -177,7 +177,7 @@ Hello World!
     <em>as</em> 構文を使うと、
     クラス内でのメソッドの可視性も変更することができます。
    </p>
-   <div class="example" id="example-215">
+   <div class="example" id="example-216">
     <p><strong>例6 メソッドの可視性の変更</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -196,7 +196,7 @@ Hello World!
     トレイトの定義の中でトレイトを使うと、
     定義したトレイトのメンバーの全体あるいは一部を組み合わせることができます。
    </p>
-   <div class="example" id="example-216">
+   <div class="example" id="example-217">
     <p><strong>例7 トレイトを組み合わせたトレイト</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -219,7 +219,14 @@ Hello World!
    <p class="para">
     トレイトでは、抽象メソッドを使ってクラスの要件を指定できます。
    </p>
-   <div class="example" id="example-217">
+   <div class="caution"><strong class="caution">警告</strong>
+    <p class="simpara">
+     具象クラスでは、
+     具象メソッドを同じ名前で定義することによって、要件を満たせます。
+     つまり、シグナチャは異なっていても構いません。
+    </p>
+   </div>
+   <div class="example" id="example-218">
     <p><strong>例8 抽象メソッドによる、要件の明示</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -236,7 +243,7 @@ Hello World!
    <p class="para">
     トレイトでは、静的なメンバーやメソッドを定義できます。
    </p>
-   <div class="example" id="example-218">
+   <div class="example" id="example-219">
     <p><strong>例9 静的な変数</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -246,7 +253,7 @@ Hello World!
     </div>
 
    </div>
-   <div class="example" id="example-219">
+   <div class="example" id="example-220">
     <p><strong>例10 静的なメソッド</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -263,7 +270,7 @@ Hello World!
    <p class="para">
     トレイトにはプロパティも定義できます。
    </p>
-   <div class="example" id="example-220">
+   <div class="example" id="example-221">
     <p><strong>例11 プロパティの定義</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -274,12 +281,13 @@ Hello World!
 
    </div>
    <p class="para">
-    トレイトでプロパティを定義したときは、クラスでは同じ名前のプロパティを定義できません。
-    
-    unless it is compatible (same visibility and initial value),
-    otherwise a fatal error is issued.
-    Before PHP 7.0.0, defining a property in the class with the same visibility
-    and initial value as in the trait, raised an E_STRICT notice.
+    トレイトでプロパティを定義したときは、
+    クラスではそれと互換性(公開範囲と初期値が同じ)がない同じ名前のプロパティを定義できません。
+    互換性がない名前を定義すると、致命的なエラーが発生します。
+    PHP 7.0.0 より前のバージョンでは、
+    トレイトに存在する名前と同じ名前をクラスのプロパティに定義すると、
+    クラス定義に互換性(公開範囲と初期値が同じ)があっても、
+    <strong><code>E_STRICT</code></strong> レベルの警告が発生していました。
    </p>
    <div class="example" id="language.oop5.interfaces.examples.ex1">
     <p><strong>例12 衝突の解決</strong></p>

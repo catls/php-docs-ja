@@ -141,12 +141,21 @@
     <span class="simpara">(object) - オブジェクトへのキャスト</span>
    </li>
    <li class="listitem">
-    <span class="simpara">(unset) - <span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span> へのキャスト (PHP 5)</span>
+    <span class="simpara">(unset) - <span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span> へのキャスト</span>
    </li>
   </ul>
 
   <p class="para">
    (binary) によるキャストや b プレフィックスのサポートは、PHP 5.2.1 で追加されました。
+   (binary) によるキャストは本質的には (string)
+   と同じですが、それに依存すべきではありません。
+  </p>
+
+  <p class="para">
+   (unset) によるキャストは PHP 7.2.0 以降推奨されなくなりました。
+   (unset) によるキャストは、値に <span class="type"><a href="language.types.null.html" class="type NULL">NULL</a></span>
+   値を代入することと同じです。
+   (unset) によるキャストは、PHP 8.0.0 で削除される予定です。
   </p>
 
   <p class="para">

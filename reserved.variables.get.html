@@ -34,7 +34,8 @@
  <div class="refsect1 description" id="refsect1-reserved.variables.get-description">
   <h3 class="title">説明</h3>
   <p class="para">
-   URL パラメータで現在のスクリプトに渡された変数の連想配列です。
+   URL パラメータ (a.k.a クエリストリング) で現在のスクリプトに渡された変数の連想配列です。
+   この配列の値は、GETリクエストだけでなく、クエリストリングが含まれた全てのリクエストで収集されることに注意して下さい。
   </p>
 
   <p class="simpara">
@@ -47,42 +48,10 @@
  </div>
 
  
-
- <div class="refsect1 changelog" id="refsect1-reserved.variables.get-changelog">
-  <h3 class="title">変更履歴</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.1.0</td>
-       <td>
-        <var class="varname"><var class="varname">$_GET</var></var> が導入され、
-        <var class="varname"><var class="varname">$HTTP_GET_VARS</var></var>
-        は非推奨となりました。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
- 
  <div class="refsect1 examples" id="refsect1-reserved.variables.get-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-297">
+   <div class="example" id="example-298">
     <p><strong>例1 <var class="varname"><var class="varname">$_GET</var></var> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

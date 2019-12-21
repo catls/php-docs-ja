@@ -27,7 +27,7 @@
  <h2 class="title">オブジェクト インターフェイス</h2>
  <p class="para">
   オブジェクトインターフェイスにより、あるクラスが実装する必要があるメソッドの
-  種類を、これらのメソッドの実体を定義することなく、指定するコードを作成できる
+  種類を、これらのメソッドの実装を定義することなく、指定するコードを作成できる
   ようになります。
  </p>
  <p class="para">
@@ -39,10 +39,10 @@
   インターフェイス内で宣言される全てのメソッドはpublicである必要があります。
   これは、インターフェイスの特性によります。
  </p>
- 
  <p class="para">
-  Note that it is possible to declare a <a href="language.oop5.decon.html#language.oop5.decon.constructor" class="link">constructor</a> in an interface,
-  what can be useful in some contexts, e.g. for use by factories.
+  <a href="language.oop5.decon.html#language.oop5.decon.constructor" class="link">コンストラクタ</a>
+  をインターフェイスで宣言できることに注意して下さい。
+  これはたとえばファクトリで使う場合など、コンテクストによっては役に立ちます。
  </p>
   <div class="sect2" id="language.oop5.interfaces.implements">
    <h3 class="title"><em>implements</em></h3>
@@ -70,7 +70,7 @@
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
      インターフェイスを実装したクラスには、
-     そのインターフェイスで定義されているメソッドとまったく同じシグネチャを持つメソッドが必要です。
+     そのインターフェイスで定義されているメソッドと、リスコフの置換原則(LSP)と互換性が取れたメソッドシグナチャを使う必要があります。
      そうしなければ致命的なエラーが発生します。
      </p>
     </p></blockquote>
@@ -86,7 +86,7 @@
   </div>
   <div class="sect2" id="language.oop5.interfaces.examples">
    <h3 class="title">例</h3>
-   <div class="example" id="example-206">
+   <div class="example" id="example-207">
     <p><strong>例1 Interface の例</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -96,7 +96,7 @@
     </div>
 
    </div>
-   <div class="example" id="example-207">
+   <div class="example" id="example-208">
     <p><strong>例2 インターフェイスの継承</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -106,7 +106,7 @@
      </div>
 
    </div>
-   <div class="example" id="example-208">
+   <div class="example" id="example-209">
     <p><strong>例3 複数のインターフェイスの継承</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -116,7 +116,7 @@
      </div>
 
    </div>
-   <div class="example" id="example-209">
+   <div class="example" id="example-210">
     <p><strong>例4 インターフェイスでの定数</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
