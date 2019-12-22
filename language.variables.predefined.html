@@ -26,7 +26,7 @@
   <div id="layout-content"><div id="language.variables.predefined" class="sect1">
    <h2 class="title">定義済みの変数</h2>
    
-   <p class="simpara">
+   <p class="para">
     PHPは、実行する全てのスクリプトに定義済みの多くの変数を
     提供します。しかし、これらの変数の多くは、
     実行するサーバーの種類、サーバーのバージョンおよび設定、
@@ -39,71 +39,36 @@
     のセクションを参照してください。
    </p>
 
-   <div class="warning"><strong class="warning">警告</strong>
-    <p class="simpara">
-     PHP 4.2.0以降では、PHPディレクティブ <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>の
-     デフォルト値が<em class="emphasis">off</em>に変更されています。
-     これは、PHPにおける大きな変更です。
-     register_globalsを<em class="emphasis">off</em>にすると、
-     グローバルスコープに定義済みの変数に影響を与えます。
-     例えば、<var class="varname"><var class="varname">DOCUMENT_ROOT</var></var>を取得するには、
-     <var class="varname"><var class="varname">$DOCUMENT_ROOT</var></var>のかわりに
-     <var class="varname"><var class="varname"><a href="reserved.variables.server.html" class="classname">$_SERVER['DOCUMENT_ROOT']</a></var></var>を使用することに
-     なります。また、URL 
-     <em>http://www.example.com/test.php?id=3</em>　から
-     <var class="varname"><var class="varname">$id</var></var>の代わりに<var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET['id']</a></var></var>、
-     <var class="varname"><var class="varname">$HOME</var></var>のかわりに<var class="varname"><var class="varname"><a href="reserved.variables.environment.html" class="classname">$_ENV['HOME']</a></var></var>を
-     使用します。
-    </p>
-    <p class="simpara">
-     この変更に関する情報については、
-     <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>に関する設定
-     エントリ、セキュリティに関する章の 
-     <a href="security.globals.html" class="link">register_globalsの使用</a>、
-     また、<a href="https://www.php.net/releases/4_1_0.php" class="link external">&raquo;&nbsp;4.1.0</a>および
-     <a href="https://www.php.net/releases/4_2_0.php" class="link external">&raquo;&nbsp;4.2.0</a>の
-     Release Announcementsを参照してください。
-    </p>
-    <p class="simpara">
-     <a href="language.variables.superglobals.html" class="link">スーパーグローバル
-      配列</a>のようなPHPの予約済みの定義済み変数を使用することが
-     推奨されます。
-    </p>
-   </div>
-
-   <p class="simpara">
-    バージョン4.1.0以降、PHPに(使用する場合)Webサーバー、環境変数、
+   <p class="para">
+    PHP には、(使用する場合)Webサーバー、環境変数、
     ユーザー入力からの変数を値とする定義済みの配列が追加されています。
-    これらの新しいは配列は、自動グローバル、すなわち、自動的に全ての
-    スコープで利用可能です。このため、これらは
+    これらの配列は、自動グローバル、すなわち、自動的に全ての
+    スコープで利用可能であるという点でかなり特別です。このため、これらは
     &quot;スーパーグローバル&quot; といわれることもあります。
     (PHPには、ユーザー定義のスーパーグローバルという機構はありません。)
-    スーパーグローバルのリストを以下に示します。
+    スーパーグローバルのリストは、<a href="language.variables.superglobals.html" class="link">ここ</a>
+    から見ることが出来ます。
     しかし、これらの内容のリストおよび定義済みのPHP変数とそれらの特性に
     関する更なる議論については、
     <a href="reserved.variables.html" class="link">定義済みの予約変数</a>の
     セクションを参照してください。
-    より古い定義済みの変数(<var class="varname"><var class="varname">$HTTP_*_VARS</var></var>)もまだ
-    存在します。
-
-    PHP 5.0.0 以降、PHP の長い
-<a href="language.variables.predefined.html" class="link">定義済みの変数</a>
-配列は <a href="ini.core.html#ini.register-long-arrays" class="link">register_long_arrays</a>
-ディレクティブにより無効にすることができます。
    </p>
+
+   <blockquote class="note"><p><strong class="note">注意</strong>: 
+    <p class="para">
+     PHP 5.4
+     より前のバージョンでは、HTTPリクエストに関する情報を取得する古い方法として、
+     スーパーグローバルの代わりに <em>HTTP_*_VARS</em> 変数がまだ利用可能でした。
+     これらの機能は PHP 5.0.0 以降では、<a href="ini.core.html#ini.register-long-arrays" class="link">register_long_arrays</a>
+     iniディレクティブ を使って無効にすることが可能でした。
+    </p>
+   </p></blockquote>
 
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <strong>可変変数</strong><br />
     <p class="para">
      <a href="language.variables.variable.html" class="link">可変変数</a>として
      スーパーグローバルを使うことはできません。
-    </p>
-   </p></blockquote>
-
-   <blockquote class="note"><p><strong class="note">注意</strong>: 
-    <p class="para">
-     スーパーグローバルと <em>HTTP_*_VARS</em> は同時に存在させることができますが、
-     お互い同一ではありません。つまり、一方を変更してももう一方はそのままです。
     </p>
    </p></blockquote>
 

@@ -123,7 +123,7 @@
       <p><strong>例3 スーパーグローバルとスコープの例</strong></p>
       <div class="example-contents">   
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">test_global</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;ほとんどの定義済み変数は"スーパー"ではなく、関数内の<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;ローカルスコープで有効とするには'global'をコールする必要があります。<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">global&nbsp;</span><span style="color: #0000BB">$HTTP_POST_VARS</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$HTTP_POST_VARS</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;スーパーグローバルはどのスコープでも有効であり<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;'global'をコールする必要がありません。<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;スーパーグローバルはPHP4.1.0以降で利用できます。<br />&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;HTTP_POST_VARS&nbsp;は今や非推奨とされています。<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">test_superglobal</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'name'</span><span style="color: #007700">];<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
       </div>
@@ -235,10 +235,12 @@
    <div class="sect2" id="language.variables.scope.references">
     <h3 class="title">グローバル変数と静的変数のリファレンス</h3>
     <p class="simpara">
-     <em>PHP4</em>を駆動するZend Engine 1では、
-     リファレンス変数の修正子
-     <em>static</em> および <em>global</em>
-     を実装しています。
+    PHP は、
+    <a href="language.references.html" class="link">リファレンス</a>
+    変数の修正子として
+    <a href="language.variables.scope.html#language.variables.scope.static" class="link">static</a> および
+    <a href="language.variables.scope.html#language.variables.scope.global" class="link">global</a>
+    を実装しています。
      例えば、関数スコープ内に<em>global</em>
      命令により実際にインポートされた真のグローバル変数は、
      実際にグローバル変数へのリファレンスを作成します。

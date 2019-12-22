@@ -70,15 +70,14 @@
 
     
     
-     
      <dt>
-Relative name</dt>
+相対名</dt>
 
      <dd>
 
       <p class="para">
-       This is an identifier starting with <em>namespace</em>, such as
-       <em>namespace\Foo\Bar</em>.
+       <em>namespace\Foo\Bar</em> のように、
+       <em>namespace</em> で始まる識別子です。
       </p>
      </dd>
 
@@ -90,60 +89,75 @@ Relative name</dt>
    名前解決は、これらの解決ルールによって行われます。
    <ol type="1">
     <li class="listitem">
-     
      <span class="simpara">
-      Fully qualified names always resolve to the name without leading namespace separator.
+      完全修飾名は、先頭の名前空間区切り文字を除いた名前に常に解決されます。
       たとえば、<em>\A\B</em> は <em>A\B</em> と解釈されます。
      </span>
     </li>
     <li class="listitem">
-     
      <span class="simpara">
-      Relative names always resolve to the name with <em>namespace</em> replaced by
-      the current namespace. If the name occurs in the global namespace, the
-      <em>namespace\</em> prefix is stripped. For example <em>namespace\A</em>
-      inside namespace <em>X\Y</em> resolves to <em>X\Y\A</em>. The same name
-      inside the global namespace resolves to <em>A</em>.
+      相対名は、<em>namespace</em> という名前を、
+      現在の名前空間に置き換えたものに常に解決されます。
+      現在の名前空間がグローバル名前空間だった場合、
+      <em>namespace\</em> 名前空間は取り除かれます。
+      たとえば、名前空間 <em>X\Y</em> の中にある
+      <em>namespace\A</em> は、
+      <em>X\Y\A</em> に解決されます。
+      グローバル名前空間の中にある同じ名前は、
+      <em>A</em> に解決されます。
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      For qualified names the first segment of the name is translated according to the current
-      class/namespace import table. For example, if the namespace <em>A\B\C</em> is
-      imported as <em>C</em>, the name <em>C\D\E</em> is translated to
-      <em>A\B\C\D\E</em>.
+      修飾名の場合は、名前の最初の識別子を、
+      現在のクラス/名前空間のインポートテーブルに従って翻訳します。
+      たとえば、名前空間 <em>A\B\C</em> が 
+      <em>C</em> としてインポートされた場合、
+      <em>C\D\E</em> という名前は、
+      <em>A\B\C\D\E</em> と翻訳されます。
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      For qualified names, if no import rule applies, the current namespace is prepended to the
-      name. For example, the name <em>C\D\E</em> inside namespace <em>A\B</em>,
-      resolves to <em>A\B\C\D\E</em>.
+      修飾名の場合で、適用すべきインポートルールがない場合、
+      現在の名前空間が名前の先頭に付加されます。
+      たとえば、名前空間 <em>A\B</em> の中にある
+      <em>C\D\E</em> という名前は
+      <em>A\B\C\D\E</em> に解決されます。
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      For unqualified names, the name is translated according to the current import table for the
-      respective symbol type. This means that class-like names are translated according to the
-      class/namespace import table, function names according to the function import table and
-      constants according to the constant import table. For example, after
-      <em>use A\B\C;</em> a usage such as <em>new C()</em> resolves to the name
-      <em>A\B\C()</em>. Similarly, after <em>use function A\B\fn;</em> a usage
-      such as <em>fn()</em> resolves to the name <em>A\B\fn</em>.
+      非修飾名の場合、名前はそれぞれのシンボルタイプの
+      現在のインポートテーブルに従って翻訳されます。
+      これは、クラスのような名前は、クラス/名前空間のインポートテーブルに従って
+      翻訳されるし、関数名は、関数のインポートテーブルに従うし、
+      定数は定数のインポートテーブルに従うということになります。
+      たとえば、<em>use A\B\C;</em> の後に、
+      <em>new C()</em> のようなことをすると、
+      C は <em>A\B\C()</em> に解決されます。
+      同じように、<em>use function A\B\fn;</em>
+      の後に <em>fn()</em> のようなことをすると、
+      <em>A\B\fn</em> という名前に解決されます。
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      For unqualified names, if no import rule applies and the name refers to a class-like symbol,
-      the current namespace is prepended. For example <em>new C()</em> inside namespace
-      <em>A\B</em> resolves to name <em>A\B\C</em>.
+      非修飾名について、適用すべきインポートルールが存在せず、
+      名前がクラスのようなシンボルを参照している場合、
+      現在の名前空間が先頭に付加されます。
+      たとえば、名前空間 <em>A\B</em> の内部にある
+      <em>new C()</em> は、
+      <em>A\B\C</em> という名前に解決されます。
      </span>
     </li>
     <li class="listitem">
      <span class="simpara">
-      For unqualified names, if no import rule applies and the name refers to a function or constant
-      and the code is outside the global namespace, the name is resolved at runtime.
-      Assuming the code is in namespace <em>A\B</em>,
+      非修飾名について、適用すべきインポートルールが存在せず、
+      名前が関数や定数を参照しており、
+      コードがグローバル名前空間の外に存在する場合は
+      名前は実行時に解決されます。
+      コードが名前空間 <em>A\B</em> の中にあると仮定すると、
       関数 <em>foo()</em> のコールは、次のように解決されます。
      </span>
       <ol type="1">
@@ -163,7 +177,7 @@ Relative name</dt>
     </li>
    </ol>
   </p>
-  <div class="example" id="example-267">
+  <div class="example" id="example-269">
    <p><strong>例1 名前解決の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

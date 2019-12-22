@@ -138,6 +138,15 @@ if ($_POST) {
      </div>
     </p>
 
+    <blockquote class="note"><p><strong class="note">注意</strong>: 
+     <span class="simpara">
+      外部の変数の名前が、正しい配列の文法で始まっていた場合、
+      後に続く文字は黙って無視されます。
+      たとえば、<em>&lt;input name=&quot;foo[bar]baz&quot;&gt;</em>
+      は <em>$_REQUEST[&#039;foo&#039;][&#039;bar&#039;]</em> になります。
+     </span>
+    </p></blockquote>
+
     <div class="sect3" id="language.variables.external.form.submit">
      <h4 class="title">IMAGE SUBMIT 変数名</h4>
 
@@ -269,14 +278,16 @@ if ($_POST) {
      <a href="language.types.html" class="link">型</a>の章も参照ください。
     </p>
 
-    
     <p class="para">
-     HTTP being a text protocol, most, if not all, content that comes in
-     <a href="language.variables.superglobals.html" class="link">Superglobal arrays</a>, 
-     like <var class="varname"><var class="varname"><a href="reserved.variables.post.html" class="classname">$_POST</a></var></var> and <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET</a></var></var> will remain
-     as strings. PHP will not try to convert values to a specific type.
-     In the example below, <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET["var1"]</a></var></var> will contain the
-     string &quot;null&quot; and <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET["var2"]</a></var></var>, the string &quot;123&quot;.
+     HTTP はテキストプロトコルなので、
+     <var class="varname"><var class="varname"><a href="reserved.variables.post.html" class="classname">$_POST</a></var></var> および <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET</a></var></var>
+     のような
+     <a href="language.variables.superglobals.html" class="link">スーパーグローバル配列</a>
+     に入ってくる内容は、全てとは言えないまでも、ほとんどは文字列のままです。
+     PHP は決して値を特定の型に変換したりはしません。
+     以下の例では、<var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET["var1"]</a></var></var> 
+     は &quot;null&quot; という文字列を含みますし、
+     <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET["var2"]</a></var></var> は、文字列 &quot;123&quot; を含みます。
      <div class="example-contents">
 <div class="cdata"><pre>
 /index.php?var1=null&amp;var2=123
@@ -318,23 +329,6 @@ if ($_POST) {
           <a href="security.magicquotes.html" class="link">マジッククォート</a>および
           <a href="ini.core.html#ini.register-long-arrays" class="link">register_long_arrays</a>
           が非推奨となりました。
-         </td>
-        </tr>
-
-        <tr>
-         <td>4.2.0</td>
-         <td>
-          <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>
-          のデフォルトが <em class="emphasis">off</em> になりました。
-         </td>
-        </tr>
-
-        <tr>
-         <td>4.1.0</td>
-         <td>
-          <a href="language.variables.superglobals.html" class="link">スーパーグローバル配列</a>、
-          つまり <var class="varname"><var class="varname"><a href="reserved.variables.post.html" class="classname">$_POST</a></var></var> や <var class="varname"><var class="varname"><a href="reserved.variables.get.html" class="classname">$_GET</a></var></var>
-          が使えるようになりました。
          </td>
         </tr>
 

@@ -37,7 +37,7 @@
     <a href="class.closure.html" class="classname">Closure</a></a> クラスを使っています。
    </p>
 
-   <div class="example" id="example-163">
+   <div class="example" id="example-165">
     <p><strong>例1 無名関数の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -56,7 +56,7 @@
     同じく最後にセミコロンをつけます。
    </p>
 
-   <div class="example" id="example-164">
+   <div class="example" id="example-166">
     <p><strong>例2 変数への無名関数の代入</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -70,12 +70,11 @@
    <p class="simpara">
     クロージャは、変数を親のスコープから引き継ぐことができます。
     引き継ぐ変数は、<em>use</em> で渡さなければなりません。
-    
-    From PHP 7.1, these variables must not include <a href="language.variables.predefined.html" class="link">superglobals</a>,
-    <var class="varname"><var class="varname">$this</var></var>, or variables with the same name as a parameter.
+    PHP 7.1 以降は、引き継ぐ値に <a href="language.variables.predefined.html" class="link">superglobals</a> や
+    <var class="varname"><var class="varname">$this</var></var>、およびパラメータと同じ名前の変数を含めてはいけません。
    </p>
 
-   <div class="example" id="example-165">
+   <div class="example" id="example-167">
     <p><strong>例3 親のスコープからの変数の引き継ぎ</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -108,7 +107,7 @@ string(11) &quot;hello world&quot;
     次の例を参照ください。
    </p>
 
-   <div class="example" id="example-166">
+   <div class="example" id="example-168">
     <p><strong>例4 クロージャのスコープ</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -119,7 +118,7 @@ string(11) &quot;hello world&quot;
 
    </div>
 
-   <div class="example" id="example-167">
+   <div class="example" id="example-169">
     <p><strong>例5 <em>$this</em> の自動バインド</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -159,7 +158,7 @@ NULL</pre></div>
      オブジェクトも、実行時にはバインドされなくなります。
     </p>
     <p class="para">
-     <div class="example" id="example-168">
+     <div class="example" id="example-170">
       <p><strong>例6 静的無名関数内での <em>$this</em> の使用例</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -179,7 +178,7 @@ NULL
     </p>
 
     <p class="para">
-     <div class="example" id="example-169">
+     <div class="example" id="example-171">
       <p><strong>例7 静的無名関数へのオブジェクトのバインド</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -215,10 +214,9 @@ Warning: Cannot bind an instance to a static closure in %s on line %d
         <tr>
          <td>7.1.0</td>
          <td>
-          
-          Anonymous functions may not close over <a href="language.variables.predefined.html" class="link">superglobals</a>,
-          <var class="varname"><var class="varname">$this</var></var>, or any variable with the same name as a
-          parameter.
+          無名関数は、<a href="language.variables.predefined.html" class="link">superglobals</a> や、
+          <var class="varname"><var class="varname">$this</var></var>, もしくは
+          引数と同じ名前の変数を use で引き継げなくなりました。
          </td>
         </tr>
 

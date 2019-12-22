@@ -36,13 +36,13 @@
     有効な変数名は文字またはアンダースコアから始まり、任意の数の文字、
     数字、アンダースコアが続きます。正規表現によれば、これは次の
     ように表現することができます。
-    &#039;<em>[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*</em>&#039;
+    <code class="code">^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$</code>
    </p>
    
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <span class="simpara">
-     ここで言うところの文字とはa-z、A-Z、127から255まで
-     (<em>0x7f-0xff</em>)のバイトを意味します。
+     ここで言うところの文字とはa-z、A-Z、128から255まで
+     (<em>0x80-0xff</em>)のバイトを意味します。
     </span>
    </p></blockquote>
 

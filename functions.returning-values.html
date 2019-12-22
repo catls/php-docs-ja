@@ -43,7 +43,7 @@
    <div class="sect2">
     <h3 class="title">return の使いかた</h3>
    <p class="para">
-    <div class="example" id="example-153">
+    <div class="example" id="example-154">
      <p><strong>例1 <span class="function"><a href="function.return.html" class="function">return</a></span> の使用法</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -59,7 +59,7 @@
     同じ効果を得ることができます。
    </p>
    <p class="para">
-    <div class="example" id="example-154">
+    <div class="example" id="example-155">
      <p><strong>例2 複数の値を得るために配列を返す</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -75,7 +75,7 @@
     言部および変数への返り値を代入する際の両方で使用する必要があります。
    </p>
    <p class="para">
-    <div class="example" id="example-155">
+    <div class="example" id="example-156">
      <p><strong>例3 関数からリファレンスを返す</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -111,6 +111,13 @@
     <a href="class.typeerror.html" class="classname">TypeError</a> が発生します。
    </p>
 
+   <p class="para">
+    PHP 7.1.0 以降では、型の名前の前にクエスチョンマーク
+    (<em>?</em>) を付けることによって、
+    戻り値の値が nullable とマークできるようになりました。
+    これは、関数の戻り地の型が特定の型か、<strong><code>NULL</code></strong> を返すかの印になります。
+   </p>
+
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
      親クラスのメソッドをオーバーライドする場合、子クラスのメソッドの戻り値の型は、
@@ -123,7 +130,7 @@
    <div class="sect3" id="functions.returning-values.type-declaration.examples">
     <h4 class="title">例</h4>
 
-    <div class="example" id="example-156">
+    <div class="example" id="example-157">
      <p><strong>例4 戻り値の型宣言の基本例</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -140,7 +147,7 @@ float(3)
       </div>
      </div>
 
-     <div class="example" id="example-157">
+     <div class="example" id="example-158">
       <p><strong>例5 強い型付けの例</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -163,7 +170,7 @@ Stack trace:
       </div>
      </div>
 
-     <div class="example" id="example-158">
+     <div class="example" id="example-159">
       <p><strong>例6 オブジェクトを返す例</strong></p>
       <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -180,6 +187,18 @@ object(C)#1 (0) {
 </pre></div>
       </div>
      </div>
+
+     <div class="example" id="example-160">
+      <p><strong>例7 Nullable な返り値の型宣言 (PHP 7.1.0 以降)</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">get_item</span><span style="color: #007700">():&nbsp;?</span><span style="color: #0000BB">string&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(isset(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'item'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'item'</span><span style="color: #007700">];<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+
     </div>
    </div>
   </div></div></div></body></html>
