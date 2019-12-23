@@ -174,6 +174,16 @@
          <em>bypass_shell</em> (windows のみ):
          <strong><code>TRUE</code></strong> にすると、<em>cmd.exe</em> シェルをバイパスします。
         </li>
+        <li class="member">
+         <em>blocking_pipes</em> (windows のみ):
+         <strong><code>TRUE</code></strong> に設定すると、パイプを強制的に切断します。
+        </li>
+        <li class="member">
+         <em>create_process_group</em> (Windows のみ):
+         <strong><code>TRUE</code></strong> に設定すると、
+         子プロセスが <em>CTRL</em> イベントを
+         ハンドルすることを許可します。
+        </li>
        </ul>
       </p>
      </dd>
@@ -209,6 +219,14 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.4.0</td>
+       <td>
+        <code class="parameter">other_options</code> パラメータに
+        オプション <em>create_process_group</em> が追加されました。
+       </td>
+      </tr>
+
       <tr>
        <td>7.0.0</td>
        <td>

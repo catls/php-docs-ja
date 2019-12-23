@@ -34,15 +34,14 @@
 
  <div class="refsect1 description" id="refsect1-wrappers.compression-description">
   <h3 class="title">説明</h3>
-  <p class="simpara"><var class="filename">zlib:</var> PHP 4.0.4 - PHP 4.2.3 (fopencookie をサポートするシステムのみ)</p>
-  <p class="simpara"><var class="filename">compress.zlib://</var> および <var class="filename">compress.bzip2://</var> PHP 4.3.0以降</p>
+  <p class="simpara"><var class="filename">compress.zlib://</var> および <var class="filename">compress.bzip2://</var></p>
 
   <p class="simpara">
    <var class="filename">zlib:</var> は <span class="function"><a href="function.gzopen.html" class="function">gzopen()</a></span> と同様に
    動作しますが、このストリームは <span class="function"><a href="function.fread.html" class="function">fread()</a></span> および
    他のファイルシステム関数と組み合わせて使用することができるところが
    異なります。この機能ではファイル名に &#039;:&#039; 文字が含まれる曖昧さが
-   あるため、PHP 4.3.0 以降では古い機能となっています。代わりに
+   あるため、推奨されません。代わりに
    <var class="filename">compress.zlib://</var> を使用してください。
   </p>
 
@@ -52,8 +51,14 @@
    <span class="function"><a href="function.gzopen.html" class="function">gzopen()</a></span> および <span class="function"><a href="function.bzopen.html" class="function">bzopen()</a></span> と等価で、
    fopencookie をサポートしないシステムの上でも動作します。
   </p>
-  <p class="para">
-   <a href="book.zip.html" class="link">ZIP 拡張モジュール</a> は <var class="filename">zip:</var> ラッパーを登録します。
+
+  <p class="simpara">
+   <a href="book.zip.html" class="link">ZIP 拡張モジュール</a>
+   は、<var class="filename">zip:</var> ラッパーを登録します。
+   PHP 7.2.0 以降、かつ libzip 1.2.0+ では、
+   暗号化されたアーカイブに対するパスワードのサポートが追加され、
+   ストリームのコンテキストでパスワードを与えることが出来るようになりました。
+   パスワードは、<em>&#039;password&#039;</em> コンテキストオプションで設定できます。
   </p>
  </div>
 

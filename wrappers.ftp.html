@@ -75,8 +75,7 @@
      <thead>
       <tr>
        <th>属性</th>
-       <th>PHP 4</th>
-       <th>PHP 5</th>
+       <th>サポート対象か</th>
       </tr>
 
      </thead>
@@ -85,65 +84,55 @@
       <tr>
        <td><a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">allow_url_fopen</a> で制約される</td>
        <td>Yes</td>
-       <td>Yes</td>
       </tr>
 
       <tr>
        <td>読み込み許可</td>
        <td>Yes</td>
-       <td>Yes</td>
       </tr>
 
       <tr>
        <td>書き込み許可</td>
-       <td>Yes（新規ファイルのみ）</td>
        <td>Yes（新規ファイル あるいは 既存のファイルで <code class="parameter">overwrite</code> を指定）</td>
       </tr>
 
       <tr>
        <td>追加許可</td>
-       <td>No</td>
        <td>Yes</td>
       </tr>
 
       <tr>
        <td>同時読み書き許可</td>
        <td>No</td>
-       <td>No</td>
       </tr>
 
       <tr>
        <td><span class="function"><a href="function.stat.html" class="function">stat()</a></span> のサポート</td>
-       <td>No</td>
        <td>
-        PHP 5.0.0 では <span class="function"><a href="function.filesize.html" class="function">filesize()</a></span>、
+        <span class="function"><a href="function.filesize.html" class="function">filesize()</a></span>、
         <span class="function"><a href="function.filetype.html" class="function">filetype()</a></span>、<span class="function"><a href="function.file-exists.html" class="function">file_exists()</a></span>、
         <span class="function"><a href="function.is-file.html" class="function">is_file()</a></span> および <span class="function"><a href="function.is-dir.html" class="function">is_dir()</a></span> のみ。
-        PHP 5.1.0 で <span class="function"><a href="function.filemtime.html" class="function">filemtime()</a></span>。
+        PHP 5.1.0 以降: <span class="function"><a href="function.filemtime.html" class="function">filemtime()</a></span>。
        </td>
       </tr>
 
       <tr>
        <td><span class="function"><a href="function.unlink.html" class="function">unlink()</a></span> のサポート</td>
-       <td>No</td>
        <td>Yes</td>
       </tr>
 
       <tr>
        <td><span class="function"><a href="function.rename.html" class="function">rename()</a></span> のサポート</td>
-       <td>No</td>
        <td>Yes</td>
       </tr>
 
       <tr>
        <td><span class="function"><a href="function.mkdir.html" class="function">mkdir()</a></span> のサポート</td>
-       <td>No</td>
        <td>Yes</td>
       </tr>
 
       <tr>
        <td><span class="function"><a href="function.rmdir.html" class="function">rmdir()</a></span> のサポート</td>
-       <td>No</td>
        <td>Yes</td>
       </tr>
 
@@ -154,35 +143,6 @@
   </p>
  </div>
  
-
- <div class="refsect1 changelog" id="refsect1-wrappers.ftp-changelog">
-  <h3 class="title">変更履歴</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        <em>ftps://</em> が追加されました。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
 
  <div class="refsect1 notes" id="refsect1-wrappers.ftp-notes">
   <h3 class="title">注意</h3>
@@ -199,9 +159,8 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <strong>追記</strong><br />
    <span class="simpara">
-    PHP 5.0.0 では、<em>ftp://</em> URL ラッパー経由での
-    ファイルの追記が可能となりました。それ以前のバージョンでは
-    <em>ftp://</em> 経由でのファイルの追記は失敗していました。
+    <em>ftp://</em> URL ラッパー経由での
+    ファイルの追記が可能です。
    </span>
   </p></blockquote>
  </div>
