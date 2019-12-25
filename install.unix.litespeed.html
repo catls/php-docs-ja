@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>LiteSpeed Web Server/OpenLiteSpeed Web Server on Unix systems</title>
+  <title>LiteSpeed/OpenLiteSpeed Webサーバ(Unixシステム用)</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,57 +19,62 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="install.unix.html">Unix システムへのインストール</a></li>
-    <li>LiteSpeed Web Server/OpenLiteSpeed Web Server on Unix systems</li>
+    <li>LiteSpeed/OpenLiteSpeed Webサーバ(Unixシステム用)</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="install.unix.litespeed" class="sect1">
- <h2 class="title">LiteSpeed Web Server/OpenLiteSpeed Web Server on Unix systems</h2>
+ <h2 class="title">LiteSpeed/OpenLiteSpeed Webサーバ(Unixシステム用)</h2>
 
  <p class="para">
-  LiteSpeed PHP is an optimized compilation of PHP built to work with LiteSpeed
-  products through the LiteSpeed SAPI. LSPHP runs as its own process and has 
-  its own standalone binary, which can be used as a simple command line binary to execute 
-  PHP scripts from the command line.
+  LiteSpeed PHP は、LiteSpeed SAPI を通じて LiteSpeed プロダクトと動作させるための
+  最適化された PHP ビルドです。
+  LSPHP  は、自分自身がプロセスとして動き、スタンドアロンなバイナリを持ちます。
+  よって、PHP スクリプトをコマンドラインから実行するための
+  シンプルなコマンドラインバイナリとして使うことができます。
  </p>
 
  <p class="para">
-  The LSAPI is a highly optimized API that allows communication between 
-  LiteSpeed and third party web engines. Its protocol is similar to FCGI, but is 
-  more efficient.
+  LSAPI は LiteSpeed と サードパーティーの Webエンジンの間で通信できる
+  高度に最適化された API です。
+  そのプロトコルは FCGI に似ていますが、それよりもっと効率的です。
  </p>
 
  <p class="para">
-  This documentation will cover installing and configuring PHP with LSAPI 
-  for a LiteSpeed Web Server and OpenLiteSpeed Web Server.
+  このドキュメントは、
+  LiteSpeed/OpenLiteSpeed Webサーバのために、PHP を LSAPI とともに
+  インストールし、設定する方法を示します。
  </p>
 
  <p class="para">
-  This guide will assume that either LSWS or OLS is installed with their 
-  default paths and flags. The default installation directory for both web 
-  servers is /usr/local/lsws and both can be run from the bin subdirectory.
+  このガイドは、LSWS または OLS が
+  それぞれのデフォルトの path とフラグを使ってインストールされていると想定しています。
+  それぞれの Webサーバのデフォルトのインストールディレクトリは /usr/local/lsws であり、
+  bin サブディレクトリから実行できます。
  </p>
 
  <p class="para">
-  Please note that throughout this documentation, version numbers have been 
-  replaced with an <em>x</em> to ensure this documentation stays correct in the future, 
-  please replace these, as necessary, with the corresponding version numbers.
+  このドキュメント全体を通して、バージョン番号は
+  ドキュメント全体が将来でも正しく保たれるようにするため、
+  &#039;x&#039; で置き換えられている点に注意してください。
+  &#039;x&#039; については、必要に応じて対応するバージョン番号に置き換えるようにしてください。
  </p>
 
  <ol type="1">
   <li class="listitem">
    <p class="para">
-    To obtain and install either LiteSpeed Web Server or OpenLiteSpeed Web Server, visit the
-    LiteSpeed Web Server wiki
+    LiteSpeed//OpenLiteSpeed Web サーバを取得し、インストールするには、
+    LiteSpeed Web サーバの wiki
     <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:installation" class="link external">&raquo;&nbsp;install page</a>
-    or OpenLiteSpeed wiki 
+    または OpenLiteSpeed wiki 
     <a href="http://open.litespeedtech.com/mediawiki/index.php/Help:Install" class="link external">&raquo;&nbsp;install page</a>.
+    を参照してください。
    </p>
   </li>
 
   <li class="listitem">
    <p class="para">
-    Obtain and unpack the php source:
+    PHP のソースコードを取得し、展開します:
    </p>
 
    <div class="informalexample">
@@ -87,10 +92,12 @@ cd php-x.x.x
 
   <li class="listitem">
    <p class="para">
-    Configure and build PHP. This is where PHP can be customized with various options,
-    such as which extensions will be enabled. Run ./configure --help for a list of available 
-    options. In the example, we&#039;ll use the default recommended configuration options for 
-    LiteSpeed Web Server:
+    PHP を configure し、ビルドします。
+    ここで PHP を様々なオプションを使ってカスタマイズできます。
+    たとえば、どの拡張機能を有効にするか、のようなものです。
+    利用できるオプションの一覧については、 ./configure --help を
+    参照してください。
+    私達の例では、LiteSpeed Webサーバで推奨されているデフォルトの設定オプションを使うことにします:
    </p>
 
    <div class="informalexample">
@@ -106,12 +113,11 @@ sudo make install
 
   <li class="listitem">
    <p class="para">
-    Checking The LSPHP Installation
+    LSPHP のインストールをチェックします。
    </p>
 
    <p class="para">
-    One of the simplest ways to check whether the installation of PHP was successful
-    is to run the following code:
+    PHP のインストールが成功したかをチェックする一番簡単な方法は、次のコードを実行することです:
    </p>
 
    <div class="informalexample">
@@ -124,7 +130,7 @@ cd /usr/local/lsws/fcgi-bin/
    </div>
 
    <p class="para">
-    This should return information about the new PHP build:
+    このコードは、新しい PHP ビルドについての情報を返すはずです:
    </p>
 
    <div class="informalexample">
@@ -138,43 +144,49 @@ Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies
    </div>
 
    <p class="para">
-    Notice the <em>litespeed</em> in parenthesis. This means that the PHP binary has been 
-    built with LSAPI support.
+    <em>litespeed</em> が括弧で囲まれていることに注意してください。これは、PHP が LSAPI サポートを有効にしてビルドされていることを意味しています。
    </p>
   </li>
  </ol>
 
  <p class="para">
-  Following the steps above, LiteSpeed / OpenLiteSpeed Web Server should 
-  now be running with support for PHP as an SAPI extension. There are many more
-  configuration options available for LSWS / OLS and PHP. For more information,
-  check out the LiteSpeed wiki about 
-  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php" class="link external">&raquo;&nbsp;PHP</a>.
+  上のステップに従えば、
+  LiteSpeed / OpenLiteSpeed Webサーバが
+  SAPI 拡張としての PHP サポートを有効にした状態で実行できるようになっているはずです。
+  LSWS / OLS と PHP で利用可能なせっていおぷしょんはもっとたくさんあります。
+  さらに詳しい情報は、
+  LiteSpeed wiki の
+  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php" class="link external">&raquo;&nbsp;PHP</a>
+  のページを参照してください。
  </p>
 
  <p class="para">
-  Using LSPHP from the command line:
+  LSPHP をコマンドラインから使う:
  </p>
 
  <p class="para">
-  LSPHP(LSAPI + PHP) command line mode is used to process PHP scripts running 
-  on a remote server that does not necessarily have a web server running. It is used 
-  to process PHP scripts residing on a local web server (separate). This setup is 
-  suitable for service scalability as PHP processing is offloaded to a remote server.
+  LSPHP(LSAPI + PHP) コマンドラインモードは、
+  必ずしも Web サーバが実行されていないリモートサーバ上で
+  PHPスクリプトを実行するために使います。
+  (別にある)ローカルの Webサーバのそばで、
+  PHPスクリプトを実行するために使われます。
+  PHP の実行がリモートサーバにオフロードされるので、
+  このセットアップはサービスのスケールさせる目的にも合っています。
  </p>
 
  <p class="para">
-  Start lsphp from the command line on a remote server:
-  LSPHP is an executable and can be started manually and bound to IPv4, IPv6, or 
-  Unix domain socket addresses with the command line option -b socket_address
+  リモートサーバ上でのコマンドラインから lsphp を起動します:
+  LSPHP は実行可能であり、-b socket_address オプションを使えば、
+  IPv4/IPv6/Unixドメインソケットアドレスに
+  bindした状態で手動で起動できます。
  </p>
 
  <p class="para">
-  Examples:
+  例:
  </p>
 
  <p class="para">
-  Have LSPHP bind to port 3000 on all IPv4 and IPv6 addresses:
+  LSPHP を 全 IPv4, IPv6 アドレスのポート3000にbindさせる:
  </p>
 
  <div class="informalexample">
@@ -186,7 +198,7 @@ Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies
  </div>
 
  <p class="para">
-  Have LSPHP bind to port 3000 on all IPv4 addresses:
+  LSPHP を 全 IPv4 アドレスのポート3000にbindさせる:
  </p>
 
  <div class="informalexample">
@@ -198,7 +210,7 @@ Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies
  </div>
 
  <p class="para">
-  Have LSPHP bind to address 192.168.0.2:3000:
+  LSPHP を 192.168.0.2:3000 にbindさせる:
  </p>
 
  <div class="informalexample">
@@ -210,7 +222,8 @@ Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies
  </div>
 
  <p class="para">
-  Have LSPHP accept requests on Unix domain socket <em>/tmp/lsphp_manual.sock</em>:
+  LSPHP に、Unixドメインソケット
+  <em>/tmp/lsphp_manual.sock</em> でリクエストを受けさせる:
  </p>
 
  <div class="informalexample">
@@ -222,7 +235,7 @@ Zend Engine v2.6.0, Copyright (c) 1998-2015 Zend Technologies
  </div>
 
  <p class="para">
-  Environment variables can be added before the LSPHP executable:
+  LSPHP を実行する前に、環境変数を追加できます:
  </p>
 
  <div class="informalexample">
@@ -234,38 +247,48 @@ PHP_LSAPI_MAX_REQUESTS=500 PHP_LSAPI_CHILDREN=35 /path/to/lsphp -b IP_address:po
  </div>
 
  <p class="para">
-  Currently LiteSpeed PHP can be used with LiteSpeed Web Server, 
-  OpenLiteSpeed Web Server, and Apache mod_lsapi. For steps on 
-  server-side configuration, visit the wiki pages for 
-  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php:configuring-lsws-for-php" class="link external">&raquo;&nbsp;LiteSpeed Web Server</a> 
-  and <a href="http://open.litespeedtech.com/mediawiki/index.php/Help:Default_PHP_Settings" class="link external">&raquo;&nbsp;OpenLiteSpeed</a>.
+  LiteSpeed PHP は、 LiteSpeed/OpenLiteSpeed Web サーバ、
+  および Apache の mod_lsapi とともに使えます。
+  サーバサイドの設定のさらなるステップについては、
+  wiki ページ
+  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php:configuring-lsws-for-php" class="link external">&raquo;&nbsp;LiteSpeed Webサーバ</a> 
+  および <a href="http://open.litespeedtech.com/mediawiki/index.php/Help:Default_PHP_Settings" class="link external">&raquo;&nbsp;OpenLiteSpeed</a>
+  を参照してください。
  </p>
 
  <p class="para">
-  LSPHP can be installed in several other ways as well.
+  LSPHP は、複数の他の方法でもインストールできます
  </p>
 
  <p class="para">
   CentOS:
-  On CentOS, LSPHP can be installed from the LiteSpeed Repository or the Remi 
-  Repository  using <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php:rpm" class="link external">&raquo;&nbsp;RPM</a>.
+  CentOS では、LSPHP は
+  LiteSpeed リポジトリ または Remi リポジトリ から、
+  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php:rpm" class="link external">&raquo;&nbsp;RPM</a>
+  を使ってインストールできます。
  </p>
 
  <p class="para">
   Debian:
-  On Debian, LSPHP can be installed from the LiteSpeed Repository using 
-  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php:apt" class="link external">&raquo;&nbsp;apt</a>.
+  Debian では、LSPHP は LiteSpeed リポジトを経由で、
+  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:php:apt" class="link external">&raquo;&nbsp;apt</a>
+  を使ってインストールできます。
  </p>
 
  <p class="para">
   cPanel:
-  Visit the respective <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cpanel:easyapache4-config" class="link external">&raquo;&nbsp;wiki page</a> 
-  about how to install LSPHP with cPanel and LSWS/OLS using EasyApache 4.
+  CPanel と EashApache 4 を使って、LSWS/OLS と CPanel とともに LSPHP をインストールする方法については、
+  それぞれの
+  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:cpanel:easyapache4-config" class="link external">&raquo;&nbsp;wiki ページ</a> 
+  を参照してください。
  </p>
 
  <p class="para">
   Plesk:
-  Plesk can be used with LSPHP on CentOS, CloudLinux, Debian, and Ubuntu, 
-  for more details on this, visit the respective <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:plesk:php_guide" class="link external">&raquo;&nbsp;wiki page</a>
+  Plesk は、CentOS, CloudLinux, Debian, および Ubuntu 上の LSPHP ともに利用できます。
+  これに関するさらなる情報は、
+  それぞれの
+  <a href="https://www.litespeedtech.com/support/wiki/doku.php/litespeed_wiki:plesk:php_guide" class="link external">&raquo;&nbsp;wiki ページ</a>
+  を参照してください。
  </p>
 </div></div></div></body></html>

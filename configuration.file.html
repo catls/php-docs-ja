@@ -53,20 +53,37 @@
      <li class="listitem">
       <span class="simpara">
        PHP 5.2.0 以降では、PHP のバージョンごとに別の場所の <em>php.ini</em>
-       を使用することができます。以下のレジストリキーを順に調べて使用します。
+       を使用することができます。レジストリキーの root は、
+       インストールされたOS や PHP が 32bit や 64bit どちらのビルドかによって変わります。
+       32bit OS 上の 32bit ビルドの PHP、
+       もしくは 64bit OS 上の 64bit ビルドの PHP は
+       <em>[(HKEY_LOCAL_MACHINE\SOFTWARE\PHP]</em> を使いますが、
+       64bit OS 上での 32bit ビルドのPHPは、
+       <em>[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\PHP]</em>] を代わりに使います。
+       ビルドのbit数がOSと同じPHPのインストールの場合、
+       以下のレジストリキーを順に調べて使用します。
        <em>[HKEY_LOCAL_MACHINE\SOFTWARE\PHP\x.y.z]</em>、
        <em>[HKEY_LOCAL_MACHINE\SOFTWARE\PHP\x.y]</em> および
        <em>[HKEY_LOCAL_MACHINE\SOFTWARE\PHP\x]</em>。
        x、y および z はそれぞれ PHP のメジャーバージョン、マイナーバージョン、
-       リリース番号を表します。これらのキーに <em>IniFilePath</em>
+       リリース番号を表します。
+       64bit OS の 32bitビルドの PHP では、
+       以下のレジストリキーを順に調べて使用します。
+      <em>[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6421Node\PHP\x.y.z]</em>,
+      <em>[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6421Node\PHP\x.y]</em> および
+      <em>[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6421Node\PHP\x]</em>
+       x、y および z はそれぞれ PHP のメジャーバージョン、マイナーバージョン、
+       リリース番号を表します。
+       これらのキーに <em>IniFilePath</em>
        の値が設定されていれば、最初に見つかった場所の <em>php.ini</em>
        を使用します (Windows のみ)。
       </span>
      </li>
      <li class="listitem">
       <span class="simpara">
-       <em>[HKEY_LOCAL_MACHINE\SOFTWARE\PHP]</em> にある
-       <em>IniFilePath</em> の値 (Windows のみ)。
+        <em>[HKEY_LOCAL_MACHINE\SOFTWARE\PHP]</em> または
+        <em>[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\PHP]</em> にある
+        <em>IniFilePath</em> の値 (Windows のみ)。
       </span>
      </li>
      <li class="listitem">

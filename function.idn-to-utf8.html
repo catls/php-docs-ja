@@ -35,8 +35,8 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>idn_to_utf8</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$domain</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$variant</code><span class="initializer"> = INTL_IDNA_VARIANT_2003</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = IDNA_DEFAULT</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$variant</code><span class="initializer"> = INTL_IDNA_VARIANT_UTS46</span></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$idna_info</code></span>
   ]]] ) : <span class="type">string</span></div>
 
@@ -83,8 +83,8 @@
      <dd>
 
       <p class="para">
-       IDNA 2003 の場合は <strong><code>INTL_IDNA_VARIANT_2003</code></strong>、あるいは
-       UTS #46 の場合は <strong><code>INTL_IDNA_VARIANT_UTS46</code></strong>。
+       IDNA 2003 の場合は <strong><code>INTL_IDNA_VARIANT_2003</code></strong> (PHP 7.2.0 以降は非推奨)、あるいは
+       UTS #46 の場合は <strong><code>INTL_IDNA_VARIANT_UTS46</code></strong> (ICU 4.6 以降のみ利用可能)。
       </p>
      </dd>
 
@@ -139,6 +139,15 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.4.0</td>
+       <td>
+        <code class="parameter">variant</code> のデフォルト値が
+        <strong><code>INTL_IDNA_VARIANT_UTS46</code></strong> となり、
+        その代わりに <strong><code>INTL_IDNA_VARIANT_2003</code></strong> は非推奨となりました。
+       </td>
+      </tr>
+
+      <tr>
        <td>7.2.0</td>
        <td>
         <strong><code>INTL_IDNA_VARIANT_2003</code></strong> は非推奨です。代わりに
@@ -150,7 +159,7 @@
        <td>5.4.0/PECL 2.0.0b1</td>
        <td>
         パラメータ <code class="parameter">variant</code> と
-        <code class="parameter">idna_info</code> が追加され、UTS #46 をサポートするようになりました。
+        <code class="parameter">idna_info</code> が追加され、UTS #46 をサポートするようになりました (ICU ≥ 4.6 が必須)。
        </td>
       </tr>
 

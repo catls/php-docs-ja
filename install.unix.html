@@ -25,7 +25,7 @@
 <div id="layout">
   <div id="layout-content"><div id="install.unix" class="chapter">
    <h1>Unix システムへのインストール</h1>
-<h2>目次</h2><ul class="chunklist chunklist_chapter"><li><a href="install.unix.apache.html">Apache 1.3.x (Unix システム用)</a></li><li><a href="install.unix.apache2.html">Apache 2.x (Unixシステム用)</a></li><li><a href="install.unix.nginx.html">Nginx 1.4.x on Unix systems</a></li><li><a href="install.unix.lighttpd-14.html">Lighttpd 1.4 (Unix システム用)</a></li><li><a href="install.unix.sun.html">Sun, iPlanet, Netscape サーバー（Sun Solaris 用）</a></li><li><a href="install.unix.litespeed.html">LiteSpeed Web Server/OpenLiteSpeed Web Server on Unix systems</a></li><li><a href="install.unix.commandline.html">CGI およびコマンドライン</a></li><li><a href="install.unix.hpux.html">HP-UX へのインストール</a></li><li><a href="install.unix.openbsd.html">OpenBSD へのインストール</a></li><li><a href="install.unix.solaris.html">Solaris へのインストール</a></li><li><a href="install.unix.debian.html">Debian GNU/Linux へのインストール</a></li></ul>
+<h2>目次</h2><ul class="chunklist chunklist_chapter"><li><a href="install.unix.apache.html">Apache 1.3.x (Unix システム用)</a></li><li><a href="install.unix.apache2.html">Apache 2.x (Unixシステム用)</a></li><li><a href="install.unix.nginx.html">Nginx 1.4.x (Unix システム用)</a></li><li><a href="install.unix.lighttpd-14.html">Lighttpd 1.4 (Unix システム用)</a></li><li><a href="install.unix.sun.html">Sun, iPlanet, Netscape サーバー（Sun Solaris 用）</a></li><li><a href="install.unix.litespeed.html">LiteSpeed/OpenLiteSpeed Webサーバ(Unixシステム用)</a></li><li><a href="install.unix.commandline.html">CGI およびコマンドライン</a></li><li><a href="install.unix.hpux.html">HP-UX へのインストール</a></li><li><a href="install.unix.openbsd.html">OpenBSD へのインストール</a></li><li><a href="install.unix.solaris.html">Solaris へのインストール</a></li><li><a href="install.unix.debian.html">Debian GNU/Linux へのインストール</a></li></ul>
 
    <p class="para">
     本章では、UNIX 系のシステムへの PHP のインストールと設定に関する
@@ -163,13 +163,14 @@
 
    <blockquote class="note"><p><strong class="note">注意</strong>: 
     <p class="para">
-     
-     Some Unix systems (such as OpenBSD and SELinux) may disallow mapping pages
-     both writable and executable for security reasons, what is called PaX
-     MPROTECT or W^X violation protection. This kind of memory mapping is,
-     however, necessary for PCRE&#039;s JIT support, so either PHP has to be built
-     <a href="pcre.installation.html" class="link">without PCRE&#039;s JIT support</a>, or the
-     binary has to be whitelisted by any means provided by the system.
+     Unixシステム (OpenBSD や SELinux のような) によっては、
+     セキュリティ上の理由で、
+     メモリ上のページに書き込み可能属性と実行可能属性の両方を付与することを
+     許可しないかもしれません。
+     これは PaX MPROTECT とか  W^X (Write XOR Execute) 防御と呼ばれています。
+     しかしながら、この手のメモリマッピングは PCRE の JIT サポートに必要なので、
+     PHP を <a href="pcre.installation.html" class="link">PCRE の JIT サポート抜きでビルドする</a> か、
+     何とかしてシステムが提供するホワイトリストに PHP のバイナリを入れなければならないでしょう。
     </p>
    </p></blockquote>
 
@@ -202,22 +203,26 @@
 
 
 
-   
-
-
-
-
 
 
    
 
 
 
+
+
+
+   
+
+
+
    
 
 
 
    
+
+
 
 
 

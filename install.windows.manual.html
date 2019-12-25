@@ -28,7 +28,7 @@
   <div class="sect2">
     <h3 class="title">ウェブサーバーの選択</h3>
     <p class="para">
-      <ul class="itemizedlist">
+   <ul class="itemizedlist">
 	<li class="listitem">
 	  <p class="para">
     IIS は Windows に標準で組み込まれています。
@@ -39,11 +39,11 @@
 
     デスクトップウェブアプリケーションやウェブ開発の場合は、IIS/Express や PHP Desktop も使えます。
     
-    <div class="example" id="install.unix.nginx.configure.nginx.php">
-     <p><strong>例1 IIS と PHP の設定をするためのコマンドライン</strong></p>
-     <div class="example-contents">
+      <div class="example" id="install.unix.nginx.configure.nginx.php">
+       <p><strong>例1 IIS と PHP の設定をするためのコマンドライン</strong></p>
+       <div class="example-contents">
 <div class="cdata"><pre>
-    
+
     @echo off
 
     REM download .ZIP file of PHP build from http://windows.php.net/downloads/
@@ -67,15 +67,15 @@ REM Configure FastCGI Variables
 %windir%\system32\inetsrv\appcmd.exe set config -section:system.webServer/fastCgi /+&quot;[fullPath=&#039;%phpdir%\%phppath%\php-cgi.exe&#039;].environmentVariables.[name=&#039;PHPRC&#039;,value=&#039;%phpdir%\%phppath%\php.ini&#039;]&quot;
 
 </pre></div>
-     </div>
+       </div>
 
-    </div>
-    
-    <a href="install.windows.legacy.index.html#install.windows.legacy.iis7" class="link">IIS を手動で設定する方法</a>
-  </p>
-</li>
-<li class="listitem">
-  <p class="para">
+      </div>
+
+      <a href="install.windows.legacy.index.html#install.windows.legacy.iis7" class="link">IIS を手動で設定する方法</a>
+     </p>
+    </li>
+    <li class="listitem">
+     <p class="para">
 
     Windows 用の Apache2 のビルドには、いくつかの種類があります。
 
@@ -85,35 +85,37 @@ REM Configure FastCGI Variables
 
     mod_php を使う場合は、スレッドセーフ版の Apache を使う必要があります。また、同じバージョンの Visual C、同じ CPU (x86 あるいは x64) のビルドでなければいけません。
 
-    <a href="install.windows.legacy.index.html#install.windows.legacy.apache2" class="link">Apache2 を手動で設定する方法</a>
+      <a href="install.windows.legacy.index.html#install.windows.legacy.apache2" class="link">Apache2 を手動で設定する方法</a>
+     </p>
+    </li>
+   </ul>
   </p>
-  </li>
-  </ul>
-  </p>
-</div>
+ </div>
 
-<div class="sect2">
+ <div class="sect2">
   <h3 class="title">ビルド方法の選択</h3>
   <p class="para">
-    PHP のリリースは <a href="http://windows.php.net/download/" class="link external">&raquo;&nbsp;http://windows.php.net/download/</a> からダウンロードできます。
+ 
+   PHP のリリースは <a href="http://windows.php.net/download/" class="link external">&raquo;&nbsp;http://windows.php.net/download/</a> からダウンロードできます。
 
-    これまでのスナップショットリリースや QA リリースで数多くのテストや最適化がなされていますが、さらに手助けしてくださるのも大歓迎です。
+   これまでのスナップショットリリースや QA リリースで数多くのテストや最適化がなされていますが、さらに手助けしてくださるのも大歓迎です。
 
-    PHP には四種類のビルドがあります。
-    <ul class="itemizedlist">
-      <li class="listitem">
-	<p class="para">Thread-Safe(TS) - Apache と mod_php のような、シングルプロセスのウェブサービス用</p>
-      </li>
-      <li class="listitem">
-	<p class="para">Non-Thread-Safe(NTS) - IIS やその他の FastCGI ウェブサーバー (Apache と mod_fastcgi など) 用。また、コマンドラインのスクリプト用にもおすすめ。</p>
-      </li>
-      <li class="listitem">
-	<p class="para">x86 - PHP 5.5、5.6、7.0 の実運用環境用。</p>
-      </li>
-      <li class="listitem">
-	<p class="para">x64 - PHP 7.0+ の実運用環境用 (ただし、32ビット版のWindowsでは使えない)。5.5 と 5.6 の x64 版は実験的なもの。</p>
-	</li>
-    </ul>
+   PHP には四種類のビルドがあります。
+
+   <ul class="itemizedlist">
+    <li class="listitem">
+     <p class="para">Thread-Safe(TS) - Apache と mod_php のような、シングルプロセスのウェブサービス用</p>
+    </li>
+    <li class="listitem">
+     <p class="para">Non-Thread-Safe(NTS) - IIS やその他の FastCGI ウェブサーバー (Apache と mod_fastcgi など) 用。また、コマンドラインのスクリプト用にもおすすめ。</p>
+    </li>
+    <li class="listitem">
+     <p class="para">x86 - PHP 5.5、5.6、7.0 の実運用環境用。</p>
+    </li>
+    <li class="listitem">
+     <p class="para">x64 - PHP 7.0+ の実運用環境用 (ただし、32ビット版のWindowsでは使えない)。5.5 と 5.6 の x64 版は実験的なもの。</p>
+    </li>
+   </ul>
   </p>
-</div>
+ </div>
 </div></div></div></body></html>

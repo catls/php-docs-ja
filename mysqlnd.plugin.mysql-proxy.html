@@ -74,7 +74,7 @@
    MySQL Proxy は wire protocol (訳注：ネットワークを通じてデータを転送するプロトコル。<a href="http://en.wikipedia.org/wiki/Wire_protocol" class="link external">&raquo;&nbsp;WikipediaでのWire Protocolの説明</a>, <a href="http://stackoverflow.com/questions/2324089/can-someone-explain-what-a-wire-level-protocol-is" class="link external">&raquo;&nbsp;StackOverflow でのWire Protocolの説明</a>) の上で動作します。MySQL Proxy を使うと、MySQLクライアントサーバプロトコルを解析し、リバースエンジニアリングしなければなりません。MySQL Proxy でできることは、通信プロトコルを管理することで達成できることに限られます。wire protocol が変更(滅多にありませんが)されると、MySQL Proxy のスクリプトも変更する必要があります。
   </p>
   <p class="para">
-   <em>mysqlnd</em>プラグインは C言語のAPI上で動作します。このAPIは <em>libmysqlclient</em>クライアント と Connector/C API の動きをそのままコピーしています。この C言語のAPI は、 基本的に MySQLクライアントサーバプロトコル、時に wire protocol と呼ばれるもののラッパーです。開発者は C言語のAPI呼び出しの制御を奪うことができます。それゆえに、wire protocol レベルのプログラムに一切変更を加えることなく、すべてのPHP呼び出しをフックできるのです。
+   <em>mysqlnd</em>プラグインは C言語のAPI上で動作します。このAPIは <em>libmysqlclient</em>クライアント の動きをそのままコピーしています。この C言語のAPI は、 基本的に MySQLクライアントサーバプロトコル、時に wire protocol と呼ばれるもののラッパーです。開発者は C言語のAPI呼び出しの制御を奪うことができます。それゆえに、wire protocol レベルのプログラムに一切変更を加えることなく、すべてのPHP呼び出しをフックできるのです。
   </p>
   <p class="para">
    <em>mysqlnd</em> は wire protocol を実装しています。そのため、プラグインは通信プロトコルを解析し、リバースエンジニアリングし、管理できるばかりか、通信プロトコルを置き換えることだってできます。ただ、こんなことをする必要は通常ありません。

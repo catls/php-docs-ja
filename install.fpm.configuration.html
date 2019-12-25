@@ -78,6 +78,39 @@
 
      
      
+      <dt id="log-limit">
+       <code class="parameter">log_limit</code>
+       <span class="type"><a href="language.types.integer.html" class="type integer">integer</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        1024文字以上のログメッセージを、
+        改行せずにロギングできる文字数の上限。
+        デフォルト値: 1024
+        PHP 7.3.0 以降で利用可能
+       </p>
+      </dd>
+
+     
+     
+      <dt id="log-buffering">
+       <code class="parameter">log_buffering</code>
+       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        追加のバッファリングを行わずに実験的なロギングを行う
+        デフォルト値: yes
+        PHP 7.3.0 以降で利用可能
+       </p>
+      </dd>
+
+     
+     
       <dt id="syslog-facility">
        <code class="parameter">syslog.facility</code>
        <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
@@ -467,7 +500,7 @@
 
      
      
-      <dt id="pm.max-chidlren">
+      <dt id="pm.max-children">
        <code class="parameter">pm.max_children</code>
        <span class="type"><a href="language.types.integer.html" class="type int">int</a></span>
       </dt>
@@ -545,9 +578,8 @@
       <dd>
 
        <p class="para">
-        
-        秒数 after which an idle process will be killed. 
-        Used only when <em>pm</em> is set to <em>ondemand</em>.
+        アイドルなプロセスがkillされた後の秒数。
+        <em>pm</em> の値が
         使用可能な単位: s(秒)(デフォルト)、m(分)、h(時間)、または d(日)。
         デフォルト値: 10 秒
        </p>
@@ -628,9 +660,31 @@
       <dd>
 
        <p class="para">
-        Specify the nice(2) priority to apply to the worker process (only if set).
-        The value can vary from -19 (highest priority) to 20 (lower priority).
+        ワーカープロセスに適用される、
+        nice(2) の値の優先度を指定します。
+        (指定された場合のみ有効)
+        この値は、-19(優先度最高) から、20(優先度最低) まで変わります。
         デフォルト値: 未設定
+       </p>
+      </dd>
+
+     
+     
+      <dt id="process-dumpable">
+       <code class="parameter">process.dumpable</code>
+       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        プロセスのユーザーやグループが、
+        masterプロセスのユーザーと異なっていた場合でも、
+        プロセスのダンプ可能フラグ(PR_SET_DUMPABLE prctl)を設定します。
+        これにより、プロセスのコアダンプを生成できるようになり、
+        pool のユーザーがプロセスを ptrace 出来るようになります。
+        デフォルト値: no
+        PHP 7.0.29, 7.1.17 および 7.2.5 から利用可能
        </p>
       </dd>
 
@@ -644,7 +698,8 @@
       <dd>
 
        <p class="para">
-        Specify prefix for path evaluation
+        path を評価する際に、
+        path の前につける prefix を指定します。
        </p>
       </dd>
 
@@ -774,6 +829,24 @@
         /dev/null にリダイレクトします。
         デフォルト値: no
        </p> 
+      </dd>
+
+     
+     
+      <dt id="decorate-workers-output">
+       <code class="parameter">decorate_workers_output</code>
+       <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+      </dt>
+
+      <dd>
+
+       <p class="para">
+        <a href="install.fpm.configuration.html#catch-workers-output" class="link">catch_workers_output</a> 
+        が有効になった場合に、
+        ワーカーの出力のデコレートを有効にします。
+        デフォルト値: yes
+        PHP 7.3.0 以降で利用可能。
+       </p>
       </dd>
 
      
