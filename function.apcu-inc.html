@@ -37,7 +37,8 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$key</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$step</code><span class="initializer"> = 1</span></span>
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter reference">&$success</code></span>
-  ]] ) : <span class="type">int</span></div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$ttl</code><span class="initializer"> = 0</span></span>
+  ]]] ) : <span class="type">int</span></div>
 
   <p class="para rdfs-comment">
    保存した整数値を増やします。
@@ -85,6 +86,18 @@
     </dd>
 
    
+   
+    <dt>
+<code class="parameter">ttl</code></dt>
+
+    <dd>
+
+     <p class="para">
+      (既存の値を減らすのではなく) 新しい値を挿入する操作に使うTTL
+     </p>
+    </dd>
+
+   
   </dl>
 
  </div>
@@ -96,6 +109,33 @@
    成功した場合に <code class="parameter">key</code> の現在値を返します。
    失敗した場合に <strong><code>FALSE</code></strong> を返します
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.apcu-inc-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>5.1.12</td>
+      <td>
+       引数 <code class="parameter">ttl</code> が追加されました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 

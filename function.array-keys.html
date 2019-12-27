@@ -35,16 +35,21 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>array_keys</strong></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$array</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$search_value</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+   ) : <span class="type">array</span></div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>array_keys</strong></span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$array</code></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$search_value</code></span>
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$strict</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
-  ]] ) : <span class="type">array</span></div>
+  ] ) : <span class="type">array</span></div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>array_keys()</strong></span> は、配列 <code class="parameter">array</code>
    から全てのキー (数値および文字列) を返します。
   </p>
   <p class="para">
-   オプション <code class="parameter">search_value</code> が指定された場合、
+   <code class="parameter">search_value</code> が指定された場合、
    指定した値に関するキーのみが返されます。指定されない場合は、
    <code class="parameter">array</code> から全てのキーが返されます。
   </p>
