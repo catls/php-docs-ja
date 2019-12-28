@@ -45,8 +45,8 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    <span class="function"><strong>list()</strong></span> は数値添字の配列でのみ動作します。
-    また、添字は 0 から始まることを想定しています。
+    PHP 7.1.0 より前のバージョンでは、<span class="function"><strong>list()</strong></span> は数値添字の配列でのみ動作し、
+    また、添字は 0 から始まることを想定していました。
    </p>
   </p></blockquote>
   <div class="warning"><strong class="warning">警告</strong>
@@ -64,13 +64,6 @@
    <p class="para">
     一般論として、特定の操作順に依存することは避けたほうがいいでしょう。
     将来的に、その順番が変更される可能性があるからです。
-   </p>
-  </div>
-  <div class="warning"><strong class="warning">警告</strong>
-   <p class="para">
-    <span class="function"><strong>list()</strong></span> を実行して配列を変更
-    (<em>list($a, $b) = $b</em> など)
-    した場合の挙動は未定義です。
    </p>
   </div>
  </div>
@@ -119,6 +112,14 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.1.0</td>
+       <td>
+        キーを <span class="function"><strong>list()</strong></span> 関数で指定できるようになりました。
+        これによって、キーが数値でなかったり、連続していなかったりした場合に配列の構造を変えることができるようになります。
+       </td>
+      </tr>
+
+      <tr>
        <td>7.0.0</td>
        <td>
         <a href="migration70.incompatible.html#migration70.incompatible.variable-handling.list.order" class="link">
@@ -155,7 +156,7 @@
  <div class="refsect1 examples" id="refsect1-function.list-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6254">
+   <div class="example" id="example-6256">
     <p><strong>例1 <span class="function"><strong>list()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -167,7 +168,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-6255">
+   <div class="example" id="example-6257">
     <p><strong>例2 <span class="function"><strong>list()</strong></span> の使用法の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -178,7 +179,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-6256">
+   <div class="example" id="example-6258">
     <p><strong>例3 ネストした <span class="function"><strong>list()</strong></span> の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -197,7 +198,7 @@ int(3)
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-6257">
+   <div class="example" id="example-6259">
     <p><strong>例4 配列の添字を使用した <span class="function"><strong>list()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -239,7 +240,7 @@ array(3) {
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-6258">
+   <div class="example" id="example-6260">
     <p><strong>例5 <span class="function"><strong>list()</strong></span> と添字の定義順</strong></p>
     <div class="example-contents"><p>
      <span class="function"><strong>list()</strong></span> が配列の要素をどの順に処理するかは、配列の添字とは無関係です。
@@ -273,6 +274,35 @@ string(1) &quot;a&quot;
     </div>
    </div>
   </p>
+  <p class="para">
+   <div class="example" id="example-6261">
+    <p><strong>例6 <span class="function"><strong>list()</strong></span> をキーを指定して使う</strong></p>
+    <div class="example-contents"><p>
+     PHP 7.1.0 以降では、<span class="function"><strong>list()</strong></span> に明示的に
+     キーを含めることができるようになりました。
+     任意の式も指定可能です。
+     数値や文字のキーも許されますが、
+     キーがない要素とある要素を混ぜることは許されません
+    </p></div>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$data&nbsp;</span><span style="color: #007700">=&nbsp;[<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"name"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Tom'</span><span style="color: #007700">],<br />&nbsp;&nbsp;&nbsp;&nbsp;[</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"name"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Fred'</span><span style="color: #007700">],<br />];<br />foreach&nbsp;(</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">as&nbsp;[</span><span style="color: #DD0000">"id"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"name"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #007700">])&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"id:&nbsp;</span><span style="color: #0000BB">$id</span><span style="color: #DD0000">,&nbsp;name:&nbsp;</span><span style="color: #0000BB">$name</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br />echo&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />list(</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$second</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$fourth</span><span style="color: #007700">)&nbsp;=&nbsp;[</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">4</span><span style="color: #007700">];<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$second</span><span style="color: #DD0000">,&nbsp;</span><span style="color: #0000BB">$fourth</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+id: 1, name: Tom
+id: 2, name: Fred
+
+2, 4
+</pre></div>
+    </div>
+   </div>
+  </p>
+
  </div>
 
 

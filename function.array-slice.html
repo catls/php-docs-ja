@@ -72,8 +72,13 @@
       <p class="para">
        <code class="parameter">offset</code> が負の値ではない場合、要素位置の計算は、
        配列 <code class="parameter">array</code> の offset から始められます。
+      </p>
+      <p class="para">
        <code class="parameter">offset</code> が負の場合、要素位置の計算は
        <code class="parameter">array</code> の最後から行われます。
+      </p>
+      <p class="para">
+        <code class="parameter">offset</code> は、配列の位置を表します。配列のキーではありません。
       </p>
      </dd>
 
@@ -87,9 +92,16 @@
       <p class="para">
        <code class="parameter">length</code>が指定され、正の場合、
        配列の要素の中から最大でその数までの要素を返します。
+      </p>
+      <p class="para">
        配列の要素数が <code class="parameter">length</code> より少ない場合は、
-       配列から取得できる要素だけを返します。<code class="parameter">length</code>
+       配列から取得できる要素だけを返します。
+      </p>
+      <p class="para">
+       <code class="parameter">length</code>
        が指定され、負の場合、配列の末尾から連続する複数の要素が返されます。
+      </p>
+      <p class="para">
        省略された場合、<code class="parameter">offset</code>
        から配列の最後までの全ての要素が返されます。
       </p>
@@ -102,12 +114,15 @@
 
      <dd>
 
-      <p class="para">
-       <span class="function"><strong>array_slice()</strong></span> はデフォルトで配列の数値キーを並べなおし、
-       リセットすることに注意してください。
-       <code class="parameter">preserve_keys</code> を <strong><code>TRUE</code></strong>
-       にする事でこの動作を変更することができます。
-      </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        <span class="function"><strong>array_slice()</strong></span> はデフォルトで配列の数値キーを並べなおし、
+        リセットします。
+        <code class="parameter">preserve_keys</code> を <strong><code>TRUE</code></strong>
+        にする事でこの動作を変更することができます。
+        文字列のキーは、このパラメータの値にかかわらず常に保存されます。
+       </p>
+      </p></blockquote>
      </dd>
 
     
@@ -140,9 +155,9 @@
       <tr>
        <td>5.2.4</td>
        <td>
-        <code class="parameter">length</code> のデフォルト値が <em>NULL</em> に変わりました。
-        <em>NULL</em> を指定すると、<code class="parameter">array</code> の長さを使うようになります。
-        これより前のバージョンでは、<em>NULL</em> を指定した場合は長さゼロと見なされていました (つまり、何も返しませんでした)。
+        <code class="parameter">length</code> のデフォルト値が <strong><code>NULL</code></strong> に変わりました。
+        <strong><code>NULL</code></strong> を指定すると、<code class="parameter">array</code> の長さを使うようになります。
+        これより前のバージョンでは、 <strong><code>NULL</code></strong> を指定した場合は長さゼロと見なされていました (つまり、何も返しませんでした)。
        </td>
       </tr>
 
@@ -189,15 +204,66 @@ Array
     </div>
    </div>
   </p>
+  <p class="para">
+   <div class="example" id="example-6218">
+    <p><strong>例2 <span class="function"><strong>array_slice()</strong></span> と、キーが1から始まる配列</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"a"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"c"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"d"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"e"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">array_slice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [0] =&gt; b
+    [1] =&gt; c
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-6219">
+    <p><strong>例3 <span class="function"><strong>array_slice()</strong></span> に、数値と文字列のキーが混じった配列を渡す例</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$ar&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">'a'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'apple'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'b'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'banana'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'42'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'pear'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'d'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'orange'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">array_slice</span><span style="color: #007700">(</span><span style="color: #0000BB">$ar</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">array_slice</span><span style="color: #007700">(</span><span style="color: #0000BB">$ar</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Array
+(
+    [a] =&gt; apple
+    [b] =&gt; banana
+    [0] =&gt; pear
+)
+Array
+(
+    [a] =&gt; apple
+    [b] =&gt; banana
+    [42] =&gt; pear
+)
+</pre></div>
+    </div>
+   </div>
+  </p>
  </div>
 
  <div class="refsect1 seealso" id="refsect1-function.array-slice-seealso">
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.array-chunk.html" class="function" rel="rdfs-seeAlso">array_chunk()</a> - 配列を分割する</span></li>
     <li class="member"><span class="function"><a href="function.array-splice.html" class="function" rel="rdfs-seeAlso">array_splice()</a> - 配列の一部を削除し、他の要素で置換する</span></li>
     <li class="member"><span class="function"><a href="function.unset.html" class="function" rel="rdfs-seeAlso">unset()</a> - 指定した変数の割当を解除する</span></li>
-    <li class="member"><span class="function"><a href="function.array-chunk.html" class="function" rel="rdfs-seeAlso">array_chunk()</a> - 配列を分割する</span></li>
    </ul>
   </p>
  </div>

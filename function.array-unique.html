@@ -41,12 +41,10 @@
   <p class="para rdfs-comment">
    <code class="parameter">array</code> を入力とし、値に重複のない新規配列を返します。
   </p>
-  
   <p class="para">
    キーは保持されることに注意してください。
-   If multiple elements compare equal under
-   the given <code class="parameter">sort_flags</code>, then the key and value of
-   the first equal element will be retained.
+   指定された <code class="parameter">sort_flags</code> において、
+   複数の要素が等しかった場合、はじめの要素のキーと値が保持されます。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
@@ -137,6 +135,17 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.2.0</td>
+       <td>
+        <code class="parameter">sort_flags</code> が <strong><code>SORT_STRING</code></strong> の場合、
+        新しい配列が生成され、ユニークな要素が追加されるようになりました。
+        これによって、異なった数値のインデックスが振られる可能性があります。
+        これより前のバージョンでは、 <code class="parameter">array</code> がコピーされ、
+        (配列を後にパックせずに) ユニークでない値が削除されていました。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.2.10</td>
        <td>
         <code class="parameter">sort_flags</code> のデフォルト値を
@@ -164,7 +173,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-unique-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6228">
+   <div class="example" id="example-6230">
     <p><strong>例1 <span class="function"><strong>array_unique()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -187,7 +196,7 @@ Array
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-6229">
+   <div class="example" id="example-6231">
     <p><strong>例2 <span class="function"><strong>array_unique()</strong></span> と型</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

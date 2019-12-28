@@ -34,7 +34,6 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>array_replace_recursive</strong></span>
     ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$array1</code></span>
-   , <span class="methodparam"><span class="type">array</span> <code class="parameter">$array2</code></span>
    [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$...</code></span>
   ] ) : <span class="type">array</span></div>
 
@@ -54,9 +53,9 @@
    配列を再帰的にたどり、内部の値に対しても同じ手順で処理します。
   </p>
   <p class="para">
-   <code class="parameter">array1</code> の値がスカラーの場合は、
-   <code class="parameter">array2</code> の値がスカラーであるか配列であるかにかかわらずそれで置き換えられます。
-   <code class="parameter">array1</code> の値と <code class="parameter">array2</code>
+   最初の配列の値がスカラーの場合は、
+   2 番目の配列の値がスカラーであるか配列であるかにかかわらずそれで置き換えられます。
+   最初の配列の値と 2番目の配列
    の値が両方配列である場合は、<span class="function"><strong>array_replace_recursive()</strong></span>
    が対応する値を再帰的に処理します。
   </p>
@@ -81,24 +80,12 @@
     
     
      <dt>
-<code class="parameter">array2</code></dt>
-
-     <dd>
-
-      <p class="para">
-       置き換えたい要素を含む配列。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
 <code class="parameter">...</code></dt>
 
      <dd>
 
       <p class="para">
-       オプション。置き換えたい要素を含む、さらに別の配列。
+       オプション。置き換えたい要素を含む配列。
       </p>
      </dd>
 

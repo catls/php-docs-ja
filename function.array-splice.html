@@ -45,9 +45,11 @@
    で指定された要素を削除し、配列 <code class="parameter">replacement</code>
    でそれを置換します。
   </p>
-  <p class="para">
-   <code class="parameter">input</code> の配列の数値添字は保存されないことに注意しましょう。
-  </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    <code class="parameter">input</code> の配列の数値添字は保存されないことに注意しましょう。
+   </p>
+  </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
     <code class="parameter">replacement</code> が配列でない場合は、
@@ -86,6 +88,8 @@
        <code class="parameter">offset</code> が正の場合、削除される部分は
        配列 <code class="parameter">input</code> の最初から指定オフセットの
        ぶんだけ進んだ位置からとなります。
+      </p>
+      <p class="para">
        <code class="parameter">offset</code> が負の場合、削除される部分は、
        <code class="parameter">input</code> の末尾から数えた位置からとなります。
       </p>
@@ -101,14 +105,24 @@
       <p class="para">
        <code class="parameter">length</code> が省略された場合、
        <code class="parameter">offset</code> から配列の最後までが全て削除されます。
-       <code class="parameter">length</code> が指定され、正の場合、複数の要素が削除されます。
-       負の <code class="parameter">length</code> が指定された場合、削除される部分の末尾の位置は配列の末尾を基準にして計算されます。
-       <code class="parameter">length</code> にゼロを指定した場合は、どの要素も削除しません。
-       ヒント: <code class="parameter">replacement</code> も指定した場合に
-       <code class="parameter">offset</code> から配列の最後まで全てを削除するには、
-       <code class="parameter">length</code> を求めるために <em>count($input)
-       </em> を使用してください。
       </p>
+      <p class="para">
+       <code class="parameter">length</code> が指定され、正の場合、複数の要素が削除されます。
+      </p>
+      <p class="para">
+       負の <code class="parameter">length</code> が指定された場合、削除される部分の末尾の位置は配列の末尾を基準にして計算されます。
+      </p>
+      <p class="para">
+       <code class="parameter">length</code> にゼロを指定した場合は、どの要素も削除しません。
+      </p>
+      <div class="tip"><strong class="tip">ヒント</strong>
+       <p class="para">
+        <code class="parameter">replacement</code> も指定した場合に
+        <code class="parameter">offset</code> から配列の最後まで全てを削除するには、
+        <code class="parameter">length</code> を求めるために <em>count($input)
+        </em> を使用してください。
+       </p>
+      </div>
      </dd>
 
     
@@ -126,12 +140,16 @@
        <code class="parameter">offset</code> および <code class="parameter">length</code>
        で何も削除しないと指定した場合、配列 <code class="parameter">replacement</code>
        の要素は <code class="parameter">offset</code> で指定された位置に挿入されます。
-       置換される配列のキーは保存されないことに注意してください。
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        置換される配列のキーは保存されないことに注意してください。
+       </p>
+      </p></blockquote>
       <p class="para">
        もし <code class="parameter">replacement</code> に一つしか要素がない場合、
        要素そのものが配列やオブジェクトあるいは <strong><code>NULL</code></strong> でない限り、<em>array()</em>
-       で括る必要はありません。
+       や 角括弧 で括る必要はありません。
       </p>
      </dd>
 
@@ -151,22 +169,57 @@
  <div class="refsect1 examples" id="refsect1-function.array-splice-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6218">
+   <div class="example" id="example-6220">
     <p><strong>例1 <span class="function"><strong>array_splice()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"green")&nbsp;となる<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"yellow")&nbsp;となる<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"orange"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"orange")&nbsp;となる<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"black"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"maroon"</span><span style="color: #007700">));<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"green",<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"blue",&nbsp;"black",&nbsp;"maroon")&nbsp;となる<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"purple"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;ここでは&nbsp;$input&nbsp;は&nbsp;array("red",&nbsp;"green",<br />//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"blue",&nbsp;"purple",&nbsp;"yellow");&nbsp;となる<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">count</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">),&nbsp;</span><span style="color: #DD0000">"orange"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$input&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"red"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"green"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"blue"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"yellow"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">array_splice</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"black"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"maroon"</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$input</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
 
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(2) {
+  [0]=&gt;
+  string(3) &quot;red&quot;
+  [1]=&gt;
+  string(5) &quot;green&quot;
+}
+array(2) {
+  [0]=&gt;
+  string(3) &quot;red&quot;
+  [1]=&gt;
+  string(6) &quot;yellow&quot;
+}
+array(2) {
+  [0]=&gt;
+  string(3) &quot;red&quot;
+  [1]=&gt;
+  string(6) &quot;orange&quot;
+}
+array(5) {
+  [0]=&gt;
+  string(3) &quot;red&quot;
+  [1]=&gt;
+  string(5) &quot;green&quot;
+  [2]=&gt;
+  string(4) &quot;blue&quot;
+  [3]=&gt;
+  string(5) &quot;black&quot;
+  [4]=&gt;
+  string(6) &quot;maroon&quot;
+}
+</pre></div>
+    </div>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-6219">
-    <p><strong>例2 <span class="function"><strong>array_splice()</strong></span> の例</strong></p>
+   <div class="example" id="example-6221">
+    <p><strong>例2 同じ動きをする、<span class="function"><strong>array_splice()</strong></span> の様々な例</strong></p>
     <div class="example-contents"><p>
-     以下の文は、同様に <var class="varname"><var class="varname">$input</var></var> の値を変更します。
+     以下の文は、すべて2つとも同じ意味です:
     </p></div>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -183,9 +236,9 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.array-merge.html" class="function" rel="rdfs-seeAlso">array_merge()</a> - ひとつまたは複数の配列をマージする</span></li>
     <li class="member"><span class="function"><a href="function.array-slice.html" class="function" rel="rdfs-seeAlso">array_slice()</a> - 配列の一部を展開する</span></li>
     <li class="member"><span class="function"><a href="function.unset.html" class="function" rel="rdfs-seeAlso">unset()</a> - 指定した変数の割当を解除する</span></li>
-    <li class="member"><span class="function"><a href="function.array-merge.html" class="function" rel="rdfs-seeAlso">array_merge()</a> - ひとつまたは複数の配列をマージする</span></li>
    </ul>
   </p>
  </div>

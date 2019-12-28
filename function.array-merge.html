@@ -33,8 +33,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>array_merge</strong></span>
-    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$array1</code></span>
-   [, <span class="methodparam"><span class="type">array</span> <code class="parameter">$...</code></span>
+    ([ <span class="methodparam"><span class="type">array</span> <code class="parameter">$...</code></span>
   ] ) : <span class="type">array</span></div>
 
   <p class="para rdfs-comment">
@@ -59,18 +58,6 @@
 
     
      <dt>
-<code class="parameter">array1</code></dt>
-
-     <dd>
-
-      <p class="para">
-       最初の配列。
-      </p>
-     </dd>
-
-    
-    
-     <dt>
 <code class="parameter">...</code></dt>
 
      <dd>
@@ -90,8 +77,40 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    結果の配列を返します。
+   引数なしで呼ばれた場合、空の <span class="type"><a href="language.types.array.html" class="type array">array</a></span> を返します。
   </p>
  </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.array-merge-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.4.0</td>
+       <td>
+        この関数は、引数なしでも呼び出せるようになりました。
+        このバージョンより前では、少なくともひとつの引数が必須でした。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
 
  <div class="refsect1 examples" id="refsect1-function.array-merge-examples">
   <h3 class="title">例</h3>
