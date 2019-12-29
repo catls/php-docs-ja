@@ -26,8 +26,31 @@
   <div id="layout-content"><div id="intro.bc" class="preface">
   <h1 class="title">はじめに</h1>
   <p class="para">
-   任意精度演算に関して、
-   文字列として表された 2147483647-1 (0x7FFFFFFF-1) までの範囲の、
-   任意の大きさおよび精度の数字をサポートするバイナリ計算機を提供します。
+    任意の精度の演算をサポートするために、PHP は 
+    <em>2147483647</em> (または <em>0x7FFFFFFF</em>) までの
+    任意のサイズおよび精度をサポートする小数の 2進数の計算機 を提供します。
+    十分なメモリがあれば、文字列表現もサポートします。
   </p>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    <span class="type"><a href="language.types.string.html" class="type string">string</a></span>
+    であることが期待されている <span class="type"><a href="language.types.float.html" class="type float">float</a></span> 型の値を BCMath 関数に渡してしまうと、
+    PHP が <span class="type"><a href="language.types.float.html" class="type float">float</a></span> 型の値を <span class="type"><a href="language.types.string.html" class="type string">string</a></span> 型に変換するやり方の影響で、
+    あなたが望む結果にならない可能性があります。
+    すなわち、 <span class="type"><a href="language.types.string.html" class="type string">string</a></span> が、ネイピア数を使った表記
+    (これは BCMath では未サポートです) である可能性があったり、
+    小数点の記号がロケール依存(BCMath は常に小数点(.)を期待しています)
+    であったりする場合です。
+   </p>
+   <div class="informalexample">
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$num1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;(string)&nbsp;0&nbsp;=&gt;&nbsp;'0'<br /></span><span style="color: #0000BB">$num2&nbsp;</span><span style="color: #007700">=&nbsp;-</span><span style="color: #0000BB">0.000005</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;(string)&nbsp;-0.000005&nbsp;=&gt;&nbsp;'-5.05E-6'<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">bcadd</span><span style="color: #007700">(</span><span style="color: #0000BB">$num1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$num2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">6</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;=&gt;&nbsp;'0.000000'<br /><br /></span><span style="color: #0000BB">setlocale</span><span style="color: #007700">(</span><span style="color: #0000BB">LC_NUMERIC</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'de_DE'</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;小数点がコンマになるロケール<br /></span><span style="color: #0000BB">$num2&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1.2</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;(string)&nbsp;1.2&nbsp;=&gt;&nbsp;'1,2'<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">bcsub</span><span style="color: #007700">(</span><span style="color: #0000BB">$num1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$num2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;=&gt;&nbsp;'0.0'<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </div>
+
  </div></div></div></body></html>
