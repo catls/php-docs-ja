@@ -35,9 +35,9 @@
 
  <blockquote class="note"><p><strong class="note">注意</strong>: 
   <span class="simpara">
-   As of PHP 7.0.0, there are no particular restrictions regarding the length of
-   a <span class="type"><a href="language.types.string.html" class="type string">string</a></span> on 64-bit builds. On 32-bit builds and in earlier
-   versions,
+   PHP 7.0.0 以降では、64bit ビルドでの <span class="type"><a href="language.types.string.html" class="type string">string</a></span> 型の長さについて、
+   特別な制限はなくなりました。
+   32bit ビルドと PHP 7.0.0 より前のバージョンの
    文字列の最大長は 2GB (2147483647 バイト) です。
   </span>
  </p></blockquote>
@@ -518,11 +518,10 @@ Robert Paulsen greeted the two .
     </div>
 
     <p class="simpara">
-     As of PHP 7.1.0 also <em class="emphasis">negative</em> numeric indices are
-     supported.
+     PHP 7.1.0 以降では、 <em class="emphasis">負の</em> 数値インデックスもサポートされました。
     </p>
 
-    <div class="example" id="example-54"><p><strong>例11 Negative numeric indices</strong></p>
+    <div class="example" id="example-54"><p><strong>例11 負の数値インデックス</strong></p>
      <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$string&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'string'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;character&nbsp;at&nbsp;index&nbsp;-2&nbsp;is&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">[-</span><span style="color: #0000BB">2</span><span style="color: #007700">]</span><span style="color: #DD0000">."</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$string</span><span style="color: #007700">[-</span><span style="color: #0000BB">3</span><span style="color: #007700">]&nbsp;=&nbsp;</span><span style="color: #DD0000">'o'</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Changing&nbsp;the&nbsp;character&nbsp;at&nbsp;index&nbsp;-3&nbsp;to&nbsp;o&nbsp;gives&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #DD0000">."</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>

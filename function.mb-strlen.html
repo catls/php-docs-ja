@@ -87,15 +87,15 @@
    <code class="parameter">str</code> の文字数を返します。
    マルチバイト文字の一文字は1個として数えられます。
   </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.mb-strlen-errors">
+  <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   無効な <code class="parameter">encoding</code> を指定した場合は <strong><code>FALSE</code></strong> を返します。
+   不明な <code class="parameter">encoding</code> を指定した場合は
+   <strong><code>E_WARNING</code></strong> レベルの警告が生成されます。
   </p>
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は論理値
-<strong><code>FALSE</code></strong> を返す可能性がありますが、<strong><code>FALSE</code></strong> として評価される値を返す可能性もあります。
-詳細については <a href="language.types.boolean.html" class="link">論理値</a>の
-セクションを参照してください。この関数の返り値を調べるには
-<a href="language.operators.comparison.html" class="link">===演算子</a> を
-使用してください。</p></div>
  </div>
 
 

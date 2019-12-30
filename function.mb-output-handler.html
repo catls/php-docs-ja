@@ -90,59 +90,6 @@
  </div>
 
 
- <div class="refsect1 changelog" id="refsect1-function.mb-output-handler-changelog">
-  <h3 class="title">変更履歴</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.1.0</td>
-       <td>
-        <p class="para">
-         以下の条件が満たされた場合に、このハンドラは
-         charset HTTP ヘッダを設定します。
-        </p>
-        <p class="para">
-         <ul class="itemizedlist">
-          <li class="listitem">
-           <span class="simpara">
-            <span class="function"><a href="function.header.html" class="function">header()</a></span> で <em>Content-Type</em>
-            が設定されていない
-           </span>
-          </li>
-          <li class="listitem">
-           <span class="simpara">
-            デフォルトの MIME 型が <em>text/</em> で始まる
-           </span>
-          </li>
-          <li class="listitem">
-           <span class="simpara">
-            <a href="mbstring.configuration.html#ini.mbstring.http-input" class="link">mbstring.http_input</a> 
-            の設定が <em>pass</em> 以外である
-           </span>
-          </li>
-         </ul>
-        </p>
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
  <div class="refsect1 examples" id="refsect1-function.mb-output-handler-examples">
   <h3 class="title">例</h3>
   <p class="para">
