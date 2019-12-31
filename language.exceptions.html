@@ -68,12 +68,10 @@
     ただし、<span class="function"><a href="function.set-exception-handler.html" class="function">set_exception_handler()</a></span> でハンドラが
     定義されている場合を除きます。
    </p>
-   
    <p class="para">
-    In PHP 7.1 and later, a <a href="language.exceptions.html#language.exceptions.catch" class="link"><em>catch</em></a> block may specify multiple exceptions
-    using the pipe (<em>|</em>) character. This is useful for when
-    different exceptions from different class hierarchies are handled the
-    same.
+    PHP 7.1 以降では、<a href="language.exceptions.html#language.exceptions.catch" class="link"><em>catch</em></a> ブロック で 複数の例外を 
+    パイプ文字 (<em>|</em>) を使って指定できるようになりました。
+    これは、異なるクラス改装からの例外を同時に扱う必要がある場合に有用です。
    </p>
   </div>
   <div class="simplesect" id="language.exceptions.finally">
@@ -167,8 +165,7 @@ string(4) &quot;foo!&quot;
     </div>
    </div>
    <div class="example" id="example-286">
-    
-    <p><strong>例6 Multi catch exception handling</strong></p>
+    <p><strong>例6 複数の例外ハンドリングをひとつの catch で行う</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">MyException&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Exception&nbsp;</span><span style="color: #007700">{&nbsp;}<br /><br />class&nbsp;</span><span style="color: #0000BB">MyOtherException&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Exception&nbsp;</span><span style="color: #007700">{&nbsp;}<br /><br />class&nbsp;</span><span style="color: #0000BB">Test&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">testing</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;</span><span style="color: #0000BB">MyException</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(</span><span style="color: #0000BB">MyException&nbsp;</span><span style="color: #007700">|&nbsp;</span><span style="color: #0000BB">MyOtherException&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Test</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">testing</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>

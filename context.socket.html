@@ -85,18 +85,18 @@
 
     
     
-    
      <dt id="context.socket.ipv6_v6only"><code class="parameter">ipv6_v6only</code></dt>
 
      <dd>
 
       <p class="para">
-       Overrides the OS default regarding mapping IPv4 into IPv6.
+       IPv4射影アドレスに関する OS のデフォルトを上書きする
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
-        This is important in particular when trying to listen on IPv4 addresses
-        separately while there exists a binding on <em>[::]</em>.
+        これは、<em>[::]</em> に バインドされたアドレスが存在するときに、
+        IPv4 アドレス で listen しようとする場合に特に重要です。
+        上で、
        </p>
        <p class="para">
         <span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span> でのみ有効です。
@@ -111,7 +111,7 @@
      <dd>
 
       <p class="para">
-       Allows multiple bindings to a same ip:port pair, even from separate processes.
+       異なるプロセスからであっても、同じ IPアドレス:ポート のペアに 複数 bind することを許可します。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
@@ -127,7 +127,8 @@
      <dd>
 
       <p class="para">
-       Enables sending and receiving data to/from broadcast addresses.
+       ブロードキャストアドレスへのデータの送信や、
+       ブロードキャストアドレスからのデータの受信を有効にします。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <p class="para">
@@ -143,8 +144,9 @@
      <dd>
 
       <p class="para">
-       Setting this option to <strong><code>TRUE</code></strong> will set <em>SOL_TCP,NO_DELAY=1</em>
-       appropriately, thus disabling the TCP Nagle algorithm.
+       このオプションを <strong><code>TRUE</code></strong> にすると、
+       <em>SOL_TCP,NO_DELAY=1</em> をそれぞれ設定します。
+       これによって、TCP の Nagle アルゴリズムを無効にします。
       </p>
      </dd>
 

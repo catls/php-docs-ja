@@ -107,7 +107,7 @@
       オブジェクトを渡した場合は、そのオブジェクトの型をその代わりに使います。
       これは、バインドしたオブジェクトの protected メソッドや private
       メソッドの可視性を決めます。
-      It is not allowed to pass (an object of) an internal class as this parameter.
+      内部クラス (のオブジェクト) を をパラメータとして渡すことはできません。
      </p>
     </dd>
 
@@ -143,8 +143,9 @@
       <tr>
        <td>7.0.0</td>
        <td>
-        <code class="parameter">newscope</code> can not be (an object of) an internal
-        class anymore, what was possible prior to this version.
+        <code class="parameter">newscope</code> には、
+        内部クラス (のオブジェクト) をパラメータとして渡すことができなくなりました。
+        これより前のバージョンでは、それが可能でした。
        </td>
       </tr>
 
