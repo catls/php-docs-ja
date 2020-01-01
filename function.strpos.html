@@ -69,10 +69,17 @@
 
      <dd>
 
-      <p class="para">
-       <code class="parameter">needle</code> が文字列でない場合は、
-       それを整数に変換し、その番号に対応する文字として扱います。
-      </p>
+      
+ <p class="para">
+  <code class="parameter">needle</code> が文字列でない場合、
+  数値に変換され、文字の通常の値として扱われます。
+  この振る舞いは PHP 7.3.0 以降では推奨されないので、
+  この機能を使用しないことを強く推奨します。
+  意図した動作に依存する場合、
+  <code class="parameter">needle</code> を string に明示的にキャストするか、
+  明示的に <span class="function"><a href="function.chr.html" class="function">chr()</a></span> 関数を呼び出すべきでしょう。 
+ </p>
+
      </dd>
 
     
@@ -144,7 +151,7 @@
  <div class="refsect1 examples" id="refsect1-function.strpos-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6124">
+   <div class="example" id="example-6125">
     <p><strong>例1 <em>===</em> の使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -155,7 +162,7 @@
 
    </div>
 
-   <div class="example" id="example-6125">
+   <div class="example" id="example-6126">
     <p><strong>例2 !== の使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -166,7 +173,7 @@
 
    </div>
 
-   <div class="example" id="example-6126">
+   <div class="example" id="example-6127">
     <p><strong>例3 オフセットの使用</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

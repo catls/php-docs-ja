@@ -104,20 +104,22 @@
      <dd>
 
       <p class="para">
-       エスケープ文字 (1 文字のみ)。デフォルトはバックスラッシュ
+       エスケープ文字 (最大1文字)。デフォルトはバックスラッシュ
        (<em>\</em>)。
+       空文字列 (<em>&quot;&quot;</em>) を指定すると、
+       プロプライエタリなエスケープ機構を無効にします。
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
-       
        <span class="simpara">
-        Usually an <code class="parameter">enclosure</code> character is escpaped inside
-        a field by doubling it; however, the <code class="parameter">escape</code>
-        character can be used as an alternative. So for the default parameter
-        values <em>&quot;&quot;</em> and <em>\&quot;</em> have the same
-        meaning. Other than allowing to escape the
-        <code class="parameter">enclosure</code> character the
-        <code class="parameter">escape</code> character has no special meaning; it isn&#039;t
-        even meant to escape itself.
+        通常、 <code class="parameter">enclosure</code> の文字は、
+        フィールドの中では二回出力されることでエスケープされます。
+        しかし、<code class="parameter">escape</code>
+        の文字を代わりに使うこともできます。
+        よって、デフォルト値 <em>&quot;&quot;</em> 
+        および <em>\&quot;</em> は同じ意味になります。
+        <code class="parameter">enclosure</code> 文字をエスケープすることを許可する以外に、
+        <code class="parameter">escape</code> 文字は特別な意味を何ら持ちません;
+        つまり、自分自身をエスケープすることすら意味しません。
        </span>
       </p></blockquote>
      </dd>
@@ -133,6 +135,37 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    読み込んだフィールドの内容を配列で返します。
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.str-getcsv-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.4.0</td>
+       <td>
+        <code class="parameter">escape</code> 引数は、
+        空文字列を、プロプライエタリなエスケープ機構を無効にするシグナルとして解釈するようになりました。
+        これより前のバージョンでは、空文字列はデフォルト値のように扱われていました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 

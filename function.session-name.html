@@ -40,15 +40,27 @@
   <p class="para rdfs-comment">
    <span class="function"><strong>session_name()</strong></span> は、現在のセッション名を返します。
    <code class="parameter">name</code> を渡すと、
-   <span class="function"><strong>session_name()</strong></span> はセッション名を上書きして元のセッション名を返します。
+   <span class="function"><strong>session_name()</strong></span> はセッション名を上書きして
+   <em class="emphasis">元の</em> セッション名を返します。
+  </p>
+  <p class="para">
+   新しいセッションの <code class="parameter">name</code> が与えられると、
+   <span class="function"><strong>session_name()</strong></span> 関数は HTTPクッキー を
+   変更します(そして、<em>session.transid</em>
+   が有効なときは、出力内容も変更します)。
+   HTTPクッキー が一度送信されると、
+   <span class="function"><strong>session_name()</strong></span> 関数はエラーになります。
+   <span class="function"><strong>session_name()</strong></span> 関数は、
+   セッションを適切に動作させるためには、
+   <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span>
+   の前に呼び出さなければなりません。
   </p>
   <p class="para">
    リクエストが開始された際にセッション名はリセットされ、
    <em>session.name</em>
    に保存されたデフォルト値に戻ります。
    よって、各リクエスト毎に(そして
-   <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> または
-   <span class="function"><a href="function.session-register.html" class="function">session_register()</a></span> をコールする前に)
+   <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> をコールする前に)
    <span class="function"><strong>session_name()</strong></span> をコールする必要があります。
   </p>
  </div>
@@ -103,7 +115,7 @@
  <div class="refsect1 examples" id="refsect1-function.session-name-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5985">
+   <div class="example" id="example-5987">
     <p><strong>例1 <span class="function"><strong>session_name()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -113,6 +125,43 @@
     </div>
 
    </div>
+  </p>
+ </div>
+
+
+<div class="refsect1 changelog" id="refsect1-function.session-name-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.2.0</td>
+       <td>
+        <span class="function"><strong>session_name()</strong></span> 関数は、
+        セッションの状態をチェックするようになりました。
+        これより前のバージョンでは、
+        クッキー の状態をチェックするだけでした。
+        そのため、古い <span class="function"><strong>session_name()</strong></span> 関数は
+        <span class="function"><a href="function.session-start.html" class="function">session_start()</a></span> 関数の後に
+        <span class="function"><strong>session_name()</strong></span> 関数をを呼び出すことを許して
+        しまっており、それが PHP 
+        のクラッシュや不具合を起こす可能性がありました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 

@@ -48,6 +48,19 @@
   <p class="para rdfs-comment">
    ロケール情報を設定します。
   </p>
+  <div class="warning"><strong class="warning">警告</strong>
+   <p class="para">
+    ロケール情報は、スレッド毎ではなくプロセス毎に維持されます。
+    もし PHP を IIS、HHVM または Windows 用 Apache のようなマルチスレッドサーバ
+    API 上で動作させている場合、
+    スクリプトを実行している間にロケールの設定が突然変わるのを
+    経験するかも知れませんが、スクリプト自身は決して
+    <span class="function"><strong>setlocale()</strong></span> 自身をコールしていません。
+    これは同時に同一プロセスの異なるスレッドで実行されている他のスクリプトが
+    <span class="function"><strong>setlocale()</strong></span>
+    を使用してプロセスワイドなロケールを変更する事により発生します。
+   </p>
+  </div>
  </div>
 
 
@@ -223,7 +236,7 @@
  <div class="refsect1 examples" id="refsect1-function.setlocale-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6085">
+   <div class="example" id="metaphone.example.basic">
     <p><strong>例1 <span class="function"><strong>setlocale()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -235,7 +248,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-6086">
+   <div class="example" id="metaphone.example.phonemes">
     <p><strong>例2 Windows での <span class="function"><strong>setlocale()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -251,19 +264,6 @@
 
  <div class="refsect1 notes" id="refsect1-function.setlocale-notes">
   <h3 class="title">注意</h3>
-  <div class="warning"><strong class="warning">警告</strong>
-   <p class="para">
-    ロケール情報は、スレッド毎ではなくプロセス毎に維持されます。
-    もし PHP を IIS、HHVM または Windows 用 Apache のようなマルチスレッドサーバ
-    API 上で動作させている場合、
-    スクリプトを実行している間にロケールの設定が突然変わるのを
-    経験するかも知れませんが、スクリプト自身は決して
-    <span class="function"><strong>setlocale()</strong></span> 自身をコールしていません。
-    これは同時に同一プロセスの異なるスレッドで実行されている他のスクリプトが
-    <span class="function"><strong>setlocale()</strong></span>
-    を使用してプロセスワイドなロケールを変更する事により発生します。
-   </p>
-  </div>
   <div class="tip"><strong class="tip">ヒント</strong>
    <p class="para">
     Windows ユーザーは Microsoft の <acronym title="Microsoft Developer Network">MSDN</acronym> の Web サイトに

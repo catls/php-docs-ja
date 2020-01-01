@@ -27,6 +27,12 @@
  <h1>セッションのアップロード状況</h1>
 
 
+ <blockquote class="note"><p><strong class="note">注意</strong>: 
+  <span class="simpara">
+   この機能は、PHP 5.4.0 以降で利用可能です。
+  </span>
+ </p></blockquote>
+
  <p class="para">
   INI オプション
   <a href="session.configuration.html#ini.session.upload-progress.enabled" class="link">session.upload_progress.enabled</a>
@@ -73,7 +79,7 @@
   これらを適切に設定すれば、進捗状況の取得によるオーバーヘッドはほぼ無視できる程度になります。
  </p>
  <p class="para">
-  <div class="example" id="example-5978">
+  <div class="example" id="example-5980">
    <p><strong>例1 情報の例</strong></p>
    <div class="example-contents"><p>
     アップロード進捗状況の配列の構造を示す例です。
@@ -105,6 +111,14 @@
    ウェブサーバーのリクエストバッファリングを無効にしておかないと、うまく動作しません。
    リクエストバッファリングが有効になっていると、PHP 側ではアップロードが完全に終わるまでアップロードされたことがわかりません。
    たとえば Nginx などのサーバーは、大きなリクエストをバッファリングするようになっています。
+  </p>
+ </div>
+ <div class="caution"><strong class="caution">警告</strong>
+  <p class="para">
+   アップロード状況の情報は、あらゆるスクリプトを実行する前に、セッションに書き込まれます。
+   よって、セッション名を <span class="function"><a href="function.ini-set.html" class="function">ini_set()</a></span> 関数や
+   <span class="function"><a href="function.session-name.html" class="function">session_name()</a></span> 関数で変更してしまうと、
+   アップロード状況の情報が欠落したセッションが提供されることになります。
   </p>
  </div>
 

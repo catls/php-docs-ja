@@ -213,7 +213,7 @@
 
     <tr>
      <td><a href="session.configuration.html#ini.session.sid-bits-per-character" class="link">session.sid_bits_per_character</a></td>
-     <td>&quot;5&quot;</td>
+     <td>&quot;4&quot;</td>
      <td>PHP_INI_ALL</td>
      <td>PHP 7.1.0 から利用可能</td>
     </tr>
@@ -1042,25 +1042,28 @@
      デフォルトは 32 です。互換性を考慮するなら 32 や 40 などを使ってもかまいません。
      セッション ID は長ければ長いほど推測されにくくなります。少なくとも 32 を指定することを推奨します。
     </span>
-    <p class="para">
-      互換性に関するメモ。
-      <em>session.hash_func</em>=0 (MD5) で
+    <div class="tip"><strong class="tip">ヒント</strong>
+     <p class="para">
+      互換性に関するメモ: 
+      <em>session.hash_function</em>=0 (MD5) で
       <em>session.hash_bits_per_character</em>=4
       の場合、あるいは
-      <em>session.hash_func</em>=1 (SHA1) で
+      <em>session.hash_function</em>=1 (SHA1) で
       <em>session.hash_bits_per_character</em>=6
       の場合は 32 を使います。
-      <em>session.hash_func</em>=0 (MD5) で
+      <em>session.hash_function</em>=0 (MD5) で
       <em>session.hash_bits_per_character</em>=5
-      の場合は 26 を使います。
-      <em>session.hash_func</em>=0 (MD5) で
+      の場合は、26 を使います。
+      <em>session.hash_function</em>=0 (MD5) で
       <em>session.hash_bits_per_character</em>=6
-      の場合は 22 を使います。INI 設定で、セッション ID を少なくとも 128
+      の場合は、22 を使います。
+      INI 設定で、セッション ID を少なくとも 128
       ビットにしておく必要があります。
       <em>session.sid_bits_per_character</em>
       に適切な値を指定することを忘れないようにしましょう。
       そうしないと、脆弱なセッション ID を使うことになってしまいます。
-    </p>
+     </p>
+    </div> 
     <blockquote class="note"><p><strong class="note">注意</strong>: 
      <span class="simpara">
       この設定は PHP 7.1.0 で導入されました。

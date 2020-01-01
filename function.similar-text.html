@@ -75,6 +75,14 @@
       <p class="para">
        次の文字列。
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <p class="para">
+        <code class="parameter">first</code> と
+        <code class="parameter">second</code> を入れ替えると、
+        結果は異なるものになります;
+        例を参照してください。
+       </p>
+      </p></blockquote> 
      </dd>
 
     
@@ -87,6 +95,9 @@
       <p class="para">
        3 番目の引数としてリファレンスを渡すことにより、
        <span class="function"><strong>similar_text()</strong></span> は類似性をパーセントで計算します。
+       これは、<span class="function"><strong>similar_text()</strong></span> の結果を、
+       与えられた文字列の長さの平均を
+       <em>100</em> 倍した値で割ることで出しています。
       </p>
      </dd>
 
@@ -102,6 +113,40 @@
   <p class="para">
    両方の文字列でマッチした文字の数を返します。
   </p>
+  <p class="para">
+   マッチする文字数は、
+   最初の共通最長部分文字列を探し、
+   同じことをその文字列の 前後の文字列に対して再帰的に行うことで計算されます。
+   そうして見つかった全ての共通部分文字列の長さが追加されます。
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.similar-text-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-6094">
+   <p><strong>例1 <span class="function"><strong>similar_text()</strong></span> で、引数を入れ替えた場合の例</strong></p>
+   <div class="example-contents"><p>
+    以下のコードは、
+    <code class="parameter">first</code> と
+    <code class="parameter">second</code> を入れ替えると、異なる結果になる可能性を示しています。
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$sim&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">similar_text</span><span style="color: #007700">(</span><span style="color: #DD0000">'bafoobar'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'barfoo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$perc</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"類似度:&nbsp;</span><span style="color: #0000BB">$sim</span><span style="color: #DD0000">&nbsp;(</span><span style="color: #0000BB">$perc</span><span style="color: #DD0000">&nbsp;%)\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$sim&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">similar_text</span><span style="color: #007700">(</span><span style="color: #DD0000">'barfoo'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'bafoobar'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$perc</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #DD0000">"類似度:&nbsp;</span><span style="color: #0000BB">$sim</span><span style="color: #DD0000">&nbsp;(</span><span style="color: #0000BB">$perc</span><span style="color: #DD0000">&nbsp;%)\n"</span><span style="color: #007700">;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+類似度: 5 (71.428571428571 %)
+類似度: 3 (42.857142857143 %)
+</pre></div>
+   </div>
+  </div>
  </div>
 
 

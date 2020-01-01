@@ -75,10 +75,17 @@
        <span class="function"><a href="function.strstr.html" class="function">strstr()</a></span>
        とは異なります。
       </p>
-      <p class="para">
-       <code class="parameter">needle</code> が文字列でない場合は、
-       それを整数に変換し、その番号に対応する文字として扱います。
-      </p>
+      
+ <p class="para">
+  <code class="parameter">needle</code> が文字列でない場合、
+  数値に変換され、文字の通常の値として扱われます。
+  この振る舞いは PHP 7.3.0 以降では推奨されないので、
+  この機能を使用しないことを強く推奨します。
+  意図した動作に依存する場合、
+  <code class="parameter">needle</code> を string に明示的にキャストするか、
+  明示的に <span class="function"><a href="function.chr.html" class="function">chr()</a></span> 関数を呼び出すべきでしょう。 
+ </p>
+
      </dd>
 
     
@@ -97,39 +104,10 @@
  </div>
 
 
- <div class="refsect1 changelog" id="refsect1-function.strrchr-changelog">
-  <h3 class="title">変更履歴</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        この関数はバイナリセーフとなりました。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
- </div>
-
-
  <div class="refsect1 examples" id="refsect1-function.strrchr-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6127">
+   <div class="example" id="example-6128">
     <p><strong>例1 <span class="function"><strong>strrchr()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

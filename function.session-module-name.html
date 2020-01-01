@@ -40,6 +40,7 @@
   <p class="para rdfs-comment">
    <span class="function"><strong>session_module_name()</strong></span>は、
    現在のセッションモジュールの名前を返します。
+   これは <a href="session.configuration.html#ini.session.save-handler" class="link">session.save_handler</a> としても知られています。
   </p>
  </div>
 
@@ -58,6 +59,9 @@
       <p class="para">
        <code class="parameter">module</code> が指定された場合、
        そのモジュールを代わりに使用します。
+       このパラメーターに <em>&quot;user&quot;</em>  を渡すことは禁止されています。
+       ユーザー定義のセッションハンドラを設定するには、この関数のかわりに
+       <span class="function"><a href="function.session-set-save-handler.html" class="function">session_set_save_handler()</a></span> 関数 を呼び出さなければなりません。
       </p>
      </dd>
 
@@ -73,6 +77,36 @@
   <p class="para">
    現在のセッションモジュールの名前を返します。
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.session-module-name-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.2.0</td>
+      <td>
+       モジュール名に <em>&quot;user&quot;</em> を設定することは、
+       明示的に禁止されるようになりました。
+       これより前のバージョンでは、
+       <em>&quot;user&quot;</em> を設定しても静かに無視されていました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 

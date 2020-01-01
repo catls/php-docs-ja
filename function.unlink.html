@@ -91,33 +91,32 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
 
  <div class="refsect1 changelog" id="refsect1-function.unlink-changelog">
   <h3 class="title">変更履歴</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
 
-     </thead>
+    </thead>
 
-     <tbody class="tbody">
-      <tr>
-       <td>5.0.0</td>
-       <td>
-        PHP 5.0.0 以降、<span class="function"><strong>unlink()</strong></span>は
-        <em class="emphasis">いくつかの</em>URL ラッパーと共に使用することもできます。
-        <span class="function"><strong>unlink()</strong></span>をサポートするラッパーのリストについては
-        <a href="wrappers.html" class="xref">サポートするプロトコル/ラッパー</a>をご覧ください。
-       </td>
-      </tr>
+    <tbody class="tbody">
+     <tr>
+      <td>7.3.0</td>
+      <td>
+       Windows で、使用中のハンドルを使ってファイルを
+       <span class="function"><strong>unlink()</strong></span> できるようになりました。
+       これより前のバージョンでは、失敗していました。
+       但し、unlink されたファイルを再生成できるようになっているわけでは未だありません。
+       そうするには、全てのハンドルが閉じられている必要があります。
+      </td>
+     </tr>
 
-     </tbody>
-    
-   </table>
+    </tbody>
+   
+  </table>
 
-  </p>
  </div>
 
 

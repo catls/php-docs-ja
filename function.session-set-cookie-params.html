@@ -41,6 +41,11 @@
    [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$httponly</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ]]]] ) : <span class="type">bool</span></div>
 
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>session_set_cookie_params</strong></span>
+    ( <span class="methodparam"><span class="type">array</span> <code class="parameter">$options</code></span>
+   ) : <span class="type">bool</span></div>
+
   <p class="para rdfs-comment">
    ファイル <var class="filename">php.ini</var> で定義されたクッキーパラメータを設定します。
    この関数の効果が持続するのは、スクリプトの実行が終了するまでです。
@@ -126,6 +131,29 @@
      </dd>
 
     
+    
+     <dt>
+<code class="parameter">options</code></dt>
+
+     <dd>
+
+      <p class="para">
+       以下に示すキーを持つことができる連想配列です。
+
+       <em>lifetime</em>, <em>path</em>, <em>domain</em>,
+       <em>secure</em>, <em>httponly</em> および <em>samesite</em>.
+
+       対応する値は、キーと同じ名前のパラメータで説明されているものと同じ意味です。
+       <em>samesite</em> 要素の値は、
+       <em>Lax</em> または <em>Strict</em> になるはずです。
+
+       上記の許可されているオプションがいずれも設定されなかった場合、
+       デフォルト値は、明示的なパラメーターのデフォルト値と同じです。
+       <em>samesite</em> 要素が省略されると、SameSite クッキー属性は設定されません。
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -154,6 +182,15 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.3.0</td>
+       <td>
+        連想配列 <code class="parameter">options</code> をサポートする、
+        別のシグナチャが追加されました。
+        このシグナチャは、SameSite クッキー属性の設定もサポートします。
+       </td>
+      </tr>
+
       <tr>
        <td>7.2.0</td>
        <td>
@@ -194,6 +231,9 @@
     </li>
     <li class="member">
      <a href="session.configuration.html#ini.session.cookie-httponly" class="link">session.cookie_httponly</a>
+    </li>
+    <li class="member">
+     <a href="session.configuration.html#ini.session.cookie-samesite" class="link">session.cookie_samesite</a>
     </li>
     <li class="member"><span class="function"><a href="function.session-get-cookie-params.html" class="function" rel="rdfs-seeAlso">session_get_cookie_params()</a> - セッションクッキーのパラメータを得る</span></li>
    </ul>
