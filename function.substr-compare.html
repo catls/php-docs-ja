@@ -131,9 +131,15 @@
    <code class="parameter">main_str</code> の <code class="parameter">offset</code>
    以降が <code class="parameter">str</code> より小さい場合に負の数、
    <code class="parameter">str</code> より大きい場合に正の数、
-   等しい場合に 0 を返します。<code class="parameter">offset</code> が
-   <code class="parameter">main_str</code> の長さ以上であるか、あるいは <code class="parameter">length</code>
-   が設定されていて 1 未満である場合 (PHP 5.5.11 より前のバージョン)、<span class="function"><strong>substr_compare()</strong></span>
+   等しい場合に 0 を返します。
+   <code class="parameter">offset</code> が
+   <code class="parameter">main_str</code> と等しい
+   (PHP 7.2.18, 7.3.5 より前のバージョン) か、
+   <code class="parameter">main_str</code> より長い場合、
+   もしくは <code class="parameter">length</code> 
+   が設定されていて0未満 (PHP 5.5.11 より前は、1未満でした)
+   である場合、
+   <span class="function"><strong>substr_compare()</strong></span>
    は警告を表示して <strong><code>FALSE</code></strong> を返します。
   </p>
  </div>
@@ -153,6 +159,14 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.2.18, 7.3.5</td>
+       <td>
+        <code class="parameter">offset</code> の値は、
+        <code class="parameter">main_str</code> の長さと等しくても問題なくなりました。
+       </td>
+      </tr>
+
       <tr>
        <td>5.5.11</td>
        <td>
@@ -178,7 +192,7 @@
  <div class="refsect1 examples" id="refsect1-function.substr-compare-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6142">
+   <div class="example" id="example-6143">
     <p><strong>例1 <span class="function"><strong>substr_compare()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
