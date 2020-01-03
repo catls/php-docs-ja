@@ -86,7 +86,7 @@
  <div class="refsect1 examples" id="refsect1-function.next-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6267">
+   <div class="example" id="example-6268">
     <p><strong>例1 <span class="function"><strong>next()</strong></span> および類似関数の使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -103,15 +103,16 @@
  <div class="refsect1 notes" id="refsect1-function.next-notes">
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   
    <span class="simpara">
-    The end of an array is indistinguishable from a <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> element.
+    配列の最後の要素に対してこの関数を実行した結果は、
+    次の要素が <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> だった場合と区別できません。
     <strong><code>FALSE</code></strong> 要素を含む配列を順に処理するには、<span class="function"><strong>foreach()</strong></span>
     関数を参照ください。
    </span>
    <span class="simpara">
-    To still use <span class="function"><strong>next()</strong></span> and properly check if the end of the array 
-    has been reached, verify that the <span class="function"><a href="function.key.html" class="function">key()</a></span> is <strong><code>NULL</code></strong>.
+    それでも <span class="function"><strong>next()</strong></span> 関数を使い、
+    適切に配列の最後に達していることをチェックするには、
+    <span class="function"><a href="function.key.html" class="function">key()</a></span> 関数の結果が <strong><code>NULL</code></strong> であることを確認するようにしてください。
    </span>
   </p></blockquote>
  </div>

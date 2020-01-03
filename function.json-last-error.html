@@ -38,6 +38,7 @@
    ) : <span class="type">int</span></div>
 
   <p class="para rdfs-comment">
+   <strong><code>JSON_THROW_ON_ERROR</code></strong> を指定していなかった場合に、
    直近の JSON エンコード/デコード処理中に発生したエラー (もし存在すれば) を返します。
   </p>
  </div>
@@ -126,16 +127,15 @@
       <td>PHP 5.5.0</td>
      </tr>
 
-     
      <tr>
       <td><strong><code>JSON_ERROR_INVALID_PROPERTY_NAME</code></strong></td>
-      <td>A property name that cannot be encoded was given</td>
+      <td>エンコードできないプロパティ名が渡されました</td>
       <td>PHP 7.0.0</td>
      </tr>
 
      <tr>
       <td><strong><code>JSON_ERROR_UTF16</code></strong></td>
-      <td>Malformed UTF-16 characters, possibly incorrectly encoded</td>
+      <td>おそらく正しくエンコードされていない、不正な UTF-16 文字</td>
       <td>PHP 7.0.0</td>
      </tr>
 
@@ -181,6 +181,24 @@ Decoding: {&#039;Organization&#039;: &#039;PHP Documentation Team&#039;} - Synta
     <div class="example-contents screen">
 <div class="cdata"><pre>
 string(4) &quot;null&quot;
+bool(true)
+</pre></div>
+    </div>
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-4656">
+    <p><strong>例3 <span class="function"><strong>json_last_error()</strong></span> と <strong><code>JSON_THROW_ON_ERROR</code></strong> の組み合わせ</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;JSON_ERROR_UTF8&nbsp;が発生する、不正なUTF8シーケンス<br /></span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #DD0000">"\xB1\x31"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;次の文字列は、JSON&nbsp;error&nbsp;が発生しない<br /></span><span style="color: #0000BB">json_encode</span><span style="color: #007700">(</span><span style="color: #DD0000">'okay'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">JSON_THROW_ON_ERROR</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;グローバルなエラー状態は、直前の&nbsp;json_encode()&nbsp;によって変更されない<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">json_last_error</span><span style="color: #007700">()&nbsp;===&nbsp;</span><span style="color: #0000BB">JSON_ERROR_UTF8</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
 bool(true)
 </pre></div>
     </div>

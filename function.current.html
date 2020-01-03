@@ -38,7 +38,7 @@
 
   <p class="para rdfs-comment">
    各配列は、&quot;カレント&quot;の要素へのポインタを有しています。
-   このポインタは、その配列の最初の要素を指すように初期化されます。
+   このポインタは、配列に挿入された最初の要素を指すように初期化されます。
   </p>
  </div>
 
@@ -117,7 +117,7 @@
  <div class="refsect1 examples" id="refsect1-function.current-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6247">
+   <div class="example" id="example-6248">
     <p><strong>例1 <span class="function"><strong>current()</strong></span> と類似関数の使用例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -133,19 +133,20 @@
  <div class="refsect1 notes" id="refsect1-function.current-notes">
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   
    <span class="simpara">
-    The end of an array and the result of calling 
-    <span class="function"><strong>current()</strong></span> on an empty array 
-    are indistinguishable from a <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> element.
+    配列の最後の要素と、
+    空の配列に対して、<span class="function"><strong>current()</strong></span> 
+    を呼び出した時の結果は、
+    <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> と区別できません。
     <strong><code>FALSE</code></strong> 要素を含む配列を順に処理するには、<span class="function"><strong>foreach()</strong></span>
     関数を参照ください。
    </span>
    <span class="simpara">
-    To still use <span class="function"><strong>current()</strong></span> and properly check if the value 
-    is really an element of the array, the <span class="function"><a href="function.key.html" class="function">key()</a></span> 
-    of the <span class="function"><strong>current()</strong></span> element should be checked to be strictly 
-    different from <strong><code>NULL</code></strong>.
+    それでも <span class="function"><strong>current()</strong></span> を使い、
+    値が本当に配列の要素であることを適切にチェックするには、
+    <span class="function"><strong>current()</strong></span> が指す要素の
+    <span class="function"><a href="function.key.html" class="function">key()</a></span> の値が、
+    厳密に <strong><code>NULL</code></strong> ではないことをチェックすべきです。
    </span>
   </p></blockquote>
  </div>

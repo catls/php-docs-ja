@@ -42,11 +42,11 @@
   <p class="para rdfs-comment">
    与えられた <code class="parameter">value</code> を JSON 形式にした文字列を返します。
   </p>
-  
   <p class="para">
-   The encoding is affected by the supplied <code class="parameter">options</code>
-   and additionally the encoding of float values depends on the value of
-   <a href="ini.core.html#ini.serialize-precision" class="link">serialize_precision</a>.
+   エンコーディングは、<code class="parameter">options</code> の指定によって影響を受けます。
+   さらに、浮動小数点のエンコーディングは、
+   <a href="ini.core.html#ini.serialize-precision" class="link">serialize_precision</a>
+   の値によっても影響を受けます。
   </p>
  </div>
 
@@ -64,7 +64,7 @@
 
       <p class="para">
        エンコードする値。
-       <span class="type"><a href="language.types.resource.html" class="type resource">resource</a></span> 型以外の任意の型を指定できます。
+       <a href="language.types.resource.html" class="link">リソース</a> 型以外の任意の型を指定できます。
       </p>
       <p class="para">
        すべての文字列データは、UTF-8 エンコードされていなければいけません。
@@ -87,17 +87,21 @@
      <dd>
 
       <p class="para">
+       <strong><code>JSON_FORCE_OBJECT</code></strong>,
        <strong><code>JSON_HEX_QUOT</code></strong>,
        <strong><code>JSON_HEX_TAG</code></strong>,
        <strong><code>JSON_HEX_AMP</code></strong>,
        <strong><code>JSON_HEX_APOS</code></strong>,
+       <strong><code>JSON_INVALID_UTF8_IGNORE</code></strong>,
+       <strong><code>JSON_INVALID_UTF8_SUBSTITUTE</code></strong>,
        <strong><code>JSON_NUMERIC_CHECK</code></strong>,
-       <strong><code>JSON_PRETTY_PRINT</code></strong>,
-       <strong><code>JSON_UNESCAPED_SLASHES</code></strong>,
-       <strong><code>JSON_FORCE_OBJECT</code></strong>,
+       <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong>,
        <strong><code>JSON_PRESERVE_ZERO_FRACTION</code></strong>,
+       <strong><code>JSON_PRETTY_PRINT</code></strong>,
+       <strong><code>JSON_UNESCAPED_LINE_TERMINATORS</code></strong>,
+       <strong><code>JSON_UNESCAPED_SLASHES</code></strong>,
        <strong><code>JSON_UNESCAPED_UNICODE</code></strong>,
-       <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong>
+       <strong><code>JSON_THROW_ON_ERROR</code></strong>
        からなるビットマスク。
        各定数の意味については
        <a href="json.constants.html" class="link">JSON 定数のページ</a>
@@ -148,6 +152,31 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.3.0</td>
+       <td>
+        <code class="parameter">options</code> パラメータに 
+        <strong><code>JSON_THROW_ON_ERROR</code></strong> が追加されました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.2.0</td>
+       <td>
+        <code class="parameter">options</code> パラメータに 
+        <strong><code>JSON_INVALID_UTF8_IGNORE</code></strong> と
+        <strong><code>JSON_INVALID_UTF8_SUBSTITUTE</code></strong> が追加されました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        <code class="parameter">options</code> パラメータに 
+        <strong><code>JSON_UNESCAPED_LINE_TERMINATORS</code></strong> が追加されました。
+       </td>
+      </tr>
+
+      <tr>
        <td>7.1.0</td>
        <td>
         double 値をエンコードする際に、
@@ -159,7 +188,8 @@
       <tr>
        <td>5.6.6</td>
        <td>
-        <code class="parameter">option</code> パラメータに <strong><code>JSON_PRESERVE_ZERO_FRACTION</code></strong> が追加されました。
+        <code class="parameter">options</code> パラメータに
+        <strong><code>JSON_PRESERVE_ZERO_FRACTION</code></strong> が追加されました。
        </td>
       </tr>
 
@@ -173,24 +203,27 @@
       <tr>
        <td>5.5.0</td>
        <td>
-        <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong> オプションが追加されました。
+        <code class="parameter">options</code> パラメータに 
+        <strong><code>JSON_PARTIAL_OUTPUT_ON_ERROR</code></strong> が追加されました。
        </td>
       </tr>
 
       <tr>
        <td>5.5.0</td>
        <td>
-        
-        The return value on failure was changed from <em>null</em>
-        string to <strong><code>FALSE</code></strong>.
+        失敗した場合の戻り値が 
+        文字列 <em>null</em>
+        から <strong><code>FALSE</code></strong> に変更されました。
        </td>
       </tr>
 
       <tr>
        <td>5.4.0</td>
        <td>
-        <code class="parameter">option</code> に
-        <strong><code>JSON_PRETTY_PRINT</code></strong>、<strong><code>JSON_UNESCAPED_SLASHES</code></strong> および <strong><code>JSON_UNESCAPED_UNICODE</code></strong>
+        <code class="parameter">options</code> パラメータに 
+        <strong><code>JSON_PRETTY_PRINT</code></strong>、
+        <strong><code>JSON_UNESCAPED_SLASHES</code></strong> および
+        <strong><code>JSON_UNESCAPED_UNICODE</code></strong>
         が追加されました。
        </td>
       </tr>
@@ -198,7 +231,20 @@
       <tr>
        <td>5.3.3</td>
        <td>
-        <code class="parameter">option</code> に <strong><code>JSON_NUMERIC_CHECK</code></strong> が追加されました。
+        <code class="parameter">options</code> パラメータに 
+        <strong><code>JSON_NUMERIC_CHECK</code></strong> が追加されました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        <code class="parameter">options</code> パラメータに 
+        <strong><code>JSON_FORCE_OBJECT</code></strong>,
+        <strong><code>JSON_HEX_AMP</code></strong>,
+        <strong><code>JSON_HEX_APOS</code></strong>,
+        <strong><code>JSON_HEX_QUOT</code></strong>,
+        <strong><code>JSON_HEX_TAG</code></strong> が追加されました。
        </td>
       </tr>
 

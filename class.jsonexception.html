@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>The JsonException class</title>
+  <title>JsonException クラス</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,12 +19,12 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="book.json.html">JSON</a></li>
-    <li>The JsonException class</li>
+    <li>JsonException クラス</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="class.jsonexception" class="reference">
- <h1 class="title">The JsonException class</h1>
+ <h1 class="title">JsonException クラス</h1>
  
  
  <div class="partintro"><p class="verinfo">(PHP 7 &gt;= 7.3.0)</p>
@@ -33,10 +33,12 @@
   <div class="section" id="jsonexception.intro">
    <h2 class="title">はじめに</h2>
    <p class="para">
-    Exception thrown if <strong><code>JSON_THROW_ON_ERROR</code></strong> option is
-    set for <span class="function"><a href="function.json-encode.html" class="function">json_encode()</a></span> or
-    <span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span>. <var class="varname"><var class="varname">code</var></var> contains the error
-    type, for possible values see <span class="function"><a href="function.json-last-error.html" class="function">json_last_error()</a></span>.
+    <strong><code>JSON_THROW_ON_ERROR</code></strong> オプションが
+    <span class="function"><a href="function.json-encode.html" class="function">json_encode()</a></span> や
+    <span class="function"><a href="function.json-decode.html" class="function">json_decode()</a></span> に設定されていた場合に投げられる例外です。
+    <var class="varname"><var class="varname">code</var></var> には、エラーのタイプを含みます。
+    あり得る <var class="varname"><var class="varname">code</var></var> の値については、
+    <span class="function"><a href="function.json-last-error.html" class="function">json_last_error()</a></span> 関数を参照してください。
    </p>
   </div>
 

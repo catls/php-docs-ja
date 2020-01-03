@@ -81,7 +81,7 @@
  <div class="refsect1 examples" id="refsect1-function.reset-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6270">
+   <div class="example" id="example-6271">
     <p><strong>例1 <span class="function"><strong>reset()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -98,14 +98,14 @@
  <div class="refsect1 notes" id="refsect1-function.reset-notes">
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
-   
    <span class="simpara">
-    The return value for an empty array is indistinguishable from 
-    the return value in case of an array which has a <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> 
-    first element. To properly check the value of the first element of an array
-    which may contain <strong><code>FALSE</code></strong> elements, first check the <span class="function"><a href="function.count.html" class="function">count()</a></span>
-    of the array, or check that <span class="function"><a href="function.key.html" class="function">key()</a></span> is not
-    <strong><code>NULL</code></strong>, after calling <span class="function"><strong>reset()</strong></span>.
+    空の配列に対してこの関数を実行した場合の戻り値は、
+    配列の先頭要素に <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> <strong><code>FALSE</code></strong> がある配列に対して
+    実行した場合の戻り値と区別できません。
+    配列の先頭に <strong><code>FALSE</code></strong> が含まれている可能性がある値を適切にチェックするには、
+    まず最初に 配列の <span class="function"><a href="function.count.html" class="function">count()</a></span> をチェックするか、
+    <span class="function"><strong>reset()</strong></span> を呼び出した後に、
+    要素の <span class="function"><a href="function.key.html" class="function">key()</a></span> が <strong><code>NULL</code></strong> でないことを確かめるようにしてください。
    </span>
   </p></blockquote>
  </div>
@@ -120,7 +120,7 @@
     <li class="member"><span class="function"><a href="function.end.html" class="function" rel="rdfs-seeAlso">end()</a> - 配列の内部ポインタを最終要素にセットする</span></li>
     <li class="member"><span class="function"><a href="function.next.html" class="function" rel="rdfs-seeAlso">next()</a> - 配列の内部ポインタを進める</span></li>
     <li class="member"><span class="function"><a href="function.prev.html" class="function" rel="rdfs-seeAlso">prev()</a> - 内部の配列ポインタをひとつ前に戻す</span></li>
-    <li class="member"><span class="function"><a href="function.array-key-first.html" class="function" rel="rdfs-seeAlso">array_key_first()</a> - Gets the first key of an array</span></li>
+    <li class="member"><span class="function"><a href="function.array-key-first.html" class="function" rel="rdfs-seeAlso">array_key_first()</a> - 配列の最初のキーを得る</span></li>
    </ul>
   </p>
  </div>

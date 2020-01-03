@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>List functions scoutapm will instrument.</title>
+  <title>scoutapm がデータを収集する関数の一覧</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="ref.scoutapm.html">Scoutapm 関数</a></li>
-    <li>List functions scoutapm will instrument.</li>
+    <li>scoutapm がデータを収集する関数の一覧</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="function.scoutapm-list-instrumented-functions" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">scoutapm_list_instrumented_functions</h1>
-  <p class="verinfo">(PECL scoutapm &gt;= 1.0.2)</p><p class="refpurpose"><span class="refname">scoutapm_list_instrumented_functions</span> &mdash; <span class="dc-title">List functions scoutapm will instrument.</span></p>
+  <p class="verinfo">(PECL scoutapm &gt;= 1.0.2)</p><p class="refpurpose"><span class="refname">scoutapm_list_instrumented_functions</span> &mdash; <span class="dc-title">scoutapm がデータを収集する関数の一覧</span></p>
 
  </div>
 
@@ -37,7 +37,7 @@
     ( <span class="methodparam">void</span>
    ) : <span class="type">array</span></div>
 
-  <p class="para rdfs-comment">Returns a list of the functions the extension will instrument.</p>
+  <p class="para rdfs-comment">この拡張機能がデータを収集する関数の一覧を返します。</p>
 
  </div>
 
@@ -51,9 +51,9 @@
  <div class="refsect1 returnvalues" id="refsect1-function.scoutapm-list-instrumented-functions-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   <span class="function"><strong>scoutapm_list_instrumented_functions()</strong></span> returns an array
-   containing a list of all functions that the scoutapm extension is able to
-   instrument in the current installation.
+   <span class="function"><strong>scoutapm_list_instrumented_functions()</strong></span> は
+   拡張機能が現在のインストールで収集できる、
+   全ての関数のリストを含んだ配列を返します。
   </p>
  </div>
 
@@ -61,7 +61,7 @@
  <div class="refsect1 examples" id="refsect1-function.scoutapm-list-instrumented-functions-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5702"><p><strong>例1 Fetch the list of functions scoutapm will instrument</strong></p>
+   <div class="example" id="example-5703"><p><strong>例1 scoutapm が情報を収集する関数の一覧を取得する</strong></p>
     <div class="example-contents">
      <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">scoutapm_list_instrumented_functions</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>

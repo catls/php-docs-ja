@@ -35,7 +35,7 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>json_decode</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$json</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$assoc</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$assoc</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$depth</code><span class="initializer"> = 512</span></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = 0</span></span>
   ]]] ) : <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span></div>
@@ -106,14 +106,15 @@
      <dd>
 
       <p class="para">
-       JSON デコードオプションのビットマスクです。
-       
-       Currently there are two supported
-       options. The first is <strong><code>JSON_BIGINT_AS_STRING</code></strong> that
-       allows casting big integers to string instead of floats which is the
-       default. The second option is <strong><code>JSON_OBJECT_AS_ARRAY</code></strong>
-       that has the same effect as setting <code class="parameter">assoc</code> to
-       <strong><code>TRUE</code></strong>.
+       <strong><code>JSON_BIGINT_AS_STRING</code></strong>,
+       <strong><code>JSON_INVALID_UTF8_IGNORE</code></strong>,
+       <strong><code>JSON_INVALID_UTF8_SUBSTITUTE</code></strong>,
+       <strong><code>JSON_OBJECT_AS_ARRAY</code></strong>,
+       <strong><code>JSON_THROW_ON_ERROR</code></strong>.
+       からなるビットマスク。
+       各定数の意味については
+       <a href="json.constants.html" class="link">JSON 定数のページ</a>
+       に説明があります。
       </p>
      </dd>
 
@@ -133,6 +134,108 @@
    そして <strong><code>NULL</code></strong> として返されます。
    <code class="parameter">json</code> のデコードに失敗したり
    エンコードされたデータが再帰制限を超えているなどの場合、<strong><code>NULL</code></strong> を返します。
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.json-decode-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.3.0</td>
+       <td>
+        <code class="parameter">options</code> パラメータに
+        <strong><code>JSON_THROW_ON_ERROR</code></strong>
+        が追加されました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.2.0</td>
+       <td>
+        <code class="parameter">options</code> パラメータに
+        <strong><code>JSON_INVALID_UTF8_IGNORE</code></strong> および
+        <strong><code>JSON_INVALID_UTF8_SUBSTITUTE</code></strong> が追加されました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.1.0</td>
+       <td>
+        空の JSONキー  (&quot;&quot;) は、
+        <em>_empty_</em> というキーではなく、
+        空のオブジェクトプロパティにエンコードされるようになりました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        RFC 7159 と非互換の数値フォーマットは拒むようになりました。
+        トップレベルでは
+        (07, 0xff, .1, -.1) のような形式を拒み、
+        全レベルで ([1.], [1.e1]) のような形式を拒否します。
+       </td>
+      </tr>
+
+      <tr>
+       <td>7.0.0</td>
+       <td>
+        空の PHP文字列 または、文字列にキャスト後の値が空文字列になる値
+        (<em>NULL</em>, <em>FALSE</em>) については、
+        JSON の syntax error が発生するようになりました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.6.0</td>
+       <td>
+        <em>true</em>、
+        <em>false</em> および <em>null</em>
+        は、すべて小文字のものだけを有効な値として受け付けるようになりました。
+        大文字が含まれる場合は警告が発生します。
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.4.0</td>
+       <td>
+        <code class="parameter">options</code> パラメータが追加されました。
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>オプションの <code class="parameter">depth</code> が追加されました。デフォルトの再帰の深さが 128 から 512 に増えました。</td>
+      </tr>
+
+      <tr>
+       <td>5.2.3</td>
+       <td>ネストの制限が 20 から 128 に拡張されました。</td>
+      </tr>
+
+      <tr>
+       <td>5.2.1</td>
+       <td>
+        基本型の JSON デコードに対応しました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 
@@ -273,88 +376,6 @@ object(stdClass)#1 (1) {
     を使用すればエラーの正確な状態を知ることができます。
    </p>
   </p></blockquote>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.json-decode-changelog">
-  <h3 class="title">変更履歴</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      
-      <tr>
-       <td>7.1.0</td>
-       <td>
-        An empty JSON key (&quot;&quot;) can be encoded to the empty object property
-        instead of using a key with value <em>_empty_</em>.
-       </td>
-      </tr>
-
-      <tr>
-       <td>7.0.0</td>
-       <td>
-        Rejected RFC 7159 incompatible number formats - top level
-        (07, 0xff, .1, -.1) and all levels ([1.], [1.e1])
-       </td>
-      </tr>
-
-      <tr>
-       <td>7.0.0</td>
-       <td>
-        An empty PHP string or value that after casting to string is an empty
-        string (<em>NULL</em>, <em>FALSE</em>) results
-        in JSON syntax error.
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.6.0</td>
-       <td>
-        <em>true</em>、
-        <em>false</em> および <em>null</em>
-        は、すべて小文字のものだけを有効な値として受け付けるようになりました。
-        大文字が含まれる場合は警告が発生します。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.4.0</td>
-       <td>
-        <code class="parameter">options</code> パラメータが追加されました。
-       </td>
-      </tr>
-
-      <tr>
-       <td>5.3.0</td>
-       <td>オプションの <code class="parameter">depth</code> が追加されました。デフォルトの再帰の深さが 128 から 512 に増えました。</td>
-      </tr>
-
-      <tr>
-       <td>5.2.3</td>
-       <td>ネストの制限が 20 から 128 に拡張されました。</td>
-      </tr>
-
-      <tr>
-       <td>5.2.1</td>
-       <td>
-        基本型の JSON デコードに対応しました。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
-  </p>
  </div>
 
 

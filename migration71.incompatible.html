@@ -374,31 +374,38 @@ array(2) {
  </div>
 
  <div class="sect2" id="migration71.incompatible.e-recoverable">
-  <h3 class="title">Error message for E_RECOVERABLE errors</h3>
+  <h3 class="title">E_RECOVERABLE エラーのエラーメッセージ</h3>
   <p class="para">
-   The error message for E_RECOVERABLE errors has been changed from &quot;Catchable
-   fatal error&quot; to &quot;Recoverable fatal error&quot;.
+   E_RECOVERABLE エラーのエラーメッセージが、
+   &quot;Catchable fatal error&quot; から
+   &quot;Recoverable fatal error&quot; に変更されました。
   </p>
  </div>
 
  <div class="sect2" id="migration71.incompatible.unserialize">
-  <h3 class="title">$options parameter of unserialize()</h3>
+  <h3 class="title">unserialize() 関数の $options パラメータ</h3>
   <p class="para">
-   The <em>allowed_classes</em> element of the $options parameter of
-   <span class="function"><a href="function.unserialize.html" class="function">unserialize()</a></span> is now strictly typed, i.e. if anything
-   other than an <span class="type"><a href="language.types.array.html" class="type array">array</a></span> or a <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span> is given,
-   unserialize() returns <strong><code>FALSE</code></strong> and issues an <strong><code>E_WARNING</code></strong>.
+   <span class="function"><a href="function.unserialize.html" class="function">unserialize()</a></span> 関数の $options パラメータの
+   <em>allowed_classes</em> 要素が、
+   型を厳密に解釈するようになりました。
+   つまり、<span class="type"><a href="language.types.array.html" class="type array">array</a></span> または <span class="type"><a href="language.types.boolean.html" class="type boolean">boolean</a></span>
+   以外のあらゆる値が与えられても、
+   unserialize() は <strong><code>FALSE</code></strong> を返し、
+   <strong><code>E_WARNING</code></strong> レベルの警告が発生します。
   </p>
  </div>
 
  <div class="sect2" id="migration71.incompatible.datetime-microseconds">
-  <h3 class="title">DateTime constructor incorporates microseconds</h3>
+  <h3 class="title">DateTime クラスのコンストラクタに、マイクロ秒も組み込まれる</h3>
   <p class="para">
-   <a href="class.datetime.html" class="classname">DateTime</a> and <a href="class.datetimeimmutable.html" class="classname">DateTimeImmutable</a>
-   now properly incorporate microseconds when constructed from the current time,
-   either explicitly or with a relative string (e.g. <em>&quot;first day of next
-   month&quot;</em>). This means that naive comparisons of two newly created
-   instances will now more likely return <strong><code>FALSE</code></strong> instead of <strong><code>TRUE</code></strong>:
+   <a href="class.datetime.html" class="classname">DateTime</a> と <a href="class.datetimeimmutable.html" class="classname">DateTimeImmutable</a>
+   は、現在時刻、明示的な時刻、
+   または相対時刻を示す文字列
+   (例: <em>&quot;first day of next month&quot;</em>)
+   から構築されると、
+   マイクロ秒を適切に含めるようになりました。
+   これは、新しく生成されたふたつのインスタンスが、<strong><code>TRUE</code></strong> ではなくて
+   <strong><code>FALSE</code></strong> を返しやすくなったということです。
    <div class="informalexample">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -412,144 +419,177 @@ array(2) {
  </div>
 
  <div class="sect2" id="migration71.incompatible.fatal-errors-to-error-exceptions">
-  <h3 class="title">Fatal errors to <a href="class.error.html" class="classname">Error</a> exceptions conversions</h3>
+  <h3 class="title">致命的なエラーが <a href="class.error.html" class="classname">Error</a> 例外に変換される</h3>
+
   <p class="para">
-   In the Date extension, invalid serialization data for
-   <a href="class.datetime.html" class="classname">DateTime</a> or <a href="class.dateperiod.html" class="classname">DatePeriod</a> classes,
-   or timezone initialization failure from serialized data, will now throw an
-   <a href="class.error.html" class="classname">Error</a> exception from the
-   <span class="methodname"><strong>__wakeup()</strong></span> or <span class="methodname"><strong>__set_state()</strong></span>
-   methods, instead of resulting in a fatal error.
+   Date 拡張機能では、
+   <a href="class.datetime.html" class="classname">DateTime</a> または <a href="class.dateperiod.html" class="classname">DatePeriod</a>
+   クラス ののシリアライズデータが不正だったり、
+   シリアライズ化したデータからタイムゾーンを初期化するのに失敗した場合、
+   致命的なエラーにならず、
+   <span class="methodname"><strong>__wakeup()</strong></span> や <span class="methodname"><strong>__set_state()</strong></span>
+   メソッドから <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the DBA extension, data modification functions (such as
-   <span class="function"><a href="function.dba-insert.html" class="function">dba_insert()</a></span>) will now throw an
-   <a href="class.error.html" class="classname">Error</a> exception instead of triggering a catchable
-   fatal error if the key does not contain exactly two elements.
+   DBA 拡張機能では、
+   (<span class="function"><a href="function.dba-insert.html" class="function">dba_insert()</a></span> のように)
+   データを変更する関数は、キーが正確にふたつの要素を含んでいない場合に
+   キャッチ可能な fatal error ではなく、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the DOM extension, invalid schema or RelaxNG validation contexts will now
-   throw an <a href="class.error.html" class="classname">Error</a> exception instead of resulting in a
-   fatal error. Similarly, attempting to register a node class that does not
-   extend the appropriate base class, or attempting to read an invalid property
-   or write to a readonly property, will also now throw an
-   <a href="class.error.html" class="classname">Error</a> exception.
+   DOM 拡張機能では、
+   不正なスキーマ や RelaxNG検証コンテキスト は
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
+
+   同じように、適切な基底クラスを継承しないノードクラスを登録しようとしたり、
+   不正なプロパティを読み出そうとしたり、
+   読み込み専用のプロパティに書き込もうとしたりしても、
+   同様に <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the IMAP extension, email addresses longer than 16385 bytes will throw an
-   <a href="class.error.html" class="classname">Error</a> exception instead of resulting in a fatal error.
+   IMAP 拡張機能では、
+   16385 バイト以上の email アドレスは、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the Intl extension, failing to call the parent constructor in a class
-   extending <a href="class.collator.html" class="classname">Collator</a> before invoking the parent methods
-   will now throw an <a href="class.error.html" class="classname">Error</a> instead of resulting in a
-   recoverable fatal error. Also, cloning a
-   <a href="class.transliterator.html" class="classname">Transliterator</a> object will now throw an
-   <a href="class.error.html" class="classname">Error</a> exception on failure to clone the internal
-   transliterator instead of resulting in a fatal error.
+   Intl 拡張機能では、
+   <a href="class.collator.html" class="classname">Collator</a> クラスを継承したクラスで、
+   親メソッドを呼ぶ前に親のコンストラクタを呼ぶのに失敗すると、
+   回復可能な fatal error にはならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
+
+   同様に、<a href="class.transliterator.html" class="classname">Transliterator</a> を clone すると、
+   内部の transliterator の複製に失敗した時に
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the LDAP extension, providing an unknown modification type to
-   <span class="function"><strong>ldap_batch_modify()</strong></span> will now throw an
-   <a href="class.error.html" class="classname">Error</a> exception instead of resulting in a fatal error.
+   LDAP 拡張機能では、
+   <span class="function"><strong>ldap_batch_modify()</strong></span> 関数に不明な変更タイプを渡すと、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the mbstring extension, the <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> and
-   <span class="function"><a href="function.mb-eregi.html" class="function">mb_eregi()</a></span> functions will now throw a
-   <a href="class.parseerror.html" class="classname">ParseError</a> exception if an invalid PHP expression is
-   provided and the &#039;e&#039; option is used.
+   mbstring 拡張機能では、
+   <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> 関数と
+   <span class="function"><a href="function.mb-eregi.html" class="function">mb_eregi()</a></span> 関数が、
+   &#039;e&#039; オプションを使い、かつ 不正な PHP の式が渡された場合に
+   <a href="class.parseerror.html" class="classname">ParseError</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the Mcrypt extension, the <span class="function"><a href="function.mcrypt-encrypt.html" class="function">mcrypt_encrypt()</a></span> and
-   <span class="function"><a href="function.mcrypt-decrypt.html" class="function">mcrypt_decrypt()</a></span> will now throw an
-   <a href="class.error.html" class="classname">Error</a> exception instead of resulting in a fatal error
-   if mcrypt cannot be initialized.
+   Mcrypt 拡張機能では、
+   <span class="function"><a href="function.mcrypt-encrypt.html" class="function">mcrypt_encrypt()</a></span> と
+   <span class="function"><a href="function.mcrypt-decrypt.html" class="function">mcrypt_decrypt()</a></span> 関数が
+   mcrypt を初期化できなかった場合に
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the mysqli extension, attempting to read an invalid property or write to
-   a readonly property will now throw an <a href="class.error.html" class="classname">Error</a> exception
-   instead of resulting in a fatal error.
+   mysqli 拡張機能では、
+   不正なプロパティを読み出そうとしたり、
+   読み取り専用のプロパティに書き込もうとしたりすると、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the Reflection extension, failing to retrieve a reflection object or
-   retrieve an object property will now throw an <a href="class.error.html" class="classname">Error</a>
-   exception instead of resulting in a fatal error.
+   Reflection 拡張機能では、
+   リフレクションオブジェクトを取得できなかったり、
+   オブジェクトのプロパティを取得できなかったりすると、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the Session extension, custom session handlers that do not return strings
-   for session IDs will now throw an <a href="class.error.html" class="classname">Error</a> exception
-   instead of resulting in a fatal error when a function is called that must
-   generate a session ID.
+   Session 拡張機能では、
+   セッションIDに文字列を返さないカスタムのセッションハンドラは、
+   セッションIDを生成しなければならない関数を呼んだ際に
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the SimpleXML extension, creating an unnamed or duplicate attribute will
-   now throw an <a href="class.error.html" class="classname">Error</a> exception instead of resulting in
-   a fatal error.
+   SimpleXML 拡張機能では、
+   名前が付いていない、または 重複した属性を作ろうとすると、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the SPL extension, attempting to clone an
-   <strong class="classname">SplDirectory</strong> object will now throw an
-   <a href="class.error.html" class="classname">Error</a> exception instead of resulting in a fatal
-   error. Similarly, calling <span class="methodname"><a href="arrayiterator.append.html" class="methodname">ArrayIterator::append()</a></span> when
-   iterating over an object will also now throw an <a href="class.error.html" class="classname">Error</a>
-   exception.
+   SPL 拡張機能では、
+   <strong class="classname">SplDirectory</strong> オブジェクトを
+   clone しようとすると、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
+
+   同じように、オブジェクトを繰り返している時に
+   <span class="methodname"><a href="arrayiterator.append.html" class="methodname">ArrayIterator::append()</a></span> を呼び出すと、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the standard extension, the <span class="function"><a href="function.assert.html" class="function">assert()</a></span> function, when
-   provided with a string argument as its first parameter, will now throw a
-   <a href="class.parseerror.html" class="classname">ParseError</a> exception instead of resulting in a
-   catchable fatal error if the PHP code is invalid. Similarly, calling
-   <span class="function"><a href="function.forward-static-call.html" class="function">forward_static_call()</a></span> outside of a class scope will now
-   throw an <a href="class.error.html" class="classname">Error</a> exception.
+   standard 拡張機能では、
+   <span class="function"><a href="function.assert.html" class="function">assert()</a></span>関数 の
+   最初のパラメーターに string 型の引数が与えられた場合、
+   かつ PHP のコードが不正だった場合に
+   キャッチ可能な致命的なエラーではなく、
+   <a href="class.parseerror.html" class="classname">ParseError</a> 例外を投げるようになりました。
+
+   同じように、
+   クラススコープの外側から
+   <span class="function"><a href="function.forward-static-call.html" class="function">forward_static_call()</a></span> を呼び出すと、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the Tidy extension, creating a <a href="class.tidynode.html" class="classname">tidyNode</a> manually
-   will now throw an <a href="class.error.html" class="classname">Error</a> exception instead of
-   resulting in a fatal error.
+   Tidy 拡張機能では、
+   <a href="class.tidynode.html" class="classname">tidyNode</a> を手動で作ろうとすると、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the WDDX extension, a circular reference when serializing will now throw
-   an <a href="class.error.html" class="classname">Error</a> exception instead of resulting in a fatal
-   error.
+   WDDX 拡張機能では、
+   シリアライズする時に循環参照が存在すると、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the XML-RPC extension, a circular reference when serializing will now
-   throw an instance of <a href="class.error.html" class="classname">Error</a> exception instead of
-   resulting in a fatal error.
+   XML-RPC 拡張機能では、
+   シリアライズする時に循環参照が存在すると、
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
 
   <p class="para">
-   In the Zip extension, the <span class="methodname"><a href="ziparchive.addglob.html" class="methodname">ZipArchive::addGlob()</a></span>
-   method will now throw an <a href="class.error.html" class="classname">Error</a> exception instead of
-   resulting in a fatal error if glob support is not available.
+   Zip 拡張機能では、
+   glob サポートが利用できない場合、
+   <span class="methodname"><a href="ziparchive.addglob.html" class="methodname">ZipArchive::addGlob()</a></span> メソッドは
+   致命的なエラーにならず、
+   <a href="class.error.html" class="classname">Error</a> 例外を投げるようになりました。
   </p>
  </div>
 
  <div class="sect2" id="migration71.incompatible.lexical-names">
-  <h3 class="title">Lexically bound variables cannot reuse names</h3>
+  <h3 class="title">字句的に束縛される変数は、名前を再利用できない</h3>
 
   <p class="para">
-   Variables bound to a <a href="functions.anonymous.html" class="link">closure</a> via
-   the <em>use</em> construct cannot use the same name as any
-   <a href="language.variables.predefined.html" class="link">superglobals</a>, <var class="varname"><var class="varname">$this</var></var>, or any parameter. For
-   example, all of these function definition will result in a fatal error:
-
+   <em>use</em> 経由で <a href="functions.anonymous.html" class="link">クロージャ</a> 
+   に束縛された変数名には、<a href="language.variables.predefined.html" class="link">superglobals</a> や
+   <var class="varname"><var class="varname">$this</var></var> またはあらゆるパラメータ と同じ名前が使えなくなりました。
+   たとえば、次のような関数定義はすべて致命的なエラーが発生します。
    <div class="informalexample">
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -563,23 +603,23 @@ array(2) {
  </div>
 
  <div class="sect2" id="migration71.incompatible.long2ip">
-  <h3 class="title">long2ip() parameter type change</h3>
+  <h3 class="title">long2ip() のパラメータタイプの変更</h3>
   <p class="para">
-   <span class="function"><a href="function.long2ip.html" class="function">long2ip()</a></span> now expects an <span class="type"><a href="language.types.integer.html" class="type int">int</a></span> instead of a
-   <span class="type"><a href="language.types.string.html" class="type string">string</a></span>.
+   <span class="function"><a href="function.long2ip.html" class="function">long2ip()</a></span> 関数は、
+   引数に <span class="type"><a href="language.types.string.html" class="type string">string</a></span> ではなく <span class="type"><a href="language.types.integer.html" class="type int">int</a></span> を期待するようになりました。
   </p>
  </div>
 
  <div class="sect2" id="migration71.incompatible.json">
-  <h3 class="title">JSON encoding and decoding</h3>
+  <h3 class="title">JSON のエンコードとデコード</h3>
   <p class="para">
-   The <code class="parameter">serialize_precision</code> ini setting now controls the
-   serialization precision when encoding doubles.
+   <code class="parameter">serialize_precision</code> ini 設定が、
+   double 型の値をエンコードするときに、
+   シリアル化の精度を制御するようになりました。
   </p>
   <p class="para">
-   Decoding an empty key now results in an empty property name, rather than 
-   <em>_empty_</em> as a property name.
-
+   空のキーをデコードすると、
+   プロパティ名が <em>_empty_</em> ではなく、空のプロパティ名になります。
    <div class="informalexample">
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -601,29 +641,30 @@ object(stdClass)#1 (1) {
   </div>
   </p>
   <p class="para">
-   When supplying the <strong><code>JSON_UNESCAPED_UNICODE</code></strong> flag to
-   <span class="function"><a href="function.json-encode.html" class="function">json_encode()</a></span>, the sequences U+2028 and U+2029 are now
-   escaped.
+   <span class="function"><a href="function.json-encode.html" class="function">json_encode()</a></span> 関数に
+   <strong><code>JSON_UNESCAPED_UNICODE</code></strong> フラグを渡すと、
+   U+2028 および U+2029 がエスケープされるようになりました。
   </p>
  </div>
 
  <div class="sect2" id="migration71.incompatible.mbstring">
   <h3 class="title">
-   Changes to <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> and <span class="function"><a href="function.mb-eregi.html" class="function">mb_eregi()</a></span>
-   parameter semantics
+   <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> および <span class="function"><a href="function.mb-eregi.html" class="function">mb_eregi()</a></span>
+   関数の引数のセマンティクスの変更
   </h3>
   <p class="para">
-   The third parameter to the <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> and
-   <span class="function"><a href="function.mb-eregi.html" class="function">mb_eregi()</a></span> functions (<code class="parameter">regs</code>) will now be
-   set to an empty array if nothing was matched. Formerly, the parameter would
-   not have been modified.
+   <span class="function"><a href="function.mb-ereg.html" class="function">mb_ereg()</a></span> 関数 と
+   <span class="function"><a href="function.mb-eregi.html" class="function">mb_eregi()</a></span> 関数
+   の第3引数 (<code class="parameter">regs</code>) は、
+   マッチするものがなかった場合、空の配列が設定されるようになりました。
+   これより前のバージョンでは、このパラメータは変更されませんでした。
   </p>
  </div>
 
  <div class="sect2" id="migration71.incompatible.openssl">
-  <h3 class="title">Drop support for the sslv2 stream</h3>
+  <h3 class="title">sslv2 ストリームのサポートの削除</h3>
   <p class="para">
-   The sslv2 stream has now been dropped in OpenSSL.
+   sslv2 ストリーム が OpenSSL から削除されました。
   </p>
  </div>
 </div></div></div></body></html>

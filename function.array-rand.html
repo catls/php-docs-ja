@@ -107,8 +107,11 @@
       <tr>
        <td>7.1.0</td>
        <td>
-        
-        The internal randomization algorithm <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link">has been changed</a> to use the <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html" class="link external">&raquo;&nbsp;Mersenne Twister</a> Random Number Generator instead of the libc rand function.
+        内部的なランダム化アルゴリズムは、
+        libc の rand 関数ではなく、
+        <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html" class="link external">&raquo;&nbsp;メルセンヌツイスタ</a>
+        乱数生成器を使うように
+        <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link">変更されました</a>
        </td>
       </tr>
 
@@ -129,7 +132,7 @@
  <div class="refsect1 examples" id="refsect1-function.array-rand-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-6211">
+   <div class="example" id="example-6212">
     <p><strong>例1 <span class="function"><strong>array_rand()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
