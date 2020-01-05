@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Set the sorting criteria</title>
+  <title>ソート条件を設定する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-collectionmodify.html">mysql_xdevapi\CollectionModify</a></li>
-    <li>Set the sorting criteria</li>
+    <li>ソート条件を設定する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-collectionmodify.sort" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">CollectionModify::sort</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CollectionModify::sort</span> &mdash; <span class="dc-title">Set the sorting criteria</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CollectionModify::sort</span> &mdash; <span class="dc-title">ソート条件を設定する</span></p>
 
  </div>
 
@@ -75,7 +75,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionmodify.sort-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   CollectionModify object that can be used for further processing.
+   以後の操作に使える CollectionModify オブジェクトを返します。
   </p>
  </div>
 
@@ -83,7 +83,7 @@
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collectionmodify.sort-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2029">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::sort()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::sort()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">'true'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #DD0000">'name&nbsp;desc'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'age&nbsp;asc'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'Married'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'NO'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>

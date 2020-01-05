@@ -150,7 +150,9 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
        <div class="caution"><strong class="caution">警告</strong>
         <p class="para">
          この修飾子を使うことは<em class="emphasis">おすすめしません</em>。
-         セキュリティに関する脆弱性を作ってしまいがちだからです。
+         リモートから実行可能な脆弱性を作ってしまいがちだからです。
+         これを防ぐには、<span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span>
+         関数を代わりに使うべきです:
         </p>
         <div class="informalexample">
          <div class="example-contents">
@@ -162,25 +164,14 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
 
         </div>
         <p class="para">
-         このサンプルを攻撃するのは簡単で、
+         このサンプルが
+         <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span> と <em>e</em> 修飾子を使って書かれている場合、
+         攻撃するのは簡単で、
          <em>&lt;h1&gt;{${eval($_GET[php_code])}}&lt;/h1&gt;</em>
          のような文字列を渡すだけで攻略できます。
          攻撃者は任意の PHP コードを実行でき、
          サーバーに対するほぼ完全なアクセス権を与えることになってしまいます。
         </p>
-        <p class="para">
-         この種のリモートコード実行脆弱性を回避するには、
-         <span class="function"><a href="function.preg-replace-callback.html" class="function">preg_replace_callback()</a></span> 関数を使うようにしなければなりません。
-        </p>
-        <div class="informalexample">
-         <div class="example-contents">
-<div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'html'</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;見出しを大文字にします<br /></span><span style="color: #0000BB">$html&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">preg_replace_callback</span><span style="color: #007700">(<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'(&lt;h([1-6])&gt;(.*?)&lt;/h\1&gt;)'</span><span style="color: #007700">,<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;(</span><span style="color: #0000BB">$m</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #DD0000">"&lt;h</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">&gt;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">strtoupper</span><span style="color: #007700">(</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">2</span><span style="color: #007700">])&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;/h</span><span style="color: #0000BB">$m</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]</span><span style="color: #DD0000">&gt;"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;},<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$html<br /></span><span style="color: #007700">);</span>
-</span>
-</code></div>
-         </div>
-
-        </div>
        </div>
        <blockquote class="note"><p><strong class="note">注意</strong>: 
         <p class="para">
@@ -188,10 +179,10 @@ PHP 7.0.0 で <em class="emphasis">削除</em> されました。</p></div>
          他の PCRE 関数では無視されます。
         </p>
        </p></blockquote>
-        </dd>
+      </dd>
 
-       
-       
+     
+     
         <dt>
 <em class="emphasis">A</em> (<em>PCRE_ANCHORED</em>)</dt>
 

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Building / Compiling From Source</title>
+  <title>ソースコードからビルド / コンパイルする</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,73 +19,87 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="mysql-xdevapi.setup.html">インストール/設定</a></li>
-    <li>Building / Compiling From Source</li>
+    <li>ソースコードからビルド / コンパイルする</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi.build" class="section">
-   <h2 class="title">Building / Compiling From Source</h2>
+   <h2 class="title">ソースコードからビルド / コンパイルする</h2>
    <p class="para">
-     Considerations for compiling this extension from source.
+    この拡張機能をソースコードからコンパイルする際に、考慮すべき事項は以下です。
    </p>
 
     <ul class="itemizedlist">
       <li class="listitem">
         <p class="para">
-          The extension name is &#039;mysql_xdevapi&#039;, so use <em>--enable-mysql-xdevapi</em>.
+          拡張機能の名前は &#039;mysql_xdevapi&#039; です。
+          よって、 <em>--enable-mysql-xdevapi</em> を使ってください。
         </p>
       </li>
       <li class="listitem">
         <p class="para">
-          Boost: required,  optionally use the --with-boost=DIR configure option
-          or set the MYSQL_XDEVAPI_BOOST_ROOT environment variable. Only the
-          boost header files are required; not the binaries.
+          Boost が必須です。
+          オプションで configure オプション --with-boost=DIR や
+          MYSQL_XDEVAPI_BOOST_ROOT 環境変数が使えます。
+          boost のヘッダファイルのみが必須で、ライブラリファイルは必要ありません。
         </p>
       </li>
       <li class="listitem">
         <p class="para">
-          Google Protocol Buffers (protobuf): required,  optionally use the --with-protobuf=DIR
-          configure option or set the MYSQL_XDEVAPI_PROTOBUF_ROOT environment variable.
+          Google の Protocol Buffers (protobuf) が必須です。
+          オプションで configure オプション --with-protobuf=DIR や
+          MYSQL_XDEVAPI_PROTOBUF_ROOT 環境変数が使えます。
         </p>
         <p class="para">
-          Optionally use <em>make protobufs</em> to generate protobuf files (*.pb.cc/.h),
-          and <em>make clean-protobufs</em> to delete generate protobuf files.
+          protobuf ファイル (*.pb.cc/.h) を生成するのに
+          オプションで <em>make protobufs</em> が使えますし、
+          生成された protobuf ファイルを削除するのに
+          <em>make clean-protobufs</em> が使えます。
         </p>
         <p class="para">
-          Windows specific protobuf note: depending on your environment,
-          the static library with a multi-threaded DLL runtime may be needed.
-          To prepare, use the following options:
+          Windows 特有の protobuf に関する注意:
+          環境によっては、マルチスレッドに対応した
+          DLL ランタイムが含まれる静的ライブラリが必要かもしれません。
+          これを準備するには、以下のオプションを使ってください:
           <em class="emphasis">-Dprotobuf_MSVC_STATIC_RUNTIME=OFF -Dprotobuf_BUILD_SHARED_LIBS=OFF</em>
         </p>
       </li>
       <li class="listitem">
         <p class="para">
-          Google Protocol Buffers / protocol compiler (protoc): required, ensure that proper
-          &#039;protoc&#039; is available in the PATH while building. It is especially
-          important as Windows PHP SDK batch scripts may overwrite the environment.
+          Google の Protocol Buffers / protocol コンパイラ (protoc) が必須です。
+          適切な &#039;protoc&#039; コマンドが ビルド中に PATH が通った場所に置いておいてください。
+          このことは、Windows PHP SDK バッチスクリプトが
+          この環境変数を上書きする可能性があるため特に重要です。
         </p>
       </li>
         <li class="listitem">
           <p class="para">
-            Bison: required, and available from the PATH.
+            Bison は必須です。PATH が通った場所に置いておいてください。
           </p>
           <p class="para">
-            Windows specific bison note: we strongly recommended that bison delivered with the
-            chosen PHP SDKis used else an error similar to &quot;zend_globals_macros.h(39):
+            Window 特有の bison に関する注意:
+            PHP SDK と同梱されている bison を使うことを強く推奨します。
+            さもなければ、次のメッセージに似たエラーが出る可能性があります。
+
+            &quot;zend_globals_macros.h(39):
             error C2375: &#039;zendparse&#039;: redefinition; different linkage
-            Zend/zend_language_parser.h(214): note: see declaration of &#039;zendparse&#039;&quot; may
-            be the result. Also, Windows PHP SDK batch scripts may overwrite the environment.
+            Zend/zend_language_parser.h(214): note: see declaration of &#039;zendparse&#039;&quot;
+
+            Windows PHP SDK バッチスクリプトが
+            環境変数を上書きする可能性があることにも注意してください。
           </p>
         </li>
       <li class="listitem">
         <p class="para">
-          Windows Specific Notes: To prepare the environment, see the official
-          Windows build documentation for either
-          <a href="https://wiki.php.net/internals/windows/stepbystepbuild" class="link external">&raquo;&nbsp;the original SDK</a> (older, PHP-7.1 only) or
-          <a href="https://wiki.php.net/internals/windows/stepbystepbuild_sdk_2" class="link external">&raquo;&nbsp;the current SDK</a> (PHP-7.1 or newer).
+          Windows 特有の注意:
+          環境を準備するために、オフィシャルな Windows ビルドドキュメント
+          <a href="https://wiki.php.net/internals/windows/stepbystepbuild" class="link external">&raquo;&nbsp;オリジナルなSDK</a> (古い。PHP-7.1 のみ) または
+          <a href="https://wiki.php.net/internals/windows/stepbystepbuild_sdk_2" class="link external">&raquo;&nbsp;現行のSDK</a> (PHP-7.1 以降) 
+          を参照してください
         </p>
         <p class="para">
-          We recommend using the backslash &#039;\\&#039; instead of a slash &#039;/&#039; for all paths.
+          全てのファイルpathについて、スラッシュ &#039;/&#039; ではなく、
+          バックスラッシュ &#039;\\&#039; を使うことを推奨します。
         </p>
       </li>
     </ul>

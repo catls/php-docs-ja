@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Connect to a MySQL server</title>
+  <title>MySQL サーバに接続する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="ref.mysql-xdevapi.html">Mysql_xdevapi 関数</a></li>
-    <li>Connect to a MySQL server</li>
+    <li>MySQL サーバに接続する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="function.mysql-xdevapi-getsession" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">getSession</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">getSession</span> &mdash; <span class="dc-title">Connect to a MySQL server</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">getSession</span> &mdash; <span class="dc-title">MySQL サーバに接続する</span></p>
 
  </div>
 
@@ -38,7 +38,7 @@
    ) : <span class="type"><span class="type mysql_xdevapi\Session">mysql_xdevapi\Session</span></span></div>
 
   <p class="para rdfs-comment">
-   Connects to the MySQL server.
+   MySQL サーバに接続します。
   </p>
  </div>
 
@@ -54,65 +54,70 @@
     <dd>
 
      <p class="para">
-      The URI to the MySQL server, such as <em>mysqlx://user:password@host</em>.
+      <em>mysqlx://user:password@host</em> のような、MySQL サーバへのURI。
      </p>
      <p class="para">
-      URI format:
+      URI のフォーマットは下記のとおりです:
      </p>
      <p class="para">
       <code class="code">scheme://[user[:[password]]@]target[:port][?attribute1=value1&amp;attribute2=value2...</code>
      </p>
      <ul class="itemizedlist">
       <li class="listitem">
-        <p class="para"><em>scheme</em>: required, the connection protocol</p>
-        <p class="para">In mysql_xdevapi it is always &#039;mysqlx&#039; (for X Protocol)</p>
+        <p class="para"><em>scheme</em> は必須です。接続プロトコルです</p>
+        <p class="para">mysql_xdevapi では、常に &#039;mysqlx&#039; です(X プロトコル)</p>
       </li>
       <li class="listitem">
-        <p class="para"><em>user</em>: optional, the MySQL user account for authentication</p>
+        <p class="para"><em>user</em>: オプションです。認証される MySQL アカウント</p>
       </li>
       <li class="listitem">
-        <p class="para"><em>password</em>: optional, the MySQL user&#039;s password for authentication</p>
+        <p class="para"><em>password</em>: オプションです。認証に使う MySQL ユーザのパスワード</p>
       </li>
       <li class="listitem">
-        <p class="para"><em>target</em>: required, the server instance the connection refers to:</p>
-        <p class="para">* TCP connection (host name, IPv4 address, or IPv6 address)</p>
-        <p class="para">* Unix socket path (local file path)</p>
-        <p class="para">* Windows named-pipe (local file path)</p>
+        <p class="para"><em>target</em>: 必須です。
+        接続が参照する サーバインスタンスです:</p>
+        <p class="para">* TCP接続 (ホスト名, IPv4 アドレス, または IPv6 アドレス)</p>
+        <p class="para">* Unix ソケットのパス (ローカルファイルのパス)</p>
+        <p class="para">* Windows 名前付きパイプ (ローカルファイルのパス)</p>
       </li>
       <li class="listitem">
-        <p class="para"><em>port</em>: optional, network port of MySQL server.</p>
-        <p class="para">by default port for X Protocol is 33060</p>
+        <p class="para"><em>port</em>: オプションです。MySQL サーバのネットワーク ポート</p>
+        <p class="para">X プロトコルのデフォルトのポートは 33060 です</p>
       </li>
       <li class="listitem">
         <p class="para">
-          <em>?attribute=value</em>: this element is optional and specifies a data dictionary 
-          that contains different options, including:
+          <em>?attribute=value</em>: この要素はオプションで、異なるオプションを含む
+          次のような辞書データを指定します:
         </p>
         <ul class="itemizedlist">
           <li class="listitem">
           <p class="para">
-            The <em>auth</em> (authentication mechanism) attribute as it relates to encrypted connections.
-            For additional information, see <a href="https://dev.mysql.com/doc/refman/8.0/en/encrypted-connection-options.html" class="link external">&raquo;&nbsp;Command
-            Options for Encrypted Connections</a>.
-            The following &#039;auth&#039; values are supported: <em>plain</em>,
+            <em>auth</em> (認証メカニズム) 属性は、接続の暗号化に関連があります。
+            追加の情報については、
+            <a href="https://dev.mysql.com/doc/refman/8.0/en/encrypted-connection-options.html" class="link external">&raquo;&nbsp;Command
+            Options for Encrypted Connections</a> を参照してください。
+
+            &#039;auth&#039; 属性については、次の値がサポートされています: <em>plain</em>,
             <em>mysql41</em>, <em>external</em>, and <em>sha256_mem</em>.
           </p>
           </li>
           <li class="listitem">
           <p class="para">
-           The <em>connect-timeout</em> attribute affects the connection
-           and not subsequent operations. It is set per connection whether on
-           a single or multiple hosts.
+           <em>connect-timeout</em> 属性は、接続時と接続後の操作に影響します。
+           単一、複数のホストへの接続かに関わらず、接続単位で設定します。
           </p>
           <p class="para">
-           Pass in a positive integer to define the connection timeout in seconds,
-           or pass in 0 (zero) to disable the timeout (infinite). Not defining
-           connect-timeout uses the default value of 10.
+           接続タイムアウトは秒単位で正の整数を渡します。
+           0 を渡すと、タイムアウトを無効(つまり無限) にします。
+           connect-timeout を定義しないと、デフォルト値10を使います。
           </p>
           <p class="para">
-            Related, the MYSQLX_CONNECTION_TIMEOUT (timeout in seconds) and MYSQLX_TEST_CONNECTION_TIMEOUT (used while running tests)
-            environment variables can be set and used instead of connect-timeout in the URI. The
-            connect-timeout URI option has precedence over these environment variables.
+            関連事項として、
+            MYSQLX_CONNECTION_TIMEOUT (秒単位のタイムアウト)
+            および、
+            MYSQLX_TEST_CONNECTION_TIMEOUT (テスト時に使います)
+            環境変数を、URI に connect-timeout を設定する代わりに設定し、使うことができます。
+            connect-timeout URI オプションは、これらの環境変数に優先します。
           </p>
           </li>
         </ul>
@@ -120,7 +125,7 @@
       </ul>
 
   <div class="example" id="example-1985">
-  <p><strong>例1 URI examples</strong></p>
+  <p><strong>例1 URI の例</strong></p>
   <div class="example-contents"><div class="phpcode"><code><span style="color: #000000">
 mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br />mysqlx://foo:bar@localhost:33060<br />mysqlx://foo:bar@localhost:33160?ssl-mode=disabled<br />mysqlx://foo:bar@localhost:33260?ssl-mode=required<br />mysqlx://foo:bar@localhost:33360?ssl-mode=required&amp;auth=mysql41<br />mysqlx://foo:bar@(/path/to/socket)<br />mysqlx://foo:bar@(/path/to/socket)?auth=sha256_mem<br />mysqlx://foo:bar@[localhost:33060,&nbsp;127.0.0.1:33061]<br />mysqlx://foobar?ssl-ca=(/path/to/ca.pem)&amp;ssl-crl=(/path/to/crl.pem)<br />mysqlx://foo:bar@[localhost:33060,&nbsp;127.0.0.1:33061]?ssl-mode=disabled<br />mysqlx://foo:bar@localhost:33160/?connect-timeout=0<br />mysqlx://foo:bar@localhost:33160/?connect-timeout=10</span>
 </code></div></div>
@@ -128,8 +133,8 @@ mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br /
 </div>
 
    <p class="para">
-    For related information, see MySQL Shell&#039;s
-    <a href="https://dev.mysql.com/doc/refman/8.0/en/mysql-shell-connection-using-uri.html" class="link external">&raquo;&nbsp;Connecting using a URI String</a>.
+    関連する情報については、MySQL Shell の
+    <a href="https://dev.mysql.com/doc/refman/8.0/en/mysql-shell-connection-using-uri.html" class="link external">&raquo;&nbsp;Connecting using a URI String</a> を参照してください
    </p>
 
     </dd>
@@ -143,7 +148,7 @@ mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br /
  <div class="refsect1 returnvalues" id="refsect1-function.mysql-xdevapi-getsession-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   A <strong class="classname">Session</strong> object.
+   <strong class="classname">Session</strong> オブジェクト
   </p>
  </div>
 
@@ -151,7 +156,7 @@ mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br /
  <div class="refsect1 errors" id="refsect1-function.mysql-xdevapi-getsession-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   A connection failure throws an <a href="class.exception.html" class="classname">Exception</a>.
+   接続に失敗した場合は、<a href="class.exception.html" class="classname">Exception</a> がスローされます。
   </p>
  </div>
 
@@ -159,7 +164,7 @@ mysqlx://foobar<br />mysqlx://root@localhost?socket=%2Ftmp%2Fmysqld.sock%2F<br /
  <div class="refsect1 examples" id="refsect1-function.mysql-xdevapi-getsession-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-1986">
-   <p><strong>例2 <span class="function"><strong>mysql_xdevapi\getSession()</strong></span> example</strong></p>
+   <p><strong>例2 <span class="function"><strong>mysql_xdevapi\getSession()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">try&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@host"</span><span style="color: #007700">);<br />}&nbsp;catch(</span><span style="color: #0000BB">Exception&nbsp;$e</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Connection&nbsp;could&nbsp;not&nbsp;be&nbsp;established:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$e</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getMessage</span><span style="color: #007700">());<br />}<br /><br /></span><span style="color: #0000BB">$schemas&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchemas</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$schemas</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$mysql_version&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getServerVersion</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$mysql_version</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">"name&nbsp;=&nbsp;'Alfred'"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">fetchOne</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Sort results</title>
+  <title>結果をソートする</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-crudoperationsortable.html">mysql_xdevapi\CrudOperationSortable</a></li>
-    <li>Sort results</li>
+    <li>結果をソートする</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-crudoperationsortable.sort" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">CrudOperationSortable::sort</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CrudOperationSortable::sort</span> &mdash; <span class="dc-title">Sort results</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CrudOperationSortable::sort</span> &mdash; <span class="dc-title">結果をソートする</span></p>
 
  </div>
 
@@ -39,9 +39,9 @@
    ) : <span class="type"><span class="type mysql_xdevapi\CrudOperationSortable">mysql_xdevapi\CrudOperationSortable</span></span></div>
 
   <p class="para rdfs-comment">
-   Sort the result set by the field selected in the sort_expr argument. The allowed
-   orders are ASC (Ascending) or DESC (Descending). This operation is equivalent to the &#039;ORDER BY&#039; SQL operation
-   and it follows the same set of rules.
+   結果セットを sort_expr 引数で指定されたフィールドでソートします。
+   許可されている順番は ASC (昇順) か DESC (降順) です。
+   この操作は、SQL における &#039;ORDER BY&#039; と同等で、それと同じルールセットに従います。
   </p>
 
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -62,8 +62,8 @@
     <dd>
 
      <p class="para">
-      One or more sorting expressions can be provided. The evaluation is from left to right,
-      and each expression is separated by a comma.
+      ひとつまたはそれ以上のソートを行う指揮を指定できます。
+      評価は左から右へと行われ、それぞれの四季はコンマで区切ります。
      </p>
     </dd>
 
@@ -76,7 +76,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-crudoperationsortable.sort-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   A CrudOperationSortable object.
+   CrudOperationSortable オブジェクトを返します。
   </p>
  </div>
 
@@ -84,7 +84,7 @@
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-crudoperationsortable.sort-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2052">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CrudOperationSortable::sort()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CrudOperationSortable::sort()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">(</span><span style="color: #DD0000">'job&nbsp;like&nbsp;\'Cavia\''</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;desc'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'_id&nbsp;desc'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>

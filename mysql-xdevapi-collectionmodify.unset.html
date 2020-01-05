@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Unset the value of document fields</title>
+  <title>ドキュメントのフィールドの値を削除する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-collectionmodify.html">mysql_xdevapi\CollectionModify</a></li>
-    <li>Unset the value of document fields</li>
+    <li>ドキュメントのフィールドの値を削除する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-collectionmodify.unset" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">CollectionModify::unset</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CollectionModify::unset</span> &mdash; <span class="dc-title">Unset the value of document fields</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CollectionModify::unset</span> &mdash; <span class="dc-title">ドキュメントのフィールドの値を削除する</span></p>
 
  </div>
 
@@ -38,7 +38,7 @@
    ) : <span class="type"><span class="type mysql_xdevapi\CollectionModify">mysql_xdevapi\CollectionModify</span></span></div>
 
   <p class="para rdfs-comment">
-   Removes attributes from documents in a collection.
+   コレクションのドキュメントから、属性を削除します。
   </p>
 
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -59,7 +59,7 @@
     <dd>
 
      <p class="para">
-      The attributes to remove from documents in a collection.
+      コレクションのドキュメントから削除する属性
      </p>
     </dd>
 
@@ -72,7 +72,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionmodify.unset-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   CollectionModify object that can be used for further processing.
+   その後の処理で使える CollectionModify オブジェクトを返します。
   </p>
  </div>
 
@@ -80,7 +80,7 @@
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collectionmodify.unset-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2030">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::unset()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::unset()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">'job&nbsp;like&nbsp;:job_name'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">unset</span><span style="color: #007700">([</span><span style="color: #DD0000">"age"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"name"</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'job_name'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Plumber'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Create collection index</title>
+  <title>コレクションにインデックスを作成</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-collection.html">mysql_xdevapi\Collection</a></li>
-    <li>Create collection index</li>
+    <li>コレクションにインデックスを作成</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-collection.createindex" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Collection::createIndex</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">Collection::createIndex</span> &mdash; <span class="dc-title">Create collection index</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">Collection::createIndex</span> &mdash; <span class="dc-title">コレクションにインデックスを作成</span></p>
 
  </div>
 
@@ -39,11 +39,12 @@
    ) : <span class="type"><span class="type void">void</span></span></div>
 
   <p class="para rdfs-comment">
-    Creates an index on the collection.
+    コレクションにインデックスを作成します。
   </p>
   <p class="para">
-    An exception is thrown if an index with the same name already exists,
-    or if index definition is not correctly formed.
+    指定された名前と同じインデックスが既に存在していた場合、
+    もしくはインデックスの定義が正しくなかった場合は、
+    例外が投げられます。
    </p>
  </div>
 
@@ -59,8 +60,9 @@
     <dd>
 
      <p class="para">
-      The name of the index that to create. This name must be a valid index name as 
-      accepted by the <em>CREATE INDEX</em> SQL query.
+      作成するインデックスの名前。
+      この名前は、 <em>CREATE INDEX</em> SQLクエリが受け入れられる、
+      正しいものでなければなりません。
      </p>
     </dd>
 

@@ -33,10 +33,17 @@
        は、推奨されなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.str-getcsv.html'>str_getcsv</a></td><td>escape 引数は、
         空文字列を、プロプライエタリなエスケープ機構を無効にするシグナルとして解釈するようになりました。
         これより前のバージョンでは、空文字列はデフォルト値のように扱われていました。</td></tr></tbody><tbody class="gen-changelog v7-4-0"><tr><td>7.2.18, 7.3.5</td><td><a href='function.substr-compare.html'>substr_compare</a></td><td>offset の値は、
-        main_str の長さと等しくても問題なくなりました。</td></tr></tbody><tbody class="gen-changelog v7-2-18, 7-3-5"><tr><td>7.2.0</td><td><a href='function.number-format.html'>number_format</a></td><td>number_format was changed to not being able to return 
-        -0, previously -0 could be returned 
-        for cases like where number would be -0.01.</td></tr><tr><td>&nbsp;</td><td><a href='function.parse-str.html'>parse_str</a></td><td>Usage of parse_str without a second parameter
-        now emits an E_DEPRECATED notice.</td></tr></tbody><tbody class="gen-changelog v7-2-0"><tr><td>7.1.0</td><td><a href='function.str-shuffle.html'>str_shuffle</a></td><td>The internal randomization algorithm has been changed to use the Mersenne Twister Random Number Generator instead of the libc rand function.</td></tr><tr><td>&nbsp;</td><td><a href='function.stripos.html'>stripos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strpos.html'>strpos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.substr-count.html'>substr_count</a></td><td>負の offset と length をサポートするようになりました。
+        main_str の長さと等しくても問題なくなりました。</td></tr></tbody><tbody class="gen-changelog v7-2-18, 7-3-5"><tr><td>7.2.0</td><td><a href='function.number-format.html'>number_format</a></td><td>number_format は、
+        -0 を返さないように変更されました。
+        これより前のバージョンでは、
+        number が -0.01 
+        のようなケースで -0 が返される場合がありました。</td></tr><tr><td>&nbsp;</td><td><a href='function.parse-str.html'>parse_str</a></td><td>parse_str関数を
+        第二引数を指定せずに使うと
+        E_DEPRECATED レベルの警告が発生するようになりました。</td></tr></tbody><tbody class="gen-changelog v7-2-0"><tr><td>7.1.0</td><td><a href='function.str-shuffle.html'>str_shuffle</a></td><td>内部的なランダム化アルゴリズムは、
+        libc の rand 関数ではなく、
+        メルセンヌツイスタ
+        乱数生成器を使うように
+        変更されました</td></tr><tr><td>&nbsp;</td><td><a href='function.stripos.html'>stripos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strpos.html'>strpos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.substr-count.html'>substr_count</a></td><td>負の offset と length をサポートするようになりました。
         length は、0 を指定しても問題ありません。</td></tr></tbody><tbody class="gen-changelog v7-1-0"><tr><td>7.0.0</td><td><a href='function.setlocale.html'>setlocale</a></td><td>category パラメータが文字列を受け付けなくなりました。
         このバージョン以降では、定数 LC_* だけしか使えません。</td></tr><tr><td>&nbsp;</td><td><a href='function.substr.html'>substr</a></td><td>string の文字数が
         start と等しい場合に空文字列を返すようになりました。

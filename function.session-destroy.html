@@ -47,8 +47,8 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <span class="simpara">
-     You do not have to call <span class="function"><strong>session_destroy()</strong></span> from usual
-     code. Cleanup $_SESSION array rather than destroying session data.
+     通常のコードでは、<span class="function"><strong>session_destroy()</strong></span> を呼ぶ必要はありません。
+     セッションデータを破棄するよりも、 $_SESSION 配列をクリーンアップしてください。
    </span>
   </p></blockquote>
   <p class="para">
@@ -56,32 +56,43 @@
    セッション ID の割り当ても解除する必要があります。セッション ID の受け渡しに
    クッキーが使用されている場合（デフォルト）には、セッションクッキーも
    削除されなければなりません。
-   そのためには <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> が利用できます。
+   そのために <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> が利用できます。
   </p>
   <p class="para">
-   When <a href="session.configuration.html#ini.session.use-strict-mode" class="link">session.use_strict_mode</a>
-   is enabled. You do not have to remove obsolete session ID cookie because
-   session module will not accept session ID cookie when there is no
-   data associated to the session ID and set new session ID cookie.
-   Enabling <a href="session.configuration.html#ini.session.use-strict-mode" class="link">session.use_strict_mode</a>
-   is recommended for all sites.
+   <a href="session.configuration.html#ini.session.use-strict-mode" class="link">session.use_strict_mode</a>
+   が有効になっている場合、
+   古くなった セッションID のクッキーを削除する必要はありません。
+   なぜなら、セッションモジュールはセッションIDに紐付いたデータがないとき、
+   セッションID のクッキーを受け入れないからです。
+   全てのサイトで、
+   <a href="session.configuration.html#ini.session.use-strict-mode" class="link">session.use_strict_mode</a>
+   を有効にすることを推奨します。
   </p>
   <div class="warning"><strong class="warning">警告</strong>
    <p class="para">
-    Immediate session deletion may cause unwanted results. When there is
-    concurrent requests, other connections may see sudden session data
-    loss. e.g. Requests from JavaScript and/or requests from URL links.
+    すぐにセッションを削除してしまうと、
+    望まない結果が起こる可能性があります。
+    並列にリクエストが行われたときに、
+    他のリクエストの接続は突然データが消えたように見えるかもしれません。
+    たとえば、JavaScript または/もしくは 
+    URLリンクからのリクエストが同時に実行された場合です。
    </p>
    <p class="para">
-    Although current session module does not accept empty session ID
-    cookie, but immediate session deletion may result in empty session ID
-    cookie due to client(browser) side race condition. This will result
-    that the client creates many session ID needlessly.
+    現在のセッションモジュールは、空のセッションIDを受け入れません。
+    しかし、すぐにセッションを削除してしまうと、
+    クライアント(ブラウザ)サイドとの競合によって、
+    空のセッションIDクッキーが発生するかもしれません。
+    これにより、不必要なのにクライアント側が
+    たくさんのセッションIDを作ってしまうことになります。
    </p>
    <p class="para">
-    To avoid these, you must set deletion time-stamp to $_SESSION and
-    reject access while later. Or make sure your application does not
-    have concurrent requests. This applies to <span class="function"><a href="function.session-regenerate-id.html" class="function">session_regenerate_id()</a></span> also.
+    こうした事象を防ぐためには、
+    $_SESSION に削除時のタイムスタンプを設定し、
+    それより後のアクセスを拒否するようにしなければなりません。
+    もしくは、アプリケーションが同時に
+    複数のリクエストを受け付けないようにすることです。
+    同じことは、<span class="function"><a href="function.session-regenerate-id.html" class="function">session_regenerate_id()</a></span>
+    関数にも当てはまります。
    </p>
   </div>
  </div>

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Limit number of modified documents</title>
+  <title>変更されるドキュメントの数を限定する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-collectionmodify.html">mysql_xdevapi\CollectionModify</a></li>
-    <li>Limit number of modified documents</li>
+    <li>変更されるドキュメントの数を限定する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-collectionmodify.limit" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">CollectionModify::limit</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CollectionModify::limit</span> &mdash; <span class="dc-title">Limit number of modified documents</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CollectionModify::limit</span> &mdash; <span class="dc-title">変更されるドキュメントの数を限定する</span></p>
 
  </div>
 
@@ -38,8 +38,8 @@
    ) : <span class="type"><span class="type mysql_xdevapi\CollectionModify">mysql_xdevapi\CollectionModify</span></span></div>
 
   <p class="para rdfs-comment">
-   Limit the number of documents modified by this operation.
-   Optionally combine with skip() to define an offset value.
+   この操作によって、変更されるドキュメントの数を限定します。
+   オプションで、skip() と組み合わせることで、オフセット値を定義します。
   </p>
  </div>
 
@@ -55,7 +55,7 @@
     <dd>
 
      <p class="para">
-      The maximum number of documents to modify.
+      変更するドキュメントの最大数
      </p>
     </dd>
 
@@ -68,7 +68,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionmodify.limit-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   A CollectionModify object.
+   CollectionModify オブジェクトを返します。
   </p>
  </div>
 
@@ -76,7 +76,7 @@
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collectionmodify.limit-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2024">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::limit()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::limit()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"DROP&nbsp;DATABASE&nbsp;IF&nbsp;EXISTS&nbsp;addressbook"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;DATABASE&nbsp;addressbook"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$schema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchema</span><span style="color: #007700">(</span><span style="color: #DD0000">"addressbook"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$collection&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$schema</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">createCollection</span><span style="color: #007700">(</span><span style="color: #DD0000">"people"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Fred",&nbsp;&nbsp;"age":&nbsp;21,&nbsp;"job":&nbsp;"Construction"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Wilma",&nbsp;"age":&nbsp;23,&nbsp;"job":&nbsp;"Teacher"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$collection</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'{"name":&nbsp;"Betty",&nbsp;"age":&nbsp;24,&nbsp;"job":&nbsp;"Teacher"}'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$collection<br />&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">"job&nbsp;=&nbsp;:job"</span><span style="color: #007700">)<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'job'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Teacher'</span><span style="color: #007700">])<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'job'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Principal'</span><span style="color: #007700">)<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">)<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$result&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$collection<br />&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()<br />&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">fetchAll</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>

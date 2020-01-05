@@ -32,40 +32,40 @@
   </p>
 
   <p class="para">
-   An example installation procedure on Ubuntu 18.04 with PHP 7.2:
+   Ubuntu 18.04 上の PHP 7.2 でインストールする例:
   </p>
 <div class="example-contents">
 <div class="cdata"><pre>
-// Dependencies
+// 依存するものをインストール
 $ apt install build-essential libprotobuf-dev libboost-dev openssl protobuf-compiler
 
-// PHP with the desired extensions; php7.2-dev is required to compile
+// 望ましい拡張機能と一緒にPHPをインストール; php7.2-dev はコンパイルに必須
 $ apt install php7.2-cli php7.2-dev php7.2-mysql php7.2-pdo php7.2-xml
 
-// Compile the extension
+// 拡張機能をコンパイル
 $ pecl install mysql_xdevapi
 </pre></div>
 </div>
 
 
   <p class="para">
-    The <em>pecl install</em> command does not enable PHP extensions (by default)
-    and enabling PHP extensions can be done in several ways. 
-    Another PHP 7.2 on Ubuntu 18.04 example:
+    <em>pecl install</em> コマンドは、PHP の拡張機能を有効にしません(デフォルト)
+    し、PHP の拡張機能を有効にする方法は複数あります。
+    Ubuntu 18.04 上の PHP 7.2 でインストールする別の例を以下に示します:
   </p>
 
 <div class="example-contents">
 <div class="cdata"><pre>
-// Create its own ini file
+// 自分の ini ファイルを作る
 $ echo &quot;extension=mysql_xdevapi.so&quot; &gt; /etc/php/7.2/mods-available/mysql_xdevapi.ini
 
-// Use the &#039;phpenmod&#039; command (note: it&#039;s Debian/Ubuntu specific)
+// &#039;phpenmod&#039; コマンドを使う (注意: Debian/Ubuntu 特有のコマンドです)
 $ phpenmod -v 7.2 -s ALL mysql_xdevapi
 
-// A &#039;phpenmod&#039; alternative is to manually symlink it
+// &#039;phpenmod&#039; の代わりに、手動でシンボリックリンクを張る
 // $ ln -s /etc/php/7.2/mods-available/mysql_xdevapi.ini /etc/php/7.2/cli/conf.d/20-mysql_xdevapi.ini
 
-// Let&#039;s see which MySQL extensions are enabled now
+// MySQL 拡張機能が有効になっているかどうかをチェックしよう
 $ php -m |grep mysql
 
 mysql_xdevapi

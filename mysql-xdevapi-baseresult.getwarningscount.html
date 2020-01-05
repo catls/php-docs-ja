@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Fetch warning count from last operation</title>
+  <title>直近の操作から発生した警告の数を取得する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-baseresult.html">mysql_xdevapi\BaseResult</a></li>
-    <li>Fetch warning count from last operation</li>
+    <li>直近の操作から発生した警告の数を取得する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-baseresult.getwarningscount" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">BaseResult::getWarningsCount</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">BaseResult::getWarningsCount</span> &mdash; <span class="dc-title">Fetch warning count from last operation</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">BaseResult::getWarningsCount</span> &mdash; <span class="dc-title">直近の操作から発生した警告の数を取得する</span></p>
 
  </div>
 
@@ -38,8 +38,8 @@
    ) : <span class="type">integer</span></div>
 
   <p class="para rdfs-comment">
-   Returns the number of warnings raised by the last operation. Specifically, 
-   these warnings are raised by the MySQL server.
+   直近の操作から発生した警告の数を取得します。
+   特に、これらの警告は MySQL サーバから発生します。
   </p>
 
  </div>
@@ -54,7 +54,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-baseresult.getwarningscount-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   The number of warnings from the last operation.
+   直近の操作から発生した警告の数を返します。
   </p>
  </div>
 
@@ -62,7 +62,7 @@
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-baseresult.getwarningscount-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-1988">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\RowResult::getWarningsCount()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\RowResult::getWarningsCount()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br />$session&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mysql_xdevapi</span><span style="color: #007700">\</span><span style="color: #0000BB">getSession</span><span style="color: #007700">(</span><span style="color: #DD0000">"mysqlx://user:password@localhost"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"DROP&nbsp;DATABASE&nbsp;IF&nbsp;EXISTS&nbsp;foo"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;DATABASE&nbsp;foo"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">sql</span><span style="color: #007700">(</span><span style="color: #DD0000">"CREATE&nbsp;TABLE&nbsp;foo.test_table(x&nbsp;int)"</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$schema&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$session</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getSchema</span><span style="color: #007700">(</span><span style="color: #DD0000">"foo"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$table&nbsp;&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$schema</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getTable</span><span style="color: #007700">(</span><span style="color: #DD0000">"test_table"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$table</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">insert</span><span style="color: #007700">([</span><span style="color: #DD0000">'x'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">values</span><span style="color: #007700">([</span><span style="color: #0000BB">1</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">values</span><span style="color: #007700">([</span><span style="color: #0000BB">2</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$table</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">select</span><span style="color: #007700">([</span><span style="color: #DD0000">'x/0&nbsp;as&nbsp;bad_x'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br />echo&nbsp;</span><span style="color: #0000BB">$res</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getWarningsCount</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>

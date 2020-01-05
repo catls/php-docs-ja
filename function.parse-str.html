@@ -41,7 +41,7 @@
   <p class="para rdfs-comment">
    URL 経由で渡されるクエリ文字列と同様に <code class="parameter">encoded_string</code>
    を処理し、現在のスコープに変数をセットします。
-   (or in the array if <code class="parameter">result</code> is provided)
+   (<code class="parameter">result</code> が指定された場合は、配列 <code class="parameter">result</code> にセットします)
   </p>
  </div>
 
@@ -74,19 +74,21 @@
        <code class="parameter">result</code> が指定された場合、
        変数は、代わりに配列の要素としてこの変数に保存されます。
       </p>
-
       <div class="warning"><strong class="warning">警告</strong>
        <p class="para">
-        Using this function without the <code class="parameter">result</code> parameter is highly
-        <em class="emphasis">DISCOURAGED</em> and <em class="emphasis">DEPRECATED</em> as of PHP 7.2.
+        この関数を <code class="parameter">result</code> パラメータを指定せずに使うことは
+        絶対に <em class="emphasis">おすすめしません</em> し、
+        PHP 7.2 以降では <em class="emphasis">推奨されません</em> 
        </p>
        <p class="para">
-        Dynamically setting variables in function&#039;s scope suffers from exactly same problems
-        as <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>.
+        関数スコープの変数に動的に値を設定すると、
+        <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>
+        と全く同じ問題で苦しむことになります。
        </p>
        <p class="para">
-        Read section on security of <a href="security.globals.html" class="link">Using Register Globals</a>
-        explaining why it is dangerous.
+        なぜこのことが危険なのかを説明するために、
+        <a href="security.globals.html" class="link">グローバル変数の登録機能の使用法</a>
+        を読んでください。
        </p>
       </div>
      </dd>
@@ -123,9 +125,9 @@
       <tr>
        <td>7.2.0</td>
        <td>
-
-        Usage of <span class="function"><strong>parse_str()</strong></span> without a second parameter
-        now emits an <strong><code>E_DEPRECATED</code></strong> notice.
+        <span class="function"><strong>parse_str()</strong></span>関数を
+        第二引数を指定せずに使うと
+        <strong><code>E_DEPRECATED</code></strong> レベルの警告が発生するようになりました。
        </td>
       </tr>
 
@@ -144,7 +146,7 @@
     <p><strong>例1 <span class="function"><strong>parse_str()</strong></span> の使用法</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"first=value&amp;arr[]=foo+bar&amp;arr[]=baz"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Recommended<br /></span><span style="color: #0000BB">parse_str</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'first'</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;value<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'arr'</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;foo&nbsp;bar<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'arr'</span><span style="color: #007700">][</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;baz<br /><br />//&nbsp;DISCOURAGED<br /></span><span style="color: #0000BB">parse_str</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$first</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;value<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;foo&nbsp;bar<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;baz<br /></span><span style="color: #0000BB">?&gt;</span>
+<span style="color: #0000BB">&lt;?php<br />$str&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"first=value&amp;arr[]=foo+bar&amp;arr[]=baz"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;推奨<br /></span><span style="color: #0000BB">parse_str</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'first'</span><span style="color: #007700">];&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;value<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'arr'</span><span style="color: #007700">][</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;foo&nbsp;bar<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$output</span><span style="color: #007700">[</span><span style="color: #DD0000">'arr'</span><span style="color: #007700">][</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;baz<br /><br />//&nbsp;お勧めできない<br /></span><span style="color: #0000BB">parse_str</span><span style="color: #007700">(</span><span style="color: #0000BB">$str</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$first</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;value<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;foo&nbsp;bar<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$arr</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">];&nbsp;</span><span style="color: #FF8000">//&nbsp;baz<br /></span><span style="color: #0000BB">?&gt;</span>
 </span>
 </code></div>
     </div>
@@ -152,11 +154,10 @@
    </div>
   </p>
   <p class="para">
-
-   Because variables in PHP can&#039;t have dots and spaces in their names,
-   those are converted to underscores. Same applies to naming of
-   respective key names in case of using this function with
-   <code class="parameter">result</code> parameter.   
+   PHP における変数は、名前にドットやスペースを許容しないので、
+   そういった値はアンダースコアに変換されます。同じことは、
+   この関数に <code class="parameter">result</code> パラメータを指定した
+   場合の、配列のキーの名前にも当てはまります。
    <div class="example" id="example-6087">
     <p><strong>例2 <span class="function"><strong>parse_str()</strong></span> name mangling</strong></p>
     <div class="example-contents">
@@ -176,8 +177,8 @@
 
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    All variables created (or values returned into array if second parameter is set)
-    are already <span class="function"><a href="function.urldecode.html" class="function">urldecode()</a></span>d.
+    全ての作成された変数 (第二引数が設定された場合は配列に設定される値)
+    の値は、既に <span class="function"><a href="function.urldecode.html" class="function">urldecode()</a></span> されています。
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 

@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Bind value to placeholder</title>
+  <title>プレースホルダーに値をバインドする</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-crudoperationbindable.html">mysql_xdevapi\CrudOperationBindable</a></li>
-    <li>Bind value to placeholder</li>
+    <li>プレースホルダーに値をバインドする</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-crudoperationbindable.bind" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">CrudOperationBindable::bind</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CrudOperationBindable::bind</span> &mdash; <span class="dc-title">Bind value to placeholder</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CrudOperationBindable::bind</span> &mdash; <span class="dc-title">プレースホルダーに値をバインドする</span></p>
 
  </div>
 
@@ -38,7 +38,7 @@
    ) : <span class="type"><span class="type mysql_xdevapi\CrudOperationBindable">mysql_xdevapi\CrudOperationBindable</span></span></div>
 
   <p class="para rdfs-comment">
-   Binds a value to a specific placeholder.
+   特定のプレースホルダーに値をバインドします。
   </p>
 
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -59,7 +59,7 @@
     <dd>
 
      <p class="para">
-      The name of the placeholders and the values to bind.
+      プレースホルダーの名前と、バインドする値
      </p>
     </dd>
 
@@ -72,7 +72,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-crudoperationbindable.bind-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   A CrudOperationBindable object.
+   CrudOperationBindable オブジェクトを返します。
   </p>
  </div>
 
@@ -80,7 +80,7 @@
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-crudoperationbindable.bind-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2049">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CrudOperationBindable::bind()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CrudOperationBindable::bind()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">'name&nbsp;like&nbsp;:name'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">arrayInsert</span><span style="color: #007700">(</span><span style="color: #DD0000">'job[0]'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Calciatore'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'name'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'ENTITY'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$table</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">delete</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">orderby</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;desc'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">where</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;&lt;&nbsp;20&nbsp;and&nbsp;age&nbsp;&gt;&nbsp;12&nbsp;and&nbsp;name&nbsp;!=&nbsp;:name'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'name'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Tierney'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>

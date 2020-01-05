@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Skip elements</title>
+  <title>要素をスキップする</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-collectionmodify.html">mysql_xdevapi\CollectionModify</a></li>
-    <li>Skip elements</li>
+    <li>要素をスキップする</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-collectionmodify.skip" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">CollectionModify::skip</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CollectionModify::skip</span> &mdash; <span class="dc-title">Skip elements</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CollectionModify::skip</span> &mdash; <span class="dc-title">要素をスキップする</span></p>
 
  </div>
 
@@ -38,9 +38,9 @@
    ) : <span class="type"><span class="type mysql_xdevapi\CollectionModify">mysql_xdevapi\CollectionModify</span></span></div>
 
   <p class="para rdfs-comment">
-   Skip the first N elements that would otherwise be returned by a find operation.
-   If the number of elements skipped is larger than the size of the result set,
-   then the find operation returns an empty set.
+   スキップしなければ find によって返される最初の N 要素をスキップします。
+   スキップされる要素の数が、結果セットのサイズより大きかった場合は、
+   空の結果セットが返されます。
   </p>
 
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -61,7 +61,7 @@
     <dd>
 
      <p class="para">
-      Number of elements to skip.
+      スキップする要素数
     </p>
     </dd>
 
@@ -74,7 +74,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-collectionmodify.skip-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   A CollectionModify object to use for further processing.
+   後の操作で使われる CollectionModify オブジェクト。
   </p>
  </div>
 
@@ -82,7 +82,7 @@
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-collectionmodify.skip-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2028">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::skip()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CollectionModify::skip()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">modify</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;&gt;&nbsp;:age'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">sort</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;desc'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">unset</span><span style="color: #007700">([</span><span style="color: #DD0000">'age'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">bind</span><span style="color: #007700">([</span><span style="color: #DD0000">'age'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">skip</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>

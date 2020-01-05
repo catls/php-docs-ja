@@ -34,19 +34,22 @@
   必要があり、そのフォルダにはファイル <var class="filename">easy.h</var>
   および <var class="filename">curl.h</var> がある必要が
   あります。<var class="filename">libcurl.a</var> という名前のファイルがディレクトリ <var class="filename">lib</var>
-  にある必要があります。PHP 4.3.0 以降、URL ストリームで cURL を使用するよう PHP を
+  にある必要があります。PHP 5.5.0 より前のバージョンでは、URL ストリームで cURL を使用するよう PHP を
   設定するために <strong class="option configure">--with-curlwrappers</strong>
 
-  を指定できます。
-  この機能は、PHP 5.5.0 で PECL に移動しました。
+  を指定可能でした。
  </p>
  <blockquote class="note"><p><strong class="note">注意</strong>: 
   <strong>Win32 ユーザーへの注意</strong><br />
   <span class="simpara">
    このモジュールを Windows 環境で使用可能とするには、
    <var class="filename">libeay32.dll</var>
-   および <var class="filename">ssleay32.dll</var>
+   および <var class="filename">ssleay32.dll</var>、
+   もしくは OpenSSL 1.1 以降では
+   <var class="filename">libcrypto-*.dll</var> および <var class="filename">libssl-*.dll</var>
    が <var class="envar">PATH</var> の通った場所に存在する必要があります。
+   また、<var class="filename">libssh2.dll</var> も <var class="envar">PATH</var>
+   の通った場所になければなりません。
   </span>
   <span class="simpara">
    cURL のサイトにある <var class="filename">libcurl.dll</var> は不要です。

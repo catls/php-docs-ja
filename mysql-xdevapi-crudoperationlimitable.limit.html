@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Set result limit</title>
+  <title>結果を限定する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.mysql-xdevapi-crudoperationlimitable.html">mysql_xdevapi\CrudOperationLimitable</a></li>
-    <li>Set result limit</li>
+    <li>結果を限定する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="mysql-xdevapi-crudoperationlimitable.limit" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">CrudOperationLimitable::limit</h1>
-  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CrudOperationLimitable::limit</span> &mdash; <span class="dc-title">Set result limit</span></p>
+  <p class="verinfo">(No version information available, might only be in Git)</p><p class="refpurpose"><span class="refname">CrudOperationLimitable::limit</span> &mdash; <span class="dc-title">結果を限定する</span></p>
 
  </div>
 
@@ -38,7 +38,7 @@
    ) : <span class="type"><span class="type mysql_xdevapi\CrudOperationLimitable">mysql_xdevapi\CrudOperationLimitable</span></span></div>
 
   <p class="para rdfs-comment">
-   Sets the maximum number of records or documents to return.
+   返されるドキュメントまたはレコードの最大数を設定します。
   </p>
 
   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
@@ -59,7 +59,7 @@
     <dd>
 
      <p class="para">
-      The maximum number of records or documents.
+      レコードまたはドキュメントの最大数
      </p>
     </dd>
 
@@ -72,7 +72,7 @@
  <div class="refsect1 returnvalues" id="refsect1-mysql-xdevapi-crudoperationlimitable.limit-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   A CrudOperationLimitable object.
+   CrudOperationLimitable オブジェクトを返します。
   </p>
  </div>
 
@@ -80,7 +80,7 @@
  <div class="refsect1 examples" id="refsect1-mysql-xdevapi-crudoperationlimitable.limit-examples">
   <h3 class="title">例</h3>
   <div class="example" id="example-2050">
-   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CrudOperationLimitable::limit()</strong></span> example</strong></p>
+   <p><strong>例1 <span class="function"><strong>mysql_xdevapi\CrudOperationLimitable::limit()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br />$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$coll</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">find</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">fields</span><span style="color: #007700">([</span><span style="color: #DD0000">'name&nbsp;as&nbsp;n'</span><span style="color: #007700">,</span><span style="color: #DD0000">'age&nbsp;as&nbsp;a'</span><span style="color: #007700">,</span><span style="color: #DD0000">'job&nbsp;as&nbsp;j'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">groupBy</span><span style="color: #007700">(</span><span style="color: #DD0000">'j'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">11</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$res&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$table</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">update</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'age'</span><span style="color: #007700">,</span><span style="color: #0000BB">69</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">where</span><span style="color: #007700">(</span><span style="color: #DD0000">'age&nbsp;&gt;&nbsp;15&nbsp;and&nbsp;age&nbsp;&lt;&nbsp;22'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">limit</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">orderby</span><span style="color: #007700">([</span><span style="color: #DD0000">'age&nbsp;asc'</span><span style="color: #007700">,</span><span style="color: #DD0000">'name&nbsp;desc'</span><span style="color: #007700">])-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
