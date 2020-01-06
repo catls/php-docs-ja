@@ -92,7 +92,162 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合に配列、失敗した場合に <strong><code>FALSE</code></strong> を返します。
+   配列の構造の詳細は、以下のリストのとおりです
   </p>
+  <p class="para">
+   <dl>
+
+    
+     <dt>
+<em>sunrise</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       日の出の時刻 (天頂角 = 90°50&#039; )
+      </span>
+     </dd>
+ 
+    
+    
+     <dt>
+<em>sunset</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       日の入りの時刻 (天頂角 = 90°35&#039; )
+      </span>
+     </dd>
+ 
+    
+    
+     <dt>
+<em>transit</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       太陽が天頂に達する時刻。
+       つまり、もっとも上部に達した時刻です。
+      </span>
+     </dd>
+ 
+    
+    
+     <dt>
+<em>civil_twilight_begin</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       夜明けの始まり(天頂角 = 96°)
+       <em>sunrise</em> の時刻に終了します。
+      </span>
+     </dd>
+ 
+    
+    
+     <dt>
+<em>civil_twilight_end</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       夕暮れの終わり(天頂角 =  96°)
+       <em>sunset</em> の時刻に始まります。
+      </span>
+     </dd>
+ 
+    
+    
+     <dt>
+<em>nautical_twilight_begin</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       航海上の夜明け (天頂角 = 102°)
+       <em>civil_twilight_begin</em> に終了します。
+      </span>
+     </dd>
+ 
+    
+    
+     <dt>
+<em>nautical_twilight_end</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       航海上の夕暮れ (天頂角 =  102°)
+       <em>civil_twilight_end</em> の時刻に始まります。
+      </span>
+     </dd>
+ 
+    
+    
+     <dt>
+<em>astronomical_twilight_begin</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       天文学上の夜明け (天頂角 = 108°)
+       <em>nautical_twilight_begin</em> に終了します。
+      </span>
+     </dd>
+ 
+    
+    
+     <dt>
+<em>astronomical_twilight_end</em></dt>
+
+     <dd>
+
+      <span class="simpara">
+       天文学上の夕暮れ (天頂角 = 108°)
+       <em>nautical_twilight_end</em> の時刻に始まります。
+      </span>
+     </dd>
+ 
+    
+   </dl>
+
+  </p>
+  <p class="para"> 
+   配列の要素の値は、UNIXタイムスタンプ、または
+   太陽が天頂より一日中下にある場合、<strong><code>FALSE</code></strong> です。
+   また、一日中天頂より上にある場合、 <strong><code>TRUE</code></strong> です。
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.date-sun-info-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>5.2.2</td>
+      <td>
+       <code class="parameter">latitude</code> と 
+       <code class="parameter">longitude</code> の順番が逆になりました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 
@@ -120,6 +275,76 @@ nautical_twilight_begin: 04:52:25
 nautical_twilight_end: 16:41:06
 astronomical_twilight_begin: 04:21:32
 astronomical_twilight_end: 17:12:00
+</pre></div>
+    </div>
+   </div>
+   <div class="example" id="example-2802">
+    <p><strong>例2 Polar night</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">date_sun_info</span><span style="color: #007700">(</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #DD0000">"2017-12-21"</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">90</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(9) {
+  [&quot;sunrise&quot;]=&gt;
+  bool(false)
+  [&quot;sunset&quot;]=&gt;
+  bool(false)
+  [&quot;transit&quot;]=&gt;
+  int(1513857490)
+  [&quot;civil_twilight_begin&quot;]=&gt;
+  bool(false)
+  [&quot;civil_twilight_end&quot;]=&gt;
+  bool(false)
+  [&quot;nautical_twilight_begin&quot;]=&gt;
+  bool(false)
+  [&quot;nautical_twilight_end&quot;]=&gt;
+  bool(false)
+  [&quot;astronomical_twilight_begin&quot;]=&gt;
+  bool(false)
+  [&quot;astronomical_twilight_end&quot;]=&gt;
+  bool(false)
+}
+</pre></div>
+    </div>
+   </div>
+   <div class="example" id="example-2803">
+    <p><strong>例3 Midnight sun</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">date_sun_info</span><span style="color: #007700">(</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #DD0000">"2017-06-21"</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">90</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+array(9) {
+  [&quot;sunrise&quot;]=&gt;
+  bool(true)
+  [&quot;sunset&quot;]=&gt;
+  bool(true)
+  [&quot;transit&quot;]=&gt;
+  int(1498046510)
+  [&quot;civil_twilight_begin&quot;]=&gt;
+  bool(true)
+  [&quot;civil_twilight_end&quot;]=&gt;
+  bool(true)
+  [&quot;nautical_twilight_begin&quot;]=&gt;
+  bool(true)
+  [&quot;nautical_twilight_end&quot;]=&gt;
+  bool(true)
+  [&quot;astronomical_twilight_begin&quot;]=&gt;
+  bool(true)
+  [&quot;astronomical_twilight_end&quot;]=&gt;
+  bool(true)
+}
 </pre></div>
     </div>
    </div>

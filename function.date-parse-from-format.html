@@ -89,6 +89,37 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-function.date-parse-from-format-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.2.0</td>
+      <td>
+       返される配列の <em>zone</em> 要素が、
+       分ではなく秒を表すようになり、
+       符号が逆になりました。
+       たとえば、
+       <em>-120</em> は <em>7200</em> を表すようになります。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-function.date-parse-from-format-examples">
   <h3 class="title">例</h3>
   <p class="para">
@@ -125,7 +156,7 @@ Array
 
     [is_localtime] =&gt; 1
     [zone_type] =&gt; 1
-    [zone] =&gt; -60
+    [zone] =&gt; 3600
     [is_dst] =&gt; 
 )
 </pre></div>

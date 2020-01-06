@@ -57,13 +57,15 @@
       </p>
       <blockquote class="note"><p><strong class="note">注意</strong>: 
        <span class="simpara">
-        Explicitly passing <strong><code>NULL</code></strong> as the <code class="parameter">object</code> is no
-        longer allowed as of PHP 7.2.0.
+        <code class="parameter">object</code> に明示的に <strong><code>NULL</code></strong> を渡すことは、
+        PHP 7.2.0 以降許されなくなりました。
        </span>
        <span class="simpara">
-        The parameter is still optional and calling <span class="function"><strong>get_class()</strong></span>
-        without a parameter from inside a class will work, but passing <strong><code>NULL</code></strong> now
-        emits an <strong><code>E_WARNING</code></strong> notice.
+        このパラメータは未だオプションです。
+        <span class="function"><strong>get_class()</strong></span> 関数を
+        クラスの内部からパラメータなしに呼び出しても動作します。
+        しかし、<strong><code>NULL</code></strong> を渡してしまうと
+        <strong><code>E_WARNING</code></strong> レベルの警告が発生します。
        </span>
       </p></blockquote>
      </dd>
@@ -86,8 +88,9 @@
    そのクラスの名前を返します。
   </p>
   <p class="para">
-   If the <code class="parameter">object</code> is an instance of a class which exists 
-   in a namespace, the qualified namespaced name of that class is returned.
+   <code class="parameter">object</code> が
+   名前空間の中に存在しているクラスのインスタンスだった場合、
+   名前空間で修飾されたクラス名が返されます。
   </p>
  </div>
 
@@ -116,8 +119,9 @@
       <tr>
        <td>7.2.0</td>
        <td>
-        <strong><code>NULL</code></strong> was removed as the default value for <code class="parameter">object</code>,
-        and is no longer a valid input.
+        <strong><code>NULL</code></strong> は、<code class="parameter">object</code> のデフォルトのパラメータとして
+        扱われなくなり、
+        正しい入力ではなくなりました。
        </td>
       </tr>
 
@@ -175,7 +179,7 @@ string(3) &quot;bar&quot;
     </div>
    </div>
    <div class="example" id="function.usort.examples.object">
-    <p><strong>例3 Using <span class="function"><strong>get_class()</strong></span> with namespaced classes</strong></p>
+    <p><strong>例3 名前空間の中にあるクラスを <span class="function"><strong>get_class()</strong></span> で使う</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">namespace&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">;<br /><br />class&nbsp;</span><span style="color: #0000BB">Baz&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">__construct</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$baz&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;\</span><span style="color: #0000BB">Foo</span><span style="color: #007700">\</span><span style="color: #0000BB">Bar</span><span style="color: #007700">\</span><span style="color: #0000BB">Baz</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$baz</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>

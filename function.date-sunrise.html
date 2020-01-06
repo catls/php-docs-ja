@@ -124,7 +124,7 @@
 
       <p class="para">
        デフォルトは北緯で、南緯は負の値で表します。
-       <em>date.default_latitude</em> も参照ください。
+       <a href="datetime.configuration.html#ini.date.default-latitude" class="link">date.default_latitude</a> も参照ください。
       </p>
      </dd>
 
@@ -137,7 +137,7 @@
 
       <p class="para">
        デフォルトは東経で、西経は負の値で表します。
-       <em>date.default_longitude</em> も参照ください。
+       <a href="datetime.configuration.html#ini.date.default-longitude" class="link">date.default_longitude</a> も参照ください。
       </p>
      </dd>
 
@@ -149,7 +149,44 @@
      <dd>
 
       <p class="para">
-       デフォルトは <em>date.sunrise_zenith</em> です。
+       <code class="parameter">zenith</code> は 太陽の中心と、地球の表面からの垂線の間になす角度です。
+       デフォルトは <a href="datetime.configuration.html#ini.date.sunrise-zenith" class="link">date.sunrise_zenith</a> です。
+       <table class="doctable table">
+        <caption><strong>一般的な <code class="parameter">zenith</code> の角度</strong></caption>
+        
+         <thead>
+          <tr>
+           <th>角度</th>
+           <th>説明</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td>90°50&#039; </td>
+           <td>日の出: 太陽が見えるようになる点</td>
+          </tr>
+
+          <tr>
+           <td>96°</td>
+           <td>薄明かり: 夜明けの始まりを示すのに慣習的に使われます</td>
+          </tr>
+
+          <tr>
+           <td>102°</td>
+           <td>航海上の薄明かり: 海の上で、水平線が見えはじめる点</td>
+          </tr>
+
+          <tr>
+           <td>108°</td>
+           <td>天文学上の薄明かり: 太陽があらゆる明かりの光源になりはじめる点</td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
       </p>
      </dd>
 
@@ -162,6 +199,9 @@
 
       <p class="para">
        時間単位で指定します。
+       <code class="parameter">format</code> が
+       <strong><code>SUNFUNCS_RET_TIMESTAMP</code></strong> の場合は、
+       <code class="parameter">gmtoffset</code> は無視されます。
       </p>
      </dd>
 
@@ -176,7 +216,9 @@
   <h3 class="title">返り値</h3>
   <p class="para">
    日の出時刻を、指定した <code class="parameter">format</code> で返します。
-   失敗した場合に <strong><code>FALSE</code></strong> を返します。
+   失敗した場合に <strong><code>FALSE</code></strong> を返します
+   失敗する潜在的な可能性があります。太陽が全く昇らない場合です。
+   これは一年のある時期、極圏の中にある場合に起こります。
   </p>
  </div>
 
@@ -226,7 +268,7 @@
  <div class="refsect1 examples" id="refsect1-function.date-sunrise-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2802">
+   <div class="example" id="example-2804">
     <p><strong>例1 <span class="function"><strong>date_sunrise()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -243,6 +285,22 @@ Mon Dec 20 2004, sunrise time : 08:54
 </pre></div>
     </div>
    </div>
+   <div class="example" id="example-2805">
+    <p><strong>例2 No sunrise</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$solstice&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">strtotime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2017-12-21'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">date_sunrise</span><span style="color: #007700">(</span><span style="color: #0000BB">$solstice</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">SUNFUNCS_RET_STRING</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">69.245833</span><span style="color: #007700">,&nbsp;-</span><span style="color: #0000BB">53.537222</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は以下となります。</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(false)
+</pre></div>
+    </div>
+   </div>
   </p>
  </div>
 
@@ -252,6 +310,7 @@ Mon Dec 20 2004, sunrise time : 08:54
   <p class="para">
    <ul class="simplelist">
     <li class="member"><span class="function"><a href="function.date-sunset.html" class="function" rel="rdfs-seeAlso">date_sunset()</a> - 指定した日付と場所についての日の入り時刻を返す</span></li>
+    <li class="member"><span class="function"><a href="function.date-sun-info.html" class="function" rel="rdfs-seeAlso">date_sun_info()</a> - 日の出/日の入り時刻と薄明かり (twilight) の開始/終了時刻の情報を含む配列を返す</span></li>
    </ul>
   </p>
  </div>

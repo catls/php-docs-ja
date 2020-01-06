@@ -61,7 +61,7 @@
 
       <p class="para">
        出力される日付文字列の書式。以下のオプションを参照ください。
-       <a href="class.datetime.html#datetime.constants.types" class="link">定義済みの定数</a>
+       <a href="class.datetimeinterface.html#datetime.constants.types" class="link">定義済みの定数</a>
        も用意されており、たとえば <strong><code>DATE_RSS</code></strong> はフォーマット文字列
        <em>&#039;D, d M Y H:i:s&#039;</em> と同じ意味になります。
       </p>
@@ -453,6 +453,14 @@
 
      <tbody class="tbody">
       <tr>
+       <td>5.1.1</td>
+       <td>
+        PHP 5.1.1 以降、<code class="parameter">format</code> パラメータで標準的な
+        日付/時刻フォーマットを指定する際に有用な <a href="datetime.constants.html" class="link">定数</a>がいくつか追加されました。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.1.0</td>
        <td>
         有効なタイムスタンプの範囲は、通常 Fri, 13 Dec 1901
@@ -471,14 +479,6 @@
 <strong><code>E_NOTICE</code></strong> が発生するようになりました。</p></td></tr>
 
 
-      <tr>
-       <td>5.1.1</td>
-       <td>
-        PHP 5.1.1 以降、<code class="parameter">format</code> パラメータで標準的な
-        日付/時刻フォーマットを指定する際に有用な <a href="datetime.constants.html" class="link">定数</a>がいくつか追加されました。
-       </td>
-      </tr>
-
      </tbody>
     
    </table>
@@ -490,7 +490,7 @@
  <div class="refsect1 examples" id="refsect1-function.date-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-2804">
+   <div class="example" id="example-2808">
     <p><strong>例1 <span class="function"><strong>date()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -506,7 +506,7 @@
    フォーマット文字列として認識される文字が展開されることを防止することができます。
    バックスラッシュ付きの文字は既に特別なシーケンスであり、
    バックスラッシュもエスケープすることが必要となる可能性があります。
-   <div class="example" id="example-2805">
+   <div class="example" id="example-2809">
     <p><strong>例2 <span class="function"><strong>date()</strong></span> の文字をエスケープする</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -520,7 +520,7 @@
   <p class="para">
    <span class="function"><strong>date()</strong></span> と <span class="function"><a href="function.mktime.html" class="function">mktime()</a></span>
    の両方を用いて、未来または過去の日付を知ることができます。
-   <div class="example" id="example-2806">
+   <div class="example" id="example-2810">
     <p><strong>例3 <span class="function"><strong>date()</strong></span> と <span class="function"><a href="function.mktime.html" class="function">mktime()</a></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -544,7 +544,7 @@
    エスケープする必要があることに注意してください。エスケープを
    する際には、改行文字 \n のような文字を回避するために
    シングルクォートを使用してください。
-   <div class="example" id="example-2807">
+   <div class="example" id="example-2811">
     <p><strong>例4 <span class="function"><strong>date()</strong></span> のフォーマット指定</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -595,7 +595,7 @@
     <li class="member"><span class="function"><a href="function.strftime.html" class="function" rel="rdfs-seeAlso">strftime()</a> - ロケールの設定に基づいてローカルな日付・時間をフォーマットする</span></li>
     <li class="member"><span class="function"><a href="function.time.html" class="function" rel="rdfs-seeAlso">time()</a> - 現在の Unix タイムスタンプを返す</span></li>
     <li class="member"><span class="function"><a href="function.strtotime.html" class="function" rel="rdfs-seeAlso">strtotime()</a> - 英文形式の日付を Unix タイムスタンプに変換する</span></li>
-    <li class="member"><a href="class.datetime.html#datetime.constants.types" class="link">定義済みの定数</a></li>
+    <li class="member"><a href="class.datetimeinterface.html#datetime.constants.types" class="link">定義済みの定数</a></li>
    </ul>
   </p>
  </div>

@@ -36,7 +36,7 @@
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>
    [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$handler</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$...</code></span>
+   [, <span class="methodparam"><span class="type">string</span> <code class="parameter">$...</code></span>
   ]] ) : <span class="type">resource</span></div>
 
   <p class="para rdfs-comment">
@@ -203,6 +203,31 @@
        <a href="dba.requirements.html" class="link">ハンドラ</a>の名前。
        <span class="function"><strong>dba_open()</strong></span> に指定したすべてのオプションが
        渡され、その機能を用いることができます。
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">...</code></dt>
+
+     <dd>
+
+      <p class="para">
+       ドライバに渡すオプションの <span class="type"><a href="language.types.string.html" class="type string">string</a></span> パラメータ
+      </p>
+      <p class="para">
+       <em>cdb</em>, <em>cdb_make</em>, <em>flatfile</em>,
+       <em>inifile</em>, <em>qdbm</em>。
+       そして <em>tcadb</em> ドライバは追加のパラメータをサポートしていません。
+      </p>
+      <p class="para">
+       <em>db1</em>, <em>db2</em>, <em>db3</em>,
+       <em>db4</em>, <em>dbm</em>, <em>gdbm</em>, <em>lmdb</em>。
+       そして、 <em>ndbm</em> ドライバは追加パラメータ
+       <em>$filemode</em> をサポートしています。
+       これは <span class="function"><a href="function.chmod.html" class="function">chmod()</a></span> のパラメータ <em>$mode</em> と同じ意味を持ち、
+       デフォルトは <em>0644</em> です。
       </p>
      </dd>
 

@@ -65,7 +65,7 @@
 
      <p class="para">日付/時刻 文字列。有効な書式については <a href="datetime.formats.html" class="link">日付と時刻の書式</a> で説明しています。</p>
      <p class="para">
-      ここに <strong><code>NULL</code></strong> を指定して
+      ここに <em>&quot;now&quot;</em> を指定して
       <code class="parameter">$timezone</code> パラメータを使うと、現在時刻を取得できます。
      </p>
     </dd>
@@ -133,6 +133,11 @@
      </thead>
 
      <tbody class="tbody">
+      <tr>
+       <td>7.1</td>
+       <td>マイクロ秒が &#039;00000&#039; ではなく、実際の値で埋められるようになりました。</td>
+      </tr>
+
       <tr>
        <td>5.3.0</td>
        <td>

@@ -63,43 +63,43 @@
      <dd>
 
       <p class="para">
-       The new priority value, the value of this may differ on platforms.
+       新しい優先度の値。この値はプラットフォームによっては異なるかもしれません。
       </p>
       <p class="para">
-       on Unix, a low value, such as <em>-20</em> means high priority 
-       wheras a positive value have a lower priority.
+       Unix 上では、<em>-20</em> のように低い値が高い優先度である一方で、
+       正の値は低い優先度として扱われます。
       </p>
       <p class="para">
-       For Windows the <code class="parameter">increment</code> parameter have the 
-       following meanings:
+       Windows では、
+       <code class="parameter">increment</code> パラメータは次のような意味があります:
       </p>
       <table class="doctable informaltable">
        
         <thead>
          <tr>
-          <th>Priority class</th>
-          <th>Possible values</th>
+          <th>優先度クラス</th>
+          <th>取りうる値</th>
          </tr>
 
         </thead>
 
         <tbody class="tbody">
          <tr>
-          <td style="vertical-align: top;">High priority</td>
+          <td style="vertical-align: top;">優先度高</td>
           <td style="vertical-align: top;">
            <code class="parameter">increment</code> <em>&lt; -9</em>
           </td>
          </tr>
 
          <tr>
-          <td style="vertical-align: top;">Above normal priority</td>
+          <td style="vertical-align: top;">通常より高い優先度</td>
           <td style="vertical-align: top;">
            <code class="parameter">increment</code> <em>&lt; -4</em>
           </td>
          </tr>
 
          <tr>
-          <td style="vertical-align: top;">Normal priority</td>
+          <td style="vertical-align: top;">通常の優先度</td>
           <td style="vertical-align: top;">
            <code class="parameter">increment</code> <em>&lt; 5</em> &amp; 
            <code class="parameter">increment</code> <em>&gt; -5</em>
@@ -107,14 +107,14 @@
          </tr>
 
          <tr>
-          <td style="vertical-align: top;">Below normal priority</td>
+          <td style="vertical-align: top;">通常より低い優先度</td>
           <td style="vertical-align: top;">
            <code class="parameter">increment</code> <em>&gt; 5</em>
           </td>
          </tr>
 
          <tr>
-          <td style="vertical-align: top;">Idle priority</td>
+          <td style="vertical-align: top;">アイドルな優先度</td>
           <td style="vertical-align: top;">
            <code class="parameter">increment</code> <em>&gt; 9</em>
           </td>
@@ -147,8 +147,8 @@
  <div class="refsect1 examples" id="refsect1-function.proc-nice-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4491">
-    <p><strong>例1 Using <span class="function"><strong>proc_nice()</strong></span> to set the process priority to high</strong></p>
+   <div class="example" id="example-4495">
+    <p><strong>例1 <span class="function"><strong>proc_nice()</strong></span> 関数を使い、プロセスの優先度を高に設定する</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
 <span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Highest&nbsp;priority<br /></span><span style="color: #0000BB">proc_nice</span><span style="color: #007700">(-</span><span style="color: #0000BB">20</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
@@ -179,7 +179,7 @@
       <tr>
        <td>7.2.0</td>
        <td>
-        この関数は、現在 Windows で利用可能です。
+        この関数は、Windows で利用できるようになりました。
        </td>
       </tr>
 
@@ -205,8 +205,9 @@
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <strong>Windows のみ</strong><br />
    <p class="para">
-    <span class="function"><strong>proc_nice()</strong></span> will change the <em class="emphasis">current</em> process 
-    priority, even if PHP was compiled using thread safety.
+    <span class="function"><strong>proc_nice()</strong></span> 関数は、
+    PHP がたとえスレッドセーフを有効にしてコンパイルされていたとしても、
+    <em class="emphasis">現在の</em> プロセスの優先度を変更します。
    </p>
   </p></blockquote>
  </div>

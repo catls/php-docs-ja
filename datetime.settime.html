@@ -39,7 +39,8 @@
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$hour</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$minute</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$second</code><span class="initializer"> = 0</span></span>
-  ] ) : <span class="type"><a href="class.datetime.html" class="type DateTime">DateTime</a></span></div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$microseconds</code><span class="initializer"> = 0</span></span>
+  ]] ) : <span class="type"><a href="class.datetime.html" class="type DateTime">DateTime</a></span></div>
 
   <p class="para rdfs-comment">手続き型</p>
   <div class="methodsynopsis dc-description">
@@ -48,7 +49,8 @@
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$hour</code></span>
    , <span class="methodparam"><span class="type">int</span> <code class="parameter">$minute</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$second</code><span class="initializer"> = 0</span></span>
-  ] ) : <span class="type"><a href="class.datetime.html" class="type DateTime">DateTime</a></span></div>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$microseconds</code><span class="initializer"> = 0</span></span>
+  ]] ) : <span class="type"><a href="class.datetime.html" class="type DateTime">DateTime</a></span></div>
 
   <p class="para rdfs-comment">
    DateTime オブジェクトの現在時刻を別の時刻にリセットします。
@@ -104,6 +106,18 @@
     </dd>
 
    
+   
+    <dt>
+<code class="parameter">microseconds</code></dt>
+
+    <dd>
+
+     <p class="para">
+      その時刻のマイクロ秒。
+     </p>
+    </dd>
+
+   
   </dl>
 
  </div>
@@ -130,6 +144,11 @@
     </thead>
 
     <tbody class="tbody">
+     <tr>
+      <td>7.1.0</td>
+      <td><code class="parameter">microseconds</code> パラメータが追加されました。</td>
+     </tr>
+
      <tr><td>5.3.0</td><td>成功した場合の返り値が
 <strong><code>NULL</code></strong> から <a href="class.datetime.html" class="classname">DateTime</a> に変更されました。</td></tr>
 

@@ -167,8 +167,8 @@
           <tr>
            <td style="vertical-align: top;"><strong><code>CURLMOPT_PUSHFUNCTION</code></strong></td>
            <td style="vertical-align: top;">
-            Pass a <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> that will be registered to handle server
-            pushes and should have the following signature:
+            サーバープッシュを扱うために登録される
+            <span class="type"><a href="language.types.callable.html" class="type callable">callable</a></span> を渡し、以下のようなシグナチャをとります:
             <div class="methodsynopsis dc-description">
              <span class="methodname"><span class="replaceable">pushfunction</span></span>
               ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$parent_ch</code></span>
@@ -185,7 +185,7 @@
               <dd>
 
                <p class="para">
-                The parent cURL handle (the request the client made).
+                親となる cURL ハンドル(クライアントが作成したリクエストの)
                </p>
               </dd>
 
@@ -197,7 +197,7 @@
               <dd>
 
                <p class="para">
-                A new cURL handle for the pushed request.
+                プッシュされたリクエストのための、新しい cURL ハンドル
                </p>
               </dd>
 
@@ -209,16 +209,16 @@
               <dd>
 
                <p class="para">
-                The push promise headers.
+                プッシュのためのプロミスヘッダ
                </p>
               </dd>
 
              
             </dl>
 
-            The push function is supposed to return either
-            <strong><code>CURL_PUSH_OK</code></strong> if it can handle the push, or
-            <strong><code>CURL_PUSH_DENY</code></strong> to reject it.
+            プッシュ関数自体は、プッシュをハンドルできる場合は
+            <strong><code>CURL_PUSH_OK</code></strong> を返し、
+            拒否する場合は、<strong><code>CURL_PUSH_DENY</code></strong> を返すことが想定されています。
            </td>
           </tr>
 
