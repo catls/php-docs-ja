@@ -114,7 +114,9 @@
 
       <p class="para">
        オプションの <code class="parameter">escape_char</code> は、エスケープ文字
-       (一文字だけ) を指定します。
+       (最大で一文字) を指定します。
+       
+       An empty string (<em>&quot;&quot;</em>) disables the proprietary escape mechanism.
       </p>
      </dd>
 
@@ -153,6 +155,15 @@
      </thead>
 
      <tbody class="tbody">
+      
+      <tr>
+       <td>7.4.0</td>
+       <td>
+        The <code class="parameter">escape_char</code> parameter now also accepts an empty
+        string to disable the proprietary escape mechanism.
+       </td>
+      </tr>
+
       <tr>
        <td>5.5.4</td>
        <td>

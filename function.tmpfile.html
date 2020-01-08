@@ -45,11 +45,12 @@
    (<span class="function"><a href="function.fclose.html" class="function">fclose()</a></span>を呼んだり、<span class="function"><strong>tmpfile()</strong></span> が返すファイルハンドルへの参照がなくなったりして)
    ファイルをクローズした場合や、スクリプトが終了したりしたときに、このファイルは自動的に削除されます。
   </p>
-  <p class="para">
-   詳細については、関数 <em>tmpfile(3)</em>
-   のシステムドキュメント、およびヘッダファイル
-   <var class="filename">stdio.h</var> を参照ください。
-  </p>
+  
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="simpara">
+    If the script terminates unexpectedly, the temporary file may not be deleted.
+   </p>
+  </div>
  </div>
 
 

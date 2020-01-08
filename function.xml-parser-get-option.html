@@ -68,7 +68,8 @@
      <dd>
 
       <span class="simpara">
-       取得するオプション。<strong><code>XML_OPTION_CASE_FOLDING</code></strong>
+       取得するオプション。<strong><code>XML_OPTION_CASE_FOLDING</code></strong>,
+       <strong><code>XML_OPTION_SKIP_TAGSTART</code></strong>, <strong><code>XML_OPTION_SKIP_WHITE</code></strong>
        あるいは <strong><code>XML_OPTION_TARGET_ENCODING</code></strong> が使用可能です。
        詳細は <span class="function"><a href="function.xml-parser-set-option.html" class="function">xml_parser_set_option()</a></span> を参照ください。
       </span>
@@ -89,6 +90,35 @@
    (同時に <strong><code>E_WARNING</code></strong> を生成します)。
    それ以外の場合、そのオプションの値が返されます。
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.xml-parser-get-option-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.1.24, 7.2.12, 7.3.0</td>
+      <td>
+       <code class="parameter">options</code> が
+       新たに <strong><code>XML_OPTION_SKIP_TAGSTART</code></strong>
+       と <strong><code>XML_OPTION_SKIP_WHITE</code></strong> をサポートしました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 

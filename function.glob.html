@@ -61,6 +61,39 @@
       <p class="para">
        パターン。チルダの展開やパラメータ置換は行いません。
       </p>
+      <p class="para">
+       Special characters:
+       <ul class="itemizedlist">
+        <li class="listitem">
+         <span class="simpara">
+          <em>*</em> - Matches zero or more characters.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <em>?</em> - Matches exactly one character (any character).
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <em>[...]</em> - Matches one character from a group of
+          characters. If the first character is <em>!</em>,
+          matches any character not in the group.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <em>...</em> - Matches all the subdirectories, recursively.
+         </span>
+        </li>
+        <li class="listitem">
+         <span class="simpara">
+          <em>\</em> - Escapes the following character,
+          except when the <strong><code>GLOB_NOESCAPE</code></strong> flag is used.
+         </span>
+        </li>
+       </ul>
+      </p>
      </dd>
 
     

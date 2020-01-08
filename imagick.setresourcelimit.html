@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>特定のリソースの制限をメガバイト単位で設定する</title>
+  <title>特定のリソースの制限を設定する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.imagick.html">Imagick</a></li>
-    <li>特定のリソースの制限をメガバイト単位で設定する</li>
+    <li>特定のリソースの制限を設定する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="imagick.setresourcelimit" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">Imagick::setResourceLimit</h1>
-  <p class="verinfo">(PECL imagick 2.0.0)</p><p class="refpurpose"><span class="refname">Imagick::setResourceLimit</span> &mdash; <span class="dc-title">特定のリソースの制限をメガバイト単位で設定する</span></p>
+  <p class="verinfo">(PECL imagick 2.0.0)</p><p class="refpurpose"><span class="refname">Imagick::setResourceLimit</span> &mdash; <span class="dc-title">特定のリソースの制限を設定する</span></p>
 
  </div>
 
@@ -56,8 +56,8 @@
      <dd>
 
       <p class="para">
-       <a href="imagick.constants.html#imagick.constants.resourcetypes" class="link">リソースタイプ定数</a>
-       のリストを参照ください。
+       <a href="imagick.constants.html#imagick.constants.resourcetypes" class="link">リソースタイプ定数</a> のうちのひとつ。
+       単位は制限されるリソースのタイプに依存します。
       </p>
      </dd>
 
@@ -85,6 +85,14 @@
   <p class="para">
    成功した場合に <strong><code>TRUE</code></strong> を返します。
   </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-imagick.setresourcelimit-seealso">
+  <h3 class="title">参考</h3>
+  <ul class="simplelist">
+   <li class="member"><span class="methodname"><a href="imagick.getresourcelimit.html" class="methodname" rel="rdfs-seeAlso">Imagick::getResourceLimit()</a> - 指定したリソースの制限を返す</span></li>
+  </ul>
  </div>
 
 

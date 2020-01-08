@@ -98,9 +98,38 @@ scale</code></dt>
  </div>
 
  
+ 
+ <div class="refsect1 changelog" id="refsect1-function.bcmul-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.3.0</td>
+      <td>
+       <span class="function"><strong>bcmul()</strong></span> now returns numbers with the requested scale.
+       Formerly, the returned numbers may have omitted trailing decimal zeroes.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-function.bcmul-examples">
   <h3 class="title">例</h3>
-  <div class="example" id="example-4189">
+  <div class="example" id="example-4190">
    <p><strong>例1 <span class="function"><strong>bcmul()</strong></span> の例</strong></p>
    <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -110,6 +139,30 @@ scale</code></dt>
    </div>
 
   </div>
+ </div>
+
+ 
+ 
+ <div class="refsect1 notes" id="refsect1-function.bcmul-notes">
+  <h3 class="title">注意</h3>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    Before PHP 7.3.0 <span class="function"><strong>bcmul()</strong></span> may return a result with fewer digits after the
+    decimal point than the <code class="parameter">scale</code> parameter would
+    indicate. This only occurs when the result doesn&#039;t require all of the
+    precision allowed by the <code class="parameter">scale</code>. For example:
+    <div class="example" id="example-4191">
+     <p><strong>例2 <span class="function"><strong>bcmul()</strong></span> scale example</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">bcmul</span><span style="color: #007700">(</span><span style="color: #DD0000">'5'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;prints&nbsp;"10",&nbsp;not&nbsp;"10.00"<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </p></blockquote>
  </div>
 
  

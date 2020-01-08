@@ -180,6 +180,56 @@
    その他のシステム(例えば Windows)では -1 を返します。
   </p>
   <p class="para">
+  
+  The value of <em>mode</em> contains information read by several functions. 
+  When written in octal, starting from the right, the first three digits are returned by
+  <span class="function"><a href="function.chmod.html" class="function">chmod()</a></span>. The next digit is ignored by PHP. The next two digits indicate
+  the file type:
+   <table class="doctable table">
+    <caption><strong><em>mode</em> file types</strong></caption>
+    
+     <thead>
+      <tr>
+       <th><em>mode</em> in octal</th>
+       <th>Meaning</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><strong><code>0120000</code></strong></td>
+       <td>link</td>
+      </tr>
+
+      <tr>
+       <td><strong><code>0100000</code></strong></td>
+       <td>regular file</td>
+      </tr>
+
+      <tr>
+       <td><strong><code>0060000</code></strong></td>
+       <td>block device</td>
+      </tr>
+
+      <tr>
+       <td><strong><code>0040000</code></strong></td>
+       <td>directory</td>
+      </tr>
+
+      <tr>
+       <td><strong><code>0010000</code></strong></td>
+       <td>fifo</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+   So for example a regular file could be <strong><code>0100644</code></strong> and a directory could be
+   <strong><code>0040755</code></strong>.
+  </p>
+  <p class="para">
    <span class="function"><strong>stat()</strong></span> はエラーの場合 <strong><code>FALSE</code></strong> を返します。
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: <span class="simpara">

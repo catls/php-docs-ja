@@ -34,16 +34,16 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>bcpowmod</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$left_operand</code></span>
-   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$right_operand</code></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$base</code></span>
+   , <span class="methodparam"><span class="type">string</span> <code class="parameter">$exponent</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$modulus</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$scale</code><span class="initializer"> = 0</span></span>
   ] ) : <span class="type">string</span></div>
 
   <p class="para rdfs-comment">
    <code class="parameter">modulus</code> で割った余りを求めることを考慮して、
-   <code class="parameter">left_operand</code> の
-   <code class="parameter">right_operand</code> 乗を高速に計算します。
+   <code class="parameter">base</code> の
+   <code class="parameter">exponent</code> 乗を高速に計算します。
   </p>
  </div>
 
@@ -55,24 +55,26 @@
 
     
      <dt>
-<code class="parameter">left_operand</code></dt>
+<code class="parameter">base</code></dt>
 
      <dd>
 
       <p class="para">
-       左オペランドを表す文字列。
+       基数を表す整数の文字列。
+       (つまり、scale は 0 でなければいけません)
       </p>
      </dd>
 
     
     
      <dt>
-<code class="parameter">right_operand</code></dt>
+<code class="parameter">exponent</code></dt>
 
      <dd>
 
       <p class="para">
-       右オペランドを表す文字列。
+       指数を表す、負でない、整数の文字列。
+       (つまり、scale は 0 でなければいけません)
       </p>
      </dd>
 
@@ -84,7 +86,8 @@
      <dd>
 
       <p class="para">
-       法を表す文字列。
+       法を表す、整数の文字列。
+       (つまり、scale は 0 でなければいけません)
       </p>
      </dd>
 
@@ -108,7 +111,8 @@ scale</code></dt>
   <h3 class="title">返り値</h3>
   <p class="para">
    結果を文字列で返します。<code class="parameter">modulus</code>
-   が 0 の場合は <strong><code>NULL</code></strong> を返します。
+   が <em>0</em> の場合、
+   または  <code class="parameter">exponent</code> が負の場合、<strong><code>NULL</code></strong> を返します。
   </p>
  </div>
 

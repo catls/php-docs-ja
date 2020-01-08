@@ -44,7 +44,7 @@
 
     <tbody class="tbody">
      <tr id="constant.stream-filter-read">
-      <td><strong><code>STREAM_FILTER_READ</code></strong> *</td>
+      <td><strong><code>STREAM_FILTER_READ</code></strong></td>
       <td>
        <span class="function"><a href="function.stream-filter-append.html" class="function">stream_filter_append()</a></span> または
        <span class="function"><a href="function.stream-filter-prepend.html" class="function">stream_filter_prepend()</a></span> と共に使われます。
@@ -54,7 +54,7 @@
      </tr>
 
      <tr id="constant.stream-filter-write">
-      <td><strong><code>STREAM_FILTER_WRITE</code></strong> *</td>
+      <td><strong><code>STREAM_FILTER_WRITE</code></strong></td>
       <td>
        <span class="function"><a href="function.stream-filter-append.html" class="function">stream_filter_append()</a></span> または
        <span class="function"><a href="function.stream-filter-prepend.html" class="function">stream_filter_prepend()</a></span> と共に使われます。
@@ -64,7 +64,7 @@
      </tr>
 
      <tr id="constant.stream-filter-all">
-      <td><strong><code>STREAM_FILTER_ALL</code></strong> *</td>
+      <td><strong><code>STREAM_FILTER_ALL</code></strong></td>
       <td>
        この定数は右の値と等価です:
        <em>STREAM_FILTER_READ |
@@ -73,7 +73,7 @@
      </tr>
 
      <tr id="constant.psfs-pass-on">
-      <td><strong><code>PSFS_PASS_ON</code></strong> *</td>
+      <td><strong><code>PSFS_PASS_ON</code></strong></td>
       <td><em>返値</em>: ユーザー空間のフィルタが
       バケットを <code class="parameter">$out</code> に返したことを
       示します。
@@ -81,7 +81,7 @@
      </tr>
 
      <tr id="constant.psfs-feed-me">
-      <td><strong><code>PSFS_FEED_ME</code></strong> *</td>
+      <td><strong><code>PSFS_FEED_ME</code></strong></td>
       <td><em>返値</em>: ユーザー空間のフィルタが
        <code class="parameter">$out</code> にバケットを返さなかったことを
        示します。(つまり、変換されたデータを返す用意ができていないという
@@ -130,7 +130,7 @@
      </tr>
 
      <tr id="constant.stream-client-async-connect">
-      <td><strong><code>STREAM_CLIENT_ASYNC_CONNECT</code></strong> *</td>
+      <td><strong><code>STREAM_CLIENT_ASYNC_CONNECT</code></strong></td>
       <td>非同期的にソケットを開きます。このオプションは、
        <strong><code>STREAM_CLIENT_CONNECT</code></strong> フラグとともに使用する
        必要があります。
@@ -139,7 +139,7 @@
      </tr>
 
      <tr id="constant.stream-client-connect">
-      <td><strong><code>STREAM_CLIENT_CONNECT</code></strong> *</td>
+      <td><strong><code>STREAM_CLIENT_CONNECT</code></strong></td>
       <td>クライアントソケット接続を開きます。クライアントソケットは
        常にこのフラグを含んでいる必要があります。
        <span class="function"><a href="function.stream-socket-client.html" class="function">stream_socket_client()</a></span> と共に使われます。
@@ -147,7 +147,7 @@
      </tr>
 
      <tr id="constant.stream-client-persistent">
-      <td><strong><code>STREAM_CLIENT_PERSISTENT</code></strong> *</td>
+      <td><strong><code>STREAM_CLIENT_PERSISTENT</code></strong></td>
       <td><span class="function"><a href="function.stream-socket-client.html" class="function">stream_socket_client()</a></span>を使って
       開かれたソケットが、セッションをまたいでも保持されるよう
       指示します。
@@ -155,7 +155,7 @@
      </tr>
 
      <tr id="constant.stream-server-bind">
-      <td><strong><code>STREAM_SERVER_BIND</code></strong> *</td>
+      <td><strong><code>STREAM_SERVER_BIND</code></strong></td>
       <td><span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span> で開かれたソケットが
       特定のターゲットに関連付けられることを示します。
       サーバーソケットには常にこのフラグが与えられているはずです。
@@ -163,7 +163,7 @@
      </tr>
 
      <tr id="constant.stream-server-listen">
-      <td><strong><code>STREAM_SERVER_LISTEN</code></strong> *</td>
+      <td><strong><code>STREAM_SERVER_LISTEN</code></strong></td>
       <td><span class="function"><a href="function.stream-socket-server.html" class="function">stream_socket_server()</a></span> で開かれ、
       <strong><code>STREAM_SERVER_BIND</code></strong> によってターゲットに
       関連付けられたストリームに、ソケットに対して接続待ちを開始するよう
@@ -175,7 +175,7 @@
      </tr>
 
      <tr id="constant.stream-notify-resolve">
-      <td><strong><code>STREAM_NOTIFY_RESOLVE</code></strong> *</td>
+      <td><strong><code>STREAM_NOTIFY_RESOLVE</code></strong></td>
       <td>
        該当するストリームにおいて、リクエストされたリモートのドメイン名の
        解決に成功したか、失敗したことを示します。
@@ -463,12 +463,6 @@
   </table>
 
  </p>
- <blockquote class="note"><p><strong class="note">注意</strong>: 
-  <span class="simpara">
-   <em>*</em> がつけられている定数は
-   PHP 5.0.0 以降で使用可能です。
-  </span>
- </p></blockquote>
  <blockquote class="note"><p><strong class="note">注意</strong>: 
   <span class="simpara">
    <em>+</em> がつけられている定数は PHP 5.1.0 以降で使用可能で、

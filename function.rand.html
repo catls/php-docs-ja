@@ -130,10 +130,19 @@
      </thead>
 
      <tbody class="tbody">
+      
+      <tr>
+       <td>7.2.0</td>
+       <td>
+        <span class="function"><strong>rand()</strong></span> <a href="migration72.incompatible.html#migration72.incompatible.rand-mt_rand-output" class="link">has received a bug fix</a> for a modulo bias bug. This means that sequences generated with a specific seed may differ from PHP 7.1 on 64-bit machines.
+       </td>
+      </tr>
+
       <tr>
        <td>7.1.0</td>
        <td>
-        <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link"><span class="function"><strong>rand()</strong></span> は、<span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> のエイリアスになりました。</a>
+        <span class="function"><strong>rand()</strong></span> は、<span class="function"><a href="function.mt-rand.html" class="function">mt_rand()</a></span> の 
+        <a href="migration71.incompatible.html#migration71.incompatible.rand-srand-aliases" class="link">エイリアスになりました。</a>
        </td>
       </tr>
 
@@ -147,7 +156,7 @@
  <div class="refsect1 examples" id="refsect1-function.rand-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4275">
+   <div class="example" id="example-4277">
     <p><strong>例1 <span class="function"><strong>rand()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

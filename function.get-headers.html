@@ -41,7 +41,8 @@
    <span class="methodname"><strong>get_headers</strong></span>
     ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$url</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$format</code><span class="initializer"> = 0</span></span>
-  ] ) : <span class="type">array</span></div>
+   [, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code></span>
+  ]] ) : <span class="type">array</span></div>
 
   <p class="para rdfs-comment">
    <span class="function"><strong>get_headers()</strong></span> は、HTTP
@@ -82,6 +83,19 @@
      </dd>
 
     
+    
+     <dt>
+<code class="parameter">context</code></dt>
+
+     <dd>
+
+      <p class="para">
+       <span class="function"><a href="function.stream-context-create.html" class="function">stream_context_create()</a></span> 関数で作られた
+       有効なコンテキストリソース
+      </p>
+     </dd>
+
+    
    </dl>
 
   </p>
@@ -112,6 +126,13 @@
 
      <tbody class="tbody">
       <tr>
+       <td>7.1.0</td>
+       <td>
+        <code class="parameter">context</code> パラメーターが追加されました。
+       </td>
+      </tr>
+
+      <tr>
        <td>5.1.3</td>
        <td>
         この関数はデフォルトのストリームコンテキストを使用します。
@@ -131,7 +152,7 @@
  <div class="refsect1 examples" id="refsect1-function.get-headers-examples">
  <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5032">
+   <div class="example" id="example-5035">
     <p><strong>例1 <span class="function"><strong>get_headers()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -172,7 +193,7 @@ Array
 </pre></div>
     </div>
    </div>
-   <div class="example" id="example-5033">
+   <div class="example" id="example-5036">
     <p><strong>例2 <span class="function"><strong>get_headers()</strong></span> で HEAD を使う例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

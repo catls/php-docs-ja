@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>すべての BC 演算関数におけるデフォルトのスケールを設定する</title>
+  <title>すべての BC 演算関数におけるデフォルトのスケールを設定/取得する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="ref.bc.html">BC Math 関数</a></li>
-    <li>すべての BC 演算関数におけるデフォルトのスケールを設定する</li>
+    <li>すべての BC 演算関数におけるデフォルトのスケールを設定/取得する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="function.bcscale" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">bcscale</h1>
-  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">bcscale</span> &mdash; <span class="dc-title">すべての BC 演算関数におけるデフォルトのスケールを設定する</span></p>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">bcscale</span> &mdash; <span class="dc-title">すべての BC 演算関数におけるデフォルトのスケールを設定/取得する</span></p>
 
  </div>
  
@@ -35,11 +35,19 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>bcscale</strong></span>
     ( <span class="methodparam"><span class="type">int</span> <code class="parameter">$scale</code></span>
-   ) : <span class="type">bool</span></div>
+   ) : <span class="type">int</span></div>
 
   <p class="para rdfs-comment">
    デフォルトのスケールを設定します。これ以降、
    BC 演算関数で明示的にスケールを指定しなかった場合にこの値を使用します。
+  </p>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>bcscale</strong></span>
+    ( <span class="methodparam">void</span>
+   ) : <span class="type">int</span></div>
+
+  <p class="para rdfs-comment">
+   現在のスケールを取得します。
   </p>
  </div>
 
@@ -67,18 +75,50 @@
  </div>
 
 
+ 
  <div class="refsect1 returnvalues" id="refsect1-function.bcscale-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   成功した場合に <strong><code>TRUE</code></strong> を、失敗した場合に <strong><code>FALSE</code></strong> を返します。
+   Returns the old scale when used as setter. Otherwise the current scale is returned.
   </p>
  </div>
 
  
+ 
+ <div class="refsect1 changelog" id="refsect1-function.bcscale-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.3.0</td>
+      <td>
+       <span class="function"><strong>bcscale()</strong></span> can now be used to get the current scale
+       factor; when used as setter, it now returns the old scale value.
+       Formerly, <code class="parameter">scale</code> was mandatory, and
+       <span class="function"><strong>bcscale()</strong></span> always returned <strong><code>TRUE</code></strong>.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-function.bcscale-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4192">
+   <div class="example" id="example-4194">
     <p><strong>例1 <span class="function"><strong>bcscale()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

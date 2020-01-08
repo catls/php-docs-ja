@@ -41,6 +41,7 @@
   <p class="para rdfs-comment">
    この関数は、URL の様々な構成要素のうち特定できるものに関して
    連想配列にして返します。
+   連想配列に含まれる要素の値は、URLデコード <em class="emphasis">されません</em>。
   </p>
   <p class="para">
    この関数は、指定された URL が有効かどうかを調べるためのもの
@@ -209,7 +210,7 @@
  <div class="refsect1 examples" id="refsect1-function.parse-url-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-5040">
+   <div class="example" id="example-5043">
     <p><strong>例1 <span class="function"><strong>parse_url()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -252,7 +253,7 @@ string(6) &quot;anchor&quot;
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-5041">
+   <div class="example" id="example-5044">
     <p><strong>例2 <span class="function"><strong>parse_url()</strong></span> でスキームを省略した例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -283,7 +284,7 @@ array(3) {
   <h3 class="title">注意</h3>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    この関数は相対 URL では動作しません。
+    この関数は相対 URL に対しては正しい結果を返さないかもしれません。
    </p>
   </p></blockquote>
   <blockquote class="note"><p><strong class="note">注意</strong>: 

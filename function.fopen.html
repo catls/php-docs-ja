@@ -334,7 +334,8 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
  <div class="refsect1 returnvalues" id="refsect1-function.fopen-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   成功した場合にファイルポインタリソース、エラー時に <strong><code>FALSE</code></strong> を返します。
+   成功した場合にファイルポインタリソース、
+   失敗した場合に <strong><code>FALSE</code></strong> を返します
   </p>
  </div>
 
@@ -342,12 +343,8 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
  <div class="refsect1 errors" id="refsect1-function.fopen-errors">
   <h3 class="title">エラー / 例外</h3>
   <p class="para">
-   オープンが失敗するとこの関数は <strong><code>FALSE</code></strong> を返し、
-   <strong><code>E_WARNING</code></strong>
-   レベルのエラーを発行します。
-   <a href="language.operators.errorcontrol.html" class="link">@</a>
-   を使ってこの warning を抑制することもできます。
-  </p>
+失敗したときは <strong><code>E_WARNING</code></strong> が発生します。
+</p>
  </div>
 
 
@@ -377,17 +374,6 @@ PHP 5.0.0 で追加されました。<em>contexts</em> の説明に関しては�
        <td>
         <em>&#039;c&#039;</em> および <em>&#039;c+&#039;</em>
         が追加されました。
-       </td>
-      </tr>
-
-      <tr>
-       <td>4.3.2</td>
-       <td>
-        PHP 4.3.2 以降では、バイナリモードとテキストモードを区別する全ての
-        プラットフォームにおいて、デフォルトのモードはバイナリにセットされます。
-        アップグレード後にスクリプトに問題が起きた場合は、
-        以上に述べたスクリプトの互換性を確保するまでの次善策として、
-        <em>&#039;t&#039;</em> フラグを試してみてください。
        </td>
       </tr>
 

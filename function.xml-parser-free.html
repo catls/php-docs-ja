@@ -40,6 +40,16 @@
   <p class="para rdfs-comment">
    指定した XML パーサ <code class="parameter">parser</code> を解放します。
   </p>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    パースが終了した際、
+    <span class="function"><strong>xml_parser_free()</strong></span> 関数を呼び出すのに加えて、
+    PHP 7.0.0 以降では
+    オブジェクトがパーサのリソースを参照している場合に、
+    メモリリークを避けるために <code class="parameter">parser</code> の参照を
+    明示的に unset することも必要になっています。
+   </p>
+  </div>
  </div>
 
 

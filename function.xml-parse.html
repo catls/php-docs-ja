@@ -36,7 +36,7 @@
    <span class="methodname"><strong>xml_parse</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$parser</code></span>
    , <span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>
-   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_final</code><span class="initializer"> = false</span></span>
+   [, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$is_final</code><span class="initializer"> = <strong><code>FALSE</code></strong></span></span>
   ] ) : <span class="type">int</span></div>
 
   <p class="para rdfs-comment">
@@ -114,10 +114,32 @@
   </p>
   <blockquote class="note"><p><strong class="note">注意</strong>: 
    <p class="para">
-    エンティティのエラーが報告されるのは、ドキュメントの最後
-    つまり <code class="parameter">is_final</code> が <strong><code>TRUE</code></strong> に設定されている場合です。
+    エンティティのエラーが報告されるのは、ドキュメントの最後で行われます。
+    つまり <code class="parameter">is_final</code> が <strong><code>TRUE</code></strong> に設定されている場合だけです。
    </p>
   </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.xml-parse-examples">
+  <h3 class="title">例</h3>
+  <div class="example" id="example-6787">
+   <p><strong>例1 巨大なXML文書を切り分けてパースする</strong></p>
+   <div class="example-contents"><p>
+     この例は、
+     どのようにして巨大なXML文書を読み取り、チャンクに分けて
+     パースするのかを示しています。
+     これにより、文書全体をメモリに置く必要がないようにします。
+     エラーハンドリングは例を簡単にするため省略しています。
+   </p></div>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$stream&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">'large.xml'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'r'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$parser&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">xml_parser_create</span><span style="color: #007700">();<br /></span><span style="color: #FF8000">//&nbsp;ハンドラをセットアップする<br /></span><span style="color: #007700">while&nbsp;((</span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">fread</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">16384</span><span style="color: #007700">)))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">xml_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$data</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;現在のチャンクをパースする<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">xml_parse</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;パースを終了する<br /></span><span style="color: #0000BB">xml_parser_free</span><span style="color: #007700">(</span><span style="color: #0000BB">$parser</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$stream</span><span style="color: #007700">);</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
  </div>
 
 

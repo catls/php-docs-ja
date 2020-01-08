@@ -97,10 +97,17 @@
  <div class="refsect1 returnvalues" id="refsect1-function.readfile-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   ファイルから読み込んだバイト数を返します。エラーが起こると
-   <strong><code>FALSE</code></strong>を返し、また@<span class="function"><strong>readfile()</strong></span>という名前でコールされない限り、
-   エラーメッセージが表示されます。
+   ファイルから読み込んだバイト数を返します。
+   失敗した場合に <strong><code>FALSE</code></strong> を返します
   </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.readfile-errors">
+  <h3 class="title">エラー / 例外</h3>
+  <p class="para">
+失敗したときは <strong><code>E_WARNING</code></strong> が発生します。
+</p>
  </div>
 
 

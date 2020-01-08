@@ -74,14 +74,6 @@
        改行文字を検出したか、EOF に達したかのいずれかが起こった時点で終了します。
        length が指定されない場合は、行末に達するまで読み続けます。
       </p>
-      <blockquote class="note"><p><strong class="note">注意</strong>: 
-       <p class="para">
-        PHP 4.3.0 より前のバージョンでは、もしこのパラメータが省略された場合、
-        行の長さを 1024 と仮定していました。
-        もしもファイル内の行の多くが 8KB を超えている場合は、
-        行の最大長を指定するとスクリプトのリソース効率がよくなります。
-       </p>
-      </p></blockquote>
      </dd>
 
     
@@ -101,35 +93,6 @@
   </p>
   <p class="para">
    エラーが起こった場合、<strong><code>FALSE</code></strong> を返します。
-  </p>
- </div>
-
-
- <div class="refsect1 changelog" id="refsect1-function.fgets-changelog">
-  <h3 class="title">変更履歴</h3>
-  <p class="para">
-   <table class="doctable informaltable">
-    
-     <thead>
-      <tr>
-       <th>バージョン</th>
-       <th>説明</th>
-      </tr>
-
-     </thead>
-
-     <tbody class="tbody">
-      <tr>
-       <td>4.3.0</td>
-       <td>
-        <span class="function"><strong>fgets()</strong></span> はバイナリセーフとなりました。
-       </td>
-      </tr>
-
-     </tbody>
-    
-   </table>
-
   </p>
  </div>
 

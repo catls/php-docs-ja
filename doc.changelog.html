@@ -30,7 +30,9 @@
     
     <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>PHP 7.1.4</td><td><a href='pdo.sqlitecreatefunction.html'>PDO::sqliteCreateFunction</a></td><td>flags が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='sqlite3.createfunction.html'>SQLite3::createFunction</a></td><td>flags が追加されました。</td></tr></tbody><tbody class="gen-changelog vPHP 7-1-4"><tr><td>PHP 7.0.15, PHP 7.1.1</td><td><a href='function.get-defined-functions.html'>get_defined_functions</a></td><td>exclude_disabled パラメータが追加されました。</td></tr></tbody><tbody class="gen-changelog vPHP 7-0-15, PHP 7-1-1"><tr><td>7.4.0</td><td><a href='function.array-merge.html'>array_merge</a></td><td>この関数は、引数なしでも呼び出せるようになりました。
         このバージョンより前では、少なくともひとつの引数が必須でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-merge-recursive.html'>array_merge_recursive</a></td><td>この関数は、引数なしでも呼び出せるようになりました。
-        このバージョンより前では、少なくともひとつの引数が必須でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-magic-quotes-gpc.html'>get_magic_quotes_gpc</a></td><td>この関数は推奨されなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-magic-quotes-runtime.html'>get_magic_quotes_runtime</a></td><td>この関数は推奨されなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.idn-to-ascii.html'>idn_to_ascii</a></td><td>variant のデフォルト値が
+        このバージョンより前では、少なくともひとつの引数が必須でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.fgetcsv.html'>fgetcsv</a></td><td>The escape parameter now also accepts an empty
+        string to disable the proprietary escape mechanism.</td></tr><tr><td>&nbsp;</td><td><a href='function.fputcsv.html'>fputcsv</a></td><td>The escape_char parameter now also accepts an empty
+        string to disable the proprietary escape mechanism.</td></tr><tr><td>&nbsp;</td><td><a href='function.get-magic-quotes-gpc.html'>get_magic_quotes_gpc</a></td><td>この関数は推奨されなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-magic-quotes-runtime.html'>get_magic_quotes_runtime</a></td><td>この関数は推奨されなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.idn-to-ascii.html'>idn_to_ascii</a></td><td>variant のデフォルト値が
         INTL_IDNA_VARIANT_UTS46 となり、
         その代わりに INTL_IDNA_VARIANT_2003 は非推奨となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.idn-to-utf8.html'>idn_to_utf8</a></td><td>variant のデフォルト値が
         INTL_IDNA_VARIANT_UTS46 となり、
@@ -42,7 +44,12 @@
         空文字列を、プロプライエタリなエスケープ機構を無効にするシグナルとして解釈するようになりました。
         これより前のバージョンでは、空文字列はデフォルト値のように扱われていました。</td></tr></tbody><tbody class="gen-changelog v7-4-0"><tr><td>7.3.0</td><td><a href='function.apache-request-headers.html'>apache_request_headers</a></td><td>FPM SAPI でもこの関数が使えるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-push.html'>array_push</a></td><td>この関数は、1 つのパラメータでのみ呼び出すことができるようになりました。
         前は、少なくとも 2 つのパラメータが必要でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-unshift.html'>array_unshift</a></td><td>この関数は、1 つのパラメータでのみ呼び出すことができるようになりました。
-        前は、少なくとも 2 つのパラメータが必要でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.compact.html'>compact</a></td><td>compact は、与えられた文字列が示す変数が未定義の場合、
+        前は、少なくとも 2 つのパラメータが必要でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.bcmul.html'>bcmul</a></td><td>bcmul now returns numbers with the requested scale.
+       Formerly, the returned numbers may have omitted trailing decimal zeroes.</td></tr><tr><td>&nbsp;</td><td><a href='function.bcpow.html'>bcpow</a></td><td>bcpow now returns numbers with the requested scale.
+       Formerly, the returned numbers may have omitted trailing decimal zeroes.</td></tr><tr><td>&nbsp;</td><td><a href='function.bcscale.html'>bcscale</a></td><td>bcscale can now be used to get the current scale
+       factor; when used as setter, it now returns the old scale value.
+       Formerly, scale was mandatory, and
+       bcscale always returned TRUE.</td></tr><tr><td>&nbsp;</td><td><a href='function.compact.html'>compact</a></td><td>compact は、与えられた文字列が示す変数が未定義の場合、
        E_NOTICE レベルのエラーを発行するようになりました。
        以前のバージョンでは、設定されていない全ての文字列は、単にスキップされます。</td></tr><tr><td>&nbsp;</td><td><a href='function.getallheaders.html'>getallheaders</a></td><td>FPM SAPI でもこの関数が使えるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.is-countable.html'>is_countable</a></td><td>is_countable が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-decode.html'>json_decode</a></td><td>options パラメータに
         JSON_THROW_ON_ERROR
@@ -57,7 +64,9 @@
        そうするには、全てのハンドルが閉じられている必要があります。</td></tr><tr><td>&nbsp;</td><td><a href='function.xml-set-external-entity-ref-handler.html'>xml_set_external_entity_ref_handler</a></td><td>拡張モジュールが libxml を使ってビルドされた場合には、コールバック
        handler
        の戻り値が無視されることはなくなりました。
-       このバージョン以前はコールバックの戻り値が無視され、パースが止まりませんでした。</td></tr></tbody><tbody class="gen-changelog v7-3-0"><tr><td>7.3</td><td><a href='function.ldap-exop.html'>ldap_exop</a></td><td>Support for serverctrls added</td></tr><tr><td>&nbsp;</td><td><a href='function.ldap-exop-passwd.html'>ldap_exop_passwd</a></td><td>Support for serverctrls added</td></tr><tr><td>&nbsp;</td><td><a href='function.ldap-modify-batch.html'>ldap_modify_batch</a></td><td>Support for serverctrls added</td></tr></tbody><tbody class="gen-changelog v7-3"><tr><td>7.2.18, 7.3.5</td><td><a href='function.substr-compare.html'>substr_compare</a></td><td>offset の値は、
+       このバージョン以前はコールバックの戻り値が無視され、パースが止まりませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='function.xml-set-external-entity-ref-handler.html'>xml_set_external_entity_ref_handler</a></td><td>拡張機能が libxml を使ってビルドされていた場合、
+       handler の戻り値は無視されることはなくなりました。
+       これより前のバージョンでは、戻り値が無視されていた上、パースが止まりませんでした。</td></tr></tbody><tbody class="gen-changelog v7-3-0"><tr><td>7.3</td><td><a href='function.ldap-exop.html'>ldap_exop</a></td><td>Support for serverctrls added</td></tr><tr><td>&nbsp;</td><td><a href='function.ldap-exop-passwd.html'>ldap_exop_passwd</a></td><td>Support for serverctrls added</td></tr><tr><td>&nbsp;</td><td><a href='function.ldap-modify-batch.html'>ldap_modify_batch</a></td><td>Support for serverctrls added</td></tr></tbody><tbody class="gen-changelog v7-3"><tr><td>7.2.18, 7.3.5</td><td><a href='function.substr-compare.html'>substr_compare</a></td><td>offset の値は、
         main_str の長さと等しくても問題なくなりました。</td></tr></tbody><tbody class="gen-changelog v7-2-18, 7-3-5"><tr><td>7.2.0</td><td><a href='function.array-unique.html'>array_unique</a></td><td>sort_flags が SORT_STRING の場合、
         新しい配列が生成され、ユニークな要素が追加されるようになりました。
         これによって、異なった数値のインデックスが振られる可能性があります。
@@ -67,7 +76,10 @@
         assert.active
         と zend.assertions が
         両方 1 に設定されると、
-        E_DEPRECATED レベルの警告が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.count.html'>count</a></td><td>count 関数は、
+        E_DEPRECATED レベルの警告が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.bcmod.html'>bcmod</a></td><td>The scale parameter was added.</td></tr><tr><td>&nbsp;</td><td><a href='function.bcmod.html'>bcmod</a></td><td>dividend and divisor are no
+       longer truncated to integer, so now the behavior of
+       bcmod follows fmod rather than
+       the % operator.</td></tr><tr><td>&nbsp;</td><td><a href='function.count.html'>count</a></td><td>count 関数は、
        array_or_countable パラメータに、
        不正な Countable 型を渡した場合に
        警告を発生させるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date-parse.html'>date_parse</a></td><td>返される配列の zone 要素が、
@@ -98,14 +110,14 @@
        このバージョンより前では、string のみがサポートされていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-convert-encoding.html'>mb_convert_encoding</a></td><td>この関数は、 val に
        array を受け入れるようになりました。
        これより前のバージョンでは、 string のみがサポートされていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-send-mail.html'>mb_send_mail</a></td><td>additional_headers パラメータは、
-        array も受け付けるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.number-format.html'>number_format</a></td><td>number_format は、
+        array も受け付けるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-rand.html'>mt_rand</a></td><td>mt_rand has received a bug fix for a modulo bias bug. This means that sequences generated with a specific seed may differ from PHP 7.1 on 64-bit machines.</td></tr><tr><td>&nbsp;</td><td><a href='function.number-format.html'>number_format</a></td><td>number_format は、
         -0 を返さないように変更されました。
         これより前のバージョンでは、
         number が -0.01 
         のようなケースで -0 が返される場合がありました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-pkcs7-verify.html'>openssl_pkcs7_verify</a></td><td>p7bfilename パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.parse-str.html'>parse_str</a></td><td>parse_str関数を
         第二引数を指定せずに使うと
         E_DEPRECATED レベルの警告が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.password-hash.html'>password_hash</a></td><td>PASSWORD_ARGON2I を使った、
-        Argon2i パスワードのサポートが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.proc-nice.html'>proc_nice</a></td><td>この関数は、Windows で利用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.read-exif-data.html'>read_exif_data</a></td><td>This function alias was deprecated.</td></tr><tr><td>&nbsp;</td><td><a href='function.session-abort.html'>session_abort</a></td><td>この関数の返り値の型は bool になりました。
+        Argon2i パスワードのサポートが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.proc-nice.html'>proc_nice</a></td><td>この関数は、Windows で利用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.rand.html'>rand</a></td><td>rand has received a bug fix for a modulo bias bug. This means that sequences generated with a specific seed may differ from PHP 7.1 on 64-bit machines.</td></tr><tr><td>&nbsp;</td><td><a href='function.read-exif-data.html'>read_exif_data</a></td><td>This function alias was deprecated.</td></tr><tr><td>&nbsp;</td><td><a href='function.session-abort.html'>session_abort</a></td><td>この関数の返り値の型は bool になりました。
        以前は void でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.session-module-name.html'>session_module_name</a></td><td>モジュール名に &quot;user&quot; を設定することは、
        明示的に禁止されるようになりました。
        これより前のバージョンでは、
@@ -123,12 +135,16 @@
        以前は void でした。</td></tr><tr><td>&nbsp;</td><td><a href='function.set-error-handler.html'>set_error_handler</a></td><td>errcontext が非推奨になりました。
         このパラメーターを使うと、
         E_DEPRECATED レベルの警告が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.unpack.html'>unpack</a></td><td>float および double 型は、
-        ビッグエンディアンとリトルエンディアンの両方をサポートします。</td></tr><tr><td>&nbsp;</td><td><a href='sqlite3.openblob.html'>SQLite3::openBlob</a></td><td>The flags parameter has been added, allowing to
-       write BLOBs; formerly only reading was supported.</td></tr></tbody><tbody class="gen-changelog v7-2-0"><tr><td>7.1.0</td><td><a href='dateinterval.format.html'>DateInterval::format</a></td><td>フォーマット文字 F と f が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='datetime.settime.html'>DateTime::setTime</a></td><td>microseconds パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-rand.html'>array_rand</a></td><td>内部的なランダム化アルゴリズムは、
+        ビッグエンディアンとリトルエンディアンの両方をサポートします。</td></tr><tr><td>&nbsp;</td><td><a href='function.utf8-decode.html'>utf8_decode</a></td><td>この関数は PHP のコアに移動しました。
+        よって、XML拡張機能でこの関数のために必要とされていた条件は撤廃されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.utf8-encode.html'>utf8_encode</a></td><td>この関数は PHP のコアに移動しました。
+        よって、XML拡張機能でこの関数のために必要とされていた条件は撤廃されました。</td></tr><tr><td>&nbsp;</td><td><a href='sqlite3.openblob.html'>SQLite3::openBlob</a></td><td>The flags parameter has been added, allowing to
+       write BLOBs; formerly only reading was supported.</td></tr></tbody><tbody class="gen-changelog v7-2-0"><tr><td>7.1.24, 7.2.12, 7.3.0</td><td><a href='function.xml-parser-get-option.html'>xml_parser_get_option</a></td><td>options が
+       新たに XML_OPTION_SKIP_TAGSTART
+       と XML_OPTION_SKIP_WHITE をサポートしました。</td></tr></tbody><tbody class="gen-changelog v7-1-24, 7-2-12, 7-3-0"><tr><td>7.1.0</td><td><a href='dateinterval.format.html'>DateInterval::format</a></td><td>フォーマット文字 F と f が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='datetime.settime.html'>DateTime::setTime</a></td><td>microseconds パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-rand.html'>array_rand</a></td><td>内部的なランダム化アルゴリズムは、
         libc の rand 関数ではなく、
         メルセンヌツイスタ
         乱数生成器を使うように
-        変更されました</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-multi-setopt.html'>curl_multi_setopt</a></td><td>CURLMOPT_PUSHFUNCTION が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.exif-imagetype.html'>exif_imagetype</a></td><td>WebP をサポートしました</td></tr><tr><td>&nbsp;</td><td><a href='function.file-get-contents.html'>file_get_contents</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getenv.html'>getenv</a></td><td>varname は、すべての環境変数の連想配列を取得するために
+        変更されました</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-multi-setopt.html'>curl_multi_setopt</a></td><td>CURLMOPT_PUSHFUNCTION が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.exif-imagetype.html'>exif_imagetype</a></td><td>WebP をサポートしました</td></tr><tr><td>&nbsp;</td><td><a href='function.file-get-contents.html'>file_get_contents</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-headers.html'>get_headers</a></td><td>context パラメーターが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getenv.html'>getenv</a></td><td>varname は、すべての環境変数の連想配列を取得するために
        省略することができるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getimagesize.html'>getimagesize</a></td><td>WebP に対応しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>optind パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.grapheme-extract.html'>grapheme_extract</a></td><td>負の start をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.grapheme-stripos.html'>grapheme_stripos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.grapheme-strpos.html'>grapheme_strpos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.iconv-strpos.html'>iconv_strpos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-decode.html'>json_decode</a></td><td>空の JSONキー  (&quot;&quot;) は、
         _empty_ というキーではなく、
         空のオブジェクトプロパティにエンコードされるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>double 値をエンコードする際に、
@@ -139,10 +155,14 @@
        regs を空の配列とするようになりました。
        以前は regs を変更しませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-ereg-replace.html'>mb_ereg_replace</a></td><td>e 修飾子が非推奨になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-ereg-search-setpos.html'>mb_ereg_search_setpos</a></td><td>負の position をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-eregi.html'>mb_eregi</a></td><td>mb_eregi will now set regs to
        an empty array, if nothing matched. Formerly,
-       regs was not modified in that case.</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-eregi-replace.html'>mb_eregi_replace</a></td><td>e 修飾子が非推奨になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-strimwidth.html'>mb_strimwidth</a></td><td>負の start と width をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-stripos.html'>mb_stripos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-strpos.html'>mb_strpos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-rand.html'>mt_rand</a></td><td>mt_randhas been updated to use the fixed, correct, version of
-         the メルセンヌ・ツイスター algorithm. To fall back to the old behaviour, use mt_srand with MT_RAND_PHP as the second paramter.</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-rand.html'>mt_rand</a></td><td>rand は、mt_rand のエイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-srand.html'>mt_srand</a></td><td>mt_rand は、正しく修正されたメルセンヌ・ツイスター・アルゴリズムを使用するように 更新されました。
+       regs was not modified in that case.</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-eregi-replace.html'>mb_eregi_replace</a></td><td>e 修飾子が非推奨になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-strimwidth.html'>mb_strimwidth</a></td><td>負の start と width をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-stripos.html'>mb_stripos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mb-strpos.html'>mb_strpos</a></td><td>負の offset をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-rand.html'>mt_rand</a></td><td>rand は、mt_rand の 
+        エイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-rand.html'>mt_rand</a></td><td>mt_rand は、固定の、正しいバージョンのメルセンヌツイスタ の アルゴリズム を使うように
+        更新されました。
+        古い振る舞いに戻すには、
+        mt_srand 関数の第二引数に
+        MT_RAND_PHP を指定して使ってください。</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-srand.html'>mt_srand</a></td><td>srand は、mt_srand の エイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-srand.html'>mt_srand</a></td><td>mt_rand は、正しく修正されたメルセンヌ・ツイスター・アルゴリズムを使用するように 更新されました。
         以前のアルゴリズムに戻すには、mt_srand に MT_RAND_PHP を
-        第 2 引数として指定してください。</td></tr><tr><td>&nbsp;</td><td><a href='function.mt-srand.html'>mt_srand</a></td><td>srand は、mt_srand の エイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-decrypt.html'>openssl_decrypt</a></td><td>tag および aad パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-encrypt.html'>openssl_encrypt</a></td><td>tag、aad および
+        第 2 引数として指定してください。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-decrypt.html'>openssl_decrypt</a></td><td>tag および aad パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-encrypt.html'>openssl_encrypt</a></td><td>tag、aad および
        tag_length パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.output-add-rewrite-var.html'>output_add_rewrite_var</a></td><td>PHP 7.1.0 より前のバージョンでは、output_add_rewrite_var
         で設定したリライト変数は、透過的セッションID出力バッファと同じセッションモジュールを使っていました。
         PHP 7.1.0 以降では、専用の出力バッファを用いるようになりました。
@@ -155,12 +175,15 @@
         output_add_rewrite_var.
         で定義したリライト変数だけを削除するようになります。</td></tr><tr><td>&nbsp;</td><td><a href='function.pcntl-signal.html'>pcntl_signal</a></td><td>PHP 7.1.0以降、ハンドラコールバックは特定のシグナルの signinfo を含む 2 番目の引数を与えられます。
         このデータは、OS が signinfo_t 構造体を持つ場合のみ提供されます。
-        OS が siginfo_t を実装していない場合は NULL が提供されます。</td></tr><tr><td>&nbsp;</td><td><a href='function.pcntl-signal-get-handler.html'>pcntl_signal_get_handler</a></td><td>pcntl_signal_get_handler has been added.</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-fetch-all.html'>pg_fetch_all</a></td><td>result_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-last-notice.html'>pg_last_notice</a></td><td>option パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-select.html'>pg_select</a></td><td>result_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.rand.html'>rand</a></td><td>rand は、mt_rand のエイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.session-start.html'>session_start</a></td><td>セッションを開始できなかった場合、
+        OS が siginfo_t を実装していない場合は NULL が提供されます。</td></tr><tr><td>&nbsp;</td><td><a href='function.pcntl-signal-get-handler.html'>pcntl_signal_get_handler</a></td><td>pcntl_signal_get_handler has been added.</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-fetch-all.html'>pg_fetch_all</a></td><td>result_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-last-notice.html'>pg_last_notice</a></td><td>option パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-select.html'>pg_select</a></td><td>result_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.rand.html'>rand</a></td><td>rand は、mt_rand の 
+        エイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.session-start.html'>session_start</a></td><td>セッションを開始できなかった場合、
         session_start は、FALSE を返し、
         $_SESSION を初期化しないようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.shuffle.html'>shuffle</a></td><td>内部的なランダム化のアルゴリズムが、
         libc の rand 関数ではなく、
         メルセンヌツイスタ 乱数生成器
-        を使うように 変更されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.srand.html'>srand</a></td><td>srand は、mt_srand のエイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.str-shuffle.html'>str_shuffle</a></td><td>内部的なランダム化アルゴリズムは、
+        を使うように 変更されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.srand.html'>srand</a></td><td>srand は、
+        mt_srand の
+        エイリアスになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.str-shuffle.html'>str_shuffle</a></td><td>内部的なランダム化アルゴリズムは、
         libc の rand 関数ではなく、
         メルセンヌツイスタ
         乱数生成器を使うように
@@ -221,9 +244,9 @@
         (07, 0xff, .1, -.1) のような形式を拒み、
         全レベルで ([1.], [1.e1]) のような形式を拒否します。</td></tr><tr><td>&nbsp;</td><td><a href='function.key.html'>key</a></td><td>array は常に値で渡されるようになりました。
         このバージョンより前は、可能な場合は参照で、それ以外の場合は値で
-        渡されていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.list.html'>list</a></td><td>list の式をまったくの空にすることはできなくなりました
-        。</td></tr><tr><td>&nbsp;</td><td><a href='function.list.html'>list</a></td><td>代入操作が行われる順番が変わりました
+        渡されていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.list.html'>list</a></td><td>代入操作が行われる順番が変わりました
         。</td></tr><tr><td>&nbsp;</td><td><a href='function.list.html'>list</a></td><td>文字列は扱えなくなりました
+        。</td></tr><tr><td>&nbsp;</td><td><a href='function.list.html'>list</a></td><td>list の式をまったくの空にすることはできなくなりました
         。</td></tr><tr><td>&nbsp;</td><td><a href='function.mcrypt-generic-end.html'>mcrypt_generic_end</a></td><td>mcrypt_generic_end 関数が削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>is_dst パラメータが削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ob-start.html'>ob_start</a></td><td>ob_start を出力バッファコールバックの内部で使う場合、
         この関数は E_ERROR の代わりに
         E_RECOVERABLE_ERROR を発行して、カスタムエラーハンドラで対応できるようにします。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-open.html'>openssl_open</a></td><td>iv が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-seal.html'>openssl_seal</a></td><td>iv が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.parse-ini-file.html'>parse_ini_file</a></td><td>ハッシュマーク (#) をコメントとみなさないようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-replace.html'>preg_replace</a></td><td>/e 修飾子をサポートしなくなりました。かわりに
@@ -247,7 +270,7 @@
         これより前のバージョンの PHP 5.6 では、間違った DES ハッシュを返していました。</td></tr></tbody><tbody class="gen-changelog v5-6-5"><tr><td>5.6.3</td><td><a href='function.pack.html'>pack</a></td><td>&quot;q&quot;、&quot;Q&quot;、&quot;J&quot;、&quot;P&quot; が追加され、64ビットの数値が使えるようになりました。</td></tr></tbody><tbody class="gen-changelog v5-6-3"><tr><td>5.6.1</td><td><a href='function.parse-ini-file.html'>parse_ini_file</a></td><td>INI_SCANNER_TYPED モードが新たに追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.sem-acquire.html'>sem_acquire</a></td><td>$nowait パラメータが追加されました。</td></tr></tbody><tbody class="gen-changelog v5-6-1"><tr><td>5.6.0</td><td><a href='function.array-fill.html'>array_fill</a></td><td>num にゼロを指定できるようになりました。これより前のバージョンでは、
         num には正の数しか指定できませんでした。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-filter.html'>array_filter</a></td><td>オプションのパラメータ flag と、定数
        ARRAY_FILTER_USE_KEY および
-       ARRAY_FILTER_USE_BOTH が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>salt を省略下場合に E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_SAFE_UPLOAD のデフォルトが TRUE になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_CLOSEPOLICY およびそれに関連する値が削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.hash-algos.html'>hash_algos</a></td><td>gost-crypto のサポートが追加されました。GOST ハッシュ関数の実装には、
+       ARRAY_FILTER_USE_BOTH が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>salt を省略下場合に E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_CLOSEPOLICY およびそれに関連する値が削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_SAFE_UPLOAD のデフォルトが TRUE になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.hash-algos.html'>hash_algos</a></td><td>gost-crypto のサポートが追加されました。GOST ハッシュ関数の実装には、
         RFC 4357, section 11.2
         で定義されている CryptoPro S-box テーブルを使っています。</td></tr><tr><td>&nbsp;</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>encoding パラメータのデフォルト値が、
    default_charset の設定値に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>encoding パラメータのデフォルト値が、
@@ -267,9 +290,9 @@
         PGSQL_CONNECT_ASYNC が指定できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-convert.html'>pg_convert</a></td><td>実験的な関数ではなくなりました。Boolean/NULL をサポートするようになりました。
         未知のデータ型やサポートしていないデータ型は、バリデーションなしにエスケープします。
         pg_convert は任意のデータ型で使えるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-delete.html'>pg_delete</a></td><td>実験的な関数ではなくなりました。定数 PGSQL_DML_ESCAPE が追加されました。
+        TRUE/FALSE や NULL をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-insert.html'>pg_insert</a></td><td>実験的な関数ではなくなりました。定数 PGSQL_DML_ESCAPE が追加されました。
         TRUE/FALSE や NULL をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-insert.html'>pg_insert</a></td><td>PGSQL_DML_STRING が渡されない限り、
-        この関数は、成功時に TRUE の代わりに接続リソースを返します。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-insert.html'>pg_insert</a></td><td>実験的な関数ではなくなりました。定数 PGSQL_DML_ESCAPE が追加されました。
-        TRUE/FALSE や NULL をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-lo-seek.html'>pg_lo_seek</a></td><td>PostgreSQL 9.3 以降での 64 ビットラージオブジェクトに対応しました。
+        この関数は、成功時に TRUE の代わりに接続リソースを返します。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-lo-seek.html'>pg_lo_seek</a></td><td>PostgreSQL 9.3 以降での 64 ビットラージオブジェクトに対応しました。
         これを使うには、クライアントとサーバーがいずれも PostgreSQL 9.3 以降であることと、
         PHP が 64 ビット版であることが必要です。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-lo-tell.html'>pg_lo_tell</a></td><td>PostgreSQL 9.3 以降での 64 ビットラージオブジェクトに対応しました。
         これを使うには、クライアントとサーバーがいずれも PostgreSQL 9.3 以降であることと、
@@ -277,8 +300,8 @@
         support PostgreSQL 9.3 and PHP must be 64bit build to use 64bit large object.</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-meta-data.html'>pg_meta_data</a></td><td>実験的な関数ではなくなりました。デフォルト属性として &quot;is enum&quot; が追加されました。
         extended フラグが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-select.html'>pg_select</a></td><td>実験的な関数ではなくなりました。定数 PGSQL_DML_ESCAPE が追加されました。
         TRUE/FALSE や NULL をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pg-update.html'>pg_update</a></td><td>実験的な関数ではなくなりました。定数 PGSQL_DML_ESCAPE が追加されました。
-        TRUE/FALSE や NULL をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-socket-enable-crypto.html'>stream_socket_enable_crypto</a></td><td>crypto_type がオプションになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-socket-enable-crypto.html'>stream_socket_enable_crypto</a></td><td>STREAM_CRYPTO_METHOD_ANY_CLIENT, STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT, STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT, STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT, STREAM_CRYPTO_METHOD_ANY_SERVER, STREAM_CRYPTO_METHOD_TLSv1_0_SERVER, STREAM_CRYPTO_METHOD_TLSv1_1_SERVER, STREAM_CRYPTO_METHOD_TLSv1_2_SERVER
-        が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.unserialize.html'>unserialize</a></td><td>シリアライズされたデータを改変して C: を
+        TRUE/FALSE や NULL をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-socket-enable-crypto.html'>stream_socket_enable_crypto</a></td><td>STREAM_CRYPTO_METHOD_ANY_CLIENT, STREAM_CRYPTO_METHOD_TLSv1_0_CLIENT, STREAM_CRYPTO_METHOD_TLSv1_1_CLIENT, STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT, STREAM_CRYPTO_METHOD_ANY_SERVER, STREAM_CRYPTO_METHOD_TLSv1_0_SERVER, STREAM_CRYPTO_METHOD_TLSv1_1_SERVER, STREAM_CRYPTO_METHOD_TLSv1_2_SERVER
+        が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-socket-enable-crypto.html'>stream_socket_enable_crypto</a></td><td>crypto_type がオプションになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.unserialize.html'>unserialize</a></td><td>シリアライズされたデータを改変して C: を
         O: に置き換え、オブジェクトのインスタンス化の際にコンストラクタを呼ばないようにしたものは、
         処理に失敗するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='reflectionclass.newinstancewithoutconstructor.html'>ReflectionClass::newInstanceWithoutConstructor</a></td><td>すべての内部クラスをインスタンス化できるようになりました。ただし
         final 宣言されたクラスは例外です。</td></tr><tr><td>&nbsp;</td><td><a href='xmlreader.getattributeno.html'>XMLReader::getAttributeNo</a></td><td>XMLReader::getAttributeNo は、
@@ -321,15 +344,15 @@
         CURLINFO_RTSP_CLIENT_CSEQ、
         CURLINFO_RTSP_CSEQ_RECV、
         CURLINFO_RTSP_SERVER_CSEQ および
-        CURLINFO_RTSP_SESSION_ID が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_SHARE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>cURL リソースを、
-        CURLOPT_PROGRESSFUNCTION コールバックの最初の引数として渡すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.empty.html'>empty</a></td><td>empty が、変数だけではなく式にも対応するようになりました。
+        CURLINFO_RTSP_SESSION_ID が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>cURL リソースを、
+        CURLOPT_PROGRESSFUNCTION コールバックの最初の引数として渡すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.curl-setopt.html'>curl_setopt</a></td><td>CURLOPT_SHARE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.empty.html'>empty</a></td><td>empty が、変数だけではなく式にも対応するようになりました。
          variables.</td></tr><tr><td>&nbsp;</td><td><a href='function.imagerotate.html'>imagerotate</a></td><td>ignore_transparent が無視されるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagerotate.html'>imagerotate</a></td><td>imagesetinterpolation 関数で設定した補間方式の影響を受けるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ip2long.html'>ip2long</a></td><td>このバージョンより前は、Windows において、IPv4 のドット形式のアドレスでなくても
         ip2long が有効な数値を返すことがありました。</td></tr><tr><td>&nbsp;</td><td><a href='function.iterator-to-array.html'>iterator_to_array</a></td><td>iterator_to_array で
         use_keys パラメータを有効にしたときの、
-        integer や string 以外の型に対するサポートを強化しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>失敗した場合の戻り値が 
+        integer や string 以外の型に対するサポートを強化しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>パラメータ depth が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>失敗した場合の戻り値が 
         文字列 null
         から FALSE に変更されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>options パラメータに 
-        JSON_PARTIAL_OUTPUT_ON_ERROR が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>パラメータ depth が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-connect.html'>mysql_connect</a></td><td>この関数は E_DEPRECATED エラーを発するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-db-name.html'>mysql_db_name</a></td><td>mysql_list_dbs 関数は非推奨となり、
+        JSON_PARTIAL_OUTPUT_ON_ERROR が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-connect.html'>mysql_connect</a></td><td>この関数は E_DEPRECATED エラーを発するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-db-name.html'>mysql_db_name</a></td><td>mysql_list_dbs 関数は非推奨となり、
         E_DEPRECATED レベルのエラーが発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-pconnect.html'>mysql_pconnect</a></td><td>この関数は E_DEPRECATED エラーを発するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mysql-tablename.html'>mysql_tablename</a></td><td>mysql_tablename 関数は非推奨となり、
         E_DEPRECATED レベルのエラーが発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.pack.html'>pack</a></td><td>&quot;Z&quot; が追加されました。Perl の &quot;a&quot; と互換性のある機能です。</td></tr><tr><td>&nbsp;</td><td><a href='function.php-logo-guid.html'>php_logo_guid</a></td><td>php_logo_guid は PHP から削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.phpinfo.html'>phpinfo</a></td><td>ロゴの GUID がデータ URI に置き換わりました。そのため、expose_php をオフにしても
         phpinfo() の結果には何も影響が出なくなりました。クレジットも、リンクではなく出力に埋め込まれるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-replace.html'>preg_replace</a></td><td>/e 修飾子が非推奨になりました。かわりに
@@ -370,9 +393,9 @@
         以前は、PHP が Apache モジュールあるいは
         Netscape/iPlanet/SunONE の NSAPI サーバーモジュール としてインストールされた時だけサポートされました。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-combine.html'>array_combine</a></td><td>これまでのバージョンでは、空の配列に対しては E_WARNING
         を発生させて FALSE を返していました。</td></tr><tr><td>&nbsp;</td><td><a href='function.array-multisort.html'>array_multisort</a></td><td>arg で指定できるソートフラグに
-        SORT_NATURAL と SORT_FLAG_CASE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date-default-timezone-get.html'>date_default_timezone_get</a></td><td>タイムゾーンの判定時に、OS から得られる情報に頼らないようになりました。
-        推測に基づくタイムゾーンは信頼できないからです。</td></tr><tr><td>&nbsp;</td><td><a href='function.date-default-timezone-get.html'>date_default_timezone_get</a></td><td>タイムゾーンの判定時に環境変数 TZ
-        を使わなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.debug-backtrace.html'>debug_backtrace</a></td><td>オプションのパラメータ limit が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.debug-print-backtrace.html'>debug_print_backtrace</a></td><td>オプションのパラメータ limit が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.define-syslog-variables.html'>define_syslog_variables</a></td><td>この関数は PHP から削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>raw パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.empty.html'>empty</a></td><td>文字列のオフセットに非数値を指定した場合は TRUE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.error-reporting.html'>error_reporting</a></td><td>E_STRICT が E_ALL に含まれるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.filter-input-array.html'>filter_input_array</a></td><td>add_empty パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.filter-var-array.html'>filter_var_array</a></td><td>add_empty パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>定数 ENT_HTML401、ENT_XML1、
+        SORT_NATURAL と SORT_FLAG_CASE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date-default-timezone-get.html'>date_default_timezone_get</a></td><td>タイムゾーンの判定時に環境変数 TZ
+        を使わなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date-default-timezone-get.html'>date_default_timezone_get</a></td><td>タイムゾーンの判定時に、OS から得られる情報に頼らないようになりました。
+        推測に基づくタイムゾーンは信頼できないからです。</td></tr><tr><td>&nbsp;</td><td><a href='function.debug-backtrace.html'>debug_backtrace</a></td><td>オプションのパラメータ limit が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.debug-print-backtrace.html'>debug_print_backtrace</a></td><td>オプションのパラメータ limit が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.define-syslog-variables.html'>define_syslog_variables</a></td><td>この関数は PHP から削除されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>raw パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.empty.html'>empty</a></td><td>文字列のオフセットに非数値を指定した場合は TRUE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.error-reporting.html'>error_reporting</a></td><td>E_STRICT が E_ALL に含まれるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.filter-input-array.html'>filter_input_array</a></td><td>add_empty パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.filter-var-array.html'>filter_var_array</a></td><td>add_empty パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>定数 ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-html-translation-table.html'>get_html_translation_table</a></td><td>encoding パラメータのデフォルトが UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-magic-quotes-gpc.html'>get_magic_quotes_gpc</a></td><td>マジッククォート機能は削除され、常に FALSE 返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-magic-quotes-runtime.html'>get_magic_quotes_runtime</a></td><td>マジッククォート機能は削除され、常に FALSE 返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getallheaders.html'>getallheaders</a></td><td>この関数は、FastCGI で使用可能になりました。
         以前は、PHP が Apache モジュールあるいは
         Netscape/iPlanet/SunONE の NSAPI サーバーモジュール としてインストールされた時だけサポートされました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gzcompress.html'>gzcompress</a></td><td>encoding パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gzdeflate.html'>gzdeflate</a></td><td>encoding パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gzencode.html'>gzencode</a></td><td>FORCE_DEFLATE が RFC 1950 準拠の出力を生成するようになりました。
@@ -380,18 +403,18 @@
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>encoding パラメータのデフォルトが
         UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
         ENT_HTML401、ENT_XML1、
-        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
-        ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>encoding パラメータのデフォルトが
-        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars-decode.html'>htmlspecialchars_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
+        UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_SUBSTITUTE、ENT_DISALLOWED、
+        ENT_HTML401、ENT_XML1、
+        ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars-decode.html'>htmlspecialchars_decode</a></td><td>定数 ENT_HTML401、ENT_XML1、
         ENT_XHTML および ENT_HTML5 が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.http-build-query.html'>http_build_query</a></td><td>enc_type パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.iconv.html'>iconv</a></td><td>このバージョン以降は、出力文字セットに //IGNORE が指定されていない限り、
          無効な文字に対して FALSE を返すようになりました。
          以前のバージョンでは、出力文字列の一部だけを返していました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagecolorset.html'>imagecolorset</a></td><td>alpha パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagegd.html'>imagegd</a></td><td>ストリームリソースを
         to に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagegd2.html'>imagegd2</a></td><td>ストリームリソースを
         to に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagegif.html'>imagegif</a></td><td>ストリームリソースを
-        to に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagejpeg.html'>imagejpeg</a></td><td>空文字列を to に渡して
-        この引数をスキップすることはできなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagejpeg.html'>imagejpeg</a></td><td>ストリームリソースを to
-        に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagepng.html'>imagepng</a></td><td>ストリームリソースを
+        to に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagejpeg.html'>imagejpeg</a></td><td>ストリームリソースを to
+        に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagejpeg.html'>imagejpeg</a></td><td>空文字列を to に渡して
+        この引数をスキップすることはできなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagepng.html'>imagepng</a></td><td>ストリームリソースを
         to に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagewbmp.html'>imagewbmp</a></td><td>ストリームリソースを
         to に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagewebp.html'>imagewebp</a></td><td>ストリームリソースを
         to に渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.isset.html'>isset</a></td><td>文字列のオフセットに非数値を指定した場合は FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-decode.html'>json_decode</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>options パラメータに 
@@ -446,10 +469,10 @@
         value パラメータに渡せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='mysqli-driver.report-mode.html'>mysqli_driver::$report_mode</a></td><td>レポートモードがプロセス単位ではなくリクエスト単位に変わりました。</td></tr></tbody><tbody class="gen-changelog v5-3-4"><tr><td>5.3.3</td><td><a href='domxpath.evaluate.html'>DOMXPath::evaluate</a></td><td>registerNodeNS パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='domxpath.query.html'>DOMXPath::query</a></td><td>registerNodeNS パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>デフォルトのエンコーディングが ISO-8859-1 から UTF-8 に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imap-fetch-overview.html'>imap_fetch_overview</a></td><td>udate プロパティが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>options パラメータに 
         JSON_NUMERIC_CHECK が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ldap-sasl-bind.html'>ldap_sasl_bind</a></td><td>Windows をサポートするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-decrypt.html'>openssl_decrypt</a></td><td>iv パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-encrypt.html'>openssl_encrypt</a></td><td>iv パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.parse-url.html'>parse_url</a></td><td>URL のパースに失敗したときに
         E_WARNING を発生させないようになりました。</td></tr></tbody><tbody class="gen-changelog v5-3-3"><tr><td>5.3.2 (PECL OCI8 1.4)</td><td><a href='function.oci-set-prefetch.html'>oci_set_prefetch</a></td><td>これより前のバージョンでは、rows
-         は 1 以上でなければなりませんでした。</td></tr></tbody><tbody class="gen-changelog v5-3-2 (PECL OCI8 1-4)"><tr><td>5.3.2</td><td><a href='function.crypt.html'>crypt</a></td><td>Blowfish で無効な rounds を指定したときに、DES に切り替えるのではなく
-        &quot;failure&quot; 文字列 (&quot;*0&quot; あるいは &quot;*1&quot;) を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>SHA-256 および SHA-512 による暗号化が追加されました。Ulrich Drepper の
+         は 1 以上でなければなりませんでした。</td></tr></tbody><tbody class="gen-changelog v5-3-2 (PECL OCI8 1-4)"><tr><td>5.3.2</td><td><a href='function.crypt.html'>crypt</a></td><td>SHA-256 および SHA-512 による暗号化が追加されました。Ulrich Drepper の
         実装
-        を使っています。</td></tr><tr><td>&nbsp;</td><td><a href='function.flock.html'>flock</a></td><td>ファイルのリソースハンドルを閉じたときにロックを自動的に解放する機能が削除されました。
+        を使っています。</td></tr><tr><td>&nbsp;</td><td><a href='function.crypt.html'>crypt</a></td><td>Blowfish で無効な rounds を指定したときに、DES に切り替えるのではなく
+        &quot;failure&quot; 文字列 (&quot;*0&quot; あるいは &quot;*1&quot;) を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.flock.html'>flock</a></td><td>ファイルのリソースハンドルを閉じたときにロックを自動的に解放する機能が削除されました。
         ロックの解放は、常に手動で行わなければなりません。</td></tr><tr><td>&nbsp;</td><td><a href='function.gmp-init.html'>gmp_init</a></td><td>base が拡張され、2 から 36 までだったのが
         2 から 62 までおよび -2 から -36 までとなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gmp-strval.html'>gmp_strval</a></td><td>base が拡張され、2 から 36 までだったのが
         2 から 62 までおよび -2 から -36 までとなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imap-append.html'>imap_append</a></td><td>INTERNALDATE のサポートが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imap-open.html'>imap_open</a></td><td>params が追加されました。</td></tr></tbody><tbody class="gen-changelog v5-3-2"><tr><td>5.3.1</td><td><a href='function.get-defined-constants.html'>get_defined_constants</a></td><td>Windows のみ: コア定数のカテゴリが Core になりました。
@@ -486,18 +509,18 @@ NULL から DateTime に変更されました。</td></tr><tr><td>&nbsp;</td><td
         安定性に問題があったためです。
         現在 dl が使える SAPI は CLI と Embed(組み込み) だけです。
         かわりに 拡張モジュール読み込みディレクティブ
-         を使ってください。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>この関数は、Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>これより前のバージョンでは、authns
+         を使ってください。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>これより前のバージョンでは、authns
         パラメータを指定したときには addtl
-        パラメータも必須となっていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.error-reporting.html'>error_reporting</a></td><td>E_DEPRECATED と E_USER_DEPRECATED が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.exif-imagetype.html'>exif_imagetype</a></td><td>アイコンをサポートしました。</td></tr><tr><td>&nbsp;</td><td><a href='function.expm1.html'>expm1</a></td><td>この関数はすべてのプラットフォームで使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fgetcsv.html'>fgetcsv</a></td><td>escape パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fnmatch.html'>fnmatch</a></td><td>この関数は Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-arg.html'>func_get_arg</a></td><td>この関数はパラメータリスト内で使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-arg.html'>func_get_arg</a></td><td>ある関数内で include や
+        パラメータも必須となっていました。</td></tr><tr><td>&nbsp;</td><td><a href='function.dns-get-record.html'>dns_get_record</a></td><td>この関数は、Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.error-reporting.html'>error_reporting</a></td><td>E_DEPRECATED と E_USER_DEPRECATED が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.exif-imagetype.html'>exif_imagetype</a></td><td>アイコンをサポートしました。</td></tr><tr><td>&nbsp;</td><td><a href='function.expm1.html'>expm1</a></td><td>この関数はすべてのプラットフォームで使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fgetcsv.html'>fgetcsv</a></td><td>escape パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fnmatch.html'>fnmatch</a></td><td>この関数は Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-arg.html'>func_get_arg</a></td><td>この関数はパラメータリスト内で使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-arg.html'>func_get_arg</a></td><td>ある関数内で include や
         require を使って別のファイルを読み込んでいるときに
         別のファイル側からこの関数をコールすると、警告を発生して
-        FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-args.html'>func_get_args</a></td><td>この関数はパラメータリスト内で使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-args.html'>func_get_args</a></td><td>ある関数内で include や
+        FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-args.html'>func_get_args</a></td><td>ある関数内で include や
         require を使って別のファイルを読み込んでいるときに
         別のファイル側からこの関数をコールすると、警告を発生して
-        FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-num-args.html'>func_num_args</a></td><td>ある関数内で include や
+        FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-get-args.html'>func_get_args</a></td><td>この関数はパラメータリスト内で使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-num-args.html'>func_num_args</a></td><td>この関数はパラメータリスト内で使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-num-args.html'>func_num_args</a></td><td>ある関数内で include や
         require を使って別のファイルを読み込んでいるときに
         別のファイル側からこの関数をコールすると、警告を発生して
-        -1 を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.func-num-args.html'>func_num_args</a></td><td>この関数はパラメータリスト内で使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gd-info.html'>gd_info</a></td><td>JPG Support 属性が JPEG Support
+        -1 を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.gd-info.html'>gd_info</a></td><td>JPG Support 属性が JPEG Support
         という名前に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-cfg-var.html'>get_cfg_var</a></td><td>get_cfg_var は、
         配列形式の ini オプションを返せるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-class.html'>get_class</a></td><td>NULL が object のデフォルトとなりました。
         したがって、NULL を object
@@ -506,9 +529,9 @@ NULL から DateTime に変更されました。</td></tr><tr><td>&nbsp;</td><td
         コア定数のカテゴリは mhash となります。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-object-vars.html'>get_object_vars</a></td><td>object がオブジェクトではない場合に
         NULL を返すようになりました。
         これより前のバージョンでは、FALSE を返していました。</td></tr><tr><td>&nbsp;</td><td><a href='function.get-resource-type.html'>get_resource_type</a></td><td>If handle is not a resource this
-       functions returns NULL. Formerly, FALSE has been returned.</td></tr><tr><td>&nbsp;</td><td><a href='function.getimagesize.html'>getimagesize</a></td><td>アイコンに対応しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getmxrr.html'>getmxrr</a></td><td>この関数は、Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>パラメータ longopts
-        がすべてのプラットフォームで使えるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>オプションの値 (&quot;::&quot; で指定します) に対応しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>この関数はシステムに依存しなくなり、今では
-        Windows でも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>&quot;=&quot; を引数/値の区切り文字として使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.hash-algos.html'>hash_algos</a></td><td>md2、ripemd256、ripemd320、salsa10、salsa20、snefru256 および sha224 のサポートを追加しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_IGNORE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_IGNORE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagecolorclosesthwb.html'>imagecolorclosesthwb</a></td><td>この関数は、Windows でも使用可能になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.inet-ntop.html'>inet_ntop</a></td><td>この関数は Windows プラットフォームでも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.inet-pton.html'>inet_pton</a></td><td>この関数は Windows プラットフォームでも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ini-get.html'>ini_get</a></td><td>指定したオプションが存在しない場合に、空文字列ではなく FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ini-get-all.html'>ini_get_all</a></td><td>details が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.is-a.html'>is_a</a></td><td>この関数は非推奨ではなくなりました。そのため
+       functions returns NULL. Formerly, FALSE has been returned.</td></tr><tr><td>&nbsp;</td><td><a href='function.getimagesize.html'>getimagesize</a></td><td>アイコンに対応しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getmxrr.html'>getmxrr</a></td><td>この関数は、Windows プラットフォームでも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>&quot;=&quot; を引数/値の区切り文字として使用できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>オプションの値 (&quot;::&quot; で指定します) に対応しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>パラメータ longopts
+        がすべてのプラットフォームで使えるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.getopt.html'>getopt</a></td><td>この関数はシステムに依存しなくなり、今では
+        Windows でも動作するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.hash-algos.html'>hash_algos</a></td><td>md2、ripemd256、ripemd320、salsa10、salsa20、snefru256 および sha224 のサポートを追加しました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>定数 ENT_IGNORE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>定数 ENT_IGNORE が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.imagecolorclosesthwb.html'>imagecolorclosesthwb</a></td><td>この関数は、Windows でも使用可能になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.inet-ntop.html'>inet_ntop</a></td><td>この関数は Windows プラットフォームでも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.inet-pton.html'>inet_pton</a></td><td>この関数は Windows プラットフォームでも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ini-get.html'>ini_get</a></td><td>指定したオプションが存在しない場合に、空文字列ではなく FALSE を返すようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.ini-get-all.html'>ini_get_all</a></td><td>details が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.is-a.html'>is_a</a></td><td>この関数は非推奨ではなくなりました。そのため
         E_STRICT も発生しなくなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-decode.html'>json_decode</a></td><td>オプションの depth が追加されました。デフォルトの再帰の深さが 128 から 512 に増えました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>options パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-encode.html'>json_encode</a></td><td>options パラメータに 
         JSON_FORCE_OBJECT,
         JSON_HEX_AMP,
@@ -534,7 +557,7 @@ NULL から DateTime に変更されました。</td></tr><tr><td>&nbsp;</td><td
         定数 LC_* ではなく文字列が渡された場合に、
         この関数は E_DEPRECATED をスローするようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.shm-attach.html'>shm_attach</a></td><td>この関数の返す値の型が、
          integer から リソース
-         に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.socket-create-pair.html'>socket_create_pair</a></td><td>この関数は、ふたたび Windows プラットフォームで使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.spl-autoload-register.html'>spl_autoload_register</a></td><td>prepend パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.spl-autoload-register.html'>spl_autoload_register</a></td><td>名前空間に対応するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-context-create.html'>stream_context_create</a></td><td>オプションの引数 params が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-socket-pair.html'>stream_socket_pair</a></td><td>この関数は、Windows プラットフォームでも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stristr.html'>stristr</a></td><td>オプションの before_needle パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strlen.html'>strlen</a></td><td>これより前のバージョンでは、配列を「Array」という文字列とみなして処理していました。
+         に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.socket-create-pair.html'>socket_create_pair</a></td><td>この関数は、ふたたび Windows プラットフォームで使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.spl-autoload-register.html'>spl_autoload_register</a></td><td>名前空間に対応するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.spl-autoload-register.html'>spl_autoload_register</a></td><td>prepend パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-context-create.html'>stream_context_create</a></td><td>オプションの引数 params が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-socket-pair.html'>stream_socket_pair</a></td><td>この関数は、Windows プラットフォームでも使用可能となりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stristr.html'>stristr</a></td><td>オプションの before_needle パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strlen.html'>strlen</a></td><td>これより前のバージョンでは、配列を「Array」という文字列とみなして処理していました。
        つまり文字列の長さは 5 になります。そして E_NOTICE レベルのエラーが発生します。</td></tr><tr><td>&nbsp;</td><td><a href='function.strstr.html'>strstr</a></td><td>オプションの before_needle パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strtotime.html'>strtotime</a></td><td>PHP 5.3.0 より前のバージョンでは、24:00
         は無効なフォーマットとされており
         strtotime は FALSE を返していました。</td></tr><tr><td>&nbsp;</td><td><a href='function.strtotime.html'>strtotime</a></td><td>PHP 5.3.0 より前のバージョンでは、
@@ -575,7 +598,7 @@ NULL から DateTime に変更されました。</td></tr><tr><td>&nbsp;</td><td
         よって、0 で始まる数字は 8 進数として評価され、0x で始まる数字は
         16 進数として評価されます。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-wrapper-register.html'>stream_wrapper_register</a></td><td>flags パラメータが追加されました。</td></tr></tbody><tbody class="gen-changelog v5-2-4"><tr><td>5.2.3</td><td><a href='function.getimagesize.html'>getimagesize</a></td><td>読み込み時にエラーが発生した場合のエラーレベルが、
         E_WARNING から
-        E_NOTICE に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>double_encode パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>double_encode パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-decode.html'>json_decode</a></td><td>ネストの制限が 20 から 128 に拡張されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.xmlwriter-write-element.html'>XMLWriter::writeElement</a></td><td>content パラメータがオプションとなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.xmlwriter-write-element-ns.html'>XMLWriter::writeElementNS</a></td><td>content パラメータがオプションとなりました。</td></tr><tr><td>&nbsp;</td><td><a href='pdostatement.getcolumnmeta.html'>PDOStatement::getColumnMeta</a></td><td>table フィールド</td></tr></tbody><tbody class="gen-changelog v5-2-3"><tr><td>5.2.2 - 5.2.6</td><td><a href='function.substr.html'>substr</a></td><td>start が負の切り出しを意味したり
+        E_NOTICE に変わりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>double_encode パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.htmlspecialchars.html'>htmlspecialchars</a></td><td>double_encode パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.json-decode.html'>json_decode</a></td><td>ネストの制限が 20 から 128 に拡張されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.xmlwriter-write-element.html'>XMLWriter::writeElement</a></td><td>content パラメータがオプションとなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.xmlwriter-write-element-ns.html'>XMLWriter::writeElementNs</a></td><td>content パラメータがオプションとなりました。</td></tr><tr><td>&nbsp;</td><td><a href='pdostatement.getcolumnmeta.html'>PDOStatement::getColumnMeta</a></td><td>table フィールド</td></tr></tbody><tbody class="gen-changelog v5-2-3"><tr><td>5.2.2 - 5.2.6</td><td><a href='function.substr.html'>substr</a></td><td>start が負の切り出しを意味したり
         切り出し位置を超える値になった場合に false を返すようになりました。
         それ以外のバージョンでは、文字列の先頭から取得します。</td></tr></tbody><tbody class="gen-changelog v5-2-2 - 5-2-6"><tr><td>5.2.2</td><td><a href='domdocument.registernodeclass.html'>DOMDocument::registerNodeClass</a></td><td>5.2.2 より前のバージョンでは、同一の baseclass
         を継承した新しいクラスを登録する際には、以前に登録されていた
@@ -631,14 +654,14 @@ NULL から DateTime に変更されました。</td></tr><tr><td>&nbsp;</td><td
         CURLOPT_FTPSSLAUTH,
         CURLOPT_PROXYAUTH および
         CURLOPT_TIMECONDITION
-        が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date.html'>date</a></td><td>有効なタイムスタンプの範囲は、通常 Fri, 13 Dec 1901
+        が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date.html'>date</a></td><td>タイムゾーンがおかしい場合に E_STRICT や
+E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date.html'>date</a></td><td>有効なタイムスタンプの範囲は、通常 Fri, 13 Dec 1901
         20:45:54 GMT から Tue, 19 Jan 2038 03:14:07 GMT までです
         (これらの日付は、32 ビット符号付き整数の最小および最大値に
         対応します)。
         しかし、PHP 5.1 より前のバージョンでは、システム環境によっては
         (例: Windows) この範囲が 1970 年 1 月 1 日から 2038 年 1 月 19 日
-        までに制限されます。</td></tr><tr><td>&nbsp;</td><td><a href='function.date.html'>date</a></td><td>タイムゾーンがおかしい場合に E_STRICT や
-E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date-sunrise.html'>date_sunrise</a></td><td>タイムゾーンがおかしい場合に E_STRICT や
+        までに制限されます。</td></tr><tr><td>&nbsp;</td><td><a href='function.date-sunrise.html'>date_sunrise</a></td><td>タイムゾーンがおかしい場合に E_STRICT や
 E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.date-sunset.html'>date_sunset</a></td><td>タイムゾーンがおかしい場合に E_STRICT や
 E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.explode.html'>explode</a></td><td>limit に負の数を指定できるようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.fgetcsv.html'>fgetcsv</a></td><td>length が必須ではなくなりました。
         デフォルトは 0 で、これは長さの制限がないことを表します。</td></tr><tr><td>&nbsp;</td><td><a href='function.file-get-contents.html'>file_get_contents</a></td><td>offset と
@@ -658,13 +681,13 @@ E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td>
         が発生して 1 を返します。</td></tr><tr><td>&nbsp;</td><td><a href='function.localtime.html'>localtime</a></td><td>タイムゾーンがおかしい場合に E_STRICT や
 E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.md5-file.html'>md5_file</a></td><td>ストリーム API を使用した関数に変更されました。
         これは md5_file('http://example.com/..')
-        のようなラッパーで利用可能であることを意味します。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>タイムゾーンがおかしい場合に E_STRICT や
-E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>引数なしでコールすると、mktime
+        のようなラッパーで利用可能であることを意味します。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>引数なしでコールすると、mktime
         は E_STRICT notice を発行するようになりました。かわりに
         time 関数を使用しましょう。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>is_dst パラメータは廃止されました。
         エラー時には -1 ではなく FALSE
         を返すようになりました。
-        年月日がすべてゼロとすることが可能になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mssql-connect.html'>mssql_connect</a></td><td>パラメータ new_link が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-pkcs7-verify.html'>openssl_pkcs7_verify</a></td><td>content パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-replace.html'>preg_replace</a></td><td>count 引数が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-replace-callback.html'>preg_replace_callback</a></td><td>パラメータ count が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.session-regenerate-id.html'>session_regenerate_id</a></td><td>delete_old_session パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.sha1-file.html'>sha1_file</a></td><td>ストリーム API を使用するように変更しました。つまり、
+        年月日がすべてゼロとすることが可能になりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mktime.html'>mktime</a></td><td>タイムゾーンがおかしい場合に E_STRICT や
+E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.mssql-connect.html'>mssql_connect</a></td><td>パラメータ new_link が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.openssl-pkcs7-verify.html'>openssl_pkcs7_verify</a></td><td>content パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-replace.html'>preg_replace</a></td><td>count 引数が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.preg-replace-callback.html'>preg_replace_callback</a></td><td>パラメータ count が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.session-regenerate-id.html'>session_regenerate_id</a></td><td>delete_old_session パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.sha1-file.html'>sha1_file</a></td><td>ストリーム API を使用するように変更しました。つまり、
         sha1_file('http://example.com/..') のように
         ラッパーとともに使用できるということです。</td></tr><tr><td>&nbsp;</td><td><a href='function.str-word-count.html'>str_word_count</a></td><td>charlist パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-copy-to-stream.html'>stream_copy_to_stream</a></td><td>offset パラメータが追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-filter-append.html'>stream_filter_append</a></td><td>PHP 5.1.0 より前のバージョンでは、この関数は成功した場合に TRUE、
         失敗した場合に FALSE を返します。</td></tr><tr><td>&nbsp;</td><td><a href='function.stream-filter-prepend.html'>stream_filter_prepend</a></td><td>PHP 5.1.0 より前のバージョンでは、この関数は
@@ -699,15 +722,9 @@ E_NOTICE が発生するようになりました。</td></tr><tr><td>&nbsp;</td>
         CURLOPT_PROXYTYPE,
         CURLOPT_SSLCERTTYPE および
         CURLOPT_HTTP200ALIASES
-        が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.dirname.html'>dirname</a></td><td>dirname がバイナリセーフとなりました。</td></tr><tr><td>&nbsp;</td><td><a href='function.is-a.html'>is_a</a></td><td>この関数は非推奨となり、かわりに
+        が追加されました。</td></tr><tr><td>&nbsp;</td><td><a href='function.is-a.html'>is_a</a></td><td>この関数は非推奨となり、かわりに
         instanceof
         演算子の使用が推奨されるようになりました。この関数をコールすると
-        E_STRICT が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='function.parse-ini-file.html'>parse_ini_file</a></td><td>値をダブルクォートで囲めばその中で改行を使用することもできます。</td></tr><tr><td>&nbsp;</td><td><a href='function.rename.html'>rename</a></td><td>rename は
-        いくつかの URL ラッパーを併用することができるようになりました。
-        rename をサポートしているラッパーの一覧については、
-         を参照ください。</td></tr><tr><td>&nbsp;</td><td><a href='function.rmdir.html'>rmdir</a></td><td>PHP 5.0.0 以降、rmdir は
-        いくつかの URL ラッパーを併用することが可能です。
-        rmdir をサポートしているラッパーの一覧については、
-         を参照ください。</td></tr><tr><td>&nbsp;</td><td><a href='function.strtotime.html'>strtotime</a></td><td>マイクロ秒も受け付けるようになりましたが、指定してもそれは無視されます。</td></tr></tbody></table>
+        E_STRICT が発生します。</td></tr><tr><td>&nbsp;</td><td><a href='function.strtotime.html'>strtotime</a></td><td>マイクロ秒も受け付けるようになりましたが、指定してもそれは無視されます。</td></tr></tbody></table>
    </div>
 </div></div></body></html>
