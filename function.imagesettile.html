@@ -51,13 +51,14 @@
    を設定することにより、
    その一部から下の部分が透けて見えるようなタイルを作成することが可能です。
   </p>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
+  <div class="caution"><strong class="caution">警告</strong>
    <p class="para">
     タイルの使用が終った際には、特別な処理は不要ですが、
-    タイルイメージを破棄する場合には、新たにタイルイメージを設定するまでは、色
+    タイルイメージを破棄する(もしくは、PHPに破棄させる)場合には、
+    新たにタイルイメージを設定するまでは、色
     <strong><code>IMG_COLOR_TILED</code></strong> を使用してはいけません。
    </p>
-  </p></blockquote>
+  </div>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.imagesettile-parameters">
@@ -99,7 +100,7 @@ image</code></dt>
  <div class="refsect1 examples" id="refsect1-function.imagesettile-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3857">
+   <div class="example" id="example-3858">
     <p><strong>例1 <span class="function"><strong>imagesettile()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

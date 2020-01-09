@@ -152,6 +152,16 @@ image</code></dt>
           そして <code class="parameter">arg2</code> でモザイク効果のモードを指定します。
          </span>
         </li>
+        
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>IMG_FILTER_SCATTER</code></strong>: Applies scatter effect 
+          to the image, use <code class="parameter">arg1</code> and 
+          <code class="parameter">arg2</code> to define the effect strength and 
+          additionally <code class="parameter">arg3</code> to only apply the 
+          on select pixel colors.
+         </span>
+        </li>
        </ul>
       </p>
      </dd>
@@ -190,6 +200,14 @@ image</code></dt>
           <strong><code>IMG_FILTER_PIXELATE</code></strong>: ピクセル単位のブロックサイズ。
          </span>
         </li>
+        
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>IMG_FILTER_SCATTER</code></strong>: Effect substraction level. 
+          This must not be higher or equal to the addition level set with 
+          <code class="parameter">arg2</code>.
+         </span>
+        </li>
        </ul>
       </p>
      </dd>
@@ -214,6 +232,12 @@ image</code></dt>
           (デフォルトは <strong><code>FALSE</code></strong>)。
          </span>
         </li>
+        
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>IMG_FILTER_SCATTER</code></strong>: Effect addition level.
+         </span>
+        </li>
        </ul>
       </p>
      </dd>
@@ -230,6 +254,13 @@ image</code></dt>
         <li class="listitem">
          <span class="simpara">
           <strong><code>IMG_FILTER_COLORIZE</code></strong>: 青コンポーネントの値。
+         </span>
+        </li>
+        
+        <li class="listitem">
+         <span class="simpara">
+          <strong><code>IMG_FILTER_SCATTER</code></strong>: Optional array indexed color values 
+          to apply effect at.
          </span>
         </li>
        </ul>
@@ -283,6 +314,21 @@ image</code></dt>
      </thead>
 
      <tbody class="tbody">
+      
+      <tr>
+       <td>7.4.0</td>
+       <td>
+        Scatter support (<strong><code>IMG_FILTER_SCATTER</code></strong>) was added.
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Pixelation support (<strong><code>IMG_FILTER_PIXELATE</code></strong>) was added.
+       </td>
+      </tr>
+
       <tr>
        <td>5.2.5</td>
        <td>
@@ -368,10 +414,37 @@ image</code></dt>
     </div>
    </div>
   </p>
+  
+  <p class="para">
+   <div class="example" id="example-3811">
+    <p><strong>例6 <span class="function"><strong>imagefilter()</strong></span> scatter example</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Load&nbsp;the&nbsp;image<br /></span><span style="color: #0000BB">$logo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">imagecreatefrompng</span><span style="color: #007700">(</span><span style="color: #DD0000">'./php.png'</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Apply&nbsp;a&nbsp;very&nbsp;soft&nbsp;scatter&nbsp;effect&nbsp;to&nbsp;the&nbsp;image<br /></span><span style="color: #0000BB">imagefilter</span><span style="color: #007700">(</span><span style="color: #0000BB">$logo</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">IMG_FILTER_SCATTER</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Output&nbsp;the&nbsp;image&nbsp;with&nbsp;the&nbsp;scatter&nbsp;effect<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">'Content-Type:&nbsp;image/png'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$logo</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagedestroy</span><span style="color: #007700">(</span><span style="color: #0000BB">$logo</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+    <div class="mediaobject">
+     
+     <div class="imageobject">
+      <img src="images/21009b70229598c6a80eef8b45bf282b-scatter.png" alt="Output of example : imagefilter() scatter" width="200" height="106" />
+     </div>
+    </div>
+   </div>
+  </p>
  </div>
 
  <div class="refsect1 notes" id="refsect1-function.imagefilter-notes">
   <h3 class="title">注意</h3>
+  
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    The result of <strong><code>IMG_FILTER_SCATTER</code></strong> is always random.
+   </span>
+  </p></blockquote>
  </div>
 
  <div class="refsect1 seealso" id="refsect1-function.imagefilter-seealso">

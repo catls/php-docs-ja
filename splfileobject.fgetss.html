@@ -30,6 +30,11 @@
 
  </div>
 
+ <div id="splfileobject.fgetss-refsynopsisdiv">
+   <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は PHP 7.3.0 で
+<em class="emphasis">非推奨</em>になります。この関数に頼らないことを強く推奨します。</p></div>
+ </div>
+
  <div class="refsect1 description" id="refsect1-splfileobject.fgetss-description">
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
@@ -38,7 +43,10 @@
   ] ) : <span class="type">string</span></div>
 
   <p class="para rdfs-comment">
-   <span class="methodname"><strong>SplFileObject::fgetss()</strong></span> attempts to strip 読み込むテキストから HTML と PHP タグを取り除こうとすること以外、<span class="methodname"><a href="splfileobject.fgets.html" class="methodname">SplFileObject::fgets()</a></span> と同じです。
+   <span class="methodname"><strong>SplFileObject::fgetss()</strong></span> 読み込むテキストから HTML と PHP タグを取り除こうとすること以外、<span class="methodname"><a href="splfileobject.fgets.html" class="methodname">SplFileObject::fgets()</a></span> と同じです。
+   この関数は、ある呼び出しから別の呼び出しの間のパースの状態を保持します。
+   したがって、これは <span class="methodname"><a href="splfileobject.fgets.html" class="methodname">SplFileObject::fgets()</a></span> の戻り値に対して
+   <span class="function"><a href="function.strip-tags.html" class="function">strip_tags()</a></span> 関数を呼び出すのと同じではありません。
   </p>
  </div>
 
@@ -77,7 +85,7 @@
  <div class="refsect1 examples" id="refsect1-splfileobject.fgetss-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4905">
+   <div class="example" id="example-4909">
     <p><strong>例1 <span class="methodname"><strong>SplFileObject::fgetss()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -109,6 +117,7 @@ Text outside of the HTML block.
     <li class="member"><span class="methodname"><a href="splfileobject.fgets.html" class="methodname" rel="rdfs-seeAlso">SplFileObject::fgets()</a> - ファイルから 1 行取り出す</span></li>
     <li class="member"><span class="methodname"><a href="splfileobject.fgetc.html" class="methodname" rel="rdfs-seeAlso">SplFileObject::fgetc()</a> - ファイルから文字を取り出す</span></li>
     <li class="member"><span class="methodname"><a href="splfileobject.current.html" class="methodname" rel="rdfs-seeAlso">SplFileObject::current()</a> - ファイルの現在の行を取得する</span></li>
+    <li class="member">The <a href="filters.string.html#filters.string.strip_tags" class="link">string.strip_tags</a> filter</li>
    </ul>
   </p>
  </div>

@@ -40,11 +40,6 @@
   <p class="para rdfs-comment">
    振る舞いのフラグを設定します。
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -60,16 +55,46 @@
      <dd>
 
       <p class="para">
-       次のビットマスク。
-       <ul class="simplelist">
-        <li class="member">
-         0 = オブジェクトのプロパティがリストとして
-         (var_dump, foreach などで) アクセスされたときに通常の機能を持たせるようにする。
-        </li>
-        <li class="member">
-         1 = 配列のインデックスを、読み書き時にプロパティとしてアクセスできるようにする。
-        </li>
-       </ul>
+       新しい ArrayIterator の振る舞い。
+       以下のいずれかの値のビットマスクか、名前付き定数を設定します。
+       将来のバージョンとの互換性を保証するため、
+       名前付き定数を使うことを強く推奨します。
+      </p>
+      <p class="para">
+       利用可能なフラグは以下のとおりです。
+       これらのフラグの実際の意味は、
+       <a href="class.arrayiterator.html#arrayiterator.constants" class="link">定義済みの定数</a>
+       で説明しています。
+       <table class="doctable table">
+        <caption><strong>ArrayIterator の振る舞いを表すフラグ</strong></caption>
+        
+         <thead>
+          <tr>
+           <th>値</th>
+           <th>定数</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td>1</td>
+           <td>
+            <a href="class.arrayiterator.html#arrayiterator.constants.std-prop-list" class="link">ArrayIterator::STD_PROP_LIST</a>
+           </td>
+          </tr>
+
+          <tr>
+           <td>2</td>
+           <td>
+            <a href="class.arrayiterator.html#arrayiterator.constants.array-as-props" class="link">ArrayIterator::ARRAY_AS_PROPS</a>
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
       </p>
      </dd>
 
@@ -92,7 +117,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
-    <li class="member"><span class="methodname"><a href="arrayiterator.getflags.html" class="methodname" rel="rdfs-seeAlso">ArrayIterator::getFlags()</a> - フラグを取得する</span></li>
+    <li class="member"><span class="methodname"><a href="arrayiterator.getflags.html" class="methodname" rel="rdfs-seeAlso">ArrayIterator::getFlags()</a> - 振る舞いのフラグを取得する</span></li>
    </ul>
   </p>
  </div>

@@ -34,7 +34,7 @@
   <h3 class="title">説明</h3>
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>GlobIterator::__construct</strong></span>
-    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>
+    ( <span class="methodparam"><span class="type">string</span> <code class="parameter">$pattern</code></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code><span class="initializer"> = FilesystemIterator::KEY_AS_PATHNAME | FilesystemIterator::CURRENT_AS_FILEINFO</span></span>
   ] )</div>
 
@@ -51,12 +51,12 @@
 
     
      <dt>
-<code class="parameter">path</code></dt>
+<code class="parameter">pattern</code></dt>
 
      <dd>
 
       <p class="para">
-       ディレクトリへのパス。
+       <span class="function"><a href="function.glob.html" class="function">glob()</a></span> 関数に渡すパターン
       </p>
      </dd>
 
@@ -83,7 +83,7 @@
  <div class="refsect1 examples" id="refsect1-globiterator.construct-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4828">
+   <div class="example" id="example-4829">
     <p><strong>例1 <a href="class.globiterator.html" class="classname">GlobIterator</a> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

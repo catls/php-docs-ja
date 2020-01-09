@@ -33,7 +33,8 @@
   <div class="section" id="norewinditerator.intro">
    <h2 class="title">はじめに</h2>
    <p class="para">
-    このイテレータは巻き戻しできません。
+    このイテレータは巻き戻しの操作を無視します。
+    これにより、一部のみを走査する 複数の foreach ループでイテレータを処理することが可能になります。
    </p>
   </div>
 
@@ -107,7 +108,7 @@
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="iteratoriterator.key.html" class="methodname">IteratorIterator::key</a></span>
     ( <span class="methodparam">void</span>
-   ) : <span class="type"><span class="type scalar">scalar</span></span></div>
+   ) : <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span></div>
 <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><a href="iteratoriterator.next.html" class="methodname">IteratorIterator::next</a></span>
     ( <span class="methodparam">void</span>

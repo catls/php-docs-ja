@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>フラグを取得する</title>
+  <title>振る舞いのフラグを取得する</title>
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
 <link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
 
@@ -19,14 +19,14 @@
   <ul class="breadcrumbs-container">
     <li><a href="index.html">PHP Manual</a></li>
     <li><a href="class.arrayiterator.html">ArrayIterator</a></li>
-    <li>フラグを取得する</li>
+    <li>振る舞いのフラグを取得する</li>
   </ul>
 </div>
 <div id="layout">
   <div id="layout-content"><div id="arrayiterator.getflags" class="refentry">
  <div class="refnamediv">
   <h1 class="refname">ArrayIterator::getFlags</h1>
-  <p class="verinfo">(PHP 5 &gt;= 5.1.0, PHP 7)</p><p class="refpurpose"><span class="refname">ArrayIterator::getFlags</span> &mdash; <span class="dc-title">フラグを取得する</span></p>
+  <p class="verinfo">(PHP 5 &gt;= 5.1.0, PHP 7)</p><p class="refpurpose"><span class="refname">ArrayIterator::getFlags</span> &mdash; <span class="dc-title">振る舞いのフラグを取得する</span></p>
 
  </div>
 
@@ -35,16 +35,13 @@
   <div class="methodsynopsis dc-description">
    <span class="modifier">public</span> <span class="methodname"><strong>ArrayIterator::getFlags</strong></span>
     ( <span class="methodparam">void</span>
-   ) : <span class="type"><span class="type void">void</span></span></div>
+   ) : <span class="type">int</span></div>
 
   <p class="para rdfs-comment">
-   現在のフラグを取得します。
+   <a href="class.arrayiterator.html" class="classname">ArrayIterator</a> の振る舞いを示すフラグを取得します。
+   利用可能なフラグについては、
+   <a href="arrayiterator.setflags.html" class="link">ArrayIterator::setFlags</a> を参照してください。
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -66,6 +63,7 @@
   <h3 class="title">参考</h3>
   <p class="para">
    <ul class="simplelist">
+    <li class="member"><span class="methodname"><strong>>ArrayIterator::setFlags()</strong></span></li>
     <li class="member"><span class="methodname"><a href="arrayiterator.valid.html" class="methodname" rel="rdfs-seeAlso">ArrayIterator::valid()</a> - 配列がまだエントリを持っているかどうかチェックする</span></li>
    </ul>
   </p>

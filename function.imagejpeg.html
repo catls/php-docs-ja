@@ -34,8 +34,8 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>imagejpeg</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$to</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$quality</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$to</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$quality</code><span class="initializer"> = -1</span></span>
   ]] ) : <span class="type">bool</span></div>
 
   <p class="para rdfs-comment">
@@ -63,11 +63,6 @@ image</code></dt>
      <dd>
 
       <p class="para">ファイル保存先のパスあるいはオープン中のリソース (この関数が値を戻した後で自動的にクローズされます)。省略したり <strong><code>NULL</code></strong> を設定したりした場合は、画像ストリームを直接出力します。</p>
-      <p class="para">
-       <code class="parameter">quality</code>
-       パラメータを指定するためにこの引数をスキップするには、
-       <strong><code>NULL</code></strong> を指定します。
-      </p>
      </dd>
 
     
@@ -80,7 +75,8 @@ image</code></dt>
       <p class="para">
        <code class="parameter">quality</code> はオプションであり、0(品質は最低
        ですが、ファイルはより小さい)から100(品質は最高ですが、ファイルは
-       最大)の範囲で指定します。デフォルトは IJG 品質値(75)です。
+       最大)の範囲で指定します。
+       デフォルト (<em>-1</em>) は、IJG 品質値(75) を使います。
       </p>
      </dd>
 
@@ -140,7 +136,7 @@ image</code></dt>
  <div class="refsect1 examples" id="refsect1-function.imagejpeg-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3831">
+   <div class="example" id="example-3832">
     <p><strong>例1 JPEG 画像のブラウザへの出力</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -160,7 +156,7 @@ image</code></dt>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-3832">
+   <div class="example" id="example-3833">
     <p><strong>例2 JPEG 画像のファイルへの保存</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -172,7 +168,7 @@ image</code></dt>
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-3833">
+   <div class="example" id="example-3834">
     <p><strong>例3 75% 品質でのブラウザへの画像の出力</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

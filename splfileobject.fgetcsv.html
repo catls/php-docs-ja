@@ -42,6 +42,13 @@
   <p class="para rdfs-comment">
    <acronym title="Comma Separated Value">CSV</acronym> フォーマットのファイルから行を取り出し読み込まれたフィールドを含む配列を返します。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <p class="para">
+    この関数は、ロケール設定を考慮します。
+    <em>LC_CTYPE</em> がたとえば <em>en_US.UTF-8</em> だった場合、
+    ファイルの1バイトのエンコーディングは、この関数では間違った読まれ方をする可能性があります。
+   </p>
+  </p></blockquote>
  </div>
 
 
@@ -81,8 +88,21 @@
      <dd>
 
       <p class="para">
-       エスケープ文字 (1 文字のみ)。デフォルトはバックスラッシュ (<em>\</em>) もしくは <span class="methodname"><a href="splfileobject.setcsvcontrol.html" class="methodname">SplFileObject::setCsvControl()</a></span> を使ってセットされた値です。
+       エスケープ文字 (最大で1文字)。デフォルトはバックスラッシュ (<em>\</em>) もしくは <span class="methodname"><a href="splfileobject.setcsvcontrol.html" class="methodname">SplFileObject::setCsvControl()</a></span> を使ってセットされた値です。
+       空文字列(<em>&quot;&quot;</em>)の場合、プロプライエタリなエスケープ機構が無効になります。
       </p>
+      <blockquote class="note"><p><strong class="note">注意</strong>: 
+       <span class="simpara">
+        <code class="parameter">enclosure</code> の文字は、フィールド内で2回出力される
+        ことでエスケープされます。しかし、
+        <code class="parameter">escape</code> 文字はその代替として使えます。
+        デフォルトのパラメータの値
+        <em>&quot;&quot;</em> と <em>\&quot;</em> は同じ意味を持ちます。
+        <code class="parameter">enclosure</code> の文字を
+        <code class="parameter">escape</code> 文字でエスケープすることには、
+        特別な意味はありません。それ自身をエスケープする意味ですらありません。
+       </span>
+      </p></blockquote>
      </dd>
 
     
@@ -105,10 +125,40 @@
  </div>
 
 
+ <div class="refsect1 changelog" id="refsect1-splfileobject.fgetcsv-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>7.4.0</td>
+       <td>
+        <code class="parameter">escape</code> パラメータは空文字列を受け入れるようになりました。
+        この場合、プロプライエタリなエスケープ機構が無効になります。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
  <div class="refsect1 examples" id="refsect1-splfileobject.fgetcsv-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4902">
+   <div class="example" id="example-4906">
     <p><strong>例1 <span class="methodname"><strong>SplFileObject::fgetcsv()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -120,7 +170,7 @@
    </div>
   </p>
   <p class="para">
-   <div class="example" id="example-4903">
+   <div class="example" id="example-4907">
     <p><strong>例2 <strong><code>SplFileObject::READ_CSV</code></strong> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">

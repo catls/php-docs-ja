@@ -75,7 +75,7 @@
         </li>
         <li class="listitem">
          <span class="simpara">
-          ロック中にブロックしないようにするには <strong><code>LOCK_NB</code></strong> (Windows ではサポートされません)。
+          ロック中にブロックしないようにするには <strong><code>LOCK_NB</code></strong>
          </span>
         </li>
        </ul>
@@ -112,7 +112,7 @@
  <div class="refsect1 examples" id="refsect1-splfileobject.flock-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-4906">
+   <div class="example" id="example-4910">
     <p><strong>例1 <span class="methodname"><strong>SplFileObject::flock()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -122,6 +122,43 @@
     </div>
 
    </div>
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 changelog" id="refsect1-splfileobject.flock-changelog">
+  <h3 class="title">変更履歴</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>バージョン</th>
+       <th>説明</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.5.22, 5.6.6</td>
+       <td>
+        Windows 上で <code class="parameter">wouldblock</code>  パラメータがサポートされました。
+       </td>
+      </tr>
+      
+      <tr>
+       <td>5.3.2</td>
+       <td>
+        ファイルのリソースハンドルが閉じられたときに、自動でアンロックする機能は削除されました。
+        アンロックは常に手動で行わなければならなくなりました。
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
   </p>
  </div>
 

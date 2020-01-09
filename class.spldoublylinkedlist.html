@@ -67,6 +67,36 @@
      {</div>
 
  
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* 定数 */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.spldoublylinkedlist.html#spldoublylinkedlist.constants.it-mode-lifo"><var class="varname">IT_MODE_LIFO</var></a></var>
+     <span class="initializer"> = 2</span>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.spldoublylinkedlist.html#spldoublylinkedlist.constants.it-mode-fifo"><var class="varname">IT_MODE_FIFO</var></a></var>
+     <span class="initializer"> = 0</span>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.spldoublylinkedlist.html#spldoublylinkedlist.constants.it-mode-delete"><var class="varname">IT_MODE_DELETE</var></a></var>
+     <span class="initializer"> = 1</span>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">const</span>
+     <span class="type">integer</span>
+      <var class="fieldsynopsis_varname"><a href="class.spldoublylinkedlist.html#spldoublylinkedlist.constants.it-mode-keep"><var class="varname">IT_MODE_KEEP</var></a></var>
+     <span class="initializer"> = 0</span>
+    ;</div>
+
+
     
  
     <div class="classsynopsisinfo classsynopsisinfo_comment">/* メソッド */</div>
@@ -173,7 +203,78 @@
    }</div>
  
   </div>
- 
+
+
+  <div class="section" id="spldoublylinkedlist.constants">
+   <h2 class="title">定義済み定数</h2>
+   <div class="section" id="spldoublylinkedlist.constants.iteration-direction">
+    <h2 class="title">イテレーションの方向</h2>
+    <dl>
+
+
+     
+      <dt id="spldoublylinkedlist.constants.it-mode-lifo"><strong><code>SplDoublyLinkedList::IT_MODE_LIFO</code></strong></dt>
+
+      <dd>
+
+       <p class="para">
+        スタックのように、LIFO (最後に入れたものを最初に取り出す) の順で走査されます。
+       </p>
+      </dd>
+
+     
+
+     
+      <dt id="spldoublylinkedlist.constants.it-mode-fifo"><strong><code>SplDoublyLinkedList::IT_MODE_FIFO</code></strong></dt>
+
+      <dd>
+
+       <p class="para">
+        キューのように、FIFO(先入れ先出し) の順で走査されます。
+       </p>
+      </dd>
+
+     
+
+    </dl>
+
+   </div>
+
+   <div class="section" id="spldoublylinkedlist.constants.iteration-behavior">
+    <h2 class="title">イテレーションの振る舞い</h2>
+    <dl>
+
+
+     
+      <dt id="spldoublylinkedlist.constants.it-mode-delete"><strong><code>SplDoublyLinkedList::IT_MODE_DELETE</code></strong></dt>
+
+      <dd>
+
+       <p class="para">
+        走査された要素を削除します。
+       </p>
+      </dd>
+
+     
+
+     
+      <dt id="spldoublylinkedlist.constants.it-mode-keep"><strong><code>SplDoublyLinkedList::IT_MODE_KEEP</code></strong></dt>
+
+      <dd>
+
+       <p class="para">
+        走査されても要素を削除しません。
+       </p>
+      </dd>
+
+     
+
+    </dl>
+
+   </div>
+  </div>
+
+
 
  
  </div>

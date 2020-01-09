@@ -40,6 +40,13 @@
    <span class="function"><strong>imagecreatefromwbmp()</strong></span> は、指定したファイル名から
    得られたイメージを表すイメージ ID を返します。
   </p>
+  <blockquote class="note"><p><strong class="note">注意</strong>: 
+   <span class="simpara">
+    WBMP画像は、Windows bitmp ではなく、ワイヤレスビットマップです。
+    Windows bitmap は、<span class="function"><a href="function.imagecreatefrombmp.html" class="function">imagecreatefrombmp()</a></span>
+    関数を使って読み込むことができます。
+   </span>
+  </p></blockquote>
   <div class="tip"><strong class="tip">ヒント</strong><p class="simpara"><a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">fopen wrappers</a> が有効の場合、この関数のファイル名として
 URL を使用することができます。ファイル名の指定方法に関する詳細は
 <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> を参照ください。

@@ -38,13 +38,8 @@
    ) : <span class="type">string</span></div>
 
   <p class="para rdfs-comment">
-   サブパスを取得します。
+   コンストラクタで渡されたディレクトリのサブパスを返します。
   </p>
-
-  <div class="warning"><strong class="warning">警告</strong><p class="simpara">この関数は、
-現在のところ詳細な情報はありません。引数のリストのみが
-記述されています。</p></div>
-
  </div>
 
 
@@ -57,7 +52,40 @@
  <div class="refsect1 returnvalues" id="refsect1-recursivedirectoryiterator.getsubpath-returnvalues">
   <h3 class="title">返り値</h3>
   <p class="para">
-   サブパス (サブディレクトリ) を返します。
+   サブパス(サブディレクトリ) を返します。
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 examples" id="refsect1-recursivedirectoryiterator.getsubpath-examples">
+  <h3 class="title">例</h3>
+  <p class="para">
+   <div class="example" id="example-4844">
+    <p><strong>例1 <span class="function"><strong>getSubPath()</strong></span> の例</strong></p>
+     <div class="example-contents"><p>
+      
+    </p></div>
+    <div class="example-contents">
+    <div class="phpcode"><code><span style="color: #000000">
+$directory&nbsp;=&nbsp;'/tmp';<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$it&nbsp;=&nbsp;new&nbsp;RecursiveIteratorIterator(new&nbsp;RecursiveDirectoryIterator($directory));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;($it&nbsp;as&nbsp;$file)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;'SubPathName:&nbsp;'&nbsp;.&nbsp;$it-&gt;getSubPathName()&nbsp;.&nbsp;"\n";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;'SubPath:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;.&nbsp;$it-&gt;getSubPath()&nbsp;.&nbsp;"\n\n";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>上の例の出力は、
+たとえば以下のようになります。</p></div>
+    <div class="example-contents screen">
+    <div class="cdata"><pre>
+     SubPathName: fruit/apple.xml
+     SubPath:     fruit
+     
+     SubPathName: stuff.xml
+     SubPath:     
+     
+     SubPathName: veggies/carrot.xml
+     SubPath:     veggies
+    </pre></div>
+    </div>
+   </div>
   </p>
  </div>
 

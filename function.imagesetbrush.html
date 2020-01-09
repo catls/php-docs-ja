@@ -45,6 +45,15 @@
    <span class="function"><a href="function.imagepolygon.html" class="function">imagepolygon()</a></span> のような)
    全ての線描画関数で使用されるブラシイメージを設定します。
   </p>
+  <div class="caution"><strong class="caution">警告</strong>
+   <p class="para">
+    ブラシの使用が終った際には特別な処理は不要ですが、
+    ブラシイメージを破棄する(もしくは、PHPに破棄させる)場合には、新たにブラシイメージを設定するまでは、
+    色 <strong><code>IMG_COLOR_BRUSHED</code></strong> または
+    <strong><code>IMG_COLOR_STYLEDBRUSHED</code></strong>
+    を使用するべきではありません。
+   </p>
+  </div>
  </div>
 
  <div class="refsect1 parameters" id="refsect1-function.imagesetbrush-parameters">
@@ -86,7 +95,7 @@ image</code></dt>
  <div class="refsect1 examples" id="refsect1-function.imagesetbrush-examples">
   <h3 class="title">例</h3>
   <p class="para">
-   <div class="example" id="example-3852">
+   <div class="example" id="example-3853">
     <p><strong>例1 <span class="function"><strong>imagesetbrush()</strong></span> の例</strong></p>
     <div class="example-contents">
 <div class="phpcode"><code><span style="color: #000000">
@@ -107,17 +116,5 @@ image</code></dt>
   </p>
  </div>
 
- <div class="refsect1 notes" id="refsect1-function.imagesetbrush-notes">
-  <h3 class="title">注意</h3>
-  <blockquote class="note"><p><strong class="note">注意</strong>: 
-   <p class="para">
-    ブラシの使用が終った際には特別な処理は不要ですが、
-    ブラシイメージを破棄する場合には、新たにブラシイメージを設定するまでは、
-    色 <strong><code>IMG_COLOR_BRUSHED</code></strong> または
-    <strong><code>IMG_COLOR_STYLEDBRUSHED</code></strong>
-    を使用するべきではありません。
-   </p>
-  </p></blockquote>
- </div>
 
 </div></div></div></body></html>

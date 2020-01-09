@@ -34,9 +34,9 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>imagepng</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$to</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$quality</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$filters</code></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <code class="parameter">$to</code><span class="initializer"> = <strong><code>NULL</code></strong></span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$quality</code><span class="initializer"> = -1</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$filters</code><span class="initializer"> = -1</span></span>
   ]]] ) : <span class="type">bool</span></div>
 
   <p class="para rdfs-comment">
@@ -82,7 +82,7 @@ image</code></dt>
 
       <p class="para">
        圧縮レベル。0 (圧縮しない) から 9 までの値です。
-       現在のデフォルトは 6 です。
+       デフォルト (<em>-1</em>) は、zlib の圧縮レベルのデフォルトを使います。
        詳細は、<a href="http://www.zlib.net/manual.html" class="link external">&raquo;&nbsp;zlib マニュアル</a> をご覧ください。
       </p>
      </dd>
@@ -101,7 +101,13 @@ image</code></dt>
        <strong><code>PNG_NO_FILTER</code></strong> や
        <strong><code>PNG_ALL_FILTERS</code></strong> を使用すると、
        全フィルタを一括で無効にしたり有効にしたりできます。
+       デフォルト値 (<em>-1</em>) は、フィルタリングを無効にします。
       </p>
+      <div class="caution"><strong class="caution">警告</strong>
+       <p class="simpara">
+        システムにインストールされた libgd は、<code class="parameter">filters</code> パラメータを無視します。
+       </p>
+      </div>
      </dd>
 
     
@@ -186,8 +192,7 @@ image</code></dt>
     <li class="member"><span class="function"><a href="function.imagewbmp.html" class="function" rel="rdfs-seeAlso">imagewbmp()</a> - 画像をブラウザあるいはファイルに出力する</span></li>
     <li class="member"><span class="function"><a href="function.imagejpeg.html" class="function" rel="rdfs-seeAlso">imagejpeg()</a> - 画像をブラウザあるいはファイルに出力する</span></li>
     <li class="member"><span class="function"><a href="function.imagetypes.html" class="function" rel="rdfs-seeAlso">imagetypes()</a> - この PHP がサポートしている画像形式を返す</span></li>
-    <li class="member"><span class="function"><a href="function.imagesavealpha.html" class="function" rel="rdfs-seeAlso">imagesavealpha()</a> - PNG 画像を保存する際に（単一色の透過設定ではない）完全な
-   アルファチャネル情報を保存するフラグを設定する</span></li>
+    <li class="member"><span class="function"><a href="function.imagesavealpha.html" class="function" rel="rdfs-seeAlso">imagesavealpha()</a> - PNG 画像を保存する際に、完全なアルファチャネル情報を保存するかどうかを指定する</span></li>
    </ul>
   </p>
  </div>

@@ -35,7 +35,7 @@
   <div class="methodsynopsis dc-description">
    <span class="methodname"><strong>imagecropauto</strong></span>
     ( <span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>
-   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code><span class="initializer"> = -1</span></span>
+   [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$mode</code><span class="initializer"> = <strong><code>IMG_CROP_DEFAULT</code></strong></span></span>
    [, <span class="methodparam"><span class="type">float</span> <code class="parameter">$threshold</code><span class="initializer"> = .5</span></span>
    [, <span class="methodparam"><span class="type">int</span> <code class="parameter">$color</code><span class="initializer"> = -1</span></span>
   ]]] ) : <span class="type">resource</span></div>
@@ -80,8 +80,11 @@ image</code></dt>
        <dd>
 
         <span class="simpara">
-         <strong><code>IMG_CROP_TRANSPARENT</code></strong> を使うことを試みます。
-         失敗した場合は <strong><code>IMG_CROP_SIDES</code></strong> を使います。
+         <strong><code>IMG_CROP_TRANSPARENT</code></strong> と同じです。
+         PHP 7.4.0 より前のバージョンでは、
+         PHP にバンドルされた libgd は、
+         画像に透過色がない場合に <strong><code>IMG_CROP_SIDES</code></strong>
+         にフォールバックしていました。
         </span>
        </dd>
 
@@ -165,6 +168,14 @@ image</code></dt>
      <p class="para">
       <strong><code>IMG_CROP_THRESHOLD</code></strong> モードのときにだけ利用します。
      </p>
+     <blockquote class="note"><p><strong class="note">注意</strong>: 
+      <span class="simpara">
+       PHP 7.4.0 より前のバージョンでは、
+       PHP にバンドルされていた libgd はやや異なるアルゴリズムを用いていました。
+       なので、同じ <code class="parameter">threshold</code> を渡しても
+       システムの libgd と PHP にバンドルされた libgd とは異なる結果が生成されていました。
+      </span>
+     </p></blockquote>
     </dd>
 
    
@@ -192,9 +203,52 @@ image</code></dt>
   <h3 class="title">返り値</h3>
   <p class="para">
    成功した場合にクロップ後の画像リソースを返します。失敗した場合に <strong><code>FALSE</code></strong> を返します。
-   クロップする箇所がなかった場合やすべてクロップされてしまった場合は、処理が失敗したものとみなされます。
-   この場合は、<span class="function"><a href="function.imagecrop.html" class="function">imagecrop()</a></span> は <strong><code>FALSE</code></strong> を返します。
+   すべてクロップされてしまった場合は、
+   <span class="function"><a href="function.imagecrop.html" class="function">imagecrop()</a></span> は <strong><code>FALSE</code></strong> を返します。
   </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.imagecropauto-changelog">
+  <h3 class="title">変更履歴</h3>
+  <table class="doctable informaltable">
+   
+    <thead>
+     <tr>
+      <th>バージョン</th>
+      <th>説明</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>7.4.0</td>
+      <td>
+       PHP にバンドルされた imagecropauto() の振る舞いは、
+       システムにインストールされる libgd のそれと同じになりました。
+       つまり、<strong><code>IMG_CROP_DEFAULT</code></strong>
+       が <strong><code>IMG_CROP_SIDES</code></strong> にフォールバックすることはななくなり、
+       しきい値によるクロップは、
+       システムにインストールされる libgd のアルゴリズムと同じものを使うようになりました。
+      </td>
+     </tr>
+
+     <tr>
+      <td>7.4.0</td>
+      <td>
+       <code class="parameter">mode</code> パラメータのデフォルト値が
+       <strong><code>IMG_CROP_AUTO</code></strong> に変更されました。
+       これより前のバージョンでは、デフォルト値は
+       <em>-1</em> で、<strong><code>IMG_CROP_DEFAULT</code></strong> に対応しています。
+       しかし、<em>-1</em> を渡すのは非推奨になりました。
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
  </div>
 
 
@@ -204,7 +258,7 @@ image</code></dt>
    <div class="example" id="example-3795">
     <p><strong>例1 自動クロップの適切な処理</strong></p>
     <div class="example-contents"><p>
-     返り値のところで説明したとおり、何もクロップしなかった場合や全部クロップしてしまったときに
+     返り値のところで説明したとおり、全部クロップしてしまったときに
      <span class="function"><strong>imagecropauto()</strong></span> が返す値は <strong><code>FALSE</code></strong> となります。
      この例では、クロップする部分がある場合にだけ画像リソース
      <em>$im</em> を自動クロップします。

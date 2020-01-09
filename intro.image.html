@@ -68,9 +68,10 @@
    </p></blockquote>
    <div class="caution"><strong class="caution">警告</strong>
     <p class="simpara">
-     
-     While the bundled version of the GD library uses the Zend memory manager to
-     allocate memory, system versions do not, so that <a href="ini.core.html#ini.memory-limit" class="link">memory_limit</a> does not apply. 
+     バンドルされている GD ライブラリは、メモリを確保するのに
+     Zend メモリマネージャーを使っていますが、
+     システムにインストールされている GD ライブラリは使っていません。
+     よって、後者には <a href="ini.core.html#ini.memory-limit" class="link">memory_limit</a> は適用されません。
     </p>
    </div>
   </p>
@@ -140,7 +141,7 @@
        <td>WebP</td>
        <td><strong><code>TRUE</code></strong></td>
        <td><strong><code>TRUE</code></strong></td>
-       <td>PHP 5.5+</td>
+       <td>PHP 5.4+</td>
       </tr>
 
       <tr>

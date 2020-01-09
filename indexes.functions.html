@@ -159,7 +159,7 @@
 <li><a href="arrayiterator.count.html" class="index">ArrayIterator::count</a> - 要素を数える</li>
 <li><a href="arrayiterator.current.html" class="index">ArrayIterator::current</a> - 現在の配列エントリを返す</li>
 <li><a href="arrayiterator.getarraycopy.html" class="index">ArrayIterator::getArrayCopy</a> - 配列のコピーを取得する</li>
-<li><a href="arrayiterator.getflags.html" class="index">ArrayIterator::getFlags</a> - フラグを取得する</li>
+<li><a href="arrayiterator.getflags.html" class="index">ArrayIterator::getFlags</a> - 振る舞いのフラグを取得する</li>
 <li><a href="arrayiterator.key.html" class="index">ArrayIterator::key</a> - 現在の配列キーを返す</li>
 <li><a href="arrayiterator.ksort.html" class="index">ArrayIterator::ksort</a> - キーで配列をソートする</li>
 <li><a href="arrayiterator.natcasesort.html" class="index">ArrayIterator::natcasesort</a> - 大文字小文字を区別せずに自然順で配列をソートする</li>
@@ -173,8 +173,8 @@
 <li><a href="arrayiterator.seek.html" class="index">ArrayIterator::seek</a> - 位置を移動する</li>
 <li><a href="arrayiterator.serialize.html" class="index">ArrayIterator::serialize</a> - シリアライズする</li>
 <li><a href="arrayiterator.setflags.html" class="index">ArrayIterator::setFlags</a> - 振る舞いのフラグを設定する</li>
-<li><a href="arrayiterator.uasort.html" class="index">ArrayIterator::uasort</a> - ユーザー定義のソート</li>
-<li><a href="arrayiterator.uksort.html" class="index">ArrayIterator::uksort</a> - ユーザー定義のソート</li>
+<li><a href="arrayiterator.uasort.html" class="index">ArrayIterator::uasort</a> - ユーザー定義の比較関数を使ってソートを行い、インデックスとの関連を管理する</li>
+<li><a href="arrayiterator.uksort.html" class="index">ArrayIterator::uksort</a> - ユーザー定義の比較関数を使い、キーでソートする</li>
 <li><a href="arrayiterator.unserialize.html" class="index">ArrayIterator::unserialize</a> - アンシリアライズする</li>
 <li><a href="arrayiterator.valid.html" class="index">ArrayIterator::valid</a> - 配列がまだエントリを持っているかどうかチェックする</li>
 <li><a href="arrayiterator.construct.html" class="index">ArrayIterator::__construct</a> - ArrayIterator を作成する</li>
@@ -3527,8 +3527,7 @@
 <li><a href="function.imagerectangle.html" class="index">imagerectangle</a> - 矩形を描画する</li>
 <li><a href="function.imageresolution.html" class="index">imageresolution</a> - Get or set the resolution of the image</li>
 <li><a href="function.imagerotate.html" class="index">imagerotate</a> - 指定された角度で画像を回転する</li>
-<li><a href="function.imagesavealpha.html" class="index">imagesavealpha</a> - PNG 画像を保存する際に（単一色の透過設定ではない）完全な
-   アルファチャネル情報を保存するフラグを設定する</li>
+<li><a href="function.imagesavealpha.html" class="index">imagesavealpha</a> - PNG 画像を保存する際に、完全なアルファチャネル情報を保存するかどうかを指定する</li>
 <li><a href="function.imagescale.html" class="index">imagescale</a> - 幅と高さを指定して、画像の縮尺を変更する</li>
 <li><a href="function.imagesetbrush.html" class="index">imagesetbrush</a> - 線の描画用にブラシイメージを設定する</li>
 <li><a href="function.imagesetclip.html" class="index">imagesetclip</a> - Set the clipping rectangle</li>
@@ -6512,7 +6511,7 @@
 <li><a href="function.openssl-private-encrypt.html" class="index">openssl_private_encrypt</a> - 秘密鍵でデータを暗号化する</li>
 <li><a href="function.openssl-public-decrypt.html" class="index">openssl_public_decrypt</a> - 公開鍵でデータを復号する</li>
 <li><a href="function.openssl-public-encrypt.html" class="index">openssl_public_encrypt</a> - 公開鍵でデータを暗号化する</li>
-<li><a href="function.openssl-random-pseudo-bytes.html" class="index">openssl_random_pseudo_bytes</a> - 疑似乱数のバイト文字列を生成する</li>
+<li><a href="function.openssl-random-pseudo-bytes.html" class="index">openssl_random_pseudo_bytes</a> - 疑似ランダムなバイト文字列を生成する</li>
 <li><a href="function.openssl-seal.html" class="index">openssl_seal</a> - データをシール(暗号化)する</li>
 <li><a href="function.openssl-sign.html" class="index">openssl_sign</a> - 署名を生成する</li>
 <li><a href="function.openssl-spki-export.html" class="index">openssl_spki_export</a> - Exports a valid PEM formatted public key signed public key and challenge</li>
@@ -7454,8 +7453,8 @@
 <li><a href="function.radius-server-secret.html" class="index">radius_server_secret</a> - 共有秘密鍵を返す</li>
 <li><a href="function.radius-strerror.html" class="index">radius_strerror</a> - エラーメッセージを返す</li>
 <li><a href="function.rand.html" class="index">rand</a> - 乱数を生成する</li>
-<li><a href="function.random-bytes.html" class="index">random_bytes</a> - Generates cryptographically secure pseudo-random bytes</li>
-<li><a href="function.random-int.html" class="index">random_int</a> - Generates cryptographically secure pseudo-random integers</li>
+<li><a href="function.random-bytes.html" class="index">random_bytes</a> - 暗号論的に安全な、疑似ランダムなバイト列を生成する</li>
+<li><a href="function.random-int.html" class="index">random_int</a> - 暗号論的に安全な疑似乱数を生成する</li>
 <li><a href="function.range.html" class="index">range</a> - ある範囲の整数を有する配列を作成する</li>
 <li><a href="wrappers.rar.html" class="index">rar://</a> - RAR</li>
 <li><a href="rararchive.close.html" class="index">RarArchive::close</a> - Rar アーカイブをクローズし、全リソースを開放する</li>
@@ -8833,7 +8832,7 @@
 <li><a href="splfileobject.setmaxlinelen.html" class="index">SplFileObject::setMaxLineLen</a> - 読み込む行の最大バイト数をセットする</li>
 <li><a href="splfileobject.valid.html" class="index">SplFileObject::valid</a> - ファイル終端でないかチェックする</li>
 <li><a href="splfileobject.construct.html" class="index">SplFileObject::__construct</a> - 新しいファイルオブジェクトを作成する</li>
-<li><a href="splfileobject.tostring.html" class="index">SplFileObject::__toString</a> - SplFileObject::current のエイリアス</li>
+<li><a href="splfileobject.tostring.html" class="index">SplFileObject::__toString</a> - SplFileObject::fgets のエイリアス</li>
 <li><a href="splfixedarray.count.html" class="index">SplFixedArray::count</a> - 配列のサイズを返す</li>
 <li><a href="splfixedarray.current.html" class="index">SplFixedArray::current</a> - 現在の配列の要素を返す</li>
 <li><a href="splfixedarray.fromarray.html" class="index">SplFixedArray::fromArray</a> - PHP の配列を SplFixedArray インスタンスにインポートする</li>
